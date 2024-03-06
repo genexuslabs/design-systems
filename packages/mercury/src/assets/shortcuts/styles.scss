@@ -1,0 +1,23 @@
+@import "tokens.scss";
+
+ch-shortcuts::part(tooltip) {
+  display: flex;
+  padding-inline-start: var(--shortcuts-tooltip__padding-inline-start);
+}
+ch-shortcuts::part(key) {
+  color: var(--shortcuts-key__color);
+  background-color: var(--shortcuts-key__background-color);
+  border-radius: var(--shortcuts-key__border-radius);
+  font-size: var(--shortcuts-key__font-size);
+  padding: var(--shortcuts-key__padding);
+}
+ch-shortcuts::part(slash),
+ch-shortcuts::part(plus) {
+  font-size: var(--shortcuts-slash__font-size);
+  color: var(--shortcuts-slash__color);
+  padding: var(--shortcuts-slash__padding);
+}
+ch-shortcuts::part(element) {
+  outline: var(--shortcuts-element__outline);
+  outline-offset: var(--shortcuts-element__outline-offset);
+}

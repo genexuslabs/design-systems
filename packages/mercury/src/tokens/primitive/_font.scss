@@ -1,0 +1,37 @@
+/* font weights used by mercury:
+- light (300)
+- regular (400)
+- semi-bold (600)
+- bold (700)
+- extra-bold (800)
+*/
+
+@mixin font() {
+  /*Families*/
+  --mer-font-family--primary: "Inter", sans-serif;
+
+  /*Weights*/
+  --mer-font__weight--light: 300;
+  --mer-font__weight--regular: 400;
+  --mer-font__weight--semi-bold: 600;
+  --mer-font__weight--bold: 700;
+  --mer-font__weight--extra-bold: 800;
+
+  /*Sizes*/
+  --mer-font__size--xxs: 12px;
+  --mer-font__size--xs: 14px;
+  --mer-font__size--sm: 16px;
+  --mer-font__size--md: 20px;
+  --mer-font__size--lg: 24px;
+  --mer-font__size--xl: 36px;
+
+  /*Line Heights*/
+  --mer-line-height--tight: 1.4em;
+  --mer-line-height--regular: normal;
+  --mer-line-height--comfortable: 1.7em;
+
+  /*Letter Spacings (to be done)*/
+  // --mer-letter-spacing--tight: ;
+  // --mer-letter-spacing--regular: ;
+  // --mer-letter-spacing--comfortable: ;
+}

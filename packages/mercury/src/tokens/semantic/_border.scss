@@ -1,0 +1,16 @@
+@mixin semantic-border() {
+  --mer-border-color__primary: var(--mer-accent__primary);
+  --mer-border-color__primary--hover: var(--mer-accent__primary--hover);
+  --mer-border-color__primary--active: var(--mer-accent__primary--active);
+  --mer-border-color__primary--disabled: var(--mer-accent__primary--disabled);
+  --mer-border-color__primary--focused: var(--mer-color__neutral-gray--00);
+  --mer-border-color__error: var(--mer-color__message-red--100);
+  --mer-border-color__warning: var(--mer-color__message-yellow--100);
+  --mer-border-color__success: var(--mer-color__message-green--100);
+  --mer-border-color__neutral: var(--mer-color__neutral-gray--200);
+  --mer-border-color__neutral--hover: var(--mer-color__neutral-gray--100);
+  --mer-border-color__neutral--active: var(--mer-color__neutral-gray--00);
+  --mer-border-color__dim: var(--mer-color__neutral-gray--600);
+  --mer-border-color__control--focused: var(--mer-color__primary-blue--200);
+  --mer-border-color__on-elevation--01: var(--mer-color__neutral-gray--1400);
+}

@@ -1,0 +1,9 @@
+@mixin semantic-item() {
+  --mer-item__background-color--hover: var(--mer-color__tinted-blue--5);
+  --mer-item__background-color--selected: var(--mer-color__tinted-blue--10);
+  --mer-item__background-color--selected-hover: var(
+    --mer-color__tinted-blue--10
+  );
+  --mer-item__border-color: var(--mer-color__tinted-blue--20);
+  --mer-item__border-color--selected: var(--mer-color__tinted-blue--20);
+}

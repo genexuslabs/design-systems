@@ -1,0 +1,18 @@
+@mixin semantic-icon() {
+  --mer-icon__on-surface: var(--mer-color__neutral-gray--300);
+  --mer-icon__on-primary: var(--mer-color__neutral-gray--800);
+  --mer-icon__on-primary--active: var(--mer-color__neutral-gray--00);
+  --mer-icon__on-disabled: var(--mer-color__neutral-gray--500);
+  --mer-icon__on-message: var(--mer-color__neutral-gray--700);
+  --mer-icon__on-elevation: var(--mer-color__neutral-gray--600);
+  --mer-icon__primary: var(--mer-accent__primary);
+  --mer-icon__primary--hover: var(--mer-accent__primary--hover);
+  --mer-icon__primary--active: var(--mer-accent__primary--active);
+  --mer-icon__primary--disabled: var(--mer-accent__primary--disabled);
+  --mer-icon__error: var(--mer-color__message-red--100);
+  --mer-icon__warning: var(--mer-color__message-yellow--100);
+  --mer-icon__success: var(--mer-color__message-green--100);
+  --mer-icon__neutral: var(--mer-color__neutral-gray--200);
+  --mer-icon__highlighted: var(--mer-color__neutral-gray--100);
+  --mer-icon__bright: var(--mer-color__neutral-gray--00);
+}
