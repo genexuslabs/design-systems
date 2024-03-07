@@ -145,61 +145,49 @@
   }
 
   // Tokens
-
-  @if $tokens {
-    // border
-    @if $border {
-      :root {
+  :root {
+    @if $tokens {
+      // border
+      @if $border {
         @include border();
       }
-    }
 
-    // color (already defined)
+      // color (already defined)
 
-    // elevation (light)
-    @if $elevation and $light-theme {
-      :root {
+      // elevation (light)
+      @if $elevation and $light-theme {
         @include elevation--light();
       }
-    }
-    @if $elevation and $prefers-color-scheme-light {
-      @media (prefers-color-scheme: light) {
-        :root {
+      @if $elevation and $prefers-color-scheme-light {
+        @media (prefers-color-scheme: light) {
           @include elevation--light();
         }
       }
-    }
-    // elevation (dark)
-    @if $elevation and $dark-theme {
-      :root.dark {
-        @include elevation--dark();
-      }
-    }
-    @if $elevation and $prefers-color-scheme-dark {
-      @media (prefers-color-scheme: dark) {
-        :root {
+
+      // elevation (dark)
+      @if $elevation and $dark-theme {
+        &.dark {
           @include elevation--dark();
         }
       }
-    }
+      @if $elevation and $prefers-color-scheme-dark {
+        @media (prefers-color-scheme: dark) {
+          @include elevation--dark();
+        }
+      }
 
-    // font
-    @if $font {
-      :root {
+      // font
+      @if $font {
         @include font();
       }
-    }
 
-    // spacing
-    @if $spacing {
-      :root {
+      // spacing
+      @if $spacing {
         @include spacing();
       }
-    }
 
-    // timing
-    @if $timing {
-      :root {
+      // timing
+      @if $timing {
         @include timing();
       }
     }
