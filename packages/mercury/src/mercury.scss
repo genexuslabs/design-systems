@@ -1,0 +1,245 @@
+// Resets
+@import "../../common/resets";
+
+// Primitive
+@import "./tokens/primitive/border";
+@import "./tokens/primitive/color";
+@import "./tokens/primitive/elevation";
+@import "./tokens/primitive/font";
+@import "./tokens/primitive/spacing";
+@import "./tokens/primitive/timing";
+
+// Semantic
+@import "./tokens/semantic/tokens";
+
+// Components
+@import "./components/shortcuts/styles";
+
+@mixin mercury(
+  // Resets
+  $resets: true,
+  $box-sizing-reset: true,
+  $button-reset: true,
+  $input-reset: true,
+  $other-reset: true,
+  $typography-reset: true,
+
+  // Theme
+  $light-theme: true,
+  $dark-theme: true,
+  $prefers-color-scheme-light: false,
+  $prefers-color-scheme-dark: false,
+
+  // Tokens
+  $tokens: true,
+  $border: true,
+  $color: true,
+  $elevation: true,
+  $font: true,
+  $spacing: true,
+  $timing: true,
+
+  // Font face
+  $font-face: true,
+
+  // Base
+  $base-classes: true,
+  $button-classes: true,
+  $form-controls-classes: true,
+  $typography-classes: true,
+
+  // Components
+  $components: true,
+  $shortcuts: true
+) {
+  // font-face
+  @if $font-face {
+    //light
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 300;
+      src: url("Inter_Light.woff2") format("woff2");
+      font-display: swap;
+    }
+
+    //regular
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      src: url("Inter_Regular.woff2") format("woff2");
+      font-display: swap;
+    }
+
+    //semi-bold
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      src: url("Inter_SemiBold.woff2") format("woff2");
+      font-display: swap;
+    }
+
+    //bold
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      src: url("Inter_Bold.woff2") format("woff2");
+      font-display: swap;
+    }
+
+    //extra-bold
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 800;
+      src: url("Inter_ExtraBold.woff2") format("woff2");
+      font-display: swap;
+    }
+  }
+
+  // Light
+  @if $color and $light-theme and $tokens {
+    :root {
+      @include foundation-colors--light();
+    }
+  }
+  @if $color and $tokens and $prefers-color-scheme-light {
+    @media (prefers-color-scheme: light) {
+      :root {
+        @include foundation-colors--light();
+      }
+    }
+  }
+  // Dark
+  @if $color and $dark-theme and $tokens {
+    :root.dark {
+      @include foundation-colors--dark();
+    }
+  }
+  @if $color and $tokens and $prefers-color-scheme-dark {
+    @media (prefers-color-scheme: dark) {
+      :root {
+        @include foundation-colors--dark();
+      }
+    }
+  }
+
+  body {
+    @if $tokens and $color {
+      background-color: var(--mer-color__surface);
+      color: var(--text-un-text__on-surface--positive);
+    }
+    margin: 0;
+  }
+
+  // Tokens
+  @if $tokens and
+    (
+      $border or
+        $color or
+        ($elevation and $light-theme) or
+        ($elevation and $prefers-color-scheme-light) or
+        ($elevation and $dark-theme) or
+        ($elevation and $prefers-color-scheme-dark) or
+        $font or
+        $spacing or
+        $timing
+    )
+  {
+    :root {
+      // border
+      @if $border {
+        @include border();
+      }
+
+      // color
+      @if $color {
+        @include semantic-accent();
+        @include semantic-border();
+        @include semantic-heading();
+        @include semantic-icon();
+        @include semantic-item();
+        @include semantic-text();
+      }
+
+      // elevation (light)
+      @if $elevation and $light-theme {
+        @include elevation--light();
+      }
+      @if $elevation and $prefers-color-scheme-light {
+        @media (prefers-color-scheme: light) {
+          @include elevation--light();
+        }
+      }
+
+      // elevation (dark)
+      @if $elevation and $dark-theme {
+        &.dark {
+          @include elevation--dark();
+        }
+      }
+      @if $elevation and $prefers-color-scheme-dark {
+        @media (prefers-color-scheme: dark) {
+          @include elevation--dark();
+        }
+      }
+
+      // font
+      @if $font {
+        @include font();
+      }
+
+      // spacing
+      @if $spacing {
+        @include spacing();
+      }
+
+      // timing
+      @if $timing {
+        @include timing();
+      }
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Resets
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $resets {
+    // box-sizing
+    @if $box-sizing-reset {
+      @include box-sizing();
+    }
+
+    // <button> and <a> reset
+    @if $button-reset {
+      @include button-reset();
+    }
+
+    @if $input-reset {
+      @include input-reset();
+    }
+
+    // <hr> reset
+    @if $other-reset {
+      @include other-reset();
+    }
+
+    // Typography reset
+    @if $typography-reset {
+      @include typography-reset();
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //               Components
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $components {
+    // card
+    @if $shortcuts {
+      @include shortcuts();
+    }
+  }
+}

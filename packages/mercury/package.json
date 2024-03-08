@@ -1,0 +1,16 @@
+{
+  "name": "@genexus/mercury",
+  "version": "0.0.1",
+  "description": "Mercury is the design system designed for GeneXus IDE Web and GeneXus Next",
+  "main": "src/mercury.scss",
+  "scripts": {
+    "test": "sass test/test.scss test/mercury.css"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "~1.71.1"
+  },
+  "engines": {
+    "pnpm": ">=3"
+  }
+}

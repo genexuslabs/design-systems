@@ -1,0 +1,7 @@
+@mixin semantic-accent() {
+  --mer-accent__primary: var(--mer-color__primary-blue--200);
+  --mer-accent__primary--hover: var(--mer-color__primary-blue--400);
+  --mer-accent__primary--active: var(--mer-color__primary-blue--600);
+  --mer-accent__primary--disabled: var(--mer-color__neutral-gray--700);
+  --mer-accent__primary--destructive: var(--mer-color__message-red--100);
+}
