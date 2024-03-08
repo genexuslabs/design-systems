@@ -127,32 +127,43 @@
     }
   }
 
-  // Semantic colors and body color styles (theme agnostic)
-  @if $tokens and $color {
-    :root {
-      @include semantic-accent();
-      @include semantic-border();
-      @include semantic-heading();
-      @include semantic-icon();
-      @include semantic-item();
-      @include semantic-text();
-    }
-    body {
+  body {
+    @if $tokens and $color {
       background-color: var(--mer-color__surface);
       color: var(--text-un-text__on-surface--positive);
-      margin: 0;
     }
+    margin: 0;
   }
 
   // Tokens
-  :root {
-    @if $tokens {
+  @if $tokens and
+    (
+      $border or
+        $color or
+        ($elevation and $light-theme) or
+        ($elevation and $prefers-color-scheme-light) or
+        ($elevation and $dark-theme) or
+        ($elevation and $prefers-color-scheme-dark) or
+        $font or
+        $spacing or
+        $timing
+    )
+  {
+    :root {
       // border
       @if $border {
         @include border();
       }
 
-      // color (already defined)
+      // color
+      @if $color {
+        @include semantic-accent();
+        @include semantic-border();
+        @include semantic-heading();
+        @include semantic-icon();
+        @include semantic-item();
+        @include semantic-text();
+      }
 
       // elevation (light)
       @if $elevation and $light-theme {
