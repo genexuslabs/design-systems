@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/unanimo.scss",
   "scripts": {
-    "test": "sass test/test.scss test/unanimo.css"
+    "test": "sass test/test.scss test/unanimo.css",
+    "validate.ci": "sass test/test.scss test/unanimo.css"
   },
   "license": "MIT",
   "devDependencies": {
