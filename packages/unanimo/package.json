@@ -7,12 +7,13 @@
     "dist/"
   ],
   "scripts": {
-    "build": "scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss",
+    "build": "cpy src/assets/** dist/assets && scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss",
     "test": "sass test/test.scss test/unanimo.css",
     "validate.ci": "sass test/test.scss test/unanimo.css"
   },
   "license": "MIT",
   "devDependencies": {
+    "cpy-cli": "~5.0.0",
     "sass": "~1.72.0",
     "scss-bundle": "~3.1.2"
   },
