@@ -1,14 +1,21 @@
 {
   "name": "@genexus/unanimo",
   "version": "0.0.1",
-  "description": "",
-  "main": "src/unanimo.scss",
+  "description": "A design system for GeneXus generated applications.",
+  "main": "dist/unanimo.scss",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "test": "sass test/test.scss test/unanimo.css"
+    "build": "cpy src/assets/** dist/assets && scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss",
+    "test": "sass test/test.scss test/unanimo.css",
+    "validate.ci": "sass test/test.scss test/unanimo.css"
   },
   "license": "MIT",
   "devDependencies": {
-    "sass": "~1.71.1"
+    "cpy-cli": "~5.0.0",
+    "sass": "~1.72.0",
+    "scss-bundle": "~3.1.2"
   },
   "engines": {
     "pnpm": ">=3"
