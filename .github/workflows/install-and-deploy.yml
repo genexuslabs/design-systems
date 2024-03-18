@@ -46,12 +46,15 @@ jobs:
 
       - name: install dependencies
         run: npm install
+        working-directory: ${{ inputs.package }}
 
       - name: validate
         run: npm run validate.ci
+        working-directory: ${{ inputs.package }}
 
       - name: publish
         if: ${{ inputs.publish == true }}
         run: npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+        working-directory: ${{ inputs.package }}
