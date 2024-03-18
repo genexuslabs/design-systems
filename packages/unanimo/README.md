@@ -5,7 +5,7 @@ A design system for GeneXus generated applications.
 ## Install
 
 ```bash
-`npm i @genexus/unanimo`
+npm i @genexus/unanimo
 ```
 
 ## Using this design system
