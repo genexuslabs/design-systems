@@ -6,11 +6,11 @@ on:
       package:
         description: "Package name"
         required: true
-        default: "package/unanimo"
+        default: "unanimo"
         type: choice
         options:
-          - package/mercury
-          - package/unanimo
+          - mercury
+          - unanimo
 
 jobs:
   install:
@@ -19,5 +19,5 @@ jobs:
       node-version: "20.x"
       cache: false
       publish: true
-      package: ${{ inputs.package }}
+      package: ../package/${{ inputs.package }}
     secrets: inherit
