@@ -1,0 +1,23 @@
+name: Node.js Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: "Package name"
+        required: true
+        default: "unanimo"
+        type: choice
+        options:
+          - mercury
+          - unanimo
+
+jobs:
+  install:
+    uses: genexuslabs/design-systems/.github/workflows/install-and-deploy.yml@main
+    with:
+      node-version: "20.x"
+      cache: false
+      publish: true
+      package: ${{ inputs.package }}
+    secrets: inherit
