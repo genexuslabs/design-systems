@@ -1,4 +1,4 @@
-name: Node.js Package
+name: Node.js Manual Publish
 
 on:
   workflow_dispatch:
@@ -6,11 +6,11 @@ on:
       package:
         description: "Package name"
         required: true
-        default: "unanimo"
+        default: "package/unanimo"
         type: choice
         options:
-          - mercury
-          - unanimo
+          - package/mercury
+          - package/unanimo
 
 jobs:
   install:
