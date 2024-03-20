@@ -7,13 +7,14 @@
     "dist/"
   ],
   "scripts": {
-    "build": "cpy src/assets/**/* dist/assets && scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss",
+    "copy-assets": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/assets/ dist/assets",
+    "build": "npm run copy-assets && scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss",
     "test": "sass test/test.scss test/unanimo.css",
-    "validate.ci": "npm run build && sass test/test.scss test/unanimo.css"
+    "validate.ci": "npm run build"
   },
   "license": "MIT",
   "devDependencies": {
-    "cpy-cli": "~5.0.0",
+    "@atao60/fse-cli": "^0.1.9",
     "sass": "~1.72.0",
     "scss-bundle": "~3.1.2"
   },
