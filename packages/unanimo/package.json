@@ -1,13 +1,13 @@
 {
   "name": "@genexus/unanimo",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A design system for GeneXus generated applications.",
   "main": "dist/unanimo.scss",
   "files": [
     "dist/"
   ],
   "scripts": {
-    "build": "cpy src/assets/** dist/assets && scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss",
+    "build": "cpy src/assets/**/* dist/assets && scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss",
     "test": "sass test/test.scss test/unanimo.css",
     "validate.ci": "npm run build && sass test/test.scss test/unanimo.css"
   },
