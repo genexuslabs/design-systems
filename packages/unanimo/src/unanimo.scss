@@ -44,6 +44,7 @@
 
   // Font face
   $font-face: true,
+  $font-face-path: "./assets/fonts/",
 
   // Base
   $base-classes: true,
@@ -66,17 +67,17 @@
   @if $font-face == true {
     @font-face {
       font-family: SourceSansPro_Regular; // 400
-      src: url("./assets/fonts/SourceSansPro_Regular.woff2");
+      src: url("#{$font-face-path}SourceSansPro_Regular.woff2");
     }
 
     @font-face {
-      font-family: SourceSansPro_SemiBold; // 700
-      src: url("./assets/fonts/SourceSansPro_SemiBold.woff2");
+      font-family: SourceSansPro_SemiBold; // 600
+      src: url("#{$font-face-path}SourceSansPro_SemiBold.woff2");
     }
 
     @font-face {
       font-family: SourceSansPro_Bold; // 700
-      src: url("./assets/fonts/SourceSansPro_Bold.woff2");
+      src: url("#{$font-face-path}SourceSansPro_Bold.woff2");
     }
   }
 
