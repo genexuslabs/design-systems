@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "copy-assets": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/assets/ dist/assets",
-    "build": "npm run copy-assets && scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss",
+    "build": "npm run copy-assets && scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss && sass test/test.scss dist/css/unanimo.css",
     "test": "sass test/test.scss test/unanimo.css",
     "validate.ci": "npm run build"
   },
