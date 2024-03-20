@@ -101,8 +101,10 @@
     }
   }
 
-  :root {
-    @if $tokens {
+  @if $tokens and
+    ($border-radius or $box-shadow or $colors or $font-size or $spacing)
+  {
+    :root {
       // border-radius
       @if $border-radius {
         @include border-radius();
