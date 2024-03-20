@@ -133,6 +133,9 @@
   // Default background-color and color
   @if $tokens and $colors {
     body {
+      display: grid;
+      min-block-size: 100dvh;
+      margin: 0;
       background-color: var(--surface-un-surface--alternative);
       color: var(--text-un-text__on-surface--positive);
 
