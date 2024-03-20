@@ -7,7 +7,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "cpy src/assets/** dist/assets && scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss",
+    "build": "cpy src/assets/**/* dist/assets && scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss",
     "test": "sass test/test.scss test/unanimo.css",
     "validate.ci": "npm run build && sass test/test.scss test/unanimo.css"
   },
