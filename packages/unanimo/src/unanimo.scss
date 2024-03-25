@@ -15,6 +15,7 @@
 
 // Components
 @import "./components/card";
+@import "./components/dropdown";
 @import "./components/header";
 @import "./components/markdown";
 @import "./components/tab";
@@ -203,6 +204,11 @@
     // card
     @if $card {
       @include card();
+    }
+
+    // dropdown
+    @if $dropdown {
+      @include dropdown();
     }
 
     // header
