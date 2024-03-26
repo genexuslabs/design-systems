@@ -12,8 +12,13 @@
 // Semantic
 @import "./tokens/semantic/tokens";
 
+// Other
+@import "./mixins";
+
 // Components
 @import "./components/shortcuts/styles";
+@import "./components/tree-view/styles";
+@import "./components/checkbox/styles";
 
 @mixin mercury(
   // Resets
@@ -50,7 +55,8 @@
 
   // Components
   $components: true,
-  $shortcuts: true
+  $tree-view: true,
+  $checkbox: true
 ) {
   // font-face
   @if $font-face {
@@ -59,7 +65,7 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 300;
-      src: url("Inter_Light.woff2") format("woff2");
+      src: url("../src/assets/fonts/Inter_Light.woff2") format("woff2");
       font-display: swap;
     }
 
@@ -68,7 +74,7 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 400;
-      src: url("Inter_Regular.woff2") format("woff2");
+      src: url("../src/assets/fonts/Inter_Regular.woff2") format("woff2");
       font-display: swap;
     }
 
@@ -77,7 +83,7 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 600;
-      src: url("Inter_SemiBold.woff2") format("woff2");
+      src: url("../src/assets/fonts/Inter_SemiBold.woff2") format("woff2");
       font-display: swap;
     }
 
@@ -86,7 +92,7 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 700;
-      src: url("Inter_Bold.woff2") format("woff2");
+      src: url("../src/assets/fonts/Inter_Bold.woff2") format("woff2");
       font-display: swap;
     }
 
@@ -95,7 +101,7 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 800;
-      src: url("Inter_ExtraBold.woff2") format("woff2");
+      src: url("../src/assets/fonts/Inter_ExtraBold.woff2") format("woff2");
       font-display: swap;
     }
   }
@@ -129,8 +135,15 @@
 
   body {
     @if $tokens and $color {
-      background-color: var(--mer-color__surface);
-      color: var(--text-un-text__on-surface--positive);
+      background-color: var(--mer-body__bg-color);
+      color: var(--mer-body__color);
+    }
+    @if $tokens and $font {
+      font-size: var(--mer-body__font-size);
+      line-height: var(--mer-body__line-height);
+    }
+    @if $font-face {
+      font-family: var(--mer-font-family--primary);
     }
     margin: 0;
   }
@@ -162,6 +175,7 @@
         @include semantic-heading();
         @include semantic-icon();
         @include semantic-item();
+        @include semantic-other();
         @include semantic-text();
       }
 
@@ -237,9 +251,11 @@
   //               Components
   // - - - - - - - - - - - - - - - - - - - -
   @if $components {
-    // card
-    @if $shortcuts {
-      @include shortcuts();
+    @if $tree-view {
+      @include tree-view();
+    }
+    @if $checkbox {
+      @include checkbox();
     }
   }
 }

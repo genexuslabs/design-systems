@@ -4,11 +4,15 @@
   "description": "Mercury is the design system designed for GeneXus IDE Web and GeneXus Next",
   "main": "src/mercury.scss",
   "scripts": {
-    "test": "sass test/test.scss test/mercury.css"
+    "test": "sass test/test.scss test/mercury.css",
+    "test-watch": "sass --watch test/test.scss test/mercury.css"
   },
   "license": "MIT",
   "devDependencies": {
     "sass": "~1.71.1"
+  },
+  "dependencies": {
+    "@genexus/chameleon-controls-library": "~5.0.0-beta.10"
   },
   "engines": {
     "pnpm": ">=3"

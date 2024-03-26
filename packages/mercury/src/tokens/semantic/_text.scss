@@ -8,7 +8,8 @@
   --mer-text__primary: var(--mer-accent__primary);
   --mer-text__primary--hover: var(--mer-accent__primary--hover);
   --mer-text__primary--active: var(--mer-accent__primary--active);
-  --mer-text__primary--disabled: var(--mer-accent__primary--disabled);
+  --mer-text__primary--disabled: #5b5b5b; //This color is not currently linked to any value on the grayscale scale (no primitive value).
+  --mer-text__disabled: var(--mer-color__neutral-gray--600);
   --mer-text__neutral: var(--mer-color__neutral-gray--200);
   --mer-text__highlighted: var(--mer-color__neutral-gray--100);
   --mer-text__bright: var(--mer-color__neutral-gray--00);

@@ -1,0 +1,46 @@
+@mixin semantic-other() {
+  /*----------------------
+  Body
+  ----------------------*/
+  --mer-body__bg-color: var(--mer-color__surface);
+  --mer-body__color: var(--mer-text__on-surface);
+  --mer-body__font-size: var(--mer-font__size--xxs);
+  --mer-body__line-height: var(--mer-line-height--regular);
+
+  /*----------------------
+  Scrollbar
+  ----------------------*/
+  // scrollbar
+  --mer-scrollbar__size: var(--mer-spacing--xs);
+
+  // scrollbar-track
+  --mer-scrollbar-track__bg-color: var(--mer-color__elevation--03);
+  --mer-scrollbar-track__border-radius: var(--mer-spacing--xs);
+
+  // scrollbar-thumb
+  --mer-scrollbar-thumb__bg-color: var(--mer-color__elevation--04);
+  --mer-scrollbar-thumb__bg-color--hover: var(--mer-color__elevation--04);
+  --mer-scrollbar-thumb__border-radius: var(--mer-spacing--xs);
+
+  // scrollbar-thumb
+  --mer-scrollbar-corner__bg: rgba(0, 0, 0, 0);
+
+  /*----------------------
+  Icon
+  ----------------------*/
+  // size
+  --mer-icon-shell__size--sm: var(--mer-spacing--md);
+  --mer-icon__size--sm: var(--mer-spacing--sm);
+  --mer-icon-shell__size--lg: var(--mer-spacing--sm);
+  --mer-icon__size--lg: var(--mer-spacing--xs);
+
+  /*----------------------
+  Label
+  ----------------------*/
+  // size
+  // space between label and control
+  --mer-label__space: var(--mer-spacing--xs);
+  --mer-label__font-size: inherit;
+  --mer-label__font-weight: var(--mer-font__weight--semi-bold);
+  --mer-label__color: inherit;
+}

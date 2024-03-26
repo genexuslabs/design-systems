@@ -1,3 +1,226 @@
 @import "../src/mercury.scss";
 
 @include mercury();
+
+:root {
+  /*----------------------
+  tree-view-item
+  ----------------------*/
+
+  --tree-view-item__color: inherit;
+  --tree-view-item__font-size: inherit;
+  --tree-view-item__gap: var(--mer-spacing--xs);
+  --tree-view-item__checkbox-size: var(--mer-checkbox__size);
+  --tree-view-item-expandable-button__size: var(--mer-spacing--md);
+  --tree-view-item-image-size__: var(--mer-spacing--md);
+  --tree-view-item-custom__padding-inline-start: var(--mer-view-spacing--2xs);
+  --tree-view-item-custom__padding-inline-end: var(--mer-spacing--2xs);
+
+  /*----------------------
+  tree-view-item -> Sates
+  ----------------------*/
+
+  // hover
+  --tree-view-item__color--hover: var(--mer-item__color--hover);
+  --tree-view-item__bg-color--hover: var(--mer-item__bg-color--hover);
+
+  // selected
+  --tree-view-item__color--selected: var(--mer-item__color--selected);
+  --tree-view-item__bg-color--selected: var(--mer-item__bg-color--selected);
+
+  /*----------------------
+  tree-view-item -> Parts
+  ----------------------*/
+
+  // dashed-line
+  --tree-view-item-dashed-line__border-color: var(--mer-text__on-surface);
+  --tree-view-item-dashed-line__opacity: 0.3;
+
+  // header
+  --tree-view-item-header__border-radius: var(--mer-border__radius--sm);
+  --tree-view-item-header__padding-block: calc(var(--mer-spacing--3xs));
+
+  // downloading
+  --tree-view-item-downloading__inline-size: var(--mer-spacing--sm);
+  --tree-view-item-downloading__block-size: var(--mer-spacing--sm);
+  --tree-view-item-downloading__border-width: var(--mer-border__width--md);
+  --tree-view-item-downloading__border-style: solid;
+  --tree-view-item-downloading__border-color: var(
+    --mer-accent__primary--active
+  );
+
+  // folder & module (common)
+  --tree-view-item-folder-action__inline-size: var(--mer-spacing--md);
+  --tree-view-item-folder-action__block-size: var(--mer-spacing--md);
+
+  // pending commit
+  --tree-view-item-pending-commit__bg-color: var(--mer-accent__primary);
+
+  /*----------------------
+  tree-view-container
+  ----------------------*/
+  --tree-view-container__min-inline-size: var(max-content);
+  --tree-view-container__padding: var(--mer-spacing--xs);
+}
+
+.tree-view {
+  /*----------------------
+  General use variables
+  ----------------------*/
+  // --ch-tree-view-item__dashed-line--inset-inline-end
+  --ch-tree-view-item-custom-padding-inline-start: 8px;
+  --ch-tree-view-item-gap: var(--tree-view-item__gap);
+  --ch-tree-view-item__checkbox-size: var(--tree-view-item__checkbox-size);
+  --ch-tree-view-item__expandable-button-size: var(
+    --tree-view-item-expandable-button__size
+  );
+  --ch-tree-view-item__image-size: var(--mer-icon-shell__size--sm);
+
+  @include mer-scrollbar;
+
+  .ch-tree-view-container {
+    padding: var(--tree-view-container__padding);
+  }
+}
+
+.tree-view-item {
+  font-size: var(--tree-view-item__color);
+  color: var(--tree-view-item__font-size);
+
+  /*----------------------
+  Parts
+  ----------------------*/
+
+  // checkbox (container)
+  &::part(checkbox__container) {
+    @include mer-checkbox("container");
+  }
+  // checkbox (container:focus)
+  &::part(checkbox__container):focus-within {
+    box-shadow: none;
+    @include mer-focus();
+  }
+  // checkbox (container:checked)
+  &::part(checkbox__container checkbox__checked) {
+    @include mer-checkbox("container--checked");
+  }
+  // checkbox (container:indeterminate)
+  &::part(checkbox__container checkbox__indeterminate) {
+    @include mer-checkbox("container--indeterminate");
+  }
+  // checkbox (option)
+  &::part(checkbox__option) {
+    @include mer-checkbox("option");
+  }
+  // checkbox (input)
+  &::part(checkbox__input) {
+    @include mer-checkbox("input");
+  }
+
+  // dashed-line
+  &::part(dashed-line) {
+    border-color: var(--tree-view-item-dashed-line__border-color);
+    opacity: var(--tree-view-item-dashed-line__opacity);
+  }
+
+  // header
+  &::part(header) {
+    border-radius: var(--tree-view-item-header__border-radius);
+    padding-inline-end: var(--tree-view-item-custom__padding-inline-end);
+
+    &:hover {
+      color: var(--tree-view-item__color--hover);
+      background-color: var(--tree-view-item__bg-color--hover);
+    }
+    &:focus {
+      @include mer-focus();
+    }
+  }
+  &[selected]::part(header) {
+    color: var(--tree-view-item__color--selected);
+    background-color: var(--tree-view-item__bg-color--selected);
+  }
+
+  // action
+  &::part(action) {
+    padding-block: var(--tree-view-item-header__padding-block);
+  }
+
+  // downloading
+  &::part(downloading) {
+    inline-size: var(--tree-view-item-downloading__inline-size);
+    block-size: var(--tree-view-item-downloading__block-size);
+    border-width: var(--tree-view-item-downloading__border-width);
+    border-style: var(--tree-view-item-downloading__border-style);
+    border-color: var(--tree-view-item-downloading__border-color);
+    border-inline-start-color: transparent;
+  }
+
+  /*----------------------
+  Parts -> dynamic icons
+  ----------------------*/
+
+  // folder & module (common)
+  &--folder::part(action)::before,
+  &--module::part(action)::before {
+    content: "";
+    inline-size: var(--tree-view-item-folder-action__inline-size);
+    block-size: var(--tree-view-item-folder-action__block-size);
+    background-repeat: no-repeat;
+  }
+
+  // folder
+  &--folder::part(action)::before {
+    background-image: url("../src/showcase/assets/icons/folder.svg");
+  }
+  &--folder::part(action expanded)::before {
+    background-image: url("../src/showcase/assets/icons/folder-open.svg");
+  }
+
+  // module
+  &--module::part(action)::before {
+    background-image: url("../src/showcase/assets/icons/module.svg");
+  }
+  &--module::part(action expanded)::before {
+    background-image: url("../src/showcase/assets/icons/module-open.svg");
+  }
+
+  //pending commit
+  &--pending-commit::part(action)::before {
+    content: "";
+    position: relative;
+    z-index: 1;
+    width: 5px;
+    height: 5px;
+    align-self: end;
+    margin-block-end: 3px;
+    margin-inline-start: 1px;
+    background-color: var(--tree-view-item-pending-commit__bg-color);
+    border-radius: 50%;
+  }
+}
+
+// TODO
+.tree-view .ch-tree-view-drag-info {
+  padding-inline: 6px;
+  padding-block: 2px;
+  background-color: var(--mer-color__elevation--04);
+  border: 1px solid var(--ds-border-color--regular);
+  border-radius: 10px;
+  box-shadow: var(--gxg-grid-row__box-shadow--dragging);
+  font-size: 8px;
+}
+
+// WA to improve the style of the drops before and after
+ch-tree-view-drop::after {
+  background-color: cyan;
+}
+
+/*-- Other Selectors (these depend on the tag class name)---*/
+.ch-tree-view-item {
+  &--drag-enter {
+    background-color: yellow;
+    outline: 1px solid currentColor;
+    outline-offset: -1px;
+  }
+}
