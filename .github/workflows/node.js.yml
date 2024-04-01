@@ -7,10 +7,18 @@ on:
     branches: [main]
 
 jobs:
-  install:
+  install-unanimo:
     uses: genexuslabs/design-systems/.github/workflows/install-and-deploy.yml@main
     with:
       node-version: "20.x"
       cache: true
       publish: false
       package: "packages/unanimo"
+
+  install-mercury:
+    uses: genexuslabs/design-systems/.github/workflows/install-and-deploy.yml@main
+    with:
+      node-version: "20.x"
+      cache: true
+      publish: false
+      package: "packages/mercury"
