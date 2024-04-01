@@ -18,6 +18,7 @@
 @import "./components/dropdown";
 @import "./components/header";
 @import "./components/markdown";
+@import "./components/query-viewer-pivot-table";
 @import "./components/tab";
 @import "./components/tree-view";
 @import "./components/tree-view-navigation";
@@ -43,6 +44,9 @@
   $font-size: true,
   $spacing: true,
 
+  // Assets
+  $assets-path: "",
+
   // Font face
   $font-face: true,
   $font-face-path: "./assets/fonts/",
@@ -60,6 +64,7 @@
   $dropdown: true,
   $header: true,
   $markdown: true,
+  $query-viewer-pivot-table: true,
   $tab: true,
   $tree-view: true,
   $tree-view-navigation: true
@@ -219,6 +224,11 @@
     // markdown
     @if $markdown {
       @include markdown();
+    }
+
+    // query-viewer-pivot-table
+    @if $query-viewer-pivot-table {
+      @include query-viewer-pivot-table($assets-path);
     }
 
     // tab
