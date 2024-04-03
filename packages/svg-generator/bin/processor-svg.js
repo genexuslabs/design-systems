@@ -1,6 +1,5 @@
 import { glob } from "glob";
 import { readFileSync, writeFile, existsSync, mkdirSync, rmSync } from "fs";
-//import * as path from "path";
 import { dirname, basename, join } from "path";
 import { optimize } from "svgo";
 import * as cheerio from "cheerio";

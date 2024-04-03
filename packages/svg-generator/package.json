@@ -4,18 +4,18 @@
   "description": "",
   "type": "module",
   "bin": {
-    "process-svg": "./processor-svg.js",
-    "process-sass": "./processor-sass.js",
-    "process-ts": "./processor-ts.js"
+    "process-svg": "./bin/processor-svg.js",
+    "process-sass": "./bin/processor-sass.js",
+    "process-ts": "./bin/processor-ts.js"
   },
   "scripts": {
     "process-svg": "node processor-svg.js",
     "process-sass": "node processor-sass.js",
     "test-sass": "sass ./test/button.scss ./test/button.css"
   },
-  "author": "",
+  "author": "genexus",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "glob": "^10.3.10",
     "svgo": "^3.2.0",
     "cheerio": "^1.0.0-rc.12"
