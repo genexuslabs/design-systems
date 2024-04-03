@@ -3,17 +3,19 @@ lockfileVersion: 5.3
 specifiers:
   '@genexus/chameleon-controls-library': ~5.0.0-beta.10
   sass: ~1.71.1
+  svg-generator: file:../svg-generator
 
 dependencies:
-  '@genexus/chameleon-controls-library': 5.0.0-beta.10
+  '@genexus/chameleon-controls-library': 5.0.0
 
 devDependencies:
   sass: 1.71.1
+  svg-generator: link:../svg-generator
 
 packages:
 
-  /@genexus/chameleon-controls-library/5.0.0-beta.10:
-    resolution: {integrity: sha512-i7hewaB1c1I82OOQ3LxIbbfqW0e9ElDWpdN+Abqa73UV9QnG/vOPXjWO8ZSn4n8BWi8zRkA4A+bSuW7eGylSig==}
+  /@genexus/chameleon-controls-library/5.0.0:
+    resolution: {integrity: sha512-CQcP7xCTZHgrHI3vahm9Dobo0ToxhqXBGCJesoln49/3QcEcvqIi0RnrPB5q4P21WwvudkQZfbQJvKE/wycVTA==}
     dependencies:
       '@genexus/markdown-parser': 0.1.1
       html5-qrcode: 2.3.8
@@ -76,8 +78,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /binary-extensions/2.2.0:
-    resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
+  /binary-extensions/2.3.0:
+    resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
     dev: true
 
@@ -194,7 +196,7 @@ packages:
       '@types/unist': 3.0.2
       devlop: 1.1.0
       hastscript: 8.0.0
-      property-information: 6.4.1
+      property-information: 6.5.0
       vfile: 6.0.1
       vfile-location: 5.0.2
       web-namespaces: 2.0.1
@@ -220,7 +222,7 @@ packages:
       '@types/hast': 3.0.4
       comma-separated-tokens: 2.0.3
       hast-util-parse-selector: 4.0.0
-      property-information: 6.4.1
+      property-information: 6.5.0
       space-separated-tokens: 2.0.2
     dev: false
 
@@ -241,7 +243,7 @@ packages:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
     engines: {node: '>=8'}
     dependencies:
-      binary-extensions: 2.2.0
+      binary-extensions: 2.3.0
     dev: true
 
   /is-extglob/2.1.1:
@@ -667,8 +669,8 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /property-information/6.4.1:
-    resolution: {integrity: sha512-OHYtXfu5aI2sS2LWFSN5rgJjrQ4pCy8i1jubJLe2QvMF8JJ++HXTUIVWFLfXJoaOfvYYjk2SN8J2wFUWIGXT4w==}
+  /property-information/6.5.0:
+    resolution: {integrity: sha512-PgTgs/BlvHxOu8QuEN7wi5A0OmXaBcHpmCSTehcs6Uuu9IkDIEo13Hy7n898RHfrQ49vKCoGeWZSaAK01nwVig==}
     dev: false
 
   /qr-creator/1.0.0:
@@ -693,11 +695,11 @@ packages:
     dependencies:
       chokidar: 3.6.0
       immutable: 4.3.5
-      source-map-js: 1.0.2
+      source-map-js: 1.2.0
     dev: true
 
-  /source-map-js/1.0.2:
-    resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
+  /source-map-js/1.2.0:
+    resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
     engines: {node: '>=0.10.0'}
     dev: true
 

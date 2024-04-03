@@ -5,11 +5,13 @@
   "main": "src/mercury.scss",
   "scripts": {
     "test": "sass test/test.scss test/mercury.css",
-    "test-watch": "sass --watch test/test.scss test/mercury.css"
+    "test-watch": "sass --watch test/test.scss test/mercury.css",
+    "svg": "process-svg ./src/assets/icons/src/ ./src/assets/icons/dist/"
   },
   "license": "MIT",
   "devDependencies": {
-    "sass": "~1.71.1"
+    "sass": "~1.71.1",
+    "svg-generator": "file:../svg-generator"
   },
   "dependencies": {
     "@genexus/chameleon-controls-library": "~5.0.0-beta.10"
