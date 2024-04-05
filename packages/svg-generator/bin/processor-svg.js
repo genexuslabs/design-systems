@@ -10,7 +10,9 @@ const REGEX_USED_VARS = new RegExp("--i\\d\\d", "g");
 const REGEX_REMOVE_VARS = new RegExp("--i\\d\\d:[^;]+;", "g");
 const SRC_DIRECTORY = await process.argv[2];
 const OUTPUT_DIRECTORY = await process.argv[3];
-const MONOCHROME_STATES_FILE = "states-monochrome.json";
+const MULTICOLOR_TEMPLATE_SVG = await process.argv[4];
+const MONOCHROME_TEMPLATE_SVG = await process.argv[5];
+const MONOCHROME_STATES_FILE = process.argv[6];
 const SVG_FIGURES = [
   "rect",
   "circle",
@@ -20,8 +22,9 @@ const SVG_FIGURES = [
   "polygon",
   "polyline",
 ];
-const multiColorTemplate = readAllTextFile("template-multicolor.svg");
-const monochromeTemplate = readAllTextFile("template-monochrome.svg");
+
+const MULTICOLOR_TEMPLATE = readAllTextFile(MULTICOLOR_TEMPLATE_SVG);
+const MONOCHROME_TEMPLATE = readAllTextFile(MONOCHROME_TEMPLATE_SVG);
 const files = await glob(`${SRC_DIRECTORY}/**/*.svg`);
 const statesJson = getStatesJson();
 
@@ -72,7 +75,8 @@ function readAllTextFile(file) {
 }
 
 function getOutputPaths(file) {
-  const baseDirectory = dirname(file).replace(SRC_DIRECTORY, OUTPUT_DIRECTORY);
+  console.log(dirname(file));
+  const baseDirectory = OUTPUT_DIRECTORY;
   const directoryLight = join(baseDirectory, "light");
   const directoryDark = join(baseDirectory, "dark");
   const fileName = basename(file);
@@ -163,14 +167,14 @@ function getTemplate(path) {
     }
     //if iconStates is undefined, this is likely to be a multicolor icon
     return {
-      template: multiColorTemplate,
-      states: undefined,
+      template: MULTICOLOR_TEMPLATE,
+      states: MONOCHROME_TEMPLATE,
     };
   } else {
     //SOURCE_FOLDER/states-monochrome.json is needed to process monochrome icons.
     return {
-      template: multiColorTemplate,
-      states: undefined,
+      template: MULTICOLOR_TEMPLATE,
+      states: MONOCHROME_TEMPLATE,
     };
   }
 }

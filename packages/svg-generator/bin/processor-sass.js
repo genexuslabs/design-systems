@@ -4,9 +4,9 @@ import fs from "fs";
 import path from "path";
 
 // Define the path to the parent directory containing the folders
-const SRC_DIRECTORY = "assets";
-const OUTPUT_DIRECTORY = "sass-output";
-const MONOCHROME_STATES_FILE = "states-monochrome.json";
+const SRC_DIRECTORY = await process.argv[2];
+const OUTPUT_DIRECTORY = await process.argv[3];
+const MONOCHROME_STATES_FILE = await process.argv[4];
 const MONOCHROME_ID = "monochrome";
 const MULTICOLOR_ID = "multicolor";
 let monochromeLists = [];
