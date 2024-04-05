@@ -2,7 +2,11 @@
   "name": "svg-generator",
   "version": "1.0.0",
   "description": "",
+  "exports": "./bin/processor-svg.js",
   "type": "module",
+  "files": [
+    "bin/"
+  ],
   "bin": {
     "process-svg": "./bin/processor-svg.js",
     "process-sass": "./bin/processor-sass.js",

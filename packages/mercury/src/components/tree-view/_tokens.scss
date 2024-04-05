@@ -2,18 +2,27 @@
   /*----------------------
   tree-view-item
   ----------------------*/
+
   --tree-view-item__color: inherit;
   --tree-view-item__font-size: inherit;
   --tree-view-item__gap: var(--mer-spacing--xs);
   --tree-view-item__checkbox-size: var(--mer-checkbox__size);
   --tree-view-item-expandable-button__size: var(--mer-spacing--md);
   --tree-view-item-image-size__: var(--mer-spacing--md);
-  //--tree-view-item-custom__padding-inline-start: var(--mer-view-spacing--xxs);
-  //--tree-view-item-custom__padding-inline-end: var(--mer-spacing--xxs);
+  --tree-view-item-custom__padding-inline-start: var(--mer-view-spacing--2xs);
+  --tree-view-item-custom__padding-inline-end: var(--mer-spacing--2xs);
+
+  /*----------------------
+  tree-view-item -> Sates
+  ----------------------*/
 
   // hover
   --tree-view-item__color--hover: var(--mer-item__color--hover);
   --tree-view-item__bg-color--hover: var(--mer-item__bg-color--hover);
+
+  // selected
+  --tree-view-item__color--selected: var(--mer-item__color--selected);
+  --tree-view-item__bg-color--selected: var(--mer-item__bg-color--selected);
 
   /*----------------------
   tree-view-item -> Parts
@@ -25,11 +34,7 @@
 
   // header
   --tree-view-item-header__border-radius: var(--mer-border__radius--sm);
-  --tree-view-item-header__padding-inline-end: var(--mer-spacing--xs);
-
-  // action
-  --tree-view-item-header__padding-block-start: var(--mer-spacing--3xs);
-  --tree-view-item-header__padding-block-end: var(--mer-spacing--3xs);
+  --tree-view-item-header__padding-block: calc(var(--mer-spacing--3xs));
 
   // downloading
   --tree-view-item-downloading__inline-size: var(--mer-spacing--sm);
@@ -50,6 +55,6 @@
   /*----------------------
   tree-view-container
   ----------------------*/
-  //--tree-view-container__min-inline-size: var();
+  --tree-view-container__min-inline-size: var(max-content);
   --tree-view-container__padding: var(--mer-spacing--xs);
 }

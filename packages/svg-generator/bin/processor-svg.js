@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { glob } from "glob";
 import { readFileSync, writeFile, existsSync, mkdirSync, rmSync } from "fs";
 import { dirname, basename, join } from "path";

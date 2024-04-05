@@ -1,0 +1,76 @@
+@mixin button-tokens() {
+  /*----------------------
+  General
+  ----------------------*/
+  //padding
+  --button__padding-block: 8px;
+  --button__padding-start: 8px;
+  //border
+  --button__border-width: 1px;
+  --button__border-style: 1px;
+  --button__border-color: transparent;
+  --button__border-radius: 2px;
+  //font
+  --button__font-family: inherit;
+  --button__font-size: inherit;
+  --button__font-weight: inherit;
+  --button__letter-spacing: inherit;
+  --button__line-height: inherit;
+
+  /*----------------------
+  Primary
+  ----------------------*/
+  --button-primary__color: inherit;
+  --button-primary__background-color: inherit;
+  --button-primary__border-color: inherit;
+  //hover
+  --button-primary__color--hover: inherit;
+  --button-primary__background-color--hover: inherit;
+  --button-primary__border-color--hover: inherit;
+  //active
+  --button-primary__color--active: inherit;
+  --button-primary__background-color--active: inherit;
+  --button-primary__border-color--active: inherit;
+  //disabled
+  --button-primary__color--disabled: inherit;
+  --button-primary__background-color--disabled: inherit;
+  --button-primary__border-color--disabled: inherit;
+
+  /*----------------------
+  Secondary
+  ----------------------*/
+  --button-secondary__color: inherit;
+  --button-secondary__background-color: inherit;
+  --button-secondary__border-color: inherit;
+  //hover
+  --button-secondary__color--hover: inherit;
+  --button-secondary__background-color--hover: inherit;
+  --button-secondary__border-color--hover: inherit;
+  //active
+  --button-secondary__color--active: inherit;
+  --button-secondary__background-color--active: inherit;
+  --button-secondary__border-color--active: inherit;
+  //disabled
+  --button-secondary__color--disabled: inherit;
+  --button-secondary__background-color--disabled: inherit;
+  --button-secondary__border-color--disabled: inherit;
+
+  /*----------------------
+  Outlined
+  ----------------------*/
+  --button-outlined__color: inherit;
+  --button-outlined__background-color: inherit;
+  --button-outlined__border-color: inherit;
+  //hover
+  --button-outlined__color--hover: inherit;
+  --button-outlined__background-color--hover: inherit;
+  --button-outlined__border-color--hover: inherit;
+  //active
+  --button-outlined__color--active: inherit;
+  --button-outlined__background-color--active: inherit;
+  --button-outlined__border-color--active: inherit;
+  //disabled
+  --button-outlined__color--disabled: inherit;
+  --button-outlined__background-color--disabled: inherit;
+  --button-outlined__border-color--disabled: inherit;
+}
