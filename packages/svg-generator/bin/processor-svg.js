@@ -75,10 +75,10 @@ function readAllTextFile(file) {
 }
 
 function getOutputPaths(file) {
-  console.log(dirname(file));
-  const baseDirectory = OUTPUT_DIRECTORY;
-  const directoryLight = join(baseDirectory, "light");
-  const directoryDark = join(baseDirectory, "dark");
+  const categoryFolder = basename(dirname(file));
+  const folder = join(OUTPUT_DIRECTORY, categoryFolder);
+  const directoryLight = join(folder, "light");
+  const directoryDark = join(folder, "dark");
   const fileName = basename(file);
 
   if (!existsSync(directoryLight)) {
