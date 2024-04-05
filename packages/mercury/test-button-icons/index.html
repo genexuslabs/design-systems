@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Button Icons</title>
+    <link rel="stylesheet" href="./button.css" />
+    <style>
+      .button::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        background-image: var(--icon-path);
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="button icon__monochrome-path--on-primary">Button</button>
+  </body>
+</html>
