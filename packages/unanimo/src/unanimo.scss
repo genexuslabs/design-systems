@@ -35,6 +35,8 @@
   // Theme
   $light-theme: true,
   $dark-theme: true,
+  $prefers-color-scheme-light: false,
+  $prefers-color-scheme-dark: false,
 
   // Tokens
   $tokens: true,
@@ -88,7 +90,13 @@
   }
 
   // Light
-  @if $light-theme and $colors and $tokens {
+  @if $colors and $light-theme and $tokens {
+    :root.light {
+      @include foundation-colors--light();
+      @include semantic-colors--light();
+    }
+  }
+  @if $colors and $tokens and $prefers-color-scheme-light {
     @media (prefers-color-scheme: light) {
       :root {
         @include foundation-colors--light();
@@ -98,7 +106,13 @@
   }
 
   // Dark
-  @if $dark-theme and $colors and $tokens {
+  @if $colors and $dark-theme and $tokens {
+    :root.dark {
+      @include foundation-colors--dark();
+      @include semantic-colors--dark();
+    }
+  }
+  @if $colors and $tokens and $prefers-color-scheme-dark {
     @media (prefers-color-scheme: dark) {
       :root {
         @include foundation-colors--dark();
@@ -193,7 +207,9 @@
 
     // Form control classes
     @if $form-controls-classes {
-      @include form-controls-classes();
+      @include form-input();
+      @include form-input__label();
+      @include form-input__helper();
     }
 
     // Typography classes
