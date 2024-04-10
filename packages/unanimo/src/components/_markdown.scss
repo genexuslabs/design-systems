@@ -1,7 +1,3 @@
-@import "../base/typography";
-@import "../base/common";
-@import "../base/button";
-
 @mixin markdown() {
   .markdown {
     @extend %text-body-2;
