@@ -14,11 +14,13 @@
 
 // Other
 @import "./mixins";
+@import "./assets/icons/sass/icons-import.scss";
 
 // Components
+@import "./components/button/styles";
+@import "./components/checkbox/styles";
 @import "./components/shortcuts/styles";
 @import "./components/tree-view/styles";
-@import "./components/checkbox/styles";
 
 @mixin mercury(
   // Resets

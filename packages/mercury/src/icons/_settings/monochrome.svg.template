@@ -21,6 +21,15 @@
           --icon-color: blue;
         }
     </style>
+    <!-- on-primary-hover -->
+    <style type="text/css" data-state="on-primary--hover">
+        .on-primary--hover-dark {
+          --icon-color: pink;
+        }
+        .on-primary--hover-light {
+          --icon-color: purple;
+        }
+    </style>
     <!-- on-primary-active -->
     <style type="text/css" data-state="on-primary--active">
         .on-primary--active-dark {
@@ -48,6 +57,15 @@
     y="0"
     class="on-primary-$color-scheme$"
     data-state="on-primary"
+  />
+  <!-- on-primary hover -->
+  <view id="on-primary--hover" viewBox="$x-on-primary--hover$ 0 $width$ $height$" />
+  <use
+    href="#icon-def"
+    x="$x-on-primary--hover$"
+    y="0"
+    class="on-primary--hover-$color-scheme$"
+    data-state="on-primary--hover"
   />
   <!-- on-primary active -->
   <view id="on-primary--active" viewBox="$x-on-primary--active$ 0 $width$ $height$" />

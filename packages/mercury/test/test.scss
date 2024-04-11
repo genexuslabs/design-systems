@@ -1,3 +1,140 @@
+$assets-path: "/packages/mercury/src/assets/icons/";
 @import "../src/mercury.scss";
-
 @include mercury();
+
+@mixin button-tokens() {
+  /*----------------------
+    General
+    ----------------------*/
+  //padding
+  --button__padding-block: 0;
+  --button__padding-inline: var(--mer-spacing--sm);
+  //border
+  --button__border-width: 1px;
+  --button__border-style: solid;
+  --button__border-color: transparent;
+  --button__border-radius: var(--mer-border__radius--sm);
+  //font
+  --button__font-family: inherit;
+  --button__font-size: inherit;
+  --button__font-weight: var(--mer-font__weight--semi-bold);
+  --button__letter-spacing: inherit;
+  --button__line-height: inherit;
+  --button__color: var(--mer-text__on-primary);
+  //other
+  --button__height: var(--spacing-comp-05);
+
+  /*----------------------
+    Primary
+    ----------------------*/
+  --button-primary__color: inherit;
+  --button-primary__background-color: var(--mer-accent__primary);
+  --button-primary__border-color: var(--button-primary__background-color);
+  //hover
+  --button-primary__color--hover: var(--mer-text__on-primary);
+  --button-primary__background-color--hover: var(--mer-accent__primary--hover);
+  --button-primary__border-color--hover: var(
+    --button-primary__background-color--hover
+  );
+  //active
+  --button-primary__color--active: var(--mer-text__on-primary--active);
+  --button-primary__background-color--active: var(
+    --mer-accent__primary--active
+  );
+  --button-primary__border-color--active: var(
+    --button-primary__background-color--active
+  );
+  //disabled
+  --button-primary__color--disabled: inherit;
+  --button-primary__background-color--disabled: inherit;
+  --button-primary__border-color--disabled: inherit;
+
+  /*----------------------
+    Secondary
+    ----------------------*/
+  --button-secondary__color: inherit;
+  --button-secondary__background-color: inherit;
+  --button-secondary__border-color: inherit;
+  //hover
+  --button-secondary__color--hover: inherit;
+  --button-secondary__background-color--hover: inherit;
+  --button-secondary__border-color--hover: inherit;
+  //active
+  --button-secondary__color--active: inherit;
+  --button-secondary__background-color--active: inherit;
+  --button-secondary__border-color--active: inherit;
+  //disabled
+  --button-secondary__color--disabled: inherit;
+  --button-secondary__background-color--disabled: inherit;
+  --button-secondary__border-color--disabled: inherit;
+
+  /*----------------------
+    Outlined
+    ----------------------*/
+  --button-outlined__color: inherit;
+  --button-outlined__background-color: inherit;
+  --button-outlined__border-color: inherit;
+  //hover
+  --button-outlined__color--hover: inherit;
+  --button-outlined__background-color--hover: inherit;
+  --button-outlined__border-color--hover: inherit;
+  //active
+  --button-outlined__color--active: inherit;
+  --button-outlined__background-color--active: inherit;
+  --button-outlined__border-color--active: inherit;
+  //disabled
+  --button-outlined__color--disabled: inherit;
+  --button-outlined__background-color--disabled: inherit;
+  --button-outlined__border-color--disabled: inherit;
+}
+
+@mixin button() {
+  :root {
+    @include button-tokens();
+  }
+
+  /*----------------------
+    General button styles
+    ----------------------*/
+  .button {
+    font-family: var(--button__font-family);
+    padding-block-start: var(--button__padding-block);
+    padding-block-end: var(--button__padding-block);
+    padding-inline-start: var(--button__padding-inline);
+    padding-inline-end: var(--button__padding-inline);
+    height: var(--button__height);
+    font-weight: var(--button__font-weight);
+    color: var(--button__color);
+    border-radius: var(--button__border-radius);
+    border-width: var(--button__border-width);
+    border-style: var(--button__border-style);
+    border-color: var(--button-primary__border-color);
+  }
+
+  /*----------------------
+    Button primary
+    ----------------------*/
+  .button--primary {
+    background-color: var(--button-primary__background-color);
+
+    // hover
+    &:hover {
+      color: var(--button-primary__color--hover);
+      background-color: var(--button-primary__background-color--hover);
+      border-color: var(--button-primary__border-color--hover);
+    }
+
+    // active
+    &:active {
+      color: var(--button-primary__color--active);
+      background-color: var(--button-primary__background-color--active);
+      border-color: var(--button-primary__border-color--active);
+    }
+
+    // hover
+    &:disabled {
+    }
+  }
+}
+
+@include button();
