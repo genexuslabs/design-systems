@@ -1,5 +1,3 @@
-@import "./common";
-
 %form-input__text {
   font-family: SourceSansPro_Regular;
   font-size: 14px;
@@ -8,6 +6,11 @@
 }
 
 %form-input__label {
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  align-items: center;
+  gap: var(--spacing-un-spacing--m); // Used for images
   font-family: SourceSansPro_SemiBold;
   font-size: 14px;
   line-height: 18px; // 128.571%
@@ -26,7 +29,7 @@
   position: relative;
   block-size: 32px;
   max-block-size: 32px;
-  padding-inline: 8px 16px;
+  padding-inline: 8px;
   border-radius: var(--border-radius-un-border__radius--m);
   border: var(--border-radius-un-border__radius--xs) solid
     var(--borders-un-border-color__strong);
@@ -34,18 +37,33 @@
 }
 
 %form-input__placeholder {
-  --ch-placeholder-text-color: var(--body-texts-un-body-m__font-color--gray);
   color: var(--body-texts-un-body-m__font-color--gray);
 }
 
-@mixin form-controls-classes() {
+@mixin form-input-placeholder-var() {
+  --ch-placeholder-color: var(--body-texts-un-body-m__font-color--gray);
+}
+
+@mixin form-input(
+  $selector: ".form-input",
+  $add--disabled: true,
+  $add--placeholder: true,
+  $add--placeholder-var: true,
+  $add--error: true
+) {
   // TODO: IMPROVE STYLE. Unanimo's implementation does not work well in Sidebar Menus
 
-  .form-input {
+  #{$selector} {
     @extend %form-input;
 
-    &::placeholder {
-      @extend %form-input__placeholder;
+    @if $add--placeholder-var {
+      @include form-input-placeholder-var();
+    }
+
+    @if $add--placeholder {
+      &::placeholder {
+        @extend %form-input__placeholder;
+      }
     }
 
     &:focus {
@@ -53,45 +71,67 @@
       outline-offset: -1px;
     }
 
-    &:disabled,
-    &--disabled {
-      border-color: var(--borders-un-border-color__disabled);
-      color: var(--text-un-text__disabled);
+    @if $add--disabled {
+      &:disabled,
+      &--disabled {
+        border-color: var(--borders-un-border-color__disabled);
+        color: var(--text-un-text__disabled);
+      }
     }
 
-    &--error {
-      border-color: var(--borders-un-border-color__error);
+    @if $add--error {
+      &--error {
+        border-color: var(--borders-un-border-color__error);
 
-      &::after {
-        content: "";
-        position: absolute;
-        inset-block: calc(50% - var(--spacing-un-spacing--l) / 2);
-        inset-inline-start: calc(
-          100% + 1px + var(--spacing-un-spacing--xs)
-        ); // 1px of border-width
+        &::after {
+          content: "";
+          position: absolute;
+          inset-block: calc(50% - var(--spacing-un-spacing--l) / 2);
+          inset-inline-start: calc(
+            100% + 1px + var(--spacing-un-spacing--xs)
+          ); // 1px of border-width
 
-        inline-size: var(--spacing-un-spacing--xl);
-        block-size: var(--spacing-un-spacing--xl);
-        -webkit-mask: url("../assets/icons/error.svg") 50% 50% /
-          var(--spacing-un-spacing--l) var(--spacing-un-spacing--l) no-repeat;
-        background-color: var(--icons-un-icon__error);
+          inline-size: var(--spacing-un-spacing--xl);
+          block-size: var(--spacing-un-spacing--xl);
+          -webkit-mask: url("../assets/icons/error.svg")
+            50%
+            50% /
+            var(--spacing-un-spacing--l)
+            var(--spacing-un-spacing--l)
+            no-repeat;
+          background-color: var(--icons-un-icon__error);
+        }
       }
     }
   }
+}
 
-  .form-input__label {
+@mixin form-input__label(
+  $selector: ".form-input__label",
+  $add--disabled: true
+) {
+  #{$selector} {
     @extend %form-input__label;
 
-    &--disabled {
-      color: var(--text-un-text__disabled);
+    @if $add--disabled {
+      &--disabled {
+        color: var(--text-un-text__disabled);
+      }
     }
   }
+}
 
-  .form-input__helper {
+@mixin form-input__helper(
+  $selector: ".form-input__helper",
+  $add--disabled: true
+) {
+  #{$selector} {
     @extend %form-input__helper;
 
-    &--disabled {
-      color: var(--text-un-text__disabled);
+    @if $add--disabled {
+      &--disabled {
+        color: var(--text-un-text__disabled);
+      }
     }
   }
 }

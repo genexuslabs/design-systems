@@ -1,6 +1,3 @@
-@import "../base/typography";
-@import "../base/form-controls";
-
 @mixin query-viewer-pivot-table($assets-path: "") {
   :root {
     --gx-query-viewer-pivot__popup-padding: var(--spacing-un-spacing--m);

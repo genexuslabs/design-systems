@@ -1,5 +1,3 @@
-@import "./common";
-
 %button-base {
   display: inline-grid;
   grid-auto-flow: column;
@@ -154,14 +152,14 @@
       @extend %button-primary--active;
     }
 
-    @if $add--disabled == true {
+    @if $add--disabled {
       &:disabled,
       &--disabled {
         @extend %button-primary--disabled;
       }
     }
 
-    @if $add--error == true {
+    @if $add--error {
       &--error {
         @extend %button-primary--error;
       }

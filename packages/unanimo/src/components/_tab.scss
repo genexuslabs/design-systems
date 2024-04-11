@@ -1,5 +1,3 @@
-@import "../base/typography";
-
 %tab {
   --ch-list-image-size: var(--spacing-un-spacing--xl);
   --ch-list-mask-image-size: calc(
@@ -9,10 +7,9 @@
 
 %tab-caption {
   padding-inline: var(--spacing-un-spacing--m);
-  padding-block: calc(
-    var(--spacing-un-spacing--m) - 4px
-  ); // due to border-block-width: 2px;
-  border-block: 2px solid transparent;
+  padding-block: var(--spacing-un-spacing--m)
+    calc(var(--spacing-un-spacing--m) - 2px); // due to border-block-end-width: 2px;
+  border-block-end: 2px solid transparent;
   gap: var(--spacing-un-spacing--s);
 }
 
@@ -31,7 +28,6 @@
 
 %tab-caption--selected {
   @extend %tab-caption--active;
-  font-family: SourceSansPro_Bold;
 }
 
 %tab-caption--disabled {
