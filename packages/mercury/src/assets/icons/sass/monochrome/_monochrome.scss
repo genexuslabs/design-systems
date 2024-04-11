@@ -16,11 +16,11 @@ $icons-monochrome: path, stroke;
     --icon-path :url("#{$assets-path}monochrome/dark/path.svg#on-primary");
   }
       
-  &-path--on-primary-active-light {
-    --icon-path :url("#{$assets-path}monochrome/light/path.svg#on-primary-active");
+  &-path--on-primary--active-light {
+    --icon-path :url("#{$assets-path}monochrome/light/path.svg#on-primary--active");
   }
-  &-path--on-primary-active-dark {
-    --icon-path :url("#{$assets-path}monochrome/dark/path.svg#on-primary-active");
+  &-path--on-primary--active-dark {
+    --icon-path :url("#{$assets-path}monochrome/dark/path.svg#on-primary--active");
   }
       
   // stroke.svg
@@ -38,11 +38,11 @@ $icons-monochrome: path, stroke;
     --icon-path :url("#{$assets-path}monochrome/dark/stroke.svg#on-primary");
   }
       
-  &-stroke--on-primary-active-light {
-    --icon-path :url("#{$assets-path}monochrome/light/stroke.svg#on-primary-active");
+  &-stroke--on-primary--active-light {
+    --icon-path :url("#{$assets-path}monochrome/light/stroke.svg#on-primary--active");
   }
-  &-stroke--on-primary-active-dark {
-    --icon-path :url("#{$assets-path}monochrome/dark/stroke.svg#on-primary-active");
+  &-stroke--on-primary--active-dark {
+    --icon-path :url("#{$assets-path}monochrome/dark/stroke.svg#on-primary--active");
   }
       
 }
