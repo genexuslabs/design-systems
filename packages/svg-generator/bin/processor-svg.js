@@ -1,7 +1,6 @@
-#!/usr/bin/env node
-
 import { glob } from "glob";
 import { readFileSync, writeFile, existsSync, mkdirSync, rmSync } from "fs";
+//import * as path from "path";
 import { dirname, basename, join } from "path";
 import { optimize } from "svgo";
 import * as cheerio from "cheerio";
@@ -25,6 +24,7 @@ const SVG_FIGURES = [
 
 const MULTICOLOR_TEMPLATE = readAllTextFile(MULTICOLOR_TEMPLATE_SVG);
 const MONOCHROME_TEMPLATE = readAllTextFile(MONOCHROME_TEMPLATE_SVG);
+
 const files = await glob(`${SRC_DIRECTORY}/**/*.svg`);
 const statesJson = getStatesJson();
 
@@ -148,10 +148,15 @@ function getTemplate(path) {
   if (statesJson) {
     //states json is used for coloring monochrome icons
     let iconPath = path.split("\\");
-    //remove "source" folder from the path
-    if (iconPath[0] === SRC_DIRECTORY) {
+
+    if (iconPath.length === 2) {
+      // no category. icon is direct children of the source folder
       iconPath.splice(0, 1);
     }
+    if (iconPath.length > 2) {
+      iconPath = iconPath.slice(-2);
+    }
+
     //remove icon file extension
     const fileNameExtension = iconPath[iconPath.length - 1];
     const fileName = getIconName(fileNameExtension);
@@ -159,22 +164,23 @@ function getTemplate(path) {
 
     //find the icon "states" in states.json. If "states" is returned it means this is a monochrome colored icon, otherwise it is considered a multicolor icon.
     const iconStates = getIconStates(statesJson, iconPath);
+
     if (iconStates !== undefined) {
       return {
-        template: monochromeTemplate,
+        template: MONOCHROME_TEMPLATE,
         states: iconStates,
       };
     }
     //if iconStates is undefined, this is likely to be a multicolor icon
     return {
       template: MULTICOLOR_TEMPLATE,
-      states: MONOCHROME_TEMPLATE,
+      states: undefined,
     };
   } else {
     //SOURCE_FOLDER/states-monochrome.json is needed to process monochrome icons.
     return {
       template: MULTICOLOR_TEMPLATE,
-      states: MONOCHROME_TEMPLATE,
+      states: undefined,
     };
   }
 }
@@ -192,6 +198,8 @@ function getIconName(fileNameExtension) {
 }
 
 function getIconStates(stateObj, iconPath, i = 0) {
+  // i has to be the index of the category folder in the path, or the icon name.
+
   // Base case: if obj is not an object or is null, return undefined
   if (typeof stateObj !== "object" || stateObj === null) {
     return undefined;
@@ -366,7 +374,6 @@ function minifyCssVars(svg) {
     "--i07": "--g",
     "--i08": "--h",
     "--i09": "--i",
-    "--icon-color": "--j",
   };
 
   return svg.replace(REGEX_USED_VARS, (match) => {
