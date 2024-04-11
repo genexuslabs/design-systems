@@ -12,10 +12,6 @@ const MULTICOLOR_ID = "multicolor";
 let monochromeLists = [];
 let multicolorLists = [];
 
-console.log("SRC_DIRECTORY", SRC_DIRECTORY);
-console.log("OUTPUT_DIRECTORY", OUTPUT_DIRECTORY);
-console.log("MONOCHROME_STATES_FILE", MONOCHROME_STATES_FILE);
-
 function getStatesJson() {
   try {
     const statesJson = fs.readFileSync(`./${MONOCHROME_STATES_FILE}`, "utf8");
@@ -38,7 +34,6 @@ function getStatesJson() {
 function readDirectoriesAndFiles(directoryPath) {
   // Read the contents of the directory
   const files = fs.readdirSync(directoryPath);
-  console.log("files", files);
 
   // Filter out only directories
   const directories = files.filter((file) =>
