@@ -14,7 +14,7 @@
 
 // Other
 @import "./mixins";
-@import "./assets/icons/sass/icons-import.scss";
+@import "./assets/icons/sass/icons-selectors.scss";
 
 // Base
 @import "./base/button/styles";
@@ -52,17 +52,14 @@
   $font-face: true,
 
   // Base
+  $base-classes: true,
   $button-classes: true,
+  $buttons-classes-with-icons: true,
 
   // Components
   $components: true,
-  $button: true,
-  $buttons-with-icons: true,
   $checkbox: true,
-  $tree-view: true,
-
-  //Other
-  $icons: true
+  $tree-view: true
 ) {
   // font-face
   @if $font-face {
@@ -254,20 +251,11 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //                 Icons
-  // Must be called before "Components"
-  // because Components might use icons
+  //                 Base
   // - - - - - - - - - - - - - - - - - - - -
-  @if $icons {
-    @include icons();
-  }
-
-  // - - - - - - - - - - - - - - - - - - - -
-  //               Base
-  // - - - - - - - - - - - - - - - - - - - -
-  @if $base {
+  @if $base-classes {
     @if $button-classes {
-      @include button($icons and $buttons-with-icons);
+      @include button($buttons-classes-with-icons);
     }
   }
 

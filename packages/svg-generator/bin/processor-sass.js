@@ -208,7 +208,7 @@ function multicolorStyles(iconsList) {
  */
 function writeImportScss(iconsLists) {
   // Create .sass file
-  const sassFileName = `icons-import.scss`;
+  const sassFileName = `icons-selectors.scss`;
   const sassFilePath = path.join(OUTPUT_DIRECTORY, sassFileName);
 
   let sassContent = "";
