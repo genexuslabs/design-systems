@@ -1,44 +1,53 @@
 @mixin button-tokens() {
   /*----------------------
-  General
-  ----------------------*/
+    General
+    ----------------------*/
   //padding
-  --button__padding-block: 8px;
-  --button__padding-start: 8px;
+  --button__padding-block: 0;
+  --button__padding-inline: var(--mer-spacing--sm);
   //border
   --button__border-width: 1px;
-  --button__border-style: 1px;
+  --button__border-style: solid;
   --button__border-color: transparent;
-  --button__border-radius: 2px;
+  --button__border-radius: var(--mer-border__radius--sm);
   //font
   --button__font-family: inherit;
   --button__font-size: inherit;
-  --button__font-weight: inherit;
+  --button__font-weight: var(--mer-font__weight--semi-bold);
   --button__letter-spacing: inherit;
   --button__line-height: inherit;
+  --button__color: var(--mer-text__on-primary);
+  //other
+  --button__height: var(--spacing-comp-05);
 
   /*----------------------
-  Primary
-  ----------------------*/
+    Primary
+    ----------------------*/
   --button-primary__color: inherit;
-  --button-primary__background-color: inherit;
-  --button-primary__border-color: inherit;
+  --button-primary__background-color: var(--mer-accent__primary);
+  --button-primary__border-color: var(--button-primary__background-color);
   //hover
-  --button-primary__color--hover: inherit;
-  --button-primary__background-color--hover: inherit;
-  --button-primary__border-color--hover: inherit;
+  --button-primary__color--hover: var(--mer-text__on-primary);
+  --button-primary__background-color--hover: var(--mer-accent__primary--hover);
+  --button-primary__border-color--hover: var(
+    --button-primary__background-color--hover
+  );
   //active
-  --button-primary__color--active: inherit;
-  --button-primary__background-color--active: inherit;
-  --button-primary__border-color--active: inherit;
+  --button-primary__color--active: var(--mer-text__on-primary--active);
+  --button-primary__background-color--active: var(
+    --mer-accent__primary--active
+  );
+  --button-primary__border-color--active: var(
+    --button-primary__background-color--active
+  );
   //disabled
   --button-primary__color--disabled: inherit;
   --button-primary__background-color--disabled: inherit;
   --button-primary__border-color--disabled: inherit;
 
   /*----------------------
-  Secondary
-  ----------------------*/
+    Secondary
+    ----------------------*/
   --button-secondary__color: inherit;
   --button-secondary__background-color: inherit;
   --button-secondary__border-color: inherit;
@@ -56,8 +65,8 @@
   --button-secondary__border-color--disabled: inherit;
 
   /*----------------------
-  Outlined
-  ----------------------*/
+    Outlined
+    ----------------------*/
   --button-outlined__color: inherit;
   --button-outlined__background-color: inherit;
   --button-outlined__border-color: inherit;

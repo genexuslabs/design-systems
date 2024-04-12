@@ -1,7 +1,7 @@
 // Resets
 @import "../../common/resets";
 
-// Primitive
+// Tokens > Primitive
 @import "./tokens/primitive/border";
 @import "./tokens/primitive/color";
 @import "./tokens/primitive/elevation";
@@ -9,15 +9,17 @@
 @import "./tokens/primitive/spacing";
 @import "./tokens/primitive/timing";
 
-// Semantic
+// Tokens > Semantic
 @import "./tokens/semantic/tokens";
 
 // Other
 @import "./mixins";
 @import "./assets/icons/sass/icons-import.scss";
 
+// Base
+@import "./base/button/styles";
+
 // Components
-@import "./components/button/styles";
 @import "./components/checkbox/styles";
 @import "./components/shortcuts/styles";
 @import "./components/tree-view/styles";
@@ -50,15 +52,17 @@
   $font-face: true,
 
   // Base
-  $base-classes: true,
   $button-classes: true,
-  $form-controls-classes: true,
-  $typography-classes: true,
 
   // Components
   $components: true,
+  $button: true,
+  $buttons-with-icons: true,
+  $checkbox: true,
   $tree-view: true,
-  $checkbox: true
+
+  //Other
+  $icons: true
 ) {
   // font-face
   @if $font-face {
@@ -250,14 +254,32 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
+  //                 Icons
+  // Must be called before "Components"
+  // because Components might use icons
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $icons {
+    @include icons();
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //               Base
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $base {
+    @if $button-classes {
+      @include button($icons and $buttons-with-icons);
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
   //               Components
   // - - - - - - - - - - - - - - - - - - - -
   @if $components {
-    @if $tree-view {
-      @include tree-view();
-    }
     @if $checkbox {
       @include checkbox();
+    }
+    @if $tree-view {
+      @include tree-view();
     }
   }
 }

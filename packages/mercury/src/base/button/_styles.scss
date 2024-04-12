@@ -1,0 +1,55 @@
+@import "tokens";
+@import "icons";
+
+@mixin button($with-icons) {
+  :root {
+    @include button-tokens();
+  }
+
+  @if $with-icons {
+    @include icons-classes();
+  }
+
+  /*----------------------
+    General button styles
+    ----------------------*/
+  .button {
+    font-family: var(--button__font-family);
+    padding-block-start: var(--button__padding-block);
+    padding-block-end: var(--button__padding-block);
+    padding-inline-start: var(--button__padding-inline);
+    padding-inline-end: var(--button__padding-inline);
+    height: var(--button__height);
+    font-weight: var(--button__font-weight);
+    color: var(--button__color);
+    border-radius: var(--button__border-radius);
+    border-width: var(--button__border-width);
+    border-style: var(--button__border-style);
+    border-color: var(--button-primary__border-color);
+  }
+
+  /*----------------------
+    Button primary
+    ----------------------*/
+  .button--primary {
+    background-color: var(--button-primary__background-color);
+
+    // hover
+    &:hover {
+      color: var(--button-primary__color--hover);
+      background-color: var(--button-primary__background-color--hover);
+      border-color: var(--button-primary__border-color--hover);
+    }
+
+    // active
+    &:active {
+      color: var(--button-primary__color--active);
+      background-color: var(--button-primary__background-color--active);
+      border-color: var(--button-primary__border-color--active);
+    }
+
+    // hover
+    &:disabled {
+    }
+  }
+}

@@ -1,15 +1,17 @@
-//Monochrome lists
-    
-@import "monochrome/monochrome";
-    
-$all-monochrome-lists: (
-  monochrome: $icons-monochrome
-);
-    
-//Multicolor lists
-    
-@import "multicolor/multicolor";
-    
-$all-multicolor-lists: (
-  multicolor: $icons-multicolor
-);
+@mixin icons() {
+  //Monochrome lists
+
+  @import "monochrome/monochrome";
+
+  $all-monochrome-lists: (
+    monochrome: $icons-monochrome
+  );
+
+  //Multicolor lists
+
+  @import "multicolor/multicolor";
+
+  $all-multicolor-lists: (
+    multicolor: $icons-multicolor
+  );
+}
