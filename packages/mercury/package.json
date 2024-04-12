@@ -7,7 +7,7 @@
     "test": "sass test/test.scss test/mercury.css",
     "test-watch": "sass --watch test/test.scss test/mercury.css",
     "svg": "process-svg ./src/icons/ ./src/assets/icons/ ./src/icons/_settings/multicolor.svg.template ./src/icons/_settings/monochrome.svg.template ./src/icons/_settings/states-monochrome.json",
-    "svg-sass": "process-sass ./src/icons/ ./src/assets/icons/sass/ ./src/icons/_settings/states-monochrome.json",
+    "svg-sass": "process-sass ./src/icons/ ./src/base/icons/sass/ ./src/icons/_settings/states-monochrome.json",
     "buttons-sass": "sass ./temporary-tests/test-button-icons/button.scss ./test-button-icons/button.css"
   },
   "license": "MIT",
