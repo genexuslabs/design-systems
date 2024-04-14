@@ -23,6 +23,7 @@
 @import "./components/markdown";
 @import "./components/query-viewer-pivot-table";
 @import "./components/tab";
+@import "./components/segmented-control";
 @import "./components/tree-view";
 @import "./components/tree-view-navigation";
 
@@ -74,6 +75,7 @@
   $markdown: true,
   $query-viewer-pivot-table: true,
   $tab: true,
+  $segmented-control: true,
   $tree-view: true,
   $tree-view-navigation: true
 ) {
@@ -266,6 +268,11 @@
     // query-viewer-pivot-table
     @if $query-viewer-pivot-table {
       @include query-viewer-pivot-table($icons-path);
+    }
+
+    // segmented-control
+    @if $segmented-control {
+      @include segmented-control();
     }
 
     // tab
