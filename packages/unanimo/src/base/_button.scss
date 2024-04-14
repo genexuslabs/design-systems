@@ -20,7 +20,7 @@
   padding-inline: var(--spacing-un-spacing--xl);
 
   &--focus-visible {
-    @include focus-style();
+    @include focus-style($outline: true);
   }
 
   &--hover {
@@ -50,7 +50,7 @@
   padding-inline: var(--spacing-un-spacing--xl);
 
   &--focus-visible {
-    @include focus-style();
+    @include focus-style($outline: true);
   }
 
   &--hover {
