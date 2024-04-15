@@ -22,8 +22,9 @@
 @import "./components/header";
 @import "./components/markdown";
 @import "./components/query-viewer-pivot-table";
-@import "./components/tab";
 @import "./components/segmented-control";
+@import "./components/slider";
+@import "./components/tab";
 @import "./components/tree-view";
 @import "./components/tree-view-navigation";
 
@@ -74,8 +75,10 @@
   $header: true,
   $markdown: true,
   $query-viewer-pivot-table: true,
-  $tab: true,
   $segmented-control: true,
+  $slider-primary: true,
+  $slider-secondary: true,
+  $tab: true,
   $tree-view: true,
   $tree-view-navigation: true
 ) {
@@ -273,6 +276,16 @@
     // segmented-control
     @if $segmented-control {
       @include segmented-control();
+    }
+
+    // slider primary
+    @if $slider-primary {
+      @include slider-primary();
+    }
+
+    // slider secondary
+    @if $slider-secondary {
+      @include slider-secondary();
     }
 
     // tab
