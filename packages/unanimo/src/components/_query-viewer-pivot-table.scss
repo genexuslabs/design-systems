@@ -1,4 +1,4 @@
-@mixin query-viewer-pivot-table($assets-path: "") {
+@mixin query-viewer-pivot-table($icons-path: "") {
   :root {
     --gx-query-viewer-pivot__popup-padding: var(--spacing-un-spacing--m);
   }
@@ -33,7 +33,7 @@
     }
 
     & .close_span_filter > .material-icons {
-      --gx-query-viewer-pivot-icon: url("#{$assets-path}close.svg");
+      --gx-query-viewer-pivot-icon: url("#{$icons-path}close.svg");
       inline-size: 22px;
       block-size: 22px;
       color: var(--text-un-text__on-surface--positive);
@@ -41,52 +41,52 @@
   }
 
   .exportOptionsAnchor {
-    --gx-query-viewer-pivot-icon: url("#{$assets-path}hamburger.svg");
+    --gx-query-viewer-pivot-icon: url("#{$icons-path}hamburger.svg");
     --gx-query-viewer-pivot__icon-mask-size: 75%;
   }
 
   .sort-asc {
-    --gx-query-viewer-pivot-icon: url("#{$assets-path}arrow-top.svg");
+    --gx-query-viewer-pivot-icon: url("#{$icons-path}arrow-top.svg");
   }
 
   .sort-desc {
-    --gx-query-viewer-pivot-icon: url("#{$assets-path}arrow-bottom.svg");
+    --gx-query-viewer-pivot-icon: url("#{$icons-path}arrow-bottom.svg");
   }
 
   .table-sort-asc {
-    --gx-query-viewer-pivot-icon: url("#{$assets-path}arrow-top.svg");
+    --gx-query-viewer-pivot-icon: url("#{$icons-path}arrow-top.svg");
   }
 
   .table-sort-desc {
-    --gx-query-viewer-pivot-icon: url("#{$assets-path}arrow-bottom.svg");
+    --gx-query-viewer-pivot-icon: url("#{$icons-path}arrow-bottom.svg");
   }
 
   .pivot_pag_div .pagefirst > .material-icons {
-    --gx-query-viewer-pivot-icon: url("#{$assets-path}first-page.svg");
+    --gx-query-viewer-pivot-icon: url("#{$icons-path}first-page.svg");
     inline-size: 16px;
     block-size: 16px;
   }
 
   .pivot_pag_div .pagelast > .material-icons {
-    --gx-query-viewer-pivot-icon: url("#{$assets-path}last-page.svg");
+    --gx-query-viewer-pivot-icon: url("#{$icons-path}last-page.svg");
     inline-size: 16px;
     block-size: 16px;
   }
 
   .pivot_pag_div .pagenext > .material-icons {
-    --gx-query-viewer-pivot-icon: url("#{$assets-path}arrow-right.svg");
+    --gx-query-viewer-pivot-icon: url("#{$icons-path}arrow-right.svg");
     inline-size: 16px;
     block-size: 16px;
   }
 
   .pivot_pag_div .pageprev > .material-icons {
-    --gx-query-viewer-pivot-icon: url("#{$assets-path}arrow-left.svg");
+    --gx-query-viewer-pivot-icon: url("#{$icons-path}arrow-left.svg");
     inline-size: 16px;
     block-size: 16px;
   }
 
   .div_settings {
-    --gx-query-viewer-pivot-icon: url("#{$assets-path}account-settings.svg");
+    --gx-query-viewer-pivot-icon: url("#{$icons-path}account-settings.svg");
   }
 
   .pivot_filter_div .filterInfoUser {
@@ -102,7 +102,7 @@
     }
 
     & > .material-icons {
-      --gx-query-viewer-pivot-icon: url("#{$assets-path}more-info.svg");
+      --gx-query-viewer-pivot-icon: url("#{$icons-path}more-info.svg");
       inline-size: 18px;
       block-size: 18px;
     }
@@ -115,14 +115,14 @@
     padding-block-end: 8px;
 
     & .oat_winrect_close_b > .material-icons {
-      --gx-query-viewer-pivot-icon: url("#{$assets-path}close.svg");
+      --gx-query-viewer-pivot-icon: url("#{$icons-path}close.svg");
       inline-size: 18px;
       block-size: 18px;
     }
   }
 
   .drag_drop_indicator {
-    --gx-query-viewer-pivot-icon: url("#{$assets-path}drag.svg");
+    --gx-query-viewer-pivot-icon: url("#{$icons-path}drag.svg");
   }
 
   #tablePagination_perPage > select {
@@ -136,7 +136,7 @@
       @extend %form-input;
       background: no-repeat 4px /
         var(--gx-query-viewer-pivot__icon-mask-size, 20px)
-        url("#{$assets-path}search.svg");
+        url("#{$icons-path}search.svg");
       padding-inline-start: 28px;
     }
   }

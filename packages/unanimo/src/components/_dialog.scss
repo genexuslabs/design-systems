@@ -1,0 +1,72 @@
+%dialog {
+  border-radius: var(--border-radius-un-border__radius--l);
+  background-color: var(--elevation-un-elevation--2);
+  box-shadow: var(--box-shadows-un-box-shadow--2);
+  gap: var(--spacing-un-spacing--xl);
+  padding: var(--spacing-un-spacing--l);
+}
+
+%dialog__backdrop {
+  background-color: color-mix(
+    in srgb,
+    var(--elevation-un-elevation--4) 25%,
+    transparent
+  );
+  backdrop-filter: blur(5px);
+  z-index: 108; // TODO: This is a WA to show the backdrop above the button of the dropdown
+}
+
+%dialog__header {
+  align-items: flex-start;
+  gap: var(--spacing-un-spacing--l);
+}
+
+%dialog__caption {
+  @extend %heading-2;
+  margin-block-start: 32px;
+  word-break: break-word;
+}
+
+@mixin dialog__close-button-icon($icons-path: "") {
+  --button-icon: url("#{$icons-path}close.svg");
+}
+
+@mixin dialog(
+  $dialog-selector: ".dialog::part(dialog)",
+  $backdrop-selector: ".dialog.ch-dialog--modal",
+  $header-selector: ".dialog::part(header)",
+  $caption-selector: ".dialog::part(caption)",
+  $close-button-selector: ".dialog::part(close-button)",
+  $icons-path: ""
+) {
+  #{$dialog-selector} {
+    @extend %dialog;
+  }
+
+  #{$backdrop-selector} {
+    @extend %dialog__backdrop;
+  }
+
+  #{$header-selector} {
+    @extend %dialog__header;
+  }
+
+  #{$caption-selector} {
+    @extend %dialog__caption;
+  }
+
+  @include button-tertiary(
+    $selector: #{$close-button-selector},
+    $add--disabled: false,
+    $add--error: false
+  );
+
+  #{$close-button-selector} {
+    @extend %button-icon-only;
+    @include dialog__close-button-icon($icons-path);
+
+    &::before {
+      @extend %button-icon;
+    }
+  }
+}

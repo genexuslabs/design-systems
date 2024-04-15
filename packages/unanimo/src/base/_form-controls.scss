@@ -5,16 +5,20 @@
   letter-spacing: 0.2px;
 }
 
+@mixin form-input__label-base {
+  font-family: SourceSansPro_SemiBold;
+  font-size: 14px;
+  line-height: 18px; // 128.571%
+  letter-spacing: 0.2px;
+}
+
 %form-input__label {
   display: inline-grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   align-items: center;
   gap: var(--spacing-un-spacing--m); // Used for images
-  font-family: SourceSansPro_SemiBold;
-  font-size: 14px;
-  line-height: 18px; // 128.571%
-  letter-spacing: 0.2px;
+  @include form-input__label-base();
 }
 
 %form-input__helper {

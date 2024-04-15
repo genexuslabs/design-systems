@@ -17,10 +17,13 @@
 
 // Components
 @import "./components/card";
+@import "./components/dialog";
 @import "./components/dropdown";
 @import "./components/header";
 @import "./components/markdown";
 @import "./components/query-viewer-pivot-table";
+@import "./components/segmented-control";
+@import "./components/slider";
 @import "./components/tab";
 @import "./components/tree-view";
 @import "./components/tree-view-navigation";
@@ -48,8 +51,8 @@
   $font-size: true,
   $spacing: true,
 
-  // Assets
-  $assets-path: "",
+  // Icons path
+  $icons-path: "",
 
   // Font face
   $font-face: true,
@@ -65,10 +68,16 @@
   $components: true,
   $action-group: true,
   $card: true,
-  $dropdown: true,
+  $dialog: true,
+  $dropdown-primary: true,
+  $dropdown-secondary: true,
+  $dropdown-conversational: true,
   $header: true,
   $markdown: true,
   $query-viewer-pivot-table: true,
+  $segmented-control: true,
+  $slider-primary: true,
+  $slider-secondary: true,
   $tab: true,
   $tree-view: true,
   $tree-view-navigation: true
@@ -229,9 +238,24 @@
       @include card();
     }
 
-    // dropdown
-    @if $dropdown {
-      @include dropdown();
+    // dialog
+    @if $dialog {
+      @include dialog($icons-path: $icons-path);
+    }
+
+    // dropdown primary
+    @if $dropdown-primary {
+      @include dropdown-primary();
+    }
+
+    // dropdown secondary
+    @if $dropdown-secondary {
+      @include dropdown-secondary();
+    }
+
+    // dropdown conversational
+    @if $dropdown-conversational {
+      @include dropdown-conversational();
     }
 
     // header
@@ -246,7 +270,22 @@
 
     // query-viewer-pivot-table
     @if $query-viewer-pivot-table {
-      @include query-viewer-pivot-table($assets-path);
+      @include query-viewer-pivot-table($icons-path);
+    }
+
+    // segmented-control
+    @if $segmented-control {
+      @include segmented-control();
+    }
+
+    // slider primary
+    @if $slider-primary {
+      @include slider-primary();
+    }
+
+    // slider secondary
+    @if $slider-secondary {
+      @include slider-secondary();
     }
 
     // tab
