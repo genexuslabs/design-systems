@@ -2,7 +2,6 @@
   border-radius: var(--border-radius-un-border__radius--l);
   background-color: var(--elevation-un-elevation--2);
   box-shadow: var(--box-shadows-un-box-shadow--2);
-  gap: var(--spacing-un-spacing--xl);
   padding: var(--spacing-un-spacing--l);
 }
 
@@ -19,6 +18,7 @@
 %dialog__header {
   align-items: flex-start;
   gap: var(--spacing-un-spacing--l);
+  margin-block-end: var(--spacing-un-spacing--xl);
 }
 
 %dialog__caption {
