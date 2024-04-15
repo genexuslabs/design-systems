@@ -2,11 +2,16 @@
   border-radius: var(--border-radius-un-border__radius--l);
   background-color: var(--elevation-un-elevation--2);
   box-shadow: var(--box-shadows-un-box-shadow--2);
-  gap: var(--spacing-un-spacing--l);
+  gap: var(--spacing-un-spacing--xl);
   padding: var(--spacing-un-spacing--l);
 }
 
 %dialog__backdrop {
+  background-color: color-mix(
+    in srgb,
+    var(--elevation-un-elevation--4) 25%,
+    transparent
+  );
   backdrop-filter: blur(5px);
   z-index: 108; // TODO: This is a WA to show the backdrop above the button of the dropdown
 }
@@ -19,6 +24,7 @@
 %dialog__caption {
   @extend %heading-2;
   margin-block-start: 32px;
+  word-break: break-word;
 }
 
 @mixin dialog__close-button-icon($icons-path: "") {
