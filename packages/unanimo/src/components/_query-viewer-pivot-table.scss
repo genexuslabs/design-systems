@@ -172,6 +172,11 @@
     }
   }
 
+  .oatgrid td,
+  .pivot_table td {
+    padding: var(--spacing-un-spacing--m);
+  }
+
   .h2title,
   .h2titlewhite,
   .h2subtitle .grandtotaltitle,
@@ -273,5 +278,10 @@
       padding-inline: unset;
       block-size: 24px;
     }
+  }
+
+  .oat_winrect_container,
+  .gx-query-viewer-pivot-container {
+    background-color: var(--surface-un-surface--positive);
   }
 }
