@@ -69,7 +69,8 @@
   $components: true,
   $action-group: true,
   $card: true,
-  $dialog: true,
+  $dialog-primary: true,
+  $dialog-secondary: true,
   $dropdown-primary: true,
   $dropdown-secondary: true,
   $dropdown-conversational: true,
@@ -240,9 +241,14 @@
       @include card();
     }
 
-    // dialog
-    @if $dialog {
-      @include dialog($icons-path: $icons-path);
+    // dialog-primary
+    @if $dialog-primary {
+      @include dialog-primary($icons-path: $icons-path);
+    }
+
+    // dialog-secondary
+    @if $dialog-secondary {
+      @include dialog-secondary($icons-path: $icons-path);
     }
 
     // dropdown primary
