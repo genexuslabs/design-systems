@@ -206,7 +206,7 @@
   .oatgrid_top_div,
   .gx-query-viewer-pivot-container > span {
     padding-block: 14px;
-    padding-inline: 8px;
+    padding-inline: var(--spacing-un-spacing--m);
   }
 
   .pivot_filter_div > span:first-child {
@@ -256,10 +256,6 @@
       border-color: var(--borders-un-border-color__primary);
       color: var(--surface-un-surface--alternative);
     }
-  }
-
-  .oatfilterwindow > hr {
-    width: unset;
   }
 
   #pop-up,
