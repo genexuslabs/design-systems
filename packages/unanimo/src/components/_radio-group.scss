@@ -1,0 +1,105 @@
+%radio-group {
+  @extend %form-input__text;
+
+  --ch-radio-group__radio-container-size: 16px;
+  --ch-radio-group__radio-option-size: 8px;
+
+  color: var(--text-un-text__on-surface--positive);
+  gap: var(--spacing-un-spacing--m);
+}
+
+%radio-item {
+  gap: var(--spacing-un-spacing--m);
+}
+
+%radio__container {
+  border-color: var(--borders-un-border-color__strong);
+
+  &--focus {
+    border-color: var(--borders-un-border-color__focused);
+    border-width: 2px;
+  }
+
+  &--disabled {
+    color: var(--borders-un-border-color__disabled);
+  }
+
+  &--checked {
+    color: var(--accents-un-accent__primary);
+  }
+
+  // Not implemented yet in the control
+  &--error {
+    background-color: var(--colors-Foundation-un-color__red--100);
+    color: var(--borders-un-border-color__error);
+  }
+}
+
+%radio__label--disabled {
+  color: var(--borders-un-border-color__disabled);
+}
+
+@mixin radio-group(
+  $radio-group-selector: ".radio-group",
+
+  $radio-item-selector: ".radio-group::part(radio-item)",
+
+  $radio-item__container-selector: ".radio-group::part(radio__container)",
+
+  $radio-item__container--focus-selector:
+    ".radio-group::part(radio__container):focus-within",
+
+  $radio-item__container--disabled-selector:
+    ".radio-group::part(radio__container disabled)",
+
+  $radio-item__container--checked-selector:
+    ".radio-group::part(radio__container checked)",
+
+  $radio-item__container--error-selector:
+    ".radio-group::part(radio__container error)",
+
+  $radio-item__label--disabled-selector:
+    ".radio-group::part(radio__label disabled)",
+
+  $add--disabled: true,
+
+  $add--error: true
+) {
+  #{$radio-group-selector} {
+    @extend %radio-group;
+  }
+
+  #{$radio-item-selector} {
+    @extend %radio-item;
+  }
+
+  #{$radio-item__container-selector} {
+    @extend %radio__container;
+  }
+
+  #{$radio-item__container--focus-selector} {
+    @extend %radio__container--focus;
+  }
+
+  @if $add--disabled {
+    #{$radio-item__container--disabled-selector} {
+      @extend %radio__container--disabled;
+    }
+  }
+
+  #{$radio-item__container--checked-selector} {
+    @extend %radio__container--checked;
+  }
+
+  @if $add--error {
+    #{$radio-item__container--error-selector} {
+      @extend %radio__container--error;
+    }
+  }
+
+  @if $add--disabled {
+    #{$radio-item__label--disabled-selector} {
+      @extend %radio__label--disabled;
+    }
+  }
+}

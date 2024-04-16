@@ -22,6 +22,7 @@
 @import "./components/header";
 @import "./components/markdown";
 @import "./components/query-viewer-pivot-table";
+@import "./components/radio-group";
 @import "./components/segmented-control";
 @import "./components/slider";
 @import "./components/tab";
@@ -75,6 +76,7 @@
   $header: true,
   $markdown: true,
   $query-viewer-pivot-table: true,
+  $radio-group: true,
   $segmented-control: true,
   $slider-primary: true,
   $slider-secondary: true,
@@ -271,6 +273,11 @@
     // query-viewer-pivot-table
     @if $query-viewer-pivot-table {
       @include query-viewer-pivot-table($icons-path);
+    }
+
+    // radio-group
+    @if $radio-group {
+      @include radio-group();
     }
 
     // segmented-control
