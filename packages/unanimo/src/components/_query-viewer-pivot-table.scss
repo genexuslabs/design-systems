@@ -145,7 +145,9 @@
     border-radius: var(--border-radius-un-border__radius--m);
   }
 
-  .pivot_title_div {
+  .pivot_title_div,
+  .gx-query-viewer-pivot-container > span,
+  .oatgrid_top_div {
     border: 1px solid var(--gx-query-viewer-pivot__border-color);
     border-start-start-radius: var(--border-radius-un-border__radius--m);
     border-start-end-radius: var(--border-radius-un-border__radius--m);
@@ -188,7 +190,9 @@
   .grandtotaltitle,
   .grandtotalvalue,
   .gtotal.firstlevelvalue,
-  .header_value > span {
+  .header_value > span,
+  .oatgrid_top_div > span,
+  .gx-query-viewer-pivot-container > span {
     @extend %tab-text;
   }
 
@@ -198,8 +202,11 @@
   }
 
   .pivot_title_div,
-  .pivot_pag_div {
+  .pivot_pag_div,
+  .oatgrid_top_div,
+  .gx-query-viewer-pivot-container > span {
     padding-block: 14px;
+    padding-inline: 8px;
   }
 
   .pivot_filter_div > span:first-child {
