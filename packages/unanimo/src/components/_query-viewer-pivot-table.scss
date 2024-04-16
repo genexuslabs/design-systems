@@ -182,7 +182,8 @@
   .pivot_title_div,
   .grandtotaltitle,
   .grandtotalvalue,
-  .gtotal.firstlevelvalue {
+  .gtotal.firstlevelvalue,
+  .header_value > span {
     @extend %tab-text;
   }
 
@@ -243,6 +244,10 @@
       border-color: var(--borders-un-border-color__primary);
       color: var(--surface-un-surface--alternative);
     }
+  }
+
+  .oatfilterwindow > hr {
+    width: unset;
   }
 
   #pop-up,
