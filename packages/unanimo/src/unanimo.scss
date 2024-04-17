@@ -22,6 +22,7 @@
 @import "./components/header";
 @import "./components/markdown";
 @import "./components/query-viewer-pivot-table";
+@import "./components/radio-group";
 @import "./components/segmented-control";
 @import "./components/slider";
 @import "./components/tab";
@@ -68,13 +69,15 @@
   $components: true,
   $action-group: true,
   $card: true,
-  $dialog: true,
+  $dialog-primary: true,
+  $dialog-secondary: true,
   $dropdown-primary: true,
   $dropdown-secondary: true,
   $dropdown-conversational: true,
   $header: true,
   $markdown: true,
   $query-viewer-pivot-table: true,
+  $radio-group: true,
   $segmented-control: true,
   $slider-primary: true,
   $slider-secondary: true,
@@ -238,9 +241,14 @@
       @include card();
     }
 
-    // dialog
-    @if $dialog {
-      @include dialog($icons-path: $icons-path);
+    // dialog-primary
+    @if $dialog-primary {
+      @include dialog-primary($icons-path: $icons-path);
+    }
+
+    // dialog-secondary
+    @if $dialog-secondary {
+      @include dialog-secondary($icons-path: $icons-path);
     }
 
     // dropdown primary
@@ -271,6 +279,11 @@
     // query-viewer-pivot-table
     @if $query-viewer-pivot-table {
       @include query-viewer-pivot-table($icons-path);
+    }
+
+    // radio-group
+    @if $radio-group {
+      @include radio-group();
     }
 
     // segmented-control
