@@ -211,18 +211,18 @@ function writeImportScss(iconsLists) {
   const sassFileName = `icons-selectors.scss`;
   const sassFilePath = path.join(OUTPUT_DIRECTORY, sassFileName);
 
-  let sassContent = "";
+  let sassContentMonochrome = "";
 
   /* --------------------------
   Import monochrome icons lists
   --------------------------- */
 
   if (monochromeLists.length) {
-    sassContent += `//Monochrome lists
+    sassContentMonochrome += `//Monochrome lists
     `;
 
     monochromeLists.forEach((list) => {
-      sassContent += `
+      sassContentMonochrome += `
 @import "${MONOCHROME_ID}/${list}";`;
     });
 
@@ -240,7 +240,7 @@ $all-monochrome-lists: (`;
       }
     });
 
-    sassContent += `
+    sassContentMonochrome += `
     ${allMonochromeLists}`;
   }
 
@@ -248,36 +248,38 @@ $all-monochrome-lists: (`;
   Import multicolor icons lists
   --------------------------- */
 
+  let sassContentMulticolor = "";
   if (multicolorLists.length) {
-    sassContent += `
+    let iconsImports = "";
+    sassContentMulticolor += `
     
 //Multicolor lists
     `;
-
     multicolorLists.forEach((list) => {
-      sassContent += `
-@import "${MULTICOLOR_ID}/${list}";`;
+      iconsImports += `@import "${MULTICOLOR_ID}/${list}";\n`;
     });
-
     let allMulticolorLists = `
-$all-multicolor-lists: (`;
+@mixin icons-lists($icons-path: "./assets/icons") {
+  ${iconsImports}
+  $all-multicolor-lists: (`;
     multicolorLists.forEach((list, i) => {
       allMulticolorLists += `
-  ${list}: $icons-${list}`;
+    ${list}: $icons-${list}`;
 
       if (i === multicolorLists.length - 1) {
         allMulticolorLists += `
-);`;
+  );`;
       } else {
         allMulticolorLists += `,`;
       }
     });
 
-    sassContent += `
-    ${allMulticolorLists}`;
+    sassContentMulticolor += `
+    ${allMulticolorLists}
+}`;
   }
 
-  fs.writeFileSync(sassFilePath, sassContent);
+  fs.writeFileSync(sassFilePath, sassContentMulticolor);
 }
 
 /**
