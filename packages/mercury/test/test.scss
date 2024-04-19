@@ -1,5 +1,3 @@
-$assets-path: "/packages/mercury/src/assets/";
-
-@import "../src/mercury.scss";
+@import "../dist/mercury.scss";
 
 @include mercury();
