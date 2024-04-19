@@ -118,7 +118,7 @@ function processSvg(path, data, output) {
 
   if (states === undefined) {
     //only for multicolor icons.
-    svg = removeUnusedVars(svg, content);
+    svg = removeUnusedVars(svg, content, path);
   }
 
   writeAllTextFile(output.light, compressSvg(setColorScheme(svg, "light")));
@@ -311,7 +311,8 @@ function parseContent(content) {
   return updatedContent;
 }
 
-function removeUnusedVars(svg, content) {
+function removeUnusedVars(svg, content, path) {
+  console.log("path", path);
   let usedVars = content.match(REGEX_USED_VARS);
   if (usedVars) {
     //remove repeated vars
