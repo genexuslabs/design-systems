@@ -312,7 +312,6 @@ function parseContent(content) {
 }
 
 function removeUnusedVars(svg, content, path) {
-  console.log("path", path);
   let usedVars = content.match(REGEX_USED_VARS);
   if (usedVars) {
     //remove repeated vars
