@@ -3,6 +3,9 @@
   "version": "0.0.2",
   "description": "Mercury is the design system designed for GeneXus IDE Web and GeneXus Next",
   "main": "src/mercury.scss",
+  "files": [
+    "dist/"
+  ],
   "type": "module",
   "scripts": {
     "copy-assets": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/assets/ dist/assets",
