@@ -1,15 +1,9 @@
-//Monochrome lists
-    
-@import "monochrome/monochrome";
-    
-$all-monochrome-lists: (
-  monochrome: $icons-monochrome
-);
+
     
 //Multicolor lists
     
-@import "multicolor/multicolor";
+@import "multicolor/objects";
     
 $all-multicolor-lists: (
-  multicolor: $icons-multicolor
+  objects: $icons-objects
 );
