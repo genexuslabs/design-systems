@@ -1,5 +1,4 @@
-@import "../base/typography";
-
+// Primary
 %dropdown-window-primary {
   @extend %text-body-2;
   padding-block: var(--spacing-un-spacing--m);
@@ -9,6 +8,7 @@
   color: var(--text-un-text__on-secondary);
 }
 
+// Secondary
 %dropdown-window-secondary {
   @extend %text-body-2;
   padding-block: var(--spacing-un-spacing--m);
@@ -18,17 +18,18 @@
   color: var(--text-un-text__on-surface--positive);
 }
 
-%dropdown-item-action {
-  --ch-dropdown-item__image-size: 24px;
-  padding-inline: var(--spacing-un-spacing--l);
-  padding-block: var(--spacing-un-spacing--xs);
-  gap: var(--spacing-un-spacing--s);
-
-  &--focus {
-    @include focus-style($outline: true);
-  }
+// Conversational
+%dropdown-window-conversational {
+  padding: var(--spacing-un-spacing--xl);
+  background-color: var(--header-un-header-primary__background-color);
+  border-end-start-radius: var(--border-radius-un-border__radius--m);
+  border-end-end-radius: var(--border-radius-un-border__radius--m);
+  box-shadow: var(--box-shadows-un-box-shadow--4);
+  color: var(--text-un-text__on-secondary);
+  gap: var(--spacing-un-spacing--m);
 }
 
+// Primary
 %dropdown-item-action-primary {
   &--hover {
     background-color: var(--header-un-header-primary__background-color--hover);
@@ -39,6 +40,7 @@
   }
 }
 
+// Secondary
 %dropdown-item-action-secondary {
   &--hover {
     background-color: var(--accents-un-accent__primary-dim--hover);
@@ -50,33 +52,60 @@
   }
 }
 
+%dropdown-item-action-conversational {
+  &--hover {
+    background-color: var(--header-un-header-primary__background-color--hover);
+  }
+
+  &--active {
+    background-color: var(--header-un-header-primary__background-color--active);
+  }
+}
+
+// Primary and secondary
+%dropdown-item-action {
+  --ch-dropdown-item__image-size: 24px;
+  padding-inline: var(--spacing-un-spacing--l);
+  padding-block: var(--spacing-un-spacing--xs);
+  gap: var(--spacing-un-spacing--s);
+
+  &--focus {
+    @include focus-style($outline: true);
+  }
+}
+
+%dropdown-item-action-conversational {
+  --ch-dropdown-item__image-size: 24px;
+  padding-block: var(--spacing-un-spacing--xs);
+  gap: var(--spacing-un-spacing--s);
+  @include form-input__label-base();
+
+  &--focus {
+    @include focus-style($outline: true);
+  }
+}
+
 %dropdown-separator {
   margin-block: var(--spacing-un-spacing--s);
 }
 
-@mixin dropdown() {
-  /* .action-group::part(more-actions-window),
+%dropdown-expandable-action-chevron {
+  content: "";
+  border-block-start: 4px dashed currentColor;
+  border-inline: 4px solid transparent;
+  margin-inline-start: 4px;
+}
+
+/* .action-group::part(more-actions-window),
       .action-group-item::part(window), */
 
-  .dropdown-primary::part(window),
-  .dropdown-primary .dropdown-item::part(window) {
-    @extend %dropdown-window-primary;
-  }
+// .action-group-primary::part(more-actions-button):hover,
+// .action-group-primary .action-group-item::part(action):hover,
 
-  .dropdown-secondary::part(window),
-  .dropdown-secondary .dropdown-item::part(window) {
-    @extend %dropdown-window-secondary;
-  }
+// .action-group-primary::part(more-actions-button):active,
+// .action-group-primary .action-group-item::part(action):active,
 
-  .dropdown-item::part(action) {
-    @extend %dropdown-item-action;
-  }
-
-  .dropdown-separator {
-    @extend %dropdown-separator;
-  }
-
-  /* .dropdown::part(expandable-button) {
+/* .dropdown::part(expandable-button) {
               padding-inline: $spacing.inset-m;
               color: $colors.primary;
               font-family: $fonts.primary-semibold;
@@ -84,42 +113,231 @@
               letter-spacing: 0.25px;
             } */
 
-  .action-group-primary::part(more-actions-button):hover,
-  .action-group-primary .action-group-item::part(action):hover,
-  .dropdown-primary .dropdown-item::part(action):hover {
-    @extend %dropdown-item-action-primary--hover;
+// .action-group-secondary::part(more-actions-button):hover,
+// .action-group-secondary .action-group-item::part(action):hover,
+
+@mixin dropdown-primary(
+  $dropdown__expandable-button-selector:
+    ".dropdown-primary::part(expandable-button)",
+
+  $dropdown__window-selector: ".dropdown-primary::part(window)",
+
+  $dropdown__action-selector: ".dropdown-primary::part(action)",
+
+  $dropdown__expandable-action-selector:
+    ".dropdown-primary::part(action expandable)",
+
+  $dropdown-separator-selector: ".dropdown-primary .dropdown-separator",
+
+  $add-separator: true
+) {
+  @include button-tertiary(
+    $selector: #{$dropdown__expandable-button-selector},
+    $add--disabled: false,
+    $add--error: false
+  );
+
+  #{$dropdown__window-selector} {
+    @extend %dropdown-window-primary;
   }
 
-  .action-group-primary::part(more-actions-button):active,
-  .action-group-primary .action-group-item::part(action):active,
-  .dropdown-primary .dropdown-item::part(action):active {
-    @extend %dropdown-item-action-primary--active;
-  }
-
-  .action-group-secondary::part(more-actions-button):hover,
-  .action-group-secondary .action-group-item::part(action):hover,
-  .dropdown-secondary .dropdown-item::part(action):hover {
-    @extend %dropdown-item-action-secondary--hover;
-  }
-
-  .action-group-secondary::part(more-actions-button):active,
-  .action-group-secondary .action-group-item::part(action):active,
-  .dropdown-secondary .dropdown-item::part(action):active {
-    @extend %dropdown-item-action-secondary--active;
-  }
-
-  .action-group::part(more-actions-button):focus-visible,
-  .action-group-item::part(action):focus-visible,
-  .dropdown::part(expandable-button):focus-visible,
-  .dropdown-item::part(action):focus-visible {
+  #{$dropdown__action-selector} {
     @extend %dropdown-item-action;
+
+    &:hover {
+      @extend %dropdown-item-action-primary--hover;
+    }
+
+    &:active {
+      @extend %dropdown-item-action-primary--active;
+    }
+
+    &:focus-visible {
+      @extend %dropdown-item-action--focus;
+    }
   }
 
-  .action-group-item::part(expandable-action)::after,
-  .dropdown-item::part(expandable-action)::after {
-    content: "";
-    border-block-start: 4px dashed currentColor;
-    border-inline: 4px solid transparent;
-    margin-inline-start: 4px;
+  #{$dropdown__expandable-action-selector}::after {
+    @extend %dropdown-expandable-action-chevron;
+  }
+
+  @if $add-separator {
+    #{$dropdown-separator-selector} {
+      @extend %dropdown-separator;
+    }
   }
 }
+
+@mixin dropdown-secondary(
+  $dropdown__expandable-button-selector:
+    ".dropdown-secondary::part(expandable-button)",
+
+  $dropdown__window-selector: ".dropdown-secondary::part(window)",
+
+  $dropdown__action-selector: ".dropdown-secondary::part(action)",
+
+  $dropdown__expandable-action-selector:
+    ".dropdown-secondary::part(action expandable)",
+
+  $dropdown-separator-selector: ".dropdown-secondary .dropdown-separator",
+
+  $add-separator: true
+) {
+  @include button-tertiary(
+    $selector: #{$dropdown__expandable-button-selector},
+    $add--disabled: false,
+    $add--error: false
+  );
+
+  #{$dropdown__window-selector} {
+    @extend %dropdown-window-secondary;
+  }
+
+  #{$dropdown__action-selector} {
+    @extend %dropdown-item-action;
+
+    &:hover {
+      @extend %dropdown-item-action-secondary--hover;
+    }
+
+    &:active {
+      @extend %dropdown-item-action-secondary--active;
+    }
+
+    &:focus-visible {
+      @extend %dropdown-item-action--focus;
+    }
+  }
+
+  #{$dropdown__expandable-action-selector}::after {
+    @extend %dropdown-expandable-action-chevron;
+  }
+
+  @if $add-separator {
+    #{$dropdown-separator-selector} {
+      @extend %dropdown-separator;
+    }
+  }
+}
+
+@mixin dropdown-conversational(
+  $dropdown__expandable-button-selector:
+    ".dropdown-conversational::part(expandable-button)",
+
+  $dropdown__window-selector: ".dropdown-conversational::part(window)",
+
+  $dropdown__action-selector: ".dropdown-conversational::part(action)",
+
+  $dropdown__expandable-action-selector:
+    ".dropdown-conversational::part(action expandable)",
+
+  $dropdown-separator-selector: ".dropdown-conversational .dropdown-separator",
+
+  $add-separator: true
+) {
+  @include button-tertiary(
+    $selector: #{$dropdown__expandable-button-selector},
+    $add--disabled: false,
+    $add--error: false
+  );
+
+  #{$dropdown__window-selector} {
+    @extend %dropdown-window-conversational;
+  }
+
+  #{$dropdown__action-selector} {
+    @extend %dropdown-item-action-conversational;
+
+    &:hover {
+      @extend %dropdown-item-action-conversational--hover;
+    }
+
+    &:active {
+      @extend %dropdown-item-action-conversational--active;
+    }
+
+    &:focus-visible {
+      @extend %dropdown-item-action-conversational--focus;
+    }
+  }
+
+  #{$dropdown__expandable-action-selector}::after {
+    @extend %dropdown-expandable-action-chevron;
+  }
+
+  @if $add-separator {
+    #{$dropdown-separator-selector} {
+      @extend %dropdown-separator;
+    }
+  }
+}
+
+// @mixin dropdown() {
+//   /* .action-group::part(more-actions-window),
+//       .action-group-item::part(window), */
+
+//   .dropdown-primary::part(window),
+//   .dropdown-primary .dropdown-item::part(window) {
+//     @extend %dropdown-window-primary;
+//   }
+
+//   .dropdown-secondary::part(window),
+//   .dropdown-secondary .dropdown-item::part(window) {
+//     @extend %dropdown-window-secondary;
+//   }
+
+//   .dropdown-item::part(action) {
+//     @extend %dropdown-item-action;
+//   }
+
+//   .dropdown-separator {
+//     @extend %dropdown-separator;
+//   }
+
+//   /* .dropdown::part(expandable-button) {
+//               padding-inline: $spacing.inset-m;
+//               color: $colors.primary;
+//               font-family: $fonts.primary-semibold;
+//               font-size: $fontSizes.s;
+//               letter-spacing: 0.25px;
+//             } */
+
+//   .action-group-primary::part(more-actions-button):hover,
+//   .action-group-primary .action-group-item::part(action):hover,
+//   .dropdown-primary .dropdown-item::part(action):hover {
+//     @extend %dropdown-item-action-primary--hover;
+//   }
+
+//   .action-group-primary::part(more-actions-button):active,
+//   .action-group-primary .action-group-item::part(action):active,
+//   .dropdown-primary .dropdown-item::part(action):active {
+//     @extend %dropdown-item-action-primary--active;
+//   }
+
+//   .action-group-secondary::part(more-actions-button):hover,
+//   .action-group-secondary .action-group-item::part(action):hover,
+//   .dropdown-secondary .dropdown-item::part(action):hover {
+//     @extend %dropdown-item-action-secondary--hover;
+//   }
+
+//   .action-group-secondary::part(more-actions-button):active,
+//   .action-group-secondary .action-group-item::part(action):active,
+//   .dropdown-secondary .dropdown-item::part(action):active {
+//     @extend %dropdown-item-action-secondary--active;
+//   }
+
+//   .action-group::part(more-actions-button):focus-visible,
+//   .action-group-item::part(action):focus-visible,
+//   .dropdown::part(expandable-button):focus-visible,
+//   .dropdown-item::part(action):focus-visible {
+//     @extend %dropdown-item-action;
+//   }
+
+//   .action-group-item::part(expandable-action)::after,
+//   .dropdown-item::part(expandable-action)::after {
+//     content: "";
+//     border-block-start: 4px dashed currentColor;
+//     border-inline: 4px solid transparent;
+//     margin-inline-start: 4px;
+//   }
+// }

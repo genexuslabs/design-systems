@@ -1,5 +1,3 @@
-@import "./common";
-
 %button-base {
   display: inline-grid;
   grid-auto-flow: column;
@@ -17,12 +15,17 @@
 %button-primary {
   @extend %button-base;
   background-color: var(--accents-un-accent__primary);
+
+  // This is necessary to avoid CLS issues when using the segmented control,
+  // due to the secondary button style has borders but the primary style doesn't
+  border: var(--border-radius-un-border__radius--xs) solid transparent;
+
   border-radius: var(--border-radius-un-border__radius--s);
   color: var(--text-un-text__on-primary);
   padding-inline: var(--spacing-un-spacing--xl);
 
   &--focus-visible {
-    @include focus-style();
+    @include focus-style($outline: true);
   }
 
   &--hover {
@@ -52,7 +55,7 @@
   padding-inline: var(--spacing-un-spacing--xl);
 
   &--focus-visible {
-    @include focus-style();
+    @include focus-style($outline: true);
   }
 
   &--hover {
@@ -109,7 +112,7 @@
   display: block;
   inline-size: var(--spacing-un-spacing--xl);
   block-size: var(--spacing-un-spacing--xl);
-  -webkit-mask: var(--ch-button-icon) 50% 50% / 100% 100% no-repeat;
+  -webkit-mask: var(--button-icon) 50% 50% / 100% 100% no-repeat;
   background-color: currentColor;
 }
 
@@ -154,14 +157,14 @@
       @extend %button-primary--active;
     }
 
-    @if $add--disabled == true {
+    @if $add--disabled {
       &:disabled,
       &--disabled {
         @extend %button-primary--disabled;
       }
     }
 
-    @if $add--error == true {
+    @if $add--error {
       &--error {
         @extend %button-primary--error;
       }

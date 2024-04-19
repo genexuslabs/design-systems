@@ -1,3 +1,5 @@
+@import "./base/common";
+
 // Resets
 @import "../../common/resets";
 
@@ -15,9 +17,14 @@
 
 // Components
 @import "./components/card";
+@import "./components/dialog";
 @import "./components/dropdown";
 @import "./components/header";
 @import "./components/markdown";
+@import "./components/query-viewer-pivot-table";
+@import "./components/radio-group";
+@import "./components/segmented-control";
+@import "./components/slider";
 @import "./components/tab";
 @import "./components/tree-view";
 @import "./components/tree-view-navigation";
@@ -34,6 +41,8 @@
   // Theme
   $light-theme: true,
   $dark-theme: true,
+  $prefers-color-scheme-light: false,
+  $prefers-color-scheme-dark: false,
 
   // Tokens
   $tokens: true,
@@ -42,6 +51,9 @@
   $colors: true,
   $font-size: true,
   $spacing: true,
+
+  // Icons path
+  $icons-path: "",
 
   // Font face
   $font-face: true,
@@ -57,9 +69,18 @@
   $components: true,
   $action-group: true,
   $card: true,
-  $dropdown: true,
+  $dialog-primary: true,
+  $dialog-secondary: true,
+  $dropdown-primary: true,
+  $dropdown-secondary: true,
+  $dropdown-conversational: true,
   $header: true,
   $markdown: true,
+  $query-viewer-pivot-table: true,
+  $radio-group: true,
+  $segmented-control: true,
+  $slider-primary: true,
+  $slider-secondary: true,
   $tab: true,
   $tree-view: true,
   $tree-view-navigation: true
@@ -83,7 +104,13 @@
   }
 
   // Light
-  @if $light-theme and $colors and $tokens {
+  @if $colors and $light-theme and $tokens {
+    :root.light {
+      @include foundation-colors--light();
+      @include semantic-colors--light();
+    }
+  }
+  @if $colors and $tokens and $prefers-color-scheme-light {
     @media (prefers-color-scheme: light) {
       :root {
         @include foundation-colors--light();
@@ -93,7 +120,13 @@
   }
 
   // Dark
-  @if $dark-theme and $colors and $tokens {
+  @if $colors and $dark-theme and $tokens {
+    :root.dark {
+      @include foundation-colors--dark();
+      @include semantic-colors--dark();
+    }
+  }
+  @if $colors and $tokens and $prefers-color-scheme-dark {
     @media (prefers-color-scheme: dark) {
       :root {
         @include foundation-colors--dark();
@@ -188,7 +221,9 @@
 
     // Form control classes
     @if $form-controls-classes {
-      @include form-controls-classes();
+      @include form-input();
+      @include form-input__label();
+      @include form-input__helper();
     }
 
     // Typography classes
@@ -206,9 +241,29 @@
       @include card();
     }
 
-    // dropdown
-    @if $dropdown {
-      @include dropdown();
+    // dialog-primary
+    @if $dialog-primary {
+      @include dialog-primary($icons-path: $icons-path);
+    }
+
+    // dialog-secondary
+    @if $dialog-secondary {
+      @include dialog-secondary($icons-path: $icons-path);
+    }
+
+    // dropdown primary
+    @if $dropdown-primary {
+      @include dropdown-primary();
+    }
+
+    // dropdown secondary
+    @if $dropdown-secondary {
+      @include dropdown-secondary();
+    }
+
+    // dropdown conversational
+    @if $dropdown-conversational {
+      @include dropdown-conversational();
     }
 
     // header
@@ -219,6 +274,31 @@
     // markdown
     @if $markdown {
       @include markdown();
+    }
+
+    // query-viewer-pivot-table
+    @if $query-viewer-pivot-table {
+      @include query-viewer-pivot-table($icons-path);
+    }
+
+    // radio-group
+    @if $radio-group {
+      @include radio-group();
+    }
+
+    // segmented-control
+    @if $segmented-control {
+      @include segmented-control();
+    }
+
+    // slider primary
+    @if $slider-primary {
+      @include slider-primary();
+    }
+
+    // slider secondary
+    @if $slider-secondary {
+      @include slider-secondary();
     }
 
     // tab

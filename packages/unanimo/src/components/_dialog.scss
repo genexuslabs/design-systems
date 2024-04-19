@@ -1,0 +1,131 @@
+%dialog-primary {
+  border-radius: var(--border-radius-un-border__radius--l);
+  background-color: var(--elevation-un-elevation--2);
+  box-shadow: var(--box-shadows-un-box-shadow--2);
+  padding: var(--spacing-un-spacing--l);
+}
+
+%dialog-secondary {
+  border-radius: var(--border-radius-un-border__radius--l);
+  background-color: var(--surface-un-surface--positive);
+  border: 1px solid var(--borders-un-border-color__mild);
+  box-shadow: var(--box-shadows-un-box-shadow--2);
+  padding: var(--spacing-un-spacing--l);
+}
+
+%dialog-primary__backdrop,
+%dialog-secondary__backdrop {
+  background-color: color-mix(
+    in srgb,
+    var(--elevation-un-elevation--4) 25%,
+    transparent
+  );
+  backdrop-filter: blur(5px);
+  z-index: 108; // TODO: This is a WA to show the backdrop above the button of the dropdown
+}
+
+%dialog-primary__header {
+  align-items: flex-start;
+  gap: var(--spacing-un-spacing--l);
+  margin-block-end: var(--spacing-un-spacing--xl);
+}
+
+%dialog-secondary__header {
+  gap: var(--spacing-un-spacing--l);
+  margin-block-end: var(--spacing-un-spacing--xl);
+}
+
+%dialog-primary__caption {
+  @extend %heading-2;
+  margin-block-start: 32px;
+  word-break: break-word;
+}
+
+%dialog-secondary__caption {
+  @extend %heading-4;
+  word-break: break-word;
+}
+
+@mixin dialog__close-button-icon($icons-path: "") {
+  --button-icon: url("#{$icons-path}close.svg");
+}
+
+@mixin dialog-primary(
+  $dialog-selector: ".dialog-primary::part(dialog)",
+  $backdrop-selector: ".dialog-primary.ch-dialog--modal",
+  $header-selector: ".dialog-primary::part(header)",
+  $caption-selector: ".dialog-primary::part(caption)",
+  $close-button-selector: ".dialog-primary::part(close-button)",
+  $icons-path: ""
+) {
+  #{$dialog-selector} {
+    @extend %dialog-primary;
+  }
+
+  #{$backdrop-selector} {
+    @extend %dialog-primary__backdrop;
+  }
+
+  #{$header-selector} {
+    @extend %dialog-primary__header;
+  }
+
+  #{$caption-selector} {
+    @extend %dialog-primary__caption;
+  }
+
+  @include button-tertiary(
+    $selector: #{$close-button-selector},
+    $add--disabled: false,
+    $add--error: false
+  );
+
+  #{$close-button-selector} {
+    @extend %button-icon-only;
+    @include dialog__close-button-icon($icons-path);
+
+    &::before {
+      @extend %button-icon;
+    }
+  }
+}
+
+@mixin dialog-secondary(
+  $dialog-selector: ".dialog-secondary::part(dialog)",
+  $backdrop-selector: ".dialog-secondary.ch-dialog--modal",
+  $header-selector: ".dialog-secondary::part(header)",
+  $caption-selector: ".dialog-secondary::part(caption)",
+  $close-button-selector: ".dialog-secondary::part(close-button)",
+  $icons-path: ""
+) {
+  #{$dialog-selector} {
+    @extend %dialog-secondary;
+  }
+
+  #{$backdrop-selector} {
+    @extend %dialog-secondary__backdrop;
+  }
+
+  #{$header-selector} {
+    @extend %dialog-secondary__header;
+  }
+
+  #{$caption-selector} {
+    @extend %dialog-secondary__caption;
+  }
+
+  @include button-tertiary(
+    $selector: #{$close-button-selector},
+    $add--disabled: false,
+    $add--error: false
+  );
+
+  #{$close-button-selector} {
+    @extend %button-icon-only;
+    @include dialog__close-button-icon($icons-path);
+
+    &::before {
+      @extend %button-icon;
+    }
+  }
+}
