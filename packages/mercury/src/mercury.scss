@@ -49,8 +49,8 @@
   $timing: true,
 
   // Icons
-  $icons-path: "./assets/icons",
   $icons: true,
+  $icons-path: "./assets/icons",
 
   // Font face
   $font-face: true,
@@ -65,7 +65,72 @@
   $checkbox: true,
   $tree-view: true
 ) {
-  // font-face
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Resets
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $resets {
+    // box-sizing
+    @if $box-sizing-reset {
+      @include box-sizing();
+    }
+
+    // <button> and <a> reset
+    @if $button-reset {
+      @include button-reset();
+    }
+
+    @if $input-reset {
+      @include input-reset();
+    }
+
+    // <hr> reset
+    @if $other-reset {
+      @include other-reset();
+    }
+
+    // Typography reset
+    @if $typography-reset {
+      @include typography-reset();
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Body
+  // - - - - - - - - - - - - - - - - - - - -
+  body {
+    @if $tokens and $color {
+      background-color: var(--mer-body__bg-color);
+      color: var(--mer-body__color);
+    }
+    @if $tokens and $font {
+      font-size: var(--mer-body__font-size);
+      line-height: var(--mer-body__line-height);
+    }
+    @if $font-face {
+      font-family: var(--mer-font-family--primary);
+    }
+    margin: 0;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Base
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $base-classes {
+    @if $button-classes {
+      @include button($buttons-classes-with-icons);
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Icons
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $icons and $icons-path {
+    @include icons-lists($icons-path: $icons-path);
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //               Typography
+  // - - - - - - - - - - - - - - - - - - - -
   @if $font-face {
     //light
     @font-face {
@@ -113,6 +178,9 @@
     }
   }
 
+  // - - - - - - - - - - - - - - - - - - - -
+  //        Primitive Color Tokens
+  // - - - - - - - - - - - - - - - - - - - -
   // Light
   @if $color and $light-theme and $tokens {
     :root {
@@ -140,22 +208,9 @@
     }
   }
 
-  body {
-    @if $tokens and $color {
-      background-color: var(--mer-body__bg-color);
-      color: var(--mer-body__color);
-    }
-    @if $tokens and $font {
-      font-size: var(--mer-body__font-size);
-      line-height: var(--mer-body__line-height);
-    }
-    @if $font-face {
-      font-family: var(--mer-font-family--primary);
-    }
-    margin: 0;
-  }
-
-  // Tokens
+  // - - - - - - - - - - - - - - - - - - - -
+  //              Other Tokens
+  // - - - - - - - - - - - - - - - - - - - -
   @if $tokens and
     (
       $border or
@@ -222,51 +277,6 @@
       @if $timing {
         @include timing();
       }
-    }
-  }
-
-  // - - - - - - - - - - - - - - - - - - - -
-  //                 Resets
-  // - - - - - - - - - - - - - - - - - - - -
-  @if $resets {
-    // box-sizing
-    @if $box-sizing-reset {
-      @include box-sizing();
-    }
-
-    // <button> and <a> reset
-    @if $button-reset {
-      @include button-reset();
-    }
-
-    @if $input-reset {
-      @include input-reset();
-    }
-
-    // <hr> reset
-    @if $other-reset {
-      @include other-reset();
-    }
-
-    // Typography reset
-    @if $typography-reset {
-      @include typography-reset();
-    }
-  }
-
-  // - - - - - - - - - - - - - - - - - - - -
-  //                 Icons
-  // - - - - - - - - - - - - - - - - - - - -
-  @if $icons && $icons-path {
-    @include icons-lists($icons-path: $icons-path);
-  }
-
-  // - - - - - - - - - - - - - - - - - - - -
-  //                 Base
-  // - - - - - - - - - - - - - - - - - - - -
-  @if $base-classes {
-    @if $button-classes {
-      @include button($buttons-classes-with-icons);
     }
   }
 
