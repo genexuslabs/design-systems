@@ -1,9 +1,9 @@
-
-    
 //Multicolor lists
-    
-@import "multicolor/objects";
-    
-$all-multicolor-lists: (
-  objects: $icons-objects
-);
+
+@mixin icons-lists($icons-path: "./assets/icons") {
+  @import "multicolor/objects";
+
+  $all-multicolor-lists: (
+    objects: $icons-objects
+  );
+}
