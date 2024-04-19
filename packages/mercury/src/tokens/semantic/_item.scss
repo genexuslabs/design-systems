@@ -1,4 +1,9 @@
 @mixin semantic-item() {
+  //enabled
+  --mer-item__color: ;
+  --mer-item__bg-color: ;
+  --mer-item__border-color: var(--mer-color__tinted-blue--20);
+
   //hover
   --mer-item__color--hover: var(--mer-color__neutral-gray--100);
   --mer-item__bg-color--hover: var(--mer-color__tinted-blue--5);
