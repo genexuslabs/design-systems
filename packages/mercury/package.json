@@ -5,12 +5,11 @@
   "main": "src/mercury.scss",
   "scripts": {
     "copy-assets": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/assets/ dist/assets",
-    "build": "npm run copy-assets && scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
+    "build": "npm run svg && npm run svg-sass && npm run copy-assets && scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
     "test": "sass test/test.scss test/mercury.css",
     "test-watch": "sass --watch test/test.scss test/mercury.css",
     "svg": "process-svg ./src/icons/ ./src/assets/icons/ ./src/icons/_settings/multicolor.svg.template ./src/icons/_settings/monochrome.svg.template ./src/icons/_settings/states-monochrome.json",
-    "svg-sass": "process-sass ./src/icons/ ./src/base/icons/sass/ ./src/icons/_settings/states-monochrome.json",
-    "buttons-sass": "sass ./temporary-tests/test-button-icons/button.scss ./test-button-icons/button.css"
+    "svg-sass": "process-sass ./src/icons/ ./src/base/icons/sass/ ./src/icons/_settings/states-monochrome.json"
   },
   "license": "MIT",
   "devDependencies": {
