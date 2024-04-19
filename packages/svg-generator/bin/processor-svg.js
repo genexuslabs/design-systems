@@ -266,8 +266,14 @@ function parseContent(content) {
     let cssClasses = svgFigure.attribs.class;
     let colorClass;
     let isMultiColor = false;
-    const hasFill = svgFigure.attribs.fill;
+    let hasFill = svgFigure.attribs.fill;
     const hasStroke = svgFigure.attribs.stroke;
+
+    //temporary fix
+    if (!hasFill) {
+      svgFigure.attribs.fill = "black";
+      hasFill = true;
+    }
 
     if (cssClasses) {
       cssClasses = cssClasses.split(" ");
