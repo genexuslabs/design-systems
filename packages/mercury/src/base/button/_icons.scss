@@ -118,14 +118,14 @@
 
 @mixin icons-classes() {
   // Generate monochrome icons (light and/or dark)
-  @each $list-name, $list in $all-monochrome-lists {
-    @each $icon in $list {
-      @include button-icon-style-monochrome(
-        $input-selector: "%icon__#{$list-name}-#{$icon}",
-        $output-selector: ".icon__#{$list-name}-#{$icon}"
-      );
-    }
-  }
+  // @each $list-name, $list in $all-monochrome-lists {
+  //   @each $icon in $list {
+  //     @include button-icon-style-monochrome(
+  //       $input-selector: "%icon__#{$list-name}-#{$icon}",
+  //       $output-selector: ".icon__#{$list-name}-#{$icon}"
+  //     );
+  //   }
+  // }
 
   //Generate multicolor icons (light and/or dark)
   @each $list-name, $list in $all-multicolor-lists {
