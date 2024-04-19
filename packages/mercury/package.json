@@ -4,6 +4,8 @@
   "description": "Mercury is the design system designed for GeneXus IDE Web and GeneXus Next",
   "main": "src/mercury.scss",
   "scripts": {
+    "copy-assets": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/assets/ dist/assets",
+    "build": "npm run copy-assets && scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
     "test": "sass test/test.scss test/mercury.css",
     "test-watch": "sass --watch test/test.scss test/mercury.css",
     "svg": "process-svg ./src/icons/ ./src/assets/icons/ ./src/icons/_settings/multicolor.svg.template ./src/icons/_settings/monochrome.svg.template ./src/icons/_settings/states-monochrome.json",
@@ -12,7 +14,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "sass": "~1.71.1"
+    "@atao60/fse-cli": "^0.1.9",
+    "sass": "~1.72.0",
+    "scss-bundle": "~3.1.2"
   },
   "dependencies": {
     "svg-generator": "file:../svg-generator"
