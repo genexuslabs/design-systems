@@ -5,11 +5,6 @@
   :root {
     @include button-tokens();
   }
-
-  @if $with-icons {
-    @include icons-classes();
-  }
-
   /*----------------------
     General button styles
     ----------------------*/
