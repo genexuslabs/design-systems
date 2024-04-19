@@ -48,6 +48,10 @@
   $spacing: true,
   $timing: true,
 
+  // Icons
+  $icons-path: "./assets/icons",
+  $icons: true,
+
   // Font face
   $font-face: true,
 
@@ -248,6 +252,13 @@
     @if $typography-reset {
       @include typography-reset();
     }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Icons
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $icons && $icons-path {
+    @include icons-lists($icons-path: $icons-path);
   }
 
   // - - - - - - - - - - - - - - - - - - - -
