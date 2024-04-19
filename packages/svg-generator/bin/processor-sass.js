@@ -143,10 +143,10 @@ function monochromeStyles(iconsList) {
     states.forEach((state) => {
       list += `
   &-${icon}--${state}-light {
-    --icon-path :url("#{$assets-path}icons/${category}/light/${icon}.svg#${state}");
+    --icon-path :url("#{$icons-path}icons/${category}/light/${icon}.svg#${state}");
   }
   &-${icon}--${state}-dark {
-    --icon-path :url("#{$assets-path}icons/${category}/dark/${icon}.svg#${state}");
+    --icon-path :url("#{$icons-path}icons/${category}/dark/${icon}.svg#${state}");
   }
       `;
     });
@@ -167,31 +167,31 @@ function multicolorStyles(iconsList) {
     list += `
   // ${icon}.svg
   &-${icon}--enabled-light {
-    --icon-path: url("#{$assets-path}icons/${iconsList.categoryName}/light/${icon}.svg#enabled");
+    --icon-path: url("#{$icons-path}icons/${iconsList.categoryName}/light/${icon}.svg#enabled");
   }
   &-${icon}--enabled-dark {
-    --icon-path: url("#{$assets-path}icons/${iconsList.categoryName}/dark/${icon}.svg#enabled");
+    --icon-path: url("#{$icons-path}icons/${iconsList.categoryName}/dark/${icon}.svg#enabled");
   }
 
   &-${icon}--hover-light {
-    --icon-path: url("#{$assets-path}icons/${iconsList.categoryName}/light/${icon}.svg#hover");
+    --icon-path: url("#{$icons-path}icons/${iconsList.categoryName}/light/${icon}.svg#hover");
   }
   &-${icon}--hover-dark {
-    --icon-path: url("#{$assets-path}icons/${iconsList.categoryName}/dark/${icon}.svg#hover");
+    --icon-path: url("#{$icons-path}icons/${iconsList.categoryName}/dark/${icon}.svg#hover");
   }
 
   &-${icon}--active-light {
-    --icon-path: url("#{$assets-path}icons/${iconsList.categoryName}/light/${icon}.svg#active");
+    --icon-path: url("#{$icons-path}icons/${iconsList.categoryName}/light/${icon}.svg#active");
   }
   &-${icon}--active-dark {
-    --icon-path: url("#{$assets-path}icons/${iconsList.categoryName}/dark/${icon}.svg#active");
+    --icon-path: url("#{$icons-path}icons/${iconsList.categoryName}/dark/${icon}.svg#active");
   }
 
   &-${icon}--disabled-light {
-    --icon-path: url("#{$assets-path}icons/${iconsList.categoryName}/light/${icon}.svg#disabled");
+    --icon-path: url("#{$icons-path}icons/${iconsList.categoryName}/light/${icon}.svg#disabled");
   }
   &-${icon}--disabled-dark {
-    --icon-path: url("#{$assets-path}icons/${iconsList.categoryName}/dark/${icon}.svg#disabled");
+    --icon-path: url("#{$icons-path}icons/${iconsList.categoryName}/dark/${icon}.svg#disabled");
   }
     `;
   });
