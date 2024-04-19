@@ -1,7 +1,7 @@
 // Resets
 @import "../../common/resets";
 
-// Primitive
+// Tokens > Primitive
 @import "./tokens/primitive/border";
 @import "./tokens/primitive/color";
 @import "./tokens/primitive/elevation";
@@ -9,11 +9,20 @@
 @import "./tokens/primitive/spacing";
 @import "./tokens/primitive/timing";
 
-// Semantic
+// Tokens > Semantic
 @import "./tokens/semantic/tokens";
 
+// Other
+@import "./mixins";
+@import "./base/icons/sass/icons-selectors.scss";
+
+// Base
+@import "./base/button/styles";
+
 // Components
+@import "./components/checkbox/styles";
 @import "./components/shortcuts/styles";
+@import "./components/tree-view/styles";
 
 @mixin mercury(
   // Resets
@@ -39,27 +48,96 @@
   $spacing: true,
   $timing: true,
 
+  // Icons
+  $icons: true,
+  $icons-path: "./assets/icons",
+
   // Font face
   $font-face: true,
 
   // Base
   $base-classes: true,
   $button-classes: true,
-  $form-controls-classes: true,
-  $typography-classes: true,
+  $buttons-classes-with-icons: true,
 
   // Components
   $components: true,
-  $shortcuts: true
+  $checkbox: true,
+  $tree-view: true
 ) {
-  // font-face
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Resets
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $resets {
+    // box-sizing
+    @if $box-sizing-reset {
+      @include box-sizing();
+    }
+
+    // <button> and <a> reset
+    @if $button-reset {
+      @include button-reset();
+    }
+
+    @if $input-reset {
+      @include input-reset();
+    }
+
+    // <hr> reset
+    @if $other-reset {
+      @include other-reset();
+    }
+
+    // Typography reset
+    @if $typography-reset {
+      @include typography-reset();
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Body
+  // - - - - - - - - - - - - - - - - - - - -
+  body {
+    @if $tokens and $color {
+      background-color: var(--mer-body__bg-color);
+      color: var(--mer-body__color);
+    }
+    @if $tokens and $font {
+      font-size: var(--mer-body__font-size);
+      line-height: var(--mer-body__line-height);
+    }
+    @if $font-face {
+      font-family: var(--mer-font-family--primary);
+    }
+    margin: 0;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Base
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $base-classes {
+    @if $button-classes {
+      @include button($buttons-classes-with-icons);
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Icons
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $icons and $icons-path {
+    @include icons-lists($icons-path: $icons-path);
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //               Typography
+  // - - - - - - - - - - - - - - - - - - - -
   @if $font-face {
     //light
     @font-face {
       font-family: "Inter";
       font-style: normal;
       font-weight: 300;
-      src: url("Inter_Light.woff2") format("woff2");
+      src: url("../src/assets/fonts/Inter_Light.woff2") format("woff2");
       font-display: swap;
     }
 
@@ -68,7 +146,7 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 400;
-      src: url("Inter_Regular.woff2") format("woff2");
+      src: url("../src/assets/fonts/Inter_Regular.woff2") format("woff2");
       font-display: swap;
     }
 
@@ -77,7 +155,7 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 600;
-      src: url("Inter_SemiBold.woff2") format("woff2");
+      src: url("../src/assets/fonts/Inter_SemiBold.woff2") format("woff2");
       font-display: swap;
     }
 
@@ -86,7 +164,7 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 700;
-      src: url("Inter_Bold.woff2") format("woff2");
+      src: url("../src/assets/fonts/Inter_Bold.woff2") format("woff2");
       font-display: swap;
     }
 
@@ -95,11 +173,14 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 800;
-      src: url("Inter_ExtraBold.woff2") format("woff2");
+      src: url("../src/assets/fonts/Inter_ExtraBold.woff2") format("woff2");
       font-display: swap;
     }
   }
 
+  // - - - - - - - - - - - - - - - - - - - -
+  //        Primitive Color Tokens
+  // - - - - - - - - - - - - - - - - - - - -
   // Light
   @if $color and $light-theme and $tokens {
     :root {
@@ -127,15 +208,9 @@
     }
   }
 
-  body {
-    @if $tokens and $color {
-      background-color: var(--mer-color__surface);
-      color: var(--text-un-text__on-surface--positive);
-    }
-    margin: 0;
-  }
-
-  // Tokens
+  // - - - - - - - - - - - - - - - - - - - -
+  //              Other Tokens
+  // - - - - - - - - - - - - - - - - - - - -
   @if $tokens and
     (
       $border or
@@ -162,6 +237,7 @@
         @include semantic-heading();
         @include semantic-icon();
         @include semantic-item();
+        @include semantic-other();
         @include semantic-text();
       }
 
@@ -205,41 +281,14 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //                 Resets
-  // - - - - - - - - - - - - - - - - - - - -
-  @if $resets {
-    // box-sizing
-    @if $box-sizing-reset {
-      @include box-sizing();
-    }
-
-    // <button> and <a> reset
-    @if $button-reset {
-      @include button-reset();
-    }
-
-    @if $input-reset {
-      @include input-reset();
-    }
-
-    // <hr> reset
-    @if $other-reset {
-      @include other-reset();
-    }
-
-    // Typography reset
-    @if $typography-reset {
-      @include typography-reset();
-    }
-  }
-
-  // - - - - - - - - - - - - - - - - - - - -
   //               Components
   // - - - - - - - - - - - - - - - - - - - -
   @if $components {
-    // card
-    @if $shortcuts {
-      @include shortcuts();
+    @if $checkbox {
+      @include checkbox();
+    }
+    @if $tree-view {
+      @include tree-view();
     }
   }
 }

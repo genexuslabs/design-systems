@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Button Icons</title>
+    <link rel="stylesheet" href="../../test/mercury.css" />
+    <style>
+      html.dark {
+        background-color: rgb(32, 31, 31);
+        color: #ebe9e9;
+      }
+      .button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 8px;
+        font-size: 20px;
+        color: inherit;
+      }
+      .button::before {
+        content: "";
+        width: 32px;
+        height: 32px;
+        background-image: var(--icon-path);
+        display: block;
+      }
+      .button,
+      .button:hover,
+      .button:active {
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="toggle-dark-btn">toggle dark</button>
+    <br /><br /><br />
+    <button class="button icon__multicolor-path">Big Button</button>
+
+    <script>
+      const toggleDarkBtn = document.getElementById("toggle-dark-btn");
+      const htmlTag = document.querySelector("html");
+      toggleDarkBtn.addEventListener("click", () => {
+        htmlTag.classList.toggle("dark");
+      });
+    </script>
+  </body>
+</html>

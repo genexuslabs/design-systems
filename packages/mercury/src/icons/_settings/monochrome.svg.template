@@ -1,0 +1,79 @@
+<svg viewBox="0 0 $width$ $height$" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="icon-def">
+        $content$
+    </g>
+    <!-- on-surface -->
+    <style type="text/css" data-state="on-surface">
+        .on-surface-dark {
+          --icon-color: red;
+        }
+        .on-surface-light {
+          --icon-color: green;
+        }
+    </style>
+    <!-- on-primary -->
+    <style type="text/css" data-state="on-primary">
+        .on-primary-dark {
+          --icon-color: orange;
+        }
+        .on-primary-light {
+          --icon-color: blue;
+        }
+    </style>
+    <!-- on-primary-hover -->
+    <style type="text/css" data-state="on-primary--hover">
+        .on-primary--hover-dark {
+          --icon-color: pink;
+        }
+        .on-primary--hover-light {
+          --icon-color: purple;
+        }
+    </style>
+    <!-- on-primary-active -->
+    <style type="text/css" data-state="on-primary--active">
+        .on-primary--active-dark {
+          --icon-color: pink;
+        }
+        .on-primary--active-light {
+          --icon-color: purple;
+        }
+    </style>
+  </defs>
+  <!-- on-surface -->
+  <view id="on-surface" viewBox="$x-on-surface$ 0 $width$ $height$" />
+  <use
+    href="#icon-def"
+    x="$x-on-surface$"
+    y="0"
+    class="on-surface-$color-scheme$"
+    data-state="on-surface"
+  />
+  <!-- on-primary -->
+  <view id="on-primary" viewBox="$x-on-primary$ 0 $width$ $height$" />
+  <use
+    href="#icon-def"
+    x="$x-on-primary$"
+    y="0"
+    class="on-primary-$color-scheme$"
+    data-state="on-primary"
+  />
+  <!-- on-primary hover -->
+  <view id="on-primary--hover" viewBox="$x-on-primary--hover$ 0 $width$ $height$" />
+  <use
+    href="#icon-def"
+    x="$x-on-primary--hover$"
+    y="0"
+    class="on-primary--hover-$color-scheme$"
+    data-state="on-primary--hover"
+  />
+  <!-- on-primary active -->
+  <view id="on-primary--active" viewBox="$x-on-primary--active$ 0 $width$ $height$" />
+  <use
+    href="#icon-def"
+    x="$x-on-primary--active$"
+    y="0"
+    class="on-primary--active-$color-scheme$"
+    data-state="on-primary--active"
+  />
+</svg>
