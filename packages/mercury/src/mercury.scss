@@ -54,6 +54,7 @@
 
   // Font face
   $font-face: true,
+  $font-face-path: "./assets/fonts/",
 
   // Base
   $base-classes: true,
@@ -137,7 +138,7 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 300;
-      src: url("../src/assets/fonts/Inter_Light.woff2") format("woff2");
+      src: url("#{$font-face-path}Inter_Light.woff2");
       font-display: swap;
     }
 
@@ -146,7 +147,7 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 400;
-      src: url("../src/assets/fonts/Inter_Regular.woff2") format("woff2");
+      src: url("#{$font-face-path}Inter_Regular.woff2");
       font-display: swap;
     }
 
@@ -155,7 +156,7 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 600;
-      src: url("../src/assets/fonts/Inter_SemiBold.woff2") format("woff2");
+      src: url("#{$font-face-path}Inter_SemiBold.woff2");
       font-display: swap;
     }
 
@@ -164,7 +165,7 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 700;
-      src: url("../src/assets/fonts/Inter_Bold.woff2") format("woff2");
+      src: url("#{$font-face-path}Inter_Bold.woff2");
       font-display: swap;
     }
 
@@ -173,7 +174,7 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 800;
-      src: url("../src/assets/fonts/Inter_ExtraBold.woff2") format("woff2");
+      src: url("#{$font-face-path}Inter_ExtraBold.woff2");
       font-display: swap;
     }
   }
