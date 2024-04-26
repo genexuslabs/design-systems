@@ -54,7 +54,7 @@
 
   // Font face
   $font-face: true,
-  $font-face-path: "./assets/fonts/",
+  $font-face-path: "../assets/fonts/",
 
   // Base
   $base-classes: true,
@@ -106,6 +106,9 @@
     @if $tokens and $font {
       font-size: var(--mer-body__font-size);
       line-height: var(--mer-body__line-height);
+      * {
+        line-height: var(--mer-body__line-height);
+      }
     }
     @if $font-face {
       font-family: var(--mer-font-family--primary);
