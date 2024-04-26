@@ -36,7 +36,7 @@ function readDirectoriesAndFiles(directoryPath) {
   const files = fs.readdirSync(directoryPath);
 
   // Filter out only directories
-  const directories = files.filter((file) =>
+  const directories = files.filter(file =>
     fs.statSync(path.join(directoryPath, file)).isDirectory()
   );
 
@@ -44,7 +44,7 @@ function readDirectoriesAndFiles(directoryPath) {
   const result = [];
 
   // Iterate over each directory
-  directories.forEach((directory) => {
+  directories.forEach(directory => {
     const categoryName = directory;
     const icons = [];
 
@@ -55,11 +55,11 @@ function readDirectoriesAndFiles(directoryPath) {
 
     // Filter out only SVG files
     const svgFiles = filesInDirectory.filter(
-      (file) => path.extname(file).toLowerCase() === ".svg"
+      file => path.extname(file).toLowerCase() === ".svg"
     );
 
     // Add each SVG file to the icons array
-    svgFiles.forEach((svgFile) => {
+    svgFiles.forEach(svgFile => {
       icons.push(path.parse(svgFile).name);
     });
 
@@ -76,7 +76,7 @@ function writeSassFiles(iconsLists) {
     fs.mkdirSync(OUTPUT_DIRECTORY);
   }
 
-  iconsLists.forEach((iconsList) => {
+  iconsLists.forEach(iconsList => {
     if (!iconsList.icons.length) {
       //only proceed if the list is not empty
       return;
@@ -136,11 +136,11 @@ function monochromeStyles(iconsList) {
   let output = "";
   let list = "";
   const category = iconsList.categoryName;
-  iconsList.icons.forEach((icon) => {
+  iconsList.icons.forEach(icon => {
     list += `
   // ${icon}.svg`;
-    const states = Object.keys(statesJson[category][icon]["states"]);
-    states.forEach((state) => {
+    const states = Object.keys(statesJson[category]["states"]);
+    states.forEach(state => {
       list += `
   &-${icon}--${state}-light {
     --icon-path :url("#{$icons-path}icons/${category}/light/${icon}.svg#${state}");
@@ -163,7 +163,7 @@ function multicolorStyles(iconsList) {
   let output = "";
   let list = "";
   const category = iconsList.categoryName;
-  iconsList.icons.forEach((icon) => {
+  iconsList.icons.forEach(icon => {
     list += `
   // ${icon}.svg
   &-${icon}--enabled-light {
@@ -211,38 +211,40 @@ function writeImportScss(iconsLists) {
   const sassFileName = `icons-selectors.scss`;
   const sassFilePath = path.join(OUTPUT_DIRECTORY, sassFileName);
 
-  let sassContentMonochrome = "";
+  let iconsListsOutput = `@mixin icons-lists($icons-path: "./assets/icons") {`;
 
   /* --------------------------
   Import monochrome icons lists
   --------------------------- */
 
+  let sassContentMonochrome = "";
   if (monochromeLists.length) {
-    sassContentMonochrome += `//Monochrome lists
+    let iconsImports = "";
+    sassContentMonochrome += `
+    
     `;
-
-    monochromeLists.forEach((list) => {
-      sassContentMonochrome += `
-@import "${MONOCHROME_ID}/${list}";`;
+    monochromeLists.forEach(list => {
+      iconsImports += `@import "${MONOCHROME_ID}/${list}";\n`;
     });
-
-    let allMonochromeLists = `
-$all-monochrome-lists: (`;
+    iconsListsOutput += `
+  ${iconsImports}
+  $all-monochrome-lists: (`;
     monochromeLists.forEach((list, i) => {
-      allMonochromeLists += `
-  ${list}: $icons-${list}`;
+      iconsListsOutput += `
+    ${list}: $icons-${list}`;
 
       if (i === monochromeLists.length - 1) {
-        allMonochromeLists += `
-);`;
+        iconsListsOutput += `
+  );`;
       } else {
-        allMonochromeLists += `,`;
+        iconsListsOutput += `,`;
       }
     });
 
     sassContentMonochrome += `
-    ${allMonochromeLists}`;
+    ${iconsListsOutput}`;
   }
+  console.log("iconsListsOutput", iconsListsOutput);
 
   /* --------------------------
   Import multicolor icons lists
@@ -252,41 +254,41 @@ $all-monochrome-lists: (`;
   if (multicolorLists.length) {
     let iconsImports = "";
     sassContentMulticolor += `
-    
-//Multicolor lists
+  
     `;
-    multicolorLists.forEach((list) => {
+    multicolorLists.forEach(list => {
       iconsImports += `@import "${MULTICOLOR_ID}/${list}";\n`;
     });
-    let allMulticolorLists = `
-@mixin icons-lists($icons-path: "./assets/icons") {
+    iconsListsOutput += `
   ${iconsImports}
   $all-multicolor-lists: (`;
     multicolorLists.forEach((list, i) => {
-      allMulticolorLists += `
+      iconsListsOutput += `
     ${list}: $icons-${list}`;
 
       if (i === multicolorLists.length - 1) {
-        allMulticolorLists += `
+        iconsListsOutput += `
   );`;
       } else {
-        allMulticolorLists += `,`;
+        iconsListsOutput += `,`;
       }
     });
 
     sassContentMulticolor += `
-    ${allMulticolorLists}
+    ${iconsListsOutput}
 }`;
   }
 
-  fs.writeFileSync(sassFilePath, sassContentMulticolor);
+  iconsListsOutput += `}`;
+
+  fs.writeFileSync(sassFilePath, iconsListsOutput);
 }
 
 /**
  * @description It clears the OUTPUT_DIRECTORY
  */
 function clearOutputDir() {
-  fs.rmSync(OUTPUT_DIRECTORY, { recursive: true, force: true }, (err) => {
+  fs.rmSync(OUTPUT_DIRECTORY, { recursive: true, force: true }, err => {
     if (err) {
       throw err;
     }
