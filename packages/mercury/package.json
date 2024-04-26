@@ -9,7 +9,8 @@
   "type": "module",
   "scripts": {
     "copy-assets": "fse copy --all --errorOnExist --dereference --preserveTimestamps --quiet src/assets/ dist/assets",
-    "build": "npm run svg-m && npm run svg-sass-m && npm run copy-assets && scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
+    "build": "npm run svg-m && npm run svg-sass-m && npm run copy-assets && npm run build.scss",
+    "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
     "test": "sass test/test.scss test/mercury.css",
     "test-watch": "sass --watch test/test.scss test/mercury.css",
     "svg": "process-svg ./src/icons/ ./src/assets/icons/ ./src/icons/_settings/multicolor.svg.template ./src/icons/_settings/monochrome.svg.template ./src/icons/_settings/states-monochrome.json",
