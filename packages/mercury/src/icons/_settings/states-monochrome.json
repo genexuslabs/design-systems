@@ -1,17 +1,16 @@
 {
   "monochrome": {
-    "path": {
+    "cat1": {
       "states": {
-        "on-surface": true,
+        "primary": true,
+        "primary--hover": true,
+        "primary--active": true,
+        "primary--disabled": true,
         "on-primary": true,
-        "on-primary--active": true
-      }
-    },
-    "stroke": {
-      "states": {
-        "on-surface": true,
-        "on-primary": true,
-        "on-primary--active": true
+        "on-primary--hover": true,
+        "on-primary--active": true,
+        "on-disabled": true,
+        "neutral": true
       }
     }
   }
