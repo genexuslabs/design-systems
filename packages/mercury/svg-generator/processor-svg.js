@@ -19,7 +19,7 @@ const SVG_FIGURES = [
   "line",
   "path",
   "polygon",
-  "polyline",
+  "polyline"
 ];
 
 const MULTICOLOR_TEMPLATE = readAllTextFile(MULTICOLOR_TEMPLATE_SVG);
@@ -33,7 +33,7 @@ let ch;
 
 clearOutputDir();
 
-files.forEach((file) => {
+files.forEach(file => {
   processSvg(file, readAllTextFile(file), getOutputPaths(file));
 });
 
@@ -41,7 +41,7 @@ files.forEach((file) => {
  * @description It removes the OUTPUT_DIR, and it then creates the folder.
  */
 function clearOutputDir() {
-  rmSync(OUTPUT_DIRECTORY, { recursive: true, force: true }, (err) => {
+  rmSync(OUTPUT_DIRECTORY, { recursive: true, force: true }, err => {
     if (err) {
       throw err;
     }
@@ -90,7 +90,7 @@ function getOutputPaths(file) {
 
   return {
     light: join(directoryLight, fileName),
-    dark: join(directoryDark, fileName),
+    dark: join(directoryDark, fileName)
   };
 }
 
@@ -168,19 +168,19 @@ function getTemplate(path) {
     if (iconStates !== undefined) {
       return {
         template: MONOCHROME_TEMPLATE,
-        states: iconStates,
+        states: iconStates
       };
     }
     //if iconStates is undefined, this is likely to be a multicolor icon
     return {
       template: MULTICOLOR_TEMPLATE,
-      states: undefined,
+      states: undefined
     };
   } else {
     //SOURCE_FOLDER/states-monochrome.json is needed to process monochrome icons.
     return {
       template: MULTICOLOR_TEMPLATE,
-      states: undefined,
+      states: undefined
     };
   }
 }
@@ -277,7 +277,7 @@ function parseContent(content) {
 
     if (cssClasses) {
       cssClasses = cssClasses.split(" ");
-      colorClass = cssClasses.find((cssClass) => cssClass.includes("--i"));
+      colorClass = cssClasses.find(cssClass => cssClass.includes("--i"));
       //figures that have a class '--i**' are multicolor icons. A single --i** is expected for every figure.
       if (colorClass !== undefined) {
         isMultiColor = true;
@@ -325,7 +325,7 @@ function removeUnusedVars(svg, content, path) {
       return usedVars.indexOf(item) === index;
     });
   }
-  return svg.replace(REGEX_REMOVE_VARS, (match) => {
+  return svg.replace(REGEX_REMOVE_VARS, match => {
     if (usedVars.includes(match.slice(0, 5))) {
       return match;
     }
@@ -353,19 +353,21 @@ function optimizeSvg(svg) {
           overrides: {
             cleanupIds: {
               preserve: [
-                "enabled",
-                "hover",
-                "active",
-                "disabled",
-                "on-surface",
+                "primary",
+                "primary--hover",
+                "primary--active",
+                "primary--disabled",
                 "on-primary",
+                "on-primary--hover",
                 "on-primary--active",
-              ],
-            },
-          },
-        },
-      },
-    ],
+                "on-disabled",
+                "neutral"
+              ]
+            }
+          }
+        }
+      }
+    ]
   }).data;
 }
 
@@ -379,16 +381,16 @@ function minifyCssVars(svg) {
     "--i06": "--f",
     "--i07": "--g",
     "--i08": "--h",
-    "--i09": "--i",
+    "--i09": "--i"
   };
 
-  return svg.replace(REGEX_USED_VARS, (match) => {
+  return svg.replace(REGEX_USED_VARS, match => {
     return map[match];
   });
 }
 
 function writeAllTextFile(filePath, data) {
-  writeFile(filePath, data, "utf8", (err) => {
+  writeFile(filePath, data, "utf8", err => {
     if (err) {
       console.error("Error writing to output file:", err);
       return;
