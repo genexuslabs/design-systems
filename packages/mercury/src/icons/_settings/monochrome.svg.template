@@ -3,53 +3,125 @@
     <g id="icon-def">
         $content$
     </g>
-    <!-- on-surface -->
-    <style type="text/css" data-state="on-surface">
-        .on-surface-dark {
-          --icon-color: red;
+    <!-- primary -->
+    <style type="text/css" data-state="primary">
+        .primary-dark {
+          --icon-color: #5BA7FF;
         }
-        .on-surface-light {
-          --icon-color: green;
+        .primary-light {
+          --icon-color: #2070CE;
         }
     </style>
-    <!-- on-primary -->
+    <!-- primary hover -->
+    <style type="text/css" data-state="primary--hover">
+        .primary--hover-dark {
+          --icon-color: #437DC0;
+        }
+        .primary--hover-light {
+          --icon-color: #437DC0;
+        }
+    </style>
+    <!-- primary active -->
+    <style type="text/css" data-state="primary--active">
+        .primary--active-dark {
+          --icon-color: #335884;
+        }
+        .primary--active-light {
+          --icon-color: #335884;
+        }
+    </style>
+    <!-- primary disabled -->
+    <style type="text/css" data-state="primary--disabled">
+        .primary--disabled-dark {
+          --icon-color: #333333;
+        }
+        .primary--disabled-light {
+          --icon-color: #B3B3B3;
+        }
+    </style>
+    <!-- on primary -->
     <style type="text/css" data-state="on-primary">
         .on-primary-dark {
-          --icon-color: orange;
+          --icon-color: #1A1A1A;
         }
         .on-primary-light {
-          --icon-color: blue;
+          --icon-color: #CCCCCC;
         }
     </style>
-    <!-- on-primary-hover -->
+    <!-- on primary hover -->
     <style type="text/css" data-state="on-primary--hover">
         .on-primary--hover-dark {
-          --icon-color: pink;
+          --icon-color: #437DC0;
         }
         .on-primary--hover-light {
-          --icon-color: purple;
+          --icon-color: #437DC0;
         }
     </style>
-    <!-- on-primary-active -->
+    <!-- on primary active -->
     <style type="text/css" data-state="on-primary--active">
         .on-primary--active-dark {
-          --icon-color: pink;
+          --icon-color: #FFFFFF;
         }
         .on-primary--active-light {
-          --icon-color: purple;
+          --icon-color: #363636;
+        }
+    </style>
+    <!-- on disabled -->
+    <style type="text/css" data-state="on-disabled">
+        .on-disabled-dark {
+          --icon-color: #666666;
+        }
+        .on-disabled-light {
+          --icon-color: #7F7F7F;
+        }
+    </style>
+    <!-- neutral -->
+    <style type="text/css" data-state="neutral">
+        .neutral-dark {
+          --icon-color: #B3B3B3;
+        }
+        .neutral-light {
+          --icon-color: #616161;
         }
     </style>
   </defs>
-  <!-- on-surface -->
-  <view id="on-surface" viewBox="$x-on-surface$ 0 $width$ $height$" />
+  <!-- primary -->
+  <view id="on-primary" viewBox="$x-primary$ 0 $width$ $height$" />
   <use
     href="#icon-def"
-    x="$x-on-surface$"
+    x="$x-primary$"
     y="0"
-    class="on-surface-$color-scheme$"
-    data-state="on-surface"
+    class="primary-$color-scheme$"
+    data-state="primary"
   />
-  <!-- on-primary -->
+  <!-- primary hover -->
+  <view id="primary--hover" viewBox="$x-primary--hover$ 0 $width$ $height$" />
+  <use
+    href="#icon-def"
+    x="$x-primary--hover$"
+    y="0"
+    class="primary--hover-$color-scheme$"
+    data-state="primary--hover"
+  />
+  <!-- primary active -->
+  <view id="primary--active" viewBox="$x-primary--active$ 0 $width$ $height$" />
+  <use
+    href="#icon-def"
+    x="$x-primary--active$"
+    y="0"
+    class="primary--active-$color-scheme$"
+    data-state="primary--active"
+  />
+  <!-- primary disabled -->
+  <view id="primary--disabled" viewBox="$x-primary--disabled$ 0 $width$ $height$" />
+  <use
+    href="#icon-def"
+    x="$x-primary--disabled$"
+    y="0"
+    class="primary--disabled-$color-scheme$"
+    data-state="primary--disabled"
+  />
+  <!-- on primary -->
   <view id="on-primary" viewBox="$x-on-primary$ 0 $width$ $height$" />
   <use
     href="#icon-def"
@@ -58,7 +130,7 @@
     class="on-primary-$color-scheme$"
     data-state="on-primary"
   />
-  <!-- on-primary hover -->
+  <!-- on primary hover -->
   <view id="on-primary--hover" viewBox="$x-on-primary--hover$ 0 $width$ $height$" />
   <use
     href="#icon-def"
@@ -67,7 +139,7 @@
     class="on-primary--hover-$color-scheme$"
     data-state="on-primary--hover"
   />
-  <!-- on-primary active -->
+  <!-- on primary active -->
   <view id="on-primary--active" viewBox="$x-on-primary--active$ 0 $width$ $height$" />
   <use
     href="#icon-def"
@@ -75,5 +147,23 @@
     y="0"
     class="on-primary--active-$color-scheme$"
     data-state="on-primary--active"
+  />
+  <!-- on disabled -->
+  <view id="on-disabled" viewBox="$x-on-disabled$ 0 $width$ $height$" />
+  <use
+    href="#icon-def"
+    x="$x-on-disabled$"
+    y="0"
+    class="on-disabled-$color-scheme$"
+    data-state="on-disabled"
+  />
+  <!-- neutral -->
+  <view id="neutral" viewBox="$x-neutral$ 0 $width$ $height$" />
+  <use
+    href="#icon-def"
+    x="$x-neutral$"
+    y="0"
+    class="neutral-$color-scheme$"
+    data-state="neutral"
   />
 </svg>
