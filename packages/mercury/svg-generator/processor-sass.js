@@ -208,10 +208,10 @@ function multicolorStyles(iconsList) {
  */
 function writeImportScss(iconsLists) {
   // Create .sass file
-  const sassFileName = `icons-selectors.scss`;
+  const sassFileName = `svg-generator-icons-lists.scss`;
   const sassFilePath = path.join(OUTPUT_DIRECTORY, sassFileName);
 
-  let iconsListsOutput = `@mixin icons-lists($icons-path: "./assets/icons") {`;
+  let iconsListsOutput = `@mixin svg-generator-icons-lists($icons-path: "./assets/icons") {`;
 
   /* --------------------------
   Import monochrome icons lists

@@ -1,54 +1,298 @@
 //monochrome
-@mixin button-icon-style-monochrome(
-  $input-selector,
-  $output-selector,
-  $light: true,
-  $dark: true,
-  $on-surface: true,
-  $on-primary: true,
-  $on-primary-active: true
-) {
-  //light
-  @if $light {
-    #{$output-selector} {
-      @if $on-surface {
-        &--on-surface {
-          @extend #{$input-selector}--on-surface-light !optional;
+// @mixin button-icon-style-monochrome(
+//   $input-selector,
+//   $output-selector,
+//   $light: true,
+//   $dark: true,
+//   $primary: true,
+//   $primary-hover: true,
+//   $primary-active: true,
+//   $primary-disabled: true,
+//   $on-primary: true,
+//   $on-primary-hover: true,
+//   $on-primary-active: true,
+//   $on-disabled: true,
+//   $neutral: true
+// ) {
+//   //light
+//   @if $light {
+//     #{$output-selector} {
+//       @if $primary {
+//         &--primary-light {
+//           @extend #{$input-selector}--primary-light !optional;
+//         }
+//       }
+//       @if $primary-hover {
+//         &--primary-hover-light {
+//           @extend #{$input-selector}--primary-hover-light !optional;
+//         }
+//       }
+//       @if $primary-active {
+//         &--primary-active-light {
+//           @extend #{$input-selector}--primary-active-light !optional;
+//         }
+//       }
+//       @if $primary-disabled {
+//         &--primary-disabled-light {
+//           @extend #{$input-selector}--primary-disabled-light !optional;
+//         }
+//       }
+//       @if $on-primary {
+//         &--on-primary-light {
+//           @extend #{$input-selector}--on-primary-light !optional;
+//         }
+//       }
+//       @if $on-primary-hover {
+//         &--on-primary-hover-light {
+//           @extend #{$input-selector}--on-primary-hover-light !optional;
+//         }
+//       }
+//       @if $on-primary-active {
+//         &--on-primary-active-light {
+//           @extend #{$input-selector}--on-primary-active-light !optional;
+//         }
+//       }
+//       @if $on-disabled {
+//         &--on-disabled-light {
+//           @extend #{$input-selector}--on-disabled-light !optional;
+//         }
+//       }
+//       @if $neutral {
+//         &--neutral-light {
+//           @extend #{$input-selector}--neutral-light !optional;
+//         }
+//       }
+//     }
+//   }
+// }
+
+//   //dark
+//   @if $dark {
+//     #{$output-selector} {
+//       @if $primary {
+//         &--primary-dark {
+//           @extend #{$input-selector}--primary-dark !optional;
+//         }
+//       }
+//       @if $primary-hover {
+//         &--primary-hover-dark {
+//           @extend #{$input-selector}--primary-hover-dark !optional;
+//         }
+//       }
+//       @if $primary-active {
+//         &--primary-active-dark {
+//           @extend #{$input-selector}--primary-active-dark !optional;
+//         }
+//       }
+//       @if $primary-disabled {
+//         &--primary-disabled-dark {
+//           @extend #{$input-selector}--primary-disabled-dark !optional;
+//         }
+//       }
+//       @if $on-primary {
+//         &--on-primary-dark {
+//           @extend #{$input-selector}--on-primary-dark !optional;
+//         }
+//       }
+//       @if $on-primary-hover {
+//         &--on-primary-hover-dark {
+//           @extend #{$input-selector}--on-primary-hover-dark !optional;
+//         }
+//       }
+//       @if $on-primary-active {
+//         &--on-primary-active-dark {
+//           @extend #{$input-selector}--on-primary-active-dark !optional;
+//         }
+//       }
+//       @if $on-disabled {
+//         &--on-disabled-dark {
+//           @extend #{$input-selector}--on-disabled-dark !optional;
+//         }
+//       }
+//       @if $neutral {
+//         &--neutral-dark {
+//           @extend #{$input-selector}--neutral-dark !optional;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// //multicolor
+// @mixin button-icon-style-multicolor(
+//   $input-selector,
+//   $output-selector,
+//   $light: true,
+//   $dark: true,
+//   $enabled: true,
+//   $hover: true,
+//   $active: true,
+//   $disabled: true
+// ) {
+//   // enabled
+//   @if $enabled and $light {
+//     #{$output-selector} {
+//       @extend #{$input-selector}--enabled-light;
+//     }
+//   }
+//   @if $enabled and $dark {
+//     html.dark #{$output-selector} {
+//       @extend #{$input-selector}--enabled-dark;
+//     }
+//   }
+
+//   // :hover
+//   @if $hover and $light {
+//     #{$output-selector}:hover {
+//       @extend #{$input-selector}--hover-light;
+//     }
+//   }
+//   @if $hover and $dark {
+//     html.dark #{$output-selector}:hover {
+//       @extend #{$input-selector}--hover-dark;
+//     }
+//   }
+
+//   // :active
+//   @if $active and $light {
+//     #{$output-selector}:active {
+//       @extend #{$input-selector}--active-light;
+//     }
+//   }
+//   @if $active and $dark {
+//     html.dark #{$output-selector}:active {
+//       @extend #{$input-selector}--active-dark;
+//     }
+//   }
+
+//   // :disabled
+//   @if $disabled and $light {
+//     #{$output-selector}:disabled {
+//       @extend #{$input-selector}--disabled-light;
+//     }
+//   }
+//   @if $disabled and $dark {
+//     html.dark #{$output-selector}:disabled {
+//       @extend #{$input-selector}--disabled-dark;
+//     }
+//   }
+// }
+
+// Generate monochrome icons (light and/or dark)
+
+$light: true;
+$dark: true;
+$primary: true;
+$primary-hover: true;
+$primary-active: true;
+$primary-disabled: true;
+$on-primary: true;
+$on-primary-hover: true;
+$on-primary-active: true;
+$on-disabled: true;
+$neutral: true;
+
+@each $list-name, $list in $all-monochrome-lists {
+  @debug $list;
+  @each $icon in $list {
+    $input-selector: "%icon__#{$list-name}-#{$icon}";
+    $output-selector: ".icon__#{$list-name}-#{$icon}";
+    @if $light {
+      #{$output-selector} {
+        @if $primary {
+          &--primary-light {
+            @extend #{$input-selector}--primary-light !optional;
+          }
         }
-      }
-      @if $on-primary {
-        &--on-primary {
-          @extend #{$input-selector}--on-primary-light !optional;
+        @if $primary-hover {
+          &--primary-hover-light {
+            @extend #{$input-selector}--primary-hover-light !optional;
+          }
         }
-      }
-      @if $on-primary-active {
-        &--on-primary:active {
-          @extend #{$input-selector}--on-primary-active-light !optional;
+        @if $primary-active {
+          &--primary-active-light {
+            @extend #{$input-selector}--primary-active-light !optional;
+          }
         }
-      }
-    }
-  }
-  //dark
-  @if $dark {
-    html.dark #{$output-selector} {
-      @if $on-surface {
-        @if $dark {
-          &--on-surface {
-            @extend #{$input-selector}--on-surface-dark !optional;
+        @if $primary-disabled {
+          &--primary-disabled-light {
+            @extend #{$input-selector}--primary-disabled-light !optional;
+          }
+        }
+        @if $on-primary {
+          &--on-primary-light {
+            @extend #{$input-selector}--on-primary-light !optional;
+          }
+        }
+        @if $on-primary-hover {
+          &--on-primary-hover-light {
+            @extend #{$input-selector}--on-primary-hover-light !optional;
+          }
+        }
+        @if $on-primary-active {
+          &--on-primary-active-light {
+            @extend #{$input-selector}--on-primary-active-light !optional;
+          }
+        }
+        @if $on-disabled {
+          &--on-disabled-light {
+            @extend #{$input-selector}--on-disabled-light !optional;
+          }
+        }
+        @if $neutral {
+          &--neutral-light {
+            @extend #{$input-selector}--neutral-light !optional;
           }
         }
       }
-      @if $on-primary {
-        @if $dark {
-          &--on-primary {
+    }
+
+    //dark
+    @if $dark {
+      #{$output-selector} {
+        @if $primary {
+          &--primary-dark {
+            @extend #{$input-selector}--primary-dark !optional;
+          }
+        }
+        @if $primary-hover {
+          &--primary-hover-dark {
+            @extend #{$input-selector}--primary-hover-dark !optional;
+          }
+        }
+        @if $primary-active {
+          &--primary-active-dark {
+            @extend #{$input-selector}--primary-active-dark !optional;
+          }
+        }
+        @if $primary-disabled {
+          &--primary-disabled-dark {
+            @extend #{$input-selector}--primary-disabled-dark !optional;
+          }
+        }
+        @if $on-primary {
+          &--on-primary-dark {
             @extend #{$input-selector}--on-primary-dark !optional;
           }
         }
-      }
-      @if $on-primary-active {
-        @if $dark {
-          &--on-primary:active {
+        @if $on-primary-hover {
+          &--on-primary-hover-dark {
+            @extend #{$input-selector}--on-primary-hover-dark !optional;
+          }
+        }
+        @if $on-primary-active {
+          &--on-primary-active-dark {
             @extend #{$input-selector}--on-primary-active-dark !optional;
+          }
+        }
+        @if $on-disabled {
+          &--on-disabled-dark {
+            @extend #{$input-selector}--on-disabled-dark !optional;
+          }
+        }
+        @if $neutral {
+          &--neutral-dark {
+            @extend #{$input-selector}--neutral-dark !optional;
           }
         }
       }
@@ -56,88 +300,12 @@
   }
 }
 
-//multicolor
-@mixin button-icon-style-multicolor(
-  $input-selector,
-  $output-selector,
-  $light: true,
-  $dark: true,
-  $enabled: true,
-  $hover: true,
-  $active: true,
-  $disabled: true
-) {
-  // enabled
-  @if $enabled and $light {
-    #{$output-selector} {
-      @extend #{$input-selector}--enabled-light;
-    }
-  }
-  @if $enabled and $dark {
-    html.dark #{$output-selector} {
-      @extend #{$input-selector}--enabled-dark;
-    }
-  }
-
-  // :hover
-  @if $hover and $light {
-    #{$output-selector}:hover {
-      @extend #{$input-selector}--hover-light;
-    }
-  }
-  @if $hover and $dark {
-    html.dark #{$output-selector}:hover {
-      @extend #{$input-selector}--hover-dark;
-    }
-  }
-
-  // :active
-  @if $active and $light {
-    #{$output-selector}:active {
-      @extend #{$input-selector}--active-light;
-    }
-  }
-  @if $active and $dark {
-    html.dark #{$output-selector}:active {
-      @extend #{$input-selector}--active-dark;
-    }
-  }
-
-  // :disabled
-  @if $disabled and $light {
-    #{$output-selector}:disabled {
-      @extend #{$input-selector}--disabled-light;
-    }
-  }
-  @if $disabled and $dark {
-    html.dark #{$output-selector}:disabled {
-      @extend #{$input-selector}--disabled-dark;
-    }
-  }
-}
-
-@mixin icons-classes($all-monochrome-lists) {
-  // Generate monochrome icons (light and/or dark)
-  @each $list-name, $list in $all-monochrome-lists {
-    @debug $list;
-    @each $icon in $list {
-      .rojo {
-        color: red;
-      }
-      @include button-icon-style-monochrome(
-        $input-selector: "%icon__#{$list-name}-#{$icon}",
-        $output-selector: ".icon__#{$list-name}-#{$icon}"
-      );
-    }
-  }
-
-  //Generate multicolor icons (light and/or dark)
-  // @each $list-name, $list in $all-multicolor-lists {
-  //   @each $icon in $list {
-  //     @include button-icon-style-multicolor(
-  //       $input-selector: "%icon__#{$list-name}-#{$icon}",
-  //       $output-selector: ".icon__#{$list-name}-#{$icon}"
-  //     );
-  //   }
-  // }
-}
+//Generate multicolor icons (light and/or dark)
+// @each $list-name, $list in $all-multicolor-lists {
+//   @each $icon in $list {
+//     @include button-icon-style-multicolor(
+//       $input-selector: "%icon__#{$list-name}-#{$icon}",
+//       $output-selector: ".icon__#{$list-name}-#{$icon}"
+//     );
+//   }
+// }

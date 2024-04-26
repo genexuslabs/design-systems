@@ -1,7 +1,6 @@
 @import "tokens";
-@import "icons";
 
-@mixin button($with-icons, $all-monochrome-lists) {
+@mixin button() {
   :root {
     @include button-tokens();
   }
@@ -46,9 +45,5 @@
     // hover
     &:disabled {
     }
-  }
-
-  @if $with-icons {
-    @include icons-classes($all-monochrome-lists);
   }
 }

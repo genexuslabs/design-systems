@@ -1,0 +1,11 @@
+@mixin icons-lists($icons-path, $icons-for-button) {
+  @import "./sass/svg-generator-icons-lists.scss";
+  @include svg-generator-icons-lists($icons-path);
+
+  @if $icons-for-button {
+    @import "../button/icons";
+    @include buttons-icons-selectors(
+      $all-monochrome-lists: $all-monochrome-lists
+    );
+  }
+}
