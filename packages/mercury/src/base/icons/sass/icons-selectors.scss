@@ -1,12 +1,11 @@
-
-    
-//Multicolor lists
-    
-    
 @mixin icons-lists($icons-path: "./assets/icons") {
-  @import "multicolor/objects";
+  @import "./monochrome/cat1";
+
+  $all-monochrome-lists: (
+    cat1: $icons-cat1
+  );
+  @import "./multicolor/objects";
 
   $all-multicolor-lists: (
     objects: $icons-objects
-  );
-}
+  );}

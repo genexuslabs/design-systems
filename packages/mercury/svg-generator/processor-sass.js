@@ -139,7 +139,7 @@ function monochromeStyles(iconsList) {
   iconsList.icons.forEach(icon => {
     list += `
   // ${icon}.svg`;
-    const states = Object.keys(statesJson[category]["states"]);
+    const states = Object.keys(statesJson[category][icon]["states"]);
     states.forEach(state => {
       list += `
   &-${icon}--${state}-light {
@@ -224,7 +224,7 @@ function writeImportScss(iconsLists) {
     
     `;
     monochromeLists.forEach(list => {
-      iconsImports += `@import "${MONOCHROME_ID}/${list}";\n`;
+      iconsImports += `@import "./${MONOCHROME_ID}/${list}";\n`;
     });
     iconsListsOutput += `
   ${iconsImports}
@@ -244,7 +244,6 @@ function writeImportScss(iconsLists) {
     sassContentMonochrome += `
     ${iconsListsOutput}`;
   }
-  console.log("iconsListsOutput", iconsListsOutput);
 
   /* --------------------------
   Import multicolor icons lists
@@ -257,7 +256,7 @@ function writeImportScss(iconsLists) {
   
     `;
     multicolorLists.forEach(list => {
-      iconsImports += `@import "${MULTICOLOR_ID}/${list}";\n`;
+      iconsImports += `@import "./${MULTICOLOR_ID}/${list}";\n`;
     });
     iconsListsOutput += `
   ${iconsImports}

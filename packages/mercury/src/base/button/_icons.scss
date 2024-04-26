@@ -116,24 +116,28 @@
   }
 }
 
-@mixin icons-classes() {
+@mixin icons-classes($all-monochrome-lists) {
   // Generate monochrome icons (light and/or dark)
-  // @each $list-name, $list in $all-monochrome-lists {
-  //   @each $icon in $list {
-  //     @include button-icon-style-monochrome(
-  //       $input-selector: "%icon__#{$list-name}-#{$icon}",
-  //       $output-selector: ".icon__#{$list-name}-#{$icon}"
-  //     );
-  //   }
-  // }
-
-  //Generate multicolor icons (light and/or dark)
-  @each $list-name, $list in $all-multicolor-lists {
+  @each $list-name, $list in $all-monochrome-lists {
+    @debug $list;
     @each $icon in $list {
-      @include button-icon-style-multicolor(
+      .rojo {
+        color: red;
+      }
+      @include button-icon-style-monochrome(
         $input-selector: "%icon__#{$list-name}-#{$icon}",
         $output-selector: ".icon__#{$list-name}-#{$icon}"
       );
     }
   }
+
+  //Generate multicolor icons (light and/or dark)
+  // @each $list-name, $list in $all-multicolor-lists {
+  //   @each $icon in $list {
+  //     @include button-icon-style-multicolor(
+  //       $input-selector: "%icon__#{$list-name}-#{$icon}",
+  //       $output-selector: ".icon__#{$list-name}-#{$icon}"
+  //     );
+  //   }
+  // }
 }

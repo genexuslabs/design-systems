@@ -12,6 +12,7 @@ const OUTPUT_DIRECTORY = await process.argv[3];
 const MULTICOLOR_TEMPLATE_SVG = await process.argv[4];
 const MONOCHROME_TEMPLATE_SVG = await process.argv[5];
 const MONOCHROME_STATES_FILE = process.argv[6];
+
 const SVG_FIGURES = [
   "rect",
   "circle",
@@ -97,14 +98,15 @@ function getOutputPaths(file) {
 function processSvg(path, data, output) {
   ch = cheerio.load(data, { xmlMode: true });
   const chSvg = ch("svg");
-  const contents = chSvg.contents();
+  //const contents = chSvg.contents();
   const size = chSvg.attr("viewBox");
   const width = size.split(" ")[2];
   const height = size.split(" ")[3];
-  const content = parseContent(contents);
+  const content = parseContent(chSvg);
   const templateInfo = getTemplate(path);
   const template = templateInfo["template"];
   const states = templateInfo["states"];
+
   let svg = template;
 
   if (states !== undefined) {
@@ -200,23 +202,30 @@ function getIconName(fileNameExtension) {
 function getIconStates(stateObj, iconPath, i = 0) {
   // i has to be the index of the category folder in the path, or the icon name.
 
-  // Base case: if obj is not an object or is null, return undefined
-  if (typeof stateObj !== "object" || stateObj === null) {
-    return undefined;
+  const iconCategory = iconPath[0];
+  const iconName = iconPath[1];
+
+  let categoryFound = false;
+  for (let cat in stateObj) {
+    if (cat === iconCategory) {
+      categoryFound = true;
+      break;
+    }
   }
-
-  const key = [iconPath[i]];
-
-  // Check if the current object has the desired key
-  if (stateObj.hasOwnProperty(key)) {
-    // If the key has a "states" property, return its value
-    if (stateObj[key].hasOwnProperty("states")) {
-      return stateObj[key]["states"];
+  if (categoryFound) {
+    let iconFound = false;
+    for (let icon in stateObj[iconCategory]) {
+      if (icon === iconName) {
+        iconFound = true;
+        break;
+      }
+    }
+    if (iconFound) {
+      return stateObj[iconCategory][iconName].states;
     } else {
-      return getIconStates(stateObj[key], iconPath, i + 1);
+      return undefined;
     }
   } else {
-    //icon not found
     return undefined;
   }
 }
@@ -228,7 +237,6 @@ function setSize(svg, width, height) {
 function setContent(svg, content) {
   return svg.replace("$content$", content);
 }
-
 function setX(svg, width, states) {
   const size = parseInt(width);
 
@@ -248,6 +256,7 @@ function setX(svg, width, states) {
         counter++;
       }
     }
+
     return svg;
   }
 }
@@ -354,12 +363,12 @@ function optimizeSvg(svg) {
             cleanupIds: {
               preserve: [
                 "primary",
-                "primary--hover",
-                "primary--active",
-                "primary--disabled",
+                "primary-hover",
+                "primary-active",
+                "primary-disabled",
                 "on-primary",
-                "on-primary--hover",
-                "on-primary--active",
+                "on-primary-hover",
+                "on-primary-active",
                 "on-disabled",
                 "neutral"
               ]

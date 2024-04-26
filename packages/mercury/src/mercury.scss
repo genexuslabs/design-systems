@@ -14,7 +14,7 @@
 
 // Other
 @import "./mixins";
-@import "./base/icons/sass/icons-selectors.scss";
+@import "./base/icons/sass/icons-selectors";
 
 // Base
 @import "./base/button/styles";
@@ -59,7 +59,7 @@
   // Base
   $base-classes: true,
   $button-classes: true,
-  $buttons-classes-with-icons: true,
+  $buttons-classes-with-icons: false,
 
   // Components
   $components: true,
@@ -117,19 +117,22 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
+  //                 Icons
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $icons and $icons-path {
+    // Define global variable to hold $all-monochrome-lists
+    $all-monochrome-lists: null !global;
+    @include icons-lists($icons-path: $icons-path);
+    @debug $all-monochrome-lists;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
   //                 Base
   // - - - - - - - - - - - - - - - - - - - -
   @if $base-classes {
     @if $button-classes {
-      @include button($buttons-classes-with-icons);
+      @include button($buttons-classes-with-icons, $all-monochrome-lists);
     }
-  }
-
-  // - - - - - - - - - - - - - - - - - - - -
-  //                 Icons
-  // - - - - - - - - - - - - - - - - - - - -
-  @if $icons and $icons-path {
-    @include icons-lists($icons-path: $icons-path);
   }
 
   // - - - - - - - - - - - - - - - - - - - -
