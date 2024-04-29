@@ -211,7 +211,7 @@ function writeImportScss(iconsLists) {
   const sassFileName = `svg-generator-icons-lists.scss`;
   const sassFilePath = path.join(OUTPUT_DIRECTORY, sassFileName);
 
-  let iconsListsOutput = `@mixin svg-generator-icons-lists($icons-path: "./assets/icons") {`;
+  let iconsListsOutput = ``;
 
   /* --------------------------
   Import monochrome icons lists
@@ -277,8 +277,6 @@ function writeImportScss(iconsLists) {
     ${iconsListsOutput}
 }`;
   }
-
-  iconsListsOutput += `}`;
 
   fs.writeFileSync(sassFilePath, iconsListsOutput);
 }
