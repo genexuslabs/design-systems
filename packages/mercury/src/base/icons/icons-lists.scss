@@ -1,8 +1,7 @@
-@import "./sass/svg-generator-icons-lists.scss";
 @import "../button/icons";
 
 @mixin icons-lists($icons-path, $icons-for-button) {
-  @include svg-generator-icons-lists($icons-path);
+  @import "./sass/svg-generator-icons-lists.scss";
 
   @if $icons-for-button {
     @include buttons-icons-selectors(
