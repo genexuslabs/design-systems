@@ -1,8 +1,5 @@
 %button-base {
-  display: inline-grid;
-  grid-auto-flow: column;
-  grid-auto-columns: max-content;
-  justify-content: center;
+  @include button-common-styles();
   gap: var(--spacing-un-spacing--s); // Used when the button has icons
   min-block-size: 32px;
   font-family: SourceSansPro_SemiBold;
@@ -108,12 +105,11 @@
 }
 
 %button-icon {
-  content: "";
-  display: block;
-  inline-size: var(--spacing-un-spacing--xl);
-  block-size: var(--spacing-un-spacing--xl);
-  -webkit-mask: var(--button-icon) 50% 50% / 100% 100% no-repeat;
-  background-color: currentColor;
+  @include button-icon-mask-common-styles(
+    $inline-size: var(--spacing-un-spacing--xl),
+    $block-size: var(--spacing-un-spacing--xl),
+    $mask-size: 100%
+  );
 }
 
 %button-icon-only {
