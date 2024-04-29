@@ -17,6 +17,7 @@
 
 // Components
 @import "./components/card";
+@import "./components/checkbox";
 @import "./components/dialog";
 @import "./components/dropdown";
 @import "./components/header";
@@ -69,6 +70,7 @@
   $components: true,
   $action-group: true,
   $card: true,
+  $checkbox: true,
   $dialog-primary: true,
   $dialog-secondary: true,
   $dropdown-primary: true,
@@ -239,6 +241,11 @@
     // card
     @if $card {
       @include card();
+    }
+
+    // checkbox
+    @if $checkbox {
+      @include checkbox();
     }
 
     // dialog-primary

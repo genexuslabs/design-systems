@@ -1,0 +1,142 @@
+%checkbox {
+  @extend %form-input__text;
+
+  --ch-checkbox__container-size: 16px;
+  --ch-checkbox__option-size: 10px;
+
+  color: var(--text-un-text__on-surface--positive);
+  gap: var(--spacing-un-spacing--m);
+
+  // Input
+  &__input {
+    border-color: var(--borders-un-border-color__strong);
+    border-radius: 3px;
+
+    &--focus {
+      border-color: var(--borders-un-border-color__focused);
+      border-width: 2px;
+    }
+
+    &--checked-and-indeterminate {
+      border-color: var(--accents-un-accent__primary);
+    }
+
+    // Not implemented yet in the control
+    &--error {
+      background-color: var(--colors-Foundation-un-color__red--100);
+    }
+
+    &--disabled {
+      border-color: var(--borders-un-border-color__disabled);
+    }
+  }
+
+  // Option
+  &__option {
+    &--checked {
+      color: var(--accents-un-accent__primary);
+    }
+
+    &--indeterminate {
+      color: var(--accents-un-accent__primary);
+    }
+
+    // Not implemented yet in the control
+    &--error {
+      color: var(--borders-un-border-color__error);
+    }
+
+    &--disabled {
+      color: var(--borders-un-border-color__disabled);
+    }
+  }
+
+  // Label
+  &__label--disabled {
+    color: var(--borders-un-border-color__disabled);
+  }
+}
+
+@mixin checkbox(
+  $checkbox-selector: ".checkbox",
+
+  $checkbox__input-selector: ".checkbox::part(input)",
+
+  $checkbox__input--disabled-selector: ".checkbox::part(input disabled)",
+
+  $checkbox__input--checked-selector: ".checkbox::part(input checked)",
+
+  $checkbox__input--indeterminate-selector:
+    ".checkbox::part(input indeterminate)",
+
+  $checkbox__input--error-selector: ".checkbox::part(input error)",
+
+  $checkbox__option--disabled-selector: ".checkbox::part(option disabled)",
+
+  $checkbox__option--checked-selector: ".checkbox::part(option checked)",
+
+  $checkbox__option--indeterminate-selector:
+    ".checkbox::part(option indeterminate)",
+
+  $checkbox__option--error-selector: ".checkbox::part(option error)",
+
+  $checkbox__label--disabled-selector: ".checkbox::part(label disabled)",
+
+  $add--disabled: true,
+
+  $add--error: true
+) {
+  #{$checkbox-selector} {
+    @extend %checkbox;
+  }
+
+  #{$checkbox__input-selector} {
+    @extend %checkbox__input;
+
+    &:focus {
+      @extend %checkbox__input--focus;
+    }
+  }
+
+  #{$checkbox__input--checked-selector} {
+    @extend %checkbox__input--checked-and-indeterminate;
+  }
+
+  #{$checkbox__input--indeterminate-selector} {
+    @extend %checkbox__input--checked-and-indeterminate;
+  }
+
+  #{$checkbox__option--checked-selector} {
+    @extend %checkbox__option--checked;
+  }
+
+  #{$checkbox__option--indeterminate-selector} {
+    @extend %checkbox__option--indeterminate;
+  }
+
+  // Disabled
+  @if $add--disabled {
+    #{$checkbox__input--disabled-selector} {
+      @extend %checkbox__input--disabled;
+    }
+
+    #{$checkbox__option--disabled-selector} {
+      @extend %checkbox__option--disabled;
+    }
+
+    #{$checkbox__label--disabled-selector} {
+      @extend %checkbox__label--disabled;
+    }
+  }
+
+  // Error
+  @if $add--error {
+    #{$checkbox__input--error-selector} {
+      @extend %checkbox__input--error;
+    }
+
+    #{$checkbox__option--error-selector} {
+      @extend %checkbox__option--error;
+    }
+  }
+}
