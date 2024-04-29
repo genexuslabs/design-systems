@@ -150,40 +150,31 @@ function getTemplate(path) {
   if (statesJson) {
     //states json is used for coloring monochrome icons
     let iconPath = path.split("\\");
+    const iconCategory = iconPath[0];
+    const iconName = iconPath[1];
 
-    if (iconPath.length === 2) {
-      // no category. icon is direct children of the source folder
-      iconPath.splice(0, 1);
+    let categoryFound = false;
+    let category;
+    for (let cat in statesJson) {
+      if (cat === iconCategory) {
+        categoryFound = true;
+        category = cat;
+        break;
+      }
     }
-    if (iconPath.length > 2) {
-      iconPath = iconPath.slice(-2);
+    if (categoryFound) {
+      let iconFound = false;
+      for (let icon in statesJson[category]) {
+        if (icon === iconName) {
+          iconFound = true;
+          break;
+        }
+      }
     }
-
-    //remove icon file extension
-    const fileNameExtension = iconPath[iconPath.length - 1];
-    const fileName = getIconName(fileNameExtension);
-    iconPath[iconPath.length - 1] = fileName;
-
-    //find the icon "states" in states.json. If "states" is returned it means this is a monochrome colored icon, otherwise it is considered a multicolor icon.
-    const iconStates = getIconStates(statesJson, iconPath);
-
-    if (iconStates !== undefined) {
-      return {
-        template: MONOCHROME_TEMPLATE,
-        states: iconStates
-      };
+    if (iconFound) {
+      return "monochrome";
     }
-    //if iconStates is undefined, this is likely to be a multicolor icon
-    return {
-      template: MULTICOLOR_TEMPLATE,
-      states: undefined
-    };
-  } else {
-    //SOURCE_FOLDER/states-monochrome.json is needed to process monochrome icons.
-    return {
-      template: MULTICOLOR_TEMPLATE,
-      states: undefined
-    };
+    return undefined; // is multicolor
   }
 }
 
