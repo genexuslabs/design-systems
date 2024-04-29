@@ -1,1 +1,11 @@
-@mixin svg-generator-icons-lists($icons-path: "./assets/icons") {}
+@mixin svg-generator-icons-lists($icons-path: "./assets/icons") {
+  @import "./monochrome/cat1";
+
+  $all-monochrome-lists: (
+    cat1: $icons-cat1
+  );
+  @import "./multicolor/objects";
+
+  $all-multicolor-lists: (
+    objects: $icons-objects
+  );}
