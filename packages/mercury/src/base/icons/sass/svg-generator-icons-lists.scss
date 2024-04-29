@@ -1,4 +1,4 @@
-@mixin svg-generator-icons-lists($icons-path: "./assets/icons") {
+
   @import "./monochrome/cat1";
 
   $all-monochrome-lists: (
@@ -8,4 +8,4 @@
 
   $all-multicolor-lists: (
     objects: $icons-objects
-  );}
+  );
