@@ -279,26 +279,6 @@
   }
 }
 
-@mixin button-classes() {
-  // Button primary
-  @include button-primary();
-
-  // Button secondary
-  @include button-secondary();
-
-  // Button tertiary
-  @include button-tertiary();
-
-  // Button icon only
-  @include button-icon-only();
-
-  // Button icon and text
-  @include button-icon-and-text();
-
-  // Button icon after and text
-  @include button-icon-after-and-text();
-}
-
 @mixin hyperlink($selector: ".text-link") {
   #{$selector} {
     @extend %text-link;

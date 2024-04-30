@@ -223,7 +223,23 @@
   @if $base-classes {
     // Button classes
     @if $button-classes {
-      @include button-classes();
+      // Button primary
+      @include button-primary();
+
+      // Button secondary
+      @include button-secondary();
+
+      // Button tertiary
+      @include button-tertiary();
+
+      // Button icon only
+      @include button-icon-only();
+
+      // Button icon and text
+      @include button-icon-and-text();
+
+      // Button icon after and text
+      @include button-icon-after-and-text();
     }
 
     // Form control classes
