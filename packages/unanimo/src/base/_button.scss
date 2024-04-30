@@ -104,27 +104,6 @@
   }
 }
 
-%button-icon {
-  @include button-icon-mask-common-styles(
-    $inline-size: var(--spacing-un-spacing--xl),
-    $block-size: var(--spacing-un-spacing--xl),
-    $mask-size: 100%
-  );
-}
-
-%button-icon-only {
-  padding-inline: var(--spacing-un-spacing--s);
-}
-
-%button-icon-and-text,
-%button-icon-after-and-text {
-  padding-inline: var(--spacing-un-spacing--l);
-}
-
-%button-icon-after-and-text--before {
-  order: 1;
-}
-
 %text-link {
   color: var(--link-un-link__font-color);
   font-size: 14px;
@@ -238,39 +217,8 @@
   }
 }
 
-@mixin button-classes() {
-  // Button primary
-  @include button-primary();
-
-  // Button secondary
-  @include button-secondary();
-
-  // Button tertiary
-  @include button-tertiary();
-
-  // Button with icon
-  .button-icon-only::before,
-  .button-icon-and-text::before,
-  .button-icon-after-and-text::before {
-    @extend %button-icon;
-  }
-
-  .button-icon-only {
-    @extend %button-icon-only;
-  }
-
-  .button-icon-and-text,
-  .button-icon-after-and-text {
-    @extend %button-icon-and-text;
-  }
-
-  .button-icon-after-and-text::before {
-    @extend %button-icon-after-and-text--before;
-  }
-}
-
-@mixin hyperlink() {
-  .text-link {
+@mixin hyperlink($selector: ".text-link") {
+  #{$selector} {
     @extend %text-link;
   }
 }

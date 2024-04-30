@@ -5,29 +5,29 @@
   justify-content: center;
 }
 
-@mixin button-icon-mask-common-styles(
-  $inline-size: var(--button-icon-size),
-  $block-size: var(--button-icon-size),
-  $mask-size: var(--button-icon-mask-size)
+@mixin icon-mask-common-styles(
+  $inline-size: var(--icon-size),
+  $block-size: var(--icon-size),
+  $mask-size: var(--icon-mask-size)
 ) {
   content: "";
   display: block;
   inline-size: $inline-size;
   block-size: $block-size;
-  -webkit-mask: no-repeat center / $mask-size var(--button-icon);
+  -webkit-mask: no-repeat center / $mask-size var(--icon-path);
   background-color: currentColor;
 }
 
-@mixin button-icon-background-common-styles(
-  $inline-size: var(--button-icon-size),
-  $block-size: var(--button-icon-size),
-  $background-size: var(--button-icon-background-size)
+@mixin icon-background-common-styles(
+  $inline-size: var(--icon-size),
+  $block-size: var(--icon-size),
+  $background-size: var(--icon-background-size)
 ) {
   content: "";
   display: block;
   inline-size: $inline-size;
   block-size: $block-size;
-  background: no-repeat center / $background-size var(--button-icon);
+  background: no-repeat center / $background-size var(--icon-path);
 }
 
 @mixin label-common-styles() {
