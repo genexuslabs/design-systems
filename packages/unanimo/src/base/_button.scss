@@ -269,8 +269,8 @@
   }
 }
 
-@mixin hyperlink() {
-  .text-link {
+@mixin hyperlink($selector: ".text-link") {
+  #{$selector} {
     @extend %text-link;
   }
 }
