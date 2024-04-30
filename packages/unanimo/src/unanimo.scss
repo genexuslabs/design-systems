@@ -19,6 +19,9 @@
 @import "./base/icons";
 @import "./base/typography";
 
+// Icons on components
+@import "./icons/button";
+
 // Components
 @import "./components/card";
 @import "./components/checkbox";
@@ -70,6 +73,9 @@
   $form-controls-classes: true,
   $icon-classes: true,
   $typography-classes: true,
+
+  // Icons
+  $icons-button: true,
 
   // Components
   $components: true,
@@ -231,15 +237,6 @@
 
       // Button tertiary
       @include button-tertiary();
-
-      // Button icon only
-      @include button-icon-only();
-
-      // Button icon and text
-      @include button-icon-and-text();
-
-      // Button icon after and text
-      @include button-icon-after-and-text();
     }
 
     // Form control classes
@@ -259,6 +256,21 @@
     @if $typography-classes {
       @include typography-classes();
     }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //           Icons on components
+  // - - - - - - - - - - - - - - - - - - - -
+  // Icon classes
+  @if $icons-button {
+    // Button icon only
+    @include button-icon-only();
+
+    // Button icon and text
+    @include button-icon-and-text();
+
+    // Button icon after and text
+    @include button-icon-after-and-text();
   }
 
   // - - - - - - - - - - - - - - - - - - - -
