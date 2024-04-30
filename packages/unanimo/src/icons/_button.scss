@@ -1,0 +1,61 @@
+%button-icon-only {
+  padding-inline: var(--spacing-un-spacing--s);
+}
+
+%button-icon-and-text,
+%button-icon-after-and-text {
+  padding-inline: var(--spacing-un-spacing--l);
+}
+
+%button-icon-after-and-text--before {
+  order: 1;
+}
+
+@mixin button-icon-only($selector: ".button-icon-only", $icon-path: null) {
+  #{$selector} {
+    @extend %button-icon-only;
+
+    @if $icon-path != null {
+      --icon-path: #{$icon-path};
+    }
+
+    &::before {
+      @extend %icon-mask--before;
+    }
+  }
+}
+
+@mixin button-icon-and-text(
+  $selector: ".button-icon-and-text",
+  $icon-path: null
+) {
+  #{$selector} {
+    @extend %button-icon-and-text;
+
+    @if $icon-path != null {
+      --icon-path: #{$icon-path};
+    }
+
+    &::before {
+      @extend %icon-mask--before;
+    }
+  }
+}
+
+@mixin button-icon-after-and-text(
+  $selector: ".button-icon-after-and-text",
+  $icon-path: null
+) {
+  #{$selector} {
+    @extend %button-icon-and-text;
+
+    @if $icon-path != null {
+      --icon-path: #{$icon-path};
+    }
+
+    &::before {
+      @extend %icon-mask--before;
+      @extend %button-icon-after-and-text--before;
+    }
+  }
+}

@@ -47,7 +47,7 @@
 }
 
 @mixin dialog__close-button-icon($icons-path: "") {
-  --button-icon: url("#{$icons-path}close.svg");
+  --icon-path: url("#{$icons-path}close.svg");
 }
 
 @mixin dialog-primary(
@@ -80,13 +80,10 @@
     $add--error: false
   );
 
-  #{$close-button-selector} {
-    @extend %button-icon-only;
-    @include dialog__close-button-icon($icons-path);
+  @include button-icon-only($selector: #{$close-button-selector});
 
-    &::before {
-      @extend %button-icon;
-    }
+  #{$close-button-selector} {
+    @include dialog__close-button-icon($icons-path);
   }
 }
 
@@ -120,12 +117,9 @@
     $add--error: false
   );
 
-  #{$close-button-selector} {
-    @extend %button-icon-only;
-    @include dialog__close-button-icon($icons-path);
+  @include button-icon-only($selector: #{$close-button-selector});
 
-    &::before {
-      @extend %button-icon;
-    }
+  #{$close-button-selector} {
+    @include dialog__close-button-icon($icons-path);
   }
 }

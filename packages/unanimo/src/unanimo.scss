@@ -16,7 +16,11 @@
 // Base classes
 @import "./base/button";
 @import "./base/form-controls";
+@import "./base/icons";
 @import "./base/typography";
+
+// Icons on components
+@import "./icons/button";
 
 // Components
 @import "./components/card";
@@ -67,7 +71,11 @@
   $base-classes: true,
   $button-classes: true,
   $form-controls-classes: true,
+  $icon-classes: true,
   $typography-classes: true,
+
+  // Icons
+  $icons-button: true,
 
   // Components
   $components: true,
@@ -221,7 +229,14 @@
   @if $base-classes {
     // Button classes
     @if $button-classes {
-      @include button-classes();
+      // Button primary
+      @include button-primary();
+
+      // Button secondary
+      @include button-secondary();
+
+      // Button tertiary
+      @include button-tertiary();
     }
 
     // Form control classes
@@ -231,10 +246,31 @@
       @include form-input__helper();
     }
 
+    // Icon classes
+    @if $icon-classes {
+      @include icon-mask();
+      @include icon-background();
+    }
+
     // Typography classes
     @if $typography-classes {
       @include typography-classes();
     }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //           Icons on components
+  // - - - - - - - - - - - - - - - - - - - -
+  // Icon classes
+  @if $icons-button {
+    // Button icon only
+    @include button-icon-only();
+
+    // Button icon and text
+    @include button-icon-and-text();
+
+    // Button icon after and text
+    @include button-icon-after-and-text();
   }
 
   // - - - - - - - - - - - - - - - - - - - -
