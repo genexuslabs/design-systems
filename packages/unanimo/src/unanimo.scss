@@ -16,6 +16,7 @@
 // Base classes
 @import "./base/button";
 @import "./base/form-controls";
+@import "./base/icons";
 @import "./base/typography";
 
 // Components
@@ -67,6 +68,7 @@
   $base-classes: true,
   $button-classes: true,
   $form-controls-classes: true,
+  $icon-classes: true,
   $typography-classes: true,
 
   // Components
@@ -229,6 +231,12 @@
       @include form-input();
       @include form-input__label();
       @include form-input__helper();
+    }
+
+    // Icon classes
+    @if $icon-classes {
+      @include icon-mask();
+      @include icon-background();
     }
 
     // Typography classes
