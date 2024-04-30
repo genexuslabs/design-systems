@@ -1,4 +1,18 @@
 /*----------------------
+Focus
+----------------------*/
+@mixin focus-style($outline: false) {
+  @if $outline == true {
+    outline-width: var(--mer-border__width--sm);
+    outline-style: solid;
+    outline-color: var(--mer-color__primary-blue--200);
+    outline-offset: -1px;
+  } @else {
+    border-color: var(--borders-un-border-color__focused);
+  }
+}
+
+/*----------------------
 Scrollbar
 ----------------------*/
 @mixin mer-scrollbar {
@@ -29,16 +43,6 @@ Scrollbar
   &::-webkit-scrollbar-corner {
     background: rgba(0, 0, 0, 0);
   }
-}
-
-/*----------------------
-Focus
-----------------------*/
-@mixin mer-focus {
-  outline-width: var(--mer-border__width--sm);
-  outline-style: solid;
-  outline-color: var(--mer-color__primary-blue--200);
-  outline-offset: -1px;
 }
 
 /*----------------------------------------------------
