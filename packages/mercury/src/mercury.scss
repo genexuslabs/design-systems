@@ -1,23 +1,23 @@
+// Base styles from packages/common
+@import "../../common/base";
+
+@import "./base/common";
+
 // Resets
 @import "../../common/resets";
 
-// Tokens > Primitive
+// Tokens
 @import "./tokens/primitive/border";
 @import "./tokens/primitive/color";
 @import "./tokens/primitive/elevation";
 @import "./tokens/primitive/font";
 @import "./tokens/primitive/spacing";
 @import "./tokens/primitive/timing";
-
-// Tokens > Semantic
 @import "./tokens/semantic/tokens";
 
-// Other
-@import "./mixins";
-@import "./base/icons/icons-lists";
-
-// Base
+// Base classes
 @import "./base/button/styles";
+@import "./base/icons/icons-lists";
 
 // Components
 @import "./components/checkbox/styles";
@@ -131,7 +131,7 @@
   // - - - - - - - - - - - - - - - - - - - -
   @if $base-classes {
     @if $button-classes {
-      @include button();
+      @include button-classes();
     }
   }
 
@@ -287,9 +287,9 @@
     }
   }
 
-  // - - - - - - - - - - - - - - - - - - - -
+  // - - - - - - - - - - - - - - - -  - - -
   //               Components
-  // - - - - - - - - - - - - - - - - - - - -
+  // - - - - - - - - - - - - - - - - - - -
   @if $components {
     @if $checkbox {
       @include checkbox();
@@ -299,3 +299,6 @@
     }
   }
 }
+
+//for testing purposes
+@include mercury();
