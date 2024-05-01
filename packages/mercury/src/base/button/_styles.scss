@@ -1,49 +1,175 @@
-@import "tokens";
+@import "../button/tokens";
 
-@mixin button() {
+%button-base {
+  @include button-common-styles();
+  border: var(--button-base__border-width);
+  border-radius: var(--button-base__border-radius);
+  block-size: var(--button-base__block-size);
+  border: var(--button-base__border-width) var(--button-base__border-style)
+    var(--button-base__border-color);
+  font-family: var(--button-base__font-family);
+  font-size: var(--button-base__font-size);
+  gap: var(--button__gap); // Used when the button has icons
+  line-height: var(--button-base__line-height);
+  padding-inline: var(--button-base__padding-inline);
+  text-transform: var(--button-base__text-transform);
+
+  &--focus-visible {
+    @include mer-focus($outline: true);
+  }
+}
+
+%button-primary {
+  @extend %button-base;
+  background-color: var(--button-primary__background-color);
+  border-color: var(--button-primary__border-color);
+  color: var(--button-primary__color);
+  background-color: green !important;
+
+  &--hover {
+    background-color: var(--button-primary__background-color--hover);
+    border-color: var(--button-primary__border-color--hover);
+    color: var(--button-primary__color--hover);
+  }
+
+  &--active {
+    background-color: var(--button-primary__background-color--active);
+    border-color: var(--button-primary__border-color--active);
+    color: var(--button-primary__color--active);
+  }
+
+  &--disabled {
+    background-color: var(--button-primary__background-color--disabled);
+    border-color: var(--button-primary__border-color--disabled);
+    color: var(--button-primary__color--disabled);
+  }
+}
+
+%button-secondary {
+  @extend %button-base;
+  background-color: var(--button-secondary__background-color);
+  border-color: var(--button-secondary__border-color);
+  color: var(--button-secondary__color);
+
+  &--hover {
+    background-color: var(--button-secondary__background-color--hover);
+    border-color: var(--button-secondary__border-color--hover);
+    color: var(--button-secondary__color--hover);
+  }
+
+  &--active {
+    background-color: var(--button-secondary__background-color--active);
+    border-color: var(--button-secondary__border-color--active);
+    color: var(--button-secondary__color--active);
+  }
+
+  &--disabled {
+    background-color: var(--button-secondary__background-color--disabled);
+    border-color: var(--button-secondary__border-color--disabled);
+    color: var(--button-secondary__color--disabled);
+  }
+}
+
+%button-tertiary {
+  @extend %button-base;
+  background-color: var(--button-tertiary__background-color);
+  border-color: var(--button-tertiary__border-color);
+  color: var(--button-tertiary__color);
+
+  &--hover {
+    background-color: var(--button-tertiary__background-color--hover);
+    border-color: var(--button-tertiary__border-color--hover);
+    color: var(--button-tertiary__color--hover);
+  }
+
+  &--active {
+    background-color: var(--button-tertiary__background-color--active);
+    border-color: var(--button-tertiary__border-color--active);
+    color: var(--button-tertiary__color--active);
+  }
+
+  &--disabled {
+    background-color: var(--button-tertiary__background-color--disabled);
+    border-color: var(--button-tertiary__border-color--disabled);
+    color: var(--button-tertiary__color--disabled);
+  }
+}
+
+@mixin button-primary($selector: ".button-primary", $add--disabled: true) {
+  #{$selector} {
+    @extend %button-primary;
+
+    &:hover {
+      @extend %button-primary--hover;
+    }
+
+    &:active {
+      @extend %button-primary--active;
+    }
+
+    @if $add--disabled {
+      &:disabled,
+      &--disabled {
+        @extend %button-primary--disabled;
+      }
+    }
+  }
+}
+
+@mixin button-secondary($selector: ".button-secondary", $add--disabled: true) {
+  #{$selector} {
+    @extend %button-secondary;
+
+    &:hover {
+      @extend %button-secondary--hover;
+    }
+
+    &:active {
+      @extend %button-secondary--active;
+    }
+
+    @if $add--disabled == true {
+      &:disabled,
+      &--disabled {
+        @extend %button-secondary--disabled;
+      }
+    }
+  }
+}
+
+@mixin button-tertiary($selector: ".button-tertiary", $add--disabled: true) {
+  #{$selector} {
+    @extend %button-tertiary;
+
+    &:hover {
+      @extend %button-tertiary--hover;
+    }
+
+    &:active {
+      @extend %button-tertiary--active;
+    }
+
+    @if $add--disabled == true {
+      &:disabled,
+      &--disabled {
+        @extend %button-tertiary--disabled;
+      }
+    }
+  }
+}
+
+@mixin button-classes() {
+  // Button tokens
   :root {
     @include button-tokens();
   }
-  /*----------------------
-    General button styles
-    ----------------------*/
-  .button {
-    font-family: var(--button__font-family);
-    padding-block-start: var(--button__padding-block);
-    padding-block-end: var(--button__padding-block);
-    padding-inline-start: var(--button__padding-inline);
-    padding-inline-end: var(--button__padding-inline);
-    height: var(--button__height);
-    font-weight: var(--button__font-weight);
-    color: var(--button__color);
-    border-radius: var(--button__border-radius);
-    border-width: var(--button__border-width);
-    border-style: var(--button__border-style);
-    border-color: var(--button-primary__border-color);
-  }
 
-  /*----------------------
-    Button primary
-    ----------------------*/
-  .button--primary {
-    background-color: var(--button-primary__background-color);
+  // Button primary
+  @include button-primary();
 
-    // hover
-    &:hover {
-      color: var(--button-primary__color--hover);
-      background-color: var(--button-primary__background-color--hover);
-      border-color: var(--button-primary__border-color--hover);
-    }
+  // Button secondary
+  @include button-secondary();
 
-    // active
-    &:active {
-      color: var(--button-primary__color--active);
-      background-color: var(--button-primary__background-color--active);
-      border-color: var(--button-primary__border-color--active);
-    }
-
-    // hover
-    &:disabled {
-    }
-  }
+  // Button tertiary
+  @include button-tertiary();
 }
