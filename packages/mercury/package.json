@@ -12,10 +12,10 @@
     "build": "npm npm run svg-sass-m && npm run copy-assets && npm run build.scss",
     "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
     "build--watch.scss": "scss-bundle --rootDir ./src --watch -e ./src/mercury.scss -o dist/mercury.scss",
-    "test": "sass test/test.scss  test/mercury.css",
+    "test": "sass test/test.scss  dist/css/mercury.css",
     "test--watch": "chokidar ./dist/mercury.scss -c \"npm run test\"",
     "svg": "node ./svg-generator/processor-svg.js ./src/icons/ ./src/assets/icons/ ./src/icons/_settings/multicolor.svg.template ./src/icons/_settings/monochrome.svg.template ./src/icons/_settings/states-monochrome.json",
-    "svg-sass": "node ./svg-generator/processor-sass.js ./src/icons/ ./src/base/icons/sass/ ./src/icons/_settings/states-monochrome.json",
+    "svg-sass": "node ./svg-generator/processor-sass.js ./src/icons/ ./src/base/icon/icons-lists/ ./src/icons/_settings/states-monochrome.json",
     "svg-old": "process-svg ./src/icons/ ./src/assets/icons/ ./src/icons/_settings/multicolor.svg.template ./src/icons/_settings/monochrome.svg.template ./src/icons/_settings/states-monochrome.json",
     "svg-sass-old": "process-sass ./src/assets/icons ./src/base/icons/sass/ ./src/icons/_settings/states-monochrome.json",
     "validate.ci": "npm run build"
