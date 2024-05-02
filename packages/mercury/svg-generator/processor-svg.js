@@ -109,6 +109,8 @@ function processSvg(path, data, output) {
 
   let svg = template;
 
+  //console.log("templateInfo", templateInfo);
+
   if (states !== undefined) {
     //only for monochrome icons. states is defined only for monochrome icons.
     svg = removeUnusedStates(svg, states);
@@ -150,11 +152,13 @@ function getTemplate(path) {
   if (statesJson) {
     //states json is used for coloring monochrome icons
     let iconPath = path.split("\\");
-    const iconCategory = iconPath[0];
-    const iconName = iconPath[1];
+    const iconCategory = iconPath[iconPath.length - 2];
+    const iconName = iconPath[iconPath.length - 1].split(".")[0];
 
     let categoryFound = false;
+    let iconFound = false;
     let category;
+    let iconValue;
     for (let cat in statesJson) {
       if (cat === iconCategory) {
         categoryFound = true;
@@ -163,18 +167,24 @@ function getTemplate(path) {
       }
     }
     if (categoryFound) {
-      let iconFound = false;
       for (let icon in statesJson[category]) {
         if (icon === iconName) {
           iconFound = true;
+          iconValue = icon;
           break;
         }
       }
     }
     if (iconFound) {
-      return "monochrome";
+      return {
+        template: MONOCHROME_TEMPLATE,
+        states: statesJson[category][iconValue]["states"]
+      };
     }
-    return undefined; // is multicolor
+    return {
+      template: MULTICOLOR_TEMPLATE,
+      states: undefined
+    };
   }
 }
 
