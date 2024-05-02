@@ -1,0 +1,125 @@
+@mixin icon-monochrome-selectors(
+  $input-selector,
+  $output-selector,
+  $enable-pseudo-selector: true,
+  $light: true,
+  $dark: true,
+  $primary: true,
+  $primary-hover: true,
+  $primary-active: true,
+  $primary-disabled: true,
+  $on-primary: true,
+  $on-primary-hover: true,
+  $on-primary-active: true,
+  $on-disabled: true,
+  $neutral: true
+) {
+  //light
+  @if $light {
+    #{$output-selector} {
+      &--primary {
+        @extend #{$input-selector}--primary-light !optional;
+      }
+      @if $primary-hover and $enable-pseudo-selector {
+        &--primary: hover;
+        &--primary-hover {
+          @extend #{$input-selector}--primary-hover-light !optional;
+        }
+      }
+      @if $primary-active {
+        &--primary:active,
+        &--primary-active {
+          @extend #{$input-selector}--primary-active-light !optional;
+        }
+      }
+      @if $primary-disabled {
+        &--primary:disabled,
+        &--primary-disabled {
+          @extend #{$input-selector}--primary-disabled-light !optional;
+        }
+      }
+      @if $on-primary {
+        &--on-primary {
+          @extend #{$input-selector}--on-primary-light !optional;
+        }
+      }
+      @if $on-primary-hover {
+        &--on-primary:hover,
+        &--on-primary-hover {
+          @extend #{$input-selector}--on-primary-hover-light !optional;
+        }
+      }
+      @if $on-primary-active {
+        &--on-primary:active,
+        &--on-primary-active {
+          @extend #{$input-selector}--on-primary-active-light !optional;
+        }
+      }
+      @if $on-disabled {
+        &--on-disabled {
+          @extend #{$input-selector}--on-disabled-light !optional;
+        }
+      }
+      @if $neutral {
+        &--neutral {
+          @extend #{$input-selector}--neutral-light !optional;
+        }
+      }
+    }
+  }
+  //dark
+  @if $dark {
+    html.dark #{$output-selector} {
+      @if $primary {
+        &--primary {
+          @extend #{$input-selector}--primary-dark !optional;
+        }
+      }
+      @if $primary-hover {
+        &--primary:hover,
+        &--primary-hover {
+          @extend #{$input-selector}--primary-hover-dark !optional;
+        }
+      }
+      @if $primary-active {
+        &--primary:active,
+        &--primary-active {
+          @extend #{$input-selector}--primary-active-dark !optional;
+        }
+      }
+      @if $primary-active {
+        &--primary:disabled,
+        &--primary-disabled {
+          @extend #{$input-selector}--primary-disabled-dark !optional;
+        }
+      }
+      @if $on-primary {
+        &--on-primary {
+          @extend #{$input-selector}--on-primary-dark !optional;
+        }
+      }
+      @if $on-primary-hover {
+        &--on-primary:hover,
+        &--on-primary-hover {
+          @extend #{$input-selector}--on-primary-hover-dark !optional;
+        }
+      }
+      @if $on-primary-active {
+        &--on-primary:active,
+        &--on-primary-active {
+          @extend #{$input-selector}--on-primary-active-dark !optional;
+        }
+      }
+      @if $on-disabled {
+        &--on-disabled {
+          @extend #{$input-selector}--on-disabled-dark !optional;
+        }
+      }
+      @if $neutral {
+        &--neutral {
+          @extend #{$input-selector}--neutral-dark !optional;
+        }
+      }
+    }
+  }
+}
