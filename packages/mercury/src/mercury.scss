@@ -16,8 +16,8 @@
 @import "./tokens/semantic/tokens";
 
 // Base classes
-@import "./base/button/styles";
-@import "./base/icons/icons-lists";
+@import "./base/button/button-styles";
+@import "./base/icon/icons-generator";
 
 // Components
 @import "./components/checkbox/styles";
@@ -50,7 +50,7 @@
 
   // Icons
   $icons: true,
-  $icons-path: "./assets/icons/",
+  $icons-path: "../assets/icons/",
 
   // Font face
   $font-face: true,
@@ -59,7 +59,6 @@
   // Base
   $base-classes: true,
   $button-classes: true,
-  $icons-for-button: true,
 
   // Components
   $components: true,
@@ -96,6 +95,56 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
+  //               Typography
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $font-face {
+    //light
+    @font-face {
+      font-family: "Inter_Light";
+      font-style: normal;
+      font-weight: 300;
+      src: url("#{$font-face-path}Inter_Light.woff2");
+      font-display: swap;
+    }
+
+    //regular
+    @font-face {
+      font-family: "Inter_Regular";
+      font-style: normal;
+      font-weight: 400;
+      src: url("#{$font-face-path}Inter_Regular.woff2");
+      font-display: swap;
+    }
+
+    //semi-bold
+    @font-face {
+      font-family: "Inter_SemiBold";
+      font-style: normal;
+      font-weight: 600;
+      src: url("#{$font-face-path}Inter_SemiBold.woff2");
+      font-display: swap;
+    }
+
+    //bold
+    @font-face {
+      font-family: "Inter_Bold";
+      font-style: normal;
+      font-weight: 700;
+      src: url("#{$font-face-path}Inter_Bold.woff2");
+      font-display: swap;
+    }
+
+    //extra-bold
+    @font-face {
+      font-family: "Inter_ExtraBold";
+      font-style: normal;
+      font-weight: 800;
+      src: url("#{$font-face-path}Inter_ExtraBold.woff2");
+      font-display: swap;
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
   //                  Body
   // - - - - - - - - - - - - - - - - - - - -
   body {
@@ -111,7 +160,7 @@
       }
     }
     @if $font-face {
-      font-family: var(--mer-font-family--primary);
+      font-family: var(--mer-font-family--inter-regular);
     }
     margin: 0;
   }
@@ -120,10 +169,7 @@
   //                 Icons
   // - - - - - - - - - - - - - - - - - - - -
   @if $icons {
-    @include icons-lists(
-      $icons-path: $icons-path,
-      $icons-for-button: $icons-for-button
-    );
+    @include icons-generator($icons-path: $icons-path);
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -132,56 +178,6 @@
   @if $base-classes {
     @if $button-classes {
       @include button-classes();
-    }
-  }
-
-  // - - - - - - - - - - - - - - - - - - - -
-  //               Typography
-  // - - - - - - - - - - - - - - - - - - - -
-  @if $font-face {
-    //light
-    @font-face {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 300;
-      src: url("#{$font-face-path}Inter_Light.woff2");
-      font-display: swap;
-    }
-
-    //regular
-    @font-face {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 400;
-      src: url("#{$font-face-path}Inter_Regular.woff2");
-      font-display: swap;
-    }
-
-    //semi-bold
-    @font-face {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 600;
-      src: url("#{$font-face-path}Inter_SemiBold.woff2");
-      font-display: swap;
-    }
-
-    //bold
-    @font-face {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 700;
-      src: url("#{$font-face-path}Inter_Bold.woff2");
-      font-display: swap;
-    }
-
-    //extra-bold
-    @font-face {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 800;
-      src: url("#{$font-face-path}Inter_ExtraBold.woff2");
-      font-display: swap;
     }
   }
 
@@ -299,6 +295,3 @@
     }
   }
 }
-
-//for testing purposes
-@include mercury();
