@@ -1,4 +1,4 @@
-@import "../button/tokens";
+@import "../button/button-tokens";
 
 %button-base {
   @include button-common-styles();
@@ -13,7 +13,6 @@
   line-height: var(--button-base__line-height);
   padding-inline: var(--button-base__padding-inline);
   text-transform: var(--button-base__text-transform);
-
   &--focus-visible {
     @include mer-focus($outline: true);
   }
@@ -24,7 +23,7 @@
   background-color: var(--button-primary__background-color);
   border-color: var(--button-primary__border-color);
   color: var(--button-primary__color);
-  background-color: green !important;
+  font-weight: var(--button-primary__font-weight);
 
   &--hover {
     background-color: var(--button-primary__background-color--hover);
@@ -50,6 +49,7 @@
   background-color: var(--button-secondary__background-color);
   border-color: var(--button-secondary__border-color);
   color: var(--button-secondary__color);
+  font-weight: var(--button-secondary__font-weight);
 
   &--hover {
     background-color: var(--button-secondary__background-color--hover);
@@ -75,6 +75,7 @@
   background-color: var(--button-tertiary__background-color);
   border-color: var(--button-tertiary__border-color);
   color: var(--button-tertiary__color);
+  font-weight: var(--button-tertiary__font-weight);
 
   &--hover {
     background-color: var(--button-tertiary__background-color--hover);

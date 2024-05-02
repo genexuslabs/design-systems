@@ -25,6 +25,7 @@
   --button-primary__background-color: var(--mer-accent__primary);
   --button-primary__border-color: var(--button-primary__background-color);
   --button-primary__color: var(--mer-text__on-primary);
+  --button-primary__font-weight: var(--mer-font__weight--semi-bold);
   //hover
   --button-primary__background-color--hover: var(--mer-accent__primary--hover);
   --button-primary__border-color--hover: var(
@@ -56,6 +57,7 @@
   --button-secondary__background-color: transparent;
   --button-secondary__border-color: var(--mer-border-color__neutral);
   --button-secondary__color: var(--mer-text__neutral);
+  --button-secondary__font-weight: var(--mer-font__weight--semi-bold);
   //hover
   --button-secondary__background-color--hover: transparent;
   --button-secondary__border-color--hover: var(
@@ -79,6 +81,7 @@
   --button-tertiary__background-color: transparent;
   --button-tertiary__border-color: transparent;
   --button-tertiary__color: var(--mer-text__primary);
+  --button-tertiary__font-weight: var(--mer-font__weight--semi-bold);
   //hover
   --button-tertiary__background-color--hover: transparent;
   --button-tertiary__border-color--hover: transparent;
