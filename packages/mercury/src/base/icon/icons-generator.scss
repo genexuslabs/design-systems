@@ -1,0 +1,114 @@
+@import "./monochrome-selectors.scss";
+
+@mixin icons-generator($icons-path) {
+  // 1.create icon common styles
+  // icon small
+  i.sm {
+    @include icon-background-common-styles(
+      var(--mer-spacing--sm),
+      var(--mer-spacing--sm),
+      contain
+    );
+  }
+  // icon small
+  i.md {
+    @include icon-background-common-styles(
+      var(--mer-spacing--md),
+      var(--mer-spacing--md),
+      contain
+    );
+  }
+  // icon small
+  i.lg {
+    @include icon-background-common-styles(
+      var(--mer-spacing--lg),
+      var(--mer-spacing--lg),
+      contain
+    );
+  }
+
+  @import "./svg-icons-lists/svg-generator-icons-lists.scss";
+
+  // 2.generate selector for icons (i) monochrome
+  // static icons do not implement states like: hover or active
+  @each $list-name, $list in $all-monochrome-lists {
+    @debug $list;
+    @each $icon in $list {
+      @include icon-monochrome-selectors(
+        $input-selector: "%icon__#{$list-name}-#{$icon}",
+        $output-selector: ".icon__#{$list-name}-#{$icon}",
+        $enable-pseudo-selector: false,
+        $primary: true,
+        $primary-hover: tre,
+        $primary-active: tre,
+        $primary-disabled: true,
+        $on-primary: true,
+        $on-primary-hover: tre,
+        $on-primary-active: true,
+        $on-disabled: true,
+        $neutral: true
+      );
+    }
+  }
+
+  // 3.generate multicolor icons selectors
+}
+
+@mixin button-icon-style-multicolor(
+  $input-selector,
+  $output-selector,
+  $light: true,
+  $dark: true,
+  $enabled: true,
+  $hover: true,
+  $active: true,
+  $disabled: true
+) {
+  // enabled
+  @if $enabled and $light {
+    #{$output-selector} {
+      @extend #{$input-selector}--enabled-light;
+    }
+  }
+  @if $enabled and $dark {
+    html.dark #{$output-selector} {
+      @extend #{$input-selector}--enabled-dark;
+    }
+  }
+
+  // :hover
+  @if $hover and $light {
+    #{$output-selector}:hover {
+      @extend #{$input-selector}--hover-light;
+    }
+  }
+  @if $hover and $dark {
+    html.dark #{$output-selector}:hover {
+      @extend #{$input-selector}--hover-dark;
+    }
+  }
+
+  // :active
+  @if $active and $light {
+    #{$output-selector}:active {
+      @extend #{$input-selector}--active-light;
+    }
+  }
+  @if $active and $dark {
+    html.dark #{$output-selector}:active {
+      @extend #{$input-selector}--active-dark;
+    }
+  }
+
+  // :disabled
+  @if $disabled and $light {
+    #{$output-selector}:disabled {
+      @extend #{$input-selector}--disabled-light;
+    }
+  }
+  @if $disabled and $dark {
+    html.dark #{$output-selector}:disabled {
+      @extend #{$input-selector}--disabled-dark;
+    }
+  }
+}
