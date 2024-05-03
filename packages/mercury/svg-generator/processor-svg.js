@@ -1,6 +1,6 @@
 import { glob } from "glob";
 import { readFileSync, writeFile, existsSync, mkdirSync, rmSync } from "fs";
-//import * as path from "path";
+import * as path from "path";
 import { dirname, basename, join } from "path";
 import { optimize } from "svgo";
 import * as cheerio from "cheerio";
@@ -109,8 +109,6 @@ function processSvg(path, data, output) {
 
   let svg = template;
 
-  //console.log("templateInfo", templateInfo);
-
   if (states !== undefined) {
     //only for monochrome icons. states is defined only for monochrome icons.
     svg = removeUnusedStates(svg, states);
@@ -148,12 +146,12 @@ function removeUnusedStates(template, states) {
   return templateHtml.html();
 }
 
-function getTemplate(path) {
+function getTemplate(iconPath) {
   if (statesJson) {
     //states json is used for coloring monochrome icons
-    let iconPath = path.split("\\");
-    const iconCategory = iconPath[iconPath.length - 2];
-    const iconName = iconPath[iconPath.length - 1].split(".")[0];
+    let iconPathArray = iconPath.split(path.sep);
+    const iconCategory = iconPathArray[iconPathArray.length - 2];
+    const iconName = iconPathArray[iconPathArray.length - 1].split(".")[0];
 
     let categoryFound = false;
     let iconFound = false;
