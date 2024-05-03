@@ -17,7 +17,7 @@
 
 // Base classes
 @import "./base/button/button-styles";
-@import "./base/icon/icons-generator";
+@import "./base/icon/icons-selectors-generator";
 
 // Components
 @import "./components/checkbox/styles";
@@ -59,6 +59,7 @@
   // Base
   $base-classes: true,
   $button-classes: true,
+  $buttons-with-icons: true,
 
   // Components
   $components: true,
@@ -169,7 +170,10 @@
   //                 Icons
   // - - - - - - - - - - - - - - - - - - - -
   @if $icons {
-    @include icons-generator($icons-path: $icons-path);
+    @include icons-selectors-generator(
+      $icons-path: $icons-path,
+      $buttons-with-icons: $buttons-with-icons
+    );
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -190,26 +194,26 @@
       @include foundation-colors--light();
     }
   }
-  @if $color and $tokens and $prefers-color-scheme-light {
-    @media (prefers-color-scheme: light) {
-      :root {
-        @include foundation-colors--light();
-      }
-    }
-  }
+  // @if $color and $tokens and $prefers-color-scheme-light {
+  //   @media (prefers-color-scheme: light) {
+  //     :root {
+  //       @include foundation-colors--light();
+  //     }
+  //   }
+  // }
   // Dark
   @if $color and $dark-theme and $tokens {
     :root.dark {
       @include foundation-colors--dark();
     }
   }
-  @if $color and $tokens and $prefers-color-scheme-dark {
-    @media (prefers-color-scheme: dark) {
-      :root {
-        @include foundation-colors--dark();
-      }
-    }
-  }
+  // @if $color and $tokens and $prefers-color-scheme-dark {
+  //   @media (prefers-color-scheme: dark) {
+  //     :root {
+  //       @include foundation-colors--dark();
+  //     }
+  //   }
+  // }
 
   // - - - - - - - - - - - - - - - - - - - -
   //              Other Tokens
