@@ -16,8 +16,6 @@
     "test--watch": "chokidar ./dist/mercury.scss -c \"npm run test\"",
     "svg": "node ./svg-generator/processor-svg.js ./src/icons/ ./src/assets/icons/ ./src/icons/_settings/multicolor.svg.template ./src/icons/_settings/monochrome.svg.template ./src/icons/_settings/states-monochrome.json",
     "svg-sass": "node ./svg-generator/processor-sass.js ./src/icons/ ./src/base/icon/icons-lists/ ./src/icons/_settings/states-monochrome.json",
-    "svg-old": "process-svg ./src/icons/ ./src/assets/icons/ ./src/icons/_settings/multicolor.svg.template ./src/icons/_settings/monochrome.svg.template ./src/icons/_settings/states-monochrome.json",
-    "svg-sass-old": "process-sass ./src/assets/icons ./src/base/icons/sass/ ./src/icons/_settings/states-monochrome.json",
     "validate.ci": "npm run build"
   },
   "license": "MIT",
