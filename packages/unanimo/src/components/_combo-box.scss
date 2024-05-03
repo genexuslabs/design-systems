@@ -1,0 +1,67 @@
+%combo-box__window {
+  background-color: var(--elevation-un-elevation--3);
+  border-radius: 4px;
+  box-shadow: var(--box-shadows-un-box-shadow--1);
+  padding: var(--spacing-un-spacing--xs);
+}
+
+%combo-box__item-selector {
+  border-radius: 4px;
+  padding-block: var(--spacing-un-spacing--s);
+  padding-inline: var(--spacing-un-spacing--m);
+}
+
+%combo-box__item--selected-selector {
+  background-color: var(--accents-un-accent__primary-dim--hover);
+}
+
+@mixin combo-box(
+  $combo-box-selector: ".combo-box",
+  $combo-box--disabled-selector: ".combo-box[disabled]",
+  $combo-box__placeholder-selector: ".combo-box::part(placeholder)",
+  $combo-box__window-selector: ".combo-box::part(window)",
+  $combo-box__item-selector: ".combo-box::part(item)",
+  $combo-box__item--selected-selector: ".combo-box::part(item selected)",
+  $add--disabled: true,
+  $add--placeholder: true,
+  $add--placeholder-var: true,
+  $add--error: true
+) {
+  // TODO: IMPROVE STYLE. Unanimo's implementation does not work well in Sidebar Menus
+
+  #{$combo-box-selector} {
+    @extend %form-input;
+
+    &:focus {
+      @extend %form-input--focus;
+    }
+
+    @if $add--placeholder-var {
+      @include form-input-placeholder-var();
+    }
+  }
+
+  @if $add--placeholder {
+    #{$combo-box__placeholder-selector} {
+      @extend %form-input__placeholder;
+    }
+  }
+
+  @if $add--disabled {
+    #{$combo-box--disabled-selector} {
+      @extend %form-input--disabled;
+    }
+  }
+
+  #{$combo-box__window-selector} {
+    @extend %combo-box__window;
+  }
+
+  #{$combo-box__item-selector} {
+    @extend %combo-box__item-selector;
+  }
+
+  #{$combo-box__item--selected-selector} {
+    @extend %combo-box__item--selected-selector;
+  }
+}
