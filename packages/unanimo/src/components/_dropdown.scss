@@ -116,6 +116,13 @@
 // .action-group-secondary::part(more-actions-button):hover,
 // .action-group-secondary .action-group-item::part(action):hover,
 
+/// @group Dropdown
+/// @param {String} $dropdown__expandable-button-selector [".dropdown-primary::part(expandable-button)"] -
+/// @param {String} $dropdown__window-selector [".dropdown-primary::part(window)"] -
+/// @param {String} $dropdown__action-selector [".dropdown-primary::part(action)"] -
+/// @param {String} $dropdown__expandable-action-selector [".dropdown-primary::part(action expandable)"] -
+/// @param {String} $dropdown-separator-selector [".dropdown-primary .dropdown-separator"] -
+/// @param {Boolean} $add-separator [true] -
 @mixin dropdown-primary(
   $dropdown__expandable-button-selector:
     ".dropdown-primary::part(expandable-button)",
@@ -168,6 +175,13 @@
   }
 }
 
+/// @group Dropdown
+/// @param {String} $dropdown__expandable-button-selector [".dropdown-secondary::part(expandable-button)"] -
+/// @param {String} $dropdown__window-selector [".dropdown-secondary::part(window)"] -
+/// @param {String} $dropdown__action-selector [".dropdown-secondary::part(action)"] -
+/// @param {String} $dropdown__expandable-action-selector [".dropdown-secondary::part(action expandable)"] -
+/// @param {String} $dropdown-separator-selector [".dropdown-secondary .dropdown-separator"] -
+/// @param {Boolean} $add-separator [true] -
 @mixin dropdown-secondary(
   $dropdown__expandable-button-selector:
     ".dropdown-secondary::part(expandable-button)",

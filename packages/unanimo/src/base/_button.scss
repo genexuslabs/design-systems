@@ -112,6 +112,36 @@
   text-decoration-line: underline;
 }
 
+/// @group Button
+/// @param {String} $selector [".button-primary"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @param {Boolean} $add--error [true] -
+/// @example scss - Default case: Using the `.button-primary` class.
+/// SCSS:
+///   @include button-primary();
+///
+/// @example markup
+/// HTML/render:
+///   <button class="button-primary" type="button"></button>
+///
+/// @example scss - Advanced case: Style a `button` element inside a Shadow Root.
+/// SCSS:
+///   my-component-with-shadow {
+///     @include button-primary(
+///       $selector: "my-component-with-shadow::part(my-button)",
+///       $add--disabled: false,
+///       $add--error: false
+///     );
+///   }
+///
+/// @example markup
+/// HTML/render:
+///   <my-component-with-shadow>
+///     #shadow root (open)
+///     |  <button part="my-button" type="button">
+///     |  </button>
+///   </my-component-with-shadow>
+///
 @mixin button-primary(
   $selector: ".button-primary",
   $add--disabled: true,
@@ -147,6 +177,36 @@
   }
 }
 
+/// @group Button
+/// @param {String} $selector [".button-secondary"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @param {Boolean} $add--error [true] -
+/// @example scss - Default case: Using the `.button-secondary` class.
+/// SCSS:
+///   @include button-secondary();
+///
+/// @example markup
+/// HTML/render:
+///   <button class="button-secondary" type="button"></button>
+///
+/// @example scss - Advanced case: Style a `button` element inside a Shadow Root.
+/// SCSS:
+///   my-component-with-shadow {
+///     @include button-secondary(
+///       $selector: "my-component-with-shadow::part(my-button)",
+///       $add--disabled: false,
+///       $add--error: false
+///     );
+///   }
+///
+/// @example markup
+/// HTML/render:
+///   <my-component-with-shadow>
+///     #shadow root (open)
+///     |  <button part="my-button" type="button">
+///     |  </button>
+///   </my-component-with-shadow>
+///
 @mixin button-secondary(
   $selector: ".button-secondary",
   $add--disabled: true,
@@ -182,6 +242,36 @@
   }
 }
 
+/// @group Button
+/// @param {String} $selector [".button-tertiary"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @param {Boolean} $add--error [true] -
+/// @example scss - Default case: Using the `.button-tertiary` class.
+/// SCSS:
+///   @include button-tertiary();
+///
+/// @example markup
+/// HTML/render:
+///   <button class="button-tertiary" type="button"></button>
+///
+/// @example scss - Advanced case: Style a `button` element inside a Shadow Root.
+/// SCSS:
+///   my-component-with-shadow {
+///     @include button-tertiary(
+///       $selector: "my-component-with-shadow::part(my-button)",
+///       $add--disabled: false,
+///       $add--error: false
+///     );
+///   }
+///
+/// @example markup
+/// HTML/render:
+///   <my-component-with-shadow>
+///     #shadow root (open)
+///     |  <button part="my-button" type="button">
+///     |  </button>
+///   </my-component-with-shadow>
+///
 @mixin button-tertiary(
   $selector: ".button-tertiary",
   $add--disabled: true,
@@ -217,6 +307,8 @@
   }
 }
 
+/// @group Hyperlink
+/// @param {String} $selector [".text-link"] -
 @mixin hyperlink($selector: ".text-link") {
   #{$selector} {
     @extend %text-link;

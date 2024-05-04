@@ -50,6 +50,13 @@
   --icon-path: url("#{$icons-path}close.svg");
 }
 
+/// @group Dialog
+/// @param {String} $dialog-selector [".dialog-primary::part(dialog)"] -
+/// @param {String} $backdrop-selector [".dialog-primary.ch-dialog--modal"] -
+/// @param {String} $header-selector [".dialog-primary::part(header)"] -
+/// @param {String} $caption-selector [".dialog-primary::part(caption)"] -
+/// @param {String} $close-button-selector [".dialog-primary::part(close-button)"] -
+/// @param {String} $icons-path [""] -
 @mixin dialog-primary(
   $dialog-selector: ".dialog-primary::part(dialog)",
   $backdrop-selector: ".dialog-primary.ch-dialog--modal",
@@ -87,6 +94,13 @@
   }
 }
 
+/// @group Dialog
+/// @param {String} $dialog-selector [".dialog-secondary::part(dialog)"] -
+/// @param {String} $backdrop-selector [".dialog-secondary.ch-dialog--modal"] -
+/// @param {String} $header-selector [".dialog-secondary::part(header)"] -
+/// @param {String} $caption-selector [".dialog-secondary::part(caption)"] -
+/// @param {String} $close-button-selector [".dialog-secondary::part(close-button)"] -
+/// @param {String} $icons-path [""] -
 @mixin dialog-secondary(
   $dialog-selector: ".dialog-secondary::part(dialog)",
   $backdrop-selector: ".dialog-secondary.ch-dialog--modal",

@@ -57,6 +57,21 @@
   }
 }
 
+/// @group Checkbox
+/// @param {String} $checkbox-selector [".checkbox"] -
+/// @param {String} $checkbox__input-selector [".checkbox::part(input)"] -
+/// @param {String} $checkbox__input--disabled-selector [".checkbox::part(input disabled)"] -
+/// @param {String} $checkbox__input--checked-selector [".checkbox::part(input checked)"] -
+/// @param {String} $checkbox__input--indeterminate-selector [".checkbox::part(input indeterminate)"] -
+/// @param {String} $checkbox__input--error-selector [".checkbox::part(input error)"] -
+/// @param {String} $checkbox__option--disabled-selector [".checkbox::part(option disabled)"] -
+/// @param {String} $checkbox__option--checked-selector [".checkbox::part(option checked)"] -
+/// @param {String} $checkbox__option--indeterminate-selector [".checkbox::part(option indeterminate)"] -
+/// @param {String} $checkbox__option--error-selector [".checkbox::part(option error)"] -
+/// @param {String} $checkbox__label--disabled-selector [".checkbox::part(label disabled)"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @param {Boolean} $add--error [true] -
+/// @param {Boolean} $add--label [true] -
 @mixin checkbox(
   $checkbox-selector: ".checkbox",
 
