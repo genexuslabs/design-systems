@@ -15,6 +15,17 @@
   background-color: var(--accents-un-accent__primary-dim--hover);
 }
 
+/// @group ComboBox
+/// @param {String} $combo-box-selector [".combo-box"] -
+/// @param {String} $combo-box--disabled-selector [".combo-box[disabled]"] -
+/// @param {String} $combo-box__placeholder-selector [".combo-box::part(placeholder)"] -
+/// @param {String} $combo-box__window-selector [".combo-box::part(window)"] -
+/// @param {String} $combo-box__item-selector [".combo-box::part(item)"] -
+/// @param {String} $combo-box__item--selected-selector [".combo-box::part(item selected)"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @param {Boolean} $add--placeholder [true] -
+/// @param {Boolean} $add--placeholder-var [true] -
+/// @param {Boolean} $add--error [true] -
 @mixin combo-box(
   $combo-box-selector: ".combo-box",
   $combo-box--disabled-selector: ".combo-box[disabled]",
