@@ -13,7 +13,7 @@ import { saveSvgOnDisk } from "./partials-svg/utilities.js";
 import {
   iconsColorsSchema,
   processedIconInfo,
-  colorScheme
+  colorScheme,
 } from "./partials-common/types.js";
 import { createMulticolorSvg } from "./partials-svg/create-multicolor-svg.js";
 import { createMonochromeSvg } from "./partials-svg/create-monochrome-svg.js";
@@ -26,6 +26,7 @@ import { log } from "./partials-svg/log.js";
 const SRC_DIRECTORY = await process.argv[2];
 const OUTPUT_DIRECTORY = await process.argv[3];
 const STATES_FILENAME = await process.argv[4];
+console.log("STATES_FILENAME", STATES_FILENAME);
 const LOG_PATH = await process.argv[5];
 const numberOfArgsProvided = process.argv.length;
 const shouldWriteToLog = !!LOG_PATH;
@@ -47,7 +48,7 @@ if (readyObj.ready) {
     .then((result: string[]) => {
       processIcons(result, readyObj.statesJson);
     })
-    .catch(error => {
+    .catch((error) => {
       const msg = `There was an error processing the icons. error: ${error}.`;
       log(msg, LOG_PATH, shouldWriteToLog);
       throw new Error(`${RED} ${msg} ${RESET_COLOR}`);
@@ -60,7 +61,7 @@ if (readyObj.ready) {
  */
 function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
   let processedIconsInfo: processedIconInfo[] = [];
-  iconsArray.forEach(iconPath => {
+  iconsArray.forEach((iconPath) => {
     const pathIsValid = validateIconPath(iconPath);
     if (!pathIsValid) {
       return;
@@ -217,7 +218,7 @@ const logProcessedIconsInfo = (
 ): void => {
   const processed: processedIconInfo[] = [];
   const notProcessed: processedIconInfo[] = [];
-  processedIconsInfo.forEach(processedIcon => {
+  processedIconsInfo.forEach((processedIcon) => {
     if (processedIcon.processed) {
       processed.push(processedIcon);
     } else {
@@ -232,7 +233,7 @@ const logProcessedIconsInfo = (
   ================================================
   Details:
   `;
-  processed.forEach(processed => {
+  processed.forEach((processed) => {
     msgProcessed += `
       icon path: ${processed.iconPath} 
       color scheme: ${processed.colorScheme}
@@ -248,7 +249,7 @@ const logProcessedIconsInfo = (
   ================================================
   Details:
   `;
-  notProcessed.forEach(notProcessed => {
+  notProcessed.forEach((notProcessed) => {
     msgNotProcessed += `
       icon path: ${notProcessed.iconPath} 
       color scheme: ${notProcessed.colorScheme}
@@ -266,7 +267,7 @@ const saveProcessedIconInfo = (
   processedIconsInfo.push({
     iconPath: iconPath,
     colorScheme: colorScheme,
-    processed: wasSavedOnDisk
+    processed: wasSavedOnDisk,
   });
 };
 
