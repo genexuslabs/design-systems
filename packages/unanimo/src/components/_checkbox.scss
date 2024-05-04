@@ -83,13 +83,14 @@
   $checkbox__label--disabled-selector: ".checkbox::part(label disabled)",
 
   $add--disabled: true,
-
-  $add--error: true
+  $add--error: true,
+  $add--label: true
 ) {
   #{$checkbox-selector} {
     @extend %checkbox;
   }
 
+  // Input
   #{$checkbox__input-selector} {
     @extend %checkbox__input;
 
@@ -97,7 +98,6 @@
       @extend %checkbox__input--focus;
     }
   }
-
   #{$checkbox__input--checked-selector} {
     @extend %checkbox__input--checked-and-indeterminate;
   }
@@ -106,6 +106,7 @@
     @extend %checkbox__input--checked-and-indeterminate;
   }
 
+  // Option
   #{$checkbox__option--checked-selector} {
     @extend %checkbox__option--checked;
   }
@@ -116,25 +117,32 @@
 
   // Disabled
   @if $add--disabled {
+    // Input
     #{$checkbox__input--disabled-selector} {
       @extend %checkbox__input--disabled;
     }
 
+    // Option
     #{$checkbox__option--disabled-selector} {
       @extend %checkbox__option--disabled;
     }
 
-    #{$checkbox__label--disabled-selector} {
-      @extend %checkbox__label--disabled;
+    // Label
+    @if $add--label {
+      #{$checkbox__label--disabled-selector} {
+        @extend %checkbox__label--disabled;
+      }
     }
   }
 
   // Error
   @if $add--error {
+    // Input
     #{$checkbox__input--error-selector} {
       @extend %checkbox__input--error;
     }
 
+    // Option
     #{$checkbox__option--error-selector} {
       @extend %checkbox__option--error;
     }
