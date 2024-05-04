@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "SVG Icon Generator: A Node.js tool for creating customizable SVG icons with color states like hover and active effects. It generates SVG icons and Sass placeholder selectors, simplifying integration into projects with generated CSS class names for scalable and dynamic iconography.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "noConfig": "node ./js/processor-svg.js",
     "noSrc": "node ./js/processor-svg.js ./js/states.json",
@@ -10,12 +11,11 @@
     "noDist": "node ./js/processor-svg.js ./js/states.json ./assets",
     "build": "npm run clean && tsc --build && npm run copy-json",
     "clean": "rimraf js/",
-    "svg": "node ./svg-sass-generator/js/processor-svg.js ./src/assets/icons/ ./src/assets/icons-proc/ ./src/assets/icons/color-states.json ./log",
-    "sass": "node ./js/processor-sass.js ./dist ./dist/sass",
+    "svg": "node ./js/processor-svg.js ./assets ./dist color-states.json ./log",
+    "sass": "node ./js/processor-sass.js ./dist ./sass",
     "html": "node ./js/processor-html.js ./dist ./log",
-    "watch": "tsc --watch",
     "clean-svg-js": "rimraf svg-sass-generator/js/",
-    "copy-json": "copyfiles -f svg-sass-generator/ts/partials-svg/*.json svg-sass-generator/js/partials-svg/",
+    "copy-json": "copyfiles -f ./ts/partials-svg/*.json ./js/partials-svg/",
     "watch": "tsc --watch",
     "build-svg": "npm run clean-svg-js && tsc --build && npm run copy-json"
   },
