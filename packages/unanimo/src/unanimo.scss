@@ -36,7 +36,6 @@
 @import "./components/slider";
 @import "./components/tab";
 @import "./components/tree-view";
-@import "./components/tree-view-navigation";
 
 @mixin unanimo(
   // Resets
@@ -97,8 +96,8 @@
   $slider-primary: true,
   $slider-secondary: true,
   $tab: true,
-  $tree-view: true,
-  $tree-view-navigation: true
+  $tree-view-primary: true,
+  $tree-view-secondary: true
 ) {
   // font-face
   @if $font-face {
@@ -359,14 +358,14 @@
       @include tab();
     }
 
-    // tree-view
-    @if $tree-view {
-      @include tree-view();
+    // tree-view-primary
+    @if $tree-view-primary {
+      @include tree-view-primary();
     }
 
-    // tree-view-navigation
-    @if $tree-view-navigation {
-      @include tree-view-navigation();
-    }
+    // tree-view-secondary
+    //  @if $tree-view-secondary {
+    //   @include tree-view-secondary();
+    // }
   }
 }
