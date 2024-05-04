@@ -14,31 +14,15 @@
     "build--watch.scss": "scss-bundle --rootDir ./src --watch -e ./src/mercury.scss -o dist/mercury.scss",
     "test": "sass test/test.scss  dist/css/mercury.css",
     "test--watch": "chokidar ./dist/mercury.scss -c \"npm run test\"",
-    "svg": "node ./svg-sass-generator/js/processor-svg.js ./src/assets/icons/ ./src/assets/icons-proc/ ./src/assets/icons/color-states.json ./log",
-    "svg-sass": "node ./svg-sass-generator/js/processor-sass.js ./src/assets/icons/ ./src/base/icon/sass",
-    "clean-svg-js": "rimraf svg-sass-generator/js/",
-    "copy-json": "copyfiles -f svg-sass-generator/ts/partials-svg/*.json svg-sass-generator/js/partials-svg/",
-    "watch-svg": "tsc --watch",
-    "build-svg": "npm run clean-svg-js && tsc --build && npm run copy-json",
     "validate.ci": "npm run build"
   },
   "license": "MIT",
   "devDependencies": {
-    "ajv": "^8.12.0",
     "@atao60/fse-cli": "^0.1.9",
-    "@types/cheerio": "^0.22.35",
-    "cheerio": "^1.0.0-rc.12",
-    "glob": "^10.3.10",
-    "rimraf": "^5.0.5",
     "sass": "~1.72.0",
-    "scss-bundle": "~3.1.2",
-    "svgo": "^3.2.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.4.4",
-    "json-colorizer": "^2.2.2"
+    "scss-bundle": "~3.1.2"
   },
   "dependencies": {
-    "copyfiles": "^2.4.1",
     "chokidar": "^3.6.0"
   },
   "engines": {
