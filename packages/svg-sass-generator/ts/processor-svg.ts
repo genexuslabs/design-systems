@@ -26,7 +26,6 @@ import { log } from "./partials-svg/log.js";
 const SRC_DIRECTORY = await process.argv[2];
 const OUTPUT_DIRECTORY = await process.argv[3];
 const STATES_FILENAME = await process.argv[4];
-console.log("STATES_FILENAME", STATES_FILENAME);
 const LOG_PATH = await process.argv[5];
 const numberOfArgsProvided = process.argv.length;
 const shouldWriteToLog = !!LOG_PATH;
