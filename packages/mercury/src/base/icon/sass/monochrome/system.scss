@@ -1,0 +1,496 @@
+
+   $icons-system: assistant, arrow-right, arrow-left, applications, add, add-circle;
+    %icon__system {
+  
+    /* =================================
+    LIGHT
+    ================================= */
+  
+    /* - - - - - - - - - - - - 
+    assistant.svg 
+    - - - - - - - - - - - - */
+    
+    &-assistant--primary-light {
+      --icon-path: url("#{$icons-path}icons/system/light/assistant.svg#primary");
+    }
+    
+    &-assistant--primary-hover-light {
+      --icon-path: url("#{$icons-path}icons/system/light/assistant.svg#primary-hover");
+    }
+    
+    &-assistant--primary-active-light {
+      --icon-path: url("#{$icons-path}icons/system/light/assistant.svg#primary-active");
+    }
+    
+    &-assistant--primary-disabled-light {
+      --icon-path: url("#{$icons-path}icons/system/light/assistant.svg#primary-disabled");
+    }
+    
+    &-assistant--on-primary-light {
+      --icon-path: url("#{$icons-path}icons/system/light/assistant.svg#on-primary");
+    }
+    
+    &-assistant--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}icons/system/light/assistant.svg#on-primary-hover");
+    }
+    
+    &-assistant--on-primary-active-light {
+      --icon-path: url("#{$icons-path}icons/system/light/assistant.svg#on-primary-active");
+    }
+    
+    &-assistant--on-disabled-light {
+      --icon-path: url("#{$icons-path}icons/system/light/assistant.svg#on-disabled");
+    }
+    
+    &-assistant--neutral-light {
+      --icon-path: url("#{$icons-path}icons/system/light/assistant.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    arrow-right.svg 
+    - - - - - - - - - - - - */
+    
+    &-arrow-right--primary-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-right.svg#primary");
+    }
+    
+    &-arrow-right--primary-hover-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-right.svg#primary-hover");
+    }
+    
+    &-arrow-right--primary-active-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-right.svg#primary-active");
+    }
+    
+    &-arrow-right--primary-disabled-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-right.svg#primary-disabled");
+    }
+    
+    &-arrow-right--on-primary-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-right.svg#on-primary");
+    }
+    
+    &-arrow-right--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-right.svg#on-primary-hover");
+    }
+    
+    &-arrow-right--on-primary-active-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-right.svg#on-primary-active");
+    }
+    
+    &-arrow-right--on-disabled-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-right.svg#on-disabled");
+    }
+    
+    &-arrow-right--neutral-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-right.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    arrow-left.svg 
+    - - - - - - - - - - - - */
+    
+    &-arrow-left--primary-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-left.svg#primary");
+    }
+    
+    &-arrow-left--primary-hover-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-left.svg#primary-hover");
+    }
+    
+    &-arrow-left--primary-active-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-left.svg#primary-active");
+    }
+    
+    &-arrow-left--primary-disabled-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-left.svg#primary-disabled");
+    }
+    
+    &-arrow-left--on-primary-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-left.svg#on-primary");
+    }
+    
+    &-arrow-left--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-left.svg#on-primary-hover");
+    }
+    
+    &-arrow-left--on-primary-active-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-left.svg#on-primary-active");
+    }
+    
+    &-arrow-left--on-disabled-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-left.svg#on-disabled");
+    }
+    
+    &-arrow-left--neutral-light {
+      --icon-path: url("#{$icons-path}icons/system/light/arrow-left.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    applications.svg 
+    - - - - - - - - - - - - */
+    
+    &-applications--primary-light {
+      --icon-path: url("#{$icons-path}icons/system/light/applications.svg#primary");
+    }
+    
+    &-applications--primary-hover-light {
+      --icon-path: url("#{$icons-path}icons/system/light/applications.svg#primary-hover");
+    }
+    
+    &-applications--primary-active-light {
+      --icon-path: url("#{$icons-path}icons/system/light/applications.svg#primary-active");
+    }
+    
+    &-applications--primary-disabled-light {
+      --icon-path: url("#{$icons-path}icons/system/light/applications.svg#primary-disabled");
+    }
+    
+    &-applications--on-primary-light {
+      --icon-path: url("#{$icons-path}icons/system/light/applications.svg#on-primary");
+    }
+    
+    &-applications--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}icons/system/light/applications.svg#on-primary-hover");
+    }
+    
+    &-applications--on-primary-active-light {
+      --icon-path: url("#{$icons-path}icons/system/light/applications.svg#on-primary-active");
+    }
+    
+    &-applications--on-disabled-light {
+      --icon-path: url("#{$icons-path}icons/system/light/applications.svg#on-disabled");
+    }
+    
+    &-applications--neutral-light {
+      --icon-path: url("#{$icons-path}icons/system/light/applications.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    add.svg 
+    - - - - - - - - - - - - */
+    
+    &-add--primary-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add.svg#primary");
+    }
+    
+    &-add--primary-hover-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add.svg#primary-hover");
+    }
+    
+    &-add--primary-active-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add.svg#primary-active");
+    }
+    
+    &-add--primary-disabled-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add.svg#primary-disabled");
+    }
+    
+    &-add--on-primary-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add.svg#on-primary");
+    }
+    
+    &-add--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add.svg#on-primary-hover");
+    }
+    
+    &-add--on-primary-active-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add.svg#on-primary-active");
+    }
+    
+    &-add--on-disabled-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add.svg#on-disabled");
+    }
+    
+    &-add--neutral-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    add-circle.svg 
+    - - - - - - - - - - - - */
+    
+    &-add-circle--primary-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add-circle.svg#primary");
+    }
+    
+    &-add-circle--primary-hover-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add-circle.svg#primary-hover");
+    }
+    
+    &-add-circle--primary-active-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add-circle.svg#primary-active");
+    }
+    
+    &-add-circle--primary-disabled-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add-circle.svg#primary-disabled");
+    }
+    
+    &-add-circle--on-primary-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add-circle.svg#on-primary");
+    }
+    
+    &-add-circle--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add-circle.svg#on-primary-hover");
+    }
+    
+    &-add-circle--on-primary-active-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add-circle.svg#on-primary-active");
+    }
+    
+    &-add-circle--on-disabled-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add-circle.svg#on-disabled");
+    }
+    
+    &-add-circle--neutral-light {
+      --icon-path: url("#{$icons-path}icons/system/light/add-circle.svg#neutral");
+    }
+    
+
+    /* =================================
+    DARK
+    ================================= */
+  
+    /* - - - - - - - - - - - - 
+    assistant.svg 
+    - - - - - - - - - - - - */
+    
+    &-assistant--primary-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/assistant.svg#primary");
+    }
+    
+    &-assistant--primary-hover-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/assistant.svg#primary-hover");
+    }
+    
+    &-assistant--primary-active-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/assistant.svg#primary-active");
+    }
+    
+    &-assistant--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/assistant.svg#primary-disabled");
+    }
+    
+    &-assistant--on-primary-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/assistant.svg#on-primary");
+    }
+    
+    &-assistant--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/assistant.svg#on-primary-hover");
+    }
+    
+    &-assistant--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/assistant.svg#on-primary-active");
+    }
+    
+    &-assistant--on-disabled-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/assistant.svg#on-disabled");
+    }
+    
+    &-assistant--neutral-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/assistant.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    arrow-right.svg 
+    - - - - - - - - - - - - */
+    
+    &-arrow-right--primary-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-right.svg#primary");
+    }
+    
+    &-arrow-right--primary-hover-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-right.svg#primary-hover");
+    }
+    
+    &-arrow-right--primary-active-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-right.svg#primary-active");
+    }
+    
+    &-arrow-right--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-right.svg#primary-disabled");
+    }
+    
+    &-arrow-right--on-primary-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-right.svg#on-primary");
+    }
+    
+    &-arrow-right--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-right.svg#on-primary-hover");
+    }
+    
+    &-arrow-right--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-right.svg#on-primary-active");
+    }
+    
+    &-arrow-right--on-disabled-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-right.svg#on-disabled");
+    }
+    
+    &-arrow-right--neutral-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-right.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    arrow-left.svg 
+    - - - - - - - - - - - - */
+    
+    &-arrow-left--primary-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-left.svg#primary");
+    }
+    
+    &-arrow-left--primary-hover-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-left.svg#primary-hover");
+    }
+    
+    &-arrow-left--primary-active-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-left.svg#primary-active");
+    }
+    
+    &-arrow-left--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-left.svg#primary-disabled");
+    }
+    
+    &-arrow-left--on-primary-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-left.svg#on-primary");
+    }
+    
+    &-arrow-left--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-left.svg#on-primary-hover");
+    }
+    
+    &-arrow-left--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-left.svg#on-primary-active");
+    }
+    
+    &-arrow-left--on-disabled-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-left.svg#on-disabled");
+    }
+    
+    &-arrow-left--neutral-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/arrow-left.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    applications.svg 
+    - - - - - - - - - - - - */
+    
+    &-applications--primary-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/applications.svg#primary");
+    }
+    
+    &-applications--primary-hover-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/applications.svg#primary-hover");
+    }
+    
+    &-applications--primary-active-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/applications.svg#primary-active");
+    }
+    
+    &-applications--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/applications.svg#primary-disabled");
+    }
+    
+    &-applications--on-primary-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/applications.svg#on-primary");
+    }
+    
+    &-applications--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/applications.svg#on-primary-hover");
+    }
+    
+    &-applications--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/applications.svg#on-primary-active");
+    }
+    
+    &-applications--on-disabled-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/applications.svg#on-disabled");
+    }
+    
+    &-applications--neutral-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/applications.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    add.svg 
+    - - - - - - - - - - - - */
+    
+    &-add--primary-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add.svg#primary");
+    }
+    
+    &-add--primary-hover-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add.svg#primary-hover");
+    }
+    
+    &-add--primary-active-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add.svg#primary-active");
+    }
+    
+    &-add--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add.svg#primary-disabled");
+    }
+    
+    &-add--on-primary-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add.svg#on-primary");
+    }
+    
+    &-add--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add.svg#on-primary-hover");
+    }
+    
+    &-add--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add.svg#on-primary-active");
+    }
+    
+    &-add--on-disabled-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add.svg#on-disabled");
+    }
+    
+    &-add--neutral-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    add-circle.svg 
+    - - - - - - - - - - - - */
+    
+    &-add-circle--primary-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add-circle.svg#primary");
+    }
+    
+    &-add-circle--primary-hover-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add-circle.svg#primary-hover");
+    }
+    
+    &-add-circle--primary-active-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add-circle.svg#primary-active");
+    }
+    
+    &-add-circle--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add-circle.svg#primary-disabled");
+    }
+    
+    &-add-circle--on-primary-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add-circle.svg#on-primary");
+    }
+    
+    &-add-circle--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add-circle.svg#on-primary-hover");
+    }
+    
+    &-add-circle--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add-circle.svg#on-primary-active");
+    }
+    
+    &-add-circle--on-disabled-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add-circle.svg#on-disabled");
+    }
+    
+    &-add-circle--neutral-dark {
+      --icon-path: url("#{$icons-path}icons/system/dark/add-circle.svg#neutral");
+    }
+    
+  
+    }
+  

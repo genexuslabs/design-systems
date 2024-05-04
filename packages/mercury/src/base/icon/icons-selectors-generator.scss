@@ -1,41 +1,23 @@
 // monochrome selectors generator (mixin)
 @import "./monochrome-selectors-generator.scss";
 
-@mixin icons-selectors-generator($icons-path, $buttons-with-icons) {
+@mixin icons-selectors-generator($icons-path) {
   // monochrome and multicolor lists
-  @import "./svg-icons-lists/svg-generator-icons-lists.scss";
+  @import "./sass/svg-generator-icons-lists.scss";
 
   // 1. generate icon styles (size, and background size)
   @include general-icon-styles($icons-path);
 
   // 2.generate selectors for icons <i>
   // icons do not implement states like: hover or active
+
+  @debug $all-monochrome-lists;
+
   @each $list-name, $list in $all-monochrome-lists {
     @each $icon in $list {
       @include monochrome-icons-selectors(
         $input-selector: "%icon__#{$list-name}-#{$icon}",
         $output-selector: ".i-#{$list-name}-#{$icon}",
-        $enable-pseudo-selector: false,
-        $primary: true,
-        $primary-hover: false,
-        $primary-active: false,
-        $primary-disabled: true,
-        $on-primary: true,
-        $on-primary-hover: false,
-        $on-primary-active: false,
-        $on-disabled: true,
-        $neutral: true
-      );
-    }
-  }
-
-  // 2.generate selectors for dynamic elements (ie.: buttons)
-  // dynamic elements like buttons implement states like: hover or active
-  @each $list-name, $list in $all-monochrome-lists {
-    @each $icon in $list {
-      @include monochrome-icons-selectors(
-        $input-selector: "%icon__#{$list-name}-#{$icon}",
-        $output-selector: ".#{$list-name}-#{$icon}",
         $enable-pseudo-selector: true,
         $primary: true,
         $primary-hover: true,
@@ -74,6 +56,13 @@
     @include icon-background-common-styles(
       var(--mer-spacing--lg),
       var(--mer-spacing--lg),
+      contain
+    );
+  }
+  button:before {
+    @include icon-background-common-styles(
+      var(--mer-spacing--md),
+      var(--mer-spacing--md),
       contain
     );
   }
