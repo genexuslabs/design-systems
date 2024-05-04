@@ -2,11 +2,11 @@ import * as fs from "fs";
 import {
   RED,
   RESET_COLOR,
-  colorizeJson
+  colorizeJson,
 } from "../partials-common/utilities.js";
 
 import { validateStatesSchema } from "./states-validator.js";
-import { getStatesObject } from "./utilities.js";
+import { getStatesObject, isJsonFileValid } from "./utilities.js";
 import { join } from "path";
 import { validateSchemaReturn } from "./states-validator.js";
 import colorize from "json-colorizer";
@@ -50,7 +50,7 @@ export function readyToProcess(
 
     return {
       ready: false,
-      statesJson: null
+      statesJson: null,
     };
   }
 
@@ -63,7 +63,7 @@ export function readyToProcess(
 
     return {
       ready: false,
-      statesJson: null
+      statesJson: null,
     };
   } else if (!fs.existsSync(SRC_DIRECTORY)) {
     const msg = `Source Directory Error: The source folder ${SRC_DIRECTORY} does not exists`;
@@ -73,7 +73,7 @@ export function readyToProcess(
 
     return {
       ready: false,
-      statesJson: null
+      statesJson: null,
     };
   }
 
@@ -86,22 +86,25 @@ export function readyToProcess(
 
     return {
       ready: false,
-      statesJson: null
+      statesJson: null,
     };
   }
 
   // 4-A. validate states json filename format
-  if (!JSON_FILENAME_REGEX.test(STATES_FILENAME)) {
-    const msg = `States Filename Error: color states json filename is not well formatted. filename received: "${STATES_FILENAME}". (argument number 3)`;
+  const statesFileIsValid = isJsonFileValid(STATES_FILENAME);
 
-    log(msg, LOG_PATH, shouldWriteToLog);
-    console.error(`${RED} ${msg} ${RESET_COLOR}`);
+  // if (!JSON_FILENAME_REGEX.test(STATES_FILENAME)) {
+  //   const msg = `States Filename Error: color states json filename is not well formatted. filename received: "${STATES_FILENAME}". (argument number 3)`;
 
-    return {
-      ready: false,
-      statesJson: null
-    };
-  }
+  //   log(msg, LOG_PATH, shouldWriteToLog);
+  //   console.error(`${RED} ${msg} ${RESET_COLOR}`);
+
+  //   return {
+  //     ready: false,
+  //     statesJson: null,
+  //   };
+  // }
+
   // 4-B. validate states json file
   const statesPath = join(SRC_DIRECTORY, STATES_FILENAME);
   const statesResult = getStatesObject(statesPath);
@@ -112,7 +115,7 @@ export function readyToProcess(
 
     return {
       ready: false,
-      statesJson: null
+      statesJson: null,
     };
   }
 
@@ -124,7 +127,7 @@ export function readyToProcess(
     let msg = `States Schema Error: color states file ${STATES_FILENAME} schema is not valid. The following errors have been found: \n\n`;
     console.error(`${RED} ${msg} ${RESET_COLOR}`);
 
-    validateSchemaResult.errors.forEach(error => {
+    validateSchemaResult.errors.forEach((error) => {
       const errorString = JSON.stringify(error, null, 2);
       console.log(colorize(errorString, { colors: colorizeJson }));
 
@@ -134,7 +137,7 @@ export function readyToProcess(
     log(msg, LOG_PATH, shouldWriteToLog);
     return {
       ready: false,
-      statesJson: null
+      statesJson: null,
     };
   }
 
@@ -146,7 +149,7 @@ export function readyToProcess(
 
   return {
     ready: true,
-    statesJson: statesResult.statesObject
+    statesJson: statesResult.statesObject,
   };
 }
 
