@@ -14,6 +14,9 @@
   );
 }
 
+/// @group Icon
+/// @param {String} $selector [".icon-mask"] -
+/// @param {type} $icon-path [null] -
 @mixin icon-mask($selector: ".icon-mask", $icon-path: null) {
   #{$selector} {
     @if $icon-path != null {
@@ -26,6 +29,9 @@
   }
 }
 
+/// @group Icon
+/// @param {String} $selector [".icon-background"] -
+/// @param {type} $icon-path [null] -
 @mixin icon-background($selector: ".icon-background", $icon-path: null) {
   #{$selector} {
     @if $icon-path != null {

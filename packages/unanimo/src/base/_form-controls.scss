@@ -55,6 +55,12 @@
   --ch-placeholder-color: var(--body-texts-un-body-m__font-color--gray);
 }
 
+/// @group Form
+/// @param {String} $selector [".form-input"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @param {Boolean} $add--placeholder [true] -
+/// @param {Boolean} $add--placeholder-var [true] -
+/// @param {Boolean} $add--error [true] -
 @mixin form-input(
   $selector: ".form-input",
   $add--disabled: true,
@@ -115,6 +121,9 @@
   }
 }
 
+/// @group Form
+/// @param {String} $selector [".form-input__label"] -
+/// @param {Boolean} $add--disabled [true] -
 @mixin form-input__label(
   $selector: ".form-input__label",
   $add--disabled: true
@@ -130,6 +139,9 @@
   }
 }
 
+/// @group Form
+/// @param {String} $selector [".form-input__helper"] -
+/// @param {Boolean} $add--disabled [true] -
 @mixin form-input__helper(
   $selector: ".form-input__helper",
   $add--disabled: true
