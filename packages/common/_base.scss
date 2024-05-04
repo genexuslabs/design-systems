@@ -34,5 +34,6 @@
   display: inline-grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;
+  grid-template-rows: auto; // Necessary to avoid creating additional rows and then adding additional gap at the bottom of the label
   align-items: center;
 }
