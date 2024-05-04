@@ -4,6 +4,12 @@
   "description": "SVG Icon Generator: A Node.js tool for creating customizable SVG icons with color states like hover and active effects. It generates SVG icons and Sass placeholder selectors, simplifying integration into projects with generated CSS class names for scalable and dynamic iconography.",
   "main": "index.js",
   "type": "module",
+  "bin": {
+    "svg": "js/processor-svg.js"
+  },
+  "files": [
+    "js"
+  ],
   "scripts": {
     "noConfig": "node ./js/processor-svg.js",
     "noSrc": "node ./js/processor-svg.js ./js/states.json",
