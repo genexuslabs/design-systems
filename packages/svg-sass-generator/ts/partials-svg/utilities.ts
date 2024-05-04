@@ -4,13 +4,15 @@ import {
   existsSync,
   mkdirSync,
   rmSync,
-  mkdir
+  mkdir,
+  accessSync,
+  constants,
 } from "fs";
 import {
   getStatesJsonReturn,
   colorScheme,
   pathInfo,
-  figureType
+  figureType,
 } from "../partials-common/types.js";
 import { optimize } from "svgo";
 import path from "path";
@@ -28,7 +30,7 @@ export const SVG_FIGURES = [
   "line",
   "path",
   "polygon",
-  "polyline"
+  "polyline",
 ];
 
 /**
@@ -41,13 +43,13 @@ export const getStatesObject = (STATES_PATH: string): getStatesJsonReturn => {
     return {
       valid: true,
       info: "Ok",
-      statesObject: JSON.parse(statesString)
+      statesObject: JSON.parse(statesString),
     };
   } catch (error) {
     return {
       valid: false,
       info: `Error reading file: ${error}`,
-      statesObject: null
+      statesObject: null,
     };
   }
 };
@@ -72,7 +74,7 @@ export const saveSvgOnDisk = (
   const filePath = path.join(fileDirectoriesPath, pathInfo.fileName);
 
   mkdir(fileDirectoriesPath, { recursive: true }, function (err) {
-    writeFile(filePath, svgString, "utf8", err => {
+    writeFile(filePath, svgString, "utf8", (err) => {
       if (err) {
         const msg = `There was an error saving the icon on disk. error: ${err}`;
         console.error(`${RED} ${msg} ${RESET_COLOR}`);
@@ -94,8 +96,30 @@ export const getPathInfo = (iconPath: string): pathInfo => {
   }
   return {
     categoryFolderName: category,
-    fileName: fileName
+    fileName: fileName,
   };
+};
+
+export const isJsonFileValid = (jsonFilePath: string) => {
+  console.log("jsonFilePath", jsonFilePath);
+  try {
+    // Resolve the absolute path
+    const absolutePath = path.resolve(jsonFilePath);
+
+    // Check if the file exists
+    accessSync(absolutePath, constants.F_OK);
+
+    // Check if the file extension is '.json'
+    if (path.extname(absolutePath) !== ".json") {
+      throw new Error("File is not a .json file");
+    }
+
+    // File exists and has a .json extension
+    return true;
+  } catch (error) {
+    // File does not exist or other error occurred
+    return false;
+  }
 };
 
 export const getFigureType = (svgFigure: cheerio.Cheerio): figureType => {
