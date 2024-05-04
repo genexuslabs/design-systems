@@ -4,8 +4,32 @@
   "description": "SVG Icon Generator: A Node.js tool for creating customizable SVG icons with color states like hover and active effects. It generates SVG icons and Sass placeholder selectors, simplifying integration into projects with generated CSS class names for scalable and dynamic iconography.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "noConfig": "node ./js/processor-svg.js",
+    "noSrc": "node ./js/processor-svg.js ./js/states.json",
+    "wrongSrc": "node ./js/processor-svg.js ./js/states.json ./asets",
+    "noDist": "node ./js/processor-svg.js ./js/states.json ./assets",
+    "clean": "rimraf js/",
+    "copy-json": "copyfiles -f ts/partials-svg/*.json js/partials-svg/",
+    "svg": "node ./js/processor-svg.js ./assets ./dist color-states.json ./log/",
+    "sass": "node ./js/processor-sass.js ./dist ./dist/sass",
+    "html": "node ./js/processor-html.js ./dist ./log",
+    "watch": "tsc --watch",
+    "build": "npm run clean && tsc --build && npm run copy-json"
   },
   "author": "GeneXus",
-  "license": "ISC"
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/cheerio": "^0.22.35",
+    "ajv": "^8.12.0",
+    "cheerio": "^1.0.0-rc.12",
+    "glob": "^10.3.10",
+    "rimraf": "^5.0.5",
+    "svgo": "^3.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.4"
+  },
+  "dependencies": {
+    "copyfiles": "^2.4.1",
+    "json-colorizer": "^2.2.2"
+  }
 }
