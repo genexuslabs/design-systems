@@ -72,7 +72,7 @@
 /// HTML/render:
 ///   <my-component-with-shadow>
 ///     #shadow root (open)
-///     |  <ch-slider exportparts="track:slider__track,thumb:slider__thumb,focus" part="slider">
+///     |  <ch-slider part="slider" exportparts="track:slider__track,thumb:slider__thumb,focus">
 ///     |  </ch-slider>
 ///   </my-component-with-shadow>
 ///
@@ -125,7 +125,7 @@
 /// HTML/render:
 ///   <my-component-with-shadow>
 ///     #shadow root (open)
-///     |  <ch-slider exportparts="track:slider__track,thumb:slider__thumb,focus" part="slider">
+///     |  <ch-slider part="slider" exportparts="track:slider__track,thumb:slider__thumb,focus">
 ///     |  </ch-slider>
 ///   </my-component-with-shadow>
 ///
