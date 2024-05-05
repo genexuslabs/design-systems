@@ -59,6 +59,48 @@ $tree-view-primary-hover: color-mix(
   padding-block: var(--spacing-un-spacing--xs);
 }
 
+/// @group Tree View
+/// @param {String} $tree-view-selector [".tree-view-primary"] -
+/// @param {String} $drag-preview-selector [".tree-view-primary::part(drag-preview)"] -
+/// @param {String} $item--drag-enter-selector [".tree-view-primary::part(item drag-enter)"] -
+/// @param {String} $item__header-selector [".tree-view-primary::part(item__header)"] -
+/// @param {String} $item__header--not-selected-selector [".tree-view-primary::part(item__header not-selected)"] -
+/// @param {String} $item__header--selected-selector [".tree-view-primary::part(item__header selected)"] -
+/// @param {String} $item__action-selector [".tree-view-primary::part(item__action)"] -
+/// @param {String} $item__checkbox-selector [".tree-view-primary::part(item__checkbox)"] -
+/// @param {String} $item__checkbox-input-selector [".tree-view-primary::part(item__checkbox-input)"] -
+/// @param {String} $item__checkbox-input--disabled-selector [".tree-view-primary::part(item__checkbox-input disabled)"] -
+/// @param {String} $item__checkbox-input--checked-selector [".tree-view-primary::part(item__checkbox-input checked)"] -
+/// @param {String} $item__checkbox-input--indeterminate-selector [".tree-view-primary::part(item__checkbox-input indeterminate)"] -
+/// @param {String} $item__checkbox-option--disabled-selector [".tree-view-primary::part(item__checkbox-option disabled)"] -
+/// @param {String} $item__checkbox-option--checked-selector [".tree-view-primary::part(item__checkbox-option checked)"] -
+/// @param {String} $item__checkbox-option--indeterminate-selector [".tree-view-primary::part(item__checkbox-option indeterminate)"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @example scss - Default case: Using the `.tree-view-primary` class.
+/// SCSS:
+///   @include tree-view-primary();
+///
+/// @example markup
+/// HTML/render:
+///   <ch-tree-view-render class="tree-view-primary">
+///   </ch-tree-view-render>
+///
+/// @example scss - Advanced case: Style a `ch-tree-view-render` control inside a Shadow Root.
+/// SCSS:
+///   my-component-with-shadow {
+///     @include tree-view-primary(
+///       // TODO
+///     );
+///   }
+///
+/// @example markup
+/// HTML/render:
+///   <my-component-with-shadow>
+///     #shadow root (open)
+///     |  <ch-tree-view-render part="tree-view" exportparts="TODO">
+///     |  </ch-tree-view-render>
+///   </my-component-with-shadow>
+///
 @mixin tree-view-primary(
   $tree-view-selector: ".tree-view-primary",
 
