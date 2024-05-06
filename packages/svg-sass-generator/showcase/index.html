@@ -14,6 +14,15 @@
         --sc-body__color: #696969;
         --sc-body__font-family: sans-serif;
         --sc-body__font-size: 16px;
+        /*top-bar*/
+        --sc-top-bar__height: 42px;
+        --sc-top-bar__padding-inline: 16px;
+        --sc-top-bar__color: var(--sc-body__color);
+        --sc-top-bar__background-color: var(--sc-border-dimmed__color);
+        --sc-top-bar-button__background-color: var(--sc-border-dimmed__color);
+        --sc-top-bar-button__color: var(--sc-body__color);
+        --sc-top-bar-button__border: 1px solid var(--sc-border-dimmed__color);
+        --sc-top-bar-description__font-size: 12px;
         /*icon*/
         --sc-icon__box: 32px;
         /*container*/
@@ -49,9 +58,43 @@
         color: var(--sc-body__color);
         font-family: var(--sc-body__font-family);
         font-size: var(--sc-body__font-size);
+        margin: 0;
+        margin-block-start: var(--sc-top-bar__height);
+      }
+      * {
+        box-sizing: border-box;
       }
       .title {
         margin: 0;
+      }
+      /*top-bar*/
+      .top-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--sc-top-bar__height);
+        padding-inline: var(--sc-top-bar__padding-inline);
+        background-color: var(--sc-top-bar__background-color);
+        color: var(--sc-top-bar__color);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .top-bar__button {
+        border-radius: 3px;
+        background-color: var(--sc-top-bar-button__background-color);
+        border: var(--sc-top-bar-button__border);
+        color: var(--sc-top-bar-button__color);
+      }
+      .top-bar__button:hover {
+        filter: brightness(1.4);
+      }
+      .top-bar__button:active {
+        filter: brightness(1.2);
+      }
+      .top-bar__description {
+        font-size: var(--sc-top-bar-description__font-size);
       }
       /*icon*/
       .icon {
@@ -85,7 +128,7 @@
       }
       .category__title {
         font-size: var(--sc-category-title__font-size);
-        margin-block-end: var(--sc-category__margin-block-end);
+        margin-block-end: var(--sc-category-title__margin-block-end);
         font-style: italic;
       }
       /*icons-container*/
@@ -107,6 +150,10 @@
     </style>
   </head>
   <body>
+    <div class="top-bar">
+      <button id="toggle-dark-btn" class="top-bar__button">toggle dark</button>
+      <small class="top-bar__description">Automatically generated</small>
+    </div>
     <div class="container" id="icons-container">
       <!-- multicolor -->
       <section class="icons-type-section">
