@@ -32,7 +32,9 @@ const parseCssString = (originalCss: string): string => {
   // remove unnecessary spaces
   parsed = parsed.replace(/ +/g, " ");
   // remove break lines
-  return parsed.replace(/[\r\n]+/g, "");
+  parsed = parsed.replace(/[\r\n]+/g, "");
+  // remove space after coma
+  return parsed.replace(/,\s*/g, ",");
 };
 
 const getSelectorsArray = (parsedCss: string): string[] => {
@@ -87,12 +89,24 @@ const splitCssSelector = (cssSelector: string): string[] => {
   }
 };
 
-// process multicolor selectors
+const processCatalogJs = (): string => {
+  console.dir(iconsCatalog, { depth: null });
+  return "";
+};
+
+// process multicolor selectors (add them to iconsCatalog)
 const multicolorParsedCssString = parseCssString(multicolorSelectors);
 const multicolorCssArray = getSelectorsArray(multicolorParsedCssString);
 const multicolorCssArrayParsed = parseCssArray(multicolorCssArray);
 processIconsSelectors(multicolorCssArrayParsed, "multicolor");
-console.log("iconsCatalog", iconsCatalog);
+
+// process monochrome selectors (add them to iconsCatalog)
+const monochromeParsedCssString = parseCssString(monochromeSelectors);
+const monochromeCssArray = getSelectorsArray(monochromeParsedCssString);
+const monochromeCssArrayParsed = parseCssArray(monochromeCssArray);
+processIconsSelectors(monochromeCssArrayParsed, "monochrome");
+
+const catalogJs = processCatalogJs();
 
 export type iconsSelectors = {
   staticSelector: string;
