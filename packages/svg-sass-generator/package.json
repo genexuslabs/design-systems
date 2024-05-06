@@ -5,40 +5,45 @@
   "main": "index.js",
   "type": "module",
   "bin": {
-    "svg": "js/processor-svg.js"
+    "ssg-svg": "./bin/processor-svg.js",
+    "ssg-sass": "./bin/processor-sass.js"
   },
   "files": [
-    "js"
+    "bin/"
   ],
   "scripts": {
     "noConfig": "node ./js/processor-svg.js",
     "noSrc": "node ./js/processor-svg.js ./js/states.json",
     "wrongSrc": "node ./js/processor-svg.js ./js/states.json ./asets",
     "noDist": "node ./js/processor-svg.js ./js/states.json ./assets",
-    "build": "npm run clean && tsc --build && npm run copy-json",
-    "clean": "rimraf js/",
+    "build": "npm run clean && tsc --build && npm run copy-json && npm run copy-to-bin",
+    "clean": "rimraf ./js ./bin",
     "svg": "node ./js/processor-svg.js ./assets ./dist color-states.json ./log",
     "sass": "node ./js/processor-sass.js ./dist ./sass",
-    "html": "node ./js/processor-html.js ./dist ./log",
     "clean-svg-js": "rimraf svg-sass-generator/js/",
     "copy-json": "copyfiles -f ./ts/partials-svg/*.json ./js/partials-svg/",
+    "copy-to-bin": "copyfiles --up 1 js/**/* bin/",
     "watch": "tsc --watch",
-    "build-svg": "npm run clean-svg-js && tsc --build && npm run copy-json"
+    "build-svg": "npm run clean-svg-js && tsc --build && npm run copy-json",
+    "showcase": "node ./js/showcase.js ./showcase/ ./showcase/",
+    "test-selectors": "sass ./showcase/svg-generator-icons-lists.scss ./showcase/styles.css"
   },
   "author": "GeneXus",
   "license": "Apache-2.0",
-  "devDependencies": {
+  "dependencies": {
     "@types/cheerio": "^0.22.35",
     "ajv": "^8.12.0",
     "cheerio": "^1.0.0-rc.12",
+    "copyfiles": "^2.4.1",
     "glob": "^10.3.10",
+    "json-colorizer": "^2.2.2",
     "rimraf": "^5.0.5",
     "svgo": "^3.2.0",
+    "sass": "~1.72.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.4"
   },
-  "dependencies": {
-    "copyfiles": "^2.4.1",
-    "json-colorizer": "^2.2.2"
+  "engines": {
+    "pnpm": ">=3"
   }
 }
