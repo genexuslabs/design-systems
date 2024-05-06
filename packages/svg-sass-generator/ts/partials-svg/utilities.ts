@@ -33,6 +33,8 @@ export const SVG_FIGURES = [
   "polyline",
 ];
 
+const ICONS_DIRECTORY = "icons";
+
 /**
  * @description It returns the monochrome states json as a JSON.
  */
@@ -67,6 +69,7 @@ export const saveSvgOnDisk = (
 
   const fileDirectoriesPath = path.join(
     outputDirectory,
+    ICONS_DIRECTORY,
     pathInfo.categoryFolderName,
     schemeFolderName
   );
@@ -98,28 +101,6 @@ export const getPathInfo = (iconPath: string): pathInfo => {
     categoryFolderName: category,
     fileName: fileName,
   };
-};
-
-export const isJsonFileValid = (jsonFilePath: string) => {
-  console.log("jsonFilePath", jsonFilePath);
-  try {
-    // Resolve the absolute path
-    const absolutePath = path.resolve(jsonFilePath);
-
-    // Check if the file exists
-    accessSync(absolutePath, constants.F_OK);
-
-    // Check if the file extension is '.json'
-    if (path.extname(absolutePath) !== ".json") {
-      throw new Error("File is not a .json file");
-    }
-
-    // File exists and has a .json extension
-    return true;
-  } catch (error) {
-    // File does not exist or other error occurred
-    return false;
-  }
 };
 
 export const getFigureType = (svgFigure: cheerio.Cheerio): figureType => {
