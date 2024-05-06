@@ -1,29 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Icons Showcase</title>
+    <link rel="stylesheet" href="./icons-selectors.css" />
+    <style>
+      :root {
+        --sc-background-color: #f4f5f5;
+        --sc-color: #696969;
+      }
+      html.dark {
+        --sc-background-color: #1a1d20;
+        --sc-color: #999999;
+      }
+      html {
+        background-color: var(--sc-background-color);
+        color: var(--sc-color);
+      }
+      body {
+        font-family: sans-serif;
+      }
+      .title {
+        margin: 0;
+      }
+      .icon {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background-image: var(--icon-path);
+        background-size: contain;
+      }
+      /*container*/
+      .container {
+        padding: 64px 32px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      /*icons-type*/
+      .icons-type:not(:last-child) {
+        padding-block-end: 64px;
+        margin-block-end: 64px;
+        border-bottom: 3px dashed var(--sc-color);
+      }
+      .icons-type__title {
+        font-weight: 100;
+        font-size: 20px;
+        margin-block-end: 32px;
+      }
+      /*category*/
+      .category:not(:last-child) {
+        margin-block-end: 32px;
+      }
+      .category__title {
+        font-size: 16px;
+        margin-block-end: 18px;
+        font-style: italic;
+      }
+      /*icons-container*/
+      .icons-container {
+        border: 1px solid var(--sc-color);
+        border-radius: 6px;
+        padding: 16px;
+      }
+      .icons-container__title {
+        margin-block-end: 18px;
+      }
+      .icons-container__list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 16px;
+      }
+    </style>
   </head>
   <body>
     <div class="container" id="icons-container">
-      <!-- multicolor icons-->
-      <section>
-        <h2>multicolor category</h2>
-        <article>
-          <h3>icon 1</h3>
-          <ul>
-            <li>
-              <span class="icon icon__objects-2-stroke"></span>
-            </li>
-          </ul>
+      <!-- multicolor -->
+      <section class="icons-type">
+        <h2 class="icons-type__title title">Multicolor Icons</h2>
+
+        <!-- cat-1 -->
+        <article class="category">
+          <h3 class="category__title title">Cat 1 title</h3>
+          <div class="icons-container">
+            <h4 class="icons-container__title title">bpm-1</h4>
+            <ul class="icons-container__list">
+              <li class="icons-container__list-item">
+                <span class="icon icon__objects-2_stroke"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- cat-1 -->
+        <article class="category">
+          <h3 class="category__title title">Cat 1 title</h3>
+          <div class="icons-container">
+            <h4 class="icons-container__title title">bpm-1</h4>
+            <ul class="icons-container__list">
+              <li class="icons-container__list-item">
+                <span class="icon icon__objects-2_stroke"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+            </ul>
+          </div>
         </article>
       </section>
 
-      <!-- monochrome icons-->
-      <section>
-        <h2>multicolor icons</h2>
+      <!-- monochrome -->
+      <section class="icons-type">
+        <h2 class="icons-type__title title">Monochrome Icons</h2>
+
+        <!-- cat-1 -->
+        <article class="category">
+          <h3 class="category__title title">Cat 1 title</h3>
+          <div class="icons-container">
+            <h4 class="icons-container__title title">bpm-1</h4>
+            <ul class="icons-container__list">
+              <li class="icons-container__list-item">
+                <span class="icon icon__objects-2_stroke"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- cat-1 -->
+        <article class="category">
+          <h3 class="category__title title">Cat 1 title</h3>
+          <div class="icons-container">
+            <h4 class="icons-container__title title">bpm-1</h4>
+            <ul class="icons-container__list">
+              <li class="icons-container__list-item">
+                <span class="icon icon__objects-2_stroke"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+            </ul>
+          </div>
+        </article>
       </section>
     </div>
+
+    <script>
+      const output = [];
+      const iconsCatalogJson = fetch("./icons-catalog.json")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((jsonData) => {
+          // Process the JSON data
+          renderIcons(jsonData);
+        })
+        .catch((error) => {
+          console.error("Error fetching JSON:", error);
+        });
+
+      const renderIcons = (iconsCatalogJson) => {
+        //multicolor
+        const multicolorCategories = iconsCatalogJson.multicolor;
+        for (let iconCategory in multicolorCategories) {
+          console.log(multicolorCategories[iconCategory]);
+        }
+      };
+    </script>
   </body>
 </html>
