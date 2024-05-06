@@ -115,6 +115,8 @@ const processIconsCatalog = (iconsCatalog: iconsCatalog) => {
       iconsCatalog.multicolor[category]
     );
   }
+
+  saveCatalogOnDisk(iconsCatalog);
 };
 
 const processCatalogCategory = (
@@ -196,7 +198,7 @@ const createPlaceholders = (
     // placeholder selectors
     icon.states.forEach((state) => {
       placeholderSelectors += `
-    &-${iconName}--${state}-${scheme} {
+    &_${iconName}--${state}-${scheme} {
       --icon-path: url("#{$icons-path}icons/${categoryName}/${scheme}/${icon.fileName}#${state}");
     }
     `;
@@ -278,7 +280,17 @@ const saveMainSassOnDisk = () => {
       return false;
     }
   });
+
   return true;
+};
+
+/**
+ *
+ * @description it saves on disk, the catalog as a json. This json will come in handy
+ * to create a showcase of catalogs in html.
+ */
+const saveCatalogOnDisk = (iconsCatalog: iconsCatalog) => {
+  console.log(iconsCatalog.monochrome["bpm-1"].light);
 };
 
 interface iconsCatalog {
