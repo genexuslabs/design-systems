@@ -14,12 +14,12 @@ export const createMulticolorSvg = (
   statesJson: iconsColorsSchema,
   colorScheme: colorScheme
 ): string => {
-  const id = "a";
+  const groupId = "icon-def";
   const viewsAndUses = createViewsUses(
     statesJson,
     svgFiguresResult,
     colorScheme,
-    id
+    groupId
   );
 
   if (!viewsAndUses) return undefined;
@@ -31,7 +31,7 @@ export const createMulticolorSvg = (
   const createdSvg = `
   <svg viewBox="0 0 $width$ $height$" xmlns="http://www.w3.org/2000/svg" data-scheme="${iconTypeMap.multicolor}">
     <defs>
-      <g id="icon-def">
+      <g id="${groupId}">
           ${figuresString}
       </g>
     </defs>
@@ -47,7 +47,7 @@ export const createMulticolorSvg = (
         params: {
           overrides: {
             cleanupIds: {
-              preserve: ["enabled", "hover", "active", "disabled"],
+              preserve: ["enabled", "hover", "active", "disabled", "icon-def"],
             },
           },
         },
@@ -62,12 +62,11 @@ const createViewsUses = (
   statesJson: iconsColorsSchema,
   svgFiguresResult: multicolorFiguresResult,
   colorScheme: colorScheme,
-  id: string
+  groupId: string
 ): string => {
   const usedColors = svgFiguresResult.usedColors;
   const width = parseInt(svgFiguresResult.size.width);
   const height = parseInt(svgFiguresResult.size.height);
-  const prefix = statesJson.multicolor.cssPrefix;
 
   //enabled
   let enabledStyle;
@@ -80,7 +79,7 @@ const createViewsUses = (
         colorScheme === "light"
           ? colorItem.states.enabled.light
           : colorItem.states.enabled.dark;
-      return `--${prefix}${color}:${colorValue};`;
+      return `--${color}:${colorValue};`;
     })
     .join("");
 
@@ -95,7 +94,7 @@ const createViewsUses = (
         colorScheme === "light"
           ? colorItem.states.hover.light
           : colorItem.states.hover.dark;
-      return `--${prefix}${color}:${colorValue};`;
+      return `--${color}:${colorValue};`;
     })
     .join("");
 
@@ -110,7 +109,7 @@ const createViewsUses = (
         colorScheme === "light"
           ? colorItem.states.active.light
           : colorItem.states.active.dark;
-      return `--${prefix}${color}:${colorValue};`;
+      return `--${color}:${colorValue};`;
     })
     .join("");
 
@@ -125,21 +124,21 @@ const createViewsUses = (
         colorScheme === "light"
           ? colorItem.states.disabled.light
           : colorItem.states.disabled.dark;
-      return `--${prefix}${color}:${colorValue};`;
+      return `--${color}:${colorValue};`;
     })
     .join("");
 
   return `
     <view id="enabled" viewBox="0 0 ${width} ${height}"/>
-    <use href="#${id}" style="${enabledStyle}"/>
+    <use href="#${groupId}" x="0" style="${enabledStyle}"/>
 
     <view id="hover" viewBox="${width} 0 ${width} ${height}"/>
-    <use x="16" href="#${id}" style="${hoverStyle}"/>
+    <use x="16" href="#${groupId}" x="${width}" style="${hoverStyle}"/>
 
     <view id="active" viewBox="${width * 2} 0 ${width} ${height}"/>
-    <use x="32" href="#${id}" style="${activeStyle}"/>
+    <use x="32" href="#${groupId}" x="${width * 2}" style="${activeStyle}"/>
 
     <view id="disabled" viewBox="${width * 3} 0 ${width} ${height}"/>
-    <use x="48" href="#${id}" style="${disabledStyle}"/>
+    <use x="48" href="#${groupId}" x="${width * 3}" style="${disabledStyle}"/>
     `;
 };
