@@ -123,8 +123,8 @@ $all-monochrome-lists: (
 @each $list-name, $list in $all-multicolor-lists {
   @each $icon in $list {
     @include multicolor-selectors(
-      $input-selector: "%icon__#{$list-name}-#{$icon}",
-      $output-selector: ".icon__#{$list-name}-#{$icon}"
+      $input-selector: "%icon__#{$list-name}_#{$icon}",
+      $output-selector: ".icon__#{$list-name}_#{$icon}"
     );
   }
 }
@@ -134,14 +134,14 @@ $all-monochrome-lists: (
   @each $icon in $list {
     // light
     @include monochrome-selectors(
-      $input-selector: "%icon__#{$list-name}-#{$icon}",
-      $output-selector: ".icon__#{$list-name}-#{$icon}",
+      $input-selector: "%icon__#{$list-name}_#{$icon}",
+      $output-selector: ".icon__#{$list-name}_#{$icon}",
       $scheme: "light"
     );
     // dark
     @include monochrome-selectors(
-      $input-selector: "%icon__#{$list-name}-#{$icon}",
-      $output-selector: "html.dark .icon__#{$list-name}-#{$icon}",
+      $input-selector: "%icon__#{$list-name}_#{$icon}",
+      $output-selector: "html.dark .icon__#{$list-name}_#{$icon}",
       $scheme: "dark"
     );
   }
