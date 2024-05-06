@@ -1,5 +1,5 @@
 import { glob } from "glob";
-import { readFileSync } from "fs";
+import { readFileSync, writeFileSync } from "fs";
 //import sass from "sass";
 import * as sass from "sass";
 import { join } from "path";
@@ -11,13 +11,73 @@ import { iconType } from "./partials-common/types.js";
 
 //Directories
 const SRC_SASS_FOLDER = await process.argv[2];
-const OUTPUT_DIRECTORY = await process.argv[3];
-const SASS_FILE_NAME = "svg-generator-icons-lists.scss";
+const ICONS_SELECTORS_GENERATOR = await process.argv[3];
+const OUTPUT_DIRECTORY = await process.argv[4];
+const SVG_ICONS_SRC = await process.argv[5];
+const SRC_ICONS_LISTS = "svg-generator-icons-lists.scss";
+const SRC_ICONS_LISTS_SELECTORS = "svg-generator-icons-lists-selectors.scss";
+const COMPILED_CSS_FILENAME = "icons-selectors.css";
+const ICONS_CATALOG_JSON_FILENAME = "icons-catalog.json";
 let iconsCatalog: iconsCatalog = { multicolor: {}, monochrome: {} };
 
-const scssFilePath = join(SRC_SASS_FOLDER, SASS_FILE_NAME);
-const scssResult = sass.compile(scssFilePath, { style: "expanded" });
+const getSassContent = (scssSourceFilePath: string): string => {
+  try {
+    // Read the file synchronously
+    const data = readFileSync(scssSourceFilePath, "utf8");
+    return data;
+  } catch (err) {
+    console.error("Error reading file:", err);
+  }
+};
+
+const createShowcaseIconsList = (
+  sourceIconsList: string,
+  iconsSelectorsGenerator: string,
+  iconsPath: string
+): string => {
+  const output = `
+$icons-path: "${iconsPath}";
+${sourceIconsList} \n
+${iconsSelectorsGenerator}
+  `;
+  return output;
+};
+
+const saveOnDisk = (content: string, outputPath: string): void => {
+  try {
+    // Write the data to a new file
+    writeFileSync(outputPath, content, "utf8");
+  } catch (err) {
+    console.error("Error:", err);
+  }
+};
+
+const scssSourceFilePath = join(SRC_SASS_FOLDER, SRC_ICONS_LISTS);
+const sourceSassContent = getSassContent(scssSourceFilePath);
+const iconsSelectorsGeneratorContent = getSassContent(
+  ICONS_SELECTORS_GENERATOR
+);
+const showcaseIconsList = createShowcaseIconsList(
+  sourceSassContent,
+  iconsSelectorsGeneratorContent,
+  SVG_ICONS_SRC
+);
+
+// save SRC_ICONS_LISTS_SELECTORS
+saveOnDisk(showcaseIconsList, join(SRC_SASS_FOLDER, SRC_ICONS_LISTS_SELECTORS));
+
+// compile SRC_ICONS_LISTS_SELECTORS
+const scssResult = sass.compile(
+  join(SRC_SASS_FOLDER, SRC_ICONS_LISTS_SELECTORS),
+  { style: "expanded" }
+);
 const cssResult = scssResult["css"];
+
+console.log("cssResult", cssResult);
+
+// save compiled css on disk
+saveOnDisk(cssResult, join(OUTPUT_DIRECTORY, COMPILED_CSS_FILENAME));
+
 const cssResultString = cssResult.replace(/[\r\n]+/g, "");
 const colorLists = cssResultString.split("lists*/");
 
@@ -60,13 +120,13 @@ const processIconsSelectors = (
     if (!iconsCatalog[iconType][category]) {
       iconsCatalog[iconType][category] = [];
       iconsCatalog[iconType][category].push({
-        staticSelector: splittedSelectors[0],
-        pseudoSelector: splittedSelectors[1],
+        pseudoSelector: splittedSelectors[0],
+        staticSelector: splittedSelectors[1],
       });
     } else {
       iconsCatalog[iconType][category].push({
-        staticSelector: splittedSelectors[0],
-        pseudoSelector: splittedSelectors[1],
+        pseudoSelector: splittedSelectors[0],
+        staticSelector: splittedSelectors[1],
       });
     }
   });
@@ -89,9 +149,12 @@ const splitCssSelector = (cssSelector: string): string[] => {
   }
 };
 
-const processCatalogJs = (): string => {
-  console.dir(iconsCatalog, { depth: null });
-  return "";
+const saveCatalogJsonOnDisk = (): string | void => {
+  const iconsCatalogJson = JSON.stringify(iconsCatalog, null, 2);
+  saveOnDisk(
+    iconsCatalogJson,
+    join(OUTPUT_DIRECTORY, ICONS_CATALOG_JSON_FILENAME)
+  );
 };
 
 // process multicolor selectors (add them to iconsCatalog)
@@ -106,7 +169,7 @@ const monochromeCssArray = getSelectorsArray(monochromeParsedCssString);
 const monochromeCssArrayParsed = parseCssArray(monochromeCssArray);
 processIconsSelectors(monochromeCssArrayParsed, "monochrome");
 
-const catalogJs = processCatalogJs();
+saveCatalogJsonOnDisk();
 
 export type iconsSelectors = {
   staticSelector: string;
