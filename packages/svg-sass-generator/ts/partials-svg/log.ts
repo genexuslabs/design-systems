@@ -1,4 +1,3 @@
-import { RED, RESET_COLOR } from "../partials-common/utilities.js";
 // import * as fs from "fs/promises";
 import { join } from "path";
 import { promises } from "fs";
@@ -33,7 +32,7 @@ export const log = (
 
   // Append the message to the file
   appendFile(
-    join(LOG_PATH, "icons-log.txt"),
+    join(LOG_PATH, "svg-log.txt"),
     `\n ${icon} \n ${message} \n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️◦ \n`
     // (err: any) => {
     //   if (err) {
