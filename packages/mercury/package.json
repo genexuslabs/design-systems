@@ -14,17 +14,17 @@
     "build--watch.scss": "scss-bundle --rootDir ./src --watch -e ./src/mercury.scss -o dist/mercury.scss",
     "test": "sass test/test.scss  dist/css/mercury.css",
     "test--watch": "chokidar ./dist/mercury.scss -c \"npm run test\"",
-    "validate.ci": "npm run build"
+    "validate.ci": "npm run build",
+    "process-svg": "ssg-svg ./assets-test ./dist-test color-states.json ./log",
+    "test-ssg": "ssg-test"
   },
   "license": "MIT",
   "devDependencies": {
     "@atao60/fse-cli": "^0.1.9",
     "sass": "~1.72.0",
     "scss-bundle": "~3.1.2",
+    "chokidar": "^3.6.0",
     "svg-sass-generator": "file:../svg-sass-generator"
-  },
-  "dependencies": {
-    "chokidar": "^3.6.0"
   },
   "engines": {
     "pnpm": ">=3"
