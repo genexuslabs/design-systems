@@ -29,32 +29,32 @@ $all-monochrome-lists: (
 
   // :hover
   #{$output-selector}:hover,
-  #{$output-selector}--hover.static {
+  #{$output-selector}--hover {
     @extend #{$input-selector}--hover-light;
   }
 
   html.dark #{$output-selector}:hover,
-  html.dark #{$output-selector}--hover.static {
+  html.dark #{$output-selector}--hover {
     @extend #{$input-selector}--hover-dark;
   }
 
   // :active
   #{$output-selector}:active,
-  #{$output-selector}--active.static {
+  #{$output-selector}--active {
     @extend #{$input-selector}--active-light;
   }
   html.dark #{$output-selector}:active,
-  html.dark #{$output-selector}--active.static {
+  html.dark #{$output-selector}--active {
     @extend #{$input-selector}--active-dark;
   }
 
   // :disabled
   #{$output-selector}:disabled,
-  #{$output-selector}--disabled.static {
+  #{$output-selector}--disabled {
     @extend #{$input-selector}--disabled-light;
   }
   html.dark #{$output-selector}:disabled,
-  html.dark #{$output-selector}--disabled.static {
+  html.dark #{$output-selector}--disabled {
     @extend #{$input-selector}--disabled-dark;
   }
 }
