@@ -1,5 +1,5 @@
 // libraries
-import { writeFile, mkdir } from "fs";
+import { writeFileSync, mkdir } from "fs";
 import path from "path";
 import cheerio from "cheerio";
 // partials-common
@@ -7,7 +7,7 @@ import { getIcons } from "./partials-common/get-icons.js";
 import { getCleanPath } from "./partials-common/utilities.js";
 import { getSvgString } from "./partials-common/get-svg-string.js";
 import { colorScheme, iconType } from "./partials-common/types.js";
-import { RED, RESET_COLOR, colorizeJson } from "./partials-common/utilities.js";
+import { RED, RESET_COLOR } from "./partials-common/utilities.js";
 import { deleteDirectoryRecursive } from "./partials-common/delete-directory.js";
 
 let monochromeCategoriesList: string[] = [];
@@ -25,7 +25,7 @@ iconsPromise
   .then((iconsArray: string[]) => {
     processIconsSass(SRC_DIRECTORY, iconsArray);
   })
-  .catch(error => {
+  .catch((error) => {
     const msg = `There was an error processing the icons. error: ${error}.`;
     throw new Error(`${RED} ${msg} ${RESET_COLOR}`);
   });
@@ -37,10 +37,10 @@ iconsPromise
 export function processIconsSass(sourceDir: string, iconsArray: string[]) {
   const iconsCatalog: iconsCatalog = {
     monochrome: {},
-    multicolor: {}
+    multicolor: {},
   };
 
-  iconsArray.forEach(iconPath => {
+  iconsArray.forEach((iconPath) => {
     addIconInCatalog(sourceDir, iconPath, iconsCatalog);
   });
 
@@ -85,13 +85,15 @@ const updateIconsCatalog = (
 ): iconsCatalog | void => {
   const cleanPath = getCleanPath(sourceDir, iconPath);
   const iconPathArray = cleanPath.split(path.sep);
-  const [category, type, filename] = iconPathArray;
+  const category = iconPathArray[iconPathArray.length - 3];
+  const scheme = iconPathArray[iconPathArray.length - 2];
+  const filename = iconPathArray[iconPathArray.length - 1];
   if (!iconsCatalog[iconType][category]) {
     iconsCatalog[iconType][category] = { light: [], dark: [] };
   }
-  iconsCatalog[iconType][category][type as colorScheme].push({
+  iconsCatalog[iconType][category][scheme as colorScheme].push({
     fileName: filename,
-    states: states
+    states: states,
   });
 };
 
@@ -192,7 +194,7 @@ const createPlaceholders = (
     `;
 
     // placeholder selectors
-    icon.states.forEach(state => {
+    icon.states.forEach((state) => {
       placeholderSelectors += `
     &-${iconName}--${state}-${scheme} {
       --icon-path: url("#{$icons-path}icons/${categoryName}/${scheme}/${icon.fileName}#${state}");
@@ -224,13 +226,15 @@ const saveSassOnDisk = (
   const filePath = path.join(sassDirectoryPath, `${categoryName}.scss`);
 
   mkdir(sassDirectoryPath, { recursive: true }, function (err) {
-    writeFile(filePath, sassFileContent, "utf8", err => {
-      if (err) {
-        const msg = `There was an error saving ${categoryName}.scss the icon on disk. error: ${err}`;
-        console.error(`${RED} ${msg} ${RESET_COLOR}`);
-        return false;
-      }
-    });
+    try {
+      // Write the content to the file synchronously
+      writeFileSync(filePath, sassFileContent);
+      // console.log(`${filePath} written successfully.`);
+    } catch (err) {
+      const msg = `There was an error saving ${categoryName}.scss the icon on disk. error: ${err}`;
+      console.error(`${RED} ${msg} ${RESET_COLOR}`);
+      return false;
+    }
   });
   return true;
 };
@@ -239,26 +243,24 @@ const saveMainSassOnDisk = () => {
   let output = ``;
 
   output += `\n/*multicolor lists*/`;
-  multicolorCategoriesList.forEach(category => {
+  multicolorCategoriesList.forEach((category) => {
     output += `\n@import "./multicolor/${category}";`;
   });
 
   output += `\n\n/*monochrome lists*/`;
-  monochromeCategoriesList.forEach(category => {
+  monochromeCategoriesList.forEach((category) => {
     output += `\n@import "./monochrome/${category}";`;
   });
 
-  output += `\n\n/*all multicolor lists*/`;
   output += `\n$all-multicolor-lists: (`;
-  multicolorCategoriesList.forEach(category => {
-    output += `\n${category}: $icons-${category}`;
+  multicolorCategoriesList.forEach((category) => {
+    output += `\n${category}: $icons-${category},`;
   });
   output += `\n);`;
 
-  output += `\n\n/*all monochrome lists*/\n`;
   output += `$all-monochrome-lists: (`;
-  monochromeCategoriesList.forEach(category => {
-    output += `\n${category}: $icons-${category}`;
+  monochromeCategoriesList.forEach((category) => {
+    output += `\n${category}: $icons-${category},`;
   });
   output += `\n);`;
 
@@ -266,13 +268,15 @@ const saveMainSassOnDisk = () => {
   const filePath = path.join(OUTPUT_DIRECTORY, fileName);
 
   mkdir(OUTPUT_DIRECTORY, { recursive: true }, function (err) {
-    writeFile(filePath, output, "utf8", err => {
-      if (err) {
-        const msg = `There was an error saving ${fileName} the icon on disk. error: ${err}`;
-        console.error(`${RED} ${msg} ${RESET_COLOR}`);
-        return false;
-      }
-    });
+    try {
+      // Write the content to the file synchronously
+      writeFileSync(filePath, output);
+      //console.log(`${filePath} written successfully.`);
+    } catch (err) {
+      const msg = `There was an error saving ${fileName} the icon on disk. error: ${err}`;
+      console.error(`${RED} ${msg} ${RESET_COLOR}`);
+      return false;
+    }
   });
   return true;
 };
