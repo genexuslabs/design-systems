@@ -115,8 +115,6 @@ const processIconsCatalog = (iconsCatalog: iconsCatalog) => {
       iconsCatalog.multicolor[category]
     );
   }
-
-  saveCatalogOnDisk(iconsCatalog);
 };
 
 const processCatalogCategory = (
@@ -254,13 +252,13 @@ const saveMainSassOnDisk = () => {
     output += `\n@import "./monochrome/${category}";`;
   });
 
-  output += `\n$all-multicolor-lists: (`;
+  output += `\n\n$all-multicolor-lists: (`;
   multicolorCategoriesList.forEach((category) => {
     output += `\n${category}: $icons-${category},`;
   });
   output += `\n);`;
 
-  output += `$all-monochrome-lists: (`;
+  output += `\n\n$all-monochrome-lists: (`;
   monochromeCategoriesList.forEach((category) => {
     output += `\n${category}: $icons-${category},`;
   });
@@ -282,15 +280,6 @@ const saveMainSassOnDisk = () => {
   });
 
   return true;
-};
-
-/**
- *
- * @description it saves on disk, the catalog as a json. This json will come in handy
- * to create a showcase of catalogs in html.
- */
-const saveCatalogOnDisk = (iconsCatalog: iconsCatalog) => {
-  console.log(iconsCatalog.monochrome["bpm-1"].light);
 };
 
 interface iconsCatalog {
