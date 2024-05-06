@@ -1,0 +1,96 @@
+
+   $icons-objects-2: stroke, path;
+    %icon__objects-2 {
+  
+    /* =================================
+    LIGHT
+    ================================= */
+  
+    /* - - - - - - - - - - - - 
+    stroke.svg 
+    - - - - - - - - - - - - */
+    
+    &-stroke--enabled-light {
+      --icon-path: url("#{$icons-path}icons/objects-2/light/stroke.svg#enabled");
+    }
+    
+    &-stroke--hover-light {
+      --icon-path: url("#{$icons-path}icons/objects-2/light/stroke.svg#hover");
+    }
+    
+    &-stroke--active-light {
+      --icon-path: url("#{$icons-path}icons/objects-2/light/stroke.svg#active");
+    }
+    
+    &-stroke--disabled-light {
+      --icon-path: url("#{$icons-path}icons/objects-2/light/stroke.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    path.svg 
+    - - - - - - - - - - - - */
+    
+    &-path--enabled-light {
+      --icon-path: url("#{$icons-path}icons/objects-2/light/path.svg#enabled");
+    }
+    
+    &-path--hover-light {
+      --icon-path: url("#{$icons-path}icons/objects-2/light/path.svg#hover");
+    }
+    
+    &-path--active-light {
+      --icon-path: url("#{$icons-path}icons/objects-2/light/path.svg#active");
+    }
+    
+    &-path--disabled-light {
+      --icon-path: url("#{$icons-path}icons/objects-2/light/path.svg#disabled");
+    }
+    
+
+    /* =================================
+    DARK
+    ================================= */
+  
+    /* - - - - - - - - - - - - 
+    stroke.svg 
+    - - - - - - - - - - - - */
+    
+    &-stroke--enabled-dark {
+      --icon-path: url("#{$icons-path}icons/objects-2/dark/stroke.svg#enabled");
+    }
+    
+    &-stroke--hover-dark {
+      --icon-path: url("#{$icons-path}icons/objects-2/dark/stroke.svg#hover");
+    }
+    
+    &-stroke--active-dark {
+      --icon-path: url("#{$icons-path}icons/objects-2/dark/stroke.svg#active");
+    }
+    
+    &-stroke--disabled-dark {
+      --icon-path: url("#{$icons-path}icons/objects-2/dark/stroke.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    path.svg 
+    - - - - - - - - - - - - */
+    
+    &-path--enabled-dark {
+      --icon-path: url("#{$icons-path}icons/objects-2/dark/path.svg#enabled");
+    }
+    
+    &-path--hover-dark {
+      --icon-path: url("#{$icons-path}icons/objects-2/dark/path.svg#hover");
+    }
+    
+    &-path--active-dark {
+      --icon-path: url("#{$icons-path}icons/objects-2/dark/path.svg#active");
+    }
+    
+    &-path--disabled-dark {
+      --icon-path: url("#{$icons-path}icons/objects-2/dark/path.svg#disabled");
+    }
+    
+  
+    }
+  

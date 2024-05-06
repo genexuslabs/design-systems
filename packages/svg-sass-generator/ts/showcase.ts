@@ -15,6 +15,11 @@ const SASS_FILE_NAME = "svg-generator-icons-lists.scss";
 
 const scssFilePath = join(SRC_SASS_FOLDER, SASS_FILE_NAME);
 const scssResult = sass.compile(scssFilePath, { style: "expanded" });
-const cssResultString = scssResult["css"].toString();
+const cssResult = scssResult["css"];
+const cssResultString = cssResult.replace(/[\r\n]+/g, "");
+const colorLists = cssResultString.split("lists*/");
 
-console.log("cssResultString", cssResultString);
+const multicolorSelectors = colorLists[1];
+const monochromeSelectors = colorLists[2];
+
+const parseCssString = (cssSelectorsString) => {};
