@@ -7,79 +7,110 @@
     <link rel="stylesheet" href="./icons-selectors.css" />
     <style>
       :root {
-        --sc-background-color: #f4f5f5;
-        --sc-color: #696969;
+        /*general*/
+        --sc-border-dimmed__color: rgba(255, 255, 255, 0.1);
+        /*body*/
+        --sc-body__background-color: #f4f5f5;
+        --sc-body__color: #696969;
+        --sc-body__font-family: sans-serif;
+        --sc-body__font-size: 16px;
+        /*icon*/
+        --sc-icon__box: 32px;
+        /*container*/
+        --sc-icon__container-padding-block: 64px;
+        --sc-icon__container-padding-inline: 32px;
+        --sc-icon__container-max-width: 1200px;
+        /*icons-type-section*/
+        --sc-icons-type-section__padding-block-end: 64px;
+        --sc-icons-type-section__margin-block-end: 64px;
+        --sc-icons-type-section__border: 3px dashed
+          var(--sc-border-dimmed__color);
+        --sc-icons-type-section-title__font-size: 20px;
+        --sc-icons-type-section-title__font-weight: 100;
+        --sc-icons-type-section-title__margin-block-end: 32px;
+        /*category*/
+        --sc-category-title__font-size: 16px;
+        --sc-category__margin-block-end: 32px;
+        --sc-category-title__margin-block-end: 18px;
+        /*icons-container*/
+        --sc-icons-container__border: 1px solid var(--sc-border-dimmed__color);
+        --sc-icons-container__border-radius: 6px;
+        --sc-icons-container__padding: 16px;
+        --sc-icons-container-title__margin-block-end: 18px;
+        --sc-icons-container-list__gap: 16px;
       }
       html.dark {
-        --sc-background-color: #1a1d20;
-        --sc-color: #999999;
+        --sc-body__background-color: #1a1d20;
+        --sc-body__color: #999999;
       }
-      html {
-        background-color: var(--sc-background-color);
-        color: var(--sc-color);
-      }
+      /*general*/
       body {
-        font-family: sans-serif;
+        background-color: var(--sc-body__background-color);
+        color: var(--sc-body__color);
+        font-family: var(--sc-body__font-family);
+        font-size: var(--sc-body__font-size);
       }
       .title {
         margin: 0;
       }
+      /*icon*/
       .icon {
         display: inline-block;
-        width: 32px;
-        height: 32px;
+        width: var(--sc-icon__box);
+        height: var(--sc-icon__box);
         background-image: var(--icon-path);
         background-size: contain;
       }
       /*container*/
       .container {
-        padding: 64px 32px;
-        max-width: 1200px;
+        padding-inline: var(--sc-icon__container-padding-inline);
+        padding-block: var(--sc-icon__container-padding-block);
+        max-width: var(--sc-icon__container-max-width);
         margin: 0 auto;
       }
-      /*icons-type*/
-      .icons-type:not(:last-child) {
-        padding-block-end: 64px;
-        margin-block-end: 64px;
-        border-bottom: 3px dashed var(--sc-color);
+      /*icons-type-section*/
+      .icons-type-section:not(:last-child) {
+        padding-block-end: var(--sc-icons-type-section__padding-block-end);
+        margin-block-end: var(--sc-icons-type-section__margin-block-end);
+        border-bottom: var(--sc-icons-type-section__border);
       }
-      .icons-type__title {
-        font-weight: 100;
-        font-size: 20px;
-        margin-block-end: 32px;
+      .icons-type-section__title {
+        font-size: var(--sc-icons-type-section-title__font-size);
+        font-weight: var(--sc-icons-type-section-title__font-weight);
+        margin-block-end: var(--sc-icons-type-section-title__margin-block-end);
       }
       /*category*/
       .category:not(:last-child) {
-        margin-block-end: 32px;
+        margin-block-end: var(--sc-category__margin-block-end);
       }
       .category__title {
-        font-size: 16px;
-        margin-block-end: 18px;
+        font-size: var(--sc-category-title__font-size);
+        margin-block-end: var(--sc-category__margin-block-end);
         font-style: italic;
       }
       /*icons-container*/
       .icons-container {
-        border: 1px solid var(--sc-color);
-        border-radius: 6px;
-        padding: 16px;
+        border: var(--sc-icons-container__border);
+        border-radius: var(--sc-icons-container__border-radius);
+        padding: var(--sc-icons-container__padding);
       }
       .icons-container__title {
-        margin-block-end: 18px;
+        margin-block-end: var(--sc-icons-container-title__margin-block-end);
       }
       .icons-container__list {
         list-style-type: none;
         margin: 0;
         padding: 0;
         display: flex;
-        gap: 16px;
+        gap: var(--sc-icons-container-list__gap);
       }
     </style>
   </head>
   <body>
     <div class="container" id="icons-container">
       <!-- multicolor -->
-      <section class="icons-type">
-        <h2 class="icons-type__title title">Multicolor Icons</h2>
+      <section class="icons-type-section">
+        <h2 class="icons-type-section__title title">Multicolor Icons</h2>
 
         <!-- cat-1 -->
         <article class="category">
@@ -139,8 +170,8 @@
       </section>
 
       <!-- monochrome -->
-      <section class="icons-type">
-        <h2 class="icons-type__title title">Monochrome Icons</h2>
+      <section class="icons-type-section">
+        <h2 class="icons-type-section__title title">Monochrome Icons</h2>
 
         <!-- cat-1 -->
         <article class="category">
