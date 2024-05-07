@@ -73,8 +73,6 @@ const scssResult = sass.compile(
 );
 const cssResult = scssResult["css"];
 
-console.log("cssResult", cssResult);
-
 // save compiled css on disk
 saveOnDisk(cssResult, join(OUTPUT_DIRECTORY, COMPILED_CSS_FILENAME));
 
@@ -112,23 +110,54 @@ const processIconsSelectors = (
   cssArray: string[],
   iconType: iconType
 ): void => {
+  let iconName: string;
+  let prevIconName: string;
   cssArray.forEach((cssIconSelector) => {
+    let newIcon = false;
+    let iconBaseName: string = null;
     // some selectors have two forms: with or without pseudo-selector (:hover, : active).
     const splittedSelectors = splitCssSelector(cssIconSelector);
     const category = getIconCategory(splittedSelectors[0]);
+    iconName = getIconName(splittedSelectors[0]);
+
+    if (iconName !== prevIconName) {
+      newIcon = true;
+      prevIconName = iconName;
+    }
+    if (iconType === "multicolor" && newIcon) {
+      if (splittedSelectors[0].includes(":")) {
+        iconBaseName = splittedSelectors[0].split(":")[0];
+      } else {
+        iconBaseName = splittedSelectors[0].split("--")[0];
+      }
+    }
+
+    let staticSelector;
+    if (splittedSelectors.length === 1) {
+      staticSelector = splittedSelectors[0];
+    } else if (splittedSelectors.length === 2) {
+      // replace(/\./g, "") removes the dot (.) from the class name.
+      // we want the class name without the dot (.)
+      if (splittedSelectors[0].includes(":")) {
+        staticSelector = splittedSelectors[1].replace(/\./g, "");
+      } else {
+        staticSelector = splittedSelectors[0].replace(/\./g, "");
+      }
+    }
+
     // Check if the property exists, if not, create it
     if (!iconsCatalog[iconType][category]) {
-      iconsCatalog[iconType][category] = [];
-      iconsCatalog[iconType][category].push({
-        pseudoSelector: splittedSelectors[0],
-        staticSelector: splittedSelectors[1],
-      });
-    } else {
-      iconsCatalog[iconType][category].push({
-        pseudoSelector: splittedSelectors[0],
-        staticSelector: splittedSelectors[1],
-      });
+      iconsCatalog[iconType][category] = {};
     }
+    if (newIcon) {
+      iconsCatalog[iconType][category][iconName] = {
+        iconBaseName: iconBaseName,
+        iconsSelectors: [],
+      };
+    }
+    iconsCatalog[iconType][category][iconName].iconsSelectors.push(
+      staticSelector
+    );
   });
 };
 
@@ -137,6 +166,15 @@ const getIconCategory = (iconCssSelector: string): string => {
   const endIndex = iconCssSelector.indexOf("_", startIndex);
   const category = iconCssSelector.substring(startIndex, endIndex);
   return category;
+};
+
+const getIconName = (iconCssSelector: string): string => {
+  const iconNameSeparatorIndex = iconCssSelector.lastIndexOf("_");
+  const iconName = iconCssSelector
+    .substring(iconNameSeparatorIndex + 1)
+    .split("--")[0]
+    .split(":")[0];
+  return iconName;
 };
 
 const splitCssSelector = (cssSelector: string): string[] => {
@@ -171,11 +209,13 @@ processIconsSelectors(monochromeCssArrayParsed, "monochrome");
 
 saveCatalogJsonOnDisk();
 
+export type iconsCategory = Record<string, iconsSelectors>;
+
 export type iconsSelectors = {
-  staticSelector: string;
-  pseudoSelector: string;
-}[];
+  iconBaseName: string;
+  iconsSelectors: string[];
+};
 export type iconsCatalog = {
-  monochrome: Record<string, iconsSelectors>;
-  multicolor: Record<string, iconsSelectors>;
+  monochrome: Record<string, iconsCategory>;
+  multicolor: Record<string, iconsCategory>;
 };

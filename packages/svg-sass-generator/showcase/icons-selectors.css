@@ -1,5 +1,6 @@
 /*multicolor lists*/
-.icon__objects-2_stroke {
+.icon__objects-2_stroke:enabled,
+.icon__objects-2_stroke--enabled {
   --icon-path: url("../dist/icons/objects-2/light/stroke.svg#enabled");
 }
 .icon__objects-2_stroke:hover,
@@ -14,7 +15,8 @@
 .icon__objects-2_stroke--disabled {
   --icon-path: url("../dist/icons/objects-2/light/stroke.svg#disabled");
 }
-.icon__objects-2_path {
+.icon__objects-2_path:enabled,
+.icon__objects-2_path--enabled {
   --icon-path: url("../dist/icons/objects-2/light/path.svg#enabled");
 }
 .icon__objects-2_path:hover,
@@ -29,7 +31,8 @@
 .icon__objects-2_path--disabled {
   --icon-path: url("../dist/icons/objects-2/light/path.svg#disabled");
 }
-html.dark .icon__objects-2_stroke {
+html.dark .icon__objects-2_stroke:enabled,
+html.dark .icon__objects-2_stroke--enabled {
   --icon-path: url("../dist/icons/objects-2/dark/stroke.svg#enabled");
 }
 html.dark .icon__objects-2_stroke:hover,
@@ -44,7 +47,8 @@ html.dark .icon__objects-2_stroke:disabled,
 html.dark .icon__objects-2_stroke--disabled {
   --icon-path: url("../dist/icons/objects-2/dark/stroke.svg#disabled");
 }
-html.dark .icon__objects-2_path {
+html.dark .icon__objects-2_path:enabled,
+html.dark .icon__objects-2_path--enabled {
   --icon-path: url("../dist/icons/objects-2/dark/path.svg#enabled");
 }
 html.dark .icon__objects-2_path:hover,
@@ -60,7 +64,8 @@ html.dark .icon__objects-2_path--disabled {
   --icon-path: url("../dist/icons/objects-2/dark/path.svg#disabled");
 }
 
-.icon__objects-1_stroke {
+.icon__objects-1_stroke:enabled,
+.icon__objects-1_stroke--enabled {
   --icon-path: url("../dist/icons/objects-1/light/stroke.svg#enabled");
 }
 .icon__objects-1_stroke:hover,
@@ -75,7 +80,8 @@ html.dark .icon__objects-2_path--disabled {
 .icon__objects-1_stroke--disabled {
   --icon-path: url("../dist/icons/objects-1/light/stroke.svg#disabled");
 }
-.icon__objects-1_path {
+.icon__objects-1_path:enabled,
+.icon__objects-1_path--enabled {
   --icon-path: url("../dist/icons/objects-1/light/path.svg#enabled");
 }
 .icon__objects-1_path:hover,
@@ -90,7 +96,8 @@ html.dark .icon__objects-2_path--disabled {
 .icon__objects-1_path--disabled {
   --icon-path: url("../dist/icons/objects-1/light/path.svg#disabled");
 }
-html.dark .icon__objects-1_stroke {
+html.dark .icon__objects-1_stroke:enabled,
+html.dark .icon__objects-1_stroke--enabled {
   --icon-path: url("../dist/icons/objects-1/dark/stroke.svg#enabled");
 }
 html.dark .icon__objects-1_stroke:hover,
@@ -105,7 +112,8 @@ html.dark .icon__objects-1_stroke:disabled,
 html.dark .icon__objects-1_stroke--disabled {
   --icon-path: url("../dist/icons/objects-1/dark/stroke.svg#disabled");
 }
-html.dark .icon__objects-1_path {
+html.dark .icon__objects-1_path:enabled,
+html.dark .icon__objects-1_path--enabled {
   --icon-path: url("../dist/icons/objects-1/dark/path.svg#enabled");
 }
 html.dark .icon__objects-1_path:hover,
