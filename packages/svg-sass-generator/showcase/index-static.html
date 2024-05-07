@@ -182,16 +182,138 @@
       <small class="top-bar__description">Automatically generated</small>
     </div>
     <div class="container" id="icons-container">
-      <!-- populated dynamically -->
+      <!-- multicolor -->
+      <section class="icons-type-section">
+        <h2
+          class="icons-type-section__title icons-type-section__title--multicolor title"
+        >
+          Multicolor Icons
+        </h2>
+
+        <!-- cat-1 -->
+        <article class="category">
+          <h3 class="category__title title">Cat 1 title</h3>
+          <div class="icons-container">
+            <h4 class="icons-container__title title">bpm-1</h4>
+            <ul class="icons-container__list">
+              <li class="icons-container__list-item">
+                <span class="icon icon__objects-2_stroke"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- cat-1 -->
+        <article class="category">
+          <h3 class="category__title title">Cat 1 title</h3>
+          <div class="icons-container">
+            <h4 class="icons-container__title title">bpm-1</h4>
+            <ul class="icons-container__list">
+              <li class="icons-container__list-item">
+                <span class="icon icon__objects-2_stroke"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <!-- monochrome -->
+      <section class="icons-type-section">
+        <h2
+          class="icons-type-section__title icons-type-section__title--monochrome title"
+        >
+          Monochrome Icons
+        </h2>
+
+        <!-- cat-1 -->
+        <article class="category">
+          <h3 class="category__title title">Cat 1 title</h3>
+          <div class="icons-container">
+            <h4 class="icons-container__title title">bpm-1</h4>
+            <ul class="icons-container__list">
+              <li class="icons-container__list-item">
+                <span class="icon icon__objects-2_stroke"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- cat-1 -->
+        <article class="category">
+          <h3 class="category__title title">Cat 1 title</h3>
+          <div class="icons-container">
+            <h4 class="icons-container__title title">bpm-1</h4>
+            <ul class="icons-container__list">
+              <li class="icons-container__list-item">
+                <span class="icon icon__objects-2_stroke"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+              <li>
+                <span class="icon"></span>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
     </div>
 
     <script>
-      const toggleDarkBtn = document.getElementById("toggle-dark-btn");
-      const html = document.querySelector("html");
-      toggleDarkBtn.addEventListener("click", () => {
-        html.classList.toggle("dark");
-      });
-      const container = document.getElementById("icons-container");
       const output = [];
       const iconsCatalogJson = fetch("./icons-catalog.json")
         .then((response) => {
@@ -209,27 +331,16 @@
         });
 
       const renderIcons = (iconsCatalogJson) => {
-        const outputArray = [];
         //multicolor
-        const multicolorSection = renderSection(
+        const multicolorRender = renderCategories(
           "multicolor",
           iconsCatalogJson.multicolor
         );
-        outputArray.push(multicolorSection);
-
-        //monochrome
-        const monochromeSection = renderSection(
-          "monochrome",
-          iconsCatalogJson.monochrome
-        );
-        outputArray.push(monochromeSection);
-        outputArray.forEach((iconsType) => {
-          container.appendChild(iconsType);
-        });
       };
 
-      const renderSection = (type, iconsType) => {
-        const categoriesArray = [];
+      const renderCategories = (type, iconsType) => {
+        const outputHtml = [];
+        const categoriesHtml = [];
 
         /* - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -280,34 +391,27 @@
             /* - - - - - - - - - - - - - - - - - - - - - - */
 
             // icon states (list items)
-            iconsType[cat][icon].iconSelectors.forEach((state) => {
+            icon.iconsSelectors.forEach((state) => {
               // list item
               const liElement = document.createElement("li");
               liElement.classList.add("icons-container__list-item");
 
               // icon (span)
               const spanElement = document.createElement("span");
-              spanElement.classList.add("icon", state);
-              spanElement.setAttribute("title", `.${state}`);
+              spanElement.classList.add(state);
               liElement.appendChild(spanElement);
               ulElement.appendChild(liElement);
             });
-
-            iconsContainer.appendChild(h4Element);
-            iconsContainer.appendChild(ulElement);
           });
 
+          iconsContainer.appendChild(h4Element);
+          iconsContainer.appendChild(ulElement);
           categoryArticle.appendChild(categoryTitle);
           categoryArticle.appendChild(iconsContainer);
-          categoriesArray.push(categoryArticle);
         });
 
         section.appendChild(sectionTitle);
-        categoriesArray.forEach((category) => {
-          section.appendChild(category);
-        });
-
-        return section;
+        section.appendChild(categoryArticle);
       };
     </script>
   </body>

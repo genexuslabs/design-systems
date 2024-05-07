@@ -32,13 +32,13 @@ const getSassContent = (scssSourceFilePath: string): string => {
 
 const createShowcaseIconsList = (
   sourceIconsList: string,
-  iconsSelectorsGenerator: string,
+  iconSelectorsGenerator: string,
   iconsPath: string
 ): string => {
   const output = `
 $icons-path: "${iconsPath}";
 ${sourceIconsList} \n
-${iconsSelectorsGenerator}
+${iconSelectorsGenerator}
   `;
   return output;
 };
@@ -54,12 +54,10 @@ const saveOnDisk = (content: string, outputPath: string): void => {
 
 const scssSourceFilePath = join(SRC_SASS_FOLDER, SRC_ICONS_LISTS);
 const sourceSassContent = getSassContent(scssSourceFilePath);
-const iconsSelectorsGeneratorContent = getSassContent(
-  ICONS_SELECTORS_GENERATOR
-);
+const iconSelectorsGeneratorContent = getSassContent(ICONS_SELECTORS_GENERATOR);
 const showcaseIconsList = createShowcaseIconsList(
   sourceSassContent,
-  iconsSelectorsGeneratorContent,
+  iconSelectorsGeneratorContent,
   SVG_ICONS_SRC
 );
 
@@ -106,10 +104,7 @@ const parseCssArray = (cssArray: string[]): string[] => {
   return cssArray.filter((cssSelector) => cssSelector.startsWith("."));
 };
 
-const processIconsSelectors = (
-  cssArray: string[],
-  iconType: iconType
-): void => {
+const processIconSelectors = (cssArray: string[], iconType: iconType): void => {
   let iconName: string;
   let prevIconName: string;
   cssArray.forEach((cssIconSelector) => {
@@ -133,11 +128,11 @@ const processIconsSelectors = (
     }
 
     let staticSelector;
+    // replace(/\./g, "") removes the dot (.) from the class name.
+    // we want the class name without the dot (.)
     if (splittedSelectors.length === 1) {
-      staticSelector = splittedSelectors[0];
+      staticSelector = splittedSelectors[0].replace(/\./g, "");
     } else if (splittedSelectors.length === 2) {
-      // replace(/\./g, "") removes the dot (.) from the class name.
-      // we want the class name without the dot (.)
       if (splittedSelectors[0].includes(":")) {
         staticSelector = splittedSelectors[1].replace(/\./g, "");
       } else {
@@ -152,10 +147,10 @@ const processIconsSelectors = (
     if (newIcon) {
       iconsCatalog[iconType][category][iconName] = {
         iconBaseName: iconBaseName,
-        iconsSelectors: [],
+        iconSelectors: [],
       };
     }
-    iconsCatalog[iconType][category][iconName].iconsSelectors.push(
+    iconsCatalog[iconType][category][iconName].iconSelectors.push(
       staticSelector
     );
   });
@@ -199,21 +194,21 @@ const saveCatalogJsonOnDisk = (): string | void => {
 const multicolorParsedCssString = parseCssString(multicolorSelectors);
 const multicolorCssArray = getSelectorsArray(multicolorParsedCssString);
 const multicolorCssArrayParsed = parseCssArray(multicolorCssArray);
-processIconsSelectors(multicolorCssArrayParsed, "multicolor");
+processIconSelectors(multicolorCssArrayParsed, "multicolor");
 
 // process monochrome selectors (add them to iconsCatalog)
 const monochromeParsedCssString = parseCssString(monochromeSelectors);
 const monochromeCssArray = getSelectorsArray(monochromeParsedCssString);
 const monochromeCssArrayParsed = parseCssArray(monochromeCssArray);
-processIconsSelectors(monochromeCssArrayParsed, "monochrome");
+processIconSelectors(monochromeCssArrayParsed, "monochrome");
 
 saveCatalogJsonOnDisk();
 
-export type iconsCategory = Record<string, iconsSelectors>;
+export type iconsCategory = Record<string, iconSelectors>;
 
-export type iconsSelectors = {
+export type iconSelectors = {
   iconBaseName: string;
-  iconsSelectors: string[];
+  iconSelectors: string[];
 };
 export type iconsCatalog = {
   monochrome: Record<string, iconsCategory>;
