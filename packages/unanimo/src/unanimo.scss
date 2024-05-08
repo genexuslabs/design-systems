@@ -71,6 +71,7 @@
   $base-classes: true,
   $button-classes: true,
   $form-controls-classes: true,
+  $hyperlink-classes: true,
   $icon-classes: true,
   $typography-classes: true,
 
@@ -243,6 +244,11 @@
       @include form-input();
       @include form-input__label();
       @include form-input__helper();
+    }
+
+    // Hyperlink
+    @if $hyperlink-classes {
+      @include hyperlink();
     }
 
     // Icon classes
