@@ -20,6 +20,20 @@ $tree-view-primary-hover: color-mix(
 %tree-view-primary {
   @extend %text-body-2;
   color: var(--text-un-text__on-secondary);
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+  scrollbar-color: var(--sidebar-un-sidebar__background-color--active)
+    transparent;
+
+  &--webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+  }
+
+  &--webkit-scrollbar-thumb {
+    background-color: var(--sidebar-un-sidebar__background-color--active);
+  }
 }
 
 %tree-view--drag-preview {
@@ -143,6 +157,14 @@ $tree-view-primary-hover: color-mix(
   #{$tree-view-selector} {
     @extend %tree-view;
     @extend %tree-view-primary;
+
+    &::-webkit-scrollbar {
+      @extend %tree-view-primary--webkit-scrollbar;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @extend %tree-view-primary--webkit-scrollbar-thumb;
+    }
   }
 
   // - - - - - - - - - - - - - - - - - - - -

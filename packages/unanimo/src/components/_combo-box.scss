@@ -1,3 +1,14 @@
+%combo-box {
+  --ch-combo-box-separation-y: 2px;
+  --ch-combo-box-item-gap: var(--spacing-un-spacing--s);
+
+  --ch-combo-box-item__image-size: var(--spacing-un-spacing--l);
+  --ch-combo-box-group__expandable-button-size: var(--spacing-un-spacing--l);
+
+  --ch-combo-box-group__expandable-button-image-size: 12px;
+  --ch-combo-box-item__background-image-size: 12px;
+}
+
 %combo-box__window {
   background-color: var(--elevation-un-elevation--3);
   border-radius: 4px;
@@ -5,23 +16,50 @@
   padding: var(--spacing-un-spacing--xs);
 }
 
-%combo-box__item-selector {
+%combo-box__group-header {
+  font-family: SourceSansPro_SemiBold;
+  padding-block: var(--spacing-un-spacing--s);
+  padding-inline: var(--spacing-un-spacing--m);
+
+  &-expandable--hover {
+    color: var(--text-un-text__primary--hover);
+  }
+}
+
+%combo-box__item {
   border-radius: 4px;
   padding-block: var(--spacing-un-spacing--s);
   padding-inline: var(--spacing-un-spacing--m);
-}
 
-%combo-box__item--selected-selector {
-  background-color: var(--accents-un-accent__primary-dim--hover);
+  &--disabled {
+    color: var(--text-un-text__disabled);
+  }
+
+  &--nested {
+    padding-inline-start: calc(
+      var(--ch-combo-box-item-gap) +
+        var(--ch-combo-box-group__expandable-button-size) +
+        var(--spacing-un-spacing--m)
+    );
+  }
+
+  &--selected {
+    background-color: var(--accents-un-accent__primary-dim--hover);
+  }
 }
 
 /// @group ComboBox
 /// @param {String} $combo-box-selector [".combo-box"] -
 /// @param {String} $combo-box--disabled-selector [".combo-box[disabled]"] -
 /// @param {String} $combo-box__placeholder-selector [".combo-box::part(placeholder)"] -
-/// @param {String} $combo-box__window-selector [".combo-box::part(window)"] -
-/// @param {String} $combo-box__item-selector [".combo-box::part(item)"] -
-/// @param {String} $combo-box__item--selected-selector [".combo-box::part(item selected)"] -
+/// @param {String} $window-selector [".combo-box::part(window)"] -
+/// @param {String} $group__header-selector [".combo-box::part(group__header)"] -
+/// @param {String} $group__header--disabled-selector [".combo-box::part(group__header disabled)"] -
+/// @param {String} $group__header--expandable-selector [".combo-box::part(group__header expandable)"] -
+/// @param {String} $item-selector [".combo-box::part(item)"] -
+/// @param {String} $item--disabled-selector [".combo-box::part(item disabled)"] -
+/// @param {String} $item--nested-selector [".combo-box::part(item nested)"] -
+/// @param {String} $item--selected-selector [".combo-box::part(item selected)"] -
 /// @param {Boolean} $add--disabled [true] -
 /// @param {Boolean} $add--placeholder [true] -
 /// @param {Boolean} $add--placeholder-var [true] -
@@ -30,9 +68,15 @@
   $combo-box-selector: ".combo-box",
   $combo-box--disabled-selector: ".combo-box[disabled]",
   $combo-box__placeholder-selector: ".combo-box::part(placeholder)",
-  $combo-box__window-selector: ".combo-box::part(window)",
-  $combo-box__item-selector: ".combo-box::part(item)",
-  $combo-box__item--selected-selector: ".combo-box::part(item selected)",
+  $window-selector: ".combo-box::part(window)",
+  $group__header-selector: ".combo-box::part(group__header)",
+  $group__header--disabled-selector: ".combo-box::part(group__header disabled)",
+  $group__header--expandable-selector:
+    ".combo-box::part(group__header expandable)",
+  $item-selector: ".combo-box::part(item)",
+  $item--disabled-selector: ".combo-box::part(item disabled)",
+  $item--nested-selector: ".combo-box::part(item nested)",
+  $item--selected-selector: ".combo-box::part(item selected)",
   $add--disabled: true,
   $add--placeholder: true,
   $add--placeholder-var: true,
@@ -42,6 +86,7 @@
 
   #{$combo-box-selector} {
     @extend %form-input;
+    @extend %combo-box;
 
     &:focus {
       @extend %form-input--focus;
@@ -62,17 +107,46 @@
     #{$combo-box--disabled-selector} {
       @extend %form-input--disabled;
     }
+
+    #{$group__header--disabled-selector} {
+      @extend %combo-box__item--disabled;
+    }
+
+    #{$item--disabled-selector} {
+      @extend %combo-box__item--disabled;
+    }
   }
 
-  #{$combo-box__window-selector} {
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Window
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$window-selector} {
     @extend %combo-box__window;
   }
 
-  #{$combo-box__item-selector} {
-    @extend %combo-box__item-selector;
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Group
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$group__header-selector} {
+    @extend %combo-box__group-header;
   }
 
-  #{$combo-box__item--selected-selector} {
-    @extend %combo-box__item--selected-selector;
+  #{$group__header--expandable-selector}:hover {
+    @extend %combo-box__group-header-expandable--hover;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Item
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$item-selector} {
+    @extend %combo-box__item;
+  }
+
+  #{$item--nested-selector} {
+    @extend %combo-box__item--nested;
+  }
+
+  #{$item--selected-selector} {
+    @extend %combo-box__item--selected;
   }
 }
