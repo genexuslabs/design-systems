@@ -11,6 +11,7 @@
     "build": "npm run copy-assets && npm run build.scss && npm run build.docs",
     "build.scss": "scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss && sass test/test.scss dist/css/unanimo.css",
     "build.docs": "sassdoc dist/unanimo.scss",
+    "generate-docs": "npm run build.scss && npm run build.docs",
     "test": "sass test/test.scss test/unanimo.css",
     "validate.ci": "npm run build"
   },
