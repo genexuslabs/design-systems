@@ -37,3 +37,9 @@
   grid-template-rows: auto; // Necessary to avoid creating additional rows and then adding additional gap at the bottom of the label
   align-items: center;
 }
+
+@mixin document-common-styles() {
+  display: grid;
+  min-block-size: 100dvh;
+  margin: 0;
+}
