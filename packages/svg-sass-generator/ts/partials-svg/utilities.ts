@@ -1,13 +1,4 @@
-import {
-  readFileSync,
-  writeFile,
-  existsSync,
-  mkdirSync,
-  rmSync,
-  mkdir,
-  accessSync,
-  constants,
-} from "fs";
+import fs from "fs";
 import {
   getStatesJsonReturn,
   colorScheme,
@@ -16,7 +7,10 @@ import {
 } from "../partials-common/types.js";
 import { optimize } from "svgo";
 import path from "path";
-import { deleteDirectoryRecursive } from "../partials-common/delete-directory.js";
+import {
+  deleteDirectory,
+  writeFile,
+} from "../partials-common/file-system-utils.js";
 import { log } from "./log.js";
 import { RED, RESET_COLOR } from "../partials-common/utilities.js";
 
@@ -41,7 +35,7 @@ const ICONS_DIRECTORY = "icons";
 export const getStatesObject = (STATES_PATH: string): getStatesJsonReturn => {
   try {
     // Read the file synchronously
-    const statesString: string = readFileSync(STATES_PATH, "utf8");
+    const statesString: string = fs.readFileSync(STATES_PATH, "utf8");
     return {
       valid: true,
       info: "Ok",
@@ -76,17 +70,8 @@ export const saveSvgOnDisk = (
 
   const filePath = path.join(fileDirectoriesPath, pathInfo.fileName);
 
-  mkdir(fileDirectoriesPath, { recursive: true }, function (err) {
-    writeFile(filePath, svgString, "utf8", (err) => {
-      if (err) {
-        const msg = `There was an error saving the icon on disk. error: ${err}`;
-        console.error(`${RED} ${msg} ${RESET_COLOR}`);
-        log(msg, LOG_PATH, true);
-        return false;
-      }
-    });
-  });
-  return true;
+  const savedSuccessfully = writeFile(filePath, svgString, LOG_PATH);
+  return savedSuccessfully;
 };
 
 export const getPathInfo = (iconPath: string): pathInfo => {

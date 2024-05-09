@@ -11,7 +11,7 @@ import { join, extname } from "path";
 import { validateSchemaReturn } from "./states-validator.js";
 import colorize from "json-colorizer";
 import { log } from "./log.js";
-import { deleteDirectoryRecursive } from "../partials-common/delete-directory.js";
+import { deleteDirectory } from "../partials-common/file-system-utils.js";
 import { iconsColorsSchema } from "../partials-common/types.js";
 
 const DIR_PATH_REGEX = /^\.\/?[\w-\/]+\/?$/;
@@ -28,7 +28,7 @@ export function readyToProcess(
   const shouldWriteToLog = !!LOG_PATH;
   //clean the log directory first for a fresh log.
   if (shouldWriteToLog) {
-    deleteDirectoryRecursive(LOG_PATH);
+    deleteDirectory(LOG_PATH);
   }
 
   // 1. check arguments quantity
@@ -134,7 +134,7 @@ export function readyToProcess(
   }
 
   // 6. clear and create output directory for a fresh start
-  deleteDirectoryRecursive(OUTPUT_DIRECTORY);
+  deleteDirectory(OUTPUT_DIRECTORY);
   if (!fs.existsSync(OUTPUT_DIRECTORY)) {
     fs.mkdirSync(OUTPUT_DIRECTORY);
   }

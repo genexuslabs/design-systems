@@ -1,6 +1,4 @@
 // libraries
-import { glob } from "glob";
-import { readFileSync } from "fs";
 import path from "path";
 import cheerio from "cheerio";
 // partials-common

@@ -8,7 +8,7 @@ import { getCleanPath } from "./partials-common/utilities.js";
 import { getSvgString } from "./partials-common/get-svg-string.js";
 import { colorScheme, iconType } from "./partials-common/types.js";
 import { RED, RESET_COLOR } from "./partials-common/utilities.js";
-import { deleteDirectoryRecursive } from "./partials-common/delete-directory.js";
+import { deleteDirectory } from "./partials-common/file-system-utils.js";
 
 let monochromeCategoriesList: string[] = [];
 let multicolorCategoriesList: string[] = [];
@@ -18,7 +18,7 @@ const SRC_DIRECTORY = await process.argv[2];
 const OUTPUT_DIRECTORY = await process.argv[3];
 
 // Start fresh (delete current output directory)
-deleteDirectoryRecursive(OUTPUT_DIRECTORY);
+deleteDirectory(OUTPUT_DIRECTORY);
 
 const iconsPromise = getIcons(SRC_DIRECTORY);
 iconsPromise
