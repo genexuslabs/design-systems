@@ -1,0 +1,38 @@
+// libraries
+import path from "path";
+// libraries
+import { readFileSync } from "fs";
+
+//Log colors
+export const RED = "\x1b[31m";
+export const GREEN = "\x1b[32m";
+export const RESET_COLOR = "\x1b[0m";
+export const colorizeJson = {
+  STRING_KEY: "white",
+  STRING_LITERAL: "green",
+  NUMBER_LITERAL: "blue",
+};
+
+/**
+ * @description it returns a file path without the sourceDirectory.
+ */
+export const getPathWithoutSrcDir = (
+  sourceDir: string,
+  filePath: string
+): string => {
+  return path.relative(sourceDir, filePath);
+};
+
+/**
+ * @description it tries to read an icon file and returns the icon markup as a string.
+ * @param iconPath: the icon path.
+ */
+export function getSvgString(iconPath: string) {
+  try {
+    return readFileSync(iconPath, "utf8");
+  } catch (error) {
+    throw new Error(
+      `${RED} There was an error reading ${iconPath} error: ${error}. ${RESET_COLOR}`
+    );
+  }
+}

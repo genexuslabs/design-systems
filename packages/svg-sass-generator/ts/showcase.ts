@@ -5,8 +5,8 @@ import * as sass from "sass";
 import { join } from "path";
 import cheerio from "cheerio";
 import { processMulticolorFigures } from "./partials-svg/process-multicolor-figures.js";
-import { saveSvgOnDisk } from "./partials-svg/utilities.js";
-import { RED, RESET_COLOR } from "./partials-common/utilities.js";
+import { saveSvgOnDisk } from "./partials-svg/utils.js";
+import { RED, RESET_COLOR } from "./partials-common/utils.js";
 import { iconType } from "./partials-common/types.js";
 
 //Directories

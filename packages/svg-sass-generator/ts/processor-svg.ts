@@ -3,11 +3,11 @@ import path from "path";
 import cheerio from "cheerio";
 // partials-common
 import { getIcons } from "./partials-common/get-icons.js";
-import { RED, RESET_COLOR } from "./partials-common/utilities.js";
-import { getSvgString } from "./partials-common/get-svg-string.js";
+import { RED, RESET_COLOR } from "./partials-common/utils.js";
+import { getSvgString } from "./partials-common/utils.js";
 // partials-svg
 import { processMulticolorFigures } from "./partials-svg/process-multicolor-figures.js";
-import { saveSvgOnDisk } from "./partials-svg/utilities.js";
+import { saveSvgOnDisk } from "./partials-svg/utils.js";
 import {
   iconsColorsSchema,
   processedIconInfo,
@@ -19,7 +19,7 @@ import { readyToProcess, readyObj } from "./partials-svg/ready-to-process.js";
 import { getIconType } from "./partials-svg/get-icon-type.js";
 import { log } from "./partials-svg/log.js";
 
-//Import partials or utilities
+//Import partials or utils
 //Files and Directories
 const SRC_DIRECTORY = await process.argv[2];
 const OUTPUT_DIRECTORY = await process.argv[3];

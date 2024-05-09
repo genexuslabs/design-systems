@@ -1,11 +1,11 @@
-import { SVG_FIGURES } from "./utilities.js";
+import { SVG_FIGURES } from "./utils.js";
 import {
   figureType,
   iconsColorsSchema,
   multicolorFiguresResult,
 } from "../partials-common/types.js";
 import cheerio from "cheerio";
-import { getFigureType, removeSpacesAndLineBreaks } from "./utilities.js";
+import { getFigureType, removeSpacesAndLineBreaks } from "./utils.js";
 import { log } from "./log.js";
 
 let warnings: warningInfo[] = [];

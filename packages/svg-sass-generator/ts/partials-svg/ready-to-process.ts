@@ -1,12 +1,8 @@
 import * as fs from "fs";
-import {
-  RED,
-  RESET_COLOR,
-  colorizeJson,
-} from "../partials-common/utilities.js";
+import { RED, RESET_COLOR, colorizeJson } from "../partials-common/utils.js";
 
 import { validateStatesSchema } from "./states-validator.js";
-import { getStatesObject } from "./utilities.js";
+import { getStatesObject } from "./utils.js";
 import { join, extname } from "path";
 import { validateSchemaReturn } from "./states-validator.js";
 import colorize from "json-colorizer";

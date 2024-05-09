@@ -12,7 +12,7 @@ import {
   writeFile,
 } from "../partials-common/file-system-utils.js";
 import { log } from "./log.js";
-import { RED, RESET_COLOR } from "../partials-common/utilities.js";
+import { RED, RESET_COLOR } from "../partials-common/utils.js";
 
 /**
  * The list of available svg figures in any svg icon.

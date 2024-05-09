@@ -4,11 +4,14 @@ import path from "path";
 import cheerio from "cheerio";
 // partials-common
 import { getIcons } from "./partials-common/get-icons.js";
-import { getCleanPath } from "./partials-common/utilities.js";
-import { getSvgString } from "./partials-common/get-svg-string.js";
+import { getPathWithoutSrcDir } from "./partials-common/utils.js";
+import { getSvgString } from "./partials-common/utils.js";
 import { colorScheme, iconType } from "./partials-common/types.js";
-import { RED, RESET_COLOR } from "./partials-common/utilities.js";
-import { deleteDirectory } from "./partials-common/file-system-utils.js";
+import { RED, RESET_COLOR } from "./partials-common/utils.js";
+import {
+  deleteDirectory,
+  writeFile,
+} from "./partials-common/file-system-utils.js";
 
 let monochromeCategoriesList: string[] = [];
 let multicolorCategoriesList: string[] = [];
@@ -83,7 +86,7 @@ const updateIconsCatalog = (
   iconType: iconType,
   states: string[]
 ): iconsCatalog | void => {
-  const cleanPath = getCleanPath(sourceDir, iconPath);
+  const cleanPath = getPathWithoutSrcDir(sourceDir, iconPath);
   const iconPathArray = cleanPath.split(path.sep);
   const category = iconPathArray[iconPathArray.length - 3];
   const scheme = iconPathArray[iconPathArray.length - 2];
@@ -224,6 +227,9 @@ const saveSassOnDisk = (
 ) => {
   const sassDirectoryPath = path.join(OUTPUT_DIRECTORY, type);
   const filePath = path.join(sassDirectoryPath, `${categoryName}.scss`);
+
+  console.log("sassDirectoryPath", sassDirectoryPath);
+  console.log("filePath", filePath);
 
   mkdir(sassDirectoryPath, { recursive: true }, function (err) {
     try {

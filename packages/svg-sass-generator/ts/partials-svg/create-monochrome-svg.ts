@@ -7,7 +7,7 @@ import {
   getPathInfo,
   getFigureType,
   removeSpacesAndLineBreaks,
-} from "./utilities.js";
+} from "./utils.js";
 // partials common
 import {
   colorScheme,

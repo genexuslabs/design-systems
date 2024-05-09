@@ -1,4 +1,4 @@
-import { SVG_FIGURES } from "./utilities.js";
+import { SVG_FIGURES } from "./utils.js";
 import {
   iconsColorsSchema,
   iconType,
