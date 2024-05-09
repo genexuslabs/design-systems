@@ -15,7 +15,7 @@
     "test": "sass test/test.scss  dist/css/mercury.css",
     "test--watch": "chokidar ./dist/mercury.scss -c \"npm run test\"",
     "validate.ci": "npm run build",
-    "process-svg": "ssg-svg ./assets-test ./dist-test color-states.json ./log",
+    "process-svg": "ssg-svg ./src/assets/icons-source/ ./scr/assets/icons-dist/ color-states.json ./log",
     "test-ssg": "ssg-test"
   },
   "license": "MIT",

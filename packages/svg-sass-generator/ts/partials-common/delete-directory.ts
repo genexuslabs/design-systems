@@ -1,6 +1,8 @@
 import { join } from "path";
 import * as fs from "fs";
 
+const DIST_DIRECTORY = await process.argv[2];
+
 /**
  * Recursively deletes a directory and its contents.
  * @param {string} directoryPath The path of the directory to delete.
@@ -22,3 +24,5 @@ export const deleteDirectoryRecursive = (directoryPath: string) => {
 
   fs.rmdirSync(directoryPath);
 };
+
+deleteDirectoryRecursive(DIST_DIRECTORY);
