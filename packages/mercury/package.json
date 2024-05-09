@@ -14,24 +14,17 @@
     "build--watch.scss": "scss-bundle --rootDir ./src --watch -e ./src/mercury.scss -o dist/mercury.scss",
     "test": "sass test/test.scss  dist/css/mercury.css",
     "test--watch": "chokidar ./dist/mercury.scss -c \"npm run test\"",
-    "svg": "node ./svg-generator/processor-svg.js ./src/icons/ ./src/assets/icons/ ./src/icons/_settings/multicolor.svg.template ./src/icons/_settings/monochrome.svg.template ./src/icons/_settings/states-monochrome.json",
-    "svg-sass": "node ./svg-generator/processor-sass.js ./src/icons/ ./src/base/icon/icons-lists/ ./src/icons/_settings/states-monochrome.json",
-    "svg-old": "process-svg ./src/icons/ ./src/assets/icons/ ./src/icons/_settings/multicolor.svg.template ./src/icons/_settings/monochrome.svg.template ./src/icons/_settings/states-monochrome.json",
-    "svg-sass-old": "process-sass ./src/assets/icons ./src/base/icons/sass/ ./src/icons/_settings/states-monochrome.json",
-    "validate.ci": "npm run build"
+    "validate.ci": "npm run build",
+    "process-svg": "ssg-svg ./src/assets/icons-source/ ./scr/assets/icons-dist/ color-states.json ./log",
+    "test-ssg": "ssg-test"
   },
   "license": "MIT",
   "devDependencies": {
     "@atao60/fse-cli": "^0.1.9",
-    "cheerio": "^1.0.0-rc.12",
-    "glob": "^10.3.10",
     "sass": "~1.72.0",
     "scss-bundle": "~3.1.2",
-    "svgo": "^3.2.0"
-  },
-  "dependencies": {
     "chokidar": "^3.6.0",
-    "svg-generator": "file:../svg-generator"
+    "svg-sass-generator": "file:../svg-sass-generator"
   },
   "engines": {
     "pnpm": ">=3"

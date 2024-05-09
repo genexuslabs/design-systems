@@ -59,7 +59,6 @@
   // Base
   $base-classes: true,
   $button-classes: true,
-  $buttons-with-icons: true,
 
   // Components
   $components: true,
@@ -170,10 +169,7 @@
   //                 Icons
   // - - - - - - - - - - - - - - - - - - - -
   @if $icons {
-    @include icons-selectors-generator(
-      $icons-path: $icons-path,
-      $buttons-with-icons: $buttons-with-icons
-    );
+    @include icons-selectors-generator($icons-path: $icons-path);
   }
 
   // - - - - - - - - - - - - - - - - - - - -
