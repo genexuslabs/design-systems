@@ -23,6 +23,9 @@ export const deleteDirectory = (directoryPath: string) => {
   fs.rmdirSync(directoryPath);
 };
 
+/**
+ * @description Recursively creates a directory.
+ */
 export const createDir = (directory: string): boolean => {
   try {
     // Check if directory exists
