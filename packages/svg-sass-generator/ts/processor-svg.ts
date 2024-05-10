@@ -123,6 +123,9 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
             LOG_PATH
           );
         }
+
+        console.log("iconPath", iconPath);
+
         // Save info for the log
         saveProcessedIconInfo(
           processedIconsInfo,

@@ -26,9 +26,7 @@
     "watch": "tsc --watch",
     "build-svg": "npm run clean-svg-js && tsc --build && npm run copy-json",
     "showcase": "node ./js/showcase.js ./sass/ ./assets/icons-selectors-generator.scss ./showcase/ ../dist/",
-    "test-selectors": "sass ./showcase/svg-generator-icons-lists.scss ./showcase/styles.css",
-    "cd": "node ./js/partials-common/file-system-utils.js ./custom-dir/otro-dir/",
-    "dd": "node ./js/partials-common/delete-directory.js ./custom-dir"
+    "test-selectors": "sass ./showcase/svg-generator-icons-lists.scss ./showcase/styles.css"
   },
   "author": "GeneXus",
   "license": "Apache-2.0",
