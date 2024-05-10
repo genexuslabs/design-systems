@@ -7,7 +7,10 @@ import { join, extname } from "path";
 import { validateSchemaReturn } from "./states-validator.js";
 import colorize from "json-colorizer";
 import { log } from "./log.js";
-import { deleteDirectory } from "../partials-common/file-system-utils.js";
+import {
+  deleteDirectory,
+  createDir,
+} from "../partials-common/file-system-utils.js";
 import { iconsColorsSchema } from "../partials-common/types.js";
 
 const DIR_PATH_REGEX = /^\.\/?[\w-\/]+\/?$/;
@@ -117,7 +120,6 @@ export function readyToProcess(
 
     validateSchemaResult.errors.forEach((error) => {
       const errorString = JSON.stringify(error, null, 2);
-      console.log(colorize(errorString, { colors: colorizeJson }));
 
       msg += errorString;
     });
@@ -131,9 +133,7 @@ export function readyToProcess(
 
   // 6. clear and create output directory for a fresh start
   deleteDirectory(OUTPUT_DIRECTORY);
-  if (!fs.existsSync(OUTPUT_DIRECTORY)) {
-    fs.mkdirSync(OUTPUT_DIRECTORY);
-  }
+  createDir(OUTPUT_DIRECTORY);
 
   return {
     ready: true,

@@ -23,19 +23,17 @@ export const deleteDirectory = (directoryPath: string) => {
   fs.rmdirSync(directoryPath);
 };
 
-export const createDir = (directory: string, LOG_PATH: string): boolean => {
+export const createDir = (directory: string): boolean => {
   try {
     // Check if directory exists
     if (!fs.existsSync(directory)) {
       // If directory does not exist, create it recursively.
       fs.mkdirSync(directory, { recursive: true });
-      console.log(`Directory "${directory}" created successfully.`);
     }
     return true;
   } catch (error) {
-    const msg = `Error writing direcotry "${directory}`;
+    const msg = `Error writing directory "${directory}`;
     console.error(`${RED} ${msg} ${RESET_COLOR}`);
-    log(msg, LOG_PATH, true);
     return false;
   }
 };
@@ -48,7 +46,7 @@ export const createDir = (directory: string, LOG_PATH: string): boolean => {
 export const writeFile = (
   filePath: string,
   data: string,
-  LOG_PATH: string
+  LOG_PATH?: string
 ): boolean => {
   try {
     const directory = dirname(filePath);

@@ -1,5 +1,6 @@
 import { glob } from "glob";
 import { readFileSync, writeFileSync } from "fs";
+import { writeFile } from "./partials-common/file-system-utils.js";
 //import sass from "sass";
 import * as sass from "sass";
 import { join } from "path";
@@ -43,14 +44,14 @@ ${iconSelectorsGenerator}
   return output;
 };
 
-const saveOnDisk = (content: string, outputPath: string): void => {
-  try {
-    // Write the data to a new file
-    writeFileSync(outputPath, content, "utf8");
-  } catch (err) {
-    console.error("Error:", err);
-  }
-};
+// const saveOnDisk = (content: string, outputPath: string): void => {
+//   try {
+//     // Write the data to a new file
+//     writeFileSync(outputPath, content, "utf8");
+//   } catch (err) {
+//     console.error("Error:", err);
+//   }
+// };
 
 const scssSourceFilePath = join(SRC_SASS_FOLDER, SRC_ICONS_LISTS);
 const sourceSassContent = getSassContent(scssSourceFilePath);
@@ -62,7 +63,10 @@ const showcaseIconsList = createShowcaseIconsList(
 );
 
 // save SRC_ICONS_LISTS_SELECTORS
-saveOnDisk(showcaseIconsList, join(SRC_SASS_FOLDER, SRC_ICONS_LISTS_SELECTORS));
+const iconListSavedOnDisk = writeFile(
+  join(SRC_SASS_FOLDER, SRC_ICONS_LISTS_SELECTORS),
+  showcaseIconsList
+);
 
 // compile SRC_ICONS_LISTS_SELECTORS
 const scssResult = sass.compile(
@@ -72,7 +76,10 @@ const scssResult = sass.compile(
 const cssResult = scssResult["css"];
 
 // save compiled css on disk
-saveOnDisk(cssResult, join(OUTPUT_DIRECTORY, COMPILED_CSS_FILENAME));
+const cssResultSavedOnDisk = writeFile(
+  join(OUTPUT_DIRECTORY, COMPILED_CSS_FILENAME),
+  cssResult
+);
 
 const cssResultString = cssResult.replace(/[\r\n]+/g, "");
 const colorLists = cssResultString.split("lists*/");
@@ -184,9 +191,9 @@ const splitCssSelector = (cssSelector: string): string[] => {
 
 const saveCatalogJsonOnDisk = (): string | void => {
   const iconsCatalogJson = JSON.stringify(iconsCatalog, null, 2);
-  saveOnDisk(
-    iconsCatalogJson,
-    join(OUTPUT_DIRECTORY, ICONS_CATALOG_JSON_FILENAME)
+  const iconsCatalogJsonSavedOnDissk = writeFile(
+    join(OUTPUT_DIRECTORY, ICONS_CATALOG_JSON_FILENAME),
+    iconsCatalogJson
   );
 };
 

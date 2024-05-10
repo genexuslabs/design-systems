@@ -228,14 +228,10 @@ const saveSassOnDisk = (
   const sassDirectoryPath = path.join(OUTPUT_DIRECTORY, type);
   const filePath = path.join(sassDirectoryPath, `${categoryName}.scss`);
 
-  console.log("sassDirectoryPath", sassDirectoryPath);
-  console.log("filePath", filePath);
-
   mkdir(sassDirectoryPath, { recursive: true }, function (err) {
     try {
       // Write the content to the file synchronously
       writeFileSync(filePath, sassFileContent);
-      // console.log(`${filePath} written successfully.`);
     } catch (err) {
       const msg = `There was an error saving ${categoryName}.scss the icon on disk. error: ${err}`;
       console.error(`${RED} ${msg} ${RESET_COLOR}`);
@@ -277,7 +273,6 @@ const saveMainSassOnDisk = () => {
     try {
       // Write the content to the file synchronously
       writeFileSync(filePath, output);
-      //console.log(`${filePath} written successfully.`);
     } catch (err) {
       const msg = `There was an error saving ${fileName} the icon on disk. error: ${err}`;
       console.error(`${RED} ${msg} ${RESET_COLOR}`);

@@ -1,7 +1,8 @@
 // import * as fs from "fs/promises";
 import { join } from "path";
 import { promises } from "fs";
-const { mkdir, appendFile } = promises;
+const { appendFile } = promises;
+import { createDir } from "../partials-common/file-system-utils.js";
 
 /**
  * @param description It writes any kind of messages to a log file.
@@ -28,7 +29,7 @@ export const log = (
   // The file and directory are cleaned on processor-svg.ts
 
   // Ensure log directory exists
-  mkdir(LOG_PATH, { recursive: true });
+  createDir(LOG_PATH);
 
   // Append the message to the file
   appendFile(
