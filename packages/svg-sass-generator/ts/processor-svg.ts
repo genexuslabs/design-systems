@@ -59,10 +59,6 @@ if (readyObj.ready) {
 function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
   let processedIconsInfo: processedIconInfo[] = [];
   iconsArray.forEach((iconPath) => {
-    const pathIsValid = validateIconPath(iconPath);
-    if (!pathIsValid) {
-      return;
-    }
     const svgString = getSvgString(iconPath);
     const svgCheerio = cheerio.load(svgString);
     const iconType = getIconType(svgCheerio, statesJson);
@@ -269,20 +265,4 @@ const saveProcessedIconInfo = (
     colorScheme: colorScheme,
     processed: wasSavedOnDisk,
   });
-};
-
-const validateIconPath = (iconPath: string): boolean => {
-  const segments = iconPath.split(path.sep);
-  // subtract 1 to exclude the file name
-  const numFolders = segments.length - 1;
-
-  if (numFolders > 2) {
-    const msg = `Please ensure that every icon.svg file is either directly inside the source folder or within a subfolder of the source folder. Files nested deeper than one level beyond the source folder will not be considered valid. ${
-      numFolders - 1
-    } folders found in: ${iconPath}`;
-    log(msg, LOG_PATH, shouldWriteToLog);
-    return false;
-  }
-
-  return true;
 };

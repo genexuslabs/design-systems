@@ -26,7 +26,8 @@
     "watch": "tsc --watch",
     "build-svg": "npm run clean-svg-js && tsc --build && npm run copy-json",
     "showcase": "node ./js/showcase.js ./sass/ ./assets/icons-selectors-generator.scss ./showcase/ ../dist/",
-    "test-selectors": "sass ./showcase/svg-generator-icons-lists.scss ./showcase/styles.css"
+    "test-selectors": "sass ./showcase/svg-generator-icons-lists.scss ./showcase/styles.css",
+    "test-nested-src": "node ./js/processor-svg.js ./assets-nested/icons/ ./dist color-states.json ./log"
   },
   "author": "GeneXus",
   "license": "Apache-2.0",
