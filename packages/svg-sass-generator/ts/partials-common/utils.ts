@@ -36,3 +36,19 @@ export function getSvgString(iconPath: string) {
     );
   }
 }
+
+/**
+ * @description: DIR_PATH_REGEX regex validates if a given directory path is valid.
+ * Any of the following are considered valid:
+ * assets
+ * /assets
+ * ./assets
+ * ./assets/
+ * assets/icons
+ * /assets/icons/
+ * ./assets/icons
+ * ./assets/icons/
+ * ./assets/icons/
+ */
+export const DIR_PATH_REGEX =
+  /^(?:\.{0,2}\/)?(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_-]+\/?$/;
