@@ -3,6 +3,8 @@ import { RED, RESET_COLOR, colorizeJson } from "../partials-common/utils.js";
 
 import { validateStatesSchema } from "./states-validator.js";
 import { getStatesObject } from "./utils.js";
+import { DIR_PATH_REGEX } from "../partials-common/utils.js";
+
 import { join, extname } from "path";
 import { validateSchemaReturn } from "./states-validator.js";
 import colorize from "json-colorizer";
@@ -13,13 +15,12 @@ import {
 } from "../partials-common/file-system-utils.js";
 import { iconsColorsSchema } from "../partials-common/types.js";
 
-const DIR_PATH_REGEX = /^\.\/?[\w-\/]+\/?$/;
 /**
  * @description Validates if required folders paths and states file and schema are valid, as this is required for processing the icons.
  */
 export function readyToProcess(
-  SRC_DIRECTORY: string,
-  OUTPUT_DIRECTORY: string,
+  SRC_PATH: string,
+  OUTPUT_PATH: string,
   STATES_FILENAME: string,
   LOG_PATH: string,
   numberOfArgsProvided: number
@@ -52,9 +53,9 @@ export function readyToProcess(
     };
   }
 
-  // 2. validate SRC_DIRECTORY
-  if (!DIR_PATH_REGEX.test(SRC_DIRECTORY)) {
-    const msg = `Source Directory Error #1: "${SRC_DIRECTORY}" is not a valid directory path for the source directory argument (argument number 1).`;
+  // 2. validate SRC_PATH
+  if (!DIR_PATH_REGEX.test(SRC_PATH)) {
+    const msg = `Source Directory Error #1: "${SRC_PATH}" is not a valid directory path for the source directory argument (argument number 1).`;
 
     log(msg, LOG_PATH, shouldWriteToLog);
     console.error(`${RED} ${msg} ${RESET_COLOR}`);
@@ -63,8 +64,8 @@ export function readyToProcess(
       ready: false,
       statesJson: null,
     };
-  } else if (!fs.existsSync(SRC_DIRECTORY)) {
-    const msg = `Source Directory Error #2: The source folder ${SRC_DIRECTORY} does not exists`;
+  } else if (!fs.existsSync(SRC_PATH)) {
+    const msg = `Source Directory Error #2: The source folder ${SRC_PATH} does not exists`;
 
     log(msg, LOG_PATH, shouldWriteToLog);
     console.error(`${RED} ${msg} ${RESET_COLOR}`);
@@ -75,9 +76,9 @@ export function readyToProcess(
     };
   }
 
-  // 3. validate OUTPUT_DIRECTORY
-  if (!DIR_PATH_REGEX.test(OUTPUT_DIRECTORY)) {
-    const msg = `Output Directory Error #1: "${OUTPUT_DIRECTORY}" is not a valid directory path for the destination directory argument (argument number 2).`;
+  // 3. validate OUTPUT_PATH
+  if (!DIR_PATH_REGEX.test(OUTPUT_PATH)) {
+    const msg = `Output Directory Error #1: "${OUTPUT_PATH}" is not a valid directory path for the destination directory argument (argument number 2).`;
 
     log(msg, LOG_PATH, shouldWriteToLog);
     console.error(`${RED} ${msg} ${RESET_COLOR}`);
@@ -97,7 +98,7 @@ export function readyToProcess(
   }
 
   // 4-B. validate states json file
-  const statesPath = join(SRC_DIRECTORY, STATES_FILENAME);
+  const statesPath = join(SRC_PATH, STATES_FILENAME);
   const statesResult = getStatesObject(statesPath);
   if (!statesResult.valid) {
     const msg = `State File Validation Error #2: the provided color states json file ${STATES_FILENAME}" is not valid. Errors found: ${statesResult.info}`;
@@ -132,8 +133,8 @@ export function readyToProcess(
   }
 
   // 6. clear and create output directory for a fresh start
-  deleteDirectory(OUTPUT_DIRECTORY);
-  createDir(OUTPUT_DIRECTORY);
+  deleteDirectory(OUTPUT_PATH);
+  createDir(OUTPUT_PATH);
 
   return {
     ready: true,

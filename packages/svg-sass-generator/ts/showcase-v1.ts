@@ -13,7 +13,7 @@ import { iconType } from "./partials-common/types.js";
 //Directories
 const SRC_SASS_FOLDER = await process.argv[2];
 const ICONS_SELECTORS_GENERATOR = await process.argv[3];
-const OUTPUT_DIRECTORY = await process.argv[4];
+const OUTPUT_PATH = await process.argv[4];
 const SVG_ICONS_SRC = await process.argv[5];
 const SRC_ICONS_LISTS = "svg-generator-icons-lists.scss";
 const SRC_ICONS_LISTS_SELECTORS = "svg-generator-icons-lists-selectors.scss";
@@ -77,7 +77,7 @@ const cssResult = scssResult["css"];
 
 // save compiled css on disk
 const cssResultSavedOnDisk = writeFile(
-  join(OUTPUT_DIRECTORY, COMPILED_CSS_FILENAME),
+  join(OUTPUT_PATH, COMPILED_CSS_FILENAME),
   cssResult
 );
 
@@ -192,7 +192,7 @@ const splitCssSelector = (cssSelector: string): string[] => {
 const saveCatalogJsonOnDisk = (): string | void => {
   const iconsCatalogJson = JSON.stringify(iconsCatalog, null, 2);
   const iconsCatalogJsonSavedOnDissk = writeFile(
-    join(OUTPUT_DIRECTORY, ICONS_CATALOG_JSON_FILENAME),
+    join(OUTPUT_PATH, ICONS_CATALOG_JSON_FILENAME),
     iconsCatalogJson
   );
 };

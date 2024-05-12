@@ -17,16 +17,16 @@ let monochromeCategoriesList: string[] = [];
 let multicolorCategoriesList: string[] = [];
 
 // Files and Directories
-const SRC_DIRECTORY = await process.argv[2];
-const OUTPUT_DIRECTORY = await process.argv[3];
+const SRC_PATH = await process.argv[2];
+const OUTPUT_PATH = await process.argv[3];
 
 // Start fresh (delete current output directory)
-deleteDirectory(OUTPUT_DIRECTORY);
+deleteDirectory(OUTPUT_PATH);
 
-const iconsPromise = getIcons(SRC_DIRECTORY);
+const iconsPromise = getIcons(SRC_PATH);
 iconsPromise
   .then((iconsArray: string[]) => {
-    processIconsSass(SRC_DIRECTORY, iconsArray);
+    processIconsSass(SRC_PATH, iconsArray);
   })
   .catch((error) => {
     const msg = `There was an error processing the icons. error: ${error}.`;
@@ -225,7 +225,7 @@ const saveSassOnDisk = (
   type: iconType,
   categoryName: string
 ) => {
-  const sassDirectoryPath = path.join(OUTPUT_DIRECTORY, type);
+  const sassDirectoryPath = path.join(OUTPUT_PATH, type);
   const filePath = path.join(sassDirectoryPath, `${categoryName}.scss`);
 
   mkdir(sassDirectoryPath, { recursive: true }, function (err) {
@@ -267,9 +267,9 @@ const saveMainSassOnDisk = () => {
   output += `\n);`;
 
   const fileName = "svg-generator-icons-lists.scss";
-  const filePath = path.join(OUTPUT_DIRECTORY, fileName);
+  const filePath = path.join(OUTPUT_PATH, fileName);
 
-  mkdir(OUTPUT_DIRECTORY, { recursive: true }, function (err) {
+  mkdir(OUTPUT_PATH, { recursive: true }, function (err) {
     try {
       // Write the content to the file synchronously
       writeFileSync(filePath, output);

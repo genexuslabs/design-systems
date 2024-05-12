@@ -21,8 +21,8 @@ import { log } from "./partials-svg/log.js";
 
 //Import partials or utils
 //Files and Directories
-const SRC_DIRECTORY = await process.argv[2];
-const OUTPUT_DIRECTORY = await process.argv[3];
+const SRC_PATH = await process.argv[2];
+const OUTPUT_PATH = await process.argv[3];
 const STATES_FILENAME = await process.argv[4];
 const LOG_PATH = await process.argv[5];
 const numberOfArgsProvided = process.argv.length;
@@ -30,8 +30,8 @@ const shouldWriteToLog = !!LOG_PATH;
 
 // 1. Check if is ready to process
 const readyObj: readyObj = readyToProcess(
-  SRC_DIRECTORY,
-  OUTPUT_DIRECTORY,
+  SRC_PATH,
+  OUTPUT_PATH,
   STATES_FILENAME,
   LOG_PATH,
   numberOfArgsProvided
@@ -40,7 +40,7 @@ const readyObj: readyObj = readyToProcess(
 if (readyObj.ready) {
   //clear
 
-  const iconsPromise = getIcons(SRC_DIRECTORY);
+  const iconsPromise = getIcons(SRC_PATH);
   iconsPromise
     .then((result: string[]) => {
       processIcons(result, readyObj.statesJson);
@@ -86,7 +86,8 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
           lightSvgSavedOnDisk = saveSvgOnDisk(
             svgIconLight,
             iconPath,
-            OUTPUT_DIRECTORY,
+            SRC_PATH,
+            OUTPUT_PATH,
             "light",
             LOG_PATH
           );
@@ -114,13 +115,12 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
           darkSvgSavedOnDisk = saveSvgOnDisk(
             svgIconDark,
             iconPath,
-            OUTPUT_DIRECTORY,
+            SRC_PATH,
+            OUTPUT_PATH,
             "dark",
             LOG_PATH
           );
         }
-
-        console.log("iconPath", iconPath);
 
         // Save info for the log
         saveProcessedIconInfo(
@@ -143,6 +143,7 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
         svgCheerio,
         statesJson,
         iconPath,
+        SRC_PATH,
         "light",
         LOG_PATH,
         STATES_FILENAME
@@ -154,7 +155,8 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
         lightSvgSavedOnDisk = saveSvgOnDisk(
           svgIconLight.svgString,
           iconPath,
-          OUTPUT_DIRECTORY,
+          SRC_PATH,
+          OUTPUT_PATH,
           "light",
           LOG_PATH
         );
@@ -177,6 +179,7 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
         svgCheerioClone,
         statesJson,
         iconPath,
+        SRC_PATH,
         "dark",
         LOG_PATH,
         STATES_FILENAME
@@ -188,7 +191,8 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
         darkSvgSavedOnDisk = saveSvgOnDisk(
           svgIconDark.svgString,
           iconPath,
-          OUTPUT_DIRECTORY,
+          SRC_PATH,
+          OUTPUT_PATH,
           "dark",
           LOG_PATH
         );
