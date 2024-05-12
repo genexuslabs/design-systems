@@ -5,14 +5,8 @@ import {
   pathInfo,
   figureType,
 } from "../partials-common/types.js";
-import { optimize } from "svgo";
 import path from "path";
-import {
-  deleteDirectory,
-  writeFile,
-} from "../partials-common/file-system-utils.js";
-import { log } from "./log.js";
-import { RED, RESET_COLOR } from "../partials-common/utils.js";
+import { writeFile } from "../partials-common/file-system-utils.js";
 
 /**
  * The list of available svg figures in any svg icon.
@@ -53,18 +47,19 @@ export const getStatesObject = (STATES_PATH: string): getStatesJsonReturn => {
 export const saveSvgOnDisk = (
   svgString: string,
   iconPath: string,
+  srcPath: string,
   outputDirectory: string,
   colorScheme: colorScheme,
   LOG_PATH: string
 ): boolean => {
   // construct file path
   const schemeFolderName = colorScheme;
-  const pathInfo = getPathInfo(iconPath);
+  const pathInfo = getPathInfo(srcPath, iconPath);
 
   const fileDirectoriesPath = path.join(
     outputDirectory,
     ICONS_DIRECTORY,
-    pathInfo.categoryFolderName,
+    pathInfo.categoryFolderName || "",
     schemeFolderName
   );
 
@@ -74,13 +69,24 @@ export const saveSvgOnDisk = (
   return savedSuccessfully;
 };
 
-export const getPathInfo = (iconPath: string): pathInfo => {
-  const fileName = iconPath.split(path.sep).pop();
-  const segments = iconPath.split(path.sep);
+export const getPathInfo = (sourcePath: string, iconPath: string): pathInfo => {
+  // paths forwards slashes (/) should be replaced with backward slashed (\) because
+  // "the path methods only add backward slashes (\)."
+  const fileName = iconPath.replace(/\//g, "\\").split(path.sep).pop();
+  const iconPathSegments = iconPath.replace(/\//g, "\\").split(path.sep);
+  const sourcePathSegments = sourcePath.replace(/\//g, "\\").split(path.sep);
+  const sourceFolder = sourcePathSegments[sourcePathSegments.length - 1];
   let category = null;
-  if (segments.length > 2) {
-    // the icon belongs to a sub-folder (category)
-    category = segments[1];
+  if (
+    iconPathSegments.length == 2 ||
+    (iconPathSegments.length > 2 &&
+      iconPathSegments[iconPathSegments.length - 2] === sourceFolder)
+  ) {
+    // the icon has no category folder, because the icon is a direct child of the source directory
+    category = null;
+  } else if (iconPathSegments.length > 2) {
+    // the icon has a category folder
+    category = iconPathSegments[iconPathSegments.length - 2];
   }
   return {
     categoryFolderName: category,

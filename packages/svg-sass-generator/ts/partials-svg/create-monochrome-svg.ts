@@ -36,6 +36,7 @@ export const createMonochromeSvg = (
   svgCheerio: cheerio.Root,
   statesJson: iconsColorsSchema,
   iconPath: string,
+  srcPath: string,
   colorScheme: colorScheme,
   LOG_PATH: string,
   STATES_FILENAME: string
@@ -52,7 +53,7 @@ export const createMonochromeSvg = (
   colorSchemeValue = colorScheme;
   monochromeStatesObjs = statesJson.monochrome.states;
   monochromeIconsArray = statesJson.monochrome.icons;
-  pathInfo = getPathInfo(iconPath);
+  pathInfo = getPathInfo(srcPath, iconPath);
   LOG_PATH = LOG_PATH;
 
   // check width and height
