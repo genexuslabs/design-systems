@@ -4,7 +4,7 @@ import {
   iconType,
   iconsColorsSchema,
   multiColorStatesArray,
-} from "./partials-common/types";
+} from "./partials-common/types.js";
 
 export const pushSavedIcon = (
   savedIconsOnDisk: savedIcons,
@@ -19,6 +19,12 @@ export const pushSavedIcon = (
   const iconName = filePathArray[filePathArray.length - 1];
   let iconStates: string[] = [];
 
+  // create category if inexistent
+  if (!(iconCategory in savedIconsOnDisk[type])) {
+    savedIconsOnDisk[type][iconCategory] = [];
+  }
+
+  // set icon states
   if (type === "monochrome") {
     const foundCategory = colorStatesJson.monochrome.icons.find(
       (icon) => icon.folder === category

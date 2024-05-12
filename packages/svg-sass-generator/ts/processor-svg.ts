@@ -142,6 +142,15 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
             "dark",
             LOG_PATH
           );
+          // Save icon for the showcase
+          pushSavedIcon(
+            savedIconsOnDisk,
+            darkMultiColorSvgSavedOnDisk.svgFilePath,
+            "multicolor",
+            darkMultiColorSvgSavedOnDisk.category,
+            "dark",
+            statesJson
+          );
         }
 
         // Save info for the log
@@ -182,6 +191,15 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
           "light",
           LOG_PATH
         );
+        // Save icon for the showcase
+        pushSavedIcon(
+          savedIconsOnDisk,
+          lightMonoChromeSvgSavedOnDisk.svgFilePath,
+          "monochrome",
+          lightMonoChromeSvgSavedOnDisk.category,
+          "light",
+          statesJson
+        );
       }
 
       // Save info for the log
@@ -217,6 +235,15 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
           OUTPUT_PATH,
           "dark",
           LOG_PATH
+        );
+        // Save icon for the showcase
+        pushSavedIcon(
+          savedIconsOnDisk,
+          lightMonoChromeSvgSavedOnDisk.svgFilePath,
+          "monochrome",
+          lightMonoChromeSvgSavedOnDisk.category,
+          "dark",
+          statesJson
         );
       }
 
