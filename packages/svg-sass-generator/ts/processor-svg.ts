@@ -5,6 +5,8 @@ import cheerio from "cheerio";
 import { getIcons } from "./partials-common/get-icons.js";
 import { RED, RESET_COLOR } from "./partials-common/utils.js";
 import { getSvgString } from "./partials-common/utils.js";
+import { savedOnDisk } from "./partials-common/types.js";
+
 // partials-svg
 import { processMulticolorFigures } from "./partials-svg/process-multicolor-figures.js";
 import { saveSvgOnDisk } from "./partials-svg/utils.js";
@@ -12,12 +14,15 @@ import {
   iconsColorsSchema,
   processedIconInfo,
   colorScheme,
+  multicolorSchema,
 } from "./partials-common/types.js";
 import { createMulticolorSvg } from "./partials-svg/create-multicolor-svg.js";
 import { createMonochromeSvg } from "./partials-svg/create-monochrome-svg.js";
 import { readyToProcess, readyObj } from "./partials-svg/ready-to-process.js";
 import { getIconType } from "./partials-svg/get-icon-type.js";
 import { log } from "./partials-svg/log.js";
+// showcase
+import { savedIcons, pushSavedIcon } from "./showcase-v2.js";
 
 //Import partials or utils
 //Files and Directories
@@ -27,6 +32,13 @@ const STATES_FILENAME = await process.argv[4];
 const LOG_PATH = await process.argv[5];
 const numberOfArgsProvided = process.argv.length;
 const shouldWriteToLog = !!LOG_PATH;
+let multiColorStates: string[];
+
+// for the showcase (showcase.js)
+const savedIconsOnDisk: savedIcons = {
+  multicolor: {},
+  monochrome: {},
+};
 
 // 1. Check if is ready to process
 const readyObj: readyObj = readyToProcess(
@@ -44,6 +56,7 @@ if (readyObj.ready) {
   iconsPromise
     .then((result: string[]) => {
       processIcons(result, readyObj.statesJson);
+      console.log("savedIconsOnDisk", savedIconsOnDisk);
     })
     .catch((error) => {
       const msg = `There was an error processing the icons. error: ${error}.`;
@@ -81,9 +94,9 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
           "light"
         );
         // Save svg on disk
-        let lightSvgSavedOnDisk = false;
+        let lightMultiColorSvgSavedOnDisk: savedOnDisk;
         if (svgIconLight) {
-          lightSvgSavedOnDisk = saveSvgOnDisk(
+          lightMultiColorSvgSavedOnDisk = saveSvgOnDisk(
             svgIconLight,
             iconPath,
             SRC_PATH,
@@ -91,11 +104,20 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
             "light",
             LOG_PATH
           );
+          // Save icon for the showcase
+          pushSavedIcon(
+            savedIconsOnDisk,
+            lightMultiColorSvgSavedOnDisk.svgFilePath,
+            "multicolor",
+            lightMultiColorSvgSavedOnDisk.category,
+            "light",
+            statesJson
+          );
         }
         // Save info for the log
         saveProcessedIconInfo(
           processedIconsInfo,
-          lightSvgSavedOnDisk,
+          lightMultiColorSvgSavedOnDisk?.saved,
           iconPath,
           "light"
         );
@@ -110,9 +132,9 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
           "dark"
         );
         // Save svg on disk
-        let darkSvgSavedOnDisk = false;
+        let darkMultiColorSvgSavedOnDisk: savedOnDisk;
         if (svgIconDark) {
-          darkSvgSavedOnDisk = saveSvgOnDisk(
+          darkMultiColorSvgSavedOnDisk = saveSvgOnDisk(
             svgIconDark,
             iconPath,
             SRC_PATH,
@@ -125,7 +147,7 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
         // Save info for the log
         saveProcessedIconInfo(
           processedIconsInfo,
-          darkSvgSavedOnDisk,
+          darkMultiColorSvgSavedOnDisk?.saved,
           iconPath,
           "dark"
         );
@@ -150,9 +172,9 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
       );
 
       // Save svg on disk
-      let lightSvgSavedOnDisk = false;
+      let lightMonoChromeSvgSavedOnDisk: savedOnDisk;
       if (svgIconLight.processed) {
-        lightSvgSavedOnDisk = saveSvgOnDisk(
+        lightMonoChromeSvgSavedOnDisk = saveSvgOnDisk(
           svgIconLight.svgString,
           iconPath,
           SRC_PATH,
@@ -165,7 +187,7 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
       // Save info for the log
       saveProcessedIconInfo(
         processedIconsInfo,
-        lightSvgSavedOnDisk,
+        lightMonoChromeSvgSavedOnDisk?.saved,
         iconPath,
         "light"
       );
@@ -186,9 +208,9 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
       );
 
       // Save svg on disk
-      let darkSvgSavedOnDisk = false;
+      let darkMonoChromeSvgSavedOnDisk: savedOnDisk;
       if (svgIconDark.processed) {
-        darkSvgSavedOnDisk = saveSvgOnDisk(
+        darkMonoChromeSvgSavedOnDisk = saveSvgOnDisk(
           svgIconDark.svgString,
           iconPath,
           SRC_PATH,
@@ -201,7 +223,7 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
       // Save info for the log
       saveProcessedIconInfo(
         processedIconsInfo,
-        darkSvgSavedOnDisk,
+        darkMonoChromeSvgSavedOnDisk?.saved,
         iconPath,
         "dark"
       );

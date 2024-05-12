@@ -7,6 +7,7 @@ import {
 } from "../partials-common/types.js";
 import path from "path";
 import { writeFile } from "../partials-common/file-system-utils.js";
+import { savedOnDisk } from "../partials-common/types.js";
 
 /**
  * The list of available svg figures in any svg icon.
@@ -51,7 +52,7 @@ export const saveSvgOnDisk = (
   outputDirectory: string,
   colorScheme: colorScheme,
   LOG_PATH: string
-): boolean => {
+): savedOnDisk => {
   // construct file path
   const schemeFolderName = colorScheme;
   const pathInfo = getPathInfo(srcPath, iconPath);
@@ -66,7 +67,11 @@ export const saveSvgOnDisk = (
   const filePath = path.join(fileDirectoriesPath, pathInfo.fileName);
 
   const savedSuccessfully = writeFile(filePath, svgString, LOG_PATH);
-  return savedSuccessfully;
+  return {
+    saved: savedSuccessfully,
+    svgFilePath: filePath,
+    category: pathInfo.categoryFolderName || null,
+  };
 };
 
 export const getPathInfo = (sourcePath: string, iconPath: string): pathInfo => {

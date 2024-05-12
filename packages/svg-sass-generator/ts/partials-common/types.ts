@@ -62,19 +62,7 @@ export interface multicolorSchema {
     colors: {
       cssClass: string;
       states: {
-        enabled: {
-          light: string;
-          dark: string;
-        };
-        hover: {
-          light: string;
-          dark: string;
-        };
-        active: {
-          light: string;
-          dark: string;
-        };
-        disabled: {
+        [state in multiColorStates[number]]: {
           light: string;
           dark: string;
         };
@@ -82,9 +70,19 @@ export interface multicolorSchema {
     }[];
   };
 }
+
+export const multiColorStatesArray = ["enabled", "hover", "active", "disabled"];
+export type multiColorStates = typeof multiColorStatesArray;
+
 export interface monochromeSchema {
   monochrome: {
     states: monochromeStates;
     icons: monochromeIcons;
   };
 }
+
+export type savedOnDisk = {
+  saved: boolean;
+  svgFilePath: string;
+  category: string;
+};
