@@ -22,6 +22,7 @@ export function readyToProcess(
   SRC_PATH: string,
   OUTPUT_PATH: string,
   STATES_FILENAME: string,
+  SHOWCASE_PATH: string,
   LOG_PATH: string,
   numberOfArgsProvided: number
 ): readyObj {
@@ -33,17 +34,18 @@ export function readyToProcess(
 
   // 1. check arguments quantity
 
-  // 4 arguments should have been provided:
+  // 5 arguments should have been provided:
   // subtract 1 because the first argument is the command for running the processor
   // (we only care about configuration arguments provided by the user).
 
   numberOfArgsProvided -= 2;
-  if (numberOfArgsProvided !== 4) {
-    const msg = `Error: 4 arguments are expected, but ${numberOfArgsProvided} were provided. Please provide the required arguments: \n
+  if (numberOfArgsProvided !== 5) {
+    const msg = `Error: 5 arguments are expected, but ${numberOfArgsProvided} were provided. Please provide the required arguments: \n
     1: icons source directory
     2: icons destination directory
     3: color states json file
-    4: the directory path for the icons-log.txt file. (only directory, file name should not be included).
+    4: icons showcase directory
+    5: the directory path for the icons-log.txt file. (only directory, file name should not be included).
     `;
     console.error(`${RED} ${msg} ${RESET_COLOR}`);
 
@@ -132,7 +134,20 @@ export function readyToProcess(
     };
   }
 
-  // 6. clear and create output directory for a fresh start
+  // 6. validate SHOWCASE_PATH
+  if (!DIR_PATH_REGEX.test(SHOWCASE_PATH)) {
+    const msg = `Showcase Directory Error: "${SHOWCASE_PATH}" is not a valid directory path for the showcase directory argument (argument number 4).`;
+
+    log(msg, LOG_PATH, shouldWriteToLog);
+    console.error(`${RED} ${msg} ${RESET_COLOR}`);
+
+    return {
+      ready: false,
+      statesJson: null,
+    };
+  }
+
+  // 7. clear and create directories for a fresh start
   deleteDirectory(OUTPUT_PATH);
   createDir(OUTPUT_PATH);
 

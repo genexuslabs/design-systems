@@ -1,12 +1,9 @@
 // libraries
-import path from "path";
 import cheerio from "cheerio";
 // partials-common
 import { getIcons } from "./partials-common/get-icons.js";
-import { RED, RESET_COLOR } from "./partials-common/utils.js";
-import { getSvgString } from "./partials-common/utils.js";
+import { RED, RESET_COLOR, getSvgString } from "./partials-common/utils.js";
 import { savedOnDisk } from "./partials-common/types.js";
-
 // partials-svg
 import { processMulticolorFigures } from "./partials-svg/process-multicolor-figures.js";
 import { saveSvgOnDisk } from "./partials-svg/utils.js";
@@ -14,7 +11,6 @@ import {
   iconsColorsSchema,
   processedIconInfo,
   colorScheme,
-  multicolorSchema,
 } from "./partials-common/types.js";
 import { createMulticolorSvg } from "./partials-svg/create-multicolor-svg.js";
 import { createMonochromeSvg } from "./partials-svg/create-monochrome-svg.js";
@@ -22,14 +18,15 @@ import { readyToProcess, readyObj } from "./partials-svg/ready-to-process.js";
 import { getIconType } from "./partials-svg/get-icon-type.js";
 import { log } from "./partials-svg/log.js";
 // showcase
-import { savedIcons, pushSavedIcon, generateShowcase } from "./showcase-v2.js";
+import { savedIcons, pushSavedIcon, generateShowcase } from "./showcase.js";
 
 //Import partials or utils
 //Files and Directories
 const SRC_PATH = await process.argv[2];
 const OUTPUT_PATH = await process.argv[3];
 const STATES_FILENAME = await process.argv[4];
-const LOG_PATH = await process.argv[5];
+const SHOWCASE_PATH = await process.argv[5];
+const LOG_PATH = await process.argv[6];
 const numberOfArgsProvided = process.argv.length;
 const shouldWriteToLog = !!LOG_PATH;
 
@@ -44,6 +41,7 @@ const readyObj: readyObj = readyToProcess(
   SRC_PATH,
   OUTPUT_PATH,
   STATES_FILENAME,
+  SHOWCASE_PATH,
   LOG_PATH,
   numberOfArgsProvided
 );
@@ -55,7 +53,7 @@ if (readyObj.ready) {
   iconsPromise
     .then((result: string[]) => {
       processIcons(result, readyObj.statesJson);
-      generateShowcase(savedIconsOnDisk);
+      generateShowcase(savedIconsOnDisk, OUTPUT_PATH, SHOWCASE_PATH, LOG_PATH);
     })
     .catch((error) => {
       const msg = `There was an error processing the icons. error: ${error}.`;

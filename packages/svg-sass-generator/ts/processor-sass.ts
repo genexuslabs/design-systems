@@ -4,14 +4,14 @@ import path from "path";
 import cheerio from "cheerio";
 // partials-common
 import { getIcons } from "./partials-common/get-icons.js";
-import { getPathWithoutSrcDir } from "./partials-common/utils.js";
-import { getSvgString } from "./partials-common/utils.js";
 import { colorScheme, iconType } from "./partials-common/types.js";
-import { RED, RESET_COLOR } from "./partials-common/utils.js";
 import {
-  deleteDirectory,
-  writeFile,
-} from "./partials-common/file-system-utils.js";
+  RED,
+  RESET_COLOR,
+  getSvgString,
+  getPathWithoutSrcDir,
+} from "./partials-common/utils.js";
+import { deleteDirectory } from "./partials-common/file-system-utils.js";
 
 let monochromeCategoriesList: string[] = [];
 let multicolorCategoriesList: string[] = [];
