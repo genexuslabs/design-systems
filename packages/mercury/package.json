@@ -13,11 +13,9 @@
     "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
     "build--watch.scss": "scss-bundle --rootDir ./src --watch -e ./src/mercury.scss -o dist/mercury.scss",
     "test": "sass test/test.scss  dist/css/mercury.css",
-    "test--watch": "chokidar ./dist/mercury.scss -c \"npm run test\"",
     "validate.ci": "npm run build",
-    "icons-svg": "ssg-svg ./icons-source/ ./src/assets/icons-dist/ color-states.json ./log",
-    "icons-sass": "ssg-sass ./src/assets/icons-dist/ ./src/base/icons-svg-generator",
-    "test-ssg": "ssg-test"
+    "icons-svg": "ssg-svg ./src/icons/svg-source ./src/icons/svg-processed color-states.json ./showcase/icons ./log",
+    "icons-sass": "ssg-sass ./src/icons/svg-processed ./src/icons/svg-sass-generator"
   },
   "license": "MIT",
   "devDependencies": {
