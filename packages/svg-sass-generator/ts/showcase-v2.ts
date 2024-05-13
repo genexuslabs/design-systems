@@ -5,6 +5,7 @@ import {
   iconsColorsSchema,
   multiColorStatesArray,
 } from "./partials-common/types.js";
+import { Schema } from "ajv";
 
 export const pushSavedIcon = (
   savedIconsOnDisk: savedIcons,
@@ -21,7 +22,10 @@ export const pushSavedIcon = (
 
   // create category if inexistent
   if (!(iconCategory in savedIconsOnDisk[type])) {
-    savedIconsOnDisk[type][iconCategory] = [];
+    savedIconsOnDisk[type][iconCategory] = {
+      light: [],
+      dark: [],
+    };
   }
 
   // set icon states
@@ -40,26 +44,311 @@ export const pushSavedIcon = (
   }
 
   // save
-  savedIconsOnDisk[type][iconCategory].push({
+  savedIconsOnDisk[type][iconCategory][colorScheme].push({
     name: iconName,
     path: svgFilePath,
-    type: type,
-    colorScheme: colorScheme,
     states: iconStates,
   });
 };
 
-interface IconCategory {
+export const generateShowcase = (savedIconsOnDisk: savedIcons) => {
+  let htmlOutput = `
+  <!DOCTYPE html>
+  <html lang="en" class="dark">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Icons Showcase</title>
+      <link rel="stylesheet" href="./icons-selectors.css" />
+      <style>
+        ${showcaseStyles}
+      </style>
+      <body>
+        ${getBody(savedIconsOnDisk)}
+      </body>
+    </html>
+  `;
+};
+
+const getBody = (savedIconsOnDisk: savedIcons) => {
+  // multicolor
+  const multicolor = savedIconsOnDisk.multicolor;
+  const monochrome = savedIconsOnDisk.multicolor;
+
+  let multicolorCategoriesOutput = ``;
+  let monochromeCategoriesOutput = ``;
+
+  // multicolor
+  Object.keys(multicolor).forEach((categoryName) => {
+    multicolorCategoriesOutput += `
+    <!-- ${categoryName} -->
+    <article class="category">
+      <h3 class="category__title title">${categoryName}</h3>
+
+      <!-- multicolor light -->
+      ${renderIcons(multicolor[categoryName].light, "light")}
+
+      <!-- multicolor dark -->
+      ${renderIcons(multicolor[categoryName].dark, "dark")}
+    </article>
+    `;
+  });
+
+  // monochrome
+  Object.keys(monochrome).forEach((categoryName) => {
+    monochromeCategoriesOutput += `
+      <!-- ${categoryName} -->
+      <article class="category">
+        <h3 class="category__title title">${categoryName}</h3>
+  
+        <!-- multicolor light -->
+        ${renderIcons(monochrome[categoryName].light, "light")}
+  
+        <!-- multicolor dark -->
+        ${renderIcons(monochrome[categoryName].dark, "dark")}
+      </article>
+      `;
+  });
+
+  const bodyOutput = `
+  <div class="top-bar">
+    <button id="toggle-dark-btn" class="top-bar__button">toggle dark</button>
+    <small class="top-bar__description">Automatically generated</small>
+  </div>
+  <div class="container" id="icons-container">
+    <!-- multicolor -->
+    <section class="icons-type-section">
+      <h2
+        class="icons-type-section__title icons-type-section__title--multicolor title"
+      >
+        Multicolor Icons
+      </h2>
+      ${multicolorCategoriesOutput}
+    </section>
+
+    <!-- monochrome -->
+    <section class="icons-type-section">
+      <h2
+        class="icons-type-section__title icons-type-section__title--monochrome title"
+      >
+        Monochrome Icons
+      </h2>
+      ${monochromeCategoriesOutput}
+    </section>
+
+  </div>
+`;
+};
+
+const renderIcons = (
+  icons: savedIconInfo[],
+  colorSchema: colorScheme
+): string => {
+  return `
+  <div class="icons-container icons-container--${colorSchema}">
+    ${icons.forEach((icon) => {
+      `<div class="icon-container">
+          <h4 class="icons-container__title title">${icon}</h4>
+          <ul class="icons-container__list">
+            ${icon.states.forEach((state) => {
+              `<li class="icons-container__list-item">
+                <img class="icon" url=${icon.path}>
+              </li>`;
+            })};
+          </ul>
+        </div>`;
+    })};
+  </div>`;
+};
+
+const showcaseStyles = `
+  :root {
+    /*general*/
+    --sc-border-dimmed__color: rgba(255, 255, 255, 0.1);
+    /*body*/
+    --sc-body__background-color: #f4f5f5;
+    --sc-body__color: #696969;
+    --sc-body__font-family: sans-serif;
+    --sc-body__font-size: 16px;
+    /*top-bar*/
+    --sc-top-bar__height: 42px;
+    --sc-top-bar__padding-inline: 16px;
+    --sc-top-bar__color: var(--sc-body__color);
+    --sc-top-bar__background-color: var(--sc-border-dimmed__color);
+    --sc-top-bar-button__background-color: var(--sc-border-dimmed__color);
+    --sc-top-bar-button__color: var(--sc-body__color);
+    --sc-top-bar-button__border: 1px solid var(--sc-border-dimmed__color);
+    --sc-top-bar-description__font-size: 12px;
+    /*icon*/
+    --sc-icon__box: 32px;
+    /*container*/
+    --sc-icon__container-padding-block: 64px;
+    --sc-icon__container-padding-inline: 32px;
+    --sc-icon__container-max-width: 1200px;
+    /*icons-type-section*/
+    --sc-icons-type-section__padding-block-end: 64px;
+    --sc-icons-type-section__margin-block-end: 64px;
+    --sc-icons-type-section__border: 3px dashed
+      var(--sc-border-dimmed__color);
+    --sc-icons-type-section-title__font-size: 24px;
+    --sc-icons-type-section-title__font-weight: 100;
+    --sc-icons-type-section-title__margin-block-end: 32px;
+    /*category*/
+    --sc-category-title__font-size: 14px;
+    --sc-category__margin-block-end: 32px;
+    --sc-category-title__margin-block-end: 18px;
+    /*icons-container*/
+    --sc-icons-container__background: rgba(255, 255, 255, 0.01);
+    --sc-icons-container__border: 1px solid var(--sc-border-dimmed__color);
+    --sc-icons-container__border-radius: 6px;
+    --sc-icons-container__padding: 16px;
+    --sc-icons-container-title__margin-block-end: 18px;
+    --sc-icons-container-list__gap: 16px;
+    --sc-icons-container-list__separation: 16px;
+    --sc-icons-container-list__border-block-end: 1px solid
+      var(--sc-border-dimmed__color);
+  }
+  html.dark {
+    --sc-body__background-color: #1a1d20;
+    --sc-body__color: #999999;
+  }
+  /*general*/
+  body {
+    background-color: var(--sc-body__background-color);
+    color: var(--sc-body__color);
+    font-family: var(--sc-body__font-family);
+    font-size: var(--sc-body__font-size);
+    margin: 0;
+    margin-block-start: var(--sc-top-bar__height);
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .title {
+    margin: 0;
+  }
+  /*top-bar*/
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--sc-top-bar__height);
+    padding-inline: var(--sc-top-bar__padding-inline);
+    background-color: var(--sc-top-bar__background-color);
+    color: var(--sc-top-bar__color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .top-bar__button {
+    border-radius: 3px;
+    background-color: var(--sc-top-bar-button__background-color);
+    border: var(--sc-top-bar-button__border);
+    color: var(--sc-top-bar-button__color);
+  }
+  .top-bar__button:hover {
+    filter: brightness(1.4);
+  }
+  .top-bar__button:active {
+    filter: brightness(1.2);
+  }
+  .top-bar__description {
+    font-size: var(--sc-top-bar-description__font-size);
+  }
+  /*icon*/
+  .icon {
+    display: inline-block;
+    width: var(--sc-icon__box);
+    height: var(--sc-icon__box);
+    background-image: var(--icon-path);
+    background-size: contain;
+  }
+  /*container*/
+  .container {
+    padding-inline: var(--sc-icon__container-padding-inline);
+    padding-block: var(--sc-icon__container-padding-block);
+    max-width: var(--sc-icon__container-max-width);
+    margin: 0 auto;
+  }
+  /*icons-type-section*/
+  .icons-type-section:not(:last-child) {
+    /* padding-block-end: var(--sc-icons-type-section__padding-block-end); */
+    /* border-bottom: var(--sc-icons-type-section__border); */
+    margin-block-end: var(--sc-icons-type-section__margin-block-end);
+  }
+  .icons-type-section__title {
+    text-align: center;
+    font-size: var(--sc-icons-type-section-title__font-size);
+    font-weight: var(--sc-icons-type-section-title__font-weight);
+    margin-block-end: var(--sc-icons-type-section-title__margin-block-end);
+    text-transform: capitalize;
+  }
+  .icons-type-section__title--multicolor:before {
+    content: "🌈";
+    margin-inline-end: 8px;
+  }
+  .icons-type-section__title--monochrome:before {
+    content: "🌈";
+    margin-inline-end: 8px;
+    filter: sepia(1);
+  }
+  /*category*/
+  .category:not(:last-child) {
+    margin-block-end: var(--sc-category__margin-block-end);
+  }
+  .category__title {
+    font-size: var(--sc-category-title__font-size);
+    margin-block-end: var(--sc-category-title__margin-block-end);
+    text-transform: uppercase;
+  }
+  .category__title:before {
+    content: "📁";
+    filter: grayscale(1);
+    margin-inline-end: 8px;
+  }
+  /*icons-container*/
+  .icons-container {
+    border: var(--sc-icons-container__border);
+    border-radius: var(--sc-icons-container__border-radius);
+    padding: var(--sc-icons-container__padding);
+    background-color: var(--sc-icons-container__background);
+  }
+  .icons-container__title {
+    margin-block-end: var(--sc-icons-container-title__margin-block-end);
+  }
+  .icons-container__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: var(--sc-icons-container-list__gap);
+    line-height: 0;
+  }
+  .icons-container__list:not(:last-child) {
+    padding-block-end: var(--sc-icons-container-list__separation);
+    margin-block-end: var(--sc-icons-container-list__separation);
+    border-block-end: var(--sc-icons-container-list__border-block-end);
+  }
+`;
+
+export interface savedIcons {
+  multicolor: {
+    [category: string]: {
+      light: savedIconInfo[];
+      dark: savedIconInfo[];
+    };
+  };
+  monochrome: {
+    [category: string]: {
+      light: savedIconInfo[];
+      dark: savedIconInfo[];
+    };
+  };
+}
+
+interface savedIconInfo {
   name: string;
   path: string;
-  type: iconType;
-  colorScheme: colorScheme;
   states: string[];
-}
-interface Categories {
-  [key: string]: IconCategory[];
-}
-export interface savedIcons {
-  multicolor: Categories;
-  monochrome: Categories;
 }

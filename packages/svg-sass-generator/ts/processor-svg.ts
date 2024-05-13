@@ -22,7 +22,7 @@ import { readyToProcess, readyObj } from "./partials-svg/ready-to-process.js";
 import { getIconType } from "./partials-svg/get-icon-type.js";
 import { log } from "./partials-svg/log.js";
 // showcase
-import { savedIcons, pushSavedIcon } from "./showcase-v2.js";
+import { savedIcons, pushSavedIcon, generateShowcase } from "./showcase-v2.js";
 
 //Import partials or utils
 //Files and Directories
@@ -32,7 +32,6 @@ const STATES_FILENAME = await process.argv[4];
 const LOG_PATH = await process.argv[5];
 const numberOfArgsProvided = process.argv.length;
 const shouldWriteToLog = !!LOG_PATH;
-let multiColorStates: string[];
 
 // for the showcase (showcase.js)
 const savedIconsOnDisk: savedIcons = {
@@ -56,7 +55,7 @@ if (readyObj.ready) {
   iconsPromise
     .then((result: string[]) => {
       processIcons(result, readyObj.statesJson);
-      console.log("savedIconsOnDisk", savedIconsOnDisk);
+      generateShowcase(savedIconsOnDisk);
     })
     .catch((error) => {
       const msg = `There was an error processing the icons. error: ${error}.`;

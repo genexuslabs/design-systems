@@ -56,40 +56,13 @@ export type getStatesJsonReturn = {
   statesObject: iconsColorsSchema | null;
 };
 
-// export interface multicolorSchema {
-//   multicolor: {
-//     cssPrefix: string;
-//     colors: {
-//       cssClass: string;
-//       states: {
-//         [state in multiColorStates[number]]: {
-//           light: string;
-//           dark: string;
-//         };
-//       };
-//     }[];
-//   };
-// }
-
 export interface multicolorSchema {
   multicolor: {
     cssPrefix: string;
     colors: {
       cssClass: string;
       states: {
-        enabled: {
-          light: string;
-          dark: string;
-        };
-        hover: {
-          light: string;
-          dark: string;
-        };
-        active: {
-          light: string;
-          dark: string;
-        };
-        disabled: {
+        [state in multiColorStates[number]]: {
           light: string;
           dark: string;
         };
