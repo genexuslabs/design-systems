@@ -14,7 +14,7 @@
     "build--watch.scss": "scss-bundle --rootDir ./src --watch -e ./src/mercury.scss -o dist/mercury.scss",
     "test": "sass test/test.scss  dist/css/mercury.css",
     "validate.ci": "npm run build",
-    "icons-svg": "ssg-svg ./src/icons ./dist/.generated color-states.json ./showcase/icons ./log",
+    "icons-svg": "ssg-svg ./src/icons ./src/assets/icons/.generated .config/color-states.json ./showcase/icons ./log",
     "icons-sass": "ssg-sass ./src/icons/svg-processed ./src/icons/svg-sass-generator"
   },
   "license": "MIT",
