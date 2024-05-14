@@ -56,7 +56,6 @@ export const saveSvgOnDisk = (
   // construct file path
   const schemeFolderName = colorScheme;
   const pathInfo = getPathInfo(srcPath, iconPath);
-  //clear console.log("pathInfo", pathInfo);
 
   const filePath = path.join(
     outputDirectory,
@@ -74,14 +73,11 @@ export const saveSvgOnDisk = (
 };
 
 export const getPathInfo = (sourcePath: string, iconPath: string): pathInfo => {
-  // paths forwards slashes (/) should be replaced with backward slashed (\) because
-  // "the path methods only add backward slashes (\)."
   const fileName = path.normalize(iconPath).split(path.sep).pop();
   const iconPathSegments = path.normalize(iconPath).split(path.sep);
   const sourcePathSegments = path.normalize(sourcePath).split(path.sep);
   const sourceFolder = sourcePathSegments[sourcePathSegments.length - 1];
   let category = null;
-  console.log("iconPathSegments", iconPathSegments);
   if (
     iconPathSegments.length == 2 ||
     (iconPathSegments.length > 2 &&
