@@ -17,7 +17,7 @@
     "copy-json": "copyfiles -f ./ts/partials-svg/*.json ./js/partials-svg/",
     "copy-to-bin": "copyfiles --up 1 js/** js/**/* bin/",
     "watch": "tsc --watch",
-    "svg": "node ./js/processor-svg.js ./dist color-states.json ./showcase ./log",
+    "svg": "node ./js/processor-svg.js ./assets ./dist/.generated color-states.json ./showcase ./log",
     "sass": "node ./js/processor-sass.js ./dist ./sass",
     "showcase": "node ./js/showcase.js ./sass/ ./assets/icons-selectors-generator.scss ./showcase/ ../dist/"
   },
