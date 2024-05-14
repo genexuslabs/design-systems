@@ -1,13 +1,10 @@
 import * as fs from "fs";
-import { RED, RESET_COLOR, colorizeJson } from "../partials-common/utils.js";
-
+import { RED, RESET_COLOR } from "../partials-common/utils.js";
 import { validateStatesSchema } from "./states-validator.js";
 import { getStatesObject } from "./utils.js";
 import { DIR_PATH_REGEX } from "../partials-common/utils.js";
-
 import { join, extname } from "path";
 import { validateSchemaReturn } from "./states-validator.js";
-import colorize from "json-colorizer";
 import { log } from "./log.js";
 import {
   deleteDirectory,
@@ -56,7 +53,8 @@ export function readyToProcess(
   }
 
   // 2. validate SRC_PATH
-  if (!DIR_PATH_REGEX.test(SRC_PATH)) {
+  //if (!DIR_PATH_REGEX.test(SRC_PATH)) {
+  if (!fs.lstatSync(SRC_PATH).isDirectory()) {
     const msg = `Source Directory Error #1: "${SRC_PATH}" is not a valid directory path for the source directory argument (argument number 1).`;
 
     log(msg, LOG_PATH, shouldWriteToLog);
@@ -79,7 +77,8 @@ export function readyToProcess(
   }
 
   // 3. validate OUTPUT_PATH
-  if (!DIR_PATH_REGEX.test(OUTPUT_PATH)) {
+  //if (!DIR_PATH_REGEX.test(OUTPUT_PATH)) {
+  if (!fs.lstatSync(OUTPUT_PATH).isDirectory()) {
     const msg = `Output Directory Error #1: "${OUTPUT_PATH}" is not a valid directory path for the destination directory argument (argument number 2).`;
 
     log(msg, LOG_PATH, shouldWriteToLog);

@@ -22,13 +22,10 @@ import {
 import { log } from "./log.js";
 
 let warnings: warningInfo[] = [];
-let iconPath;
-let statesJson: iconsColorsSchema;
 let colorSchemeValue: colorScheme;
 let monochromeStatesObjs: monochromeStates;
 let monochromeIconsArray: monochromeIcons;
 let pathInfo: pathInfo;
-let LOG_PATH: string;
 let CSS_VAR_NAME = "--color";
 let SVG_ID = "icon-def";
 
