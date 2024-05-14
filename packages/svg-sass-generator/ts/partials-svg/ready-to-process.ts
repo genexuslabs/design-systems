@@ -55,6 +55,7 @@ export function readyToProcess(
   // 2. validate SRC_PATH
   //if (!DIR_PATH_REGEX.test(SRC_PATH)) {
   if (!fs.lstatSync(SRC_PATH).isDirectory()) {
+    // a better way to validate dir path
     const msg = `Source Directory Error #1: "${SRC_PATH}" is not a valid directory path for the source directory argument (argument number 1).`;
 
     log(msg, LOG_PATH, shouldWriteToLog);
@@ -78,7 +79,9 @@ export function readyToProcess(
 
   // 3. validate OUTPUT_PATH
   //if (!DIR_PATH_REGEX.test(OUTPUT_PATH)) {
-  if (!fs.lstatSync(OUTPUT_PATH).isDirectory()) {
+  //if (!fs.lstatSync(OUTPUT_PATH).isDirectory()) {
+  const outputIsDirectory = true; //temporary WA
+  if (!outputIsDirectory) {
     const msg = `Output Directory Error #1: "${OUTPUT_PATH}" is not a valid directory path for the destination directory argument (argument number 2).`;
 
     log(msg, LOG_PATH, shouldWriteToLog);
