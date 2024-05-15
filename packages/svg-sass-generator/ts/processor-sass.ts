@@ -10,6 +10,7 @@ import {
   RESET_COLOR,
   getSvgString,
   getPathWithoutSrcDir,
+  OUTPUT_GENERATED,
 } from "./partials-common/utils.js";
 import { deleteDirectory } from "./partials-common/file-system-utils.js";
 
@@ -18,15 +19,18 @@ let multicolorCategoriesList: string[] = [];
 
 // Files and Directories
 const SRC_PATH = await process.argv[2];
+const SRC_PATH_GENERATED = path.join(SRC_PATH, OUTPUT_GENERATED);
 const OUTPUT_PATH = await process.argv[3];
+const OUTPUT_PATH_GENERATED = path.join(OUTPUT_PATH, OUTPUT_GENERATED);
+const ALL_LISTS_FILENAME = "all-lists.scss";
 
 // Start fresh (delete current output directory)
-deleteDirectory(OUTPUT_PATH);
+deleteDirectory(OUTPUT_PATH_GENERATED);
 
 const iconsPromise = getIcons(SRC_PATH);
 iconsPromise
   .then((iconsArray: string[]) => {
-    processIconsSass(SRC_PATH, iconsArray);
+    processIconsSass(SRC_PATH_GENERATED, iconsArray);
   })
   .catch((error) => {
     const msg = `There was an error processing the icons. error: ${error}.`;
@@ -225,7 +229,7 @@ const saveSassOnDisk = (
   type: iconType,
   categoryName: string
 ) => {
-  const sassDirectoryPath = path.join(OUTPUT_PATH, type);
+  const sassDirectoryPath = path.join(OUTPUT_PATH_GENERATED, type);
   const filePath = path.join(sassDirectoryPath, `${categoryName}.scss`);
 
   mkdir(sassDirectoryPath, { recursive: true }, function (err) {
@@ -266,15 +270,14 @@ const saveMainSassOnDisk = () => {
   });
   output += `\n);`;
 
-  const fileName = "svg-generator-icons-lists.scss";
-  const filePath = path.join(OUTPUT_PATH, fileName);
+  const filePath = path.join(OUTPUT_PATH_GENERATED, ALL_LISTS_FILENAME);
 
-  mkdir(OUTPUT_PATH, { recursive: true }, function (err) {
+  mkdir(OUTPUT_PATH_GENERATED, { recursive: true }, function (err) {
     try {
       // Write the content to the file synchronously
       writeFileSync(filePath, output);
     } catch (err) {
-      const msg = `There was an error saving ${fileName} the icon on disk. error: ${err}`;
+      const msg = `There was an error saving ${ALL_LISTS_FILENAME} the icon on disk. error: ${err}`;
       console.error(`${RED} ${msg} ${RESET_COLOR}`);
       return false;
     }
