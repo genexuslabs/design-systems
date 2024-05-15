@@ -295,7 +295,10 @@ const renderIcons = (
            ${icon.states
              .map((state) => {
                return `<li class="icon-container__list-item" id=${category}/${icon.name}>
-               <img class="icon" src="${icon.path}#${state}" title="${state}" alt="${icon.name} icon on state '${state}'">
+               <figure class="icon-container__figure">
+                <img class="icon" src="${icon.path}#${state}" title="${state}" alt="${icon.name} icon on state '${state}'">
+                <figcaption class="icon-container__figure-caption">${state}</figcaption>
+               </figure>
              </li>`;
              })
              .join("")}
@@ -367,6 +370,7 @@ const showcaseStyles = `
     --sc-icon__container-padding-block: 64px;
     --sc-icon__container-padding-inline: 32px;
     --sc-icon__container-max-width: 1200px;
+    --sc-container-title__color: #000000ab;
     --sc-container-title__font-size: 14px;
     --sc-container-title__font-weight: 300;
     --sc-container-title__text-transform: uppercase;
@@ -387,18 +391,18 @@ const showcaseStyles = `
     --sc-category__margin-block-end: 32px;
     --sc-category-title__margin-block-end: 18px;
     /*icons-container*/
-    --sc-icon-container__background: #FCFCFC;
-    --sc-icon-container__border: 1px solid var(--sc-border-dimmed__color);
-    --sc-icon-container__border-radius: 6px;
-    --sc-icon-container__padding: 16px;
-    --sc-icon-container-title__margin-block-end: 24px;
     --sc-icons-container-list__separation: 16px;
     --sc-icons-container-list__border-block-end: 1px solid
       var(--sc-border-dimmed__color);
     /*icon-container*/
-    --sc-icon-container__margin-block: 16px;
-    --sc-icon-container__padding-block: 16px;
+    --sc-icon-container__background: #FCFCFC;
+    --sc-icon-container__border: 1px solid var(--sc-border-dimmed__color);
+    --sc-icon-container__border-radius: 6px;
+    --sc-icon-container__padding: 16px;
+    --sc-icon-container__margin: 16px;
     --sc-icons-container-title__margin-block-end: 16px;
+    /*icon-container__list*/
+    --sc-icon-container-list__background-color: #212427;
 
   }
   /* =======================
@@ -411,9 +415,11 @@ const showcaseStyles = `
     --sc-body__background-color: #1a1d20;
     --sc-body__color: #999999;
     --sc-icon-container__background: #1D2023;
+    --sc-container-title__color: #ffffffcc;
     --sc-border-dimmed__color: rgba(255, 255, 255, 0.1);
     --sc-top-bar-button__filter--hover: brightness(1.4);
     --sc-top-bar-button__filter--active: brightness(1.2);
+    --sc-icon-container-list__background-color: #212427;
   }
   html.dark .light{
     display: none !important;
@@ -439,7 +445,7 @@ const showcaseStyles = `
   }
   a {
     text-decoration: none;
-    color: var(--sc-body__color);
+    color: inherit;
   }
   a:hover {
     text-decoration: underline;
@@ -515,7 +521,6 @@ const showcaseStyles = `
     font-weight: var(--sc-icons-type-section-title__font-weight);
     margin-block-end: var(--sc-icons-type-section-title__margin-block-end);
     text-transform: capitalize;
-    filter:
   }
   .aside__primary-title:before {
     content: "🌈";
@@ -528,6 +533,7 @@ const showcaseStyles = `
     font-size: var(--sc-category-title__font-size);
     margin-block-end: var(--sc-category-title__margin-block-end);
     text-transform: uppercase;
+    color: var(--sc-container-title__color);
   }
   .aside__category-list {
     padding-block-end: var(--sc-category-title__margin-block-end);
@@ -558,7 +564,6 @@ const showcaseStyles = `
   .container {
     padding-inline: var(--sc-icon__container-padding-inline);
     padding-block: var(--sc-icon__container-padding-block);
-    max-width: var(--sc-icon__container-max-width);
     margin: 0 0 0 var(--sc-aside__width);
   }
   .container__title {
@@ -633,26 +638,34 @@ const showcaseStyles = `
   }
   /*icons-container*/
   .icons-container {
-    display: flex;
-    flex-direction: row;
+    display:grid; 
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
     border: var(--sc-icon-container__border);
     border-radius: var(--sc-icon-container__border-radius);
-    padding: var(--sc-icon-container__padding);
     background-color: var(--sc-icon-container__background);
+  }
+  .icon-container__list {
+
+  }
+  .icon-container__figure {
+    margin: 0;
+    display:flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .icon-container__figure-caption {
+    font-size: 13px;
   }
   .icon-container__title {
     margin-block-end: var(--sc-icons-container-title__margin-block-end);
+    color: var(--sc-container-title__color);
   }
   .icon-container__list:not(:last-child) {
     padding-block-end: var(--sc-icons-container-list__separation);
-    margin-block-end: var(--sc-icons-container-list__separation);
-    border-block-end: var(--sc-icons-container-list__border-block-end);
   }
   /*icon-container*/
-  .icon-container:not(:last-child) {
-    margin-block-end: var(--sc-icon-container__margin-block);
-    padding-block-end: var(--sc-icon-container__padding-block);
-    border-block-end: 1px solid var(--sc-border-dimmed__color);
+  .icon-container {
+    padding: var(--sc-icon-container__padding);
   }
 
 `;
