@@ -8,6 +8,7 @@ import {
 import path from "path";
 import { writeFile } from "../partials-common/file-system-utils.js";
 import { savedOnDisk } from "../partials-common/types.js";
+import { OUTPUT_GENERATED } from "../partials-common/utils.js";
 
 /**
  * The list of available svg figures in any svg icon.
@@ -22,7 +23,7 @@ export const SVG_FIGURES = [
   "polyline",
 ];
 
-const ICONS_DIRECTORY = "icons";
+const GENERATED_DIRECTORY = ".generated";
 
 /**
  * @description It returns the monochrome states json as a JSON.
@@ -59,6 +60,7 @@ export const saveSvgOnDisk = (
 
   const filePath = path.join(
     outputDirectory,
+    GENERATED_DIRECTORY,
     pathInfo.categoryFolderName || "",
     schemeFolderName,
     pathInfo.fileName

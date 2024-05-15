@@ -15,9 +15,9 @@
     "clean": "rimraf ./js ./bin",
     "build": "npm run clean && tsc --build && npm run copy-json && npm run copy-to-bin",
     "copy-json": "copyfiles -f ./ts/partials-svg/*.json ./js/partials-svg/",
-    "copy-to-bin": "copyfiles --up 1 js/** js/**/* bin/",
+    "copy-to-bin": "copyfiles -u 1 ./js/**/* ./bin",
     "watch": "tsc --watch",
-    "svg": "node ./js/processor-svg.js ./assets ./dist/.generated color-states.json ./showcase ./log",
+    "svg": "node ./js/processor-svg.js ./assets ./dist/ .config/color-states.json ./showcase ./log",
     "sass": "node ./js/processor-sass.js ./dist ./sass",
     "showcase": "node ./js/showcase.js ./sass/ ./assets/icons-selectors-generator.scss ./showcase/ ../dist/"
   },

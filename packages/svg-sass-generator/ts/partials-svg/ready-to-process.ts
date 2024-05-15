@@ -1,5 +1,11 @@
 import * as fs from "fs";
-import { RED, RESET_COLOR } from "../partials-common/utils.js";
+import path from "path";
+
+import {
+  RED,
+  RESET_COLOR,
+  OUTPUT_GENERATED,
+} from "../partials-common/utils.js";
 import { validateStatesSchema } from "./states-validator.js";
 import { getStatesObject } from "./utils.js";
 import { DIR_PATH_REGEX } from "../partials-common/utils.js";
@@ -78,10 +84,7 @@ export function readyToProcess(
   }
 
   // 3. validate OUTPUT_PATH
-  //if (!DIR_PATH_REGEX.test(OUTPUT_PATH)) {
-  //if (!fs.lstatSync(OUTPUT_PATH).isDirectory()) {
-  const outputIsDirectory = true; //temporary WA
-  if (!outputIsDirectory) {
+  if (!DIR_PATH_REGEX.test(OUTPUT_PATH)) {
     const msg = `Output Directory Error #1: "${OUTPUT_PATH}" is not a valid directory path for the destination directory argument (argument number 2).`;
 
     log(msg, LOG_PATH, shouldWriteToLog);
@@ -151,7 +154,8 @@ export function readyToProcess(
 
   // 7. clear and create directories for a fresh start
   deleteDirectory(OUTPUT_PATH);
-  createDir(OUTPUT_PATH);
+  const outputPath = path.join(OUTPUT_PATH, OUTPUT_GENERATED);
+  createDir(outputPath);
 
   return {
     ready: true,
