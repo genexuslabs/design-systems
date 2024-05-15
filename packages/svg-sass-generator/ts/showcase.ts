@@ -73,7 +73,12 @@ export const generateShowcase = (
         ${showcaseStyles}
       </style>
       <body>
-        ${getBody(savedIconsOnDisk)}
+        <div class="top-bar">
+          <button id="toggle-dark-btn" class="top-bar__button">toggle dark</button>
+          <small class="top-bar__description">Automatically generated</small>
+        </div>
+        ${getAside(savedIconsOnDisk)}
+        ${getMain(savedIconsOnDisk)}
       </body>
     </html>
   `;
@@ -83,7 +88,63 @@ export const generateShowcase = (
   writeFile(filePath, htmlOutput, logPath);
 };
 
-const getBody = (savedIconsOnDisk: savedIcons) => {
+const getAside = (savedIconsOnDisk: savedIcons): string => {
+  const multicolor = savedIconsOnDisk.multicolor;
+  const monochrome = savedIconsOnDisk.monochrome;
+  let multicolorCategoriesOutput = ``;
+  let monochromeCategoriesOutput = ``;
+
+  // multicolor
+  Object.keys(multicolor).map((categoryName) => {
+    multicolorCategoriesOutput += `  
+    <h3 class="aside__category-title"><a href="#">${categoryName}</a></h3>
+      <!-- multicolor light -->
+      ${renderIconsListAside(multicolor[categoryName].light, "light")}
+      <!-- multicolor dark -->
+      ${renderIconsListAside(multicolor[categoryName].dark, "dark")}
+    </article>
+    `;
+  });
+
+  // monochrome
+  Object.keys(monochrome).map((categoryName) => {
+    monochromeCategoriesOutput += `  
+      <h3 class="aside__category-title"><a href="#">${categoryName}</a></h3>
+        <!-- multicolor light -->
+        ${renderIconsListAside(monochrome[categoryName].light, "light")}
+        <!-- multicolor dark -->
+        ${renderIconsListAside(monochrome[categoryName].dark, "dark")}
+      </article>
+      `;
+  });
+
+  return `
+  <!-- ASIDE -->
+  <aside class="aside">
+    <nav class="aside__nav">
+
+      <!-- multicolor icons list -->
+      <h2 class="aside__primary-title aside__primary-title--multicolor">
+        <a href="multicolor-icons-section">
+        multicolor
+        </a>
+      </h2>
+      ${multicolorCategoriesOutput}
+
+      <!-- monochrome icons list -->
+      <h2 class="aside__primary-title aside__primary-title--monochrome">
+        <a href="multicolor-icons-section">
+        monochrome
+        </a>
+      </h2>
+      ${monochromeCategoriesOutput}
+
+    </nav>
+  </aside>
+  `;
+};
+
+const getMain = (savedIconsOnDisk: savedIcons) => {
   // multicolor
   const multicolor = savedIconsOnDisk.multicolor;
   const monochrome = savedIconsOnDisk.monochrome;
@@ -119,10 +180,20 @@ const getBody = (savedIconsOnDisk: savedIcons) => {
     })</h3>
 
       <!-- multicolor light -->
-      ${renderIcons(multicolor[categoryName].light, "multicolor", "light")}
+      ${renderIcons(
+        categoryName,
+        multicolor[categoryName].light,
+        "multicolor",
+        "light"
+      )}
 
       <!-- multicolor dark -->
-      ${renderIcons(multicolor[categoryName].dark, "multicolor", "dark")}
+      ${renderIcons(
+        categoryName,
+        multicolor[categoryName].dark,
+        "multicolor",
+        "dark"
+      )}
     </article>
     `;
   });
@@ -143,50 +214,58 @@ const getBody = (savedIconsOnDisk: savedIcons) => {
     })</h3>
   
         <!-- multicolor light -->
-        ${renderIcons(monochrome[categoryName].light, "monochrome", "light")}
+        ${renderIcons(
+          categoryName,
+          monochrome[categoryName].light,
+          "monochrome",
+          "light"
+        )}
   
         <!-- multicolor dark -->
-        ${renderIcons(monochrome[categoryName].dark, "monochrome", "dark")}
+        ${renderIcons(
+          categoryName,
+          monochrome[categoryName].dark,
+          "monochrome",
+          "dark"
+        )}
       </article>
       `;
   });
 
-  const bodyOutput = `
-  <div class="top-bar">
-    <button id="toggle-dark-btn" class="top-bar__button">toggle dark</button>
-    <small class="top-bar__description">Automatically generated</small>
-  </div>
-  <div class="container" id="icons-container">
+  const mainOutput = `
+  <!-- MAIN -->
+  <main class="container" id="icons-container">
+
     <!-- multicolor -->
-    <section class="icons-type-section">
+    <section class="icons-type-section" aria-labelledby="multicolor-icons-section">
 
-      <h1 class="icons-container__title title">auto-generated scalable vector icons</h1>
+      <h1 class="container__title title">auto-generated scalable vector icons</h1>
 
-      <h2 class="icons-type-section__title icons-type-section__title--multicolor title light">
-        ${totalIcons.multicolor.light} Multicolor Light Icons
+      <h2 class="icons-type-section__title icons-type-section__title--multicolor title" id="multicolor-icons-section">
+        <span class="amount light">${totalIcons.multicolor.light}</span>
+        <span class="amount dark">${totalIcons.multicolor.dark}</span>
+        Multicolor <span class="icons-type-section__title-schema"></span> Icons
       </h2>
-      <h2 class="icons-type-section__title icons-type-section__title--multicolor title dark">
-        ${totalIcons.multicolor.dark} Multicolor Dark Icons
-      </h2>
-      <p class="note"><small>Position the cursor over an icon to know its state 👆🏼</small></p>
+
+      <p hidden class="note"><small></small></p>
 
       ${multicolorCategoriesOutput}
     </section>
 
     <!-- monochrome -->
-    <section class="icons-type-section">
+    <section class="icons-type-section" aria-labelledby="monochrome-icons-section">
 
-      <h2 class="icons-type-section__title icons-type-section__title--monochrome title light">
-        ${totalIcons.monochrome.light} Monochrome Light Icons
+      <h2 class="icons-type-section__title icons-type-section__title--monochrome title" id="monochrome-icons-section">
+        <span class="amount light">${totalIcons.monochrome.light}</span>
+        <span class="amount dark">${totalIcons.monochrome.dark}</span>
+        Monochrome <span class="icons-type-section__title-schema"></span> Icons
       </h2>
-      <h2 class="icons-type-section__title icons-type-section__title--monochrome title dark">
-        ${totalIcons.monochrome.dark} Monochrome Dark Icons
-      </h2>
-      <p class="note"><small>Position the cursor over an icon to know its state 👆🏼</small></p>
+
+      <p hidden class="note"><small></small></p>
 
       ${monochromeCategoriesOutput}
     </section>
-  </div>
+  </main>
 
   <script>
     const btnToggleDark = document.getElementById("toggle-dark-btn");
@@ -197,10 +276,11 @@ const getBody = (savedIconsOnDisk: savedIcons) => {
   </script>
 `;
 
-  return bodyOutput;
+  return mainOutput;
 };
 
 const renderIcons = (
+  category: string,
   icons: savedIconInfo[],
   iconType: iconType,
   colorSchema: colorScheme
@@ -211,11 +291,11 @@ const renderIcons = (
       .map((icon) => {
         return `<div class="icon-container">
          <h4 class="icon-container__title title">${icon.name}</h4>
-         <ul class="icon-container__list">
+         <ul class="icon-container__list list list--vertical">
            ${icon.states
              .map((state) => {
-               return `<li class="icon-container__list-item">
-               <img class="icon" src="${icon.path}#${state}" title="${state}">
+               return `<li class="icon-container__list-item" id=${category}/${icon.name}>
+               <img class="icon" src="${icon.path}#${state}" title="${state}" alt="${icon.name} icon on state '${state}'">
              </li>`;
              })
              .join("")}
@@ -224,6 +304,23 @@ const renderIcons = (
       })
       .join("")}
   </div>`;
+};
+
+const renderIconsListAside = (
+  icons: savedIconInfo[],
+  colorSchema: colorScheme
+): string => {
+  return `
+  <ul class="aside__category-list list list--vertical ${colorSchema}">
+    ${icons
+      .map((icon) => {
+        return `
+          <li class="aside__category-list-item">
+            <a href="#">${icon.name}</a>
+          </li>`;
+      })
+      .join("")}
+  </ul>`;
 };
 
 const getTotalIcons = (
@@ -239,9 +336,13 @@ const getTotalIcons = (
 };
 
 const showcaseStyles = `
+  /* =======================
+  TOKENS
+  ========================*/
   :root {
     /*general*/
     --sc-border-dimmed__color: rgba(0, 0, 0, 0.1);
+    --sc-list__gap: 16px;
     /*body*/
     --sc-body__background-color: #f4f5f5;
     --sc-body__color: #696969;
@@ -260,49 +361,56 @@ const showcaseStyles = `
     --sc-top-bar-description__font-size: 12px;
     /*icon*/
     --sc-icon__box: 32px;
-    /*container*/
+    /*aside*/
+    --sc-aside__width: 232px;
+    /*container (main)*/
     --sc-icon__container-padding-block: 64px;
     --sc-icon__container-padding-inline: 32px;
     --sc-icon__container-max-width: 1200px;
+    --sc-container-title__font-size: 14px;
+    --sc-container-title__font-weight: 300;
+    --sc-container-title__text-transform: uppercase;
+    --sc-container-title__letter-spacing: 0.2em;
+    --sc-container-title__margin-block-end: 24px;
+    --sc-container-title__padding-block-end: 24px;
+    --sc-icons-container-title__text-align: center;
     /*icons-type-section*/
     --sc-icons-type-section__padding-block-end: 64px;
     --sc-icons-type-section__margin-block-end: 64px;
     --sc-icons-type-section__border: 3px dashed
       var(--sc-border-dimmed__color);
     --sc-icons-type-section-title__font-size: 18px;
-    --sc-icons-type-section-title__font-weight: 100;
+    --sc-icons-type-section-title__font-weight: 400;
     --sc-icons-type-section-title__margin-block-end: 16px;
     /*category*/
     --sc-category-title__font-size: 14px;
     --sc-category__margin-block-end: 32px;
     --sc-category-title__margin-block-end: 18px;
     /*icons-container*/
-    --sc-icon-container__background: rgba(255, 255, 255, 0.7);
+    --sc-icon-container__background: #FCFCFC;
     --sc-icon-container__border: 1px solid var(--sc-border-dimmed__color);
     --sc-icon-container__border-radius: 6px;
     --sc-icon-container__padding: 16px;
-    --sc-icons-container-title__margin-block-end: 24px;
-    --sc-icons-container-title__font-size: 16px;
-    --sc-icons-container-title__font-weight: 300;
-    --sc-icons-container-title__text-transform: uppercase;
-    --sc-icons-container-title__letter-spacing: 0.1em;
-    --sc-icons-container-title__text-align: center;
-    --sc-icons-container-list__gap: 16px;
+    --sc-icon-container-title__margin-block-end: 24px;
     --sc-icons-container-list__separation: 16px;
     --sc-icons-container-list__border-block-end: 1px solid
       var(--sc-border-dimmed__color);
     /*icon-container*/
     --sc-icon-container__margin-block: 16px;
     --sc-icon-container__padding-block: 16px;
+    --sc-icons-container-title__margin-block-end: 16px;
 
   }
+  /* =======================
+  GENERAL
+  ========================*/
   html:not(.dark) .dark{
     display: none !important;
   }
   html.dark {
     --sc-body__background-color: #1a1d20;
     --sc-body__color: #999999;
-    --sc-icon-container__background: rgba(255, 255, 255, 0.01);
+    --sc-icon-container__background: #1D2023;
     --sc-border-dimmed__color: rgba(255, 255, 255, 0.1);
     --sc-top-bar-button__filter--hover: brightness(1.4);
     --sc-top-bar-button__filter--active: brightness(1.2);
@@ -310,7 +418,6 @@ const showcaseStyles = `
   html.dark .light{
     display: none !important;
   }
-  /*general*/
   body {
     background-color: var(--sc-body__background-color);
     color: var(--sc-body__color);
@@ -322,10 +429,44 @@ const showcaseStyles = `
   * {
     box-sizing: border-box;
   }
+  *:last-child {
+    margin-block-end: 0;
+    padding-block-end: 0;
+  }
+  *:first-child {
+    margin-block-start: 0;
+    padding-block-start: 0;
+  }
+  a {
+    text-decoration: none;
+    color: var(--sc-body__color);
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  a:active {
+    filter: var(--sc-top-bar-button__filter--active);
+  }
   .title {
     margin: 0;
   }
-  /*top-bar*/
+  .list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: var(--sc-list__gap);
+  }
+  .list li {
+    margin: 0;
+  }
+  .list--vertical {
+    flex-direction: column;
+    gap: 10px;
+  }
+  /* =======================
+  TOP-BAR
+  ========================*/
   .top-bar {
     position: fixed;
     z-index:99;
@@ -356,6 +497,55 @@ const showcaseStyles = `
   .top-bar__description {
     font-size: var(--sc-top-bar-description__font-size);
   }
+  /* =======================
+  ASIDE
+  ========================*/
+  .aside {
+    position: fixed;
+    height: calc(100vh - var(--sc-top-bar__height));
+    top: var(--sc-top-bar__height);
+    left: 0;
+    padding: 16px;
+    width: var(--sc-aside__width);
+    background-color: var(--sc-icon-container__background);
+    z-index:99;
+  }
+  .aside__primary-title {
+    font-size: var(--sc-icons-type-section-title__font-size);
+    font-weight: var(--sc-icons-type-section-title__font-weight);
+    margin-block-end: var(--sc-icons-type-section-title__margin-block-end);
+    text-transform: capitalize;
+    filter:
+  }
+  .aside__primary-title:before {
+    content: "🌈";
+    margin-inline-end: 8px;
+  }
+  .aside__primary-title--monochrome:before {
+    filter: sepia(1);
+  }
+  .aside__category-title {
+    font-size: var(--sc-category-title__font-size);
+    margin-block-end: var(--sc-category-title__margin-block-end);
+    text-transform: uppercase;
+  }
+  .aside__category-list {
+    padding-block-end: var(--sc-category-title__margin-block-end);
+    border-block-end: var(--sc-icon-container__border);
+  }
+  .aside__category-list-item {
+    margin-block-end: calc(var(--sc-icons-container-title__margin-block-end) * 0.75);
+    font-size: 13px;
+  }
+  .aside__category-list-item:before {
+    content: "- ";
+    display: inline-block;
+    padding-inline-end: 8px;
+    
+  }
+  /* =======================
+  MAIN
+  ========================*/
   /*icon*/
   .icon {
     display: inline-block;
@@ -369,7 +559,28 @@ const showcaseStyles = `
     padding-inline: var(--sc-icon__container-padding-inline);
     padding-block: var(--sc-icon__container-padding-block);
     max-width: var(--sc-icon__container-max-width);
-    margin: 0 auto;
+    margin: 0 0 0 var(--sc-aside__width);
+  }
+  .container__title {
+    padding-block-end: var(--sc-container-title__padding-block-end);
+    margin-block-end: var(--sc-container-title__margin-block-end);
+    font-size: var(--sc-container-title__font-size);
+    font-weight: var(--sc-container-title__font-weight);
+    text-transform: var(--sc-container-title__text-transform);
+    letter-spacing: var(--sc-container-title__letter-spacing);
+    text-align: var(--sc-icons-container-title__text-align);
+    position: relative;
+  }
+  .container__title:after {
+    content: "";
+    display: block;
+    width: 128px;
+    height: 2px;
+    border-bottom: 1px solid var(--sc-border-dimmed__color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
   /*icons-type-section*/
   .icons-type-section:not(:last-child) {
@@ -382,7 +593,13 @@ const showcaseStyles = `
     font-size: var(--sc-icons-type-section-title__font-size);
     font-weight: var(--sc-icons-type-section-title__font-weight);
     margin-block-end: var(--sc-icons-type-section-title__margin-block-end);
-    text-transform: lowercase;
+    text-transform: capitalize;
+  }
+  .icons-type-section__title-schema:before {
+    content: "light";
+  }
+  html.dark .icons-type-section__title-schema:before {
+    content: "dark";
   }
   .icons-type-section__title--multicolor:before {
     content: "🌈";
@@ -417,40 +634,14 @@ const showcaseStyles = `
   /*icons-container*/
   .icons-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border: var(--sc-icon-container__border);
     border-radius: var(--sc-icon-container__border-radius);
     padding: var(--sc-icon-container__padding);
     background-color: var(--sc-icon-container__background);
   }
-  .icons-container__title {
-    padding-block-end: var(--sc-icons-container-title__margin-block-end);
+  .icon-container__title {
     margin-block-end: var(--sc-icons-container-title__margin-block-end);
-    font-size: var(--sc-icons-container-title__font-size);
-    font-weight: var(--sc-icons-container-title__font-weight);
-    text-transform: var(--sc-icons-container-title__text-transform);
-    letter-spacing: var(--sc-icons-container-title__letter-spacing);
-    text-align: var(--sc-icons-container-title__text-align);
-    position: relative;
-  }
-  .icons-container__title:after {
-    content: "";
-    display: block;
-    width: 128px;
-    height: 2px;
-    border-bottom: 1px solid var(--sc-border-dimmed__color);
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .icon-container__list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: var(--sc-icons-container-list__gap);
-    line-height: 0;
   }
   .icon-container__list:not(:last-child) {
     padding-block-end: var(--sc-icons-container-list__separation);
