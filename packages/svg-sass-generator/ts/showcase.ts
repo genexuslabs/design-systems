@@ -160,6 +160,8 @@ const getBody = (savedIconsOnDisk: savedIcons) => {
     <!-- multicolor -->
     <section class="icons-type-section">
 
+      <h1 class="icons-container__title title">auto-generated scalable vector icons</h1>
+
       <h2 class="icons-type-section__title icons-type-section__title--multicolor title light">
         ${totalIcons.multicolor.light} Multicolor Light Icons
       </h2>
@@ -208,11 +210,11 @@ const renderIcons = (
     ${icons
       .map((icon) => {
         return `<div class="icon-container">
-         <h4 class="icons-container__title title">${icon.name}</h4>
-         <ul class="icons-container__list">
+         <h4 class="icon-container__title title">${icon.name}</h4>
+         <ul class="icon-container__list">
            ${icon.states
              .map((state) => {
-               return `<li class="icons-container__list-item">
+               return `<li class="icon-container__list-item">
                <img class="icon" src="${icon.path}#${state}" title="${state}">
              </li>`;
              })
@@ -267,7 +269,7 @@ const showcaseStyles = `
     --sc-icons-type-section__margin-block-end: 64px;
     --sc-icons-type-section__border: 3px dashed
       var(--sc-border-dimmed__color);
-    --sc-icons-type-section-title__font-size: 24px;
+    --sc-icons-type-section-title__font-size: 18px;
     --sc-icons-type-section-title__font-weight: 100;
     --sc-icons-type-section-title__margin-block-end: 16px;
     /*category*/
@@ -275,11 +277,16 @@ const showcaseStyles = `
     --sc-category__margin-block-end: 32px;
     --sc-category-title__margin-block-end: 18px;
     /*icons-container*/
-    --sc-icons-container__background: rgba(255, 255, 255, 0.7);
-    --sc-icons-container__border: 1px solid var(--sc-border-dimmed__color);
-    --sc-icons-container__border-radius: 6px;
-    --sc-icons-container__padding: 16px;
-    --sc-icons-container-title__margin-block-end: 18px;
+    --sc-icon-container__background: rgba(255, 255, 255, 0.7);
+    --sc-icon-container__border: 1px solid var(--sc-border-dimmed__color);
+    --sc-icon-container__border-radius: 6px;
+    --sc-icon-container__padding: 16px;
+    --sc-icons-container-title__margin-block-end: 24px;
+    --sc-icons-container-title__font-size: 16px;
+    --sc-icons-container-title__font-weight: 300;
+    --sc-icons-container-title__text-transform: uppercase;
+    --sc-icons-container-title__letter-spacing: 0.1em;
+    --sc-icons-container-title__text-align: center;
     --sc-icons-container-list__gap: 16px;
     --sc-icons-container-list__separation: 16px;
     --sc-icons-container-list__border-block-end: 1px solid
@@ -295,7 +302,7 @@ const showcaseStyles = `
   html.dark {
     --sc-body__background-color: #1a1d20;
     --sc-body__color: #999999;
-    --sc-icons-container__background: rgba(255, 255, 255, 0.01);
+    --sc-icon-container__background: rgba(255, 255, 255, 0.01);
     --sc-border-dimmed__color: rgba(255, 255, 255, 0.1);
     --sc-top-bar-button__filter--hover: brightness(1.4);
     --sc-top-bar-button__filter--active: brightness(1.2);
@@ -411,15 +418,33 @@ const showcaseStyles = `
   .icons-container {
     display: flex;
     flex-direction: column;
-    border: var(--sc-icons-container__border);
-    border-radius: var(--sc-icons-container__border-radius);
-    padding: var(--sc-icons-container__padding);
-    background-color: var(--sc-icons-container__background);
+    border: var(--sc-icon-container__border);
+    border-radius: var(--sc-icon-container__border-radius);
+    padding: var(--sc-icon-container__padding);
+    background-color: var(--sc-icon-container__background);
   }
   .icons-container__title {
+    padding-block-end: var(--sc-icons-container-title__margin-block-end);
     margin-block-end: var(--sc-icons-container-title__margin-block-end);
+    font-size: var(--sc-icons-container-title__font-size);
+    font-weight: var(--sc-icons-container-title__font-weight);
+    text-transform: var(--sc-icons-container-title__text-transform);
+    letter-spacing: var(--sc-icons-container-title__letter-spacing);
+    text-align: var(--sc-icons-container-title__text-align);
+    position: relative;
   }
-  .icons-container__list {
+  .icons-container__title:after {
+    content: "";
+    display: block;
+    width: 128px;
+    height: 2px;
+    border-bottom: 1px solid var(--sc-border-dimmed__color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .icon-container__list {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -427,7 +452,7 @@ const showcaseStyles = `
     gap: var(--sc-icons-container-list__gap);
     line-height: 0;
   }
-  .icons-container__list:not(:last-child) {
+  .icon-container__list:not(:last-child) {
     padding-block-end: var(--sc-icons-container-list__separation);
     margin-block-end: var(--sc-icons-container-list__separation);
     border-block-end: var(--sc-icons-container-list__border-block-end);
