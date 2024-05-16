@@ -23,8 +23,6 @@ export const SVG_FIGURES = [
   "polyline",
 ];
 
-const GENERATED_DIRECTORY = ".generated";
-
 /**
  * @description It returns the monochrome states json as a JSON.
  */
@@ -60,7 +58,7 @@ export const saveSvgOnDisk = (
 
   const filePath = path.join(
     outputDirectory,
-    GENERATED_DIRECTORY,
+    OUTPUT_GENERATED,
     pathInfo.categoryFolderName || "",
     schemeFolderName,
     pathInfo.fileName

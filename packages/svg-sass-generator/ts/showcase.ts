@@ -92,6 +92,7 @@ export const generateShowcase = (
 };
 
 const updateAsideLinks = (): string => {
+  return "";
   return `
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -195,9 +196,9 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
   <aside class="aside">
 
     <!-- a detailed (bigger) view of any clicked icon -->
-    <button class="sc-button sc-button--full-width aside__toggle-detailed-view-button" id="toggle-enlarged-version-btn"></button>  
+    <button class="sc-button sc-button--full-width aside__toggle-detailed-view-button aside__toggle-detailed-view-button--collapsed" id="toggle-enlarged-version-btn"></button>  
 
-    <div class="aside__detailed-view-wrapper" id="aside__detailed-view-wrapper">
+    <div class="aside__detailed-view-wrapper aside__detailed-view-wrapper--visible" id="aside__detailed-view-wrapper">
       <figure class="aside__detailed-view" id="icon-detailed-view">
         <div class="aside__icon-detailed-image-wrapper">
         <img id="icon-detailed-img" class="aside__icon-detailed-image" src="" alt="An enlarged view of the selected icon">
@@ -222,7 +223,7 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
 
       <!-- monochrome icons list -->
       <h2 class="aside__primary-title aside__primary-title--monochrome">
-        <a href="#multicolor-icons-section">
+        <a href="#monochrome-icons-section">
         monochrome
         </a>
       </h2>
@@ -307,7 +308,7 @@ const getMain = (savedIconsOnDisk: savedIcons) => {
   Object.keys(monochrome).map((categoryName) => {
     monochromeCategoriesOutput += `
       <!-- ${categoryName} -->
-      <article class="category" id="category-${categoryName}">
+      <article class="category" id="${categoryName}">
 
       <h3 class="category__title title light">
         ${categoryName} (${
@@ -437,7 +438,7 @@ const renderIcons = (
   <div class="icons-container icons-container--${iconType} ${colorSchema}">
     ${icons
       .map((icon) => {
-        const listId = `${category}__${icon.name.split(".")[0]}`;
+        const listId = `${category}-${icon.name.split(".")[0]}`;
 
         return `<div class="icon-container" id=${listId}>
          <h4 class="icon-container__title title">${icon.name}</h4>
@@ -471,7 +472,7 @@ const renderIconsListAside = (
     <ul class="aside__category-list list list--vertical">
       ${icons
         .map((icon) => {
-          const href = `${category}__${icon.name.split(".")[0]}`;
+          const href = `${category}-${icon.name.split(".")[0]}`;
           return `
             <li class="aside__category-list-item">
               <a href="#${href}">${icon.name}</a>
@@ -564,6 +565,10 @@ const showcaseStyles = `
   /* =======================
   GENERAL
   ========================*/
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
   html:not(.dark) .dark{
     display: none !important;
   }
