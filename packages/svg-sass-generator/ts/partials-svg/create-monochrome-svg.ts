@@ -69,9 +69,11 @@ svg element was provided without width or/and height. This attributes are requir
   }
 
   // check if category of icon exist on the states json
+
   const iconCategoryIndex = monochromeIconsArray.findIndex((icon) => {
     return icon.folder === pathInfo.categoryFolderName;
   });
+
   if (iconCategoryIndex === -1) {
     const msg = `
 Icon category was not found on "${STATES_FILENAME}". The icon category name is expected to be the same as the icon folder name. This icon will be ignored. \n

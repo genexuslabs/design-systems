@@ -179,6 +179,7 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
 
       // Save svg on disk
       let lightMonoChromeSvgSavedOnDisk: savedOnDisk;
+
       if (svgIconLight.processed) {
         lightMonoChromeSvgSavedOnDisk = saveSvgOnDisk(
           svgIconLight.svgString,

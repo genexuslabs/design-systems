@@ -16,9 +16,8 @@ export const pushSavedIcon = (
   colorScheme: colorScheme,
   colorStatesJson: iconsColorsSchema
 ) => {
-  const filePathArray = svgFilePath.replace(/\//g, "\\").split(path.sep);
   const iconCategory = category || "uncategorized";
-  const iconName = filePathArray[filePathArray.length - 1];
+  const iconName = path.basename(svgFilePath);
   let iconStates: string[] = [];
 
   // create category if inexistent
@@ -151,7 +150,7 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
   Object.keys(multicolor).map((categoryName) => {
     multicolorCategoriesOutput += `  
     <h3 class="aside__category-title" role="button">
-      <a href="#category-${categoryName}" class="aside__category-title-link">${categoryName}</a>
+      <a href="#${categoryName}" class="aside__category-title-link">${categoryName}</a>
     </h3>
       <!-- multicolor light -->
       ${renderIconsListAside(
@@ -173,7 +172,7 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
   Object.keys(monochrome).map((categoryName) => {
     monochromeCategoriesOutput += `  
     <h3 class="aside__category-title" role="button">
-      <a href="#category-${categoryName}" class="aside__category-title-link">${categoryName}</a>
+      <a href="#${categoryName}" class="aside__category-title-link">${categoryName}</a>
     </h3>
       <!-- multicolor light -->
         ${renderIconsListAside(
@@ -201,13 +200,13 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
     <div class="aside__detailed-view-wrapper" id="aside__detailed-view-wrapper">
       <figure class="aside__detailed-view" id="icon-detailed-view">
         <div class="aside__icon-detailed-image-wrapper">
-        <img id="icon-detailed-img" class="aside__icon-detailed-image" src="dist\\.generated\\objects\\dark\\stroke.svg#hover">
+        <img id="icon-detailed-img" class="aside__icon-detailed-image" src="" alt="An enlarged view of the selected icon">
         </div>
         <figcaption id="icon-detailed-view-caption" class="aside__detailed-icon-figcaption" >
-          <p class="detailed-icon__desciption">
+          <strong>category/icon.svg</strong>
+          <p class="detailed-icon__description">
             Here goes an optional description for the icon use
           </p>
-          <strong>category/icon.svg</strong>
         </figcaption>
       </figure>
     </div>
@@ -274,7 +273,7 @@ const getMain = (savedIconsOnDisk: savedIcons) => {
   Object.keys(multicolor).map((categoryName) => {
     multicolorCategoriesOutput += `
     <!-- ${categoryName} -->
-    <article class="category" id="category-${categoryName}">
+    <article class="category" id="${categoryName}">
 
     <h3 class="category__title title light">
       ${categoryName} (${
@@ -520,7 +519,7 @@ const showcaseStyles = `
     --sc-top-bar-button__filter--active: brightness(0.8);
     --sc-top-bar-description__font-size: 12px;
     /*icon*/
-    --sc-icon__box: 32px;
+    --sc-icon__box: 24px;
     /*aside*/
     --sc-aside__width: 232px;
     /*container (main)*/
@@ -706,23 +705,29 @@ const showcaseStyles = `
     border-radius: 4px 4px 0 0;
   }
   .aside__icon-detailed-image {
-    width: 100%;
     position: absolute;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%, -50%);
   }
   .aside__detailed-icon-figcaption {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     border: 1px solid var(--sc-border-dimmed__color);
     border-top: none;
     border-radius: 0 0 4px 4px;
-    text-align: center;
     padding: 8px;
     font-size: 12px;
+    gap: 8px;
+  }
+  
+  .detailed-icon__description {
+    margin-block-start: 0;
+    font-style: italic;
+    line-height:1.4em;
+    font-size: 11px;
   }
   .aside {
     position: fixed;
