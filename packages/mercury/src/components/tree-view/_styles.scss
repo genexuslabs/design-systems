@@ -18,7 +18,7 @@
     );
     --ch-tree-view-item__image-size: var(--mer-icon-shell__size--sm);
 
-    @include mer-scrollbar;
+    @include scrollbar-styles;
 
     .ch-tree-view-container {
       padding: var(--tree-view-container__padding);
@@ -40,7 +40,7 @@
     // checkbox (container:focus)
     &::part(checkbox__container):focus-within {
       box-shadow: none;
-      @include mer-focus();
+      @include focus-style();
     }
     // checkbox (container:checked)
     &::part(checkbox__container checkbox__checked) {
@@ -75,7 +75,7 @@
         background-color: var(--tree-view-item__bg-color--hover);
       }
       &:focus {
-        @include mer-focus();
+        @include focus-style();
       }
     }
     &[selected]::part(header) {

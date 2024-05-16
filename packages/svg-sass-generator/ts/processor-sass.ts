@@ -204,7 +204,7 @@ const createPlaceholders = (
     icon.states.forEach((state) => {
       placeholderSelectors += `
     &_${iconName}--${state}-${scheme} {
-      --icon-path: url("#{$icons-path}icons/${categoryName}/${scheme}/${icon.fileName}#${state}");
+      --icon-path: url("#{$icons-path}${categoryName}/${scheme}/${icon.fileName}#${state}");
     }
     `;
     });

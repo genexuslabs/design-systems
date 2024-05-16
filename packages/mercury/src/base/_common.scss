@@ -1,7 +1,7 @@
 /*----------------------
 Focus
 ----------------------*/
-@mixin mer-focus($outline: false) {
+@mixin focus-style($outline: false) {
   @if $outline == true {
     outline-width: var(--mer-border__width--sm);
     outline-style: solid;
@@ -15,7 +15,7 @@ Focus
 /*----------------------
 Scrollbar
 ----------------------*/
-@mixin mer-scrollbar {
+@mixin scrollbar-styles {
   //scrollbar
   &::-webkit-scrollbar {
     width: var(--mer-scrollbar__size);
@@ -48,7 +48,7 @@ Scrollbar
 /*----------------------------------------------------
 Item (applies to every item (tree, grid, list, etc...)
 ----------------------------------------------------*/
-@mixin mer-item($state: "hover") {
+@mixin item-styles($state: "hover") {
   @if $state == "hover" {
     &:hover {
       color: var(--mer-item__color--hover);
@@ -73,7 +73,7 @@ Item (applies to every item (tree, grid, list, etc...)
 /*----------------------
 Checkbox
 ----------------------*/
-@mixin mer-checkbox($part) {
+@mixin checkbox-styles($part) {
   //container
   @if $part == "container" {
     box-sizing: border-box;
@@ -97,7 +97,7 @@ Checkbox
   }
   // container:focus
   @if $part == "container--focus-within" {
-    @include mer-focus();
+    @include focus-style();
     box-shadow: none;
   }
   // container:checked

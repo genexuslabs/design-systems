@@ -1,0 +1,16 @@
+
+/*multicolor lists*/
+
+/*monochrome lists*/
+@import "./monochrome/system-3";
+@import "./monochrome/system-2";
+@import "./monochrome/system-1";
+
+$all-multicolor-lists: (
+);
+
+$all-monochrome-lists: (
+system-3: $icons-system-3,
+system-2: $icons-system-2,
+system-1: $icons-system-1,
+);

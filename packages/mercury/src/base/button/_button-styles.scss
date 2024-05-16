@@ -14,7 +14,7 @@
   padding-inline: var(--button-base__padding-inline);
   text-transform: var(--button-base__text-transform);
   &--focus-visible {
-    @include mer-focus($outline: true);
+    @include focus-style($outline: true);
   }
 }
 
