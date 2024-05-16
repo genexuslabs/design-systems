@@ -1,5 +1,12 @@
 import path from "path";
+import * as fs from "fs";
+
+import {
+  copyFolderSync,
+  deleteDirectory,
+} from "./partials-common/file-system-utils.js";
 import { writeFile } from "./partials-common/file-system-utils.js";
+import { OUTPUT_GENERATED } from "./partials-common/utils.js";
 
 import {
   colorScheme,
@@ -57,8 +64,8 @@ export const generateShowcase = (
   showcasePath: string,
   logPath: string
 ) => {
-  // calculate relative path from SHOWCASE_PATH to OUTPUT_PATH
-  const baseTagHref = path.relative(showcasePath, outputPath);
+  // remove directory for a fresh start
+  deleteDirectory(showcasePath);
 
   let htmlOutput = `
   <!DOCTYPE html>
@@ -66,7 +73,6 @@ export const generateShowcase = (
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <base href="${baseTagHref}">
       <title>Icons Showcase</title>
       <style>
         ${showcaseStyles}
@@ -80,7 +86,6 @@ export const generateShowcase = (
       </div>
       ${getAside(savedIconsOnDisk)}
       ${getMain(savedIconsOnDisk)}
-      ${updateAsideLinks()}
       ${toggleAsideLists()}
       ${preventListLinkPropagation()}
     </body>
@@ -89,27 +94,11 @@ export const generateShowcase = (
 
   const filePath = path.join(showcasePath, "index.html");
   writeFile(filePath, htmlOutput, logPath);
-};
 
-const updateAsideLinks = (): string => {
-  return "";
-  return `
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // redefine urls for all the list items, since it wont work
-      // by default because the base tag differs.
-      const currentUrl = window.location.href;
-      const parsedUrl = new URL(currentUrl);
-      const pathname = parsedUrl.pathname;
-
-      const asideNav = document.getElementById("aside-nav");
-      const asideNavUrls = asideNav.querySelectorAll("a");
-      asideNavUrls.forEach((a) => {
-        const linkHref = a.getAttribute("href");
-        a.setAttribute("href", pathname + linkHref);
-      });
-    });
-  </script>`;
+  // Then copy all the icons;
+  fs.cpSync(outputPath, path.join(showcasePath, outputPath), {
+    recursive: true,
+  });
 };
 
 const toggleAsideLists = (): string => {
@@ -966,12 +955,12 @@ const showcaseStyles = `
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: var(--sc-border-dimmed__color);
-    border:radius: 4px;
+    border-radius: 4px;
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    filter: brightness: 1.1;
+    filter: brightness(1.1);
   }
 `;
 

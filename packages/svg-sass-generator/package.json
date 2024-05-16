@@ -15,7 +15,7 @@
     "clean": "rimraf ./js ./bin",
     "build": "npm run clean && tsc --build && npm run copy-json && npm run copy-to-bin",
     "copy-json": "copyfiles -f ./ts/partials-svg/*.json ./js/partials-svg/",
-    "copy-to-bin": "copyfiles -u 1 ./js/**/* ./bin",
+    "copy-to-bin": "rsync -av --exclude='js' ./js/ ./bin",
     "watch": "tsc --watch",
     "svg": "node ./js/processor-svg.js ./assets ./dist/ .config/color-states.json ./showcase ./log",
     "sass": "node ./js/processor-sass.js ./dist/.generated ./sass"
