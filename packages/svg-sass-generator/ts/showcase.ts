@@ -82,6 +82,7 @@ export const generateShowcase = (
       ${getAside(savedIconsOnDisk)}
       ${getMain(savedIconsOnDisk)}
       ${updateAsideLinks()}
+      ${toggleAsideLists()}
     </body>
   </html>
   `;
@@ -95,17 +96,33 @@ const updateAsideLinks = (): string => {
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       // redefine urls for all the list items, since it wont work
-      // by default because of the base tag
+      // by default because the base tag differs.
       const currentUrl = window.location.href;
+      const parsedUrl = new URL(currentUrl);
+      const baseUrl = parsedUrl.origin + parsedUrl.pathname;
+      console.log("baseUrl", baseUrl);
       const asideNav = document.getElementById("aside-nav");
       const asideNavUrls = asideNav.querySelectorAll("a");
-      console.log(asideNavUrls);
       asideNavUrls.forEach((a) => {
-        const currentHref = a.getAttribute("href");
-        console.log(currentUrl);
-        a.setAttribute("href", currentUrl + currentHref);
+        const linkHref = a.getAttribute("href");
+        a.setAttribute("href", baseUrl + linkHref);
       });
     });
+  </script>`;
+};
+
+const toggleAsideLists = (): string => {
+  return `
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const asideListsToggleButtons = document.querySelectorAll(".aside__category-title");
+        asideListsToggleButtons.forEach((listToggleButton) => {
+          listToggleButton.addEventListener("click", function() {
+            const relatedCategoryList = listToggleButton.nextElementSibling;
+            relatedCategoryList.classList.toggle("aside__category-list-wrapper--uncollapsed");
+          });
+        });
+      });
   </script>`;
 };
 
@@ -118,7 +135,9 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
   // multicolor
   Object.keys(multicolor).map((categoryName) => {
     multicolorCategoriesOutput += `  
-    <h3 class="aside__category-title"><a href="#">${categoryName}</a></h3>
+    <h3 class="aside__category-title" role="button">
+      <a href="#">${categoryName}</a>
+    </h3>
       <!-- multicolor light -->
       ${renderIconsListAside(
         categoryName,
@@ -138,8 +157,10 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
   // monochrome
   Object.keys(monochrome).map((categoryName) => {
     monochromeCategoriesOutput += `  
-      <h3 class="aside__category-title"><a href="#">${categoryName}</a></h3>
-        <!-- multicolor light -->
+    <h3 class="aside__category-title" role="button">
+      <a href="#">${categoryName}</a>
+    </h3>
+      <!-- multicolor light -->
         ${renderIconsListAside(
           categoryName,
           monochrome[categoryName].light,
@@ -174,7 +195,7 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
     <nav class="aside__nav" id="aside-nav">
       <!-- multicolor icons list -->
       <h2 class="aside__primary-title aside__primary-title--multicolor">
-        <a href="multicolor-icons-section">
+        <a href="#multicolor-icons-section">
         multicolor
         </a>
       </h2>
@@ -427,17 +448,19 @@ const renderIconsListAside = (
   colorSchema: colorScheme
 ): string => {
   return `
-  <ul class="aside__category-list list list--vertical ${colorSchema}">
-    ${icons
-      .map((icon) => {
-        const href = `${category}__${icon.name.split(".")[0]}`;
-        return `
-          <li class="aside__category-list-item">
-            <a href="#${href}">${icon.name}</a>
-          </li>`;
-      })
-      .join("")}
-  </ul>`;
+  <div class="aside__category-list-wrapper">
+    <ul class="aside__category-list list list--vertical">
+      ${icons
+        .map((icon) => {
+          const href = `${category}__${icon.name.split(".")[0]}`;
+          return `
+            <li class="aside__category-list-item">
+              <a href="#${href}">${icon.name}</a>
+            </li>`;
+        })
+        .join("")}
+    </ul>
+  </div>`;
 };
 
 const getTotalIcons = (
@@ -641,6 +664,9 @@ const showcaseStyles = `
   /* =======================
   ASIDE
   ========================*/
+  .aside {
+    overflow-x: auto;
+  }
   .aside__detailed-view {
     margin: 0;
     overflow: hidden;
@@ -677,7 +703,6 @@ const showcaseStyles = `
     text-align: center;
     padding: 8px;
     font-size: 12px;
-    margin-block-end: 16px;
   }
   .aside {
     position: fixed;
@@ -692,7 +717,7 @@ const showcaseStyles = `
   .aside__primary-title {
     font-size: var(--sc-icons-type-section-title__font-size);
     font-weight: var(--sc-icons-type-section-title__font-weight);
-    margin-block-end: var(--sc-icons-type-section-title__margin-block-end);
+    margin-block-start: calc(var(--sc-icons-type-section-title__margin-block-end) * 2);
     text-transform: capitalize;
   }
   .aside__primary-title:before {
@@ -704,20 +729,55 @@ const showcaseStyles = `
   }
   .aside__category-title {
     font-size: var(--sc-category-title__font-size);
-    margin-block-end: var(--sc-category-title__margin-block-end);
+    padding-block: 12px;
+    margin: 0;
     text-transform: uppercase;
     color: var(--sc-container-title__color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .aside__category-title::after {
+    border-style: solid;
+    border-width: 0.25em 0.25em 0 0;
+    content: '';
+    display: inline-block;
+    height: 0.45em;
+    right: 0.15em;
+    position: relative;
+    vertical-align: top;
+    width: 0.45em;
+    top: 0;
+    transform: rotate(135deg);
+    color: var(--sc-body__color);
+  }
+  .aside__category-title:hover {
+    cursor: pointer;
+  }
+  .aside__category-title:hover::after {
+    color: var(--sc-container-title__color);
+  }
+  .aside__category-title:last-of-type{
+    border-block-end: none;
+  }
+  .aside__category-list-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 250ms;
+    transition: all 250ms;
+  }
+  .aside__category-list-wrapper--uncollapsed {
+    grid-template-rows: 1fr;
+    margin-block-end: 12px;
   }
   .aside__category-list {
-    padding-block-end: var(--sc-category-title__margin-block-end);
-    border-block-end: var(--sc-icon-container__border);
+    overflow: hidden
   }
   .aside__category-list-item {
     margin-block-end: calc(var(--sc-icons-container-title__margin-block-end) * 0.75);
     font-size: 13px;
   }
   .aside__category-list-item:before {
-    content: "- ";
     display: inline-block;
     padding-inline-end: 8px; 
   }
@@ -859,6 +919,29 @@ const showcaseStyles = `
   .icon-state-button:hover {
     cursor: pointer;
     color : var(--sc-container-title__color);
+  }
+  /* =======================
+  CUSTOM SCROLLBAR
+  ========================*/
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--sc-body__background-color);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--sc-border-dimmed__color);
+    border:radius: 4px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    filter: brightness: 1.1;
   }
 `;
 
