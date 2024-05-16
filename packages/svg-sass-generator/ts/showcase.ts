@@ -203,7 +203,12 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
         <div class="aside__icon-detailed-image-wrapper">
         <img id="icon-detailed-img" class="aside__icon-detailed-image" src="dist\\.generated\\objects\\dark\\stroke.svg#hover">
         </div>
-        <figcaption id="icon-detailed-view-caption" class="aside__detailed-icon-figcaption" >category/icon.svg</figcaption>
+        <figcaption id="icon-detailed-view-caption" class="aside__detailed-icon-figcaption" >
+          <p class="detailed-icon__desciption">
+            Here goes an optional description for the icon use
+          </p>
+          <strong>category/icon.svg</strong>
+        </figcaption>
       </figure>
     </div>
 
