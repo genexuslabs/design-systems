@@ -72,20 +72,41 @@ export const generateShowcase = (
       <style>
         ${showcaseStyles}
       </style>
-      <body>
-        <div class="top-bar">
-          <button id="toggle-dark-btn" class="top-bar__button">toggle dark</button>
-          <small class="top-bar__description">Automatically generated</small>
-        </div>
-        ${getAside(savedIconsOnDisk)}
-        ${getMain(savedIconsOnDisk)}
-      </body>
-    </html>
+
+    </head>
+    <body>
+      <div class="top-bar">
+        <button id="toggle-dark-btn" class="top-bar__button">toggle dark</button>
+        <small class="top-bar__description">Automatically generated</small>
+      </div>
+      ${getAside(savedIconsOnDisk)}
+      ${getMain(savedIconsOnDisk)}
+      ${updateAsideLinks()}
+    </body>
+  </html>
   `;
 
   const filePath = path.join(showcasePath, "index.html");
-
   writeFile(filePath, htmlOutput, logPath);
+};
+
+const updateAsideLinks = (): string => {
+  return `
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // redefine urls for all the list items, since it wont work
+      // by default because of the base tag
+      const currentUrl = window.location.href;
+      const asideNav = document.getElementById("aside-nav");
+      const asideNavUrls = asideNav.querySelectorAll("a");
+      console.log(asideNavUrls);
+      asideNavUrls.forEach((a) => {
+        const currentHref = a.getAttribute("href");
+        console.log(currentUrl);
+        a.setAttribute("href", currentUrl + currentHref);
+      });
+    });
+  </script>`;
 };
 
 const getAside = (savedIconsOnDisk: savedIcons): string => {
@@ -99,9 +120,17 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
     multicolorCategoriesOutput += `  
     <h3 class="aside__category-title"><a href="#">${categoryName}</a></h3>
       <!-- multicolor light -->
-      ${renderIconsListAside(multicolor[categoryName].light, "light")}
+      ${renderIconsListAside(
+        categoryName,
+        multicolor[categoryName].light,
+        "light"
+      )}
       <!-- multicolor dark -->
-      ${renderIconsListAside(multicolor[categoryName].dark, "dark")}
+      ${renderIconsListAside(
+        categoryName,
+        multicolor[categoryName].dark,
+        "dark"
+      )}
     </article>
     `;
   });
@@ -111,9 +140,17 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
     monochromeCategoriesOutput += `  
       <h3 class="aside__category-title"><a href="#">${categoryName}</a></h3>
         <!-- multicolor light -->
-        ${renderIconsListAside(monochrome[categoryName].light, "light")}
+        ${renderIconsListAside(
+          categoryName,
+          monochrome[categoryName].light,
+          "light"
+        )}
         <!-- multicolor dark -->
-        ${renderIconsListAside(monochrome[categoryName].dark, "dark")}
+        ${renderIconsListAside(
+          categoryName,
+          monochrome[categoryName].dark,
+          "dark"
+        )}
       </article>
       `;
   });
@@ -121,8 +158,20 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
   return `
   <!-- ASIDE -->
   <aside class="aside">
-    <nav class="aside__nav">
 
+    <!-- a detailed (bigger) view of any clicked icon -->
+    <button class="sc-button sc-button--full-width aside__toggle-detailed-view-button" id="toggle-enlarged-version-btn"></button>  
+
+    <div class="aside__detailed-view-wrapper" id="aside__detailed-view-wrapper">
+      <figure class="aside__detailed-view" id="icon-detailed-view">
+        <div class="aside__icon-detailed-image-wrapper">
+        <img id="icon-detailed-img" class="aside__icon-detailed-image" src="dist\\.generated\\objects\\dark\\stroke.svg#hover">
+        </div>
+        <figcaption id="icon-detailed-view-caption" class="aside__detailed-icon-figcaption" >category/icon.svg</figcaption>
+      </figure>
+    </div>
+
+    <nav class="aside__nav" id="aside-nav">
       <!-- multicolor icons list -->
       <h2 class="aside__primary-title aside__primary-title--multicolor">
         <a href="multicolor-icons-section">
@@ -133,7 +182,7 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
 
       <!-- monochrome icons list -->
       <h2 class="aside__primary-title aside__primary-title--monochrome">
-        <a href="multicolor-icons-section">
+        <a href="#multicolor-icons-section">
         monochrome
         </a>
       </h2>
@@ -141,6 +190,22 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
 
     </nav>
   </aside>
+
+  <script>
+    // toggle enlarged icon version
+    const toggleEnlargedVersionBtn = document.getElementById("toggle-enlarged-version-btn");
+    const detailedViewWrapper = document.getElementById("aside__detailed-view-wrapper");
+  
+    var svgIconsShowcaseLS = localStorage.getItem("svg-icons-showcase");
+    var svgIconsShowcaseLSObject = svgIconsShowcaseLS ? JSON.parse(svgIconsShowcaseLS) : null;
+    var detailedViewVisible = svgIconsShowcaseLSObject
+    ? svgIconsShowcaseLSObject.detailedViewVisible
+    : null;
+    if (detailedViewVisible) {
+      toggleEnlargedVersionBtn.classList.add("aside__toggle-detailed-view-button--collapsed");
+      detailedViewWrapper.classList.add("aside__detailed-view-wrapper--visible");
+    }
+  </script>
   `;
 };
 
@@ -268,15 +333,58 @@ const getMain = (savedIconsOnDisk: savedIcons) => {
   </main>
 
   <script>
-    const btnToggleDark = document.getElementById("toggle-dark-btn");
-    const html = document.querySelector("html");
-    btnToggleDark.addEventListener("click", function(){
-      html.classList.toggle("dark");
-    });
+    ${buttonToggleDark()}
+    ${getIconDetail()}
+
+    const toggleEnlargedVersion = () => {
+      detailedViewWrapper.classList.toggle("aside__detailed-view-wrapper--visible");
+      toggleEnlargedVersionBtn.classList.toggle("aside__toggle-detailed-view-button--collapsed");
+      if(detailedViewWrapper.classList.contains("aside__detailed-view-wrapper--visible")){
+        localStorage.setItem('svg-icons-showcase', JSON.stringify({
+          detailedViewVisible: true
+        }));
+      } else {
+        localStorage.setItem('svg-icons-showcase', JSON.stringify({
+          detailedViewVisible: false
+        }));
+      }
+    };
+
+    toggleEnlargedVersionBtn.addEventListener("click", toggleEnlargedVersion);
   </script>
 `;
 
   return mainOutput;
+};
+
+const buttonToggleDark = (): string => {
+  return `
+    const btnToggleDark = document.getElementById("toggle-dark-btn");
+    const html = document.querySelector("html");
+    btnToggleDark.addEventListener("click", function () {
+      html.classList.toggle("dark");
+    });
+  `;
+};
+
+const getIconDetail = () => {
+  return `
+  const iconDetailedView = document.getElementById("icon-detailed-view");
+  const iconDetailedImage = document.getElementById("icon-detailed-img");
+  const iconDetailedViewCaption = document.getElementById("icon-detailed-view-caption");
+
+  const allIconsButtons = document.querySelectorAll(".icon-state-button");
+  allIconsButtons.forEach(IconButton => {
+    IconButton.addEventListener("click", (e) => {
+      const button = e.currentTarget;
+      const iconPath = button.dataset.src;
+      const iconName = button.dataset.name;
+
+      iconDetailedImage.setAttribute("src", iconPath);
+      iconDetailedViewCaption.innerText = iconName;
+    });
+  });
+`;
 };
 
 const renderIcons = (
@@ -289,16 +397,20 @@ const renderIcons = (
   <div class="icons-container icons-container--${iconType} ${colorSchema}">
     ${icons
       .map((icon) => {
-        return `<div class="icon-container">
+        const listId = `${category}__${icon.name.split(".")[0]}`;
+
+        return `<div class="icon-container" id=${listId}>
          <h4 class="icon-container__title title">${icon.name}</h4>
          <ul class="icon-container__list list list--vertical">
            ${icon.states
              .map((state) => {
-               return `<li class="icon-container__list-item" id=${category}/${icon.name}>
-               <figure class="icon-container__figure">
-                <img class="icon" src="${icon.path}#${state}" title="${state}" alt="${icon.name} icon on state '${state}'">
-                <figcaption class="icon-container__figure-caption">${state}</figcaption>
-               </figure>
+               return `<li class="icon-container__list-item">
+               <button class="icon-state-button" data-src="${icon.path}#${state}" data-name="${category}/${icon.name}" id="${listId}--${state}">
+                <figure class="icon-container__figure">
+                  <img class="icon" src="${icon.path}#${state}" title="${state}" alt="${icon.name} icon on state '${state}'"/>
+                  <figcaption class="icon-container__figure-caption">${state}</figcaption>
+                </figure>
+               </button>
              </li>`;
              })
              .join("")}
@@ -310,6 +422,7 @@ const renderIcons = (
 };
 
 const renderIconsListAside = (
+  category: string,
   icons: savedIconInfo[],
   colorSchema: colorScheme
 ): string => {
@@ -317,9 +430,10 @@ const renderIconsListAside = (
   <ul class="aside__category-list list list--vertical ${colorSchema}">
     ${icons
       .map((icon) => {
+        const href = `${category}__${icon.name.split(".")[0]}`;
         return `
           <li class="aside__category-list-item">
-            <a href="#">${icon.name}</a>
+            <a href="#${href}">${icon.name}</a>
           </li>`;
       })
       .join("")}
@@ -384,7 +498,7 @@ const showcaseStyles = `
     --sc-icons-type-section__border: 3px dashed
       var(--sc-border-dimmed__color);
     --sc-icons-type-section-title__font-size: 18px;
-    --sc-icons-type-section-title__font-weight: 400;
+    --sc-icons-type-section-title__font-weight: bold;
     --sc-icons-type-section-title__margin-block-end: 16px;
     /*category*/
     --sc-category-title__font-size: 14px;
@@ -470,6 +584,27 @@ const showcaseStyles = `
     flex-direction: column;
     gap: 10px;
   }
+  .sc-button {
+    background-color: #155263;
+    border: 0;
+    padding: 4px 16px;
+    border-radius: 2px;
+    color: #ffffffcc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+  }
+  .sc-button:hover {
+    cursor:pointer;
+    filter: brightness(110%);
+  }
+  .sc-button:active {
+    filter: brightness(90%);
+  }
+  .sc-button--full-width {
+    width: 100%;
+  }
   /* =======================
   TOP-BAR
   ========================*/
@@ -506,6 +641,44 @@ const showcaseStyles = `
   /* =======================
   ASIDE
   ========================*/
+  .aside__detailed-view {
+    margin: 0;
+    overflow: hidden;
+  }
+  .aside__detailed-view-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 250ms;
+  }
+  .aside__detailed-view-wrapper--visible {
+    grid-template-rows: 1fr;
+  }
+  .aside__icon-detailed-image-wrapper {
+    padding-top:100%;
+    position: relative;
+    border: 1px solid var(--sc-border-dimmed__color);
+    border-radius: 4px 4px 0 0;
+  }
+  .aside__icon-detailed-image {
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+  }
+  .aside__detailed-icon-figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--sc-border-dimmed__color);
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    text-align: center;
+    padding: 8px;
+    font-size: 12px;
+    margin-block-end: 16px;
+  }
   .aside {
     position: fixed;
     height: calc(100vh - var(--sc-top-bar__height));
@@ -546,8 +719,16 @@ const showcaseStyles = `
   .aside__category-list-item:before {
     content: "- ";
     display: inline-block;
-    padding-inline-end: 8px;
-    
+    padding-inline-end: 8px; 
+  }
+  .aside__toggle-detailed-view-button {
+    margin-block-end: 16px;
+  }
+  .aside__toggle-detailed-view-button:before {
+    content:"see enlarged version 🔎";
+  }
+  .aside__toggle-detailed-view-button--collapsed:before {
+    content:"hide enlarged version";
   }
   /* =======================
   MAIN
@@ -655,10 +836,12 @@ const showcaseStyles = `
   }
   .icon-container__figure-caption {
     font-size: 13px;
+    text-align: left;
   }
   .icon-container__title {
     margin-block-end: var(--sc-icons-container-title__margin-block-end);
     color: var(--sc-container-title__color);
+    font-size: 15px;
   }
   .icon-container__list:not(:last-child) {
     padding-block-end: var(--sc-icons-container-list__separation);
@@ -667,7 +850,16 @@ const showcaseStyles = `
   .icon-container {
     padding: var(--sc-icon-container__padding);
   }
-
+  .icon-state-button {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+  }
+  .icon-state-button:hover {
+    cursor: pointer;
+    color : var(--sc-container-title__color);
+  }
 `;
 
 export interface savedIcons {
