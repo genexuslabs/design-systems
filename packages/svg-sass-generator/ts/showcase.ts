@@ -83,6 +83,7 @@ export const generateShowcase = (
       ${getMain(savedIconsOnDisk)}
       ${updateAsideLinks()}
       ${toggleAsideLists()}
+      ${preventListLinkPropagation()}
     </body>
   </html>
   `;
@@ -99,13 +100,13 @@ const updateAsideLinks = (): string => {
       // by default because the base tag differs.
       const currentUrl = window.location.href;
       const parsedUrl = new URL(currentUrl);
-      const baseUrl = parsedUrl.origin + parsedUrl.pathname;
-      console.log("baseUrl", baseUrl);
+      const pathname = parsedUrl.pathname;
+
       const asideNav = document.getElementById("aside-nav");
       const asideNavUrls = asideNav.querySelectorAll("a");
       asideNavUrls.forEach((a) => {
         const linkHref = a.getAttribute("href");
-        a.setAttribute("href", baseUrl + linkHref);
+        a.setAttribute("href", pathname + linkHref);
       });
     });
   </script>`;
@@ -126,6 +127,20 @@ const toggleAsideLists = (): string => {
   </script>`;
 };
 
+const preventListLinkPropagation = (): string => {
+  return `
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const asideCategoriesLinks = document.querySelectorAll(".aside__category-title-link");
+      asideCategoriesLinks.forEach((categoryTitleLink) => {
+        categoryTitleLink.addEventListener("click", function(e) {
+          e.stopPropagation();
+        });
+      });
+    });
+  </script>`;
+};
+
 const getAside = (savedIconsOnDisk: savedIcons): string => {
   const multicolor = savedIconsOnDisk.multicolor;
   const monochrome = savedIconsOnDisk.monochrome;
@@ -136,7 +151,7 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
   Object.keys(multicolor).map((categoryName) => {
     multicolorCategoriesOutput += `  
     <h3 class="aside__category-title" role="button">
-      <a href="#">${categoryName}</a>
+      <a href="#category-${categoryName}" class="aside__category-title-link">${categoryName}</a>
     </h3>
       <!-- multicolor light -->
       ${renderIconsListAside(
@@ -158,7 +173,7 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
   Object.keys(monochrome).map((categoryName) => {
     monochromeCategoriesOutput += `  
     <h3 class="aside__category-title" role="button">
-      <a href="#">${categoryName}</a>
+      <a href="#category-${categoryName}" class="aside__category-title-link">${categoryName}</a>
     </h3>
       <!-- multicolor light -->
         ${renderIconsListAside(
@@ -254,7 +269,7 @@ const getMain = (savedIconsOnDisk: savedIcons) => {
   Object.keys(multicolor).map((categoryName) => {
     multicolorCategoriesOutput += `
     <!-- ${categoryName} -->
-    <article class="category">
+    <article class="category" id="category-${categoryName}">
 
     <h3 class="category__title title light">
       ${categoryName} (${
@@ -288,7 +303,7 @@ const getMain = (savedIconsOnDisk: savedIcons) => {
   Object.keys(monochrome).map((categoryName) => {
     monochromeCategoriesOutput += `
       <!-- ${categoryName} -->
-      <article class="category">
+      <article class="category" id="category-${categoryName}">
 
       <h3 class="category__title title light">
         ${categoryName} (${
@@ -782,7 +797,7 @@ const showcaseStyles = `
     padding-inline-end: 8px; 
   }
   .aside__toggle-detailed-view-button {
-    margin-block-end: 16px;
+    
   }
   .aside__toggle-detailed-view-button:before {
     content:"see enlarged version 🔎";
@@ -880,7 +895,7 @@ const showcaseStyles = `
   /*icons-container*/
   .icons-container {
     display:grid; 
-    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220PX, 1fr));
     border: var(--sc-icon-container__border);
     border-radius: var(--sc-icon-container__border-radius);
     background-color: var(--sc-icon-container__background);
