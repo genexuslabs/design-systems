@@ -1,0 +1,3216 @@
+
+   $icons-system: warning, user, tools, time, thunder, show, settings, search, retry, qr-code, order-numberically, news, more-options-vertical, mail, logout, log-out, lock, list, link, link-variant, home, grid, filters, expand, drag, download, database, dashboard, contact, connector, close, chevron-up, chevron-right, chevron-down, check, card, card-variant, assistant, arrow-right, add;
+    %icon__system {
+  
+    /* =================================
+    LIGHT
+    ================================= */
+  
+    /* - - - - - - - - - - - - 
+    warning.svg 
+    - - - - - - - - - - - - */
+    
+    &_warning--primary-light {
+      --icon-path: url("#{$icons-path}system/light/warning.svg#primary");
+    }
+    
+    &_warning--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/warning.svg#primary-hover");
+    }
+    
+    &_warning--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/warning.svg#primary-active");
+    }
+    
+    &_warning--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/warning.svg#primary-disabled");
+    }
+    
+    &_warning--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/warning.svg#on-primary");
+    }
+    
+    &_warning--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/warning.svg#on-primary-hover");
+    }
+    
+    &_warning--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/warning.svg#on-primary-active");
+    }
+    
+    &_warning--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/warning.svg#on-disabled");
+    }
+    
+    &_warning--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/warning.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    user.svg 
+    - - - - - - - - - - - - */
+    
+    &_user--primary-light {
+      --icon-path: url("#{$icons-path}system/light/user.svg#primary");
+    }
+    
+    &_user--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/user.svg#primary-hover");
+    }
+    
+    &_user--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/user.svg#primary-active");
+    }
+    
+    &_user--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/user.svg#primary-disabled");
+    }
+    
+    &_user--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/user.svg#on-primary");
+    }
+    
+    &_user--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/user.svg#on-primary-hover");
+    }
+    
+    &_user--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/user.svg#on-primary-active");
+    }
+    
+    &_user--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/user.svg#on-disabled");
+    }
+    
+    &_user--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/user.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    tools.svg 
+    - - - - - - - - - - - - */
+    
+    &_tools--primary-light {
+      --icon-path: url("#{$icons-path}system/light/tools.svg#primary");
+    }
+    
+    &_tools--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/tools.svg#primary-hover");
+    }
+    
+    &_tools--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/tools.svg#primary-active");
+    }
+    
+    &_tools--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/tools.svg#primary-disabled");
+    }
+    
+    &_tools--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/tools.svg#on-primary");
+    }
+    
+    &_tools--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/tools.svg#on-primary-hover");
+    }
+    
+    &_tools--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/tools.svg#on-primary-active");
+    }
+    
+    &_tools--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/tools.svg#on-disabled");
+    }
+    
+    &_tools--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/tools.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    time.svg 
+    - - - - - - - - - - - - */
+    
+    &_time--primary-light {
+      --icon-path: url("#{$icons-path}system/light/time.svg#primary");
+    }
+    
+    &_time--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/time.svg#primary-hover");
+    }
+    
+    &_time--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/time.svg#primary-active");
+    }
+    
+    &_time--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/time.svg#primary-disabled");
+    }
+    
+    &_time--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/time.svg#on-primary");
+    }
+    
+    &_time--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/time.svg#on-primary-hover");
+    }
+    
+    &_time--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/time.svg#on-primary-active");
+    }
+    
+    &_time--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/time.svg#on-disabled");
+    }
+    
+    &_time--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/time.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    thunder.svg 
+    - - - - - - - - - - - - */
+    
+    &_thunder--primary-light {
+      --icon-path: url("#{$icons-path}system/light/thunder.svg#primary");
+    }
+    
+    &_thunder--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/thunder.svg#primary-hover");
+    }
+    
+    &_thunder--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/thunder.svg#primary-active");
+    }
+    
+    &_thunder--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/thunder.svg#primary-disabled");
+    }
+    
+    &_thunder--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/thunder.svg#on-primary");
+    }
+    
+    &_thunder--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/thunder.svg#on-primary-hover");
+    }
+    
+    &_thunder--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/thunder.svg#on-primary-active");
+    }
+    
+    &_thunder--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/thunder.svg#on-disabled");
+    }
+    
+    &_thunder--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/thunder.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    show.svg 
+    - - - - - - - - - - - - */
+    
+    &_show--primary-light {
+      --icon-path: url("#{$icons-path}system/light/show.svg#primary");
+    }
+    
+    &_show--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/show.svg#primary-hover");
+    }
+    
+    &_show--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/show.svg#primary-active");
+    }
+    
+    &_show--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/show.svg#primary-disabled");
+    }
+    
+    &_show--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/show.svg#on-primary");
+    }
+    
+    &_show--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/show.svg#on-primary-hover");
+    }
+    
+    &_show--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/show.svg#on-primary-active");
+    }
+    
+    &_show--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/show.svg#on-disabled");
+    }
+    
+    &_show--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/show.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    settings.svg 
+    - - - - - - - - - - - - */
+    
+    &_settings--primary-light {
+      --icon-path: url("#{$icons-path}system/light/settings.svg#primary");
+    }
+    
+    &_settings--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/settings.svg#primary-hover");
+    }
+    
+    &_settings--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/settings.svg#primary-active");
+    }
+    
+    &_settings--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/settings.svg#primary-disabled");
+    }
+    
+    &_settings--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/settings.svg#on-primary");
+    }
+    
+    &_settings--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/settings.svg#on-primary-hover");
+    }
+    
+    &_settings--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/settings.svg#on-primary-active");
+    }
+    
+    &_settings--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/settings.svg#on-disabled");
+    }
+    
+    &_settings--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/settings.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    search.svg 
+    - - - - - - - - - - - - */
+    
+    &_search--primary-light {
+      --icon-path: url("#{$icons-path}system/light/search.svg#primary");
+    }
+    
+    &_search--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/search.svg#primary-hover");
+    }
+    
+    &_search--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/search.svg#primary-active");
+    }
+    
+    &_search--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/search.svg#primary-disabled");
+    }
+    
+    &_search--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/search.svg#on-primary");
+    }
+    
+    &_search--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/search.svg#on-primary-hover");
+    }
+    
+    &_search--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/search.svg#on-primary-active");
+    }
+    
+    &_search--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/search.svg#on-disabled");
+    }
+    
+    &_search--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/search.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    retry.svg 
+    - - - - - - - - - - - - */
+    
+    &_retry--primary-light {
+      --icon-path: url("#{$icons-path}system/light/retry.svg#primary");
+    }
+    
+    &_retry--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/retry.svg#primary-hover");
+    }
+    
+    &_retry--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/retry.svg#primary-active");
+    }
+    
+    &_retry--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/retry.svg#primary-disabled");
+    }
+    
+    &_retry--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/retry.svg#on-primary");
+    }
+    
+    &_retry--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/retry.svg#on-primary-hover");
+    }
+    
+    &_retry--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/retry.svg#on-primary-active");
+    }
+    
+    &_retry--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/retry.svg#on-disabled");
+    }
+    
+    &_retry--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/retry.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    qr-code.svg 
+    - - - - - - - - - - - - */
+    
+    &_qr-code--primary-light {
+      --icon-path: url("#{$icons-path}system/light/qr-code.svg#primary");
+    }
+    
+    &_qr-code--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/qr-code.svg#primary-hover");
+    }
+    
+    &_qr-code--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/qr-code.svg#primary-active");
+    }
+    
+    &_qr-code--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/qr-code.svg#primary-disabled");
+    }
+    
+    &_qr-code--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/qr-code.svg#on-primary");
+    }
+    
+    &_qr-code--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/qr-code.svg#on-primary-hover");
+    }
+    
+    &_qr-code--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/qr-code.svg#on-primary-active");
+    }
+    
+    &_qr-code--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/qr-code.svg#on-disabled");
+    }
+    
+    &_qr-code--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/qr-code.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    order-numberically.svg 
+    - - - - - - - - - - - - */
+    
+    &_order-numberically--primary-light {
+      --icon-path: url("#{$icons-path}system/light/order-numberically.svg#primary");
+    }
+    
+    &_order-numberically--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/order-numberically.svg#primary-hover");
+    }
+    
+    &_order-numberically--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/order-numberically.svg#primary-active");
+    }
+    
+    &_order-numberically--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/order-numberically.svg#primary-disabled");
+    }
+    
+    &_order-numberically--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/order-numberically.svg#on-primary");
+    }
+    
+    &_order-numberically--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/order-numberically.svg#on-primary-hover");
+    }
+    
+    &_order-numberically--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/order-numberically.svg#on-primary-active");
+    }
+    
+    &_order-numberically--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/order-numberically.svg#on-disabled");
+    }
+    
+    &_order-numberically--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/order-numberically.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    news.svg 
+    - - - - - - - - - - - - */
+    
+    &_news--primary-light {
+      --icon-path: url("#{$icons-path}system/light/news.svg#primary");
+    }
+    
+    &_news--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/news.svg#primary-hover");
+    }
+    
+    &_news--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/news.svg#primary-active");
+    }
+    
+    &_news--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/news.svg#primary-disabled");
+    }
+    
+    &_news--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/news.svg#on-primary");
+    }
+    
+    &_news--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/news.svg#on-primary-hover");
+    }
+    
+    &_news--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/news.svg#on-primary-active");
+    }
+    
+    &_news--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/news.svg#on-disabled");
+    }
+    
+    &_news--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/news.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    more-options-vertical.svg 
+    - - - - - - - - - - - - */
+    
+    &_more-options-vertical--primary-light {
+      --icon-path: url("#{$icons-path}system/light/more-options-vertical.svg#primary");
+    }
+    
+    &_more-options-vertical--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/more-options-vertical.svg#primary-hover");
+    }
+    
+    &_more-options-vertical--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/more-options-vertical.svg#primary-active");
+    }
+    
+    &_more-options-vertical--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/more-options-vertical.svg#primary-disabled");
+    }
+    
+    &_more-options-vertical--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/more-options-vertical.svg#on-primary");
+    }
+    
+    &_more-options-vertical--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/more-options-vertical.svg#on-primary-hover");
+    }
+    
+    &_more-options-vertical--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/more-options-vertical.svg#on-primary-active");
+    }
+    
+    &_more-options-vertical--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/more-options-vertical.svg#on-disabled");
+    }
+    
+    &_more-options-vertical--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/more-options-vertical.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    mail.svg 
+    - - - - - - - - - - - - */
+    
+    &_mail--primary-light {
+      --icon-path: url("#{$icons-path}system/light/mail.svg#primary");
+    }
+    
+    &_mail--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/mail.svg#primary-hover");
+    }
+    
+    &_mail--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/mail.svg#primary-active");
+    }
+    
+    &_mail--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/mail.svg#primary-disabled");
+    }
+    
+    &_mail--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/mail.svg#on-primary");
+    }
+    
+    &_mail--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/mail.svg#on-primary-hover");
+    }
+    
+    &_mail--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/mail.svg#on-primary-active");
+    }
+    
+    &_mail--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/mail.svg#on-disabled");
+    }
+    
+    &_mail--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/mail.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    logout.svg 
+    - - - - - - - - - - - - */
+    
+    &_logout--primary-light {
+      --icon-path: url("#{$icons-path}system/light/logout.svg#primary");
+    }
+    
+    &_logout--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/logout.svg#primary-hover");
+    }
+    
+    &_logout--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/logout.svg#primary-active");
+    }
+    
+    &_logout--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/logout.svg#primary-disabled");
+    }
+    
+    &_logout--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/logout.svg#on-primary");
+    }
+    
+    &_logout--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/logout.svg#on-primary-hover");
+    }
+    
+    &_logout--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/logout.svg#on-primary-active");
+    }
+    
+    &_logout--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/logout.svg#on-disabled");
+    }
+    
+    &_logout--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/logout.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    log-out.svg 
+    - - - - - - - - - - - - */
+    
+    &_log-out--primary-light {
+      --icon-path: url("#{$icons-path}system/light/log-out.svg#primary");
+    }
+    
+    &_log-out--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/log-out.svg#primary-hover");
+    }
+    
+    &_log-out--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/log-out.svg#primary-active");
+    }
+    
+    &_log-out--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/log-out.svg#primary-disabled");
+    }
+    
+    &_log-out--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/log-out.svg#on-primary");
+    }
+    
+    &_log-out--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/log-out.svg#on-primary-hover");
+    }
+    
+    &_log-out--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/log-out.svg#on-primary-active");
+    }
+    
+    &_log-out--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/log-out.svg#on-disabled");
+    }
+    
+    &_log-out--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/log-out.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    lock.svg 
+    - - - - - - - - - - - - */
+    
+    &_lock--primary-light {
+      --icon-path: url("#{$icons-path}system/light/lock.svg#primary");
+    }
+    
+    &_lock--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/lock.svg#primary-hover");
+    }
+    
+    &_lock--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/lock.svg#primary-active");
+    }
+    
+    &_lock--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/lock.svg#primary-disabled");
+    }
+    
+    &_lock--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/lock.svg#on-primary");
+    }
+    
+    &_lock--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/lock.svg#on-primary-hover");
+    }
+    
+    &_lock--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/lock.svg#on-primary-active");
+    }
+    
+    &_lock--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/lock.svg#on-disabled");
+    }
+    
+    &_lock--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/lock.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    list.svg 
+    - - - - - - - - - - - - */
+    
+    &_list--primary-light {
+      --icon-path: url("#{$icons-path}system/light/list.svg#primary");
+    }
+    
+    &_list--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/list.svg#primary-hover");
+    }
+    
+    &_list--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/list.svg#primary-active");
+    }
+    
+    &_list--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/list.svg#primary-disabled");
+    }
+    
+    &_list--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/list.svg#on-primary");
+    }
+    
+    &_list--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/list.svg#on-primary-hover");
+    }
+    
+    &_list--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/list.svg#on-primary-active");
+    }
+    
+    &_list--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/list.svg#on-disabled");
+    }
+    
+    &_list--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/list.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    link.svg 
+    - - - - - - - - - - - - */
+    
+    &_link--primary-light {
+      --icon-path: url("#{$icons-path}system/light/link.svg#primary");
+    }
+    
+    &_link--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/link.svg#primary-hover");
+    }
+    
+    &_link--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/link.svg#primary-active");
+    }
+    
+    &_link--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/link.svg#primary-disabled");
+    }
+    
+    &_link--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/link.svg#on-primary");
+    }
+    
+    &_link--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/link.svg#on-primary-hover");
+    }
+    
+    &_link--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/link.svg#on-primary-active");
+    }
+    
+    &_link--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/link.svg#on-disabled");
+    }
+    
+    &_link--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/link.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    link-variant.svg 
+    - - - - - - - - - - - - */
+    
+    &_link-variant--primary-light {
+      --icon-path: url("#{$icons-path}system/light/link-variant.svg#primary");
+    }
+    
+    &_link-variant--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/link-variant.svg#primary-hover");
+    }
+    
+    &_link-variant--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/link-variant.svg#primary-active");
+    }
+    
+    &_link-variant--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/link-variant.svg#primary-disabled");
+    }
+    
+    &_link-variant--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/link-variant.svg#on-primary");
+    }
+    
+    &_link-variant--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/link-variant.svg#on-primary-hover");
+    }
+    
+    &_link-variant--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/link-variant.svg#on-primary-active");
+    }
+    
+    &_link-variant--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/link-variant.svg#on-disabled");
+    }
+    
+    &_link-variant--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/link-variant.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    home.svg 
+    - - - - - - - - - - - - */
+    
+    &_home--primary-light {
+      --icon-path: url("#{$icons-path}system/light/home.svg#primary");
+    }
+    
+    &_home--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/home.svg#primary-hover");
+    }
+    
+    &_home--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/home.svg#primary-active");
+    }
+    
+    &_home--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/home.svg#primary-disabled");
+    }
+    
+    &_home--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/home.svg#on-primary");
+    }
+    
+    &_home--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/home.svg#on-primary-hover");
+    }
+    
+    &_home--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/home.svg#on-primary-active");
+    }
+    
+    &_home--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/home.svg#on-disabled");
+    }
+    
+    &_home--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/home.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    grid.svg 
+    - - - - - - - - - - - - */
+    
+    &_grid--primary-light {
+      --icon-path: url("#{$icons-path}system/light/grid.svg#primary");
+    }
+    
+    &_grid--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/grid.svg#primary-hover");
+    }
+    
+    &_grid--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/grid.svg#primary-active");
+    }
+    
+    &_grid--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/grid.svg#primary-disabled");
+    }
+    
+    &_grid--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/grid.svg#on-primary");
+    }
+    
+    &_grid--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/grid.svg#on-primary-hover");
+    }
+    
+    &_grid--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/grid.svg#on-primary-active");
+    }
+    
+    &_grid--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/grid.svg#on-disabled");
+    }
+    
+    &_grid--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/grid.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    filters.svg 
+    - - - - - - - - - - - - */
+    
+    &_filters--primary-light {
+      --icon-path: url("#{$icons-path}system/light/filters.svg#primary");
+    }
+    
+    &_filters--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/filters.svg#primary-hover");
+    }
+    
+    &_filters--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/filters.svg#primary-active");
+    }
+    
+    &_filters--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/filters.svg#primary-disabled");
+    }
+    
+    &_filters--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/filters.svg#on-primary");
+    }
+    
+    &_filters--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/filters.svg#on-primary-hover");
+    }
+    
+    &_filters--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/filters.svg#on-primary-active");
+    }
+    
+    &_filters--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/filters.svg#on-disabled");
+    }
+    
+    &_filters--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/filters.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    expand.svg 
+    - - - - - - - - - - - - */
+    
+    &_expand--primary-light {
+      --icon-path: url("#{$icons-path}system/light/expand.svg#primary");
+    }
+    
+    &_expand--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/expand.svg#primary-hover");
+    }
+    
+    &_expand--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/expand.svg#primary-active");
+    }
+    
+    &_expand--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/expand.svg#primary-disabled");
+    }
+    
+    &_expand--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/expand.svg#on-primary");
+    }
+    
+    &_expand--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/expand.svg#on-primary-hover");
+    }
+    
+    &_expand--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/expand.svg#on-primary-active");
+    }
+    
+    &_expand--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/expand.svg#on-disabled");
+    }
+    
+    &_expand--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/expand.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    drag.svg 
+    - - - - - - - - - - - - */
+    
+    &_drag--primary-light {
+      --icon-path: url("#{$icons-path}system/light/drag.svg#primary");
+    }
+    
+    &_drag--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/drag.svg#primary-hover");
+    }
+    
+    &_drag--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/drag.svg#primary-active");
+    }
+    
+    &_drag--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/drag.svg#primary-disabled");
+    }
+    
+    &_drag--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/drag.svg#on-primary");
+    }
+    
+    &_drag--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/drag.svg#on-primary-hover");
+    }
+    
+    &_drag--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/drag.svg#on-primary-active");
+    }
+    
+    &_drag--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/drag.svg#on-disabled");
+    }
+    
+    &_drag--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/drag.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    download.svg 
+    - - - - - - - - - - - - */
+    
+    &_download--primary-light {
+      --icon-path: url("#{$icons-path}system/light/download.svg#primary");
+    }
+    
+    &_download--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/download.svg#primary-hover");
+    }
+    
+    &_download--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/download.svg#primary-active");
+    }
+    
+    &_download--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/download.svg#primary-disabled");
+    }
+    
+    &_download--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/download.svg#on-primary");
+    }
+    
+    &_download--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/download.svg#on-primary-hover");
+    }
+    
+    &_download--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/download.svg#on-primary-active");
+    }
+    
+    &_download--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/download.svg#on-disabled");
+    }
+    
+    &_download--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/download.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    database.svg 
+    - - - - - - - - - - - - */
+    
+    &_database--primary-light {
+      --icon-path: url("#{$icons-path}system/light/database.svg#primary");
+    }
+    
+    &_database--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/database.svg#primary-hover");
+    }
+    
+    &_database--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/database.svg#primary-active");
+    }
+    
+    &_database--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/database.svg#primary-disabled");
+    }
+    
+    &_database--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/database.svg#on-primary");
+    }
+    
+    &_database--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/database.svg#on-primary-hover");
+    }
+    
+    &_database--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/database.svg#on-primary-active");
+    }
+    
+    &_database--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/database.svg#on-disabled");
+    }
+    
+    &_database--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/database.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    dashboard.svg 
+    - - - - - - - - - - - - */
+    
+    &_dashboard--primary-light {
+      --icon-path: url("#{$icons-path}system/light/dashboard.svg#primary");
+    }
+    
+    &_dashboard--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/dashboard.svg#primary-hover");
+    }
+    
+    &_dashboard--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/dashboard.svg#primary-active");
+    }
+    
+    &_dashboard--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/dashboard.svg#primary-disabled");
+    }
+    
+    &_dashboard--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/dashboard.svg#on-primary");
+    }
+    
+    &_dashboard--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/dashboard.svg#on-primary-hover");
+    }
+    
+    &_dashboard--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/dashboard.svg#on-primary-active");
+    }
+    
+    &_dashboard--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/dashboard.svg#on-disabled");
+    }
+    
+    &_dashboard--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/dashboard.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    contact.svg 
+    - - - - - - - - - - - - */
+    
+    &_contact--primary-light {
+      --icon-path: url("#{$icons-path}system/light/contact.svg#primary");
+    }
+    
+    &_contact--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/contact.svg#primary-hover");
+    }
+    
+    &_contact--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/contact.svg#primary-active");
+    }
+    
+    &_contact--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/contact.svg#primary-disabled");
+    }
+    
+    &_contact--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/contact.svg#on-primary");
+    }
+    
+    &_contact--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/contact.svg#on-primary-hover");
+    }
+    
+    &_contact--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/contact.svg#on-primary-active");
+    }
+    
+    &_contact--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/contact.svg#on-disabled");
+    }
+    
+    &_contact--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/contact.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    connector.svg 
+    - - - - - - - - - - - - */
+    
+    &_connector--primary-light {
+      --icon-path: url("#{$icons-path}system/light/connector.svg#primary");
+    }
+    
+    &_connector--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/connector.svg#primary-hover");
+    }
+    
+    &_connector--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/connector.svg#primary-active");
+    }
+    
+    &_connector--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/connector.svg#primary-disabled");
+    }
+    
+    &_connector--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/connector.svg#on-primary");
+    }
+    
+    &_connector--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/connector.svg#on-primary-hover");
+    }
+    
+    &_connector--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/connector.svg#on-primary-active");
+    }
+    
+    &_connector--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/connector.svg#on-disabled");
+    }
+    
+    &_connector--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/connector.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    close.svg 
+    - - - - - - - - - - - - */
+    
+    &_close--primary-light {
+      --icon-path: url("#{$icons-path}system/light/close.svg#primary");
+    }
+    
+    &_close--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/close.svg#primary-hover");
+    }
+    
+    &_close--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/close.svg#primary-active");
+    }
+    
+    &_close--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/close.svg#primary-disabled");
+    }
+    
+    &_close--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/close.svg#on-primary");
+    }
+    
+    &_close--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/close.svg#on-primary-hover");
+    }
+    
+    &_close--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/close.svg#on-primary-active");
+    }
+    
+    &_close--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/close.svg#on-disabled");
+    }
+    
+    &_close--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/close.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    chevron-up.svg 
+    - - - - - - - - - - - - */
+    
+    &_chevron-up--primary-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-up.svg#primary");
+    }
+    
+    &_chevron-up--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-up.svg#primary-hover");
+    }
+    
+    &_chevron-up--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-up.svg#primary-active");
+    }
+    
+    &_chevron-up--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-up.svg#primary-disabled");
+    }
+    
+    &_chevron-up--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-up.svg#on-primary");
+    }
+    
+    &_chevron-up--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-up.svg#on-primary-hover");
+    }
+    
+    &_chevron-up--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-up.svg#on-primary-active");
+    }
+    
+    &_chevron-up--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-up.svg#on-disabled");
+    }
+    
+    &_chevron-up--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-up.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    chevron-right.svg 
+    - - - - - - - - - - - - */
+    
+    &_chevron-right--primary-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-right.svg#primary");
+    }
+    
+    &_chevron-right--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-right.svg#primary-hover");
+    }
+    
+    &_chevron-right--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-right.svg#primary-active");
+    }
+    
+    &_chevron-right--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-right.svg#primary-disabled");
+    }
+    
+    &_chevron-right--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-right.svg#on-primary");
+    }
+    
+    &_chevron-right--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-right.svg#on-primary-hover");
+    }
+    
+    &_chevron-right--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-right.svg#on-primary-active");
+    }
+    
+    &_chevron-right--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-right.svg#on-disabled");
+    }
+    
+    &_chevron-right--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-right.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    chevron-down.svg 
+    - - - - - - - - - - - - */
+    
+    &_chevron-down--primary-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-down.svg#primary");
+    }
+    
+    &_chevron-down--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-down.svg#primary-hover");
+    }
+    
+    &_chevron-down--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-down.svg#primary-active");
+    }
+    
+    &_chevron-down--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-down.svg#primary-disabled");
+    }
+    
+    &_chevron-down--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-down.svg#on-primary");
+    }
+    
+    &_chevron-down--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-down.svg#on-primary-hover");
+    }
+    
+    &_chevron-down--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-down.svg#on-primary-active");
+    }
+    
+    &_chevron-down--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-down.svg#on-disabled");
+    }
+    
+    &_chevron-down--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/chevron-down.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    check.svg 
+    - - - - - - - - - - - - */
+    
+    &_check--primary-light {
+      --icon-path: url("#{$icons-path}system/light/check.svg#primary");
+    }
+    
+    &_check--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/check.svg#primary-hover");
+    }
+    
+    &_check--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/check.svg#primary-active");
+    }
+    
+    &_check--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/check.svg#primary-disabled");
+    }
+    
+    &_check--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/check.svg#on-primary");
+    }
+    
+    &_check--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/check.svg#on-primary-hover");
+    }
+    
+    &_check--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/check.svg#on-primary-active");
+    }
+    
+    &_check--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/check.svg#on-disabled");
+    }
+    
+    &_check--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/check.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    card.svg 
+    - - - - - - - - - - - - */
+    
+    &_card--primary-light {
+      --icon-path: url("#{$icons-path}system/light/card.svg#primary");
+    }
+    
+    &_card--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/card.svg#primary-hover");
+    }
+    
+    &_card--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/card.svg#primary-active");
+    }
+    
+    &_card--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/card.svg#primary-disabled");
+    }
+    
+    &_card--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/card.svg#on-primary");
+    }
+    
+    &_card--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/card.svg#on-primary-hover");
+    }
+    
+    &_card--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/card.svg#on-primary-active");
+    }
+    
+    &_card--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/card.svg#on-disabled");
+    }
+    
+    &_card--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/card.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    card-variant.svg 
+    - - - - - - - - - - - - */
+    
+    &_card-variant--primary-light {
+      --icon-path: url("#{$icons-path}system/light/card-variant.svg#primary");
+    }
+    
+    &_card-variant--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/card-variant.svg#primary-hover");
+    }
+    
+    &_card-variant--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/card-variant.svg#primary-active");
+    }
+    
+    &_card-variant--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/card-variant.svg#primary-disabled");
+    }
+    
+    &_card-variant--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/card-variant.svg#on-primary");
+    }
+    
+    &_card-variant--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/card-variant.svg#on-primary-hover");
+    }
+    
+    &_card-variant--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/card-variant.svg#on-primary-active");
+    }
+    
+    &_card-variant--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/card-variant.svg#on-disabled");
+    }
+    
+    &_card-variant--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/card-variant.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    assistant.svg 
+    - - - - - - - - - - - - */
+    
+    &_assistant--primary-light {
+      --icon-path: url("#{$icons-path}system/light/assistant.svg#primary");
+    }
+    
+    &_assistant--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/assistant.svg#primary-hover");
+    }
+    
+    &_assistant--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/assistant.svg#primary-active");
+    }
+    
+    &_assistant--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/assistant.svg#primary-disabled");
+    }
+    
+    &_assistant--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/assistant.svg#on-primary");
+    }
+    
+    &_assistant--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/assistant.svg#on-primary-hover");
+    }
+    
+    &_assistant--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/assistant.svg#on-primary-active");
+    }
+    
+    &_assistant--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/assistant.svg#on-disabled");
+    }
+    
+    &_assistant--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/assistant.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    arrow-right.svg 
+    - - - - - - - - - - - - */
+    
+    &_arrow-right--primary-light {
+      --icon-path: url("#{$icons-path}system/light/arrow-right.svg#primary");
+    }
+    
+    &_arrow-right--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/arrow-right.svg#primary-hover");
+    }
+    
+    &_arrow-right--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/arrow-right.svg#primary-active");
+    }
+    
+    &_arrow-right--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/arrow-right.svg#primary-disabled");
+    }
+    
+    &_arrow-right--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/arrow-right.svg#on-primary");
+    }
+    
+    &_arrow-right--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/arrow-right.svg#on-primary-hover");
+    }
+    
+    &_arrow-right--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/arrow-right.svg#on-primary-active");
+    }
+    
+    &_arrow-right--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/arrow-right.svg#on-disabled");
+    }
+    
+    &_arrow-right--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/arrow-right.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    add.svg 
+    - - - - - - - - - - - - */
+    
+    &_add--primary-light {
+      --icon-path: url("#{$icons-path}system/light/add.svg#primary");
+    }
+    
+    &_add--primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/add.svg#primary-hover");
+    }
+    
+    &_add--primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/add.svg#primary-active");
+    }
+    
+    &_add--primary-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/add.svg#primary-disabled");
+    }
+    
+    &_add--on-primary-light {
+      --icon-path: url("#{$icons-path}system/light/add.svg#on-primary");
+    }
+    
+    &_add--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}system/light/add.svg#on-primary-hover");
+    }
+    
+    &_add--on-primary-active-light {
+      --icon-path: url("#{$icons-path}system/light/add.svg#on-primary-active");
+    }
+    
+    &_add--on-disabled-light {
+      --icon-path: url("#{$icons-path}system/light/add.svg#on-disabled");
+    }
+    
+    &_add--neutral-light {
+      --icon-path: url("#{$icons-path}system/light/add.svg#neutral");
+    }
+    
+
+    /* =================================
+    DARK
+    ================================= */
+  
+    /* - - - - - - - - - - - - 
+    warning.svg 
+    - - - - - - - - - - - - */
+    
+    &_warning--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/warning.svg#primary");
+    }
+    
+    &_warning--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/warning.svg#primary-hover");
+    }
+    
+    &_warning--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/warning.svg#primary-active");
+    }
+    
+    &_warning--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/warning.svg#primary-disabled");
+    }
+    
+    &_warning--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/warning.svg#on-primary");
+    }
+    
+    &_warning--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/warning.svg#on-primary-hover");
+    }
+    
+    &_warning--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/warning.svg#on-primary-active");
+    }
+    
+    &_warning--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/warning.svg#on-disabled");
+    }
+    
+    &_warning--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/warning.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    user.svg 
+    - - - - - - - - - - - - */
+    
+    &_user--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/user.svg#primary");
+    }
+    
+    &_user--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/user.svg#primary-hover");
+    }
+    
+    &_user--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/user.svg#primary-active");
+    }
+    
+    &_user--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/user.svg#primary-disabled");
+    }
+    
+    &_user--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/user.svg#on-primary");
+    }
+    
+    &_user--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/user.svg#on-primary-hover");
+    }
+    
+    &_user--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/user.svg#on-primary-active");
+    }
+    
+    &_user--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/user.svg#on-disabled");
+    }
+    
+    &_user--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/user.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    tools.svg 
+    - - - - - - - - - - - - */
+    
+    &_tools--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/tools.svg#primary");
+    }
+    
+    &_tools--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/tools.svg#primary-hover");
+    }
+    
+    &_tools--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/tools.svg#primary-active");
+    }
+    
+    &_tools--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/tools.svg#primary-disabled");
+    }
+    
+    &_tools--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/tools.svg#on-primary");
+    }
+    
+    &_tools--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/tools.svg#on-primary-hover");
+    }
+    
+    &_tools--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/tools.svg#on-primary-active");
+    }
+    
+    &_tools--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/tools.svg#on-disabled");
+    }
+    
+    &_tools--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/tools.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    time.svg 
+    - - - - - - - - - - - - */
+    
+    &_time--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/time.svg#primary");
+    }
+    
+    &_time--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/time.svg#primary-hover");
+    }
+    
+    &_time--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/time.svg#primary-active");
+    }
+    
+    &_time--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/time.svg#primary-disabled");
+    }
+    
+    &_time--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/time.svg#on-primary");
+    }
+    
+    &_time--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/time.svg#on-primary-hover");
+    }
+    
+    &_time--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/time.svg#on-primary-active");
+    }
+    
+    &_time--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/time.svg#on-disabled");
+    }
+    
+    &_time--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/time.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    thunder.svg 
+    - - - - - - - - - - - - */
+    
+    &_thunder--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/thunder.svg#primary");
+    }
+    
+    &_thunder--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/thunder.svg#primary-hover");
+    }
+    
+    &_thunder--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/thunder.svg#primary-active");
+    }
+    
+    &_thunder--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/thunder.svg#primary-disabled");
+    }
+    
+    &_thunder--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/thunder.svg#on-primary");
+    }
+    
+    &_thunder--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/thunder.svg#on-primary-hover");
+    }
+    
+    &_thunder--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/thunder.svg#on-primary-active");
+    }
+    
+    &_thunder--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/thunder.svg#on-disabled");
+    }
+    
+    &_thunder--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/thunder.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    show.svg 
+    - - - - - - - - - - - - */
+    
+    &_show--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/show.svg#primary");
+    }
+    
+    &_show--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/show.svg#primary-hover");
+    }
+    
+    &_show--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/show.svg#primary-active");
+    }
+    
+    &_show--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/show.svg#primary-disabled");
+    }
+    
+    &_show--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/show.svg#on-primary");
+    }
+    
+    &_show--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/show.svg#on-primary-hover");
+    }
+    
+    &_show--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/show.svg#on-primary-active");
+    }
+    
+    &_show--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/show.svg#on-disabled");
+    }
+    
+    &_show--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/show.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    settings.svg 
+    - - - - - - - - - - - - */
+    
+    &_settings--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/settings.svg#primary");
+    }
+    
+    &_settings--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/settings.svg#primary-hover");
+    }
+    
+    &_settings--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/settings.svg#primary-active");
+    }
+    
+    &_settings--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/settings.svg#primary-disabled");
+    }
+    
+    &_settings--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/settings.svg#on-primary");
+    }
+    
+    &_settings--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/settings.svg#on-primary-hover");
+    }
+    
+    &_settings--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/settings.svg#on-primary-active");
+    }
+    
+    &_settings--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/settings.svg#on-disabled");
+    }
+    
+    &_settings--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/settings.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    search.svg 
+    - - - - - - - - - - - - */
+    
+    &_search--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/search.svg#primary");
+    }
+    
+    &_search--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/search.svg#primary-hover");
+    }
+    
+    &_search--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/search.svg#primary-active");
+    }
+    
+    &_search--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/search.svg#primary-disabled");
+    }
+    
+    &_search--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/search.svg#on-primary");
+    }
+    
+    &_search--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/search.svg#on-primary-hover");
+    }
+    
+    &_search--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/search.svg#on-primary-active");
+    }
+    
+    &_search--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/search.svg#on-disabled");
+    }
+    
+    &_search--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/search.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    retry.svg 
+    - - - - - - - - - - - - */
+    
+    &_retry--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/retry.svg#primary");
+    }
+    
+    &_retry--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/retry.svg#primary-hover");
+    }
+    
+    &_retry--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/retry.svg#primary-active");
+    }
+    
+    &_retry--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/retry.svg#primary-disabled");
+    }
+    
+    &_retry--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/retry.svg#on-primary");
+    }
+    
+    &_retry--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/retry.svg#on-primary-hover");
+    }
+    
+    &_retry--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/retry.svg#on-primary-active");
+    }
+    
+    &_retry--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/retry.svg#on-disabled");
+    }
+    
+    &_retry--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/retry.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    qr-code.svg 
+    - - - - - - - - - - - - */
+    
+    &_qr-code--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/qr-code.svg#primary");
+    }
+    
+    &_qr-code--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/qr-code.svg#primary-hover");
+    }
+    
+    &_qr-code--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/qr-code.svg#primary-active");
+    }
+    
+    &_qr-code--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/qr-code.svg#primary-disabled");
+    }
+    
+    &_qr-code--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/qr-code.svg#on-primary");
+    }
+    
+    &_qr-code--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/qr-code.svg#on-primary-hover");
+    }
+    
+    &_qr-code--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/qr-code.svg#on-primary-active");
+    }
+    
+    &_qr-code--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/qr-code.svg#on-disabled");
+    }
+    
+    &_qr-code--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/qr-code.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    order-numberically.svg 
+    - - - - - - - - - - - - */
+    
+    &_order-numberically--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/order-numberically.svg#primary");
+    }
+    
+    &_order-numberically--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/order-numberically.svg#primary-hover");
+    }
+    
+    &_order-numberically--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/order-numberically.svg#primary-active");
+    }
+    
+    &_order-numberically--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/order-numberically.svg#primary-disabled");
+    }
+    
+    &_order-numberically--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/order-numberically.svg#on-primary");
+    }
+    
+    &_order-numberically--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/order-numberically.svg#on-primary-hover");
+    }
+    
+    &_order-numberically--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/order-numberically.svg#on-primary-active");
+    }
+    
+    &_order-numberically--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/order-numberically.svg#on-disabled");
+    }
+    
+    &_order-numberically--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/order-numberically.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    news.svg 
+    - - - - - - - - - - - - */
+    
+    &_news--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/news.svg#primary");
+    }
+    
+    &_news--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/news.svg#primary-hover");
+    }
+    
+    &_news--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/news.svg#primary-active");
+    }
+    
+    &_news--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/news.svg#primary-disabled");
+    }
+    
+    &_news--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/news.svg#on-primary");
+    }
+    
+    &_news--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/news.svg#on-primary-hover");
+    }
+    
+    &_news--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/news.svg#on-primary-active");
+    }
+    
+    &_news--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/news.svg#on-disabled");
+    }
+    
+    &_news--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/news.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    more-options-vertical.svg 
+    - - - - - - - - - - - - */
+    
+    &_more-options-vertical--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/more-options-vertical.svg#primary");
+    }
+    
+    &_more-options-vertical--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/more-options-vertical.svg#primary-hover");
+    }
+    
+    &_more-options-vertical--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/more-options-vertical.svg#primary-active");
+    }
+    
+    &_more-options-vertical--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/more-options-vertical.svg#primary-disabled");
+    }
+    
+    &_more-options-vertical--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/more-options-vertical.svg#on-primary");
+    }
+    
+    &_more-options-vertical--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/more-options-vertical.svg#on-primary-hover");
+    }
+    
+    &_more-options-vertical--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/more-options-vertical.svg#on-primary-active");
+    }
+    
+    &_more-options-vertical--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/more-options-vertical.svg#on-disabled");
+    }
+    
+    &_more-options-vertical--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/more-options-vertical.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    mail.svg 
+    - - - - - - - - - - - - */
+    
+    &_mail--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/mail.svg#primary");
+    }
+    
+    &_mail--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/mail.svg#primary-hover");
+    }
+    
+    &_mail--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/mail.svg#primary-active");
+    }
+    
+    &_mail--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/mail.svg#primary-disabled");
+    }
+    
+    &_mail--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/mail.svg#on-primary");
+    }
+    
+    &_mail--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/mail.svg#on-primary-hover");
+    }
+    
+    &_mail--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/mail.svg#on-primary-active");
+    }
+    
+    &_mail--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/mail.svg#on-disabled");
+    }
+    
+    &_mail--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/mail.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    logout.svg 
+    - - - - - - - - - - - - */
+    
+    &_logout--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/logout.svg#primary");
+    }
+    
+    &_logout--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/logout.svg#primary-hover");
+    }
+    
+    &_logout--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/logout.svg#primary-active");
+    }
+    
+    &_logout--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/logout.svg#primary-disabled");
+    }
+    
+    &_logout--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/logout.svg#on-primary");
+    }
+    
+    &_logout--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/logout.svg#on-primary-hover");
+    }
+    
+    &_logout--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/logout.svg#on-primary-active");
+    }
+    
+    &_logout--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/logout.svg#on-disabled");
+    }
+    
+    &_logout--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/logout.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    log-out.svg 
+    - - - - - - - - - - - - */
+    
+    &_log-out--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/log-out.svg#primary");
+    }
+    
+    &_log-out--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/log-out.svg#primary-hover");
+    }
+    
+    &_log-out--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/log-out.svg#primary-active");
+    }
+    
+    &_log-out--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/log-out.svg#primary-disabled");
+    }
+    
+    &_log-out--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/log-out.svg#on-primary");
+    }
+    
+    &_log-out--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/log-out.svg#on-primary-hover");
+    }
+    
+    &_log-out--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/log-out.svg#on-primary-active");
+    }
+    
+    &_log-out--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/log-out.svg#on-disabled");
+    }
+    
+    &_log-out--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/log-out.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    lock.svg 
+    - - - - - - - - - - - - */
+    
+    &_lock--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/lock.svg#primary");
+    }
+    
+    &_lock--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/lock.svg#primary-hover");
+    }
+    
+    &_lock--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/lock.svg#primary-active");
+    }
+    
+    &_lock--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/lock.svg#primary-disabled");
+    }
+    
+    &_lock--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/lock.svg#on-primary");
+    }
+    
+    &_lock--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/lock.svg#on-primary-hover");
+    }
+    
+    &_lock--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/lock.svg#on-primary-active");
+    }
+    
+    &_lock--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/lock.svg#on-disabled");
+    }
+    
+    &_lock--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/lock.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    list.svg 
+    - - - - - - - - - - - - */
+    
+    &_list--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/list.svg#primary");
+    }
+    
+    &_list--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/list.svg#primary-hover");
+    }
+    
+    &_list--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/list.svg#primary-active");
+    }
+    
+    &_list--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/list.svg#primary-disabled");
+    }
+    
+    &_list--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/list.svg#on-primary");
+    }
+    
+    &_list--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/list.svg#on-primary-hover");
+    }
+    
+    &_list--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/list.svg#on-primary-active");
+    }
+    
+    &_list--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/list.svg#on-disabled");
+    }
+    
+    &_list--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/list.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    link.svg 
+    - - - - - - - - - - - - */
+    
+    &_link--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/link.svg#primary");
+    }
+    
+    &_link--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/link.svg#primary-hover");
+    }
+    
+    &_link--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/link.svg#primary-active");
+    }
+    
+    &_link--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/link.svg#primary-disabled");
+    }
+    
+    &_link--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/link.svg#on-primary");
+    }
+    
+    &_link--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/link.svg#on-primary-hover");
+    }
+    
+    &_link--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/link.svg#on-primary-active");
+    }
+    
+    &_link--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/link.svg#on-disabled");
+    }
+    
+    &_link--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/link.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    link-variant.svg 
+    - - - - - - - - - - - - */
+    
+    &_link-variant--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/link-variant.svg#primary");
+    }
+    
+    &_link-variant--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/link-variant.svg#primary-hover");
+    }
+    
+    &_link-variant--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/link-variant.svg#primary-active");
+    }
+    
+    &_link-variant--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/link-variant.svg#primary-disabled");
+    }
+    
+    &_link-variant--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/link-variant.svg#on-primary");
+    }
+    
+    &_link-variant--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/link-variant.svg#on-primary-hover");
+    }
+    
+    &_link-variant--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/link-variant.svg#on-primary-active");
+    }
+    
+    &_link-variant--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/link-variant.svg#on-disabled");
+    }
+    
+    &_link-variant--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/link-variant.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    home.svg 
+    - - - - - - - - - - - - */
+    
+    &_home--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/home.svg#primary");
+    }
+    
+    &_home--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/home.svg#primary-hover");
+    }
+    
+    &_home--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/home.svg#primary-active");
+    }
+    
+    &_home--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/home.svg#primary-disabled");
+    }
+    
+    &_home--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/home.svg#on-primary");
+    }
+    
+    &_home--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/home.svg#on-primary-hover");
+    }
+    
+    &_home--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/home.svg#on-primary-active");
+    }
+    
+    &_home--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/home.svg#on-disabled");
+    }
+    
+    &_home--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/home.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    grid.svg 
+    - - - - - - - - - - - - */
+    
+    &_grid--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/grid.svg#primary");
+    }
+    
+    &_grid--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/grid.svg#primary-hover");
+    }
+    
+    &_grid--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/grid.svg#primary-active");
+    }
+    
+    &_grid--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/grid.svg#primary-disabled");
+    }
+    
+    &_grid--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/grid.svg#on-primary");
+    }
+    
+    &_grid--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/grid.svg#on-primary-hover");
+    }
+    
+    &_grid--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/grid.svg#on-primary-active");
+    }
+    
+    &_grid--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/grid.svg#on-disabled");
+    }
+    
+    &_grid--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/grid.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    filters.svg 
+    - - - - - - - - - - - - */
+    
+    &_filters--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/filters.svg#primary");
+    }
+    
+    &_filters--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/filters.svg#primary-hover");
+    }
+    
+    &_filters--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/filters.svg#primary-active");
+    }
+    
+    &_filters--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/filters.svg#primary-disabled");
+    }
+    
+    &_filters--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/filters.svg#on-primary");
+    }
+    
+    &_filters--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/filters.svg#on-primary-hover");
+    }
+    
+    &_filters--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/filters.svg#on-primary-active");
+    }
+    
+    &_filters--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/filters.svg#on-disabled");
+    }
+    
+    &_filters--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/filters.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    expand.svg 
+    - - - - - - - - - - - - */
+    
+    &_expand--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/expand.svg#primary");
+    }
+    
+    &_expand--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/expand.svg#primary-hover");
+    }
+    
+    &_expand--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/expand.svg#primary-active");
+    }
+    
+    &_expand--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/expand.svg#primary-disabled");
+    }
+    
+    &_expand--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/expand.svg#on-primary");
+    }
+    
+    &_expand--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/expand.svg#on-primary-hover");
+    }
+    
+    &_expand--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/expand.svg#on-primary-active");
+    }
+    
+    &_expand--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/expand.svg#on-disabled");
+    }
+    
+    &_expand--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/expand.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    drag.svg 
+    - - - - - - - - - - - - */
+    
+    &_drag--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/drag.svg#primary");
+    }
+    
+    &_drag--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/drag.svg#primary-hover");
+    }
+    
+    &_drag--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/drag.svg#primary-active");
+    }
+    
+    &_drag--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/drag.svg#primary-disabled");
+    }
+    
+    &_drag--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/drag.svg#on-primary");
+    }
+    
+    &_drag--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/drag.svg#on-primary-hover");
+    }
+    
+    &_drag--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/drag.svg#on-primary-active");
+    }
+    
+    &_drag--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/drag.svg#on-disabled");
+    }
+    
+    &_drag--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/drag.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    download.svg 
+    - - - - - - - - - - - - */
+    
+    &_download--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/download.svg#primary");
+    }
+    
+    &_download--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/download.svg#primary-hover");
+    }
+    
+    &_download--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/download.svg#primary-active");
+    }
+    
+    &_download--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/download.svg#primary-disabled");
+    }
+    
+    &_download--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/download.svg#on-primary");
+    }
+    
+    &_download--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/download.svg#on-primary-hover");
+    }
+    
+    &_download--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/download.svg#on-primary-active");
+    }
+    
+    &_download--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/download.svg#on-disabled");
+    }
+    
+    &_download--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/download.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    database.svg 
+    - - - - - - - - - - - - */
+    
+    &_database--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/database.svg#primary");
+    }
+    
+    &_database--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/database.svg#primary-hover");
+    }
+    
+    &_database--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/database.svg#primary-active");
+    }
+    
+    &_database--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/database.svg#primary-disabled");
+    }
+    
+    &_database--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/database.svg#on-primary");
+    }
+    
+    &_database--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/database.svg#on-primary-hover");
+    }
+    
+    &_database--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/database.svg#on-primary-active");
+    }
+    
+    &_database--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/database.svg#on-disabled");
+    }
+    
+    &_database--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/database.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    dashboard.svg 
+    - - - - - - - - - - - - */
+    
+    &_dashboard--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/dashboard.svg#primary");
+    }
+    
+    &_dashboard--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/dashboard.svg#primary-hover");
+    }
+    
+    &_dashboard--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/dashboard.svg#primary-active");
+    }
+    
+    &_dashboard--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/dashboard.svg#primary-disabled");
+    }
+    
+    &_dashboard--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/dashboard.svg#on-primary");
+    }
+    
+    &_dashboard--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/dashboard.svg#on-primary-hover");
+    }
+    
+    &_dashboard--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/dashboard.svg#on-primary-active");
+    }
+    
+    &_dashboard--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/dashboard.svg#on-disabled");
+    }
+    
+    &_dashboard--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/dashboard.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    contact.svg 
+    - - - - - - - - - - - - */
+    
+    &_contact--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/contact.svg#primary");
+    }
+    
+    &_contact--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/contact.svg#primary-hover");
+    }
+    
+    &_contact--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/contact.svg#primary-active");
+    }
+    
+    &_contact--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/contact.svg#primary-disabled");
+    }
+    
+    &_contact--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/contact.svg#on-primary");
+    }
+    
+    &_contact--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/contact.svg#on-primary-hover");
+    }
+    
+    &_contact--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/contact.svg#on-primary-active");
+    }
+    
+    &_contact--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/contact.svg#on-disabled");
+    }
+    
+    &_contact--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/contact.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    connector.svg 
+    - - - - - - - - - - - - */
+    
+    &_connector--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/connector.svg#primary");
+    }
+    
+    &_connector--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/connector.svg#primary-hover");
+    }
+    
+    &_connector--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/connector.svg#primary-active");
+    }
+    
+    &_connector--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/connector.svg#primary-disabled");
+    }
+    
+    &_connector--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/connector.svg#on-primary");
+    }
+    
+    &_connector--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/connector.svg#on-primary-hover");
+    }
+    
+    &_connector--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/connector.svg#on-primary-active");
+    }
+    
+    &_connector--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/connector.svg#on-disabled");
+    }
+    
+    &_connector--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/connector.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    close.svg 
+    - - - - - - - - - - - - */
+    
+    &_close--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/close.svg#primary");
+    }
+    
+    &_close--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/close.svg#primary-hover");
+    }
+    
+    &_close--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/close.svg#primary-active");
+    }
+    
+    &_close--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/close.svg#primary-disabled");
+    }
+    
+    &_close--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/close.svg#on-primary");
+    }
+    
+    &_close--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/close.svg#on-primary-hover");
+    }
+    
+    &_close--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/close.svg#on-primary-active");
+    }
+    
+    &_close--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/close.svg#on-disabled");
+    }
+    
+    &_close--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/close.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    chevron-up.svg 
+    - - - - - - - - - - - - */
+    
+    &_chevron-up--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-up.svg#primary");
+    }
+    
+    &_chevron-up--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-up.svg#primary-hover");
+    }
+    
+    &_chevron-up--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-up.svg#primary-active");
+    }
+    
+    &_chevron-up--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-up.svg#primary-disabled");
+    }
+    
+    &_chevron-up--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-up.svg#on-primary");
+    }
+    
+    &_chevron-up--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-up.svg#on-primary-hover");
+    }
+    
+    &_chevron-up--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-up.svg#on-primary-active");
+    }
+    
+    &_chevron-up--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-up.svg#on-disabled");
+    }
+    
+    &_chevron-up--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-up.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    chevron-right.svg 
+    - - - - - - - - - - - - */
+    
+    &_chevron-right--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-right.svg#primary");
+    }
+    
+    &_chevron-right--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-right.svg#primary-hover");
+    }
+    
+    &_chevron-right--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-right.svg#primary-active");
+    }
+    
+    &_chevron-right--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-right.svg#primary-disabled");
+    }
+    
+    &_chevron-right--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-right.svg#on-primary");
+    }
+    
+    &_chevron-right--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-right.svg#on-primary-hover");
+    }
+    
+    &_chevron-right--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-right.svg#on-primary-active");
+    }
+    
+    &_chevron-right--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-right.svg#on-disabled");
+    }
+    
+    &_chevron-right--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-right.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    chevron-down.svg 
+    - - - - - - - - - - - - */
+    
+    &_chevron-down--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-down.svg#primary");
+    }
+    
+    &_chevron-down--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-down.svg#primary-hover");
+    }
+    
+    &_chevron-down--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-down.svg#primary-active");
+    }
+    
+    &_chevron-down--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-down.svg#primary-disabled");
+    }
+    
+    &_chevron-down--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-down.svg#on-primary");
+    }
+    
+    &_chevron-down--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-down.svg#on-primary-hover");
+    }
+    
+    &_chevron-down--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-down.svg#on-primary-active");
+    }
+    
+    &_chevron-down--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-down.svg#on-disabled");
+    }
+    
+    &_chevron-down--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/chevron-down.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    check.svg 
+    - - - - - - - - - - - - */
+    
+    &_check--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/check.svg#primary");
+    }
+    
+    &_check--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/check.svg#primary-hover");
+    }
+    
+    &_check--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/check.svg#primary-active");
+    }
+    
+    &_check--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/check.svg#primary-disabled");
+    }
+    
+    &_check--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/check.svg#on-primary");
+    }
+    
+    &_check--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/check.svg#on-primary-hover");
+    }
+    
+    &_check--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/check.svg#on-primary-active");
+    }
+    
+    &_check--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/check.svg#on-disabled");
+    }
+    
+    &_check--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/check.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    card.svg 
+    - - - - - - - - - - - - */
+    
+    &_card--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/card.svg#primary");
+    }
+    
+    &_card--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/card.svg#primary-hover");
+    }
+    
+    &_card--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/card.svg#primary-active");
+    }
+    
+    &_card--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/card.svg#primary-disabled");
+    }
+    
+    &_card--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/card.svg#on-primary");
+    }
+    
+    &_card--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/card.svg#on-primary-hover");
+    }
+    
+    &_card--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/card.svg#on-primary-active");
+    }
+    
+    &_card--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/card.svg#on-disabled");
+    }
+    
+    &_card--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/card.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    card-variant.svg 
+    - - - - - - - - - - - - */
+    
+    &_card-variant--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/card-variant.svg#primary");
+    }
+    
+    &_card-variant--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/card-variant.svg#primary-hover");
+    }
+    
+    &_card-variant--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/card-variant.svg#primary-active");
+    }
+    
+    &_card-variant--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/card-variant.svg#primary-disabled");
+    }
+    
+    &_card-variant--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/card-variant.svg#on-primary");
+    }
+    
+    &_card-variant--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/card-variant.svg#on-primary-hover");
+    }
+    
+    &_card-variant--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/card-variant.svg#on-primary-active");
+    }
+    
+    &_card-variant--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/card-variant.svg#on-disabled");
+    }
+    
+    &_card-variant--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/card-variant.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    assistant.svg 
+    - - - - - - - - - - - - */
+    
+    &_assistant--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/assistant.svg#primary");
+    }
+    
+    &_assistant--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/assistant.svg#primary-hover");
+    }
+    
+    &_assistant--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/assistant.svg#primary-active");
+    }
+    
+    &_assistant--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/assistant.svg#primary-disabled");
+    }
+    
+    &_assistant--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/assistant.svg#on-primary");
+    }
+    
+    &_assistant--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/assistant.svg#on-primary-hover");
+    }
+    
+    &_assistant--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/assistant.svg#on-primary-active");
+    }
+    
+    &_assistant--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/assistant.svg#on-disabled");
+    }
+    
+    &_assistant--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/assistant.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    arrow-right.svg 
+    - - - - - - - - - - - - */
+    
+    &_arrow-right--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/arrow-right.svg#primary");
+    }
+    
+    &_arrow-right--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/arrow-right.svg#primary-hover");
+    }
+    
+    &_arrow-right--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/arrow-right.svg#primary-active");
+    }
+    
+    &_arrow-right--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/arrow-right.svg#primary-disabled");
+    }
+    
+    &_arrow-right--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/arrow-right.svg#on-primary");
+    }
+    
+    &_arrow-right--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/arrow-right.svg#on-primary-hover");
+    }
+    
+    &_arrow-right--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/arrow-right.svg#on-primary-active");
+    }
+    
+    &_arrow-right--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/arrow-right.svg#on-disabled");
+    }
+    
+    &_arrow-right--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/arrow-right.svg#neutral");
+    }
+    
+    /* - - - - - - - - - - - - 
+    add.svg 
+    - - - - - - - - - - - - */
+    
+    &_add--primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/add.svg#primary");
+    }
+    
+    &_add--primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/add.svg#primary-hover");
+    }
+    
+    &_add--primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/add.svg#primary-active");
+    }
+    
+    &_add--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/add.svg#primary-disabled");
+    }
+    
+    &_add--on-primary-dark {
+      --icon-path: url("#{$icons-path}system/dark/add.svg#on-primary");
+    }
+    
+    &_add--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}system/dark/add.svg#on-primary-hover");
+    }
+    
+    &_add--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}system/dark/add.svg#on-primary-active");
+    }
+    
+    &_add--on-disabled-dark {
+      --icon-path: url("#{$icons-path}system/dark/add.svg#on-disabled");
+    }
+    
+    &_add--neutral-dark {
+      --icon-path: url("#{$icons-path}system/dark/add.svg#neutral");
+    }
+    
+  
+    }
+  

@@ -10,12 +10,13 @@
   "scripts": {
     "copy-assets": "fse copy --all --errorOnExist --dereference --preserveTimestamps --quiet src/assets/ dist/assets",
     "build": "npm run svg-sass && npm run copy-assets && npm run build.scss",
-    "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
+    "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss www/assets/mercury.css",
     "build--watch.scss": "scss-bundle --rootDir ./src --watch -e ./src/mercury.scss -o dist/mercury.scss",
-    "test": "sass test/test.scss  dist/css/mercury.css",
+    "test": "sass test/test.scss  test/mercury.css",
     "validate.ci": "npm run build",
-    "icons-svg": "ssg-svg ./src/icons ./src/assets/icons/ .config/color-states.json ./showcase/icons ./log",
-    "icons-sass": "ssg-sass ./src/assets/icons/.generated ./src/icons"
+    "icons-svg": "ssg-svg ./src/icons ./src/assets/icons/ .config/color-states.json ./www/icons ./log",
+    "icons-sass": "ssg-sass ./src/assets/icons/.generated ./src/icons",
+    "www": "npm run build.scss && "
   },
   "license": "MIT",
   "devDependencies": {

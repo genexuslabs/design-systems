@@ -35,7 +35,7 @@
 
     // checkbox (container)
     &::part(checkbox__container) {
-      @include mer-checkbox("container");
+      @include checkbox-styles("container");
     }
     // checkbox (container:focus)
     &::part(checkbox__container):focus-within {
@@ -44,19 +44,19 @@
     }
     // checkbox (container:checked)
     &::part(checkbox__container checkbox__checked) {
-      @include mer-checkbox("container--checked");
+      @include checkbox-styles("container--checked");
     }
     // checkbox (container:indeterminate)
     &::part(checkbox__container checkbox__indeterminate) {
-      @include mer-checkbox("container--indeterminate");
+      @include checkbox-styles("container--indeterminate");
     }
     // checkbox (option)
     &::part(checkbox__option) {
-      @include mer-checkbox("option");
+      @include checkbox-styles("option");
     }
     // checkbox (input)
     &::part(checkbox__input) {
-      @include mer-checkbox("input");
+      @include checkbox-styles("input");
     }
 
     // dashed-line

@@ -28,7 +28,8 @@
 @import "./base/button/button-styles";
 @import "./base/icons";
 
-// Icons on components
+// Icons
+@import "./icons/.generated/all-lists";
 @import "./icons/button";
 
 // Components
@@ -54,7 +55,7 @@
   // Tokens
   $tokens: true,
   $border: true,
-  $color: true,
+  $colors: true,
   $elevation: true,
   $font: true,
   $spacing: true,
@@ -198,7 +199,7 @@
 
       // Spacing
       @if $spacing {
-        @include font-size();
+        @include spacing();
       }
 
       // Timing
@@ -264,6 +265,9 @@
     @if $button-classes {
       // Button primary
       @include button-primary();
+      :root.dark {
+        @include button-tokens();
+      }
 
       // Button secondary
       @include button-secondary();
