@@ -1,7 +1,7 @@
 @mixin tree-view-tokens() {
   --ch-tree-view-item-custom-padding-inline-start: var(--mer-spacing--2xs);
   --ch-tree-view-item-gap: var(--mer-spacing--xs);
-  --ch-tree-view-item__checkbox-size: var(--mer-checkbox__size);
+  --ch-tree-view-item__checkbox-size: var(--mer-spacing--md);
   --ch-tree-view-item__expandable-button-size: var(--mer-spacing--md);
   --ch-tree-view-item__image-size: var(--mer-spacing--md);
   --ch-tree-view-item__line--inset-inline-end: 4px;
