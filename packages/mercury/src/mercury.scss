@@ -1,3 +1,5 @@
+@import "../../common/base";
+
 // Resets
 @import "../../common/resets";
 
@@ -98,6 +100,8 @@
   //                  Body
   // - - - - - - - - - - - - - - - - - - - -
   body {
+    @include document-common-styles();
+
     @if $tokens and $color {
       background-color: var(--mer-body__bg-color);
       color: var(--mer-body__color);
@@ -109,7 +113,6 @@
     @if $font-face {
       font-family: var(--mer-font-family--primary);
     }
-    margin: 0;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
