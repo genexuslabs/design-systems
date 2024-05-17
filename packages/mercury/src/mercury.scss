@@ -1,6 +1,3 @@
-// Icons
-$icons-path: "../assets/icons/";
-
 // Base styles from packages/common
 @import "../../common/base";
 @import "../../common/utilities";
@@ -32,7 +29,6 @@ $icons-path: "../assets/icons/";
 @import "./base/icons";
 
 // Icons
-@import "./icons/.generated/all-lists";
 @import "./icons/button";
 
 // Components
@@ -65,7 +61,7 @@ $icons-path: "../assets/icons/";
   $timing: true,
 
   // Icons
-  //$icons-path: "../assets/icons/",
+  $icons-path: "../assets/icons/",
   // Font face
   $font-face: true,
   $font-face-path: "../assets/fonts/",
@@ -83,6 +79,8 @@ $icons-path: "../assets/icons/";
   $checkbox: true,
   $tree-view: true
 ) {
+  @import "./icons/.generated/all-lists";
+
   // - - - - - - - - - - - - - - - - - - - -
   //              Typography
   // - - - - - - - - - - - - - - - - - - - -
@@ -299,8 +297,10 @@ $icons-path: "../assets/icons/";
     // Button icon after and text
     @include button-icon-after-and-text();
 
+    $selectors: "%icon__system_warning--primary-light",
+      "%icon__system_warning--hover-light";
     // Selectors
-    @include buttons-monochrome-icons-selectors($icons-system);
+    @include buttons-monochrome-icons-selectors($selectors);
   }
 
   // - - - - - - - - - - - - - - - -  - - -
