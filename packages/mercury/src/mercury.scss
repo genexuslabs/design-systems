@@ -20,9 +20,9 @@
 @import "./base/button/styles";
 
 // Components
-@import "./components/checkbox/styles";
+@import "./components/checkbox/checkbox-styles";
 @import "./components/shortcuts/styles";
-@import "./components/tree-view/styles";
+@import "./components/tree-view/tree-view-styles";
 
 @mixin mercury(
   // Resets
@@ -63,7 +63,7 @@
   // Components
   $components: true,
   $checkbox: true,
-  $tree-view: true
+  $tree-view-primary: true
 ) {
   // - - - - - - - - - - - - - - - - - - - -
   //                 Resets
@@ -287,8 +287,8 @@
     @if $checkbox {
       @include checkbox();
     }
-    @if $tree-view {
-      @include tree-view();
+    @if $tree-view-primary {
+      @include tree-view-primary();
     }
   }
 }
