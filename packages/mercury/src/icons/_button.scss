@@ -1,10 +1,11 @@
 %button-icon-only {
-  padding-inline: var(--spacing-un-spacing--s);
+  padding-inline: var(--button-icon-only__padding-inline);
 }
 
 %button-icon-and-text,
 %button-icon-after-and-text {
-  padding-inline: var(--spacing-un-spacing--l);
+  // same as regular base button
+  padding-inline: var(--button-base__padding-inline);
 }
 
 %button-icon-after-and-text--before {
@@ -57,5 +58,181 @@
       @extend %icon-mask--before;
       @extend %button-icon-after-and-text--before;
     }
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - -
+//            Icons Selectors
+// - - - - - - - - - - - - - - - - - - - -
+
+// Monochrome
+@mixin button-icon-style-monochrome(
+  $input-selector,
+  $output-selector,
+  $light-theme-selector: ".light",
+  $dark-theme-selector: ".dark",
+  $light: true,
+  $dark: true,
+  $on-surface: true,
+  $on-primary: true,
+  $on-primary-active: true
+) {
+  // Light
+  @if $light {
+    #{$light-theme-selector} {
+      #{$output-selector} {
+        @if $on-surface {
+          &--on-surface {
+            @extend #{$input-selector}--on-surface-light !optional;
+          }
+        }
+        @if $on-primary {
+          &--on-primary {
+            @extend #{$input-selector}--on-primary-light !optional;
+          }
+        }
+        @if $on-primary-active {
+          &--on-primary:active {
+            @extend #{$input-selector}--on-primary-active-light !optional;
+          }
+        }
+      }
+    }
+  }
+
+  // Dark
+  @if $dark {
+    #{$dark-theme-selector} {
+      #{$output-selector} {
+        @if $on-surface {
+          &--on-surface {
+            @extend #{$input-selector}--on-surface-dark !optional;
+          }
+        }
+        @if $on-primary {
+          &--on-primary {
+            @extend #{$input-selector}--on-primary-dark !optional;
+          }
+        }
+        @if $on-primary-active {
+          &--on-primary:active {
+            @extend #{$input-selector}--on-primary-active-dark !optional;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Multicolor
+@mixin button-icon-style-multicolor(
+  $input-selector,
+  $output-selector,
+  $light: true,
+  $dark: true,
+  $light-theme-selector: ".light",
+  $dark-theme-selector: ".dark",
+  $primary: true,
+  $primary-hover: true,
+  $primary-active: true,
+  $primary-disabled: true,
+  $on-primary: true,
+  $on-primary-hover: true,
+  $on-primary-active: true,
+  $on-disabled: true,
+  $neutral: true
+) {
+  // Light
+  @if $light {
+    #{$light-theme-selector} {
+      #{$output-selector} {
+        @if $enabled {
+          @extend #{$input-selector}--enabled-light;
+        }
+
+        @if $hover {
+          &:hover {
+            @extend #{$input-selector}--hover-light;
+          }
+        }
+
+        @if $active {
+          &:active {
+            @extend #{$input-selector}--active-light;
+          }
+        }
+
+        @if $disabled {
+          &:disabled {
+            @extend #{$input-selector}--disabled-light;
+          }
+        }
+      }
+    }
+  }
+
+  // Dark
+  @if $dark {
+    #{$dark-theme-selector} {
+      #{$output-selector} {
+        @if $enabled {
+          @extend #{$input-selector}--enabled-dark;
+        }
+
+        @if $hover {
+          &:hover {
+            @extend #{$input-selector}--hover-dark;
+          }
+        }
+
+        @if $active {
+          &:active {
+            @extend #{$input-selector}--active-dark;
+          }
+        }
+
+        @if $disabled {
+          &:disabled {
+            @extend #{$input-selector}--disabled-dark;
+          }
+        }
+      }
+    }
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - -
+//        Icons Selectors (New)
+// - - - - - - - - - - - - - - - - - - - -
+
+@mixin buttons-icons-selectors(
+  $all-monochrome-icons,
+  $light: true,
+  $dark: true,
+  $light-theme-selector: ".light",
+  $dark-theme-selector: ".dark",
+  $primary: true,
+  $primary-hover: true,
+  $primary-active: true,
+  $primary-disabled: true,
+  $on-primary: true,
+  $on-primary-hover: true,
+  $on-primary-active: true,
+  $on-disabled: true,
+  $neutral: true
+) {
+  // Generate monochrome icons (light and/or dark)
+  @each $monochrome-icon-selector in $all-monochrome-lists {
+    @include button-icon-style-monochrome(
+      $input-selector: #{$monochrome-icon-selector},
+      $output-selector: #{str-replace($monochrome-icon-selector, "%", ".")},
+      $light: $light,
+      $dark: $dark,
+      $light-theme-selector: $light-theme-selector,
+      $dark-theme-selector: $dark-theme-selector,
+      $on-surface: $on-surface,
+      $on-primary: $on-primary,
+      $on-primary-active: $on-primary-active
+    );
   }
 }

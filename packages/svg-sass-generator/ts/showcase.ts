@@ -437,7 +437,7 @@ const renderIcons = (
                return `<li class="icon-container__list-item">
                <button class="icon-state-button" data-src="${icon.path}#${state}" data-name="${category}/${icon.name}" id="${listId}--${state}">
                 <figure class="icon-container__figure">
-                  <img class="icon" src="${icon.path}#${state}" title="${state}" alt="${icon.name} icon on state '${state}'"/>
+                  <img class="icon" src="${icon.path}#${state}" alt="${icon.name} icon on state '${state}'"/>
                   <figcaption class="icon-container__figure-caption">${state}</figcaption>
                 </figure>
                </button>

@@ -1,5 +1,6 @@
 // Base styles from packages/common
 @import "../../common/base";
+@import "../../common/utilities";
 
 @import "./base/common";
 
@@ -17,7 +18,10 @@
 
 // Base classes
 @import "./base/button/button-styles";
-@import "./base/icon/icons-selectors-generator";
+@import "./base/icons";
+
+// Icons on components
+@import "./icons/button";
 
 // Components
 @import "./components/checkbox/styles";
