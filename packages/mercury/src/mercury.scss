@@ -1,3 +1,6 @@
+// Icons
+$icons-path: "../assets/icons/";
+
 // Base styles from packages/common
 @import "../../common/base";
 @import "../../common/utilities";
@@ -62,8 +65,7 @@
   $timing: true,
 
   // Icons
-  $icons-path: "../assets/icons/",
-
+  //$icons-path: "../assets/icons/",
   // Font face
   $font-face: true,
   $font-face-path: "../assets/fonts/",
@@ -296,6 +298,9 @@
 
     // Button icon after and text
     @include button-icon-after-and-text();
+
+    // Selectors
+    @include buttons-monochrome-icons-selectors($icons-system);
   }
 
   // - - - - - - - - - - - - - - - -  - - -

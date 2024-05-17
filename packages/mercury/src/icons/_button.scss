@@ -73,27 +73,41 @@
   $dark-theme-selector: ".dark",
   $light: true,
   $dark: true,
-  $on-surface: true,
+  $primary: true,
+  $primary-hover: true,
+  $primary-active: true,
+  $primary-disabled: true,
   $on-primary: true,
-  $on-primary-active: true
+  $on-primary-hover: true,
+  $on-primary-active: true,
+  $on-disabled: true,
+  $neutral: true
 ) {
   // Light
   @if $light {
     #{$light-theme-selector} {
       #{$output-selector} {
-        @if $on-surface {
-          &--on-surface {
-            @extend #{$input-selector}--on-surface-light !optional;
+        @if $primary {
+          &--primary {
+            @extend #{$input-selector}--primary-light !optional;
           }
         }
-        @if $on-primary {
-          &--on-primary {
-            @extend #{$input-selector}--on-primary-light !optional;
+        @if $primary-hover {
+          &--primary-hover,
+          &--primary:hover {
+            @extend #{$input-selector}--primary-hover-light !optional;
           }
         }
-        @if $on-primary-active {
-          &--on-primary:active {
-            @extend #{$input-selector}--on-primary-active-light !optional;
+        @if $primary-active {
+          &--primary-active,
+          &--primary:active {
+            @extend #{$input-selector}--primary-active-light !optional;
+          }
+        }
+        @if $primary-disabled {
+          &--primary-disabled,
+          &--primary:disabled {
+            @extend #{$input-selector}--primary-disabled-light !optional;
           }
         }
       }
@@ -101,22 +115,30 @@
   }
 
   // Dark
-  @if $dark {
+  @if $light {
     #{$dark-theme-selector} {
       #{$output-selector} {
-        @if $on-surface {
-          &--on-surface {
-            @extend #{$input-selector}--on-surface-dark !optional;
+        @if $primary {
+          &--primary {
+            @extend #{$input-selector}--primary-dark !optional;
           }
         }
-        @if $on-primary {
-          &--on-primary {
-            @extend #{$input-selector}--on-primary-dark !optional;
+        @if $primary-hover {
+          &--primary-hover,
+          &--primary:hover {
+            @extend #{$input-selector}--primary-hover-dark !optional;
           }
         }
-        @if $on-primary-active {
-          &--on-primary:active {
-            @extend #{$input-selector}--on-primary-active-dark !optional;
+        @if $primary-active {
+          &--primary-active,
+          &--primary:active {
+            @extend #{$input-selector}--primary-active-dark !optional;
+          }
+        }
+        @if $primary-disabled {
+          &--primary-disabled,
+          &--primary:disabled {
+            @extend #{$input-selector}--primary-disabled-dark !optional;
           }
         }
       }
@@ -205,8 +227,8 @@
 //        Icons Selectors (New)
 // - - - - - - - - - - - - - - - - - - - -
 
-@mixin buttons-icons-selectors(
-  $all-monochrome-icons,
+@mixin buttons-monochrome-icons-selectors(
+  $monochrome-icons-list,
   $light: true,
   $dark: true,
   $light-theme-selector: ".light",
@@ -222,17 +244,60 @@
   $neutral: true
 ) {
   // Generate monochrome icons (light and/or dark)
-  @each $monochrome-icon-selector in $all-monochrome-lists {
+  @each $monochrome-icon-selector in $monochrome-icons-list {
+    $output-selector-generated: str-replace(
+      $monochrome-icon-selector,
+      "%",
+      "."
+    );
     @include button-icon-style-monochrome(
       $input-selector: #{$monochrome-icon-selector},
-      $output-selector: #{str-replace($monochrome-icon-selector, "%", ".")},
+      $output-selector: #{$output-selector-generated},
       $light: $light,
       $dark: $dark,
       $light-theme-selector: $light-theme-selector,
       $dark-theme-selector: $dark-theme-selector,
-      $on-surface: $on-surface,
+      $primary: $primary,
+      $primary-hover: $primary-hover,
+      $primary-active: $primary-active,
+      $primary-disabled: $primary-disabled,
       $on-primary: $on-primary,
-      $on-primary-active: $on-primary-active
+      $on-primary-hover: $on-primary-hover,
+      $on-primary-active: $on-primary-active,
+      $on-disabled: $on-disabled,
+      $neutral: $neutral
     );
   }
 }
+
+// @mixin buttons-icons-selectors(
+//   $all-monochrome-icons,
+//   $light: true,
+//   $dark: true,
+//   $light-theme-selector: ".light",
+//   $dark-theme-selector: ".dark",
+//   $primary: true,
+//   $primary-hover: true,
+//   $primary-active: true,
+//   $primary-disabled: true,
+//   $on-primary: true,
+//   $on-primary-hover: true,
+//   $on-primary-active: true,
+//   $on-disabled: true,
+//   $neutral: true
+// ) {
+//   // Generate monochrome icons (light and/or dark)
+//   @each $monochrome-icon-selector in $all-monochrome-lists {
+//     @include button-icon-style-monochrome(
+//       $input-selector: #{$monochrome-icon-selector},
+//       $output-selector: #{str-replace($monochrome-icon-selector, "%", ".")},
+//       $light: $light,
+//       $dark: $dark,
+//       $light-theme-selector: $light-theme-selector,
+//       $dark-theme-selector: $dark-theme-selector,
+//       $on-surface: $on-surface,
+//       $on-primary: $on-primary,
+//       $on-primary-active: $on-primary-active
+//     );
+//   }
+// }
