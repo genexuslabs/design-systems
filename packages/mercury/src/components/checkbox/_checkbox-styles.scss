@@ -1,0 +1,138 @@
+@import "tokens";
+
+%checkbox {
+  @include checkbox-tokens();
+  font-weight: var(--mer-label__font-weight);
+
+  // Input
+  &__input {
+    background-color: var(--mer-checkbox__bg-color);
+    border: var(--mer-checkbox__border);
+    border-radius: var(--mer-checkbox__border-radius);
+
+    &--focus {
+      @include mer-focus();
+    }
+
+    &--disabled {
+      border-color: var(--mer-text__disabled);
+    }
+  }
+
+  // Option
+  &__option {
+    &--checked {
+      color: var(--mer-checkbox-check__color);
+    }
+
+    &--indeterminate {
+      inline-size: 8px;
+      block-size: 1.5px;
+      border-radius: 2px;
+      color: var(--mer-checkbox-check__color);
+    }
+
+    &--disabled {
+      color: var(--mer-text__disabled);
+    }
+  }
+
+  // Label
+  &__label {
+    margin-inline-start: var(--mer-label__space);
+
+    &--disabled {
+      color: var(--mer-text__disabled);
+    }
+  }
+}
+
+/// @group Checkbox
+/// @param {String} $checkbox-selector [".checkbox"] -
+/// @param {String} $checkbox__input-selector [".checkbox::part(input)"] -
+/// @param {String} $checkbox__input--disabled-selector [".checkbox::part(input disabled)"] -
+/// @param {String} $checkbox__option--disabled-selector [".checkbox::part(option disabled)"] -
+/// @param {String} $checkbox__option--checked-selector [".checkbox::part(option checked)"] -
+/// @param {String} $checkbox__option--indeterminate-selector [".checkbox::part(option indeterminate)"] -
+/// @param {String} $checkbox__label-selector [".checkbox::part(label)"] -
+/// @param {String} $checkbox__label--disabled-selector [".checkbox::part(label disabled)"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @param {Boolean} $add--label [true] -
+@mixin checkbox(
+  $checkbox-selector: ".checkbox",
+
+  $checkbox__input-selector: ".checkbox::part(input)",
+
+  $checkbox__input--disabled-selector: ".checkbox::part(input disabled)",
+
+  $checkbox__option--disabled-selector: ".checkbox::part(option disabled)",
+
+  $checkbox__option--checked-selector: ".checkbox::part(option checked)",
+
+  $checkbox__option--indeterminate-selector:
+    ".checkbox::part(option indeterminate)",
+
+  $checkbox__label-selector: ".checkbox::part(label)",
+
+  $checkbox__label--disabled-selector: ".checkbox::part(label disabled)",
+
+  $add--disabled: true,
+  $add--label: true
+) {
+  #{$checkbox-selector} {
+    @extend %checkbox;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Input
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$checkbox__input-selector} {
+    @extend %checkbox__input;
+
+    &:focus {
+      @extend %checkbox__input--focus;
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Option
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$checkbox__option--checked-selector} {
+    @extend %checkbox__option--checked;
+  }
+
+  #{$checkbox__option--indeterminate-selector} {
+    @extend %checkbox__option--indeterminate;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Label
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $add--label {
+    #{$checkbox__label-selector} {
+      @extend %checkbox__label;
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                Disabled
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $add--disabled {
+    // Input
+    #{$checkbox__input--disabled-selector} {
+      @extend %checkbox__input--disabled;
+    }
+
+    // Option
+    #{$checkbox__option--disabled-selector} {
+      @extend %checkbox__option--disabled;
+    }
+
+    // Label
+    @if $add--label {
+      #{$checkbox__label--disabled-selector} {
+        @extend %checkbox__label--disabled;
+      }
+    }
+  }
+}
