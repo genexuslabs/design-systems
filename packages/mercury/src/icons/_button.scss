@@ -87,6 +87,7 @@
   @if $light {
     #{$light-theme-selector} {
       #{$output-selector} {
+        // primary
         @if $primary {
           &--primary {
             @extend #{$input-selector}--primary-light !optional;
@@ -110,14 +111,45 @@
             @extend #{$input-selector}--primary-disabled-light !optional;
           }
         }
+        // on primary
+        @if $on-primary {
+          &--on-primary {
+            @extend #{$input-selector}--on-primary-light !optional;
+          }
+        }
+        @if $on-primary-hover {
+          &--on-primary-hover,
+          &--on-primary:hover {
+            @extend #{$input-selector}--on-primary-hover-light !optional;
+          }
+        }
+        @if $on-primary-active {
+          &--on-primary-active,
+          &--on-primary:active {
+            @extend #{$input-selector}--on-primary-active-light !optional;
+          }
+        }
+        // on disabled
+        @if $on-disabled {
+          &--on-disabled {
+            @extend #{$input-selector}--on-disabled-light !optional;
+          }
+        }
+        // neutral
+        @if $neutral {
+          &--neutral {
+            @extend #{$input-selector}--neutral-light !optional;
+          }
+        }
       }
     }
   }
 
   // Dark
-  @if $light {
+  @if $dark {
     #{$dark-theme-selector} {
       #{$output-selector} {
+        // primary
         @if $primary {
           &--primary {
             @extend #{$input-selector}--primary-dark !optional;
@@ -139,6 +171,36 @@
           &--primary-disabled,
           &--primary:disabled {
             @extend #{$input-selector}--primary-disabled-dark !optional;
+          }
+        }
+        // on primary
+        @if $on-primary {
+          &--on-primary {
+            @extend #{$input-selector}--on-primary-dark !optional;
+          }
+        }
+        @if $on-primary-hover {
+          &--on-primary-hover,
+          &--on-primary:hover {
+            @extend #{$input-selector}--on-primary-hover-dark !optional;
+          }
+        }
+        @if $on-primary-active {
+          &--on-primary-active,
+          &--on-primary:active {
+            @extend #{$input-selector}--on-primary-active-dark !optional;
+          }
+        }
+        // on disabled
+        @if $on-disabled {
+          &--on-disabled {
+            @extend #{$input-selector}--on-disabled-dark !optional;
+          }
+        }
+        // neutral
+        @if $neutral {
+          &--neutral {
+            @extend #{$input-selector}--neutral-dark !optional;
           }
         }
       }
@@ -227,51 +289,6 @@
 //        Icons Selectors (New)
 // - - - - - - - - - - - - - - - - - - - -
 
-// @mixin buttons-monochrome-icons-selectors(
-//   $monochrome-icons-list,
-//   $light: true,
-//   $dark: true,
-//   $light-theme-selector: ".light",
-//   $dark-theme-selector: ".dark",
-//   $primary: true,
-//   $primary-hover: true,
-//   $primary-active: true,
-//   $primary-disabled: true,
-//   $on-primary: true,
-//   $on-primary-hover: true,
-//   $on-primary-active: true,
-//   $on-disabled: true,
-//   $neutral: true
-// ) {
-//   // Generate monochrome icons (light and/or dark)
-//   @each $list-name, $icon in $icons-list {
-//     @each $icon in $icons-list {
-//       $output-selector-generated: str-replace(
-//         $monochrome-icon-selector,
-//         "%",
-//         "."
-//       );
-//       @include button-icon-style-monochrome(
-//         $input-selector: #{$monochrome-icon-selector},
-//         $output-selector: #{$output-selector-generated},
-//         $light: $light,
-//         $dark: $dark,
-//         $light-theme-selector: $light-theme-selector,
-//         $dark-theme-selector: $dark-theme-selector,
-//         $primary: $primary,
-//         $primary-hover: $primary-hover,
-//         $primary-active: $primary-active,
-//         $primary-disabled: $primary-disabled,
-//         $on-primary: $on-primary,
-//         $on-primary-hover: $on-primary-hover,
-//         $on-primary-active: $on-primary-active,
-//         $on-disabled: $on-disabled,
-//         $neutral: $neutral
-//       );
-//     }
-//   }
-// }
-
 @mixin buttons-monochrome-icons-selectors(
   $monochrome-icon-selectors,
   $light: true,
@@ -288,7 +305,6 @@
   $on-disabled: true,
   $neutral: true
 ) {
-  // Generate monochrome icons (light and/or dark)
   @each $monochrome-icon-selector in $monochrome-icon-selectors {
     @include button-icon-style-monochrome(
       $input-selector: #{$monochrome-icon-selector},

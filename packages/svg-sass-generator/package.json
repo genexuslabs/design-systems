@@ -12,7 +12,7 @@
     "bin/"
   ],
   "scripts": {
-    "clean": "fse remove ./js && fse remove .bin",
+    "clean": "fse remove ./js && fse remove bin",
     "build": "npm run clean && tsc --build && npm run copy-json && npm run copy-to-bin",
     "copy-json": "npm run copy-schema-monochrome && npm run copy-schema-multicolor",
     "copy-schema-monochrome": "fse copy ./ts/partials-svg/schema-monochrome.json ./js/partials-svg/schema-monochrome.json",

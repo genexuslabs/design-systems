@@ -61,10 +61,11 @@
   $timing: true,
 
   // Icons
-  $icons-path: "../assets/icons/",
+  $icons-path: "./assets/icons/",
+
   // Font face
   $font-face: true,
-  $font-face-path: "../assets/fonts/",
+  $font-face-path: "./assets/fonts/",
 
   // Base
   $base-classes: true,
@@ -79,12 +80,21 @@
   $checkbox: true,
   $tree-view: true
 ) {
+  // - - - - - - - - - - - - - - - - - - - -
+  //              Icons
+  // - - - - - - - - - - - - - - - - - - - -
+
   @import "./icons/.generated/all-lists";
+
+  // Monochrome > system
+  $system-virtual-selectors: generate-icons-virtual-selectors(
+    $system,
+    "system"
+  );
 
   // - - - - - - - - - - - - - - - - - - - -
   //              Typography
   // - - - - - - - - - - - - - - - - - - - -
-
   // font-face
   @if $font-face {
     //light
@@ -162,9 +172,10 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //        Other Tokens thant Colors
+  //        Other Tokens than Colors
   // - - - - - - - - - - - - - - - - - - - -
 
+  // Primitive
   @if $tokens and ($border or $elevation or $font or $spacing or $timing) {
     :root {
       // Border
@@ -209,6 +220,14 @@
     }
   }
 
+  // Semantic (Other than colors)
+  @if $tokens {
+    :root {
+      // Other
+      @include semantic-other();
+    }
+  }
+
   // - - - - - - - - - - - - - - - - - - - -
   //                General
   // - - - - - - - - - - - - - - - - - - - -
@@ -220,7 +239,8 @@
       min-block-size: 100dvh;
       margin: 0;
       background-color: var(--mer-color__surface);
-      color: var(--mer-color__surface);
+      color: var(--mer-text__on-surface);
+      line-height: var(--mer-line-height--regular);
 
       @if $font-face {
         font-family: Inter_Regular;
@@ -297,10 +317,7 @@
     // Button icon after and text
     @include button-icon-after-and-text();
 
-    $selectors: "%icon__system_warning--primary-light",
-      "%icon__system_warning--hover-light";
-    // Selectors
-    @include buttons-monochrome-icons-selectors($selectors);
+    @include buttons-monochrome-icons-selectors($system-virtual-selectors);
   }
 
   // - - - - - - - - - - - - - - - -  - - -

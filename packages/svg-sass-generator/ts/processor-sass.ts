@@ -139,7 +139,7 @@ const createSassFileString = (
   categoryName: string,
   categoryIcons: lightDarkIcons
 ): string => {
-  let categoryList = ` $icons-${categoryName}: `;
+  let categoryList = ` $${categoryName}: `;
 
   // category list (only once. iterate over dark or light, is the same)
   categoryIcons.dark.forEach((icon, index) => {
@@ -260,13 +260,13 @@ const saveMainSassOnDisk = () => {
 
   output += `\n\n$all-multicolor-lists: (`;
   multicolorCategoriesList.forEach((category) => {
-    output += `\n${category}: $icons-${category},`;
+    output += `\n${category}: $${category},`;
   });
   output += `\n);`;
 
   output += `\n\n$all-monochrome-lists: (`;
   monochromeCategoriesList.forEach((category) => {
-    output += `\n${category}: $icons-${category},`;
+    output += `\n${category}: $${category},`;
   });
   output += `\n);`;
 
