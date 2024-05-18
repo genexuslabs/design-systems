@@ -1,0 +1,98 @@
+{
+  "monochrome": {
+    "states": {
+      "on-primary": {
+        "light": "blue",
+        "dark": "green"
+      },
+      "on-surface": {
+        "light": "orange",
+        "dark": "red"
+      }
+    },
+    "icons": [
+      {
+        "folder": "bpm-1",
+        "states": {
+          "on-primary": true,
+          "on-surface": true
+        }
+      },
+      {
+        "folder": "bpm-2",
+        "states": {
+          "on-primary": true,
+          "on-surface": true
+        }
+      }
+    ]
+  },
+  "multicolor": {
+    "cssPrefix": "gx-",
+    "colors": [
+      {
+        "cssClass": "green",
+        "states": {
+          "enabled": {
+            "light": "#66BB6A",
+            "dark": "#4CAF50"
+          },
+          "hover": {
+            "light": "#81C784",
+            "dark": "#388E3C"
+          },
+          "active": {
+            "light": "#4CAF50",
+            "dark": "#2E7D32"
+          },
+          "disabled": {
+            "light": "#E0E0E0",
+            "dark": "#BDBDBD"
+          }
+        }
+      },
+      {
+        "cssClass": "blue",
+        "states": {
+          "enabled": {
+            "light": "#64B5F6",
+            "dark": "#2196F3"
+          },
+          "hover": {
+            "light": "#64B5F6",
+            "dark": "#1976D2"
+          },
+          "active": {
+            "light": "#42A5F5",
+            "dark": "#1565C0"
+          },
+          "disabled": {
+            "light": "#E0E0E0",
+            "dark": "#BDBDBD"
+          }
+        }
+      },
+      {
+        "cssClass": "orange",
+        "states": {
+          "enabled": {
+            "light": "#FFB74D",
+            "dark": "#FF9800"
+          },
+          "hover": {
+            "light": "#FFB74D",
+            "dark": "#F57C00"
+          },
+          "active": {
+            "light": "#FFA726",
+            "dark": "#EF6C00"
+          },
+          "disabled": {
+            "light": "#E0E0E0",
+            "dark": "#BDBDBD"
+          }
+        }
+      }
+    ]
+  }
+}
