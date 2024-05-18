@@ -10,9 +10,10 @@
   "scripts": {
     "copy-assets": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/assets/ dist/assets",
     "build": "npm run icons-svg && npm run icons-sass && npm run copy-assets && npm run build.scss",
+    "build-no-svg": "npm run copy-assets && npm run build.scss",
     "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
     "test": "sass test/test.scss  test/mercury.css",
-    "validate.ci": "npm run build",
+    "validate.ci": "npm run build-no-svg",
     "icons-svg": "ssg-svg ./src/icons/generable ./src/assets/icons/ .config/color-states.json ./www/icons ./log",
     "icons-sass": "ssg-sass ./src/assets/icons/.generated ./src/icons"
   },
