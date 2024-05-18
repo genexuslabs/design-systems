@@ -1,6 +1,6 @@
 {
   "name": "@genexus/unanimo",
-  "version": "0.8.0",
+  "version": "0.10.1",
   "description": "A design system for GeneXus generated applications.",
   "main": "dist/unanimo.scss",
   "files": [
@@ -8,8 +8,10 @@
   ],
   "scripts": {
     "copy-assets": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/assets/ dist/assets",
-    "build": "npm run copy-assets && npm run build.scss",
+    "build": "npm run copy-assets && npm run build.scss && npm run build.docs",
     "build.scss": "scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss && sass test/test.scss dist/css/unanimo.css",
+    "build.docs": "sassdoc dist/unanimo.scss",
+    "generate-docs": "npm run build.scss && npm run build.docs",
     "test": "sass test/test.scss test/unanimo.css",
     "validate.ci": "npm run build"
   },
@@ -17,6 +19,7 @@
   "devDependencies": {
     "@atao60/fse-cli": "^0.1.9",
     "sass": "~1.72.0",
+    "sassdoc": "^2.7.4",
     "scss-bundle": "~3.1.2"
   },
   "engines": {

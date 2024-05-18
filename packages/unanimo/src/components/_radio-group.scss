@@ -39,6 +39,17 @@
   color: var(--borders-un-border-color__disabled);
 }
 
+/// @group Radio Group
+/// @param {String} $radio-group-selector [".radio-group"] -
+/// @param {String} $radio-item-selector [".radio-group::part(radio-item)"] -
+/// @param {String} $radio-item__container-selector [".radio-group::part(radio__container)"] -
+/// @param {String} $radio-item__container--focus-selector [".radio-group::part(radio__container):focus-within"] -
+/// @param {String} $radio-item__container--disabled-selector [".radio-group::part(radio__container disabled)"] -
+/// @param {String} $radio-item__container--checked-selector [".radio-group::part(radio__container checked)"] -
+/// @param {String} $radio-item__container--error-selector [".radio-group::part(radio__container error)"] -
+/// @param {String} $radio-item__label--disabled-selector [".radio-group::part(radio__label disabled)"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @param {Boolean} $add--error [true] -
 @mixin radio-group(
   $radio-group-selector: ".radio-group",
 

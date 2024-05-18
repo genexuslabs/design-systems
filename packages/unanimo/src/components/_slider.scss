@@ -44,11 +44,43 @@
   border-radius: 4px;
 }
 
+/// @group Slider
+/// @param {String} $slider-selector [".slider-primary"] -
+/// @param {String} $track-selector [".slider-primary::part(track)"] -
+/// @param {String} $thumb-selector [".slider-primary::part(thumb)"] -
+/// @param {String} $thumb-focus-selector [".slider-primary:focus-visible::part(thumb focus)"] -
+/// @example scss - Default case: Using the `.slider-primary` class.
+/// SCSS:
+///   @include slider-primary();
+///
+/// @example markup
+/// HTML/render:
+///   <ch-slider class="slider-primary"></ch-slider>
+///
+/// @example scss - Advanced case: Style a `ch-slider` control inside a Shadow Root.
+/// SCSS:
+///   my-component-with-shadow {
+///     @include slider-primary(
+///       $slider-selector: "&::part(slider)",
+///       $track-selector: "&::part(slider__track)",
+///       $thumb-selector: "&::part(slider__thumb)",
+///       $thumb-focus-selector: "&::part(slider__thumb focus)"
+///     );
+///   }
+///
+/// @example markup
+/// HTML/render:
+///   <my-component-with-shadow>
+///     #shadow root (open)
+///     |  <ch-slider part="slider" exportparts="track:slider__track,thumb:slider__thumb,focus">
+///     |  </ch-slider>
+///   </my-component-with-shadow>
+///
 @mixin slider-primary(
   $slider-selector: ".slider-primary",
   $track-selector: ".slider-primary::part(track)",
   $thumb-selector: ".slider-primary::part(thumb)",
-  $thumb-focus-selector: ".slider-primary:focus-visible::part(thumb)"
+  $thumb-focus-selector: ".slider-primary:focus-visible::part(thumb focus)"
 ) {
   #{$slider-selector} {
     @extend %slider-primary__slider;
@@ -67,10 +99,40 @@
   }
 }
 
+/// @group Slider
+/// @param {String} $slider-selector [".slider-secondary"] -
+/// @param {String} $track-selector [".slider-secondary::part(track)"] -
+/// @param {String} $thumb-focus-selector [".slider-secondary:focus-visible::part(thumb focus)"] -
+/// @example scss - Default case: Using the `.slider-secondary` class.
+/// SCSS:
+///   @include slider-secondary();
+///
+/// @example markup
+/// HTML/render:
+///   <ch-slider class="slider-secondary"></ch-slider>
+///
+/// @example scss - Advanced case: Style a `ch-slider` control inside a Shadow Root.
+/// SCSS:
+///   my-component-with-shadow {
+///     @include slider-secondary(
+///       $slider-selector: "&::part(slider)",
+///       $track-selector: "&::part(slider__track)",
+///       $thumb-focus-selector: "&::part(slider__thumb focus)"
+///     );
+///   }
+///
+/// @example markup
+/// HTML/render:
+///   <my-component-with-shadow>
+///     #shadow root (open)
+///     |  <ch-slider part="slider" exportparts="track:slider__track,thumb:slider__thumb,focus">
+///     |  </ch-slider>
+///   </my-component-with-shadow>
+///
 @mixin slider-secondary(
   $slider-selector: ".slider-secondary",
   $track-selector: ".slider-secondary::part(track)",
-  $thumb-focus-selector: ".slider-secondary:focus-visible::part(thumb)"
+  $thumb-focus-selector: ".slider-secondary:focus-visible::part(thumb focus)"
 ) {
   #{$slider-selector} {
     @extend %slider-secondary__slider;
