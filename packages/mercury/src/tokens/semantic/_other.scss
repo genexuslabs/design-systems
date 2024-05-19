@@ -8,25 +8,27 @@
   --mer-body__line-height: var(--mer-line-height--regular);
 
   /*----------------------
+  Heading
+  ----------------------*/
+  --mer-heading__color: var(--mer-color__neutral-gray--100);
+
+  /*----------------------
   Scrollbar
   ----------------------*/
   // scrollbar
   --mer-scrollbar__size: var(--mer-spacing--xs);
-
   // scrollbar-track
   --mer-scrollbar-track__bg-color: var(--mer-color__elevation--03);
   --mer-scrollbar-track__border-radius: var(--mer-spacing--xs);
-
   // scrollbar-thumb
   --mer-scrollbar-thumb__bg-color: var(--mer-color__elevation--04);
   --mer-scrollbar-thumb__bg-color--hover: var(--mer-color__elevation--04);
   --mer-scrollbar-thumb__border-radius: var(--mer-spacing--xs);
-
   // scrollbar-thumb
   --mer-scrollbar-corner__bg: rgba(0, 0, 0, 0);
 
   /*----------------------
-  Icon
+  Icon Size
   ----------------------*/
   // box (shell)
   --mer-icon__box--sm: var(--mer-spacing--md);
