@@ -1,11 +1,11 @@
 @mixin foundation-colors--light() {
-  //Primary
+  // primary
   --mer-color__primary-blue--200: #2070ce;
   --mer-color__primary-blue--300: #5498e8;
   --mer-color__primary-blue--400: #437dc0;
   --mer-color__primary-blue--600: #335884;
 
-  //Neutral
+  // neutral
   --mer-color__neutral-gray--00: #363636;
   --mer-color__neutral-gray--100: #525151;
   --mer-color__neutral-gray--200: #616161;
@@ -23,7 +23,7 @@
   --mer-color__neutral-gray--1300: #dedede;
   --mer-color__neutral-gray--1400: #ffffff;
 
-  //Tinted Grays
+  // tinted grays
   --mer-color__tinted-yellow--5: #ffc96b0d;
   --mer-color__tinted-yellow--60: #ffc96b99;
   --mer-color__tinted-red--5: #fb7c840d;
@@ -36,7 +36,7 @@
   --mer-color__tinted-blue--20: #2070ce33;
   --mer-color__tinted-blue--50: #2070ce80;
 
-  //Message
+  // message
   --mer-color__message-green--100: #3fa89b;
   --mer-color__message-green--200: #3fa89b;
   --mer-color__message-yellow--100: #ffc96b;
@@ -45,27 +45,27 @@
   --mer-color__message-red--200: #fb7c84;
   --mer-color__message-red--300: #dd8f94;
 
-  //Surface
+  // surface
   --mer-color__surface: #f4f5f5;
 
-  //Elevation
+  // elevation
   --mer-color__elevation--01: #f1f1f1;
   --mer-color__elevation--02: #e4e4e4;
   --mer-color__elevation--03: #dedede;
   --mer-color__elevation--04: #ffffff;
 
-  //Secondary
+  // secondary
   --mer-color__secondary-green--200: #3fa89b;
 }
 
 @mixin foundation-colors--dark() {
-  //Primary
+  // primary
   --mer-color__primary-blue--200: #5ba7ff;
   --mer-color__primary-blue--300: #5498e8;
   --mer-color__primary-blue--400: #437dc0;
   --mer-color__primary-blue--600: #335884;
 
-  //Neutral
+  // neutral
   --mer-color__neutral-gray--00: #ffffff;
   --mer-color__neutral-gray--100: #cccccc;
   --mer-color__neutral-gray--200: #b3b3b3;
@@ -83,7 +83,7 @@
   --mer-color__neutral-gray--1300: #3b3e40;
   --mer-color__neutral-gray--1400: #2d3134;
 
-  //Tinted Grays
+  // tinted grays
   --mer-color__tinted-yellow--5: #ffc96b0d;
   --mer-color__tinted-yellow--60: #ffc96b99;
   --mer-color__tinted-red--5: #fb7c840d;
@@ -96,7 +96,7 @@
   --mer-color__tinted-blue--20: #5ba7ff33;
   --mer-color__tinted-blue--50: #5ba7ff80;
 
-  //Message
+  // message
   --mer-color__message-green--100: #3fa89b;
   --mer-color__message-green--200: #3fa89b;
   --mer-color__message-yellow--100: #ffc96b;
@@ -105,15 +105,15 @@
   --mer-color__message-red--200: #e35861;
   --mer-color__message-red--300: #dd8f94;
 
-  //Surface
+  // surface
   --mer-color__surface: #1a1d20;
 
-  //Elevation
+  // elevation
   --mer-color__elevation--01: #202428;
   --mer-color__elevation--02: #262a2f;
   --mer-color__elevation--03: #2b3237;
   --mer-color__elevation--04: #3b4044;
 
-  //Secondary
+  // secondary
   --mer-color__secondary-green--200: #3fa89b;
 }
