@@ -15,17 +15,23 @@
     "test": "sass test/test.scss  test/mercury.css",
     "validate.ci": "npm run build-no-svg",
     "icons-svg": "ssg-svg ./src/icons/generable ./src/assets/icons/ .config/color-states.json ./www/icons ./log",
-    "icons-sass": "ssg-sass ./src/assets/icons/.generated ./src/icons"
+    "icons-sass": "ssg-sass ./src/assets/icons/.generated ./src/icons",
+    "watch:sass": "chokidar src/**/*.scss -c \"npm run build.scss\""
   },
   "license": "MIT",
   "devDependencies": {
     "@atao60/fse-cli": "^0.1.9",
+    "chokidar": "^3.6.0",
+    "chokidar-cli": "^3.0.0",
     "sass": "~1.72.0",
     "scss-bundle": "~3.1.2",
-    "chokidar": "^3.6.0",
     "svg-sass-generator": "file:../svg-sass-generator"
   },
   "engines": {
     "pnpm": ">=3"
+  },
+  "dependencies": {
+    "i": "^0.3.7",
+    "npm": "^10.8.0"
   }
 }
