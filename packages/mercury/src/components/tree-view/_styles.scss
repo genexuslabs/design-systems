@@ -18,7 +18,7 @@
     );
     --ch-tree-view-item__image-size: var(--mer-icon-shell__size--sm);
 
-    @include mer-scrollbar;
+    @include scrollbar-styles;
 
     .ch-tree-view-container {
       padding: var(--tree-view-container__padding);
@@ -35,28 +35,28 @@
 
     // checkbox (container)
     &::part(checkbox__container) {
-      @include mer-checkbox("container");
+      @include checkbox-styles("container");
     }
     // checkbox (container:focus)
     &::part(checkbox__container):focus-within {
       box-shadow: none;
-      @include mer-focus();
+      @include focus-style();
     }
     // checkbox (container:checked)
     &::part(checkbox__container checkbox__checked) {
-      @include mer-checkbox("container--checked");
+      @include checkbox-styles("container--checked");
     }
     // checkbox (container:indeterminate)
     &::part(checkbox__container checkbox__indeterminate) {
-      @include mer-checkbox("container--indeterminate");
+      @include checkbox-styles("container--indeterminate");
     }
     // checkbox (option)
     &::part(checkbox__option) {
-      @include mer-checkbox("option");
+      @include checkbox-styles("option");
     }
     // checkbox (input)
     &::part(checkbox__input) {
-      @include mer-checkbox("input");
+      @include checkbox-styles("input");
     }
 
     // dashed-line
@@ -75,7 +75,7 @@
         background-color: var(--tree-view-item__bg-color--hover);
       }
       &:focus {
-        @include mer-focus();
+        @include focus-style();
       }
     }
     &[selected]::part(header) {
