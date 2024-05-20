@@ -1,7 +1,0 @@
-@import "tokens";
-
-@mixin checkbox() {
-  :root {
-    @include checkbox-tokens();
-  }
-}

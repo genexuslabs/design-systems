@@ -1,60 +1,46 @@
 @mixin tree-view-tokens() {
-  /*----------------------
-  tree-view-item
-  ----------------------*/
+  --ch-tree-view-item-custom-padding-inline-start: var(--mer-spacing--2xs);
+  --ch-tree-view-item-gap: var(--mer-spacing--xs);
+  --ch-tree-view-item__checkbox-size: var(--mer-spacing--md);
+  --ch-tree-view-item__expandable-button-size: var(--mer-spacing--md);
+  --ch-tree-view-item__image-size: var(--mer-spacing--md);
+  --ch-tree-view-item__line--inset-inline-end: 4px;
 
-  --tree-view-item__color: inherit;
-  --tree-view-item__font-size: inherit;
-  --tree-view-item__gap: var(--mer-spacing--xs);
-  --tree-view-item__checkbox-size: var(--mer-checkbox__size);
-  --tree-view-item-expandable-button__size: var(--mer-spacing--md);
-  --tree-view-item-image-size__: var(--mer-spacing--md);
-  --tree-view-item-custom__padding-inline-start: var(--mer-view-spacing--2xs);
+  --tree-view__min-inline-size: max-content;
+  --tree-view__padding: var(--mer-spacing--xs);
   --tree-view-item-custom__padding-inline-end: var(--mer-spacing--2xs);
 
-  /*----------------------
-  tree-view-item -> Sates
-  ----------------------*/
-
-  // hover
+  // - - - - - - - - - - - - - - - - - - - -
+  //               Item states
+  // - - - - - - - - - - - - - - - - - - - -
+  // Hover
   --tree-view-item__color--hover: var(--mer-item__color--hover);
   --tree-view-item__bg-color--hover: var(--mer-item__bg-color--hover);
 
-  // selected
+  // Selected
   --tree-view-item__color--selected: var(--mer-item__color--selected);
   --tree-view-item__bg-color--selected: var(--mer-item__bg-color--selected);
 
-  /*----------------------
-  tree-view-item -> Parts
-  ----------------------*/
-
-  // dashed-line
+  // - - - - - - - - - - - - - - - - - - - -
+  //                Item line
+  // - - - - - - - - - - - - - - - - - - - -
   --tree-view-item-dashed-line__border-color: var(--mer-text__on-surface);
   --tree-view-item-dashed-line__opacity: 0.3;
 
-  // header
+  // - - - - - - - - - - - - - - - - - - - -
+  //               Item header
+  // - - - - - - - - - - - - - - - - - - - -
   --tree-view-item-header__border-radius: var(--mer-border__radius--sm);
   --tree-view-item-header__padding-block: calc(var(--mer-spacing--3xs));
 
-  // downloading
+  // - - - - - - - - - - - - - - - - - - - -
+  //            Item downloading
+  // - - - - - - - - - - - - - - - - - - - -
   --tree-view-item-downloading__inline-size: var(--mer-spacing--sm);
   --tree-view-item-downloading__block-size: var(--mer-spacing--sm);
-  --tree-view-item-downloading__border-width: var(--mer-border__width--md);
-  --tree-view-item-downloading__border-style: solid;
-  --tree-view-item-downloading__border-color: var(
-    --mer-accent__primary--active
-  );
+  --tree-view-item-downloading__border: var(--mer-border__width--md) solid
+    var(--mer-accent__primary--active);
 
-  // folder & module (common)
-  --tree-view-item-folder-action__inline-size: var(--mer-spacing--md);
-  --tree-view-item-folder-action__block-size: var(--mer-spacing--md);
-
-  // pending commit
-  --tree-view-item-pending-commit__bg-color: var(--mer-accent__primary);
-
-  /*----------------------
-  tree-view-container
-  ----------------------*/
-  --tree-view-container__min-inline-size: var(max-content);
-  --tree-view-container__padding: var(--mer-spacing--xs);
+  // TODO: pending commit
+  // --tree-view-item-pending-commit__bg-color: var(--mer-accent__primary);
 }
