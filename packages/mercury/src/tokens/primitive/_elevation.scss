@@ -1,15 +1,17 @@
 @mixin elevation--light() {
-  /*background color*/
+  // background color
   --mer-elevation__background-color--01: var(--mer-color__neutral-gray--900);
   --mer-elevation__background-color--02: var(--mer-color__neutral-gray--900);
   --mer-elevation__background-color--03: var(--mer-color__neutral-gray--900);
   --mer-elevation__background-color--04: var(--mer-color__neutral-gray--900);
-  /*border*/
+
+  // border
   --mer-elevation__border-01: transparent;
   --mer-elevation__border-02: transparent;
   --mer-elevation__border-03: transparent;
   --mer-elevation__border-04: transparent;
-  /*box shadow*/
+
+  // box shadow
   --mer-elevation__box-shadow--01: 0px 2px 1px -1px rgba(0, 0, 0, 0.08),
     0px 1px 4px 0px rgba(0, 0, 0, 0.06);
   --mer-elevation__box-shadow--02: 0px 1px 10px 0px rgba(0, 0, 0, 0.12),
@@ -21,16 +23,18 @@
 }
 
 @mixin elevation--dark() {
-  /*background color*/
+  // background color
   --mer-elevation__background-color--01: var(--mer-color__elevation--01);
   --mer-elevation__background-color--02: var(--mer-color__elevation--02);
   --mer-elevation__background-color--03: var(--mer-color__elevation--03);
   --mer-elevation__background-color--04: var(--mer-color__elevation--04);
-  /*border*/
+
+  // border
   --mer-elevation__border-01: 1px solid var(--mer-color__elevation--03);
   --mer-elevation__border-03: transparent;
   --mer-elevation__border-04: transparent;
-  /*box shadow*/
+
+  // box shadow
   --mer-elevation__box-shadow--01: none;
   --mer-elevation__box-shadow--02: none;
   --mer-elevation__box-shadow--03: none;
