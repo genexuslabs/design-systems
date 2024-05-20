@@ -101,30 +101,35 @@
     @font-face {
       font-family: Inter_Light; // 300
       src: url("#{$font-face-path}Inter_Light.woff2");
+      font-display: swap;
     }
 
     //regular
     @font-face {
       font-family: Inter_Regular; // 400
       src: url("#{$font-face-path}Inter_Regular.woff2");
+      font-display: swap;
     }
 
     //semi-bold
     @font-face {
       font-family: Inter_SemiBold; // 600
       src: url("#{$font-face-path}Inter_SemiBold.woff2");
+      font-display: swap;
     }
 
     //bold
     @font-face {
       font-family: Inter_Bold; // 700
       src: url("#{$font-face-path}Inter_Bold.woff2");
+      font-display: swap;
     }
 
     //extra-bold
     @font-face {
       font-family: Inter_ExtraBold; // 800
       src: url("#{$font-face-path}Inter_ExtraBold.woff2");
+      font-display: swap;
     }
   }
 
