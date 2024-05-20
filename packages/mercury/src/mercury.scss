@@ -1,7 +1,13 @@
+// Base styles from packages/common
+@import "../../common/base";
+@import "../../common/utilities";
+
+@import "./base/common";
+
 // Resets
 @import "../../common/resets";
 
-// Tokens > Primitive
+// Tokens Primitive
 @import "./tokens/primitive/border";
 @import "./tokens/primitive/color";
 @import "./tokens/primitive/elevation";
@@ -9,15 +15,21 @@
 @import "./tokens/primitive/spacing";
 @import "./tokens/primitive/timing";
 
-// Tokens > Semantic
-@import "./tokens/semantic/tokens";
+// Tokens Semantic
+@import "./tokens/semantic/accent";
+@import "./tokens/semantic/border";
+@import "./tokens/semantic/icon";
+@import "./tokens/semantic/item";
+@import "./tokens/semantic/other";
+@import "./tokens/semantic/text";
+@import "./tokens/semantic/accent";
 
-// Other
-@import "./mixins";
-@import "./base/icons/sass/icons-selectors.scss";
+// Base classes
+@import "./base/button/button-styles";
+@import "./base/icons";
 
-// Base
-@import "./base/button/styles";
+// Icons
+@import "./icons/button";
 
 // Components
 @import "./components/checkbox/checkbox-styles";
@@ -42,29 +54,200 @@
   // Tokens
   $tokens: true,
   $border: true,
-  $color: true,
+  $colors: true,
   $elevation: true,
   $font: true,
   $spacing: true,
   $timing: true,
 
   // Icons
-  $icons: true,
-  $icons-path: "./assets/icons",
+  $icons-path: "./assets/icons/",
 
   // Font face
   $font-face: true,
+  $font-face-path: "./assets/fonts/",
 
   // Base
   $base-classes: true,
   $button-classes: true,
-  $buttons-classes-with-icons: true,
+  $icon-classes: true,
+
+  // Icons
+  $icons-button: true,
 
   // Components
   $components: true,
   $checkbox: true,
   $tree-view-primary: true
 ) {
+  // - - - - - - - - - - - - - - - - - - - -
+  //              Icons
+  // - - - - - - - - - - - - - - - - - - - -
+
+  @import "./icons/.generated/all-lists";
+
+  // Monochrome > system
+  $system-virtual-selectors: generate-icons-virtual-selectors(
+    $system,
+    "system"
+  );
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //              Typography
+  // - - - - - - - - - - - - - - - - - - - -
+  // font-face
+  @if $font-face {
+    //light
+    @font-face {
+      font-family: Inter_Light; // 300
+      src: url("#{$font-face-path}Inter_Light.woff2");
+    }
+
+    //regular
+    @font-face {
+      font-family: Inter_Regular; // 400
+      src: url("#{$font-face-path}Inter_Regular.woff2");
+    }
+
+    //semi-bold
+    @font-face {
+      font-family: Inter_SemiBold; // 600
+      src: url("#{$font-face-path}Inter_SemiBold.woff2");
+    }
+
+    //bold
+    @font-face {
+      font-family: Inter_Bold; // 700
+      src: url("#{$font-face-path}Inter_Bold.woff2");
+    }
+
+    //extra-bold
+    @font-face {
+      font-family: Inter_ExtraBold; // 800
+      src: url("#{$font-face-path}Inter_ExtraBold.woff2");
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //              Color Schemes
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // Light
+  @if $colors and $light-theme and $tokens {
+    :root.light {
+      @include foundation-colors--light();
+    }
+  }
+  @if $colors and $tokens and $prefers-color-scheme-light {
+    @media (prefers-color-scheme: light) {
+      :root {
+        @include foundation-colors--light();
+      }
+    }
+  }
+
+  // Dark
+  @if $colors and $dark-theme and $tokens {
+    :root.dark {
+      @include foundation-colors--dark();
+    }
+  }
+  @if $colors and $tokens and $prefers-color-scheme-dark {
+    @media (prefers-color-scheme: dark) {
+      :root {
+        @include foundation-colors--dark();
+      }
+    }
+  }
+
+  // Semantic Colors (Are independent of color scheme)
+  @if $colors and $tokens {
+    :root {
+      @include semantic-accent();
+      @include semantic-border();
+      @include semantic-icon();
+      @include semantic-item();
+      @include semantic-text();
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //        Other Tokens than Colors
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // Primitive
+  @if $tokens and ($border or $elevation or $font or $spacing or $timing) {
+    :root {
+      // Border
+      @if $border {
+        @include border();
+      }
+
+      // Elevation Light
+      @if $elevation and $light-theme {
+        @include elevation--light();
+      }
+      @if $elevation and $prefers-color-scheme-light {
+        @media (prefers-color-scheme: light) {
+          @include elevation--light();
+        }
+      }
+
+      // Elevation Dark
+      @if $elevation and $dark-theme {
+        @include elevation--dark();
+      }
+      @if $elevation and $prefers-color-scheme-dark {
+        @media (prefers-color-scheme: dark) {
+          @include elevation--dark();
+        }
+      }
+
+      // Font
+      @if $font {
+        @include font();
+      }
+
+      // Spacing
+      @if $spacing {
+        @include spacing();
+      }
+
+      // Timing
+      @if $timing {
+        @include timing();
+      }
+    }
+  }
+
+  // Semantic (Other than colors)
+  @if $tokens {
+    :root {
+      // Other
+      @include semantic-other();
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                General
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // Default background-color and color
+  @if $tokens and $colors {
+    body {
+      display: grid;
+      min-block-size: 100dvh;
+      margin: 0;
+      background-color: var(--mer-color__surface);
+      color: var(--mer-text__on-surface);
+      line-height: var(--mer-line-height--regular);
+
+      @if $font-face {
+        font-family: Inter_Regular;
+      }
+    }
+  }
+
   // - - - - - - - - - - - - - - - - - - - -
   //                 Resets
   // - - - - - - - - - - - - - - - - - - - -
@@ -95,194 +278,51 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //                  Body
-  // - - - - - - - - - - - - - - - - - - - -
-  body {
-    @if $tokens and $color {
-      background-color: var(--mer-body__bg-color);
-      color: var(--mer-body__color);
-    }
-    @if $tokens and $font {
-      font-size: var(--mer-body__font-size);
-      line-height: var(--mer-body__line-height);
-    }
-    @if $font-face {
-      font-family: var(--mer-font-family--primary);
-    }
-    margin: 0;
-  }
-
-  // - - - - - - - - - - - - - - - - - - - -
-  //                 Base
+  //              Base classes
   // - - - - - - - - - - - - - - - - - - - -
   @if $base-classes {
+    // Button classes
     @if $button-classes {
-      @include button($buttons-classes-with-icons);
+      // Button primary
+      @include button-primary();
+      :root.dark {
+        @include button-tokens();
+      }
+
+      // Button secondary
+      @include button-secondary();
+
+      // Button tertiary
+      @include button-tertiary();
+    }
+
+    // Icon classes
+    @if $icon-classes {
+      @include icon-mask();
+      @include icon-background();
     }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //                 Icons
+  //     Icons on Elements / Components
   // - - - - - - - - - - - - - - - - - - - -
-  @if $icons and $icons-path {
-    @include icons-lists($icons-path: $icons-path);
+  // Icon classes
+  @if $icons-button {
+    // Button icon only
+    @include button-icon-only();
+
+    // Button icon and text
+    @include button-icon-and-text();
+
+    // Button icon after and text
+    @include button-icon-after-and-text();
+
+    @include buttons-monochrome-icons-selectors($system-virtual-selectors);
   }
 
-  // - - - - - - - - - - - - - - - - - - - -
-  //               Typography
-  // - - - - - - - - - - - - - - - - - - - -
-  @if $font-face {
-    //light
-    @font-face {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 300;
-      src: url("../src/assets/fonts/Inter_Light.woff2") format("woff2");
-      font-display: swap;
-    }
-
-    //regular
-    @font-face {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 400;
-      src: url("../src/assets/fonts/Inter_Regular.woff2") format("woff2");
-      font-display: swap;
-    }
-
-    //semi-bold
-    @font-face {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 600;
-      src: url("../src/assets/fonts/Inter_SemiBold.woff2") format("woff2");
-      font-display: swap;
-    }
-
-    //bold
-    @font-face {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 700;
-      src: url("../src/assets/fonts/Inter_Bold.woff2") format("woff2");
-      font-display: swap;
-    }
-
-    //extra-bold
-    @font-face {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 800;
-      src: url("../src/assets/fonts/Inter_ExtraBold.woff2") format("woff2");
-      font-display: swap;
-    }
-  }
-
-  // - - - - - - - - - - - - - - - - - - - -
-  //        Primitive Color Tokens
-  // - - - - - - - - - - - - - - - - - - - -
-  // Light
-  @if $color and $light-theme and $tokens {
-    :root {
-      @include foundation-colors--light();
-    }
-  }
-  @if $color and $tokens and $prefers-color-scheme-light {
-    @media (prefers-color-scheme: light) {
-      :root {
-        @include foundation-colors--light();
-      }
-    }
-  }
-  // Dark
-  @if $color and $dark-theme and $tokens {
-    :root.dark {
-      @include foundation-colors--dark();
-    }
-  }
-  @if $color and $tokens and $prefers-color-scheme-dark {
-    @media (prefers-color-scheme: dark) {
-      :root {
-        @include foundation-colors--dark();
-      }
-    }
-  }
-
-  // - - - - - - - - - - - - - - - - - - - -
-  //              Other Tokens
-  // - - - - - - - - - - - - - - - - - - - -
-  @if $tokens and
-    (
-      $border or
-        $color or
-        ($elevation and $light-theme) or
-        ($elevation and $prefers-color-scheme-light) or
-        ($elevation and $dark-theme) or
-        ($elevation and $prefers-color-scheme-dark) or
-        $font or
-        $spacing or
-        $timing
-    )
-  {
-    :root {
-      // border
-      @if $border {
-        @include border();
-      }
-
-      // color
-      @if $color {
-        @include semantic-accent();
-        @include semantic-border();
-        @include semantic-heading();
-        @include semantic-icon();
-        @include semantic-item();
-        @include semantic-other();
-        @include semantic-text();
-      }
-
-      // elevation (light)
-      @if $elevation and $light-theme {
-        @include elevation--light();
-      }
-      @if $elevation and $prefers-color-scheme-light {
-        @media (prefers-color-scheme: light) {
-          @include elevation--light();
-        }
-      }
-
-      // elevation (dark)
-      @if $elevation and $dark-theme {
-        &.dark {
-          @include elevation--dark();
-        }
-      }
-      @if $elevation and $prefers-color-scheme-dark {
-        @media (prefers-color-scheme: dark) {
-          @include elevation--dark();
-        }
-      }
-
-      // font
-      @if $font {
-        @include font();
-      }
-
-      // spacing
-      @if $spacing {
-        @include spacing();
-      }
-
-      // timing
-      @if $timing {
-        @include timing();
-      }
-    }
-  }
-
-  // - - - - - - - - - - - - - - - - - - - -
+  // - - - - - - - - - - - - - - - -  - - -
   //               Components
-  // - - - - - - - - - - - - - - - - - - - -
+  // - - - - - - - - - - - - - - - - - - -
   @if $components {
     @if $checkbox {
       @include checkbox();

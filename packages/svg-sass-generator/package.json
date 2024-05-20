@@ -1,0 +1,47 @@
+{
+  "name": "svg-sass-generator",
+  "version": "1.0.0",
+  "description": "SVG Icon Generator: A Node.js tool for creating customizable SVG icons with color states like hover and active effects. It generates SVG icons and Sass placeholder selectors, simplifying integration into projects with generated CSS class names for scalable and dynamic iconography.",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "ssg-svg": "./bin/processor-svg.js",
+    "ssg-sass": "./bin/processor-sass.js"
+  },
+  "files": [
+    "bin/"
+  ],
+  "scripts": {
+    "clean": "fse remove ./js && fse remove bin",
+    "build": "npm run clean && tsc --build && npm run copy-json && npm run copy-to-bin",
+    "copy-json": "npm run copy-schema-monochrome && npm run copy-schema-multicolor",
+    "copy-schema-monochrome": "fse copy ./ts/partials-svg/schema-monochrome.json ./js/partials-svg/schema-monochrome.json",
+    "copy-schema-multicolor": "fse copy ./ts/partials-svg/schema-multicolor.json ./js/partials-svg/schema-multicolor.json",
+    "copy-to-bin": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet ./js ./bin",
+    "watch": "tsc --watch",
+    "svg": "node ./js/processor-svg.js ./assets ./dist/ .config/color-states.json ./showcase ./log",
+    "sass": "node ./js/processor-sass.js ./dist/.generated ./sass"
+  },
+  "author": "GeneXus",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@atao60/fse-cli": "^0.1.9",
+    "@types/cheerio": "^0.22.35",
+    "ajv": "^8.12.0",
+    "cheerio": "^1.0.0-rc.12",
+    "glob": "^10.3.10",
+    "i": "^0.3.7",
+    "json-colorizer": "^2.2.2",
+    "node-localstorage": "^3.0.5",
+    "sass": "~1.72.0",
+    "svgo": "^3.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.4"
+  },
+  "engines": {
+    "pnpm": ">=3"
+  },
+  "devDependencies": {
+    "@types/node-localstorage": "^1.3.3"
+  }
+}

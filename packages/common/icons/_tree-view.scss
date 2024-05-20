@@ -1,0 +1,69 @@
+%tree-view-item__action-icon--base {
+  content: "";
+  display: block;
+  inline-size: var(--ch-tree-view-item__image-size);
+  block-size: var(--ch-tree-view-item__image-size);
+  content-visibility: auto;
+  contain-intrinsic-size: auto var(--ch-tree-view-item__image-size);
+}
+
+@mixin tree-view-item__action-icon--start() {
+  grid-area: start-img;
+}
+
+@mixin tree-view-item__action-icon--end() {
+  grid-area: end-img;
+}
+
+@mixin tree-view-item__action-icon--background($icon-path: "") {
+  background: no-repeat center / 100% #{$icon-path};
+}
+
+@mixin tree-view-item__action-icon--mask($icon-path: "") {
+  -webkit-mask: #{$icon-path} 50% 50% / 100% 100% no-repeat;
+  background-color: currentColor;
+}
+
+@include tree-view-item__action-icon(
+  $position: "start",
+  $item__action-with-icon-selector:
+    ".tree-view-class::part(item__action custom-icon)",
+  $icon-path: "",
+  $icon-type: "background"
+) {
+  @if $position == "start" {
+    #{$item__action-with-icon-selector}::before {
+      @extend %tree-view-item__action-icon--base;
+      @include tree-view-item__action-icon--start();
+
+      // background image
+      @if $icon-type == "background" {
+        @include tree-view-item__action-icon--background(
+          $icon-path: $icon-path
+        );
+      }
+      // mask image
+      @else {
+        @include tree-view-item__action-icon--mask($icon-path: $icon-path);
+      }
+    }
+  }
+  // $position == "end"
+  @else {
+    #{$item__action-with-icon-selector}::before {
+      @extend %tree-view-item__action-icon--base;
+      @include tree-view-item__action-icon--end();
+
+      // background image
+      @if $icon-type == "background" {
+        @include tree-view-item__action-icon--background(
+          $icon-path: $icon-path
+        );
+      }
+      // mask image
+      @else {
+        @include tree-view-item__action-icon--mask($icon-path: $icon-path);
+      }
+    }
+  }
+}

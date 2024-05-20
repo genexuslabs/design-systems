@@ -9,26 +9,21 @@
   "type": "module",
   "scripts": {
     "copy-assets": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/assets/ dist/assets",
-    "build": "npm run svg-m && npm run svg-sass-m && npm run copy-assets && scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
-    "test": "sass test/test.scss test/mercury.css",
-    "test-watch": "sass --watch test/test.scss test/mercury.css",
-    "svg": "process-svg ./src/icons/ ./src/assets/icons/ ./src/icons/_settings/multicolor.svg.template ./src/icons/_settings/monochrome.svg.template ./src/icons/_settings/states-monochrome.json",
-    "svg-sass": "process-sass ./src/icons/ ./src/base/icons/sass/ ./src/icons/_settings/states-monochrome.json",
-    "svg-m": "node ./svg-generator/processor-svg.js ./src/icons/ ./src/assets/icons/ ./src/icons/_settings/multicolor.svg.template ./src/icons/_settings/monochrome.svg.template ./src/icons/_settings/states-monochrome.json",
-    "svg-sass-m": "node ./svg-generator/processor-sass.js ./src/icons/ ./src/base/icons/sass/ ./src/icons/_settings/states-monochrome.json",
-    "validate.ci": "npm run build"
+    "build": "npm run icons-svg && npm run icons-sass && npm run copy-assets && npm run build.scss",
+    "build-no-svg": "npm run copy-assets && npm run build.scss",
+    "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
+    "test": "sass test/test.scss  test/mercury.css",
+    "validate.ci": "npm run build-no-svg",
+    "icons-svg": "ssg-svg ./src/icons/generable ./src/assets/icons/ .config/color-states.json ./www/icons ./log",
+    "icons-sass": "ssg-sass ./src/assets/icons/.generated ./src/icons"
   },
   "license": "MIT",
   "devDependencies": {
     "@atao60/fse-cli": "^0.1.9",
     "sass": "~1.72.0",
     "scss-bundle": "~3.1.2",
-    "glob": "^10.3.10",
-    "svgo": "^3.2.0",
-    "cheerio": "^1.0.0-rc.12"
-  },
-  "dependencies": {
-    "svg-generator": "file:../svg-generator"
+    "chokidar": "^3.6.0",
+    "svg-sass-generator": "file:../svg-sass-generator"
   },
   "engines": {
     "pnpm": ">=3"

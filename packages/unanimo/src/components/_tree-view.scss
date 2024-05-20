@@ -21,7 +21,6 @@ $tree-view-primary-hover: color-mix(
   @extend %text-body-2;
   color: var(--text-un-text__on-secondary);
   scrollbar-width: thin;
-  scrollbar-gutter: stable;
   scrollbar-color: var(--sidebar-un-sidebar__background-color--active)
     transparent;
 
