@@ -16,7 +16,7 @@
     "validate.ci": "npm run build-no-svg",
     "icons-svg": "ssg-svg ./src/icons/generable ./src/assets/icons/ .config/color-states.json ./www/icons ./log",
     "icons-sass": "ssg-sass ./src/assets/icons/.generated ./src/icons",
-    "watch:sass": "chokidar src/**/*.scss -c \"npm run build.scss\""
+    "watch:sass": "chokidar src/**/*.scss ../common/**/*.scss -c \"npm run build.scss\""
   },
   "license": "MIT",
   "devDependencies": {
