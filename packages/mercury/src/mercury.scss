@@ -236,7 +236,7 @@
 
     @if $tokens {
       // Default background-color and color
-      @if $color {
+      @if $colors {
         background-color: var(--mer-color__surface);
         color: var(--mer-text__on-surface);
       }
