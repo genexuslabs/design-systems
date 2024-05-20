@@ -18,7 +18,7 @@
 
 %tree-view-item--drag-enter {
   background-color: var(--tree-view-item__bg-color--hover);
-  @include mer-focus();
+  @include focus-style(true);
 }
 
 %tree-view-drop--after {
@@ -30,7 +30,7 @@
   padding-inline-end: var(--tree-view-item-custom__padding-inline-end);
 
   &--focus-visible {
-    @include mer-focus();
+    @include focus-style(true);
   }
 
   &--not-selected-hover {
@@ -151,7 +151,7 @@
   // Base style
   #{$tree-view-selector} {
     @extend %tree-view;
-    @include mer-scrollbar();
+    @include scrollbar-styles();
   }
 
   // - - - - - - - - - - - - - - - - - - - -
