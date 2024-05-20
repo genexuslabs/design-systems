@@ -231,16 +231,19 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                General
   // - - - - - - - - - - - - - - - - - - - -
+  body {
+    @include document-common-styles();
 
-  // Default background-color and color
-  @if $tokens and $colors {
-    body {
-      display: grid;
-      min-block-size: 100dvh;
-      margin: 0;
-      background-color: var(--mer-color__surface);
-      color: var(--mer-text__on-surface);
-      line-height: var(--mer-line-height--regular);
+    @if $tokens {
+      // Default background-color and color
+      @if $colors {
+        background-color: var(--mer-color__surface);
+        color: var(--mer-text__on-surface);
+      }
+
+      @if $font {
+        line-height: var(--mer-line-height--regular);
+      }
 
       @if $font-face {
         font-family: Inter_Regular;
