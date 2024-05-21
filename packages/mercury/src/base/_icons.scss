@@ -29,3 +29,188 @@
     );
   }
 }
+
+// - - - - - - - - - - - - - - - - - - - -
+//      Icons | Monochrome Selectors
+// - - - - - - - - - - - - - - - - - - - -
+
+// Single selector generator
+@mixin generate-monochrome-icon-selector(
+  $input-selector,
+  $output-selector,
+  $light-theme-selector: ".light",
+  $dark-theme-selector: ".dark",
+  $light: true,
+  $dark: true,
+  $primary: true,
+  $primary-hover: true,
+  $primary-active: true,
+  $primary-disabled: true,
+  $on-primary: true,
+  $on-primary-hover: true,
+  $on-primary-active: true,
+  $on-disabled: true,
+  $neutral: true
+) {
+  // Light
+  @if $light {
+    #{$light-theme-selector} {
+      #{$output-selector} {
+        // primary
+        @if $primary {
+          &--primary {
+            @extend #{$input-selector}--primary-light !optional;
+          }
+        }
+        @if $primary-hover {
+          &--primary-hover,
+          &--primary:hover {
+            @extend #{$input-selector}--primary-hover-light !optional;
+          }
+        }
+        @if $primary-active {
+          &--primary-active,
+          &--primary:active {
+            @extend #{$input-selector}--primary-active-light !optional;
+          }
+        }
+        @if $primary-disabled {
+          &--primary-disabled,
+          &--primary:disabled {
+            @extend #{$input-selector}--primary-disabled-light !optional;
+          }
+        }
+        // on primary
+        @if $on-primary {
+          &--on-primary {
+            @extend #{$input-selector}--on-primary-light !optional;
+          }
+        }
+        @if $on-primary-hover {
+          &--on-primary-hover,
+          &--on-primary:hover {
+            @extend #{$input-selector}--on-primary-hover-light !optional;
+          }
+        }
+        @if $on-primary-active {
+          &--on-primary-active,
+          &--on-primary:active {
+            @extend #{$input-selector}--on-primary-active-light !optional;
+          }
+        }
+        // on disabled
+        @if $on-disabled {
+          &--on-disabled {
+            @extend #{$input-selector}--on-disabled-light !optional;
+          }
+        }
+        // neutral
+        @if $neutral {
+          &--neutral {
+            @extend #{$input-selector}--neutral-light !optional;
+          }
+        }
+      }
+    }
+  }
+
+  // Dark
+  @if $dark {
+    #{$dark-theme-selector} {
+      #{$output-selector} {
+        // primary
+        @if $primary {
+          &--primary {
+            @extend #{$input-selector}--primary-dark !optional;
+          }
+        }
+        @if $primary-hover {
+          &--primary-hover,
+          &--primary:hover {
+            @extend #{$input-selector}--primary-hover-dark !optional;
+          }
+        }
+        @if $primary-active {
+          &--primary-active,
+          &--primary:active {
+            @extend #{$input-selector}--primary-active-dark !optional;
+          }
+        }
+        @if $primary-disabled {
+          &--primary-disabled,
+          &--primary:disabled {
+            @extend #{$input-selector}--primary-disabled-dark !optional;
+          }
+        }
+        // on primary
+        @if $on-primary {
+          &--on-primary {
+            @extend #{$input-selector}--on-primary-dark !optional;
+          }
+        }
+        @if $on-primary-hover {
+          &--on-primary-hover,
+          &--on-primary:hover {
+            @extend #{$input-selector}--on-primary-hover-dark !optional;
+          }
+        }
+        @if $on-primary-active {
+          &--on-primary-active,
+          &--on-primary:active {
+            @extend #{$input-selector}--on-primary-active-dark !optional;
+          }
+        }
+        // on disabled
+        @if $on-disabled {
+          &--on-disabled {
+            @extend #{$input-selector}--on-disabled-dark !optional;
+          }
+        }
+        // neutral
+        @if $neutral {
+          &--neutral {
+            @extend #{$input-selector}--neutral-dark !optional;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Monochrome
+@mixin process-monochrome-icons-list(
+  $monochrome-icon-selectors,
+  $light: true,
+  $dark: true,
+  $light-theme-selector: ".light",
+  $dark-theme-selector: ".dark",
+  $primary: true,
+  $primary-hover: true,
+  $primary-active: true,
+  $primary-disabled: true,
+  $on-primary: true,
+  $on-primary-hover: true,
+  $on-primary-active: true,
+  $on-disabled: true,
+  $neutral: true
+) {
+  @each $monochrome-icon-selector in $monochrome-icon-selectors {
+    @include generate-monochrome-icon-selector(
+      $input-selector: #{$monochrome-icon-selector},
+      $output-selector: str-replace($monochrome-icon-selector, "%", "."),
+      $light: $light,
+      $dark: $dark,
+      $light-theme-selector: $light-theme-selector,
+      $dark-theme-selector: $dark-theme-selector,
+      $primary: $primary,
+      $primary-hover: $primary-hover,
+      $primary-active: $primary-active,
+      $primary-disabled: $primary-disabled,
+      $on-primary: $on-primary,
+      $on-primary-hover: $on-primary-hover,
+      $on-primary-active: $on-primary-active,
+      $on-disabled: $on-disabled,
+      $neutral: $neutral
+    );
+  }
+}
