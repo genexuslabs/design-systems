@@ -20,3 +20,12 @@
     $background-position-x: var(--mer-form-input__bg-position--x)
   );
 }
+
+@mixin form-input-bg-x-rtl-support() {
+  // has to be included in the root
+  :root[dir="rtl"] {
+    --mer-form-input__bg-position--x: calc(
+      100% - var(--mer-form-input__bg-position--x-value)
+    );
+  }
+}
