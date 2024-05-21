@@ -13,7 +13,7 @@
 
 %form-input-text-only {
   @extend %form-input-text-base;
-  padding: 0 16px;
+  padding-inline: 16px;
 }
 
 @mixin form-input-text-only(
