@@ -1,0 +1,9 @@
+@mixin form-input-text-tokens() {
+  --form-input-text__border: var(--mer-form-input__border);
+  --form-input-text__border-radius: var(--mer-form-input__border-radius);
+  --form-input-text__color: var(--mer-form-input__color);
+  --form-input-text__font-size: var(--mer-form-input__font-size);
+  --form-input-text__font-weight: var(--mer-form-input__color);
+  --form-input-text__padding-inline: var(--mer-form-input__padding-inline);
+  --form-input-text__font-family: inherit;
+}

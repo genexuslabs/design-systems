@@ -1,0 +1,26 @@
+@import "form-input-text-tokens";
+
+// Base form-input-text sty
+%form-input-text-base {
+  font-family: var(--form-input-text__font-family);
+  border: var(--form-input-text__border);
+  border-radius: var(--form-input-text__border-radius);
+  color: var(--form-input-text__color);
+  font-size: var(--form-input-text__font-size);
+  padding: var(--form-input-text__padding-inline);
+  height: var(--mer-control-inline__height);
+}
+
+%form-input-text-only {
+  @extend %form-input-text-base;
+  padding: 0 16px;
+}
+
+@mixin form-input-text-only(
+  $selector: ".form-input-text-only",
+  $add--disabled: true
+) {
+  #{$selector} {
+    @extend %form-input-text-only;
+  }
+}
