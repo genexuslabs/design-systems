@@ -7,13 +7,11 @@
   border-radius: var(--form-input-text__border-radius);
   color: var(--form-input-text__color);
   font-size: var(--form-input-text__font-size);
-  padding: var(--form-input-text__padding-inline);
   block-size: var(--mer-control__block-size);
 }
 
 %form-input-text-only {
   @extend %form-input-text-base;
-  padding-inline: 16px;
 }
 
 @mixin form-input-text-only(
@@ -22,5 +20,6 @@
 ) {
   #{$selector} {
     @extend %form-input-text-only;
+    padding-inline: var(--form-input-text__padding-inline);
   }
 }
