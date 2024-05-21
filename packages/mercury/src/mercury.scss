@@ -34,9 +34,9 @@
 @import "./icons/form-input-text";
 
 // Components
-@import "./components/checkbox/styles";
+@import "./components/checkbox/checkbox-styles";
 @import "./components/shortcuts/styles";
-@import "./components/tree-view/styles";
+@import "./components/tree-view/tree-view-styles";
 
 @mixin mercury(
   // Resets
@@ -81,7 +81,7 @@
   // Components
   $components: true,
   $checkbox: true,
-  $tree-view: true
+  $tree-view-primary: true
 ) {
   // - - - - - - - - - - - - - - - - - - - -
   //              Icons
@@ -104,30 +104,35 @@
     @font-face {
       font-family: Inter_Light; // 300
       src: url("#{$font-face-path}Inter_Light.woff2");
+      font-display: swap;
     }
 
     //regular
     @font-face {
       font-family: Inter_Regular; // 400
       src: url("#{$font-face-path}Inter_Regular.woff2");
+      font-display: swap;
     }
 
     //semi-bold
     @font-face {
       font-family: Inter_SemiBold; // 600
       src: url("#{$font-face-path}Inter_SemiBold.woff2");
+      font-display: swap;
     }
 
     //bold
     @font-face {
       font-family: Inter_Bold; // 700
       src: url("#{$font-face-path}Inter_Bold.woff2");
+      font-display: swap;
     }
 
     //extra-bold
     @font-face {
       font-family: Inter_ExtraBold; // 800
       src: url("#{$font-face-path}Inter_ExtraBold.woff2");
+      font-display: swap;
     }
   }
 
@@ -234,16 +239,19 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                General
   // - - - - - - - - - - - - - - - - - - - -
+  body {
+    @include document-common-styles();
 
-  // Default background-color and color
-  @if $tokens and $colors {
-    body {
-      display: grid;
-      min-block-size: 100dvh;
-      margin: 0;
-      background-color: var(--mer-color__surface);
-      color: var(--mer-text__on-surface);
-      line-height: var(--mer-line-height--regular);
+    @if $tokens {
+      // Default background-color and color
+      @if $colors {
+        background-color: var(--mer-color__surface);
+        color: var(--mer-text__on-surface);
+      }
+
+      @if $font {
+        line-height: var(--mer-line-height--regular);
+      }
 
       @if $font-face {
         font-family: Inter_Regular;
@@ -345,8 +353,8 @@
     @if $checkbox {
       @include checkbox();
     }
-    @if $tree-view {
-      @include tree-view();
+    @if $tree-view-primary {
+      @include tree-view-primary();
     }
   }
 }

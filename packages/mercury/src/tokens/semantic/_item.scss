@@ -1,21 +1,23 @@
 @mixin semantic-item() {
-  //enabled
+  // enabled
   --mer-item__color: ;
   --mer-item__bg-color: ;
-  --mer-item__border-color: var(--mer-color__tinted-blue--20);
+  --mer-item__border-color: ;
 
-  //hover
-  --mer-item__color--hover: var(--mer-color__neutral-gray--100);
-  --mer-item__bg-color--hover: var(--mer-color__tinted-blue--5);
-  --mer-item__border-color--hover: var(--mer-color__tinted-blue--20);
+  // hover
+  --mer-item__color--hover: var(--mer-color__neutral-gray--100); // ❓
+  --mer-item__bg-color--hover: var(--mer-color__tinted-blue--5); // ✅
+  --mer-item__border-color--hover: var(--mer-color__tinted-blue--20); // ✅
 
-  //selected
-  --mer-item__color--selected: var(--mer-color__neutral-gray--100);
-  --mer-item__bg-color--selected: var(--mer-color__tinted-blue--10);
+  // selected
+  --mer-item__color--selected: var(--mer-color__neutral-gray--100); // ❓
+  --mer-item__bg-color--selected: var(--mer-color__tinted-blue--10); // ✅
   --mer-item__border-color--selected: var(--mer-color__tinted-blue--20);
 
-  //selected + hover
-  --mer-item__color--selected-hover: var(--mer-color__neutral-gray--100);
-  --mer-item__bg-color--selected-hover: var(--mer-color__tinted-blue--10);
-  --mer-item__border-color--selected-hover: var(--mer-color__tinted-blue--20);
+  // selected + hover
+  --mer-item__color--selected-hover: var(--mer-color__neutral-gray--100); // ❓
+  --mer-item__bg-color--selected-hover: var(--mer-color__tinted-blue--10); // ✅
+  --mer-item__border-color--selected-hover: var(
+    --mer-color__tinted-blue--20
+  ); // ✅
 }

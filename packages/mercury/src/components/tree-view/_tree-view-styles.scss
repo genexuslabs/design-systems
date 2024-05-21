@@ -1,0 +1,257 @@
+@import "tokens";
+
+%tree-view {
+  @include tree-view-tokens();
+
+  padding: var(--tree-view__padding);
+  min-inline-size: var(--tree-view__min-inline-size);
+}
+
+// TODO: Improve this
+%tree-view--drag-preview {
+  padding-inline: 8px;
+  background-color: var(--mer-color__elevation--04);
+  border-radius: 10px;
+  box-shadow: var(--mer-elevation__box-shadow--03);
+  font-size: 8px;
+}
+
+%tree-view-item--drag-enter {
+  background-color: var(--tree-view-item__bg-color--hover);
+  @include focus-style(true);
+}
+
+%tree-view-drop--after {
+  background-color: var(--mer-color__primary-blue--200);
+}
+
+%tree-view-item__header {
+  border-radius: var(--tree-view-item-header__border-radius);
+  padding-inline-end: var(--tree-view-item-custom__padding-inline-end);
+
+  &--focus-visible {
+    @include focus-style(true);
+  }
+
+  &--not-selected-hover {
+    background-color: var(--tree-view-item__bg-color--hover);
+    color: var(--tree-view-item__color--hover);
+  }
+
+  &--selected {
+    background-color: var(--tree-view-item__bg-color--selected);
+    color: var(--tree-view-item__color--selected);
+  }
+}
+
+%tree-view-item__action {
+  padding-block: var(--tree-view-item-header__padding-block);
+}
+
+%tree-view-item__line {
+  border-color: var(--tree-view-item-dashed-line__border-color);
+  opacity: var(--tree-view-item-dashed-line__opacity);
+}
+
+%tree-view-item__downloading {
+  inline-size: var(--tree-view-item-downloading__inline-size);
+  block-size: var(--tree-view-item-downloading__block-size);
+  border: var(--tree-view-item-downloading__border);
+  border-inline-start-color: transparent;
+}
+
+/// @group Tree View
+/// @param {String} $tree-view-selector [".tree-view-primary"] -
+/// @param {String} $drag-preview-selector [".tree-view-primary::part(drag-preview)"] -
+/// @param {String} $drop-selector [".tree-view-primary::part(drop)"] -
+/// @param {String} $item--drag-enter-selector [".tree-view-primary::part(item drag-enter)"] -
+/// @param {String} $item__header-selector [".tree-view-primary::part(item__header)"] -
+/// @param {String} $item__header--not-selected-selector [".tree-view-primary::part(item__header not-selected)"] -
+/// @param {String} $item__header--selected-selector [".tree-view-primary::part(item__header selected)"] -
+/// @param {String} $item__action-selector [".tree-view-primary::part(item__action)"] -
+/// @param {String} $item__downloading-selector [".tree-view-primary::part(item__downloading)"] -
+/// @param {String} $item__line-selector [".tree-view-primary::part(item__line)"] -
+/// @param {String} $item__checkbox-selector [".tree-view-primary::part(item__checkbox)"] -
+/// @param {String} $item__checkbox-input-selector [".tree-view-primary::part(item__checkbox-input)"] -
+/// @param {String} $item__checkbox-input--disabled-selector [".tree-view-primary::part(item__checkbox-input disabled)"] -
+/// @param {String} $item__checkbox-input--checked-selector [".tree-view-primary::part(item__checkbox-input checked)"] -
+/// @param {String} $item__checkbox-input--indeterminate-selector [".tree-view-primary::part(item__checkbox-input indeterminate)"] -
+/// @param {String} $item__checkbox-option--disabled-selector [".tree-view-primary::part(item__checkbox-option disabled)"] -
+/// @param {String} $item__checkbox-option--checked-selector [".tree-view-primary::part(item__checkbox-option checked)"] -
+/// @param {String} $item__checkbox-option--indeterminate-selector [".tree-view-primary::part(item__checkbox-option indeterminate)"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @example scss - Default case: Using the `.tree-view-primary` class.
+/// SCSS:
+///   @include tree-view-primary();
+///
+/// @example markup
+/// HTML/render:
+///   <ch-tree-view-render class="tree-view-primary">
+///   </ch-tree-view-render>
+///
+/// @example scss - Advanced case: Style a `ch-tree-view-render` control inside a Shadow Root.
+/// SCSS:
+///   my-component-with-shadow {
+///     @include tree-view-primary(
+///       // TODO
+///     );
+///   }
+///
+/// @example markup
+/// HTML/render:
+///   <my-component-with-shadow>
+///     #shadow root (open)
+///     |  <ch-tree-view-render part="tree-view" exportparts="TODO">
+///     |  </ch-tree-view-render>
+///   </my-component-with-shadow>
+///
+@mixin tree-view-primary(
+  $tree-view-selector: ".tree-view-primary",
+
+  // Drag preview
+  $drag-preview-selector: ".tree-view-primary::part(drag-preview)",
+
+  // Drag enter on item
+  $item--drag-enter-selector: ".tree-view-primary::part(item drag-enter)",
+
+  // Drop
+  $drop-selector: ".tree-view-primary::part(drop)",
+
+  // Item header
+  $item__header-selector: ".tree-view-primary::part(item__header)",
+  $item__header--not-selected-selector:
+    ".tree-view-primary::part(item__header not-selected)",
+  $item__header--selected-selector:
+    ".tree-view-primary::part(item__header selected)",
+
+  // Item action
+  $item__action-selector: ".tree-view-primary::part(item__action)",
+
+  // Item downloading
+  $item__downloading-selector: ".tree-view-primary::part(item__downloading)",
+
+  // Item line
+  $item__line-selector: ".tree-view-primary::part(item__line)",
+
+  // Checkbox
+  $item__checkbox-selector: ".tree-view-primary::part(item__checkbox)",
+  $item__checkbox-input-selector:
+    ".tree-view-primary::part(item__checkbox-input)",
+  $item__checkbox-input--disabled-selector:
+    ".tree-view-primary::part(item__checkbox-input disabled)",
+  $item__checkbox-option--disabled-selector:
+    ".tree-view-primary::part(item__checkbox-option disabled)",
+  $item__checkbox-option--checked-selector:
+    ".tree-view-primary::part(item__checkbox-option checked)",
+  $item__checkbox-option--indeterminate-selector:
+    ".tree-view-primary::part(item__checkbox-option indeterminate)",
+
+  $add--disabled: true
+) {
+  // Base style
+  #{$tree-view-selector} {
+    @extend %tree-view;
+    @include scrollbar-styles();
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //               Drag preview
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$drag-preview-selector} {
+    @extend %tree-view--drag-preview;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Drop
+  // - - - - - - - - - - - - - - - - - - - -
+  // WA to improve the style of the drops before and after
+  #{$drop-selector}::after {
+    @extend %tree-view-drop--after;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Item
+  // - - - - - - - - - - - - - - - - - - - -
+  // Drag enter
+  #{$item--drag-enter-selector} {
+    @extend %tree-view-item--drag-enter;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Header
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$item__header-selector} {
+    @extend %tree-view-item__header;
+
+    &:focus-visible {
+      @extend %tree-view-item__header--focus-visible;
+    }
+  }
+
+  // Item not selected with hover
+  #{$item__header--not-selected-selector}:hover {
+    @extend %tree-view-item__header--not-selected-hover;
+  }
+
+  // Item selected and item with active
+  #{$item__header--selected-selector} {
+    @extend %tree-view-item__header--selected;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Action
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$item__action-selector} {
+    @extend %tree-view-item__action;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //               Downloading
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$item__downloading-selector} {
+    @extend %tree-view-item__downloading;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Line
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$item__line-selector} {
+    @extend %tree-view-item__line;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                Checkbox
+  // - - - - - - - - - - - - - - - - - - - -
+  @include checkbox(
+    $checkbox-selector: #{$item__checkbox-selector},
+
+    $checkbox__input-selector: #{$item__checkbox-input-selector},
+
+    $checkbox__input--disabled-selector: #{$item__checkbox-input--disabled-selector},
+
+    $checkbox__option--disabled-selector: #{$item__checkbox-option--disabled-selector},
+
+    $checkbox__option--checked-selector: #{$item__checkbox-option--checked-selector},
+
+    $checkbox__option--indeterminate-selector: #{$item__checkbox-option--indeterminate-selector},
+
+    $add--disabled: $add--disabled,
+    $add--label: false
+  );
+}
+
+// // folder
+// &--folder::part(action)::before {
+//   background-image: url("../src/showcase/assets/icons/folder.svg");
+// }
+// &--folder::part(action expanded)::before {
+//   background-image: url("../src/showcase/assets/icons/folder-open.svg");
+// }
+
+// // module
+// &--module::part(action)::before {
+//   background-image: url("../src/showcase/assets/icons/module.svg");
+// }
+// &--module::part(action expanded)::before {
+//   background-image: url("../src/showcase/assets/icons/module-open.svg");
+// }
