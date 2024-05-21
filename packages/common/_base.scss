@@ -86,11 +86,8 @@
   $background-size: "0",
   $background-position-x: "0"
 ) {
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: #{$background-position-x};
-  background-size: $background-size;
-  background-image: var(--icon-path);
+  background: var(--icon-path) $background-position-x center / $background-size
+    no-repeat;
 }
 
 // - - - - - - - - - - - - - - - - - - - -
