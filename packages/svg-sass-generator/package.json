@@ -20,7 +20,8 @@
     "copy-to-bin": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet ./js ./bin",
     "watch": "tsc --watch",
     "svg": "node ./js/processor-svg.js ./assets ./dist/ .config/color-states.json ./showcase ./log",
-    "sass": "node ./js/processor-sass.js ./dist/.generated ./sass"
+    "sass": "node ./js/processor-sass.js ./dist/.generated ./sass",
+    "validate.ci": "npm run build"
   },
   "author": "GeneXus",
   "license": "Apache-2.0",
