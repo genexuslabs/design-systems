@@ -2,6 +2,7 @@
 
 // Base form-input-text sty
 %form-input-base {
+  @include form-input-element-tokens();
   font-family: var(--mer-form-input__font-family);
   border: var(--mer-form-input__border);
   border-radius: var(--mer-form-input__border-radius);
