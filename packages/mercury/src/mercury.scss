@@ -26,12 +26,12 @@
 
 // Base classes
 @import "./base/button/button-styles";
-@import "./base/form-input-text/form-input-text-styles.scss";
+@import "./base/form-input-element/form-input-element-styles.scss";
 @import "./base/icons";
 
 // Icons
 @import "./icons/button";
-@import "./icons/form-input-text";
+@import "./icons/form-input-element";
 
 // Components
 @import "./components/checkbox/checkbox-styles";
@@ -312,7 +312,7 @@
     // Form input text
     @if $form-input-text-classes {
       :root {
-        @include form-input-text-tokens();
+        @include form-input-element-tokens();
       }
       @include form-input-text-only();
     }
