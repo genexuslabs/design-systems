@@ -48,24 +48,44 @@ Scrollbar
 /*----------------------------------------------------
 Item (applies to every item (tree, grid, list, etc...)
 ----------------------------------------------------*/
-@mixin item-styles($state: "hover") {
-  @if $state == "hover" {
+@mixin item-styles($style: "enabled") {
+  @if $style == "border" {
+    border: var(--mer-item__border-width)
+      var(--mer-item__border-style)
+      transparent;
+    // border color depends on the state (enabled, hover, etc)
+  }
+  @if $style == "enabled" {
+    &:enabled {
+      color: var(--mer-item__color--enabled);
+      background-color: var(--mer-item__bg-color--enabled);
+      border-color: var(--mer-item__border-color--enabled);
+    }
+  }
+  @if $style == "hover" {
     &:hover {
       color: var(--mer-item__color--hover);
       background-color: var(--mer-item__bg-color--hover);
       border-color: var(--mer-item__border-color--hover);
     }
   }
-  @if $state == "selected" {
+  @if $style == "selected" {
     color: var(--mer-item__color--selected);
     background-color: var(--mer-item__bg-color--selected);
     border-color: var(--mer-item__border-color--selected);
   }
-  @if $state == "selected-hover" {
+  @if $style == "selected-hover" {
     &:hover {
       color: var(--mer-item__color--selected-hover);
       background-color: var(--mer-item__bg-color--selected-hover);
       border-color: var(--mer-item__border-color--selected-hover);
+    }
+  }
+  @if $style == "disabled" {
+    &:disabled {
+      color: var(--mer-item__color--disabled);
+      background-color: var(--mer-item__bg-color--disabled);
+      border-color: var(--mer-item__border-color--disabled);
     }
   }
 }

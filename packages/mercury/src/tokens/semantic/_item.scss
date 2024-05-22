@@ -1,8 +1,12 @@
 @mixin semantic-item() {
+  // generic
+  --mer-item__border-width: var(--mer-border__width--sm);
+  --mer-item__border-style: solid;
+
   // enabled
-  --mer-item__color: ;
-  --mer-item__bg-color: ;
-  --mer-item__border-color: ;
+  --mer-item__color--enabled: var(--mer-text__on-surface);
+  --mer-item__bg-color--enabled: var(--mer-color__elevation--01);
+  --mer-item__border-color--enabled: var(--mer-color__elevation--04);
 
   // hover
   --mer-item__color--hover: var(--mer-color__neutral-gray--100); // ❓
@@ -20,4 +24,9 @@
   --mer-item__border-color--selected-hover: var(
     --mer-color__tinted-blue--20
   ); // ✅
+
+  // disabled
+  --mer-item__color--disabled: var(); // ❓
+  --mer-item__bg-color--disabled: var(); // ✅
+  --mer-item__border-color--disabled: var(); // ✅
 }
