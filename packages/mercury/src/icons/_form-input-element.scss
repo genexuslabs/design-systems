@@ -1,0 +1,19 @@
+%form-input-element-icon {
+  @extend %form-input-base;
+  padding-inline-start: calc(
+    var(--mer-form-input__padding-inline) * 2 + var(--mer-form-input__icon-size)
+  );
+}
+
+@mixin form-input-text-icon(
+  $selector: ".form-input-text-icon",
+  $icon-path: null
+) {
+  #{$selector} {
+    @if $icon-path != null {
+      --icon-path: #{$icon-path};
+    }
+    @extend %form-input-element-icon;
+    @extend %icon-input-background;
+  }
+}

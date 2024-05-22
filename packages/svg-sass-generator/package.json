@@ -1,6 +1,6 @@
 {
-  "name": "svg-sass-generator",
-  "version": "1.0.0",
+  "name": "@genexus/svg-sass-generator",
+  "version": "1.1.1",
   "description": "SVG Icon Generator: A Node.js tool for creating customizable SVG icons with color states like hover and active effects. It generates SVG icons and Sass placeholder selectors, simplifying integration into projects with generated CSS class names for scalable and dynamic iconography.",
   "main": "index.js",
   "type": "module",
@@ -20,7 +20,8 @@
     "copy-to-bin": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet ./js ./bin",
     "watch": "tsc --watch",
     "svg": "node ./js/processor-svg.js ./assets ./dist/ .config/color-states.json ./showcase ./log",
-    "sass": "node ./js/processor-sass.js ./dist/.generated ./sass"
+    "sass": "node ./js/processor-sass.js ./dist/.generated ./sass",
+    "validate.ci": "npm run build"
   },
   "author": "GeneXus",
   "license": "Apache-2.0",
