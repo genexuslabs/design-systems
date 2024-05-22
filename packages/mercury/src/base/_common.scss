@@ -49,8 +49,17 @@ Scrollbar
 Item (applies to every item (tree, grid, list, etc...)
 ----------------------------------------------------*/
 @mixin item-styles($style: "enabled") {
-  @if $style == "border" {
-    border: var(--mer-item__border-width)
+  @if $style == "border-list" {
+    border-block-end: var(--mer-item__border-width)
+      var(--mer-item__border-style)
+      transparent;
+    // border color depends on the state (enabled, hover, etc)
+  }
+  @if $style == "border-grid" {
+    border-block-end: var(--mer-item__border-width)
+      var(--mer-item__border-style)
+      transparent;
+    border-inline-end: var(--mer-item__border-width)
       var(--mer-item__border-style)
       transparent;
     // border color depends on the state (enabled, hover, etc)
@@ -88,4 +97,26 @@ Item (applies to every item (tree, grid, list, etc...)
       border-color: var(--mer-item__border-color--disabled);
     }
   }
+}
+
+%item-border-list {
+  @include item-styles("border-list");
+}
+%item-border-grid {
+  @include item-styles("border-grid");
+}
+%item-enabled {
+  @include item-styles("enabled");
+}
+%item-hover {
+  @include item-styles("hover");
+}
+%item-selected {
+  @include item-styles("selected");
+}
+%item-selected-hover {
+  @include item-styles("selected-hover");
+}
+%item-disabled {
+  @include item-styles("disabled");
 }
