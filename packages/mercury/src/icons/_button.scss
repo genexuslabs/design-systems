@@ -1,4 +1,7 @@
+@import "../base/button/button-tokens";
+
 %button-icon-only {
+  @include button-tokens-icon-only();
   padding-inline: var(--button-icon-only__padding-inline);
 }
 
