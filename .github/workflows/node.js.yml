@@ -22,3 +22,11 @@ jobs:
       cache: true
       publish: false
       package: "packages/mercury"
+
+  install-svg-sass-generator:
+    uses: genexuslabs/design-systems/.github/workflows/install-and-deploy.yml@main
+    with:
+      node-version: "20.x"
+      cache: true
+      publish: false
+      package: "packages/svg-sass-generator"
