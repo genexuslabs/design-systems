@@ -1,0 +1,30 @@
+@import "template-tokens";
+
+%template-component {
+  background-color: var(--template-component-background-color);
+  color: var(--template-component-color);
+}
+
+%template-component__item {
+  border-radius: var(--template-component__border-radius);
+  padding-block: var(--template-component__padding-block);
+  padding-inline: var(--template-component__padding-inline);
+}
+
+/// @param {String} $template-component-selector [".template-component"] -
+/// @param {String} $template-selector--disabled [".template-component[disabled]"] -
+@mixin template-component(
+  $template-component-selector: ".template-component",
+  $template-component-selector--disabled: ".template-component"
+) {
+  #{$template-component-selector} {
+    @extend %template-component;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Item
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$item-selector} {
+    @extend %template-component__item;
+  }
+}

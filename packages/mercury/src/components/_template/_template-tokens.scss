@@ -1,0 +1,7 @@
+@mixin template-tokens() {
+  --template-component__background-color: var(--mer-color__neutral-gray--800);
+  --template-component__color: var(--mer-color__neutral-gray--100);
+  --template-component__padding-block: var(--mer-spacing--xs);
+  --template-component__border-radius: var(--mer-border__radius--xs);
+  --template-component__padding-inline: var(--mer-spacing--xs);
+}
