@@ -12,6 +12,7 @@
 
 %form-input-text-only {
   @extend %form-input-base;
+  padding-inline: var(--mer-form-input__padding-inline);
 }
 
 @mixin form-input-text-only(
@@ -20,6 +21,5 @@
 ) {
   #{$selector} {
     @extend %form-input-text-only;
-    padding-inline: var(--mer-form-input__padding-inline);
   }
 }
