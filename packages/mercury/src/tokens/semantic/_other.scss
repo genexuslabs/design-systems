@@ -34,6 +34,13 @@
   --mer-icon__box--sm: var(--mer-spacing--md);
   --mer-icon__box--lg: var(--mer-spacing--lg);
 
+  /*----------------------------------------------------------
+  Form Input (form-input-*** background-position-x RTL support)
+  -----------------------------------------------------------*/
+  --mer-form-input__padding-inline: var(--mer-spacing--xs);
+  --mer-form-input__bg-position--x-value: var(--mer-form-input__padding-inline);
+  --mer-form-input__bg-position--x: var(--mer-form-input__bg-position--x-value);
+
   /*-------------------------------------------------------------
   Inline Control (Should have the same height to look good inline)
   -------------------------------------------------------------*/
