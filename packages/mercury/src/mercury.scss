@@ -294,11 +294,6 @@
   @if $base-classes {
     // Button classes
     @if $button-classes {
-      // Buttons Tokens
-      :root {
-        @include button-tokens();
-      }
-
       // Button primary
       @include button-primary();
 
@@ -311,9 +306,6 @@
 
     // Form input text
     @if $form-input-text-classes {
-      :root {
-        @include form-input-element-tokens();
-      }
       @include form-input-text-only();
     }
 
