@@ -1,6 +1,7 @@
 @import "../button/button-tokens";
 
 %button-base {
+  @include button-tokens-base();
   @include button-common-styles();
   border: var(--button-base__border-width);
   border-radius: var(--button-base__border-radius);
@@ -9,7 +10,7 @@
     var(--button-base__border-color);
   font-family: var(--button-base__font-family);
   font-size: var(--button-base__font-size);
-  gap: var(--button__gap); // Used when the button has icons
+  gap: var(--button-base__gap); // Used when the button has icons
   line-height: var(--button-base__line-height);
   padding-inline: var(--button-base__padding-inline);
   text-transform: var(--button-base__text-transform);
@@ -19,6 +20,7 @@
 }
 
 %button-primary {
+  @include button-tokens-primary();
   @extend %button-base;
   background-color: var(--button-primary__background-color);
   border-color: var(--button-primary__border-color);
@@ -45,6 +47,7 @@
 }
 
 %button-secondary {
+  @include button-tokens-secondary();
   @extend %button-base;
   background-color: var(--button-secondary__background-color);
   border-color: var(--button-secondary__border-color);
@@ -71,6 +74,7 @@
 }
 
 %button-tertiary {
+  @include button-tokens-tertiary();
   @extend %button-base;
   background-color: var(--button-tertiary__background-color);
   border-color: var(--button-tertiary__border-color);
@@ -160,11 +164,6 @@
 }
 
 @mixin button-classes() {
-  // Button tokens
-  :root {
-    @include button-tokens();
-  }
-
   // Button primary
   @include button-primary();
 

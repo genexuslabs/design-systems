@@ -44,6 +44,21 @@ const addGoogleFonts = () => {
   HEAD.appendChild(jetBrains);
 };
 
+const toggleRTLBtn = () => {
+  const toggleRTLBtn = document.getElementById("toggle-rtl-btn");
+  if (toggleRTLBtn) {
+    toggleRTLBtn.addEventListener("click", () => {
+      const dir = HTML.getAttribute("dir");
+      if (dir && dir === "ltr") {
+        HTML.setAttribute("dir", "rtl");
+      } else if (dir && dir === "rtl") {
+        HTML.setAttribute("dir", "ltr");
+      }
+    });
+  }
+};
+
 includeStyles();
 setScheme();
 addGoogleFonts();
+toggleRTLBtn();
