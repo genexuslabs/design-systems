@@ -16,6 +16,14 @@ const includeStyles = () => {
   HEAD.appendChild(mercuryLink);
 };
 
+const includeChameleon = () => {
+  const chameleonScript = document.createElement("script");
+  chameleonScript.src =
+    "https://unpkg.com/@genexus/chameleon-controls-library@latest/dist/chameleon/chameleon.esm.js";
+  chameleonScript.type = "module";
+  HEAD.appendChild(chameleonScript);
+};
+
 const setScheme = () => {
   HTML.classList.add("dark");
 };
@@ -59,6 +67,7 @@ const toggleRTLBtn = () => {
 };
 
 includeStyles();
+includeChameleon();
 setScheme();
 addGoogleFonts();
 toggleRTLBtn();
