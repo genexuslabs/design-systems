@@ -2,6 +2,9 @@
   // generic
   --mer-item__border-width: var(--mer-border__width--sm);
   --mer-item__border-style: solid;
+  --mer-item__padding-inline: var(--mer-spacing--xs); //optional
+  --mer-item__padding-block: var(--mer-spacing--xs); //optional
+  --mer-item__padding-min-block-size: var(--mer-spacing--lg); //optional
 
   // enabled
   --mer-item__color--enabled: var(--mer-text__on-surface);
