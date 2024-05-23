@@ -16,4 +16,18 @@
   //--mer-form-input__padding-inline is defined globally in /tokens/semantic/_other/
   // (Form Input) because it the padding-inline value is required in the calculation
   // of background-x position for RTL support, and this calculation needs to be on the :root
+
+  // hover
+  --mer-form-input__border-color--hover: var(--mer-color__neutral-gray--00);
+
+  // disabled
+  --mer-form-input__border-color--disabled: var(--mer-text__on-disabled);
+  --mer-form-input__background-color--disabled: var(
+    --mer-accent__primary--disabled
+  );
+  --mer-form-input__color--disabled: var(--mer-accent__primary--disabled);
+
+  // placeholder
+  --mer-form-input__placeholder-color: var(--mer-text__on-surface);
+  --mer-form-input__placeholder-font-style: italic;
 }
