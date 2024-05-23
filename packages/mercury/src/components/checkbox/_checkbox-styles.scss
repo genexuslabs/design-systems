@@ -1,14 +1,14 @@
 @import "tokens";
+@import "../../base/form-input-element/tokens.scss";
 
 %checkbox {
+  @extend %form-input-tokens;
   @include checkbox-tokens();
   font-weight: var(--mer-label__font-weight);
 
   // Input
   &__input {
-    background-color: var(--mer-checkbox__bg-color);
-    border: var(--mer-checkbox__border);
-    border-radius: var(--mer-checkbox__border-radius);
+    @extend %form-input-base;
 
     &--focus {
       @include focus-style();
