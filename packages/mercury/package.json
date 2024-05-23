@@ -1,6 +1,6 @@
 {
   "name": "@genexus/mercury",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Mercury is the design system designed for GeneXus IDE Web and GeneXus Next",
   "main": "dist/mercury.scss",
   "files": [
@@ -25,7 +25,7 @@
     "chokidar-cli": "^3.0.0",
     "sass": "~1.72.0",
     "scss-bundle": "~3.1.2",
-    "svg-sass-generator": "file:../svg-sass-generator"
+    "@genexus/svg-sass-generator": "1.1.1"
   },
   "engines": {
     "pnpm": ">=3"
