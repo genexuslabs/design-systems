@@ -1,12 +1,11 @@
 %form-input__text {
-  font-family: SourceSansPro_Regular;
   font-size: 14px;
   line-height: 18px; // 128.571%
   letter-spacing: 0.2px;
 }
 
 @mixin form-input__label-base {
-  font-family: SourceSansPro_SemiBold;
+  font-weight: 600;
   font-size: 14px;
   line-height: 18px; // 128.571%
   letter-spacing: 0.2px;

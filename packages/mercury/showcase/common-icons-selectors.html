@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Common Icons Selectors</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="../dist/assets/images/mercury-favicon-32x32.png"
+      sizes="32x32"
+    />
+    <base href="../dist/" target="_blank" />
+  </head>
+  <body class="body">
+    <div class="top-bar">
+      <button id="toggle-rtl-btn" class="top-bar__button">toggle RTL</button>
+    </div>
+
+    <main class="container">
+      <!-- button primary -->
+      <section class="section">
+        <div class="articles-container">
+          <!-- button-primary text & icon-->
+          <article class="article">
+            <header class="article__header">
+              <h2 class="article__title">button primary + icon and text</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .button-primary
+                </li>
+                <li class="article__pill article__pill--class">
+                  .button-icon-and-text
+                </li>
+                <li class="article__pill article__pill--icon">
+                  .icon__system_user--on-primary
+                </li>
+              </ul>
+            </header>
+            <div class="article__content">
+              <button
+                class="button-primary button-icon-and-text icon__system_user--on-primary"
+              >
+                Caption
+              </button>
+            </div>
+          </article>
+
+          <!-- button-primary & icon only-->
+          <article class="article">
+            <header class="article__header">
+              <h2 class="article__title">button primary + icon only</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .button-primary
+                </li>
+                <li class="article__pill article__pill--class">
+                  .button-icon-and-text
+                </li>
+                <li class="article__pill article__pill--icon">
+                  .icon__system_user--on-primary
+                </li>
+              </ul>
+            </header>
+            <div class="article__content">
+              <button
+                class="button-primary button-icon-and-text icon__system_user--on-primary"
+              >
+                Caption
+              </button>
+            </div>
+          </article>
+
+          <!-- form input text -->
+          <article class="article">
+            <header class="article__header">
+              <h2 class="article__title">form input text only</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .form-input-text
+                </li>
+              </ul>
+            </header>
+            <div class="article__content">
+              <input
+                type="text"
+                value="Hello"
+                class="form-input-text-only icon__system_user--on-primary"
+              />
+            </div>
+          </article>
+
+          <!-- form input text + icon -->
+          <article class="article">
+            <header class="article__header">
+              <h2 class="article__title">fonr input text + icon</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .form-input-text
+                </li>
+                <li class="article__pill article__pill--class">
+                  .form-input-text-icon
+                </li>
+                <li class="article__pill article__pill--icon">
+                  .icon__system_user--on-primary
+                </li>
+              </ul>
+            </header>
+            <div class="article__content">
+              <input
+                type="text"
+                value="Hello icon"
+                class="form-input-text-icon icon__system_logout--neutral"
+              />
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script src="../showcase/scripts.js"></script>
+  </body>
+</html>
