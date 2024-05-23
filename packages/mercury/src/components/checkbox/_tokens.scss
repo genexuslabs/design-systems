@@ -1,13 +1,4 @@
 @mixin checkbox-tokens() {
   // size
-  --ch-checkbox__container-size: var(--mer-spacing--md);
-
-  // border
-  --mer-checkbox__border: var(--mer-border__width--sm) solid
-    var(--mer-border-color__dim);
-  --mer-checkbox__border-radius: var(--mer-border__radius--xs);
-  --mer-checkbox-check__color: var(--mer-border-color__neutral--active);
-
-  // background
-  --mer-checkbox__bg-color: transparent;
+  --checkbox-check__color: var(--mer-border-color__neutral--active);
 }

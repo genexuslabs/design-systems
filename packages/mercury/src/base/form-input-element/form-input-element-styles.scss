@@ -1,20 +1,43 @@
 @import "tokens";
 
 // Base form-input-text sty
-%form-input-base {
+%form-input-tokens {
   @include form-input-element-tokens();
+}
+
+%form-input-base {
   font-family: var(--mer-form-input__font-family);
   border: var(--mer-form-input__border);
   border-radius: var(--mer-form-input__border-radius);
   color: var(--mer-form-input__color);
   font-size: var(--mer-form-input__font-size);
-  block-size: var(--mer-control__block-size);
   background-color: var(--mer-form-input__background-color);
 }
 
-%form-input-text-only {
+// Applies for:
+// text
+// password
+// email
+// url
+// file
+// etc...
+%form-input-size-regular {
   @extend %form-input-base;
   padding-inline: var(--mer-form-input__padding-inline);
+  block-size: var(--mer-control__block-size);
+}
+
+// Applies for:
+// radio
+// checkbox
+%form-input-size-tiny {
+  @extend %form-input-base;
+  block-size: var(--mer-form-input__size--tiny);
+  inline-size: var(--mer-form-input__size--tiny);
+}
+
+%form-input-text-only {
+  block-size: var(--mer-control__block-size);
 }
 
 @mixin form-input-text-only(
@@ -22,6 +45,7 @@
   $add--disabled: true
 ) {
   #{$selector} {
+    @extend %form-input-tokens;
     @extend %form-input-text-only;
   }
 }

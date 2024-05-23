@@ -41,7 +41,7 @@ Scrollbar
 
   // corner
   &::-webkit-scrollbar-corner {
-    background: transparent;
+    background: var(--mer-scrollbar-corner__bg);
   }
 }
 
