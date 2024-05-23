@@ -57,10 +57,17 @@
   /*----------------------
   Label
   ----------------------*/
-  // size
   // space between label and control
   --mer-label__space: var(--mer-spacing--xs);
   --mer-label__font-size: inherit;
   --mer-label__font-weight: var(--mer-font__weight--semi-bold);
   --mer-label__color: inherit;
+
+  /*----------------------
+  Focus
+  ----------------------*/
+  --mer-focus__outline-width: var(--mer-border__width--sm);
+  --mer-focus__outline-style: solid;
+  --mer-focus__outline-color: var(--mer-color__primary-blue--200);
+  --borders-un-border-color__focused: var(--mer-focus__outline-color);
 }
