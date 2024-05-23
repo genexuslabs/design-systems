@@ -1,4 +1,4 @@
-@import "form-input-element-tokens";
+@import "tokens";
 
 // Base form-input-text sty
 %form-input-base {
@@ -9,6 +9,7 @@
   color: var(--mer-form-input__color);
   font-size: var(--mer-form-input__font-size);
   block-size: var(--mer-control__block-size);
+  background-color: var(--mer-form-input__background-color);
 }
 
 %form-input-text-only {
