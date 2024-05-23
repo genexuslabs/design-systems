@@ -10,11 +10,12 @@
   // generic (are independent of the item state)
   --mer-item__border-width: var(--mer-border__width--sm);
   --mer-item__border-style: solid;
-  --mer-item__padding-inline: var(--mer-spacing--xs); //optional
-  --mer-item__padding-block: var(--mer-spacing--xs); //optional
-  --mer-item__min-block-size: var(--mer-spacing--lg); //optional
-  --mer-item__font-family: var(--mer-font-family--inter-regular); //optional
-  --mer-item__font-size: var(--mer-body__font-size); //optional
+  --mer-item__line-height: var(--mer-line-height--tight);
+  --mer-item__padding-inline: var(--mer-spacing--xs); // optional
+  --mer-item__padding-block: var(--mer-spacing--xs); // optional
+  --mer-item__min-block-size: var(--mer-spacing--lg); // optional
+  --mer-item__font-family: var(--mer-font-family--inter-regular); // optional
+  --mer-item__font-size: var(--mer-body__font-size); // optional
 
   // enabled
   --mer-item__color--enabled: var(--mer-text__on-surface);
