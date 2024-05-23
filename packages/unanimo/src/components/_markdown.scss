@@ -89,7 +89,7 @@
 
     strong {
       font-weight: unset;
-      font-family: SourceSansPro_Bold;
+      font-weight: 700;
     }
 
     // - - - - - - - - - - - - - - - - - - - -
@@ -152,7 +152,6 @@
         padding-inline: var(--spacing-un-spacing--l);
         padding-block: var(--spacing-un-spacing--m);
         background-color: var(--surface-un-surface--alternative);
-        font-family: SourceSansPro_Regular;
       }
 
       & > .code-block__content {
