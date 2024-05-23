@@ -13,6 +13,11 @@
   font-size: var(--mer-form-input__font-size);
   background-color: var(--mer-form-input__background-color);
 
+  &::placeholder {
+    color: var(--mer-form-input__placeholder-color);
+    font-style: var(--mer-form-input__placeholder-font-style);
+  }
+
   &:hover:not(:disabled) {
     border-color: var(--mer-form-input__border-color--hover);
   }
