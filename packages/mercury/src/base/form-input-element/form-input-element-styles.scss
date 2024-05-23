@@ -12,6 +12,15 @@
   color: var(--mer-form-input__color);
   font-size: var(--mer-form-input__font-size);
   background-color: var(--mer-form-input__background-color);
+
+  &:hover:not(:disabled) {
+    border-color: var(--mer-form-input__border-color--hover);
+  }
+  &:disabled {
+    border-color: var(--mer-form-input__border-color--disabled);
+    background-color: var(--mer-form-input__background-color--disabled);
+    color: var(--mer-form-input__color--disabled);
+  }
 }
 
 // Applies for:
