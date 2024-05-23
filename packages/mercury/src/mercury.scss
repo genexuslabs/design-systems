@@ -257,7 +257,7 @@
       }
 
       @if $font-face {
-        font-family: Inter_Regular;
+        font-family: var(--mer-body__font-family);
       }
     }
   }
