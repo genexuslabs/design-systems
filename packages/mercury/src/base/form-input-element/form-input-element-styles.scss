@@ -18,10 +18,13 @@
     font-style: var(--mer-form-input__placeholder-font-style);
   }
 
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled),
+  &:hover:not([disabled]) {
     border-color: var(--mer-form-input__border-color--hover);
   }
-  &:disabled {
+
+  &:disabled,
+  &[disabled] {
     border-color: var(--mer-form-input__border-color--disabled);
     background-color: var(--mer-form-input__background-color--disabled);
     color: var(--mer-form-input__color--disabled);
