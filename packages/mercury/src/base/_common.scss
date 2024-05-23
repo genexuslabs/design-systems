@@ -64,6 +64,20 @@ Item (applies to every item (tree, grid, list, etc...)
       transparent;
     // border color depends on the state (enabled, hover, etc)
   }
+  @if $style == "font" {
+    // font could be optional.
+    // Items from different components could have different font styles.
+    padding-inline: var(--mer-item__padding-inline);
+    padding-block: var(--mer-item__padding-block);
+    min-block-size: var(--mer-item__padding-min-block-size);
+  }
+  @if $style == "structure" {
+    // structure could be optional.
+    // Items from different components could have different padding / block-size.
+    padding-inline: var(--mer-item__padding-inline);
+    padding-block: var(--mer-item__padding-block);
+    min-block-size: var(--mer-item__padding-min-block-size);
+  }
   @if $style == "enabled" {
     &:enabled {
       color: var(--mer-item__color--enabled);
