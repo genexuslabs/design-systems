@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkbox</title>
+    <base href="../dist/" target="_blank" />
+  </head>
+  <body class="body">
+    <main class="container">
+      <!-- button primary -->
+      <section class="section">
+        <header class="section__header">
+          <h1 class="section__title section__title--mono">ch-checkbox</h1>
+          <p class="section__description">
+            A checkbox is a form element that allows users to select one or more
+            options from a set by checking. It is commonly used for tasks such
+            as selecting preferences, or agreeing to terms and conditions,
+            providing a clear and simple way for users to make multiple
+            independent selections within a form.
+          </p>
+        </header>
+        <div class="section__articles-container">
+          <!-- enabled -->
+          <article class="article">
+            <header class="article__header">
+              <h2 class="article__title">enabled unchecked</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">.checkbox</li>
+                <li class="article__pill article__pill--property-string">
+                  uncheckedValue="off"
+                </li>
+                <li class="article__pill article__pill--property-string">
+                  value="off"
+                </li>
+              </ul>
+            </header>
+            <div class="article__content">
+              <ch-checkbox
+                class="checkbox"
+                unchecked-value="off"
+                checked-value="on"
+                value="off"
+              ></ch-checkbox>
+            </div>
+          </article>
+
+          <!-- enabled checked -->
+          <article class="article">
+            <header class="article__header">
+              <h2 class="article__title">enabled checked</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">.checkbox</li>
+                <li class="article__pill article__pill--property-string">
+                  checkedValue="on"
+                </li>
+                <li class="article__pill article__pill--property-string">
+                  value="on"
+                </li>
+              </ul>
+            </header>
+            <div class="article__content">
+              <ch-checkbox
+                class="checkbox"
+                unchecked-value="off"
+                checked-value="on"
+                value="off"
+              ></ch-checkbox>
+            </div>
+          </article>
+
+          <!-- enabled indeterminate -->
+          <article class="article">
+            <header class="article__header">
+              <h2 class="article__title">enabled indeterminate</h2>
+              <p class="article__description">
+                An indeterminate checkbox is a checkbox that is in a state that
+                is neither checked nor unchecked. This state indicates that only
+                some, but not all, sub-options related to the checkbox are
+                selected.
+              </p>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">.checkbox</li>
+                <li class="article__pill article__pill--property-boolean">
+                  indeterminate
+                </li>
+              </ul>
+            </header>
+            <div class="article__content">
+              <ch-checkbox
+                class="checkbox"
+                unchecked-value="off"
+                checked-value="on"
+                value="on"
+                indeterminate
+              ></ch-checkbox>
+            </div>
+          </article>
+
+          <!-- disabled -->
+          <article class="article">
+            <header class="article__header">
+              <h2 class="article__title">disabled</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">.checkbox</li>
+                <li class="article__pill article__pill--property-boolean">
+                  disabled
+                </li>
+              </ul>
+            </header>
+            <div class="article__content">
+              <ch-checkbox
+                class="checkbox"
+                unchecked-value="off"
+                checked-value="on"
+                value="on"
+                disabled
+              ></ch-checkbox>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script src="../showcase/scripts.js"></script>
+  </body>
+</html>
