@@ -23,6 +23,8 @@
   --article-title__font-weight: 500;
   --article-title__pipe-font-size: 14px;
   --article-title__pipe-padding-inline: 4px;
+  --article-description__font-size: 14px;
+  --article-description__max-width: 640px;
   --article-sub-title__font-size: 16px;
   --article-mini-title__font-size: 12px;
   --article-border-block-end: 1px solid var(--mer-color__neutral-gray--1000);
@@ -39,8 +41,8 @@
   --article-pill__color--class: #5dc599;
   --article-pill__color--icon: #f9bd56;
   --article-pill__color--property-string: #437dc0;
-  --article-pill__color--property-boolean: #e35861;
-  --article-pill__color--property-number: #d123e8;
+  --article-pill__color--property-boolean: #b654a1;
+  --article-pill__color--property-number: #b0436e;
   /* content */
 }
 
@@ -69,9 +71,10 @@ Top Bar
 }
 
 /*====================
-Articles
+Container
 ====================*/
 .container {
+  width: 100%;
   max-width: var(--container__max-width);
   padding-inline: var(--container__padding-inline);
   margin: 0 auto;
@@ -94,6 +97,9 @@ Section
 .section__title {
   font-size: var(--section-title__font-size);
   font-family: var(--section-title__font-family);
+}
+.section__title--mono {
+  font-family: monospace;
 }
 .section__description {
   font-size: var(--section-description__font-size);
@@ -138,6 +144,10 @@ Articles
   font-family: var(Inter_Bold);
   font-size: var(--article-title__pipe-font-size);
   padding-inline: var(--article-title__pipe-padding-inline);
+}
+.article__description {
+  font-size: var(--article-description__font-size);
+  max-width: var(--article-description__max-width);
 }
 .article__sub-title {
   font-size: var(--article-sub-title__font-size);
