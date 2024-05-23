@@ -1,0 +1,25 @@
+@mixin tabular-grid-tokens() {
+  // Generic tokens for texts
+  --tabular-grid-base__font-family: var(--mer-body__font-family);
+  --tabular-grid-base__font-size: var(--mer-body__font-size);
+  --tabular-grid-base__color: var(--mer-text__on-surface);
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //             Part "Header"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //              Part "Main"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  --tabular-grid-main__background-color: var(--mer-color__elevation--01);
+  --tabular-grid-main__border-width: var(--mer-system__border-width);
+  --tabular-grid-main__border-style: var(--mer-system__border-style);
+  --tabular-grid-main__border-color: transparent;
+  --tabular-grid-main__border: var(--tabular-grid-main__border-width)
+    var(--tabular-grid-main__border-style)
+    var(--tabular-grid-main__border-color);
+  --tabular-grid-main__border-radius: var(--mer-border__radius--0);
+  --tabular-grid-main__padding-inline: var(--mer-spacing--sm);
+  --tabular-grid-main__padding-block: var(--mer-spacing--sm);
+}
