@@ -48,32 +48,36 @@ Scrollbar
 /*----------------------------------------------------
 Item (applies to every item (tree, grid, list, etc...)
 ----------------------------------------------------*/
+
+// note: $style's that are not marked as ¨optional¨ should be
+// applied to every item on the design system, in order to
+// keep consistency. $style's that are not marked as "optional"
+// are optional because items from different components could
+// display different styles for that particular group/$style
+
 @mixin item-styles($style: "enabled") {
   @if $style == "border-list" {
     border-block-end: var(--mer-item__border-width)
       var(--mer-item__border-style)
-      transparent;
+      var(--mer-item__border-color--enabled);
     // border color depends on the state (enabled, hover, etc)
   }
   @if $style == "border-grid" {
-    border-block-end: var(--mer-item__border-width)
+    $border-styles: var(--mer-item__border-width)
       var(--mer-item__border-style)
-      transparent;
-    border-inline-end: var(--mer-item__border-width)
-      var(--mer-item__border-style)
-      transparent;
+      var(--mer-item__border-color--enabled);
+    border-block-end: $border-styles;
+    border-inline-end: $border-styles;
     // border color depends on the state (enabled, hover, etc)
   }
   @if $style == "font" {
-    // font could be optional.
-    // Items from different components could have different font styles.
-    padding-inline: var(--mer-item__padding-inline);
-    padding-block: var(--mer-item__padding-block);
-    min-block-size: var(--mer-item__padding-min-block-size);
+    // optional
+    font-family: var(--mer-item__font-family);
+    font-size: var(--mer-item__font-size);
+    line-height: var(--mer-item__line-height);
   }
   @if $style == "structure" {
-    // structure could be optional.
-    // Items from different components could have different padding / block-size.
+    // optional
     padding-inline: var(--mer-item__padding-inline);
     padding-block: var(--mer-item__padding-block);
     min-block-size: var(--mer-item__padding-min-block-size);
