@@ -4,8 +4,16 @@
   ----------------------*/
   --mer-body__bg-color: var(--mer-color__surface);
   --mer-body__color: var(--mer-text__on-surface);
-  --mer-body__font-size: var(--mer-font__size--xxs);
+  --mer-body__font-size: var(--mer-font__size--2xs);
   --mer-body__line-height: var(--mer-line-height--regular);
+
+  /*----------------------
+  System
+  ----------------------*/
+  // System tokens are the most basic kind, used when there is not a more specific categorization.
+  --mer-system__border-width: var(--mer-border__width--sm);
+  --mer-system__border-style: solid;
+  --mer-system__border-color: var(--mer-color__neutral-gray--500);
 
   /*----------------------
   Heading
@@ -25,7 +33,7 @@
   --mer-scrollbar-thumb__bg-color--hover: var(--mer-color__elevation--04);
   --mer-scrollbar-thumb__border-radius: var(--mer-spacing--xs);
   // scrollbar-thumb
-  --mer-scrollbar-corner__bg: rgba(0, 0, 0, 0);
+  --mer-scrollbar-corner__bg: transparent;
 
   /*----------------------
   Icon Size
