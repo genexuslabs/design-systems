@@ -1,0 +1,26 @@
+@mixin tabular-grid-cell-tokens() {
+  //   --tabular-grid-cell__font-family: var(--tabular-grid-base__font-family);
+  //   --tabular-grid-cell__font-size: var(--tabular-grid-base__font-size);
+  //   --tabular-grid-cell__font-color: var(--tabular-grid-base__color);
+  //   --tabular-grid-cell__padding-inline: var(--mer-item__padding-inline);
+  //   --tabular-grid-cell__padding-block: var(--mer-item__padding-block);
+  //   --tabular-grid-cell__min-block-size: var(--mer-item__padding-min-block-size);
+
+  // note: grid-cell is considered an "item", and because of this, the styles are
+  // applied through "@mixin item-styles". This ensures consistency across all system
+  // list items. This is why there are no styles for the cell in this file.
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //            Part "drag-icon"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //         Part "selector-label"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //            Part "selector"
+  // - - - - - - - - - - - - - - - - - - - -
+}
+
+// --checkbox-check__color: var(--mer-border-color__neutral--active);
