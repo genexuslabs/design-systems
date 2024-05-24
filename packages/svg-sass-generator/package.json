@@ -19,7 +19,7 @@
     "copy-schema-multicolor": "fse copy ./ts/partials-svg/schema-multicolor.json ./js/partials-svg/schema-multicolor.json",
     "copy-to-bin": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet ./js ./bin",
     "watch": "tsc --watch",
-    "svg": "node ./js/processor-svg.js ./assets ./dist/ .config/color-states.json ./showcase ./log",
+    "svg": "node ./js/processor-svg.js ./source ./dist .config/color-states.json ./showcase ./log",
     "sass": "node ./js/processor-sass.js ./dist/.generated ./sass",
     "validate.ci": "npm run build"
   },
