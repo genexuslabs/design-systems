@@ -12,7 +12,7 @@ import {
   colorScheme,
   iconType,
   iconsColorsSchema,
-  multiColorStatesArray,
+  elementStates,
 } from "./partials-common/types.js";
 
 export const pushSavedIcon = (
@@ -47,7 +47,7 @@ export const pushSavedIcon = (
     }
   } else {
     // is multicolor
-    iconStates = multiColorStatesArray;
+    iconStates = elementStates;
   }
 
   // save
