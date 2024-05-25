@@ -19,8 +19,8 @@ const allMonochromeStatesExist = (
       if (!monochromeStates.includes(state)) {
         missingMonochromeStates.push({
           info: "Required monochrome state, but not found on monochrome.states",
-          category: icon["folder"],
           state: state,
+          folder: icon["folder"],
         });
       }
     }
@@ -103,6 +103,6 @@ export type validateSchemaReturn = {
 
 type missingMonochromeState = {
   info: string;
-  category: string;
+  folder: string;
   state: string;
 };
