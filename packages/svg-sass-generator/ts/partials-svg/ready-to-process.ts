@@ -123,16 +123,18 @@ export function readyToProcess(
     statesResult.statesObject
   );
   if (!validateSchemaResult.isValid) {
-    let msg = `States Schema Error #3: color states file ${STATES_FILENAME} schema is not valid. The following errors have been found: \n\n`;
-    console.error(`${RED} ${msg} ${RESET_COLOR}`);
+    let msgLog = `States Schema Error #3: color states file ${STATES_FILENAME} schema is not valid. The following errors have been found: \n\n`;
+
+    const msgConsole = `States Schema Error #3: color states file ${STATES_FILENAME} schema is not valid. Please, read the log file under ${LOG_PATH} to know what went wrong.`;
 
     validateSchemaResult.errors.forEach((error) => {
       const errorString = JSON.stringify(error, null, 2);
-
-      msg += errorString;
+      msgLog += `${errorString}\n`;
     });
 
-    log(msg, LOG_PATH, shouldWriteToLog);
+    log(msgLog, LOG_PATH, shouldWriteToLog);
+    console.error(`${RED} ${msgConsole} ${RESET_COLOR}`);
+
     return {
       ready: false,
       statesJson: null,
