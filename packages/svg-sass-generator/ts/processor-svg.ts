@@ -11,6 +11,7 @@ import {
   iconsColorsSchema,
   processedIconInfo,
   colorScheme,
+  MonochromeColorsMap,
 } from "./partials-common/types.js";
 import { createMulticolorSvg } from "./partials-svg/create-multicolor-svg.js";
 import { createMonochromeSvg } from "./partials-svg/create-monochrome-svg.js";
@@ -47,12 +48,12 @@ const readyObj: readyObj = readyToProcess(
 );
 
 if (readyObj.ready) {
-  //clear
-
   const iconsPromise = getIcons(SRC_PATH);
   iconsPromise
     .then((result: string[]) => {
-      processIcons(result, readyObj.statesJson);
+      const monochromeColorsMap: MonochromeColorsMap =
+        createMonochromeColorsMap(readyObj.statesJson);
+      processIcons(result, readyObj.statesJson, monochromeColorsMap);
       generateShowcase(savedIconsOnDisk, OUTPUT_PATH, SHOWCASE_PATH, LOG_PATH);
     })
     .catch((error) => {
@@ -66,7 +67,11 @@ if (readyObj.ready) {
  * @description: it processes the icons, meaning it will create the new svg version for each icon.
  * @param iconsArray: an array strings, where each string represents the icon path.
  */
-function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
+function processIcons(
+  iconsArray: string[],
+  statesJson: iconsColorsSchema,
+  monochromeColorsMap: MonochromeColorsMap
+) {
   let processedIconsInfo: processedIconInfo[] = [];
   iconsArray.forEach((iconPath) => {
     const svgString = getSvgString(iconPath);
@@ -174,7 +179,8 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
         SRC_PATH,
         "light",
         LOG_PATH,
-        STATES_FILENAME
+        STATES_FILENAME,
+        monochromeColorsMap
       );
 
       // Save svg on disk
@@ -220,7 +226,8 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
         SRC_PATH,
         "dark",
         LOG_PATH,
-        STATES_FILENAME
+        STATES_FILENAME,
+        monochromeColorsMap
       );
 
       // Save svg on disk
@@ -316,4 +323,14 @@ const saveProcessedIconInfo = (
     colorScheme: colorScheme,
     processed: wasSavedOnDisk,
   });
+};
+
+const createMonochromeColorsMap = (
+  statesJson: iconsColorsSchema
+): MonochromeColorsMap => {
+  const monochromeColorsMap: MonochromeColorsMap = new Map<string, number>();
+  statesJson.monochrome.colors.forEach((color, i) => {
+    monochromeColorsMap.set(color.name, i);
+  });
+  return monochromeColorsMap;
 };
