@@ -1,13 +1,32 @@
 {
   "monochrome": {
     "states": {
-      "on-primary": {
-        "light": "blue",
-        "dark": "green"
+      "primary": {
+        "enabled": {
+          "light": "#007BFF",
+          "dark": "#87CEEB"
+        },
+        "hover": {
+          "light": "#0056b3",
+          "dark": "#00BFFF"
+        },
+        "active": {
+          "light": "#004494",
+          "dark": "#1E90FF"
+        },
+        "disabled": {
+          "light": "#A3B9E0",
+          "dark": "#B0E0E6"
+        }
       },
       "on-surface": {
-        "light": "orange",
-        "dark": "red"
+        "enabled": {
+          "light": "#333333",
+          "dark": "#666666"
+        },
+        "hover": null,
+        "active": null,
+        "disabled": null
       }
     },
     "icons": [
