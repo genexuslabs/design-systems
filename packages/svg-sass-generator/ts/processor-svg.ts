@@ -70,12 +70,12 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
   let processedIconsInfo: processedIconInfo[] = [];
   iconsArray.forEach((iconPath) => {
     const svgString = getSvgString(iconPath);
-    const svgCheerio = cheerio.load(svgString);
-    const iconType = getIconType(svgCheerio, statesJson);
+    const svgSourceCheerio = cheerio.load(svgString);
+    const iconType = getIconType(svgSourceCheerio, statesJson);
 
     if (iconType === "multicolor") {
       const svgFiguresResult = processMulticolorFigures(
-        svgCheerio,
+        svgSourceCheerio,
         statesJson,
         iconPath,
         LOG_PATH
@@ -160,7 +160,7 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
       }
     } else if (iconType === "monochrome") {
       // clone cheerio object, to process the unmodified object for the dark version.
-      const svgCheerioClone = cheerio.load(svgCheerio.html());
+      const svgSourceCheerioClone = cheerio.load(svgSourceCheerio.html());
 
       /* ==================
       MONOCHROME LIGHT
@@ -168,7 +168,7 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
       // Create and get svg
 
       const svgIconLight = createMonochromeSvg(
-        svgCheerio,
+        svgSourceCheerio,
         statesJson,
         iconPath,
         SRC_PATH,
@@ -214,7 +214,7 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
 
       // Create and get svg
       const svgIconDark = createMonochromeSvg(
-        svgCheerioClone,
+        svgSourceCheerioClone,
         statesJson,
         iconPath,
         SRC_PATH,
