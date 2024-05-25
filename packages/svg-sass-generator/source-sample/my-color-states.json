@@ -1,47 +1,53 @@
 {
   "monochrome": {
-    "states": {
-      "primary": {
-        "enabled": {
-          "light": "#007BFF",
-          "dark": "#87CEEB"
-        },
-        "hover": {
-          "light": "#0056b3",
-          "dark": "#00BFFF"
-        },
-        "active": {
-          "light": "#004494",
-          "dark": "#1E90FF"
-        },
-        "disabled": {
-          "light": "#A3B9E0",
-          "dark": "#B0E0E6"
+    "colors": [
+      {
+        "name": "primary",
+        "states": {
+          "enabled": {
+            "light": "#007BFF",
+            "dark": "#87CEEB"
+          },
+          "hover": {
+            "light": "#0056b3",
+            "dark": "#00BFFF"
+          },
+          "active": {
+            "light": "#004494",
+            "dark": "#1E90FF"
+          },
+          "disabled": {
+            "light": "#A3B9E0",
+            "dark": "#B0E0E6"
+          }
         }
       },
-      "on-surface": {
-        "enabled": {
-          "light": "#333333",
-          "dark": "#666666"
-        },
-        "hover": null,
-        "active": null,
-        "disabled": null
+      {
+        "name": "on-surface",
+        "states": {
+          "enabled": {
+            "light": "#007BFF",
+            "dark": "#87CEEB"
+          },
+          "hover": null,
+          "active": null,
+          "disabled": null
+        }
       }
-    },
-    "icons": [
+    ],
+    "iconsCategories": [
       {
         "folder": "bpm-1",
-        "states": {
-          "on-primary": true,
+        "colors": {
+          "primary": true,
           "on-surface": true
         }
       },
       {
         "folder": "bpm-2",
-        "states": {
-          "on-primary": true,
-          "on-surface": true
+        "colors": {
+          "primary": true,
+          "on-surface": false
         }
       }
     ]

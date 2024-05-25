@@ -4,16 +4,46 @@
     "monochrome": {
       "type": "object",
       "properties": {
-        "states": {
-          "type": "object",
-          "patternProperties": {
-            "^on-[a-zA-Z]+$": {
-              "type": "object",
-              "properties": {
-                "light": { "type": "string" },
-                "dark": { "type": "string" }
-              }
-            }
+        "colors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "states": {
+                "type": "object",
+                "enabled": {
+                  "type": "object",
+                  "properties": {
+                    "light": { "type": "string" },
+                    "dark": { "type": "string" }
+                  }
+                },
+                "hover": {
+                  "type": "object",
+                  "properties": {
+                    "light": { "type": "string" },
+                    "dark": { "type": "string" }
+                  }
+                },
+                "active": {
+                  "type": "object",
+                  "properties": {
+                    "light": { "type": "string" },
+                    "dark": { "type": "string" }
+                  }
+                },
+                "disabled": {
+                  "type": "object",
+                  "properties": {
+                    "light": { "type": "string" },
+                    "dark": { "type": "string" }
+                  }
+                }
+              },
+              "required": ["enabled"]
+            },
+            "required": ["name", "states"]
           }
         },
         "icons": {
