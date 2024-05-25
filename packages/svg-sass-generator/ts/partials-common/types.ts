@@ -61,7 +61,8 @@ export interface monochromeIconResult {
   processed: boolean;
   svgString: string;
 }
-
+// Used to access monochrome.colors more quickly, on '/partials-svg/create-monochrome.svg'
+export type MonochromeColorsMap = Map<string, number>;
 /* - - - - - - - - - - - - - - - - - - 
        Multicolor / Monochrome
 - - - - - - - - - - - - - - - - - - */
