@@ -25,7 +25,7 @@ import {
 import { log } from "./log.js";
 
 let warnings: warningInfo[] = [];
-let olorSchemeValue: ColorScheme;
+let colorSchemeValue: ColorScheme;
 let monochromeColors: MonochromeColor[];
 let monochromeIconsCategories: MonochromeIconCategory[];
 let pathInfo: PathInfo;
@@ -38,7 +38,7 @@ export const createMonochromeSvg = (
   statesJson: IconsColorsSchema,
   iconPath: string,
   srcPath: string,
-  olorScheme: ColorScheme,
+  colorScheme: ColorScheme,
   LOG_PATH: string,
   STATES_FILENAME: string,
   monochromeColorsMap: MonochromeColorsMap
@@ -51,7 +51,7 @@ export const createMonochromeSvg = (
   warnings = []; //clear warnings array from the prev. icon
   iconPath = iconPath;
   statesJson = statesJson;
-  olorSchemeValue = olorScheme;
+  colorSchemeValue = colorScheme;
   monochromeColors = statesJson.monochrome.colors;
   monochromeIconsCategories = statesJson.monochrome.iconsCategories;
   pathInfo = getPathInfo(srcPath, iconPath);
@@ -64,7 +64,7 @@ export const createMonochromeSvg = (
 svg element was provided without width or/and height. This attributes are required. This icon will be ignored. \n
   category: ${pathInfo.categoryFolderName}
   icon type: monochrome,
-  scheme: ${olorScheme}
+  scheme: ${colorScheme}
   icon: ${pathInfo.fileName}\n`;
     log(msg, LOG_PATH);
     return {
@@ -85,7 +85,7 @@ svg element was provided without width or/and height. This attributes are requir
 Icon folder was not found on "${STATES_FILENAME} on 'monochrome.iconsCategories' ". The icon folder name is expected to be the same as the icon svg parent folder name. This icon will be ignored. \n
   category (folder) not found: ${pathInfo.categoryFolderName}
   icon type: monochrome,
-  scheme: ${olorScheme}
+  scheme: ${colorScheme}
   icon: ${pathInfo.fileName}\n`;
     log(msg, LOG_PATH);
     return {
@@ -184,7 +184,7 @@ const createStylesViewsUses = (
 
   let i: number = 0;
   Object.entries(iconCategoryColors).forEach((color): void => {
-    console.log(color);
+    //console.log(color);
     // if (isEnabled) {
     //   const x = i * width;
     //   const colorValue = getColorValue(color);
