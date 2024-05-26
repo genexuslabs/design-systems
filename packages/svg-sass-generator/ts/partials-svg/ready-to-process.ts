@@ -6,11 +6,11 @@ import {
   RESET_COLOR,
   OUTPUT_GENERATED,
 } from "../partials-common/utils.js";
-import { validateStatesSchema } from "./monochrome-colors-validator.js";
+import { validateStatesSchema } from "./color-states-validator.js";
 import { getStatesObject } from "./utils.js";
 import { DIR_PATH_REGEX } from "../partials-common/utils.js";
 import { join, extname } from "path";
-import { validateSchemaReturn } from "./monochrome-colors-validator.js";
+import { validateSchemaReturn } from "./color-states-validator.js";
 import { log } from "./log.js";
 import {
   deleteDirectory,
