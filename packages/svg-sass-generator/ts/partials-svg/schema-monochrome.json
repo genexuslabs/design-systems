@@ -12,58 +12,80 @@
               "name": { "type": "string" },
               "states": {
                 "type": "object",
-                "enabled": {
-                  "type": "object",
-                  "properties": {
-                    "light": { "type": "string" },
-                    "dark": { "type": "string" }
+                "properties": {
+                  "enabled": {
+                    "type": "object",
+                    "properties": {
+                      "light": { "type": "string" },
+                      "dark": { "type": "string" }
+                    },
+                    "required": ["light", "dark"]
+                  },
+                  "hover": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "light": { "type": "string" },
+                          "dark": { "type": "string" }
+                        },
+                        "required": ["light", "dark"]
+                      },
+                      { "type": "null" }
+                    ]
+                  },
+                  "active": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "light": { "type": "string" },
+                          "dark": { "type": "string" }
+                        },
+                        "required": ["light", "dark"]
+                      },
+                      { "type": "null" }
+                    ]
+                  },
+                  "disabled": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "light": { "type": "string" },
+                          "dark": { "type": "string" }
+                        },
+                        "required": ["light", "dark"]
+                      },
+                      { "type": "null" }
+                    ]
                   }
                 },
-                "hover": {
-                  "type": "object",
-                  "properties": {
-                    "light": { "type": "string" },
-                    "dark": { "type": "string" }
-                  }
-                },
-                "active": {
-                  "type": "object",
-                  "properties": {
-                    "light": { "type": "string" },
-                    "dark": { "type": "string" }
-                  }
-                },
-                "disabled": {
-                  "type": "object",
-                  "properties": {
-                    "light": { "type": "string" },
-                    "dark": { "type": "string" }
-                  }
-                }
-              },
-              "required": ["enabled"]
+                "required": ["enabled", "hover", "active", "disabled"]
+              }
             },
             "required": ["name", "states"]
           }
         },
-        "icons": {
+        "iconsCategories": {
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
-              "folder": { "type": ["string", "null"] },
-              "states": {
+              "folder": { "type": ["string"] },
+              "colors": {
                 "type": "object",
                 "patternProperties": {
                   "^on-[a-zA-Z]+$": { "type": "boolean" }
                 }
-              }
+              },
+              "colorsExist": true
             },
-            "required": ["folder", "states"]
+            "required": ["folder", "colors"]
           }
         }
       },
-      "required": ["states", "icons"]
+      "required": ["colors", "iconsCategories"]
     }
   },
   "required": ["monochrome"]
