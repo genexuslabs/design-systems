@@ -2,7 +2,7 @@ import Ajv, { ErrorObject } from "ajv";
 import { readFileSync } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { monochromeSchema } from "../partials-common/types";
+import { MonochromeSchema } from "../partials-common/types";
 
 /**
  * @param description: it returns an array with each missing monochrome color state on the color states json file.
@@ -12,30 +12,31 @@ import { monochromeSchema } from "../partials-common/types";
 matter if a color exists in monochrome.color, that it is not used in monochrome.iconsCategories. 
 */
 
-const allMonochromeColorsExist = (
-  statesObject: any
-): missingMonochromeColor[] => {
-  const missingMonochromeColors: missingMonochromeColor[] = [];
-  const monochromeColors = Object.keys(statesObject["monochrome"]["states"]);
+function checkMonochromeColorsExistence(
+  monochromeStatesJson: MonochromeSchema
+) {
+  const colorsNames = monochromeStatesJson.monochrome.colors.map(
+    (color) => color.name
+  );
+  const missingColors: missingMonochromeColor[] = [];
 
-  for (const icon of statesObject["monochrome"]["icons"]) {
-    const iconStates = Object.keys(icon.states);
-    for (const state of iconStates) {
-      if (!monochromeColors.includes(state)) {
-        missingMonochromeColors.push({
+  monochromeStatesJson.monochrome.iconsCategories.forEach((category) => {
+    for (const color in category.colors) {
+      if (category.colors[color] && !colorsNames.includes(color)) {
+        missingColors.push({
           info: "Required monochrome state, but not found on monochrome.states",
-          color: state,
-          folder: icon["folder"],
+          color: color,
+          folder: category.folder,
         });
       }
     }
-  }
+  });
 
-  return missingMonochromeColors;
-};
+  return missingColors;
+}
 
 export const validateStatesSchema = (
-  statesObject: Object
+  statesObject: 
 ): validateSchemaReturn => {
   // Load the JSON schema
   const __filename = fileURLToPath(import.meta.url);
@@ -77,7 +78,7 @@ export const validateStatesSchema = (
   const isValid = validate(statesObject);
 
   if (isValid) {
-    const missingMonochromeColors = allMonochromeColorsExist(statesObject);
+    const missingMonochromeColors = checkMonochromeColorsExistence(statesObject);
     if (missingMonochromeColors.length) {
       return {
         isValid: false,
