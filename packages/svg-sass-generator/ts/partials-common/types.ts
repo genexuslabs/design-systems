@@ -1,16 +1,12 @@
-export interface IconsColorsSchema extends MulticolorSchema, MonochromeSchema {}
-
 /* - - - - - - - - - - - - - - - - - - 
               Multicolor
 - - - - - - - - - - - - - - - - - - */
 export interface MulticolorSchema {
-  multicolor: {
-    cssPrefix: string;
-    colors: {
-      cssClass: string;
-      states: ElementStates;
-    }[];
-  };
+  cssPrefix: string;
+  colors: {
+    cssClass: string;
+    states: ElementStates;
+  }[];
 }
 
 export interface MulticolorFiguresResult {
@@ -27,10 +23,8 @@ export interface MulticolorFiguresResult {
               Monochrome
 - - - - - - - - - - - - - - - - - - */
 export interface MonochromeSchema {
-  monochrome: {
-    colors: MonochromeColor[];
-    iconsCategories: MonochromeIconCategory[];
-  };
+  colors: MonochromeColor[];
+  iconsCategories: MonochromeIconCategory[];
 }
 
 export type MonochromeColor = {
@@ -77,14 +71,14 @@ export type ElementStates = {
   [key in ElementStateKeys]: ThemeColors;
 };
 
+export type IconsColorsSchema = {
+  multicolor: MulticolorSchema;
+  monochrome: MonochromeSchema;
+};
+
 /* - - - - - - - - - - - - - - - - - - 
                 Other
 - - - - - - - - - - - - - - - - - - */
-
-export type ColorsStatesSchema = {
-  monochrome: MulticolorSchema;
-  multicolor: MonochromeSchema;
-};
 
 export type PathInfo = {
   categoryFolderName: string;
