@@ -4,7 +4,7 @@ import path from "path";
 import cheerio from "cheerio";
 // partials-common
 import { getIcons } from "./partials-common/get-icons.js";
-import { colorScheme, iconType } from "./partials-common/types.js";
+import { ColorScheme, IconType } from "./partials-common/types.js";
 import {
   RED,
   RESET_COLOR,
@@ -65,7 +65,7 @@ const addIconInCatalog = (
   const svgCheerio = cheerio.load(svgString);
   const svgElement = svgCheerio("svg");
   const viewsElements = svgElement.find("view");
-  const iconType = svgElement.attr("data-scheme") as iconType;
+  const iconType = svgElement.attr("data-scheme") as IconType;
 
   if (iconType === "monochrome") {
     viewsElements.each((i, view) => {
@@ -87,7 +87,7 @@ const updateIconsCatalog = (
   sourceDir: string,
   iconPath: string,
   iconsCatalog: iconsCatalog,
-  iconType: iconType,
+  iconType: IconType,
   states: string[]
 ): iconsCatalog | void => {
   const cleanPath = getPathWithoutSrcDir(sourceDir, iconPath);
@@ -98,7 +98,7 @@ const updateIconsCatalog = (
   if (!iconsCatalog[iconType][category]) {
     iconsCatalog[iconType][category] = { light: [], dark: [] };
   }
-  iconsCatalog[iconType][category][scheme as colorScheme].push({
+  iconsCatalog[iconType][category][scheme as ColorScheme].push({
     fileName: filename,
     states: states,
   });
@@ -125,7 +125,7 @@ const processIconsCatalog = (iconsCatalog: iconsCatalog) => {
 };
 
 const processCatalogCategory = (
-  type: iconType,
+  type: IconType,
   categoryName: string,
   categoryIcons: lightDarkIcons
 ) => {
@@ -186,7 +186,7 @@ const createSassFileString = (
 const createPlaceholders = (
   categoryName: string,
   categoryIcons: lightDarkIcons,
-  scheme: colorScheme
+  scheme: ColorScheme
 ): string => {
   let placeholderSelectors = ``;
 
@@ -216,7 +216,7 @@ const createPlaceholders = (
 /**
  * @description it saves the category in the array, for creating sass categories lists later.
  */
-const saveCategory = (type: iconType, categoryName: string) => {
+const saveCategory = (type: IconType, categoryName: string) => {
   if (type === "monochrome") {
     monochromeCategoriesList.push(categoryName);
   } else if (type === "multicolor") {
@@ -226,7 +226,7 @@ const saveCategory = (type: iconType, categoryName: string) => {
 
 const saveSassOnDisk = (
   sassFileContent: string,
-  type: iconType,
+  type: IconType,
   categoryName: string
 ) => {
   const sassDirectoryPath = path.join(OUTPUT_PATH_GENERATED, type);
