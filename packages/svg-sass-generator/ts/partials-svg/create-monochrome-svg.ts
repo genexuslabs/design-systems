@@ -17,9 +17,9 @@ import {
   MonochromeIconCategory,
   MonochromeIconCategoryColors,
   MonochromeIconResult,
-  IconTypeMap,
   MonochromeColorsMap,
   ElementStates,
+  ThemeColors,
 } from "../partials-common/types.js";
 
 import { log } from "./log.js";
@@ -137,7 +137,6 @@ Icon folder was not found on "${STATES_FILENAME} on 'monochrome.iconsCategories'
     removeSpacesAndLineBreaks(processedFiguresString);
 
   let createdSvg: string = undefined;
-
   if (originalAndUpdatedDiffer) {
     // if some of the figures were updated, continue with the svg processing. Otherwise return the result now. No need to keep processing.
     createdSvg = createStylesViewsUses(
@@ -181,47 +180,40 @@ const createStylesViewsUses = (
   const iconCategoryColors: MonochromeIconCategoryColors =
     monochromeIconsCategories[iconCategoryIndex].colors;
 
-  let i: number = 0;
+  let yIndex: number = 0;
   Object.entries(iconCategoryColors).forEach((color): void => {
-    const x = i * width;
+    let xIndex: number = 0;
     const colorName = color[0];
     const colorApplies = color[1];
-    if (colorApplies) {
-      const colorStates = getColorStates(colorName, monochromeColorsMap);
-      console.log("colorStates", colorStates);
-      // console.log("colorStates", colorStates);
-      // view and use
-      // viewsUses += `<view id="${color}" viewBox="${x} 0 ${width} ${height}" />
-      //   <use
-      //     href="#${SVG_ID}"
-      //     x="${x}"
-      //     y="0"
-      //     style="${CSS_VAR_NAME}:${colorValue}"
-      //   />
-      //   `;
-      // i++;
-    }
-  });
 
-  Object.entries(iconCategoryColors).forEach(([color, isEnabled]): void => {
-    // if (isEnabled) {
-    //   const x = i * width;
-    //   const colorValue = getColorValue(color);
-    //   // view and use
-    //   viewsUses += `<view id="${color}" viewBox="${x} 0 ${width} ${height}" />
-    //   <use
-    //     href="#${SVG_ID}"
-    //     x="${x}"
-    //     y="0"
-    //     style="${CSS_VAR_NAME}:${colorValue}"
-    //   />
-    //   `;
-    //   i++;
-    // }
+    if (colorApplies) {
+      const colorElementStates = getColorStates(colorName, monochromeColorsMap);
+      Object.entries(colorElementStates).forEach((elementState): void => {
+        const stateColors = elementState[1];
+        if (stateColors !== null) {
+          const stateName = elementState[0];
+          const colorValue = stateColors[colorSchemeValue];
+
+          const stateViewUse: string = createViewUse(
+            colorName,
+            colorValue,
+            stateName,
+            width,
+            height,
+            xIndex,
+            yIndex
+          );
+
+          xIndex++;
+          viewsUses += stateViewUse;
+        }
+      });
+    }
+    yIndex++;
   });
 
   return `
-  <svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" data-scheme="${IconTypeMap.monochrome}">
+  <svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" data-scheme="${colorSchemeValue}">
     <defs>
       <g id="icon-def">
           ${svgFiguresString}
@@ -236,10 +228,32 @@ const getColorStates = (
   monochromeColorsMap: MonochromeColorsMap
 ): ElementStates => {
   const colorIndex = monochromeColorsMap.get(colorName);
-  if (colorIndex) {
+  if (colorIndex !== undefined) {
     return monochromeColors[colorIndex].states;
   }
   return null;
+};
+
+const createViewUse = (
+  colorName: string,
+  colorValue: string,
+  stateName: string,
+  width: number,
+  height: number,
+  xIndex: number,
+  yIndex: number
+): string => {
+  const x = xIndex * width;
+  const y = yIndex * height;
+  const viewId = `${colorName}-${stateName}`;
+  return `
+  <view id="${viewId}" viewBox="${x} 0 ${width} ${height}" />
+  <use
+    href="#${SVG_ID}"
+    x="${x}"
+    x="${y}"
+    style="${CSS_VAR_NAME}:${colorValue}"
+  />`;
 };
 
 const setCssVarName = (
