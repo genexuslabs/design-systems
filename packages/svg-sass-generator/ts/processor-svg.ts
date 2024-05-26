@@ -3,14 +3,14 @@ import cheerio from "cheerio";
 // partials-common
 import { getIcons } from "./partials-common/get-icons.js";
 import { RED, RESET_COLOR, getSvgString } from "./partials-common/utils.js";
-import { savedOnDisk } from "./partials-common/types.js";
+import { SavedOnDisk } from "./partials-common/types.js";
 // partials-svg
 import { processMulticolorFigures } from "./partials-svg/process-multicolor-figures.js";
 import { saveSvgOnDisk } from "./partials-svg/utils.js";
 import {
-  iconsColorsSchema,
-  processedIconInfo,
-  colorScheme,
+  IconsColorsSchema,
+  ProcessedIconInfo,
+  ColorScheme,
   MonochromeColorsMap,
 } from "./partials-common/types.js";
 import { createMulticolorSvg } from "./partials-svg/create-multicolor-svg.js";
@@ -69,10 +69,10 @@ if (readyObj.ready) {
  */
 function processIcons(
   iconsArray: string[],
-  statesJson: iconsColorsSchema,
+  statesJson: IconsColorsSchema,
   monochromeColorsMap: MonochromeColorsMap
 ) {
-  let processedIconsInfo: processedIconInfo[] = [];
+  let processedIconsInfo: ProcessedIconInfo[] = [];
   iconsArray.forEach((iconPath) => {
     const svgString = getSvgString(iconPath);
     const svgSourceCheerio = cheerio.load(svgString);
@@ -96,7 +96,7 @@ function processIcons(
           "light"
         );
         // Save svg on disk
-        let lightMultiColorSvgSavedOnDisk: savedOnDisk;
+        let lightMultiColorSvgSavedOnDisk: SavedOnDisk;
         if (svgIconLight) {
           lightMultiColorSvgSavedOnDisk = saveSvgOnDisk(
             svgIconLight,
@@ -134,7 +134,7 @@ function processIcons(
           "dark"
         );
         // Save svg on disk
-        let darkMultiColorSvgSavedOnDisk: savedOnDisk;
+        let darkMultiColorSvgSavedOnDisk: SavedOnDisk;
         if (svgIconDark) {
           darkMultiColorSvgSavedOnDisk = saveSvgOnDisk(
             svgIconDark,
@@ -184,7 +184,7 @@ function processIcons(
       );
 
       // Save svg on disk
-      let lightMonoChromeSvgSavedOnDisk: savedOnDisk;
+      let lightMonoChromeSvgSavedOnDisk: SavedOnDisk;
 
       if (svgIconLight.processed) {
         lightMonoChromeSvgSavedOnDisk = saveSvgOnDisk(
@@ -231,7 +231,7 @@ function processIcons(
       );
 
       // Save svg on disk
-      let darkMonoChromeSvgSavedOnDisk: savedOnDisk;
+      let darkMonoChromeSvgSavedOnDisk: SavedOnDisk;
       if (svgIconDark.processed) {
         darkMonoChromeSvgSavedOnDisk = saveSvgOnDisk(
           svgIconDark.svgString,
@@ -268,10 +268,10 @@ function processIcons(
 }
 
 const logProcessedIconsInfo = (
-  processedIconsInfo: processedIconInfo[]
+  processedIconsInfo: ProcessedIconInfo[]
 ): void => {
-  const processed: processedIconInfo[] = [];
-  const notProcessed: processedIconInfo[] = [];
+  const processed: ProcessedIconInfo[] = [];
+  const notProcessed: ProcessedIconInfo[] = [];
   processedIconsInfo.forEach((processedIcon) => {
     if (processedIcon.processed) {
       processed.push(processedIcon);
@@ -290,7 +290,7 @@ const logProcessedIconsInfo = (
   processed.forEach((processed) => {
     msgProcessed += `
       icon path: ${processed.iconPath} 
-      color scheme: ${processed.colorScheme}
+      color scheme: ${processed.ColorScheme}
     `;
   });
   log(msgProcessed, LOG_PATH, shouldWriteToLog, "success");
@@ -306,27 +306,27 @@ const logProcessedIconsInfo = (
   notProcessed.forEach((notProcessed) => {
     msgNotProcessed += `
       icon path: ${notProcessed.iconPath} 
-      color scheme: ${notProcessed.colorScheme}
+      color scheme: ${notProcessed.ColorScheme}
     `;
   });
   log(msgNotProcessed, LOG_PATH, shouldWriteToLog, "error");
 };
 
 const saveProcessedIconInfo = (
-  processedIconsInfo: processedIconInfo[],
+  processedIconsInfo: ProcessedIconInfo[],
   wasSavedOnDisk: boolean,
   iconPath: string,
-  colorScheme: colorScheme
+  colorScheme: ColorScheme
 ): void => {
   processedIconsInfo.push({
     iconPath: iconPath,
-    colorScheme: colorScheme,
+    ColorScheme: colorScheme,
     processed: wasSavedOnDisk,
   });
 };
 
 const createMonochromeColorsMap = (
-  statesJson: iconsColorsSchema
+  statesJson: IconsColorsSchema
 ): MonochromeColorsMap => {
   const monochromeColorsMap: MonochromeColorsMap = new Map<string, number>();
   statesJson.monochrome.colors.forEach((color, i) => {

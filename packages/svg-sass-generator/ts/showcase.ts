@@ -9,19 +9,19 @@ import { writeFile } from "./partials-common/file-system-utils.js";
 import { OUTPUT_GENERATED } from "./partials-common/utils.js";
 
 import {
-  colorScheme,
-  iconType,
-  iconsColorsSchema,
+  ColorScheme,
+  IconType,
+  IconsColorsSchema,
   elementStates,
 } from "./partials-common/types.js";
 
 export const pushSavedIcon = (
   savedIconsOnDisk: savedIcons,
   svgFilePath: string,
-  type: iconType,
+  type: IconType,
   category: string,
-  colorScheme: colorScheme,
-  colorStatesJson: iconsColorsSchema
+  colorScheme: ColorScheme,
+  colorStatesJson: IconsColorsSchema
 ) => {
   const iconCategory = category || "uncategorized";
   const iconName = path.basename(svgFilePath);
@@ -36,19 +36,19 @@ export const pushSavedIcon = (
   }
 
   // set icon states
-  if (type === "monochrome") {
-    const foundCategory = colorStatesJson.monochrome.icons.find(
-      (icon) => icon.folder === category
-    );
-    if (foundCategory) {
-      iconStates = Object.keys(foundCategory.states).filter(
-        (state) => foundCategory.states[state]
-      );
-    }
-  } else {
-    // is multicolor
-    iconStates = elementStates;
-  }
+  // if (type === "monochrome") {
+  //   const foundCategory = colorStatesJson.monochrome.icons.find(
+  //     (icon) => icon.folder === category
+  //   );
+  //   if (foundCategory) {
+  //     iconStates = Object.keys(foundCategory.states).filter(
+  //       (state) => foundCategory.states[state]
+  //     );
+  //   }
+  // } else {
+  //   // is multicolor
+  //   iconStates = elementStates;
+  // }
 
   // save
   savedIconsOnDisk[type][iconCategory][colorScheme].push({
@@ -420,8 +420,8 @@ const getIconDetail = () => {
 const renderIcons = (
   category: string,
   icons: savedIconInfo[],
-  iconType: iconType,
-  colorSchema: colorScheme
+  iconType: IconType,
+  colorSchema: ColorScheme
 ): string => {
   return `
   <div class="icons-container icons-container--${iconType} ${colorSchema}">
@@ -454,7 +454,7 @@ const renderIcons = (
 const renderIconsListAside = (
   category: string,
   icons: savedIconInfo[],
-  colorSchema: colorScheme
+  colorSchema: ColorScheme
 ): string => {
   return `
   <div class="aside__category-list-wrapper">
@@ -473,8 +473,8 @@ const renderIconsListAside = (
 };
 
 const getTotalIcons = (
-  type: iconType,
-  colorSchema: colorScheme,
+  type: IconType,
+  colorSchema: ColorScheme,
   savedIconsOnDisk: savedIcons
 ): number => {
   let total = 0;

@@ -3,16 +3,16 @@ import cheerio from "cheerio";
 import { optimize } from "svgo";
 // partials common
 import {
-  colorScheme,
-  iconsColorsSchema,
-  multicolorFiguresResult,
-  iconTypeMap,
+  ColorScheme,
+  IconsColorsSchema,
+  MulticolorFiguresResult,
+  IconTypeMap,
 } from "../partials-common/types.js";
 
 export const createMulticolorSvg = (
-  svgFiguresResult: multicolorFiguresResult,
-  statesJson: iconsColorsSchema,
-  colorScheme: colorScheme
+  svgFiguresResult: MulticolorFiguresResult,
+  statesJson: IconsColorsSchema,
+  colorScheme: ColorScheme
 ): string => {
   const groupId = "icon-def";
   const viewsAndUses = createViewsUses(
@@ -29,7 +29,7 @@ export const createMulticolorSvg = (
   if (!figuresString) return undefined;
 
   const createdSvg = `
-  <svg viewBox="0 0 $width$ $height$" xmlns="http://www.w3.org/2000/svg" data-scheme="${iconTypeMap.multicolor}">
+  <svg viewBox="0 0 $width$ $height$" xmlns="http://www.w3.org/2000/svg" data-scheme="${IconTypeMap.multicolor}">
     <defs>
       <g id="${groupId}">
           ${figuresString}
@@ -59,9 +59,9 @@ export const createMulticolorSvg = (
 };
 
 const createViewsUses = (
-  statesJson: iconsColorsSchema,
-  svgFiguresResult: multicolorFiguresResult,
-  colorScheme: colorScheme,
+  statesJson: IconsColorsSchema,
+  svgFiguresResult: MulticolorFiguresResult,
+  colorScheme: ColorScheme,
   groupId: string
 ): string => {
   const usedColors = svgFiguresResult.usedColors;

@@ -10,48 +10,53 @@ import {
 } from "./utils.js";
 // partials common
 import {
-  colorScheme,
-  pathInfo,
-  monochromeStates,
-  iconsColorsSchema,
-  monochromeIcons,
-  monochromeIconResult,
-  iconTypeMap,
+  ColorScheme,
+  PathInfo,
+  IconsColorsSchema,
+  MonochromeColor,
+  MonochromeIconCategory,
+  MonochromeIconCategoryColors,
+  MonochromeIconResult,
+  IconTypeMap,
+  MonochromeColorsMap,
+  ElementStates,
 } from "../partials-common/types.js";
 
 import { log } from "./log.js";
 
 let warnings: warningInfo[] = [];
-let colorSchemeValue: colorScheme;
-let monochromeStatesObjs: monochromeStates;
-let monochromeIconsArray: monochromeIcons;
-let pathInfo: pathInfo;
+let olorSchemeValue: ColorScheme;
+let monochromeColors: MonochromeColor[];
+let monochromeIconsCategories: MonochromeIconCategory[];
+let pathInfo: PathInfo;
 let CSS_VAR_NAME = "--color";
 let SVG_ID = "icon-def";
+let monochromeColorsMap: MonochromeColorsMap;
 
 export const createMonochromeSvg = (
-  svgCheerio: cheerio.Root,
-  statesJson: iconsColorsSchema,
+  svgSourceCheerio: cheerio.Root,
+  statesJson: IconsColorsSchema,
   iconPath: string,
   srcPath: string,
-  colorScheme: colorScheme,
+  olorScheme: ColorScheme,
   LOG_PATH: string,
-  STATES_FILENAME: string
-): monochromeIconResult => {
-  const svg = svgCheerio("svg");
+  STATES_FILENAME: string,
+  monochromeColorsMap: MonochromeColorsMap
+): MonochromeIconResult => {
+  const svg = svgSourceCheerio("svg");
   const svgWidth = svg.attr("width");
   const svgHeight = svg.attr("height");
-  const svgFigures = svgCheerio(SVG_FIGURES.join(","));
+  const svgFigures = svgSourceCheerio(SVG_FIGURES.join(","));
 
   warnings = []; //clear warnings array from the prev. icon
-
   iconPath = iconPath;
   statesJson = statesJson;
-  colorSchemeValue = colorScheme;
-  monochromeStatesObjs = statesJson.monochrome.states;
-  monochromeIconsArray = statesJson.monochrome.icons;
+  olorSchemeValue = olorScheme;
+  monochromeColors = statesJson.monochrome.colors;
+  monochromeIconsCategories = statesJson.monochrome.iconsCategories;
   pathInfo = getPathInfo(srcPath, iconPath);
   LOG_PATH = LOG_PATH;
+  monochromeColorsMap = monochromeColorsMap;
 
   // check width and height
   if (!svgWidth || !svgHeight) {
@@ -59,7 +64,7 @@ export const createMonochromeSvg = (
 svg element was provided without width or/and height. This attributes are required. This icon will be ignored. \n
   category: ${pathInfo.categoryFolderName}
   icon type: monochrome,
-  scheme: ${colorScheme}
+  scheme: ${olorScheme}
   icon: ${pathInfo.fileName}\n`;
     log(msg, LOG_PATH);
     return {
@@ -69,17 +74,18 @@ svg element was provided without width or/and height. This attributes are requir
   }
 
   // check if category of icon exist on the states json
-
-  const iconCategoryIndex = monochromeIconsArray.findIndex((icon) => {
-    return icon.folder === pathInfo.categoryFolderName;
-  });
+  const iconCategoryIndex = monochromeIconsCategories.findIndex(
+    (iconCategory) => {
+      return iconCategory.folder === pathInfo.categoryFolderName;
+    }
+  );
 
   if (iconCategoryIndex === -1) {
     const msg = `
-Icon category was not found on "${STATES_FILENAME}". The icon category name is expected to be the same as the icon folder name. This icon will be ignored. \n
-  category not found: ${pathInfo.categoryFolderName}
+Icon folder was not found on "${STATES_FILENAME} on 'monochrome.iconsCategories' ". The icon folder name is expected to be the same as the icon svg parent folder name. This icon will be ignored. \n
+  category (folder) not found: ${pathInfo.categoryFolderName}
   icon type: monochrome,
-  scheme: ${colorScheme}
+  scheme: ${olorScheme}
   icon: ${pathInfo.fileName}\n`;
     log(msg, LOG_PATH);
     return {
@@ -173,29 +179,47 @@ const createStylesViewsUses = (
   const width = parseFloat(svgWidth);
   const height = parseFloat(svgHeight);
 
-  const iconStates: monochromeStates =
-    monochromeIconsArray[iconCategoryIndex].states;
+  const iconCategoryColors: MonochromeIconCategoryColors =
+    monochromeIconsCategories[iconCategoryIndex].colors;
 
   let i: number = 0;
-  Object.entries(iconStates).forEach(([stateName, isEnabled]): void => {
-    if (isEnabled) {
-      const x = i * width;
-      const colorValue = getColorValue(stateName);
-      // view and use
-      viewsUses += `<view id="${stateName}" viewBox="${x} 0 ${width} ${height}" />
-      <use
-        href="#${SVG_ID}"
-        x="${x}"
-        y="0"
-        style="${CSS_VAR_NAME}:${colorValue}"
-      />
-      `;
-      i++;
-    }
+  Object.entries(iconCategoryColors).forEach((color): void => {
+    console.log(color);
+    // if (isEnabled) {
+    //   const x = i * width;
+    //   const colorValue = getColorValue(color);
+    //   // view and use
+    //   viewsUses += `<view id="${color}" viewBox="${x} 0 ${width} ${height}" />
+    //   <use
+    //     href="#${SVG_ID}"
+    //     x="${x}"
+    //     y="0"
+    //     style="${CSS_VAR_NAME}:${colorValue}"
+    //   />
+    //   `;
+    //   i++;
+    // }
+  });
+
+  Object.entries(iconCategoryColors).forEach(([color, isEnabled]): void => {
+    // if (isEnabled) {
+    //   const x = i * width;
+    //   const colorValue = getColorValue(color);
+    //   // view and use
+    //   viewsUses += `<view id="${color}" viewBox="${x} 0 ${width} ${height}" />
+    //   <use
+    //     href="#${SVG_ID}"
+    //     x="${x}"
+    //     y="0"
+    //     style="${CSS_VAR_NAME}:${colorValue}"
+    //   />
+    //   `;
+    //   i++;
+    // }
   });
 
   return `
-  <svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" data-scheme="${iconTypeMap.monochrome}">
+  <svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" data-scheme="${IconTypeMap.monochrome}">
     <defs>
       <g id="icon-def">
           ${svgFiguresString}
@@ -205,8 +229,11 @@ const createStylesViewsUses = (
   </svg>`;
 };
 
-const getColorValue = (state: string): string => {
-  return monochromeStatesObjs[state][colorSchemeValue];
+const getColorStates = (color: string): ElementStates => {
+  const colorIndex = monochromeColorsMap.get(color);
+  if (colorIndex) {
+    return monochromeColors[colorIndex].states;
+  }
 };
 
 const setCssVarName = (

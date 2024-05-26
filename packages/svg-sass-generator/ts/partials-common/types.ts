@@ -1,24 +1,19 @@
-export interface iconsColorsSchema extends multicolorSchema, monochromeSchema {}
+export interface IconsColorsSchema extends MulticolorSchema, MonochromeSchema {}
 
 /* - - - - - - - - - - - - - - - - - - 
               Multicolor
 - - - - - - - - - - - - - - - - - - */
-export interface multicolorSchema {
+export interface MulticolorSchema {
   multicolor: {
     cssPrefix: string;
     colors: {
       cssClass: string;
-      states: {
-        [state in ElementStates[number]]: {
-          light: string;
-          dark: string;
-        };
-      };
+      states: ElementStates;
     }[];
   };
 }
 
-export interface multicolorFiguresResult {
+export interface MulticolorFiguresResult {
   processed: boolean;
   cheerioSvgFigures: cheerio.Cheerio;
   usedColors: string[];
@@ -31,33 +26,28 @@ export interface multicolorFiguresResult {
 /* - - - - - - - - - - - - - - - - - - 
               Monochrome
 - - - - - - - - - - - - - - - - - - */
-export interface monochromeSchema {
+export interface MonochromeSchema {
   monochrome: {
-    colors: monochromeColor[];
-    iconsCategories: monochromeIconCategory[];
+    colors: MonochromeColor[];
+    iconsCategories: MonochromeIconCategory[];
   };
 }
 
-export type monochromeColor = {
+export type MonochromeColor = {
   name: string;
-  states: {
-    [state in ElementStates[number]]: {
-      light: string;
-      dark: string;
-    };
-  };
+  states: ElementStates;
 };
 
-export type monochromeIconCategory = {
+export type MonochromeIconCategory = {
   folder: string;
-  colors: monochromeIconCategoryColors;
+  colors: MonochromeIconCategoryColors;
 };
 
-export type monochromeIconCategoryColors = {
+export type MonochromeIconCategoryColors = {
   [key: string]: string;
 };
 
-export interface monochromeIconResult {
+export interface MonochromeIconResult {
   processed: boolean;
   svgString: string;
 }
@@ -67,44 +57,56 @@ export type MonochromeColorsMap = Map<string, number>;
        Multicolor / Monochrome
 - - - - - - - - - - - - - - - - - - */
 
-export type iconType = "multicolor" | "monochrome";
+export type IconType = "multicolor" | "monochrome";
 
 export const elementStates = ["enabled", "hover", "active", "disabled"];
+type ElementStateKeys = (typeof elementStates)[number];
 
-export type ElementStates = typeof elementStates;
+export type ColorScheme = "dark" | "light";
 
-export type colorScheme = "dark" | "light";
-
-export const iconTypeMap: Record<iconType, iconType> = {
+export const IconTypeMap: Record<IconType, IconType> = {
   multicolor: "multicolor",
   monochrome: "monochrome",
 };
 
+export type ThemeColors = {
+  [key in ColorScheme]: string;
+};
+
+export type ElementStates = {
+  [key in ElementStateKeys]: ThemeColors;
+};
+
 /* - - - - - - - - - - - - - - - - - - 
-              Other
+                Other
 - - - - - - - - - - - - - - - - - - */
 
-export type pathInfo = {
+export type ColorsStatesSchema = {
+  monochrome: MulticolorSchema;
+  multicolor: MonochromeSchema;
+};
+
+export type PathInfo = {
   categoryFolderName: string;
   fileName: string;
 };
 
-export type processedIconInfo = {
+export type ProcessedIconInfo = {
   iconPath: string;
-  colorScheme: colorScheme;
+  ColorScheme: ColorScheme;
   processed: boolean;
 };
 
-export type savedOnDisk = {
+export type SavedOnDisk = {
   saved: boolean;
   svgFilePath: string;
   category: string;
 };
 
-export type figureType = "path" | "stroke" | "both";
+export type FigureType = "path" | "stroke" | "both";
 
-export type getStatesJsonReturn = {
+export type GetStatesJsonReturn = {
   valid: boolean;
   info: string;
-  statesObject: iconsColorsSchema | null;
+  statesObject: IconsColorsSchema | null;
 };

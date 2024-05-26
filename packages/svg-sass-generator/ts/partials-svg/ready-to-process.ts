@@ -6,17 +6,17 @@ import {
   RESET_COLOR,
   OUTPUT_GENERATED,
 } from "../partials-common/utils.js";
-import { validateStatesSchema } from "./states-validator.js";
+import { validateStatesSchema } from "./monochrome-colors-validator.js";
 import { getStatesObject } from "./utils.js";
 import { DIR_PATH_REGEX } from "../partials-common/utils.js";
 import { join, extname } from "path";
-import { validateSchemaReturn } from "./states-validator.js";
+import { validateSchemaReturn } from "./monochrome-colors-validator.js";
 import { log } from "./log.js";
 import {
   deleteDirectory,
   createDir,
 } from "../partials-common/file-system-utils.js";
-import { iconsColorsSchema } from "../partials-common/types.js";
+import { IconsColorsSchema } from "../partials-common/types.js";
 
 /**
  * @description Validates if required folders paths and states file and schema are valid, as this is required for processing the icons.
@@ -167,5 +167,5 @@ export function readyToProcess(
 
 export type readyObj = {
   ready: boolean;
-  statesJson: iconsColorsSchema;
+  statesJson: IconsColorsSchema;
 };
