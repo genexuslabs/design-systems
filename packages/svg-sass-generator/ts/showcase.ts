@@ -6,26 +6,28 @@ import {
   deleteDirectory,
 } from "./partials-common/file-system-utils.js";
 import { writeFile } from "./partials-common/file-system-utils.js";
-import { OUTPUT_GENERATED } from "./partials-common/utils.js";
 
 import {
   ColorScheme,
   IconType,
   IconsColorsSchema,
-  elementStates,
-} from "./partials-common/types.js";
+  ElementStates,
+  ElementState,
+  MonochromeColorsMap,
+  MonochromeCategoriesMap,
+  MonochromeColor,
+  MonochromeSchema,
+} from "./partials-common/types";
 
 export const pushSavedIcon = (
   savedIconsOnDisk: savedIcons,
   svgFilePath: string,
   type: IconType,
   category: string,
-  colorScheme: ColorScheme,
-  colorStatesJson: IconsColorsSchema
+  colorScheme: ColorScheme
 ) => {
   const iconCategory = category || "uncategorized";
   const iconName = path.basename(svgFilePath);
-  let iconStates: string[] = [];
 
   // create category if inexistent
   if (!(iconCategory in savedIconsOnDisk[type])) {
@@ -35,26 +37,10 @@ export const pushSavedIcon = (
     };
   }
 
-  // set icon states
-  // if (type === "monochrome") {
-  //   const foundCategory = colorStatesJson.monochrome.icons.find(
-  //     (icon) => icon.folder === category
-  //   );
-  //   if (foundCategory) {
-  //     iconStates = Object.keys(foundCategory.states).filter(
-  //       (state) => foundCategory.states[state]
-  //     );
-  //   }
-  // } else {
-  //   // is multicolor
-  //   iconStates = elementStates;
-  // }
-
   // save
   savedIconsOnDisk[type][iconCategory][colorScheme].push({
     name: iconName,
     path: svgFilePath,
-    states: iconStates,
   });
 };
 
@@ -62,8 +48,13 @@ export const generateShowcase = (
   savedIconsOnDisk: savedIcons,
   outputPath: string,
   showcasePath: string,
-  logPath: string
+  logPath: string,
+  statesJson: IconsColorsSchema,
+  monochromeColorsMap: MonochromeColorsMap,
+  monochromeCategoriesMap: MonochromeCategoriesMap
 ) => {
+  const monochromeColorsAndCategories: MonochromeSchema = statesJson.monochrome;
+
   // remove directory for a fresh start
   deleteDirectory(showcasePath);
 
@@ -85,7 +76,12 @@ export const generateShowcase = (
         <small class="top-bar__description">Automatically generated</small>
       </div>
       ${getAside(savedIconsOnDisk)}
-      ${getMain(savedIconsOnDisk)}
+      ${getMain(
+        savedIconsOnDisk,
+        monochromeColorsAndCategories,
+        monochromeColorsMap,
+        monochromeCategoriesMap
+      )}
       ${toggleAsideLists()}
       ${preventListLinkPropagation()}
     </body>
@@ -239,7 +235,15 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
   `;
 };
 
-const getMain = (savedIconsOnDisk: savedIcons) => {
+const noImgSrc =
+  "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgMzAgMzAiIHdpZHRoPSIzMHB4IiBoZWlnaHQ9IjMwcHgiPjxwYXRoIGQ9Ik0gMTUgMyBDIDExLjc4MzA1OSAzIDguODY0MTk4MiA0LjI4MDc5MjYgNi43MDcwMzEyIDYuMzQ5NjA5NCBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgNi4zNDc2NTYyIDYuNzA3MDMxMiBDIDQuMjc5Mzc2NiA4Ljg2NDEwNzEgMyAxMS43ODM1MzEgMyAxNSBDIDMgMjEuNjE1NTcyIDguMzg0NDI3NiAyNyAxNSAyNyBDIDE4LjIxMDAwNyAyNyAyMS4xMjM0NzUgMjUuNzI0OTk1IDIzLjI3OTI5NyAyMy42NjQwNjIgQSAxLjAwMDEgMS4wMDAxIDAgMCAwIDIzLjY2MjEwOSAyMy4yODEyNSBDIDI1LjcyNDE2OCAyMS4xMjUyMzUgMjcgMTguMjEwOTk4IDI3IDE1IEMgMjcgOC4zODQ0Mjc2IDIxLjYxNTU3MiAzIDE1IDMgeiBNIDE1IDUgQyAyMC41MzQ2OTIgNSAyNSA5LjQ2NTMwNzkgMjUgMTUgQyAyNSAxNy40MDYzNyAyNC4xNTUxNzMgMTkuNjA5MDYyIDIyLjc0NjA5NCAyMS4zMzIwMzEgTCA4LjY2Nzk2ODggNy4yNTM5MDYyIEMgMTAuMzkwOTM4IDUuODQ0ODI3NCAxMi41OTM2MyA1IDE1IDUgeiBNIDcuMjUzOTA2MiA4LjY2Nzk2ODggTCAyMS4zMzIwMzEgMjIuNzQ2MDk0IEMgMTkuNjA5MDYyIDI0LjE1NTE3MyAxNy40MDYzNyAyNSAxNSAyNSBDIDkuNDY1MzA3OSAyNSA1IDIwLjUzNDY5MiA1IDE1IEMgNSAxMi41OTM2MyA1Ljg0NDgyNzQgMTAuMzkwOTM4IDcuMjUzOTA2MiA4LjY2Nzk2ODggeiIvPjwvc3ZnPg==";
+
+const getMain = (
+  savedIconsOnDisk: savedIcons,
+  monochromeColorsAndCategories: MonochromeSchema,
+  monochromeColorsMap: MonochromeColorsMap,
+  monochromeCategoriesMap: MonochromeCategoriesMap
+) => {
   // multicolor
   const multicolor = savedIconsOnDisk.multicolor;
   const monochrome = savedIconsOnDisk.monochrome;
@@ -266,11 +270,11 @@ const getMain = (savedIconsOnDisk: savedIcons) => {
     <article class="category" id="${categoryName}">
 
     <h3 class="category__title title light">
-      ${categoryName} (${
+      / ${categoryName} (${
       savedIconsOnDisk["multicolor"][categoryName].light.length
     })</h3>
     <h3 class="category__title title dark">
-      ${categoryName} (${
+      / ${categoryName} (${
       savedIconsOnDisk["multicolor"][categoryName].dark.length
     })</h3>
 
@@ -300,28 +304,34 @@ const getMain = (savedIconsOnDisk: savedIcons) => {
       <article class="category" id="${categoryName}">
 
       <h3 class="category__title title light">
-        ${categoryName} (${
+        / ${categoryName} (${
       savedIconsOnDisk["monochrome"][categoryName].light.length
     })</h3>
         <h3 class="category__title title dark">
-          ${categoryName} (${
+          / ${categoryName} (${
       savedIconsOnDisk["monochrome"][categoryName].dark.length
     })</h3>
   
-        <!-- multicolor light -->
+        <!-- monochrome light -->
         ${renderIcons(
           categoryName,
           monochrome[categoryName].light,
           "monochrome",
-          "light"
+          "light",
+          monochromeColorsAndCategories,
+          monochromeColorsMap,
+          monochromeCategoriesMap
         )}
   
-        <!-- multicolor dark -->
+        <!-- monochrome dark -->
         ${renderIcons(
           categoryName,
           monochrome[categoryName].dark,
           "monochrome",
-          "dark"
+          "dark",
+          monochromeColorsAndCategories,
+          monochromeColorsMap,
+          monochromeCategoriesMap
         )}
       </article>
       `;
@@ -421,34 +431,175 @@ const renderIcons = (
   category: string,
   icons: savedIconInfo[],
   iconType: IconType,
-  colorSchema: ColorScheme
+  colorSchema: ColorScheme,
+  monochromeColorsAndCategories?: MonochromeSchema,
+  monochromeColorsMap?: MonochromeColorsMap,
+  monochromeCategoriesMap?: MonochromeCategoriesMap
 ): string => {
+  // default classes are for multicolor
+  let iconsContainerClasses = `icons-container icons-container--grid icons-container--${iconType} ${colorSchema}`;
+  let iconContainerClasses = "icon-container";
+  if (iconType === "monochrome") {
+    // classes for monochrome
+    // for monochrome, icons container is not of type "grid"
+    // (.icons-container--grid)
+    iconsContainerClasses = `icons-container icons-container icons-container--${iconType} ${colorSchema}`;
+    iconContainerClasses = "icon-container icon-container--with-separator";
+  }
+
   return `
-  <div class="icons-container icons-container--${iconType} ${colorSchema}">
+  <div class="${iconsContainerClasses}">
     ${icons
       .map((icon) => {
         const listId = `${category}-${icon.name.split(".")[0]}`;
-
-        return `<div class="icon-container" id=${listId}>
-         <h4 class="icon-container__title title">${icon.name}</h4>
-         <ul class="icon-container__list list list--vertical">
-           ${icon.states
-             .map((state) => {
-               return `<li class="icon-container__list-item">
-               <button class="icon-state-button" data-src="${icon.path}#${state}" data-name="${category}/${icon.name}" id="${listId}--${state}">
-                <figure class="icon-container__figure">
-                  <img class="icon" src="${icon.path}#${state}" alt="${icon.name} icon on state '${state}'"/>
-                  <figcaption class="icon-container__figure-caption">${state}</figcaption>
-                </figure>
-               </button>
-             </li>`;
-             })
-             .join("")}
-         </ul>
-       </div>`;
+        const htmlList =
+          iconType === "multicolor"
+            ? getMulticolorList(icon, category, listId)
+            : getMonochromeList(
+                icon,
+                category,
+                listId,
+                colorSchema,
+                monochromeColorsAndCategories,
+                monochromeColorsMap,
+                monochromeCategoriesMap
+              );
+        return `
+        <div class="${iconContainerClasses}" id=${listId}>
+           <h4 class="icon-container__title icon-container__title--h4 icon-container__title--svg-icon title">${icon.name}</h4>
+           ${htmlList}
+         </div>`;
       })
       .join("")}
   </div>`;
+};
+
+const getMulticolorList = (
+  icon: savedIconInfo,
+  category: string,
+  listId: string
+): string => {
+  const states = ["enabled", "hover", "active", "disabled"];
+  return `<ul class="icon-container__list list list--vertical">
+  ${states
+    .map((state) => {
+      return `<li class="icon-container__list-item">
+      <button class="icon-state-button" data-src="${icon.path}#${state}" data-name="${category}/${icon.name}" id="${listId}--${state}">
+       <figure class="icon-container__figure">
+         <img class="icon" src="${icon.path}#${state}" alt="${icon.name} icon on state '${state}'"/>
+         <figcaption class="icon-container__figure-caption" disabled>${state}</figcaption>
+       </figure>
+      </button>
+    </li>`;
+    })
+    .join("")}
+</ul>`;
+};
+
+const getMonochromeList = (
+  icon: savedIconInfo,
+  category: string,
+  listId: string,
+  colorSchema: ColorScheme,
+  monochromeColorsAndCategories: MonochromeSchema,
+  monochromeColorsMap: MonochromeColorsMap,
+  monochromeCategoriesMap: MonochromeCategoriesMap
+): string => {
+  const colorsHtmlList: string = getMonochromeColorsList(
+    icon,
+    category,
+    colorSchema,
+    monochromeColorsAndCategories,
+    monochromeColorsMap,
+    monochromeCategoriesMap
+  );
+
+  return `<ul class="icon-container__list list list--grid">${colorsHtmlList}</ul>`;
+};
+
+const getMonochromeColorsList = (
+  icon: savedIconInfo,
+  category: string,
+  colorSchema: ColorScheme,
+  monochromeColorsAndCategories?: MonochromeSchema,
+  monochromeColorsMap?: MonochromeColorsMap,
+  monochromeCategoriesMap?: MonochromeCategoriesMap
+): string => {
+  let colorLists: string[] = [];
+
+  const categories = monochromeColorsAndCategories.iconsCategories;
+  const categoryIndex = monochromeCategoriesMap.get(category);
+
+  if (categoryIndex !== undefined) {
+    Object.keys(categories[categoryIndex].colors).map((color) => {
+      const colorIsNull = !categories[categoryIndex].colors[color];
+      if (colorIsNull) {
+        return;
+      }
+      const colorIndex = monochromeColorsMap.get(color);
+      if (colorIndex !== undefined) {
+        const color = monochromeColorsAndCategories.colors[colorIndex];
+        // push states that have some value (enabled, hover, active, disabled)
+        let states: ElementStates = {
+          enabled: null,
+          hover: null,
+          active: null,
+          disabled: null,
+        };
+        let colorStatesList: string[] = [];
+        Object.keys(color.states).forEach((state: ElementState) => {
+          // 1. Check if state is not null or undefined
+          // 2. Then check if the color has a property defined fot the color scheme (light or dark)
+          // 3. Then check if the value of the scheme is not null or undefined
+          const stateValue = color.states[state];
+
+          if (
+            stateValue &&
+            color.states[state].hasOwnProperty(colorSchema) &&
+            color.states[state][colorSchema]
+          ) {
+            states[state] = color.states[state];
+          }
+        });
+
+        // push list items
+        Object.keys(states).forEach((state: ElementState) => {
+          const stateIsNull = !states[state];
+          let slot = `
+          <button class="icon-state-button" data-src="${icon.path}#${state}" data-name="${category}/${icon.name}">
+            <figure class="icon-container__figure">
+              <img class="icon" src="${icon.path}#${color.name}-${state}" alt="${icon.name} icon on state '${state}'"/>
+              <figcaption class="icon-container__figure-caption">${state}</figcaption>
+            </figure>
+          </button>`;
+
+          if (stateIsNull) {
+            slot = `
+            <figure class="icon-container__figure">
+              <span class="no-state-img"/></span>
+              <figcaption class="icon-container__figure-caption icon-container__figure-caption--disabled">${state} is not defined</figcaption>
+            </figure>`;
+          }
+
+          colorStatesList.push(`
+          <li class="icon-container__list-item">
+            ${slot}
+          </li>`);
+        });
+
+        colorLists.push(`<li class="icon-container icons-container--nested">
+        <h5 class="icon-container__title title icon-container__title--h5"><em>${
+          color.name
+        }</em></h5>
+        <ul class="icon-container__list list list--vertical"> 
+          ${colorStatesList.join("")}
+        </ul>
+      </li>`);
+      }
+    });
+  }
+
+  return colorLists.join("");
 };
 
 const renderIconsListAside = (
@@ -620,6 +771,10 @@ const showcaseStyles = `
     flex-direction: column;
     gap: 10px;
   }
+  .list--grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200PX, 1fr));
+  }
   .sc-button {
     background-color: #155263;
     border: 0;
@@ -740,6 +895,7 @@ const showcaseStyles = `
     text-transform: capitalize;
   }
   .aside__primary-title:before {
+    display: none;
     content: "🌈";
     margin-inline-end: 8px;
   }
@@ -820,6 +976,19 @@ const showcaseStyles = `
     background-image: var(--icon-path);
     background-size: contain;
   }
+  /*no state defined (no svg)*/
+  .no-state-img {
+    width: var(--sc-icon__box);
+    height: var(--sc-icon__box);
+    background-color: var(--sc-body__color);
+    -webkit-mask-image: url(${noImgSrc});
+    mask-image: url(${noImgSrc});
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 18px;
+    -webkit-mask-position-x: center;
+    -webkit-mask-position-y: center;
+    opacity: 0.5;
+  }
   /*container*/
   .container {
     padding-inline: var(--sc-icon__container-padding-inline);
@@ -898,11 +1067,13 @@ const showcaseStyles = `
   }
   /*icons-container*/
   .icons-container {
-    display:grid; 
-    grid-template-columns: repeat(auto-fill, minmax(220PX, 1fr));
     border: var(--sc-icon-container__border);
     border-radius: var(--sc-icon-container__border-radius);
     background-color: var(--sc-icon-container__background);
+  }
+  .icons-container--grid {
+    display:grid; 
+    grid-template-columns: repeat(auto-fill, minmax(220PX, 1fr));
   }
   .icon-container__list {
 
@@ -917,10 +1088,32 @@ const showcaseStyles = `
     font-size: 13px;
     text-align: left;
   }
+  .icon-container__figure-caption--disabled {
+    opacity: 0.5
+  }
   .icon-container__title {
     margin-block-end: var(--sc-icons-container-title__margin-block-end);
     color: var(--sc-container-title__color);
     font-size: 15px;
+  }
+  .icon-container__title--svg-icon {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+  }
+  .icon-container__title--svg-icon::before {
+    content:"🖼️";
+  }
+  .icon-container__title--h4 {
+    font-size: 16px;
+    margin-block-end: 16px;
+    padding-block-end: 16px;
+    border-block-end: 1px solid var(--sc-border-dimmed__color);
+  }
+  .icon-container__title--h5 {
+    font-size: 14px;
+    font-weight: 300;
   }
   .icon-container__list:not(:last-child) {
     padding-block-end: var(--sc-icons-container-list__separation);
@@ -929,11 +1122,18 @@ const showcaseStyles = `
   .icon-container {
     padding: var(--sc-icon-container__padding);
   }
+  .icon-container--with-separator {
+    border-block-end: 1px dashed var(--sc-border-dimmed__color);
+  }
+  .icon-container .icon-container {
+    padding: 0;
+  }
   .icon-state-button {
     width: 100%;
     background-color: transparent;
     border: none;
     color: inherit;
+    padding: 0;
   }
   .icon-state-button:hover {
     cursor: pointer;
@@ -981,7 +1181,6 @@ export interface savedIcons {
 interface savedIconInfo {
   name: string;
   path: string;
-  states: string[];
 }
 
 type totalIcons = {
@@ -993,4 +1192,8 @@ type totalIcons = {
     light: number;
     dark: number;
   };
+};
+
+type MonochromeCategoriesStates = {
+  [category: string]: ElementStates;
 };
