@@ -34,6 +34,7 @@
 @import "./components/radio-group";
 @import "./components/segmented-control";
 @import "./components/slider";
+@import "./components/switch";
 @import "./components/tab";
 @import "./components/tree-view";
 
@@ -96,6 +97,7 @@
   $segmented-control: true,
   $slider-primary: true,
   $slider-secondary: true,
+  $switch: true,
   $tab: true,
   $tree-view-primary: true,
   $tree-view-secondary: true
@@ -361,6 +363,11 @@
     // slider secondary
     @if $slider-secondary {
       @include slider-secondary();
+    }
+
+    // switch
+    @if $switch {
+      @include switch();
     }
 
     // tab
