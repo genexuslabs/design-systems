@@ -14,20 +14,20 @@
                 "type": "object",
                 "properties": {
                   "enabled": {
-                    "type": "object",
+                    "type": ["object", "null"],
                     "properties": {
-                      "light": { "type": "string" },
-                      "dark": { "type": "string" }
+                      "light": { "type": ["string", "null"] },
+                      "dark": { "type": ["string", "null"] }
                     },
                     "required": ["light", "dark"]
                   },
                   "hover": {
                     "anyOf": [
                       {
-                        "type": "object",
+                        "type": ["object", "null"],
                         "properties": {
-                          "light": { "type": "string" },
-                          "dark": { "type": "string" }
+                          "light": { "type": ["string", "null"] },
+                          "dark": { "type": ["string", "null"] }
                         },
                         "required": ["light", "dark"]
                       },
@@ -37,10 +37,10 @@
                   "active": {
                     "anyOf": [
                       {
-                        "type": "object",
+                        "type": ["object", "null"],
                         "properties": {
-                          "light": { "type": "string" },
-                          "dark": { "type": "string" }
+                          "light": { "type": ["string", "null"] },
+                          "dark": { "type": ["string", "null"] }
                         },
                         "required": ["light", "dark"]
                       },
@@ -50,10 +50,10 @@
                   "disabled": {
                     "anyOf": [
                       {
-                        "type": "object",
+                        "type": ["object", "null"],
                         "properties": {
-                          "light": { "type": "string" },
-                          "dark": { "type": "string" }
+                          "light": { "type": ["string", "null"] },
+                          "dark": { "type": ["string", "null"] }
                         },
                         "required": ["light", "dark"]
                       },
