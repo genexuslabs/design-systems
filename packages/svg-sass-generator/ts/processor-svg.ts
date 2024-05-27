@@ -12,6 +12,7 @@ import {
   ProcessedIconInfo,
   ColorScheme,
   MonochromeColorsMap,
+  MonochromeCategoriesMap,
 } from "./partials-common/types.js";
 import { createMulticolorSvg } from "./partials-svg/create-multicolor-svg.js";
 import { createMonochromeSvg } from "./partials-svg/create-monochrome-svg.js";
@@ -51,10 +52,25 @@ if (readyObj.ready) {
   const iconsPromise = getIcons(SRC_PATH);
   iconsPromise
     .then((result: string[]) => {
+      // 1. Create monochrome maps for quickly access when creating the showcase
+      // colors map
       const monochromeColorsMap: MonochromeColorsMap =
         createMonochromeColorsMap(readyObj.statesJson);
+      // categories map
+      const monochromeCategoriesMap: MonochromeCategoriesMap =
+        createMonochromeCategoriesMap(readyObj.statesJson);
+      // 2. Process icons (the important stuff!💥)
       processIcons(result, readyObj.statesJson, monochromeColorsMap);
-      generateShowcase(savedIconsOnDisk, OUTPUT_PATH, SHOWCASE_PATH, LOG_PATH);
+      // 3. Generate showcase (nice feature to have)
+      generateShowcase(
+        savedIconsOnDisk,
+        OUTPUT_PATH,
+        SHOWCASE_PATH,
+        LOG_PATH,
+        readyObj.statesJson,
+        monochromeColorsMap,
+        monochromeCategoriesMap
+      );
     })
     .catch((error) => {
       const msg = `There was an error processing the icons. error: ${error}.`;
@@ -112,8 +128,7 @@ function processIcons(
             lightMultiColorSvgSavedOnDisk.svgFilePath,
             "multicolor",
             lightMultiColorSvgSavedOnDisk.category,
-            "light",
-            statesJson
+            "light"
           );
         }
         // Save info for the log
@@ -150,8 +165,7 @@ function processIcons(
             darkMultiColorSvgSavedOnDisk.svgFilePath,
             "multicolor",
             darkMultiColorSvgSavedOnDisk.category,
-            "dark",
-            statesJson
+            "dark"
           );
         }
 
@@ -201,8 +215,7 @@ function processIcons(
           lightMonoChromeSvgSavedOnDisk.svgFilePath,
           "monochrome",
           lightMonoChromeSvgSavedOnDisk.category,
-          "light",
-          statesJson
+          "light"
         );
       }
 
@@ -244,11 +257,10 @@ function processIcons(
         // Save icon for the showcase
         pushSavedIcon(
           savedIconsOnDisk,
-          lightMonoChromeSvgSavedOnDisk.svgFilePath,
+          darkMonoChromeSvgSavedOnDisk.svgFilePath,
           "monochrome",
-          lightMonoChromeSvgSavedOnDisk.category,
-          "dark",
-          statesJson
+          darkMonoChromeSvgSavedOnDisk.category,
+          "dark"
         );
       }
 
@@ -333,4 +345,17 @@ const createMonochromeColorsMap = (
     monochromeColorsMap.set(color.name, i);
   });
   return monochromeColorsMap;
+};
+
+const createMonochromeCategoriesMap = (
+  statesJson: IconsColorsSchema
+): MonochromeCategoriesMap => {
+  const monochromeCategoriesMap: MonochromeCategoriesMap = new Map<
+    string,
+    number
+  >();
+  statesJson.monochrome.iconsCategories.forEach((category, i) => {
+    monochromeCategoriesMap.set(category.folder, i);
+  });
+  return monochromeCategoriesMap;
 };
