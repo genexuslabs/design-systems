@@ -47,14 +47,14 @@ export interface MonochromeIconResult {
 }
 // Used to access monochrome.colors more quickly, on '/partials-svg/create-monochrome.svg'
 export type MonochromeColorsMap = Map<string, number>;
+export type MonochromeCategoriesMap = Map<string, number>;
 /* - - - - - - - - - - - - - - - - - - 
        Multicolor / Monochrome
 - - - - - - - - - - - - - - - - - - */
 
 export type IconType = "multicolor" | "monochrome";
 
-export const elementStates = ["enabled", "hover", "active", "disabled"];
-type ElementStateKeys = (typeof elementStates)[number];
+export type ElementState = "enabled" | "hover" | "active" | "disabled";
 
 export type ColorScheme = "dark" | "light";
 
@@ -68,7 +68,7 @@ export type ThemeColors = {
 };
 
 export type ElementStates = {
-  [key in ElementStateKeys]: ThemeColors;
+  [key in ElementState]: ThemeColors;
 };
 
 export type IconsColorsSchema = {
