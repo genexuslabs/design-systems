@@ -247,11 +247,11 @@ const createViewUse = (
   const y = yIndex * height;
   const viewId = `${colorName}-${stateName}`;
   return `
-  <view id="${viewId}" viewBox="${x} 0 ${width} ${height}" />
+  <view id="${viewId}" viewBox="${x} ${y} ${width} ${height}" />
   <use
     href="#${SVG_ID}"
     x="${x}"
-    x="${y}"
+    y="${y}"
     style="${CSS_VAR_NAME}:${colorValue}"
   />`;
 };
