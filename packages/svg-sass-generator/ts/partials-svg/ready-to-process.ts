@@ -6,17 +6,17 @@ import {
   RESET_COLOR,
   OUTPUT_GENERATED,
 } from "../partials-common/utils.js";
-import { validateStatesSchema } from "./states-validator.js";
+import { validateStatesSchema } from "./color-states-validator.js";
 import { getStatesObject } from "./utils.js";
 import { DIR_PATH_REGEX } from "../partials-common/utils.js";
 import { join, extname } from "path";
-import { validateSchemaReturn } from "./states-validator.js";
+import { validateSchemaReturn } from "./color-states-validator.js";
 import { log } from "./log.js";
 import {
   deleteDirectory,
   createDir,
 } from "../partials-common/file-system-utils.js";
-import { iconsColorsSchema } from "../partials-common/types.js";
+import { IconsColorsSchema } from "../partials-common/types.js";
 
 /**
  * @description Validates if required folders paths and states file and schema are valid, as this is required for processing the icons.
@@ -24,7 +24,7 @@ import { iconsColorsSchema } from "../partials-common/types.js";
 export function readyToProcess(
   SRC_PATH: string,
   OUTPUT_PATH: string,
-  STATES_FILENAME: string,
+  COLOR_STATES_PATH: string,
   SHOWCASE_PATH: string,
   LOG_PATH: string,
   numberOfArgsProvided: number
@@ -96,19 +96,29 @@ export function readyToProcess(
     };
   }
 
-  // 4-A. validate color states is a json
-  const colorStatesIsJson = extname(STATES_FILENAME).toLowerCase() === ".json";
-  if (!colorStatesIsJson) {
-    const msg = `State File Validation Error #1: the provided color states file "${STATES_FILENAME}" is not a json file. This file is expected to be a json.`;
-    console.error(`${RED} ${msg} ${RESET_COLOR}`);
-    log(msg, LOG_PATH, shouldWriteToLog);
-  }
+  // 4-A. validate "color states" filepath and extension
+  fs.access(COLOR_STATES_PATH, fs.constants.F_OK | fs.constants.R_OK, (err) => {
+    if (err) {
+      const msg = `"Color States" file validation error #1: "${COLOR_STATES_PATH}" is not a valid file or ${COLOR_STATES_PATH} does not exists. Please check that argument (argument number 3).`;
+
+      log(msg, LOG_PATH, shouldWriteToLog);
+      console.error(`${RED} ${msg} ${RESET_COLOR}`);
+    } else {
+      // Validate that extension is a.json
+      const colorStatesIsJson =
+        extname(COLOR_STATES_PATH).toLowerCase() === ".json";
+      if (!colorStatesIsJson) {
+        const msg = `"Color States" file validation error #1: the provided color states file "${COLOR_STATES_PATH}" is not a json file. This file is expected to be a json.`;
+        console.error(`${RED} ${msg} ${RESET_COLOR}`);
+        log(msg, LOG_PATH, shouldWriteToLog);
+      }
+    }
+  });
 
   // 4-B. validate states json file
-  const statesPath = join(SRC_PATH, STATES_FILENAME);
-  const statesResult = getStatesObject(statesPath);
+  const statesResult = getStatesObject(COLOR_STATES_PATH);
   if (!statesResult.valid) {
-    const msg = `State File Validation Error #2: the provided color states json file ${STATES_FILENAME}" is not valid. Errors found: ${statesResult.info}`;
+    const msg = `"Color States" file validation error #2: the provided color states json file ${COLOR_STATES_PATH}" is not valid. Errors found: ${statesResult.info}`;
     console.error(`${RED} ${msg} ${RESET_COLOR}`);
     log(msg, LOG_PATH, shouldWriteToLog);
 
@@ -123,16 +133,18 @@ export function readyToProcess(
     statesResult.statesObject
   );
   if (!validateSchemaResult.isValid) {
-    let msg = `States Schema Error #3: color states file ${STATES_FILENAME} schema is not valid. The following errors have been found: \n\n`;
-    console.error(`${RED} ${msg} ${RESET_COLOR}`);
+    let msgLog = `"Color States" Schema Error #3: color states file ${COLOR_STATES_PATH} schema is not valid. The following errors have been found: \n\n`;
+
+    const msgConsole = `States Schema Error #3: color states file ${COLOR_STATES_PATH} schema is not valid. Please, read the log file under ${LOG_PATH} to know what went wrong.`;
 
     validateSchemaResult.errors.forEach((error) => {
       const errorString = JSON.stringify(error, null, 2);
-
-      msg += errorString;
+      msgLog += `${errorString}\n`;
     });
 
-    log(msg, LOG_PATH, shouldWriteToLog);
+    log(msgLog, LOG_PATH, shouldWriteToLog);
+    console.error(`${RED} ${msgConsole} ${RESET_COLOR}`);
+
     return {
       ready: false,
       statesJson: null,
@@ -165,5 +177,5 @@ export function readyToProcess(
 
 export type readyObj = {
   ready: boolean;
-  statesJson: iconsColorsSchema;
+  statesJson: IconsColorsSchema;
 };

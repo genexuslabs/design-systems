@@ -1,14 +1,14 @@
 import { SVG_FIGURES } from "./utils.js";
 import {
-  iconsColorsSchema,
-  iconType,
-  iconTypeMap,
+  IconsColorsSchema,
+  IconType,
+  IconTypeMap,
 } from "../partials-common/types.js";
 
 export function getIconType(
   iconCheerio: cheerio.Root,
-  statesJson: iconsColorsSchema
-): iconType | undefined {
+  statesJson: IconsColorsSchema
+): IconType | undefined {
   const strictChecking = false;
   // If strictChecking is true:
   // It will consider the icon is multicolor if every figure has a css class name where the prefix
@@ -39,7 +39,7 @@ export function getIconType(
     (multiColorFigures === svgFigures.length && strictChecking) ||
     (multiColorFigures >= 1 && !strictChecking)
   ) {
-    return iconTypeMap.multicolor;
+    return IconTypeMap.multicolor;
   } else if (multiColorFigures >= 1 && strictChecking) {
     // Because strictChecking is on, and not every figure (but at least one) has a class name that includes the multicolor prefix,
     // this icon is not considered multicolor, nor monochrome, hence it is undefined.
