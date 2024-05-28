@@ -135,7 +135,34 @@ const searchInput = (): string => {
     const searchInput = document.getElementById("search-input");
     console.log(searchInput);
     searchInput.addEventListener("input", (e) => {
-      
+      const filterValue = e.target.value.toLowerCase();
+      searchItems.forEach(searchItem => {
+        const itemDataValue = searchItem.getAttribute('data-value').toLowerCase();
+        if(!itemDataValue.includes(filterValue)) {
+          searchItem.setAttribute('hidden', '');
+        } else {
+          searchItem.removeAttribute('hidden');
+        }
+
+        // Then look for empty .icons.container's
+        allIconsContainers.forEach(iconsContainer => {
+          const visibleIcons = iconsContainer.querySelectorAll('.search-item:not([hidden])');
+          if(visibleIcons.length === 0) {
+            iconsContainer.classList.add("icons-container--empty");
+          } else {
+            iconsContainer.classList.remove("icons-container--empty");
+          }
+        });
+
+        // Disable aside navigation if searching
+        if(filterValue.length !== 0) {
+          asideNav.setAttribute('disabled', '');
+          asideNav.classList.add('aside__nav--disabled');
+        } else {
+          asideNav.removeAttribute('disabled');
+          asideNav.classList.remove('aside__nav--disabled');
+        }
+      })
     });
   </script>`;
 };
@@ -478,7 +505,7 @@ const renderIcons = (
         const listId = `${category}-${icon.name.split(".")[0]}`;
         const htmlList =
           iconType === "multicolor"
-            ? getMulticolorList(icon, category, listId)
+            ? getMulticolorList(icon, category, listId, colorSchema)
             : getMonochromeList(
                 icon,
                 category,
@@ -489,8 +516,12 @@ const renderIcons = (
                 monochromeCategoriesMap
               );
         return `
-        <div class="${iconContainerClasses}" id=${listId} data-value="${icon.name}">
-           <h4 class="icon-container__title icon-container__title--h4 icon-container__title--svg-icon title">${icon.name}</h4>
+        <div class="${iconContainerClasses}" id=${listId} data-value="${
+          icon.name.split(".")[0]
+        }">
+           <h4 class="icon-container__title icon-container__title--h4 icon-container__title--svg-icon title">${
+             icon.name
+           }</h4>
            ${htmlList}
          </div>`;
       })
@@ -501,14 +532,15 @@ const renderIcons = (
 const getMulticolorList = (
   icon: savedIconInfo,
   category: string,
-  listId: string
+  listId: string,
+  colorSchema: ColorScheme
 ): string => {
   const states = ["enabled", "hover", "active", "disabled"];
   return `<ul class="icon-container__list list list--vertical">
   ${states
     .map((state) => {
       return `<li class="icon-container__list-item">
-      <button class="icon-state-button" data-src="${icon.path}#${state}" data-name="${category}/${icon.name}" id="${listId}--${state}">
+      <button class="icon-state-button" data-src="${icon.path}#${state}" data-name="${category}/${icon.name}" id="${listId}--${state}-${colorSchema}">
        <figure class="icon-container__figure">
          <img class="icon" src="${icon.path}#${state}" alt="${icon.name} icon on state '${state}'"/>
          <figcaption class="icon-container__figure-caption" disabled>${state}</figcaption>
@@ -662,7 +694,9 @@ const getTotalIcons = (
 
 const getAllSearchItems = (): string => {
   return `<script>
-    const searchItems =  Array.from(document.querySelectorAll(".search-item"))
+    const searchItems = Array.from(document.querySelectorAll(".search-item"));
+    const allIconsContainers = document.querySelectorAll(".icons-container");
+    const asideNav = document.getElementById("aside-nav");
   </script>`;
 };
 
@@ -945,6 +979,14 @@ const showcaseStyles = `
     background-color: var(--sc-icon-container__background);
     z-index:99;
   }
+  .aside__nav {
+    transition: 200ms opacity;
+    opacity:1;
+  }
+  .aside__nav--disabled {
+    opacity: 0.25;
+    pointer-events: none !important;
+  }
   .aside__nav a {
     display: inline-block;
     padding: var(--sc-focus-width);
@@ -1154,8 +1196,16 @@ const showcaseStyles = `
     display:grid; 
     grid-template-columns: repeat(auto-fill, minmax(220PX, 1fr));
   }
-  .icon-container__list {
-
+  .icons-container--empty {
+    display: block;    
+  }
+  .icons-container--empty::before {
+    content:"No icons matched your query in this category";
+    display:block;
+    text-align: center;
+    padding: 32px;
+    line-height: 1.5em;
+    font-size: 15px;
   }
   .icon-container__figure {
     margin: 0;
