@@ -1,7 +1,7 @@
 @mixin button-tokens-base() {
   //font
   --button-base__font-family: inherit;
-  --button-base__font-size: var(--mer-font__size--xs);
+  --button-base__font-size: var(--mer-font__size--2xs);
   //--button-base__font-weight: var(--mer-font__weight--semi-bold);
   --button-base__line-height: var(--mer-line-height--tight);
   //--button-base__color: var(--mer-text__on-primary);
@@ -12,7 +12,7 @@
   --button-base__border-color: transparent;
   --button-base__border-radius: var(--mer-border__radius--sm);
   //other
-  --button-base__block-size: var(--mer-spacing--xl);
+  --button-base__block-size: var(--mer-control__block-size);
   --button-base__gap: var(--mer-spacing--xs);
   --button-base__padding-inline: var(--mer-spacing--sm);
 }
