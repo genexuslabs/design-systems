@@ -25,6 +25,7 @@
 // Components
 @import "./components/card";
 @import "./components/checkbox";
+@import "./components/code";
 @import "./components/combo-box";
 @import "./components/dialog";
 @import "./components/dropdown";
@@ -84,6 +85,7 @@
   $action-group: true,
   $card: true,
   $checkbox: true,
+  $code: true,
   $combo-box: true,
   $dialog-primary: true,
   $dialog-secondary: true,
@@ -298,6 +300,11 @@
     // checkbox
     @if $checkbox {
       @include checkbox();
+    }
+
+    // code
+    @if $code {
+      @include code();
     }
 
     // combo-box
