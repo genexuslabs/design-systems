@@ -24,7 +24,7 @@ import { IconsColorsSchema } from "../partials-common/types.js";
 export function readyToProcess(
   SRC_PATH: string,
   OUTPUT_PATH: string,
-  STATES_FILENAME: string,
+  COLOR_STATES_PATH: string,
   SHOWCASE_PATH: string,
   LOG_PATH: string,
   numberOfArgsProvided: number
@@ -96,19 +96,29 @@ export function readyToProcess(
     };
   }
 
-  // 4-A. validate color states is a json
-  const colorStatesIsJson = extname(STATES_FILENAME).toLowerCase() === ".json";
-  if (!colorStatesIsJson) {
-    const msg = `State File Validation Error #1: the provided color states file "${STATES_FILENAME}" is not a json file. This file is expected to be a json.`;
-    console.error(`${RED} ${msg} ${RESET_COLOR}`);
-    log(msg, LOG_PATH, shouldWriteToLog);
-  }
+  // 4-A. validate "color states" filepath and extension
+  fs.access(COLOR_STATES_PATH, fs.constants.F_OK | fs.constants.R_OK, (err) => {
+    if (err) {
+      const msg = `"Color Stats" file validation error #1: "${COLOR_STATES_PATH}" is not a valid file or ${COLOR_STATES_PATH} does not exists. Please check that argument (argument number 3).`;
+
+      log(msg, LOG_PATH, shouldWriteToLog);
+      console.error(`${RED} ${msg} ${RESET_COLOR}`);
+    } else {
+      // Validate that extension is a.json
+      const colorStatesIsJson =
+        extname(COLOR_STATES_PATH).toLowerCase() === ".json";
+      if (!colorStatesIsJson) {
+        const msg = `"Color Stats" file validation error #1: the provided color states file "${COLOR_STATES_PATH}" is not a json file. This file is expected to be a json.`;
+        console.error(`${RED} ${msg} ${RESET_COLOR}`);
+        log(msg, LOG_PATH, shouldWriteToLog);
+      }
+    }
+  });
 
   // 4-B. validate states json file
-  const statesPath = join(SRC_PATH, STATES_FILENAME);
-  const statesResult = getStatesObject(statesPath);
+  const statesResult = getStatesObject(COLOR_STATES_PATH);
   if (!statesResult.valid) {
-    const msg = `State File Validation Error #2: the provided color states json file ${STATES_FILENAME}" is not valid. Errors found: ${statesResult.info}`;
+    const msg = `"Color Stats" file validation error #2: the provided color states json file ${COLOR_STATES_PATH}" is not valid. Errors found: ${statesResult.info}`;
     console.error(`${RED} ${msg} ${RESET_COLOR}`);
     log(msg, LOG_PATH, shouldWriteToLog);
 
@@ -123,9 +133,9 @@ export function readyToProcess(
     statesResult.statesObject
   );
   if (!validateSchemaResult.isValid) {
-    let msgLog = `States Schema Error #3: color states file ${STATES_FILENAME} schema is not valid. The following errors have been found: \n\n`;
+    let msgLog = `States Schema Error #3: color states file ${COLOR_STATES_PATH} schema is not valid. The following errors have been found: \n\n`;
 
-    const msgConsole = `States Schema Error #3: color states file ${STATES_FILENAME} schema is not valid. Please, read the log file under ${LOG_PATH} to know what went wrong.`;
+    const msgConsole = `States Schema Error #3: color states file ${COLOR_STATES_PATH} schema is not valid. Please, read the log file under ${LOG_PATH} to know what went wrong.`;
 
     validateSchemaResult.errors.forEach((error) => {
       const errorString = JSON.stringify(error, null, 2);

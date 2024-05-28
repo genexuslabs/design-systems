@@ -26,7 +26,7 @@ import { savedIcons, pushSavedIcon, generateShowcase } from "./showcase.js";
 //Files and Directories
 const SRC_PATH = await process.argv[2];
 const OUTPUT_PATH = await process.argv[3];
-const STATES_FILENAME = await process.argv[4];
+const COLOR_STATES_PATH = await process.argv[4];
 const SHOWCASE_PATH = await process.argv[5];
 const LOG_PATH = await process.argv[6];
 const numberOfArgsProvided = process.argv.length;
@@ -42,7 +42,7 @@ const savedIconsOnDisk: savedIcons = {
 const readyObj: readyObj = readyToProcess(
   SRC_PATH,
   OUTPUT_PATH,
-  STATES_FILENAME,
+  COLOR_STATES_PATH,
   SHOWCASE_PATH,
   LOG_PATH,
   numberOfArgsProvided
@@ -193,7 +193,7 @@ function processIcons(
         SRC_PATH,
         "light",
         LOG_PATH,
-        STATES_FILENAME,
+        COLOR_STATES_PATH,
         monochromeColorsMap
       );
 
@@ -239,7 +239,7 @@ function processIcons(
         SRC_PATH,
         "dark",
         LOG_PATH,
-        STATES_FILENAME,
+        COLOR_STATES_PATH,
         monochromeColorsMap
       );
 
