@@ -1,13 +1,13 @@
 import fs from "fs";
 import {
-  getStatesJsonReturn,
-  colorScheme,
-  pathInfo,
-  figureType,
+  GetStatesJsonReturn,
+  ColorScheme,
+  PathInfo,
+  FigureType,
 } from "../partials-common/types.js";
 import path from "path";
 import { writeFile } from "../partials-common/file-system-utils.js";
-import { savedOnDisk } from "../partials-common/types.js";
+import { SavedOnDisk } from "../partials-common/types.js";
 import { OUTPUT_GENERATED } from "../partials-common/utils.js";
 
 /**
@@ -26,7 +26,7 @@ export const SVG_FIGURES = [
 /**
  * @description It returns the monochrome states json as a JSON.
  */
-export const getStatesObject = (STATES_PATH: string): getStatesJsonReturn => {
+export const getStatesObject = (STATES_PATH: string): GetStatesJsonReturn => {
   try {
     // Read the file synchronously
     const statesString: string = fs.readFileSync(STATES_PATH, "utf8");
@@ -49,9 +49,9 @@ export const saveSvgOnDisk = (
   iconPath: string,
   srcPath: string,
   outputDirectory: string,
-  colorScheme: colorScheme,
+  colorScheme: ColorScheme,
   LOG_PATH: string
-): savedOnDisk => {
+): SavedOnDisk => {
   // construct file path
   const schemeFolderName = colorScheme;
   const pathInfo = getPathInfo(srcPath, iconPath);
@@ -72,7 +72,7 @@ export const saveSvgOnDisk = (
   };
 };
 
-export const getPathInfo = (sourcePath: string, iconPath: string): pathInfo => {
+export const getPathInfo = (sourcePath: string, iconPath: string): PathInfo => {
   const fileName = path.normalize(iconPath).split(path.sep).pop();
   const iconPathSegments = path.normalize(iconPath).split(path.sep);
   const sourcePathSegments = path.normalize(sourcePath).split(path.sep);
@@ -95,7 +95,7 @@ export const getPathInfo = (sourcePath: string, iconPath: string): pathInfo => {
   };
 };
 
-export const getFigureType = (svgFigure: cheerio.Cheerio): figureType => {
+export const getFigureType = (svgFigure: cheerio.Cheerio): FigureType => {
   const fill = svgFigure.attr("fill");
   const stroke = svgFigure.attr("stroke");
   if (fill && stroke) {

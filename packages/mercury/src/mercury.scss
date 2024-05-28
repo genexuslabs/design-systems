@@ -26,15 +26,17 @@
 
 // Base classes
 @import "./base/button/button-styles";
+@import "./base/form-input-element/form-input-element-styles.scss";
 @import "./base/icons";
 
 // Icons
 @import "./icons/button";
+@import "./icons/form-input-element";
 
 // Components
-@import "./components/checkbox/styles";
+@import "./components/checkbox/checkbox-styles";
 @import "./components/shortcuts/styles";
-@import "./components/tree-view/styles";
+@import "./components/tree-view/tree-view-styles";
 
 @mixin mercury(
   // Resets
@@ -70,15 +72,16 @@
   // Base
   $base-classes: true,
   $button-classes: true,
+  $form-input-text-classes: true,
   $icon-classes: true,
 
   // Icons
-  $icons-button: true,
+  $icons-elements: true,
 
   // Components
   $components: true,
   $checkbox: true,
-  $tree-view: true
+  $tree-view-primary: true
 ) {
   // - - - - - - - - - - - - - - - - - - - -
   //              Icons
@@ -101,30 +104,35 @@
     @font-face {
       font-family: Inter_Light; // 300
       src: url("#{$font-face-path}Inter_Light.woff2");
+      font-display: swap;
     }
 
     //regular
     @font-face {
       font-family: Inter_Regular; // 400
       src: url("#{$font-face-path}Inter_Regular.woff2");
+      font-display: swap;
     }
 
     //semi-bold
     @font-face {
       font-family: Inter_SemiBold; // 600
       src: url("#{$font-face-path}Inter_SemiBold.woff2");
+      font-display: swap;
     }
 
     //bold
     @font-face {
       font-family: Inter_Bold; // 700
       src: url("#{$font-face-path}Inter_Bold.woff2");
+      font-display: swap;
     }
 
     //extra-bold
     @font-face {
       font-family: Inter_ExtraBold; // 800
       src: url("#{$font-face-path}Inter_ExtraBold.woff2");
+      font-display: swap;
     }
   }
 
@@ -231,16 +239,19 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                General
   // - - - - - - - - - - - - - - - - - - - -
+  body {
+    @include document-common-styles();
 
-  // Default background-color and color
-  @if $tokens and $colors {
-    body {
-      display: grid;
-      min-block-size: 100dvh;
-      margin: 0;
-      background-color: var(--mer-color__surface);
-      color: var(--mer-text__on-surface);
-      line-height: var(--mer-line-height--regular);
+    @if $tokens {
+      // Default background-color and color
+      @if $colors {
+        background-color: var(--mer-color__surface);
+        color: var(--mer-text__on-surface);
+      }
+
+      @if $font {
+        line-height: var(--mer-line-height--regular);
+      }
 
       @if $font-face {
         font-family: Inter_Regular;
@@ -285,9 +296,6 @@
     @if $button-classes {
       // Button primary
       @include button-primary();
-      :root.dark {
-        @include button-tokens();
-      }
 
       // Button secondary
       @include button-secondary();
@@ -296,18 +304,27 @@
       @include button-tertiary();
     }
 
+    // Form input text
+    @if $form-input-text-classes {
+      @include form-input-text-only();
+    }
+
     // Icon classes
     @if $icon-classes {
       @include icon-mask();
       @include icon-background();
+      @include form-input-text-icon();
+      @include form-input-bg-x-rtl-support();
     }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
   //     Icons on Elements / Components
   // - - - - - - - - - - - - - - - - - - - -
-  // Icon classes
-  @if $icons-button {
+  @if ($icons-elements) {
+    // Process icons lists
+    @include process-monochrome-icons-list($system-virtual-selectors);
+
     // Button icon only
     @include button-icon-only();
 
@@ -317,7 +334,8 @@
     // Button icon after and text
     @include button-icon-after-and-text();
 
-    @include buttons-monochrome-icons-selectors($system-virtual-selectors);
+    // Form input text
+    @include form-input-text-icon();
   }
 
   // - - - - - - - - - - - - - - - -  - - -
@@ -327,8 +345,8 @@
     @if $checkbox {
       @include checkbox();
     }
-    @if $tree-view {
-      @include tree-view();
+    @if $tree-view-primary {
+      @include tree-view-primary();
     }
   }
 }

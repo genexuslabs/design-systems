@@ -34,6 +34,7 @@
 @import "./components/radio-group";
 @import "./components/segmented-control";
 @import "./components/slider";
+@import "./components/switch";
 @import "./components/tab";
 @import "./components/tree-view";
 
@@ -96,6 +97,7 @@
   $segmented-control: true,
   $slider-primary: true,
   $slider-secondary: true,
+  $switch: true,
   $tab: true,
   $tree-view-primary: true,
   $tree-view-secondary: true
@@ -103,18 +105,24 @@
   // font-face
   @if $font-face {
     @font-face {
-      font-family: SourceSansPro_Regular; // 400
+      font-family: SourceSansPro; // 400
       src: url("#{$font-face-path}SourceSansPro_Regular.woff2");
+      font-weight: 400;
+      font-display: swap;
     }
 
     @font-face {
-      font-family: SourceSansPro_SemiBold; // 600
+      font-family: SourceSansPro; // 600
       src: url("#{$font-face-path}SourceSansPro_SemiBold.woff2");
+      font-weight: 600;
+      font-display: swap;
     }
 
     @font-face {
-      font-family: SourceSansPro_Bold; // 700
+      font-family: SourceSansPro; // 700
       src: url("#{$font-face-path}SourceSansPro_Bold.woff2");
+      font-weight: 700;
+      font-display: swap;
     }
   }
 
@@ -189,7 +197,7 @@
       color: var(--text-un-text__on-surface--positive);
 
       @if $font-face {
-        font-family: SourceSansPro_Regular;
+        font-family: SourceSansPro;
       }
     }
   }
@@ -355,6 +363,11 @@
     // slider secondary
     @if $slider-secondary {
       @include slider-secondary();
+    }
+
+    // switch
+    @if $switch {
+      @include switch();
     }
 
     // tab

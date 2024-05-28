@@ -1,13 +1,12 @@
 @mixin checkbox-tokens() {
   // size
-  --mer-checkbox__size: var(--mer-spacing--md);
+  --ch-checkbox__container-size: var(--mer-spacing--md);
 
   // border
-  --mer-checkbox__border-width: var(--mer-border__width--sm);
-  --mer-checkbox__border-style: solid;
-  --mer-checkbox__border-color: var(--mer-border-color__dim);
+  --mer-checkbox__border: var(--mer-border__width--sm) solid
+    var(--mer-border-color__dim);
   --mer-checkbox__border-radius: var(--mer-border__radius--xs);
-  --mer-checkbox-check__border-color: var(--mer-border-color__neutral--active);
+  --mer-checkbox-check__color: var(--mer-border-color__neutral--active);
 
   // background
   --mer-checkbox__bg-color: transparent;

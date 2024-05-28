@@ -3,14 +3,16 @@ import cheerio from "cheerio";
 // partials-common
 import { getIcons } from "./partials-common/get-icons.js";
 import { RED, RESET_COLOR, getSvgString } from "./partials-common/utils.js";
-import { savedOnDisk } from "./partials-common/types.js";
+import { SavedOnDisk } from "./partials-common/types.js";
 // partials-svg
 import { processMulticolorFigures } from "./partials-svg/process-multicolor-figures.js";
 import { saveSvgOnDisk } from "./partials-svg/utils.js";
 import {
-  iconsColorsSchema,
-  processedIconInfo,
-  colorScheme,
+  IconsColorsSchema,
+  ProcessedIconInfo,
+  ColorScheme,
+  MonochromeColorsMap,
+  MonochromeCategoriesMap,
 } from "./partials-common/types.js";
 import { createMulticolorSvg } from "./partials-svg/create-multicolor-svg.js";
 import { createMonochromeSvg } from "./partials-svg/create-monochrome-svg.js";
@@ -24,7 +26,7 @@ import { savedIcons, pushSavedIcon, generateShowcase } from "./showcase.js";
 //Files and Directories
 const SRC_PATH = await process.argv[2];
 const OUTPUT_PATH = await process.argv[3];
-const STATES_FILENAME = await process.argv[4];
+const COLOR_STATES_PATH = await process.argv[4];
 const SHOWCASE_PATH = await process.argv[5];
 const LOG_PATH = await process.argv[6];
 const numberOfArgsProvided = process.argv.length;
@@ -40,20 +42,35 @@ const savedIconsOnDisk: savedIcons = {
 const readyObj: readyObj = readyToProcess(
   SRC_PATH,
   OUTPUT_PATH,
-  STATES_FILENAME,
+  COLOR_STATES_PATH,
   SHOWCASE_PATH,
   LOG_PATH,
   numberOfArgsProvided
 );
 
 if (readyObj.ready) {
-  //clear
-
   const iconsPromise = getIcons(SRC_PATH);
   iconsPromise
     .then((result: string[]) => {
-      processIcons(result, readyObj.statesJson);
-      generateShowcase(savedIconsOnDisk, OUTPUT_PATH, SHOWCASE_PATH, LOG_PATH);
+      // 1. Create monochrome maps for quickly access when creating the showcase
+      // colors map
+      const monochromeColorsMap: MonochromeColorsMap =
+        createMonochromeColorsMap(readyObj.statesJson);
+      // categories map
+      const monochromeCategoriesMap: MonochromeCategoriesMap =
+        createMonochromeCategoriesMap(readyObj.statesJson);
+      // 2. Process icons (the important stuff!💥)
+      processIcons(result, readyObj.statesJson, monochromeColorsMap);
+      // 3. Generate showcase (nice feature to have)
+      generateShowcase(
+        savedIconsOnDisk,
+        OUTPUT_PATH,
+        SHOWCASE_PATH,
+        LOG_PATH,
+        readyObj.statesJson,
+        monochromeColorsMap,
+        monochromeCategoriesMap
+      );
     })
     .catch((error) => {
       const msg = `There was an error processing the icons. error: ${error}.`;
@@ -66,16 +83,20 @@ if (readyObj.ready) {
  * @description: it processes the icons, meaning it will create the new svg version for each icon.
  * @param iconsArray: an array strings, where each string represents the icon path.
  */
-function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
-  let processedIconsInfo: processedIconInfo[] = [];
+function processIcons(
+  iconsArray: string[],
+  statesJson: IconsColorsSchema,
+  monochromeColorsMap: MonochromeColorsMap
+) {
+  let processedIconsInfo: ProcessedIconInfo[] = [];
   iconsArray.forEach((iconPath) => {
     const svgString = getSvgString(iconPath);
-    const svgCheerio = cheerio.load(svgString);
-    const iconType = getIconType(svgCheerio, statesJson);
+    const svgSourceCheerio = cheerio.load(svgString);
+    const iconType = getIconType(svgSourceCheerio, statesJson);
 
     if (iconType === "multicolor") {
       const svgFiguresResult = processMulticolorFigures(
-        svgCheerio,
+        svgSourceCheerio,
         statesJson,
         iconPath,
         LOG_PATH
@@ -91,7 +112,7 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
           "light"
         );
         // Save svg on disk
-        let lightMultiColorSvgSavedOnDisk: savedOnDisk;
+        let lightMultiColorSvgSavedOnDisk: SavedOnDisk;
         if (svgIconLight) {
           lightMultiColorSvgSavedOnDisk = saveSvgOnDisk(
             svgIconLight,
@@ -107,8 +128,7 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
             lightMultiColorSvgSavedOnDisk.svgFilePath,
             "multicolor",
             lightMultiColorSvgSavedOnDisk.category,
-            "light",
-            statesJson
+            "light"
           );
         }
         // Save info for the log
@@ -129,7 +149,7 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
           "dark"
         );
         // Save svg on disk
-        let darkMultiColorSvgSavedOnDisk: savedOnDisk;
+        let darkMultiColorSvgSavedOnDisk: SavedOnDisk;
         if (svgIconDark) {
           darkMultiColorSvgSavedOnDisk = saveSvgOnDisk(
             svgIconDark,
@@ -145,8 +165,7 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
             darkMultiColorSvgSavedOnDisk.svgFilePath,
             "multicolor",
             darkMultiColorSvgSavedOnDisk.category,
-            "dark",
-            statesJson
+            "dark"
           );
         }
 
@@ -160,7 +179,7 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
       }
     } else if (iconType === "monochrome") {
       // clone cheerio object, to process the unmodified object for the dark version.
-      const svgCheerioClone = cheerio.load(svgCheerio.html());
+      const svgSourceCheerioClone = cheerio.load(svgSourceCheerio.html());
 
       /* ==================
       MONOCHROME LIGHT
@@ -168,17 +187,18 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
       // Create and get svg
 
       const svgIconLight = createMonochromeSvg(
-        svgCheerio,
+        svgSourceCheerio,
         statesJson,
         iconPath,
         SRC_PATH,
         "light",
         LOG_PATH,
-        STATES_FILENAME
+        COLOR_STATES_PATH,
+        monochromeColorsMap
       );
 
       // Save svg on disk
-      let lightMonoChromeSvgSavedOnDisk: savedOnDisk;
+      let lightMonoChromeSvgSavedOnDisk: SavedOnDisk;
 
       if (svgIconLight.processed) {
         lightMonoChromeSvgSavedOnDisk = saveSvgOnDisk(
@@ -195,8 +215,7 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
           lightMonoChromeSvgSavedOnDisk.svgFilePath,
           "monochrome",
           lightMonoChromeSvgSavedOnDisk.category,
-          "light",
-          statesJson
+          "light"
         );
       }
 
@@ -214,17 +233,18 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
 
       // Create and get svg
       const svgIconDark = createMonochromeSvg(
-        svgCheerioClone,
+        svgSourceCheerioClone,
         statesJson,
         iconPath,
         SRC_PATH,
         "dark",
         LOG_PATH,
-        STATES_FILENAME
+        COLOR_STATES_PATH,
+        monochromeColorsMap
       );
 
       // Save svg on disk
-      let darkMonoChromeSvgSavedOnDisk: savedOnDisk;
+      let darkMonoChromeSvgSavedOnDisk: SavedOnDisk;
       if (svgIconDark.processed) {
         darkMonoChromeSvgSavedOnDisk = saveSvgOnDisk(
           svgIconDark.svgString,
@@ -237,11 +257,10 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
         // Save icon for the showcase
         pushSavedIcon(
           savedIconsOnDisk,
-          lightMonoChromeSvgSavedOnDisk.svgFilePath,
+          darkMonoChromeSvgSavedOnDisk.svgFilePath,
           "monochrome",
-          lightMonoChromeSvgSavedOnDisk.category,
-          "dark",
-          statesJson
+          darkMonoChromeSvgSavedOnDisk.category,
+          "dark"
         );
       }
 
@@ -261,10 +280,10 @@ function processIcons(iconsArray: string[], statesJson: iconsColorsSchema) {
 }
 
 const logProcessedIconsInfo = (
-  processedIconsInfo: processedIconInfo[]
+  processedIconsInfo: ProcessedIconInfo[]
 ): void => {
-  const processed: processedIconInfo[] = [];
-  const notProcessed: processedIconInfo[] = [];
+  const processed: ProcessedIconInfo[] = [];
+  const notProcessed: ProcessedIconInfo[] = [];
   processedIconsInfo.forEach((processedIcon) => {
     if (processedIcon.processed) {
       processed.push(processedIcon);
@@ -283,7 +302,7 @@ const logProcessedIconsInfo = (
   processed.forEach((processed) => {
     msgProcessed += `
       icon path: ${processed.iconPath} 
-      color scheme: ${processed.colorScheme}
+      color scheme: ${processed.ColorScheme}
     `;
   });
   log(msgProcessed, LOG_PATH, shouldWriteToLog, "success");
@@ -299,21 +318,44 @@ const logProcessedIconsInfo = (
   notProcessed.forEach((notProcessed) => {
     msgNotProcessed += `
       icon path: ${notProcessed.iconPath} 
-      color scheme: ${notProcessed.colorScheme}
+      color scheme: ${notProcessed.ColorScheme}
     `;
   });
   log(msgNotProcessed, LOG_PATH, shouldWriteToLog, "error");
 };
 
 const saveProcessedIconInfo = (
-  processedIconsInfo: processedIconInfo[],
+  processedIconsInfo: ProcessedIconInfo[],
   wasSavedOnDisk: boolean,
   iconPath: string,
-  colorScheme: colorScheme
+  colorScheme: ColorScheme
 ): void => {
   processedIconsInfo.push({
     iconPath: iconPath,
-    colorScheme: colorScheme,
+    ColorScheme: colorScheme,
     processed: wasSavedOnDisk,
   });
+};
+
+const createMonochromeColorsMap = (
+  statesJson: IconsColorsSchema
+): MonochromeColorsMap => {
+  const monochromeColorsMap: MonochromeColorsMap = new Map<string, number>();
+  statesJson.monochrome.colors.forEach((color, i) => {
+    monochromeColorsMap.set(color.name, i);
+  });
+  return monochromeColorsMap;
+};
+
+const createMonochromeCategoriesMap = (
+  statesJson: IconsColorsSchema
+): MonochromeCategoriesMap => {
+  const monochromeCategoriesMap: MonochromeCategoriesMap = new Map<
+    string,
+    number
+  >();
+  statesJson.monochrome.iconsCategories.forEach((category, i) => {
+    monochromeCategoriesMap.set(category.folder, i);
+  });
+  return monochromeCategoriesMap;
 };
