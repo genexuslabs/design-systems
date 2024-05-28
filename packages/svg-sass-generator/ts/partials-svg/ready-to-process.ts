@@ -99,7 +99,7 @@ export function readyToProcess(
   // 4-A. validate "color states" filepath and extension
   fs.access(COLOR_STATES_PATH, fs.constants.F_OK | fs.constants.R_OK, (err) => {
     if (err) {
-      const msg = `"Color Stats" file validation error #1: "${COLOR_STATES_PATH}" is not a valid file or ${COLOR_STATES_PATH} does not exists. Please check that argument (argument number 3).`;
+      const msg = `"Color States" file validation error #1: "${COLOR_STATES_PATH}" is not a valid file or ${COLOR_STATES_PATH} does not exists. Please check that argument (argument number 3).`;
 
       log(msg, LOG_PATH, shouldWriteToLog);
       console.error(`${RED} ${msg} ${RESET_COLOR}`);
@@ -108,7 +108,7 @@ export function readyToProcess(
       const colorStatesIsJson =
         extname(COLOR_STATES_PATH).toLowerCase() === ".json";
       if (!colorStatesIsJson) {
-        const msg = `"Color Stats" file validation error #1: the provided color states file "${COLOR_STATES_PATH}" is not a json file. This file is expected to be a json.`;
+        const msg = `"Color States" file validation error #1: the provided color states file "${COLOR_STATES_PATH}" is not a json file. This file is expected to be a json.`;
         console.error(`${RED} ${msg} ${RESET_COLOR}`);
         log(msg, LOG_PATH, shouldWriteToLog);
       }
@@ -118,7 +118,7 @@ export function readyToProcess(
   // 4-B. validate states json file
   const statesResult = getStatesObject(COLOR_STATES_PATH);
   if (!statesResult.valid) {
-    const msg = `"Color Stats" file validation error #2: the provided color states json file ${COLOR_STATES_PATH}" is not valid. Errors found: ${statesResult.info}`;
+    const msg = `"Color States" file validation error #2: the provided color states json file ${COLOR_STATES_PATH}" is not valid. Errors found: ${statesResult.info}`;
     console.error(`${RED} ${msg} ${RESET_COLOR}`);
     log(msg, LOG_PATH, shouldWriteToLog);
 
@@ -133,7 +133,7 @@ export function readyToProcess(
     statesResult.statesObject
   );
   if (!validateSchemaResult.isValid) {
-    let msgLog = `States Schema Error #3: color states file ${COLOR_STATES_PATH} schema is not valid. The following errors have been found: \n\n`;
+    let msgLog = `"Color States" Schema Error #3: color states file ${COLOR_STATES_PATH} schema is not valid. The following errors have been found: \n\n`;
 
     const msgConsole = `States Schema Error #3: color states file ${COLOR_STATES_PATH} schema is not valid. Please, read the log file under ${LOG_PATH} to know what went wrong.`;
 
