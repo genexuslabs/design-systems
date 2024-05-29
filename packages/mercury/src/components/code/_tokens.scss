@@ -1,0 +1,8 @@
+@mixin code-tokens() {
+  // TODO: variable names should be updated to something more descriptive
+  --ch-code__color-base: var(--mer-text__on-surface);
+  --ch-code__color-blue: var(--mer-color__primary-blue--400);
+  --ch-code__color-light-blue: var(--mer-color__primary-blue--200);
+  --ch-code__color-red: var(--mer-color__message-red--200);
+  --ch-code__color-green: var(--mer-color__message-green--200);
+}
