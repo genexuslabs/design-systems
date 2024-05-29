@@ -15,6 +15,9 @@
   --button-base__block-size: var(--mer-control__block-size);
   --button-base__gap: var(--mer-spacing--xs);
   --button-base__padding-inline: var(--mer-spacing--sm);
+  //with icon
+  --button-icon-only__padding: 0;
+  --button-icon-only__inline-size: var(--mer-control__block-size);
 }
 
 @mixin button-tokens-primary() {
@@ -86,8 +89,8 @@
   --button-tertiary__color--active: var(--mer-text__primary--active);
   //disabled
   --button-tertiary__background-color--disabled: transparent;
-  --button-tertiary__border-color--disabled: var(--mer-text__on-disabled);
-  --button-tertiary__color--disabled: transparent;
+  --button-tertiary__border-color--disabled: transparent;
+  --button-tertiary__color--disabled: var(--mer-text__on-disabled);
 }
 
 @mixin button-tokens-icon-only() {
