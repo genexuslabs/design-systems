@@ -10,11 +10,12 @@
       href="../dist/assets/images/mercury-favicon-32x32.png"
       sizes="32x32"
     />
-    <base href="../dist/" target="_blank" />
   </head>
   <body class="body">
     <main class="container">
-      <!-- button primary -->
+      <!-- ----------------------------------------------------- 
+    BUTTON PRIMARY
+    ------------------------------------------------------ -->
       <section class="section">
         <header class="section__header">
           <h1 class="section__title">button primary</h1>
@@ -31,37 +32,520 @@
             <header class="article__header">
               <h2 class="article__title">text only</h2>
               <ul class="article__pills">
-                <li class="article__pill article__pill--property-string">
+                <li class="article__pill article__pill--class">
                   .button-primary
                 </li>
               </ul>
             </header>
-            <div class="article__content">
-              <button class="button-primary">Caption</button>
+            <div class="article__main">
+              <div class="article__content">
+                <button class="button-primary">Caption</button>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-1" language="xml" class="code"> </ch-code>
+                <script>
+                  const markup1 = `<button class="button-primary">
+  Caption
+</button>`;
+                  document.getElementById("ch-code-1").value = markup1;
+                </script>
+              </div>
             </div>
           </article>
 
-          <!-- button-primary text & icon-->
+          <!-- button-primary text only : disabled-->
           <article class="article">
+            <!-- header -->
             <header class="article__header">
-              <h2 class="article__title">text + icon</h2>
+              <h2 class="article__title">text only : disabled</h2>
               <ul class="article__pills">
-                <li class="article__pill article__pill--property-string">
+                <li class="article__pill article__pill--class">
                   .button-primary
+                </li>
+                <li class="article__pill article__pill--property-string">
+                  disabled
                 </li>
               </ul>
             </header>
-            <div class="article__content">
-              <button
-                class="button-primary button-icon-and-text icon__system_user--on-primary"
-              >
-                Caption
-              </button>
+            <!-- main -->
+            <div class="article__main">
+              <div class="article__content">
+                <button class="button-primary" disabled>Caption</button>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-2" language="xml" class="code"></ch-code>
+                <script>
+                  const markup2 = `<button class="button-primary" disabled>
+  Captions
+</button>`;
+                  document.getElementById("ch-code-2").value = markup2;
+                </script>
+              </div>
+            </div>
+          </article>
+
+          <!-- button-primary text + icon-->
+          <article class="article">
+            <!-- header -->
+            <header class="article__header">
+              <h2 class="article__title">text + icon</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .button-primary
+                </li>
+                <li class="article__pill article__pill--class">
+                  .button-icon-and-text
+                </li>
+                <li class="article__pill article__pill--icon">
+                  .icon__system_user--on-primary
+                </li>
+              </ul>
+            </header>
+            <!-- main -->
+            <div class="article__main">
+              <div class="article__content">
+                <button
+                  class="button-primary button-icon-and-text icon__system_user--on-primary"
+                >
+                  Caption
+                </button>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-3" language="xml" class="code"> </ch-code>
+                <script>
+                  const markup3 = `<button class="button-primary button-icon-and-text icon__system_user--on-primary">
+  Caption
+</button>`;
+                  document.getElementById("ch-code-3").value = markup3;
+                </script>
+              </div>
+            </div>
+          </article>
+
+          <!-- button-primary text + icon : disabled -->
+          <article class="article">
+            <!-- header -->
+            <header class="article__header">
+              <h2 class="article__title">text + icon : disabled</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .button-primary
+                </li>
+                <li class="article__pill article__pill--class">
+                  .button-icon-and-text
+                </li>
+                <li class="article__pill article__pill--icon">
+                  .icon__system_user--on-primary
+                </li>
+                <li class="article__pill article__pill--property-string">
+                  disabled
+                </li>
+              </ul>
+            </header>
+            <!-- main -->
+            <div class="article__main">
+              <div class="article__content">
+                <button
+                  class="button-primary button-primary--disabled button-icon-and-text icon__system_user--on-disabled"
+                  disabled
+                >
+                  Caption
+                </button>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-4" language="xml" class="code"> </ch-code>
+                <script>
+                  const markup4 = `<button class="button-primary button-primary--disabled button-icon-and-text icon__system_user--on-disabled"
+                  disabled>
+  Caption
+</button>`;
+                  document.getElementById("ch-code-4").value = markup4;
+                </script>
+              </div>
+            </div>
+          </article>
+
+          <!-- button-primary icon only -->
+          <article class="article">
+            <!-- header -->
+            <header class="article__header">
+              <h2 class="article__title">icon only</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .button-primary
+                </li>
+                <li class="article__pill article__pill--class">
+                  .button-icon-only
+                </li>
+                <li class="article__pill article__pill--icon">
+                  .icon__system_user--on-primary
+                </li>
+                <li class="article__pill article__pill--property-string">
+                  disabled
+                </li>
+              </ul>
+            </header>
+            <!-- main -->
+            <div class="article__main">
+              <div class="article__content">
+                <button
+                  class="button-primary button-icon-only icon__system_user--on-primary"
+                ></button>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-5" language="xml" class="code"> </ch-code>
+                <script>
+                  const markup5 = `<button class="button-primary button-icon-only icon__system_user--on-primary"></button>`;
+                  document.getElementById("ch-code-5").value = markup5;
+                </script>
+              </div>
+            </div>
+          </article>
+
+          <!-- button-primary icon only : disabled-->
+          <article class="article">
+            <!-- header -->
+            <header class="article__header">
+              <h2 class="article__title">icon only : disabled</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .button-primary
+                </li>
+                <li class="article__pill article__pill--class">
+                  .button-icon-only
+                </li>
+                <li class="article__pill article__pill--icon">
+                  .icon__system_user--on-primary
+                </li>
+                <li class="article__pill article__pill--property-string">
+                  disabled
+                </li>
+              </ul>
+            </header>
+            <!-- main -->
+            <div class="article__main">
+              <div class="article__content">
+                <button
+                  class="button-primary button-icon-only icon__system_user--on-disabled"
+                  disabled
+                ></button>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-6" language="xml" class="code"> </ch-code>
+                <script>
+                  const markup6 = `<button class="button-primary button-icon-only icon__system_user--on-disabled" disabled></button>`;
+                  document.getElementById("ch-code-6").value = markup6;
+                </script>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ----------------------------------------------------- 
+      BUTTON SECONDARY
+      ------------------------------------------------------ -->
+      <section class="section">
+        <!-- header -->
+        <header class="section__header">
+          <h1 class="section__title">button secondary</h1>
+          <p class="section__description">
+            A secondary HTML button is a supportive element on a webpage,
+            designed to complement the primary button without overshadowing it.
+            It usually represents less critical actions, such as navigating to
+            another page or cancelling an action, providing users with
+            alternative options.
+          </p>
+        </header>
+        <div class="articles-container">
+          <!-- button-secondary text only -->
+          <article class="article">
+            <header class="article__header">
+              <h2 class="article__title">text only</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .button-secondary
+                </li>
+              </ul>
+            </header>
+            <!-- main -->
+            <div class="article__main">
+              <div class="article__content">
+                <button class="button-secondary">Caption</button>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-7" language="xml" class="code"> </ch-code>
+                <script>
+                  const markup7 = `<button class="button-secondary"></button>`;
+                  document.getElementById("ch-code-7").value = markup7;
+                </script>
+              </div>
+            </div>
+          </article>
+
+          <!-- button-secondary text : disabled-->
+          <article class="article">
+            <!-- header -->
+            <header class="article__header">
+              <h2 class="article__title">text only : disabled</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .button-secondary
+                </li>
+                <li class="article__pill article__pill--property-string">
+                  disabled
+                </li>
+              </ul>
+            </header>
+            <!-- main -->
+            <div class="article__main">
+              <div class="article__content">
+                <button class="button-secondary" disabled>Caption</button>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-8" language="xml" class="code"></ch-code>
+                <script>
+                  const markup8 = `<button class="button-secondary" disabled>
+  Caption
+</button>`;
+                  document.getElementById("ch-code-8").value = markup8;
+                </script>
+              </div>
+            </div>
+          </article>
+
+          <!-- button-secondary text + icon-->
+          <article class="article">
+            <!-- header -->
+            <header class="article__header">
+              <h2 class="article__title">text + icon</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .button-secondary
+                </li>
+                <li class="article__pill article__pill--icon">
+                  .icon__system_user--on-primary
+                </li>
+              </ul>
+            </header>
+            <!-- main -->
+            <div class="article__main">
+              <div class="article__content">
+                <button
+                  class="button-secondary button-icon-and-text icon__system_user--neutral"
+                >
+                  Caption
+                </button>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-9" language="xml" class="code"></ch-code>
+                <script>
+                  const markup9 = `<button class="button-secondary button-icon-and-text icon__system_user--neutral">
+  Caption
+</button>`;
+                  document.getElementById("ch-code-9").value = markup9;
+                </script>
+              </div>
+            </div>
+          </article>
+
+          <!-- button-secondary text + icon : disabled -->
+          <article class="article">
+            <!-- header -->
+            <header class="article__header">
+              <h2 class="article__title">text + icon : disabled</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .button-secondary
+                </li>
+                <li class="article__pill article__pill--class">
+                  .button-icon-and-text
+                </li>
+                <li class="article__pill article__pill--icon">
+                  .icon__system_user--on-primary
+                </li>
+                <li class="article__pill article__pill--property-string">
+                  disabled
+                </li>
+              </ul>
+            </header>
+            <!-- main -->
+            <div class="article__main">
+              <div class="article__content">
+                <button
+                  class="button-secondary button-icon-and-text icon__system_user--on-disabled"
+                  disabled
+                >
+                  Caption
+                </button>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-10" language="xml" class="code"></ch-code>
+                <script>
+                  const markup10 = `<button class="button-secondary button-icon-and-text icon__system_user--on-disabled" disabled>
+  Caption
+</button>`;
+                  document.getElementById("ch-code-10").value = markup10;
+                </script>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ----------------------------------------------------- 
+      BUTTON TERTIARY
+      ------------------------------------------------------ -->
+      <section class="section">
+        <!-- header -->
+        <header class="section__header">
+          <h1 class="section__title">button tertiary</h1>
+          <p class="section__description">
+            A tertiary HTML button is a minimalistic element on a webpage,
+            designed to be subtle and unobtrusive. With no border and a
+            transparent background, it typically represents the least critical
+            actions, such as linking to additional information or performing
+            tertiary tasks, allowing it to blend seamlessly into the content.
+          </p>
+        </header>
+        <div class="articles-container">
+          <!-- button-tertiary text only -->
+          <article class="article">
+            <header class="article__header">
+              <h2 class="article__title">text only</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .button-tertiary
+                </li>
+              </ul>
+            </header>
+            <!-- main -->
+            <div class="article__main">
+              <div class="article__content">
+                <button class="button-tertiary">Caption</button>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-11" language="xml" class="code"></ch-code>
+                <script>
+                  const markup11 = `<button class="button-tertiary">
+  Caption
+</button>`;
+                  document.getElementById("ch-code-11").value = markup11;
+                </script>
+              </div>
+            </div>
+          </article>
+
+          <!-- button-tertiary text : disabled-->
+          <article class="article">
+            <!-- header -->
+            <header class="article__header">
+              <h2 class="article__title">text only : disabled</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .button-tertiary
+                </li>
+                <li class="article__pill article__pill--property-string">
+                  disabled
+                </li>
+              </ul>
+            </header>
+            <!-- main -->
+            <div class="article__main">
+              <div class="article__content">
+                <button class="button-tertiary" disabled>Caption</button>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-12" language="xml" class="code"></ch-code>
+                <script>
+                  const markup12 = `<button class="button-tertiary" disabled>
+  Caption
+</button>`;
+                  document.getElementById("ch-code-12").value = markup12;
+                </script>
+              </div>
+            </div>
+          </article>
+
+          <!-- button-tertiary text + icon-->
+          <article class="article">
+            <!-- header -->
+            <header class="article__header">
+              <h2 class="article__title">text + icon</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .button-tertiary
+                </li>
+                <li class="article__pill article__pill--icon">
+                  .icon__system_user--on-primary
+                </li>
+              </ul>
+            </header>
+            <!-- main -->
+            <div class="article__main">
+              <div class="article__content">
+                <button
+                  class="button-tertiary button-icon-and-text icon__system_user--primary"
+                >
+                  Caption
+                </button>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-13" language="xml" class="code"></ch-code>
+                <script>
+                  const markup13 = `<button class="button-tertiary button-icon-and-text icon__system_user--primary">
+  Caption
+</button>`;
+                  document.getElementById("ch-code-13").value = markup13;
+                </script>
+              </div>
+            </div>
+          </article>
+
+          <!-- button-tertiary text + icon : disabled -->
+          <article class="article">
+            <!-- header -->
+            <header class="article__header">
+              <h2 class="article__title">text + icon : disabled</h2>
+              <ul class="article__pills">
+                <li class="article__pill article__pill--class">
+                  .button-tertiary
+                </li>
+                <li class="article__pill article__pill--class">
+                  .button-icon-and-text
+                </li>
+                <li class="article__pill article__pill--icon">
+                  .icon__system_user--on-primary
+                </li>
+                <li class="article__pill article__pill--property-string">
+                  disabled
+                </li>
+              </ul>
+            </header>
+            <!-- main -->
+            <div class="article__main">
+              <div class="article__content">
+                <button
+                  class="button-tertiary button-icon-and-text icon__system_user--on-disabled"
+                  disabled
+                >
+                  Caption
+                </button>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-14" language="xml" class="code"></ch-code>
+                <script>
+                  const markup14 = `<button class="button-tertiary button-icon-and-text icon__system_user--on-disabled" disabled>
+  Caption
+</button>`;
+                  document.getElementById("ch-code-14").value = markup14;
+                </script>
+              </div>
             </div>
           </article>
         </div>
       </section>
     </main>
-    <script src="../showcase/scripts.js"></script>
+    <script src="./assets/scripts.js"></script>
   </body>
 </html>
