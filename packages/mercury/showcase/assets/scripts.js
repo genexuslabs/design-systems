@@ -3,17 +3,23 @@ const HEAD = document.head;
 const BODY = document.querySelector("body");
 
 const includeStyles = () => {
+  //reset styles
+  const resetStylesLink = document.createElement("link");
+  resetStylesLink.rel = "stylesheet";
+  resetStylesLink.href = "./assets/reset.css";
+  HEAD.appendChild(resetStylesLink);
+
   //main styles
   const mainStylesLink = document.createElement("link");
   mainStylesLink.rel = "stylesheet";
-  mainStylesLink.href = "./assets/styles-main.css";
+  mainStylesLink.href = "./assets/main.css";
   HEAD.appendChild(mainStylesLink);
 
-  //aside styles
-  const asideStylesLink = document.createElement("link");
-  asideStylesLink.rel = "stylesheet";
-  asideStylesLink.href = "./assets/styles-aside.css";
-  HEAD.appendChild(asideStylesLink);
+  //sidebar styles
+  const sidebarStylesLink = document.createElement("link");
+  sidebarStylesLink.rel = "stylesheet";
+  sidebarStylesLink.href = "./assets/sidebar.css";
+  HEAD.appendChild(sidebarStylesLink);
 
   //mercury styles
   const mercuryLink = document.createElement("link");
