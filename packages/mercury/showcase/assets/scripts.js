@@ -3,17 +3,31 @@ const HEAD = document.head;
 const BODY = document.querySelector("body");
 
 const includeStyles = () => {
-  //showcase styles
-  const showcaseLlink = document.createElement("link");
-  showcaseLlink.rel = "stylesheet";
-  showcaseLlink.href = "../showcase/styles.css";
-  HEAD.appendChild(showcaseLlink);
+  //main styles
+  const mainStylesLink = document.createElement("link");
+  mainStylesLink.rel = "stylesheet";
+  mainStylesLink.href = "./assets/styles-main.css";
+  HEAD.appendChild(mainStylesLink);
+
+  //aside styles
+  const asideStylesLink = document.createElement("link");
+  asideStylesLink.rel = "stylesheet";
+  asideStylesLink.href = "./assets/styles-aside.css";
+  HEAD.appendChild(asideStylesLink);
 
   //mercury styles
   const mercuryLink = document.createElement("link");
   mercuryLink.rel = "stylesheet";
-  mercuryLink.href = "./css/mercury.css";
+  mercuryLink.href = "../dist/css/mercury.css";
   HEAD.appendChild(mercuryLink);
+};
+
+const includeChameleon = () => {
+  const chameleonScript = document.createElement("script");
+  chameleonScript.src =
+    "https://unpkg.com/@genexus/chameleon-controls-library@latest/dist/chameleon/chameleon.esm.js";
+  chameleonScript.type = "module";
+  HEAD.appendChild(chameleonScript);
 };
 
 const setScheme = () => {
@@ -58,7 +72,10 @@ const toggleRTLBtn = () => {
   }
 };
 
+const createSidebar = () => {};
+
 includeStyles();
+includeChameleon();
 setScheme();
 addGoogleFonts();
 toggleRTLBtn();
