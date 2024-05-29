@@ -1,4 +1,5 @@
 :root {
+  --sc-base__border-color: var(--mer-color__neutral-gray--700);
   /* TOKENS MAIN */
   --body__font-size: 16px;
   --body__line-height: 16px;
@@ -49,8 +50,8 @@
 /*====================
 General
 ====================*/
-body {
-  display: block !important; /*WA: Prevent issues with scroll in internal controls due to display: grid on the body*/
+body.showcase {
+  display: block; /*WA: Prevent issues with scroll in internal controls due to display: grid on the body*/
 }
 
 /*====================
@@ -227,7 +228,7 @@ Articles
 Code (ch-code)
 ====================*/
 .article__code {
-  border: 1px solid var(--mer-color__neutral-gray--700);
+  border: 1px solid var(--sc-base__border-color);
   border-radius: var(--mer-border__radius--sm);
   padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
 }
