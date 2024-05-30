@@ -1,6 +1,15 @@
+// constants
+const _URL = new URL(window.location.href);
+const PAGE_URL = `${_URL.origin}${_URL.pathname}`;
+const ARTICLE_HEADER_CLASS = ".article__header";
+const ARTICLE_SELECTOR = ".article[nav]";
+// references
 const HTML = document.querySelector("html");
 const HEAD = document.head;
 const BODY = document.querySelector("body");
+let PARENT_NAV_SIDEBAR; // a reference if the page has sidebar
+let CURRENT_PAGE_NAV_ITEM; // a reference the navigation item for the actual actual page.
+let PAGE_ARTICLES; // a reference to all the page ".article[nav]"
 
 const includeStyles = () => {
   //reset styles
@@ -78,10 +87,211 @@ const toggleRTLBtn = () => {
   }
 };
 
-const createSidebar = () => {};
+const getNavbarItems = () => {
+  // Fetch the list of the showcase html pages.
+  return fetch("./assets/navbar-items.json")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then(data => {
+      return data;
+    })
+    .catch(error => {
+      console.error("There was a problem with the fetch operation:", error);
+    });
+};
+
+const includeSidebarPageNav = () => {
+  // This is the navigation items for the current page articles.
+  // Let's call this the internal navigation.
+  const includeSidebar = BODY.hasAttribute("sidebar");
+  if (includeSidebar) {
+  }
+};
+
+const addArticleTitles = () => {
+  if (!PAGE_ARTICLES) {
+    PAGE_ARTICLES = document.querySelectorAll(ARTICLE_SELECTOR);
+  }
+  if (PAGE_ARTICLES.length) {
+    const moreThanOne = PAGE_ARTICLES.length > 1;
+    PAGE_ARTICLES.forEach((article, i) => {
+      const title = article.getAttribute("data-title");
+      const header = article.querySelector(ARTICLE_HEADER_CLASS);
+      if (title && header) {
+        const articleTitleEl = document.createElement("h2");
+        articleTitleEl.classList.add("article__title");
+        articleTitleEl.textContent = title;
+
+        // Add a number to each item to make it easier to refer to.
+        // Make it a separate element, to allow different style.
+        // This only makes sense if there is more than one .article[nav]
+        if (moreThanOne) {
+          const numberTag = document.createElement("span");
+          numberTag.classList.add("article__number-id");
+          numberTag.textContent = `${i + 1}`;
+          articleTitleEl.insertBefore(numberTag, articleTitleEl.firstChild);
+        }
+
+        // Add an id to the article, to allow sharing the page url with an anchor to this article.
+        const articleId = generateArticleId(title, i);
+        if (articleId) {
+          article.setAttribute("id", articleId);
+        }
+
+        header.insertBefore(articleTitleEl, header.firstChild);
+      }
+    });
+  }
+};
+
+const addTitleAnchors = () => {
+  if (!PAGE_ARTICLES) {
+    PAGE_ARTICLES = document.querySelectorAll(ARTICLE_SELECTOR);
+  }
+  if (PAGE_ARTICLES.length) {
+    PAGE_ARTICLES.forEach(article => {
+      const header = article.querySelector(ARTICLE_HEADER_CLASS);
+      const articleId = article.getAttribute("id");
+      if (header && articleId) {
+        header.addEventListener("click", () => {
+          console.log(PAGE_URL);
+          copyToClipBoard(`${PAGE_URL}#${articleId}`);
+        });
+      }
+    });
+  }
+};
+
+const generateArticleId = (title, i) => {
+  // the index prevents duplicate ids if the article title is the same in more
+  // than one case (who knows).
+  return `${title.toLowerCase().replace(/ /g, "-")}-${i}`;
+};
+
+const includeSidebarNav = async () => {
+  // This is the navigation items for the showcase html pages.
+  // Let's call this the external navigation.
+
+  const includeSidebar = BODY.hasAttribute("sidebar");
+  if (includeSidebar) {
+    const navbarItems = await getNavbarItems();
+    if (navbarItems && navbarItems.items.length) {
+      // get page url name to identify the navigation item
+      // for this page later.
+
+      const pageName = PAGE_URL.split("/").pop().split(".")[0];
+
+      navbarItems.items.forEach(item => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = item.url;
+        a.textContent = item.caption;
+
+        // ¿Is this the item of the actual page?
+        if (item.url.split(".")[0] === pageName) {
+          CURRENT_PAGE_NAV_ITEM = li;
+        }
+
+        li.appendChild(a);
+        PARENT_NAV_SIDEBAR.appendChild(li);
+      });
+    }
+  }
+
+  if (CURRENT_PAGE_NAV_ITEM) {
+    // only create internal navigation if the navigation item
+    // for this page exists.
+    includeSidebarPageNav();
+  }
+};
+
+const includeSidebar = () => {
+  // the following js is credit to chat-gpt.
+  // I just gave him the html, amazing!
+
+  const includeSidebar = BODY.hasAttribute("sidebar");
+  if (includeSidebar) {
+    // Create aside element
+    const aside = document.createElement("aside");
+    aside.classList.add("sidebar");
+
+    // Create header element
+    const header = document.createElement("header");
+    header.classList.add("sidebar__header");
+    header.textContent = "Mercury Design System";
+    aside.appendChild(header);
+
+    // Create nav element
+    const nav = document.createElement("nav");
+    nav.classList.add("sidebar__nav");
+    aside.appendChild(nav);
+
+    // Create ul element
+    const ul = document.createElement("ul");
+    ul.classList.add("sidebar__list", "sidebar__list--parent");
+    ul.id = "parent-sidebar";
+    PARENT_NAV_SIDEBAR = ul;
+    nav.appendChild(ul);
+
+    // Create footer element
+    const footer = document.createElement("footer");
+    footer.classList.add("sidebar__footer");
+    aside.appendChild(footer);
+
+    // Create anchor element
+    const anchor = document.createElement("a");
+    anchor.classList.add("sidebar__footer-link");
+    anchor.href = "#";
+    footer.appendChild(anchor);
+    // temporary until tokens are ready:
+    anchor.addEventListener("click", () => {
+      alert("Tokens showcase is not ready yet!");
+    });
+
+    // Create span elements for footer text
+    const span1 = document.createElement("span");
+    span1.classList.add("sidebar__footer-text");
+    span1.textContent = "⚛️ The Tokens";
+
+    const span2 = document.createElement("span");
+    span2.classList.add(
+      "sidebar__footer-text",
+      "sidebar__footer-text--the-gold"
+    );
+    span2.textContent = "✨ The Gold !";
+
+    // Append span elements to anchor element
+    anchor.appendChild(span1);
+    anchor.appendChild(span2);
+
+    // Prepend the aside element as the first child of the body
+    const body = document.body;
+    body.insertBefore(aside, body.firstChild);
+
+    includeSidebarNav();
+  }
+};
+
+const copyToClipBoard = text => {
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      // copied successfully
+    })
+    .catch(err => {
+      console.error("Error copying text: ", err);
+    });
+};
 
 includeStyles();
 includeChameleon();
+addArticleTitles();
+addTitleAnchors();
+includeSidebar();
 setScheme();
 addGoogleFonts();
 toggleRTLBtn();
