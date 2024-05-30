@@ -22,7 +22,7 @@
 /*====================
 General
 ====================*/
-body.showcase-sidebar {
+body.showcase[sidebar] {
   display: grid;
   grid-template-columns: var(--sc-sidebar__width) 1fr; /* 250px for aside, rest for main */
   height: 100vh; /* Full viewport height */
