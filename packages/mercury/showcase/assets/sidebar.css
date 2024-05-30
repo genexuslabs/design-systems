@@ -63,6 +63,7 @@ Header
   border-block-end: 1px solid var(--sc-sidebar__border-color);
 }
 .sidebar__footer {
+  display: none;
   border-block-start: 1px solid var(--sc-sidebar__border-color);
 }
 .sidebar__footer-text--the-gold {
@@ -104,6 +105,9 @@ Nav
 .sidebar__list li a:hover {
   color: var(--mer-color__neutral-gray--100);
 }
+.sidebar__list li a:hover::before {
+  background-color: var(--mer-color__neutral-gray--100);
+}
 .sidebar__list li a:active {
   color: var(--mer-color__neutral-gray--400);
 }
@@ -120,7 +124,7 @@ Nav
   background-color: var(--sc-base__border-color);
 }
 /*List Parent*/
-.sidebar__list--parent > li {
+.sidebar__list--parent {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-size: 12px;
@@ -130,6 +134,9 @@ Nav
   margin-inline-start: var(--sc-sidebar-list-child__margin-inline-start);
   position: relative;
   padding: 2px 0;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  font-size: 12px;
 }
 .sidebar__list--child::before {
   content: "";
