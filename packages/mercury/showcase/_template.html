@@ -4,9 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Template</title>
-    <base href="../dist/" target="_blank" />
   </head>
-  <body class="body">
+  <body class="showcase">
     <main class="container">
       <!-- button primary -->
       <section class="section">
@@ -15,21 +14,34 @@
           <p class="section__description">section description</p>
         </header>
         <div class="section__articles-container">
-          <!-- primary text only -->
+          <!-- button-primary text only -->
           <article class="article">
             <header class="article__header">
-              <h2 class="article__title">article title</h2>
+              <h2 class="article__title">text only</h2>
               <ul class="article__pills">
-                <li class="article__pill article__pill--property-string">
-                  pill 1
+                <li class="article__pill article__pill--class">
+                  .button-primary
                 </li>
               </ul>
             </header>
-            <div class="article__content">(Here goes the component)</div>
+            <div class="article__main">
+              <div class="article__content">
+                <button class="button-primary">Caption</button>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-1" language="xml" class="code"> </ch-code>
+                <script>
+                  const markup1 = `<button class="button-primary">
+Caption
+</button>`;
+                  document.getElementById("ch-code-1").value = markup1;
+                </script>
+              </div>
+            </div>
           </article>
         </div>
       </section>
     </main>
-    <script src="../showcase/scripts.js"></script>
+    <script src="./assets/scripts.js"></script>
   </body>
 </html>

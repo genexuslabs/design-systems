@@ -37,6 +37,7 @@
 @import "./components/checkbox/checkbox-styles";
 @import "./components/shortcuts/styles";
 @import "./components/tree-view/tree-view-styles";
+@import "./components/code/code-styles";
 
 @mixin mercury(
   // Resets
@@ -81,7 +82,8 @@
   // Components
   $components: true,
   $checkbox: true,
-  $tree-view-primary: true
+  $tree-view-primary: true,
+  $code: true
 ) {
   // - - - - - - - - - - - - - - - - - - - -
   //              Icons
@@ -342,11 +344,17 @@
   //               Components
   // - - - - - - - - - - - - - - - - - - -
   @if $components {
+    // checkbox
     @if $checkbox {
       @include checkbox();
     }
+    // tree view
     @if $tree-view-primary {
       @include tree-view-primary();
+    }
+    // code
+    @if $code {
+      @include code();
     }
   }
 }
