@@ -119,6 +119,12 @@ Nav
 
   background-color: var(--sc-base__border-color);
 }
+/*List Parent*/
+.sidebar__list--parent > li {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+}
 /*List Child*/
 .sidebar__list--child {
   margin-inline-start: var(--sc-sidebar-list-child__margin-inline-start);
