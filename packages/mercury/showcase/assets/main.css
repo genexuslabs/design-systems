@@ -248,7 +248,9 @@ Articles
 .article__main {
   display: flex;
   flex-direction: column;
-  gap: var(--article-header__gap);
+}
+.article__content {
+  margin-block-end: var(--article-header__gap);
 }
 
 /*====================
@@ -256,6 +258,7 @@ ch-code
 ====================*/
 .code {
   position: relative;
+  transition: background-color 50ms;
 }
 .code .article__pill {
   opacity: 0;
@@ -273,4 +276,66 @@ body.ctrl-cmd-pressed .code {
 }
 body.ctrl-cmd-pressed .article__pill {
   opacity: 0 !important;
+}
+/* generated header and copy button (/showcase/assets/scripts.js) */
+.code__header {
+  --code-header__color: var(--mer-color__neutral-gray--300);
+  font-size: var(--mer-font__size--2xs);
+  background-color: var(--mer-color__elevation--01);
+  display: flex;
+  justify-content: end;
+  overflow: hidden;
+  color: var(--code-header__color);
+  /* border-top-left-radius: var(--ch-code__border-radius);
+  border-top-right-radius: var(--ch-code__border-radius); */
+  /* border-radius should be equal to .code border-radius  */
+  border-top-left-radius: var(--mer-border__radius--sm);
+  border-top-right-radius: var(--mer-border__radius--sm);
+}
+/* .code__header should not implement padding. instead it is better for the elements inside to implement padding. This helps reduce vertical space in the .code__header. */
+.code__header > * {
+  padding-inline: var(--mer-spacing--md);
+  padding-block: var(--mer-spacing--2xs);
+  text-transform: uppercase;
+  /*border-inline-start: var(--mer-border__width--sm) solid
+    var(--mer-color__neutral-gray--700);*/
+}
+.code__button {
+  color: var(--code-header__color);
+}
+.code__button:hover {
+  cursor: pointer;
+  --code-header__color: var(--mer-color__neutral-gray--100);
+}
+.code__button:active {
+  --code-header__color: var(--mer-color__neutral-gray--400);
+}
+.code__header + .code {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.code__copy-button {
+  display: flex;
+  gap: var(--mer-spacing--xs);
+}
+.code__copy-button::before {
+  content: "";
+  width: var(--mer-spacing--lg);
+  height: var(--mer-spacing--lg);
+  display: inline-block;
+  mask-image: url("../assets/images/copy.svg");
+  background-size: cover;
+  background-color: var(--code-header__color);
+}
+.code--highlight {
+  animation: bgChange 0.1s linear 2;
+  animation-direction: alternate;
+}
+@keyframes bgChange {
+  from {
+    background-color: var(--mer-color__neutral-gray--800);
+  }
+  to {
+    background-color: var(--mer-color__elevation--01);
+  }
 }
