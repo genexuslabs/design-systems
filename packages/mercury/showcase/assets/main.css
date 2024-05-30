@@ -8,7 +8,7 @@
   --container__padding-inline: 32px;
   /* section */
   --section: ;
-  --section__gap: 128px;
+  --section__gap: calc(128px - var(--article-padding-block));
   --section__padding-block: 128px;
   --section-header__gap: 24px;
   --section-title__font-size: 36px;
@@ -50,7 +50,7 @@
 /*====================
 General
 ====================*/
-html {
+* {
   scroll-behavior: smooth;
 }
 body.showcase {
@@ -159,13 +159,14 @@ Articles
 .article:not(:last-child) {
   border-block-end: var(--article-border-block-end);
 }
-.article:first-child {
-  padding-block-start: 0;
-}
 .article:last-child {
   padding-block-end: 0;
 }
-/* article header*/
+/* article highlighting */
+.article--highlighting .article__title {
+  animation: articleTitleAnimation 1000ms infinite alternate backwards;
+}
+/* article header */
 .article__header {
   display: flex;
   flex-direction: column;
@@ -253,6 +254,43 @@ Articles
   flex-direction: column;
   gap: var(--article-header__gap);
 }
-/* article content */
-.article__content {
+
+/*This animation is for highlighting the article title, when clicking on
+the sidebar navigation. It is an optional setting on /showcase/assets/scripts.js
+The name of the const is HIGHLIGHT_NAV_ARTICLE.
+*/
+@keyframes articleTitleAnimation {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.35);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+/*====================
+ch-code
+====================*/
+.code {
+  position: relative;
+}
+.code .article__pill {
+  opacity: 0;
+  transition: 100ms opacity;
+  position: absolute;
+  right: 9px;
+  top: 9px;
+  /* 9px makes the pill vertically centered on a ch-code of one line*/
+}
+.code:hover .article__pill {
+  opacity: 1;
+}
+body.ctrl-cmd-pressed .code {
+  cursor: pointer;
+}
+body.ctrl-cmd-pressed .article__pill {
+  opacity: 0 !important;
 }
