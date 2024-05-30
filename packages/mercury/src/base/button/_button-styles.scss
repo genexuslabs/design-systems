@@ -113,8 +113,7 @@
     }
 
     @if $add--disabled {
-      &:disabled,
-      &--disabled {
+      &:disabled {
         @extend %button-primary--disabled;
       }
     }

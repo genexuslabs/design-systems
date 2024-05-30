@@ -10,46 +10,49 @@ import {
 } from "./utils.js";
 // partials common
 import {
-  colorScheme,
-  pathInfo,
-  monochromeStates,
-  iconsColorsSchema,
-  monochromeIcons,
-  monochromeIconResult,
-  iconTypeMap,
+  ColorScheme,
+  PathInfo,
+  IconsColorsSchema,
+  MonochromeColor,
+  MonochromeIconCategory,
+  MonochromeIconCategoryColors,
+  MonochromeIconResult,
+  MonochromeColorsMap,
+  ElementStates,
+  ThemeColors,
 } from "../partials-common/types.js";
 
 import { log } from "./log.js";
 
 let warnings: warningInfo[] = [];
-let colorSchemeValue: colorScheme;
-let monochromeStatesObjs: monochromeStates;
-let monochromeIconsArray: monochromeIcons;
-let pathInfo: pathInfo;
+let colorSchemeValue: ColorScheme;
+let monochromeColors: MonochromeColor[];
+let monochromeIconsCategories: MonochromeIconCategory[];
+let pathInfo: PathInfo;
 let CSS_VAR_NAME = "--color";
 let SVG_ID = "icon-def";
 
 export const createMonochromeSvg = (
-  svgCheerio: cheerio.Root,
-  statesJson: iconsColorsSchema,
+  svgSourceCheerio: cheerio.Root,
+  statesJson: IconsColorsSchema,
   iconPath: string,
   srcPath: string,
-  colorScheme: colorScheme,
+  colorScheme: ColorScheme,
   LOG_PATH: string,
-  STATES_FILENAME: string
-): monochromeIconResult => {
-  const svg = svgCheerio("svg");
+  STATES_FILENAME: string,
+  monochromeColorsMap: MonochromeColorsMap
+): MonochromeIconResult => {
+  const svg = svgSourceCheerio("svg");
   const svgWidth = svg.attr("width");
   const svgHeight = svg.attr("height");
-  const svgFigures = svgCheerio(SVG_FIGURES.join(","));
+  const svgFigures = svgSourceCheerio(SVG_FIGURES.join(","));
 
   warnings = []; //clear warnings array from the prev. icon
-
   iconPath = iconPath;
   statesJson = statesJson;
   colorSchemeValue = colorScheme;
-  monochromeStatesObjs = statesJson.monochrome.states;
-  monochromeIconsArray = statesJson.monochrome.icons;
+  monochromeColors = statesJson.monochrome.colors;
+  monochromeIconsCategories = statesJson.monochrome.iconsCategories;
   pathInfo = getPathInfo(srcPath, iconPath);
   LOG_PATH = LOG_PATH;
 
@@ -69,15 +72,16 @@ svg element was provided without width or/and height. This attributes are requir
   }
 
   // check if category of icon exist on the states json
-
-  const iconCategoryIndex = monochromeIconsArray.findIndex((icon) => {
-    return icon.folder === pathInfo.categoryFolderName;
-  });
+  const iconCategoryIndex = monochromeIconsCategories.findIndex(
+    (iconCategory) => {
+      return iconCategory.folder === pathInfo.categoryFolderName;
+    }
+  );
 
   if (iconCategoryIndex === -1) {
     const msg = `
-Icon category was not found on "${STATES_FILENAME}". The icon category name is expected to be the same as the icon folder name. This icon will be ignored. \n
-  category not found: ${pathInfo.categoryFolderName}
+Icon folder was not found on "${STATES_FILENAME} on 'monochrome.iconsCategories' ". The icon folder name is expected to be the same as the icon svg parent folder name. This icon will be ignored. \n
+  category (folder) not found: ${pathInfo.categoryFolderName}
   icon type: monochrome,
   scheme: ${colorScheme}
   icon: ${pathInfo.fileName}\n`;
@@ -125,8 +129,7 @@ Icon category was not found on "${STATES_FILENAME}". The icon category name is e
     log(msg + formattedWarnings, LOG_PATH, true, "warning");
   }
 
-  // If the original icon string differs from the updated, then it is
-  // considered as processed
+  // If the original icon string differs from the updated, then it considered as processed
   const processedFiguresString = cheerio.html(svgFigures);
 
   const originalAndUpdatedDiffer =
@@ -134,14 +137,14 @@ Icon category was not found on "${STATES_FILENAME}". The icon category name is e
     removeSpacesAndLineBreaks(processedFiguresString);
 
   let createdSvg: string = undefined;
-
   if (originalAndUpdatedDiffer) {
     // if some of the figures were updated, continue with the svg processing. Otherwise return the result now. No need to keep processing.
     createdSvg = createStylesViewsUses(
       processedFiguresString,
       iconCategoryIndex,
       svgWidth,
-      svgHeight
+      svgHeight,
+      monochromeColorsMap
     );
   } else {
     return {
@@ -167,35 +170,50 @@ const createStylesViewsUses = (
   svgFiguresString: string,
   iconCategoryIndex: number,
   svgWidth: string,
-  svgHeight: string
+  svgHeight: string,
+  monochromeColorsMap: MonochromeColorsMap
 ): string => {
   let viewsUses: string = ``;
   const width = parseFloat(svgWidth);
   const height = parseFloat(svgHeight);
 
-  const iconStates: monochromeStates =
-    monochromeIconsArray[iconCategoryIndex].states;
+  const iconCategoryColors: MonochromeIconCategoryColors =
+    monochromeIconsCategories[iconCategoryIndex].colors;
 
-  let i: number = 0;
-  Object.entries(iconStates).forEach(([stateName, isEnabled]): void => {
-    if (isEnabled) {
-      const x = i * width;
-      const colorValue = getColorValue(stateName);
-      // view and use
-      viewsUses += `<view id="${stateName}" viewBox="${x} 0 ${width} ${height}" />
-      <use
-        href="#${SVG_ID}"
-        x="${x}"
-        y="0"
-        style="${CSS_VAR_NAME}:${colorValue}"
-      />
-      `;
-      i++;
+  let yIndex: number = 0;
+  Object.entries(iconCategoryColors).forEach((color): void => {
+    let xIndex: number = 0;
+    const colorName = color[0];
+    const colorApplies = color[1];
+
+    if (colorApplies) {
+      const colorElementStates = getColorStates(colorName, monochromeColorsMap);
+      Object.entries(colorElementStates).forEach((elementState): void => {
+        const stateColors = elementState[1];
+        if (stateColors !== null) {
+          const stateName = elementState[0];
+          const colorValue = stateColors[colorSchemeValue];
+
+          const stateViewUse: string = createViewUse(
+            colorName,
+            colorValue,
+            stateName,
+            width,
+            height,
+            xIndex,
+            yIndex
+          );
+
+          xIndex++;
+          viewsUses += stateViewUse;
+        }
+      });
     }
+    yIndex++;
   });
 
   return `
-  <svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" data-scheme="${iconTypeMap.monochrome}">
+  <svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" data-scheme="${colorSchemeValue}">
     <defs>
       <g id="icon-def">
           ${svgFiguresString}
@@ -205,8 +223,37 @@ const createStylesViewsUses = (
   </svg>`;
 };
 
-const getColorValue = (state: string): string => {
-  return monochromeStatesObjs[state][colorSchemeValue];
+const getColorStates = (
+  colorName: string,
+  monochromeColorsMap: MonochromeColorsMap
+): ElementStates => {
+  const colorIndex = monochromeColorsMap.get(colorName);
+  if (colorIndex !== undefined) {
+    return monochromeColors[colorIndex].states;
+  }
+  return null;
+};
+
+const createViewUse = (
+  colorName: string,
+  colorValue: string,
+  stateName: string,
+  width: number,
+  height: number,
+  xIndex: number,
+  yIndex: number
+): string => {
+  const x = xIndex * width;
+  const y = yIndex * height;
+  const viewId = `${colorName}-${stateName}`;
+  return `
+  <view id="${viewId}" viewBox="${x} ${y} ${width} ${height}" />
+  <use
+    href="#${SVG_ID}"
+    x="${x}"
+    y="${y}"
+    style="${CSS_VAR_NAME}:${colorValue}"
+  />`;
 };
 
 const setCssVarName = (

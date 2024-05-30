@@ -1,0 +1,113 @@
+%switch {
+  --ch-switch-thumb__unchecked-background-color: var(
+    --elevation-un-elevation--1
+  );
+  --ch-switch-thumb__checked-background-color: var(
+    --accents-un-accent__primary--hover
+  );
+
+  --ch-switch-track__unchecked-background-color: var(
+    --colors-foundation-un-color__gray--400
+  );
+  --ch-switch-track__checked-background-color: var(
+    --colors-foundation-un-color__gray--500
+  );
+
+  --ch-switch-thumb__state-transition-duration: 200ms;
+
+  --ch-switch-track-block-size: 12px;
+  --ch-switch-track-inline-size: 48px;
+  --ch-switch-thumb-size: 24px;
+
+  // Track
+  &__track--disabled {
+    --ch-switch-track__unchecked-background-color: var(
+      --colors-foundation-un-color__gray--500
+    );
+  }
+
+  // Thumb
+  &__thumb {
+    filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.12))
+      drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1));
+
+    &--focus {
+      border: 2px solid var(--borders-un-border-color__focused);
+    }
+
+    &--disabled {
+      --ch-switch-thumb__checked-background-color: var(
+        --accents-un-accent__disabled
+      );
+      --ch-switch-thumb__unchecked-background-color: var(
+        --accents-un-accent__disabled
+      );
+    }
+  }
+
+  // Label
+  &__caption {
+    @extend %form-input__text;
+    margin-inline-start: var(--spacing-un-spacing--m);
+
+    &--disabled {
+      color: var(--borders-un-border-color__disabled);
+    }
+  }
+}
+
+@mixin switch(
+  $switch-selector: ".switch",
+  $track--disabled-selector: ".switch::part(track disabled)",
+  $thumb-selector: ".switch::part(thumb)",
+  $thumb--disabled-selector: ".switch::part(thumb disabled)",
+  $caption-selector: ".switch::part(caption)",
+  $caption--disabled-selector: ".switch::part(caption disabled)",
+
+  $add--disabled: true,
+  $add--caption: true
+) {
+  #{$switch-selector} {
+    @extend %switch;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Thumb
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$thumb-selector} {
+    @extend %switch__thumb;
+
+    &:focus {
+      @extend %switch__thumb--focus;
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Caption
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $add--caption {
+    #{$caption-selector} {
+      @extend %switch__caption;
+    }
+  }
+
+  // Disabled
+  @if $add--disabled {
+    // Track
+    #{$track--disabled-selector} {
+      @extend %switch__track--disabled;
+    }
+
+    // Thumb
+    #{$thumb--disabled-selector} {
+      @extend %switch__thumb--disabled;
+    }
+
+    // Caption
+    @if $add--caption {
+      #{$caption--disabled-selector} {
+        @extend %switch__caption--disabled;
+      }
+    }
+  }
+}

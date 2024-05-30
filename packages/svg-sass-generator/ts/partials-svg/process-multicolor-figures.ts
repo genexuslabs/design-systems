@@ -1,8 +1,8 @@
 import { SVG_FIGURES } from "./utils.js";
 import {
-  figureType,
-  iconsColorsSchema,
-  multicolorFiguresResult,
+  FigureType,
+  IconsColorsSchema,
+  MulticolorFiguresResult,
 } from "../partials-common/types.js";
 import cheerio from "cheerio";
 import { getFigureType, removeSpacesAndLineBreaks } from "./utils.js";
@@ -13,10 +13,10 @@ let usedColors: string[] = [];
 
 export const processMulticolorFigures = (
   svgCheerio: cheerio.Root,
-  statesJson: iconsColorsSchema,
+  statesJson: IconsColorsSchema,
   iconPath: string,
   LOG_PATH: string
-): multicolorFiguresResult => {
+): MulticolorFiguresResult => {
   const svg = svgCheerio("svg");
   const svgWidth = svg.attr("width");
   const svgHeight = svg.attr("height");
@@ -90,7 +90,7 @@ export const processMulticolorFigures = (
 const processFigure = (
   index: number,
   svgFigure: cheerio.Cheerio,
-  statesJson: iconsColorsSchema
+  statesJson: IconsColorsSchema
 ): cheerio.Cheerio => {
   const cssClasses = svgFigure.attr("class");
   const colorName = getColorName(index, svgFigure, cssClasses, statesJson);
@@ -130,7 +130,7 @@ const getColorName = (
   index: number,
   svgFigure: cheerio.Cheerio,
   cssClasses: string,
-  statesJson: iconsColorsSchema
+  statesJson: IconsColorsSchema
 ): string => {
   const figureTagName = svgFigure.get(0).name; /*revisar*/
   const cssPrefix: string = statesJson.multicolor.cssPrefix;

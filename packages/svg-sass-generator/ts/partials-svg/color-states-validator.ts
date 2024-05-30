@@ -2,35 +2,48 @@ import Ajv, { ErrorObject } from "ajv";
 import { readFileSync } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { MonochromeSchema, IconsColorsSchema } from "../partials-common/types";
 
 /**
- * @param description: it returns an array with each missing monochrome color state, on the color states json file.
+ * @param description: it returns an array with each missing monochrome color state on the color states json file.
  */
-const allMonochromeStatesExist = (
-  statesObject: any
-): missingMonochromeState[] => {
-  const missingMonochromeStates: missingMonochromeState[] = [];
 
-  const monochromeStates = Object.keys(statesObject["monochrome"]["states"]);
+/* This is a validation function that validates if every color under monochrome.iconsCategories exists monochrome.colors. It does not check the other way, because it doesn't
+matter if a color exists in monochrome.color, that it is not used in monochrome.iconsCategories. 
+*/
 
-  for (const icon of statesObject["monochrome"]["icons"]) {
-    const iconStates = Object.keys(icon.states);
-    for (const state of iconStates) {
-      if (!monochromeStates.includes(state)) {
-        missingMonochromeStates.push({
+function checkMonochromeColorsExistence(
+  monochromeStatesJson: MonochromeSchema
+) {
+  // alreadyCheckedColors avoids checking for colors that were already checked.
+  const alreadyCheckedColors: Set<string> = new Set([]);
+  const monochromeColorsNames = monochromeStatesJson.colors.map(
+    (color) => color.name
+  );
+  const missingColors: missingMonochromeColor[] = [];
+
+  monochromeStatesJson.iconsCategories.forEach((category) => {
+    for (const color in category.colors) {
+      if (
+        !alreadyCheckedColors.has(color) &&
+        category.colors[color] &&
+        !monochromeColorsNames.includes(color)
+      ) {
+        missingColors.push({
           info: "Required monochrome state, but not found on monochrome.states",
-          category: icon["folder"],
-          state: state,
+          color: color,
+          folder: category.folder,
         });
       }
+      alreadyCheckedColors.add(color);
     }
-  }
+  });
 
-  return missingMonochromeStates;
-};
+  return missingColors;
+}
 
 export const validateStatesSchema = (
-  statesObject: Object
+  colorStatesSchema: IconsColorsSchema
 ): validateSchemaReturn => {
   // Load the JSON schema
   const __filename = fileURLToPath(import.meta.url);
@@ -69,14 +82,16 @@ export const validateStatesSchema = (
   const validate = ajv.getSchema("mergedSchema");
 
   // Validate the JSON data against the schema
-  const isValid = validate(statesObject);
+  const isValid = validate(colorStatesSchema);
 
   if (isValid) {
-    const missingMonochromeStates = allMonochromeStatesExist(statesObject);
-    if (missingMonochromeStates.length) {
+    const missingMonochromeColors = checkMonochromeColorsExistence(
+      colorStatesSchema.monochrome
+    );
+    if (missingMonochromeColors.length) {
       return {
         isValid: false,
-        errors: missingMonochromeStates,
+        errors: missingMonochromeColors,
       };
     } else {
       return {
@@ -96,13 +111,13 @@ export type validateSchemaReturn = {
   isValid: boolean;
   errors:
     | ErrorObject<string, Record<string, any>, unknown>[]
-    | missingMonochromeState[]
+    | missingMonochromeColor[]
     | null
     | undefined;
 };
 
-type missingMonochromeState = {
+type missingMonochromeColor = {
   info: string;
-  category: string;
-  state: string;
+  color: string;
+  folder: string;
 };

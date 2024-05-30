@@ -25,6 +25,7 @@
 // Components
 @import "./components/card";
 @import "./components/checkbox";
+@import "./components/code";
 @import "./components/combo-box";
 @import "./components/dialog";
 @import "./components/dropdown";
@@ -34,6 +35,7 @@
 @import "./components/radio-group";
 @import "./components/segmented-control";
 @import "./components/slider";
+@import "./components/switch";
 @import "./components/tab";
 @import "./components/tree-view";
 
@@ -83,6 +85,7 @@
   $action-group: true,
   $card: true,
   $checkbox: true,
+  $code: true,
   $combo-box: true,
   $dialog-primary: true,
   $dialog-secondary: true,
@@ -96,6 +99,7 @@
   $segmented-control: true,
   $slider-primary: true,
   $slider-secondary: true,
+  $switch: true,
   $tab: true,
   $tree-view-primary: true,
   $tree-view-secondary: true
@@ -298,6 +302,11 @@
       @include checkbox();
     }
 
+    // code
+    @if $code {
+      @include code();
+    }
+
     // combo-box
     @if $combo-box {
       @include combo-box();
@@ -361,6 +370,11 @@
     // slider secondary
     @if $slider-secondary {
       @include slider-secondary();
+    }
+
+    // switch
+    @if $switch {
+      @include switch();
     }
 
     // tab

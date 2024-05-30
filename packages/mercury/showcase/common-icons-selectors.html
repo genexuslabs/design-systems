@@ -10,7 +10,17 @@
       href="../dist/assets/images/mercury-favicon-32x32.png"
       sizes="32x32"
     />
-    <base href="../dist/" target="_blank" />
+    <script type="module">
+      import { defineCustomElements } from "https://unpkg.com/@genexus/chameleon-controls-library@latest/dist/esm/loader.js";
+      defineCustomElements();
+    </script>
+
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
   </head>
   <body class="body">
     <div class="top-bar">

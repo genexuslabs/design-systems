@@ -6,26 +6,28 @@ import {
   deleteDirectory,
 } from "./partials-common/file-system-utils.js";
 import { writeFile } from "./partials-common/file-system-utils.js";
-import { OUTPUT_GENERATED } from "./partials-common/utils.js";
 
 import {
-  colorScheme,
-  iconType,
-  iconsColorsSchema,
-  multiColorStatesArray,
-} from "./partials-common/types.js";
+  ColorScheme,
+  IconType,
+  IconsColorsSchema,
+  ElementStates,
+  ElementState,
+  MonochromeColorsMap,
+  MonochromeCategoriesMap,
+  MonochromeColor,
+  MonochromeSchema,
+} from "./partials-common/types";
 
 export const pushSavedIcon = (
   savedIconsOnDisk: savedIcons,
   svgFilePath: string,
-  type: iconType,
+  type: IconType,
   category: string,
-  colorScheme: colorScheme,
-  colorStatesJson: iconsColorsSchema
+  colorScheme: ColorScheme
 ) => {
   const iconCategory = category || "uncategorized";
   const iconName = path.basename(svgFilePath);
-  let iconStates: string[] = [];
 
   // create category if inexistent
   if (!(iconCategory in savedIconsOnDisk[type])) {
@@ -35,26 +37,10 @@ export const pushSavedIcon = (
     };
   }
 
-  // set icon states
-  if (type === "monochrome") {
-    const foundCategory = colorStatesJson.monochrome.icons.find(
-      (icon) => icon.folder === category
-    );
-    if (foundCategory) {
-      iconStates = Object.keys(foundCategory.states).filter(
-        (state) => foundCategory.states[state]
-      );
-    }
-  } else {
-    // is multicolor
-    iconStates = multiColorStatesArray;
-  }
-
   // save
   savedIconsOnDisk[type][iconCategory][colorScheme].push({
     name: iconName,
     path: svgFilePath,
-    states: iconStates,
   });
 };
 
@@ -62,8 +48,13 @@ export const generateShowcase = (
   savedIconsOnDisk: savedIcons,
   outputPath: string,
   showcasePath: string,
-  logPath: string
+  logPath: string,
+  statesJson: IconsColorsSchema,
+  monochromeColorsMap: MonochromeColorsMap,
+  monochromeCategoriesMap: MonochromeCategoriesMap
 ) => {
+  const monochromeColorsAndCategories: MonochromeSchema = statesJson.monochrome;
+
   // remove directory for a fresh start
   deleteDirectory(showcasePath);
 
@@ -82,12 +73,20 @@ export const generateShowcase = (
     <body>
       <div class="top-bar">
         <button id="toggle-dark-btn" class="top-bar__button">toggle dark</button>
+        <input id="search-input" type="text" class="top-bar__search"/ placeholder="Search for icons...">
         <small class="top-bar__description">Automatically generated</small>
       </div>
       ${getAside(savedIconsOnDisk)}
-      ${getMain(savedIconsOnDisk)}
+      ${getMain(
+        savedIconsOnDisk,
+        monochromeColorsAndCategories,
+        monochromeColorsMap,
+        monochromeCategoriesMap
+      )}
       ${toggleAsideLists()}
       ${preventListLinkPropagation()}
+      ${searchInput()}
+      ${getAllSearchItems()}
     </body>
   </html>
   `;
@@ -130,6 +129,44 @@ const preventListLinkPropagation = (): string => {
   </script>`;
 };
 
+const searchInput = (): string => {
+  return `
+  <script>
+    const searchInput = document.getElementById("search-input");
+    console.log(searchInput);
+    searchInput.addEventListener("input", (e) => {
+      const filterValue = e.target.value.toLowerCase();
+      searchItems.forEach(searchItem => {
+        const itemDataValue = searchItem.getAttribute('data-value').toLowerCase();
+        if(!itemDataValue.includes(filterValue)) {
+          searchItem.setAttribute('hidden', '');
+        } else {
+          searchItem.removeAttribute('hidden');
+        }
+
+        // Then look for empty .icons.container's
+        allIconsContainers.forEach(iconsContainer => {
+          const visibleIcons = iconsContainer.querySelectorAll('.search-item:not([hidden])');
+          if(visibleIcons.length === 0) {
+            iconsContainer.classList.add("icons-container--empty");
+          } else {
+            iconsContainer.classList.remove("icons-container--empty");
+          }
+        });
+
+        // Disable aside navigation if searching
+        if(filterValue.length !== 0) {
+          asideNav.setAttribute('disabled', '');
+          asideNav.classList.add('aside__nav--disabled');
+        } else {
+          asideNav.removeAttribute('disabled');
+          asideNav.classList.remove('aside__nav--disabled');
+        }
+      })
+    });
+  </script>`;
+};
+
 const getAside = (savedIconsOnDisk: savedIcons): string => {
   const multicolor = savedIconsOnDisk.multicolor;
   const monochrome = savedIconsOnDisk.monochrome;
@@ -139,8 +176,16 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
   // multicolor
   Object.keys(multicolor).map((categoryName) => {
     multicolorCategoriesOutput += `  
-    <h3 class="aside__category-title" role="button">
-      <a href="#${categoryName}" class="aside__category-title-link">${categoryName}</a>
+    <!-- dark -->
+    <h3 class="aside__category-title dark" role="button">
+      <a href="#multicolor-${categoryName}-dark" class="aside__category-title-link">${categoryName}</a>
+    </h3>
+    <!-- multicolor dark -->
+    ${renderIconsListAside(categoryName, multicolor[categoryName].dark, "dark")}
+
+    <!-- light -->
+    <h3 class="aside__category-title light" role="button">
+      <a href="#multicolor-${categoryName}-light" class="aside__category-title-link">${categoryName}</a>
     </h3>
       <!-- multicolor light -->
       ${renderIconsListAside(
@@ -148,12 +193,7 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
         multicolor[categoryName].light,
         "light"
       )}
-      <!-- multicolor dark -->
-      ${renderIconsListAside(
-        categoryName,
-        multicolor[categoryName].dark,
-        "dark"
-      )}
+    
     </article>
     `;
   });
@@ -161,22 +201,25 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
   // monochrome
   Object.keys(monochrome).map((categoryName) => {
     monochromeCategoriesOutput += `  
-    <h3 class="aside__category-title" role="button">
-      <a href="#${categoryName}" class="aside__category-title-link">${categoryName}</a>
+    <!-- dark -->
+    <h3 class="aside__category-title dark" role="button">
+      <a href="#monochrome-${categoryName}-dark" class="aside__category-title-link">${categoryName}</a>
     </h3>
-      <!-- multicolor light -->
-        ${renderIconsListAside(
-          categoryName,
-          monochrome[categoryName].light,
-          "light"
-        )}
-        <!-- multicolor dark -->
-        ${renderIconsListAside(
-          categoryName,
-          monochrome[categoryName].dark,
-          "dark"
-        )}
-      </article>
+    <!-- multicolor dark -->
+    ${renderIconsListAside(categoryName, monochrome[categoryName].dark, "dark")}
+
+    <!-- light -->
+    <h3 class="aside__category-title light" role="button">
+      <a href="#monochrome-${categoryName}-light" class="aside__category-title-link">${categoryName}</a>
+    </h3>
+    <!-- multicolor light -->
+    ${renderIconsListAside(
+      categoryName,
+      monochrome[categoryName].light,
+      "light"
+    )}
+      
+    </article>
       `;
   });
 
@@ -239,7 +282,15 @@ const getAside = (savedIconsOnDisk: savedIcons): string => {
   `;
 };
 
-const getMain = (savedIconsOnDisk: savedIcons) => {
+const noImgSrc =
+  "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgMzAgMzAiIHdpZHRoPSIzMHB4IiBoZWlnaHQ9IjMwcHgiPjxwYXRoIGQ9Ik0gMTUgMyBDIDExLjc4MzA1OSAzIDguODY0MTk4MiA0LjI4MDc5MjYgNi43MDcwMzEyIDYuMzQ5NjA5NCBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgNi4zNDc2NTYyIDYuNzA3MDMxMiBDIDQuMjc5Mzc2NiA4Ljg2NDEwNzEgMyAxMS43ODM1MzEgMyAxNSBDIDMgMjEuNjE1NTcyIDguMzg0NDI3NiAyNyAxNSAyNyBDIDE4LjIxMDAwNyAyNyAyMS4xMjM0NzUgMjUuNzI0OTk1IDIzLjI3OTI5NyAyMy42NjQwNjIgQSAxLjAwMDEgMS4wMDAxIDAgMCAwIDIzLjY2MjEwOSAyMy4yODEyNSBDIDI1LjcyNDE2OCAyMS4xMjUyMzUgMjcgMTguMjEwOTk4IDI3IDE1IEMgMjcgOC4zODQ0Mjc2IDIxLjYxNTU3MiAzIDE1IDMgeiBNIDE1IDUgQyAyMC41MzQ2OTIgNSAyNSA5LjQ2NTMwNzkgMjUgMTUgQyAyNSAxNy40MDYzNyAyNC4xNTUxNzMgMTkuNjA5MDYyIDIyLjc0NjA5NCAyMS4zMzIwMzEgTCA4LjY2Nzk2ODggNy4yNTM5MDYyIEMgMTAuMzkwOTM4IDUuODQ0ODI3NCAxMi41OTM2MyA1IDE1IDUgeiBNIDcuMjUzOTA2MiA4LjY2Nzk2ODggTCAyMS4zMzIwMzEgMjIuNzQ2MDk0IEMgMTkuNjA5MDYyIDI0LjE1NTE3MyAxNy40MDYzNyAyNSAxNSAyNSBDIDkuNDY1MzA3OSAyNSA1IDIwLjUzNDY5MiA1IDE1IEMgNSAxMi41OTM2MyA1Ljg0NDgyNzQgMTAuMzkwOTM4IDcuMjUzOTA2MiA4LjY2Nzk2ODggeiIvPjwvc3ZnPg==";
+
+const getMain = (
+  savedIconsOnDisk: savedIcons,
+  monochromeColorsAndCategories: MonochromeSchema,
+  monochromeColorsMap: MonochromeColorsMap,
+  monochromeCategoriesMap: MonochromeCategoriesMap
+) => {
   // multicolor
   const multicolor = savedIconsOnDisk.multicolor;
   const monochrome = savedIconsOnDisk.monochrome;
@@ -263,24 +314,25 @@ const getMain = (savedIconsOnDisk: savedIcons) => {
   Object.keys(multicolor).map((categoryName) => {
     multicolorCategoriesOutput += `
     <!-- ${categoryName} -->
-    <article class="category" id="${categoryName}">
+    <article class="category">
 
-    <h3 class="category__title title light">
-      ${categoryName} (${
+    <h3 class="category__title title light" data-title="${categoryName}">
+      ${categoryName} <span hidden>(${
       savedIconsOnDisk["multicolor"][categoryName].light.length
-    })</h3>
-    <h3 class="category__title title dark">
-      ${categoryName} (${
-      savedIconsOnDisk["multicolor"][categoryName].dark.length
-    })</h3>
+    })</span></h3>
 
-      <!-- multicolor light -->
-      ${renderIcons(
-        categoryName,
-        multicolor[categoryName].light,
-        "multicolor",
-        "light"
-      )}
+    <!-- multicolor light -->
+    ${renderIcons(
+      categoryName,
+      multicolor[categoryName].light,
+      "multicolor",
+      "light"
+    )}
+
+    <h3 class="category__title title dark" data-title="${categoryName}">
+      ${categoryName} <span hidden>(${
+      savedIconsOnDisk["multicolor"][categoryName].dark.length
+    })</span></h3>
 
       <!-- multicolor dark -->
       ${renderIcons(
@@ -297,31 +349,39 @@ const getMain = (savedIconsOnDisk: savedIcons) => {
   Object.keys(monochrome).map((categoryName) => {
     monochromeCategoriesOutput += `
       <!-- ${categoryName} -->
-      <article class="category" id="${categoryName}">
+      <article class="category">
 
-      <h3 class="category__title title light">
+      <h3 class="category__title title light" data-title="${categoryName}">
         ${categoryName} (${
       savedIconsOnDisk["monochrome"][categoryName].light.length
-    })</h3>
-        <h3 class="category__title title dark">
+    })
+
+    <!-- monochrome light -->
+    ${renderIcons(
+      categoryName,
+      monochrome[categoryName].light,
+      "monochrome",
+      "light",
+      monochromeColorsAndCategories,
+      monochromeColorsMap,
+      monochromeCategoriesMap
+    )}
+      </h3>
+
+        <h3 class="category__title title dark" data-title="${categoryName}">
           ${categoryName} (${
       savedIconsOnDisk["monochrome"][categoryName].dark.length
     })</h3>
-  
-        <!-- multicolor light -->
-        ${renderIcons(
-          categoryName,
-          monochrome[categoryName].light,
-          "monochrome",
-          "light"
-        )}
-  
-        <!-- multicolor dark -->
+
+        <!-- monochrome dark -->
         ${renderIcons(
           categoryName,
           monochrome[categoryName].dark,
           "monochrome",
-          "dark"
+          "dark",
+          monochromeColorsAndCategories,
+          monochromeColorsMap,
+          monochromeCategoriesMap
         )}
       </article>
       `;
@@ -338,7 +398,7 @@ const getMain = (savedIconsOnDisk: savedIcons) => {
 
       <h2 class="icons-type-section__title icons-type-section__title--multicolor title" id="multicolor-icons-section">
         <span class="amount light">${totalIcons.multicolor.light}</span>
-        <span class="amount dark">${totalIcons.multicolor.dark}</span>
+        <span class="amount dark" hidden>${totalIcons.multicolor.dark}</span>
         Multicolor <span class="icons-type-section__title-schema"></span> Icons
       </h2>
 
@@ -352,7 +412,7 @@ const getMain = (savedIconsOnDisk: savedIcons) => {
 
       <h2 class="icons-type-section__title icons-type-section__title--monochrome title" id="monochrome-icons-section">
         <span class="amount light">${totalIcons.monochrome.light}</span>
-        <span class="amount dark">${totalIcons.monochrome.dark}</span>
+        <span class="amount dark" hidden>${totalIcons.monochrome.dark}</span>
         Monochrome <span class="icons-type-section__title-schema"></span> Icons
       </h2>
 
@@ -409,7 +469,7 @@ const getIconDetail = () => {
       const button = e.currentTarget;
       const iconPath = button.dataset.src;
       const iconName = button.dataset.name;
-
+      console.log(iconDetailedImage);
       iconDetailedImage.setAttribute("src", iconPath);
       iconDetailedViewCaption.innerText = iconName;
     });
@@ -420,45 +480,193 @@ const getIconDetail = () => {
 const renderIcons = (
   category: string,
   icons: savedIconInfo[],
-  iconType: iconType,
-  colorSchema: colorScheme
+  iconType: IconType,
+  colorSchema: ColorScheme,
+  monochromeColorsAndCategories?: MonochromeSchema,
+  monochromeColorsMap?: MonochromeColorsMap,
+  monochromeCategoriesMap?: MonochromeCategoriesMap
 ): string => {
+  // default classes are for multicolor
+  let iconsContainerClasses = `icons-container icons-container--grid icons-container--${iconType} ${colorSchema}`;
+  let iconContainerClasses = "search-item icon-container";
+  if (iconType === "monochrome") {
+    // classes for monochrome
+    // for monochrome, icons container is not of type "grid"
+    // (.icons-container--grid)
+    iconsContainerClasses = `icons-container icons-container icons-container--${iconType} ${colorSchema}`;
+    iconContainerClasses =
+      "search-item icon-container icon-container--with-separator";
+  }
+
   return `
-  <div class="icons-container icons-container--${iconType} ${colorSchema}">
+  <div class="${iconsContainerClasses}" tabindex="0" id="${iconType}-${category}-${colorSchema}">
     ${icons
       .map((icon) => {
         const listId = `${category}-${icon.name.split(".")[0]}`;
-
-        return `<div class="icon-container" id=${listId}>
-         <h4 class="icon-container__title title">${icon.name}</h4>
-         <ul class="icon-container__list list list--vertical">
-           ${icon.states
-             .map((state) => {
-               return `<li class="icon-container__list-item">
-               <button class="icon-state-button" data-src="${icon.path}#${state}" data-name="${category}/${icon.name}" id="${listId}--${state}">
-                <figure class="icon-container__figure">
-                  <img class="icon" src="${icon.path}#${state}" alt="${icon.name} icon on state '${state}'"/>
-                  <figcaption class="icon-container__figure-caption">${state}</figcaption>
-                </figure>
-               </button>
-             </li>`;
-             })
-             .join("")}
-         </ul>
-       </div>`;
+        const htmlList =
+          iconType === "multicolor"
+            ? getMulticolorList(icon, category, listId, colorSchema)
+            : getMonochromeList(
+                icon,
+                category,
+                listId,
+                colorSchema,
+                monochromeColorsAndCategories,
+                monochromeColorsMap,
+                monochromeCategoriesMap
+              );
+        return `
+        <div class="${iconContainerClasses}" id=${listId} data-value="${
+          icon.name.split(".")[0]
+        }">
+           <h4 class="icon-container__title icon-container__title--h4 icon-container__title--svg-icon title">${
+             icon.name
+           }</h4>
+           ${htmlList}
+         </div>`;
       })
       .join("")}
   </div>`;
 };
 
+const getMulticolorList = (
+  icon: savedIconInfo,
+  category: string,
+  listId: string,
+  colorSchema: ColorScheme
+): string => {
+  const states = ["enabled", "hover", "active", "disabled"];
+  return `<ul class="icon-container__list list list--vertical">
+  ${states
+    .map((state) => {
+      return `<li class="icon-container__list-item">
+      <button class="icon-state-button" data-src="${icon.path}#${state}" data-name="${category}/${icon.name}" id="${listId}--${state}-${colorSchema}">
+       <figure class="icon-container__figure">
+         <img class="icon" src="${icon.path}#${state}" alt="${icon.name} icon on state '${state}'"/>
+         <figcaption class="icon-container__figure-caption" disabled>${state}</figcaption>
+       </figure>
+      </button>
+    </li>`;
+    })
+    .join("")}
+</ul>`;
+};
+
+const getMonochromeList = (
+  icon: savedIconInfo,
+  category: string,
+  listId: string,
+  colorSchema: ColorScheme,
+  monochromeColorsAndCategories: MonochromeSchema,
+  monochromeColorsMap: MonochromeColorsMap,
+  monochromeCategoriesMap: MonochromeCategoriesMap
+): string => {
+  const colorsHtmlList: string = getMonochromeColorsList(
+    icon,
+    category,
+    colorSchema,
+    monochromeColorsAndCategories,
+    monochromeColorsMap,
+    monochromeCategoriesMap
+  );
+
+  return `<ul class="icon-container__list list list--grid">${colorsHtmlList}</ul>`;
+};
+
+const getMonochromeColorsList = (
+  icon: savedIconInfo,
+  category: string,
+  colorSchema: ColorScheme,
+  monochromeColorsAndCategories?: MonochromeSchema,
+  monochromeColorsMap?: MonochromeColorsMap,
+  monochromeCategoriesMap?: MonochromeCategoriesMap
+): string => {
+  let colorLists: string[] = [];
+
+  const categories = monochromeColorsAndCategories.iconsCategories;
+  const categoryIndex = monochromeCategoriesMap.get(category);
+
+  if (categoryIndex !== undefined) {
+    Object.keys(categories[categoryIndex].colors).map((color) => {
+      const colorIsNull = !categories[categoryIndex].colors[color];
+      if (colorIsNull) {
+        return;
+      }
+      const colorIndex = monochromeColorsMap.get(color);
+      if (colorIndex !== undefined) {
+        const color = monochromeColorsAndCategories.colors[colorIndex];
+        // push states that have some value (enabled, hover, active, disabled)
+        let states: ElementStates = {
+          enabled: null,
+          hover: null,
+          active: null,
+          disabled: null,
+        };
+        let colorStatesList: string[] = [];
+        Object.keys(color.states).forEach((state: ElementState) => {
+          // 1. Check if state is not null or undefined
+          // 2. Then check if the color has a property defined fot the color scheme (light or dark)
+          // 3. Then check if the value of the scheme is not null or undefined
+          const stateValue = color.states[state];
+
+          if (
+            stateValue &&
+            color.states[state].hasOwnProperty(colorSchema) &&
+            color.states[state][colorSchema]
+          ) {
+            states[state] = color.states[state];
+          }
+        });
+
+        // push list items
+        Object.keys(states).forEach((state: ElementState) => {
+          const stateIsNull = !states[state];
+          const imgPath = `${icon.path}#${color.name}-${state}`;
+          let slot = `
+          <button class="icon-state-button" data-src="${imgPath}" data-name="${category}/${icon.name}">
+            <figure class="icon-container__figure">
+              <img class="icon" src="${imgPath}" alt="${icon.name} icon on state '${state}'"/>
+              <figcaption class="icon-container__figure-caption">${state}</figcaption>
+            </figure>
+          </button>`;
+
+          if (stateIsNull) {
+            slot = `
+            <figure class="icon-container__figure" style="pointer-events: none;">
+              <span class="no-state-img"/></span>
+              <figcaption class="icon-container__figure-caption icon-container__figure-caption--disabled">${state} is not defined</figcaption>
+            </figure>`;
+          }
+
+          colorStatesList.push(`
+          <li class="icon-container__list-item">
+            ${slot}
+          </li>`);
+        });
+
+        colorLists.push(`<li class="icon-container icons-container--nested">
+        <h5 class="icon-container__title title icon-container__title--h5"><em>${
+          color.name
+        }</em></h5>
+        <ul class="icon-container__list list list--vertical"> 
+          ${colorStatesList.join("")}
+        </ul>
+      </li>`);
+      }
+    });
+  }
+
+  return colorLists.join("");
+};
+
 const renderIconsListAside = (
   category: string,
   icons: savedIconInfo[],
-  colorSchema: colorScheme
+  colorSchema: ColorScheme
 ): string => {
   return `
   <div class="aside__category-list-wrapper">
-    <ul class="aside__category-list list list--vertical">
+    <ul class="aside__category-list list list--vertical-tiny-gap">
       ${icons
         .map((icon) => {
           const href = `${category}-${icon.name.split(".")[0]}`;
@@ -473,8 +681,8 @@ const renderIconsListAside = (
 };
 
 const getTotalIcons = (
-  type: iconType,
-  colorSchema: colorScheme,
+  type: IconType,
+  colorSchema: ColorScheme,
   savedIconsOnDisk: savedIcons
 ): number => {
   let total = 0;
@@ -482,6 +690,14 @@ const getTotalIcons = (
     total += savedIconsOnDisk[type][category][colorSchema].length;
   });
   return total;
+};
+
+const getAllSearchItems = (): string => {
+  return `<script>
+    const searchItems = Array.from(document.querySelectorAll(".search-item"));
+    const allIconsContainers = document.querySelectorAll(".icons-container");
+    const asideNav = document.getElementById("aside-nav");
+  </script>`;
 };
 
 const showcaseStyles = `
@@ -492,11 +708,14 @@ const showcaseStyles = `
     /*general*/
     --sc-border-dimmed__color: rgba(0, 0, 0, 0.1);
     --sc-list__gap: 16px;
+    --sc-focus-width: 3px;
+    --sc-focus-color: 91, 167, 255;
     /*body*/
     --sc-body__background-color: #f4f5f5;
     --sc-body__color: #696969;
     --sc-body__font-family: sans-serif;
     --sc-body__font-size: 16px;
+    --sc-link__color--hover: black;
     /*top-bar*/
     --sc-top-bar__height: 42px;
     --sc-top-bar__padding-inline: 16px;
@@ -554,6 +773,9 @@ const showcaseStyles = `
   /* =======================
   GENERAL
   ========================*/
+  :focus {
+    outline: var(--sc-focus-width) solid rgb(var(--sc-focus-color));
+  }
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
@@ -570,6 +792,8 @@ const showcaseStyles = `
     --sc-top-bar-button__filter--hover: brightness(1.4);
     --sc-top-bar-button__filter--active: brightness(1.2);
     --sc-icon-container-list__background-color: #212427;
+    --sc-link__color--hover: white;
+    --sc-focus-color: 32, 112, 206;
   }
   html.dark .light{
     display: none !important;
@@ -594,8 +818,8 @@ const showcaseStyles = `
     padding-block-start: 0;
   }
   a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
   }
   a:hover {
     text-decoration: underline;
@@ -618,12 +842,20 @@ const showcaseStyles = `
   }
   .list--vertical {
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
+  }
+  .list--vertical-tiny-gap {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .list--grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200PX, 1fr));
   }
   .sc-button {
-    background-color: #155263;
+    background-color: rgba(var(--sc-focus-color), 0.1);
     border: 0;
-    padding: 4px 16px;
+    padding: 6px;
     border-radius: 2px;
     color: #ffffffcc;
     display: flex;
@@ -633,7 +865,7 @@ const showcaseStyles = `
   }
   .sc-button:hover {
     cursor:pointer;
-    filter: brightness(110%);
+    background-color: rgba(var(--sc-focus-color), 0.2);
   }
   .sc-button:active {
     filter: brightness(90%);
@@ -671,6 +903,20 @@ const showcaseStyles = `
   .top-bar__button:active {
     filter: var(--sc-top-bar-button__filter--active);
   }
+  .top-bar__search {
+    background-color: var(--sc-icon-container__background);
+    height: 28px;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 360px;
+    border: none;
+    padding: 0 16px;
+    color: var(--sc-body__color);
+  }
+  .top-bar__search::placeholder {
+    font-style: italic;
+  }
+
   .top-bar__description {
     font-size: var(--sc-top-bar-description__font-size);
   }
@@ -733,6 +979,20 @@ const showcaseStyles = `
     background-color: var(--sc-icon-container__background);
     z-index:99;
   }
+  .aside__nav {
+    transition: 200ms opacity;
+    opacity:1;
+  }
+  .aside__nav--disabled {
+    opacity: 0.25;
+    pointer-events: none !important;
+  }
+  .aside__nav a {
+    display: inline-block;
+    padding: var(--sc-focus-width);
+    outline-offset: calc(var(--sc-focus-width) * -1);
+    border-radius: 3px;
+  }
   .aside__primary-title {
     font-size: var(--sc-icons-type-section-title__font-size);
     font-weight: var(--sc-icons-type-section-title__font-weight);
@@ -740,6 +1000,7 @@ const showcaseStyles = `
     text-transform: capitalize;
   }
   .aside__primary-title:before {
+    display: none;
     content: "🌈";
     margin-inline-end: 8px;
   }
@@ -748,10 +1009,9 @@ const showcaseStyles = `
   }
   .aside__category-title {
     font-size: var(--sc-category-title__font-size);
-    padding-block: 12px;
+    padding: 6px;
     margin: 0;
     text-transform: uppercase;
-    color: var(--sc-container-title__color);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -762,7 +1022,7 @@ const showcaseStyles = `
     content: '';
     display: inline-block;
     height: 0.45em;
-    right: 0.15em;
+    right: 4px;
     position: relative;
     vertical-align: top;
     width: 0.45em;
@@ -772,12 +1032,20 @@ const showcaseStyles = `
   }
   .aside__category-title:hover {
     cursor: pointer;
+    background-color: rgba(var(--sc-focus-color), 0.1);
   }
   .aside__category-title:hover::after {
     color: var(--sc-container-title__color);
   }
   .aside__category-title:last-of-type{
     border-block-end: none;
+  }
+  .aside__category-title-link::before {
+    content: "📁";
+    filter: grayscale(1);
+    margin-inline-end: 8px;
+    position: relative;
+    top: -2px;
   }
   .aside__category-list-wrapper {
     display: grid;
@@ -795,6 +1063,11 @@ const showcaseStyles = `
   .aside__category-list-item {
     margin-block-end: calc(var(--sc-icons-container-title__margin-block-end) * 0.75);
     font-size: 13px;
+  }
+  .aside__category-list-item a {
+    display: inline-block;
+    width: 100%;
+    padding: 6px;
   }
   .aside__category-list-item:before {
     display: inline-block;
@@ -819,6 +1092,19 @@ const showcaseStyles = `
     height: var(--sc-icon__box);
     background-image: var(--icon-path);
     background-size: contain;
+  }
+  /*no state defined (no svg)*/
+  .no-state-img {
+    width: var(--sc-icon__box);
+    height: var(--sc-icon__box);
+    background-color: var(--sc-body__color);
+    -webkit-mask-image: url(${noImgSrc});
+    mask-image: url(${noImgSrc});
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 18px;
+    -webkit-mask-position-x: center;
+    -webkit-mask-position-y: center;
+    opacity: 0.5;
   }
   /*container*/
   .container {
@@ -869,11 +1155,13 @@ const showcaseStyles = `
   .icons-type-section__title--multicolor:before {
     content: "🌈";
     margin-inline-end: 8px;
+    display:none;
   }
   .icons-type-section__title--monochrome:before {
     content: "🌈";
     margin-inline-end: 8px;
     filter: sepia(1);
+    display:none;
   }
   .note {
     text-align: center;
@@ -894,18 +1182,30 @@ const showcaseStyles = `
   .category__title:before {
     content: "📁";
     filter: grayscale(1);
-    margin-inline-end: 8px;
+    margin-inline-end: 5px;
+    position: relative;
+    top: -1px;
   }
   /*icons-container*/
   .icons-container {
-    display:grid; 
-    grid-template-columns: repeat(auto-fill, minmax(220PX, 1fr));
     border: var(--sc-icon-container__border);
     border-radius: var(--sc-icon-container__border-radius);
     background-color: var(--sc-icon-container__background);
   }
-  .icon-container__list {
-
+  .icons-container--grid {
+    display:grid; 
+    grid-template-columns: repeat(auto-fill, minmax(220PX, 1fr));
+  }
+  .icons-container--empty {
+    display: block;    
+  }
+  .icons-container--empty::before {
+    content:"No icons matched your query in this category";
+    display:block;
+    text-align: center;
+    padding: 32px;
+    line-height: 1.5em;
+    font-size: 15px;
   }
   .icon-container__figure {
     margin: 0;
@@ -917,10 +1217,32 @@ const showcaseStyles = `
     font-size: 13px;
     text-align: left;
   }
+  .icon-container__figure-caption--disabled {
+    opacity: 0.5
+  }
   .icon-container__title {
     margin-block-end: var(--sc-icons-container-title__margin-block-end);
     color: var(--sc-container-title__color);
     font-size: 15px;
+  }
+  .icon-container__title--svg-icon {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+  }
+  .icon-container__title--svg-icon::before {
+    content:"🖼️";
+  }
+  .icon-container__title--h4 {
+    font-size: 16px;
+    margin-block-end: 16px;
+    padding-block-end: 16px;
+    border-block-end: 1px solid var(--sc-border-dimmed__color);
+  }
+  .icon-container__title--h5 {
+    font-size: 14px;
+    font-weight: 300;
   }
   .icon-container__list:not(:last-child) {
     padding-block-end: var(--sc-icons-container-list__separation);
@@ -929,11 +1251,19 @@ const showcaseStyles = `
   .icon-container {
     padding: var(--sc-icon-container__padding);
   }
+  .icon-container--with-separator {
+    border-block-end: 1px dashed var(--sc-border-dimmed__color);
+  }
+  .icon-container .icon-container {
+    padding: 0;
+  }
   .icon-state-button {
     width: 100%;
     background-color: transparent;
     border: none;
     color: inherit;
+    padding: 0;
+    border-radius: 3px;
   }
   .icon-state-button:hover {
     cursor: pointer;
@@ -981,7 +1311,6 @@ export interface savedIcons {
 interface savedIconInfo {
   name: string;
   path: string;
-  states: string[];
 }
 
 type totalIcons = {
@@ -993,4 +1322,8 @@ type totalIcons = {
     light: number;
     dark: number;
   };
+};
+
+type MonochromeCategoriesStates = {
+  [category: string]: ElementStates;
 };
