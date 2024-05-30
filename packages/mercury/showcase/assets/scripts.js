@@ -321,21 +321,33 @@ const addCopyCodeFunctionality = () => {
   const chCodes = document.querySelectorAll(".code");
   if (chCodes.length) {
     chCodes.forEach(chCode => {
-      const chCodeId = chCode.getAttribute("id");
+      // ch-code header
+      const chCodeHeader = document.createElement("div");
+      chCodeHeader.classList.add("code__header");
 
-      // suggest pill
-      const copyCodeSuggestion = document.createElement("span");
-      copyCodeSuggestion.classList.add("article__pill");
-      copyCodeSuggestion.classList.add("article__pill--icon");
-      copyCodeSuggestion.textContent = `ctrl / cmd + click to copy`;
-      chCode.appendChild(copyCodeSuggestion);
+      // copy code button
+      const copyCodeButton = document.createElement("button");
+      copyCodeButton.classList.add("code__copy-button");
+      copyCodeButton.classList.add("code__button");
+      copyCodeButton.innerText = "copy markup";
 
-      // copy on click
-      chCode.addEventListener("click", e => {
-        if (e.ctrlKey || e.metaKey) {
-          // It is expected that the markup/code string that was set as value to the
-          // ch-code, was saved on a variable with the same name as the ch-code id.
-          //copyToClipBoard();
+      // append button inside header
+      chCodeHeader.appendChild(copyCodeButton);
+
+      // insert the ch-code header before ch-code
+      const codeParent = chCode.parentElement;
+      codeParent.insertBefore(chCodeHeader, chCode);
+
+      copyCodeButton.addEventListener("click", event => {
+        // assuming the copy code button is being inserted before ch-code
+        // inside .code__header.
+        const chCode = chCodeHeader.nextElementSibling;
+        if (chCode) {
+          copyToClipBoard(chCode.value);
+          chCode.classList.add("code--highlight");
+          setTimeout(() => {
+            chCode.classList.remove("code--highlight");
+          }, 200);
         }
       });
     });
