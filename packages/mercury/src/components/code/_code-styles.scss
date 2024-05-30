@@ -1,16 +1,29 @@
 @import "tokens";
 
 @mixin code($selector: ".code") {
-  // resets
-  pre {
-    margin: 0;
-  }
-  // prevent text wrap
-  .hljs-tag {
-    white-space: nowrap;
-  }
-
   #{$selector} {
+    // reset
+    pre {
+      margin: 0;
+    }
+    /* begin of WA */
+    // prevent text wrap
+    .hljs-tag {
+      white-space: nowrap;
+    }
+    overflow: auto;
+    pre {
+      overflow: auto;
+      @include scrollbar-styles();
+    }
+    // prevent text wrap
+    /* end of WA */
+
+    background-color: var(--ch-code__bg-color);
+    border: var(--ch-code__border);
+    border-radius: var(--ch-code__border-radius);
+    padding: var(--ch-code__padding);
+
     @include code-tokens();
     .hljs-doctag,
     .hljs-keyword,
