@@ -50,6 +50,9 @@
 /*====================
 General
 ====================*/
+html {
+  scroll-behavior: smooth;
+}
 body.showcase {
   display: block; /*WA: Prevent issues with scroll in internal controls due to display: grid on the body*/
 }
@@ -172,12 +175,20 @@ Articles
 .article__title {
   font-size: var(--article-title__font-size);
   font-weight: var(--article-title__font-weight);
+  display: flex;
+  align-items: center;
 }
-/* articles title pipe*/
-.article__title-pipe {
-  font-family: var(Inter_Bold);
-  font-size: var(--article-title__pipe-font-size);
-  padding-inline: var(--article-title__pipe-padding-inline);
+.article__number-id {
+  font-family: monospace;
+  font-size: var(--article-title__font-size);
+  display: flex;
+  align-items: center;
+}
+.article__number-id::after {
+  content: "|";
+  font-size: 0.8em;
+  padding: 0 8px;
+  opacity: 0.25;
 }
 .article__sub-title {
   font-size: var(--article-sub-title__font-size);
