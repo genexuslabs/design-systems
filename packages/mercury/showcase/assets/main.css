@@ -3,7 +3,7 @@
   /* TOKENS MAIN */
   --body__font-size: 16px;
   --body__line-height: 16px;
-  /* container */
+  /* .container */
   --container__max-width: 960px;
   --container__padding-inline: 32px;
   /* section */
@@ -81,6 +81,28 @@ Top Bar
 /*====================
 Articles
 ====================*/
+.main {
+  height: 100%;
+  overflow-y: auto;
+}
+.main::-webkit-scrollbar {
+  width: var(--mer-spacing--sm);
+  height: var(--mer-scrollbar__size);
+}
+.main::-webkit-scrollbar-track {
+  background-color: var(--mer-scrollbar-track__bg-color);
+  border-radius: var(--mer-scrollbar-track__border-radius);
+}
+.main::-webkit-scrollbar-thumb {
+  background-color: var(--mer-scrollbar-thumb__bg-color);
+  border-radius: var(--mer-scrollbar-thumb__border-radius);
+}
+.main::-webkit-scrollbar-thumb:hover {
+  background-color: var(--mer-scrollbar-thumb__bg-color--hover);
+}
+.main::-webkit-scrollbar-corner {
+  background: transparent;
+}
 .container {
   width: 100%;
   max-width: var(--container__max-width);
