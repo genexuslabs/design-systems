@@ -162,10 +162,6 @@ Articles
 .article:last-child {
   padding-block-end: 0;
 }
-/* article highlighting */
-.article--highlighting .article__title {
-  animation: articleTitleAnimation 1000ms infinite alternate backwards;
-}
 /* article header */
 .article__header {
   display: flex;
@@ -253,22 +249,6 @@ Articles
   display: flex;
   flex-direction: column;
   gap: var(--article-header__gap);
-}
-
-/*This animation is for highlighting the article title, when clicking on
-the sidebar navigation. It is an optional setting on /showcase/assets/scripts.js
-The name of the const is HIGHLIGHT_NAV_ARTICLE.
-*/
-@keyframes articleTitleAnimation {
-  0% {
-    filter: brightness(1);
-  }
-  50% {
-    filter: brightness(1.35);
-  }
-  100% {
-    filter: brightness(1);
-  }
 }
 
 /*====================
