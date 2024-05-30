@@ -1,3 +1,4 @@
+// configuration
 // constants
 const _URL = new URL(window.location.href);
 const PAGE_URL = `${_URL.origin}${_URL.pathname}`;
@@ -104,11 +105,36 @@ const getNavbarItems = () => {
     });
 };
 
-const includeSidebarPageNav = () => {
+const includeSidebarPageInternalNav = () => {
   // This is the navigation items for the current page articles.
   // Let's call this the internal navigation.
   const includeSidebar = BODY.hasAttribute("sidebar");
-  if (includeSidebar) {
+  if (includeSidebar && CURRENT_PAGE_NAV_ITEM) {
+    // CURRENT_PAGE_NAV_ITEM is a reference to the item on the sidebar
+    // that refers to the actual page.
+    if (!PAGE_ARTICLES) {
+      PAGE_ARTICLES = document.querySelectorAll(ARTICLE_SELECTOR);
+    }
+    if (PAGE_ARTICLES.length) {
+      const pageUlEl = document.createElement("ul");
+      pageUlEl.classList.add("sidebar__list--child");
+      PAGE_ARTICLES.forEach(article => {
+        const hasId = article.hasAttribute("id");
+        const hasTitle = article.hasAttribute("data-title");
+        if (hasId && hasTitle) {
+          const articleId = article.getAttribute("id");
+          const articleTitle = article.getAttribute("data-title");
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = `#${articleId}`;
+          a.textContent = articleTitle;
+
+          li.appendChild(a);
+          pageUlEl.appendChild(li);
+        }
+      });
+      CURRENT_PAGE_NAV_ITEM.appendChild(pageUlEl);
+    }
   }
 };
 
@@ -205,7 +231,7 @@ const includeSidebarNav = async () => {
   if (CURRENT_PAGE_NAV_ITEM) {
     // only create internal navigation if the navigation item
     // for this page exists.
-    includeSidebarPageNav();
+    includeSidebarPageInternalNav();
   }
 };
 
@@ -276,6 +302,46 @@ const includeSidebar = () => {
   }
 };
 
+const listenToCtrlCmd = () => {
+  // when ctrl or cmd is pressed, if the mouse cursor is over a code block,
+  // we want to display a pointer cursor, because it is on the "copy" mode.
+  document.addEventListener("keydown", e => {
+    if (e.key === "Control" || e.key === "Meta") {
+      BODY.classList.add("ctrl-cmd-pressed");
+    }
+  });
+  document.addEventListener("keyup", e => {
+    if (e.key === "Control" || e.key === "Meta") {
+      BODY.classList.remove("ctrl-cmd-pressed");
+    }
+  });
+};
+
+const addCopyCodeFunctionality = () => {
+  const chCodes = document.querySelectorAll(".code");
+  if (chCodes.length) {
+    chCodes.forEach(chCode => {
+      const chCodeId = chCode.getAttribute("id");
+
+      // suggest pill
+      const copyCodeSuggestion = document.createElement("span");
+      copyCodeSuggestion.classList.add("article__pill");
+      copyCodeSuggestion.classList.add("article__pill--icon");
+      copyCodeSuggestion.textContent = `ctrl / cmd + click to copy`;
+      chCode.appendChild(copyCodeSuggestion);
+
+      // copy on click
+      chCode.addEventListener("click", e => {
+        if (e.ctrlKey || e.metaKey) {
+          // It is expected that the markup/code string that was set as value to the
+          // ch-code, was saved on a variable with the same name as the ch-code id.
+          //copyToClipBoard();
+        }
+      });
+    });
+  }
+};
+
 const copyToClipBoard = text => {
   navigator.clipboard
     .writeText(text)
@@ -287,11 +353,15 @@ const copyToClipBoard = text => {
     });
 };
 
-includeStyles();
-includeChameleon();
-addArticleTitles();
-addTitleAnchors();
-includeSidebar();
-setScheme();
-addGoogleFonts();
-toggleRTLBtn();
+document.addEventListener("DOMContentLoaded", function () {
+  includeStyles();
+  addGoogleFonts();
+  includeChameleon();
+  addArticleTitles();
+  addTitleAnchors();
+  setScheme();
+  toggleRTLBtn();
+  addCopyCodeFunctionality();
+  listenToCtrlCmd();
+  includeSidebar();
+});
