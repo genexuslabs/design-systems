@@ -448,7 +448,103 @@
               <!-- /.article__content -->
               <ch-code id="chCode2" language="xml" class="code"></ch-code>
               <script>
-                const chCode2 = ``;
+                const chCode2 = `<ch-grid class="tabular-grid" row-selection-mode="none">
+  <ch-grid-columnset>
+    <ch-grid-column
+      class="tabular-grid-column"
+      column-id="code"
+      column-name="Country Code"
+      settingable="false"
+    ></ch-grid-column>
+    <ch-grid-column
+      class="tabular-grid-column"
+      column-id="name"
+      column-name="Country Name"
+      settingable="false"
+    ></ch-grid-column>
+    <ch-grid-column
+      class="tabular-grid-column"
+      column-id="population"
+      column-name="Country Population"
+      settingable="false"
+    ></ch-grid-column>
+    <ch-grid-column
+      class="tabular-grid-column"
+      column-id="language"
+      column-name="Country Language"
+      settingable="false"
+    ></ch-grid-column>
+  </ch-grid-columnset> 
+
+  <!-- rowset 1.1 -->
+  <ch-grid-rowset class="tabular-grid-rowset">
+    <ch-grid-rowset-legend class="tabular-grid-rowset-legend">América del Norte</ch-grid-rowset-legend>
+    <ch-grid-row rowid="ca" class="tabular-grid-row">
+      <ch-grid-cell class="tabular-grid-cell">CA</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">Canadá</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">38.000.000</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">English</ch-grid-cell>
+    </ch-grid-row>
+    <ch-grid-row rowid="mx" class="tabular-grid-row">
+      <ch-grid-cell class="tabular-grid-cell">MX</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">México</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">126.000.000</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+    </ch-grid-row>
+    <ch-grid-row rowid="us" class="tabular-grid-row">
+      <ch-grid-cell class="tabular-grid-cell">US</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">Estados Unidos</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">331.000.000</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">English</ch-grid-cell>
+    </ch-grid-row>
+  </ch-grid-rowset>
+
+  <!-- rowset 2.1 -->
+  <ch-grid-rowset class="tabular-grid-rowset">
+    <ch-grid-rowset-legend class="tabular-grid-rowset-legend">América del Sur</ch-grid-rowset-legend>
+    <ch-grid-row rowid="bo" class="tabular-grid-row">
+      <ch-grid-cell class="tabular-grid-cell">BO</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">Bolivia</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">11.800.000</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+    </ch-grid-row>
+    <ch-grid-row rowid="cl" class="tabular-grid-row">
+      <ch-grid-cell class="tabular-grid-cell">CL</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">Chile</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">19.500.000</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+    </ch-grid-row>
+    <ch-grid-row rowid="ec" class="tabular-grid-row">
+      <ch-grid-cell class="tabular-grid-cell">EC</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">Ecuador</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">17.600.000</ch-grid-cell>
+      <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+    </ch-grid-row>
+
+    <!-- rowset 2.2 -->
+    <ch-grid-rowset class="tabular-grid-rowset">
+      <ch-grid-rowset-legend class="tabular-grid-rowset-legend">Campeones del mundo</ch-grid-rowset-legend>
+      <ch-grid-row rowid="ar" class="tabular-grid-row">
+        <ch-grid-cell class="tabular-grid-cell">AR</ch-grid-cell>
+        <ch-grid-cell class="tabular-grid-cell">Argentina</ch-grid-cell>
+        <ch-grid-cell class="tabular-grid-cell">45.400.000</ch-grid-cell>
+        <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+      </ch-grid-row>
+      <ch-grid-row rowid="br" class="tabular-grid-row">
+        <ch-grid-cell class="tabular-grid-cell">BR</ch-grid-cell>
+        <ch-grid-cell class="tabular-grid-cell">Brasil</ch-grid-cell>
+        <ch-grid-cell class="tabular-grid-cell">212.600.000</ch-grid-cell>
+        <ch-grid-cell class="tabular-grid-cell">Português</ch-grid-cell>
+      </ch-grid-row>
+      <ch-grid-row rowid="uy" class="tabular-grid-row">
+        <ch-grid-cell class="tabular-grid-cell">UY</ch-grid-cell>
+        <ch-grid-cell class="tabular-grid-cell">Uruguay</ch-grid-cell>
+        <ch-grid-cell class="tabular-grid-cell">3.500.000</ch-grid-cell>
+        <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+      </ch-grid-row>
+    </ch-grid-rowset>
+  </ch-grid-rowset>
+</ch-grid>`;
                 document.getElementById("chCode2").value = chCode2;
               </script>
             </div>
