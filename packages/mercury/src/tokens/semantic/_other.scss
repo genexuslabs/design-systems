@@ -70,6 +70,6 @@
   --mer-focus__outline-width: var(--mer-border__width--sm);
   --mer-focus__outline-style: solid;
   --mer-focus__outline-color: var(--mer-color__primary-blue--200);
-  --mer-focus__outline-offset: calc(--mer-system__border-width) * -1;
+  --mer-focus__outline-offset: calc(var(--mer-system__border-width) * -1);
   --borders-un-border-color__focused: var(--mer-focus__outline-color);
 }
