@@ -5,7 +5,7 @@
 
   --grid-column-bar__gap: var(--mer-spacing--xs);
   --grid-column-bar__bg-color: var(--tabular-grid__bg-color);
-  --grid-column-bar__color: var(--grid-base__color);
+  --grid-column-bar__color: var(--mer-text__bright);
   --grid-column-bar__padding-inline: var(--mer-spacing--xs);
   --grid-column-bar__padding-block: var(--mer-spacing--xs);
   --grid-column-bar__font-size: var(--grid-base__font-size);
@@ -26,10 +26,6 @@
   // =======================================
   //          Part "bar-name"
   // =======================================
-
-  --grid-bar-name__font-family: var(--mer-font-family--inter-semi-bold);
-  --grid-bar-name__font-size: var(--tabular-grid__font-size);
-  --grid-bar-name__color: var(--tabular-grid__color);
 
   // - - - - - - - - - - - - - - - - - - - -
   //         Part "bar-name-icon"
