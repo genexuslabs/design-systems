@@ -17,6 +17,10 @@
   --mer-item__font-family: var(--mer-font-family--inter-regular); // optional
   --mer-item__font-size: var(--mer-body__font-size); // optional
 
+  --mer-item__color: var(--mer-item__color--enabled);
+  --mer-item__bg-color: var(--mer-item__bg-color--enabled);
+  --mer-item__border-color: var(--mer-item__border-color--enabled);
+
   // enabled
   --mer-item__color--enabled: var(--mer-text__on-elevation);
   --mer-item__bg-color--enabled: var(--mer-color__elevation--01);
