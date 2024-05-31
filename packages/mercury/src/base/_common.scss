@@ -57,9 +57,9 @@ Item (applies to every item (tree, grid, list, etc...)
 
 @mixin item-styles($style: "enabled") {
   @if $style == "border-list" {
-    border-block-end: var(--mer-item__border-width)
+    border: var(--mer-item__border-width)
       var(--mer-item__border-style)
-      var(--mer-item__border-color--enabled);
+      transparent;
     // border color depends on the state (enabled, hover, etc)
   }
   @if $style == "border-grid" {
@@ -83,11 +83,9 @@ Item (applies to every item (tree, grid, list, etc...)
     min-block-size: var(--mer-item__padding-min-block-size);
   }
   @if $style == "enabled" {
-    &:enabled {
-      color: var(--mer-item__color--enabled);
-      background-color: var(--mer-item__bg-color--enabled);
-      border-color: var(--mer-item__border-color--enabled);
-    }
+    color: var(--mer-item__color--enabled);
+    // background-color: var(--mer-item__bg-color--enabled); // TODO
+    border-color: var(--mer-item__border-color--enabled);
   }
   @if $style == "hover" {
     &:hover {
@@ -123,6 +121,12 @@ Item (applies to every item (tree, grid, list, etc...)
 %item-border-grid {
   @include item-styles("border-grid");
 }
+%item-font {
+  @include item-styles("font");
+}
+%item-structure {
+  @include item-styles("structure");
+}
 %item-enabled {
   @include item-styles("enabled");
 }
@@ -136,5 +140,10 @@ Item (applies to every item (tree, grid, list, etc...)
   @include item-styles("selected-hover");
 }
 %item-disabled {
+  @include item-styles("disabled");
+}
+%item-common-states {
+  @include item-styles("enabled");
+  @include item-styles("hover");
   @include item-styles("disabled");
 }
