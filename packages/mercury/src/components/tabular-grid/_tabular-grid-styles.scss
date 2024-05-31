@@ -1,5 +1,4 @@
 @import "tokens-grid";
-@import "tokens-row";
 @import "tokens-column";
 @import "tokens-cell";
 
@@ -25,6 +24,7 @@
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-column__bar {
+  width: 100%;
   gap: var(--grid-column-bar__gap);
   background-color: var(--grid-column-bar__bg-color);
   color: var(--grid-column-bar__color);
@@ -32,6 +32,8 @@
   padding-block: var(--grid-column-bar__padding-block);
   font-size: var(--grid-column-bar__font-size);
   font-family: var(--grid-column-bar__font-family);
+  border-block-end: var(--mer-item__border-width) var(--mer-item__border-style)
+    var(--mer-item__border-color--enabled);
 }
 
 %tabular-grid-column__bar-resize-split {
@@ -45,13 +47,33 @@
 }
 
 // - - - - - - - - - - - - - - - - - - - -
+//            ch-grid-row
+// - - - - - - - - - - - - - - - - - - - -
+
+// no styles on ch-grid-row, since it has "display:contents"
+%tabular-grid-row {
+  @extend %item-border-list;
+  border-block-end-color: var(--mer-item__border-color--enabled);
+}
+
+// - - - - - - - - - - - - - - - - - - - -
 //            ch-grid-cell
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-cell {
-  @include item-styles("structure");
-  @include item-styles("border-grid");
-  @include item-styles("font");
+  @extend %item-structure;
+  @extend %item-font;
+  &:not(:last-child) {
+    border-inline-end: var(--mer-item__border-width)
+      var(--mer-item__border-style) var(--mer-item__border-color--enabled);
+  }
+  &[focused] {
+    @include focus-style(true);
+  }
+
+  &:last-child {
+    border-inline-end: none;
+  }
 }
 
 /// @group ch-grid
@@ -115,10 +137,21 @@
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$tabular-grid-row} {
-    &:last-child {
+    @extend %tabular-grid-row;
+
+    &[focused] {
+      border-style: dotted;
+      @include focus-style();
+    }
+
+    &[highlighted] {
       #{$tabular-grid-cell} {
-        border-block-end: none;
+        @extend %item-common-states;
       }
+    }
+
+    &:last-child {
+      border-block-end-color: transparent;
     }
   }
 
@@ -128,9 +161,5 @@
 
   #{$tabular-grid-cell} {
     @extend %tabular-grid-cell;
-
-    &:last-child {
-      border-inline-end: none;
-    }
   }
 }
