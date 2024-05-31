@@ -1,9 +1,9 @@
 @mixin elevation--light() {
   // background color
-  --mer-elevation__background-color--01: var(--mer-color__neutral-gray--900);
-  --mer-elevation__background-color--02: var(--mer-color__neutral-gray--900);
-  --mer-elevation__background-color--03: var(--mer-color__neutral-gray--900);
-  --mer-elevation__background-color--04: var(--mer-color__neutral-gray--900);
+  --mer-elevation__bg-color--01: var(--mer-color__neutral-gray--900);
+  --mer-elevation__bg-color--02: var(--mer-color__neutral-gray--900);
+  --mer-elevation__bg-color--03: var(--mer-color__neutral-gray--900);
+  --mer-elevation__bg-color--04: var(--mer-color__neutral-gray--900);
 
   // border
   --mer-elevation__border-01: transparent;
@@ -24,10 +24,10 @@
 
 @mixin elevation--dark() {
   // background color
-  --mer-elevation__background-color--01: var(--mer-color__elevation--01);
-  --mer-elevation__background-color--02: var(--mer-color__elevation--02);
-  --mer-elevation__background-color--03: var(--mer-color__elevation--03);
-  --mer-elevation__background-color--04: var(--mer-color__elevation--04);
+  --mer-elevation__bg-color--01: var(--mer-color__elevation--01);
+  --mer-elevation__bg-color--02: var(--mer-color__elevation--02);
+  --mer-elevation__bg-color--03: var(--mer-color__elevation--03);
+  --mer-elevation__bg-color--04: var(--mer-color__elevation--04);
 
   // border
   --mer-elevation__border-01: 1px solid var(--mer-color__elevation--03);

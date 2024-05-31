@@ -4,7 +4,7 @@
   // =======================================
 
   --grid-column-bar__gap: var(--mer-spacing--xs);
-  --grid-column-bar__background-color: var(--tabular-grid__background-color);
+  --grid-column-bar__bg-color: var(--tabular-grid__bg-color);
   --grid-column-bar__color: var(--grid-base__color);
   --grid-column-bar__padding-inline: var(--mer-spacing--xs);
   --grid-column-bar__padding-block: var(--mer-spacing--xs);
@@ -68,11 +68,7 @@
   // - - - - - - - - - - - - - - - - - - - -
 
   --grid-bar-resize-split__inline-size: var(--mer-spacing--3xs);
-  --grid-bar-resize-split__background-color: var(
-    --mer-color__neutral-gray--700
-  );
-  --grid-bar-resize-split__background-color--hover: var(
-    --grid-column-bar__color
-  );
+  --grid-bar-resize-split__bg-color: var(--mer-color__neutral-gray--700);
+  --grid-bar-resize-split__bg-color--hover: var(--grid-column-bar__color);
   --grid-bar-resize-split__border-radius: var(--mer-border__radius--xs);
 }

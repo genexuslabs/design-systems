@@ -6,7 +6,7 @@
   --mer-form-input__border: var(--mer-form-input__border-width)
     var(--mer-form-input__border-style) var(--mer-form-input__border-color);
   --mer-form-input__border-radius: var(--mer-border__radius--sm);
-  --mer-form-input__background-color: transparent;
+  --mer-form-input__bg-color: transparent;
   --mer-form-input__color: var(--mer-text__bright);
   --mer-form-input__font-family: var(--mer-font-family--inter-regular);
   --mer-form-input__font-size: var(--mer-body__font-size);
@@ -22,9 +22,7 @@
 
   // disabled
   --mer-form-input__border-color--disabled: var(--mer-text__on-disabled);
-  --mer-form-input__background-color--disabled: var(
-    --mer-accent__primary--disabled
-  );
+  --mer-form-input__bg-color--disabled: var(--mer-accent__primary--disabled);
   --mer-form-input__color--disabled: var(--mer-accent__primary--disabled);
 
   // placeholder

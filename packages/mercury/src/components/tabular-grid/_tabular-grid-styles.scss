@@ -13,7 +13,7 @@
 }
 
 %tabular-grid__main {
-  background-color: var(--grid-main__background-color);
+  background-color: var(--grid-main__bg-color);
   border: var(--grid-main__border);
   border-radius: var(--grid-main__border-radius);
   padding-inline: var(--grid-main__padding-inline);
@@ -26,7 +26,7 @@
 
 %tabular-grid-column__bar {
   gap: var(--grid-column-bar__gap);
-  background-color: var(--grid-column-bar__background-color);
+  background-color: var(--grid-column-bar__bg-color);
   color: var(--grid-column-bar__color);
   padding-inline: var(--grid-column-bar__padding-inline);
   padding-block: var(--grid-column-bar__padding-block);
@@ -36,11 +36,11 @@
 
 %tabular-grid-column__bar-resize-split {
   inline-size: var(--grid-bar-resize-split__inline-size);
-  background-color: var(--grid-bar-resize-split__background-color);
+  background-color: var(--grid-bar-resize-split__bg-color);
   border-radius: var(--grid-bar-resize-split__border-radius);
 
   &--hover {
-    background-color: var(--grid-bar-resize-split__background-color--hover);
+    background-color: var(--grid-bar-resize-split__bg-color--hover);
   }
 }
 
