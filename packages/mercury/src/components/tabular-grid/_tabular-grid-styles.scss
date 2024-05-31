@@ -1,4 +1,5 @@
 @import "tokens-grid";
+@import "tokens-row";
 @import "tokens-column";
 @import "tokens-cell";
 
@@ -7,6 +8,7 @@
 // - - - - - - - - - - - - - - - - - - - -
 %tabular-grid {
   @include tabular-grid-tokens();
+  @include tabular-grid-row-tokens();
   @include tabular-grid-column-tokens();
   @include tabular-grid-cell-tokens();
 }
@@ -34,6 +36,7 @@
   font-family: var(--grid-column-bar__font-family);
   border-block-end: var(--mer-item__border-width) var(--mer-item__border-style)
     var(--mer-item__border-color--enabled);
+  line-height: var(--mer-item__line-height);
 }
 
 %tabular-grid-column__bar-resize-split {
@@ -49,6 +52,55 @@
 // - - - - - - - - - - - - - - - - - - - -
 //            ch-grid-row
 // - - - - - - - - - - - - - - - - - - - -
+
+// no styles on ch-grid-row, since it has "display:contents"
+%tabular-grid-row {
+  @extend %item-border-list;
+  border-block-end-color: var(--mer-item__border-color--enabled);
+}
+
+// - - - - - - - - - - - - - - - - - - - -
+//            ch-grid-rowset
+// - - - - - - - - - - - - - - - - - - - -
+%tabular-grid-rowset {
+}
+
+// - - - - - - - - - - - - - - - - - - - -
+//        ch-grid-rowset-legend
+// - - - - - - - - - - - - - - - - - - - -
+%tabular-grid-rowset-legend {
+  cursor: pointer;
+  font-family: var(--grid-rowset-legend__font-family);
+  font-size: var(--grid-rowset-legend__font-size);
+  color: var(--grid-rowset-legend__color);
+  padding-inline: var(--grid-rowset-legend__padding-inline);
+  padding-block: var(--grid-rowset-legend__padding-block);
+  background-color: var(--mer-color__elevation--02);
+  border-block-end: var(--mer-item__border-width) var(--mer-item__border-style)
+    var(--mer-item__border-color--enabled);
+
+  &:hover {
+    color: var(--grid-rowset-legend__color--hover);
+  }
+
+  // reset margin-inline-start
+  margin-inline-start: 0;
+  padding-inline-start: calc(
+    var(--indent) * (var(--level) - 1) + var(--grid-column-bar__padding-inline)
+  );
+  --indent: var(--grid-rowset-legend__indent);
+}
+
+// Parts
+// TODO
+%tabular-grid-rowset-legend__caret {
+}
+%tabular-grid-rowset-legend__selector-label {
+}
+%tabular-grid-rowset-legend__selector {
+}
+%tabular-grid-rowset-legend__icon {
+}
 
 // no styles on ch-grid-row, since it has "display:contents"
 %tabular-grid-row {
@@ -87,6 +139,16 @@
 /// @group ch-grid-row
 /// @param {String} $tabular-grid-row [".tabular-grid-row"] -
 
+/// @group ch-grid-rowset
+/// @param {String} $tabular-grid-rowset [".tabular-grid-rowset"] -
+
+/// @group ch-grid-rowset-legend
+/// @param {String} $tabular-grid-rowset-legend [".tabular-grid-rowset-legend"] -
+/// @param {String} $tabular-grid-rowset-legend__caret [".tabular-grid-rowset-legend::part(caret)"] -
+/// @param {String} $tabular-grid-rowset-legend__selector-label [".tabular-grid-rowset-legend::part(selector-label)"] -
+/// @param {String} $tabular-grid-rowset-legend__selector [".tabular-grid-rowset-legend::part(selector)"] -
+/// @param {String} $tabular-grid-rowset-legend__icon [".tabular-grid-rowset-legend::part(icon)"] -
+
 /// @group ch-grid-cell
 /// @param {String} $tabular-grid-cell [".tabular-grid-cell"] -
 @mixin tabular-grid(
@@ -101,6 +163,17 @@
 
   // ch-grid-row
   $tabular-grid-row: ".tabular-grid-row",
+
+  // ch-grid-rowset
+  $tabular-grid-rowset: ".tabular-grid-rowset",
+
+  // ch-grid-rowset-legend
+  $tabular-grid-rowset-legend: ".tabular-grid-rowset-legend",
+  $tabular-grid-rowset-legend__caret: ".tabular-grid-rowset-legend__caret",
+  $tabular-grid-rowset-legend__selector-label:
+    ".tabular-grid-rowset-legend__selector-label",
+  $tabular-grid-rowset-legend__selector: ".tabular-grid-rowset-legend__selector",
+  $tabular-grid-rowset-legend__icon: ".tabular-grid-rowset-legend__icon",
 
   // ch-grid-cell
   $tabular-grid-cell: ".tabular-grid-cell"
@@ -153,6 +226,40 @@
     &:last-child {
       border-block-end-color: transparent;
     }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //         ch-grid-rowset
+  // - - - - - - - - - - - - - - - - - - - -
+
+  #{$tabular-grid-rowset} {
+    @extend %tabular-grid-rowset;
+
+    &[collapsed]:not(:last-child) {
+      #{$tabular-grid-rowset-legend} {
+        margin-block-end: 1px;
+      }
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //         ch-grid-rowset-legend
+  // - - - - - - - - - - - - - - - - - - - -
+
+  #{$tabular-grid-rowset-legend} {
+    @extend %tabular-grid-rowset-legend;
+  }
+  #{$tabular-grid-rowset-legend__caret} {
+    @extend %tabular-grid-rowset-legend__caret;
+  }
+  #{$tabular-grid-rowset-legend__selector-label} {
+    @extend %tabular-grid-rowset-legend__selector-label;
+  }
+  #{$tabular-grid-rowset-legend__selector} {
+    @extend %tabular-grid-rowset-legend__selector;
+  }
+  #{$tabular-grid-rowset-legend__icon} {
+    @extend %tabular-grid-rowset-legend__icon;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
