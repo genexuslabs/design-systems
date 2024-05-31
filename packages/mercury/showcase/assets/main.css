@@ -58,6 +58,9 @@ General
 body.showcase {
   display: block; /*WA: Prevent issues with scroll in internal controls due to display: grid on the body*/
 }
+.article[hidden] {
+  display: none;
+}
 
 /*====================
 Top Bar
