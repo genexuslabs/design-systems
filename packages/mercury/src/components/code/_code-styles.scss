@@ -19,10 +19,10 @@
     // prevent text wrap
     /* end of WA */
 
-    background-color: var(--ch-code__bg-color);
-    border: var(--ch-code__border);
-    border-radius: var(--ch-code__border-radius);
-    padding: var(--ch-code__padding);
+    background-color: var(--code__bg-color);
+    border: var(--code__border);
+    border-radius: var(--code__border-radius);
+    padding: var(--code__padding);
 
     @include code-tokens();
     .hljs-doctag,
@@ -33,14 +33,14 @@
     .hljs-type,
     .hljs-variable.language_ {
       /* prettylights-syntax-keyword */
-      color: var(--ch-code__color-blue);
+      color: var(--code__color-blue);
     }
 
     .hljs-title,
     .hljs-title.class_,
     .hljs-title.class_.inherited__,
     .hljs-title.function_ {
-      color: var(--ch-code__color-base);
+      color: var(--code__color-base);
     }
 
     .hljs-attr,
@@ -53,14 +53,14 @@
     .hljs-selector-attr,
     .hljs-selector-class,
     .hljs-selector-id {
-      color: var(--ch-code__color-blue);
+      color: var(--code__color-blue);
     }
 
     .hljs-regexp,
     .hljs-string,
     .hljs-meta .hljs-string {
       color: var(
-        --ch-code__color-green
+        --code__color-green
       ); /* DARK: color-mix(in srgb, var(--colors-foundation-un-color__red--300) 60%, #000) */
     }
 
@@ -73,14 +73,14 @@
     .hljs-comment,
     .hljs-code,
     .hljs-formula {
-      color: var(--ch-code__color-green);
+      color: var(--code__color-green);
     }
 
     .hljs-name,
     .hljs-quote,
     .hljs-selector-tag,
     .hljs-selector-pseudo {
-      color: var(--ch-code__color-light-blue);
+      color: var(--code__color-light-blue);
     }
 
     .hljs-subst {

@@ -13,11 +13,11 @@
 }
 
 %tabular-grid__main {
-  background-color: var(--tabular-grid-main__background-color);
-  border: var(--tabular-grid-main__border);
-  border-radius: var(--tabular-grid-main__border-radius);
-  padding-inline: var(--tabular-grid-main__padding-inline);
-  padding-block: var(--tabular-grid-main__padding-block);
+  background-color: var(--grid-main__background-color);
+  border: var(--grid-main__border);
+  border-radius: var(--grid-main__border-radius);
+  padding-inline: var(--grid-main__padding-inline);
+  padding-block: var(--grid-main__padding-block);
 }
 
 // - - - - - - - - - - - - - - - - - - - -
@@ -25,24 +25,22 @@
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-column__bar {
-  gap: var(--tabular-grid-column-bar__gap);
-  background-color: var(--tabular-grid-column-bar__background-color);
-  color: var(--tabular-grid-column-bar__color);
-  padding-inline: var(--tabular-grid-column-bar__padding-inline);
-  padding-block: var(--tabular-grid-column-bar__padding-block);
-  font-size: var(--tabular-grid-column-bar__font-size);
-  font-family: var(--tabular-grid-column-bar__font-family);
+  gap: var(--grid-column-bar__gap);
+  background-color: var(--grid-column-bar__background-color);
+  color: var(--grid-column-bar__color);
+  padding-inline: var(--grid-column-bar__padding-inline);
+  padding-block: var(--grid-column-bar__padding-block);
+  font-size: var(--grid-column-bar__font-size);
+  font-family: var(--grid-column-bar__font-family);
 }
 
 %tabular-grid-column__bar-resize-split {
-  inline-size: var(--tabular-grid-bar-resize-split__inline-size);
-  background-color: var(--tabular-grid-bar-resize-split__background-color);
-  border-radius: var(--tabular-grid-bar-resize-split__border-radius);
+  inline-size: var(--grid-bar-resize-split__inline-size);
+  background-color: var(--grid-bar-resize-split__background-color);
+  border-radius: var(--grid-bar-resize-split__border-radius);
 
   &--hover {
-    background-color: var(
-      --tabular-grid-bar-resize-split__background-color--hover
-    );
+    background-color: var(--grid-bar-resize-split__background-color--hover);
   }
 }
 

@@ -1,46 +1,46 @@
 @mixin tree-view-tokens() {
-  --ch-tree-view-item-custom-padding-inline-start: var(--mer-spacing--2xs);
-  --ch-tree-view-item-gap: var(--mer-spacing--xs);
-  --ch-tree-view-item__checkbox-size: var(--mer-spacing--md);
-  --ch-tree-view-item__expandable-button-size: var(--mer-spacing--md);
-  --ch-tree-view-item__image-size: var(--mer-spacing--md);
-  --ch-tree-view-item__line--inset-inline-end: 4px;
+  --tree-item-custom-padding-inline-start: var(--mer-spacing--2xs);
+  --tree-item-gap: var(--mer-spacing--xs);
+  --tree-item__checkbox-size: var(--mer-spacing--md);
+  --tree-item__expandable-button-size: var(--mer-spacing--md);
+  --tree-item__image-size: var(--mer-spacing--md);
+  --tree-item__line--inset-inline-end: 4px;
 
-  --tree-view__min-inline-size: max-content;
-  --tree-view__padding: var(--mer-spacing--xs);
-  --tree-view-item-custom__padding-inline-end: var(--mer-spacing--2xs);
+  --tree__min-inline-size: max-content;
+  --tree__padding: var(--mer-spacing--xs);
+  --tree-item-custom__padding-inline-end: var(--mer-spacing--2xs);
 
   // - - - - - - - - - - - - - - - - - - - -
   //               Item states
   // - - - - - - - - - - - - - - - - - - - -
   // Hover
-  --tree-view-item__color--hover: var(--mer-item__color--hover);
-  --tree-view-item__bg-color--hover: var(--mer-item__bg-color--hover);
+  --tree-item__color--hover: var(--mer-item__color--hover);
+  --tree-item__bg-color--hover: var(--mer-item__bg-color--hover);
 
   // Selected
-  --tree-view-item__color--selected: var(--mer-item__color--selected);
-  --tree-view-item__bg-color--selected: var(--mer-item__bg-color--selected);
+  --tree-item__color--selected: var(--mer-item__color--selected);
+  --tree-item__bg-color--selected: var(--mer-item__bg-color--selected);
 
   // - - - - - - - - - - - - - - - - - - - -
   //                Item line
   // - - - - - - - - - - - - - - - - - - - -
-  --tree-view-item-dashed-line__border-color: var(--mer-text__on-surface);
-  --tree-view-item-dashed-line__opacity: 0.3;
+  --tree-item-dashed-line__border-color: var(--mer-text__on-surface);
+  --tree-item-dashed-line__opacity: 0.3;
 
   // - - - - - - - - - - - - - - - - - - - -
   //               Item header
   // - - - - - - - - - - - - - - - - - - - -
-  --tree-view-item-header__border-radius: var(--mer-border__radius--sm);
-  --tree-view-item-header__padding-block: calc(var(--mer-spacing--3xs));
+  --tree-item-header__border-radius: var(--mer-border__radius--sm);
+  --tree-item-header__padding-block: calc(var(--mer-spacing--3xs));
 
   // - - - - - - - - - - - - - - - - - - - -
   //            Item downloading
   // - - - - - - - - - - - - - - - - - - - -
-  --tree-view-item-downloading__inline-size: var(--mer-spacing--sm);
-  --tree-view-item-downloading__block-size: var(--mer-spacing--sm);
-  --tree-view-item-downloading__border: var(--mer-border__width--md) solid
+  --tree-item-downloading__inline-size: var(--mer-spacing--sm);
+  --tree-item-downloading__block-size: var(--mer-spacing--sm);
+  --tree-item-downloading__border: var(--mer-border__width--md) solid
     var(--mer-accent__primary--active);
 
   // TODO: pending commit
-  // --tree-view-item-pending-commit__bg-color: var(--mer-accent__primary);
+  // --tree-item-pending-commit__bg-color: var(--mer-accent__primary);
 }

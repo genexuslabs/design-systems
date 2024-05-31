@@ -3,8 +3,8 @@
 %tree-view {
   @include tree-view-tokens();
 
-  padding: var(--tree-view__padding);
-  min-inline-size: var(--tree-view__min-inline-size);
+  padding: var(--tree__padding);
+  min-inline-size: var(--tree__min-inline-size);
 }
 
 // TODO: Improve this
@@ -17,7 +17,7 @@
 }
 
 %tree-view-item--drag-enter {
-  background-color: var(--tree-view-item__bg-color--hover);
+  background-color: var(--tree-item__bg-color--hover);
   @include focus-style(true);
 }
 
@@ -26,37 +26,37 @@
 }
 
 %tree-view-item__header {
-  border-radius: var(--tree-view-item-header__border-radius);
-  padding-inline-end: var(--tree-view-item-custom__padding-inline-end);
+  border-radius: var(--tree-item-header__border-radius);
+  padding-inline-end: var(--tree-item-custom__padding-inline-end);
 
   &--focus-visible {
     @include focus-style(true);
   }
 
   &--not-selected-hover {
-    background-color: var(--tree-view-item__bg-color--hover);
-    color: var(--tree-view-item__color--hover);
+    background-color: var(--tree-item__bg-color--hover);
+    color: var(--tree-item__color--hover);
   }
 
   &--selected {
-    background-color: var(--tree-view-item__bg-color--selected);
-    color: var(--tree-view-item__color--selected);
+    background-color: var(--tree-item__bg-color--selected);
+    color: var(--tree-item__color--selected);
   }
 }
 
 %tree-view-item__action {
-  padding-block: var(--tree-view-item-header__padding-block);
+  padding-block: var(--tree-item-header__padding-block);
 }
 
 %tree-view-item__line {
-  border-color: var(--tree-view-item-dashed-line__border-color);
-  opacity: var(--tree-view-item-dashed-line__opacity);
+  border-color: var(--tree-item-dashed-line__border-color);
+  opacity: var(--tree-item-dashed-line__opacity);
 }
 
 %tree-view-item__downloading {
-  inline-size: var(--tree-view-item-downloading__inline-size);
-  block-size: var(--tree-view-item-downloading__block-size);
-  border: var(--tree-view-item-downloading__border);
+  inline-size: var(--tree-item-downloading__inline-size);
+  block-size: var(--tree-item-downloading__block-size);
+  border: var(--tree-item-downloading__border);
   border-inline-start-color: transparent;
 }
 
