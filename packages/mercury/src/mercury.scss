@@ -355,12 +355,13 @@
     @if $tree-view-primary {
       @include tree-view-primary();
     }
+    // tabular grid
     @if $tabular-grid {
       @include tabular-grid();
-      // code
-      @if $code {
-        @include code();
-      }
+    }
+    // code
+    @if $code {
+      @include code();
     }
   }
 }

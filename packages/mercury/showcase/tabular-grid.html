@@ -4,7 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tabular Grid</title>
-    <base href="../dist/" target="_blank" />
+    <script type="module">
+      import { defineCustomElements } from "https://unpkg.com/@genexus/chameleon-controls-library@latest/dist/esm/loader.js";
+      defineCustomElements();
+    </script>
+
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
   </head>
   <body class="body">
     <main class="container">
@@ -144,6 +154,6 @@
         </div>
       </section>
     </main>
-    <script src="../showcase/scripts.js"></script>
+    <script src="./assets/scripts.js"></script>
   </body>
 </html>
