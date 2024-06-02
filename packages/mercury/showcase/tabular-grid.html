@@ -1541,6 +1541,265 @@ keyboard-navigation-mode="selection">
             </div>
             <!-- /.article__main -->
           </article>
+
+          <!-- ================================== 
+          row-mark + keyboard-select
+          =================================== -->
+          <article class="article" nav data-title="row-mark + keyboard-select">
+            <header class="article__header"></header>
+            <!-- main -->
+            <div class="article__main">
+              <div class="article__description">
+                <p>
+                  Adds checkboxes that allows marking the rows. Press
+                  <code>space-bar</code> to mark a row, or multiple rows. The
+                  following attributes have to be present on the first
+                  <code>ch-grid-column</code> only :
+                </p>
+                <ul class="article__list">
+                  <li><code>column-type="rich"</code></li>
+                  <li><code>rich-row-selector</code></li>
+                  <li><code>rich-row-selector-mode="mark"</code></li>
+                </ul>
+              </div>
+              <div class="article__content">
+                <ch-grid
+                  class="tabular-grid"
+                  row-selection-mode="multiple"
+                  keyboard-navigation-mode="select"
+                >
+                  <ch-grid-columnset>
+                    <ch-grid-column
+                      class="tabular-grid-column"
+                      column-id="code"
+                      column-name="Country Code"
+                      column-type="rich"
+                      rich-row-selector
+                      rich-row-selector-mode="mark"
+                      settingable="false"
+                    ></ch-grid-column>
+                    <ch-grid-column
+                      class="tabular-grid-column"
+                      column-id="name"
+                      column-name="Country Name"
+                      settingable="false"
+                    ></ch-grid-column>
+                    <ch-grid-column
+                      class="tabular-grid-column"
+                      column-id="population"
+                      column-name="Country Population"
+                      settingable="false"
+                    ></ch-grid-column>
+                    <ch-grid-column
+                      class="tabular-grid-column"
+                      column-id="language"
+                      column-name="Country Language"
+                      settingable="false"
+                    ></ch-grid-column>
+                  </ch-grid-columnset>
+
+                  <ch-grid-row class="tabular-grid-row" rowid="ar">
+                    <ch-grid-cell class="tabular-grid-cell">AR</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Argentina</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >45.400.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
+                  </ch-grid-row>
+                  <ch-grid-row class="tabular-grid-row" rowid="bo">
+                    <ch-grid-cell class="tabular-grid-cell">BO</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Bolivia</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >11.800.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
+                  </ch-grid-row>
+                  <ch-grid-row class="tabular-grid-row" rowid="br">
+                    <ch-grid-cell class="tabular-grid-cell">BR</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Brasil</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >212.600.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Português</ch-grid-cell
+                    >
+                  </ch-grid-row>
+                  <ch-grid-row class="tabular-grid-row" rowid="cl">
+                    <ch-grid-cell class="tabular-grid-cell">CL</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell">Chile</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >19.500.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
+                  </ch-grid-row>
+                  <ch-grid-row class="tabular-grid-row" rowid="ec">
+                    <ch-grid-cell class="tabular-grid-cell">EC</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Ecuador</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >17.600.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
+                  </ch-grid-row>
+                  <ch-grid-row class="tabular-grid-row" rowid="py">
+                    <ch-grid-cell class="tabular-grid-cell">PY</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Paraguay</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >7.500.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
+                  </ch-grid-row>
+                  <ch-grid-row class="tabular-grid-row" rowid="pe">
+                    <ch-grid-cell class="tabular-grid-cell">PE</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell">Perú</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >32.800.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
+                  </ch-grid-row>
+                  <ch-grid-row class="tabular-grid-row" rowid="uy">
+                    <ch-grid-cell class="tabular-grid-cell">UY</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Uruguay</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >3.500.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
+                  </ch-grid-row>
+                  <ch-grid-row class="tabular-grid-row" rowid="ve">
+                    <ch-grid-cell class="tabular-grid-cell">VE</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Venezuela</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >28.500.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
+                  </ch-grid-row>
+                </ch-grid>
+              </div>
+              <div class="article__code">
+                <ch-code id="ch-code-7" language="xml" class="code"></ch-code>
+                <script>
+                  const markup7 = `<ch-grid
+class="tabular-grid"
+row-selection-mode="multiple"
+keyboard-navigation-mode="select">
+  <ch-grid-columnset>
+    <ch-grid-column
+      class="tabular-grid-column"
+      column-id="code"
+      column-name="Country Code"
+      column-type="rich"
+      rich-row-selector
+      rich-row-selector-mode="mark"
+      settingable="false"></ch-grid-column>
+    <ch-grid-column
+      class="tabular-grid-column"
+      column-id="name"
+      column-name="Country Name"
+      settingable="false"></ch-grid-column>
+    <ch-grid-column
+      class="tabular-grid-column"
+      column-id="population"
+      column-name="Country Population"
+      settingable="false"></ch-grid-column>
+    <ch-grid-column
+      class="tabular-grid-column"
+      column-id="language"
+      column-name="Country Language"
+      settingable="false"></ch-grid-column>
+  </ch-grid-columnset>
+  <ch-grid-row class="tabular-grid-row" rowid="ar">
+    <ch-grid-cell class="tabular-grid-cell">AR</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Argentina</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">45.400.000</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+  </ch-grid-row>
+  <ch-grid-row class="tabular-grid-row" rowid="bo">
+    <ch-grid-cell class="tabular-grid-cell">BO</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Bolivia</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">11.800.000</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+  </ch-grid-row>
+  <ch-grid-row class="tabular-grid-row" rowid="br">
+    <ch-grid-cell class="tabular-grid-cell">BR</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Brasil</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">212.600.000</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Português</ch-grid-cell>
+  </ch-grid-row>
+  <ch-grid-row class="tabular-grid-row" rowid="cl">
+    <ch-grid-cell class="tabular-grid-cell">CL</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Chile</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">19.500.000</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+  </ch-grid-row>
+  <ch-grid-row class="tabular-grid-row" rowid="ec">
+    <ch-grid-cell class="tabular-grid-cell">EC</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Ecuador</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">17.600.000</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+  </ch-grid-row>
+  <ch-grid-row class="tabular-grid-row" rowid="py">
+    <ch-grid-cell class="tabular-grid-cell">PY</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Paraguay</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">7.500.000</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+  </ch-grid-row>
+  <ch-grid-row class="tabular-grid-row" rowid="pe">
+    <ch-grid-cell class="tabular-grid-cell">PE</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Perú</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">32.800.000</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+  </ch-grid-row>
+  <ch-grid-row class="tabular-grid-row" rowid="uy">
+    <ch-grid-cell class="tabular-grid-cell">UY</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Uruguay</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">3.500.000</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+  </ch-grid-row>
+  <ch-grid-row class="tabular-grid-row" rowid="ve">
+    <ch-grid-cell class="tabular-grid-cell">VE</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Venezuela</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">28.500.000</ch-grid-cell>
+    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+  </ch-grid-row>
+</ch-grid>
+                  `;
+                  document.getElementById("ch-code-7").value = markup7;
+                </script>
+              </div>
+              <!-- /.article__content -->
+            </div>
+            <!-- /.article__main -->
+          </article>
         </div>
       </section>
     </main>
