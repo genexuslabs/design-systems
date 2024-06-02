@@ -35,7 +35,7 @@
           <!-- ========================== 
           basic
           =========================== -->
-          <article class="article" nav data-title="basic" >
+          <article class="article" nav data-title="basic" hidden>
             <!-- header -->
             <header class="article__header"></header>
             <!-- main -->
@@ -244,7 +244,7 @@
           <!-- ========================== 
           group
           =========================== -->
-          <article class="article" nav data-title="group" >
+          <article class="article" nav data-title="group" hidden>
             <!-- header -->
             <header class="article__header"></header>
             <!-- main -->
@@ -551,10 +551,14 @@
             <!-- /.article__main -->
           </article>
 
-                   <!-- ========================== 
-          button-primary text only
+          <!-- ========================== 
+          single selection + keyboard focus
           =========================== -->
-          <article class="article" nav data-title="single selection">
+          <article
+            class="article"
+            nav
+            data-title="single selection + keyboard focus"
+          >
             <header class="article__header"></header>
             <!-- main -->
             <div class="article__main">
@@ -593,57 +597,107 @@
 
                   <ch-grid-row class="tabular-grid-row" rowid="ar">
                     <ch-grid-cell class="tabular-grid-cell">AR</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Argentina</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">45.400.000</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Argentina</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >45.400.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
                   </ch-grid-row>
                   <ch-grid-row class="tabular-grid-row" rowid="bo">
                     <ch-grid-cell class="tabular-grid-cell">BO</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Bolivia</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">11.800.000</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Bolivia</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >11.800.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
                   </ch-grid-row>
                   <ch-grid-row class="tabular-grid-row" rowid="br">
                     <ch-grid-cell class="tabular-grid-cell">BR</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Brasil</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">212.600.000</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Português</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Brasil</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >212.600.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Português</ch-grid-cell
+                    >
                   </ch-grid-row>
                   <ch-grid-row class="tabular-grid-row" rowid="cl">
                     <ch-grid-cell class="tabular-grid-cell">CL</ch-grid-cell>
                     <ch-grid-cell class="tabular-grid-cell">Chile</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">19.500.000</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >19.500.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
                   </ch-grid-row>
                   <ch-grid-row class="tabular-grid-row" rowid="ec">
                     <ch-grid-cell class="tabular-grid-cell">EC</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Ecuador</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">17.600.000</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Ecuador</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >17.600.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
                   </ch-grid-row>
                   <ch-grid-row class="tabular-grid-row" rowid="py">
                     <ch-grid-cell class="tabular-grid-cell">PY</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Paraguay</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">7.500.000</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Paraguay</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >7.500.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
                   </ch-grid-row>
                   <ch-grid-row class="tabular-grid-row" rowid="pe">
                     <ch-grid-cell class="tabular-grid-cell">PE</ch-grid-cell>
                     <ch-grid-cell class="tabular-grid-cell">Perú</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">32.800.000</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >32.800.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
                   </ch-grid-row>
                   <ch-grid-row class="tabular-grid-row" rowid="uy">
                     <ch-grid-cell class="tabular-grid-cell">UY</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Uruguay</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">3.500.000</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Uruguay</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >3.500.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
                   </ch-grid-row>
                   <ch-grid-row class="tabular-grid-row" rowid="ve">
                     <ch-grid-cell class="tabular-grid-cell">VE</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Venezuela</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">28.500.000</ch-grid-cell>
-                    <ch-grid-cell class="tabular-grid-cell">Español</ch-grid-cell>
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Venezuela</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >28.500.000</ch-grid-cell
+                    >
+                    <ch-grid-cell class="tabular-grid-cell"
+                      >Español</ch-grid-cell
+                    >
                   </ch-grid-row>
                 </ch-grid>
               </div>
@@ -660,7 +714,6 @@ Caption
             </div>
             <!-- /.article__main -->
           </article>
-        </div>
         </div>
       </section>
     </main>
