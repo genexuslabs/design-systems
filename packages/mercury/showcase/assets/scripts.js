@@ -38,6 +38,15 @@ const includeStyles = () => {
   HEAD.appendChild(mercuryLink);
 };
 
+const includeFavicon = () => {
+  const linkElement = document.createElement("link");
+  linkElement.rel = "icon";
+  linkElement.type = "image/png";
+  linkElement.href = "../dist/assets/images/mercury-favicon-32x32.png";
+  linkElement.sizes = "32x32";
+  document.head.appendChild(linkElement);
+};
+
 const setScheme = () => {
   HTML.classList.add("dark");
 };
@@ -359,6 +368,7 @@ const copyToClipBoard = text => {
 
 document.addEventListener("DOMContentLoaded", function () {
   includeStyles();
+  includeFavicon();
   addGoogleFonts();
   addArticleTitles();
   addTitleAnchors();
