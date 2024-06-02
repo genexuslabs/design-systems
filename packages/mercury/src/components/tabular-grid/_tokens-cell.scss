@@ -1,14 +1,7 @@
 @mixin tabular-grid-cell-tokens() {
-  //   --grid-cell__font-family: var(--grid-base__font-family);
-  //   --grid-cell__font-size: var(--grid-base__font-size);
-  //   --grid-cell__font-color: var(--grid-base__color);
-  //   --grid-cell__padding-inline: var(--mer-item__padding-inline);
-  //   --grid-cell__padding-block: var(--mer-item__padding-block);
-  //   --grid-cell__min-block-size: var(--mer-item__padding-min-block-size);
-
   // note: grid-cell is considered an "item", and because of this, the styles are
-  // applied through "@mixin item-styles". This ensures consistency across all system
-  // list items. This is why there are no styles for the cell in this file.
+  // applied through "item" @mixins. This ensures consistency across all system
+  // list items.
 
   // - - - - - - - - - - - - - - - - - - - -
   //            Part "drag-icon"

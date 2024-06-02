@@ -15,10 +15,6 @@
 
 %tabular-grid__main {
   background-color: var(--grid-main__bg-color);
-  border: var(--grid-main__border);
-  border-radius: var(--grid-main__border-radius);
-  padding-inline: var(--grid-main__padding-inline);
-  padding-block: var(--grid-main__padding-block);
 }
 
 // - - - - - - - - - - - - - - - - - - - -
@@ -26,6 +22,7 @@
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-column__bar {
+  position: relative;
   width: 100%;
   gap: var(--grid-column-bar__gap);
   background-color: var(--grid-column-bar__bg-color);
@@ -34,18 +31,21 @@
   padding-block: var(--grid-column-bar__padding-block);
   font-size: var(--grid-column-bar__font-size);
   font-family: var(--grid-column-bar__font-family);
-  border-block-end: var(--mer-item__border-width) var(--mer-item__border-style)
-    var(--mer-item__border-color--enabled);
   line-height: var(--mer-item__line-height);
 }
 
 %tabular-grid-column__bar-resize-split {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
   inline-size: var(--grid-bar-resize-split__inline-size);
+  border-inline-end: var(--grid-bar-resize-split__border-inline-end);
   background-color: var(--grid-bar-resize-split__bg-color);
-  border-radius: var(--grid-bar-resize-split__border-radius);
-
   &--hover {
-    background-color: var(--grid-bar-resize-split__bg-color--hover);
+    border-inline-end-color: var(
+      --grid-bar-resize-split__border-inline-end-color--hover
+    );
   }
 }
 
@@ -55,8 +55,8 @@
 
 // no styles on ch-grid-row, since it has "display:contents"
 %tabular-grid-row {
-  @extend %item-border-list;
-  border-block-end-color: var(--mer-item__border-color--enabled);
+  border: 1px solid transparent;
+  background-color: var(--grid-base__bg-color);
 }
 
 // - - - - - - - - - - - - - - - - - - - -
@@ -104,8 +104,6 @@
 
 // no styles on ch-grid-row, since it has "display:contents"
 %tabular-grid-row {
-  @extend %item-border-list;
-  border-block-end-color: var(--mer-item__border-color--enabled);
 }
 
 // - - - - - - - - - - - - - - - - - - - -
@@ -115,16 +113,28 @@
 %tabular-grid-cell {
   @extend %item-structure;
   @extend %item-font;
-  &:not(:last-child) {
-    border-inline-end: var(--mer-item__border-width)
-      var(--mer-item__border-style) var(--mer-item__border-color--enabled);
-  }
+  color: var(--mer-item__color);
+
   &[focused] {
     @include focus-style(true);
   }
 
-  &:last-child {
-    border-inline-end: none;
+  position: relative;
+  &:after {
+    // WA since cell hover background color (when row highlighted attribute is present), is a tinted blue
+    // (has opacity), and it blends with the gray bg-color of the ch grid "main" part, causing
+    // the resulting combination of colors a different blue tone than what is expected. The reason
+    // the grid "main" part has a light gray, instead of a dark gray, is because the grid border is
+    // not a real border, but an illusion caused by the main 1px gap.
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--mer-item__bg-color);
+    z-index: -1;
   }
 }
 
@@ -189,6 +199,8 @@
 
   #{$tabular-grid__main} {
     @extend %tabular-grid__main;
+    background-color: var(--grid-main__bg-color);
+    gap: 1px;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -211,25 +223,30 @@
 
   #{$tabular-grid-row} {
     @extend %tabular-grid-row;
-
+    // the following styles have to be applied here, because they depend on the
+    // $tabular-grid-cell selector, which is not known in the '%tabular-grid-row' placeholder.
+    &[highlighted] {
+      #{$tabular-grid-cell} {
+        &:after {
+          @extend %item-hover;
+        }
+      }
+    }
+    &[selected] {
+      #{$tabular-grid-cell} {
+        &:after {
+          @extend %item-selected;
+        }
+      }
+    }
     &[focused] {
       border-style: dotted;
       @include focus-style();
     }
-
-    &[highlighted] {
-      #{$tabular-grid-cell} {
-        @extend %item-common-states;
-      }
-    }
-
-    &:last-child {
-      border-block-end-color: transparent;
-    }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //         ch-grid-rowset
+  //             ch-grid-rowset
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$tabular-grid-rowset} {

@@ -4,7 +4,7 @@
   // =======================================
 
   --grid-column-bar__gap: var(--mer-spacing--xs);
-  --grid-column-bar__bg-color: var(--tabular-grid__bg-color);
+  --grid-column-bar__bg-color: var(--grid-base__bg-color);
   --grid-column-bar__color: var(--mer-text__bright);
   --grid-column-bar__padding-inline: var(--mer-spacing--xs);
   --grid-column-bar__padding-block: var(--mer-spacing--xs);
@@ -63,8 +63,11 @@
   //         Part "bar-resize-split"
   // - - - - - - - - - - - - - - - - - - - -
 
-  --grid-bar-resize-split__inline-size: var(--mer-spacing--3xs);
-  --grid-bar-resize-split__bg-color: var(--mer-color__neutral-gray--700);
-  --grid-bar-resize-split__bg-color--hover: var(--grid-column-bar__color);
-  --grid-bar-resize-split__border-radius: var(--mer-border__radius--xs);
+  --grid-bar-resize-split__inline-size: var(--mer-spacing--2xs);
+  --grid-bar-resize-split__bg-color: transparent;
+  --grid-bar-resize-split__border-inline-end: var(--mer-border__width--sm) solid
+    transparent;
+  --grid-bar-resize-split__border-inline-end-color--hover: var(
+    --grid-column-bar__color
+  );
 }
