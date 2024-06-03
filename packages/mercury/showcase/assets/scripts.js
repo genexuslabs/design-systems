@@ -122,7 +122,8 @@ const includeSidebarPageInternalNav = () => {
       PAGE_ARTICLES.forEach(article => {
         const hasId = article.hasAttribute("id");
         const hasTitle = article.hasAttribute("data-title");
-        if (hasId && hasTitle) {
+        const isHidden = article.hasAttribute("hidden");
+        if (hasId && hasTitle && !isHidden) {
           const articleId = article.getAttribute("id");
           const articleTitle = article.getAttribute("data-title");
           const li = document.createElement("li");
