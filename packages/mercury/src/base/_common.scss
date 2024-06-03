@@ -143,3 +143,15 @@ Item (applies to every item (tree, grid, list, etc...)
   @include item-styles("hover");
   @include item-styles("disabled");
 }
+
+/*----------------------
+Window
+----------------------*/
+// TODO: This styles should better be applied on the ch-window ?
+%window-styles {
+  border: var(--mer-window__border);
+  border-radius: var(--mer-window__border-radius);
+  padding: var(--mer-window__padding);
+  background-color: var(--mer-window__bg-color);
+  box-shadow: var(--mer-box-shadow--01);
+}
