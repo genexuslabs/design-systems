@@ -62,6 +62,24 @@ body.showcase {
   display: none;
 }
 
+/* List */
+.article__list li {
+  position: relative;
+  padding-inline-start: 12px;
+  display: block;
+}
+.article__list li::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: "";
+  display: block;
+  width: 3px;
+  height: 3px;
+  transform: translateY(-50%);
+  background-color: var(--sc-base__border-color);
+}
+
 /*====================
 Top Bar
 ====================*/
@@ -260,9 +278,9 @@ Articles
 .article__main {
   display: flex;
   flex-direction: column;
+  gap: var(--article-header__gap);
 }
 .article__content {
-  margin-block-end: var(--article-header__gap);
 }
 
 /*====================
