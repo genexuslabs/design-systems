@@ -16,144 +16,146 @@
     </style>
   </head>
   <body class="showcase" sidebar>
-    <main class="container">
-      <!-- button primary -->
-      <section class="section">
-        <header class="section__header">
-          <h1 class="section__title">checkbox</h1>
-          <p class="section__description">
-            A checkbox is a form element that allows users to select one or more
-            options from a set by checking. It is commonly used for tasks such
-            as selecting preferences, or agreeing to terms and conditions,
-            providing a clear and simple way for users to make multiple
-            independent selections within a form.
-          </p>
-        </header>
-        <div class="section__articles-container">
-          <!-- enabled unchecked-->
-          <article class="article" nav data-title="enabled unchecked">
-            <!-- header -->
-            <header class="article__header"></header>
-            <!-- main -->
-            <div class="article__main">
-              <div class="article__content">
-                <ch-checkbox
-                  class="checkbox"
-                  unchecked-value="off"
-                  checked-value="on"
-                  value="off"
-                ></ch-checkbox>
-              </div>
-              <div class="article__code">
-                <ch-code id="chCode1" language="xml" class="code"></ch-code>
-                <script>
-                  const chCode1 = `<ch-checkbox
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <header class="section__header">
+            <h1 class="section__title">checkbox</h1>
+            <p class="section__description">
+              A checkbox is a form element that allows users to select one or
+              more options from a set by checking. It is commonly used for tasks
+              such as selecting preferences, or agreeing to terms and
+              conditions, providing a clear and simple way for users to make
+              multiple independent selections within a form.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- enabled unchecked-->
+            <article class="article" nav data-title="enabled unchecked">
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox"
+                    unchecked-value="off"
+                    checked-value="on"
+                    value="off"
+                  ></ch-checkbox>
+                </div>
+                <div class="article__code">
+                  <ch-code id="chCode1" language="xml" class="code"></ch-code>
+                  <script>
+                    const chCode1 = `<ch-checkbox
 class="checkbox"
 unchecked-value="off"
 checked-value="on"
 value="off"></ch-checkbox>`;
-                  document.getElementById("chCode1").value = chCode1;
-                </script>
+                    document.getElementById("chCode1").value = chCode1;
+                  </script>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- enabled checked -->
-          <article class="article" nav data-title="enabled checked">
-            <!-- header -->
-            <header class="article__header"></header>
-            <!-- main -->
-            <div class="article__main">
-              <div class="article__content">
-                <ch-checkbox
-                  class="checkbox"
-                  unchecked-value="off"
-                  checked-value="on"
-                  value="on"
-                ></ch-checkbox>
-              </div>
-              <div class="article__code">
-                <ch-code id="chCode2" language="xml" class="code"></ch-code>
-                <script>
-                  const chCode2 = `<ch-checkbox
+            <!-- enabled checked -->
+            <article class="article" nav data-title="enabled checked">
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox"
+                    unchecked-value="off"
+                    checked-value="on"
+                    value="on"
+                  ></ch-checkbox>
+                </div>
+                <div class="article__code">
+                  <ch-code id="chCode2" language="xml" class="code"></ch-code>
+                  <script>
+                    const chCode2 = `<ch-checkbox
 class="checkbox"
 unchecked-value="off"
 checked-value="on"
 value="on"></ch-checkbox>`;
-                  document.getElementById("chCode2").value = chCode2;
-                </script>
+                    document.getElementById("chCode2").value = chCode2;
+                  </script>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- enabled indeterminate -->
-          <article class="article" nav data-title="enabled indeterminate">
-            <!-- header -->
-            <header class="article__header">
-              <p class="article__description">
-                An indeterminate checkbox is a checkbox that is in a state that
-                is neither checked nor unchecked. This state indicates that only
-                some, but not all, sub-options related to the checkbox are
-                selected.
-              </p>
-            </header>
-            <!-- main -->
-            <div class="article__main">
-              <div class="article__content">
-                <ch-checkbox
-                  class="checkbox"
-                  unchecked-value="off"
-                  checked-value="on"
-                  value="on"
-                  indeterminate
-                ></ch-checkbox>
-              </div>
-              <div class="article__code">
-                <ch-code id="chCode3" language="xml" class="code"></ch-code>
-                <script>
-                  const chCode3 = `<ch-checkbox
+            <!-- enabled indeterminate -->
+            <article class="article" nav data-title="enabled indeterminate">
+              <!-- header -->
+              <header class="article__header">
+                <p class="article__description">
+                  An indeterminate checkbox is a checkbox that is in a state
+                  that is neither checked nor unchecked. This state indicates
+                  that only some, but not all, sub-options related to the
+                  checkbox are selected.
+                </p>
+              </header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox"
+                    unchecked-value="off"
+                    checked-value="on"
+                    value="on"
+                    indeterminate
+                  ></ch-checkbox>
+                </div>
+                <div class="article__code">
+                  <ch-code id="chCode3" language="xml" class="code"></ch-code>
+                  <script>
+                    const chCode3 = `<ch-checkbox
 class="checkbox"
 unchecked-value="off"
 checked-value="on"
 value="on"
 indeterminate"></ch-checkbox>`;
-                  document.getElementById("chCode3").value = chCode3;
-                </script>
+                    document.getElementById("chCode3").value = chCode3;
+                  </script>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- disabled -->
-          <article class="article" nav data-title="disabled">
-            <!-- header -->
-            <header class="article__header"></header>
-            <!-- main -->
-            <div class="article__main">
-              <div class="article__content">
-                <ch-checkbox
-                  class="checkbox"
-                  unchecked-value="off"
-                  checked-value="on"
-                  value="on"
-                  disabled
-                ></ch-checkbox>
-              </div>
-              <div class="article__code">
-                <ch-code id="chCode4" language="xml" class="code"></ch-code>
-                <script>
-                  const chCode4 = `<ch-checkbox
+            <!-- disabled -->
+            <article class="article" nav data-title="disabled">
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox"
+                    unchecked-value="off"
+                    checked-value="on"
+                    value="on"
+                    disabled
+                  ></ch-checkbox>
+                </div>
+                <div class="article__code">
+                  <ch-code id="chCode4" language="xml" class="code"></ch-code>
+                  <script>
+                    const chCode4 = `<ch-checkbox
 class="checkbox"
 unchecked-value="off"
 checked-value="on"
 value="on"
 disabled></ch-checkbox>`;
-                  document.getElementById("chCode4").value = chCode4;
-                </script>
+                    document.getElementById("chCode4").value = chCode4;
+                  </script>
+                </div>
               </div>
-            </div>
-          </article>
-        </div>
-      </section>
+            </article>
+          </div>
+        </section>
+      </div>
     </main>
     <script src="./assets/scripts.js"></script>
   </body>
