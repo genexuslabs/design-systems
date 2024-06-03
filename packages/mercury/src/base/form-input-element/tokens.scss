@@ -1,8 +1,5 @@
 @mixin form-input-element-tokens() {
   // Common form input element tokens
-  --mer-form-input__border-color: var(--mer-color__neutral-gray--500);
-  --mer-form-input__border-style: solid;
-  --mer-form-input__border-width: var(--mer-border__width--sm);
   --mer-form-input__border: var(--mer-form-input__border-width)
     var(--mer-form-input__border-style) var(--mer-form-input__border-color);
   --mer-form-input__border-radius: var(--mer-border__radius--sm);
@@ -21,7 +18,6 @@
   --mer-form-input__border-color--hover: var(--mer-color__neutral-gray--00);
 
   // disabled
-  --mer-form-input__border-color--disabled: var(--mer-text__on-disabled);
   --mer-form-input__bg-color--disabled: var(--mer-accent__primary--disabled);
   --mer-form-input__color--disabled: var(--mer-accent__primary--disabled);
 
