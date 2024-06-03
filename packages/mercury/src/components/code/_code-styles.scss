@@ -5,6 +5,8 @@
     // reset
     pre {
       margin: 0;
+      font-size: 13px;
+      line-height: 1.55em;
     }
     /* begin of WA */
     // prevent text wrap
@@ -14,6 +16,7 @@
     overflow: auto;
     pre {
       overflow: auto;
+      padding: var(--code__padding);
       @include scrollbar-styles();
     }
     // prevent text wrap
@@ -22,7 +25,6 @@
     background-color: var(--code__bg-color);
     border: var(--code__border);
     border-radius: var(--code__border-radius);
-    padding: var(--code__padding);
 
     @include code-tokens();
     .hljs-doctag,
