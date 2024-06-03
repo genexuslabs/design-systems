@@ -111,6 +111,9 @@ Nav
 .sidebar__list li a:active {
   color: var(--mer-color__neutral-gray--400);
 }
+.sidebar__list li a:active::before {
+  background-color: var(--mer-color__neutral-gray--400);
+}
 .sidebar__list li a::before {
   position: absolute;
   top: 50%;
