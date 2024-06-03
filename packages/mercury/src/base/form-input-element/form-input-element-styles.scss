@@ -49,8 +49,8 @@
 // checkbox
 %form-input-size-tiny {
   @extend %form-input-base;
-  block-size: var(--mer-form-input__size--tiny);
-  inline-size: var(--mer-form-input__size--tiny);
+  block-size: var(--mer-control__block-size--tiny);
+  inline-size: var(--mer-control__block-size--tiny);
 }
 
 %form-input-text-only {
