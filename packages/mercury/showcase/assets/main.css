@@ -348,7 +348,7 @@ body.ctrl-cmd-pressed .article__pill {
 }
 .code__copy-button {
   display: flex;
-  gap: var(--mer-spacing--xs);
+  gap: var(--mer-spacing--2xs);
   width: 100%;
   font-size: 11px;
   flex-direction: row-reverse;
@@ -358,9 +358,11 @@ body.ctrl-cmd-pressed .article__pill {
   width: var(--mer-spacing--lg);
   height: var(--mer-spacing--lg);
   display: inline-block;
-  mask-image: url("../assets/images/copy.svg");
-  background-size: cover;
   background-color: var(--code-header__color);
+  mask-image: url("../assets/images/copy.svg");
+  mask-size: 75%;
+  mask-position: center center;
+  mask-repeat: no-repeat;
 }
 .code--highlight {
   animation: bgChange 0.1s linear 2;
