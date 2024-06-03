@@ -221,6 +221,7 @@ const includeSidebarNav = async () => {
         // ¿Is this the item of the actual page?
         if (item.url.split(".")[0] === pageName) {
           CURRENT_PAGE_NAV_ITEM = li;
+          li.classList.add("current-page");
         }
 
         li.appendChild(a);

@@ -95,11 +95,10 @@ Nav
   line-height: 1.4em;
 }
 .sidebar__list li:not(:last-child) {
-  margin: 4px 0;
 }
 .sidebar__list li a {
   position: relative;
-  padding-inline-start: 12px;
+  padding: 4px 0 4px 12px;
   display: block;
 }
 .sidebar__list li a:hover {
@@ -123,6 +122,14 @@ Nav
 
   background-color: var(--sc-base__border-color);
 }
+/* current page */
+.sidebar__list li.current-page > a {
+  pointer-events: none;
+  color: var(--mer-accent__primary);
+}
+.sidebar__list li.current-page > a::before {
+  background-color: var(--mer-accent__primary);
+}
 /*List Parent*/
 .sidebar__list--parent {
   text-transform: uppercase;
@@ -140,10 +147,10 @@ Nav
 }
 .sidebar__list--child::before {
   content: "";
-  height: 90%;
+  height: 94%;
   width: 2px;
   position: absolute;
   left: calc(var(--sc-sidebar-list-child__margin-inline-start) * -1);
-  top: 5%;
+  top: 3%;
   border-left: 1px dashed var(--sc-sidebar__border-color);
 }
