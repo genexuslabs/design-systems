@@ -137,6 +137,70 @@
     z-index: -1;
   }
 }
+%tabular-grid-cell__selector-label {
+  line-height: 0;
+  font-size: 0;
+  background-color: transparent;
+  margin-inline-end: var(--mer-label__space);
+  block-size: var(--mer-control__block-size--tiny);
+  inline-size: var(--mer-control__block-size--tiny);
+}
+%tabular-grid-cell__selector {
+  position: relative;
+  margin: 0;
+  width: 0;
+  height: 0;
+}
+%tabular-grid-cell__selector--before {
+  content: "";
+  display: inline-block;
+  width: var(--mer-control__block-size--tiny);
+  height: var(--mer-control__block-size--tiny);
+  border: var(--mer-form-input__border);
+  border-radius: var(--mer-control-tiny__border-radius);
+  box-sizing: border-box;
+}
+%tabular-grid-cell__selector--after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  border-color: var(--mer-form-input-check__border-color);
+  top: calc(var(--mer-control__block-size--tiny) / 4);
+  left: calc(var(--mer-control__block-size--tiny) / 4);
+}
+%tabular-grid-cell__selector--after-checked {
+  inline-size: calc(var(--mer-control__block-size--tiny) / 2);
+  block-size: calc(var(--mer-control__block-size--tiny) / 2);
+  background-color: currentColor;
+  pointer-events: none;
+  -webkit-mask: no-repeat center / 100%
+    var(--mer-checkbox__option-checked-image);
+  color: var(--mer-form-input-check__border-color);
+}
+%tabular-grid-cell__selector--after-indeterminate {
+  inline-size: 8px;
+  block-size: var(--mer-form-input-check__border-width);
+  border-radius: 2px;
+  background-color: var(--mer-form-input-check__border-color);
+  top: calc(
+    var(--mer-control__block-size--tiny) / 2 -
+      var(--mer-form-input-check__border-width) / 2
+  );
+}
+
+// - - - - - - - - - - - - - - - - - - - -
+//          ch-grid-row-actions
+// - - - - - - - - - - - - - - - - - - - -
+%tabular-grid-row-actions {
+}
+%tabular-grid-row-actions__window {
+  @extend %window-styles;
+}
+%tabular-grid-row-actions__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mer-window__gap);
+}
 
 /// @group ch-grid
 /// @param {String} $tabular-grid-selector [".tabular-grid"] -
@@ -145,6 +209,10 @@
 /// @group ch-grid-column
 /// @param {String} $tabular-grid__bar [".tabular-grid-column::part(bar)"] -
 /// @param {String} $tabular-grid__bar-resize-split [".tabular-grid-column::part(bar-resize-split)"] -
+/// @param {String} $tabular-grid-column__selector-label [".tabular-grid-column::part(selector-label)"] -
+/// @param {String} $tabular-grid-column__selector [".tabular-grid-column::part(selector)"] -
+/// @param {String} $tabular-grid-column__selector--checked [".tabular-grid-column::part(selector checked)"] -
+/// @param {String} $tabular-grid-column__selector--indeterminate [".tabular-grid-column::part(selector indeterminate)"] -
 
 /// @group ch-grid-row
 /// @param {String} $tabular-grid-row [".tabular-grid-row"] -
@@ -161,6 +229,13 @@
 
 /// @group ch-grid-cell
 /// @param {String} $tabular-grid-cell [".tabular-grid-cell"] -
+/// @param {String} $tabular-grid-cell__drag-icon [".tabular-grid-cell::part(drag-icon)"] -
+/// @param {String} $tabular-grid-cell__selector-label [".tabular-grid-cell::part(selector-label)"] -
+/// @param {String} $tabular-grid-cell__selector [".tabular-grid-cell::part(selector)"] -
+/// @param {String} $tabular-grid-cell__selector--checked [".tabular-grid-cell::part(selector checked)"] -
+/// @param {String} $tabular-grid-cell__actions-icon [".tabular-grid-cell::part(actions-icon)"] -
+
+/// @group ch-grid-row-actions
 @mixin tabular-grid(
   // ch-grid
   $tabular-grid-selector: ".tabular-grid",
@@ -170,6 +245,13 @@
   $tabular-grid-column__bar: ".tabular-grid-column::part(bar)",
   $tabular-grid-column__bar-resize-split:
     ".tabular-grid-column::part(bar-resize-split)",
+  $tabular-grid-column__selector-label:
+    ".tabular-grid-column::part(selector-label)",
+  $tabular-grid-column__selector: ".tabular-grid-column::part(selector)",
+  $tabular-grid-column__selector--checked:
+    ".tabular-grid-column::part(selector checked)",
+  $tabular-grid-column__selector--indeterminate:
+    ".tabular-grid-column::part(selector indeterminate)",
 
   // ch-grid-row
   $tabular-grid-row: ".tabular-grid-row",
@@ -186,11 +268,25 @@
   $tabular-grid-rowset-legend__icon: ".tabular-grid-rowset-legend__icon",
 
   // ch-grid-cell
-  $tabular-grid-cell: ".tabular-grid-cell"
+  $tabular-grid-cell: ".tabular-grid-cell",
+  $tabular-grid-cell__drag-icon: ".tabular-grid-cell::part(drag-icon)",
+  $tabular-grid-cell__selector-label: ".tabular-grid-cell::part(selector-label)",
+  $tabular-grid-cell__selector: ".tabular-grid-cell::part(selector)",
+  $tabular-grid-cell__selector--checked:
+    ".tabular-grid-cell::part(selector checked)",
+  $tabular-grid-cell__actions-icon: ".tabular-grid-cell::part(actions-icon)",
+
+  // ch-grid-row-actions
+  $tabular-grid-row-actions: ".tabular-grid-row-actions",
+  $tabular-grid-row-actions__window: ".tabular-grid-row-actions::part(window)",
+  $tabular-grid-row-actions__main: ".tabular-grid-row-actions::part(main)"
 ) {
   // Base style
   #{$tabular-grid-selector} {
     @extend %tabular-grid;
+    &:focus {
+      outline: none;
+    }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -214,6 +310,35 @@
     @extend %tabular-grid-column__bar-resize-split;
     &:hover {
       @extend %tabular-grid-column__bar-resize-split--hover;
+    }
+  }
+  // checkbox (same styles add cell checkbox)
+  #{$tabular-grid-column__selector-label} {
+    @extend %tabular-grid-cell__selector-label;
+  }
+  #{$tabular-grid-column__selector} {
+    @extend %tabular-grid-cell__selector;
+    &::before {
+      @extend %tabular-grid-cell__selector--before;
+    }
+    &::after {
+      @extend %tabular-grid-cell__selector--after;
+    }
+    &:focus {
+      outline: none;
+      &:before {
+        @include focus-style();
+      }
+    }
+  }
+  #{$tabular-grid-column__selector--checked} {
+    &::after {
+      @extend %tabular-grid-cell__selector--after-checked;
+    }
+  }
+  #{$tabular-grid-column__selector--indeterminate} {
+    &::after {
+      @extend %tabular-grid-cell__selector--after-indeterminate;
     }
   }
 
@@ -285,5 +410,56 @@
 
   #{$tabular-grid-cell} {
     @extend %tabular-grid-cell;
+  }
+  // drag icon
+  #{$tabular-grid-cell__drag-icon} {
+    width: 8px;
+    height: 100%;
+    background-color: green;
+    cursor: pointer;
+    margin-inline-end: 8px;
+  }
+  // checkbox
+  #{$tabular-grid-cell__selector-label} {
+    @extend %tabular-grid-cell__selector-label;
+  }
+  #{$tabular-grid-cell__selector} {
+    @extend %tabular-grid-cell__selector;
+    &::before {
+      @extend %tabular-grid-cell__selector--before;
+    }
+    &::after {
+      @extend %tabular-grid-cell__selector--after;
+    }
+    &:focus {
+      outline: none;
+      &:before {
+        @include focus-style();
+      }
+    }
+  }
+  #{$tabular-grid-cell__selector--checked} {
+    &::after {
+      @extend %tabular-grid-cell__selector--after-checked;
+    }
+  }
+  // actions icon
+  #{$tabular-grid-cell__actions-icon} {
+    width: 100%;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //          ch-grid-row-actions
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$tabular-grid-row-actions} {
+    &[show-on-row-hover]::part(window) {
+      margin-inline-end: var(--mer-spacing--xs);
+    }
+  }
+  #{$tabular-grid-row-actions__window} {
+    @extend %tabular-grid-row-actions__window;
+  }
+  #{$tabular-grid-row-actions__main} {
+    @extend %tabular-grid-row-actions__main;
   }
 }
