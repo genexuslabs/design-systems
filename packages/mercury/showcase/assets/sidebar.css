@@ -50,6 +50,7 @@ Header
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 1px;
+  font-family: var(--mer-font-family--inter-semi-bold);
 }
 .sidebar__header,
 .sidebar__footer-link {
@@ -57,7 +58,7 @@ Header
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
+  height: 40px;
 }
 .sidebar__header {
   border-block-end: 1px solid var(--sc-sidebar__border-color);
