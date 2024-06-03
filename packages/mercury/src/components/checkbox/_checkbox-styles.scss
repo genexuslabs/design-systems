@@ -2,6 +2,7 @@
 @import "../../base/form-input-element/tokens.scss";
 
 %checkbox {
+  --mer-form-input__bg-color--disabled: transparent;
   @extend %form-input-tokens;
   @include checkbox-tokens();
   font-weight: var(--mer-label__font-weight);
@@ -9,6 +10,7 @@
   // Input
   &__input {
     @extend %form-input-base;
+    border-radius: var(--mer-control-tiny__border-radius);
 
     &--focus {
       @include focus-style();
@@ -22,18 +24,18 @@
   // Option
   &__option {
     &--checked {
-      color: var(--mer-checkbox-check__color);
+      color: var(--mer-form-input-check__border-color);
     }
 
     &--indeterminate {
       inline-size: 8px;
-      block-size: 1.5px;
+      block-size: var(--mer-form-input-check__border-width);
       border-radius: 2px;
-      color: var(--mer-checkbox-check__color);
+      color: var(--mer-form-input-check__border-color);
     }
 
     &--disabled {
-      color: var(--mer-text__disabled);
+      color: var(--mer-form-input-check__border-color--disabled);
     }
   }
 
