@@ -49,11 +49,30 @@
   --mer-form-input__padding-inline: var(--mer-spacing--xs);
   --mer-form-input__bg-position--x-value: var(--mer-form-input__padding-inline);
   --mer-form-input__bg-position--x: var(--mer-form-input__bg-position--x-value);
+  // The following css variables are at the time of writing, global, because some components, besides
+  // the ch-checkbox, implement their own checkboxes. For example, the tabular-grid cell parts "selector-label"
+  // and "selector".
+  --mer-form-input__border-color: var(--mer-color__neutral-gray--500);
+  --mer-form-input__border-style: solid;
+  --mer-form-input__border-width: var(--mer-border__width--sm);
+  --mer-form-input__border: var(--mer-form-input__border-width)
+    var(--mer-form-input__border-style) var(--mer-form-input__border-color);
+  --mer-form-input__border-radius: var(--mer-border__radius--sm);
+  // the input checkbox checked styles, or radio button inner circle
+  --mer-form-input-check__border-width: var(--mer-border__radius--xs);
+  --mer-form-input-check__border-color: var(
+    --mer-border-color__neutral--active
+  );
+  --mer-form-input-check__border-color--disabled: var(
+    --mer-accent__primary--disabled
+  );
 
   /*-------------------------------------------------------------
   Inline Control (Should have the same height to look good inline)
   -------------------------------------------------------------*/
   --mer-control__block-size: var(--mer-spacing--lg);
+  --mer-control__block-size--tiny: var(--mer-spacing--md);
+  --mer-control-tiny__border-radius: var(--mer-border__radius--2xs);
 
   /*----------------------
   Label
