@@ -19,7 +19,7 @@ import {
   MonochromeIconResult,
   MonochromeColorsMap,
   ElementStates,
-  ThemeColors,
+  IconTypeMap,
 } from "../partials-common/types.js";
 
 import { log } from "./log.js";
@@ -213,7 +213,7 @@ const createStylesViewsUses = (
   });
 
   return `
-  <svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" data-scheme="${colorSchemeValue}">
+  <svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" data-scheme="${IconTypeMap.monochrome}">
     <defs>
       <g id="icon-def">
           ${svgFiguresString}
