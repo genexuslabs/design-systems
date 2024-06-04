@@ -131,6 +131,9 @@
   // Light
   @if $colors and $light-theme and $tokens {
     :root.light {
+      // Fixes issues in elements that force its color based on this property.
+      // For example, the font color of the input with autocomplete (:-webkit-autofill)
+      color-scheme: light;
       @include foundation-colors--light();
       @include semantic-colors--light();
     }
@@ -138,6 +141,9 @@
   @if $colors and $tokens and $prefers-color-scheme-light {
     @media (prefers-color-scheme: light) {
       :root {
+        // Fixes issues in elements that force its color based on this property.
+        // For example, the font color of the input with autocomplete (:-webkit-autofill)
+        color-scheme: light;
         @include foundation-colors--light();
         @include semantic-colors--light();
       }
@@ -147,6 +153,9 @@
   // Dark
   @if $colors and $dark-theme and $tokens {
     :root.dark {
+      // Fixes issues in elements that force its color based on this property.
+      // For example, the font color of the input with autocomplete (:-webkit-autofill)
+      color-scheme: dark;
       @include foundation-colors--dark();
       @include semantic-colors--dark();
     }
@@ -154,6 +163,9 @@
   @if $colors and $tokens and $prefers-color-scheme-dark {
     @media (prefers-color-scheme: dark) {
       :root {
+        // Fixes issues in elements that force its color based on this property.
+        // For example, the font color of the input with autocomplete (:-webkit-autofill)
+        color-scheme: dark;
         @include foundation-colors--dark();
         @include semantic-colors--dark();
       }
