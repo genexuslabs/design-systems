@@ -1,56 +1,326 @@
 {
   "monochrome": {
-    "states": {
-      "primary": {
-        "light": "#2070CE",
-        "dark": "#5BA7FF"
-      },
-      "primary-hover": {
-        "light": "#437DC0",
-        "dark": "#437DC0"
-      },
-      "primary-active": {
-        "light": "#335884",
-        "dark": "#335884"
-      },
-      "primary-disabled": {
-        "light": "#B3B3B3",
-        "dark": "#333333"
-      },
-      "on-primary": {
-        "light": "#CCCCCC",
-        "dark": "#1A1A1A"
-      },
-      "on-primary-hover": {
-        "light": "#437DC0",
-        "dark": "#437DC0"
-      },
-      "on-primary-active": {
-        "light": "#363636",
-        "dark": "#FFFFFF"
-      },
-      "on-disabled": {
-        "light": "#7F7F7F",
-        "dark": "#666666"
-      },
-      "neutral": {
-        "light": "#616161",
-        "dark": "#B3B3B3"
-      }
-    },
-    "icons": [
+    "colors": [
       {
-        "folder": "system",
+        "name": "on-surface",
         "states": {
-          "primary": true,
-          "primary-hover": true,
-          "primary-active": true,
-          "primary-disabled": true,
+          "enabled": {
+            "dark": "#999999",
+            "light": "#696969"
+          },
+          "hover": {
+            "dark": null,
+            "light": null
+          },
+          "active": {
+            "dark": null,
+            "light": null
+          },
+          "disabled": {
+            "dark": null,
+            "light": null
+          }
+        }
+      },
+      {
+        "name": "on-primary",
+        "states": {
+          "enabled": {
+            "dark": "#1A1A1A",
+            "light": "#CCCCCC"
+          },
+          "hover": {
+            "dark": "#B3B3B3",
+            "light": "#616161"
+          },
+          "active": {
+            "dark": "#FFFFFF",
+            "light": "#363636"
+          },
+          "disabled": {
+            "dark": "#7F7F7F",
+            "light": "#666666"
+          }
+        }
+      },
+      {
+        "name": "on-disabled",
+        "states": {
+          "enabled": {
+            "dark": "#7F7F7F",
+            "light": "#666666"
+          },
+          "hover": {
+            "dark": null,
+            "light": null
+          },
+          "active": {
+            "dark": null,
+            "light": null
+          },
+          "disabled": {
+            "dark": null,
+            "light": null
+          }
+        }
+      },
+      {
+        "name": "on-message",
+        "states": {
+          "enabled": {
+            "dark": "#333333",
+            "light": "#B3B3B3"
+          },
+          "hover": {
+            "dark": null,
+            "light": null
+          },
+          "active": {
+            "dark": null,
+            "light": null
+          },
+          "disabled": {
+            "dark": null,
+            "light": null
+          }
+        }
+      },
+      {
+        "name": "on-elevation",
+        "states": {
+          "enabled": {
+            "dark": "#CCCCCC",
+            "light": "#525151"
+          },
+          "hover": {
+            "dark": null,
+            "light": null
+          },
+          "active": {
+            "dark": null,
+            "light": null
+          },
+          "disabled": {
+            "dark": null,
+            "light": null
+          }
+        }
+      },
+      {
+        "name": "primary",
+        "states": {
+          "enabled": {
+            "dark": "#5BA7FF",
+            "light": "#2070CE"
+          },
+          "hover": {
+            "dark": "#437DC0",
+            "light": "#437DC0"
+          },
+          "active": {
+            "dark": "#335884",
+            "light": "#335884"
+          },
+          "disabled": {
+            "dark": "#4D4D4D",
+            "light": "#999999"
+          }
+        }
+      },
+      {
+        "name": "error",
+        "states": {
+          "enabled": {
+            "dark": "#E35861",
+            "light": "#FB7C84"
+          },
+          "hover": {
+            "dark": null,
+            "light": null
+          },
+          "active": {
+            "dark": null,
+            "light": null
+          },
+          "disabled": {
+            "dark": null,
+            "light": null
+          }
+        }
+      },
+      {
+        "name": "warning",
+        "states": {
+          "enabled": {
+            "dark": "#F9BD56",
+            "light": "#FFC96B"
+          },
+          "hover": {
+            "dark": null,
+            "light": null
+          },
+          "active": {
+            "dark": null,
+            "light": null
+          },
+          "disabled": {
+            "dark": null,
+            "light": null
+          }
+        }
+      },
+      {
+        "name": "success",
+        "states": {
+          "enabled": {
+            "dark": "#3FA89B",
+            "light": "#3FA89B"
+          },
+          "hover": {
+            "dark": null,
+            "light": null
+          },
+          "active": {
+            "dark": null,
+            "light": null
+          },
+          "disabled": {
+            "dark": null,
+            "light": null
+          }
+        }
+      },
+      {
+        "name": "neutral",
+        "states": {
+          "enabled": {
+            "dark": "#3FA89B",
+            "light": "#3FA89B"
+          },
+          "hover": {
+            "dark": null,
+            "light": null
+          },
+          "active": {
+            "dark": null,
+            "light": null
+          },
+          "disabled": {
+            "dark": null,
+            "light": null
+          }
+        }
+      },
+      {
+        "name": "highlighted",
+        "states": {
+          "enabled": {
+            "dark": "#CCCCCC",
+            "light": "#525151"
+          },
+          "hover": {
+            "dark": null,
+            "light": null
+          },
+          "active": {
+            "dark": null,
+            "light": null
+          },
+          "disabled": {
+            "dark": null,
+            "light": null
+          }
+        }
+      },
+      {
+        "name": "bright",
+        "states": {
+          "enabled": {
+            "dark": "#FFFFFF",
+            "light": "#363636"
+          },
+          "hover": {
+            "dark": null,
+            "light": null
+          },
+          "active": {
+            "dark": null,
+            "light": null
+          },
+          "disabled": {
+            "dark": null,
+            "light": null
+          }
+        }
+      }
+    ],
+    "iconsCategories": [
+      {
+        "folder": "gemini-tools",
+        "states": {
+          "on-surface": true,
           "on-primary": true,
-          "on-primary-hover": true,
-          "on-primary-active": true,
           "on-disabled": true,
-          "neutral": true
+          "on-message": true,
+          "on-elevation": true,
+          "primary": true,
+          "error": false,
+          "warning": false,
+          "success": false,
+          "neutral": true,
+          "highlighted": false,
+          "bright": false
+        }
+      },
+      {
+        "folder": "menus",
+        "states": {
+          "on-surface": true,
+          "on-primary": true,
+          "on-disabled": true,
+          "on-message": true,
+          "on-elevation": true,
+          "primary": true,
+          "error": false,
+          "warning": false,
+          "success": false,
+          "neutral": true,
+          "highlighted": false,
+          "bright": false
+        }
+      },
+      {
+        "folder": "navigation",
+        "states": {
+          "on-surface": true,
+          "on-primary": true,
+          "on-disabled": true,
+          "on-message": true,
+          "on-elevation": true,
+          "primary": true,
+          "error": false,
+          "warning": false,
+          "success": false,
+          "neutral": true,
+          "highlighted": false,
+          "bright": false
+        }
+      },
+      {
+        "folder": "windows-tools",
+        "states": {
+          "on-surface": true,
+          "on-primary": true,
+          "on-disabled": true,
+          "on-message": true,
+          "on-elevation": true,
+          "primary": true,
+          "error": false,
+          "warning": false,
+          "success": false,
+          "neutral": true,
+          "highlighted": false,
+          "bright": false
         }
       }
     ]
