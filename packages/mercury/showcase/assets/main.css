@@ -61,6 +61,10 @@ body.showcase {
 .article[hidden] {
   display: none;
 }
+::selection {
+  background-color: var(--mer-color__tinted-blue--10);
+  color: var(--mer-text__on-surface);
+}
 
 /* List */
 .article__list li {
