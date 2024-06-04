@@ -8,7 +8,7 @@
   --container__padding-inline: 32px;
   /* section */
   --section: ;
-  --section__gap: calc(128px - var(--article-padding-block));
+  --section__gap: 128px;
   --section__padding-block: 128px;
   --section-header__gap: 24px;
   --section-title__font-size: 36px;
@@ -188,6 +188,9 @@ Articles
 }
 .article:not(:last-child) {
   border-block-end: var(--article-border-block-end);
+}
+.article:first-of-type {
+  padding-block-start: 0;
 }
 .article:last-child {
   padding-block-end: 0;
