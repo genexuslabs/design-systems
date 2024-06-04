@@ -1,3 +1,4 @@
+
 /*multicolor lists*/
 
 /*monochrome lists*/
@@ -6,11 +7,12 @@
 @import "./monochrome/menus";
 @import "./monochrome/gemini-tools";
 
-$all-multicolor-lists: ();
+$all-multicolor-lists: (
+);
 
 $all-monochrome-lists: (
-  windows-tools: $windows-tools,
-  navigation: $navigation,
-  menus: $menus,
-  gemini-tools: $gemini-tools
+windows-tools: $windows-tools,
+navigation: $navigation,
+menus: $menus,
+gemini-tools: $gemini-tools,
 );
