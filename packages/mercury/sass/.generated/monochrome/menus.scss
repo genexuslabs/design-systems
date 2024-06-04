@@ -1,0 +1,4192 @@
+
+   $menus: undo, undo-close-object, save, save-all, run, redo, properties, paste, open-object, new-object, find, delete, cut, create-database-tables, copy, cancel-build, build, build-all;
+    %icon__menus {
+  
+    /* =================================
+    LIGHT
+    ================================= */
+  
+    /* - - - - - - - - - - - - 
+    undo.svg 
+    - - - - - - - - - - - - */
+    
+    &_undo--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-surface-enabled");
+    }
+    
+    &_undo--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-surface-hover");
+    }
+    
+    &_undo--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-surface-active");
+    }
+    
+    &_undo--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-surface-disabled");
+    }
+    
+    &_undo--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-primary-enabled");
+    }
+    
+    &_undo--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-primary-hover");
+    }
+    
+    &_undo--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-primary-active");
+    }
+    
+    &_undo--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-primary-disabled");
+    }
+    
+    &_undo--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-disabled-enabled");
+    }
+    
+    &_undo--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-disabled-hover");
+    }
+    
+    &_undo--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-disabled-active");
+    }
+    
+    &_undo--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-disabled-disabled");
+    }
+    
+    &_undo--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-message-enabled");
+    }
+    
+    &_undo--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-message-hover");
+    }
+    
+    &_undo--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-message-active");
+    }
+    
+    &_undo--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-message-disabled");
+    }
+    
+    &_undo--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-elevation-enabled");
+    }
+    
+    &_undo--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-elevation-hover");
+    }
+    
+    &_undo--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-elevation-active");
+    }
+    
+    &_undo--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#on-elevation-disabled");
+    }
+    
+    &_undo--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#primary-enabled");
+    }
+    
+    &_undo--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#primary-hover");
+    }
+    
+    &_undo--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#primary-active");
+    }
+    
+    &_undo--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#primary-disabled");
+    }
+    
+    &_undo--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#neutral-enabled");
+    }
+    
+    &_undo--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#neutral-hover");
+    }
+    
+    &_undo--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#neutral-active");
+    }
+    
+    &_undo--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    undo-close-object.svg 
+    - - - - - - - - - - - - */
+    
+    &_undo-close-object--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-surface-enabled");
+    }
+    
+    &_undo-close-object--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-surface-hover");
+    }
+    
+    &_undo-close-object--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-surface-active");
+    }
+    
+    &_undo-close-object--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-surface-disabled");
+    }
+    
+    &_undo-close-object--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-primary-enabled");
+    }
+    
+    &_undo-close-object--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-primary-hover");
+    }
+    
+    &_undo-close-object--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-primary-active");
+    }
+    
+    &_undo-close-object--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-primary-disabled");
+    }
+    
+    &_undo-close-object--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-disabled-enabled");
+    }
+    
+    &_undo-close-object--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-disabled-hover");
+    }
+    
+    &_undo-close-object--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-disabled-active");
+    }
+    
+    &_undo-close-object--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-disabled-disabled");
+    }
+    
+    &_undo-close-object--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-message-enabled");
+    }
+    
+    &_undo-close-object--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-message-hover");
+    }
+    
+    &_undo-close-object--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-message-active");
+    }
+    
+    &_undo-close-object--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-message-disabled");
+    }
+    
+    &_undo-close-object--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-elevation-enabled");
+    }
+    
+    &_undo-close-object--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-elevation-hover");
+    }
+    
+    &_undo-close-object--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-elevation-active");
+    }
+    
+    &_undo-close-object--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#on-elevation-disabled");
+    }
+    
+    &_undo-close-object--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#primary-enabled");
+    }
+    
+    &_undo-close-object--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#primary-hover");
+    }
+    
+    &_undo-close-object--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#primary-active");
+    }
+    
+    &_undo-close-object--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#primary-disabled");
+    }
+    
+    &_undo-close-object--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#neutral-enabled");
+    }
+    
+    &_undo-close-object--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#neutral-hover");
+    }
+    
+    &_undo-close-object--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#neutral-active");
+    }
+    
+    &_undo-close-object--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/undo-close-object.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    save.svg 
+    - - - - - - - - - - - - */
+    
+    &_save--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-surface-enabled");
+    }
+    
+    &_save--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-surface-hover");
+    }
+    
+    &_save--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-surface-active");
+    }
+    
+    &_save--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-surface-disabled");
+    }
+    
+    &_save--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-primary-enabled");
+    }
+    
+    &_save--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-primary-hover");
+    }
+    
+    &_save--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-primary-active");
+    }
+    
+    &_save--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-primary-disabled");
+    }
+    
+    &_save--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-disabled-enabled");
+    }
+    
+    &_save--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-disabled-hover");
+    }
+    
+    &_save--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-disabled-active");
+    }
+    
+    &_save--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-disabled-disabled");
+    }
+    
+    &_save--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-message-enabled");
+    }
+    
+    &_save--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-message-hover");
+    }
+    
+    &_save--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-message-active");
+    }
+    
+    &_save--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-message-disabled");
+    }
+    
+    &_save--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-elevation-enabled");
+    }
+    
+    &_save--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-elevation-hover");
+    }
+    
+    &_save--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-elevation-active");
+    }
+    
+    &_save--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#on-elevation-disabled");
+    }
+    
+    &_save--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#primary-enabled");
+    }
+    
+    &_save--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#primary-hover");
+    }
+    
+    &_save--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#primary-active");
+    }
+    
+    &_save--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#primary-disabled");
+    }
+    
+    &_save--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#neutral-enabled");
+    }
+    
+    &_save--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#neutral-hover");
+    }
+    
+    &_save--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#neutral-active");
+    }
+    
+    &_save--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    save-all.svg 
+    - - - - - - - - - - - - */
+    
+    &_save-all--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-surface-enabled");
+    }
+    
+    &_save-all--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-surface-hover");
+    }
+    
+    &_save-all--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-surface-active");
+    }
+    
+    &_save-all--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-surface-disabled");
+    }
+    
+    &_save-all--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-primary-enabled");
+    }
+    
+    &_save-all--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-primary-hover");
+    }
+    
+    &_save-all--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-primary-active");
+    }
+    
+    &_save-all--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-primary-disabled");
+    }
+    
+    &_save-all--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-disabled-enabled");
+    }
+    
+    &_save-all--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-disabled-hover");
+    }
+    
+    &_save-all--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-disabled-active");
+    }
+    
+    &_save-all--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-disabled-disabled");
+    }
+    
+    &_save-all--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-message-enabled");
+    }
+    
+    &_save-all--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-message-hover");
+    }
+    
+    &_save-all--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-message-active");
+    }
+    
+    &_save-all--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-message-disabled");
+    }
+    
+    &_save-all--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-elevation-enabled");
+    }
+    
+    &_save-all--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-elevation-hover");
+    }
+    
+    &_save-all--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-elevation-active");
+    }
+    
+    &_save-all--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#on-elevation-disabled");
+    }
+    
+    &_save-all--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#primary-enabled");
+    }
+    
+    &_save-all--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#primary-hover");
+    }
+    
+    &_save-all--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#primary-active");
+    }
+    
+    &_save-all--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#primary-disabled");
+    }
+    
+    &_save-all--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#neutral-enabled");
+    }
+    
+    &_save-all--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#neutral-hover");
+    }
+    
+    &_save-all--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#neutral-active");
+    }
+    
+    &_save-all--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/save-all.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    run.svg 
+    - - - - - - - - - - - - */
+    
+    &_run--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-surface-enabled");
+    }
+    
+    &_run--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-surface-hover");
+    }
+    
+    &_run--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-surface-active");
+    }
+    
+    &_run--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-surface-disabled");
+    }
+    
+    &_run--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-primary-enabled");
+    }
+    
+    &_run--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-primary-hover");
+    }
+    
+    &_run--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-primary-active");
+    }
+    
+    &_run--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-primary-disabled");
+    }
+    
+    &_run--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-disabled-enabled");
+    }
+    
+    &_run--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-disabled-hover");
+    }
+    
+    &_run--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-disabled-active");
+    }
+    
+    &_run--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-disabled-disabled");
+    }
+    
+    &_run--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-message-enabled");
+    }
+    
+    &_run--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-message-hover");
+    }
+    
+    &_run--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-message-active");
+    }
+    
+    &_run--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-message-disabled");
+    }
+    
+    &_run--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-elevation-enabled");
+    }
+    
+    &_run--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-elevation-hover");
+    }
+    
+    &_run--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-elevation-active");
+    }
+    
+    &_run--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#on-elevation-disabled");
+    }
+    
+    &_run--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#primary-enabled");
+    }
+    
+    &_run--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#primary-hover");
+    }
+    
+    &_run--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#primary-active");
+    }
+    
+    &_run--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#primary-disabled");
+    }
+    
+    &_run--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#neutral-enabled");
+    }
+    
+    &_run--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#neutral-hover");
+    }
+    
+    &_run--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#neutral-active");
+    }
+    
+    &_run--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/run.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    redo.svg 
+    - - - - - - - - - - - - */
+    
+    &_redo--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-surface-enabled");
+    }
+    
+    &_redo--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-surface-hover");
+    }
+    
+    &_redo--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-surface-active");
+    }
+    
+    &_redo--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-surface-disabled");
+    }
+    
+    &_redo--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-primary-enabled");
+    }
+    
+    &_redo--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-primary-hover");
+    }
+    
+    &_redo--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-primary-active");
+    }
+    
+    &_redo--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-primary-disabled");
+    }
+    
+    &_redo--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-disabled-enabled");
+    }
+    
+    &_redo--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-disabled-hover");
+    }
+    
+    &_redo--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-disabled-active");
+    }
+    
+    &_redo--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-disabled-disabled");
+    }
+    
+    &_redo--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-message-enabled");
+    }
+    
+    &_redo--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-message-hover");
+    }
+    
+    &_redo--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-message-active");
+    }
+    
+    &_redo--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-message-disabled");
+    }
+    
+    &_redo--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-elevation-enabled");
+    }
+    
+    &_redo--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-elevation-hover");
+    }
+    
+    &_redo--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-elevation-active");
+    }
+    
+    &_redo--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#on-elevation-disabled");
+    }
+    
+    &_redo--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#primary-enabled");
+    }
+    
+    &_redo--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#primary-hover");
+    }
+    
+    &_redo--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#primary-active");
+    }
+    
+    &_redo--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#primary-disabled");
+    }
+    
+    &_redo--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#neutral-enabled");
+    }
+    
+    &_redo--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#neutral-hover");
+    }
+    
+    &_redo--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#neutral-active");
+    }
+    
+    &_redo--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/redo.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    properties.svg 
+    - - - - - - - - - - - - */
+    
+    &_properties--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-surface-enabled");
+    }
+    
+    &_properties--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-surface-hover");
+    }
+    
+    &_properties--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-surface-active");
+    }
+    
+    &_properties--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-surface-disabled");
+    }
+    
+    &_properties--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-primary-enabled");
+    }
+    
+    &_properties--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-primary-hover");
+    }
+    
+    &_properties--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-primary-active");
+    }
+    
+    &_properties--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-primary-disabled");
+    }
+    
+    &_properties--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-disabled-enabled");
+    }
+    
+    &_properties--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-disabled-hover");
+    }
+    
+    &_properties--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-disabled-active");
+    }
+    
+    &_properties--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-disabled-disabled");
+    }
+    
+    &_properties--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-message-enabled");
+    }
+    
+    &_properties--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-message-hover");
+    }
+    
+    &_properties--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-message-active");
+    }
+    
+    &_properties--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-message-disabled");
+    }
+    
+    &_properties--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-elevation-enabled");
+    }
+    
+    &_properties--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-elevation-hover");
+    }
+    
+    &_properties--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-elevation-active");
+    }
+    
+    &_properties--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#on-elevation-disabled");
+    }
+    
+    &_properties--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#primary-enabled");
+    }
+    
+    &_properties--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#primary-hover");
+    }
+    
+    &_properties--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#primary-active");
+    }
+    
+    &_properties--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#primary-disabled");
+    }
+    
+    &_properties--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#neutral-enabled");
+    }
+    
+    &_properties--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#neutral-hover");
+    }
+    
+    &_properties--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#neutral-active");
+    }
+    
+    &_properties--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/properties.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    paste.svg 
+    - - - - - - - - - - - - */
+    
+    &_paste--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-surface-enabled");
+    }
+    
+    &_paste--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-surface-hover");
+    }
+    
+    &_paste--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-surface-active");
+    }
+    
+    &_paste--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-surface-disabled");
+    }
+    
+    &_paste--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-primary-enabled");
+    }
+    
+    &_paste--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-primary-hover");
+    }
+    
+    &_paste--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-primary-active");
+    }
+    
+    &_paste--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-primary-disabled");
+    }
+    
+    &_paste--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-disabled-enabled");
+    }
+    
+    &_paste--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-disabled-hover");
+    }
+    
+    &_paste--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-disabled-active");
+    }
+    
+    &_paste--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-disabled-disabled");
+    }
+    
+    &_paste--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-message-enabled");
+    }
+    
+    &_paste--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-message-hover");
+    }
+    
+    &_paste--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-message-active");
+    }
+    
+    &_paste--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-message-disabled");
+    }
+    
+    &_paste--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-elevation-enabled");
+    }
+    
+    &_paste--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-elevation-hover");
+    }
+    
+    &_paste--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-elevation-active");
+    }
+    
+    &_paste--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#on-elevation-disabled");
+    }
+    
+    &_paste--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#primary-enabled");
+    }
+    
+    &_paste--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#primary-hover");
+    }
+    
+    &_paste--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#primary-active");
+    }
+    
+    &_paste--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#primary-disabled");
+    }
+    
+    &_paste--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#neutral-enabled");
+    }
+    
+    &_paste--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#neutral-hover");
+    }
+    
+    &_paste--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#neutral-active");
+    }
+    
+    &_paste--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/paste.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    open-object.svg 
+    - - - - - - - - - - - - */
+    
+    &_open-object--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-surface-enabled");
+    }
+    
+    &_open-object--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-surface-hover");
+    }
+    
+    &_open-object--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-surface-active");
+    }
+    
+    &_open-object--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-surface-disabled");
+    }
+    
+    &_open-object--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-primary-enabled");
+    }
+    
+    &_open-object--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-primary-hover");
+    }
+    
+    &_open-object--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-primary-active");
+    }
+    
+    &_open-object--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-primary-disabled");
+    }
+    
+    &_open-object--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-disabled-enabled");
+    }
+    
+    &_open-object--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-disabled-hover");
+    }
+    
+    &_open-object--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-disabled-active");
+    }
+    
+    &_open-object--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-disabled-disabled");
+    }
+    
+    &_open-object--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-message-enabled");
+    }
+    
+    &_open-object--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-message-hover");
+    }
+    
+    &_open-object--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-message-active");
+    }
+    
+    &_open-object--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-message-disabled");
+    }
+    
+    &_open-object--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-elevation-enabled");
+    }
+    
+    &_open-object--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-elevation-hover");
+    }
+    
+    &_open-object--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-elevation-active");
+    }
+    
+    &_open-object--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#on-elevation-disabled");
+    }
+    
+    &_open-object--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#primary-enabled");
+    }
+    
+    &_open-object--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#primary-hover");
+    }
+    
+    &_open-object--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#primary-active");
+    }
+    
+    &_open-object--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#primary-disabled");
+    }
+    
+    &_open-object--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#neutral-enabled");
+    }
+    
+    &_open-object--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#neutral-hover");
+    }
+    
+    &_open-object--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#neutral-active");
+    }
+    
+    &_open-object--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/open-object.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    new-object.svg 
+    - - - - - - - - - - - - */
+    
+    &_new-object--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-surface-enabled");
+    }
+    
+    &_new-object--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-surface-hover");
+    }
+    
+    &_new-object--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-surface-active");
+    }
+    
+    &_new-object--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-surface-disabled");
+    }
+    
+    &_new-object--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-primary-enabled");
+    }
+    
+    &_new-object--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-primary-hover");
+    }
+    
+    &_new-object--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-primary-active");
+    }
+    
+    &_new-object--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-primary-disabled");
+    }
+    
+    &_new-object--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-disabled-enabled");
+    }
+    
+    &_new-object--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-disabled-hover");
+    }
+    
+    &_new-object--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-disabled-active");
+    }
+    
+    &_new-object--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-disabled-disabled");
+    }
+    
+    &_new-object--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-message-enabled");
+    }
+    
+    &_new-object--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-message-hover");
+    }
+    
+    &_new-object--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-message-active");
+    }
+    
+    &_new-object--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-message-disabled");
+    }
+    
+    &_new-object--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-elevation-enabled");
+    }
+    
+    &_new-object--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-elevation-hover");
+    }
+    
+    &_new-object--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-elevation-active");
+    }
+    
+    &_new-object--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#on-elevation-disabled");
+    }
+    
+    &_new-object--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#primary-enabled");
+    }
+    
+    &_new-object--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#primary-hover");
+    }
+    
+    &_new-object--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#primary-active");
+    }
+    
+    &_new-object--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#primary-disabled");
+    }
+    
+    &_new-object--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#neutral-enabled");
+    }
+    
+    &_new-object--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#neutral-hover");
+    }
+    
+    &_new-object--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#neutral-active");
+    }
+    
+    &_new-object--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/new-object.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    find.svg 
+    - - - - - - - - - - - - */
+    
+    &_find--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-surface-enabled");
+    }
+    
+    &_find--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-surface-hover");
+    }
+    
+    &_find--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-surface-active");
+    }
+    
+    &_find--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-surface-disabled");
+    }
+    
+    &_find--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-primary-enabled");
+    }
+    
+    &_find--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-primary-hover");
+    }
+    
+    &_find--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-primary-active");
+    }
+    
+    &_find--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-primary-disabled");
+    }
+    
+    &_find--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-disabled-enabled");
+    }
+    
+    &_find--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-disabled-hover");
+    }
+    
+    &_find--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-disabled-active");
+    }
+    
+    &_find--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-disabled-disabled");
+    }
+    
+    &_find--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-message-enabled");
+    }
+    
+    &_find--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-message-hover");
+    }
+    
+    &_find--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-message-active");
+    }
+    
+    &_find--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-message-disabled");
+    }
+    
+    &_find--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-elevation-enabled");
+    }
+    
+    &_find--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-elevation-hover");
+    }
+    
+    &_find--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-elevation-active");
+    }
+    
+    &_find--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#on-elevation-disabled");
+    }
+    
+    &_find--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#primary-enabled");
+    }
+    
+    &_find--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#primary-hover");
+    }
+    
+    &_find--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#primary-active");
+    }
+    
+    &_find--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#primary-disabled");
+    }
+    
+    &_find--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#neutral-enabled");
+    }
+    
+    &_find--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#neutral-hover");
+    }
+    
+    &_find--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#neutral-active");
+    }
+    
+    &_find--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/find.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    delete.svg 
+    - - - - - - - - - - - - */
+    
+    &_delete--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-surface-enabled");
+    }
+    
+    &_delete--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-surface-hover");
+    }
+    
+    &_delete--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-surface-active");
+    }
+    
+    &_delete--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-surface-disabled");
+    }
+    
+    &_delete--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-primary-enabled");
+    }
+    
+    &_delete--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-primary-hover");
+    }
+    
+    &_delete--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-primary-active");
+    }
+    
+    &_delete--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-primary-disabled");
+    }
+    
+    &_delete--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-disabled-enabled");
+    }
+    
+    &_delete--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-disabled-hover");
+    }
+    
+    &_delete--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-disabled-active");
+    }
+    
+    &_delete--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-disabled-disabled");
+    }
+    
+    &_delete--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-message-enabled");
+    }
+    
+    &_delete--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-message-hover");
+    }
+    
+    &_delete--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-message-active");
+    }
+    
+    &_delete--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-message-disabled");
+    }
+    
+    &_delete--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-elevation-enabled");
+    }
+    
+    &_delete--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-elevation-hover");
+    }
+    
+    &_delete--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-elevation-active");
+    }
+    
+    &_delete--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#on-elevation-disabled");
+    }
+    
+    &_delete--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#primary-enabled");
+    }
+    
+    &_delete--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#primary-hover");
+    }
+    
+    &_delete--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#primary-active");
+    }
+    
+    &_delete--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#primary-disabled");
+    }
+    
+    &_delete--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#neutral-enabled");
+    }
+    
+    &_delete--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#neutral-hover");
+    }
+    
+    &_delete--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#neutral-active");
+    }
+    
+    &_delete--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/delete.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    cut.svg 
+    - - - - - - - - - - - - */
+    
+    &_cut--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-surface-enabled");
+    }
+    
+    &_cut--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-surface-hover");
+    }
+    
+    &_cut--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-surface-active");
+    }
+    
+    &_cut--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-surface-disabled");
+    }
+    
+    &_cut--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-primary-enabled");
+    }
+    
+    &_cut--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-primary-hover");
+    }
+    
+    &_cut--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-primary-active");
+    }
+    
+    &_cut--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-primary-disabled");
+    }
+    
+    &_cut--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-disabled-enabled");
+    }
+    
+    &_cut--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-disabled-hover");
+    }
+    
+    &_cut--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-disabled-active");
+    }
+    
+    &_cut--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-disabled-disabled");
+    }
+    
+    &_cut--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-message-enabled");
+    }
+    
+    &_cut--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-message-hover");
+    }
+    
+    &_cut--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-message-active");
+    }
+    
+    &_cut--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-message-disabled");
+    }
+    
+    &_cut--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-elevation-enabled");
+    }
+    
+    &_cut--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-elevation-hover");
+    }
+    
+    &_cut--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-elevation-active");
+    }
+    
+    &_cut--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#on-elevation-disabled");
+    }
+    
+    &_cut--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#primary-enabled");
+    }
+    
+    &_cut--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#primary-hover");
+    }
+    
+    &_cut--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#primary-active");
+    }
+    
+    &_cut--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#primary-disabled");
+    }
+    
+    &_cut--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#neutral-enabled");
+    }
+    
+    &_cut--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#neutral-hover");
+    }
+    
+    &_cut--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#neutral-active");
+    }
+    
+    &_cut--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cut.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    create-database-tables.svg 
+    - - - - - - - - - - - - */
+    
+    &_create-database-tables--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-surface-enabled");
+    }
+    
+    &_create-database-tables--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-surface-hover");
+    }
+    
+    &_create-database-tables--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-surface-active");
+    }
+    
+    &_create-database-tables--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-surface-disabled");
+    }
+    
+    &_create-database-tables--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-primary-enabled");
+    }
+    
+    &_create-database-tables--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-primary-hover");
+    }
+    
+    &_create-database-tables--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-primary-active");
+    }
+    
+    &_create-database-tables--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-primary-disabled");
+    }
+    
+    &_create-database-tables--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-disabled-enabled");
+    }
+    
+    &_create-database-tables--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-disabled-hover");
+    }
+    
+    &_create-database-tables--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-disabled-active");
+    }
+    
+    &_create-database-tables--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-disabled-disabled");
+    }
+    
+    &_create-database-tables--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-message-enabled");
+    }
+    
+    &_create-database-tables--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-message-hover");
+    }
+    
+    &_create-database-tables--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-message-active");
+    }
+    
+    &_create-database-tables--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-message-disabled");
+    }
+    
+    &_create-database-tables--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-elevation-enabled");
+    }
+    
+    &_create-database-tables--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-elevation-hover");
+    }
+    
+    &_create-database-tables--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-elevation-active");
+    }
+    
+    &_create-database-tables--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#on-elevation-disabled");
+    }
+    
+    &_create-database-tables--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#primary-enabled");
+    }
+    
+    &_create-database-tables--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#primary-hover");
+    }
+    
+    &_create-database-tables--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#primary-active");
+    }
+    
+    &_create-database-tables--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#primary-disabled");
+    }
+    
+    &_create-database-tables--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#neutral-enabled");
+    }
+    
+    &_create-database-tables--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#neutral-hover");
+    }
+    
+    &_create-database-tables--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#neutral-active");
+    }
+    
+    &_create-database-tables--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/create-database-tables.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    copy.svg 
+    - - - - - - - - - - - - */
+    
+    &_copy--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-surface-enabled");
+    }
+    
+    &_copy--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-surface-hover");
+    }
+    
+    &_copy--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-surface-active");
+    }
+    
+    &_copy--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-surface-disabled");
+    }
+    
+    &_copy--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-primary-enabled");
+    }
+    
+    &_copy--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-primary-hover");
+    }
+    
+    &_copy--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-primary-active");
+    }
+    
+    &_copy--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-primary-disabled");
+    }
+    
+    &_copy--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-disabled-enabled");
+    }
+    
+    &_copy--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-disabled-hover");
+    }
+    
+    &_copy--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-disabled-active");
+    }
+    
+    &_copy--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-disabled-disabled");
+    }
+    
+    &_copy--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-message-enabled");
+    }
+    
+    &_copy--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-message-hover");
+    }
+    
+    &_copy--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-message-active");
+    }
+    
+    &_copy--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-message-disabled");
+    }
+    
+    &_copy--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-elevation-enabled");
+    }
+    
+    &_copy--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-elevation-hover");
+    }
+    
+    &_copy--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-elevation-active");
+    }
+    
+    &_copy--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#on-elevation-disabled");
+    }
+    
+    &_copy--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#primary-enabled");
+    }
+    
+    &_copy--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#primary-hover");
+    }
+    
+    &_copy--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#primary-active");
+    }
+    
+    &_copy--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#primary-disabled");
+    }
+    
+    &_copy--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#neutral-enabled");
+    }
+    
+    &_copy--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#neutral-hover");
+    }
+    
+    &_copy--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#neutral-active");
+    }
+    
+    &_copy--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/copy.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    cancel-build.svg 
+    - - - - - - - - - - - - */
+    
+    &_cancel-build--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-surface-enabled");
+    }
+    
+    &_cancel-build--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-surface-hover");
+    }
+    
+    &_cancel-build--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-surface-active");
+    }
+    
+    &_cancel-build--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-surface-disabled");
+    }
+    
+    &_cancel-build--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-primary-enabled");
+    }
+    
+    &_cancel-build--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-primary-hover");
+    }
+    
+    &_cancel-build--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-primary-active");
+    }
+    
+    &_cancel-build--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-primary-disabled");
+    }
+    
+    &_cancel-build--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-disabled-enabled");
+    }
+    
+    &_cancel-build--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-disabled-hover");
+    }
+    
+    &_cancel-build--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-disabled-active");
+    }
+    
+    &_cancel-build--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-disabled-disabled");
+    }
+    
+    &_cancel-build--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-message-enabled");
+    }
+    
+    &_cancel-build--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-message-hover");
+    }
+    
+    &_cancel-build--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-message-active");
+    }
+    
+    &_cancel-build--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-message-disabled");
+    }
+    
+    &_cancel-build--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-elevation-enabled");
+    }
+    
+    &_cancel-build--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-elevation-hover");
+    }
+    
+    &_cancel-build--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-elevation-active");
+    }
+    
+    &_cancel-build--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#on-elevation-disabled");
+    }
+    
+    &_cancel-build--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#primary-enabled");
+    }
+    
+    &_cancel-build--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#primary-hover");
+    }
+    
+    &_cancel-build--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#primary-active");
+    }
+    
+    &_cancel-build--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#primary-disabled");
+    }
+    
+    &_cancel-build--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#neutral-enabled");
+    }
+    
+    &_cancel-build--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#neutral-hover");
+    }
+    
+    &_cancel-build--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#neutral-active");
+    }
+    
+    &_cancel-build--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/cancel-build.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    build.svg 
+    - - - - - - - - - - - - */
+    
+    &_build--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-surface-enabled");
+    }
+    
+    &_build--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-surface-hover");
+    }
+    
+    &_build--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-surface-active");
+    }
+    
+    &_build--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-surface-disabled");
+    }
+    
+    &_build--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-primary-enabled");
+    }
+    
+    &_build--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-primary-hover");
+    }
+    
+    &_build--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-primary-active");
+    }
+    
+    &_build--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-primary-disabled");
+    }
+    
+    &_build--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-disabled-enabled");
+    }
+    
+    &_build--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-disabled-hover");
+    }
+    
+    &_build--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-disabled-active");
+    }
+    
+    &_build--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-disabled-disabled");
+    }
+    
+    &_build--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-message-enabled");
+    }
+    
+    &_build--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-message-hover");
+    }
+    
+    &_build--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-message-active");
+    }
+    
+    &_build--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-message-disabled");
+    }
+    
+    &_build--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-elevation-enabled");
+    }
+    
+    &_build--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-elevation-hover");
+    }
+    
+    &_build--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-elevation-active");
+    }
+    
+    &_build--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#on-elevation-disabled");
+    }
+    
+    &_build--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#primary-enabled");
+    }
+    
+    &_build--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#primary-hover");
+    }
+    
+    &_build--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#primary-active");
+    }
+    
+    &_build--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#primary-disabled");
+    }
+    
+    &_build--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#neutral-enabled");
+    }
+    
+    &_build--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#neutral-hover");
+    }
+    
+    &_build--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#neutral-active");
+    }
+    
+    &_build--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    build-all.svg 
+    - - - - - - - - - - - - */
+    
+    &_build-all--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-surface-enabled");
+    }
+    
+    &_build-all--on-surface-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-surface-hover");
+    }
+    
+    &_build-all--on-surface-active-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-surface-active");
+    }
+    
+    &_build-all--on-surface-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-surface-disabled");
+    }
+    
+    &_build-all--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-primary-enabled");
+    }
+    
+    &_build-all--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-primary-hover");
+    }
+    
+    &_build-all--on-primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-primary-active");
+    }
+    
+    &_build-all--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-primary-disabled");
+    }
+    
+    &_build-all--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-disabled-enabled");
+    }
+    
+    &_build-all--on-disabled-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-disabled-hover");
+    }
+    
+    &_build-all--on-disabled-active-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-disabled-active");
+    }
+    
+    &_build-all--on-disabled-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-disabled-disabled");
+    }
+    
+    &_build-all--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-message-enabled");
+    }
+    
+    &_build-all--on-message-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-message-hover");
+    }
+    
+    &_build-all--on-message-active-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-message-active");
+    }
+    
+    &_build-all--on-message-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-message-disabled");
+    }
+    
+    &_build-all--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-elevation-enabled");
+    }
+    
+    &_build-all--on-elevation-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-elevation-hover");
+    }
+    
+    &_build-all--on-elevation-active-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-elevation-active");
+    }
+    
+    &_build-all--on-elevation-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#on-elevation-disabled");
+    }
+    
+    &_build-all--primary-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#primary-enabled");
+    }
+    
+    &_build-all--primary-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#primary-hover");
+    }
+    
+    &_build-all--primary-active-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#primary-active");
+    }
+    
+    &_build-all--primary-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#primary-disabled");
+    }
+    
+    &_build-all--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#neutral-enabled");
+    }
+    
+    &_build-all--neutral-hover-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#neutral-hover");
+    }
+    
+    &_build-all--neutral-active-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#neutral-active");
+    }
+    
+    &_build-all--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}menus/light/build-all.svg#neutral-disabled");
+    }
+    
+
+    /* =================================
+    DARK
+    ================================= */
+  
+    /* - - - - - - - - - - - - 
+    undo.svg 
+    - - - - - - - - - - - - */
+    
+    &_undo--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-surface-enabled");
+    }
+    
+    &_undo--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-surface-hover");
+    }
+    
+    &_undo--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-surface-active");
+    }
+    
+    &_undo--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-surface-disabled");
+    }
+    
+    &_undo--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-primary-enabled");
+    }
+    
+    &_undo--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-primary-hover");
+    }
+    
+    &_undo--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-primary-active");
+    }
+    
+    &_undo--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-primary-disabled");
+    }
+    
+    &_undo--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-disabled-enabled");
+    }
+    
+    &_undo--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-disabled-hover");
+    }
+    
+    &_undo--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-disabled-active");
+    }
+    
+    &_undo--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-disabled-disabled");
+    }
+    
+    &_undo--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-message-enabled");
+    }
+    
+    &_undo--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-message-hover");
+    }
+    
+    &_undo--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-message-active");
+    }
+    
+    &_undo--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-message-disabled");
+    }
+    
+    &_undo--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-elevation-enabled");
+    }
+    
+    &_undo--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-elevation-hover");
+    }
+    
+    &_undo--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-elevation-active");
+    }
+    
+    &_undo--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#on-elevation-disabled");
+    }
+    
+    &_undo--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#primary-enabled");
+    }
+    
+    &_undo--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#primary-hover");
+    }
+    
+    &_undo--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#primary-active");
+    }
+    
+    &_undo--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#primary-disabled");
+    }
+    
+    &_undo--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#neutral-enabled");
+    }
+    
+    &_undo--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#neutral-hover");
+    }
+    
+    &_undo--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#neutral-active");
+    }
+    
+    &_undo--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    undo-close-object.svg 
+    - - - - - - - - - - - - */
+    
+    &_undo-close-object--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-surface-enabled");
+    }
+    
+    &_undo-close-object--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-surface-hover");
+    }
+    
+    &_undo-close-object--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-surface-active");
+    }
+    
+    &_undo-close-object--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-surface-disabled");
+    }
+    
+    &_undo-close-object--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-primary-enabled");
+    }
+    
+    &_undo-close-object--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-primary-hover");
+    }
+    
+    &_undo-close-object--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-primary-active");
+    }
+    
+    &_undo-close-object--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-primary-disabled");
+    }
+    
+    &_undo-close-object--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-disabled-enabled");
+    }
+    
+    &_undo-close-object--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-disabled-hover");
+    }
+    
+    &_undo-close-object--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-disabled-active");
+    }
+    
+    &_undo-close-object--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-disabled-disabled");
+    }
+    
+    &_undo-close-object--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-message-enabled");
+    }
+    
+    &_undo-close-object--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-message-hover");
+    }
+    
+    &_undo-close-object--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-message-active");
+    }
+    
+    &_undo-close-object--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-message-disabled");
+    }
+    
+    &_undo-close-object--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-elevation-enabled");
+    }
+    
+    &_undo-close-object--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-elevation-hover");
+    }
+    
+    &_undo-close-object--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-elevation-active");
+    }
+    
+    &_undo-close-object--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#on-elevation-disabled");
+    }
+    
+    &_undo-close-object--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#primary-enabled");
+    }
+    
+    &_undo-close-object--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#primary-hover");
+    }
+    
+    &_undo-close-object--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#primary-active");
+    }
+    
+    &_undo-close-object--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#primary-disabled");
+    }
+    
+    &_undo-close-object--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#neutral-enabled");
+    }
+    
+    &_undo-close-object--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#neutral-hover");
+    }
+    
+    &_undo-close-object--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#neutral-active");
+    }
+    
+    &_undo-close-object--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/undo-close-object.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    save.svg 
+    - - - - - - - - - - - - */
+    
+    &_save--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-surface-enabled");
+    }
+    
+    &_save--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-surface-hover");
+    }
+    
+    &_save--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-surface-active");
+    }
+    
+    &_save--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-surface-disabled");
+    }
+    
+    &_save--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-primary-enabled");
+    }
+    
+    &_save--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-primary-hover");
+    }
+    
+    &_save--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-primary-active");
+    }
+    
+    &_save--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-primary-disabled");
+    }
+    
+    &_save--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-disabled-enabled");
+    }
+    
+    &_save--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-disabled-hover");
+    }
+    
+    &_save--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-disabled-active");
+    }
+    
+    &_save--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-disabled-disabled");
+    }
+    
+    &_save--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-message-enabled");
+    }
+    
+    &_save--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-message-hover");
+    }
+    
+    &_save--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-message-active");
+    }
+    
+    &_save--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-message-disabled");
+    }
+    
+    &_save--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-elevation-enabled");
+    }
+    
+    &_save--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-elevation-hover");
+    }
+    
+    &_save--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-elevation-active");
+    }
+    
+    &_save--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#on-elevation-disabled");
+    }
+    
+    &_save--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#primary-enabled");
+    }
+    
+    &_save--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#primary-hover");
+    }
+    
+    &_save--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#primary-active");
+    }
+    
+    &_save--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#primary-disabled");
+    }
+    
+    &_save--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#neutral-enabled");
+    }
+    
+    &_save--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#neutral-hover");
+    }
+    
+    &_save--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#neutral-active");
+    }
+    
+    &_save--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    save-all.svg 
+    - - - - - - - - - - - - */
+    
+    &_save-all--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-surface-enabled");
+    }
+    
+    &_save-all--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-surface-hover");
+    }
+    
+    &_save-all--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-surface-active");
+    }
+    
+    &_save-all--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-surface-disabled");
+    }
+    
+    &_save-all--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-primary-enabled");
+    }
+    
+    &_save-all--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-primary-hover");
+    }
+    
+    &_save-all--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-primary-active");
+    }
+    
+    &_save-all--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-primary-disabled");
+    }
+    
+    &_save-all--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-disabled-enabled");
+    }
+    
+    &_save-all--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-disabled-hover");
+    }
+    
+    &_save-all--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-disabled-active");
+    }
+    
+    &_save-all--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-disabled-disabled");
+    }
+    
+    &_save-all--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-message-enabled");
+    }
+    
+    &_save-all--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-message-hover");
+    }
+    
+    &_save-all--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-message-active");
+    }
+    
+    &_save-all--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-message-disabled");
+    }
+    
+    &_save-all--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-elevation-enabled");
+    }
+    
+    &_save-all--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-elevation-hover");
+    }
+    
+    &_save-all--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-elevation-active");
+    }
+    
+    &_save-all--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#on-elevation-disabled");
+    }
+    
+    &_save-all--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#primary-enabled");
+    }
+    
+    &_save-all--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#primary-hover");
+    }
+    
+    &_save-all--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#primary-active");
+    }
+    
+    &_save-all--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#primary-disabled");
+    }
+    
+    &_save-all--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#neutral-enabled");
+    }
+    
+    &_save-all--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#neutral-hover");
+    }
+    
+    &_save-all--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#neutral-active");
+    }
+    
+    &_save-all--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/save-all.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    run.svg 
+    - - - - - - - - - - - - */
+    
+    &_run--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-surface-enabled");
+    }
+    
+    &_run--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-surface-hover");
+    }
+    
+    &_run--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-surface-active");
+    }
+    
+    &_run--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-surface-disabled");
+    }
+    
+    &_run--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-primary-enabled");
+    }
+    
+    &_run--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-primary-hover");
+    }
+    
+    &_run--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-primary-active");
+    }
+    
+    &_run--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-primary-disabled");
+    }
+    
+    &_run--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-disabled-enabled");
+    }
+    
+    &_run--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-disabled-hover");
+    }
+    
+    &_run--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-disabled-active");
+    }
+    
+    &_run--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-disabled-disabled");
+    }
+    
+    &_run--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-message-enabled");
+    }
+    
+    &_run--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-message-hover");
+    }
+    
+    &_run--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-message-active");
+    }
+    
+    &_run--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-message-disabled");
+    }
+    
+    &_run--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-elevation-enabled");
+    }
+    
+    &_run--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-elevation-hover");
+    }
+    
+    &_run--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-elevation-active");
+    }
+    
+    &_run--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#on-elevation-disabled");
+    }
+    
+    &_run--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#primary-enabled");
+    }
+    
+    &_run--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#primary-hover");
+    }
+    
+    &_run--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#primary-active");
+    }
+    
+    &_run--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#primary-disabled");
+    }
+    
+    &_run--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#neutral-enabled");
+    }
+    
+    &_run--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#neutral-hover");
+    }
+    
+    &_run--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#neutral-active");
+    }
+    
+    &_run--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/run.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    redo.svg 
+    - - - - - - - - - - - - */
+    
+    &_redo--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-surface-enabled");
+    }
+    
+    &_redo--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-surface-hover");
+    }
+    
+    &_redo--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-surface-active");
+    }
+    
+    &_redo--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-surface-disabled");
+    }
+    
+    &_redo--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-primary-enabled");
+    }
+    
+    &_redo--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-primary-hover");
+    }
+    
+    &_redo--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-primary-active");
+    }
+    
+    &_redo--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-primary-disabled");
+    }
+    
+    &_redo--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-disabled-enabled");
+    }
+    
+    &_redo--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-disabled-hover");
+    }
+    
+    &_redo--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-disabled-active");
+    }
+    
+    &_redo--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-disabled-disabled");
+    }
+    
+    &_redo--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-message-enabled");
+    }
+    
+    &_redo--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-message-hover");
+    }
+    
+    &_redo--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-message-active");
+    }
+    
+    &_redo--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-message-disabled");
+    }
+    
+    &_redo--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-elevation-enabled");
+    }
+    
+    &_redo--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-elevation-hover");
+    }
+    
+    &_redo--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-elevation-active");
+    }
+    
+    &_redo--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#on-elevation-disabled");
+    }
+    
+    &_redo--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#primary-enabled");
+    }
+    
+    &_redo--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#primary-hover");
+    }
+    
+    &_redo--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#primary-active");
+    }
+    
+    &_redo--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#primary-disabled");
+    }
+    
+    &_redo--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#neutral-enabled");
+    }
+    
+    &_redo--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#neutral-hover");
+    }
+    
+    &_redo--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#neutral-active");
+    }
+    
+    &_redo--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/redo.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    properties.svg 
+    - - - - - - - - - - - - */
+    
+    &_properties--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-surface-enabled");
+    }
+    
+    &_properties--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-surface-hover");
+    }
+    
+    &_properties--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-surface-active");
+    }
+    
+    &_properties--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-surface-disabled");
+    }
+    
+    &_properties--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-primary-enabled");
+    }
+    
+    &_properties--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-primary-hover");
+    }
+    
+    &_properties--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-primary-active");
+    }
+    
+    &_properties--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-primary-disabled");
+    }
+    
+    &_properties--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-disabled-enabled");
+    }
+    
+    &_properties--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-disabled-hover");
+    }
+    
+    &_properties--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-disabled-active");
+    }
+    
+    &_properties--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-disabled-disabled");
+    }
+    
+    &_properties--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-message-enabled");
+    }
+    
+    &_properties--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-message-hover");
+    }
+    
+    &_properties--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-message-active");
+    }
+    
+    &_properties--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-message-disabled");
+    }
+    
+    &_properties--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-elevation-enabled");
+    }
+    
+    &_properties--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-elevation-hover");
+    }
+    
+    &_properties--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-elevation-active");
+    }
+    
+    &_properties--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#on-elevation-disabled");
+    }
+    
+    &_properties--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#primary-enabled");
+    }
+    
+    &_properties--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#primary-hover");
+    }
+    
+    &_properties--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#primary-active");
+    }
+    
+    &_properties--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#primary-disabled");
+    }
+    
+    &_properties--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#neutral-enabled");
+    }
+    
+    &_properties--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#neutral-hover");
+    }
+    
+    &_properties--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#neutral-active");
+    }
+    
+    &_properties--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/properties.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    paste.svg 
+    - - - - - - - - - - - - */
+    
+    &_paste--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-surface-enabled");
+    }
+    
+    &_paste--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-surface-hover");
+    }
+    
+    &_paste--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-surface-active");
+    }
+    
+    &_paste--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-surface-disabled");
+    }
+    
+    &_paste--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-primary-enabled");
+    }
+    
+    &_paste--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-primary-hover");
+    }
+    
+    &_paste--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-primary-active");
+    }
+    
+    &_paste--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-primary-disabled");
+    }
+    
+    &_paste--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-disabled-enabled");
+    }
+    
+    &_paste--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-disabled-hover");
+    }
+    
+    &_paste--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-disabled-active");
+    }
+    
+    &_paste--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-disabled-disabled");
+    }
+    
+    &_paste--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-message-enabled");
+    }
+    
+    &_paste--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-message-hover");
+    }
+    
+    &_paste--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-message-active");
+    }
+    
+    &_paste--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-message-disabled");
+    }
+    
+    &_paste--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-elevation-enabled");
+    }
+    
+    &_paste--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-elevation-hover");
+    }
+    
+    &_paste--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-elevation-active");
+    }
+    
+    &_paste--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#on-elevation-disabled");
+    }
+    
+    &_paste--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#primary-enabled");
+    }
+    
+    &_paste--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#primary-hover");
+    }
+    
+    &_paste--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#primary-active");
+    }
+    
+    &_paste--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#primary-disabled");
+    }
+    
+    &_paste--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#neutral-enabled");
+    }
+    
+    &_paste--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#neutral-hover");
+    }
+    
+    &_paste--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#neutral-active");
+    }
+    
+    &_paste--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/paste.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    open-object.svg 
+    - - - - - - - - - - - - */
+    
+    &_open-object--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-surface-enabled");
+    }
+    
+    &_open-object--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-surface-hover");
+    }
+    
+    &_open-object--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-surface-active");
+    }
+    
+    &_open-object--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-surface-disabled");
+    }
+    
+    &_open-object--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-primary-enabled");
+    }
+    
+    &_open-object--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-primary-hover");
+    }
+    
+    &_open-object--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-primary-active");
+    }
+    
+    &_open-object--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-primary-disabled");
+    }
+    
+    &_open-object--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-disabled-enabled");
+    }
+    
+    &_open-object--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-disabled-hover");
+    }
+    
+    &_open-object--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-disabled-active");
+    }
+    
+    &_open-object--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-disabled-disabled");
+    }
+    
+    &_open-object--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-message-enabled");
+    }
+    
+    &_open-object--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-message-hover");
+    }
+    
+    &_open-object--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-message-active");
+    }
+    
+    &_open-object--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-message-disabled");
+    }
+    
+    &_open-object--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-elevation-enabled");
+    }
+    
+    &_open-object--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-elevation-hover");
+    }
+    
+    &_open-object--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-elevation-active");
+    }
+    
+    &_open-object--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#on-elevation-disabled");
+    }
+    
+    &_open-object--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#primary-enabled");
+    }
+    
+    &_open-object--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#primary-hover");
+    }
+    
+    &_open-object--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#primary-active");
+    }
+    
+    &_open-object--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#primary-disabled");
+    }
+    
+    &_open-object--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#neutral-enabled");
+    }
+    
+    &_open-object--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#neutral-hover");
+    }
+    
+    &_open-object--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#neutral-active");
+    }
+    
+    &_open-object--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/open-object.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    new-object.svg 
+    - - - - - - - - - - - - */
+    
+    &_new-object--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-surface-enabled");
+    }
+    
+    &_new-object--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-surface-hover");
+    }
+    
+    &_new-object--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-surface-active");
+    }
+    
+    &_new-object--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-surface-disabled");
+    }
+    
+    &_new-object--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-primary-enabled");
+    }
+    
+    &_new-object--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-primary-hover");
+    }
+    
+    &_new-object--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-primary-active");
+    }
+    
+    &_new-object--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-primary-disabled");
+    }
+    
+    &_new-object--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-disabled-enabled");
+    }
+    
+    &_new-object--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-disabled-hover");
+    }
+    
+    &_new-object--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-disabled-active");
+    }
+    
+    &_new-object--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-disabled-disabled");
+    }
+    
+    &_new-object--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-message-enabled");
+    }
+    
+    &_new-object--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-message-hover");
+    }
+    
+    &_new-object--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-message-active");
+    }
+    
+    &_new-object--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-message-disabled");
+    }
+    
+    &_new-object--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-elevation-enabled");
+    }
+    
+    &_new-object--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-elevation-hover");
+    }
+    
+    &_new-object--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-elevation-active");
+    }
+    
+    &_new-object--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#on-elevation-disabled");
+    }
+    
+    &_new-object--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#primary-enabled");
+    }
+    
+    &_new-object--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#primary-hover");
+    }
+    
+    &_new-object--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#primary-active");
+    }
+    
+    &_new-object--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#primary-disabled");
+    }
+    
+    &_new-object--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#neutral-enabled");
+    }
+    
+    &_new-object--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#neutral-hover");
+    }
+    
+    &_new-object--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#neutral-active");
+    }
+    
+    &_new-object--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/new-object.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    find.svg 
+    - - - - - - - - - - - - */
+    
+    &_find--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-surface-enabled");
+    }
+    
+    &_find--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-surface-hover");
+    }
+    
+    &_find--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-surface-active");
+    }
+    
+    &_find--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-surface-disabled");
+    }
+    
+    &_find--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-primary-enabled");
+    }
+    
+    &_find--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-primary-hover");
+    }
+    
+    &_find--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-primary-active");
+    }
+    
+    &_find--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-primary-disabled");
+    }
+    
+    &_find--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-disabled-enabled");
+    }
+    
+    &_find--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-disabled-hover");
+    }
+    
+    &_find--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-disabled-active");
+    }
+    
+    &_find--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-disabled-disabled");
+    }
+    
+    &_find--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-message-enabled");
+    }
+    
+    &_find--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-message-hover");
+    }
+    
+    &_find--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-message-active");
+    }
+    
+    &_find--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-message-disabled");
+    }
+    
+    &_find--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-elevation-enabled");
+    }
+    
+    &_find--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-elevation-hover");
+    }
+    
+    &_find--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-elevation-active");
+    }
+    
+    &_find--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#on-elevation-disabled");
+    }
+    
+    &_find--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#primary-enabled");
+    }
+    
+    &_find--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#primary-hover");
+    }
+    
+    &_find--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#primary-active");
+    }
+    
+    &_find--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#primary-disabled");
+    }
+    
+    &_find--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#neutral-enabled");
+    }
+    
+    &_find--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#neutral-hover");
+    }
+    
+    &_find--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#neutral-active");
+    }
+    
+    &_find--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/find.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    delete.svg 
+    - - - - - - - - - - - - */
+    
+    &_delete--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-surface-enabled");
+    }
+    
+    &_delete--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-surface-hover");
+    }
+    
+    &_delete--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-surface-active");
+    }
+    
+    &_delete--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-surface-disabled");
+    }
+    
+    &_delete--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-primary-enabled");
+    }
+    
+    &_delete--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-primary-hover");
+    }
+    
+    &_delete--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-primary-active");
+    }
+    
+    &_delete--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-primary-disabled");
+    }
+    
+    &_delete--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-disabled-enabled");
+    }
+    
+    &_delete--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-disabled-hover");
+    }
+    
+    &_delete--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-disabled-active");
+    }
+    
+    &_delete--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-disabled-disabled");
+    }
+    
+    &_delete--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-message-enabled");
+    }
+    
+    &_delete--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-message-hover");
+    }
+    
+    &_delete--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-message-active");
+    }
+    
+    &_delete--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-message-disabled");
+    }
+    
+    &_delete--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-elevation-enabled");
+    }
+    
+    &_delete--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-elevation-hover");
+    }
+    
+    &_delete--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-elevation-active");
+    }
+    
+    &_delete--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#on-elevation-disabled");
+    }
+    
+    &_delete--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#primary-enabled");
+    }
+    
+    &_delete--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#primary-hover");
+    }
+    
+    &_delete--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#primary-active");
+    }
+    
+    &_delete--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#primary-disabled");
+    }
+    
+    &_delete--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#neutral-enabled");
+    }
+    
+    &_delete--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#neutral-hover");
+    }
+    
+    &_delete--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#neutral-active");
+    }
+    
+    &_delete--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/delete.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    cut.svg 
+    - - - - - - - - - - - - */
+    
+    &_cut--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-surface-enabled");
+    }
+    
+    &_cut--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-surface-hover");
+    }
+    
+    &_cut--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-surface-active");
+    }
+    
+    &_cut--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-surface-disabled");
+    }
+    
+    &_cut--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-primary-enabled");
+    }
+    
+    &_cut--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-primary-hover");
+    }
+    
+    &_cut--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-primary-active");
+    }
+    
+    &_cut--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-primary-disabled");
+    }
+    
+    &_cut--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-disabled-enabled");
+    }
+    
+    &_cut--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-disabled-hover");
+    }
+    
+    &_cut--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-disabled-active");
+    }
+    
+    &_cut--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-disabled-disabled");
+    }
+    
+    &_cut--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-message-enabled");
+    }
+    
+    &_cut--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-message-hover");
+    }
+    
+    &_cut--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-message-active");
+    }
+    
+    &_cut--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-message-disabled");
+    }
+    
+    &_cut--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-elevation-enabled");
+    }
+    
+    &_cut--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-elevation-hover");
+    }
+    
+    &_cut--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-elevation-active");
+    }
+    
+    &_cut--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#on-elevation-disabled");
+    }
+    
+    &_cut--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#primary-enabled");
+    }
+    
+    &_cut--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#primary-hover");
+    }
+    
+    &_cut--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#primary-active");
+    }
+    
+    &_cut--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#primary-disabled");
+    }
+    
+    &_cut--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#neutral-enabled");
+    }
+    
+    &_cut--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#neutral-hover");
+    }
+    
+    &_cut--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#neutral-active");
+    }
+    
+    &_cut--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cut.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    create-database-tables.svg 
+    - - - - - - - - - - - - */
+    
+    &_create-database-tables--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-surface-enabled");
+    }
+    
+    &_create-database-tables--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-surface-hover");
+    }
+    
+    &_create-database-tables--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-surface-active");
+    }
+    
+    &_create-database-tables--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-surface-disabled");
+    }
+    
+    &_create-database-tables--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-primary-enabled");
+    }
+    
+    &_create-database-tables--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-primary-hover");
+    }
+    
+    &_create-database-tables--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-primary-active");
+    }
+    
+    &_create-database-tables--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-primary-disabled");
+    }
+    
+    &_create-database-tables--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-disabled-enabled");
+    }
+    
+    &_create-database-tables--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-disabled-hover");
+    }
+    
+    &_create-database-tables--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-disabled-active");
+    }
+    
+    &_create-database-tables--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-disabled-disabled");
+    }
+    
+    &_create-database-tables--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-message-enabled");
+    }
+    
+    &_create-database-tables--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-message-hover");
+    }
+    
+    &_create-database-tables--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-message-active");
+    }
+    
+    &_create-database-tables--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-message-disabled");
+    }
+    
+    &_create-database-tables--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-elevation-enabled");
+    }
+    
+    &_create-database-tables--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-elevation-hover");
+    }
+    
+    &_create-database-tables--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-elevation-active");
+    }
+    
+    &_create-database-tables--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#on-elevation-disabled");
+    }
+    
+    &_create-database-tables--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#primary-enabled");
+    }
+    
+    &_create-database-tables--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#primary-hover");
+    }
+    
+    &_create-database-tables--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#primary-active");
+    }
+    
+    &_create-database-tables--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#primary-disabled");
+    }
+    
+    &_create-database-tables--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#neutral-enabled");
+    }
+    
+    &_create-database-tables--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#neutral-hover");
+    }
+    
+    &_create-database-tables--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#neutral-active");
+    }
+    
+    &_create-database-tables--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/create-database-tables.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    copy.svg 
+    - - - - - - - - - - - - */
+    
+    &_copy--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-surface-enabled");
+    }
+    
+    &_copy--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-surface-hover");
+    }
+    
+    &_copy--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-surface-active");
+    }
+    
+    &_copy--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-surface-disabled");
+    }
+    
+    &_copy--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-primary-enabled");
+    }
+    
+    &_copy--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-primary-hover");
+    }
+    
+    &_copy--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-primary-active");
+    }
+    
+    &_copy--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-primary-disabled");
+    }
+    
+    &_copy--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-disabled-enabled");
+    }
+    
+    &_copy--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-disabled-hover");
+    }
+    
+    &_copy--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-disabled-active");
+    }
+    
+    &_copy--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-disabled-disabled");
+    }
+    
+    &_copy--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-message-enabled");
+    }
+    
+    &_copy--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-message-hover");
+    }
+    
+    &_copy--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-message-active");
+    }
+    
+    &_copy--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-message-disabled");
+    }
+    
+    &_copy--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-elevation-enabled");
+    }
+    
+    &_copy--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-elevation-hover");
+    }
+    
+    &_copy--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-elevation-active");
+    }
+    
+    &_copy--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#on-elevation-disabled");
+    }
+    
+    &_copy--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#primary-enabled");
+    }
+    
+    &_copy--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#primary-hover");
+    }
+    
+    &_copy--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#primary-active");
+    }
+    
+    &_copy--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#primary-disabled");
+    }
+    
+    &_copy--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#neutral-enabled");
+    }
+    
+    &_copy--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#neutral-hover");
+    }
+    
+    &_copy--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#neutral-active");
+    }
+    
+    &_copy--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/copy.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    cancel-build.svg 
+    - - - - - - - - - - - - */
+    
+    &_cancel-build--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-surface-enabled");
+    }
+    
+    &_cancel-build--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-surface-hover");
+    }
+    
+    &_cancel-build--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-surface-active");
+    }
+    
+    &_cancel-build--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-surface-disabled");
+    }
+    
+    &_cancel-build--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-primary-enabled");
+    }
+    
+    &_cancel-build--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-primary-hover");
+    }
+    
+    &_cancel-build--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-primary-active");
+    }
+    
+    &_cancel-build--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-primary-disabled");
+    }
+    
+    &_cancel-build--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-disabled-enabled");
+    }
+    
+    &_cancel-build--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-disabled-hover");
+    }
+    
+    &_cancel-build--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-disabled-active");
+    }
+    
+    &_cancel-build--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-disabled-disabled");
+    }
+    
+    &_cancel-build--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-message-enabled");
+    }
+    
+    &_cancel-build--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-message-hover");
+    }
+    
+    &_cancel-build--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-message-active");
+    }
+    
+    &_cancel-build--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-message-disabled");
+    }
+    
+    &_cancel-build--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-elevation-enabled");
+    }
+    
+    &_cancel-build--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-elevation-hover");
+    }
+    
+    &_cancel-build--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-elevation-active");
+    }
+    
+    &_cancel-build--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#on-elevation-disabled");
+    }
+    
+    &_cancel-build--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#primary-enabled");
+    }
+    
+    &_cancel-build--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#primary-hover");
+    }
+    
+    &_cancel-build--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#primary-active");
+    }
+    
+    &_cancel-build--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#primary-disabled");
+    }
+    
+    &_cancel-build--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#neutral-enabled");
+    }
+    
+    &_cancel-build--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#neutral-hover");
+    }
+    
+    &_cancel-build--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#neutral-active");
+    }
+    
+    &_cancel-build--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/cancel-build.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    build.svg 
+    - - - - - - - - - - - - */
+    
+    &_build--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-surface-enabled");
+    }
+    
+    &_build--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-surface-hover");
+    }
+    
+    &_build--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-surface-active");
+    }
+    
+    &_build--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-surface-disabled");
+    }
+    
+    &_build--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-primary-enabled");
+    }
+    
+    &_build--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-primary-hover");
+    }
+    
+    &_build--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-primary-active");
+    }
+    
+    &_build--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-primary-disabled");
+    }
+    
+    &_build--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-disabled-enabled");
+    }
+    
+    &_build--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-disabled-hover");
+    }
+    
+    &_build--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-disabled-active");
+    }
+    
+    &_build--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-disabled-disabled");
+    }
+    
+    &_build--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-message-enabled");
+    }
+    
+    &_build--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-message-hover");
+    }
+    
+    &_build--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-message-active");
+    }
+    
+    &_build--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-message-disabled");
+    }
+    
+    &_build--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-elevation-enabled");
+    }
+    
+    &_build--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-elevation-hover");
+    }
+    
+    &_build--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-elevation-active");
+    }
+    
+    &_build--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#on-elevation-disabled");
+    }
+    
+    &_build--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#primary-enabled");
+    }
+    
+    &_build--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#primary-hover");
+    }
+    
+    &_build--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#primary-active");
+    }
+    
+    &_build--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#primary-disabled");
+    }
+    
+    &_build--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#neutral-enabled");
+    }
+    
+    &_build--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#neutral-hover");
+    }
+    
+    &_build--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#neutral-active");
+    }
+    
+    &_build--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build.svg#neutral-disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    build-all.svg 
+    - - - - - - - - - - - - */
+    
+    &_build-all--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-surface-enabled");
+    }
+    
+    &_build-all--on-surface-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-surface-hover");
+    }
+    
+    &_build-all--on-surface-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-surface-active");
+    }
+    
+    &_build-all--on-surface-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-surface-disabled");
+    }
+    
+    &_build-all--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-primary-enabled");
+    }
+    
+    &_build-all--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-primary-hover");
+    }
+    
+    &_build-all--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-primary-active");
+    }
+    
+    &_build-all--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-primary-disabled");
+    }
+    
+    &_build-all--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-disabled-enabled");
+    }
+    
+    &_build-all--on-disabled-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-disabled-hover");
+    }
+    
+    &_build-all--on-disabled-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-disabled-active");
+    }
+    
+    &_build-all--on-disabled-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-disabled-disabled");
+    }
+    
+    &_build-all--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-message-enabled");
+    }
+    
+    &_build-all--on-message-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-message-hover");
+    }
+    
+    &_build-all--on-message-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-message-active");
+    }
+    
+    &_build-all--on-message-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-message-disabled");
+    }
+    
+    &_build-all--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-elevation-enabled");
+    }
+    
+    &_build-all--on-elevation-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-elevation-hover");
+    }
+    
+    &_build-all--on-elevation-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-elevation-active");
+    }
+    
+    &_build-all--on-elevation-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#on-elevation-disabled");
+    }
+    
+    &_build-all--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#primary-enabled");
+    }
+    
+    &_build-all--primary-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#primary-hover");
+    }
+    
+    &_build-all--primary-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#primary-active");
+    }
+    
+    &_build-all--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#primary-disabled");
+    }
+    
+    &_build-all--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#neutral-enabled");
+    }
+    
+    &_build-all--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#neutral-hover");
+    }
+    
+    &_build-all--neutral-active-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#neutral-active");
+    }
+    
+    &_build-all--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}menus/dark/build-all.svg#neutral-disabled");
+    }
+    
+  
+    }
+  
