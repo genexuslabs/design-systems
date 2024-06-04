@@ -14,8 +14,8 @@
     "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
     "test": "sass test/test.scss  test/mercury.css",
     "validate.ci": "npm run build-no-svg",
-    "icons-svg": "ssg-svg ./src/icons/svg-source ./src/assets/icons/ .config/color-states.json ./www/icons ./log",
-    "icons-sass": "ssg-sass ./src/assets/icons/.generated ./src/icons",
+    "icons-svg": "ssg-svg ./src/icons/svg-source ./src/assets/icons/ ./src/icons/svg-source/.config/color-states.json ./www/icons ./log",
+    "icons-sass": "ssg-sass ./src/assets/icons ./src/icons",
     "watch:sass": "chokidar src/**/*.scss ../common/**/*.scss -c \"npm run build.scss\""
   },
   "license": "MIT",
