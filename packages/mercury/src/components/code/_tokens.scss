@@ -1,13 +1,13 @@
 @mixin code-tokens() {
   // TODO: variable names should be updated to something more descriptive
-  --ch-code__color-base: var(--mer-text__on-surface);
-  --ch-code__color-blue: var(--mer-color__primary-blue--400);
-  --ch-code__color-light-blue: var(--mer-color__primary-blue--200);
-  --ch-code__color-red: var(--mer-color__message-red--200);
-  --ch-code__color-green: var(--mer-color__message-green--200);
-  --ch-code__bg-color: var(--mer-color__neutral-gray--800);
-  --ch-code__border: var(--mer-border__width--sm) solid
+  --code__color-base: var(--mer-text__on-surface);
+  --code__color-blue: var(--mer-color__primary-blue--400);
+  --code__color-light-blue: var(--mer-color__primary-blue--200);
+  --code__color-red: var(--mer-color__message-red--200);
+  --code__color-green: var(--mer-color__message-green--200);
+  --code__bg-color: var(--mer-color__neutral-gray--800);
+  --code__border: var(--mer-border__width--sm) solid
     var(--mer-color__elevation--01);
-  --ch-code__border-radius: var(--mer-border__radius--sm);
-  --ch-code__padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
+  --code__border-radius: var(--mer-border__radius--sm);
+  --code__padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
 }
