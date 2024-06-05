@@ -42,72 +42,138 @@
   $dark-theme-selector: ".dark",
   $light: true,
   $dark: true,
-  $primary: true,
-  $primary-hover: true,
-  $primary-active: true,
-  $primary-disabled: true,
+  $on-surface: true,
   $on-primary: true,
-  $on-primary-hover: true,
-  $on-primary-active: true,
   $on-disabled: true,
-  $neutral: true
+  $on-message: true,
+  $on-elevation: true,
+  $primary: true,
+  $error: true,
+  $warning: true,
+  $success: true,
+  $neutral: true,
+  $highlighted: true,
+  $bright: true
 ) {
   // Light
   @if $light {
     #{$light-theme-selector} {
       #{$output-selector} {
-        // primary
-        @if $primary {
-          &--primary {
-            @extend #{$input-selector}--primary-light !optional;
+        // on-surface
+        @if $on-surface {
+          &--on-surface {
+            @extend #{$input-selector}--on-surface-enabled-light !optional;
           }
         }
-        @if $primary-hover {
-          &--primary-hover,
+
+        // on-primary
+        @if $on-primary {
+          &--on-primary:enabled {
+            @extend #{$input-selector}--on-primary-enabled-light !optional;
+          }
+          &--on-primary:hover {
+            @extend #{$input-selector}--on-primary-hover-light !optional;
+          }
+          &--on-primary:active {
+            @extend #{$input-selector}--on-primary-active-light !optional;
+          }
+          &--on-primary:disabled {
+            @extend #{$input-selector}--on-primary-disabled-light !optional;
+          }
+        }
+
+        // on-disabled
+        @if $on-disabled {
+          &--on-disabled:enabled {
+            @extend #{$input-selector}--on-disabled-enabled-light !optional;
+          }
+        }
+
+        // on-message
+        @if $on-message {
+          &--on-message:enabled {
+            @extend #{$input-selector}--on-message-enabled-light !optional;
+          }
+        }
+
+        // on-elevation
+        @if $on-elevation {
+          &--on-elevation:enabled {
+            @extend #{$input-selector}--on-elevation-enabled-light !optional;
+          }
+        }
+
+        // primary
+        @if $primary {
+          &--primary:enabled {
+            @extend #{$input-selector}--primary-enabled-light !optional;
+          }
           &--primary:hover {
             @extend #{$input-selector}--primary-hover-light !optional;
           }
-        }
-        @if $primary-active {
-          &--primary-active,
           &--primary:active {
             @extend #{$input-selector}--primary-active-light !optional;
           }
-        }
-        @if $primary-disabled {
-          &--primary-disabled,
           &--primary:disabled {
             @extend #{$input-selector}--primary-disabled-light !optional;
           }
         }
-        // on primary
-        @if $on-primary {
-          &--on-primary {
-            @extend #{$input-selector}--on-primary-light !optional;
+
+        // error
+        @if $error {
+          &--error:enabled {
+            @extend #{$input-selector}--error-enabled-light !optional;
           }
         }
-        @if $on-primary-hover {
-          &--on-primary-hover,
-          &--on-primary:hover {
-            @extend #{$input-selector}--on-primary-hover-light !optional;
+
+        // warning
+        @if $warning {
+          &--warning:enabled {
+            @extend #{$input-selector}--warning-enabled-light !optional;
           }
         }
-        @if $on-primary-active {
-          &--on-primary-active,
-          &--on-primary:active {
-            @extend #{$input-selector}--on-primary-active-light !optional;
+
+        // warning
+        @if $warning {
+          &--warning:enabled {
+            @extend #{$input-selector}--warning-enabled-light !optional;
           }
         }
-        // on disabled
-        @if $on-disabled {
-          &--on-disabled {
-            @extend #{$input-selector}--on-disabled-light !optional;
+
+        // success
+        @if $success {
+          &--success:enabled {
+            @extend #{$input-selector}--success-enabled-light !optional;
           }
         }
+
         // neutral
         @if $neutral {
-          &--neutral {
-            @extend #{$input-selector}--neutral-light !optional;
+          &--neutral:enabled {
+            @extend #{$input-selector}--neutral-enabled-light !optional;
+          }
+          &--neutral:hover {
+            @extend #{$input-selector}--neutral-hover-light !optional;
+          }
+          &--neutral:active {
+            @extend #{$input-selector}--neutral-active-light !optional;
+          }
+          &--neutral:disabled {
+            @extend #{$input-selector}--neutral-disabled-light !optional;
+          }
+        }
+
+        // highlighted
+        @if $highlighted {
+          &--highlighted:enabled {
+            @extend #{$input-selector}--highlighted-enabled-light !optional;
+          }
+        }
+
+        // bright
+        @if $bright {
+          &--bright:enabled {
+            @extend #{$input-selector}--bright-enabled-light !optional;
           }
         }
       }
@@ -118,58 +184,121 @@
   @if $dark {
     #{$dark-theme-selector} {
       #{$output-selector} {
-        // primary
-        @if $primary {
-          &--primary {
-            @extend #{$input-selector}--primary-dark !optional;
+        // on-surface
+        @if $on-surface {
+          &--on-surface {
+            @extend #{$input-selector}--on-surface-enabled-dark !optional;
           }
         }
-        @if $primary-hover {
-          &--primary-hover,
+
+        // on-primary
+        @if $on-primary {
+          &--on-primary:enabled {
+            @extend #{$input-selector}--on-primary-enabled-dark !optional;
+          }
+          &--on-primary:hover {
+            @extend #{$input-selector}--on-primary-hover-dark !optional;
+          }
+          &--on-primary:active {
+            @extend #{$input-selector}--on-primary-active-dark !optional;
+          }
+          &--on-primary:disabled {
+            @extend #{$input-selector}--on-primary-disabled-dark !optional;
+          }
+        }
+
+        // on-disabled
+        @if $on-disabled {
+          &--on-disabled:enabled {
+            @extend #{$input-selector}--on-disabled-enabled-dark !optional;
+          }
+        }
+
+        // on-message
+        @if $on-message {
+          &--on-message:enabled {
+            @extend #{$input-selector}--on-message-enabled-dark !optional;
+          }
+        }
+
+        // on-elevation
+        @if $on-elevation {
+          &--on-elevation:enabled {
+            @extend #{$input-selector}--on-elevation-enabled-dark !optional;
+          }
+        }
+
+        // primary
+        @if $primary {
+          &--primary:enabled {
+            @extend #{$input-selector}--primary-enabled-dark !optional;
+          }
           &--primary:hover {
             @extend #{$input-selector}--primary-hover-dark !optional;
           }
-        }
-        @if $primary-active {
-          &--primary-active,
           &--primary:active {
             @extend #{$input-selector}--primary-active-dark !optional;
           }
-        }
-        @if $primary-disabled {
-          &--primary-disabled,
           &--primary:disabled {
             @extend #{$input-selector}--primary-disabled-dark !optional;
           }
         }
-        // on primary
-        @if $on-primary {
-          &--on-primary {
-            @extend #{$input-selector}--on-primary-dark !optional;
+
+        // error
+        @if $error {
+          &--error:enabled {
+            @extend #{$input-selector}--error-enabled-dark !optional;
           }
         }
-        @if $on-primary-hover {
-          &--on-primary-hover,
-          &--on-primary:hover {
-            @extend #{$input-selector}--on-primary-hover-dark !optional;
+
+        // warning
+        @if $warning {
+          &--warning:enabled {
+            @extend #{$input-selector}--warning-enabled-dark !optional;
           }
         }
-        @if $on-primary-active {
-          &--on-primary-active,
-          &--on-primary:active {
-            @extend #{$input-selector}--on-primary-active-dark !optional;
+
+        // warning
+        @if $warning {
+          &--warning:enabled {
+            @extend #{$input-selector}--warning-enabled-dark !optional;
           }
         }
-        // on disabled
-        @if $on-disabled {
-          &--on-disabled {
-            @extend #{$input-selector}--on-disabled-dark !optional;
+
+        // success
+        @if $success {
+          &--success:enabled {
+            @extend #{$input-selector}--success-enabled-dark !optional;
           }
         }
+
         // neutral
         @if $neutral {
-          &--neutral {
-            @extend #{$input-selector}--neutral-dark !optional;
+          &--neutral:enabled {
+            @extend #{$input-selector}--neutral-enabled-dark !optional;
+          }
+          &--neutral:hover {
+            @extend #{$input-selector}--neutral-hover-dark !optional;
+          }
+          &--neutral:active {
+            @extend #{$input-selector}--neutral-active-dark !optional;
+          }
+          &--neutral:disabled {
+            @extend #{$input-selector}--neutral-disabled-dark !optional;
+          }
+        }
+
+        // highlighted
+        @if $highlighted {
+          &--highlighted:enabled {
+            @extend #{$input-selector}--highlighted-enabled-dark !optional;
+          }
+        }
+
+        // bright
+        @if $bright {
+          &--bright:enabled {
+            @extend #{$input-selector}--bright-enabled-dark !optional;
           }
         }
       }
@@ -184,15 +313,18 @@
   $dark: true,
   $light-theme-selector: ".light",
   $dark-theme-selector: ".dark",
-  $primary: true,
-  $primary-hover: true,
-  $primary-active: true,
-  $primary-disabled: true,
+  $on-surface: true,
   $on-primary: true,
-  $on-primary-hover: true,
-  $on-primary-active: true,
   $on-disabled: true,
-  $neutral: true
+  $on-message: true,
+  $on-elevation: true,
+  $primary: true,
+  $error: true,
+  $warning: true,
+  $success: true,
+  $neutral: true,
+  $highlighted: true,
+  $bright: true
 ) {
   @each $monochrome-icon-selector in $monochrome-icon-selectors {
     @include generate-monochrome-icon-selector(
@@ -202,15 +334,18 @@
       $dark: $dark,
       $light-theme-selector: $light-theme-selector,
       $dark-theme-selector: $dark-theme-selector,
-      $primary: $primary,
-      $primary-hover: $primary-hover,
-      $primary-active: $primary-active,
-      $primary-disabled: $primary-disabled,
+      $on-surface: $on-surface,
       $on-primary: $on-primary,
-      $on-primary-hover: $on-primary-hover,
-      $on-primary-active: $on-primary-active,
       $on-disabled: $on-disabled,
-      $neutral: $neutral
+      $on-message: $on-message,
+      $on-elevation: $on-elevation,
+      $primary: $primary,
+      $error: $error,
+      $warning: $warning,
+      $success: $success,
+      $neutral: $neutral,
+      $highlighted: $highlighted,
+      $bright: $bright
     );
   }
 }
