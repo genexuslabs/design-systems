@@ -37,6 +37,7 @@
 @import "./components/checkbox/checkbox-styles";
 @import "./components/shortcuts/styles";
 @import "./components/tree-view/tree-view-styles";
+@import "./components/tabular-grid/tabular-grid-styles";
 @import "./components/code/code-styles";
 
 @mixin mercury(
@@ -83,6 +84,7 @@
   $components: true,
   $checkbox: true,
   $tree-view-primary: true,
+  $tabular-grid: true,
   $code: true
 ) {
   // - - - - - - - - - - - - - - - - - - - -
@@ -363,6 +365,10 @@
     // tree view
     @if $tree-view-primary {
       @include tree-view-primary();
+    }
+    // tabular grid
+    @if $tabular-grid {
+      @include tabular-grid();
     }
     // code
     @if $code {
