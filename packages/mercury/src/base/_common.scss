@@ -3,10 +3,10 @@ Focus
 ----------------------*/
 @mixin focus-style($outline: false) {
   @if $outline == true {
-    outline-width: var(--mer-border__width--sm);
-    outline-style: solid;
-    outline-color: var(--mer-color__primary-blue--200);
-    outline-offset: -1px;
+    outline-width: var(--mer-focus__outline-width);
+    outline-style: var(--mer-focus__outline-style);
+    outline-color: var(--mer-focus__outline-color);
+    outline-offset: var(--mer-focus__outline-offset);
   } @else {
     border-color: var(--borders-un-border-color__focused);
   }
@@ -41,31 +41,117 @@ Scrollbar
 
   // corner
   &::-webkit-scrollbar-corner {
-    background: transparent;
+    background: var(--mer-scrollbar-corner__bg);
   }
 }
 
 /*----------------------------------------------------
 Item (applies to every item (tree, grid, list, etc...)
 ----------------------------------------------------*/
-@mixin item-styles($state: "hover") {
-  @if $state == "hover" {
-    &:hover {
-      color: var(--mer-item__color--hover);
-      background-color: var(--mer-item__bg-color--hover);
-      border-color: var(--mer-item__border-color--hover);
-    }
+
+// note: $style's that are not marked as ¨optional¨ should be
+// applied to every item on the design system, in order to
+// keep consistency. $style's that are not marked as "optional"
+// are optional because items from different components could
+// display different styles for that particular group/$style
+
+@mixin item-styles($style: "enabled") {
+  @if $style == "border-list" {
+    border: var(--mer-item__border-width)
+      var(--mer-item__border-style)
+      transparent;
+    // border color depends on the state (enabled, hover, etc)
   }
-  @if $state == "selected" {
-    color: var(--mer-item__color--selected);
-    background-color: var(--mer-item__bg-color--selected);
-    border-color: var(--mer-item__border-color--selected);
+  @if $style == "border-grid" {
+    border-block-end: var(--mer-item__border-width)
+      var(--mer-item__border-style)
+      var(--mer-item__border-color);
+    border-inline-end: var(--mer-item__border-width)
+      var(--mer-item__border-style)
+      var(--mer-item__border-color);
+    // border color depends on the state (enabled, hover, etc)
   }
-  @if $state == "selected-hover" {
-    &:hover {
-      color: var(--mer-item__color--selected-hover);
-      background-color: var(--mer-item__bg-color--selected-hover);
-      border-color: var(--mer-item__border-color--selected-hover);
-    }
+  @if $style == "font" {
+    // optional
+    font-family: var(--mer-item__font-family);
+    font-size: var(--mer-item__font-size);
+    line-height: var(--mer-item__line-height);
   }
+  @if $style == "structure" {
+    // optional
+    padding-inline: var(--mer-item__padding-inline);
+    padding-block: var(--mer-item__padding-block);
+    min-block-size: var(--mer-item__padding-min-block-size);
+  }
+  @if $style == "colors" {
+    background-color: var(--mer-item__bg-color);
+    color: var(--mer-item__color);
+    border-color: var(--mer-item__border-color);
+  }
+  @if $style == "hover" {
+    --mer-item__color: var(--mer-item__color--hover);
+    --mer-item__bg-color: var(--mer-item__bg-color--hover);
+    --mer-item__border-color: var(--mer-item__border-color--hover);
+  }
+  @if $style == "selected" {
+    --mer-item__color: var(--mer-item__color--selected);
+    --mer-item__bg-color: var(--mer-item__bg-color--selected);
+    --mer-item__border-color: var(--mer-item__border-color--selected);
+  }
+  @if $style == "selected-hover" {
+    --mer-item__color: var(--mer-item__color--selected-hover);
+    --mer-item__bg-color: var(--mer-item__bg-color--selected-hover);
+    --mer-item__border-color: var(--mer-item__border-color--selected-hover);
+  }
+  @if $style == "disabled" {
+    --mer-item__color: var(--mer-item__color--disabled);
+    --mer-item__bg-color: var(--mer-item__bg-color--disabled);
+    --mer-item__border-color: var(--mer-item__border-color--disabled);
+  }
+}
+
+%item-border-list {
+  @include item-styles("border-list");
+}
+%item-border-grid {
+  @include item-styles("border-grid");
+}
+%item-font {
+  @include item-styles("font");
+}
+%item-structure {
+  @include item-styles("structure");
+}
+%item-colors {
+  // enabled
+  @include item-styles("colors");
+}
+%item-hover {
+  @include item-styles("hover");
+}
+%item-selected {
+  @include item-styles("selected");
+}
+%item-selected-hover {
+  @include item-styles("selected-hover");
+}
+%item-disabled {
+  @include item-styles("disabled");
+}
+%item-common-states {
+  @include item-styles("enabled");
+  @include item-styles("hover");
+  @include item-styles("disabled");
+}
+
+/*----------------------
+Window
+----------------------*/
+// TODO: This styles should better be applied on the ch-window ?
+%window-styles {
+  border: var(--mer-window__border);
+  border-radius: var(--mer-window__border-radius);
+  padding: var(--mer-window__padding);
+  background-color: var(--mer-window__bg-color);
+  box-shadow: var(--mer-box-shadow--01);
 }
