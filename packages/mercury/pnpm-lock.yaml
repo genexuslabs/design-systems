@@ -9,8 +9,8 @@ devDependencies:
     specifier: ^0.1.9
     version: 0.1.9
   '@genexus/svg-sass-generator':
-    specifier: 1.1.1
-    version: 1.1.1(@types/node@20.12.12)
+    specifier: 1.1.4
+    version: 1.1.4(@types/node@20.12.12)
   chokidar:
     specifier: ^3.6.0
     version: 3.6.0
@@ -58,8 +58,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@genexus/svg-sass-generator@1.1.1(@types/node@20.12.12):
-    resolution: {integrity: sha512-CufoUyzju/3teGXfabZROMZwwy7B3mePSa5jl4Oe3lhBoHEh0KgRy1LKybrRwJp4m7OPx3tnIx3unuQyhox2Fg==}
+  /@genexus/svg-sass-generator@1.1.4(@types/node@20.12.12):
+    resolution: {integrity: sha512-L8zD+PyRhK6LhbNuuphYD8UkgfRwDsLhLu7kIG+t36KWRiRx4GDPXyhmyui2PE0ejxV8KobzHCYwKdHDMukfbw==}
     engines: {pnpm: '>=3'}
     hasBin: true
     dependencies:
@@ -70,7 +70,6 @@ packages:
       glob: 10.3.15
       i: 0.3.7
       json-colorizer: 2.2.2
-      node-localstorage: 3.0.5
       sass: 1.72.0
       svgo: 3.3.2
       ts-node: 10.9.2(@types/node@20.12.12)(typescript@5.4.5)
@@ -771,11 +770,6 @@ packages:
     resolution: {integrity: sha512-Ju0+lEMyzMVZarkTn/gqRpdqd5dOPaz1mCZ0SH3JV6iFw81PldE/PEB1hWVEA288HPt4WXW8O7AWxB10M+03QQ==}
     dev: true
 
-  /imurmurhash@0.1.4:
-    resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
-    engines: {node: '>=0.8.19'}
-    dev: true
-
   /inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
     dependencies:
@@ -973,13 +967,6 @@ packages:
 
   /mute-stream@0.0.8:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
-    dev: true
-
-  /node-localstorage@3.0.5:
-    resolution: {integrity: sha512-GCwtK33iwVXboZWYcqQHu3aRvXEBwmPkAMRBLeaX86ufhqslyUkLGsi4aW3INEfdQYpUB5M9qtYf3eHvAk2VBg==}
-    engines: {node: '>=0.12'}
-    dependencies:
-      write-file-atomic: 5.0.1
     dev: true
 
   /normalize-path@3.0.0:
@@ -1496,14 +1483,6 @@ packages:
 
   /wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
-    dev: true
-
-  /write-file-atomic@5.0.1:
-    resolution: {integrity: sha512-+QU2zd6OTD8XWIJCbffaiQeH9U73qIqafo1x6V1snCWYGJf6cVE0cDR4D8xRzcEnfI21IFrUPzPGtcPf8AC+Rw==}
-    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
-    dependencies:
-      imurmurhash: 0.1.4
-      signal-exit: 4.1.0
     dev: true
 
   /y18n@4.0.3:
