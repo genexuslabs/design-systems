@@ -8,7 +8,7 @@
   --container__padding-inline: 32px;
   /* section */
   --section: ;
-  --section__gap: calc(128px - var(--article-padding-block));
+  --section__gap: 128px;
   --section__padding-block: 128px;
   --section-header__gap: 24px;
   --section-title__font-size: 36px;
@@ -27,6 +27,8 @@
   --article-title__font-weight: 500;
   --article-title__pipe-font-size: 14px;
   --article-title__pipe-padding-inline: 4px;
+  --article-description__font-size: 14px;
+  --article-description__max-width: 640px;
   --article-sub-title__font-size: 16px;
   --article-mini-title__font-size: 12px;
   --article-border-block-end: 1px solid var(--mer-color__neutral-gray--1000);
@@ -56,6 +58,31 @@ General
 body.showcase {
   display: block; /*WA: Prevent issues with scroll in internal controls due to display: grid on the body*/
 }
+.article[hidden] {
+  display: none;
+}
+::selection {
+  background-color: var(--mer-color__tinted-blue--10);
+  color: var(--mer-text__on-surface);
+}
+
+/* List */
+.article__list li {
+  position: relative;
+  padding-inline-start: 12px;
+  display: block;
+}
+.article__list li::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: "";
+  display: block;
+  width: 3px;
+  height: 3px;
+  transform: translateY(-50%);
+  background-color: var(--sc-base__border-color);
+}
 
 /*====================
 Top Bar
@@ -82,7 +109,7 @@ Top Bar
 }
 
 /*====================
-Articles
+Container
 ====================*/
 .main {
   height: 100%;
@@ -135,6 +162,9 @@ Section
   font-size: var(--section-title__font-size);
   font-family: var(--section-title__font-family);
 }
+.section__title--mono {
+  font-family: monospace;
+}
 .section__description {
   font-size: var(--section-description__font-size);
   max-width: var(--section-description__max-width);
@@ -158,6 +188,9 @@ Articles
 }
 .article:not(:last-child) {
   border-block-end: var(--article-border-block-end);
+}
+.article:first-of-type {
+  padding-block-start: 0;
 }
 .article:last-child {
   padding-block-end: 0;
@@ -186,6 +219,10 @@ Articles
   font-size: 0.8em;
   padding: 0 8px;
   opacity: 0.25;
+}
+.article__description {
+  font-size: var(--article-description__font-size);
+  max-width: var(--article-description__max-width);
 }
 .article__sub-title {
   font-size: var(--article-sub-title__font-size);
@@ -248,9 +285,9 @@ Articles
 .article__main {
   display: flex;
   flex-direction: column;
+  gap: var(--article-header__gap);
 }
 .article__content {
-  margin-block-end: var(--article-header__gap);
 }
 
 /*====================
@@ -259,6 +296,7 @@ ch-code
 .code {
   position: relative;
   transition: background-color 50ms;
+  max-height: 480px;
 }
 .code .article__pill {
   opacity: 0;
@@ -294,8 +332,9 @@ body.ctrl-cmd-pressed .article__pill {
 }
 /* .code__header should not implement padding. instead it is better for the elements inside to implement padding. This helps reduce vertical space in the .code__header. */
 .code__header > * {
-  padding-inline: var(--mer-spacing--md);
-  padding-block: var(--mer-spacing--2xs);
+  /* padding-inline: var(--mer-spacing--md);
+  padding-block: var(--mer-spacing--2xs); */
+  padding: var(--mer-spacing--2xs);
   text-transform: uppercase;
   /*border-inline-start: var(--mer-border__width--sm) solid
     var(--mer-color__neutral-gray--700);*/
@@ -316,16 +355,21 @@ body.ctrl-cmd-pressed .article__pill {
 }
 .code__copy-button {
   display: flex;
-  gap: var(--mer-spacing--xs);
+  gap: var(--mer-spacing--2xs);
+  width: 100%;
+  font-size: 11px;
+  flex-direction: row-reverse;
 }
 .code__copy-button::before {
   content: "";
   width: var(--mer-spacing--lg);
   height: var(--mer-spacing--lg);
   display: inline-block;
-  mask-image: url("../assets/images/copy.svg");
-  background-size: cover;
   background-color: var(--code-header__color);
+  mask-image: url("../assets/images/copy.svg");
+  mask-size: 75%;
+  mask-position: center center;
+  mask-repeat: no-repeat;
 }
 .code--highlight {
   animation: bgChange 0.1s linear 2;
