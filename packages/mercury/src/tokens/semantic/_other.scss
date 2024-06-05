@@ -4,8 +4,17 @@
   ----------------------*/
   --mer-body__bg-color: var(--mer-color__surface);
   --mer-body__color: var(--mer-text__on-surface);
-  --mer-body__font-size: var(--mer-font__size--xxs);
+  --mer-body__font-size: var(--mer-font__size--2xs);
+  --mer-body__font-family: var(--mer-font-family--inter-regular);
   --mer-body__line-height: var(--mer-line-height--regular);
+
+  /*----------------------
+  System
+  ----------------------*/
+  // System tokens are the most basic kind, used when there is not a more specific categorization.
+  --mer-system__border-width: var(--mer-border__width--sm);
+  --mer-system__border-style: solid;
+  --mer-system__border-color: var(--mer-color__neutral-gray--500);
 
   /*----------------------
   Heading
@@ -22,10 +31,10 @@
   --mer-scrollbar-track__border-radius: var(--mer-spacing--xs);
   // scrollbar-thumb
   --mer-scrollbar-thumb__bg-color: var(--mer-color__elevation--04);
-  --mer-scrollbar-thumb__bg-color--hover: var(--mer-color__elevation--04);
+  --mer-scrollbar-thumb__bg-color--hover: #42474c;
   --mer-scrollbar-thumb__border-radius: var(--mer-spacing--xs);
   // scrollbar-thumb
-  --mer-scrollbar-corner__bg: rgba(0, 0, 0, 0);
+  --mer-scrollbar-corner__bg: transparent;
 
   /*----------------------
   Icon Size
@@ -40,19 +49,59 @@
   --mer-form-input__padding-inline: var(--mer-spacing--xs);
   --mer-form-input__bg-position--x-value: var(--mer-form-input__padding-inline);
   --mer-form-input__bg-position--x: var(--mer-form-input__bg-position--x-value);
+  // The following css variables are at the time of writing, global, because some components, besides
+  // the ch-checkbox, implement their own checkboxes. For example, the tabular-grid cell parts "selector-label"
+  // and "selector".
+  --mer-form-input__border-color: var(--mer-color__neutral-gray--500);
+  --mer-form-input__border-style: solid;
+  --mer-form-input__border-width: var(--mer-border__width--sm);
+  --mer-form-input__border: var(--mer-form-input__border-width)
+    var(--mer-form-input__border-style) var(--mer-form-input__border-color);
+  --mer-form-input__border-radius: var(--mer-border__radius--sm);
+  // the input checkbox checked styles, or radio button inner circle
+  --mer-form-input-check__border-width: var(--mer-border__radius--xs);
+  --mer-form-input-check__border-color: var(
+    --mer-border-color__neutral--active
+  );
+  --mer-form-input-check__border-color--disabled: var(
+    --mer-accent__primary--disabled
+  );
+  --mer-checkbox__option-checked-image: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='currentColor' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/></svg>");
 
   /*-------------------------------------------------------------
   Inline Control (Should have the same height to look good inline)
   -------------------------------------------------------------*/
   --mer-control__block-size: var(--mer-spacing--lg);
+  --mer-control__block-size--tiny: var(--mer-spacing--md);
+  --mer-control-tiny__border-radius: var(--mer-border__radius--2xs);
 
   /*----------------------
   Label
   ----------------------*/
-  // size
   // space between label and control
   --mer-label__space: var(--mer-spacing--xs);
   --mer-label__font-size: inherit;
   --mer-label__font-weight: var(--mer-font__weight--semi-bold);
   --mer-label__color: inherit;
+
+  /*----------------------
+  Window
+  ----------------------*/
+  // TODO: This styles should better be applied on the ch-window.
+  --mer-window__border: var(--mer-border__width--sm) solid
+    var(--mer-color__elevation--04);
+  --mer-window__border-radius: var(--mer-border__radius--sm);
+  --mer-window__padding: var(--mer-spacing--xs);
+  --mer-window__bg-color: var(--mer-color__elevation--01);
+  --mer-window__gap: var(--mer-spacing--xs);
+  --mer-window__box-shadow: var(--mer-spacing--xs);
+
+  /*----------------------
+  Focus
+  ----------------------*/
+  --mer-focus__outline-width: var(--mer-border__width--sm);
+  --mer-focus__outline-style: solid;
+  --mer-focus__outline-color: var(--mer-color__primary-blue--200);
+  --mer-focus__outline-offset: calc(var(--mer-system__border-width) * -1);
+  --borders-un-border-color__focused: var(--mer-focus__outline-color);
 }
