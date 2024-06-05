@@ -3,9 +3,9 @@ Focus
 ----------------------*/
 @mixin focus-style($outline: false) {
   @if $outline == true {
-    outline-width: var(--mer-focus__outline-width);
-    outline-style: var(--mer-focus__outline-style);
-    outline-color: var(--mer-focus__outline-color);
+    outline: var(--mer-focus__outline-width)
+      var(--mer-focus__outline-style)
+      var(--mer-focus__outline-color);
     outline-offset: var(--mer-focus__outline-offset);
   } @else {
     border-color: var(--borders-un-border-color__focused);
