@@ -1,0 +1,4728 @@
+
+   $windows-tools: workflow, workflow-settings, work-with-attributes, watch, toolbox, teamdev, services, roles, rol, responsive-sizes, references, properties, preferences, performance-test-objects, output, logout, last-changes-view, kb-explorer, indexer-monitor, history, genexus-cloud, frontend, filter, filter-conditions, error-list, debugx, datastores, category-groups, breakpoints, backend, alphabetical-order;
+    %icon__windows-tools {
+  
+    /* =================================
+    LIGHT
+    ================================= */
+  
+    /* - - - - - - - - - - - - 
+    workflow.svg 
+    - - - - - - - - - - - - */
+    
+    &_workflow--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#on-surface-enabled");
+    }
+    
+    &_workflow--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#on-primary-enabled");
+    }
+    
+    &_workflow--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#on-primary-hover");
+    }
+    
+    &_workflow--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#on-primary-active");
+    }
+    
+    &_workflow--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#on-primary-disabled");
+    }
+    
+    &_workflow--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#on-disabled-enabled");
+    }
+    
+    &_workflow--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#on-message-enabled");
+    }
+    
+    &_workflow--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#on-elevation-enabled");
+    }
+    
+    &_workflow--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#primary-enabled");
+    }
+    
+    &_workflow--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#primary-hover");
+    }
+    
+    &_workflow--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#primary-active");
+    }
+    
+    &_workflow--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#primary-disabled");
+    }
+    
+    &_workflow--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#neutral-enabled");
+    }
+    
+    &_workflow--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#neutral-hover");
+    }
+    
+    &_workflow--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#neutral-active");
+    }
+    
+    &_workflow--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#neutral-disabled");
+    }
+    
+    &_workflow--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#highlighted-enabled");
+    }
+    
+    &_workflow--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    workflow-settings.svg 
+    - - - - - - - - - - - - */
+    
+    &_workflow-settings--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#on-surface-enabled");
+    }
+    
+    &_workflow-settings--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#on-primary-enabled");
+    }
+    
+    &_workflow-settings--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#on-primary-hover");
+    }
+    
+    &_workflow-settings--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#on-primary-active");
+    }
+    
+    &_workflow-settings--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#on-primary-disabled");
+    }
+    
+    &_workflow-settings--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#on-disabled-enabled");
+    }
+    
+    &_workflow-settings--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#on-message-enabled");
+    }
+    
+    &_workflow-settings--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#on-elevation-enabled");
+    }
+    
+    &_workflow-settings--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#primary-enabled");
+    }
+    
+    &_workflow-settings--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#primary-hover");
+    }
+    
+    &_workflow-settings--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#primary-active");
+    }
+    
+    &_workflow-settings--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#primary-disabled");
+    }
+    
+    &_workflow-settings--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#neutral-enabled");
+    }
+    
+    &_workflow-settings--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#neutral-hover");
+    }
+    
+    &_workflow-settings--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#neutral-active");
+    }
+    
+    &_workflow-settings--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#neutral-disabled");
+    }
+    
+    &_workflow-settings--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#highlighted-enabled");
+    }
+    
+    &_workflow-settings--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/workflow-settings.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    work-with-attributes.svg 
+    - - - - - - - - - - - - */
+    
+    &_work-with-attributes--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#on-surface-enabled");
+    }
+    
+    &_work-with-attributes--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#on-primary-enabled");
+    }
+    
+    &_work-with-attributes--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#on-primary-hover");
+    }
+    
+    &_work-with-attributes--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#on-primary-active");
+    }
+    
+    &_work-with-attributes--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#on-primary-disabled");
+    }
+    
+    &_work-with-attributes--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#on-disabled-enabled");
+    }
+    
+    &_work-with-attributes--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#on-message-enabled");
+    }
+    
+    &_work-with-attributes--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#on-elevation-enabled");
+    }
+    
+    &_work-with-attributes--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#primary-enabled");
+    }
+    
+    &_work-with-attributes--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#primary-hover");
+    }
+    
+    &_work-with-attributes--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#primary-active");
+    }
+    
+    &_work-with-attributes--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#primary-disabled");
+    }
+    
+    &_work-with-attributes--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#neutral-enabled");
+    }
+    
+    &_work-with-attributes--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#neutral-hover");
+    }
+    
+    &_work-with-attributes--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#neutral-active");
+    }
+    
+    &_work-with-attributes--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#neutral-disabled");
+    }
+    
+    &_work-with-attributes--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#highlighted-enabled");
+    }
+    
+    &_work-with-attributes--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/work-with-attributes.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    watch.svg 
+    - - - - - - - - - - - - */
+    
+    &_watch--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#on-surface-enabled");
+    }
+    
+    &_watch--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#on-primary-enabled");
+    }
+    
+    &_watch--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#on-primary-hover");
+    }
+    
+    &_watch--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#on-primary-active");
+    }
+    
+    &_watch--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#on-primary-disabled");
+    }
+    
+    &_watch--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#on-disabled-enabled");
+    }
+    
+    &_watch--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#on-message-enabled");
+    }
+    
+    &_watch--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#on-elevation-enabled");
+    }
+    
+    &_watch--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#primary-enabled");
+    }
+    
+    &_watch--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#primary-hover");
+    }
+    
+    &_watch--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#primary-active");
+    }
+    
+    &_watch--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#primary-disabled");
+    }
+    
+    &_watch--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#neutral-enabled");
+    }
+    
+    &_watch--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#neutral-hover");
+    }
+    
+    &_watch--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#neutral-active");
+    }
+    
+    &_watch--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#neutral-disabled");
+    }
+    
+    &_watch--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#highlighted-enabled");
+    }
+    
+    &_watch--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/watch.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    toolbox.svg 
+    - - - - - - - - - - - - */
+    
+    &_toolbox--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#on-surface-enabled");
+    }
+    
+    &_toolbox--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#on-primary-enabled");
+    }
+    
+    &_toolbox--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#on-primary-hover");
+    }
+    
+    &_toolbox--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#on-primary-active");
+    }
+    
+    &_toolbox--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#on-primary-disabled");
+    }
+    
+    &_toolbox--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#on-disabled-enabled");
+    }
+    
+    &_toolbox--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#on-message-enabled");
+    }
+    
+    &_toolbox--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#on-elevation-enabled");
+    }
+    
+    &_toolbox--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#primary-enabled");
+    }
+    
+    &_toolbox--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#primary-hover");
+    }
+    
+    &_toolbox--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#primary-active");
+    }
+    
+    &_toolbox--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#primary-disabled");
+    }
+    
+    &_toolbox--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#neutral-enabled");
+    }
+    
+    &_toolbox--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#neutral-hover");
+    }
+    
+    &_toolbox--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#neutral-active");
+    }
+    
+    &_toolbox--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#neutral-disabled");
+    }
+    
+    &_toolbox--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#highlighted-enabled");
+    }
+    
+    &_toolbox--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/toolbox.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    teamdev.svg 
+    - - - - - - - - - - - - */
+    
+    &_teamdev--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#on-surface-enabled");
+    }
+    
+    &_teamdev--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#on-primary-enabled");
+    }
+    
+    &_teamdev--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#on-primary-hover");
+    }
+    
+    &_teamdev--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#on-primary-active");
+    }
+    
+    &_teamdev--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#on-primary-disabled");
+    }
+    
+    &_teamdev--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#on-disabled-enabled");
+    }
+    
+    &_teamdev--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#on-message-enabled");
+    }
+    
+    &_teamdev--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#on-elevation-enabled");
+    }
+    
+    &_teamdev--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#primary-enabled");
+    }
+    
+    &_teamdev--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#primary-hover");
+    }
+    
+    &_teamdev--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#primary-active");
+    }
+    
+    &_teamdev--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#primary-disabled");
+    }
+    
+    &_teamdev--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#neutral-enabled");
+    }
+    
+    &_teamdev--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#neutral-hover");
+    }
+    
+    &_teamdev--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#neutral-active");
+    }
+    
+    &_teamdev--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#neutral-disabled");
+    }
+    
+    &_teamdev--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#highlighted-enabled");
+    }
+    
+    &_teamdev--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/teamdev.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    services.svg 
+    - - - - - - - - - - - - */
+    
+    &_services--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#on-surface-enabled");
+    }
+    
+    &_services--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#on-primary-enabled");
+    }
+    
+    &_services--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#on-primary-hover");
+    }
+    
+    &_services--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#on-primary-active");
+    }
+    
+    &_services--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#on-primary-disabled");
+    }
+    
+    &_services--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#on-disabled-enabled");
+    }
+    
+    &_services--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#on-message-enabled");
+    }
+    
+    &_services--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#on-elevation-enabled");
+    }
+    
+    &_services--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#primary-enabled");
+    }
+    
+    &_services--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#primary-hover");
+    }
+    
+    &_services--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#primary-active");
+    }
+    
+    &_services--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#primary-disabled");
+    }
+    
+    &_services--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#neutral-enabled");
+    }
+    
+    &_services--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#neutral-hover");
+    }
+    
+    &_services--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#neutral-active");
+    }
+    
+    &_services--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#neutral-disabled");
+    }
+    
+    &_services--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#highlighted-enabled");
+    }
+    
+    &_services--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/services.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    roles.svg 
+    - - - - - - - - - - - - */
+    
+    &_roles--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#on-surface-enabled");
+    }
+    
+    &_roles--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#on-primary-enabled");
+    }
+    
+    &_roles--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#on-primary-hover");
+    }
+    
+    &_roles--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#on-primary-active");
+    }
+    
+    &_roles--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#on-primary-disabled");
+    }
+    
+    &_roles--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#on-disabled-enabled");
+    }
+    
+    &_roles--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#on-message-enabled");
+    }
+    
+    &_roles--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#on-elevation-enabled");
+    }
+    
+    &_roles--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#primary-enabled");
+    }
+    
+    &_roles--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#primary-hover");
+    }
+    
+    &_roles--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#primary-active");
+    }
+    
+    &_roles--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#primary-disabled");
+    }
+    
+    &_roles--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#neutral-enabled");
+    }
+    
+    &_roles--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#neutral-hover");
+    }
+    
+    &_roles--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#neutral-active");
+    }
+    
+    &_roles--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#neutral-disabled");
+    }
+    
+    &_roles--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#highlighted-enabled");
+    }
+    
+    &_roles--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/roles.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    rol.svg 
+    - - - - - - - - - - - - */
+    
+    &_rol--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#on-surface-enabled");
+    }
+    
+    &_rol--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#on-primary-enabled");
+    }
+    
+    &_rol--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#on-primary-hover");
+    }
+    
+    &_rol--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#on-primary-active");
+    }
+    
+    &_rol--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#on-primary-disabled");
+    }
+    
+    &_rol--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#on-disabled-enabled");
+    }
+    
+    &_rol--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#on-message-enabled");
+    }
+    
+    &_rol--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#on-elevation-enabled");
+    }
+    
+    &_rol--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#primary-enabled");
+    }
+    
+    &_rol--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#primary-hover");
+    }
+    
+    &_rol--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#primary-active");
+    }
+    
+    &_rol--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#primary-disabled");
+    }
+    
+    &_rol--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#neutral-enabled");
+    }
+    
+    &_rol--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#neutral-hover");
+    }
+    
+    &_rol--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#neutral-active");
+    }
+    
+    &_rol--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#neutral-disabled");
+    }
+    
+    &_rol--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#highlighted-enabled");
+    }
+    
+    &_rol--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/rol.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    responsive-sizes.svg 
+    - - - - - - - - - - - - */
+    
+    &_responsive-sizes--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#on-surface-enabled");
+    }
+    
+    &_responsive-sizes--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#on-primary-enabled");
+    }
+    
+    &_responsive-sizes--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#on-primary-hover");
+    }
+    
+    &_responsive-sizes--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#on-primary-active");
+    }
+    
+    &_responsive-sizes--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#on-primary-disabled");
+    }
+    
+    &_responsive-sizes--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#on-disabled-enabled");
+    }
+    
+    &_responsive-sizes--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#on-message-enabled");
+    }
+    
+    &_responsive-sizes--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#on-elevation-enabled");
+    }
+    
+    &_responsive-sizes--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#primary-enabled");
+    }
+    
+    &_responsive-sizes--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#primary-hover");
+    }
+    
+    &_responsive-sizes--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#primary-active");
+    }
+    
+    &_responsive-sizes--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#primary-disabled");
+    }
+    
+    &_responsive-sizes--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#neutral-enabled");
+    }
+    
+    &_responsive-sizes--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#neutral-hover");
+    }
+    
+    &_responsive-sizes--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#neutral-active");
+    }
+    
+    &_responsive-sizes--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#neutral-disabled");
+    }
+    
+    &_responsive-sizes--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#highlighted-enabled");
+    }
+    
+    &_responsive-sizes--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/responsive-sizes.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    references.svg 
+    - - - - - - - - - - - - */
+    
+    &_references--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#on-surface-enabled");
+    }
+    
+    &_references--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#on-primary-enabled");
+    }
+    
+    &_references--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#on-primary-hover");
+    }
+    
+    &_references--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#on-primary-active");
+    }
+    
+    &_references--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#on-primary-disabled");
+    }
+    
+    &_references--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#on-disabled-enabled");
+    }
+    
+    &_references--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#on-message-enabled");
+    }
+    
+    &_references--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#on-elevation-enabled");
+    }
+    
+    &_references--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#primary-enabled");
+    }
+    
+    &_references--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#primary-hover");
+    }
+    
+    &_references--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#primary-active");
+    }
+    
+    &_references--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#primary-disabled");
+    }
+    
+    &_references--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#neutral-enabled");
+    }
+    
+    &_references--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#neutral-hover");
+    }
+    
+    &_references--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#neutral-active");
+    }
+    
+    &_references--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#neutral-disabled");
+    }
+    
+    &_references--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#highlighted-enabled");
+    }
+    
+    &_references--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/references.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    properties.svg 
+    - - - - - - - - - - - - */
+    
+    &_properties--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#on-surface-enabled");
+    }
+    
+    &_properties--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#on-primary-enabled");
+    }
+    
+    &_properties--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#on-primary-hover");
+    }
+    
+    &_properties--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#on-primary-active");
+    }
+    
+    &_properties--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#on-primary-disabled");
+    }
+    
+    &_properties--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#on-disabled-enabled");
+    }
+    
+    &_properties--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#on-message-enabled");
+    }
+    
+    &_properties--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#on-elevation-enabled");
+    }
+    
+    &_properties--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#primary-enabled");
+    }
+    
+    &_properties--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#primary-hover");
+    }
+    
+    &_properties--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#primary-active");
+    }
+    
+    &_properties--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#primary-disabled");
+    }
+    
+    &_properties--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#neutral-enabled");
+    }
+    
+    &_properties--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#neutral-hover");
+    }
+    
+    &_properties--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#neutral-active");
+    }
+    
+    &_properties--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#neutral-disabled");
+    }
+    
+    &_properties--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#highlighted-enabled");
+    }
+    
+    &_properties--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/properties.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    preferences.svg 
+    - - - - - - - - - - - - */
+    
+    &_preferences--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#on-surface-enabled");
+    }
+    
+    &_preferences--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#on-primary-enabled");
+    }
+    
+    &_preferences--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#on-primary-hover");
+    }
+    
+    &_preferences--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#on-primary-active");
+    }
+    
+    &_preferences--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#on-primary-disabled");
+    }
+    
+    &_preferences--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#on-disabled-enabled");
+    }
+    
+    &_preferences--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#on-message-enabled");
+    }
+    
+    &_preferences--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#on-elevation-enabled");
+    }
+    
+    &_preferences--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#primary-enabled");
+    }
+    
+    &_preferences--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#primary-hover");
+    }
+    
+    &_preferences--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#primary-active");
+    }
+    
+    &_preferences--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#primary-disabled");
+    }
+    
+    &_preferences--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#neutral-enabled");
+    }
+    
+    &_preferences--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#neutral-hover");
+    }
+    
+    &_preferences--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#neutral-active");
+    }
+    
+    &_preferences--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#neutral-disabled");
+    }
+    
+    &_preferences--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#highlighted-enabled");
+    }
+    
+    &_preferences--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/preferences.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    performance-test-objects.svg 
+    - - - - - - - - - - - - */
+    
+    &_performance-test-objects--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#on-surface-enabled");
+    }
+    
+    &_performance-test-objects--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#on-primary-enabled");
+    }
+    
+    &_performance-test-objects--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#on-primary-hover");
+    }
+    
+    &_performance-test-objects--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#on-primary-active");
+    }
+    
+    &_performance-test-objects--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#on-primary-disabled");
+    }
+    
+    &_performance-test-objects--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#on-disabled-enabled");
+    }
+    
+    &_performance-test-objects--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#on-message-enabled");
+    }
+    
+    &_performance-test-objects--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#on-elevation-enabled");
+    }
+    
+    &_performance-test-objects--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#primary-enabled");
+    }
+    
+    &_performance-test-objects--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#primary-hover");
+    }
+    
+    &_performance-test-objects--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#primary-active");
+    }
+    
+    &_performance-test-objects--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#primary-disabled");
+    }
+    
+    &_performance-test-objects--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#neutral-enabled");
+    }
+    
+    &_performance-test-objects--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#neutral-hover");
+    }
+    
+    &_performance-test-objects--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#neutral-active");
+    }
+    
+    &_performance-test-objects--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#neutral-disabled");
+    }
+    
+    &_performance-test-objects--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#highlighted-enabled");
+    }
+    
+    &_performance-test-objects--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/performance-test-objects.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    output.svg 
+    - - - - - - - - - - - - */
+    
+    &_output--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#on-surface-enabled");
+    }
+    
+    &_output--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#on-primary-enabled");
+    }
+    
+    &_output--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#on-primary-hover");
+    }
+    
+    &_output--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#on-primary-active");
+    }
+    
+    &_output--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#on-primary-disabled");
+    }
+    
+    &_output--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#on-disabled-enabled");
+    }
+    
+    &_output--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#on-message-enabled");
+    }
+    
+    &_output--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#on-elevation-enabled");
+    }
+    
+    &_output--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#primary-enabled");
+    }
+    
+    &_output--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#primary-hover");
+    }
+    
+    &_output--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#primary-active");
+    }
+    
+    &_output--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#primary-disabled");
+    }
+    
+    &_output--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#neutral-enabled");
+    }
+    
+    &_output--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#neutral-hover");
+    }
+    
+    &_output--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#neutral-active");
+    }
+    
+    &_output--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#neutral-disabled");
+    }
+    
+    &_output--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#highlighted-enabled");
+    }
+    
+    &_output--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/output.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    logout.svg 
+    - - - - - - - - - - - - */
+    
+    &_logout--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#on-surface-enabled");
+    }
+    
+    &_logout--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#on-primary-enabled");
+    }
+    
+    &_logout--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#on-primary-hover");
+    }
+    
+    &_logout--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#on-primary-active");
+    }
+    
+    &_logout--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#on-primary-disabled");
+    }
+    
+    &_logout--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#on-disabled-enabled");
+    }
+    
+    &_logout--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#on-message-enabled");
+    }
+    
+    &_logout--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#on-elevation-enabled");
+    }
+    
+    &_logout--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#primary-enabled");
+    }
+    
+    &_logout--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#primary-hover");
+    }
+    
+    &_logout--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#primary-active");
+    }
+    
+    &_logout--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#primary-disabled");
+    }
+    
+    &_logout--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#neutral-enabled");
+    }
+    
+    &_logout--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#neutral-hover");
+    }
+    
+    &_logout--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#neutral-active");
+    }
+    
+    &_logout--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#neutral-disabled");
+    }
+    
+    &_logout--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#highlighted-enabled");
+    }
+    
+    &_logout--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/logout.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    last-changes-view.svg 
+    - - - - - - - - - - - - */
+    
+    &_last-changes-view--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#on-surface-enabled");
+    }
+    
+    &_last-changes-view--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#on-primary-enabled");
+    }
+    
+    &_last-changes-view--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#on-primary-hover");
+    }
+    
+    &_last-changes-view--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#on-primary-active");
+    }
+    
+    &_last-changes-view--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#on-primary-disabled");
+    }
+    
+    &_last-changes-view--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#on-disabled-enabled");
+    }
+    
+    &_last-changes-view--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#on-message-enabled");
+    }
+    
+    &_last-changes-view--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#on-elevation-enabled");
+    }
+    
+    &_last-changes-view--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#primary-enabled");
+    }
+    
+    &_last-changes-view--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#primary-hover");
+    }
+    
+    &_last-changes-view--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#primary-active");
+    }
+    
+    &_last-changes-view--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#primary-disabled");
+    }
+    
+    &_last-changes-view--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#neutral-enabled");
+    }
+    
+    &_last-changes-view--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#neutral-hover");
+    }
+    
+    &_last-changes-view--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#neutral-active");
+    }
+    
+    &_last-changes-view--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#neutral-disabled");
+    }
+    
+    &_last-changes-view--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#highlighted-enabled");
+    }
+    
+    &_last-changes-view--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/last-changes-view.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    kb-explorer.svg 
+    - - - - - - - - - - - - */
+    
+    &_kb-explorer--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#on-surface-enabled");
+    }
+    
+    &_kb-explorer--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#on-primary-enabled");
+    }
+    
+    &_kb-explorer--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#on-primary-hover");
+    }
+    
+    &_kb-explorer--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#on-primary-active");
+    }
+    
+    &_kb-explorer--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#on-primary-disabled");
+    }
+    
+    &_kb-explorer--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#on-disabled-enabled");
+    }
+    
+    &_kb-explorer--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#on-message-enabled");
+    }
+    
+    &_kb-explorer--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#on-elevation-enabled");
+    }
+    
+    &_kb-explorer--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#primary-enabled");
+    }
+    
+    &_kb-explorer--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#primary-hover");
+    }
+    
+    &_kb-explorer--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#primary-active");
+    }
+    
+    &_kb-explorer--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#primary-disabled");
+    }
+    
+    &_kb-explorer--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#neutral-enabled");
+    }
+    
+    &_kb-explorer--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#neutral-hover");
+    }
+    
+    &_kb-explorer--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#neutral-active");
+    }
+    
+    &_kb-explorer--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#neutral-disabled");
+    }
+    
+    &_kb-explorer--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#highlighted-enabled");
+    }
+    
+    &_kb-explorer--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/kb-explorer.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    indexer-monitor.svg 
+    - - - - - - - - - - - - */
+    
+    &_indexer-monitor--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#on-surface-enabled");
+    }
+    
+    &_indexer-monitor--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#on-primary-enabled");
+    }
+    
+    &_indexer-monitor--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#on-primary-hover");
+    }
+    
+    &_indexer-monitor--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#on-primary-active");
+    }
+    
+    &_indexer-monitor--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#on-primary-disabled");
+    }
+    
+    &_indexer-monitor--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#on-disabled-enabled");
+    }
+    
+    &_indexer-monitor--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#on-message-enabled");
+    }
+    
+    &_indexer-monitor--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#on-elevation-enabled");
+    }
+    
+    &_indexer-monitor--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#primary-enabled");
+    }
+    
+    &_indexer-monitor--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#primary-hover");
+    }
+    
+    &_indexer-monitor--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#primary-active");
+    }
+    
+    &_indexer-monitor--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#primary-disabled");
+    }
+    
+    &_indexer-monitor--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#neutral-enabled");
+    }
+    
+    &_indexer-monitor--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#neutral-hover");
+    }
+    
+    &_indexer-monitor--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#neutral-active");
+    }
+    
+    &_indexer-monitor--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#neutral-disabled");
+    }
+    
+    &_indexer-monitor--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#highlighted-enabled");
+    }
+    
+    &_indexer-monitor--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/indexer-monitor.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    history.svg 
+    - - - - - - - - - - - - */
+    
+    &_history--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#on-surface-enabled");
+    }
+    
+    &_history--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#on-primary-enabled");
+    }
+    
+    &_history--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#on-primary-hover");
+    }
+    
+    &_history--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#on-primary-active");
+    }
+    
+    &_history--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#on-primary-disabled");
+    }
+    
+    &_history--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#on-disabled-enabled");
+    }
+    
+    &_history--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#on-message-enabled");
+    }
+    
+    &_history--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#on-elevation-enabled");
+    }
+    
+    &_history--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#primary-enabled");
+    }
+    
+    &_history--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#primary-hover");
+    }
+    
+    &_history--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#primary-active");
+    }
+    
+    &_history--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#primary-disabled");
+    }
+    
+    &_history--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#neutral-enabled");
+    }
+    
+    &_history--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#neutral-hover");
+    }
+    
+    &_history--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#neutral-active");
+    }
+    
+    &_history--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#neutral-disabled");
+    }
+    
+    &_history--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#highlighted-enabled");
+    }
+    
+    &_history--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/history.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    genexus-cloud.svg 
+    - - - - - - - - - - - - */
+    
+    &_genexus-cloud--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#on-surface-enabled");
+    }
+    
+    &_genexus-cloud--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#on-primary-enabled");
+    }
+    
+    &_genexus-cloud--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#on-primary-hover");
+    }
+    
+    &_genexus-cloud--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#on-primary-active");
+    }
+    
+    &_genexus-cloud--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#on-primary-disabled");
+    }
+    
+    &_genexus-cloud--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#on-disabled-enabled");
+    }
+    
+    &_genexus-cloud--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#on-message-enabled");
+    }
+    
+    &_genexus-cloud--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#on-elevation-enabled");
+    }
+    
+    &_genexus-cloud--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#primary-enabled");
+    }
+    
+    &_genexus-cloud--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#primary-hover");
+    }
+    
+    &_genexus-cloud--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#primary-active");
+    }
+    
+    &_genexus-cloud--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#primary-disabled");
+    }
+    
+    &_genexus-cloud--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#neutral-enabled");
+    }
+    
+    &_genexus-cloud--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#neutral-hover");
+    }
+    
+    &_genexus-cloud--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#neutral-active");
+    }
+    
+    &_genexus-cloud--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#neutral-disabled");
+    }
+    
+    &_genexus-cloud--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#highlighted-enabled");
+    }
+    
+    &_genexus-cloud--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/genexus-cloud.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    frontend.svg 
+    - - - - - - - - - - - - */
+    
+    &_frontend--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#on-surface-enabled");
+    }
+    
+    &_frontend--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#on-primary-enabled");
+    }
+    
+    &_frontend--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#on-primary-hover");
+    }
+    
+    &_frontend--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#on-primary-active");
+    }
+    
+    &_frontend--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#on-primary-disabled");
+    }
+    
+    &_frontend--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#on-disabled-enabled");
+    }
+    
+    &_frontend--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#on-message-enabled");
+    }
+    
+    &_frontend--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#on-elevation-enabled");
+    }
+    
+    &_frontend--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#primary-enabled");
+    }
+    
+    &_frontend--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#primary-hover");
+    }
+    
+    &_frontend--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#primary-active");
+    }
+    
+    &_frontend--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#primary-disabled");
+    }
+    
+    &_frontend--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#neutral-enabled");
+    }
+    
+    &_frontend--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#neutral-hover");
+    }
+    
+    &_frontend--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#neutral-active");
+    }
+    
+    &_frontend--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#neutral-disabled");
+    }
+    
+    &_frontend--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#highlighted-enabled");
+    }
+    
+    &_frontend--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/frontend.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    filter.svg 
+    - - - - - - - - - - - - */
+    
+    &_filter--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#on-surface-enabled");
+    }
+    
+    &_filter--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#on-primary-enabled");
+    }
+    
+    &_filter--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#on-primary-hover");
+    }
+    
+    &_filter--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#on-primary-active");
+    }
+    
+    &_filter--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#on-primary-disabled");
+    }
+    
+    &_filter--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#on-disabled-enabled");
+    }
+    
+    &_filter--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#on-message-enabled");
+    }
+    
+    &_filter--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#on-elevation-enabled");
+    }
+    
+    &_filter--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#primary-enabled");
+    }
+    
+    &_filter--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#primary-hover");
+    }
+    
+    &_filter--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#primary-active");
+    }
+    
+    &_filter--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#primary-disabled");
+    }
+    
+    &_filter--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#neutral-enabled");
+    }
+    
+    &_filter--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#neutral-hover");
+    }
+    
+    &_filter--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#neutral-active");
+    }
+    
+    &_filter--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#neutral-disabled");
+    }
+    
+    &_filter--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#highlighted-enabled");
+    }
+    
+    &_filter--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    filter-conditions.svg 
+    - - - - - - - - - - - - */
+    
+    &_filter-conditions--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#on-surface-enabled");
+    }
+    
+    &_filter-conditions--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#on-primary-enabled");
+    }
+    
+    &_filter-conditions--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#on-primary-hover");
+    }
+    
+    &_filter-conditions--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#on-primary-active");
+    }
+    
+    &_filter-conditions--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#on-primary-disabled");
+    }
+    
+    &_filter-conditions--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#on-disabled-enabled");
+    }
+    
+    &_filter-conditions--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#on-message-enabled");
+    }
+    
+    &_filter-conditions--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#on-elevation-enabled");
+    }
+    
+    &_filter-conditions--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#primary-enabled");
+    }
+    
+    &_filter-conditions--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#primary-hover");
+    }
+    
+    &_filter-conditions--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#primary-active");
+    }
+    
+    &_filter-conditions--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#primary-disabled");
+    }
+    
+    &_filter-conditions--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#neutral-enabled");
+    }
+    
+    &_filter-conditions--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#neutral-hover");
+    }
+    
+    &_filter-conditions--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#neutral-active");
+    }
+    
+    &_filter-conditions--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#neutral-disabled");
+    }
+    
+    &_filter-conditions--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#highlighted-enabled");
+    }
+    
+    &_filter-conditions--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/filter-conditions.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    error-list.svg 
+    - - - - - - - - - - - - */
+    
+    &_error-list--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#on-surface-enabled");
+    }
+    
+    &_error-list--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#on-primary-enabled");
+    }
+    
+    &_error-list--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#on-primary-hover");
+    }
+    
+    &_error-list--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#on-primary-active");
+    }
+    
+    &_error-list--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#on-primary-disabled");
+    }
+    
+    &_error-list--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#on-disabled-enabled");
+    }
+    
+    &_error-list--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#on-message-enabled");
+    }
+    
+    &_error-list--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#on-elevation-enabled");
+    }
+    
+    &_error-list--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#primary-enabled");
+    }
+    
+    &_error-list--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#primary-hover");
+    }
+    
+    &_error-list--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#primary-active");
+    }
+    
+    &_error-list--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#primary-disabled");
+    }
+    
+    &_error-list--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#neutral-enabled");
+    }
+    
+    &_error-list--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#neutral-hover");
+    }
+    
+    &_error-list--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#neutral-active");
+    }
+    
+    &_error-list--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#neutral-disabled");
+    }
+    
+    &_error-list--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#highlighted-enabled");
+    }
+    
+    &_error-list--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/error-list.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    debugx.svg 
+    - - - - - - - - - - - - */
+    
+    &_debugx--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#on-surface-enabled");
+    }
+    
+    &_debugx--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#on-primary-enabled");
+    }
+    
+    &_debugx--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#on-primary-hover");
+    }
+    
+    &_debugx--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#on-primary-active");
+    }
+    
+    &_debugx--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#on-primary-disabled");
+    }
+    
+    &_debugx--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#on-disabled-enabled");
+    }
+    
+    &_debugx--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#on-message-enabled");
+    }
+    
+    &_debugx--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#on-elevation-enabled");
+    }
+    
+    &_debugx--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#primary-enabled");
+    }
+    
+    &_debugx--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#primary-hover");
+    }
+    
+    &_debugx--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#primary-active");
+    }
+    
+    &_debugx--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#primary-disabled");
+    }
+    
+    &_debugx--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#neutral-enabled");
+    }
+    
+    &_debugx--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#neutral-hover");
+    }
+    
+    &_debugx--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#neutral-active");
+    }
+    
+    &_debugx--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#neutral-disabled");
+    }
+    
+    &_debugx--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#highlighted-enabled");
+    }
+    
+    &_debugx--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/debugx.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    datastores.svg 
+    - - - - - - - - - - - - */
+    
+    &_datastores--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#on-surface-enabled");
+    }
+    
+    &_datastores--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#on-primary-enabled");
+    }
+    
+    &_datastores--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#on-primary-hover");
+    }
+    
+    &_datastores--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#on-primary-active");
+    }
+    
+    &_datastores--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#on-primary-disabled");
+    }
+    
+    &_datastores--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#on-disabled-enabled");
+    }
+    
+    &_datastores--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#on-message-enabled");
+    }
+    
+    &_datastores--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#on-elevation-enabled");
+    }
+    
+    &_datastores--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#primary-enabled");
+    }
+    
+    &_datastores--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#primary-hover");
+    }
+    
+    &_datastores--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#primary-active");
+    }
+    
+    &_datastores--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#primary-disabled");
+    }
+    
+    &_datastores--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#neutral-enabled");
+    }
+    
+    &_datastores--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#neutral-hover");
+    }
+    
+    &_datastores--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#neutral-active");
+    }
+    
+    &_datastores--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#neutral-disabled");
+    }
+    
+    &_datastores--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#highlighted-enabled");
+    }
+    
+    &_datastores--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/datastores.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    category-groups.svg 
+    - - - - - - - - - - - - */
+    
+    &_category-groups--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#on-surface-enabled");
+    }
+    
+    &_category-groups--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#on-primary-enabled");
+    }
+    
+    &_category-groups--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#on-primary-hover");
+    }
+    
+    &_category-groups--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#on-primary-active");
+    }
+    
+    &_category-groups--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#on-primary-disabled");
+    }
+    
+    &_category-groups--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#on-disabled-enabled");
+    }
+    
+    &_category-groups--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#on-message-enabled");
+    }
+    
+    &_category-groups--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#on-elevation-enabled");
+    }
+    
+    &_category-groups--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#primary-enabled");
+    }
+    
+    &_category-groups--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#primary-hover");
+    }
+    
+    &_category-groups--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#primary-active");
+    }
+    
+    &_category-groups--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#primary-disabled");
+    }
+    
+    &_category-groups--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#neutral-enabled");
+    }
+    
+    &_category-groups--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#neutral-hover");
+    }
+    
+    &_category-groups--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#neutral-active");
+    }
+    
+    &_category-groups--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#neutral-disabled");
+    }
+    
+    &_category-groups--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#highlighted-enabled");
+    }
+    
+    &_category-groups--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/category-groups.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    breakpoints.svg 
+    - - - - - - - - - - - - */
+    
+    &_breakpoints--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#on-surface-enabled");
+    }
+    
+    &_breakpoints--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#on-primary-enabled");
+    }
+    
+    &_breakpoints--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#on-primary-hover");
+    }
+    
+    &_breakpoints--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#on-primary-active");
+    }
+    
+    &_breakpoints--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#on-primary-disabled");
+    }
+    
+    &_breakpoints--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#on-disabled-enabled");
+    }
+    
+    &_breakpoints--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#on-message-enabled");
+    }
+    
+    &_breakpoints--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#on-elevation-enabled");
+    }
+    
+    &_breakpoints--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#primary-enabled");
+    }
+    
+    &_breakpoints--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#primary-hover");
+    }
+    
+    &_breakpoints--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#primary-active");
+    }
+    
+    &_breakpoints--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#primary-disabled");
+    }
+    
+    &_breakpoints--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#neutral-enabled");
+    }
+    
+    &_breakpoints--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#neutral-hover");
+    }
+    
+    &_breakpoints--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#neutral-active");
+    }
+    
+    &_breakpoints--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#neutral-disabled");
+    }
+    
+    &_breakpoints--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#highlighted-enabled");
+    }
+    
+    &_breakpoints--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/breakpoints.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    backend.svg 
+    - - - - - - - - - - - - */
+    
+    &_backend--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#on-surface-enabled");
+    }
+    
+    &_backend--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#on-primary-enabled");
+    }
+    
+    &_backend--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#on-primary-hover");
+    }
+    
+    &_backend--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#on-primary-active");
+    }
+    
+    &_backend--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#on-primary-disabled");
+    }
+    
+    &_backend--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#on-disabled-enabled");
+    }
+    
+    &_backend--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#on-message-enabled");
+    }
+    
+    &_backend--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#on-elevation-enabled");
+    }
+    
+    &_backend--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#primary-enabled");
+    }
+    
+    &_backend--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#primary-hover");
+    }
+    
+    &_backend--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#primary-active");
+    }
+    
+    &_backend--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#primary-disabled");
+    }
+    
+    &_backend--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#neutral-enabled");
+    }
+    
+    &_backend--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#neutral-hover");
+    }
+    
+    &_backend--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#neutral-active");
+    }
+    
+    &_backend--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#neutral-disabled");
+    }
+    
+    &_backend--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#highlighted-enabled");
+    }
+    
+    &_backend--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/backend.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    alphabetical-order.svg 
+    - - - - - - - - - - - - */
+    
+    &_alphabetical-order--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#on-surface-enabled");
+    }
+    
+    &_alphabetical-order--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#on-primary-enabled");
+    }
+    
+    &_alphabetical-order--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#on-primary-hover");
+    }
+    
+    &_alphabetical-order--on-primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#on-primary-active");
+    }
+    
+    &_alphabetical-order--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#on-primary-disabled");
+    }
+    
+    &_alphabetical-order--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#on-disabled-enabled");
+    }
+    
+    &_alphabetical-order--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#on-message-enabled");
+    }
+    
+    &_alphabetical-order--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#on-elevation-enabled");
+    }
+    
+    &_alphabetical-order--primary-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#primary-enabled");
+    }
+    
+    &_alphabetical-order--primary-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#primary-hover");
+    }
+    
+    &_alphabetical-order--primary-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#primary-active");
+    }
+    
+    &_alphabetical-order--primary-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#primary-disabled");
+    }
+    
+    &_alphabetical-order--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#neutral-enabled");
+    }
+    
+    &_alphabetical-order--neutral-hover-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#neutral-hover");
+    }
+    
+    &_alphabetical-order--neutral-active-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#neutral-active");
+    }
+    
+    &_alphabetical-order--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#neutral-disabled");
+    }
+    
+    &_alphabetical-order--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#highlighted-enabled");
+    }
+    
+    &_alphabetical-order--bright-enabled-light {
+      --icon-path: url("#{$icons-path}windows-tools/light/alphabetical-order.svg#bright-enabled");
+    }
+    
+
+    /* =================================
+    DARK
+    ================================= */
+  
+    /* - - - - - - - - - - - - 
+    workflow.svg 
+    - - - - - - - - - - - - */
+    
+    &_workflow--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#on-surface-enabled");
+    }
+    
+    &_workflow--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#on-primary-enabled");
+    }
+    
+    &_workflow--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#on-primary-hover");
+    }
+    
+    &_workflow--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#on-primary-active");
+    }
+    
+    &_workflow--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#on-primary-disabled");
+    }
+    
+    &_workflow--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#on-disabled-enabled");
+    }
+    
+    &_workflow--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#on-message-enabled");
+    }
+    
+    &_workflow--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#on-elevation-enabled");
+    }
+    
+    &_workflow--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#primary-enabled");
+    }
+    
+    &_workflow--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#primary-hover");
+    }
+    
+    &_workflow--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#primary-active");
+    }
+    
+    &_workflow--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#primary-disabled");
+    }
+    
+    &_workflow--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#neutral-enabled");
+    }
+    
+    &_workflow--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#neutral-hover");
+    }
+    
+    &_workflow--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#neutral-active");
+    }
+    
+    &_workflow--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#neutral-disabled");
+    }
+    
+    &_workflow--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#highlighted-enabled");
+    }
+    
+    &_workflow--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    workflow-settings.svg 
+    - - - - - - - - - - - - */
+    
+    &_workflow-settings--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#on-surface-enabled");
+    }
+    
+    &_workflow-settings--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#on-primary-enabled");
+    }
+    
+    &_workflow-settings--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#on-primary-hover");
+    }
+    
+    &_workflow-settings--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#on-primary-active");
+    }
+    
+    &_workflow-settings--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#on-primary-disabled");
+    }
+    
+    &_workflow-settings--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#on-disabled-enabled");
+    }
+    
+    &_workflow-settings--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#on-message-enabled");
+    }
+    
+    &_workflow-settings--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#on-elevation-enabled");
+    }
+    
+    &_workflow-settings--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#primary-enabled");
+    }
+    
+    &_workflow-settings--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#primary-hover");
+    }
+    
+    &_workflow-settings--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#primary-active");
+    }
+    
+    &_workflow-settings--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#primary-disabled");
+    }
+    
+    &_workflow-settings--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#neutral-enabled");
+    }
+    
+    &_workflow-settings--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#neutral-hover");
+    }
+    
+    &_workflow-settings--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#neutral-active");
+    }
+    
+    &_workflow-settings--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#neutral-disabled");
+    }
+    
+    &_workflow-settings--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#highlighted-enabled");
+    }
+    
+    &_workflow-settings--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/workflow-settings.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    work-with-attributes.svg 
+    - - - - - - - - - - - - */
+    
+    &_work-with-attributes--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#on-surface-enabled");
+    }
+    
+    &_work-with-attributes--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#on-primary-enabled");
+    }
+    
+    &_work-with-attributes--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#on-primary-hover");
+    }
+    
+    &_work-with-attributes--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#on-primary-active");
+    }
+    
+    &_work-with-attributes--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#on-primary-disabled");
+    }
+    
+    &_work-with-attributes--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#on-disabled-enabled");
+    }
+    
+    &_work-with-attributes--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#on-message-enabled");
+    }
+    
+    &_work-with-attributes--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#on-elevation-enabled");
+    }
+    
+    &_work-with-attributes--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#primary-enabled");
+    }
+    
+    &_work-with-attributes--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#primary-hover");
+    }
+    
+    &_work-with-attributes--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#primary-active");
+    }
+    
+    &_work-with-attributes--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#primary-disabled");
+    }
+    
+    &_work-with-attributes--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#neutral-enabled");
+    }
+    
+    &_work-with-attributes--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#neutral-hover");
+    }
+    
+    &_work-with-attributes--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#neutral-active");
+    }
+    
+    &_work-with-attributes--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#neutral-disabled");
+    }
+    
+    &_work-with-attributes--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#highlighted-enabled");
+    }
+    
+    &_work-with-attributes--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/work-with-attributes.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    watch.svg 
+    - - - - - - - - - - - - */
+    
+    &_watch--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#on-surface-enabled");
+    }
+    
+    &_watch--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#on-primary-enabled");
+    }
+    
+    &_watch--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#on-primary-hover");
+    }
+    
+    &_watch--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#on-primary-active");
+    }
+    
+    &_watch--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#on-primary-disabled");
+    }
+    
+    &_watch--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#on-disabled-enabled");
+    }
+    
+    &_watch--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#on-message-enabled");
+    }
+    
+    &_watch--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#on-elevation-enabled");
+    }
+    
+    &_watch--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#primary-enabled");
+    }
+    
+    &_watch--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#primary-hover");
+    }
+    
+    &_watch--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#primary-active");
+    }
+    
+    &_watch--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#primary-disabled");
+    }
+    
+    &_watch--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#neutral-enabled");
+    }
+    
+    &_watch--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#neutral-hover");
+    }
+    
+    &_watch--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#neutral-active");
+    }
+    
+    &_watch--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#neutral-disabled");
+    }
+    
+    &_watch--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#highlighted-enabled");
+    }
+    
+    &_watch--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/watch.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    toolbox.svg 
+    - - - - - - - - - - - - */
+    
+    &_toolbox--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#on-surface-enabled");
+    }
+    
+    &_toolbox--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#on-primary-enabled");
+    }
+    
+    &_toolbox--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#on-primary-hover");
+    }
+    
+    &_toolbox--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#on-primary-active");
+    }
+    
+    &_toolbox--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#on-primary-disabled");
+    }
+    
+    &_toolbox--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#on-disabled-enabled");
+    }
+    
+    &_toolbox--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#on-message-enabled");
+    }
+    
+    &_toolbox--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#on-elevation-enabled");
+    }
+    
+    &_toolbox--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#primary-enabled");
+    }
+    
+    &_toolbox--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#primary-hover");
+    }
+    
+    &_toolbox--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#primary-active");
+    }
+    
+    &_toolbox--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#primary-disabled");
+    }
+    
+    &_toolbox--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#neutral-enabled");
+    }
+    
+    &_toolbox--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#neutral-hover");
+    }
+    
+    &_toolbox--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#neutral-active");
+    }
+    
+    &_toolbox--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#neutral-disabled");
+    }
+    
+    &_toolbox--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#highlighted-enabled");
+    }
+    
+    &_toolbox--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/toolbox.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    teamdev.svg 
+    - - - - - - - - - - - - */
+    
+    &_teamdev--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#on-surface-enabled");
+    }
+    
+    &_teamdev--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#on-primary-enabled");
+    }
+    
+    &_teamdev--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#on-primary-hover");
+    }
+    
+    &_teamdev--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#on-primary-active");
+    }
+    
+    &_teamdev--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#on-primary-disabled");
+    }
+    
+    &_teamdev--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#on-disabled-enabled");
+    }
+    
+    &_teamdev--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#on-message-enabled");
+    }
+    
+    &_teamdev--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#on-elevation-enabled");
+    }
+    
+    &_teamdev--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#primary-enabled");
+    }
+    
+    &_teamdev--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#primary-hover");
+    }
+    
+    &_teamdev--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#primary-active");
+    }
+    
+    &_teamdev--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#primary-disabled");
+    }
+    
+    &_teamdev--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#neutral-enabled");
+    }
+    
+    &_teamdev--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#neutral-hover");
+    }
+    
+    &_teamdev--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#neutral-active");
+    }
+    
+    &_teamdev--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#neutral-disabled");
+    }
+    
+    &_teamdev--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#highlighted-enabled");
+    }
+    
+    &_teamdev--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/teamdev.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    services.svg 
+    - - - - - - - - - - - - */
+    
+    &_services--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#on-surface-enabled");
+    }
+    
+    &_services--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#on-primary-enabled");
+    }
+    
+    &_services--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#on-primary-hover");
+    }
+    
+    &_services--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#on-primary-active");
+    }
+    
+    &_services--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#on-primary-disabled");
+    }
+    
+    &_services--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#on-disabled-enabled");
+    }
+    
+    &_services--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#on-message-enabled");
+    }
+    
+    &_services--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#on-elevation-enabled");
+    }
+    
+    &_services--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#primary-enabled");
+    }
+    
+    &_services--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#primary-hover");
+    }
+    
+    &_services--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#primary-active");
+    }
+    
+    &_services--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#primary-disabled");
+    }
+    
+    &_services--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#neutral-enabled");
+    }
+    
+    &_services--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#neutral-hover");
+    }
+    
+    &_services--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#neutral-active");
+    }
+    
+    &_services--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#neutral-disabled");
+    }
+    
+    &_services--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#highlighted-enabled");
+    }
+    
+    &_services--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/services.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    roles.svg 
+    - - - - - - - - - - - - */
+    
+    &_roles--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#on-surface-enabled");
+    }
+    
+    &_roles--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#on-primary-enabled");
+    }
+    
+    &_roles--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#on-primary-hover");
+    }
+    
+    &_roles--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#on-primary-active");
+    }
+    
+    &_roles--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#on-primary-disabled");
+    }
+    
+    &_roles--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#on-disabled-enabled");
+    }
+    
+    &_roles--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#on-message-enabled");
+    }
+    
+    &_roles--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#on-elevation-enabled");
+    }
+    
+    &_roles--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#primary-enabled");
+    }
+    
+    &_roles--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#primary-hover");
+    }
+    
+    &_roles--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#primary-active");
+    }
+    
+    &_roles--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#primary-disabled");
+    }
+    
+    &_roles--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#neutral-enabled");
+    }
+    
+    &_roles--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#neutral-hover");
+    }
+    
+    &_roles--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#neutral-active");
+    }
+    
+    &_roles--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#neutral-disabled");
+    }
+    
+    &_roles--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#highlighted-enabled");
+    }
+    
+    &_roles--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/roles.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    rol.svg 
+    - - - - - - - - - - - - */
+    
+    &_rol--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#on-surface-enabled");
+    }
+    
+    &_rol--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#on-primary-enabled");
+    }
+    
+    &_rol--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#on-primary-hover");
+    }
+    
+    &_rol--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#on-primary-active");
+    }
+    
+    &_rol--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#on-primary-disabled");
+    }
+    
+    &_rol--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#on-disabled-enabled");
+    }
+    
+    &_rol--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#on-message-enabled");
+    }
+    
+    &_rol--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#on-elevation-enabled");
+    }
+    
+    &_rol--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#primary-enabled");
+    }
+    
+    &_rol--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#primary-hover");
+    }
+    
+    &_rol--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#primary-active");
+    }
+    
+    &_rol--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#primary-disabled");
+    }
+    
+    &_rol--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#neutral-enabled");
+    }
+    
+    &_rol--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#neutral-hover");
+    }
+    
+    &_rol--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#neutral-active");
+    }
+    
+    &_rol--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#neutral-disabled");
+    }
+    
+    &_rol--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#highlighted-enabled");
+    }
+    
+    &_rol--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/rol.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    responsive-sizes.svg 
+    - - - - - - - - - - - - */
+    
+    &_responsive-sizes--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#on-surface-enabled");
+    }
+    
+    &_responsive-sizes--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#on-primary-enabled");
+    }
+    
+    &_responsive-sizes--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#on-primary-hover");
+    }
+    
+    &_responsive-sizes--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#on-primary-active");
+    }
+    
+    &_responsive-sizes--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#on-primary-disabled");
+    }
+    
+    &_responsive-sizes--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#on-disabled-enabled");
+    }
+    
+    &_responsive-sizes--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#on-message-enabled");
+    }
+    
+    &_responsive-sizes--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#on-elevation-enabled");
+    }
+    
+    &_responsive-sizes--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#primary-enabled");
+    }
+    
+    &_responsive-sizes--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#primary-hover");
+    }
+    
+    &_responsive-sizes--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#primary-active");
+    }
+    
+    &_responsive-sizes--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#primary-disabled");
+    }
+    
+    &_responsive-sizes--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#neutral-enabled");
+    }
+    
+    &_responsive-sizes--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#neutral-hover");
+    }
+    
+    &_responsive-sizes--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#neutral-active");
+    }
+    
+    &_responsive-sizes--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#neutral-disabled");
+    }
+    
+    &_responsive-sizes--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#highlighted-enabled");
+    }
+    
+    &_responsive-sizes--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/responsive-sizes.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    references.svg 
+    - - - - - - - - - - - - */
+    
+    &_references--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#on-surface-enabled");
+    }
+    
+    &_references--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#on-primary-enabled");
+    }
+    
+    &_references--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#on-primary-hover");
+    }
+    
+    &_references--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#on-primary-active");
+    }
+    
+    &_references--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#on-primary-disabled");
+    }
+    
+    &_references--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#on-disabled-enabled");
+    }
+    
+    &_references--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#on-message-enabled");
+    }
+    
+    &_references--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#on-elevation-enabled");
+    }
+    
+    &_references--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#primary-enabled");
+    }
+    
+    &_references--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#primary-hover");
+    }
+    
+    &_references--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#primary-active");
+    }
+    
+    &_references--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#primary-disabled");
+    }
+    
+    &_references--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#neutral-enabled");
+    }
+    
+    &_references--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#neutral-hover");
+    }
+    
+    &_references--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#neutral-active");
+    }
+    
+    &_references--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#neutral-disabled");
+    }
+    
+    &_references--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#highlighted-enabled");
+    }
+    
+    &_references--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/references.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    properties.svg 
+    - - - - - - - - - - - - */
+    
+    &_properties--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#on-surface-enabled");
+    }
+    
+    &_properties--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#on-primary-enabled");
+    }
+    
+    &_properties--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#on-primary-hover");
+    }
+    
+    &_properties--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#on-primary-active");
+    }
+    
+    &_properties--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#on-primary-disabled");
+    }
+    
+    &_properties--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#on-disabled-enabled");
+    }
+    
+    &_properties--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#on-message-enabled");
+    }
+    
+    &_properties--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#on-elevation-enabled");
+    }
+    
+    &_properties--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#primary-enabled");
+    }
+    
+    &_properties--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#primary-hover");
+    }
+    
+    &_properties--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#primary-active");
+    }
+    
+    &_properties--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#primary-disabled");
+    }
+    
+    &_properties--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#neutral-enabled");
+    }
+    
+    &_properties--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#neutral-hover");
+    }
+    
+    &_properties--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#neutral-active");
+    }
+    
+    &_properties--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#neutral-disabled");
+    }
+    
+    &_properties--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#highlighted-enabled");
+    }
+    
+    &_properties--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/properties.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    preferences.svg 
+    - - - - - - - - - - - - */
+    
+    &_preferences--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#on-surface-enabled");
+    }
+    
+    &_preferences--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#on-primary-enabled");
+    }
+    
+    &_preferences--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#on-primary-hover");
+    }
+    
+    &_preferences--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#on-primary-active");
+    }
+    
+    &_preferences--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#on-primary-disabled");
+    }
+    
+    &_preferences--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#on-disabled-enabled");
+    }
+    
+    &_preferences--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#on-message-enabled");
+    }
+    
+    &_preferences--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#on-elevation-enabled");
+    }
+    
+    &_preferences--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#primary-enabled");
+    }
+    
+    &_preferences--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#primary-hover");
+    }
+    
+    &_preferences--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#primary-active");
+    }
+    
+    &_preferences--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#primary-disabled");
+    }
+    
+    &_preferences--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#neutral-enabled");
+    }
+    
+    &_preferences--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#neutral-hover");
+    }
+    
+    &_preferences--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#neutral-active");
+    }
+    
+    &_preferences--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#neutral-disabled");
+    }
+    
+    &_preferences--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#highlighted-enabled");
+    }
+    
+    &_preferences--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/preferences.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    performance-test-objects.svg 
+    - - - - - - - - - - - - */
+    
+    &_performance-test-objects--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#on-surface-enabled");
+    }
+    
+    &_performance-test-objects--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#on-primary-enabled");
+    }
+    
+    &_performance-test-objects--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#on-primary-hover");
+    }
+    
+    &_performance-test-objects--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#on-primary-active");
+    }
+    
+    &_performance-test-objects--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#on-primary-disabled");
+    }
+    
+    &_performance-test-objects--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#on-disabled-enabled");
+    }
+    
+    &_performance-test-objects--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#on-message-enabled");
+    }
+    
+    &_performance-test-objects--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#on-elevation-enabled");
+    }
+    
+    &_performance-test-objects--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#primary-enabled");
+    }
+    
+    &_performance-test-objects--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#primary-hover");
+    }
+    
+    &_performance-test-objects--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#primary-active");
+    }
+    
+    &_performance-test-objects--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#primary-disabled");
+    }
+    
+    &_performance-test-objects--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#neutral-enabled");
+    }
+    
+    &_performance-test-objects--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#neutral-hover");
+    }
+    
+    &_performance-test-objects--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#neutral-active");
+    }
+    
+    &_performance-test-objects--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#neutral-disabled");
+    }
+    
+    &_performance-test-objects--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#highlighted-enabled");
+    }
+    
+    &_performance-test-objects--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/performance-test-objects.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    output.svg 
+    - - - - - - - - - - - - */
+    
+    &_output--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#on-surface-enabled");
+    }
+    
+    &_output--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#on-primary-enabled");
+    }
+    
+    &_output--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#on-primary-hover");
+    }
+    
+    &_output--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#on-primary-active");
+    }
+    
+    &_output--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#on-primary-disabled");
+    }
+    
+    &_output--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#on-disabled-enabled");
+    }
+    
+    &_output--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#on-message-enabled");
+    }
+    
+    &_output--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#on-elevation-enabled");
+    }
+    
+    &_output--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#primary-enabled");
+    }
+    
+    &_output--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#primary-hover");
+    }
+    
+    &_output--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#primary-active");
+    }
+    
+    &_output--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#primary-disabled");
+    }
+    
+    &_output--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#neutral-enabled");
+    }
+    
+    &_output--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#neutral-hover");
+    }
+    
+    &_output--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#neutral-active");
+    }
+    
+    &_output--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#neutral-disabled");
+    }
+    
+    &_output--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#highlighted-enabled");
+    }
+    
+    &_output--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/output.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    logout.svg 
+    - - - - - - - - - - - - */
+    
+    &_logout--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#on-surface-enabled");
+    }
+    
+    &_logout--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#on-primary-enabled");
+    }
+    
+    &_logout--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#on-primary-hover");
+    }
+    
+    &_logout--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#on-primary-active");
+    }
+    
+    &_logout--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#on-primary-disabled");
+    }
+    
+    &_logout--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#on-disabled-enabled");
+    }
+    
+    &_logout--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#on-message-enabled");
+    }
+    
+    &_logout--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#on-elevation-enabled");
+    }
+    
+    &_logout--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#primary-enabled");
+    }
+    
+    &_logout--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#primary-hover");
+    }
+    
+    &_logout--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#primary-active");
+    }
+    
+    &_logout--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#primary-disabled");
+    }
+    
+    &_logout--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#neutral-enabled");
+    }
+    
+    &_logout--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#neutral-hover");
+    }
+    
+    &_logout--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#neutral-active");
+    }
+    
+    &_logout--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#neutral-disabled");
+    }
+    
+    &_logout--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#highlighted-enabled");
+    }
+    
+    &_logout--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/logout.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    last-changes-view.svg 
+    - - - - - - - - - - - - */
+    
+    &_last-changes-view--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#on-surface-enabled");
+    }
+    
+    &_last-changes-view--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#on-primary-enabled");
+    }
+    
+    &_last-changes-view--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#on-primary-hover");
+    }
+    
+    &_last-changes-view--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#on-primary-active");
+    }
+    
+    &_last-changes-view--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#on-primary-disabled");
+    }
+    
+    &_last-changes-view--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#on-disabled-enabled");
+    }
+    
+    &_last-changes-view--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#on-message-enabled");
+    }
+    
+    &_last-changes-view--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#on-elevation-enabled");
+    }
+    
+    &_last-changes-view--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#primary-enabled");
+    }
+    
+    &_last-changes-view--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#primary-hover");
+    }
+    
+    &_last-changes-view--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#primary-active");
+    }
+    
+    &_last-changes-view--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#primary-disabled");
+    }
+    
+    &_last-changes-view--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#neutral-enabled");
+    }
+    
+    &_last-changes-view--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#neutral-hover");
+    }
+    
+    &_last-changes-view--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#neutral-active");
+    }
+    
+    &_last-changes-view--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#neutral-disabled");
+    }
+    
+    &_last-changes-view--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#highlighted-enabled");
+    }
+    
+    &_last-changes-view--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/last-changes-view.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    kb-explorer.svg 
+    - - - - - - - - - - - - */
+    
+    &_kb-explorer--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#on-surface-enabled");
+    }
+    
+    &_kb-explorer--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#on-primary-enabled");
+    }
+    
+    &_kb-explorer--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#on-primary-hover");
+    }
+    
+    &_kb-explorer--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#on-primary-active");
+    }
+    
+    &_kb-explorer--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#on-primary-disabled");
+    }
+    
+    &_kb-explorer--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#on-disabled-enabled");
+    }
+    
+    &_kb-explorer--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#on-message-enabled");
+    }
+    
+    &_kb-explorer--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#on-elevation-enabled");
+    }
+    
+    &_kb-explorer--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#primary-enabled");
+    }
+    
+    &_kb-explorer--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#primary-hover");
+    }
+    
+    &_kb-explorer--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#primary-active");
+    }
+    
+    &_kb-explorer--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#primary-disabled");
+    }
+    
+    &_kb-explorer--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#neutral-enabled");
+    }
+    
+    &_kb-explorer--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#neutral-hover");
+    }
+    
+    &_kb-explorer--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#neutral-active");
+    }
+    
+    &_kb-explorer--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#neutral-disabled");
+    }
+    
+    &_kb-explorer--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#highlighted-enabled");
+    }
+    
+    &_kb-explorer--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/kb-explorer.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    indexer-monitor.svg 
+    - - - - - - - - - - - - */
+    
+    &_indexer-monitor--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#on-surface-enabled");
+    }
+    
+    &_indexer-monitor--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#on-primary-enabled");
+    }
+    
+    &_indexer-monitor--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#on-primary-hover");
+    }
+    
+    &_indexer-monitor--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#on-primary-active");
+    }
+    
+    &_indexer-monitor--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#on-primary-disabled");
+    }
+    
+    &_indexer-monitor--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#on-disabled-enabled");
+    }
+    
+    &_indexer-monitor--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#on-message-enabled");
+    }
+    
+    &_indexer-monitor--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#on-elevation-enabled");
+    }
+    
+    &_indexer-monitor--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#primary-enabled");
+    }
+    
+    &_indexer-monitor--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#primary-hover");
+    }
+    
+    &_indexer-monitor--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#primary-active");
+    }
+    
+    &_indexer-monitor--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#primary-disabled");
+    }
+    
+    &_indexer-monitor--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#neutral-enabled");
+    }
+    
+    &_indexer-monitor--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#neutral-hover");
+    }
+    
+    &_indexer-monitor--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#neutral-active");
+    }
+    
+    &_indexer-monitor--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#neutral-disabled");
+    }
+    
+    &_indexer-monitor--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#highlighted-enabled");
+    }
+    
+    &_indexer-monitor--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/indexer-monitor.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    history.svg 
+    - - - - - - - - - - - - */
+    
+    &_history--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#on-surface-enabled");
+    }
+    
+    &_history--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#on-primary-enabled");
+    }
+    
+    &_history--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#on-primary-hover");
+    }
+    
+    &_history--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#on-primary-active");
+    }
+    
+    &_history--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#on-primary-disabled");
+    }
+    
+    &_history--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#on-disabled-enabled");
+    }
+    
+    &_history--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#on-message-enabled");
+    }
+    
+    &_history--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#on-elevation-enabled");
+    }
+    
+    &_history--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#primary-enabled");
+    }
+    
+    &_history--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#primary-hover");
+    }
+    
+    &_history--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#primary-active");
+    }
+    
+    &_history--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#primary-disabled");
+    }
+    
+    &_history--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#neutral-enabled");
+    }
+    
+    &_history--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#neutral-hover");
+    }
+    
+    &_history--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#neutral-active");
+    }
+    
+    &_history--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#neutral-disabled");
+    }
+    
+    &_history--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#highlighted-enabled");
+    }
+    
+    &_history--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/history.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    genexus-cloud.svg 
+    - - - - - - - - - - - - */
+    
+    &_genexus-cloud--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#on-surface-enabled");
+    }
+    
+    &_genexus-cloud--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#on-primary-enabled");
+    }
+    
+    &_genexus-cloud--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#on-primary-hover");
+    }
+    
+    &_genexus-cloud--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#on-primary-active");
+    }
+    
+    &_genexus-cloud--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#on-primary-disabled");
+    }
+    
+    &_genexus-cloud--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#on-disabled-enabled");
+    }
+    
+    &_genexus-cloud--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#on-message-enabled");
+    }
+    
+    &_genexus-cloud--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#on-elevation-enabled");
+    }
+    
+    &_genexus-cloud--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#primary-enabled");
+    }
+    
+    &_genexus-cloud--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#primary-hover");
+    }
+    
+    &_genexus-cloud--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#primary-active");
+    }
+    
+    &_genexus-cloud--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#primary-disabled");
+    }
+    
+    &_genexus-cloud--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#neutral-enabled");
+    }
+    
+    &_genexus-cloud--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#neutral-hover");
+    }
+    
+    &_genexus-cloud--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#neutral-active");
+    }
+    
+    &_genexus-cloud--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#neutral-disabled");
+    }
+    
+    &_genexus-cloud--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#highlighted-enabled");
+    }
+    
+    &_genexus-cloud--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/genexus-cloud.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    frontend.svg 
+    - - - - - - - - - - - - */
+    
+    &_frontend--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#on-surface-enabled");
+    }
+    
+    &_frontend--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#on-primary-enabled");
+    }
+    
+    &_frontend--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#on-primary-hover");
+    }
+    
+    &_frontend--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#on-primary-active");
+    }
+    
+    &_frontend--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#on-primary-disabled");
+    }
+    
+    &_frontend--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#on-disabled-enabled");
+    }
+    
+    &_frontend--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#on-message-enabled");
+    }
+    
+    &_frontend--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#on-elevation-enabled");
+    }
+    
+    &_frontend--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#primary-enabled");
+    }
+    
+    &_frontend--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#primary-hover");
+    }
+    
+    &_frontend--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#primary-active");
+    }
+    
+    &_frontend--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#primary-disabled");
+    }
+    
+    &_frontend--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#neutral-enabled");
+    }
+    
+    &_frontend--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#neutral-hover");
+    }
+    
+    &_frontend--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#neutral-active");
+    }
+    
+    &_frontend--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#neutral-disabled");
+    }
+    
+    &_frontend--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#highlighted-enabled");
+    }
+    
+    &_frontend--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/frontend.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    filter.svg 
+    - - - - - - - - - - - - */
+    
+    &_filter--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#on-surface-enabled");
+    }
+    
+    &_filter--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#on-primary-enabled");
+    }
+    
+    &_filter--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#on-primary-hover");
+    }
+    
+    &_filter--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#on-primary-active");
+    }
+    
+    &_filter--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#on-primary-disabled");
+    }
+    
+    &_filter--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#on-disabled-enabled");
+    }
+    
+    &_filter--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#on-message-enabled");
+    }
+    
+    &_filter--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#on-elevation-enabled");
+    }
+    
+    &_filter--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#primary-enabled");
+    }
+    
+    &_filter--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#primary-hover");
+    }
+    
+    &_filter--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#primary-active");
+    }
+    
+    &_filter--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#primary-disabled");
+    }
+    
+    &_filter--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#neutral-enabled");
+    }
+    
+    &_filter--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#neutral-hover");
+    }
+    
+    &_filter--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#neutral-active");
+    }
+    
+    &_filter--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#neutral-disabled");
+    }
+    
+    &_filter--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#highlighted-enabled");
+    }
+    
+    &_filter--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    filter-conditions.svg 
+    - - - - - - - - - - - - */
+    
+    &_filter-conditions--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#on-surface-enabled");
+    }
+    
+    &_filter-conditions--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#on-primary-enabled");
+    }
+    
+    &_filter-conditions--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#on-primary-hover");
+    }
+    
+    &_filter-conditions--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#on-primary-active");
+    }
+    
+    &_filter-conditions--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#on-primary-disabled");
+    }
+    
+    &_filter-conditions--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#on-disabled-enabled");
+    }
+    
+    &_filter-conditions--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#on-message-enabled");
+    }
+    
+    &_filter-conditions--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#on-elevation-enabled");
+    }
+    
+    &_filter-conditions--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#primary-enabled");
+    }
+    
+    &_filter-conditions--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#primary-hover");
+    }
+    
+    &_filter-conditions--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#primary-active");
+    }
+    
+    &_filter-conditions--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#primary-disabled");
+    }
+    
+    &_filter-conditions--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#neutral-enabled");
+    }
+    
+    &_filter-conditions--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#neutral-hover");
+    }
+    
+    &_filter-conditions--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#neutral-active");
+    }
+    
+    &_filter-conditions--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#neutral-disabled");
+    }
+    
+    &_filter-conditions--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#highlighted-enabled");
+    }
+    
+    &_filter-conditions--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/filter-conditions.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    error-list.svg 
+    - - - - - - - - - - - - */
+    
+    &_error-list--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#on-surface-enabled");
+    }
+    
+    &_error-list--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#on-primary-enabled");
+    }
+    
+    &_error-list--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#on-primary-hover");
+    }
+    
+    &_error-list--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#on-primary-active");
+    }
+    
+    &_error-list--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#on-primary-disabled");
+    }
+    
+    &_error-list--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#on-disabled-enabled");
+    }
+    
+    &_error-list--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#on-message-enabled");
+    }
+    
+    &_error-list--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#on-elevation-enabled");
+    }
+    
+    &_error-list--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#primary-enabled");
+    }
+    
+    &_error-list--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#primary-hover");
+    }
+    
+    &_error-list--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#primary-active");
+    }
+    
+    &_error-list--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#primary-disabled");
+    }
+    
+    &_error-list--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#neutral-enabled");
+    }
+    
+    &_error-list--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#neutral-hover");
+    }
+    
+    &_error-list--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#neutral-active");
+    }
+    
+    &_error-list--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#neutral-disabled");
+    }
+    
+    &_error-list--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#highlighted-enabled");
+    }
+    
+    &_error-list--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/error-list.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    debugx.svg 
+    - - - - - - - - - - - - */
+    
+    &_debugx--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#on-surface-enabled");
+    }
+    
+    &_debugx--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#on-primary-enabled");
+    }
+    
+    &_debugx--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#on-primary-hover");
+    }
+    
+    &_debugx--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#on-primary-active");
+    }
+    
+    &_debugx--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#on-primary-disabled");
+    }
+    
+    &_debugx--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#on-disabled-enabled");
+    }
+    
+    &_debugx--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#on-message-enabled");
+    }
+    
+    &_debugx--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#on-elevation-enabled");
+    }
+    
+    &_debugx--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#primary-enabled");
+    }
+    
+    &_debugx--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#primary-hover");
+    }
+    
+    &_debugx--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#primary-active");
+    }
+    
+    &_debugx--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#primary-disabled");
+    }
+    
+    &_debugx--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#neutral-enabled");
+    }
+    
+    &_debugx--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#neutral-hover");
+    }
+    
+    &_debugx--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#neutral-active");
+    }
+    
+    &_debugx--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#neutral-disabled");
+    }
+    
+    &_debugx--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#highlighted-enabled");
+    }
+    
+    &_debugx--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/debugx.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    datastores.svg 
+    - - - - - - - - - - - - */
+    
+    &_datastores--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#on-surface-enabled");
+    }
+    
+    &_datastores--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#on-primary-enabled");
+    }
+    
+    &_datastores--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#on-primary-hover");
+    }
+    
+    &_datastores--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#on-primary-active");
+    }
+    
+    &_datastores--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#on-primary-disabled");
+    }
+    
+    &_datastores--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#on-disabled-enabled");
+    }
+    
+    &_datastores--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#on-message-enabled");
+    }
+    
+    &_datastores--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#on-elevation-enabled");
+    }
+    
+    &_datastores--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#primary-enabled");
+    }
+    
+    &_datastores--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#primary-hover");
+    }
+    
+    &_datastores--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#primary-active");
+    }
+    
+    &_datastores--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#primary-disabled");
+    }
+    
+    &_datastores--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#neutral-enabled");
+    }
+    
+    &_datastores--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#neutral-hover");
+    }
+    
+    &_datastores--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#neutral-active");
+    }
+    
+    &_datastores--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#neutral-disabled");
+    }
+    
+    &_datastores--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#highlighted-enabled");
+    }
+    
+    &_datastores--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/datastores.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    category-groups.svg 
+    - - - - - - - - - - - - */
+    
+    &_category-groups--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#on-surface-enabled");
+    }
+    
+    &_category-groups--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#on-primary-enabled");
+    }
+    
+    &_category-groups--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#on-primary-hover");
+    }
+    
+    &_category-groups--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#on-primary-active");
+    }
+    
+    &_category-groups--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#on-primary-disabled");
+    }
+    
+    &_category-groups--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#on-disabled-enabled");
+    }
+    
+    &_category-groups--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#on-message-enabled");
+    }
+    
+    &_category-groups--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#on-elevation-enabled");
+    }
+    
+    &_category-groups--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#primary-enabled");
+    }
+    
+    &_category-groups--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#primary-hover");
+    }
+    
+    &_category-groups--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#primary-active");
+    }
+    
+    &_category-groups--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#primary-disabled");
+    }
+    
+    &_category-groups--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#neutral-enabled");
+    }
+    
+    &_category-groups--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#neutral-hover");
+    }
+    
+    &_category-groups--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#neutral-active");
+    }
+    
+    &_category-groups--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#neutral-disabled");
+    }
+    
+    &_category-groups--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#highlighted-enabled");
+    }
+    
+    &_category-groups--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/category-groups.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    breakpoints.svg 
+    - - - - - - - - - - - - */
+    
+    &_breakpoints--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#on-surface-enabled");
+    }
+    
+    &_breakpoints--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#on-primary-enabled");
+    }
+    
+    &_breakpoints--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#on-primary-hover");
+    }
+    
+    &_breakpoints--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#on-primary-active");
+    }
+    
+    &_breakpoints--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#on-primary-disabled");
+    }
+    
+    &_breakpoints--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#on-disabled-enabled");
+    }
+    
+    &_breakpoints--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#on-message-enabled");
+    }
+    
+    &_breakpoints--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#on-elevation-enabled");
+    }
+    
+    &_breakpoints--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#primary-enabled");
+    }
+    
+    &_breakpoints--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#primary-hover");
+    }
+    
+    &_breakpoints--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#primary-active");
+    }
+    
+    &_breakpoints--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#primary-disabled");
+    }
+    
+    &_breakpoints--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#neutral-enabled");
+    }
+    
+    &_breakpoints--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#neutral-hover");
+    }
+    
+    &_breakpoints--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#neutral-active");
+    }
+    
+    &_breakpoints--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#neutral-disabled");
+    }
+    
+    &_breakpoints--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#highlighted-enabled");
+    }
+    
+    &_breakpoints--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/breakpoints.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    backend.svg 
+    - - - - - - - - - - - - */
+    
+    &_backend--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#on-surface-enabled");
+    }
+    
+    &_backend--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#on-primary-enabled");
+    }
+    
+    &_backend--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#on-primary-hover");
+    }
+    
+    &_backend--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#on-primary-active");
+    }
+    
+    &_backend--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#on-primary-disabled");
+    }
+    
+    &_backend--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#on-disabled-enabled");
+    }
+    
+    &_backend--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#on-message-enabled");
+    }
+    
+    &_backend--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#on-elevation-enabled");
+    }
+    
+    &_backend--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#primary-enabled");
+    }
+    
+    &_backend--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#primary-hover");
+    }
+    
+    &_backend--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#primary-active");
+    }
+    
+    &_backend--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#primary-disabled");
+    }
+    
+    &_backend--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#neutral-enabled");
+    }
+    
+    &_backend--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#neutral-hover");
+    }
+    
+    &_backend--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#neutral-active");
+    }
+    
+    &_backend--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#neutral-disabled");
+    }
+    
+    &_backend--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#highlighted-enabled");
+    }
+    
+    &_backend--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/backend.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    alphabetical-order.svg 
+    - - - - - - - - - - - - */
+    
+    &_alphabetical-order--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#on-surface-enabled");
+    }
+    
+    &_alphabetical-order--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#on-primary-enabled");
+    }
+    
+    &_alphabetical-order--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#on-primary-hover");
+    }
+    
+    &_alphabetical-order--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#on-primary-active");
+    }
+    
+    &_alphabetical-order--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#on-primary-disabled");
+    }
+    
+    &_alphabetical-order--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#on-disabled-enabled");
+    }
+    
+    &_alphabetical-order--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#on-message-enabled");
+    }
+    
+    &_alphabetical-order--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#on-elevation-enabled");
+    }
+    
+    &_alphabetical-order--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#primary-enabled");
+    }
+    
+    &_alphabetical-order--primary-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#primary-hover");
+    }
+    
+    &_alphabetical-order--primary-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#primary-active");
+    }
+    
+    &_alphabetical-order--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#primary-disabled");
+    }
+    
+    &_alphabetical-order--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#neutral-enabled");
+    }
+    
+    &_alphabetical-order--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#neutral-hover");
+    }
+    
+    &_alphabetical-order--neutral-active-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#neutral-active");
+    }
+    
+    &_alphabetical-order--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#neutral-disabled");
+    }
+    
+    &_alphabetical-order--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#highlighted-enabled");
+    }
+    
+    &_alphabetical-order--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}windows-tools/dark/alphabetical-order.svg#bright-enabled");
+    }
+    
+  
+    }
+  

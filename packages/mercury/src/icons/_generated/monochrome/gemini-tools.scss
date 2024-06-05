@@ -1,0 +1,5336 @@
+
+   $gemini-tools: warning, success, show-more-vertical, show-more-horizontal, share, settings, search, reset, read-only, open-window, notice, more-info, minus, minus-circle, list-view, folder, flow-arrow, file, error, edit, edit-wand, duplicate, download, deleted, delete, data-provider, copy, copy-to-clipboard, color-picker, close, category-ungroup, category-group, card-view, add, add-circle;
+    %icon__gemini-tools {
+  
+    /* =================================
+    LIGHT
+    ================================= */
+  
+    /* - - - - - - - - - - - - 
+    warning.svg 
+    - - - - - - - - - - - - */
+    
+    &_warning--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#on-surface-enabled");
+    }
+    
+    &_warning--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#on-primary-enabled");
+    }
+    
+    &_warning--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#on-primary-hover");
+    }
+    
+    &_warning--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#on-primary-active");
+    }
+    
+    &_warning--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#on-primary-disabled");
+    }
+    
+    &_warning--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#on-disabled-enabled");
+    }
+    
+    &_warning--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#on-message-enabled");
+    }
+    
+    &_warning--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#on-elevation-enabled");
+    }
+    
+    &_warning--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#primary-enabled");
+    }
+    
+    &_warning--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#primary-hover");
+    }
+    
+    &_warning--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#primary-active");
+    }
+    
+    &_warning--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#primary-disabled");
+    }
+    
+    &_warning--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#neutral-enabled");
+    }
+    
+    &_warning--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#neutral-hover");
+    }
+    
+    &_warning--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#neutral-active");
+    }
+    
+    &_warning--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#neutral-disabled");
+    }
+    
+    &_warning--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#highlighted-enabled");
+    }
+    
+    &_warning--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    success.svg 
+    - - - - - - - - - - - - */
+    
+    &_success--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#on-surface-enabled");
+    }
+    
+    &_success--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#on-primary-enabled");
+    }
+    
+    &_success--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#on-primary-hover");
+    }
+    
+    &_success--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#on-primary-active");
+    }
+    
+    &_success--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#on-primary-disabled");
+    }
+    
+    &_success--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#on-disabled-enabled");
+    }
+    
+    &_success--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#on-message-enabled");
+    }
+    
+    &_success--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#on-elevation-enabled");
+    }
+    
+    &_success--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#primary-enabled");
+    }
+    
+    &_success--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#primary-hover");
+    }
+    
+    &_success--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#primary-active");
+    }
+    
+    &_success--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#primary-disabled");
+    }
+    
+    &_success--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#neutral-enabled");
+    }
+    
+    &_success--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#neutral-hover");
+    }
+    
+    &_success--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#neutral-active");
+    }
+    
+    &_success--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#neutral-disabled");
+    }
+    
+    &_success--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#highlighted-enabled");
+    }
+    
+    &_success--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    show-more-vertical.svg 
+    - - - - - - - - - - - - */
+    
+    &_show-more-vertical--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#on-surface-enabled");
+    }
+    
+    &_show-more-vertical--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#on-primary-enabled");
+    }
+    
+    &_show-more-vertical--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#on-primary-hover");
+    }
+    
+    &_show-more-vertical--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#on-primary-active");
+    }
+    
+    &_show-more-vertical--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#on-primary-disabled");
+    }
+    
+    &_show-more-vertical--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#on-disabled-enabled");
+    }
+    
+    &_show-more-vertical--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#on-message-enabled");
+    }
+    
+    &_show-more-vertical--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#on-elevation-enabled");
+    }
+    
+    &_show-more-vertical--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#primary-enabled");
+    }
+    
+    &_show-more-vertical--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#primary-hover");
+    }
+    
+    &_show-more-vertical--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#primary-active");
+    }
+    
+    &_show-more-vertical--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#primary-disabled");
+    }
+    
+    &_show-more-vertical--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#neutral-enabled");
+    }
+    
+    &_show-more-vertical--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#neutral-hover");
+    }
+    
+    &_show-more-vertical--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#neutral-active");
+    }
+    
+    &_show-more-vertical--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#neutral-disabled");
+    }
+    
+    &_show-more-vertical--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#highlighted-enabled");
+    }
+    
+    &_show-more-vertical--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    show-more-horizontal.svg 
+    - - - - - - - - - - - - */
+    
+    &_show-more-horizontal--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#on-surface-enabled");
+    }
+    
+    &_show-more-horizontal--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#on-primary-enabled");
+    }
+    
+    &_show-more-horizontal--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#on-primary-hover");
+    }
+    
+    &_show-more-horizontal--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#on-primary-active");
+    }
+    
+    &_show-more-horizontal--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#on-primary-disabled");
+    }
+    
+    &_show-more-horizontal--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#on-disabled-enabled");
+    }
+    
+    &_show-more-horizontal--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#on-message-enabled");
+    }
+    
+    &_show-more-horizontal--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#on-elevation-enabled");
+    }
+    
+    &_show-more-horizontal--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#primary-enabled");
+    }
+    
+    &_show-more-horizontal--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#primary-hover");
+    }
+    
+    &_show-more-horizontal--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#primary-active");
+    }
+    
+    &_show-more-horizontal--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#primary-disabled");
+    }
+    
+    &_show-more-horizontal--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#neutral-enabled");
+    }
+    
+    &_show-more-horizontal--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#neutral-hover");
+    }
+    
+    &_show-more-horizontal--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#neutral-active");
+    }
+    
+    &_show-more-horizontal--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#neutral-disabled");
+    }
+    
+    &_show-more-horizontal--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#highlighted-enabled");
+    }
+    
+    &_show-more-horizontal--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    share.svg 
+    - - - - - - - - - - - - */
+    
+    &_share--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#on-surface-enabled");
+    }
+    
+    &_share--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#on-primary-enabled");
+    }
+    
+    &_share--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#on-primary-hover");
+    }
+    
+    &_share--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#on-primary-active");
+    }
+    
+    &_share--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#on-primary-disabled");
+    }
+    
+    &_share--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#on-disabled-enabled");
+    }
+    
+    &_share--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#on-message-enabled");
+    }
+    
+    &_share--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#on-elevation-enabled");
+    }
+    
+    &_share--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#primary-enabled");
+    }
+    
+    &_share--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#primary-hover");
+    }
+    
+    &_share--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#primary-active");
+    }
+    
+    &_share--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#primary-disabled");
+    }
+    
+    &_share--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#neutral-enabled");
+    }
+    
+    &_share--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#neutral-hover");
+    }
+    
+    &_share--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#neutral-active");
+    }
+    
+    &_share--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#neutral-disabled");
+    }
+    
+    &_share--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#highlighted-enabled");
+    }
+    
+    &_share--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    settings.svg 
+    - - - - - - - - - - - - */
+    
+    &_settings--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#on-surface-enabled");
+    }
+    
+    &_settings--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#on-primary-enabled");
+    }
+    
+    &_settings--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#on-primary-hover");
+    }
+    
+    &_settings--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#on-primary-active");
+    }
+    
+    &_settings--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#on-primary-disabled");
+    }
+    
+    &_settings--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#on-disabled-enabled");
+    }
+    
+    &_settings--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#on-message-enabled");
+    }
+    
+    &_settings--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#on-elevation-enabled");
+    }
+    
+    &_settings--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#primary-enabled");
+    }
+    
+    &_settings--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#primary-hover");
+    }
+    
+    &_settings--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#primary-active");
+    }
+    
+    &_settings--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#primary-disabled");
+    }
+    
+    &_settings--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#neutral-enabled");
+    }
+    
+    &_settings--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#neutral-hover");
+    }
+    
+    &_settings--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#neutral-active");
+    }
+    
+    &_settings--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#neutral-disabled");
+    }
+    
+    &_settings--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#highlighted-enabled");
+    }
+    
+    &_settings--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    search.svg 
+    - - - - - - - - - - - - */
+    
+    &_search--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#on-surface-enabled");
+    }
+    
+    &_search--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#on-primary-enabled");
+    }
+    
+    &_search--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#on-primary-hover");
+    }
+    
+    &_search--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#on-primary-active");
+    }
+    
+    &_search--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#on-primary-disabled");
+    }
+    
+    &_search--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#on-disabled-enabled");
+    }
+    
+    &_search--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#on-message-enabled");
+    }
+    
+    &_search--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#on-elevation-enabled");
+    }
+    
+    &_search--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#primary-enabled");
+    }
+    
+    &_search--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#primary-hover");
+    }
+    
+    &_search--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#primary-active");
+    }
+    
+    &_search--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#primary-disabled");
+    }
+    
+    &_search--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#neutral-enabled");
+    }
+    
+    &_search--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#neutral-hover");
+    }
+    
+    &_search--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#neutral-active");
+    }
+    
+    &_search--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#neutral-disabled");
+    }
+    
+    &_search--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#highlighted-enabled");
+    }
+    
+    &_search--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    reset.svg 
+    - - - - - - - - - - - - */
+    
+    &_reset--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#on-surface-enabled");
+    }
+    
+    &_reset--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#on-primary-enabled");
+    }
+    
+    &_reset--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#on-primary-hover");
+    }
+    
+    &_reset--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#on-primary-active");
+    }
+    
+    &_reset--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#on-primary-disabled");
+    }
+    
+    &_reset--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#on-disabled-enabled");
+    }
+    
+    &_reset--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#on-message-enabled");
+    }
+    
+    &_reset--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#on-elevation-enabled");
+    }
+    
+    &_reset--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#primary-enabled");
+    }
+    
+    &_reset--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#primary-hover");
+    }
+    
+    &_reset--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#primary-active");
+    }
+    
+    &_reset--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#primary-disabled");
+    }
+    
+    &_reset--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#neutral-enabled");
+    }
+    
+    &_reset--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#neutral-hover");
+    }
+    
+    &_reset--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#neutral-active");
+    }
+    
+    &_reset--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#neutral-disabled");
+    }
+    
+    &_reset--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#highlighted-enabled");
+    }
+    
+    &_reset--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    read-only.svg 
+    - - - - - - - - - - - - */
+    
+    &_read-only--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#on-surface-enabled");
+    }
+    
+    &_read-only--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#on-primary-enabled");
+    }
+    
+    &_read-only--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#on-primary-hover");
+    }
+    
+    &_read-only--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#on-primary-active");
+    }
+    
+    &_read-only--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#on-primary-disabled");
+    }
+    
+    &_read-only--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#on-disabled-enabled");
+    }
+    
+    &_read-only--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#on-message-enabled");
+    }
+    
+    &_read-only--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#on-elevation-enabled");
+    }
+    
+    &_read-only--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#primary-enabled");
+    }
+    
+    &_read-only--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#primary-hover");
+    }
+    
+    &_read-only--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#primary-active");
+    }
+    
+    &_read-only--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#primary-disabled");
+    }
+    
+    &_read-only--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#neutral-enabled");
+    }
+    
+    &_read-only--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#neutral-hover");
+    }
+    
+    &_read-only--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#neutral-active");
+    }
+    
+    &_read-only--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#neutral-disabled");
+    }
+    
+    &_read-only--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#highlighted-enabled");
+    }
+    
+    &_read-only--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    open-window.svg 
+    - - - - - - - - - - - - */
+    
+    &_open-window--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#on-surface-enabled");
+    }
+    
+    &_open-window--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#on-primary-enabled");
+    }
+    
+    &_open-window--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#on-primary-hover");
+    }
+    
+    &_open-window--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#on-primary-active");
+    }
+    
+    &_open-window--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#on-primary-disabled");
+    }
+    
+    &_open-window--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#on-disabled-enabled");
+    }
+    
+    &_open-window--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#on-message-enabled");
+    }
+    
+    &_open-window--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#on-elevation-enabled");
+    }
+    
+    &_open-window--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#primary-enabled");
+    }
+    
+    &_open-window--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#primary-hover");
+    }
+    
+    &_open-window--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#primary-active");
+    }
+    
+    &_open-window--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#primary-disabled");
+    }
+    
+    &_open-window--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#neutral-enabled");
+    }
+    
+    &_open-window--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#neutral-hover");
+    }
+    
+    &_open-window--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#neutral-active");
+    }
+    
+    &_open-window--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#neutral-disabled");
+    }
+    
+    &_open-window--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#highlighted-enabled");
+    }
+    
+    &_open-window--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    notice.svg 
+    - - - - - - - - - - - - */
+    
+    &_notice--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#on-surface-enabled");
+    }
+    
+    &_notice--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#on-primary-enabled");
+    }
+    
+    &_notice--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#on-primary-hover");
+    }
+    
+    &_notice--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#on-primary-active");
+    }
+    
+    &_notice--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#on-primary-disabled");
+    }
+    
+    &_notice--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#on-disabled-enabled");
+    }
+    
+    &_notice--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#on-message-enabled");
+    }
+    
+    &_notice--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#on-elevation-enabled");
+    }
+    
+    &_notice--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#primary-enabled");
+    }
+    
+    &_notice--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#primary-hover");
+    }
+    
+    &_notice--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#primary-active");
+    }
+    
+    &_notice--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#primary-disabled");
+    }
+    
+    &_notice--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#neutral-enabled");
+    }
+    
+    &_notice--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#neutral-hover");
+    }
+    
+    &_notice--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#neutral-active");
+    }
+    
+    &_notice--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#neutral-disabled");
+    }
+    
+    &_notice--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#highlighted-enabled");
+    }
+    
+    &_notice--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    more-info.svg 
+    - - - - - - - - - - - - */
+    
+    &_more-info--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#on-surface-enabled");
+    }
+    
+    &_more-info--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#on-primary-enabled");
+    }
+    
+    &_more-info--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#on-primary-hover");
+    }
+    
+    &_more-info--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#on-primary-active");
+    }
+    
+    &_more-info--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#on-primary-disabled");
+    }
+    
+    &_more-info--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#on-disabled-enabled");
+    }
+    
+    &_more-info--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#on-message-enabled");
+    }
+    
+    &_more-info--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#on-elevation-enabled");
+    }
+    
+    &_more-info--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#primary-enabled");
+    }
+    
+    &_more-info--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#primary-hover");
+    }
+    
+    &_more-info--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#primary-active");
+    }
+    
+    &_more-info--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#primary-disabled");
+    }
+    
+    &_more-info--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#neutral-enabled");
+    }
+    
+    &_more-info--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#neutral-hover");
+    }
+    
+    &_more-info--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#neutral-active");
+    }
+    
+    &_more-info--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#neutral-disabled");
+    }
+    
+    &_more-info--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#highlighted-enabled");
+    }
+    
+    &_more-info--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    minus.svg 
+    - - - - - - - - - - - - */
+    
+    &_minus--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#on-surface-enabled");
+    }
+    
+    &_minus--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#on-primary-enabled");
+    }
+    
+    &_minus--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#on-primary-hover");
+    }
+    
+    &_minus--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#on-primary-active");
+    }
+    
+    &_minus--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#on-primary-disabled");
+    }
+    
+    &_minus--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#on-disabled-enabled");
+    }
+    
+    &_minus--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#on-message-enabled");
+    }
+    
+    &_minus--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#on-elevation-enabled");
+    }
+    
+    &_minus--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#primary-enabled");
+    }
+    
+    &_minus--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#primary-hover");
+    }
+    
+    &_minus--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#primary-active");
+    }
+    
+    &_minus--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#primary-disabled");
+    }
+    
+    &_minus--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#neutral-enabled");
+    }
+    
+    &_minus--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#neutral-hover");
+    }
+    
+    &_minus--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#neutral-active");
+    }
+    
+    &_minus--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#neutral-disabled");
+    }
+    
+    &_minus--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#highlighted-enabled");
+    }
+    
+    &_minus--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    minus-circle.svg 
+    - - - - - - - - - - - - */
+    
+    &_minus-circle--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#on-surface-enabled");
+    }
+    
+    &_minus-circle--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#on-primary-enabled");
+    }
+    
+    &_minus-circle--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#on-primary-hover");
+    }
+    
+    &_minus-circle--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#on-primary-active");
+    }
+    
+    &_minus-circle--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#on-primary-disabled");
+    }
+    
+    &_minus-circle--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#on-disabled-enabled");
+    }
+    
+    &_minus-circle--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#on-message-enabled");
+    }
+    
+    &_minus-circle--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#on-elevation-enabled");
+    }
+    
+    &_minus-circle--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#primary-enabled");
+    }
+    
+    &_minus-circle--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#primary-hover");
+    }
+    
+    &_minus-circle--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#primary-active");
+    }
+    
+    &_minus-circle--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#primary-disabled");
+    }
+    
+    &_minus-circle--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#neutral-enabled");
+    }
+    
+    &_minus-circle--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#neutral-hover");
+    }
+    
+    &_minus-circle--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#neutral-active");
+    }
+    
+    &_minus-circle--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#neutral-disabled");
+    }
+    
+    &_minus-circle--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#highlighted-enabled");
+    }
+    
+    &_minus-circle--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    list-view.svg 
+    - - - - - - - - - - - - */
+    
+    &_list-view--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#on-surface-enabled");
+    }
+    
+    &_list-view--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#on-primary-enabled");
+    }
+    
+    &_list-view--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#on-primary-hover");
+    }
+    
+    &_list-view--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#on-primary-active");
+    }
+    
+    &_list-view--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#on-primary-disabled");
+    }
+    
+    &_list-view--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#on-disabled-enabled");
+    }
+    
+    &_list-view--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#on-message-enabled");
+    }
+    
+    &_list-view--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#on-elevation-enabled");
+    }
+    
+    &_list-view--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#primary-enabled");
+    }
+    
+    &_list-view--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#primary-hover");
+    }
+    
+    &_list-view--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#primary-active");
+    }
+    
+    &_list-view--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#primary-disabled");
+    }
+    
+    &_list-view--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#neutral-enabled");
+    }
+    
+    &_list-view--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#neutral-hover");
+    }
+    
+    &_list-view--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#neutral-active");
+    }
+    
+    &_list-view--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#neutral-disabled");
+    }
+    
+    &_list-view--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#highlighted-enabled");
+    }
+    
+    &_list-view--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    folder.svg 
+    - - - - - - - - - - - - */
+    
+    &_folder--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#on-surface-enabled");
+    }
+    
+    &_folder--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#on-primary-enabled");
+    }
+    
+    &_folder--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#on-primary-hover");
+    }
+    
+    &_folder--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#on-primary-active");
+    }
+    
+    &_folder--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#on-primary-disabled");
+    }
+    
+    &_folder--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#on-disabled-enabled");
+    }
+    
+    &_folder--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#on-message-enabled");
+    }
+    
+    &_folder--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#on-elevation-enabled");
+    }
+    
+    &_folder--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#primary-enabled");
+    }
+    
+    &_folder--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#primary-hover");
+    }
+    
+    &_folder--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#primary-active");
+    }
+    
+    &_folder--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#primary-disabled");
+    }
+    
+    &_folder--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#neutral-enabled");
+    }
+    
+    &_folder--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#neutral-hover");
+    }
+    
+    &_folder--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#neutral-active");
+    }
+    
+    &_folder--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#neutral-disabled");
+    }
+    
+    &_folder--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#highlighted-enabled");
+    }
+    
+    &_folder--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    flow-arrow.svg 
+    - - - - - - - - - - - - */
+    
+    &_flow-arrow--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#on-surface-enabled");
+    }
+    
+    &_flow-arrow--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#on-primary-enabled");
+    }
+    
+    &_flow-arrow--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#on-primary-hover");
+    }
+    
+    &_flow-arrow--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#on-primary-active");
+    }
+    
+    &_flow-arrow--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#on-primary-disabled");
+    }
+    
+    &_flow-arrow--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#on-disabled-enabled");
+    }
+    
+    &_flow-arrow--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#on-message-enabled");
+    }
+    
+    &_flow-arrow--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#on-elevation-enabled");
+    }
+    
+    &_flow-arrow--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#primary-enabled");
+    }
+    
+    &_flow-arrow--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#primary-hover");
+    }
+    
+    &_flow-arrow--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#primary-active");
+    }
+    
+    &_flow-arrow--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#primary-disabled");
+    }
+    
+    &_flow-arrow--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#neutral-enabled");
+    }
+    
+    &_flow-arrow--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#neutral-hover");
+    }
+    
+    &_flow-arrow--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#neutral-active");
+    }
+    
+    &_flow-arrow--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#neutral-disabled");
+    }
+    
+    &_flow-arrow--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#highlighted-enabled");
+    }
+    
+    &_flow-arrow--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    file.svg 
+    - - - - - - - - - - - - */
+    
+    &_file--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#on-surface-enabled");
+    }
+    
+    &_file--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#on-primary-enabled");
+    }
+    
+    &_file--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#on-primary-hover");
+    }
+    
+    &_file--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#on-primary-active");
+    }
+    
+    &_file--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#on-primary-disabled");
+    }
+    
+    &_file--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#on-disabled-enabled");
+    }
+    
+    &_file--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#on-message-enabled");
+    }
+    
+    &_file--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#on-elevation-enabled");
+    }
+    
+    &_file--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#primary-enabled");
+    }
+    
+    &_file--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#primary-hover");
+    }
+    
+    &_file--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#primary-active");
+    }
+    
+    &_file--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#primary-disabled");
+    }
+    
+    &_file--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#neutral-enabled");
+    }
+    
+    &_file--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#neutral-hover");
+    }
+    
+    &_file--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#neutral-active");
+    }
+    
+    &_file--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#neutral-disabled");
+    }
+    
+    &_file--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#highlighted-enabled");
+    }
+    
+    &_file--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    error.svg 
+    - - - - - - - - - - - - */
+    
+    &_error--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#on-surface-enabled");
+    }
+    
+    &_error--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#on-primary-enabled");
+    }
+    
+    &_error--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#on-primary-hover");
+    }
+    
+    &_error--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#on-primary-active");
+    }
+    
+    &_error--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#on-primary-disabled");
+    }
+    
+    &_error--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#on-disabled-enabled");
+    }
+    
+    &_error--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#on-message-enabled");
+    }
+    
+    &_error--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#on-elevation-enabled");
+    }
+    
+    &_error--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#primary-enabled");
+    }
+    
+    &_error--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#primary-hover");
+    }
+    
+    &_error--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#primary-active");
+    }
+    
+    &_error--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#primary-disabled");
+    }
+    
+    &_error--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#neutral-enabled");
+    }
+    
+    &_error--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#neutral-hover");
+    }
+    
+    &_error--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#neutral-active");
+    }
+    
+    &_error--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#neutral-disabled");
+    }
+    
+    &_error--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#highlighted-enabled");
+    }
+    
+    &_error--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    edit.svg 
+    - - - - - - - - - - - - */
+    
+    &_edit--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#on-surface-enabled");
+    }
+    
+    &_edit--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#on-primary-enabled");
+    }
+    
+    &_edit--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#on-primary-hover");
+    }
+    
+    &_edit--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#on-primary-active");
+    }
+    
+    &_edit--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#on-primary-disabled");
+    }
+    
+    &_edit--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#on-disabled-enabled");
+    }
+    
+    &_edit--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#on-message-enabled");
+    }
+    
+    &_edit--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#on-elevation-enabled");
+    }
+    
+    &_edit--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#primary-enabled");
+    }
+    
+    &_edit--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#primary-hover");
+    }
+    
+    &_edit--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#primary-active");
+    }
+    
+    &_edit--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#primary-disabled");
+    }
+    
+    &_edit--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#neutral-enabled");
+    }
+    
+    &_edit--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#neutral-hover");
+    }
+    
+    &_edit--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#neutral-active");
+    }
+    
+    &_edit--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#neutral-disabled");
+    }
+    
+    &_edit--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#highlighted-enabled");
+    }
+    
+    &_edit--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    edit-wand.svg 
+    - - - - - - - - - - - - */
+    
+    &_edit-wand--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#on-surface-enabled");
+    }
+    
+    &_edit-wand--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#on-primary-enabled");
+    }
+    
+    &_edit-wand--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#on-primary-hover");
+    }
+    
+    &_edit-wand--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#on-primary-active");
+    }
+    
+    &_edit-wand--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#on-primary-disabled");
+    }
+    
+    &_edit-wand--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#on-disabled-enabled");
+    }
+    
+    &_edit-wand--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#on-message-enabled");
+    }
+    
+    &_edit-wand--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#on-elevation-enabled");
+    }
+    
+    &_edit-wand--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#primary-enabled");
+    }
+    
+    &_edit-wand--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#primary-hover");
+    }
+    
+    &_edit-wand--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#primary-active");
+    }
+    
+    &_edit-wand--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#primary-disabled");
+    }
+    
+    &_edit-wand--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#neutral-enabled");
+    }
+    
+    &_edit-wand--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#neutral-hover");
+    }
+    
+    &_edit-wand--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#neutral-active");
+    }
+    
+    &_edit-wand--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#neutral-disabled");
+    }
+    
+    &_edit-wand--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#highlighted-enabled");
+    }
+    
+    &_edit-wand--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    duplicate.svg 
+    - - - - - - - - - - - - */
+    
+    &_duplicate--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#on-surface-enabled");
+    }
+    
+    &_duplicate--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#on-primary-enabled");
+    }
+    
+    &_duplicate--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#on-primary-hover");
+    }
+    
+    &_duplicate--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#on-primary-active");
+    }
+    
+    &_duplicate--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#on-primary-disabled");
+    }
+    
+    &_duplicate--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#on-disabled-enabled");
+    }
+    
+    &_duplicate--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#on-message-enabled");
+    }
+    
+    &_duplicate--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#on-elevation-enabled");
+    }
+    
+    &_duplicate--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#primary-enabled");
+    }
+    
+    &_duplicate--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#primary-hover");
+    }
+    
+    &_duplicate--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#primary-active");
+    }
+    
+    &_duplicate--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#primary-disabled");
+    }
+    
+    &_duplicate--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#neutral-enabled");
+    }
+    
+    &_duplicate--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#neutral-hover");
+    }
+    
+    &_duplicate--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#neutral-active");
+    }
+    
+    &_duplicate--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#neutral-disabled");
+    }
+    
+    &_duplicate--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#highlighted-enabled");
+    }
+    
+    &_duplicate--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    download.svg 
+    - - - - - - - - - - - - */
+    
+    &_download--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#on-surface-enabled");
+    }
+    
+    &_download--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#on-primary-enabled");
+    }
+    
+    &_download--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#on-primary-hover");
+    }
+    
+    &_download--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#on-primary-active");
+    }
+    
+    &_download--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#on-primary-disabled");
+    }
+    
+    &_download--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#on-disabled-enabled");
+    }
+    
+    &_download--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#on-message-enabled");
+    }
+    
+    &_download--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#on-elevation-enabled");
+    }
+    
+    &_download--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#primary-enabled");
+    }
+    
+    &_download--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#primary-hover");
+    }
+    
+    &_download--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#primary-active");
+    }
+    
+    &_download--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#primary-disabled");
+    }
+    
+    &_download--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#neutral-enabled");
+    }
+    
+    &_download--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#neutral-hover");
+    }
+    
+    &_download--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#neutral-active");
+    }
+    
+    &_download--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#neutral-disabled");
+    }
+    
+    &_download--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#highlighted-enabled");
+    }
+    
+    &_download--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    deleted.svg 
+    - - - - - - - - - - - - */
+    
+    &_deleted--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#on-surface-enabled");
+    }
+    
+    &_deleted--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#on-primary-enabled");
+    }
+    
+    &_deleted--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#on-primary-hover");
+    }
+    
+    &_deleted--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#on-primary-active");
+    }
+    
+    &_deleted--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#on-primary-disabled");
+    }
+    
+    &_deleted--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#on-disabled-enabled");
+    }
+    
+    &_deleted--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#on-message-enabled");
+    }
+    
+    &_deleted--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#on-elevation-enabled");
+    }
+    
+    &_deleted--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#primary-enabled");
+    }
+    
+    &_deleted--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#primary-hover");
+    }
+    
+    &_deleted--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#primary-active");
+    }
+    
+    &_deleted--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#primary-disabled");
+    }
+    
+    &_deleted--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#neutral-enabled");
+    }
+    
+    &_deleted--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#neutral-hover");
+    }
+    
+    &_deleted--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#neutral-active");
+    }
+    
+    &_deleted--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#neutral-disabled");
+    }
+    
+    &_deleted--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#highlighted-enabled");
+    }
+    
+    &_deleted--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    delete.svg 
+    - - - - - - - - - - - - */
+    
+    &_delete--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#on-surface-enabled");
+    }
+    
+    &_delete--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#on-primary-enabled");
+    }
+    
+    &_delete--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#on-primary-hover");
+    }
+    
+    &_delete--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#on-primary-active");
+    }
+    
+    &_delete--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#on-primary-disabled");
+    }
+    
+    &_delete--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#on-disabled-enabled");
+    }
+    
+    &_delete--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#on-message-enabled");
+    }
+    
+    &_delete--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#on-elevation-enabled");
+    }
+    
+    &_delete--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#primary-enabled");
+    }
+    
+    &_delete--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#primary-hover");
+    }
+    
+    &_delete--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#primary-active");
+    }
+    
+    &_delete--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#primary-disabled");
+    }
+    
+    &_delete--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#neutral-enabled");
+    }
+    
+    &_delete--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#neutral-hover");
+    }
+    
+    &_delete--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#neutral-active");
+    }
+    
+    &_delete--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#neutral-disabled");
+    }
+    
+    &_delete--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#highlighted-enabled");
+    }
+    
+    &_delete--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    data-provider.svg 
+    - - - - - - - - - - - - */
+    
+    &_data-provider--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#on-surface-enabled");
+    }
+    
+    &_data-provider--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#on-primary-enabled");
+    }
+    
+    &_data-provider--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#on-primary-hover");
+    }
+    
+    &_data-provider--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#on-primary-active");
+    }
+    
+    &_data-provider--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#on-primary-disabled");
+    }
+    
+    &_data-provider--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#on-disabled-enabled");
+    }
+    
+    &_data-provider--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#on-message-enabled");
+    }
+    
+    &_data-provider--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#on-elevation-enabled");
+    }
+    
+    &_data-provider--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#primary-enabled");
+    }
+    
+    &_data-provider--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#primary-hover");
+    }
+    
+    &_data-provider--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#primary-active");
+    }
+    
+    &_data-provider--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#primary-disabled");
+    }
+    
+    &_data-provider--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#neutral-enabled");
+    }
+    
+    &_data-provider--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#neutral-hover");
+    }
+    
+    &_data-provider--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#neutral-active");
+    }
+    
+    &_data-provider--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#neutral-disabled");
+    }
+    
+    &_data-provider--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#highlighted-enabled");
+    }
+    
+    &_data-provider--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    copy.svg 
+    - - - - - - - - - - - - */
+    
+    &_copy--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#on-surface-enabled");
+    }
+    
+    &_copy--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#on-primary-enabled");
+    }
+    
+    &_copy--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#on-primary-hover");
+    }
+    
+    &_copy--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#on-primary-active");
+    }
+    
+    &_copy--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#on-primary-disabled");
+    }
+    
+    &_copy--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#on-disabled-enabled");
+    }
+    
+    &_copy--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#on-message-enabled");
+    }
+    
+    &_copy--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#on-elevation-enabled");
+    }
+    
+    &_copy--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#primary-enabled");
+    }
+    
+    &_copy--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#primary-hover");
+    }
+    
+    &_copy--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#primary-active");
+    }
+    
+    &_copy--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#primary-disabled");
+    }
+    
+    &_copy--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#neutral-enabled");
+    }
+    
+    &_copy--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#neutral-hover");
+    }
+    
+    &_copy--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#neutral-active");
+    }
+    
+    &_copy--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#neutral-disabled");
+    }
+    
+    &_copy--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#highlighted-enabled");
+    }
+    
+    &_copy--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    copy-to-clipboard.svg 
+    - - - - - - - - - - - - */
+    
+    &_copy-to-clipboard--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#on-surface-enabled");
+    }
+    
+    &_copy-to-clipboard--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#on-primary-enabled");
+    }
+    
+    &_copy-to-clipboard--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#on-primary-hover");
+    }
+    
+    &_copy-to-clipboard--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#on-primary-active");
+    }
+    
+    &_copy-to-clipboard--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#on-primary-disabled");
+    }
+    
+    &_copy-to-clipboard--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#on-disabled-enabled");
+    }
+    
+    &_copy-to-clipboard--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#on-message-enabled");
+    }
+    
+    &_copy-to-clipboard--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#on-elevation-enabled");
+    }
+    
+    &_copy-to-clipboard--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#primary-enabled");
+    }
+    
+    &_copy-to-clipboard--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#primary-hover");
+    }
+    
+    &_copy-to-clipboard--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#primary-active");
+    }
+    
+    &_copy-to-clipboard--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#primary-disabled");
+    }
+    
+    &_copy-to-clipboard--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#neutral-enabled");
+    }
+    
+    &_copy-to-clipboard--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#neutral-hover");
+    }
+    
+    &_copy-to-clipboard--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#neutral-active");
+    }
+    
+    &_copy-to-clipboard--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#neutral-disabled");
+    }
+    
+    &_copy-to-clipboard--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#highlighted-enabled");
+    }
+    
+    &_copy-to-clipboard--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    color-picker.svg 
+    - - - - - - - - - - - - */
+    
+    &_color-picker--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#on-surface-enabled");
+    }
+    
+    &_color-picker--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#on-primary-enabled");
+    }
+    
+    &_color-picker--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#on-primary-hover");
+    }
+    
+    &_color-picker--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#on-primary-active");
+    }
+    
+    &_color-picker--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#on-primary-disabled");
+    }
+    
+    &_color-picker--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#on-disabled-enabled");
+    }
+    
+    &_color-picker--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#on-message-enabled");
+    }
+    
+    &_color-picker--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#on-elevation-enabled");
+    }
+    
+    &_color-picker--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#primary-enabled");
+    }
+    
+    &_color-picker--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#primary-hover");
+    }
+    
+    &_color-picker--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#primary-active");
+    }
+    
+    &_color-picker--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#primary-disabled");
+    }
+    
+    &_color-picker--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#neutral-enabled");
+    }
+    
+    &_color-picker--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#neutral-hover");
+    }
+    
+    &_color-picker--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#neutral-active");
+    }
+    
+    &_color-picker--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#neutral-disabled");
+    }
+    
+    &_color-picker--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#highlighted-enabled");
+    }
+    
+    &_color-picker--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    close.svg 
+    - - - - - - - - - - - - */
+    
+    &_close--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#on-surface-enabled");
+    }
+    
+    &_close--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#on-primary-enabled");
+    }
+    
+    &_close--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#on-primary-hover");
+    }
+    
+    &_close--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#on-primary-active");
+    }
+    
+    &_close--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#on-primary-disabled");
+    }
+    
+    &_close--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#on-disabled-enabled");
+    }
+    
+    &_close--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#on-message-enabled");
+    }
+    
+    &_close--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#on-elevation-enabled");
+    }
+    
+    &_close--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#primary-enabled");
+    }
+    
+    &_close--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#primary-hover");
+    }
+    
+    &_close--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#primary-active");
+    }
+    
+    &_close--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#primary-disabled");
+    }
+    
+    &_close--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#neutral-enabled");
+    }
+    
+    &_close--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#neutral-hover");
+    }
+    
+    &_close--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#neutral-active");
+    }
+    
+    &_close--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#neutral-disabled");
+    }
+    
+    &_close--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#highlighted-enabled");
+    }
+    
+    &_close--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    category-ungroup.svg 
+    - - - - - - - - - - - - */
+    
+    &_category-ungroup--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#on-surface-enabled");
+    }
+    
+    &_category-ungroup--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#on-primary-enabled");
+    }
+    
+    &_category-ungroup--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#on-primary-hover");
+    }
+    
+    &_category-ungroup--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#on-primary-active");
+    }
+    
+    &_category-ungroup--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#on-primary-disabled");
+    }
+    
+    &_category-ungroup--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#on-disabled-enabled");
+    }
+    
+    &_category-ungroup--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#on-message-enabled");
+    }
+    
+    &_category-ungroup--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#on-elevation-enabled");
+    }
+    
+    &_category-ungroup--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#primary-enabled");
+    }
+    
+    &_category-ungroup--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#primary-hover");
+    }
+    
+    &_category-ungroup--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#primary-active");
+    }
+    
+    &_category-ungroup--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#primary-disabled");
+    }
+    
+    &_category-ungroup--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#neutral-enabled");
+    }
+    
+    &_category-ungroup--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#neutral-hover");
+    }
+    
+    &_category-ungroup--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#neutral-active");
+    }
+    
+    &_category-ungroup--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#neutral-disabled");
+    }
+    
+    &_category-ungroup--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#highlighted-enabled");
+    }
+    
+    &_category-ungroup--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    category-group.svg 
+    - - - - - - - - - - - - */
+    
+    &_category-group--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#on-surface-enabled");
+    }
+    
+    &_category-group--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#on-primary-enabled");
+    }
+    
+    &_category-group--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#on-primary-hover");
+    }
+    
+    &_category-group--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#on-primary-active");
+    }
+    
+    &_category-group--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#on-primary-disabled");
+    }
+    
+    &_category-group--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#on-disabled-enabled");
+    }
+    
+    &_category-group--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#on-message-enabled");
+    }
+    
+    &_category-group--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#on-elevation-enabled");
+    }
+    
+    &_category-group--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#primary-enabled");
+    }
+    
+    &_category-group--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#primary-hover");
+    }
+    
+    &_category-group--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#primary-active");
+    }
+    
+    &_category-group--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#primary-disabled");
+    }
+    
+    &_category-group--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#neutral-enabled");
+    }
+    
+    &_category-group--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#neutral-hover");
+    }
+    
+    &_category-group--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#neutral-active");
+    }
+    
+    &_category-group--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#neutral-disabled");
+    }
+    
+    &_category-group--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#highlighted-enabled");
+    }
+    
+    &_category-group--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    card-view.svg 
+    - - - - - - - - - - - - */
+    
+    &_card-view--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#on-surface-enabled");
+    }
+    
+    &_card-view--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#on-primary-enabled");
+    }
+    
+    &_card-view--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#on-primary-hover");
+    }
+    
+    &_card-view--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#on-primary-active");
+    }
+    
+    &_card-view--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#on-primary-disabled");
+    }
+    
+    &_card-view--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#on-disabled-enabled");
+    }
+    
+    &_card-view--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#on-message-enabled");
+    }
+    
+    &_card-view--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#on-elevation-enabled");
+    }
+    
+    &_card-view--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#primary-enabled");
+    }
+    
+    &_card-view--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#primary-hover");
+    }
+    
+    &_card-view--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#primary-active");
+    }
+    
+    &_card-view--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#primary-disabled");
+    }
+    
+    &_card-view--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#neutral-enabled");
+    }
+    
+    &_card-view--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#neutral-hover");
+    }
+    
+    &_card-view--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#neutral-active");
+    }
+    
+    &_card-view--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#neutral-disabled");
+    }
+    
+    &_card-view--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#highlighted-enabled");
+    }
+    
+    &_card-view--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    add.svg 
+    - - - - - - - - - - - - */
+    
+    &_add--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#on-surface-enabled");
+    }
+    
+    &_add--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#on-primary-enabled");
+    }
+    
+    &_add--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#on-primary-hover");
+    }
+    
+    &_add--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#on-primary-active");
+    }
+    
+    &_add--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#on-primary-disabled");
+    }
+    
+    &_add--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#on-disabled-enabled");
+    }
+    
+    &_add--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#on-message-enabled");
+    }
+    
+    &_add--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#on-elevation-enabled");
+    }
+    
+    &_add--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#primary-enabled");
+    }
+    
+    &_add--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#primary-hover");
+    }
+    
+    &_add--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#primary-active");
+    }
+    
+    &_add--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#primary-disabled");
+    }
+    
+    &_add--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#neutral-enabled");
+    }
+    
+    &_add--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#neutral-hover");
+    }
+    
+    &_add--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#neutral-active");
+    }
+    
+    &_add--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#neutral-disabled");
+    }
+    
+    &_add--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#highlighted-enabled");
+    }
+    
+    &_add--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    add-circle.svg 
+    - - - - - - - - - - - - */
+    
+    &_add-circle--on-surface-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#on-surface-enabled");
+    }
+    
+    &_add-circle--on-primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#on-primary-enabled");
+    }
+    
+    &_add-circle--on-primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#on-primary-hover");
+    }
+    
+    &_add-circle--on-primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#on-primary-active");
+    }
+    
+    &_add-circle--on-primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#on-primary-disabled");
+    }
+    
+    &_add-circle--on-disabled-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#on-disabled-enabled");
+    }
+    
+    &_add-circle--on-message-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#on-message-enabled");
+    }
+    
+    &_add-circle--on-elevation-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#on-elevation-enabled");
+    }
+    
+    &_add-circle--primary-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#primary-enabled");
+    }
+    
+    &_add-circle--primary-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#primary-hover");
+    }
+    
+    &_add-circle--primary-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#primary-active");
+    }
+    
+    &_add-circle--primary-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#primary-disabled");
+    }
+    
+    &_add-circle--neutral-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#neutral-enabled");
+    }
+    
+    &_add-circle--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#neutral-hover");
+    }
+    
+    &_add-circle--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#neutral-active");
+    }
+    
+    &_add-circle--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#neutral-disabled");
+    }
+    
+    &_add-circle--highlighted-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#highlighted-enabled");
+    }
+    
+    &_add-circle--bright-enabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#bright-enabled");
+    }
+    
+
+    /* =================================
+    DARK
+    ================================= */
+  
+    /* - - - - - - - - - - - - 
+    warning.svg 
+    - - - - - - - - - - - - */
+    
+    &_warning--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#on-surface-enabled");
+    }
+    
+    &_warning--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#on-primary-enabled");
+    }
+    
+    &_warning--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#on-primary-hover");
+    }
+    
+    &_warning--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#on-primary-active");
+    }
+    
+    &_warning--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#on-primary-disabled");
+    }
+    
+    &_warning--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#on-disabled-enabled");
+    }
+    
+    &_warning--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#on-message-enabled");
+    }
+    
+    &_warning--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#on-elevation-enabled");
+    }
+    
+    &_warning--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#primary-enabled");
+    }
+    
+    &_warning--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#primary-hover");
+    }
+    
+    &_warning--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#primary-active");
+    }
+    
+    &_warning--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#primary-disabled");
+    }
+    
+    &_warning--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#neutral-enabled");
+    }
+    
+    &_warning--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#neutral-hover");
+    }
+    
+    &_warning--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#neutral-active");
+    }
+    
+    &_warning--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#neutral-disabled");
+    }
+    
+    &_warning--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#highlighted-enabled");
+    }
+    
+    &_warning--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    success.svg 
+    - - - - - - - - - - - - */
+    
+    &_success--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#on-surface-enabled");
+    }
+    
+    &_success--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#on-primary-enabled");
+    }
+    
+    &_success--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#on-primary-hover");
+    }
+    
+    &_success--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#on-primary-active");
+    }
+    
+    &_success--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#on-primary-disabled");
+    }
+    
+    &_success--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#on-disabled-enabled");
+    }
+    
+    &_success--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#on-message-enabled");
+    }
+    
+    &_success--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#on-elevation-enabled");
+    }
+    
+    &_success--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#primary-enabled");
+    }
+    
+    &_success--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#primary-hover");
+    }
+    
+    &_success--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#primary-active");
+    }
+    
+    &_success--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#primary-disabled");
+    }
+    
+    &_success--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#neutral-enabled");
+    }
+    
+    &_success--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#neutral-hover");
+    }
+    
+    &_success--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#neutral-active");
+    }
+    
+    &_success--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#neutral-disabled");
+    }
+    
+    &_success--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#highlighted-enabled");
+    }
+    
+    &_success--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    show-more-vertical.svg 
+    - - - - - - - - - - - - */
+    
+    &_show-more-vertical--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#on-surface-enabled");
+    }
+    
+    &_show-more-vertical--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#on-primary-enabled");
+    }
+    
+    &_show-more-vertical--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#on-primary-hover");
+    }
+    
+    &_show-more-vertical--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#on-primary-active");
+    }
+    
+    &_show-more-vertical--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#on-primary-disabled");
+    }
+    
+    &_show-more-vertical--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#on-disabled-enabled");
+    }
+    
+    &_show-more-vertical--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#on-message-enabled");
+    }
+    
+    &_show-more-vertical--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#on-elevation-enabled");
+    }
+    
+    &_show-more-vertical--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#primary-enabled");
+    }
+    
+    &_show-more-vertical--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#primary-hover");
+    }
+    
+    &_show-more-vertical--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#primary-active");
+    }
+    
+    &_show-more-vertical--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#primary-disabled");
+    }
+    
+    &_show-more-vertical--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#neutral-enabled");
+    }
+    
+    &_show-more-vertical--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#neutral-hover");
+    }
+    
+    &_show-more-vertical--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#neutral-active");
+    }
+    
+    &_show-more-vertical--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#neutral-disabled");
+    }
+    
+    &_show-more-vertical--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#highlighted-enabled");
+    }
+    
+    &_show-more-vertical--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    show-more-horizontal.svg 
+    - - - - - - - - - - - - */
+    
+    &_show-more-horizontal--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#on-surface-enabled");
+    }
+    
+    &_show-more-horizontal--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#on-primary-enabled");
+    }
+    
+    &_show-more-horizontal--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#on-primary-hover");
+    }
+    
+    &_show-more-horizontal--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#on-primary-active");
+    }
+    
+    &_show-more-horizontal--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#on-primary-disabled");
+    }
+    
+    &_show-more-horizontal--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#on-disabled-enabled");
+    }
+    
+    &_show-more-horizontal--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#on-message-enabled");
+    }
+    
+    &_show-more-horizontal--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#on-elevation-enabled");
+    }
+    
+    &_show-more-horizontal--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#primary-enabled");
+    }
+    
+    &_show-more-horizontal--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#primary-hover");
+    }
+    
+    &_show-more-horizontal--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#primary-active");
+    }
+    
+    &_show-more-horizontal--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#primary-disabled");
+    }
+    
+    &_show-more-horizontal--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#neutral-enabled");
+    }
+    
+    &_show-more-horizontal--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#neutral-hover");
+    }
+    
+    &_show-more-horizontal--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#neutral-active");
+    }
+    
+    &_show-more-horizontal--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#neutral-disabled");
+    }
+    
+    &_show-more-horizontal--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#highlighted-enabled");
+    }
+    
+    &_show-more-horizontal--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    share.svg 
+    - - - - - - - - - - - - */
+    
+    &_share--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#on-surface-enabled");
+    }
+    
+    &_share--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#on-primary-enabled");
+    }
+    
+    &_share--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#on-primary-hover");
+    }
+    
+    &_share--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#on-primary-active");
+    }
+    
+    &_share--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#on-primary-disabled");
+    }
+    
+    &_share--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#on-disabled-enabled");
+    }
+    
+    &_share--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#on-message-enabled");
+    }
+    
+    &_share--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#on-elevation-enabled");
+    }
+    
+    &_share--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#primary-enabled");
+    }
+    
+    &_share--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#primary-hover");
+    }
+    
+    &_share--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#primary-active");
+    }
+    
+    &_share--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#primary-disabled");
+    }
+    
+    &_share--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#neutral-enabled");
+    }
+    
+    &_share--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#neutral-hover");
+    }
+    
+    &_share--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#neutral-active");
+    }
+    
+    &_share--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#neutral-disabled");
+    }
+    
+    &_share--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#highlighted-enabled");
+    }
+    
+    &_share--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    settings.svg 
+    - - - - - - - - - - - - */
+    
+    &_settings--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#on-surface-enabled");
+    }
+    
+    &_settings--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#on-primary-enabled");
+    }
+    
+    &_settings--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#on-primary-hover");
+    }
+    
+    &_settings--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#on-primary-active");
+    }
+    
+    &_settings--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#on-primary-disabled");
+    }
+    
+    &_settings--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#on-disabled-enabled");
+    }
+    
+    &_settings--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#on-message-enabled");
+    }
+    
+    &_settings--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#on-elevation-enabled");
+    }
+    
+    &_settings--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#primary-enabled");
+    }
+    
+    &_settings--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#primary-hover");
+    }
+    
+    &_settings--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#primary-active");
+    }
+    
+    &_settings--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#primary-disabled");
+    }
+    
+    &_settings--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#neutral-enabled");
+    }
+    
+    &_settings--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#neutral-hover");
+    }
+    
+    &_settings--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#neutral-active");
+    }
+    
+    &_settings--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#neutral-disabled");
+    }
+    
+    &_settings--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#highlighted-enabled");
+    }
+    
+    &_settings--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    search.svg 
+    - - - - - - - - - - - - */
+    
+    &_search--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#on-surface-enabled");
+    }
+    
+    &_search--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#on-primary-enabled");
+    }
+    
+    &_search--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#on-primary-hover");
+    }
+    
+    &_search--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#on-primary-active");
+    }
+    
+    &_search--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#on-primary-disabled");
+    }
+    
+    &_search--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#on-disabled-enabled");
+    }
+    
+    &_search--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#on-message-enabled");
+    }
+    
+    &_search--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#on-elevation-enabled");
+    }
+    
+    &_search--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#primary-enabled");
+    }
+    
+    &_search--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#primary-hover");
+    }
+    
+    &_search--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#primary-active");
+    }
+    
+    &_search--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#primary-disabled");
+    }
+    
+    &_search--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#neutral-enabled");
+    }
+    
+    &_search--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#neutral-hover");
+    }
+    
+    &_search--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#neutral-active");
+    }
+    
+    &_search--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#neutral-disabled");
+    }
+    
+    &_search--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#highlighted-enabled");
+    }
+    
+    &_search--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    reset.svg 
+    - - - - - - - - - - - - */
+    
+    &_reset--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#on-surface-enabled");
+    }
+    
+    &_reset--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#on-primary-enabled");
+    }
+    
+    &_reset--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#on-primary-hover");
+    }
+    
+    &_reset--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#on-primary-active");
+    }
+    
+    &_reset--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#on-primary-disabled");
+    }
+    
+    &_reset--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#on-disabled-enabled");
+    }
+    
+    &_reset--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#on-message-enabled");
+    }
+    
+    &_reset--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#on-elevation-enabled");
+    }
+    
+    &_reset--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#primary-enabled");
+    }
+    
+    &_reset--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#primary-hover");
+    }
+    
+    &_reset--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#primary-active");
+    }
+    
+    &_reset--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#primary-disabled");
+    }
+    
+    &_reset--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#neutral-enabled");
+    }
+    
+    &_reset--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#neutral-hover");
+    }
+    
+    &_reset--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#neutral-active");
+    }
+    
+    &_reset--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#neutral-disabled");
+    }
+    
+    &_reset--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#highlighted-enabled");
+    }
+    
+    &_reset--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    read-only.svg 
+    - - - - - - - - - - - - */
+    
+    &_read-only--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#on-surface-enabled");
+    }
+    
+    &_read-only--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#on-primary-enabled");
+    }
+    
+    &_read-only--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#on-primary-hover");
+    }
+    
+    &_read-only--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#on-primary-active");
+    }
+    
+    &_read-only--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#on-primary-disabled");
+    }
+    
+    &_read-only--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#on-disabled-enabled");
+    }
+    
+    &_read-only--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#on-message-enabled");
+    }
+    
+    &_read-only--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#on-elevation-enabled");
+    }
+    
+    &_read-only--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#primary-enabled");
+    }
+    
+    &_read-only--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#primary-hover");
+    }
+    
+    &_read-only--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#primary-active");
+    }
+    
+    &_read-only--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#primary-disabled");
+    }
+    
+    &_read-only--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#neutral-enabled");
+    }
+    
+    &_read-only--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#neutral-hover");
+    }
+    
+    &_read-only--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#neutral-active");
+    }
+    
+    &_read-only--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#neutral-disabled");
+    }
+    
+    &_read-only--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#highlighted-enabled");
+    }
+    
+    &_read-only--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    open-window.svg 
+    - - - - - - - - - - - - */
+    
+    &_open-window--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#on-surface-enabled");
+    }
+    
+    &_open-window--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#on-primary-enabled");
+    }
+    
+    &_open-window--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#on-primary-hover");
+    }
+    
+    &_open-window--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#on-primary-active");
+    }
+    
+    &_open-window--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#on-primary-disabled");
+    }
+    
+    &_open-window--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#on-disabled-enabled");
+    }
+    
+    &_open-window--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#on-message-enabled");
+    }
+    
+    &_open-window--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#on-elevation-enabled");
+    }
+    
+    &_open-window--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#primary-enabled");
+    }
+    
+    &_open-window--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#primary-hover");
+    }
+    
+    &_open-window--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#primary-active");
+    }
+    
+    &_open-window--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#primary-disabled");
+    }
+    
+    &_open-window--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#neutral-enabled");
+    }
+    
+    &_open-window--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#neutral-hover");
+    }
+    
+    &_open-window--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#neutral-active");
+    }
+    
+    &_open-window--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#neutral-disabled");
+    }
+    
+    &_open-window--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#highlighted-enabled");
+    }
+    
+    &_open-window--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    notice.svg 
+    - - - - - - - - - - - - */
+    
+    &_notice--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#on-surface-enabled");
+    }
+    
+    &_notice--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#on-primary-enabled");
+    }
+    
+    &_notice--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#on-primary-hover");
+    }
+    
+    &_notice--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#on-primary-active");
+    }
+    
+    &_notice--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#on-primary-disabled");
+    }
+    
+    &_notice--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#on-disabled-enabled");
+    }
+    
+    &_notice--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#on-message-enabled");
+    }
+    
+    &_notice--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#on-elevation-enabled");
+    }
+    
+    &_notice--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#primary-enabled");
+    }
+    
+    &_notice--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#primary-hover");
+    }
+    
+    &_notice--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#primary-active");
+    }
+    
+    &_notice--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#primary-disabled");
+    }
+    
+    &_notice--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#neutral-enabled");
+    }
+    
+    &_notice--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#neutral-hover");
+    }
+    
+    &_notice--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#neutral-active");
+    }
+    
+    &_notice--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#neutral-disabled");
+    }
+    
+    &_notice--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#highlighted-enabled");
+    }
+    
+    &_notice--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    more-info.svg 
+    - - - - - - - - - - - - */
+    
+    &_more-info--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#on-surface-enabled");
+    }
+    
+    &_more-info--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#on-primary-enabled");
+    }
+    
+    &_more-info--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#on-primary-hover");
+    }
+    
+    &_more-info--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#on-primary-active");
+    }
+    
+    &_more-info--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#on-primary-disabled");
+    }
+    
+    &_more-info--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#on-disabled-enabled");
+    }
+    
+    &_more-info--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#on-message-enabled");
+    }
+    
+    &_more-info--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#on-elevation-enabled");
+    }
+    
+    &_more-info--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#primary-enabled");
+    }
+    
+    &_more-info--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#primary-hover");
+    }
+    
+    &_more-info--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#primary-active");
+    }
+    
+    &_more-info--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#primary-disabled");
+    }
+    
+    &_more-info--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#neutral-enabled");
+    }
+    
+    &_more-info--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#neutral-hover");
+    }
+    
+    &_more-info--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#neutral-active");
+    }
+    
+    &_more-info--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#neutral-disabled");
+    }
+    
+    &_more-info--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#highlighted-enabled");
+    }
+    
+    &_more-info--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    minus.svg 
+    - - - - - - - - - - - - */
+    
+    &_minus--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#on-surface-enabled");
+    }
+    
+    &_minus--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#on-primary-enabled");
+    }
+    
+    &_minus--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#on-primary-hover");
+    }
+    
+    &_minus--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#on-primary-active");
+    }
+    
+    &_minus--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#on-primary-disabled");
+    }
+    
+    &_minus--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#on-disabled-enabled");
+    }
+    
+    &_minus--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#on-message-enabled");
+    }
+    
+    &_minus--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#on-elevation-enabled");
+    }
+    
+    &_minus--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#primary-enabled");
+    }
+    
+    &_minus--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#primary-hover");
+    }
+    
+    &_minus--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#primary-active");
+    }
+    
+    &_minus--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#primary-disabled");
+    }
+    
+    &_minus--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#neutral-enabled");
+    }
+    
+    &_minus--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#neutral-hover");
+    }
+    
+    &_minus--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#neutral-active");
+    }
+    
+    &_minus--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#neutral-disabled");
+    }
+    
+    &_minus--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#highlighted-enabled");
+    }
+    
+    &_minus--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    minus-circle.svg 
+    - - - - - - - - - - - - */
+    
+    &_minus-circle--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#on-surface-enabled");
+    }
+    
+    &_minus-circle--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#on-primary-enabled");
+    }
+    
+    &_minus-circle--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#on-primary-hover");
+    }
+    
+    &_minus-circle--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#on-primary-active");
+    }
+    
+    &_minus-circle--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#on-primary-disabled");
+    }
+    
+    &_minus-circle--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#on-disabled-enabled");
+    }
+    
+    &_minus-circle--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#on-message-enabled");
+    }
+    
+    &_minus-circle--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#on-elevation-enabled");
+    }
+    
+    &_minus-circle--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#primary-enabled");
+    }
+    
+    &_minus-circle--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#primary-hover");
+    }
+    
+    &_minus-circle--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#primary-active");
+    }
+    
+    &_minus-circle--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#primary-disabled");
+    }
+    
+    &_minus-circle--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#neutral-enabled");
+    }
+    
+    &_minus-circle--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#neutral-hover");
+    }
+    
+    &_minus-circle--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#neutral-active");
+    }
+    
+    &_minus-circle--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#neutral-disabled");
+    }
+    
+    &_minus-circle--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#highlighted-enabled");
+    }
+    
+    &_minus-circle--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    list-view.svg 
+    - - - - - - - - - - - - */
+    
+    &_list-view--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#on-surface-enabled");
+    }
+    
+    &_list-view--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#on-primary-enabled");
+    }
+    
+    &_list-view--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#on-primary-hover");
+    }
+    
+    &_list-view--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#on-primary-active");
+    }
+    
+    &_list-view--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#on-primary-disabled");
+    }
+    
+    &_list-view--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#on-disabled-enabled");
+    }
+    
+    &_list-view--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#on-message-enabled");
+    }
+    
+    &_list-view--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#on-elevation-enabled");
+    }
+    
+    &_list-view--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#primary-enabled");
+    }
+    
+    &_list-view--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#primary-hover");
+    }
+    
+    &_list-view--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#primary-active");
+    }
+    
+    &_list-view--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#primary-disabled");
+    }
+    
+    &_list-view--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#neutral-enabled");
+    }
+    
+    &_list-view--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#neutral-hover");
+    }
+    
+    &_list-view--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#neutral-active");
+    }
+    
+    &_list-view--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#neutral-disabled");
+    }
+    
+    &_list-view--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#highlighted-enabled");
+    }
+    
+    &_list-view--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    folder.svg 
+    - - - - - - - - - - - - */
+    
+    &_folder--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#on-surface-enabled");
+    }
+    
+    &_folder--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#on-primary-enabled");
+    }
+    
+    &_folder--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#on-primary-hover");
+    }
+    
+    &_folder--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#on-primary-active");
+    }
+    
+    &_folder--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#on-primary-disabled");
+    }
+    
+    &_folder--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#on-disabled-enabled");
+    }
+    
+    &_folder--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#on-message-enabled");
+    }
+    
+    &_folder--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#on-elevation-enabled");
+    }
+    
+    &_folder--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#primary-enabled");
+    }
+    
+    &_folder--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#primary-hover");
+    }
+    
+    &_folder--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#primary-active");
+    }
+    
+    &_folder--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#primary-disabled");
+    }
+    
+    &_folder--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#neutral-enabled");
+    }
+    
+    &_folder--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#neutral-hover");
+    }
+    
+    &_folder--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#neutral-active");
+    }
+    
+    &_folder--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#neutral-disabled");
+    }
+    
+    &_folder--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#highlighted-enabled");
+    }
+    
+    &_folder--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    flow-arrow.svg 
+    - - - - - - - - - - - - */
+    
+    &_flow-arrow--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#on-surface-enabled");
+    }
+    
+    &_flow-arrow--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#on-primary-enabled");
+    }
+    
+    &_flow-arrow--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#on-primary-hover");
+    }
+    
+    &_flow-arrow--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#on-primary-active");
+    }
+    
+    &_flow-arrow--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#on-primary-disabled");
+    }
+    
+    &_flow-arrow--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#on-disabled-enabled");
+    }
+    
+    &_flow-arrow--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#on-message-enabled");
+    }
+    
+    &_flow-arrow--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#on-elevation-enabled");
+    }
+    
+    &_flow-arrow--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#primary-enabled");
+    }
+    
+    &_flow-arrow--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#primary-hover");
+    }
+    
+    &_flow-arrow--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#primary-active");
+    }
+    
+    &_flow-arrow--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#primary-disabled");
+    }
+    
+    &_flow-arrow--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#neutral-enabled");
+    }
+    
+    &_flow-arrow--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#neutral-hover");
+    }
+    
+    &_flow-arrow--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#neutral-active");
+    }
+    
+    &_flow-arrow--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#neutral-disabled");
+    }
+    
+    &_flow-arrow--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#highlighted-enabled");
+    }
+    
+    &_flow-arrow--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    file.svg 
+    - - - - - - - - - - - - */
+    
+    &_file--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#on-surface-enabled");
+    }
+    
+    &_file--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#on-primary-enabled");
+    }
+    
+    &_file--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#on-primary-hover");
+    }
+    
+    &_file--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#on-primary-active");
+    }
+    
+    &_file--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#on-primary-disabled");
+    }
+    
+    &_file--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#on-disabled-enabled");
+    }
+    
+    &_file--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#on-message-enabled");
+    }
+    
+    &_file--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#on-elevation-enabled");
+    }
+    
+    &_file--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#primary-enabled");
+    }
+    
+    &_file--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#primary-hover");
+    }
+    
+    &_file--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#primary-active");
+    }
+    
+    &_file--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#primary-disabled");
+    }
+    
+    &_file--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#neutral-enabled");
+    }
+    
+    &_file--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#neutral-hover");
+    }
+    
+    &_file--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#neutral-active");
+    }
+    
+    &_file--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#neutral-disabled");
+    }
+    
+    &_file--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#highlighted-enabled");
+    }
+    
+    &_file--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    error.svg 
+    - - - - - - - - - - - - */
+    
+    &_error--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#on-surface-enabled");
+    }
+    
+    &_error--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#on-primary-enabled");
+    }
+    
+    &_error--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#on-primary-hover");
+    }
+    
+    &_error--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#on-primary-active");
+    }
+    
+    &_error--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#on-primary-disabled");
+    }
+    
+    &_error--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#on-disabled-enabled");
+    }
+    
+    &_error--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#on-message-enabled");
+    }
+    
+    &_error--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#on-elevation-enabled");
+    }
+    
+    &_error--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#primary-enabled");
+    }
+    
+    &_error--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#primary-hover");
+    }
+    
+    &_error--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#primary-active");
+    }
+    
+    &_error--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#primary-disabled");
+    }
+    
+    &_error--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#neutral-enabled");
+    }
+    
+    &_error--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#neutral-hover");
+    }
+    
+    &_error--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#neutral-active");
+    }
+    
+    &_error--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#neutral-disabled");
+    }
+    
+    &_error--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#highlighted-enabled");
+    }
+    
+    &_error--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    edit.svg 
+    - - - - - - - - - - - - */
+    
+    &_edit--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#on-surface-enabled");
+    }
+    
+    &_edit--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#on-primary-enabled");
+    }
+    
+    &_edit--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#on-primary-hover");
+    }
+    
+    &_edit--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#on-primary-active");
+    }
+    
+    &_edit--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#on-primary-disabled");
+    }
+    
+    &_edit--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#on-disabled-enabled");
+    }
+    
+    &_edit--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#on-message-enabled");
+    }
+    
+    &_edit--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#on-elevation-enabled");
+    }
+    
+    &_edit--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#primary-enabled");
+    }
+    
+    &_edit--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#primary-hover");
+    }
+    
+    &_edit--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#primary-active");
+    }
+    
+    &_edit--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#primary-disabled");
+    }
+    
+    &_edit--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#neutral-enabled");
+    }
+    
+    &_edit--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#neutral-hover");
+    }
+    
+    &_edit--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#neutral-active");
+    }
+    
+    &_edit--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#neutral-disabled");
+    }
+    
+    &_edit--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#highlighted-enabled");
+    }
+    
+    &_edit--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    edit-wand.svg 
+    - - - - - - - - - - - - */
+    
+    &_edit-wand--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#on-surface-enabled");
+    }
+    
+    &_edit-wand--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#on-primary-enabled");
+    }
+    
+    &_edit-wand--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#on-primary-hover");
+    }
+    
+    &_edit-wand--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#on-primary-active");
+    }
+    
+    &_edit-wand--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#on-primary-disabled");
+    }
+    
+    &_edit-wand--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#on-disabled-enabled");
+    }
+    
+    &_edit-wand--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#on-message-enabled");
+    }
+    
+    &_edit-wand--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#on-elevation-enabled");
+    }
+    
+    &_edit-wand--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#primary-enabled");
+    }
+    
+    &_edit-wand--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#primary-hover");
+    }
+    
+    &_edit-wand--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#primary-active");
+    }
+    
+    &_edit-wand--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#primary-disabled");
+    }
+    
+    &_edit-wand--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#neutral-enabled");
+    }
+    
+    &_edit-wand--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#neutral-hover");
+    }
+    
+    &_edit-wand--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#neutral-active");
+    }
+    
+    &_edit-wand--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#neutral-disabled");
+    }
+    
+    &_edit-wand--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#highlighted-enabled");
+    }
+    
+    &_edit-wand--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    duplicate.svg 
+    - - - - - - - - - - - - */
+    
+    &_duplicate--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#on-surface-enabled");
+    }
+    
+    &_duplicate--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#on-primary-enabled");
+    }
+    
+    &_duplicate--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#on-primary-hover");
+    }
+    
+    &_duplicate--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#on-primary-active");
+    }
+    
+    &_duplicate--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#on-primary-disabled");
+    }
+    
+    &_duplicate--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#on-disabled-enabled");
+    }
+    
+    &_duplicate--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#on-message-enabled");
+    }
+    
+    &_duplicate--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#on-elevation-enabled");
+    }
+    
+    &_duplicate--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#primary-enabled");
+    }
+    
+    &_duplicate--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#primary-hover");
+    }
+    
+    &_duplicate--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#primary-active");
+    }
+    
+    &_duplicate--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#primary-disabled");
+    }
+    
+    &_duplicate--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#neutral-enabled");
+    }
+    
+    &_duplicate--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#neutral-hover");
+    }
+    
+    &_duplicate--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#neutral-active");
+    }
+    
+    &_duplicate--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#neutral-disabled");
+    }
+    
+    &_duplicate--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#highlighted-enabled");
+    }
+    
+    &_duplicate--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    download.svg 
+    - - - - - - - - - - - - */
+    
+    &_download--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#on-surface-enabled");
+    }
+    
+    &_download--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#on-primary-enabled");
+    }
+    
+    &_download--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#on-primary-hover");
+    }
+    
+    &_download--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#on-primary-active");
+    }
+    
+    &_download--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#on-primary-disabled");
+    }
+    
+    &_download--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#on-disabled-enabled");
+    }
+    
+    &_download--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#on-message-enabled");
+    }
+    
+    &_download--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#on-elevation-enabled");
+    }
+    
+    &_download--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#primary-enabled");
+    }
+    
+    &_download--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#primary-hover");
+    }
+    
+    &_download--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#primary-active");
+    }
+    
+    &_download--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#primary-disabled");
+    }
+    
+    &_download--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#neutral-enabled");
+    }
+    
+    &_download--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#neutral-hover");
+    }
+    
+    &_download--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#neutral-active");
+    }
+    
+    &_download--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#neutral-disabled");
+    }
+    
+    &_download--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#highlighted-enabled");
+    }
+    
+    &_download--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    deleted.svg 
+    - - - - - - - - - - - - */
+    
+    &_deleted--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#on-surface-enabled");
+    }
+    
+    &_deleted--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#on-primary-enabled");
+    }
+    
+    &_deleted--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#on-primary-hover");
+    }
+    
+    &_deleted--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#on-primary-active");
+    }
+    
+    &_deleted--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#on-primary-disabled");
+    }
+    
+    &_deleted--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#on-disabled-enabled");
+    }
+    
+    &_deleted--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#on-message-enabled");
+    }
+    
+    &_deleted--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#on-elevation-enabled");
+    }
+    
+    &_deleted--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#primary-enabled");
+    }
+    
+    &_deleted--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#primary-hover");
+    }
+    
+    &_deleted--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#primary-active");
+    }
+    
+    &_deleted--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#primary-disabled");
+    }
+    
+    &_deleted--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#neutral-enabled");
+    }
+    
+    &_deleted--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#neutral-hover");
+    }
+    
+    &_deleted--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#neutral-active");
+    }
+    
+    &_deleted--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#neutral-disabled");
+    }
+    
+    &_deleted--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#highlighted-enabled");
+    }
+    
+    &_deleted--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    delete.svg 
+    - - - - - - - - - - - - */
+    
+    &_delete--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#on-surface-enabled");
+    }
+    
+    &_delete--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#on-primary-enabled");
+    }
+    
+    &_delete--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#on-primary-hover");
+    }
+    
+    &_delete--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#on-primary-active");
+    }
+    
+    &_delete--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#on-primary-disabled");
+    }
+    
+    &_delete--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#on-disabled-enabled");
+    }
+    
+    &_delete--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#on-message-enabled");
+    }
+    
+    &_delete--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#on-elevation-enabled");
+    }
+    
+    &_delete--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#primary-enabled");
+    }
+    
+    &_delete--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#primary-hover");
+    }
+    
+    &_delete--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#primary-active");
+    }
+    
+    &_delete--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#primary-disabled");
+    }
+    
+    &_delete--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#neutral-enabled");
+    }
+    
+    &_delete--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#neutral-hover");
+    }
+    
+    &_delete--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#neutral-active");
+    }
+    
+    &_delete--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#neutral-disabled");
+    }
+    
+    &_delete--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#highlighted-enabled");
+    }
+    
+    &_delete--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    data-provider.svg 
+    - - - - - - - - - - - - */
+    
+    &_data-provider--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#on-surface-enabled");
+    }
+    
+    &_data-provider--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#on-primary-enabled");
+    }
+    
+    &_data-provider--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#on-primary-hover");
+    }
+    
+    &_data-provider--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#on-primary-active");
+    }
+    
+    &_data-provider--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#on-primary-disabled");
+    }
+    
+    &_data-provider--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#on-disabled-enabled");
+    }
+    
+    &_data-provider--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#on-message-enabled");
+    }
+    
+    &_data-provider--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#on-elevation-enabled");
+    }
+    
+    &_data-provider--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#primary-enabled");
+    }
+    
+    &_data-provider--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#primary-hover");
+    }
+    
+    &_data-provider--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#primary-active");
+    }
+    
+    &_data-provider--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#primary-disabled");
+    }
+    
+    &_data-provider--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#neutral-enabled");
+    }
+    
+    &_data-provider--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#neutral-hover");
+    }
+    
+    &_data-provider--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#neutral-active");
+    }
+    
+    &_data-provider--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#neutral-disabled");
+    }
+    
+    &_data-provider--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#highlighted-enabled");
+    }
+    
+    &_data-provider--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    copy.svg 
+    - - - - - - - - - - - - */
+    
+    &_copy--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#on-surface-enabled");
+    }
+    
+    &_copy--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#on-primary-enabled");
+    }
+    
+    &_copy--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#on-primary-hover");
+    }
+    
+    &_copy--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#on-primary-active");
+    }
+    
+    &_copy--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#on-primary-disabled");
+    }
+    
+    &_copy--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#on-disabled-enabled");
+    }
+    
+    &_copy--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#on-message-enabled");
+    }
+    
+    &_copy--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#on-elevation-enabled");
+    }
+    
+    &_copy--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#primary-enabled");
+    }
+    
+    &_copy--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#primary-hover");
+    }
+    
+    &_copy--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#primary-active");
+    }
+    
+    &_copy--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#primary-disabled");
+    }
+    
+    &_copy--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#neutral-enabled");
+    }
+    
+    &_copy--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#neutral-hover");
+    }
+    
+    &_copy--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#neutral-active");
+    }
+    
+    &_copy--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#neutral-disabled");
+    }
+    
+    &_copy--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#highlighted-enabled");
+    }
+    
+    &_copy--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    copy-to-clipboard.svg 
+    - - - - - - - - - - - - */
+    
+    &_copy-to-clipboard--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#on-surface-enabled");
+    }
+    
+    &_copy-to-clipboard--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#on-primary-enabled");
+    }
+    
+    &_copy-to-clipboard--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#on-primary-hover");
+    }
+    
+    &_copy-to-clipboard--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#on-primary-active");
+    }
+    
+    &_copy-to-clipboard--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#on-primary-disabled");
+    }
+    
+    &_copy-to-clipboard--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#on-disabled-enabled");
+    }
+    
+    &_copy-to-clipboard--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#on-message-enabled");
+    }
+    
+    &_copy-to-clipboard--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#on-elevation-enabled");
+    }
+    
+    &_copy-to-clipboard--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#primary-enabled");
+    }
+    
+    &_copy-to-clipboard--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#primary-hover");
+    }
+    
+    &_copy-to-clipboard--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#primary-active");
+    }
+    
+    &_copy-to-clipboard--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#primary-disabled");
+    }
+    
+    &_copy-to-clipboard--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#neutral-enabled");
+    }
+    
+    &_copy-to-clipboard--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#neutral-hover");
+    }
+    
+    &_copy-to-clipboard--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#neutral-active");
+    }
+    
+    &_copy-to-clipboard--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#neutral-disabled");
+    }
+    
+    &_copy-to-clipboard--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#highlighted-enabled");
+    }
+    
+    &_copy-to-clipboard--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    color-picker.svg 
+    - - - - - - - - - - - - */
+    
+    &_color-picker--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#on-surface-enabled");
+    }
+    
+    &_color-picker--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#on-primary-enabled");
+    }
+    
+    &_color-picker--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#on-primary-hover");
+    }
+    
+    &_color-picker--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#on-primary-active");
+    }
+    
+    &_color-picker--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#on-primary-disabled");
+    }
+    
+    &_color-picker--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#on-disabled-enabled");
+    }
+    
+    &_color-picker--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#on-message-enabled");
+    }
+    
+    &_color-picker--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#on-elevation-enabled");
+    }
+    
+    &_color-picker--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#primary-enabled");
+    }
+    
+    &_color-picker--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#primary-hover");
+    }
+    
+    &_color-picker--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#primary-active");
+    }
+    
+    &_color-picker--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#primary-disabled");
+    }
+    
+    &_color-picker--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#neutral-enabled");
+    }
+    
+    &_color-picker--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#neutral-hover");
+    }
+    
+    &_color-picker--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#neutral-active");
+    }
+    
+    &_color-picker--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#neutral-disabled");
+    }
+    
+    &_color-picker--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#highlighted-enabled");
+    }
+    
+    &_color-picker--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    close.svg 
+    - - - - - - - - - - - - */
+    
+    &_close--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#on-surface-enabled");
+    }
+    
+    &_close--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#on-primary-enabled");
+    }
+    
+    &_close--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#on-primary-hover");
+    }
+    
+    &_close--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#on-primary-active");
+    }
+    
+    &_close--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#on-primary-disabled");
+    }
+    
+    &_close--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#on-disabled-enabled");
+    }
+    
+    &_close--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#on-message-enabled");
+    }
+    
+    &_close--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#on-elevation-enabled");
+    }
+    
+    &_close--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#primary-enabled");
+    }
+    
+    &_close--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#primary-hover");
+    }
+    
+    &_close--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#primary-active");
+    }
+    
+    &_close--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#primary-disabled");
+    }
+    
+    &_close--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#neutral-enabled");
+    }
+    
+    &_close--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#neutral-hover");
+    }
+    
+    &_close--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#neutral-active");
+    }
+    
+    &_close--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#neutral-disabled");
+    }
+    
+    &_close--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#highlighted-enabled");
+    }
+    
+    &_close--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    category-ungroup.svg 
+    - - - - - - - - - - - - */
+    
+    &_category-ungroup--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#on-surface-enabled");
+    }
+    
+    &_category-ungroup--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#on-primary-enabled");
+    }
+    
+    &_category-ungroup--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#on-primary-hover");
+    }
+    
+    &_category-ungroup--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#on-primary-active");
+    }
+    
+    &_category-ungroup--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#on-primary-disabled");
+    }
+    
+    &_category-ungroup--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#on-disabled-enabled");
+    }
+    
+    &_category-ungroup--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#on-message-enabled");
+    }
+    
+    &_category-ungroup--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#on-elevation-enabled");
+    }
+    
+    &_category-ungroup--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#primary-enabled");
+    }
+    
+    &_category-ungroup--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#primary-hover");
+    }
+    
+    &_category-ungroup--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#primary-active");
+    }
+    
+    &_category-ungroup--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#primary-disabled");
+    }
+    
+    &_category-ungroup--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#neutral-enabled");
+    }
+    
+    &_category-ungroup--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#neutral-hover");
+    }
+    
+    &_category-ungroup--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#neutral-active");
+    }
+    
+    &_category-ungroup--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#neutral-disabled");
+    }
+    
+    &_category-ungroup--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#highlighted-enabled");
+    }
+    
+    &_category-ungroup--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    category-group.svg 
+    - - - - - - - - - - - - */
+    
+    &_category-group--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#on-surface-enabled");
+    }
+    
+    &_category-group--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#on-primary-enabled");
+    }
+    
+    &_category-group--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#on-primary-hover");
+    }
+    
+    &_category-group--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#on-primary-active");
+    }
+    
+    &_category-group--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#on-primary-disabled");
+    }
+    
+    &_category-group--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#on-disabled-enabled");
+    }
+    
+    &_category-group--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#on-message-enabled");
+    }
+    
+    &_category-group--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#on-elevation-enabled");
+    }
+    
+    &_category-group--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#primary-enabled");
+    }
+    
+    &_category-group--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#primary-hover");
+    }
+    
+    &_category-group--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#primary-active");
+    }
+    
+    &_category-group--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#primary-disabled");
+    }
+    
+    &_category-group--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#neutral-enabled");
+    }
+    
+    &_category-group--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#neutral-hover");
+    }
+    
+    &_category-group--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#neutral-active");
+    }
+    
+    &_category-group--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#neutral-disabled");
+    }
+    
+    &_category-group--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#highlighted-enabled");
+    }
+    
+    &_category-group--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    card-view.svg 
+    - - - - - - - - - - - - */
+    
+    &_card-view--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#on-surface-enabled");
+    }
+    
+    &_card-view--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#on-primary-enabled");
+    }
+    
+    &_card-view--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#on-primary-hover");
+    }
+    
+    &_card-view--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#on-primary-active");
+    }
+    
+    &_card-view--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#on-primary-disabled");
+    }
+    
+    &_card-view--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#on-disabled-enabled");
+    }
+    
+    &_card-view--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#on-message-enabled");
+    }
+    
+    &_card-view--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#on-elevation-enabled");
+    }
+    
+    &_card-view--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#primary-enabled");
+    }
+    
+    &_card-view--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#primary-hover");
+    }
+    
+    &_card-view--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#primary-active");
+    }
+    
+    &_card-view--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#primary-disabled");
+    }
+    
+    &_card-view--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#neutral-enabled");
+    }
+    
+    &_card-view--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#neutral-hover");
+    }
+    
+    &_card-view--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#neutral-active");
+    }
+    
+    &_card-view--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#neutral-disabled");
+    }
+    
+    &_card-view--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#highlighted-enabled");
+    }
+    
+    &_card-view--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    add.svg 
+    - - - - - - - - - - - - */
+    
+    &_add--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#on-surface-enabled");
+    }
+    
+    &_add--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#on-primary-enabled");
+    }
+    
+    &_add--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#on-primary-hover");
+    }
+    
+    &_add--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#on-primary-active");
+    }
+    
+    &_add--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#on-primary-disabled");
+    }
+    
+    &_add--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#on-disabled-enabled");
+    }
+    
+    &_add--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#on-message-enabled");
+    }
+    
+    &_add--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#on-elevation-enabled");
+    }
+    
+    &_add--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#primary-enabled");
+    }
+    
+    &_add--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#primary-hover");
+    }
+    
+    &_add--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#primary-active");
+    }
+    
+    &_add--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#primary-disabled");
+    }
+    
+    &_add--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#neutral-enabled");
+    }
+    
+    &_add--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#neutral-hover");
+    }
+    
+    &_add--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#neutral-active");
+    }
+    
+    &_add--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#neutral-disabled");
+    }
+    
+    &_add--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#highlighted-enabled");
+    }
+    
+    &_add--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#bright-enabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    add-circle.svg 
+    - - - - - - - - - - - - */
+    
+    &_add-circle--on-surface-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#on-surface-enabled");
+    }
+    
+    &_add-circle--on-primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#on-primary-enabled");
+    }
+    
+    &_add-circle--on-primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#on-primary-hover");
+    }
+    
+    &_add-circle--on-primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#on-primary-active");
+    }
+    
+    &_add-circle--on-primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#on-primary-disabled");
+    }
+    
+    &_add-circle--on-disabled-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#on-disabled-enabled");
+    }
+    
+    &_add-circle--on-message-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#on-message-enabled");
+    }
+    
+    &_add-circle--on-elevation-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#on-elevation-enabled");
+    }
+    
+    &_add-circle--primary-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#primary-enabled");
+    }
+    
+    &_add-circle--primary-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#primary-hover");
+    }
+    
+    &_add-circle--primary-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#primary-active");
+    }
+    
+    &_add-circle--primary-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#primary-disabled");
+    }
+    
+    &_add-circle--neutral-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#neutral-enabled");
+    }
+    
+    &_add-circle--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#neutral-hover");
+    }
+    
+    &_add-circle--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#neutral-active");
+    }
+    
+    &_add-circle--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#neutral-disabled");
+    }
+    
+    &_add-circle--highlighted-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#highlighted-enabled");
+    }
+    
+    &_add-circle--bright-enabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#bright-enabled");
+    }
+    
+  
+    }
+  
