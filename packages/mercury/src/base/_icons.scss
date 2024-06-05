@@ -11,17 +11,15 @@
 // - - - - - - - - - - - - - - - - - - - -
 
 // Icon mask styles
-@mixin icon-mask-common-styles($size: "sm", $mask-size: var(--icon-mask-size)) {
+@mixin mer-icon-mask-common-styles(
+  $size: "sm",
+  $mask-size: var(--icon-mask-size)
+) {
   $iconSize: var(--mer-icon__box--sm);
   @if $size == "lg" {
     $iconSize: var(--mer-icon__box--lg);
   }
-  content: "";
-  display: block;
-  inline-size: $iconSize;
-  block-size: $iconSize;
-  -webkit-mask: no-repeat center / $mask-size var(--icon-path);
-  background-color: currentColor;
+  @include icon-mask-common-styles($iconSize, $iconSize, $mask-size);
 }
 
 /// @group Icon
@@ -46,23 +44,23 @@
 }
 
 %icon-mask--before {
-  @include icon-mask-common-styles($size: "sm", $mask-size: 100%);
+  @include mer-icon-mask-common-styles($size: "sm", $mask-size: 100%);
 }
 
 // Icon background styles
-@mixin icon-background-common-styles(
+@mixin mer-icon-background-common-styles(
   $size: "sm",
-  $background-size: var(--icon-background-size)
+  $background-size: var(--icon-mask-size)
 ) {
   $iconSize: var(--mer-icon__box--sm);
   @if $size == "lg" {
     $iconSize: var(--mer-icon__box--lg);
   }
-  content: "";
-  display: inline-block;
-  inline-size: #{$iconSize};
-  block-size: #{$iconSize};
-  background: no-repeat center / $background-size var(--icon-path);
+  @include icon-background-common-styles(
+    $iconSize,
+    $iconSize,
+    $background-size
+  );
 }
 
 /// @group Icon
@@ -91,7 +89,10 @@
 }
 
 %icon-background--before {
-  @include icon-background-common-styles($size: "sm", $background-size: 100%);
+  @include mer-icon-background-common-styles(
+    $size: "sm",
+    $background-size: 100%
+  );
 }
 
 // Icon Input background styles

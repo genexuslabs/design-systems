@@ -19,3 +19,34 @@
   min-block-size: 100dvh;
   margin: 0;
 }
+
+// - - - - - - - - - - - - - - - - - - - -
+//    Icons | Mask & Background
+// - - - - - - - - - - - - - - - - - - - -
+
+// Icon mask styles
+@mixin icon-mask-common-styles(
+  $inline-size: var(--icon-size),
+  $block-size: var(--icon-size),
+  $mask-size: var(--icon-mask-size)
+) {
+  content: "";
+  display: block;
+  inline-size: $inline-size;
+  block-size: $block-size;
+  -webkit-mask: no-repeat center / $mask-size var(--icon-path);
+  background-color: currentColor;
+}
+
+// Icon background styles
+@mixin icon-background-common-styles(
+  $inline-size: var(--icon-size),
+  $block-size: var(--icon-size),
+  $background-size: var(--icon-background-size)
+) {
+  content: "";
+  display: block;
+  inline-size: $inline-size;
+  block-size: $block-size;
+  background: no-repeat center / $background-size var(--icon-path);
+}
