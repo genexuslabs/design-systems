@@ -62,6 +62,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#neutral-enabled");
     }
     
+    &_warning--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#neutral-hover");
+    }
+    
+    &_warning--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#neutral-active");
+    }
+    
+    &_warning--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#neutral-disabled");
+    }
+    
     &_warning--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/warning.svg#highlighted-enabled");
     }
@@ -124,6 +136,18 @@
     
     &_success--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#neutral-enabled");
+    }
+    
+    &_success--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#neutral-hover");
+    }
+    
+    &_success--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#neutral-active");
+    }
+    
+    &_success--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/success.svg#neutral-disabled");
     }
     
     &_success--highlighted-enabled-light {
@@ -190,6 +214,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#neutral-enabled");
     }
     
+    &_show-more-vertical--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#neutral-hover");
+    }
+    
+    &_show-more-vertical--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#neutral-active");
+    }
+    
+    &_show-more-vertical--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#neutral-disabled");
+    }
+    
     &_show-more-vertical--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/show-more-vertical.svg#highlighted-enabled");
     }
@@ -252,6 +288,18 @@
     
     &_show-more-horizontal--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#neutral-enabled");
+    }
+    
+    &_show-more-horizontal--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#neutral-hover");
+    }
+    
+    &_show-more-horizontal--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#neutral-active");
+    }
+    
+    &_show-more-horizontal--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/show-more-horizontal.svg#neutral-disabled");
     }
     
     &_show-more-horizontal--highlighted-enabled-light {
@@ -318,6 +366,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#neutral-enabled");
     }
     
+    &_share--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#neutral-hover");
+    }
+    
+    &_share--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#neutral-active");
+    }
+    
+    &_share--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#neutral-disabled");
+    }
+    
     &_share--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/share.svg#highlighted-enabled");
     }
@@ -380,6 +440,18 @@
     
     &_settings--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#neutral-enabled");
+    }
+    
+    &_settings--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#neutral-hover");
+    }
+    
+    &_settings--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#neutral-active");
+    }
+    
+    &_settings--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/settings.svg#neutral-disabled");
     }
     
     &_settings--highlighted-enabled-light {
@@ -446,6 +518,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#neutral-enabled");
     }
     
+    &_search--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#neutral-hover");
+    }
+    
+    &_search--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#neutral-active");
+    }
+    
+    &_search--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#neutral-disabled");
+    }
+    
     &_search--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/search.svg#highlighted-enabled");
     }
@@ -508,6 +592,18 @@
     
     &_reset--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#neutral-enabled");
+    }
+    
+    &_reset--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#neutral-hover");
+    }
+    
+    &_reset--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#neutral-active");
+    }
+    
+    &_reset--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/reset.svg#neutral-disabled");
     }
     
     &_reset--highlighted-enabled-light {
@@ -574,6 +670,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#neutral-enabled");
     }
     
+    &_read-only--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#neutral-hover");
+    }
+    
+    &_read-only--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#neutral-active");
+    }
+    
+    &_read-only--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#neutral-disabled");
+    }
+    
     &_read-only--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/read-only.svg#highlighted-enabled");
     }
@@ -636,6 +744,18 @@
     
     &_open-window--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#neutral-enabled");
+    }
+    
+    &_open-window--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#neutral-hover");
+    }
+    
+    &_open-window--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#neutral-active");
+    }
+    
+    &_open-window--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/open-window.svg#neutral-disabled");
     }
     
     &_open-window--highlighted-enabled-light {
@@ -702,6 +822,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#neutral-enabled");
     }
     
+    &_notice--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#neutral-hover");
+    }
+    
+    &_notice--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#neutral-active");
+    }
+    
+    &_notice--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#neutral-disabled");
+    }
+    
     &_notice--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/notice.svg#highlighted-enabled");
     }
@@ -764,6 +896,18 @@
     
     &_more-info--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#neutral-enabled");
+    }
+    
+    &_more-info--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#neutral-hover");
+    }
+    
+    &_more-info--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#neutral-active");
+    }
+    
+    &_more-info--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/more-info.svg#neutral-disabled");
     }
     
     &_more-info--highlighted-enabled-light {
@@ -830,6 +974,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#neutral-enabled");
     }
     
+    &_minus--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#neutral-hover");
+    }
+    
+    &_minus--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#neutral-active");
+    }
+    
+    &_minus--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#neutral-disabled");
+    }
+    
     &_minus--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/minus.svg#highlighted-enabled");
     }
@@ -892,6 +1048,18 @@
     
     &_minus-circle--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#neutral-enabled");
+    }
+    
+    &_minus-circle--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#neutral-hover");
+    }
+    
+    &_minus-circle--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#neutral-active");
+    }
+    
+    &_minus-circle--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/minus-circle.svg#neutral-disabled");
     }
     
     &_minus-circle--highlighted-enabled-light {
@@ -958,6 +1126,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#neutral-enabled");
     }
     
+    &_list-view--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#neutral-hover");
+    }
+    
+    &_list-view--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#neutral-active");
+    }
+    
+    &_list-view--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#neutral-disabled");
+    }
+    
     &_list-view--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/list-view.svg#highlighted-enabled");
     }
@@ -1020,6 +1200,18 @@
     
     &_folder--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#neutral-enabled");
+    }
+    
+    &_folder--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#neutral-hover");
+    }
+    
+    &_folder--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#neutral-active");
+    }
+    
+    &_folder--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/folder.svg#neutral-disabled");
     }
     
     &_folder--highlighted-enabled-light {
@@ -1086,6 +1278,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#neutral-enabled");
     }
     
+    &_flow-arrow--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#neutral-hover");
+    }
+    
+    &_flow-arrow--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#neutral-active");
+    }
+    
+    &_flow-arrow--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#neutral-disabled");
+    }
+    
     &_flow-arrow--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/flow-arrow.svg#highlighted-enabled");
     }
@@ -1148,6 +1352,18 @@
     
     &_file--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#neutral-enabled");
+    }
+    
+    &_file--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#neutral-hover");
+    }
+    
+    &_file--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#neutral-active");
+    }
+    
+    &_file--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/file.svg#neutral-disabled");
     }
     
     &_file--highlighted-enabled-light {
@@ -1214,6 +1430,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#neutral-enabled");
     }
     
+    &_error--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#neutral-hover");
+    }
+    
+    &_error--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#neutral-active");
+    }
+    
+    &_error--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#neutral-disabled");
+    }
+    
     &_error--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/error.svg#highlighted-enabled");
     }
@@ -1276,6 +1504,18 @@
     
     &_edit--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#neutral-enabled");
+    }
+    
+    &_edit--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#neutral-hover");
+    }
+    
+    &_edit--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#neutral-active");
+    }
+    
+    &_edit--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit.svg#neutral-disabled");
     }
     
     &_edit--highlighted-enabled-light {
@@ -1342,6 +1582,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#neutral-enabled");
     }
     
+    &_edit-wand--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#neutral-hover");
+    }
+    
+    &_edit-wand--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#neutral-active");
+    }
+    
+    &_edit-wand--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#neutral-disabled");
+    }
+    
     &_edit-wand--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/edit-wand.svg#highlighted-enabled");
     }
@@ -1404,6 +1656,18 @@
     
     &_duplicate--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#neutral-enabled");
+    }
+    
+    &_duplicate--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#neutral-hover");
+    }
+    
+    &_duplicate--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#neutral-active");
+    }
+    
+    &_duplicate--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/duplicate.svg#neutral-disabled");
     }
     
     &_duplicate--highlighted-enabled-light {
@@ -1470,6 +1734,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#neutral-enabled");
     }
     
+    &_download--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#neutral-hover");
+    }
+    
+    &_download--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#neutral-active");
+    }
+    
+    &_download--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#neutral-disabled");
+    }
+    
     &_download--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/download.svg#highlighted-enabled");
     }
@@ -1532,6 +1808,18 @@
     
     &_deleted--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#neutral-enabled");
+    }
+    
+    &_deleted--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#neutral-hover");
+    }
+    
+    &_deleted--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#neutral-active");
+    }
+    
+    &_deleted--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/deleted.svg#neutral-disabled");
     }
     
     &_deleted--highlighted-enabled-light {
@@ -1598,6 +1886,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#neutral-enabled");
     }
     
+    &_delete--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#neutral-hover");
+    }
+    
+    &_delete--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#neutral-active");
+    }
+    
+    &_delete--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#neutral-disabled");
+    }
+    
     &_delete--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/delete.svg#highlighted-enabled");
     }
@@ -1660,6 +1960,18 @@
     
     &_data-provider--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#neutral-enabled");
+    }
+    
+    &_data-provider--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#neutral-hover");
+    }
+    
+    &_data-provider--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#neutral-active");
+    }
+    
+    &_data-provider--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/data-provider.svg#neutral-disabled");
     }
     
     &_data-provider--highlighted-enabled-light {
@@ -1726,6 +2038,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#neutral-enabled");
     }
     
+    &_copy--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#neutral-hover");
+    }
+    
+    &_copy--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#neutral-active");
+    }
+    
+    &_copy--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#neutral-disabled");
+    }
+    
     &_copy--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/copy.svg#highlighted-enabled");
     }
@@ -1788,6 +2112,18 @@
     
     &_copy-to-clipboard--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#neutral-enabled");
+    }
+    
+    &_copy-to-clipboard--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#neutral-hover");
+    }
+    
+    &_copy-to-clipboard--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#neutral-active");
+    }
+    
+    &_copy-to-clipboard--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/copy-to-clipboard.svg#neutral-disabled");
     }
     
     &_copy-to-clipboard--highlighted-enabled-light {
@@ -1854,6 +2190,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#neutral-enabled");
     }
     
+    &_color-picker--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#neutral-hover");
+    }
+    
+    &_color-picker--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#neutral-active");
+    }
+    
+    &_color-picker--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#neutral-disabled");
+    }
+    
     &_color-picker--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/color-picker.svg#highlighted-enabled");
     }
@@ -1916,6 +2264,18 @@
     
     &_close--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#neutral-enabled");
+    }
+    
+    &_close--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#neutral-hover");
+    }
+    
+    &_close--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#neutral-active");
+    }
+    
+    &_close--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/close.svg#neutral-disabled");
     }
     
     &_close--highlighted-enabled-light {
@@ -1982,6 +2342,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#neutral-enabled");
     }
     
+    &_category-ungroup--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#neutral-hover");
+    }
+    
+    &_category-ungroup--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#neutral-active");
+    }
+    
+    &_category-ungroup--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#neutral-disabled");
+    }
+    
     &_category-ungroup--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/category-ungroup.svg#highlighted-enabled");
     }
@@ -2044,6 +2416,18 @@
     
     &_category-group--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#neutral-enabled");
+    }
+    
+    &_category-group--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#neutral-hover");
+    }
+    
+    &_category-group--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#neutral-active");
+    }
+    
+    &_category-group--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/category-group.svg#neutral-disabled");
     }
     
     &_category-group--highlighted-enabled-light {
@@ -2110,6 +2494,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#neutral-enabled");
     }
     
+    &_card-view--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#neutral-hover");
+    }
+    
+    &_card-view--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#neutral-active");
+    }
+    
+    &_card-view--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#neutral-disabled");
+    }
+    
     &_card-view--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/card-view.svg#highlighted-enabled");
     }
@@ -2174,6 +2570,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#neutral-enabled");
     }
     
+    &_add--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#neutral-hover");
+    }
+    
+    &_add--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#neutral-active");
+    }
+    
+    &_add--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#neutral-disabled");
+    }
+    
     &_add--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/add.svg#highlighted-enabled");
     }
@@ -2236,6 +2644,18 @@
     
     &_add-circle--neutral-enabled-light {
       --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#neutral-enabled");
+    }
+    
+    &_add-circle--neutral-hover-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#neutral-hover");
+    }
+    
+    &_add-circle--neutral-active-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#neutral-active");
+    }
+    
+    &_add-circle--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}gemini-tools/light/add-circle.svg#neutral-disabled");
     }
     
     &_add-circle--highlighted-enabled-light {
@@ -2307,6 +2727,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#neutral-enabled");
     }
     
+    &_warning--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#neutral-hover");
+    }
+    
+    &_warning--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#neutral-active");
+    }
+    
+    &_warning--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#neutral-disabled");
+    }
+    
     &_warning--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/warning.svg#highlighted-enabled");
     }
@@ -2369,6 +2801,18 @@
     
     &_success--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#neutral-enabled");
+    }
+    
+    &_success--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#neutral-hover");
+    }
+    
+    &_success--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#neutral-active");
+    }
+    
+    &_success--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/success.svg#neutral-disabled");
     }
     
     &_success--highlighted-enabled-dark {
@@ -2435,6 +2879,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#neutral-enabled");
     }
     
+    &_show-more-vertical--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#neutral-hover");
+    }
+    
+    &_show-more-vertical--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#neutral-active");
+    }
+    
+    &_show-more-vertical--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#neutral-disabled");
+    }
+    
     &_show-more-vertical--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-vertical.svg#highlighted-enabled");
     }
@@ -2497,6 +2953,18 @@
     
     &_show-more-horizontal--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#neutral-enabled");
+    }
+    
+    &_show-more-horizontal--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#neutral-hover");
+    }
+    
+    &_show-more-horizontal--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#neutral-active");
+    }
+    
+    &_show-more-horizontal--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/show-more-horizontal.svg#neutral-disabled");
     }
     
     &_show-more-horizontal--highlighted-enabled-dark {
@@ -2563,6 +3031,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#neutral-enabled");
     }
     
+    &_share--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#neutral-hover");
+    }
+    
+    &_share--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#neutral-active");
+    }
+    
+    &_share--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#neutral-disabled");
+    }
+    
     &_share--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/share.svg#highlighted-enabled");
     }
@@ -2625,6 +3105,18 @@
     
     &_settings--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#neutral-enabled");
+    }
+    
+    &_settings--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#neutral-hover");
+    }
+    
+    &_settings--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#neutral-active");
+    }
+    
+    &_settings--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/settings.svg#neutral-disabled");
     }
     
     &_settings--highlighted-enabled-dark {
@@ -2691,6 +3183,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#neutral-enabled");
     }
     
+    &_search--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#neutral-hover");
+    }
+    
+    &_search--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#neutral-active");
+    }
+    
+    &_search--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#neutral-disabled");
+    }
+    
     &_search--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/search.svg#highlighted-enabled");
     }
@@ -2753,6 +3257,18 @@
     
     &_reset--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#neutral-enabled");
+    }
+    
+    &_reset--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#neutral-hover");
+    }
+    
+    &_reset--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#neutral-active");
+    }
+    
+    &_reset--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/reset.svg#neutral-disabled");
     }
     
     &_reset--highlighted-enabled-dark {
@@ -2819,6 +3335,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#neutral-enabled");
     }
     
+    &_read-only--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#neutral-hover");
+    }
+    
+    &_read-only--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#neutral-active");
+    }
+    
+    &_read-only--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#neutral-disabled");
+    }
+    
     &_read-only--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/read-only.svg#highlighted-enabled");
     }
@@ -2881,6 +3409,18 @@
     
     &_open-window--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#neutral-enabled");
+    }
+    
+    &_open-window--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#neutral-hover");
+    }
+    
+    &_open-window--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#neutral-active");
+    }
+    
+    &_open-window--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/open-window.svg#neutral-disabled");
     }
     
     &_open-window--highlighted-enabled-dark {
@@ -2947,6 +3487,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#neutral-enabled");
     }
     
+    &_notice--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#neutral-hover");
+    }
+    
+    &_notice--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#neutral-active");
+    }
+    
+    &_notice--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#neutral-disabled");
+    }
+    
     &_notice--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/notice.svg#highlighted-enabled");
     }
@@ -3009,6 +3561,18 @@
     
     &_more-info--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#neutral-enabled");
+    }
+    
+    &_more-info--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#neutral-hover");
+    }
+    
+    &_more-info--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#neutral-active");
+    }
+    
+    &_more-info--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/more-info.svg#neutral-disabled");
     }
     
     &_more-info--highlighted-enabled-dark {
@@ -3075,6 +3639,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#neutral-enabled");
     }
     
+    &_minus--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#neutral-hover");
+    }
+    
+    &_minus--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#neutral-active");
+    }
+    
+    &_minus--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#neutral-disabled");
+    }
+    
     &_minus--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/minus.svg#highlighted-enabled");
     }
@@ -3137,6 +3713,18 @@
     
     &_minus-circle--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#neutral-enabled");
+    }
+    
+    &_minus-circle--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#neutral-hover");
+    }
+    
+    &_minus-circle--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#neutral-active");
+    }
+    
+    &_minus-circle--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/minus-circle.svg#neutral-disabled");
     }
     
     &_minus-circle--highlighted-enabled-dark {
@@ -3203,6 +3791,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#neutral-enabled");
     }
     
+    &_list-view--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#neutral-hover");
+    }
+    
+    &_list-view--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#neutral-active");
+    }
+    
+    &_list-view--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#neutral-disabled");
+    }
+    
     &_list-view--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/list-view.svg#highlighted-enabled");
     }
@@ -3265,6 +3865,18 @@
     
     &_folder--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#neutral-enabled");
+    }
+    
+    &_folder--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#neutral-hover");
+    }
+    
+    &_folder--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#neutral-active");
+    }
+    
+    &_folder--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/folder.svg#neutral-disabled");
     }
     
     &_folder--highlighted-enabled-dark {
@@ -3331,6 +3943,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#neutral-enabled");
     }
     
+    &_flow-arrow--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#neutral-hover");
+    }
+    
+    &_flow-arrow--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#neutral-active");
+    }
+    
+    &_flow-arrow--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#neutral-disabled");
+    }
+    
     &_flow-arrow--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/flow-arrow.svg#highlighted-enabled");
     }
@@ -3393,6 +4017,18 @@
     
     &_file--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#neutral-enabled");
+    }
+    
+    &_file--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#neutral-hover");
+    }
+    
+    &_file--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#neutral-active");
+    }
+    
+    &_file--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/file.svg#neutral-disabled");
     }
     
     &_file--highlighted-enabled-dark {
@@ -3459,6 +4095,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#neutral-enabled");
     }
     
+    &_error--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#neutral-hover");
+    }
+    
+    &_error--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#neutral-active");
+    }
+    
+    &_error--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#neutral-disabled");
+    }
+    
     &_error--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/error.svg#highlighted-enabled");
     }
@@ -3521,6 +4169,18 @@
     
     &_edit--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#neutral-enabled");
+    }
+    
+    &_edit--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#neutral-hover");
+    }
+    
+    &_edit--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#neutral-active");
+    }
+    
+    &_edit--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit.svg#neutral-disabled");
     }
     
     &_edit--highlighted-enabled-dark {
@@ -3587,6 +4247,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#neutral-enabled");
     }
     
+    &_edit-wand--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#neutral-hover");
+    }
+    
+    &_edit-wand--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#neutral-active");
+    }
+    
+    &_edit-wand--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#neutral-disabled");
+    }
+    
     &_edit-wand--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/edit-wand.svg#highlighted-enabled");
     }
@@ -3649,6 +4321,18 @@
     
     &_duplicate--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#neutral-enabled");
+    }
+    
+    &_duplicate--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#neutral-hover");
+    }
+    
+    &_duplicate--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#neutral-active");
+    }
+    
+    &_duplicate--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/duplicate.svg#neutral-disabled");
     }
     
     &_duplicate--highlighted-enabled-dark {
@@ -3715,6 +4399,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#neutral-enabled");
     }
     
+    &_download--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#neutral-hover");
+    }
+    
+    &_download--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#neutral-active");
+    }
+    
+    &_download--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#neutral-disabled");
+    }
+    
     &_download--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/download.svg#highlighted-enabled");
     }
@@ -3777,6 +4473,18 @@
     
     &_deleted--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#neutral-enabled");
+    }
+    
+    &_deleted--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#neutral-hover");
+    }
+    
+    &_deleted--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#neutral-active");
+    }
+    
+    &_deleted--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/deleted.svg#neutral-disabled");
     }
     
     &_deleted--highlighted-enabled-dark {
@@ -3843,6 +4551,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#neutral-enabled");
     }
     
+    &_delete--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#neutral-hover");
+    }
+    
+    &_delete--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#neutral-active");
+    }
+    
+    &_delete--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#neutral-disabled");
+    }
+    
     &_delete--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/delete.svg#highlighted-enabled");
     }
@@ -3905,6 +4625,18 @@
     
     &_data-provider--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#neutral-enabled");
+    }
+    
+    &_data-provider--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#neutral-hover");
+    }
+    
+    &_data-provider--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#neutral-active");
+    }
+    
+    &_data-provider--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/data-provider.svg#neutral-disabled");
     }
     
     &_data-provider--highlighted-enabled-dark {
@@ -3971,6 +4703,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#neutral-enabled");
     }
     
+    &_copy--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#neutral-hover");
+    }
+    
+    &_copy--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#neutral-active");
+    }
+    
+    &_copy--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#neutral-disabled");
+    }
+    
     &_copy--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/copy.svg#highlighted-enabled");
     }
@@ -4033,6 +4777,18 @@
     
     &_copy-to-clipboard--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#neutral-enabled");
+    }
+    
+    &_copy-to-clipboard--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#neutral-hover");
+    }
+    
+    &_copy-to-clipboard--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#neutral-active");
+    }
+    
+    &_copy-to-clipboard--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/copy-to-clipboard.svg#neutral-disabled");
     }
     
     &_copy-to-clipboard--highlighted-enabled-dark {
@@ -4099,6 +4855,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#neutral-enabled");
     }
     
+    &_color-picker--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#neutral-hover");
+    }
+    
+    &_color-picker--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#neutral-active");
+    }
+    
+    &_color-picker--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#neutral-disabled");
+    }
+    
     &_color-picker--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/color-picker.svg#highlighted-enabled");
     }
@@ -4161,6 +4929,18 @@
     
     &_close--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#neutral-enabled");
+    }
+    
+    &_close--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#neutral-hover");
+    }
+    
+    &_close--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#neutral-active");
+    }
+    
+    &_close--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/close.svg#neutral-disabled");
     }
     
     &_close--highlighted-enabled-dark {
@@ -4227,6 +5007,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#neutral-enabled");
     }
     
+    &_category-ungroup--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#neutral-hover");
+    }
+    
+    &_category-ungroup--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#neutral-active");
+    }
+    
+    &_category-ungroup--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#neutral-disabled");
+    }
+    
     &_category-ungroup--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/category-ungroup.svg#highlighted-enabled");
     }
@@ -4289,6 +5081,18 @@
     
     &_category-group--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#neutral-enabled");
+    }
+    
+    &_category-group--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#neutral-hover");
+    }
+    
+    &_category-group--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#neutral-active");
+    }
+    
+    &_category-group--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/category-group.svg#neutral-disabled");
     }
     
     &_category-group--highlighted-enabled-dark {
@@ -4355,6 +5159,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#neutral-enabled");
     }
     
+    &_card-view--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#neutral-hover");
+    }
+    
+    &_card-view--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#neutral-active");
+    }
+    
+    &_card-view--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#neutral-disabled");
+    }
+    
     &_card-view--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/card-view.svg#highlighted-enabled");
     }
@@ -4419,6 +5235,18 @@
       --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#neutral-enabled");
     }
     
+    &_add--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#neutral-hover");
+    }
+    
+    &_add--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#neutral-active");
+    }
+    
+    &_add--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#neutral-disabled");
+    }
+    
     &_add--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/add.svg#highlighted-enabled");
     }
@@ -4481,6 +5309,18 @@
     
     &_add-circle--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#neutral-enabled");
+    }
+    
+    &_add-circle--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#neutral-hover");
+    }
+    
+    &_add-circle--neutral-active-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#neutral-active");
+    }
+    
+    &_add-circle--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}gemini-tools/dark/add-circle.svg#neutral-disabled");
     }
     
     &_add-circle--highlighted-enabled-dark {

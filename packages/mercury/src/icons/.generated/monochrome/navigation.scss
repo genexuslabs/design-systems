@@ -62,6 +62,18 @@
       --icon-path: url("#{$icons-path}navigation/light/pill-outlined.svg#neutral-enabled");
     }
     
+    &_pill-outlined--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/pill-outlined.svg#neutral-hover");
+    }
+    
+    &_pill-outlined--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/pill-outlined.svg#neutral-active");
+    }
+    
+    &_pill-outlined--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/pill-outlined.svg#neutral-disabled");
+    }
+    
     &_pill-outlined--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/pill-outlined.svg#highlighted-enabled");
     }
@@ -124,6 +136,18 @@
     
     &_pill-filled--neutral-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/pill-filled.svg#neutral-enabled");
+    }
+    
+    &_pill-filled--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/pill-filled.svg#neutral-hover");
+    }
+    
+    &_pill-filled--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/pill-filled.svg#neutral-active");
+    }
+    
+    &_pill-filled--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/pill-filled.svg#neutral-disabled");
     }
     
     &_pill-filled--highlighted-enabled-light {
@@ -190,6 +214,18 @@
       --icon-path: url("#{$icons-path}navigation/light/level-up.svg#neutral-enabled");
     }
     
+    &_level-up--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/level-up.svg#neutral-hover");
+    }
+    
+    &_level-up--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/level-up.svg#neutral-active");
+    }
+    
+    &_level-up--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/level-up.svg#neutral-disabled");
+    }
+    
     &_level-up--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/level-up.svg#highlighted-enabled");
     }
@@ -252,6 +288,18 @@
     
     &_level-down--neutral-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/level-down.svg#neutral-enabled");
+    }
+    
+    &_level-down--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/level-down.svg#neutral-hover");
+    }
+    
+    &_level-down--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/level-down.svg#neutral-active");
+    }
+    
+    &_level-down--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/level-down.svg#neutral-disabled");
     }
     
     &_level-down--highlighted-enabled-light {
@@ -318,6 +366,18 @@
       --icon-path: url("#{$icons-path}navigation/light/gx-arrow-right.svg#neutral-enabled");
     }
     
+    &_gx-arrow-right--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/gx-arrow-right.svg#neutral-hover");
+    }
+    
+    &_gx-arrow-right--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/gx-arrow-right.svg#neutral-active");
+    }
+    
+    &_gx-arrow-right--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/gx-arrow-right.svg#neutral-disabled");
+    }
+    
     &_gx-arrow-right--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/gx-arrow-right.svg#highlighted-enabled");
     }
@@ -380,6 +440,18 @@
     
     &_drag--neutral-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/drag.svg#neutral-enabled");
+    }
+    
+    &_drag--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/drag.svg#neutral-hover");
+    }
+    
+    &_drag--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/drag.svg#neutral-active");
+    }
+    
+    &_drag--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/drag.svg#neutral-disabled");
     }
     
     &_drag--highlighted-enabled-light {
@@ -446,6 +518,18 @@
       --icon-path: url("#{$icons-path}navigation/light/chevron-up.svg#neutral-enabled");
     }
     
+    &_chevron-up--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/chevron-up.svg#neutral-hover");
+    }
+    
+    &_chevron-up--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/chevron-up.svg#neutral-active");
+    }
+    
+    &_chevron-up--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/chevron-up.svg#neutral-disabled");
+    }
+    
     &_chevron-up--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/chevron-up.svg#highlighted-enabled");
     }
@@ -508,6 +592,18 @@
     
     &_chevron-right--neutral-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/chevron-right.svg#neutral-enabled");
+    }
+    
+    &_chevron-right--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/chevron-right.svg#neutral-hover");
+    }
+    
+    &_chevron-right--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/chevron-right.svg#neutral-active");
+    }
+    
+    &_chevron-right--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/chevron-right.svg#neutral-disabled");
     }
     
     &_chevron-right--highlighted-enabled-light {
@@ -574,6 +670,18 @@
       --icon-path: url("#{$icons-path}navigation/light/chevron-left.svg#neutral-enabled");
     }
     
+    &_chevron-left--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/chevron-left.svg#neutral-hover");
+    }
+    
+    &_chevron-left--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/chevron-left.svg#neutral-active");
+    }
+    
+    &_chevron-left--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/chevron-left.svg#neutral-disabled");
+    }
+    
     &_chevron-left--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/chevron-left.svg#highlighted-enabled");
     }
@@ -636,6 +744,18 @@
     
     &_chevron-down--neutral-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/chevron-down.svg#neutral-enabled");
+    }
+    
+    &_chevron-down--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/chevron-down.svg#neutral-hover");
+    }
+    
+    &_chevron-down--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/chevron-down.svg#neutral-active");
+    }
+    
+    &_chevron-down--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/chevron-down.svg#neutral-disabled");
     }
     
     &_chevron-down--highlighted-enabled-light {
@@ -702,6 +822,18 @@
       --icon-path: url("#{$icons-path}navigation/light/bullet.svg#neutral-enabled");
     }
     
+    &_bullet--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/bullet.svg#neutral-hover");
+    }
+    
+    &_bullet--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/bullet.svg#neutral-active");
+    }
+    
+    &_bullet--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/bullet.svg#neutral-disabled");
+    }
+    
     &_bullet--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/bullet.svg#highlighted-enabled");
     }
@@ -764,6 +896,18 @@
     
     &_arrow-up--neutral-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/arrow-up.svg#neutral-enabled");
+    }
+    
+    &_arrow-up--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/arrow-up.svg#neutral-hover");
+    }
+    
+    &_arrow-up--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/arrow-up.svg#neutral-active");
+    }
+    
+    &_arrow-up--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/arrow-up.svg#neutral-disabled");
     }
     
     &_arrow-up--highlighted-enabled-light {
@@ -830,6 +974,18 @@
       --icon-path: url("#{$icons-path}navigation/light/arrow-right.svg#neutral-enabled");
     }
     
+    &_arrow-right--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/arrow-right.svg#neutral-hover");
+    }
+    
+    &_arrow-right--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/arrow-right.svg#neutral-active");
+    }
+    
+    &_arrow-right--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/arrow-right.svg#neutral-disabled");
+    }
+    
     &_arrow-right--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/arrow-right.svg#highlighted-enabled");
     }
@@ -892,6 +1048,18 @@
     
     &_arrow-left--neutral-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/arrow-left.svg#neutral-enabled");
+    }
+    
+    &_arrow-left--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/arrow-left.svg#neutral-hover");
+    }
+    
+    &_arrow-left--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/arrow-left.svg#neutral-active");
+    }
+    
+    &_arrow-left--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/arrow-left.svg#neutral-disabled");
     }
     
     &_arrow-left--highlighted-enabled-light {
@@ -958,6 +1126,18 @@
       --icon-path: url("#{$icons-path}navigation/light/arrow-down.svg#neutral-enabled");
     }
     
+    &_arrow-down--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/arrow-down.svg#neutral-hover");
+    }
+    
+    &_arrow-down--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/arrow-down.svg#neutral-active");
+    }
+    
+    &_arrow-down--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/arrow-down.svg#neutral-disabled");
+    }
+    
     &_arrow-down--highlighted-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/arrow-down.svg#highlighted-enabled");
     }
@@ -1020,6 +1200,18 @@
     
     &_arrow-down-skyblue--neutral-enabled-light {
       --icon-path: url("#{$icons-path}navigation/light/arrow-down-skyblue.svg#neutral-enabled");
+    }
+    
+    &_arrow-down-skyblue--neutral-hover-light {
+      --icon-path: url("#{$icons-path}navigation/light/arrow-down-skyblue.svg#neutral-hover");
+    }
+    
+    &_arrow-down-skyblue--neutral-active-light {
+      --icon-path: url("#{$icons-path}navigation/light/arrow-down-skyblue.svg#neutral-active");
+    }
+    
+    &_arrow-down-skyblue--neutral-disabled-light {
+      --icon-path: url("#{$icons-path}navigation/light/arrow-down-skyblue.svg#neutral-disabled");
     }
     
     &_arrow-down-skyblue--highlighted-enabled-light {
@@ -1091,6 +1283,18 @@
       --icon-path: url("#{$icons-path}navigation/dark/pill-outlined.svg#neutral-enabled");
     }
     
+    &_pill-outlined--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/pill-outlined.svg#neutral-hover");
+    }
+    
+    &_pill-outlined--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/pill-outlined.svg#neutral-active");
+    }
+    
+    &_pill-outlined--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/pill-outlined.svg#neutral-disabled");
+    }
+    
     &_pill-outlined--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/pill-outlined.svg#highlighted-enabled");
     }
@@ -1153,6 +1357,18 @@
     
     &_pill-filled--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/pill-filled.svg#neutral-enabled");
+    }
+    
+    &_pill-filled--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/pill-filled.svg#neutral-hover");
+    }
+    
+    &_pill-filled--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/pill-filled.svg#neutral-active");
+    }
+    
+    &_pill-filled--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/pill-filled.svg#neutral-disabled");
     }
     
     &_pill-filled--highlighted-enabled-dark {
@@ -1219,6 +1435,18 @@
       --icon-path: url("#{$icons-path}navigation/dark/level-up.svg#neutral-enabled");
     }
     
+    &_level-up--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/level-up.svg#neutral-hover");
+    }
+    
+    &_level-up--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/level-up.svg#neutral-active");
+    }
+    
+    &_level-up--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/level-up.svg#neutral-disabled");
+    }
+    
     &_level-up--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/level-up.svg#highlighted-enabled");
     }
@@ -1281,6 +1509,18 @@
     
     &_level-down--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/level-down.svg#neutral-enabled");
+    }
+    
+    &_level-down--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/level-down.svg#neutral-hover");
+    }
+    
+    &_level-down--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/level-down.svg#neutral-active");
+    }
+    
+    &_level-down--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/level-down.svg#neutral-disabled");
     }
     
     &_level-down--highlighted-enabled-dark {
@@ -1347,6 +1587,18 @@
       --icon-path: url("#{$icons-path}navigation/dark/gx-arrow-right.svg#neutral-enabled");
     }
     
+    &_gx-arrow-right--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/gx-arrow-right.svg#neutral-hover");
+    }
+    
+    &_gx-arrow-right--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/gx-arrow-right.svg#neutral-active");
+    }
+    
+    &_gx-arrow-right--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/gx-arrow-right.svg#neutral-disabled");
+    }
+    
     &_gx-arrow-right--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/gx-arrow-right.svg#highlighted-enabled");
     }
@@ -1409,6 +1661,18 @@
     
     &_drag--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/drag.svg#neutral-enabled");
+    }
+    
+    &_drag--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/drag.svg#neutral-hover");
+    }
+    
+    &_drag--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/drag.svg#neutral-active");
+    }
+    
+    &_drag--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/drag.svg#neutral-disabled");
     }
     
     &_drag--highlighted-enabled-dark {
@@ -1475,6 +1739,18 @@
       --icon-path: url("#{$icons-path}navigation/dark/chevron-up.svg#neutral-enabled");
     }
     
+    &_chevron-up--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/chevron-up.svg#neutral-hover");
+    }
+    
+    &_chevron-up--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/chevron-up.svg#neutral-active");
+    }
+    
+    &_chevron-up--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/chevron-up.svg#neutral-disabled");
+    }
+    
     &_chevron-up--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/chevron-up.svg#highlighted-enabled");
     }
@@ -1537,6 +1813,18 @@
     
     &_chevron-right--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/chevron-right.svg#neutral-enabled");
+    }
+    
+    &_chevron-right--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/chevron-right.svg#neutral-hover");
+    }
+    
+    &_chevron-right--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/chevron-right.svg#neutral-active");
+    }
+    
+    &_chevron-right--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/chevron-right.svg#neutral-disabled");
     }
     
     &_chevron-right--highlighted-enabled-dark {
@@ -1603,6 +1891,18 @@
       --icon-path: url("#{$icons-path}navigation/dark/chevron-left.svg#neutral-enabled");
     }
     
+    &_chevron-left--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/chevron-left.svg#neutral-hover");
+    }
+    
+    &_chevron-left--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/chevron-left.svg#neutral-active");
+    }
+    
+    &_chevron-left--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/chevron-left.svg#neutral-disabled");
+    }
+    
     &_chevron-left--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/chevron-left.svg#highlighted-enabled");
     }
@@ -1665,6 +1965,18 @@
     
     &_chevron-down--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/chevron-down.svg#neutral-enabled");
+    }
+    
+    &_chevron-down--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/chevron-down.svg#neutral-hover");
+    }
+    
+    &_chevron-down--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/chevron-down.svg#neutral-active");
+    }
+    
+    &_chevron-down--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/chevron-down.svg#neutral-disabled");
     }
     
     &_chevron-down--highlighted-enabled-dark {
@@ -1731,6 +2043,18 @@
       --icon-path: url("#{$icons-path}navigation/dark/bullet.svg#neutral-enabled");
     }
     
+    &_bullet--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/bullet.svg#neutral-hover");
+    }
+    
+    &_bullet--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/bullet.svg#neutral-active");
+    }
+    
+    &_bullet--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/bullet.svg#neutral-disabled");
+    }
+    
     &_bullet--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/bullet.svg#highlighted-enabled");
     }
@@ -1793,6 +2117,18 @@
     
     &_arrow-up--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/arrow-up.svg#neutral-enabled");
+    }
+    
+    &_arrow-up--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/arrow-up.svg#neutral-hover");
+    }
+    
+    &_arrow-up--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/arrow-up.svg#neutral-active");
+    }
+    
+    &_arrow-up--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/arrow-up.svg#neutral-disabled");
     }
     
     &_arrow-up--highlighted-enabled-dark {
@@ -1859,6 +2195,18 @@
       --icon-path: url("#{$icons-path}navigation/dark/arrow-right.svg#neutral-enabled");
     }
     
+    &_arrow-right--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/arrow-right.svg#neutral-hover");
+    }
+    
+    &_arrow-right--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/arrow-right.svg#neutral-active");
+    }
+    
+    &_arrow-right--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/arrow-right.svg#neutral-disabled");
+    }
+    
     &_arrow-right--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/arrow-right.svg#highlighted-enabled");
     }
@@ -1921,6 +2269,18 @@
     
     &_arrow-left--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/arrow-left.svg#neutral-enabled");
+    }
+    
+    &_arrow-left--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/arrow-left.svg#neutral-hover");
+    }
+    
+    &_arrow-left--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/arrow-left.svg#neutral-active");
+    }
+    
+    &_arrow-left--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/arrow-left.svg#neutral-disabled");
     }
     
     &_arrow-left--highlighted-enabled-dark {
@@ -1987,6 +2347,18 @@
       --icon-path: url("#{$icons-path}navigation/dark/arrow-down.svg#neutral-enabled");
     }
     
+    &_arrow-down--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/arrow-down.svg#neutral-hover");
+    }
+    
+    &_arrow-down--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/arrow-down.svg#neutral-active");
+    }
+    
+    &_arrow-down--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/arrow-down.svg#neutral-disabled");
+    }
+    
     &_arrow-down--highlighted-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/arrow-down.svg#highlighted-enabled");
     }
@@ -2049,6 +2421,18 @@
     
     &_arrow-down-skyblue--neutral-enabled-dark {
       --icon-path: url("#{$icons-path}navigation/dark/arrow-down-skyblue.svg#neutral-enabled");
+    }
+    
+    &_arrow-down-skyblue--neutral-hover-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/arrow-down-skyblue.svg#neutral-hover");
+    }
+    
+    &_arrow-down-skyblue--neutral-active-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/arrow-down-skyblue.svg#neutral-active");
+    }
+    
+    &_arrow-down-skyblue--neutral-disabled-dark {
+      --icon-path: url("#{$icons-path}navigation/dark/arrow-down-skyblue.svg#neutral-disabled");
     }
     
     &_arrow-down-skyblue--highlighted-enabled-dark {
