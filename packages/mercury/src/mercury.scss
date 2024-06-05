@@ -91,12 +91,21 @@
   //              Icons
   // - - - - - - - - - - - - - - - - - - - -
 
-  @import "./icons/.generated/all-lists";
+  @import "./icons/_generated/all-lists";
 
-  // Monochrome > system
-  $system-virtual-selectors: generate-icons-virtual-selectors(
-    $system,
-    "system"
+  // Monochrome Icons
+  $gemini-tools-virtual-selectors: generate-icons-virtual-selectors(
+    $gemini-tools,
+    "gemini-tools"
+  );
+  $menus-virtual-selectors: generate-icons-virtual-selectors($menus, "menus");
+  $navigation-virtual-selectors: generate-icons-virtual-selectors(
+    $navigation,
+    "navigation"
+  );
+  $windows-tools-virtual-selectors: generate-icons-virtual-selectors(
+    $windows-tools,
+    "windows-tools"
   );
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -339,7 +348,10 @@
   // - - - - - - - - - - - - - - - - - - - -
   @if ($icons-elements) {
     // Process icons lists
-    @include process-monochrome-icons-list($system-virtual-selectors);
+    @include process-monochrome-icons-list($gemini-tools-virtual-selectors);
+    @include process-monochrome-icons-list($menus-virtual-selectors);
+    @include process-monochrome-icons-list($navigation-virtual-selectors);
+    @include process-monochrome-icons-list($windows-tools-virtual-selectors);
 
     // Button icon only
     @include button-icon-only();
