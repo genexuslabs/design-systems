@@ -1,0 +1,73 @@
+@mixin tabular-grid-column-tokens() {
+  // =======================================
+  //             Part "bar"
+  // =======================================
+
+  --grid-column-bar__gap: var(--mer-spacing--xs);
+  --grid-column-bar__bg-color: var(--grid-base__bg-color);
+  --grid-column-bar__color: var(--mer-text__bright);
+  --grid-column-bar__padding-inline: var(--mer-spacing--xs);
+  --grid-column-bar__padding-block: var(--mer-spacing--xs);
+  --grid-column-bar__font-size: var(--grid-base__font-size);
+  --grid-column-bar__font-family: var(--mer-font-family--inter-semi-bold);
+
+  // =======================================
+  //         Part "bar-selector"
+  // =======================================
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //         Part "selector-label"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //           Part "selector"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // =======================================
+  //          Part "bar-name"
+  // =======================================
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //         Part "bar-name-icon"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //          Part "bar-name-text"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // =======================================
+  //          Part "bar-sort"
+  // =======================================
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //       Part "bar-sort-ascending"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //       Part "bar-sort-descending"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // =======================================
+  //         Part "bar-settings"
+  // =======================================
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //        Part "bar-settings-button"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // =======================================
+  //          Part "bar-resize"
+  // =======================================
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //         Part "bar-resize-split"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  --grid-bar-resize-split__inline-size: var(--mer-spacing--2xs);
+  --grid-bar-resize-split__bg-color: transparent;
+  --grid-bar-resize-split__border-inline-end: var(--mer-border__width--sm) solid
+    transparent;
+  --grid-bar-resize-split__border-inline-end-color--hover: var(
+    --grid-column-bar__color
+  );
+}

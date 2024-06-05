@@ -1,0 +1,17 @@
+@mixin tabular-grid-tokens() {
+  // Generic tokens for texts
+  --grid-base__font-size: var(--mer-body__font-size);
+  --grid-base__bg-color: var(--mer-color__elevation--01);
+  --grid-base__icon-gap: var(--mer-spacing--xs);
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //             Part "Header"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //              Part "Main"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // This color simulates the grid cells border at the time of writing.
+  --grid-main__bg-color: var(--mer-item__border-color);
+}

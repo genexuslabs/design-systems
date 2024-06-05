@@ -1,17 +1,107 @@
+@mixin form-input-bg-x-rtl-support() {
+  // has to be included in the root
+  :root[dir="rtl"] {
+    --mer-form-input__bg-position--x: calc(
+      100% - var(--mer-form-input__bg-position--x-value)
+    );
+  }
+}
+// - - - - - - - - - - - - - - - - - - - -
+//    Icons | Mask & Background
+// - - - - - - - - - - - - - - - - - - - -
+
+// Icon mask styles
+@mixin mer-icon-mask-common-styles(
+  $size: "sm",
+  $mask-size: var(--icon-mask-size)
+) {
+  $iconSize: var(--mer-icon__box--sm);
+  @if $size == "lg" {
+    $iconSize: var(--mer-icon__box--lg);
+  }
+  @include icon-mask-common-styles($iconSize, $iconSize, $mask-size);
+}
+
+/// @group Icon
+/// @param {String} $selector [".icon-mask"] -
+/// @param {type} $icon-path [null] -
+/// @param {type} $icon-class [null] -
+/// @output
+@mixin icon-mask($selector: ".icon-mask", $icon-path: null, $icon-class: null) {
+  #{$selector} {
+    @if $icon-path != null {
+      --icon-path: #{$icon-path};
+    }
+
+    @if $icon-class != null {
+      @extend #{$icon-class} !optional;
+    }
+
+    &::before {
+      @extend %icon-mask--before;
+    }
+  }
+}
+
 %icon-mask--before {
-  @include icon-mask-common-styles(
-    $inline-size: var(--mer-icon__box--sm),
-    $block-size: var(--mer-icon__box--sm),
-    $mask-size: 100%
+  @include mer-icon-mask-common-styles($size: "sm", $mask-size: 100%);
+}
+
+// Icon background styles
+@mixin mer-icon-background-common-styles(
+  $size: "sm",
+  $background-size: var(--icon-mask-size)
+) {
+  $iconSize: var(--mer-icon__box--sm);
+  @if $size == "lg" {
+    $iconSize: var(--mer-icon__box--lg);
+  }
+  @include icon-background-common-styles(
+    $iconSize,
+    $iconSize,
+    $background-size
   );
 }
 
+/// @group Icon
+/// @param {String} $selector [".icon-background"] -
+/// @param {type} $icon-path [null] -
+/// @param {type} $icon-class [null] -
+/// @output
+@mixin icon-background(
+  $selector: ".icon-background",
+  $icon-path: null,
+  $icon-class: null
+) {
+  #{$selector} {
+    @if $icon-path != null {
+      --icon-path: #{$icon-path};
+    }
+
+    @if $icon-class != null {
+      @extend #{$icon-class} !optional;
+    }
+
+    &::before {
+      @extend %icon-background--before;
+    }
+  }
+}
+
 %icon-background--before {
-  @include icon-background-common-styles(
-    $inline-size: var(--mer-icon__box--sm),
-    $block-size: var(--mer-icon__box--sm),
+  @include mer-icon-background-common-styles(
+    $size: "sm",
     $background-size: 100%
   );
+}
+
+// Icon Input background styles
+@mixin icon-input-background-common-styles(
+  $background-size: "0",
+  $background-position-x: "0"
+) {
+  background: var(--icon-path) $background-position-x center / $background-size
+    no-repeat;
 }
 
 %icon-input-background {
@@ -21,93 +111,46 @@
   );
 }
 
-@mixin form-input-bg-x-rtl-support() {
-  // has to be included in the root
-  :root[dir="rtl"] {
-    --mer-form-input__bg-position--x: calc(
-      100% - var(--mer-form-input__bg-position--x-value)
-    );
-  }
-}
-
 // - - - - - - - - - - - - - - - - - - - -
-//      Icons | Monochrome Selectors
+//     Multicolor Selectors Generator
 // - - - - - - - - - - - - - - - - - - - -
 
 // Single selector generator
 @mixin generate-monochrome-icon-selector(
   $input-selector,
   $output-selector,
-  $light-theme-selector: ".light",
-  $dark-theme-selector: ".dark",
   $light: true,
   $dark: true,
-  $primary: true,
-  $primary-hover: true,
-  $primary-active: true,
-  $primary-disabled: true,
-  $on-primary: true,
-  $on-primary-hover: true,
-  $on-primary-active: true,
-  $on-disabled: true,
-  $neutral: true
+  $light-theme-selector: ".light",
+  $dark-theme-selector: ".dark",
+  $enabled: true,
+  $hover: true,
+  $active: true,
+  $disabled: true
 ) {
   // Light
   @if $light {
     #{$light-theme-selector} {
       #{$output-selector} {
-        // primary
-        @if $primary {
-          &--primary {
-            @extend #{$input-selector}--primary-light !optional;
+        @if $enabled {
+          @extend #{$input-selector}--enabled-light;
+        }
+
+        @if $hover {
+          &:hover {
+            @extend #{$input-selector}--hover-light;
           }
         }
-        @if $primary-hover {
-          &--primary-hover,
-          &--primary:hover {
-            @extend #{$input-selector}--primary-hover-light !optional;
+
+        @if $active {
+          &:active {
+            @extend #{$input-selector}--active-light;
           }
         }
-        @if $primary-active {
-          &--primary-active,
-          &--primary:active {
-            @extend #{$input-selector}--primary-active-light !optional;
-          }
-        }
-        @if $primary-disabled {
-          &--primary-disabled,
-          &--primary:disabled {
-            @extend #{$input-selector}--primary-disabled-light !optional;
-          }
-        }
-        // on primary
-        @if $on-primary {
-          &--on-primary {
-            @extend #{$input-selector}--on-primary-light !optional;
-          }
-        }
-        @if $on-primary-hover {
-          &--on-primary-hover,
-          &--on-primary:hover {
-            @extend #{$input-selector}--on-primary-hover-light !optional;
-          }
-        }
-        @if $on-primary-active {
-          &--on-primary-active,
-          &--on-primary:active {
-            @extend #{$input-selector}--on-primary-active-light !optional;
-          }
-        }
-        // on disabled
-        @if $on-disabled {
-          &--on-disabled {
-            @extend #{$input-selector}--on-disabled-light !optional;
-          }
-        }
-        // neutral
-        @if $neutral {
-          &--neutral {
-            @extend #{$input-selector}--neutral-light !optional;
+
+        @if $disabled {
+          &:disabled {
+            @extend #{$input-selector}--disabled-light;
           }
         }
       }
@@ -118,58 +161,25 @@
   @if $dark {
     #{$dark-theme-selector} {
       #{$output-selector} {
-        // primary
-        @if $primary {
-          &--primary {
-            @extend #{$input-selector}--primary-dark !optional;
+        @if $enabled {
+          @extend #{$input-selector}--enabled-dark;
+        }
+
+        @if $hover {
+          &:hover {
+            @extend #{$input-selector}--hover-dark;
           }
         }
-        @if $primary-hover {
-          &--primary-hover,
-          &--primary:hover {
-            @extend #{$input-selector}--primary-hover-dark !optional;
+
+        @if $active {
+          &:active {
+            @extend #{$input-selector}--active-dark;
           }
         }
-        @if $primary-active {
-          &--primary-active,
-          &--primary:active {
-            @extend #{$input-selector}--primary-active-dark !optional;
-          }
-        }
-        @if $primary-disabled {
-          &--primary-disabled,
-          &--primary:disabled {
-            @extend #{$input-selector}--primary-disabled-dark !optional;
-          }
-        }
-        // on primary
-        @if $on-primary {
-          &--on-primary {
-            @extend #{$input-selector}--on-primary-dark !optional;
-          }
-        }
-        @if $on-primary-hover {
-          &--on-primary-hover,
-          &--on-primary:hover {
-            @extend #{$input-selector}--on-primary-hover-dark !optional;
-          }
-        }
-        @if $on-primary-active {
-          &--on-primary-active,
-          &--on-primary:active {
-            @extend #{$input-selector}--on-primary-active-dark !optional;
-          }
-        }
-        // on disabled
-        @if $on-disabled {
-          &--on-disabled {
-            @extend #{$input-selector}--on-disabled-dark !optional;
-          }
-        }
-        // neutral
-        @if $neutral {
-          &--neutral {
-            @extend #{$input-selector}--neutral-dark !optional;
+
+        @if $disabled {
+          &:disabled {
+            @extend #{$input-selector}--disabled-dark;
           }
         }
       }
@@ -177,22 +187,299 @@
   }
 }
 
-// Monochrome
+// - - - - - - - - - - - - - - - - - - - -
+//     Monochrome Selectors Generator
+// - - - - - - - - - - - - - - - - - - - -
+
+@mixin generate-monochrome-icon-selector(
+  $input-selector,
+  $output-selector,
+  $light-theme-selector: ".light",
+  $dark-theme-selector: ".dark",
+  $light: true,
+  $dark: true,
+  $on-surface: true,
+  $on-primary: true,
+  $on-disabled: true,
+  $on-message: true,
+  $on-elevation: true,
+  $primary: true,
+  $error: true,
+  $warning: true,
+  $success: true,
+  $neutral: true,
+  $highlighted: true,
+  $bright: true
+) {
+  // Light
+  @if $light {
+    #{$light-theme-selector} {
+      #{$output-selector} {
+        // on-surface
+        @if $on-surface {
+          &--on-surface {
+            @extend #{$input-selector}--on-surface-enabled-light !optional;
+          }
+        }
+
+        // on-primary
+        @if $on-primary {
+          &--on-primary:enabled {
+            @extend #{$input-selector}--on-primary-enabled-light !optional;
+          }
+          &--on-primary:hover {
+            @extend #{$input-selector}--on-primary-hover-light !optional;
+          }
+          &--on-primary:active {
+            @extend #{$input-selector}--on-primary-active-light !optional;
+          }
+          &--on-primary:disabled {
+            @extend #{$input-selector}--on-primary-disabled-light !optional;
+          }
+        }
+
+        // on-disabled
+        @if $on-disabled {
+          &--on-disabled:enabled {
+            @extend #{$input-selector}--on-disabled-enabled-light !optional;
+          }
+        }
+
+        // on-message
+        @if $on-message {
+          &--on-message:enabled {
+            @extend #{$input-selector}--on-message-enabled-light !optional;
+          }
+        }
+
+        // on-elevation
+        @if $on-elevation {
+          &--on-elevation:enabled {
+            @extend #{$input-selector}--on-elevation-enabled-light !optional;
+          }
+        }
+
+        // primary
+        @if $primary {
+          &--primary:enabled {
+            @extend #{$input-selector}--primary-enabled-light !optional;
+          }
+          &--primary:hover {
+            @extend #{$input-selector}--primary-hover-light !optional;
+          }
+          &--primary:active {
+            @extend #{$input-selector}--primary-active-light !optional;
+          }
+          &--primary:disabled {
+            @extend #{$input-selector}--primary-disabled-light !optional;
+          }
+        }
+
+        // error
+        @if $error {
+          &--error:enabled {
+            @extend #{$input-selector}--error-enabled-light !optional;
+          }
+        }
+
+        // warning
+        @if $warning {
+          &--warning:enabled {
+            @extend #{$input-selector}--warning-enabled-light !optional;
+          }
+        }
+
+        // warning
+        @if $warning {
+          &--warning:enabled {
+            @extend #{$input-selector}--warning-enabled-light !optional;
+          }
+        }
+
+        // success
+        @if $success {
+          &--success:enabled {
+            @extend #{$input-selector}--success-enabled-light !optional;
+          }
+        }
+
+        // neutral
+        @if $neutral {
+          &--neutral:enabled {
+            @extend #{$input-selector}--neutral-enabled-light !optional;
+          }
+          &--neutral:hover {
+            @extend #{$input-selector}--neutral-hover-light !optional;
+          }
+          &--neutral:active {
+            @extend #{$input-selector}--neutral-active-light !optional;
+          }
+          &--neutral:disabled {
+            @extend #{$input-selector}--neutral-disabled-light !optional;
+          }
+        }
+
+        // highlighted
+        @if $highlighted {
+          &--highlighted:enabled {
+            @extend #{$input-selector}--highlighted-enabled-light !optional;
+          }
+        }
+
+        // bright
+        @if $bright {
+          &--bright:enabled {
+            @extend #{$input-selector}--bright-enabled-light !optional;
+          }
+        }
+      }
+    }
+  }
+
+  // Dark
+  @if $dark {
+    #{$dark-theme-selector} {
+      #{$output-selector} {
+        // on-surface
+        @if $on-surface {
+          &--on-surface {
+            @extend #{$input-selector}--on-surface-enabled-dark !optional;
+          }
+        }
+
+        // on-primary
+        @if $on-primary {
+          &--on-primary:enabled {
+            @extend #{$input-selector}--on-primary-enabled-dark !optional;
+          }
+          &--on-primary:hover {
+            @extend #{$input-selector}--on-primary-hover-dark !optional;
+          }
+          &--on-primary:active {
+            @extend #{$input-selector}--on-primary-active-dark !optional;
+          }
+          &--on-primary:disabled {
+            @extend #{$input-selector}--on-primary-disabled-dark !optional;
+          }
+        }
+
+        // on-disabled
+        @if $on-disabled {
+          &--on-disabled:enabled {
+            @extend #{$input-selector}--on-disabled-enabled-dark !optional;
+          }
+        }
+
+        // on-message
+        @if $on-message {
+          &--on-message:enabled {
+            @extend #{$input-selector}--on-message-enabled-dark !optional;
+          }
+        }
+
+        // on-elevation
+        @if $on-elevation {
+          &--on-elevation:enabled {
+            @extend #{$input-selector}--on-elevation-enabled-dark !optional;
+          }
+        }
+
+        // primary
+        @if $primary {
+          &--primary:enabled {
+            @extend #{$input-selector}--primary-enabled-dark !optional;
+          }
+          &--primary:hover {
+            @extend #{$input-selector}--primary-hover-dark !optional;
+          }
+          &--primary:active {
+            @extend #{$input-selector}--primary-active-dark !optional;
+          }
+          &--primary:disabled {
+            @extend #{$input-selector}--primary-disabled-dark !optional;
+          }
+        }
+
+        // error
+        @if $error {
+          &--error:enabled {
+            @extend #{$input-selector}--error-enabled-dark !optional;
+          }
+        }
+
+        // warning
+        @if $warning {
+          &--warning:enabled {
+            @extend #{$input-selector}--warning-enabled-dark !optional;
+          }
+        }
+
+        // warning
+        @if $warning {
+          &--warning:enabled {
+            @extend #{$input-selector}--warning-enabled-dark !optional;
+          }
+        }
+
+        // success
+        @if $success {
+          &--success:enabled {
+            @extend #{$input-selector}--success-enabled-dark !optional;
+          }
+        }
+
+        // neutral
+        @if $neutral {
+          &--neutral:enabled {
+            @extend #{$input-selector}--neutral-enabled-dark !optional;
+          }
+          &--neutral:hover {
+            @extend #{$input-selector}--neutral-hover-dark !optional;
+          }
+          &--neutral:active {
+            @extend #{$input-selector}--neutral-active-dark !optional;
+          }
+          &--neutral:disabled {
+            @extend #{$input-selector}--neutral-disabled-dark !optional;
+          }
+        }
+
+        // highlighted
+        @if $highlighted {
+          &--highlighted:enabled {
+            @extend #{$input-selector}--highlighted-enabled-dark !optional;
+          }
+        }
+
+        // bright
+        @if $bright {
+          &--bright:enabled {
+            @extend #{$input-selector}--bright-enabled-dark !optional;
+          }
+        }
+      }
+    }
+  }
+}
+
 @mixin process-monochrome-icons-list(
   $monochrome-icon-selectors,
   $light: true,
   $dark: true,
   $light-theme-selector: ".light",
   $dark-theme-selector: ".dark",
-  $primary: true,
-  $primary-hover: true,
-  $primary-active: true,
-  $primary-disabled: true,
+  $on-surface: true,
   $on-primary: true,
-  $on-primary-hover: true,
-  $on-primary-active: true,
   $on-disabled: true,
-  $neutral: true
+  $on-message: true,
+  $on-elevation: true,
+  $primary: true,
+  $error: true,
+  $warning: true,
+  $success: true,
+  $neutral: true,
+  $highlighted: true,
+  $bright: true
 ) {
   @each $monochrome-icon-selector in $monochrome-icon-selectors {
     @include generate-monochrome-icon-selector(
@@ -202,15 +489,48 @@
       $dark: $dark,
       $light-theme-selector: $light-theme-selector,
       $dark-theme-selector: $dark-theme-selector,
-      $primary: $primary,
-      $primary-hover: $primary-hover,
-      $primary-active: $primary-active,
-      $primary-disabled: $primary-disabled,
+      $on-surface: $on-surface,
       $on-primary: $on-primary,
-      $on-primary-hover: $on-primary-hover,
-      $on-primary-active: $on-primary-active,
       $on-disabled: $on-disabled,
-      $neutral: $neutral
+      $on-message: $on-message,
+      $on-elevation: $on-elevation,
+      $primary: $primary,
+      $error: $error,
+      $warning: $warning,
+      $success: $success,
+      $neutral: $neutral,
+      $highlighted: $highlighted,
+      $bright: $bright
     );
   }
+}
+
+// Generate icons virtual selectors
+
+/// It returns a list of virtual selectors. This function is designed to
+/// process the icons selectors generated by "svg-sass-generator" package,
+/// present in this monorepo. This function only generates one part of the
+/// selector: %icon__{category-name}_{icon-name}. ie.: %icon__system_user.
+/// Another mixin should then combine the selectors that this function provides
+/// with the rest of the selector. Generally, the other part of the selector
+/// includes the name of the icon state, and the name of the color scheme.
+/// An example of a complete selector: %icon__system_user--primary-light.
+/// @param {List} $icons-list - The list of icons
+/// @param {String} $category - The category name of the list
+/// @param {String} $prefix_category-separator - The prefix-category separator
+/// @return {String} $category_icon-separator - The category-icon separator
+@function generate-icons-virtual-selectors(
+  $icons-list,
+  $category,
+  $prefix_category-separator: "__",
+  $category_icon-separator: "_"
+) {
+  $output-list: ();
+  @each $icon in $icons-list {
+    $output-list: append(
+      $output-list,
+      "%icon#{$prefix_category-separator}#{$category}#{$category_icon-separator}#{$icon}"
+    );
+  }
+  @return $output-list;
 }

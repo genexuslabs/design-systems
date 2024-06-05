@@ -38,6 +38,15 @@ const includeStyles = () => {
   HEAD.appendChild(mercuryLink);
 };
 
+const includeFavicon = () => {
+  const linkElement = document.createElement("link");
+  linkElement.rel = "icon";
+  linkElement.type = "image/png";
+  linkElement.href = "../dist/assets/images/mercury-favicon-32x32.png";
+  linkElement.sizes = "32x32";
+  document.head.appendChild(linkElement);
+};
+
 const setScheme = () => {
   HTML.classList.add("dark");
 };
@@ -113,7 +122,8 @@ const includeSidebarPageInternalNav = () => {
       PAGE_ARTICLES.forEach(article => {
         const hasId = article.hasAttribute("id");
         const hasTitle = article.hasAttribute("data-title");
-        if (hasId && hasTitle) {
+        const isHidden = article.hasAttribute("hidden");
+        if (hasId && hasTitle && !isHidden) {
           const articleId = article.getAttribute("id");
           const articleTitle = article.getAttribute("data-title");
           const li = document.createElement("li");
@@ -212,6 +222,7 @@ const includeSidebarNav = async () => {
         // ¿Is this the item of the actual page?
         if (item.url.split(".")[0] === pageName) {
           CURRENT_PAGE_NAV_ITEM = li;
+          li.classList.add("current-page");
         }
 
         li.appendChild(a);
@@ -359,6 +370,7 @@ const copyToClipBoard = text => {
 
 document.addEventListener("DOMContentLoaded", function () {
   includeStyles();
+  includeFavicon();
   addGoogleFonts();
   addArticleTitles();
   addTitleAnchors();
