@@ -1104,6 +1104,8 @@ keyboard-navigation-mode="select">
                         class="tabular-grid-column"
                         column-id="code"
                         column-name="Country Code"
+                        column-type="rich"
+                        rich-row-selector
                         settingable="false"
                       ></ch-grid-column>
                       <ch-grid-column
@@ -1246,8 +1248,9 @@ keyboard-navigation-mode="focus">
   <ch-grid-columnset>
     <ch-grid-column
       class="tabular-grid-column"
-      column-id="code"
       column-name="Country Code"
+      column-type="rich"
+      rich-row-selector
       settingable="false"></ch-grid-column>
     <ch-grid-column
       class="tabular-grid-column"
@@ -1335,7 +1338,6 @@ keyboard-navigation-mode="focus">
               class="article"
               nav
               data-title="selection multiple with keyboard selection"
-              hidden
             >
               <header class="article__header"></header>
               <!-- main -->
@@ -1588,7 +1590,6 @@ keyboard-navigation-mode="selection">
               class="article"
               nav
               data-title="row-mark with keyboard-select"
-              hidden
             >
               <header class="article__header"></header>
               <!-- main -->
@@ -1849,7 +1850,6 @@ keyboard-navigation-mode="select">
               class="article"
               nav
               data-title="row-mark with keyboard-focus"
-              hidden
             >
               <header class="article__header"></header>
               <!-- main -->
@@ -2108,7 +2108,7 @@ keyboard-navigation-mode="focus">
             <!-- ================================== 
           row reorder
           =================================== -->
-            <article class="article" nav data-title="row reorder" hidden>
+            <article class="article" nav data-title="row reorder">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">

@@ -259,11 +259,12 @@
 
   // ch-grid-rowset-legend
   $tabular-grid-rowset-legend: ".tabular-grid-rowset-legend",
-  $tabular-grid-rowset-legend__caret: ".tabular-grid-rowset-legend__caret",
+  $tabular-grid-rowset-legend__caret: ".tabular-grid-rowset-legend::part(caret)",
   $tabular-grid-rowset-legend__selector-label:
-    ".tabular-grid-rowset-legend__selector-label",
-  $tabular-grid-rowset-legend__selector: ".tabular-grid-rowset-legend__selector",
-  $tabular-grid-rowset-legend__icon: ".tabular-grid-rowset-legend__icon",
+    ".tabular-grid-rowset-legend::part(selector-label)",
+  $tabular-grid-rowset-legend__selector:
+    ".tabular-grid-rowset-legend::part(selector)",
+  $tabular-grid-rowset-legend__icon: ".tabular-grid-rowset-legend::part(icon)",
 
   // ch-grid-cell
   $tabular-grid-cell: ".tabular-grid-cell",
@@ -366,6 +367,9 @@
       border-style: dotted;
       @include focus-style();
     }
+    &[dragging] {
+      box-shadow: var(--mer-box-shadow--01);
+    }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -374,6 +378,16 @@
 
   #{$tabular-grid-rowset} {
     @extend %tabular-grid-rowset;
+
+    // part::(caret)
+    #{$tabular-grid-rowset-legend__caret} {
+      @extend %icon__gemini-tools_minus--on-surface-enabled-dark;
+    }
+    &[collapsed] {
+      #{$tabular-grid-rowset-legend__caret} {
+        @extend %icon__gemini-tools_add--on-surface-enabled-dark;
+      }
+    }
 
     &[collapsed]:not(:last-child) {
       #{$tabular-grid-rowset-legend} {
@@ -388,9 +402,12 @@
 
   #{$tabular-grid-rowset-legend} {
     @extend %tabular-grid-rowset-legend;
+    display: flex;
+    align-items: center;
+    gap: var(--grid-base__icon-gap);
   }
   #{$tabular-grid-rowset-legend__caret} {
-    @extend %tabular-grid-rowset-legend__caret;
+    @extend %icon-background--before;
   }
   #{$tabular-grid-rowset-legend__selector-label} {
     @extend %tabular-grid-rowset-legend__selector-label;
@@ -400,6 +417,8 @@
   }
   #{$tabular-grid-rowset-legend__icon} {
     @extend %tabular-grid-rowset-legend__icon;
+    @extend %icon-background--before;
+    @extend %icon__gemini-tools_category-group--on-surface-enabled-dark;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -411,11 +430,9 @@
   }
   // drag icon
   #{$tabular-grid-cell__drag-icon} {
-    width: 8px;
-    height: 100%;
-    background-color: green;
-    cursor: pointer;
-    margin-inline-end: 8px;
+    @extend %icon-background--before;
+    @extend %icon__navigation_drag--on-surface-enabled-dark;
+    margin-inline-end: var(--grid-base__icon-gap);
   }
   // checkbox
   #{$tabular-grid-cell__selector-label} {
@@ -444,6 +461,9 @@
   // actions icon
   #{$tabular-grid-cell__actions-icon} {
     width: 100%;
+    @extend %icon-background--before;
+    @extend %icon__gemini-tools_show-more-vertical--on-surface-enabled-dark;
+    border: none;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
