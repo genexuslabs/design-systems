@@ -1,0 +1,19 @@
+@mixin tabular-grid-cell-tokens() {
+  // note: grid-cell is considered an "item", and because of this, the styles are
+  // applied through "item" @mixins. This ensures consistency across all system
+  // list items.
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //            Part "drag-icon"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //         Part "selector-label"
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //            Part "selector"
+  // - - - - - - - - - - - - - - - - - - - -
+}
+
+// --checkbox-check__color: var(--mer-border-color__neutral--active);
