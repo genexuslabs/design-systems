@@ -1,6 +1,7 @@
 @mixin checkbox-tokens() {
   // size
-  --ch-checkbox__container-size: var(--mer-spacing--md);
+  --ch-checkbox__container-size: var(--mer-control__block-size--tiny);
+  --ch-checkbox__option-size: calc(var(--mer-control__block-size--tiny) / 2);
 
   // border
   --mer-checkbox__border: var(--mer-border__width--sm) solid
