@@ -407,7 +407,7 @@
     gap: var(--grid-base__icon-gap);
   }
   #{$tabular-grid-rowset-legend__caret} {
-    @extend %icon-background--before;
+    @extend %icon-background--md-before;
   }
   #{$tabular-grid-rowset-legend__selector-label} {
     @extend %tabular-grid-rowset-legend__selector-label;
@@ -417,7 +417,7 @@
   }
   #{$tabular-grid-rowset-legend__icon} {
     @extend %tabular-grid-rowset-legend__icon;
-    @extend %icon-background--before;
+    @extend %icon-background--md-before;
     @extend %icon__gemini-tools_category-group--on-surface-enabled-dark;
   }
 
@@ -430,7 +430,7 @@
   }
   // drag icon
   #{$tabular-grid-cell__drag-icon} {
-    @extend %icon-background--before;
+    @extend %icon-background--md-before;
     @extend %icon__navigation_drag--on-surface-enabled-dark;
     margin-inline-end: var(--grid-base__icon-gap);
   }
@@ -461,7 +461,7 @@
   // actions icon
   #{$tabular-grid-cell__actions-icon} {
     width: 100%;
-    @extend %icon-background--before;
+    @extend %icon-background--md-before;
     @extend %icon__gemini-tools_show-more-vertical--on-surface-enabled-dark;
     border: none;
   }

@@ -25,7 +25,7 @@
     }
 
     &::before {
-      @extend %icon-mask--before;
+      @extend %icon-mask--md-before;
     }
   }
 }
@@ -42,7 +42,7 @@
     }
 
     &::before {
-      @extend %icon-background--before;
+      @extend %icon-background--md-before;
     }
   }
 }
@@ -59,7 +59,7 @@
     }
 
     &::before {
-      @extend %icon-background--before;
+      @extend %icon-background--md-before;
       @extend %button-icon-after-and-text--before;
     }
   }

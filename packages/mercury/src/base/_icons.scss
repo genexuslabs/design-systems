@@ -6,71 +6,16 @@
     );
   }
 }
-// - - - - - - - - - - - - - - - - - - - -
-//    Icons | Mask & Background
-// - - - - - - - - - - - - - - - - - - - -
-
-// Icon mask styles
-@mixin mer-icon-mask-common-styles(
-  $size: "sm",
-  $mask-size: var(--icon-mask-size)
-) {
-  $iconSize: var(--mer-icon__box--sm);
-  @if $size == "lg" {
-    $iconSize: var(--mer-icon__box--lg);
-  }
-  @include icon-mask-common-styles($iconSize, $iconSize, $mask-size);
-}
 
 /// @group Icon
 /// @param {String} $selector [".icon-mask"] -
 /// @param {type} $icon-path [null] -
 /// @param {type} $icon-class [null] -
 /// @output
-@mixin icon-mask($selector: ".icon-mask", $icon-path: null, $icon-class: null) {
-  #{$selector} {
-    @if $icon-path != null {
-      --icon-path: #{$icon-path};
-    }
-
-    @if $icon-class != null {
-      @extend #{$icon-class} !optional;
-    }
-
-    &::before {
-      @extend %icon-mask--before;
-    }
-  }
-}
-
-%icon-mask--before {
-  @include mer-icon-mask-common-styles($size: "sm", $mask-size: 100%);
-}
-
-// Icon background styles
-@mixin mer-icon-background-common-styles(
-  $size: "sm",
-  $background-size: var(--icon-mask-size)
-) {
-  $iconSize: var(--mer-icon__box--sm);
-  @if $size == "lg" {
-    $iconSize: var(--mer-icon__box--lg);
-  }
-  @include icon-background-common-styles(
-    $iconSize,
-    $iconSize,
-    $background-size
-  );
-}
-
-/// @group Icon
-/// @param {String} $selector [".icon-background"] -
-/// @param {type} $icon-path [null] -
-/// @param {type} $icon-class [null] -
-/// @output
-@mixin icon-background(
-  $selector: ".icon-background",
+@mixin icon-mask(
+  $selector: ".icon-mask",
   $icon-path: null,
+  $icon-size: "sm",
   $icon-class: null
 ) {
   #{$selector} {
@@ -83,14 +28,63 @@
     }
 
     &::before {
-      @extend %icon-background--before;
+      @extend %icon-mask--#{$icon-size}-before;
     }
   }
 }
 
-%icon-background--before {
-  @include mer-icon-background-common-styles(
-    $size: "sm",
+%icon-mask--sm-before {
+  @include icon-mask-common-styles(
+    $inline-size: var(--mer-icon__box--sm),
+    $block-size: var(--mer-icon__box--sm),
+    $mask-size: 100%
+  );
+}
+%icon-mask--md-before {
+  @include icon-mask-common-styles(
+    $inline-size: var(--mer-icon__box--md),
+    $block-size: var(--mer-icon__box--md),
+    $mask-size: 100%
+  );
+}
+
+/// @group Icon
+/// @param {String} $selector [".icon-background"] -
+/// @param {type} $icon-path [null] -
+/// @param {type} $icon-class [null] -
+/// @output
+@mixin icon-background(
+  $selector: ".icon-background",
+  $icon-path: null,
+  $icon-size: "sm",
+  $icon-class: null
+) {
+  #{$selector} {
+    @if $icon-path != null {
+      --icon-path: #{$icon-path};
+    }
+
+    @if $icon-class != null {
+      @extend #{$icon-class} !optional;
+    }
+
+    &::before {
+      @extend %icon-background--#{$icon-size}-before;
+    }
+  }
+}
+
+%icon-background--sm-before {
+  @include icon-background-common-styles(
+    $inline-size: var(--mer-icon__box--sm),
+    $block-size: var(--mer-icon__box--sm),
+    $background-size: 100%
+  );
+}
+%icon-background--md-before {
+  @include icon-background-common-styles(
+    $inline-size: var(--mer-icon__box--md),
+    $block-size: var(--mer-icon__box--md),
     $background-size: 100%
   );
 }
