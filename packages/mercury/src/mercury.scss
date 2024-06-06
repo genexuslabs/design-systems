@@ -25,6 +25,7 @@
 @import "./tokens/semantic/accent";
 
 // Base classes
+@import "./base/label/label-styles";
 @import "./base/button/button-styles";
 @import "./base/form-controls/form-input-styles";
 @import "./base/icons";
@@ -73,6 +74,7 @@
 
   // Base
   $base-classes: true,
+  $label: true,
   $button-classes: true,
   $form-controls-classes: true,
   $icon-classes: true,
@@ -317,6 +319,11 @@
   //              Base classes
   // - - - - - - - - - - - - - - - - - - - -
   @if $base-classes {
+    // Label classes
+    @if $label {
+      @include label();
+    }
+
     // Button classes
     @if $button-classes {
       // Button primary
