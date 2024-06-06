@@ -27,12 +27,12 @@
 // Base classes
 @import "./base/label/label-styles";
 @import "./base/button/button-styles";
-@import "./base/form-input-element/form-input-element-styles.scss";
+@import "./base/form-controls/form-input-styles";
 @import "./base/icons";
 
 // Icons
 @import "./icons/button";
-@import "./icons/form-input-element";
+@import "./icons/form-input";
 
 // Components
 @import "./components/checkbox/checkbox-styles";
@@ -76,7 +76,7 @@
   $base-classes: true,
   $label: true,
   $button-classes: true,
-  $form-input-text-classes: true,
+  $form-controls-classes: true,
   $icon-classes: true,
 
   // Icons
@@ -336,16 +336,16 @@
       @include button-tertiary();
     }
 
-    // Form input text
-    @if $form-input-text-classes {
-      @include form-input-text-only();
+    // Form control classes
+    @if $form-controls-classes {
+      @include form-input();
     }
 
     // Icon classes
     @if $icon-classes {
       @include icon-mask();
       @include icon-background();
-      @include form-input-text-icon();
+      @include form-input-icon();
       @include form-input-bg-x-rtl-support();
     }
   }
@@ -370,7 +370,7 @@
     @include button-icon-after-and-text();
 
     // Form input text
-    @include form-input-text-icon();
+    @include form-input-icon();
   }
 
   // - - - - - - - - - - - - - - - -  - - -

@@ -1,0 +1,86 @@
+@import "form-input-tokens";
+
+%form-input {
+  @include form-input-tokens();
+  font-family: var(--mer-form-input__font-family);
+  border: var(--mer-form-input__border);
+  border-radius: var(--mer-form-input__border-radius);
+  color: var(--mer-form-input__color);
+  font-size: var(--mer-form-input__font-size);
+  block-size: var(--mer-control__block-size);
+  padding-inline: var(--mer-form-input__padding-inline);
+
+  &--focus {
+    @include focus-style(false);
+  }
+
+  &--hover {
+    border-color: var(--mer-form-input__border-color--hover);
+  }
+
+  &--disabled {
+    color: var(--mer-form-input__color--disabled);
+    border-color: var(--mer-form-input__border-color--disabled);
+    background-color: var(--mer-form-input__bg-color--disabled);
+  }
+
+  &--disabled-placeholder {
+    --mer-form-input__color--placeholder: var(
+      --mer-form-input__color--disabled
+    );
+  }
+
+  &--error {
+    border-color: var(--mer-form-input__border-color--error);
+  }
+}
+
+%form-input__placeholder {
+  font-style: italic;
+  color: var(--mer-form-input__color--placeholder);
+}
+
+/// @group Form
+/// @param {String} $selector [".form-input"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @param {Boolean} $add--placeholder [true] -
+/// @param {Boolean} $add--placeholder-var [true] -
+/// @param {Boolean} $add--error [true] -
+@mixin form-input(
+  $selector: ".form-input",
+  $add--disabled: true,
+  $add--placeholder: true,
+  $add--placeholder-var: false,
+  $add--error: true
+) {
+  #{$selector} {
+    @extend %form-input;
+
+    @if $add--placeholder-var {
+      // @include form-input-placeholder-var(); TODO
+    }
+
+    @if $add--placeholder {
+      &::placeholder {
+        @extend %form-input__placeholder;
+      }
+    }
+
+    &:focus {
+      @extend %form-input--focus;
+    }
+
+    @if $add--disabled {
+      &:disabled,
+      &--disabled {
+        @extend %form-input--disabled;
+      }
+    }
+
+    @if $add--error {
+      &--error {
+        @extend %form-input--error;
+      }
+    }
+  }
+}
