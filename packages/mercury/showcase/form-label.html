@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>From Label</title>
+
+    <script type="module">
+      import { defineCustomElements } from "https://unpkg.com/@genexus/chameleon-controls-library@latest/dist/esm/loader.js";
+      defineCustomElements();
+    </script>
+
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+      .box {
+        display: block;
+        inline-size: 150px;
+        block-size: 32px;
+        background-color: var(--mer-color__elevation--02);
+      }
+      .inline-alignment {
+        display: flex;
+        align-items: center;
+      }
+      .block-alignment {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body class="showcase" sidebar>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">form label</h1>
+            <p class="section__description">
+              A label element is a crucial component on a webpage, designed to
+              provide descriptive text for form controls. It improves
+              accessibility and usability by indicating the purpose of the
+              associated input element, helping users understand what
+              information is required.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          label above
+          =========================== -->
+            <article class="article" nav data-title="label above">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="block-alignment">
+                    <label class="label label--above">The Label Caption</label>
+                    <div class="box"></div>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-1" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup1 = `<label class="label label--above">The Label Caption</label>`;
+                    document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          label after
+          =========================== -->
+            <article class="article" nav data-title="label after">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="inline-alignment">
+                    <div class="box"></div>
+                    <label class="label label--after">The Label Caption</label>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-2" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup2 = `<label class="label label--after">The Label Caption</label>`;
+                    document.getElementById("ch-code-2").value = markup2;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          label below
+          =========================== -->
+            <article class="article" nav data-title="label below">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="block-alignment">
+                    <div class="box"></div>
+                    <label class="label label--below">The Label Caption</label>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-3" language="xml" class="code"></ch-code>
+                  <script>
+                    const markup3 = `<label class="label label--below">The Label Caption</label>`;
+                    document.getElementById("ch-code-3").value = markup3;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          label before
+          =========================== -->
+            <article class="article" nav data-title="label before">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="inline-alignment">
+                    <label class="label label--before">The Label Caption</label>
+                    <div class="box"></div>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-4" language="xml" class="code"></ch-code>
+                  <script>
+                    const markup4 = `<label class="label label--before">The Label Caption</label>`;
+                    document.getElementById("ch-code-4").value = markup4;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          label disabled
+          =========================== -->
+            <article class="article" nav data-title="disabled">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <label class="label label--disabled">The Label Caption</label>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-5" language="xml" class="code"></ch-code>
+                  <script>
+                    const markup5 = `<label class="label label--before">The Label Caption</label>`;
+                    document.getElementById("ch-code-5").value = markup5;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./assets/scripts.js"></script>
+  </body>
+</html>
