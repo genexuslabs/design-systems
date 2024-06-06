@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tree View</title>
+
+    <script type="module">
+      import { defineCustomElements } from "https://unpkg.com/@genexus/chameleon-controls-library@latest/dist/esm/loader.js";
+      defineCustomElements();
+    </script>
+
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+      .article__content {
+        height: 300px;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body class="showcase" sidebar>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">tree view</h1>
+            <p class="section__description">section description</p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          button-primary text only
+          =========================== -->
+            <article class="article" nav data-title="text only">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-tree-view-render
+                    class="tree-view-primary"
+                    show-lines="all"
+                    multi-selection="true"
+                    id="tree-basic"
+                  ></ch-tree-view-render>
+                  <script type="module">
+                    /* - - - - - - - - - - - - - - -
+                    Lazy Load Promise 
+                    - - - - - - - - - - - - - - -*/
+                    // import tree models
+                    import {
+                      fileSystemModel,
+                      lazyLoadItemsDictionary,
+                      kbExplorerModel,
+                      importObjectsModel,
+                      lazyLoadTreeItemsCallback
+                    } from "./assets/models/tree.js";
+
+                    // get reference to tree and set model
+                    const testTreeX = document.getElementById("tree-basic");
+                    testTreeX.model = kbExplorerModel;
+
+                    /* - - - - - - - - - - - - - - -
+                    Lazy Load Promise 
+                    - - - - - - - - - - - - - - -*/
+                    testTreeX.lazyLoadTreeItemsCallback =
+                      lazyLoadTreeItemsCallback;
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-1" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup1 = ``;
+                    document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./assets/scripts.js"></script>
+  </body>
+</html>
