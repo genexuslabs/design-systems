@@ -55,6 +55,9 @@ General
 * {
   scroll-behavior: smooth;
 }
+html {
+  background-color: var(--mer-color__surface);
+}
 body.showcase {
   display: block; /*WA: Prevent issues with scroll in internal controls due to display: grid on the body*/
 }
