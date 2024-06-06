@@ -1,0 +1,64 @@
+@import "tokens";
+
+%label {
+  @include label-tokens();
+  font-family: var(--label__font-family);
+  font-size: var(--label__font-size);
+  color: var(--label__color);
+  line-height: var(--label__line-height);
+}
+
+// Positioning margin
+%label--disabled {
+  color: var(--label__color--disabled);
+}
+%label--above {
+  margin-block-end: var(--label__block-margin);
+}
+%label--after {
+  margin-inline-start: var(--label__inline-margin);
+}
+%label--below {
+  margin-block-start: var(--label__block-margin);
+}
+%label--before {
+  margin-inline-end: var(--label__inline-margin);
+}
+
+/// @group Label
+/// @param {String} $label-selector [".label"] -
+/// @param {String} $label--disabled-selector [".label--disabled"] -
+/// @param {String} $label--above-selector [".label--above"] -
+/// @param {String} $label--after-selector [".label--after"] -
+/// @param {String} $label--below-selector [".label--below"] -
+/// @param {String} $label--before-selector [".label--before"] -
+@mixin label(
+  $label-selector: ".label",
+  $label--disabled-selector: ".label--disabled",
+  $label--above-selector: ".label--above",
+  $label--after-selector: ".label--after",
+  $label--below-selector: ".label--below",
+  $label--before-selector: ".label--before"
+) {
+  #{$label-selector} {
+    @extend %label;
+  }
+
+  #{$label--disabled-selector} {
+    @extend %label--disabled;
+  }
+
+  // Positioning margin
+  #{$label--above-selector} {
+    @extend %label--above;
+  }
+  #{$label--after-selector} {
+    @extend %label--after;
+  }
+  #{$label--below-selector} {
+    @extend %label--below;
+  }
+  #{$label--before-selector} {
+    @extend %label--before;
+  }
+}
