@@ -2,7 +2,8 @@
 
 %tree-view {
   @include tree-view-tokens();
-  // font-size: var(--tree-view__font-size); // check
+  font-size: var(--tree-view__font-size);
+  line-height: var(--mer-line-height--regular);
   padding: var(--tree-view__padding);
   min-inline-size: var(--tree-view__min-inline-size);
 }
@@ -28,19 +29,6 @@
 %tree-view-item__header {
   border-radius: var(--tree-view-item-header__border-radius);
   padding-inline-end: var(--tree-view-item-custom__padding-inline-end);
-
-  /* check */
-  --ch-tree-view-item-custom-padding-inline-start: var(
-    --tree-view-item-custom-padding-inline-start
-  );
-  --ch-tree-view-item-gap: var(--tree-view-item-gap);
-  --ch-tree-view-item__checkbox-size: var(--tree-view-item__checkbox-size);
-  --ch-tree-view-item__image-size: var(--tree-view-item__image-size);
-  --ch-tree-view-item__line--inset-inline-end: var(
-    --tree-view-item__line--inset-inline-end
-  );
-  // --ch-tree-view-item__line--inset-inline-start: 1em;
-  /* /end check */
 
   &--focus-visible {
     @include focus-style(true);
