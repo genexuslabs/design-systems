@@ -1,0 +1,17 @@
+@import "tokens";
+
+%label {
+  @include label-tokens();
+  font-family: var(--label__font-family);
+  font-size: var(--label__font-size);
+  color: var(--label__color);
+  line-height: var(--label__line-height);
+}
+
+/// @group Label
+/// @param {String} $label-selector [".label"] -
+@mixin label($label-selector: ".label") {
+  #{$label-selector} {
+    @extend %label;
+  }
+}
