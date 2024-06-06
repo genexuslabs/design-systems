@@ -5,14 +5,18 @@
   --tree-view__font-size: var(--mer-body__font-size);
 
   // - - - - - - - - - - - - - - - - - - - -
-  //                  Item
+  //     Item (Provided by the ch-tree)
   // - - - - - - - - - - - - - - - - - - - -
-  --tree-view-item-custom-padding-inline-start: var(--mer-spacing--2xs);
-  --tree-view-item-gap: var(--mer-spacing--xs);
-  --tree-view-item__checkbox-size: var(--mer-spacing--md);
-  --tree-view-item__expandable-button-size: var(--mer-spacing--md);
-  --tree-view-item__image-size: var(--mer-spacing--md);
-  --tree-view-item__line--inset-inline-end: 4px;
+  --ch-tree-view-item-custom-padding-inline-start: var(--mer-spacing--xs);
+  --ch-tree-view-item-gap: var(--mer-spacing--xs);
+  --ch-tree-view-item__checkbox-size: var(--mer-spacing--md);
+  --ch-tree-view-item__expandable-button-size: var(--mer-spacing--md);
+  --ch-tree-view-item__image-size: var(--mer-spacing--md);
+  --ch-tree-view-item__line--inset-inline-end: 4px;
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //       Item (Custom css properties)
+  // - - - - - - - - - - - - - - - - - - - -
 
   --tree-view__min-inline-size: max-content;
   --tree-view__padding: var(--mer-spacing--xs);
