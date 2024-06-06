@@ -19,7 +19,7 @@ const FIRST_LEVEL_SIZE = 10;
 const SECOND_LEVEL_SIZE = 20;
 const THIRD_LEVEL_SIZE = 20;
 
-const ASSETS_PREFIX = "showcase/pages/assets/icons/";
+const ASSETS_PREFIX = "assets/icons/objects/";
 
 const fileSystem_root = [
   {
