@@ -6,24 +6,23 @@
   font-size: var(--label__font-size);
   color: var(--label__color);
   line-height: var(--label__line-height);
+}
 
-  &--disabled {
-    color: var(--label__color--disabled);
-  }
-
-  // Positioning margin
-  &--above {
-    margin-block-end: var(--label__block-margin);
-  }
-  &--after {
-    margin-inline-start: var(--label__inline-margin);
-  }
-  &--below {
-    margin-block-start: var(--label__block-margin);
-  }
-  &--before {
-    margin-inline-end: var(--label__inline-margin);
-  }
+// Positioning margin
+%label--disabled {
+  color: var(--label__color--disabled);
+}
+%label--above {
+  margin-block-end: var(--label__block-margin);
+}
+%label--after {
+  margin-inline-start: var(--label__inline-margin);
+}
+%label--below {
+  margin-block-start: var(--label__block-margin);
+}
+%label--before {
+  margin-inline-end: var(--label__inline-margin);
 }
 
 /// @group Label
