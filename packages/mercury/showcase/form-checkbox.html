@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkbox</title>
+
+    <script type="module">
+      import { defineCustomElements } from "https://unpkg.com/@genexus/chameleon-controls-library@latest/dist/esm/loader.js";
+      defineCustomElements();
+    </script>
+
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body class="showcase" sidebar>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">checkbox</h1>
+            <p class="section__description">
+              A checkbox input element is a versatile component on a webpage,
+              designed to allow users to make binary choices. It is typically
+              used for selecting multiple options from a list or toggling a
+              setting on and off, making it an essential tool for enhancing user
+              interaction and data collection.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          checked
+          =========================== -->
+            <article class="article" nav data-title="checked">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox"
+                    checked-value="true"
+                    un-checked-value="false"
+                    value="true"
+                  ></ch-checkbox>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-1" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup1 = `<ch-checkbox
+class="checkbox"
+checked-value="true"
+un-checked-value="false"
+value="true"></ch-checkbox>`;
+                    document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          unchecked
+          =========================== -->
+            <article class="article" nav data-title="unchecked">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox"
+                    checked-value="true"
+                    un-checked-value="false"
+                    value="false"
+                  ></ch-checkbox>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-2" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup2 = `<ch-checkbox
+class="checkbox"
+checked-value="true"
+un-checked-value="false"
+value="false"></ch-checkbox>`;
+                    document.getElementById("ch-code-2").value = markup2;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          indeterminate
+          =========================== -->
+            <article class="article" nav data-title="indeterminate">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox"
+                    checked-value="true"
+                    un-checked-value="false"
+                    value="false"
+                    indeterminate
+                  ></ch-checkbox>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-3" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup3 = `<ch-checkbox
+class="checkbox"
+checked-value="true"
+un-checked-value="false"
+value="false"
+indeterminate></ch-checkbox>`;
+                    document.getElementById("ch-code-3").value = markup3;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          with label
+          =========================== -->
+            <article class="article" nav data-title="with label">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox checkbox--error"
+                    checked-value="true"
+                    un-checked-value="false"
+                    value="false"
+                    caption="Caption"
+                  ></ch-checkbox>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-4" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup4 = ` <ch-checkbox
+class="checkbox checkbox--error"
+checked-value="true"
+un-checked-value="false"
+value="false"
+caption="Caption"></ch-checkbox>`;
+                    document.getElementById("ch-code-4").value = markup4;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./assets/scripts.js"></script>
+  </body>
+</html>

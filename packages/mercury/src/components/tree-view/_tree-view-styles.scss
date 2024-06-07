@@ -140,6 +140,10 @@
     ".tree-view-primary::part(item__checkbox-input)",
   $item__checkbox-input--disabled-selector:
     ".tree-view-primary::part(item__checkbox-input disabled)",
+  $item__checkbox-input--checked-selector:
+    ".tree-view-primary::part(item__checkbox-input checked)",
+  $item__checkbox-input--indeterminate-selector:
+    ".tree-view-primary::part(item__checkbox-input indeterminate)",
   $item__checkbox-option--disabled-selector:
     ".tree-view-primary::part(item__checkbox-option disabled)",
   $item__checkbox-option--checked-selector:
@@ -226,10 +230,16 @@
   @include checkbox(
     $checkbox-selector: #{$item__checkbox-selector},
 
+    // input
     $checkbox__input-selector: #{$item__checkbox-input-selector},
 
     $checkbox__input--disabled-selector: #{$item__checkbox-input--disabled-selector},
 
+    $checkbox__input--checked-selector: #{$item__checkbox-input--checked-selector},
+
+    $checkbox__input--indeterminate-selector: #{$item__checkbox-input--indeterminate-selector},
+
+    // option
     $checkbox__option--disabled-selector: #{$item__checkbox-option--disabled-selector},
 
     $checkbox__option--checked-selector: #{$item__checkbox-option--checked-selector},
@@ -237,22 +247,7 @@
     $checkbox__option--indeterminate-selector: #{$item__checkbox-option--indeterminate-selector},
 
     $add--disabled: $add--disabled,
+    $add--error: false,
     $add--label: false
   );
 }
-
-// // folder
-// &--folder::part(action)::before {
-//   background-image: url("../src/showcase/assets/icons/folder.svg");
-// }
-// &--folder::part(action expanded)::before {
-//   background-image: url("../src/showcase/assets/icons/folder-open.svg");
-// }
-
-// // module
-// &--module::part(action)::before {
-//   background-image: url("../src/showcase/assets/icons/module.svg");
-// }
-// &--module::part(action expanded)::before {
-//   background-image: url("../src/showcase/assets/icons/module-open.svg");
-// }
