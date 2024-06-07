@@ -38,37 +38,46 @@
   gap: var(--spacing-un-spacing--s);
 }
 
-@mixin tab() {
-  .tab {
+@mixin tab(
+  $tab-selector: ".tab",
+  $tab-caption-selector: ".tab::part(button)",
+  $tab-caption--selected-selector: ".tab::part(button selected)",
+  $tab-caption--disabled-selector: ".tab::part(button disabled)",
+  $tab-list-selector: ".tab::part(tab-list)",
+  $add--disabled: true
+) {
+  #{$tab-selector} {
     @extend %tab;
+  }
 
-    &::part(button) {
-      @extend %tab-text;
-      @extend %tab-caption;
+  #{$tab-caption-selector} {
+    @extend %tab-text;
+    @extend %tab-caption;
 
-      &:hover {
-        @extend %tab-caption--hover;
-      }
-
-      &:active {
-        @extend %tab-caption--active;
-      }
-
-      &:focus-visible {
-        @extend %tab-caption--focus-visible;
-      }
+    &:hover {
+      @extend %tab-caption--hover;
     }
 
-    &::part(button selected) {
-      @extend %tab-caption--selected;
+    &:active {
+      @extend %tab-caption--active;
     }
 
-    &::part(button disabled) {
+    &:focus-visible {
+      @extend %tab-caption--focus-visible;
+    }
+  }
+
+  #{$tab-caption--selected-selector} {
+    @extend %tab-caption--selected;
+  }
+
+  #{$tab-list-selector} {
+    @extend %tab-list;
+  }
+
+  @if $add--disabled {
+    #{$tab-caption--disabled-selector} {
       @extend %tab-caption--disabled;
-    }
-
-    &::part(tab-list) {
-      @extend %tab-list;
     }
   }
 }
