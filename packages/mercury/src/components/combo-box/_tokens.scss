@@ -1,0 +1,13 @@
+@mixin combo-box-tokens() {
+  // - - - - - - - - - - - - - - - - - - - -
+  //     Provided by the ch-combo-box
+  // - - - - - - - - - - - - - - - - - - - -
+  --ch-combo-box-separation-y: 2px;
+  --ch-combo-box-item-gap: 8px;
+
+  --ch-combo-box-item__image-size: 16px;
+  --ch-combo-box-group__expandable-button-size: 16px;
+
+  --ch-combo-box-group__expandable-button-image-size: 12px;
+  --ch-combo-box-item__background-image-size: 100%;
+}
