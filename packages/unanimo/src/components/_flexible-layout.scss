@@ -1,0 +1,16 @@
+@mixin flexible-layout(
+  $tab-selector: ".flexible-layout::part(leaf)",
+  $tab-caption-selector: ".flexible-layout::part(button)",
+  $tab-caption--selected-selector: ".flexible-layout::part(button selected)",
+  $tab-caption--disabled-selector: ".flexible-layout::part(button disabled)",
+  $tab-list-selector: ".flexible-layout::part(tab-list)",
+  $add--disabled: true
+) {
+  @include tab(
+    $tab-selector: #{$tab-selector},
+    $tab-caption-selector: #{$tab-caption-selector},
+    $tab-caption--selected-selector: #{$tab-caption--selected-selector},
+    $tab-list-selector: #{$tab-list-selector},
+    $add--disabled: $add--disabled
+  );
+}

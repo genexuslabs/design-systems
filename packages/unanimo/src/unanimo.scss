@@ -29,6 +29,7 @@
 @import "./components/combo-box";
 @import "./components/dialog";
 @import "./components/dropdown";
+@import "./components/flexible-layout";
 @import "./components/header";
 @import "./components/markdown";
 @import "./components/query-viewer-pivot-table";
@@ -92,6 +93,7 @@
   $dropdown-primary: true,
   $dropdown-secondary: true,
   $dropdown-conversational: true,
+  $flexible-layout: true,
   $header: true,
   $markdown: true,
   $query-viewer-pivot-table: true,
@@ -347,6 +349,11 @@
     // dropdown conversational
     @if $dropdown-conversational {
       @include dropdown-conversational();
+    }
+
+    // flexible-layout
+    @if $flexible-layout {
+      @include flexible-layout();
     }
 
     // header
