@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radio Group</title>
+
+    <script type="module">
+      import { defineCustomElements } from "https://unpkg.com/@genexus/chameleon-controls-library@latest/dist/esm/loader.js";
+      defineCustomElements();
+    </script>
+
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body class="showcase" sidebar>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">radio group</h1>
+            <p class="section__description">A radio group is an essential UI component in HTML, designed to allow users to select one option from a set of choices. Each radio button within the group represents a distinct option, ensuring mutual exclusivity. This setup is commonly used in forms to facilitate decisions such as choosing a payment method, selecting a preferred contact time, or specifying a shipping option.</p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          no label
+          =========================== -->
+            <article class="article" nav data-title="no label">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-radio-group-render class="radio-group" id="radio-group-1"></ch-radio-group>
+                  <script>
+                    const radioGroup1 =
+                      document.getElementById("radio-group-1");
+                    radioGroup1.model = [
+                      { value: "value 1", caption: "Label for the value 1" },
+                      {
+                        value: "value 2",
+                        caption: "Label for the value 2"
+                      },
+                      {
+                        value: "value 3",
+                        caption: "Label for the value 3",
+                        disabled: true
+                      },
+                      { value: "value 4", caption: "Label for the value 4" },
+                      {
+                        value: "value 5",
+                        caption: "Label for the value 5",
+                        disabled: true
+                      },
+                      {
+                        value: "value 6",
+                        caption: "Label for the value 6"
+                      }
+                    ];
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-1" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup1 = `<ch-radio-group-render class="radio-group"></ch-radio-group-render>`
+                    document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./assets/scripts.js"></script>
+  </body>
+</html>

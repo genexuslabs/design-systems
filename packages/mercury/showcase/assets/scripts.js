@@ -4,6 +4,9 @@ const _URL = new URL(window.location.href);
 const PAGE_URL = `${_URL.origin}${_URL.pathname}`;
 const ARTICLE_HEADER_CLASS = ".article__header";
 const ARTICLE_SELECTOR = ".article[nav]";
+const CONTAINER_REF = document.querySelector(".container");
+let topBarRef = null;
+
 // references
 const HTML = document.querySelector("html");
 const HEAD = document.head;
@@ -30,6 +33,12 @@ const includeStyles = () => {
   sidebarStylesLink.rel = "stylesheet";
   sidebarStylesLink.href = "./assets/sidebar.css";
   HEAD.appendChild(sidebarStylesLink);
+
+  //top-bar styles
+  const topBarStylesLink = document.createElement("link");
+  topBarStylesLink.rel = "stylesheet";
+  topBarStylesLink.href = "./assets/top-bar.css";
+  HEAD.appendChild(topBarStylesLink);
 
   //mercury styles
   const mercuryLink = document.createElement("link");
@@ -140,6 +149,15 @@ const includeSidebarPageInternalNav = () => {
   }
 };
 
+const includeTopBar = () => {
+  if (CONTAINER_REF) {
+    const topBarEl = document.createElement("div");
+    topBarEl.className = "container__top-bar";
+    CONTAINER_REF.appendChild(topBarEl);
+    topBarRef = topBarEl;
+  }
+};
+
 const addArticleTitles = () => {
   if (!PAGE_ARTICLES) {
     PAGE_ARTICLES = document.querySelectorAll(ARTICLE_SELECTOR);
@@ -223,6 +241,11 @@ const includeSidebarNav = async () => {
         if (item.url.split(".")[0] === pageName) {
           CURRENT_PAGE_NAV_ITEM = li;
           li.classList.add("current-page");
+
+          // Include chameleon URL
+          if (item.chameleonUrl && item.chameleonUrl !== null) {
+            includeChameleonURL(item.chameleonUrl);
+          }
         }
 
         li.appendChild(a);
@@ -357,6 +380,18 @@ const addCopyCodeFunctionality = () => {
   }
 };
 
+const includeChameleonURL = chameleonURL => {
+  if (chameleonURL && topBarRef) {
+    const anchor = document.createElement("a");
+    anchor.className = "button-tertiary";
+    anchor.textContent = "Chameleon Reference";
+    anchor.textContent = "Chameleon Reference";
+    anchor.setAttribute("href", chameleonURL);
+    anchor.setAttribute("target", "_blank");
+    topBarRef.appendChild(anchor);
+  }
+};
+
 const copyToClipBoard = text => {
   navigator.clipboard
     .writeText(text)
@@ -379,4 +414,6 @@ document.addEventListener("DOMContentLoaded", function () {
   addCopyCodeFunctionality();
   listenToCtrlCmd();
   includeSidebar();
+  includeTopBar();
+  includeChameleonURL();
 });
