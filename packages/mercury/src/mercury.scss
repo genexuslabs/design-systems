@@ -36,6 +36,7 @@
 
 // Components
 @import "./components/checkbox/checkbox-styles";
+@import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
 @import "./components/tree-view/tree-view-styles";
 @import "./components/tabular-grid/tabular-grid-styles";
@@ -85,6 +86,7 @@
   // Components
   $components: true,
   $checkbox: true,
+  $radio-group: true,
   $tree-view-primary: true,
   $tabular-grid: true,
   $code: true
@@ -381,6 +383,12 @@
     @if $checkbox {
       @include checkbox();
     }
+
+    // radio-group
+    @if $radio-group {
+      @include radio-group();
+    }
+
     // tree view
     @if $tree-view-primary {
       @include tree-view-primary();

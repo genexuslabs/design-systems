@@ -58,7 +58,7 @@ Header
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
+  height: var(--sc-top-bar__height);
 }
 .sidebar__header {
   border-block-end: 1px solid var(--sc-sidebar__border-color);
