@@ -2,12 +2,12 @@
   // - - - - - - - - - - - - - - - - - - - -
   //     Provided by the ch-combo-box
   // - - - - - - - - - - - - - - - - - - - -
-  --ch-combo-box-separation-y: 2px;
-  --ch-combo-box-item-gap: 8px;
+  --ch-combo-box-separation-y: var(--mer-spacing--3xs);
+  --ch-combo-box-item-gap: var(--mer-spacing--xs);
 
-  --ch-combo-box-item__image-size: 16px;
-  --ch-combo-box-group__expandable-button-size: 16px;
+  --ch-combo-box-item__image-size: var(--mer-spacing--md);
+  --ch-combo-box-group__expandable-button-size: var(--mer-spacing--md);
 
-  --ch-combo-box-group__expandable-button-image-size: 12px;
+  --ch-combo-box-group__expandable-button-image-size: var(--mer-spacing--sm);
   --ch-combo-box-item__background-image-size: 100%;
 }
