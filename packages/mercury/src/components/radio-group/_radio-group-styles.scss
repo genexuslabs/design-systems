@@ -1,0 +1,138 @@
+@import "tokens";
+
+%radio-group {
+  @include radio-group-tokens();
+
+  // TODO : Extend form input styles
+
+  // Css properties provided by the ch-radio-group-render
+  --ch-radio-group__radio-container-size: var(--mer-control__block-size--tiny);
+  --ch-radio-group__radio-option-size: calc(var(--mer-spacing--2xs) * 1.5);
+  // /End
+
+  color: var(--mer-body__color);
+  gap: var(--radio-group_gap);
+}
+
+%radio-item {
+  // gas is set as margin-inline-start on the "radio__label" part
+}
+
+%radio__container {
+  border: var(--mer-form-input__border);
+  flex-shrink: 0;
+
+  &--focus {
+    @include focus-style(true);
+  }
+
+  &--disabled {
+    color: var(--borders-un-border-color__disabled);
+  }
+
+  &--checked {
+    color: var(--mer-form-input-check__border-color);
+  }
+
+  // Not implemented yet in the control
+  &--error {
+    background-color: var(--colors-Foundation-un-color__red--100);
+    color: var(--borders-un-border-color__error);
+  }
+}
+
+%radio__label {
+  font-size: 12px;
+}
+
+%radio__label--disabled {
+  @extend %label--disabled;
+}
+
+/// @group Radio Group
+/// @param {String} $radio-group-selector [".radio-group"] -
+/// @param {String} $radio-item-selector [".radio-group::part(radio-item)"] -
+/// @param {String} $radio-item__container-selector [".radio-group::part(radio__container)"] -
+/// @param {String} $radio-item__container--focus-selector [".radio-group::part(radio__container):focus-within"] -
+/// @param {String} $radio-item__container--disabled-selector [".radio-group::part(radio__container disabled)"] -
+/// @param {String} $radio-item__container--checked-selector [".radio-group::part(radio__container checked)"] -
+/// @param {String} $radio-item__container--error-selector [".radio-group::part(radio__container error)"] -
+/// @param {String} $radio-item__label [".radio-group::part(radio__label)"] -
+/// @param {String} $radio-item__label--disabled-selector [".radio-group::part(radio__label disabled)"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @param {Boolean} $add--error [true] -
+@mixin radio-group(
+  $radio-group-selector: ".radio-group",
+
+  $radio-item-selector: ".radio-group::part(radio-item)",
+
+  $radio-item__container-selector: ".radio-group::part(radio__container)",
+
+  $radio-item__container--focus-selector:
+    ".radio-group::part(radio__container):focus-within",
+
+  $radio-item__container--disabled-selector:
+    ".radio-group::part(radio__container disabled)",
+
+  $radio-item__container--checked-selector:
+    ".radio-group::part(radio__container checked)",
+
+  $radio-item__container--error-selector:
+    ".radio-group::part(radio__container error)",
+
+  $radio-item__label: ".radio-group::part(radio__label)",
+
+  $radio-item__label--disabled-selector:
+    ".radio-group::part(radio__label disabled)",
+
+  $add--disabled: true,
+
+  $add--error: true
+) {
+  #{$radio-group-selector} {
+    @extend %radio-group;
+  }
+
+  #{$radio-item-selector} {
+    @extend %radio-item;
+  }
+
+  #{$radio-item__container-selector} {
+    @extend %radio__container;
+  }
+
+  #{$radio-item__container--focus-selector} {
+    @extend %radio__container--focus;
+  }
+
+  @if $add--disabled {
+    #{$radio-item__container--disabled-selector} {
+      @extend %radio__container--disabled;
+      border-color: var(--mer-border-color__primary--disabled);
+    }
+  }
+
+  #{$radio-item__container--checked-selector} {
+    @extend %radio__container--checked;
+    border-color: var(--mer-color__neutral-gray--300);
+  }
+
+  @if $add--error {
+    #{$radio-item__container--error-selector} {
+      @extend %radio__container--error;
+    }
+  }
+
+  @if $radio-item__label {
+    #{$radio-item__label} {
+      @extend %label;
+      @extend %label--after;
+    }
+  }
+
+  @if $add--disabled {
+    #{$radio-item__label--disabled-selector} {
+      @extend %radio__label--disabled;
+    }
+  }
+}
