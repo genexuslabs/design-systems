@@ -25,7 +25,7 @@
 @import "./tokens/semantic/accent";
 
 // Base classes
-@import "./base/label/label-styles";
+@import "./base/label/label-styles"; // should be at the top, since other elements use it.
 @import "./base/button/button-styles";
 @import "./base/form-controls/form-input-styles";
 @import "./base/icons";
@@ -36,6 +36,7 @@
 
 // Components
 @import "./components/checkbox/checkbox-styles";
+@import "./components/combo-box/combo-box-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
 @import "./components/tree-view/tree-view-styles";
@@ -85,6 +86,7 @@
 
   // Components
   $components: true,
+  $combo-box: true,
   $checkbox: true,
   $radio-group: true,
   $tree-view-primary: true,
@@ -393,10 +395,17 @@
     @if $tree-view-primary {
       @include tree-view-primary();
     }
+
+    // combo box
+    @if $combo-box {
+      @include combo-box();
+    }
+
     // tabular grid
     @if $tabular-grid {
       @include tabular-grid();
     }
+
     // code
     @if $code {
       @include code();
