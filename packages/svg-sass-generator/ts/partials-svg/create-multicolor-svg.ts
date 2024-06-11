@@ -28,8 +28,11 @@ export const createMulticolorSvg = (
 
   if (!figuresString) return undefined;
 
+  const svgWidth = svgFiguresResult.size.width;
+  const svgHeight = svgFiguresResult.size.height;
+
   const createdSvg = `
-  <svg viewBox="0 0 $width$ $height$" xmlns="http://www.w3.org/2000/svg" data-scheme="${IconTypeMap.multicolor}">
+  <svg viewBox="0 0 ${svgWidth} ${svgHeight}" xmlns="http://www.w3.org/2000/svg" data-scheme="${IconTypeMap.multicolor}">
     <defs>
       <g id="${groupId}">
           ${figuresString}
