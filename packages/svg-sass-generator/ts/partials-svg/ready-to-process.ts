@@ -165,8 +165,8 @@ export function readyToProcess(
   }
 
   // 7. clear and create directories for a fresh start
-  deleteDirectory(OUTPUT_PATH);
   const outputPath = path.join(OUTPUT_PATH, OUTPUT_GENERATED);
+  deleteDirectory(outputPath);
   createDir(outputPath);
 
   return {
