@@ -38,11 +38,12 @@ export function readyToProcess(
   // 1. check arguments quantity
 
   // 5 arguments should have been provided:
-  // subtract 1 because the first argument is the command for running the processor
+  // subtract 2 because the first argument is node,
+  // and the second argument is the command for running the processor.
   // (we only care about configuration arguments provided by the user).
 
   numberOfArgsProvided -= 2;
-  if (numberOfArgsProvided !== 5) {
+  if (numberOfArgsProvided < 5) {
     const msg = `Error: 5 arguments are expected, but ${numberOfArgsProvided} were provided. Please provide the required arguments: \n
     1: icons source directory
     2: icons destination directory
