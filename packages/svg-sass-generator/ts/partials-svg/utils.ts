@@ -65,9 +65,16 @@ export const saveSvgOnDisk = (
   );
 
   const savedSuccessfully = writeFile(filePath, svgString, LOG_PATH);
+  // svgFilePath should include: category + scheme (light or dark) + icon file name.
+  // svgFilePath is only for the showcase, and the preceding part of the path is
+  // defined on the showcase html page with the base tag.
   return {
     saved: savedSuccessfully,
-    svgFilePath: filePath,
+    svgFilePath: path.join(
+      pathInfo.categoryFolderName || "",
+      schemeFolderName,
+      pathInfo.fileName
+    ),
     category: pathInfo.categoryFolderName || null,
   };
 };
