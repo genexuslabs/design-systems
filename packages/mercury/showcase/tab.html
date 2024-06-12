@@ -16,11 +16,13 @@
         visibility: hidden;
       }
       .article__content {
-        height: 300px;
+        block-size: 300px;
       }
       .slot {
-        font-size: 12px;
-        padding: 8px;
+        padding: 12px;
+      }
+      .slot *:first-child {
+        margin-block-start: 0;
       }
     </style>
   </head>
@@ -51,32 +53,16 @@
                 <div class="article__content">
                   <ch-tab-render class="tab" id="tab-1" direction="block">
                     <div slot="item1" class="slot">
-                      Content of the item 1
-                      <label>
-                        Any text
-                        <input type="text" />
-                      </label>
+                      <p class="text-body">Content of the item 1</p>
                     </div>
                     <div slot="item2" class="slot">
-                      Content of the item 2
-                      <label>
-                        Any text
-                        <input type="text" />
-                      </label>
+                      <p class="text-body">Content of the item 2</p>
                     </div>
                     <div slot="item3" class="slot">
-                      Content of the item 3
-                      <label>
-                        Any text
-                        <input type="text" />
-                      </label>
+                      <p class="text-body">Content of the item 3</p>
                     </div>
                     <div slot="item4" class="slot">
-                      Content of the item 4
-                      <label>
-                        Any text
-                        <input type="text" />
-                      </label>
+                      <p class="text-body">Content of the item 4</p>
                     </div>
                   </ch-tab-render>
                   <script>
@@ -93,9 +79,20 @@
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `<button class="button-primary">
-Caption
-</button>`;
+                    const markup1 = `<ch-tab-render class="tab" direction="block">
+  <div slot="item1">
+    <p class="text-body">Content of the item 1</p>
+  </div>
+  <div slot="item2">
+    <p class="text-body">Content of the item 2</p>
+  </div>
+  <div slot="item3">
+    <p class="text-body">Content of the item 3</p>
+  </div>
+  <div slot="item4">
+    <p class="text-body">Content of the item 4</p>
+  </div>
+</ch-tab-render>`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
                 </div>
@@ -114,32 +111,16 @@ Caption
                 <div class="article__content">
                   <ch-tab-render class="tab" id="tab-2" direction="inline">
                     <div slot="item1" class="slot">
-                      Content of the item 1
-                      <label>
-                        Any text
-                        <input type="text" />
-                      </label>
+                      <p class="text-body">Content of the item 1</p>
                     </div>
                     <div slot="item2" class="slot">
-                      Content of the item 2
-                      <label>
-                        Any text
-                        <input type="text" />
-                      </label>
+                      <p class="text-body">Content of the item 2</p>
                     </div>
                     <div slot="item3" class="slot">
-                      Content of the item 3
-                      <label>
-                        Any text
-                        <input type="text" />
-                      </label>
+                      <p class="text-body">Content of the item 3</p>
                     </div>
                     <div slot="item4" class="slot">
-                      Content of the item 4
-                      <label>
-                        Any text
-                        <input type="text" />
-                      </label>
+                      <p class="text-body">Content of the item 4</p>
                     </div>
                   </ch-tab-render>
                   <script>
@@ -156,10 +137,21 @@ Caption
                   <ch-code id="ch-code-2" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup2 = `<button class="button-primary">
-Caption
-</button>`;
-                    document.getElementById("ch-code-2").value = markup1;
+                    const markup2 = `<ch-tab-render class="tab" direction="inline">
+  <div slot="item1">
+    <p class="text-body">Content of the item 1</p>
+  </div>
+  <div slot="item2">
+    <p class="text-body">Content of the item 2</p>
+  </div>
+  <div slot="item3">
+    <p class="text-body">Content of the item 3</p>
+  </div>
+  <div slot="item4">
+    <p class="text-body">Content of the item 4</p>
+  </div>
+</ch-tab-render>`;
+                    document.getElementById("ch-code-2").value = markup2;
                   </script>
                 </div>
                 <!-- /.article__content -->
