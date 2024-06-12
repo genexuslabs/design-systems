@@ -1,8 +1,14 @@
+import path from "path";
 // libraries
 import cheerio from "cheerio";
 // partials-common
 import { getIcons } from "./partials-common/get-icons.js";
-import { RED, RESET_COLOR, getSvgString } from "./partials-common/utils.js";
+import {
+  RED,
+  RESET_COLOR,
+  getSvgString,
+  OUTPUT_GENERATED,
+} from "./partials-common/utils.js";
 import { SavedOnDisk } from "./partials-common/types.js";
 // partials-svg
 import { processMulticolorFigures } from "./partials-svg/process-multicolor-figures.js";
@@ -22,13 +28,21 @@ import { log } from "./partials-svg/log.js";
 // showcase
 import { savedIcons, pushSavedIcon, generateShowcase } from "./showcase.js";
 
-//Import partials or utils
 //Files and Directories
+
 const SRC_PATH = await process.argv[2];
 const OUTPUT_PATH = await process.argv[3];
 const COLOR_STATES_PATH = await process.argv[4];
 const SHOWCASE_PATH = await process.argv[5];
 const LOG_PATH = await process.argv[6];
+
+// Optional Base URL for the showcase
+const showcaseBaseUrl = path.join(
+  path.relative(SHOWCASE_PATH, OUTPUT_PATH),
+  OUTPUT_GENERATED
+);
+const SHOWCASE_BASE_HREF = (await process.argv[7]) || showcaseBaseUrl;
+
 const numberOfArgsProvided = process.argv.length;
 const shouldWriteToLog = !!LOG_PATH;
 
@@ -69,7 +83,8 @@ if (readyObj.ready) {
         LOG_PATH,
         readyObj.statesJson,
         monochromeColorsMap,
-        monochromeCategoriesMap
+        monochromeCategoriesMap,
+        SHOWCASE_BASE_HREF
       );
     })
     .catch((error) => {
@@ -122,6 +137,7 @@ function processIcons(
             "light",
             LOG_PATH
           );
+
           // Save icon for the showcase
           pushSavedIcon(
             savedIconsOnDisk,

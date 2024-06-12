@@ -1,10 +1,7 @@
 import path from "path";
 import * as fs from "fs";
 
-import {
-  copyFolderSync,
-  deleteDirectory,
-} from "./partials-common/file-system-utils.js";
+import { deleteDirectory } from "./partials-common/file-system-utils.js";
 import { writeFile } from "./partials-common/file-system-utils.js";
 
 import {
@@ -51,7 +48,8 @@ export const generateShowcase = (
   logPath: string,
   statesJson: IconsColorsSchema,
   monochromeColorsMap: MonochromeColorsMap,
-  monochromeCategoriesMap: MonochromeCategoriesMap
+  monochromeCategoriesMap: MonochromeCategoriesMap,
+  SHOWCASE_BASE_HREF: string
 ) => {
   const monochromeColorsAndCategories: MonochromeSchema = statesJson.monochrome;
 
@@ -68,7 +66,7 @@ export const generateShowcase = (
       <style>
         ${showcaseStyles}
       </style>
-
+      <base href="${SHOWCASE_BASE_HREF}">
     </head>
     <body>
       <div class="top-bar">
@@ -93,11 +91,6 @@ export const generateShowcase = (
 
   const filePath = path.join(showcasePath, "index.html");
   writeFile(filePath, htmlOutput, logPath);
-
-  // Then copy all the icons;
-  fs.cpSync(outputPath, path.join(showcasePath, outputPath), {
-    recursive: true,
-  });
 };
 
 const toggleAsideLists = (): string => {
@@ -133,7 +126,6 @@ const searchInput = (): string => {
   return `
   <script>
     const searchInput = document.getElementById("search-input");
-    console.log(searchInput);
     searchInput.addEventListener("input", (e) => {
       const filterValue = e.target.value.toLowerCase();
       searchItems.forEach(searchItem => {
@@ -469,7 +461,6 @@ const getIconDetail = () => {
       const button = e.currentTarget;
       const iconPath = button.dataset.src;
       const iconName = button.dataset.name;
-      console.log(iconDetailedImage);
       iconDetailedImage.setAttribute("src", iconPath);
       iconDetailedViewCaption.innerText = iconName;
     });
