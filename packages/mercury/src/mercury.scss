@@ -29,6 +29,7 @@
 @import "./base/button/button-styles";
 @import "./base/form-controls/form-input-styles";
 @import "./base/icons";
+@import "./base/typography/typography-styles";
 
 // Icons
 @import "./icons/button";
@@ -37,6 +38,7 @@
 // Components
 @import "./components/checkbox/checkbox-styles";
 @import "./components/combo-box/combo-box-styles";
+@import "./components/dialog/dialog-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
 @import "./components/tree-view/tree-view-styles";
@@ -80,6 +82,7 @@
   $button-classes: true,
   $form-controls-classes: true,
   $icon-classes: true,
+  $typography-classes: true,
 
   // Icons
   $icons-elements: true,
@@ -87,6 +90,7 @@
   // Components
   $components: true,
   $combo-box: true,
+  $dialog: true,
   $checkbox: true,
   $radio-group: true,
   $tree-view-primary: true,
@@ -317,6 +321,11 @@
     @if $typography-reset {
       @include typography-reset();
     }
+
+    // Typography classes
+    @if $typography-classes {
+      @include typography-classes();
+    }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -399,6 +408,11 @@
     // combo box
     @if $combo-box {
       @include combo-box();
+    }
+
+    // dialog
+    @if $dialog {
+      @include dialog();
     }
 
     // tabular grid
