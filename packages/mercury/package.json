@@ -8,15 +8,15 @@
   ],
   "type": "module",
   "scripts": {
-    "copy-assets": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/assets/ dist/assets",
-    "build": "npm run icons-svg && npm run icons-sass && npm run copy-assets && npm run build.scss",
-    "build-no-svg": "npm run copy-assets && npm run build.scss",
+    "build": "npm run icons-svg && npm run icons-sass && npm run build.scss && npm run copy-tasks",
+    "build-no-svg": "npm run build.scss && npm run copy-tasks",
     "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
     "test": "sass test/test.scss  test/mercury.css",
     "validate.ci": "npm run build-no-svg",
-    "icons-svg": "ssg-svg ./src/icons/svg-source ./src/assets/icons/ ./src/icons/svg-source/.config/color-states.json ./www/icons ./log",
+    "icons-svg": "ssg-svg ./src/icons/svg-source ./src/assets/icons/ ./src/icons/svg-source/.config/color-states.json ./showcase/icons ./log",
     "icons-sass": "ssg-sass ./src/assets/icons ./src/icons",
-    "watch:sass": "chokidar src/**/*.scss ../common/**/*.scss -c \"npm run build.scss\""
+    "watch:sass": "chokidar src/**/*.scss ../common/**/*.scss -c \"npm run build.scss\"",
+    "copy-tasks": "node copy-tasks.js"
   },
   "license": "MIT",
   "devDependencies": {
