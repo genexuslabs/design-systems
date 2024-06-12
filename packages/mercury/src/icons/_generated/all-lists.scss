@@ -1,5 +1,6 @@
 
 /*multicolor lists*/
+@import "./multicolor/objects";
 
 /*monochrome lists*/
 @import "./monochrome/windows-tools";
@@ -8,6 +9,7 @@
 @import "./monochrome/gemini-tools";
 
 $all-multicolor-lists: (
+objects: $objects,
 );
 
 $all-monochrome-lists: (
