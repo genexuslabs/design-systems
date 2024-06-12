@@ -26,11 +26,11 @@
   letter-spacing: 0.4px;
 }
 
-%tab-text {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 18px; // 128.571%
-  letter-spacing: 0.8px;
+%text-body {
+  font-size: var(--mer-font__size--xs);
+  font-family: var(--mer-font-family--inter-regular);
+  line-height: var(--mer-line-height--regular);
+  margin-block: var(--mer-spacing--sm);
 }
 
 @mixin typography-classes() {
@@ -42,7 +42,7 @@
     @extend %heading-2;
   }
 
-  .heading-2 {
+  .heading-3 {
     @extend %heading-3;
   }
 
@@ -50,7 +50,7 @@
     @extend %heading-4;
   }
 
-  .tab-text {
-    @extend %tab-text;
+  .text-body {
+    @extend %text-body;
   }
 }

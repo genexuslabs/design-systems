@@ -1,0 +1,93 @@
+%dialog {
+  --ch-dialog-max-inline-size: 800px;
+  border-radius: 0;
+  background-color: var(--mer-color__elevation--01);
+  box-shadow: var(--mer-box-shadow--01);
+}
+
+%dialog__backdrop {
+  background-color: color-mix(
+    in srgb,
+    var(--elevation-un-elevation--4) 25%,
+    transparent
+  );
+  backdrop-filter: blur(5px);
+  z-index: 108; // TODO: This is a WA to show the backdrop above the button of the dropdown
+}
+
+%dialog__header {
+  align-items: flex-start;
+  gap: var(--mer-spacing--sm);
+  padding: var(--mer-spacing--md) var(--mer-spacing--sm);
+  border-block-end: var(--mer-border__width--sm) solid
+    var(--mer-color__elevation--04);
+}
+
+%dialog__content {
+  padding: var(--mer-spacing--lg) var(--mer-spacing--md);
+}
+
+%dialog__caption {
+  color: var(--mer-text__on-elevation);
+  font-family: var(--mer-font-family--inter-bold);
+  word-break: break-word;
+}
+
+%dialog__footer {
+  padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
+  border-block-start: var(--mer-border__width--sm) solid
+    var(--mer-color__elevation--04);
+  gap: var(--mer-spacing--sm);
+}
+
+@mixin dialog__close-button-icon($icons-path: "") {
+  --icon-path: url("#{$icons-path}close.svg");
+}
+
+/// @group Dialog
+/// @param {String} $dialog-selector [".dialog::part(dialog)"] -
+/// @param {String} $backdrop-selector [".dialog.ch-dialog--modal"] -
+/// @param {String} $header-selector [".dialog::part(header)"] -
+/// @param {String} $content-selector [".dialog::part(content)"] -
+/// @param {String} $caption-selector [".dialog::part(caption)"] -
+/// @param {String} $close-button-selector [".dialog::part(close-button)"] -
+/// @param {String} $footer-selector [".dialog::part(footer)"] -
+/// @param {String} $icons-path [""] -
+@mixin dialog(
+  $dialog-selector: ".dialog::part(dialog)",
+  $backdrop-selector: ".dialog.ch-dialog--modal",
+  $header-selector: ".dialog::part(header)",
+  $content-selector: ".dialog::part(content)",
+  $caption-selector: ".dialog::part(caption)",
+  $close-button-selector: ".dialog::part(close-button)",
+  $footer-selector: ".dialog::part(footer)",
+  $icons-path: ""
+) {
+  #{$dialog-selector} {
+    @extend %dialog;
+  }
+
+  #{$backdrop-selector} {
+    @extend %dialog__backdrop;
+  }
+
+  #{$header-selector} {
+    @extend %dialog__header;
+  }
+
+  #{$content-selector} {
+    @extend %dialog__content;
+  }
+
+  #{$caption-selector} {
+    @extend %dialog__caption;
+  }
+
+  #{$footer-selector} {
+    @extend %dialog__footer;
+  }
+
+  #{$close-button-selector} {
+    @include dialog__close-button-icon($icons-path);
+  }
+}
