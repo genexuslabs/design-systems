@@ -1,0 +1,2696 @@
+
+   $objects: workflow, work-panel, webpanel, web-component, version, url-rewrite, transaction, to-be-defined, theme, theme-web, theme-for-sd, table, super-app, subtype-group, structured-data-type, stencil, roles, report, references, query, procedure, patterns, panel-for-sd, orphant-document, offline-database, object, notification-templates, module, module-open, mini-app, menubar, menu, masterpage, main-object, language, knowledge-base, image, generator, generator-category, folder, folder-open, file, external-object, environment-select, environment-no-select, dso, domain, document, document-workflow, diagram, design, deployment-unit, dataview-index, datastore, datastore-category, data-view, data-selector, data-provider, dashboard, customization, conversational-flows, category, calendars, business-process-diagram, bg-color, attribute, api;
+    %icon__objects {
+  
+    /* =================================
+    LIGHT
+    ================================= */
+  
+    /* - - - - - - - - - - - - 
+    workflow.svg 
+    - - - - - - - - - - - - */
+    
+    &_workflow--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/workflow.svg#enabled");
+    }
+    
+    &_workflow--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/workflow.svg#hover");
+    }
+    
+    &_workflow--active-light {
+      --icon-path: url("#{$icons-path}objects/light/workflow.svg#active");
+    }
+    
+    &_workflow--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/workflow.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    work-panel.svg 
+    - - - - - - - - - - - - */
+    
+    &_work-panel--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/work-panel.svg#enabled");
+    }
+    
+    &_work-panel--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/work-panel.svg#hover");
+    }
+    
+    &_work-panel--active-light {
+      --icon-path: url("#{$icons-path}objects/light/work-panel.svg#active");
+    }
+    
+    &_work-panel--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/work-panel.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    webpanel.svg 
+    - - - - - - - - - - - - */
+    
+    &_webpanel--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/webpanel.svg#enabled");
+    }
+    
+    &_webpanel--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/webpanel.svg#hover");
+    }
+    
+    &_webpanel--active-light {
+      --icon-path: url("#{$icons-path}objects/light/webpanel.svg#active");
+    }
+    
+    &_webpanel--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/webpanel.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    web-component.svg 
+    - - - - - - - - - - - - */
+    
+    &_web-component--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/web-component.svg#enabled");
+    }
+    
+    &_web-component--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/web-component.svg#hover");
+    }
+    
+    &_web-component--active-light {
+      --icon-path: url("#{$icons-path}objects/light/web-component.svg#active");
+    }
+    
+    &_web-component--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/web-component.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    version.svg 
+    - - - - - - - - - - - - */
+    
+    &_version--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/version.svg#enabled");
+    }
+    
+    &_version--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/version.svg#hover");
+    }
+    
+    &_version--active-light {
+      --icon-path: url("#{$icons-path}objects/light/version.svg#active");
+    }
+    
+    &_version--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/version.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    url-rewrite.svg 
+    - - - - - - - - - - - - */
+    
+    &_url-rewrite--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/url-rewrite.svg#enabled");
+    }
+    
+    &_url-rewrite--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/url-rewrite.svg#hover");
+    }
+    
+    &_url-rewrite--active-light {
+      --icon-path: url("#{$icons-path}objects/light/url-rewrite.svg#active");
+    }
+    
+    &_url-rewrite--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/url-rewrite.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    transaction.svg 
+    - - - - - - - - - - - - */
+    
+    &_transaction--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/transaction.svg#enabled");
+    }
+    
+    &_transaction--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/transaction.svg#hover");
+    }
+    
+    &_transaction--active-light {
+      --icon-path: url("#{$icons-path}objects/light/transaction.svg#active");
+    }
+    
+    &_transaction--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/transaction.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    to-be-defined.svg 
+    - - - - - - - - - - - - */
+    
+    &_to-be-defined--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/to-be-defined.svg#enabled");
+    }
+    
+    &_to-be-defined--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/to-be-defined.svg#hover");
+    }
+    
+    &_to-be-defined--active-light {
+      --icon-path: url("#{$icons-path}objects/light/to-be-defined.svg#active");
+    }
+    
+    &_to-be-defined--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/to-be-defined.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    theme.svg 
+    - - - - - - - - - - - - */
+    
+    &_theme--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/theme.svg#enabled");
+    }
+    
+    &_theme--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/theme.svg#hover");
+    }
+    
+    &_theme--active-light {
+      --icon-path: url("#{$icons-path}objects/light/theme.svg#active");
+    }
+    
+    &_theme--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/theme.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    theme-web.svg 
+    - - - - - - - - - - - - */
+    
+    &_theme-web--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/theme-web.svg#enabled");
+    }
+    
+    &_theme-web--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/theme-web.svg#hover");
+    }
+    
+    &_theme-web--active-light {
+      --icon-path: url("#{$icons-path}objects/light/theme-web.svg#active");
+    }
+    
+    &_theme-web--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/theme-web.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    theme-for-sd.svg 
+    - - - - - - - - - - - - */
+    
+    &_theme-for-sd--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/theme-for-sd.svg#enabled");
+    }
+    
+    &_theme-for-sd--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/theme-for-sd.svg#hover");
+    }
+    
+    &_theme-for-sd--active-light {
+      --icon-path: url("#{$icons-path}objects/light/theme-for-sd.svg#active");
+    }
+    
+    &_theme-for-sd--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/theme-for-sd.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    table.svg 
+    - - - - - - - - - - - - */
+    
+    &_table--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/table.svg#enabled");
+    }
+    
+    &_table--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/table.svg#hover");
+    }
+    
+    &_table--active-light {
+      --icon-path: url("#{$icons-path}objects/light/table.svg#active");
+    }
+    
+    &_table--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/table.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    super-app.svg 
+    - - - - - - - - - - - - */
+    
+    &_super-app--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/super-app.svg#enabled");
+    }
+    
+    &_super-app--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/super-app.svg#hover");
+    }
+    
+    &_super-app--active-light {
+      --icon-path: url("#{$icons-path}objects/light/super-app.svg#active");
+    }
+    
+    &_super-app--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/super-app.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    subtype-group.svg 
+    - - - - - - - - - - - - */
+    
+    &_subtype-group--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/subtype-group.svg#enabled");
+    }
+    
+    &_subtype-group--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/subtype-group.svg#hover");
+    }
+    
+    &_subtype-group--active-light {
+      --icon-path: url("#{$icons-path}objects/light/subtype-group.svg#active");
+    }
+    
+    &_subtype-group--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/subtype-group.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    structured-data-type.svg 
+    - - - - - - - - - - - - */
+    
+    &_structured-data-type--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/structured-data-type.svg#enabled");
+    }
+    
+    &_structured-data-type--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/structured-data-type.svg#hover");
+    }
+    
+    &_structured-data-type--active-light {
+      --icon-path: url("#{$icons-path}objects/light/structured-data-type.svg#active");
+    }
+    
+    &_structured-data-type--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/structured-data-type.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    stencil.svg 
+    - - - - - - - - - - - - */
+    
+    &_stencil--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/stencil.svg#enabled");
+    }
+    
+    &_stencil--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/stencil.svg#hover");
+    }
+    
+    &_stencil--active-light {
+      --icon-path: url("#{$icons-path}objects/light/stencil.svg#active");
+    }
+    
+    &_stencil--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/stencil.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    roles.svg 
+    - - - - - - - - - - - - */
+    
+    &_roles--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/roles.svg#enabled");
+    }
+    
+    &_roles--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/roles.svg#hover");
+    }
+    
+    &_roles--active-light {
+      --icon-path: url("#{$icons-path}objects/light/roles.svg#active");
+    }
+    
+    &_roles--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/roles.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    report.svg 
+    - - - - - - - - - - - - */
+    
+    &_report--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/report.svg#enabled");
+    }
+    
+    &_report--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/report.svg#hover");
+    }
+    
+    &_report--active-light {
+      --icon-path: url("#{$icons-path}objects/light/report.svg#active");
+    }
+    
+    &_report--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/report.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    references.svg 
+    - - - - - - - - - - - - */
+    
+    &_references--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/references.svg#enabled");
+    }
+    
+    &_references--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/references.svg#hover");
+    }
+    
+    &_references--active-light {
+      --icon-path: url("#{$icons-path}objects/light/references.svg#active");
+    }
+    
+    &_references--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/references.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    query.svg 
+    - - - - - - - - - - - - */
+    
+    &_query--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/query.svg#enabled");
+    }
+    
+    &_query--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/query.svg#hover");
+    }
+    
+    &_query--active-light {
+      --icon-path: url("#{$icons-path}objects/light/query.svg#active");
+    }
+    
+    &_query--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/query.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    procedure.svg 
+    - - - - - - - - - - - - */
+    
+    &_procedure--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/procedure.svg#enabled");
+    }
+    
+    &_procedure--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/procedure.svg#hover");
+    }
+    
+    &_procedure--active-light {
+      --icon-path: url("#{$icons-path}objects/light/procedure.svg#active");
+    }
+    
+    &_procedure--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/procedure.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    patterns.svg 
+    - - - - - - - - - - - - */
+    
+    &_patterns--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/patterns.svg#enabled");
+    }
+    
+    &_patterns--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/patterns.svg#hover");
+    }
+    
+    &_patterns--active-light {
+      --icon-path: url("#{$icons-path}objects/light/patterns.svg#active");
+    }
+    
+    &_patterns--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/patterns.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    panel-for-sd.svg 
+    - - - - - - - - - - - - */
+    
+    &_panel-for-sd--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/panel-for-sd.svg#enabled");
+    }
+    
+    &_panel-for-sd--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/panel-for-sd.svg#hover");
+    }
+    
+    &_panel-for-sd--active-light {
+      --icon-path: url("#{$icons-path}objects/light/panel-for-sd.svg#active");
+    }
+    
+    &_panel-for-sd--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/panel-for-sd.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    orphant-document.svg 
+    - - - - - - - - - - - - */
+    
+    &_orphant-document--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/orphant-document.svg#enabled");
+    }
+    
+    &_orphant-document--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/orphant-document.svg#hover");
+    }
+    
+    &_orphant-document--active-light {
+      --icon-path: url("#{$icons-path}objects/light/orphant-document.svg#active");
+    }
+    
+    &_orphant-document--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/orphant-document.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    offline-database.svg 
+    - - - - - - - - - - - - */
+    
+    &_offline-database--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/offline-database.svg#enabled");
+    }
+    
+    &_offline-database--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/offline-database.svg#hover");
+    }
+    
+    &_offline-database--active-light {
+      --icon-path: url("#{$icons-path}objects/light/offline-database.svg#active");
+    }
+    
+    &_offline-database--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/offline-database.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    object.svg 
+    - - - - - - - - - - - - */
+    
+    &_object--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/object.svg#enabled");
+    }
+    
+    &_object--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/object.svg#hover");
+    }
+    
+    &_object--active-light {
+      --icon-path: url("#{$icons-path}objects/light/object.svg#active");
+    }
+    
+    &_object--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/object.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    notification-templates.svg 
+    - - - - - - - - - - - - */
+    
+    &_notification-templates--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/notification-templates.svg#enabled");
+    }
+    
+    &_notification-templates--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/notification-templates.svg#hover");
+    }
+    
+    &_notification-templates--active-light {
+      --icon-path: url("#{$icons-path}objects/light/notification-templates.svg#active");
+    }
+    
+    &_notification-templates--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/notification-templates.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    module.svg 
+    - - - - - - - - - - - - */
+    
+    &_module--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/module.svg#enabled");
+    }
+    
+    &_module--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/module.svg#hover");
+    }
+    
+    &_module--active-light {
+      --icon-path: url("#{$icons-path}objects/light/module.svg#active");
+    }
+    
+    &_module--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/module.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    module-open.svg 
+    - - - - - - - - - - - - */
+    
+    &_module-open--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/module-open.svg#enabled");
+    }
+    
+    &_module-open--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/module-open.svg#hover");
+    }
+    
+    &_module-open--active-light {
+      --icon-path: url("#{$icons-path}objects/light/module-open.svg#active");
+    }
+    
+    &_module-open--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/module-open.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    mini-app.svg 
+    - - - - - - - - - - - - */
+    
+    &_mini-app--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/mini-app.svg#enabled");
+    }
+    
+    &_mini-app--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/mini-app.svg#hover");
+    }
+    
+    &_mini-app--active-light {
+      --icon-path: url("#{$icons-path}objects/light/mini-app.svg#active");
+    }
+    
+    &_mini-app--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/mini-app.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    menubar.svg 
+    - - - - - - - - - - - - */
+    
+    &_menubar--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/menubar.svg#enabled");
+    }
+    
+    &_menubar--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/menubar.svg#hover");
+    }
+    
+    &_menubar--active-light {
+      --icon-path: url("#{$icons-path}objects/light/menubar.svg#active");
+    }
+    
+    &_menubar--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/menubar.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    menu.svg 
+    - - - - - - - - - - - - */
+    
+    &_menu--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/menu.svg#enabled");
+    }
+    
+    &_menu--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/menu.svg#hover");
+    }
+    
+    &_menu--active-light {
+      --icon-path: url("#{$icons-path}objects/light/menu.svg#active");
+    }
+    
+    &_menu--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/menu.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    masterpage.svg 
+    - - - - - - - - - - - - */
+    
+    &_masterpage--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/masterpage.svg#enabled");
+    }
+    
+    &_masterpage--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/masterpage.svg#hover");
+    }
+    
+    &_masterpage--active-light {
+      --icon-path: url("#{$icons-path}objects/light/masterpage.svg#active");
+    }
+    
+    &_masterpage--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/masterpage.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    main-object.svg 
+    - - - - - - - - - - - - */
+    
+    &_main-object--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/main-object.svg#enabled");
+    }
+    
+    &_main-object--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/main-object.svg#hover");
+    }
+    
+    &_main-object--active-light {
+      --icon-path: url("#{$icons-path}objects/light/main-object.svg#active");
+    }
+    
+    &_main-object--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/main-object.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    language.svg 
+    - - - - - - - - - - - - */
+    
+    &_language--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/language.svg#enabled");
+    }
+    
+    &_language--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/language.svg#hover");
+    }
+    
+    &_language--active-light {
+      --icon-path: url("#{$icons-path}objects/light/language.svg#active");
+    }
+    
+    &_language--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/language.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    knowledge-base.svg 
+    - - - - - - - - - - - - */
+    
+    &_knowledge-base--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/knowledge-base.svg#enabled");
+    }
+    
+    &_knowledge-base--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/knowledge-base.svg#hover");
+    }
+    
+    &_knowledge-base--active-light {
+      --icon-path: url("#{$icons-path}objects/light/knowledge-base.svg#active");
+    }
+    
+    &_knowledge-base--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/knowledge-base.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    image.svg 
+    - - - - - - - - - - - - */
+    
+    &_image--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/image.svg#enabled");
+    }
+    
+    &_image--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/image.svg#hover");
+    }
+    
+    &_image--active-light {
+      --icon-path: url("#{$icons-path}objects/light/image.svg#active");
+    }
+    
+    &_image--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/image.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    generator.svg 
+    - - - - - - - - - - - - */
+    
+    &_generator--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/generator.svg#enabled");
+    }
+    
+    &_generator--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/generator.svg#hover");
+    }
+    
+    &_generator--active-light {
+      --icon-path: url("#{$icons-path}objects/light/generator.svg#active");
+    }
+    
+    &_generator--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/generator.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    generator-category.svg 
+    - - - - - - - - - - - - */
+    
+    &_generator-category--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/generator-category.svg#enabled");
+    }
+    
+    &_generator-category--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/generator-category.svg#hover");
+    }
+    
+    &_generator-category--active-light {
+      --icon-path: url("#{$icons-path}objects/light/generator-category.svg#active");
+    }
+    
+    &_generator-category--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/generator-category.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    folder.svg 
+    - - - - - - - - - - - - */
+    
+    &_folder--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/folder.svg#enabled");
+    }
+    
+    &_folder--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/folder.svg#hover");
+    }
+    
+    &_folder--active-light {
+      --icon-path: url("#{$icons-path}objects/light/folder.svg#active");
+    }
+    
+    &_folder--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/folder.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    folder-open.svg 
+    - - - - - - - - - - - - */
+    
+    &_folder-open--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/folder-open.svg#enabled");
+    }
+    
+    &_folder-open--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/folder-open.svg#hover");
+    }
+    
+    &_folder-open--active-light {
+      --icon-path: url("#{$icons-path}objects/light/folder-open.svg#active");
+    }
+    
+    &_folder-open--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/folder-open.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    file.svg 
+    - - - - - - - - - - - - */
+    
+    &_file--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/file.svg#enabled");
+    }
+    
+    &_file--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/file.svg#hover");
+    }
+    
+    &_file--active-light {
+      --icon-path: url("#{$icons-path}objects/light/file.svg#active");
+    }
+    
+    &_file--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/file.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    external-object.svg 
+    - - - - - - - - - - - - */
+    
+    &_external-object--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/external-object.svg#enabled");
+    }
+    
+    &_external-object--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/external-object.svg#hover");
+    }
+    
+    &_external-object--active-light {
+      --icon-path: url("#{$icons-path}objects/light/external-object.svg#active");
+    }
+    
+    &_external-object--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/external-object.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    environment-select.svg 
+    - - - - - - - - - - - - */
+    
+    &_environment-select--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/environment-select.svg#enabled");
+    }
+    
+    &_environment-select--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/environment-select.svg#hover");
+    }
+    
+    &_environment-select--active-light {
+      --icon-path: url("#{$icons-path}objects/light/environment-select.svg#active");
+    }
+    
+    &_environment-select--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/environment-select.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    environment-no-select.svg 
+    - - - - - - - - - - - - */
+    
+    &_environment-no-select--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/environment-no-select.svg#enabled");
+    }
+    
+    &_environment-no-select--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/environment-no-select.svg#hover");
+    }
+    
+    &_environment-no-select--active-light {
+      --icon-path: url("#{$icons-path}objects/light/environment-no-select.svg#active");
+    }
+    
+    &_environment-no-select--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/environment-no-select.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    dso.svg 
+    - - - - - - - - - - - - */
+    
+    &_dso--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/dso.svg#enabled");
+    }
+    
+    &_dso--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/dso.svg#hover");
+    }
+    
+    &_dso--active-light {
+      --icon-path: url("#{$icons-path}objects/light/dso.svg#active");
+    }
+    
+    &_dso--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/dso.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    domain.svg 
+    - - - - - - - - - - - - */
+    
+    &_domain--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/domain.svg#enabled");
+    }
+    
+    &_domain--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/domain.svg#hover");
+    }
+    
+    &_domain--active-light {
+      --icon-path: url("#{$icons-path}objects/light/domain.svg#active");
+    }
+    
+    &_domain--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/domain.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    document.svg 
+    - - - - - - - - - - - - */
+    
+    &_document--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/document.svg#enabled");
+    }
+    
+    &_document--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/document.svg#hover");
+    }
+    
+    &_document--active-light {
+      --icon-path: url("#{$icons-path}objects/light/document.svg#active");
+    }
+    
+    &_document--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/document.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    document-workflow.svg 
+    - - - - - - - - - - - - */
+    
+    &_document-workflow--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/document-workflow.svg#enabled");
+    }
+    
+    &_document-workflow--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/document-workflow.svg#hover");
+    }
+    
+    &_document-workflow--active-light {
+      --icon-path: url("#{$icons-path}objects/light/document-workflow.svg#active");
+    }
+    
+    &_document-workflow--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/document-workflow.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    diagram.svg 
+    - - - - - - - - - - - - */
+    
+    &_diagram--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/diagram.svg#enabled");
+    }
+    
+    &_diagram--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/diagram.svg#hover");
+    }
+    
+    &_diagram--active-light {
+      --icon-path: url("#{$icons-path}objects/light/diagram.svg#active");
+    }
+    
+    &_diagram--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/diagram.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    design.svg 
+    - - - - - - - - - - - - */
+    
+    &_design--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/design.svg#enabled");
+    }
+    
+    &_design--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/design.svg#hover");
+    }
+    
+    &_design--active-light {
+      --icon-path: url("#{$icons-path}objects/light/design.svg#active");
+    }
+    
+    &_design--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/design.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    deployment-unit.svg 
+    - - - - - - - - - - - - */
+    
+    &_deployment-unit--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/deployment-unit.svg#enabled");
+    }
+    
+    &_deployment-unit--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/deployment-unit.svg#hover");
+    }
+    
+    &_deployment-unit--active-light {
+      --icon-path: url("#{$icons-path}objects/light/deployment-unit.svg#active");
+    }
+    
+    &_deployment-unit--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/deployment-unit.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    dataview-index.svg 
+    - - - - - - - - - - - - */
+    
+    &_dataview-index--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/dataview-index.svg#enabled");
+    }
+    
+    &_dataview-index--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/dataview-index.svg#hover");
+    }
+    
+    &_dataview-index--active-light {
+      --icon-path: url("#{$icons-path}objects/light/dataview-index.svg#active");
+    }
+    
+    &_dataview-index--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/dataview-index.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    datastore.svg 
+    - - - - - - - - - - - - */
+    
+    &_datastore--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/datastore.svg#enabled");
+    }
+    
+    &_datastore--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/datastore.svg#hover");
+    }
+    
+    &_datastore--active-light {
+      --icon-path: url("#{$icons-path}objects/light/datastore.svg#active");
+    }
+    
+    &_datastore--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/datastore.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    datastore-category.svg 
+    - - - - - - - - - - - - */
+    
+    &_datastore-category--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/datastore-category.svg#enabled");
+    }
+    
+    &_datastore-category--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/datastore-category.svg#hover");
+    }
+    
+    &_datastore-category--active-light {
+      --icon-path: url("#{$icons-path}objects/light/datastore-category.svg#active");
+    }
+    
+    &_datastore-category--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/datastore-category.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    data-view.svg 
+    - - - - - - - - - - - - */
+    
+    &_data-view--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/data-view.svg#enabled");
+    }
+    
+    &_data-view--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/data-view.svg#hover");
+    }
+    
+    &_data-view--active-light {
+      --icon-path: url("#{$icons-path}objects/light/data-view.svg#active");
+    }
+    
+    &_data-view--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/data-view.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    data-selector.svg 
+    - - - - - - - - - - - - */
+    
+    &_data-selector--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/data-selector.svg#enabled");
+    }
+    
+    &_data-selector--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/data-selector.svg#hover");
+    }
+    
+    &_data-selector--active-light {
+      --icon-path: url("#{$icons-path}objects/light/data-selector.svg#active");
+    }
+    
+    &_data-selector--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/data-selector.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    data-provider.svg 
+    - - - - - - - - - - - - */
+    
+    &_data-provider--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/data-provider.svg#enabled");
+    }
+    
+    &_data-provider--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/data-provider.svg#hover");
+    }
+    
+    &_data-provider--active-light {
+      --icon-path: url("#{$icons-path}objects/light/data-provider.svg#active");
+    }
+    
+    &_data-provider--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/data-provider.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    dashboard.svg 
+    - - - - - - - - - - - - */
+    
+    &_dashboard--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/dashboard.svg#enabled");
+    }
+    
+    &_dashboard--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/dashboard.svg#hover");
+    }
+    
+    &_dashboard--active-light {
+      --icon-path: url("#{$icons-path}objects/light/dashboard.svg#active");
+    }
+    
+    &_dashboard--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/dashboard.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    customization.svg 
+    - - - - - - - - - - - - */
+    
+    &_customization--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/customization.svg#enabled");
+    }
+    
+    &_customization--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/customization.svg#hover");
+    }
+    
+    &_customization--active-light {
+      --icon-path: url("#{$icons-path}objects/light/customization.svg#active");
+    }
+    
+    &_customization--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/customization.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    conversational-flows.svg 
+    - - - - - - - - - - - - */
+    
+    &_conversational-flows--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/conversational-flows.svg#enabled");
+    }
+    
+    &_conversational-flows--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/conversational-flows.svg#hover");
+    }
+    
+    &_conversational-flows--active-light {
+      --icon-path: url("#{$icons-path}objects/light/conversational-flows.svg#active");
+    }
+    
+    &_conversational-flows--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/conversational-flows.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    category.svg 
+    - - - - - - - - - - - - */
+    
+    &_category--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/category.svg#enabled");
+    }
+    
+    &_category--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/category.svg#hover");
+    }
+    
+    &_category--active-light {
+      --icon-path: url("#{$icons-path}objects/light/category.svg#active");
+    }
+    
+    &_category--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/category.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    calendars.svg 
+    - - - - - - - - - - - - */
+    
+    &_calendars--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/calendars.svg#enabled");
+    }
+    
+    &_calendars--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/calendars.svg#hover");
+    }
+    
+    &_calendars--active-light {
+      --icon-path: url("#{$icons-path}objects/light/calendars.svg#active");
+    }
+    
+    &_calendars--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/calendars.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    business-process-diagram.svg 
+    - - - - - - - - - - - - */
+    
+    &_business-process-diagram--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/business-process-diagram.svg#enabled");
+    }
+    
+    &_business-process-diagram--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/business-process-diagram.svg#hover");
+    }
+    
+    &_business-process-diagram--active-light {
+      --icon-path: url("#{$icons-path}objects/light/business-process-diagram.svg#active");
+    }
+    
+    &_business-process-diagram--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/business-process-diagram.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    bg-color.svg 
+    - - - - - - - - - - - - */
+    
+    &_bg-color--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/bg-color.svg#enabled");
+    }
+    
+    &_bg-color--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/bg-color.svg#hover");
+    }
+    
+    &_bg-color--active-light {
+      --icon-path: url("#{$icons-path}objects/light/bg-color.svg#active");
+    }
+    
+    &_bg-color--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/bg-color.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    attribute.svg 
+    - - - - - - - - - - - - */
+    
+    &_attribute--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/attribute.svg#enabled");
+    }
+    
+    &_attribute--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/attribute.svg#hover");
+    }
+    
+    &_attribute--active-light {
+      --icon-path: url("#{$icons-path}objects/light/attribute.svg#active");
+    }
+    
+    &_attribute--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/attribute.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    api.svg 
+    - - - - - - - - - - - - */
+    
+    &_api--enabled-light {
+      --icon-path: url("#{$icons-path}objects/light/api.svg#enabled");
+    }
+    
+    &_api--hover-light {
+      --icon-path: url("#{$icons-path}objects/light/api.svg#hover");
+    }
+    
+    &_api--active-light {
+      --icon-path: url("#{$icons-path}objects/light/api.svg#active");
+    }
+    
+    &_api--disabled-light {
+      --icon-path: url("#{$icons-path}objects/light/api.svg#disabled");
+    }
+    
+
+    /* =================================
+    DARK
+    ================================= */
+  
+    /* - - - - - - - - - - - - 
+    workflow.svg 
+    - - - - - - - - - - - - */
+    
+    &_workflow--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/workflow.svg#enabled");
+    }
+    
+    &_workflow--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/workflow.svg#hover");
+    }
+    
+    &_workflow--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/workflow.svg#active");
+    }
+    
+    &_workflow--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/workflow.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    work-panel.svg 
+    - - - - - - - - - - - - */
+    
+    &_work-panel--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/work-panel.svg#enabled");
+    }
+    
+    &_work-panel--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/work-panel.svg#hover");
+    }
+    
+    &_work-panel--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/work-panel.svg#active");
+    }
+    
+    &_work-panel--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/work-panel.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    webpanel.svg 
+    - - - - - - - - - - - - */
+    
+    &_webpanel--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/webpanel.svg#enabled");
+    }
+    
+    &_webpanel--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/webpanel.svg#hover");
+    }
+    
+    &_webpanel--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/webpanel.svg#active");
+    }
+    
+    &_webpanel--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/webpanel.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    web-component.svg 
+    - - - - - - - - - - - - */
+    
+    &_web-component--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/web-component.svg#enabled");
+    }
+    
+    &_web-component--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/web-component.svg#hover");
+    }
+    
+    &_web-component--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/web-component.svg#active");
+    }
+    
+    &_web-component--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/web-component.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    version.svg 
+    - - - - - - - - - - - - */
+    
+    &_version--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/version.svg#enabled");
+    }
+    
+    &_version--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/version.svg#hover");
+    }
+    
+    &_version--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/version.svg#active");
+    }
+    
+    &_version--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/version.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    url-rewrite.svg 
+    - - - - - - - - - - - - */
+    
+    &_url-rewrite--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/url-rewrite.svg#enabled");
+    }
+    
+    &_url-rewrite--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/url-rewrite.svg#hover");
+    }
+    
+    &_url-rewrite--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/url-rewrite.svg#active");
+    }
+    
+    &_url-rewrite--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/url-rewrite.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    transaction.svg 
+    - - - - - - - - - - - - */
+    
+    &_transaction--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/transaction.svg#enabled");
+    }
+    
+    &_transaction--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/transaction.svg#hover");
+    }
+    
+    &_transaction--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/transaction.svg#active");
+    }
+    
+    &_transaction--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/transaction.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    to-be-defined.svg 
+    - - - - - - - - - - - - */
+    
+    &_to-be-defined--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/to-be-defined.svg#enabled");
+    }
+    
+    &_to-be-defined--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/to-be-defined.svg#hover");
+    }
+    
+    &_to-be-defined--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/to-be-defined.svg#active");
+    }
+    
+    &_to-be-defined--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/to-be-defined.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    theme.svg 
+    - - - - - - - - - - - - */
+    
+    &_theme--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/theme.svg#enabled");
+    }
+    
+    &_theme--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/theme.svg#hover");
+    }
+    
+    &_theme--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/theme.svg#active");
+    }
+    
+    &_theme--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/theme.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    theme-web.svg 
+    - - - - - - - - - - - - */
+    
+    &_theme-web--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/theme-web.svg#enabled");
+    }
+    
+    &_theme-web--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/theme-web.svg#hover");
+    }
+    
+    &_theme-web--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/theme-web.svg#active");
+    }
+    
+    &_theme-web--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/theme-web.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    theme-for-sd.svg 
+    - - - - - - - - - - - - */
+    
+    &_theme-for-sd--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/theme-for-sd.svg#enabled");
+    }
+    
+    &_theme-for-sd--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/theme-for-sd.svg#hover");
+    }
+    
+    &_theme-for-sd--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/theme-for-sd.svg#active");
+    }
+    
+    &_theme-for-sd--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/theme-for-sd.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    table.svg 
+    - - - - - - - - - - - - */
+    
+    &_table--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/table.svg#enabled");
+    }
+    
+    &_table--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/table.svg#hover");
+    }
+    
+    &_table--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/table.svg#active");
+    }
+    
+    &_table--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/table.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    super-app.svg 
+    - - - - - - - - - - - - */
+    
+    &_super-app--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/super-app.svg#enabled");
+    }
+    
+    &_super-app--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/super-app.svg#hover");
+    }
+    
+    &_super-app--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/super-app.svg#active");
+    }
+    
+    &_super-app--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/super-app.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    subtype-group.svg 
+    - - - - - - - - - - - - */
+    
+    &_subtype-group--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/subtype-group.svg#enabled");
+    }
+    
+    &_subtype-group--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/subtype-group.svg#hover");
+    }
+    
+    &_subtype-group--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/subtype-group.svg#active");
+    }
+    
+    &_subtype-group--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/subtype-group.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    structured-data-type.svg 
+    - - - - - - - - - - - - */
+    
+    &_structured-data-type--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/structured-data-type.svg#enabled");
+    }
+    
+    &_structured-data-type--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/structured-data-type.svg#hover");
+    }
+    
+    &_structured-data-type--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/structured-data-type.svg#active");
+    }
+    
+    &_structured-data-type--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/structured-data-type.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    stencil.svg 
+    - - - - - - - - - - - - */
+    
+    &_stencil--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/stencil.svg#enabled");
+    }
+    
+    &_stencil--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/stencil.svg#hover");
+    }
+    
+    &_stencil--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/stencil.svg#active");
+    }
+    
+    &_stencil--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/stencil.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    roles.svg 
+    - - - - - - - - - - - - */
+    
+    &_roles--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/roles.svg#enabled");
+    }
+    
+    &_roles--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/roles.svg#hover");
+    }
+    
+    &_roles--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/roles.svg#active");
+    }
+    
+    &_roles--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/roles.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    report.svg 
+    - - - - - - - - - - - - */
+    
+    &_report--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/report.svg#enabled");
+    }
+    
+    &_report--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/report.svg#hover");
+    }
+    
+    &_report--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/report.svg#active");
+    }
+    
+    &_report--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/report.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    references.svg 
+    - - - - - - - - - - - - */
+    
+    &_references--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/references.svg#enabled");
+    }
+    
+    &_references--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/references.svg#hover");
+    }
+    
+    &_references--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/references.svg#active");
+    }
+    
+    &_references--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/references.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    query.svg 
+    - - - - - - - - - - - - */
+    
+    &_query--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/query.svg#enabled");
+    }
+    
+    &_query--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/query.svg#hover");
+    }
+    
+    &_query--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/query.svg#active");
+    }
+    
+    &_query--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/query.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    procedure.svg 
+    - - - - - - - - - - - - */
+    
+    &_procedure--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/procedure.svg#enabled");
+    }
+    
+    &_procedure--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/procedure.svg#hover");
+    }
+    
+    &_procedure--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/procedure.svg#active");
+    }
+    
+    &_procedure--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/procedure.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    patterns.svg 
+    - - - - - - - - - - - - */
+    
+    &_patterns--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/patterns.svg#enabled");
+    }
+    
+    &_patterns--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/patterns.svg#hover");
+    }
+    
+    &_patterns--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/patterns.svg#active");
+    }
+    
+    &_patterns--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/patterns.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    panel-for-sd.svg 
+    - - - - - - - - - - - - */
+    
+    &_panel-for-sd--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/panel-for-sd.svg#enabled");
+    }
+    
+    &_panel-for-sd--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/panel-for-sd.svg#hover");
+    }
+    
+    &_panel-for-sd--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/panel-for-sd.svg#active");
+    }
+    
+    &_panel-for-sd--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/panel-for-sd.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    orphant-document.svg 
+    - - - - - - - - - - - - */
+    
+    &_orphant-document--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/orphant-document.svg#enabled");
+    }
+    
+    &_orphant-document--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/orphant-document.svg#hover");
+    }
+    
+    &_orphant-document--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/orphant-document.svg#active");
+    }
+    
+    &_orphant-document--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/orphant-document.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    offline-database.svg 
+    - - - - - - - - - - - - */
+    
+    &_offline-database--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/offline-database.svg#enabled");
+    }
+    
+    &_offline-database--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/offline-database.svg#hover");
+    }
+    
+    &_offline-database--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/offline-database.svg#active");
+    }
+    
+    &_offline-database--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/offline-database.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    object.svg 
+    - - - - - - - - - - - - */
+    
+    &_object--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/object.svg#enabled");
+    }
+    
+    &_object--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/object.svg#hover");
+    }
+    
+    &_object--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/object.svg#active");
+    }
+    
+    &_object--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/object.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    notification-templates.svg 
+    - - - - - - - - - - - - */
+    
+    &_notification-templates--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/notification-templates.svg#enabled");
+    }
+    
+    &_notification-templates--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/notification-templates.svg#hover");
+    }
+    
+    &_notification-templates--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/notification-templates.svg#active");
+    }
+    
+    &_notification-templates--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/notification-templates.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    module.svg 
+    - - - - - - - - - - - - */
+    
+    &_module--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/module.svg#enabled");
+    }
+    
+    &_module--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/module.svg#hover");
+    }
+    
+    &_module--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/module.svg#active");
+    }
+    
+    &_module--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/module.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    module-open.svg 
+    - - - - - - - - - - - - */
+    
+    &_module-open--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/module-open.svg#enabled");
+    }
+    
+    &_module-open--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/module-open.svg#hover");
+    }
+    
+    &_module-open--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/module-open.svg#active");
+    }
+    
+    &_module-open--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/module-open.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    mini-app.svg 
+    - - - - - - - - - - - - */
+    
+    &_mini-app--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/mini-app.svg#enabled");
+    }
+    
+    &_mini-app--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/mini-app.svg#hover");
+    }
+    
+    &_mini-app--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/mini-app.svg#active");
+    }
+    
+    &_mini-app--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/mini-app.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    menubar.svg 
+    - - - - - - - - - - - - */
+    
+    &_menubar--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/menubar.svg#enabled");
+    }
+    
+    &_menubar--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/menubar.svg#hover");
+    }
+    
+    &_menubar--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/menubar.svg#active");
+    }
+    
+    &_menubar--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/menubar.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    menu.svg 
+    - - - - - - - - - - - - */
+    
+    &_menu--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/menu.svg#enabled");
+    }
+    
+    &_menu--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/menu.svg#hover");
+    }
+    
+    &_menu--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/menu.svg#active");
+    }
+    
+    &_menu--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/menu.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    masterpage.svg 
+    - - - - - - - - - - - - */
+    
+    &_masterpage--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/masterpage.svg#enabled");
+    }
+    
+    &_masterpage--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/masterpage.svg#hover");
+    }
+    
+    &_masterpage--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/masterpage.svg#active");
+    }
+    
+    &_masterpage--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/masterpage.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    main-object.svg 
+    - - - - - - - - - - - - */
+    
+    &_main-object--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/main-object.svg#enabled");
+    }
+    
+    &_main-object--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/main-object.svg#hover");
+    }
+    
+    &_main-object--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/main-object.svg#active");
+    }
+    
+    &_main-object--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/main-object.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    language.svg 
+    - - - - - - - - - - - - */
+    
+    &_language--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/language.svg#enabled");
+    }
+    
+    &_language--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/language.svg#hover");
+    }
+    
+    &_language--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/language.svg#active");
+    }
+    
+    &_language--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/language.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    knowledge-base.svg 
+    - - - - - - - - - - - - */
+    
+    &_knowledge-base--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/knowledge-base.svg#enabled");
+    }
+    
+    &_knowledge-base--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/knowledge-base.svg#hover");
+    }
+    
+    &_knowledge-base--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/knowledge-base.svg#active");
+    }
+    
+    &_knowledge-base--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/knowledge-base.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    image.svg 
+    - - - - - - - - - - - - */
+    
+    &_image--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/image.svg#enabled");
+    }
+    
+    &_image--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/image.svg#hover");
+    }
+    
+    &_image--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/image.svg#active");
+    }
+    
+    &_image--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/image.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    generator.svg 
+    - - - - - - - - - - - - */
+    
+    &_generator--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/generator.svg#enabled");
+    }
+    
+    &_generator--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/generator.svg#hover");
+    }
+    
+    &_generator--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/generator.svg#active");
+    }
+    
+    &_generator--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/generator.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    generator-category.svg 
+    - - - - - - - - - - - - */
+    
+    &_generator-category--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/generator-category.svg#enabled");
+    }
+    
+    &_generator-category--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/generator-category.svg#hover");
+    }
+    
+    &_generator-category--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/generator-category.svg#active");
+    }
+    
+    &_generator-category--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/generator-category.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    folder.svg 
+    - - - - - - - - - - - - */
+    
+    &_folder--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/folder.svg#enabled");
+    }
+    
+    &_folder--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/folder.svg#hover");
+    }
+    
+    &_folder--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/folder.svg#active");
+    }
+    
+    &_folder--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/folder.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    folder-open.svg 
+    - - - - - - - - - - - - */
+    
+    &_folder-open--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/folder-open.svg#enabled");
+    }
+    
+    &_folder-open--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/folder-open.svg#hover");
+    }
+    
+    &_folder-open--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/folder-open.svg#active");
+    }
+    
+    &_folder-open--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/folder-open.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    file.svg 
+    - - - - - - - - - - - - */
+    
+    &_file--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/file.svg#enabled");
+    }
+    
+    &_file--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/file.svg#hover");
+    }
+    
+    &_file--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/file.svg#active");
+    }
+    
+    &_file--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/file.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    external-object.svg 
+    - - - - - - - - - - - - */
+    
+    &_external-object--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/external-object.svg#enabled");
+    }
+    
+    &_external-object--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/external-object.svg#hover");
+    }
+    
+    &_external-object--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/external-object.svg#active");
+    }
+    
+    &_external-object--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/external-object.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    environment-select.svg 
+    - - - - - - - - - - - - */
+    
+    &_environment-select--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/environment-select.svg#enabled");
+    }
+    
+    &_environment-select--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/environment-select.svg#hover");
+    }
+    
+    &_environment-select--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/environment-select.svg#active");
+    }
+    
+    &_environment-select--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/environment-select.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    environment-no-select.svg 
+    - - - - - - - - - - - - */
+    
+    &_environment-no-select--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/environment-no-select.svg#enabled");
+    }
+    
+    &_environment-no-select--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/environment-no-select.svg#hover");
+    }
+    
+    &_environment-no-select--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/environment-no-select.svg#active");
+    }
+    
+    &_environment-no-select--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/environment-no-select.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    dso.svg 
+    - - - - - - - - - - - - */
+    
+    &_dso--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/dso.svg#enabled");
+    }
+    
+    &_dso--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/dso.svg#hover");
+    }
+    
+    &_dso--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/dso.svg#active");
+    }
+    
+    &_dso--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/dso.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    domain.svg 
+    - - - - - - - - - - - - */
+    
+    &_domain--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/domain.svg#enabled");
+    }
+    
+    &_domain--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/domain.svg#hover");
+    }
+    
+    &_domain--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/domain.svg#active");
+    }
+    
+    &_domain--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/domain.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    document.svg 
+    - - - - - - - - - - - - */
+    
+    &_document--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/document.svg#enabled");
+    }
+    
+    &_document--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/document.svg#hover");
+    }
+    
+    &_document--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/document.svg#active");
+    }
+    
+    &_document--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/document.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    document-workflow.svg 
+    - - - - - - - - - - - - */
+    
+    &_document-workflow--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/document-workflow.svg#enabled");
+    }
+    
+    &_document-workflow--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/document-workflow.svg#hover");
+    }
+    
+    &_document-workflow--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/document-workflow.svg#active");
+    }
+    
+    &_document-workflow--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/document-workflow.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    diagram.svg 
+    - - - - - - - - - - - - */
+    
+    &_diagram--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/diagram.svg#enabled");
+    }
+    
+    &_diagram--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/diagram.svg#hover");
+    }
+    
+    &_diagram--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/diagram.svg#active");
+    }
+    
+    &_diagram--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/diagram.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    design.svg 
+    - - - - - - - - - - - - */
+    
+    &_design--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/design.svg#enabled");
+    }
+    
+    &_design--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/design.svg#hover");
+    }
+    
+    &_design--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/design.svg#active");
+    }
+    
+    &_design--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/design.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    deployment-unit.svg 
+    - - - - - - - - - - - - */
+    
+    &_deployment-unit--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/deployment-unit.svg#enabled");
+    }
+    
+    &_deployment-unit--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/deployment-unit.svg#hover");
+    }
+    
+    &_deployment-unit--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/deployment-unit.svg#active");
+    }
+    
+    &_deployment-unit--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/deployment-unit.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    dataview-index.svg 
+    - - - - - - - - - - - - */
+    
+    &_dataview-index--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/dataview-index.svg#enabled");
+    }
+    
+    &_dataview-index--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/dataview-index.svg#hover");
+    }
+    
+    &_dataview-index--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/dataview-index.svg#active");
+    }
+    
+    &_dataview-index--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/dataview-index.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    datastore.svg 
+    - - - - - - - - - - - - */
+    
+    &_datastore--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/datastore.svg#enabled");
+    }
+    
+    &_datastore--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/datastore.svg#hover");
+    }
+    
+    &_datastore--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/datastore.svg#active");
+    }
+    
+    &_datastore--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/datastore.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    datastore-category.svg 
+    - - - - - - - - - - - - */
+    
+    &_datastore-category--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/datastore-category.svg#enabled");
+    }
+    
+    &_datastore-category--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/datastore-category.svg#hover");
+    }
+    
+    &_datastore-category--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/datastore-category.svg#active");
+    }
+    
+    &_datastore-category--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/datastore-category.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    data-view.svg 
+    - - - - - - - - - - - - */
+    
+    &_data-view--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/data-view.svg#enabled");
+    }
+    
+    &_data-view--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/data-view.svg#hover");
+    }
+    
+    &_data-view--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/data-view.svg#active");
+    }
+    
+    &_data-view--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/data-view.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    data-selector.svg 
+    - - - - - - - - - - - - */
+    
+    &_data-selector--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/data-selector.svg#enabled");
+    }
+    
+    &_data-selector--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/data-selector.svg#hover");
+    }
+    
+    &_data-selector--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/data-selector.svg#active");
+    }
+    
+    &_data-selector--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/data-selector.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    data-provider.svg 
+    - - - - - - - - - - - - */
+    
+    &_data-provider--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/data-provider.svg#enabled");
+    }
+    
+    &_data-provider--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/data-provider.svg#hover");
+    }
+    
+    &_data-provider--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/data-provider.svg#active");
+    }
+    
+    &_data-provider--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/data-provider.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    dashboard.svg 
+    - - - - - - - - - - - - */
+    
+    &_dashboard--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/dashboard.svg#enabled");
+    }
+    
+    &_dashboard--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/dashboard.svg#hover");
+    }
+    
+    &_dashboard--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/dashboard.svg#active");
+    }
+    
+    &_dashboard--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/dashboard.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    customization.svg 
+    - - - - - - - - - - - - */
+    
+    &_customization--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/customization.svg#enabled");
+    }
+    
+    &_customization--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/customization.svg#hover");
+    }
+    
+    &_customization--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/customization.svg#active");
+    }
+    
+    &_customization--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/customization.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    conversational-flows.svg 
+    - - - - - - - - - - - - */
+    
+    &_conversational-flows--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/conversational-flows.svg#enabled");
+    }
+    
+    &_conversational-flows--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/conversational-flows.svg#hover");
+    }
+    
+    &_conversational-flows--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/conversational-flows.svg#active");
+    }
+    
+    &_conversational-flows--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/conversational-flows.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    category.svg 
+    - - - - - - - - - - - - */
+    
+    &_category--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/category.svg#enabled");
+    }
+    
+    &_category--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/category.svg#hover");
+    }
+    
+    &_category--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/category.svg#active");
+    }
+    
+    &_category--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/category.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    calendars.svg 
+    - - - - - - - - - - - - */
+    
+    &_calendars--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/calendars.svg#enabled");
+    }
+    
+    &_calendars--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/calendars.svg#hover");
+    }
+    
+    &_calendars--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/calendars.svg#active");
+    }
+    
+    &_calendars--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/calendars.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    business-process-diagram.svg 
+    - - - - - - - - - - - - */
+    
+    &_business-process-diagram--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/business-process-diagram.svg#enabled");
+    }
+    
+    &_business-process-diagram--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/business-process-diagram.svg#hover");
+    }
+    
+    &_business-process-diagram--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/business-process-diagram.svg#active");
+    }
+    
+    &_business-process-diagram--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/business-process-diagram.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    bg-color.svg 
+    - - - - - - - - - - - - */
+    
+    &_bg-color--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/bg-color.svg#enabled");
+    }
+    
+    &_bg-color--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/bg-color.svg#hover");
+    }
+    
+    &_bg-color--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/bg-color.svg#active");
+    }
+    
+    &_bg-color--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/bg-color.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    attribute.svg 
+    - - - - - - - - - - - - */
+    
+    &_attribute--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/attribute.svg#enabled");
+    }
+    
+    &_attribute--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/attribute.svg#hover");
+    }
+    
+    &_attribute--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/attribute.svg#active");
+    }
+    
+    &_attribute--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/attribute.svg#disabled");
+    }
+    
+    /* - - - - - - - - - - - - 
+    api.svg 
+    - - - - - - - - - - - - */
+    
+    &_api--enabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/api.svg#enabled");
+    }
+    
+    &_api--hover-dark {
+      --icon-path: url("#{$icons-path}objects/dark/api.svg#hover");
+    }
+    
+    &_api--active-dark {
+      --icon-path: url("#{$icons-path}objects/dark/api.svg#active");
+    }
+    
+    &_api--disabled-dark {
+      --icon-path: url("#{$icons-path}objects/dark/api.svg#disabled");
+    }
+    
+  
+    }
+  
