@@ -1,0 +1,99 @@
+@import "tokens";
+
+%tab {
+  --ch-list-image-size: var(--spacing-un-spacing--xl);
+  --ch-list-mask-image-size: calc(
+    var(--spacing-un-spacing--xl) - var(--spacing-un-spacing--m)
+  );
+
+  background-color: var(--mer-color__elevation--01);
+  border: var(--mer-border__radius--2xs) solid var(--mer-color__elevation--03);
+  border-radius: var(--mer-border__radius--sm);
+}
+
+%tab-caption {
+  padding-inline: var(--mer-spacing--xs);
+  padding-block: var(--mer-spacing--2xs) calc(var(--mer-spacing--2xs) - 1px); // due to border-block-end-width: 2px;
+  border-block-end: var(--mer-border__width--sm) solid transparent;
+  gap: 0;
+}
+
+%tab-caption--hover {
+  border-block-end-color: var(--mer-accent__primary);
+}
+
+%tab-caption--active {
+  border-block-end-color: var(--mer-accent__primary);
+  color: var(--mer-text__bright);
+}
+
+%tab-caption--focus-visible {
+  @include focus-style(true);
+}
+
+%tab-caption--selected {
+  @extend %tab-caption--active;
+}
+
+%tab-caption--disabled {
+  color: var(--mer-text__primary--disabled);
+}
+
+%tab-list {
+  // gap: var(--mer-spacing--2xs);
+}
+
+@mixin tab(
+  $tab-selector: ".tab",
+  $tab-caption-selector: ".tab::part(button)",
+  $tab-caption--selected-selector: ".tab::part(button selected)",
+  $tab-caption--disabled-selector: ".tab::part(button disabled)",
+  $tab-list-selector: ".tab::part(tab-list)",
+  $tab-list-selector--block: ".tab::part(tab-list block)",
+  $tab-list-selector--inline: ".tab::part(tab-list inline)",
+  $add--disabled: true
+) {
+  #{$tab-selector} {
+    @extend %tab;
+  }
+
+  #{$tab-caption-selector} {
+    @extend %tab-text;
+    @extend %tab-caption;
+    gap: 8px;
+
+    &:hover {
+      @extend %tab-caption--hover;
+    }
+
+    &:active {
+      @extend %tab-caption--active;
+    }
+
+    &:focus-visible {
+      @extend %tab-caption--focus-visible;
+    }
+  }
+
+  #{$tab-caption--selected-selector} {
+    @extend %tab-caption--selected;
+  }
+
+  #{$tab-list-selector} {
+    @extend %tab-list;
+  }
+
+  #{$tab-list-selector--block} {
+    border-block-end: 1px solid var(--mer-color__elevation--03);
+  }
+
+  #{$tab-list-selector--inline} {
+    border-inline-end: 1px solid var(--mer-color__elevation--03);
+  }
+
+  @if $add--disabled {
+    #{$tab-caption--disabled-selector} {
+      @extend %tab-caption--disabled;
+    }
+  }
+}
