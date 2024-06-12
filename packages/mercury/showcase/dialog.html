@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dialog</title>
+
+    <script type="module">
+      import { defineCustomElements } from "https://unpkg.com/@genexus/chameleon-controls-library@latest/dist/esm/loader.js";
+      defineCustomElements();
+    </script>
+
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body class="showcase" sidebar>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">dialog</h1>
+            <p class="section__description">
+              A dialog component, similar to a modal, is an overlay element
+              designed to capture user attention for tasks like confirmations,
+              prompts, or additional information. It appears on top of the main
+              content, requiring user interaction to proceed
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          button-primary text only
+          =========================== -->
+            <article class="article" nav data-title="header and footer">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <!-- ch-dialog -->
+                  <ch-dialog
+                    class="dialog"
+                    caption="A Basic Dialog"
+                    id="dialog-basic"
+                    show-header
+                    show-footer
+                    resizable
+                    allow-drag="box"
+                  >
+                    <p class="text-body" style="margin-block-start: 0">
+                      GeneXus is a low-code development platform that
+                      streamlines the creation of enterprise applications by
+                      automatically generating code for various environments
+                      from a single specification.
+                    </p>
+                    <p class="text-body">
+                      It's ideal for developers who want to quickly prototype,
+                      develop, and deploy applications across web, mobile, and
+                      desktop platforms. With its model-driven approach, GeneXus
+                      minimizes the need for manual coding, allowing developers
+                      to focus on design and user experience.
+                    </p>
+                    <p class="text-body" style="margin-block-end: 0">
+                      The platform also excels in its robust integration
+                      capabilities, enabling seamless connectivity with various
+                      databases and third-party services. This flexibility
+                      ensures that applications built with GeneXus are scalable
+                      and maintainable, reducing the time and effort required
+                      for updates and enhancements.
+                    </p>
+                    <button
+                      slot="footer"
+                      type="button"
+                      class="button button-primary"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      slot="footer"
+                      type="button"
+                      class="button button-tertiary"
+                    >
+                      Save
+                    </button>
+                  </ch-dialog>
+                  <button
+                    class="button button-secondary"
+                    id="btn-show-dialog-basic"
+                  >
+                    Show Dialog
+                  </button>
+                  <script>
+                    const showDialogBasic = document.getElementById(
+                      "btn-show-dialog-basic"
+                    );
+                    const dialogBasic = document.getElementById("dialog-basic");
+                    showDialogBasic.addEventListener("click", () => {
+                      dialogBasic.hidden = false;
+                    });
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-1" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup1 = `<ch-dialog
+class="dialog"
+caption="A Basic Dialog"
+id="dialog-basic"
+show-header
+show-footer
+resizable
+allow-drag="box"
+>
+  <p class="text-body" style="margin-block-start: 0">
+    GeneXus is a low-code development platform that
+    streamlines the creation of enterprise applications by
+    automatically generating code for various environments
+    from a single specification.
+  </p>
+  <p class="text-body">
+    It's ideal for developers who want to quickly prototype,
+    develop, and deploy applications across web, mobile, and
+    desktop platforms. With its model-driven approach, GeneXus
+    minimizes the need for manual coding, allowing developers
+    to focus on design and user experience.
+  </p>
+  <p class="text-body" style="margin-block-end: 0">
+    The platform also excels in its robust integration
+    capabilities, enabling seamless connectivity with various
+    databases and third-party services. This flexibility
+    ensures that applications built with GeneXus are scalable
+    and maintainable, reducing the time and effort required
+    for updates and enhancements.
+  </p>
+  <button slot="footer" type="button" class="button button-primary">Cancel</button>
+  <button slot="footer" type="button" class="button button-tertiary" >Save</button>
+</ch-dialog>`;
+                    document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./assets/scripts.js"></script>
+  </body>
+</html>
