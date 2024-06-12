@@ -26,6 +26,18 @@
   letter-spacing: 0.4px;
 }
 
+%text-body-1 {
+  font-size: 16px;
+  line-height: 24px; // 150%
+  letter-spacing: 0.4px;
+}
+
+%text-body-2 {
+  font-size: 14px;
+  line-height: 18px; // 128.571%
+  letter-spacing: 0.2px;
+}
+
 %tab-text {
   font-weight: 600;
   font-size: 14px;
@@ -42,12 +54,16 @@
     @extend %heading-2;
   }
 
-  .heading-2 {
-    @extend %heading-3;
-  }
-
   .heading-4 {
     @extend %heading-4;
+  }
+
+  .text-body-1 {
+    @extend %text-body-1;
+  }
+
+  .text-body-2 {
+    @extend %text-body-2;
   }
 
   .tab-text {
