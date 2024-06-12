@@ -18,31 +18,37 @@
   &--hover {
     border-color: var(--mer-accent__primary);
   }
+
   &--active {
     color: var(--mer-text__bright);
   }
 
-  //
   &--focus-visible {
     @include focus-style(true);
   }
+
   &--selected {
     @extend %tab-caption--active;
+
     &-inline {
       border-color: var(--mer-color__tinted-blue--20) !important;
       background-color: var(--mer-color__tinted-blue--10);
     }
+
     &-block {
       border-color: var(--mer-accent__primary) !important;
     }
   }
+
   &--disabled {
     color: var(--mer-text__primary--disabled);
   }
+
   &--block-selector {
     border-block-end: var(--mer-border__width--sm) solid transparent;
     padding-inline: var(--mer-spacing--xs);
   }
+
   &--inline-selector {
     border-block-start: var(--mer-border__width--sm) solid transparent;
     padding-inline: var(--mer-spacing--md);
@@ -55,6 +61,7 @@
     border-block-end: var(--mer-border__width--sm) solid
       var(--mer-color__elevation--03);
   }
+
   &--inline-selector {
     border-inline-end: var(--mer-border__width--sm) solid
       var(--mer-color__elevation--03);
@@ -95,9 +102,11 @@
       @extend %tab-caption--focus-visible;
     }
   }
+
   #{$tab-caption--block-selector} {
     @extend %tab-caption--block-selector;
   }
+
   #{$tab-caption--inline-selector} {
     @extend %tab-caption--inline-selector;
   }
@@ -105,9 +114,11 @@
   #{$tab-caption--selected-selector} {
     @extend %tab-caption--selected;
   }
+
   #{$tab-caption--selected-inline-selector} {
     @extend %tab-caption--selected-inline;
   }
+
   #{$tab-caption--selected-block-selector} {
     @extend %tab-caption--selected-block;
   }
