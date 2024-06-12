@@ -1,8 +1,8 @@
 @import "tokens";
 
 %tab {
-  --ch-list-image-size: var(--spacing-un-spacing--xl);
-  --ch-list-mask-image-size: calc(
+  --ch-tab-image-size: var(--spacing-un-spacing--xl);
+  --ch-tab-mask-image-size: calc(
     var(--spacing-un-spacing--xl) - var(--spacing-un-spacing--m)
   );
 
@@ -12,45 +12,67 @@
 }
 
 %tab-caption {
-  padding-inline: var(--mer-spacing--xs);
-  padding-block: var(--mer-spacing--2xs) calc(var(--mer-spacing--2xs) - 1px); // due to border-block-end-width: 2px;
-  border-block-end: var(--mer-border__width--sm) solid transparent;
-  gap: 0;
-}
+  padding-block: var(--mer-spacing--3xs);
+  gap: var(--mer-spacing--xs);
 
-%tab-caption--hover {
-  border-block-end-color: var(--mer-accent__primary);
-}
+  &--hover {
+    border-color: var(--mer-accent__primary);
+  }
+  &--active {
+    color: var(--mer-text__bright);
+  }
 
-%tab-caption--active {
-  border-block-end-color: var(--mer-accent__primary);
-  color: var(--mer-text__bright);
-}
-
-%tab-caption--focus-visible {
-  @include focus-style(true);
-}
-
-%tab-caption--selected {
-  @extend %tab-caption--active;
-}
-
-%tab-caption--disabled {
-  color: var(--mer-text__primary--disabled);
+  //
+  &--focus-visible {
+    @include focus-style(true);
+  }
+  &--selected {
+    @extend %tab-caption--active;
+    &-inline {
+      border-color: var(--mer-color__tinted-blue--20) !important;
+      background-color: var(--mer-color__tinted-blue--10);
+    }
+    &-block {
+      border-color: var(--mer-accent__primary) !important;
+    }
+  }
+  &--disabled {
+    color: var(--mer-text__primary--disabled);
+  }
+  &--block-selector {
+    border-block-end: var(--mer-border__width--sm) solid transparent;
+    padding-inline: var(--mer-spacing--xs);
+  }
+  &--inline-selector {
+    border-block-start: var(--mer-border__width--sm) solid transparent;
+    padding-inline: var(--mer-spacing--md);
+  }
 }
 
 %tab-list {
-  // gap: var(--mer-spacing--2xs);
+  &--block-selector {
+    padding: 0 var(--mer-spacing--xs);
+    border-block-end: var(--mer-border__width--sm) solid
+      var(--mer-color__elevation--03);
+  }
+  &--inline-selector {
+    border-inline-end: var(--mer-border__width--sm) solid
+      var(--mer-color__elevation--03);
+  }
 }
 
 @mixin tab(
   $tab-selector: ".tab",
   $tab-caption-selector: ".tab::part(button)",
+  $tab-caption--block-selector: ".tab::part(button block)",
+  $tab-caption--inline-selector: ".tab::part(button inline)",
   $tab-caption--selected-selector: ".tab::part(button selected)",
+  $tab-caption--selected-inline-selector: ".tab::part(button inline selected)",
+  $tab-caption--selected-block-selector: ".tab::part(button block selected)",
   $tab-caption--disabled-selector: ".tab::part(button disabled)",
   $tab-list-selector: ".tab::part(tab-list)",
-  $tab-list-selector--block: ".tab::part(tab-list block)",
-  $tab-list-selector--inline: ".tab::part(tab-list inline)",
+  $tab-list--block-selector: ".tab::part(tab-list block)",
+  $tab-list--inline-selector: ".tab::part(tab-list inline)",
   $add--disabled: true
 ) {
   #{$tab-selector} {
@@ -60,7 +82,6 @@
   #{$tab-caption-selector} {
     @extend %tab-text;
     @extend %tab-caption;
-    gap: 8px;
 
     &:hover {
       @extend %tab-caption--hover;
@@ -74,21 +95,33 @@
       @extend %tab-caption--focus-visible;
     }
   }
+  #{$tab-caption--block-selector} {
+    @extend %tab-caption--block-selector;
+  }
+  #{$tab-caption--inline-selector} {
+    @extend %tab-caption--inline-selector;
+  }
 
   #{$tab-caption--selected-selector} {
     @extend %tab-caption--selected;
+  }
+  #{$tab-caption--selected-inline-selector} {
+    @extend %tab-caption--selected-inline;
+  }
+  #{$tab-caption--selected-block-selector} {
+    @extend %tab-caption--selected-block;
   }
 
   #{$tab-list-selector} {
     @extend %tab-list;
   }
 
-  #{$tab-list-selector--block} {
-    border-block-end: 1px solid var(--mer-color__elevation--03);
+  #{$tab-list--block-selector} {
+    @extend %tab-list--block-selector;
   }
 
-  #{$tab-list-selector--inline} {
-    border-inline-end: 1px solid var(--mer-color__elevation--03);
+  #{$tab-list--inline-selector} {
+    @extend %tab-list--inline-selector;
   }
 
   @if $add--disabled {
