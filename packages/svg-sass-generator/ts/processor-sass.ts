@@ -59,7 +59,6 @@ export function processIconsSass(sourceDir: string, iconsArray: string[]) {
   // iconsCatalog is ready
   processIconsCatalog(iconsCatalog);
   const iconsObject = createIconsObject(iconsCatalog);
-  console.log(JSON.stringify(iconsObject, null, 2));
 }
 
 const addIconInCatalog = (
