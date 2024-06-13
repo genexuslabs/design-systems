@@ -13,6 +13,7 @@ import {
   OUTPUT_GENERATED,
 } from "./partials-common/utils.js";
 import { deleteDirectory } from "./partials-common/file-system-utils.js";
+import { createIconsObject } from "./processor-ts.js";
 
 let monochromeCategoriesList: string[] = [];
 let multicolorCategoriesList: string[] = [];
@@ -57,6 +58,8 @@ export function processIconsSass(sourceDir: string, iconsArray: string[]) {
 
   // iconsCatalog is ready
   processIconsCatalog(iconsCatalog);
+  const iconsObject = createIconsObject(iconsCatalog);
+  console.log(JSON.stringify(iconsObject, null, 2));
 }
 
 const addIconInCatalog = (
@@ -343,7 +346,7 @@ const saveMainSassOnDisk = () => {
   return true;
 };
 
-interface iconsCatalog {
+export interface iconsCatalog {
   monochrome: catalogCategory;
   multicolor: catalogCategory;
 }
