@@ -27,42 +27,42 @@
     @include focus-style(true);
   }
 
+  &--block {
+    border-block-end: var(--mer-border__width--sm) solid transparent;
+    padding-inline: var(--mer-spacing--xs);
+  }
+
+  &--inline {
+    border-block-start: var(--mer-border__width--sm) solid transparent;
+    padding-inline: var(--mer-spacing--md);
+  }
+
   &--selected {
     @extend %tab-caption--active;
 
     &-inline {
-      border-color: var(--mer-color__tinted-blue--20) !important;
+      border-color: var(--mer-color__tinted-blue--20);
       background-color: var(--mer-color__tinted-blue--10);
     }
 
     &-block {
-      border-color: var(--mer-accent__primary) !important;
+      border-color: var(--mer-accent__primary);
     }
   }
 
   &--disabled {
     color: var(--mer-text__primary--disabled);
   }
-
-  &--block-selector {
-    border-block-end: var(--mer-border__width--sm) solid transparent;
-    padding-inline: var(--mer-spacing--xs);
-  }
-
-  &--inline-selector {
-    border-block-start: var(--mer-border__width--sm) solid transparent;
-    padding-inline: var(--mer-spacing--md);
-  }
 }
 
 %tab-list {
-  &--block-selector {
-    padding: 0 var(--mer-spacing--xs);
+  &--block {
+    padding-inline: var(--mer-spacing--xs);
     border-block-end: var(--mer-border__width--sm) solid
       var(--mer-color__elevation--03);
   }
 
-  &--inline-selector {
+  &--inline {
     border-inline-end: var(--mer-border__width--sm) solid
       var(--mer-color__elevation--03);
   }
@@ -104,11 +104,11 @@
   }
 
   #{$tab-caption--block-selector} {
-    @extend %tab-caption--block-selector;
+    @extend %tab-caption--block;
   }
 
   #{$tab-caption--inline-selector} {
-    @extend %tab-caption--inline-selector;
+    @extend %tab-caption--inline;
   }
 
   #{$tab-caption--selected-selector} {
@@ -128,11 +128,11 @@
   }
 
   #{$tab-list--block-selector} {
-    @extend %tab-list--block-selector;
+    @extend %tab-list--block;
   }
 
   #{$tab-list--inline-selector} {
-    @extend %tab-list--inline-selector;
+    @extend %tab-list--inline;
   }
 
   @if $add--disabled {
