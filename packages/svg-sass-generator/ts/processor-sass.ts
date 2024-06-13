@@ -13,6 +13,7 @@ import {
   OUTPUT_GENERATED,
 } from "./partials-common/utils.js";
 import { deleteDirectory } from "./partials-common/file-system-utils.js";
+import { createIconsObject } from "./processor-ts.js";
 
 let monochromeCategoriesList: string[] = [];
 let multicolorCategoriesList: string[] = [];
@@ -57,6 +58,7 @@ export function processIconsSass(sourceDir: string, iconsArray: string[]) {
 
   // iconsCatalog is ready
   processIconsCatalog(iconsCatalog);
+  const iconsObject = createIconsObject(iconsCatalog);
 }
 
 const addIconInCatalog = (
@@ -105,6 +107,7 @@ const updateIconsCatalog = (
   iconsCatalog[iconType][category][scheme as ColorScheme].push({
     fileName: filename,
     states: states,
+    iconType: iconType,
   });
 };
 
@@ -154,30 +157,60 @@ const createSassFileString = (
         : `${iconName}, `;
   });
 
-  const lightPlaceholders = createPlaceholders(
+  // Icons Custom Properties
+  const lightCustomProperties = createIconsCustomProperties(
     categoryName,
     categoryIcons,
     "light"
   );
-  const darkPlaceholders = createPlaceholders(
+  const darkCustomProperties = createIconsCustomProperties(
     categoryName,
     categoryIcons,
     "dark"
   );
 
+  // Icons Sass List and Placeholders
+  const darkPlaceholders = createPlaceholders(
+    categoryName,
+    categoryIcons,
+    "dark"
+  );
+  const lightPlaceholders = createPlaceholders(
+    categoryName,
+    categoryIcons,
+    "light"
+  );
+
+  const allIconsCustomProperties = `
+  /* =================================
+  LIGHT CUSTOM PROPERTIES
+  ================================= */
+
+  ${lightCustomProperties}
+
+  /* =================================
+  DARK CUSTOM PROPERTIES
+  ================================= */
+
+  ${darkCustomProperties}
+  `;
+
   const allPlaceholders = `
-    /* =================================
-    LIGHT
-    ================================= */
+
+  /* =================================
+  LIGHT PLACEHOLDERS SELECTORS
+  ================================= */
   ${lightPlaceholders}
 
-    /* =================================
-    DARK
-    ================================= */
+  
+  /* =================================
+  DARK PLACEHOLDERS SELECTORS
+  ================================= */
   ${darkPlaceholders}
   `;
 
   const output = `
+  ${allIconsCustomProperties}
   ${categoryList}
     %icon__${categoryName} {
   ${allPlaceholders}
@@ -194,11 +227,13 @@ const createPlaceholders = (
 ): string => {
   let placeholderSelectors = ``;
 
-  // dark placeholder selectors
-  categoryIcons.dark.forEach((icon, index) => {
+  // (iterate over dark or light, is the same)
+  categoryIcons.dark.forEach((icon) => {
+    const stateSeparator = icon.iconType === "monochrome" ? "_" : "--";
     const iconName = icon.fileName.split(".")[0];
 
     placeholderSelectors += `
+
     /* - - - - - - - - - - - - 
     ${icon.fileName} 
     - - - - - - - - - - - - */
@@ -207,14 +242,34 @@ const createPlaceholders = (
     // placeholder selectors
     icon.states.forEach((state) => {
       placeholderSelectors += `
-    &_${iconName}--${state}-${scheme} {
-      --icon-path: url("#{$icons-path}${categoryName}/${scheme}/${icon.fileName}#${state}");
-    }
-    `;
+    &_${iconName}${stateSeparator}${state} {
+      --icon-path: var(--icon__${categoryName}_${iconName}${stateSeparator}${state});
+    }`;
     });
   });
 
-  return placeholderSelectors;
+  return `${placeholderSelectors}`;
+};
+
+const createIconsCustomProperties = (
+  categoryName: string,
+  categoryIcons: lightDarkIcons,
+  scheme: ColorScheme
+) => {
+  let iconsCustomProperties = `:root.${scheme} {
+  /*${categoryName}*/\n`;
+  categoryIcons[scheme].forEach((icon) => {
+    const iconName = icon.fileName.split(".")[0];
+    const stateSeparator = icon.iconType === "monochrome" ? "_" : "--";
+    const iconStates = icon.states;
+    if (iconStates) {
+      iconStates.forEach((iconState) => {
+        iconsCustomProperties += `  --icon__${categoryName}_${iconName}${stateSeparator}${iconState}: url('#{$icons-path}${categoryName}/${scheme}/${icon.fileName}#${iconState}'); \n`;
+      });
+    }
+  });
+  iconsCustomProperties += `\n  }`;
+  return iconsCustomProperties;
 };
 
 /**
@@ -290,7 +345,7 @@ const saveMainSassOnDisk = () => {
   return true;
 };
 
-interface iconsCatalog {
+export interface iconsCatalog {
   monochrome: catalogCategory;
   multicolor: catalogCategory;
 }
@@ -300,6 +355,6 @@ export type catalogCategory = {
 };
 
 export type lightDarkIcons = {
-  light: { fileName: string; states: string[] }[];
-  dark: { fileName: string; states: string[] }[];
+  light: { fileName: string; states: string[]; iconType: IconType }[];
+  dark: { fileName: string; states: string[]; iconType: IconType }[];
 };

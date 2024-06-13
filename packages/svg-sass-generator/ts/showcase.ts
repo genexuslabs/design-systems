@@ -612,7 +612,7 @@ const getMonochromeColorsList = (
         // push list items
         Object.keys(states).forEach((state: ElementState) => {
           const stateIsNull = !states[state];
-          const imgPath = `${icon.path}#${color.name}-${state}`;
+          const imgPath = `${icon.path}#${color.name}--${state}`;
           let slot = `
           <button class="icon-state-button" data-src="${imgPath}" data-name="${category}/${icon.name}">
             <figure class="icon-container__figure">
