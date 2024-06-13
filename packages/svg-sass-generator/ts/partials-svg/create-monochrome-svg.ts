@@ -245,7 +245,7 @@ const createViewUse = (
 ): string => {
   const x = xIndex * width;
   const y = yIndex * height;
-  const viewId = `${colorName}-${stateName}`;
+  const viewId = `${colorName}--${stateName}`;
   return `
   <view id="${viewId}" viewBox="${x} ${y} ${width} ${height}" />
   <use
