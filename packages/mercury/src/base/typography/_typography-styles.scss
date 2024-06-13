@@ -33,6 +33,12 @@
   margin-block: var(--mer-spacing--sm);
 }
 
+%tab-text {
+  font-family: var(--mer-font-family--inter-regular);
+  font-size: var(--mer-font__size--2xs);
+  line-height: var(--mer-font-family--inter-regular);
+}
+
 @mixin typography-classes() {
   .heading-1 {
     @extend %heading-1;

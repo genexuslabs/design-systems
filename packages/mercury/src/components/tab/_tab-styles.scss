@@ -1,0 +1,143 @@
+@import "tokens";
+
+%tab {
+  --ch-tab-image-size: var(--spacing-un-spacing--xl);
+  --ch-tab-mask-image-size: calc(
+    var(--spacing-un-spacing--xl) - var(--spacing-un-spacing--m)
+  );
+
+  background-color: var(--mer-color__elevation--01);
+  border: var(--mer-border__radius--2xs) solid var(--mer-color__elevation--03);
+  border-radius: var(--mer-border__radius--sm);
+}
+
+%tab-caption {
+  padding-block: var(--mer-spacing--3xs);
+  gap: var(--mer-spacing--xs);
+
+  &--hover {
+    border-color: var(--mer-accent__primary);
+  }
+
+  &--active {
+    color: var(--mer-text__bright);
+  }
+
+  &--focus-visible {
+    @include focus-style(true);
+  }
+
+  &--block {
+    border-block-end: var(--mer-border__width--sm) solid transparent;
+    padding-inline: var(--mer-spacing--xs);
+  }
+
+  &--inline {
+    border-block-start: var(--mer-border__width--sm) solid transparent;
+    padding-inline: var(--mer-spacing--md);
+  }
+
+  &--selected {
+    @extend %tab-caption--active;
+
+    &-inline {
+      border-color: var(--mer-color__tinted-blue--20);
+      background-color: var(--mer-color__tinted-blue--10);
+    }
+
+    &-block {
+      border-color: var(--mer-accent__primary);
+    }
+  }
+
+  &--disabled {
+    color: var(--mer-text__primary--disabled);
+  }
+}
+
+%tab-list {
+  &--block {
+    padding-inline: var(--mer-spacing--xs);
+    border-block-end: var(--mer-border__width--sm) solid
+      var(--mer-color__elevation--03);
+  }
+
+  &--inline {
+    border-inline-end: var(--mer-border__width--sm) solid
+      var(--mer-color__elevation--03);
+  }
+}
+
+@mixin tab(
+  $tab-selector: ".tab",
+  $tab-caption-selector: ".tab::part(button)",
+  $tab-caption--block-selector: ".tab::part(button block)",
+  $tab-caption--inline-selector: ".tab::part(button inline)",
+  $tab-caption--selected-selector: ".tab::part(button selected)",
+  $tab-caption--selected-inline-selector: ".tab::part(button inline selected)",
+  $tab-caption--selected-block-selector: ".tab::part(button block selected)",
+  $tab-caption--disabled-selector: ".tab::part(button disabled)",
+  $tab-list-selector: ".tab::part(tab-list)",
+  $tab-list--block-selector: ".tab::part(tab-list block)",
+  $tab-list--inline-selector: ".tab::part(tab-list inline)",
+  $add--disabled: true
+) {
+  #{$tab-selector} {
+    @extend %tab;
+  }
+
+  #{$tab-caption-selector} {
+    @extend %tab-text;
+    @extend %tab-caption;
+
+    &:hover {
+      @extend %tab-caption--hover;
+    }
+
+    &:active {
+      @extend %tab-caption--active;
+    }
+
+    &:focus-visible {
+      @extend %tab-caption--focus-visible;
+    }
+  }
+
+  #{$tab-caption--block-selector} {
+    @extend %tab-caption--block;
+  }
+
+  #{$tab-caption--inline-selector} {
+    @extend %tab-caption--inline;
+  }
+
+  #{$tab-caption--selected-selector} {
+    @extend %tab-caption--selected;
+  }
+
+  #{$tab-caption--selected-inline-selector} {
+    @extend %tab-caption--selected-inline;
+  }
+
+  #{$tab-caption--selected-block-selector} {
+    @extend %tab-caption--selected-block;
+  }
+
+  #{$tab-list-selector} {
+    @extend %tab-list;
+  }
+
+  #{$tab-list--block-selector} {
+    @extend %tab-list--block;
+  }
+
+  #{$tab-list--inline-selector} {
+    @extend %tab-list--inline;
+  }
+
+  @if $add--disabled {
+    #{$tab-caption--disabled-selector} {
+      @extend %tab-caption--disabled;
+    }
+  }
+}
