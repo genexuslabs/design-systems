@@ -30,6 +30,7 @@
 @import "./base/form-controls/form-input-styles";
 @import "./base/icons";
 @import "./base/typography/typography-styles";
+@import "./base/layout/layout-styles";
 
 // Icons
 @import "./icons/button";
@@ -84,6 +85,7 @@
   $form-controls-classes: true,
   $icon-classes: true,
   $typography-classes: true,
+  $layout-classes: true,
 
   // Icons
   $icons-elements: true,
@@ -362,6 +364,11 @@
       @include icon-background();
       @include form-input-icon();
       @include form-input-bg-x-rtl-support();
+    }
+
+    // Layout classes
+    @if $layout-classes {
+      @include layout();
     }
   }
 
