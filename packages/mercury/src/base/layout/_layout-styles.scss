@@ -1,45 +1,94 @@
 @import "tokens";
 
-@mixin layout($selector: ".layout", $full: true) {
-  .layout {
+%layout {
+  display: grid;
+  padding-block: var(--mer-spacing--md);
+  padding-inline: var(--mer-spacing--lg);
+  gap: var(--mer-spacing--md);
+
+  &__panel {
     display: grid;
-    block-size: 100%;
-    padding-block: var(--mer-spacing--md);
-    padding-inline: var(--mer-spacing--lg);
-    gap: var(--mer-spacing--md);
+  }
 
-    &__panel {
-      block-size: 100%;
-    }
+  &--cols-1 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 
-    &--cols-1 {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-    }
+  &--cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+  }
 
-    &--cols-2 {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 1fr;
-    }
+  &--cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+  }
 
-    &--cols-3 {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 1fr;
-    }
+  &--cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
 
-    &--cols-4 {
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: 1fr;
-    }
+  &--cols-1-2 {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+  }
 
-    &--cols-1-2 {
-      grid-template-columns: 1fr 2fr;
-      grid-template-rows: 1fr;
-    }
+  &--cols-2-1 {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
 
-    &--cols-2-1 {
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: 1fr;
-    }
+/// @group Layout
+/// @param {String} $layout-selector [".layout"] -
+/// @param {String} $panel-selector [".layout__panel"] -
+/// @param {String} $layout--cols-1-selector [".layout--cols-1"] -
+/// @param {String} $layout--cols-2-selector [".layout--cols-2"] -
+/// @param {String} $layout--cols-3-selector [".layout--cols-3"] -
+/// @param {String} $layout--cols-4-selector [".layout--cols-4"] -
+/// @param {String} $layout--cols-2-1-selector [".layout--cols-2-1"] -
+/// @param {String} $layout--cols-1-2-selector [".layout--cols-1-2"] -
+@mixin layout(
+  $layout-selector: ".layout",
+  $panel-selector: ".layout__panel",
+  $layout--cols-1-selector: ".layout--cols-1",
+  $layout--cols-2-selector: ".layout--cols-2",
+  $layout--cols-3-selector: ".layout--cols-3",
+  $layout--cols-4-selector: ".layout--cols-4",
+  $layout--cols-2-1-selector: ".layout--cols-1-2",
+  $layout--cols-1-2-selector: ".layout--cols-2-1"
+) {
+  #{$layout-selector} {
+    @extend %layout;
+  }
+
+  #{$panel-selector} {
+    @extend %layout__panel;
+  }
+
+  #{$layout--cols-1-selector} {
+    @extend %layout--cols-1;
+  }
+
+  #{$layout--cols-2-selector} {
+    @extend %layout--cols-2;
+  }
+
+  #{$layout--cols-3-selector} {
+    @extend %layout--cols-3;
+  }
+
+  #{$layout--cols-4-selector} {
+    @extend %layout--cols-4;
+  }
+
+  #{$layout--cols-2-1-selector} {
+    @extend %layout--cols-2-1;
+  }
+
+  #{$layout--cols-1-2-selector} {
+    @extend %layout--cols-1-2;
   }
 }
