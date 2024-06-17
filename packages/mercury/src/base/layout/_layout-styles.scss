@@ -43,8 +43,8 @@
 /// @param {String} $layout--cols-2-selector [".layout--cols-2"] -
 /// @param {String} $layout--cols-3-selector [".layout--cols-3"] -
 /// @param {String} $layout--cols-4-selector [".layout--cols-4"] -
-/// @param {String} $layout--cols-2-1-selector [".layout--cols-2-1"] -
 /// @param {String} $layout--cols-1-2-selector [".layout--cols-1-2"] -
+/// @param {String} $layout--cols-2-1-selector [".layout--cols-2-1"] -
 @mixin layout(
   $layout-selector: ".layout",
   $panel-selector: ".layout__panel",
@@ -52,8 +52,8 @@
   $layout--cols-2-selector: ".layout--cols-2",
   $layout--cols-3-selector: ".layout--cols-3",
   $layout--cols-4-selector: ".layout--cols-4",
-  $layout--cols-2-1-selector: ".layout--cols-2-1",
-  $layout--cols-1-2-selector: ".layout--cols-1-2"
+  $layout--cols-1-2-selector: ".layout--cols-1-2",
+  $layout--cols-2-1-selector: ".layout--cols-2-1"
 ) {
   #{$layout-selector} {
     @extend %layout;
@@ -79,11 +79,11 @@
     @extend %layout--cols-4;
   }
 
-  #{$layout--cols-2-1-selector} {
-    @extend %layout--cols-2-1;
-  }
-
   #{$layout--cols-1-2-selector} {
     @extend %layout--cols-1-2;
+  }
+
+  #{$layout--cols-2-1-selector} {
+    @extend %layout--cols-2-1;
   }
 }
