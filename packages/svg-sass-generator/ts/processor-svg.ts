@@ -3,12 +3,7 @@ import path from "path";
 import cheerio from "cheerio";
 // partials-common
 import { getIcons } from "./partials-common/get-icons.js";
-import {
-  RED,
-  RESET_COLOR,
-  getSvgString,
-  OUTPUT_GENERATED,
-} from "./partials-common/utils.js";
+import { RED, RESET_COLOR, getSvgString } from "./partials-common/utils.js";
 import { SavedOnDisk } from "./partials-common/types.js";
 // partials-svg
 import { processMulticolorFigures } from "./partials-svg/process-multicolor-figures.js";
@@ -37,10 +32,8 @@ const SHOWCASE_PATH = await process.argv[5];
 const LOG_PATH = await process.argv[6];
 
 // Optional Base URL for the showcase
-const showcaseBaseUrl = path.join(
-  path.relative(SHOWCASE_PATH, OUTPUT_PATH),
-  OUTPUT_GENERATED
-);
+const showcaseBaseUrl = path.relative(SHOWCASE_PATH, OUTPUT_PATH) + path.sep;
+
 const SHOWCASE_BASE_HREF = (await process.argv[7]) || showcaseBaseUrl;
 
 const numberOfArgsProvided = process.argv.length;

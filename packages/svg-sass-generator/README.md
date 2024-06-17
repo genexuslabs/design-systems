@@ -42,6 +42,7 @@ This commands creates the colorized svg icons, and creates a html file with a sh
 4. The json file that contains the required information for the colors of the different states. This includes the color definition for monochrome, and also multicolor icons. **Please, note that this path is relative to the source folder** (./assets in this example). You can use `./samples/color-states-json` as a starting template.
 5. The showcase path directory. This is the directory where the html showcase will be generated.
 6. The log directory where the log file will be written. The log file will contain information about the result of the process. It is specially helpful if there are any type of errors; `./log`
+7. (optional) the relative path from the `./showcase` folder the the processed icons folder. If this argument is not provided, the tool will determine the path from `./showcase` to the dist folder that was set by the user in `svg` script as the third (3) argument.
 
 ### 🛠️ `npm run sass`
 
@@ -62,5 +63,6 @@ This way, you can easily iterate over all the multicolor or monochrome categorie
 
 ### notes
 
+- To avoid collisions with already existing folders on the destination paths that might be named the same as source icons folders, please provide an additional folder to the output path folder, for the `svg` script, as well as for the `sass` folder. Suggested name is `_generated`.
 - This tool is still a work in progress.
 - If you are improving the tool, you can use the `npm run watch` command for a better developer experience. This will watch any changes on the `/ts` folder and update the `/js` output directory.

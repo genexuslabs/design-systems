@@ -52,5 +52,3 @@ export function getSvgString(iconPath: string) {
  */
 export const DIR_PATH_REGEX =
   /^(?:\.{0,2}\/)?(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_-]+\/?$/;
-
-export const OUTPUT_GENERATED = "_generated/";

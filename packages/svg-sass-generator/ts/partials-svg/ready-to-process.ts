@@ -1,11 +1,7 @@
 import * as fs from "fs";
 import path from "path";
 
-import {
-  RED,
-  RESET_COLOR,
-  OUTPUT_GENERATED,
-} from "../partials-common/utils.js";
+import { RED, RESET_COLOR } from "../partials-common/utils.js";
 import { validateStatesSchema } from "./color-states-validator.js";
 import { getStatesObject } from "./utils.js";
 import { DIR_PATH_REGEX } from "../partials-common/utils.js";
@@ -166,7 +162,7 @@ export function readyToProcess(
   }
 
   // 7. clear and create directories for a fresh start
-  const outputPath = path.join(OUTPUT_PATH, OUTPUT_GENERATED);
+  const outputPath = OUTPUT_PATH;
   deleteDirectory(outputPath);
   createDir(outputPath);
 
