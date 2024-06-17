@@ -1,0 +1,12 @@
+$icons-path: "assets/icons/";
+
+@import "../sass/_generated/all-lists.scss";
+
+@include generate-monochrome-icons-selectors(
+  $all-monochrome-lists,
+  $ignored-categories: ()
+);
+@include generate-multicolor-icons-selectors(
+  $all-multicolor-lists,
+  $ignored-categories: ()
+);
