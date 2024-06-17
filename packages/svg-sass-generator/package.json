@@ -19,9 +19,10 @@
     "copy-schema-multicolor": "fse copy ./ts/partials-svg/schema-multicolor.json ./js/partials-svg/schema-multicolor.json",
     "copy-to-bin": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet ./js ./bin",
     "watch": "tsc --watch",
-    "svg": "node ./js/processor-svg.js source-sample/ dist/_my-generated/ source-sample/my-color-states.json showcase/ ./log/",
-    "sass": "node ./js/processor-sass.js dist/ sass/_my-generated/",
-    "validate.ci": "npm run build"
+    "svg": "node ./js/processor-svg.js source-sample/ dist/_generated/ source-sample/my-color-states.json showcase/ ./log/",
+    "sass": "node ./js/processor-sass.js dist/ sass/_generated/ source-sample/my-color-states.json",
+    "validate.ci": "npm run build",
+    "test-mixin": "sass ./tests/tests.scss ./tests/tests.css"
   },
   "author": "GeneXus",
   "license": "Apache-2.0",
