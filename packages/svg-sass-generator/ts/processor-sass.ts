@@ -5,6 +5,7 @@ import cheerio from "cheerio";
 // partials-common
 import { getIcons } from "./partials-common/get-icons.js";
 import { ColorScheme, IconType } from "./partials-common/types.js";
+import { getStatesObject } from "./partials-svg/utils.js";
 import {
   RED,
   RESET_COLOR,
@@ -20,12 +21,15 @@ let multicolorCategoriesList: string[] = [];
 // Files and Directories
 const SRC_PATH = await process.argv[2];
 const OUTPUT_PATH = await process.argv[3];
+const COLOR_STATES_PATH = await process.argv[4];
 const ALL_LISTS_FILENAME = "all-lists.scss";
 
 // Start fresh (delete current output directory)
 deleteDirectory(OUTPUT_PATH);
 
 const iconsPromise = getIcons(SRC_PATH);
+const colorStates = getStatesObject(COLOR_STATES_PATH).statesObject;
+
 iconsPromise
   .then((iconsArray: string[]) => {
     processIconsSass(SRC_PATH, iconsArray);
@@ -312,15 +316,20 @@ const saveMainSassOnDisk = () => {
 
   output += `\n\n$all-multicolor-lists: (`;
   multicolorCategoriesList.forEach((category) => {
-    output += `\n${category}: $${category},`;
+    output += ` \n${category}: $${category},`;
   });
   output += `\n);`;
 
   output += `\n\n$all-monochrome-lists: (`;
   monochromeCategoriesList.forEach((category) => {
-    output += `\n${category}: $${category},`;
+    output += ` \n${category}: $${category},`;
   });
   output += `\n);`;
+
+  //Icons selectors mixins
+  const iconsSelectorsMixinsOutput = getIconsSelectorsMixins();
+
+  output += iconsSelectorsMixinsOutput;
 
   const filePath = path.join(OUTPUT_PATH, ALL_LISTS_FILENAME);
 
@@ -336,6 +345,184 @@ const saveMainSassOnDisk = () => {
   });
 
   return true;
+};
+
+/**
+ * @description It includes a couple of mixins (one for monochrome icons, and another for
+ * multicolor icons that will allow the final user to generate css classes for each icon.
+ * It also includes a couple of lists and functions that are required for the mixing to work.
+ */
+const getIconsSelectorsMixins = () => {
+  let output = ``;
+  output += getMonochromeSassConstructs();
+  output += getMulticolorSassConstructs();
+  return output;
+};
+
+/* - - - - - - - - - - - - - - - - - - - - -
+MONOCHROME CONSTRUCTS
+- - - - - - - - - - - - - - - - - - - - - */
+
+const getMonochromeSassConstructs = () => {
+  let output = `\n\n/* - - - - - - - - - - - - - - - - - - 
+MONOCHROME CONSTRUCTS
+- - - - - - - - - - - - - - - - - - */\n\n`;
+  output += monochromeColorsListString();
+  output += monochromeCategoriesListString();
+  output += monochromeMapFunctions();
+  output += monochromeSelectorsMixin();
+  return output;
+};
+
+const monochromeColorsListString = (): string => {
+  let output = `$monochrome-colors: (\n`;
+  const monochromeColors = colorStates.monochrome.colors;
+  monochromeColors.forEach((color, i) => {
+    const isLastColor = i === monochromeColors.length - 1;
+    const colorStates = Object.entries(color.states);
+    output += ` ${color.name}: (\n`;
+
+    colorStates.forEach(([stateName, colorValue], stateIndex, statesArray) => {
+      if (!colorValue) {
+        return;
+      }
+      const isLastState = stateIndex === statesArray.length - 1;
+      output += `   ${stateName}`;
+      output += !isLastState ? ",\n" : "\n";
+    });
+    output += !isLastColor ? " ),\n" : " )\n";
+  });
+  output += `);`;
+  return output;
+};
+
+const monochromeCategoriesListString = (): string => {
+  let output = `\n\n$monochrome-categories: (\n`;
+  const monochromeCategories = colorStates.monochrome.iconsCategories;
+  monochromeCategories.forEach((category, i) => {
+    const isLastCategory = i === monochromeCategories.length - 1;
+    const categoryName = category.folder;
+    const categoryColors = Object.entries(category.colors);
+
+    output += ` ${categoryName}: (\n`;
+
+    categoryColors.forEach(
+      ([colorName, colorValue], colorIndex, colorsArray) => {
+        if (!colorValue) {
+          return;
+        }
+        const isLastColor = colorIndex === colorsArray.length - 1;
+        output += `   ${colorName}`;
+        output += !isLastColor ? ",\n" : "\n";
+      }
+    );
+    output += !isLastCategory ? " ),\n" : " )\n";
+  });
+  output += `);`;
+  return output;
+};
+
+const monochromeMapFunctions = (): string => {
+  return `\n\n// functions for monochrome or multicolor:
+@function category-is-excluded($category, $categories-list) {
+  @return index($category, $categories-list) != null;
+}
+
+// functions for monochrome only:
+@function get-monochrome-category-colors($category) {
+  @return map-get($monochrome-categories, $category);
+}
+
+@function get-monochrome-color-states($color) {
+  @return map-get($monochrome-colors, $color);
+}
+  
+// functions for multicolor only:
+@function get-multicolor-color-states(){
+  $multicolorStates: (enabled, hover, active, disabled);
+  @return $multicolorStates;
+}
+`;
+};
+
+const monochromeSelectorsMixin = (): string => {
+  return `\n\n@mixin generate-monochrome-icons-selectors(
+  $all-monochrome-lists,
+  $css-prefix: "icon",
+  $prefix-category-separator: "__",
+  $category-icon-separator: "_",
+  $icon-color-separator: "_",
+  $color-state-separator: "--",
+  $ignored-categories
+) {
+  @each $category-name, $category-icons in $all-monochrome-lists {
+    $category-is-excluded: category-is-excluded(
+      $category-name,
+      $ignored-categories
+    );
+    @if (not($category-is-excluded)) {
+      $category-colors: get-monochrome-category-colors($category-name);
+      @each $icon in $category-icons {
+        @each $color in $category-colors {
+          $color-states: get-monochrome-color-states($color);
+          @each $state in $color-states {
+            .#{$css-prefix}#{$prefix-category-separator}#{$category-name}#{$category-icon-separator}#{$icon}#{$icon-color-separator}#{$color} {
+              &:#{$state} {
+                --icon-path: var(
+                  --icon#{$prefix-category-separator}#{$category-name}#{$category-icon-separator}#{$icon}#{$icon-color-separator}#{$color}#{$color-state-separator}#{$state}
+                );
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}`;
+};
+
+/* - - - - - - - - - - - - - - - - - - - - -
+MULTICOLOR CONSTRUCTS
+- - - - - - - - - - - - - - - - - - - - - */
+
+const getMulticolorSassConstructs = () => {
+  let output = `\n\n/* - - - - - - - - - - - - - - - - - - 
+MULTICOLOR CONSTRUCTS
+- - - - - - - - - - - - - - - - - - */`;
+  output += multicolorSelectorsMixin();
+  return output;
+};
+
+const multicolorSelectorsMixin = (): string => {
+  return `\n\n@mixin generate-multicolor-icons-selectors(
+  $all-multicolor-lists,
+  $css-prefix: "icon",
+  $prefix-category-separator: "__",
+  $category-icon-separator: "_",
+  $icon-state-separator: "--",
+  $ignored-categories
+) {
+  @each $category-name, $category-icons in $all-multicolor-lists {
+    $category-is-excluded: category-is-excluded(
+      $category-name,
+      $ignored-categories
+    );
+    @if (not($category-is-excluded)) {
+      @each $icon in $category-icons {
+        $icon-states: get-multicolor-color-states();
+        @each $state in $icon-states {
+          .#{$css-prefix}#{$prefix-category-separator}#{$category-name}#{$category-icon-separator}#{$icon} {
+            &:#{$state} {
+              --icon-path: var(
+                --icon#{$prefix-category-separator}#{$category-name}#{$category-icon-separator}#{$icon}#{$icon-state-separator}#{$state}
+              );
+            }
+          }
+        }
+      }
+    }
+  }
+}`;
 };
 
 export interface iconsCatalog {
