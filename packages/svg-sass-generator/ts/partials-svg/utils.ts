@@ -8,7 +8,6 @@ import {
 import path from "path";
 import { writeFile } from "../partials-common/file-system-utils.js";
 import { SavedOnDisk } from "../partials-common/types.js";
-import { OUTPUT_GENERATED } from "../partials-common/utils.js";
 
 /**
  * The list of available svg figures in any svg icon.
@@ -58,7 +57,6 @@ export const saveSvgOnDisk = (
 
   const filePath = path.join(
     outputDirectory,
-    OUTPUT_GENERATED,
     pathInfo.categoryFolderName || "",
     schemeFolderName,
     pathInfo.fileName
