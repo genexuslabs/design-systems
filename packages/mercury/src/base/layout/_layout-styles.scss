@@ -57,8 +57,8 @@
   $layout--cols-2-selector: ".layout--cols-2",
   $layout--cols-3-selector: ".layout--cols-3",
   $layout--cols-4-selector: ".layout--cols-4",
-  $layout--cols-2-1-selector: ".layout--cols-1-2",
-  $layout--cols-1-2-selector: ".layout--cols-2-1"
+  $layout--cols-2-1-selector: ".layout--cols-2-1",
+  $layout--cols-1-2-selector: ".layout--cols-1-2"
 ) {
   #{$layout-selector} {
     @extend %layout;
