@@ -23,6 +23,7 @@ const SRC_PATH = await process.argv[2];
 const OUTPUT_PATH = await process.argv[3];
 const COLOR_STATES_PATH = await process.argv[4];
 const ALL_LISTS_FILENAME = "all-lists.scss";
+const MIXINS_FILENAME = "svg-sass-mixins.scss";
 
 // Start fresh (delete current output directory)
 deleteDirectory(OUTPUT_PATH);
@@ -136,7 +137,8 @@ const processCatalogCategory = (
   saveCategory(type, categoryName);
   const sassFileContent = createSassFileString(categoryName, categoryIcons);
   saveSassOnDisk(sassFileContent, type, categoryName);
-  saveMainSassOnDisk();
+  saveIconsListsOnDisk();
+  saveMixinsOnDisk();
 };
 
 const createSassFileString = (
@@ -301,7 +303,7 @@ const saveSassOnDisk = (
   return true;
 };
 
-const saveMainSassOnDisk = () => {
+const saveIconsListsOnDisk = () => {
   let output = ``;
 
   output += `\n/*multicolor lists*/`;
@@ -326,11 +328,6 @@ const saveMainSassOnDisk = () => {
   });
   output += `\n);`;
 
-  //Icons selectors mixins
-  const iconsSelectorsMixinsOutput = getIconsSelectorsMixins();
-
-  output += iconsSelectorsMixinsOutput;
-
   const filePath = path.join(OUTPUT_PATH, ALL_LISTS_FILENAME);
 
   mkdir(OUTPUT_PATH, { recursive: true }, function (err) {
@@ -339,6 +336,26 @@ const saveMainSassOnDisk = () => {
       writeFileSync(filePath, output);
     } catch (err) {
       const msg = `There was an error saving ${ALL_LISTS_FILENAME} the icon on disk. error: ${err}`;
+      console.error(`${RED} ${msg} ${RESET_COLOR}`);
+      return false;
+    }
+  });
+
+  return true;
+};
+
+const saveMixinsOnDisk = () => {
+  //Icons selectors mixins
+  const output = getIconsSelectorsMixins();
+
+  const filePath = path.join(OUTPUT_PATH, MIXINS_FILENAME);
+
+  mkdir(OUTPUT_PATH, { recursive: true }, function (err) {
+    try {
+      // Write the content to the file synchronously
+      writeFileSync(filePath, output);
+    } catch (err) {
+      const msg = `There was an error saving ${MIXINS_FILENAME} the icon on disk. error: ${err}`;
       console.error(`${RED} ${msg} ${RESET_COLOR}`);
       return false;
     }
