@@ -13,8 +13,8 @@
     "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
     "test": "sass test/test.scss  test/mercury.css",
     "validate.ci": "npm run build-no-svg",
-    "icons-svg": "ssg-svg ./src/icons/svg-source ./src/assets/icons/ ./src/icons/svg-source/.config/color-states.json ./showcase/icons ./log ../assets/icons/",
-    "icons-sass": "ssg-sass ./src/assets/icons ./src/icons",
+    "icons-svg": "ssg-svg src/icons/svg-source src/assets/icons/_generated/ src/icons/svg-source/.config/color-states.json showcase/icons/ ./log ../assets/icons/",
+    "icons-sass": "ssg-sass src/assets/icons/ src/icons/_generated/ src/icons/svg-source/.config/color-states.json",
     "watch:sass": "chokidar src/**/*.scss ../common/**/*.scss -c \"npm run build.scss\"",
     "copy-tasks": "node copy-tasks.js"
   },
@@ -25,7 +25,7 @@
     "chokidar-cli": "^3.0.0",
     "sass": "~1.72.0",
     "scss-bundle": "~3.1.2",
-    "@genexus/svg-sass-generator": "1.1.6"
+    "@genexus/svg-sass-generator": "1.1.11"
   },
   "engines": {
     "pnpm": ">=3"
