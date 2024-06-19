@@ -1,2696 +1,2851 @@
 
+  
+  /* =================================
+  LIGHT CUSTOM PROPERTIES
+  ================================= */
+
+  :root.light {
+  /*objects*/
+  --icon__objects_workflow--enabled: url('#{$icons-path}objects/light/workflow.svg#enabled'); 
+  --icon__objects_workflow--hover: url('#{$icons-path}objects/light/workflow.svg#hover'); 
+  --icon__objects_workflow--active: url('#{$icons-path}objects/light/workflow.svg#active'); 
+  --icon__objects_workflow--disabled: url('#{$icons-path}objects/light/workflow.svg#disabled'); 
+  --icon__objects_work-panel--enabled: url('#{$icons-path}objects/light/work-panel.svg#enabled'); 
+  --icon__objects_work-panel--hover: url('#{$icons-path}objects/light/work-panel.svg#hover'); 
+  --icon__objects_work-panel--active: url('#{$icons-path}objects/light/work-panel.svg#active'); 
+  --icon__objects_work-panel--disabled: url('#{$icons-path}objects/light/work-panel.svg#disabled'); 
+  --icon__objects_webpanel--enabled: url('#{$icons-path}objects/light/webpanel.svg#enabled'); 
+  --icon__objects_webpanel--hover: url('#{$icons-path}objects/light/webpanel.svg#hover'); 
+  --icon__objects_webpanel--active: url('#{$icons-path}objects/light/webpanel.svg#active'); 
+  --icon__objects_webpanel--disabled: url('#{$icons-path}objects/light/webpanel.svg#disabled'); 
+  --icon__objects_web-component--enabled: url('#{$icons-path}objects/light/web-component.svg#enabled'); 
+  --icon__objects_web-component--hover: url('#{$icons-path}objects/light/web-component.svg#hover'); 
+  --icon__objects_web-component--active: url('#{$icons-path}objects/light/web-component.svg#active'); 
+  --icon__objects_web-component--disabled: url('#{$icons-path}objects/light/web-component.svg#disabled'); 
+  --icon__objects_version--enabled: url('#{$icons-path}objects/light/version.svg#enabled'); 
+  --icon__objects_version--hover: url('#{$icons-path}objects/light/version.svg#hover'); 
+  --icon__objects_version--active: url('#{$icons-path}objects/light/version.svg#active'); 
+  --icon__objects_version--disabled: url('#{$icons-path}objects/light/version.svg#disabled'); 
+  --icon__objects_url-rewrite--enabled: url('#{$icons-path}objects/light/url-rewrite.svg#enabled'); 
+  --icon__objects_url-rewrite--hover: url('#{$icons-path}objects/light/url-rewrite.svg#hover'); 
+  --icon__objects_url-rewrite--active: url('#{$icons-path}objects/light/url-rewrite.svg#active'); 
+  --icon__objects_url-rewrite--disabled: url('#{$icons-path}objects/light/url-rewrite.svg#disabled'); 
+  --icon__objects_transaction--enabled: url('#{$icons-path}objects/light/transaction.svg#enabled'); 
+  --icon__objects_transaction--hover: url('#{$icons-path}objects/light/transaction.svg#hover'); 
+  --icon__objects_transaction--active: url('#{$icons-path}objects/light/transaction.svg#active'); 
+  --icon__objects_transaction--disabled: url('#{$icons-path}objects/light/transaction.svg#disabled'); 
+  --icon__objects_to-be-defined--enabled: url('#{$icons-path}objects/light/to-be-defined.svg#enabled'); 
+  --icon__objects_to-be-defined--hover: url('#{$icons-path}objects/light/to-be-defined.svg#hover'); 
+  --icon__objects_to-be-defined--active: url('#{$icons-path}objects/light/to-be-defined.svg#active'); 
+  --icon__objects_to-be-defined--disabled: url('#{$icons-path}objects/light/to-be-defined.svg#disabled'); 
+  --icon__objects_theme--enabled: url('#{$icons-path}objects/light/theme.svg#enabled'); 
+  --icon__objects_theme--hover: url('#{$icons-path}objects/light/theme.svg#hover'); 
+  --icon__objects_theme--active: url('#{$icons-path}objects/light/theme.svg#active'); 
+  --icon__objects_theme--disabled: url('#{$icons-path}objects/light/theme.svg#disabled'); 
+  --icon__objects_theme-web--enabled: url('#{$icons-path}objects/light/theme-web.svg#enabled'); 
+  --icon__objects_theme-web--hover: url('#{$icons-path}objects/light/theme-web.svg#hover'); 
+  --icon__objects_theme-web--active: url('#{$icons-path}objects/light/theme-web.svg#active'); 
+  --icon__objects_theme-web--disabled: url('#{$icons-path}objects/light/theme-web.svg#disabled'); 
+  --icon__objects_theme-for-sd--enabled: url('#{$icons-path}objects/light/theme-for-sd.svg#enabled'); 
+  --icon__objects_theme-for-sd--hover: url('#{$icons-path}objects/light/theme-for-sd.svg#hover'); 
+  --icon__objects_theme-for-sd--active: url('#{$icons-path}objects/light/theme-for-sd.svg#active'); 
+  --icon__objects_theme-for-sd--disabled: url('#{$icons-path}objects/light/theme-for-sd.svg#disabled'); 
+  --icon__objects_table--enabled: url('#{$icons-path}objects/light/table.svg#enabled'); 
+  --icon__objects_table--hover: url('#{$icons-path}objects/light/table.svg#hover'); 
+  --icon__objects_table--active: url('#{$icons-path}objects/light/table.svg#active'); 
+  --icon__objects_table--disabled: url('#{$icons-path}objects/light/table.svg#disabled'); 
+  --icon__objects_super-app--enabled: url('#{$icons-path}objects/light/super-app.svg#enabled'); 
+  --icon__objects_super-app--hover: url('#{$icons-path}objects/light/super-app.svg#hover'); 
+  --icon__objects_super-app--active: url('#{$icons-path}objects/light/super-app.svg#active'); 
+  --icon__objects_super-app--disabled: url('#{$icons-path}objects/light/super-app.svg#disabled'); 
+  --icon__objects_subtype-group--enabled: url('#{$icons-path}objects/light/subtype-group.svg#enabled'); 
+  --icon__objects_subtype-group--hover: url('#{$icons-path}objects/light/subtype-group.svg#hover'); 
+  --icon__objects_subtype-group--active: url('#{$icons-path}objects/light/subtype-group.svg#active'); 
+  --icon__objects_subtype-group--disabled: url('#{$icons-path}objects/light/subtype-group.svg#disabled'); 
+  --icon__objects_structured-data-type--enabled: url('#{$icons-path}objects/light/structured-data-type.svg#enabled'); 
+  --icon__objects_structured-data-type--hover: url('#{$icons-path}objects/light/structured-data-type.svg#hover'); 
+  --icon__objects_structured-data-type--active: url('#{$icons-path}objects/light/structured-data-type.svg#active'); 
+  --icon__objects_structured-data-type--disabled: url('#{$icons-path}objects/light/structured-data-type.svg#disabled'); 
+  --icon__objects_stencil--enabled: url('#{$icons-path}objects/light/stencil.svg#enabled'); 
+  --icon__objects_stencil--hover: url('#{$icons-path}objects/light/stencil.svg#hover'); 
+  --icon__objects_stencil--active: url('#{$icons-path}objects/light/stencil.svg#active'); 
+  --icon__objects_stencil--disabled: url('#{$icons-path}objects/light/stencil.svg#disabled'); 
+  --icon__objects_roles--enabled: url('#{$icons-path}objects/light/roles.svg#enabled'); 
+  --icon__objects_roles--hover: url('#{$icons-path}objects/light/roles.svg#hover'); 
+  --icon__objects_roles--active: url('#{$icons-path}objects/light/roles.svg#active'); 
+  --icon__objects_roles--disabled: url('#{$icons-path}objects/light/roles.svg#disabled'); 
+  --icon__objects_report--enabled: url('#{$icons-path}objects/light/report.svg#enabled'); 
+  --icon__objects_report--hover: url('#{$icons-path}objects/light/report.svg#hover'); 
+  --icon__objects_report--active: url('#{$icons-path}objects/light/report.svg#active'); 
+  --icon__objects_report--disabled: url('#{$icons-path}objects/light/report.svg#disabled'); 
+  --icon__objects_references--enabled: url('#{$icons-path}objects/light/references.svg#enabled'); 
+  --icon__objects_references--hover: url('#{$icons-path}objects/light/references.svg#hover'); 
+  --icon__objects_references--active: url('#{$icons-path}objects/light/references.svg#active'); 
+  --icon__objects_references--disabled: url('#{$icons-path}objects/light/references.svg#disabled'); 
+  --icon__objects_query--enabled: url('#{$icons-path}objects/light/query.svg#enabled'); 
+  --icon__objects_query--hover: url('#{$icons-path}objects/light/query.svg#hover'); 
+  --icon__objects_query--active: url('#{$icons-path}objects/light/query.svg#active'); 
+  --icon__objects_query--disabled: url('#{$icons-path}objects/light/query.svg#disabled'); 
+  --icon__objects_procedure--enabled: url('#{$icons-path}objects/light/procedure.svg#enabled'); 
+  --icon__objects_procedure--hover: url('#{$icons-path}objects/light/procedure.svg#hover'); 
+  --icon__objects_procedure--active: url('#{$icons-path}objects/light/procedure.svg#active'); 
+  --icon__objects_procedure--disabled: url('#{$icons-path}objects/light/procedure.svg#disabled'); 
+  --icon__objects_patterns--enabled: url('#{$icons-path}objects/light/patterns.svg#enabled'); 
+  --icon__objects_patterns--hover: url('#{$icons-path}objects/light/patterns.svg#hover'); 
+  --icon__objects_patterns--active: url('#{$icons-path}objects/light/patterns.svg#active'); 
+  --icon__objects_patterns--disabled: url('#{$icons-path}objects/light/patterns.svg#disabled'); 
+  --icon__objects_panel-for-sd--enabled: url('#{$icons-path}objects/light/panel-for-sd.svg#enabled'); 
+  --icon__objects_panel-for-sd--hover: url('#{$icons-path}objects/light/panel-for-sd.svg#hover'); 
+  --icon__objects_panel-for-sd--active: url('#{$icons-path}objects/light/panel-for-sd.svg#active'); 
+  --icon__objects_panel-for-sd--disabled: url('#{$icons-path}objects/light/panel-for-sd.svg#disabled'); 
+  --icon__objects_orphant-document--enabled: url('#{$icons-path}objects/light/orphant-document.svg#enabled'); 
+  --icon__objects_orphant-document--hover: url('#{$icons-path}objects/light/orphant-document.svg#hover'); 
+  --icon__objects_orphant-document--active: url('#{$icons-path}objects/light/orphant-document.svg#active'); 
+  --icon__objects_orphant-document--disabled: url('#{$icons-path}objects/light/orphant-document.svg#disabled'); 
+  --icon__objects_offline-database--enabled: url('#{$icons-path}objects/light/offline-database.svg#enabled'); 
+  --icon__objects_offline-database--hover: url('#{$icons-path}objects/light/offline-database.svg#hover'); 
+  --icon__objects_offline-database--active: url('#{$icons-path}objects/light/offline-database.svg#active'); 
+  --icon__objects_offline-database--disabled: url('#{$icons-path}objects/light/offline-database.svg#disabled'); 
+  --icon__objects_object--enabled: url('#{$icons-path}objects/light/object.svg#enabled'); 
+  --icon__objects_object--hover: url('#{$icons-path}objects/light/object.svg#hover'); 
+  --icon__objects_object--active: url('#{$icons-path}objects/light/object.svg#active'); 
+  --icon__objects_object--disabled: url('#{$icons-path}objects/light/object.svg#disabled'); 
+  --icon__objects_notification-templates--enabled: url('#{$icons-path}objects/light/notification-templates.svg#enabled'); 
+  --icon__objects_notification-templates--hover: url('#{$icons-path}objects/light/notification-templates.svg#hover'); 
+  --icon__objects_notification-templates--active: url('#{$icons-path}objects/light/notification-templates.svg#active'); 
+  --icon__objects_notification-templates--disabled: url('#{$icons-path}objects/light/notification-templates.svg#disabled'); 
+  --icon__objects_module--enabled: url('#{$icons-path}objects/light/module.svg#enabled'); 
+  --icon__objects_module--hover: url('#{$icons-path}objects/light/module.svg#hover'); 
+  --icon__objects_module--active: url('#{$icons-path}objects/light/module.svg#active'); 
+  --icon__objects_module--disabled: url('#{$icons-path}objects/light/module.svg#disabled'); 
+  --icon__objects_module-open--enabled: url('#{$icons-path}objects/light/module-open.svg#enabled'); 
+  --icon__objects_module-open--hover: url('#{$icons-path}objects/light/module-open.svg#hover'); 
+  --icon__objects_module-open--active: url('#{$icons-path}objects/light/module-open.svg#active'); 
+  --icon__objects_module-open--disabled: url('#{$icons-path}objects/light/module-open.svg#disabled'); 
+  --icon__objects_mini-app--enabled: url('#{$icons-path}objects/light/mini-app.svg#enabled'); 
+  --icon__objects_mini-app--hover: url('#{$icons-path}objects/light/mini-app.svg#hover'); 
+  --icon__objects_mini-app--active: url('#{$icons-path}objects/light/mini-app.svg#active'); 
+  --icon__objects_mini-app--disabled: url('#{$icons-path}objects/light/mini-app.svg#disabled'); 
+  --icon__objects_menubar--enabled: url('#{$icons-path}objects/light/menubar.svg#enabled'); 
+  --icon__objects_menubar--hover: url('#{$icons-path}objects/light/menubar.svg#hover'); 
+  --icon__objects_menubar--active: url('#{$icons-path}objects/light/menubar.svg#active'); 
+  --icon__objects_menubar--disabled: url('#{$icons-path}objects/light/menubar.svg#disabled'); 
+  --icon__objects_menu--enabled: url('#{$icons-path}objects/light/menu.svg#enabled'); 
+  --icon__objects_menu--hover: url('#{$icons-path}objects/light/menu.svg#hover'); 
+  --icon__objects_menu--active: url('#{$icons-path}objects/light/menu.svg#active'); 
+  --icon__objects_menu--disabled: url('#{$icons-path}objects/light/menu.svg#disabled'); 
+  --icon__objects_masterpage--enabled: url('#{$icons-path}objects/light/masterpage.svg#enabled'); 
+  --icon__objects_masterpage--hover: url('#{$icons-path}objects/light/masterpage.svg#hover'); 
+  --icon__objects_masterpage--active: url('#{$icons-path}objects/light/masterpage.svg#active'); 
+  --icon__objects_masterpage--disabled: url('#{$icons-path}objects/light/masterpage.svg#disabled'); 
+  --icon__objects_main-object--enabled: url('#{$icons-path}objects/light/main-object.svg#enabled'); 
+  --icon__objects_main-object--hover: url('#{$icons-path}objects/light/main-object.svg#hover'); 
+  --icon__objects_main-object--active: url('#{$icons-path}objects/light/main-object.svg#active'); 
+  --icon__objects_main-object--disabled: url('#{$icons-path}objects/light/main-object.svg#disabled'); 
+  --icon__objects_language--enabled: url('#{$icons-path}objects/light/language.svg#enabled'); 
+  --icon__objects_language--hover: url('#{$icons-path}objects/light/language.svg#hover'); 
+  --icon__objects_language--active: url('#{$icons-path}objects/light/language.svg#active'); 
+  --icon__objects_language--disabled: url('#{$icons-path}objects/light/language.svg#disabled'); 
+  --icon__objects_knowledge-base--enabled: url('#{$icons-path}objects/light/knowledge-base.svg#enabled'); 
+  --icon__objects_knowledge-base--hover: url('#{$icons-path}objects/light/knowledge-base.svg#hover'); 
+  --icon__objects_knowledge-base--active: url('#{$icons-path}objects/light/knowledge-base.svg#active'); 
+  --icon__objects_knowledge-base--disabled: url('#{$icons-path}objects/light/knowledge-base.svg#disabled'); 
+  --icon__objects_image--enabled: url('#{$icons-path}objects/light/image.svg#enabled'); 
+  --icon__objects_image--hover: url('#{$icons-path}objects/light/image.svg#hover'); 
+  --icon__objects_image--active: url('#{$icons-path}objects/light/image.svg#active'); 
+  --icon__objects_image--disabled: url('#{$icons-path}objects/light/image.svg#disabled'); 
+  --icon__objects_generator--enabled: url('#{$icons-path}objects/light/generator.svg#enabled'); 
+  --icon__objects_generator--hover: url('#{$icons-path}objects/light/generator.svg#hover'); 
+  --icon__objects_generator--active: url('#{$icons-path}objects/light/generator.svg#active'); 
+  --icon__objects_generator--disabled: url('#{$icons-path}objects/light/generator.svg#disabled'); 
+  --icon__objects_generator-category--enabled: url('#{$icons-path}objects/light/generator-category.svg#enabled'); 
+  --icon__objects_generator-category--hover: url('#{$icons-path}objects/light/generator-category.svg#hover'); 
+  --icon__objects_generator-category--active: url('#{$icons-path}objects/light/generator-category.svg#active'); 
+  --icon__objects_generator-category--disabled: url('#{$icons-path}objects/light/generator-category.svg#disabled'); 
+  --icon__objects_folder--enabled: url('#{$icons-path}objects/light/folder.svg#enabled'); 
+  --icon__objects_folder--hover: url('#{$icons-path}objects/light/folder.svg#hover'); 
+  --icon__objects_folder--active: url('#{$icons-path}objects/light/folder.svg#active'); 
+  --icon__objects_folder--disabled: url('#{$icons-path}objects/light/folder.svg#disabled'); 
+  --icon__objects_folder-open--enabled: url('#{$icons-path}objects/light/folder-open.svg#enabled'); 
+  --icon__objects_folder-open--hover: url('#{$icons-path}objects/light/folder-open.svg#hover'); 
+  --icon__objects_folder-open--active: url('#{$icons-path}objects/light/folder-open.svg#active'); 
+  --icon__objects_folder-open--disabled: url('#{$icons-path}objects/light/folder-open.svg#disabled'); 
+  --icon__objects_file--enabled: url('#{$icons-path}objects/light/file.svg#enabled'); 
+  --icon__objects_file--hover: url('#{$icons-path}objects/light/file.svg#hover'); 
+  --icon__objects_file--active: url('#{$icons-path}objects/light/file.svg#active'); 
+  --icon__objects_file--disabled: url('#{$icons-path}objects/light/file.svg#disabled'); 
+  --icon__objects_external-object--enabled: url('#{$icons-path}objects/light/external-object.svg#enabled'); 
+  --icon__objects_external-object--hover: url('#{$icons-path}objects/light/external-object.svg#hover'); 
+  --icon__objects_external-object--active: url('#{$icons-path}objects/light/external-object.svg#active'); 
+  --icon__objects_external-object--disabled: url('#{$icons-path}objects/light/external-object.svg#disabled'); 
+  --icon__objects_environment-select--enabled: url('#{$icons-path}objects/light/environment-select.svg#enabled'); 
+  --icon__objects_environment-select--hover: url('#{$icons-path}objects/light/environment-select.svg#hover'); 
+  --icon__objects_environment-select--active: url('#{$icons-path}objects/light/environment-select.svg#active'); 
+  --icon__objects_environment-select--disabled: url('#{$icons-path}objects/light/environment-select.svg#disabled'); 
+  --icon__objects_environment-no-select--enabled: url('#{$icons-path}objects/light/environment-no-select.svg#enabled'); 
+  --icon__objects_environment-no-select--hover: url('#{$icons-path}objects/light/environment-no-select.svg#hover'); 
+  --icon__objects_environment-no-select--active: url('#{$icons-path}objects/light/environment-no-select.svg#active'); 
+  --icon__objects_environment-no-select--disabled: url('#{$icons-path}objects/light/environment-no-select.svg#disabled'); 
+  --icon__objects_dso--enabled: url('#{$icons-path}objects/light/dso.svg#enabled'); 
+  --icon__objects_dso--hover: url('#{$icons-path}objects/light/dso.svg#hover'); 
+  --icon__objects_dso--active: url('#{$icons-path}objects/light/dso.svg#active'); 
+  --icon__objects_dso--disabled: url('#{$icons-path}objects/light/dso.svg#disabled'); 
+  --icon__objects_domain--enabled: url('#{$icons-path}objects/light/domain.svg#enabled'); 
+  --icon__objects_domain--hover: url('#{$icons-path}objects/light/domain.svg#hover'); 
+  --icon__objects_domain--active: url('#{$icons-path}objects/light/domain.svg#active'); 
+  --icon__objects_domain--disabled: url('#{$icons-path}objects/light/domain.svg#disabled'); 
+  --icon__objects_document--enabled: url('#{$icons-path}objects/light/document.svg#enabled'); 
+  --icon__objects_document--hover: url('#{$icons-path}objects/light/document.svg#hover'); 
+  --icon__objects_document--active: url('#{$icons-path}objects/light/document.svg#active'); 
+  --icon__objects_document--disabled: url('#{$icons-path}objects/light/document.svg#disabled'); 
+  --icon__objects_document-workflow--enabled: url('#{$icons-path}objects/light/document-workflow.svg#enabled'); 
+  --icon__objects_document-workflow--hover: url('#{$icons-path}objects/light/document-workflow.svg#hover'); 
+  --icon__objects_document-workflow--active: url('#{$icons-path}objects/light/document-workflow.svg#active'); 
+  --icon__objects_document-workflow--disabled: url('#{$icons-path}objects/light/document-workflow.svg#disabled'); 
+  --icon__objects_diagram--enabled: url('#{$icons-path}objects/light/diagram.svg#enabled'); 
+  --icon__objects_diagram--hover: url('#{$icons-path}objects/light/diagram.svg#hover'); 
+  --icon__objects_diagram--active: url('#{$icons-path}objects/light/diagram.svg#active'); 
+  --icon__objects_diagram--disabled: url('#{$icons-path}objects/light/diagram.svg#disabled'); 
+  --icon__objects_design--enabled: url('#{$icons-path}objects/light/design.svg#enabled'); 
+  --icon__objects_design--hover: url('#{$icons-path}objects/light/design.svg#hover'); 
+  --icon__objects_design--active: url('#{$icons-path}objects/light/design.svg#active'); 
+  --icon__objects_design--disabled: url('#{$icons-path}objects/light/design.svg#disabled'); 
+  --icon__objects_deployment-unit--enabled: url('#{$icons-path}objects/light/deployment-unit.svg#enabled'); 
+  --icon__objects_deployment-unit--hover: url('#{$icons-path}objects/light/deployment-unit.svg#hover'); 
+  --icon__objects_deployment-unit--active: url('#{$icons-path}objects/light/deployment-unit.svg#active'); 
+  --icon__objects_deployment-unit--disabled: url('#{$icons-path}objects/light/deployment-unit.svg#disabled'); 
+  --icon__objects_dataview-index--enabled: url('#{$icons-path}objects/light/dataview-index.svg#enabled'); 
+  --icon__objects_dataview-index--hover: url('#{$icons-path}objects/light/dataview-index.svg#hover'); 
+  --icon__objects_dataview-index--active: url('#{$icons-path}objects/light/dataview-index.svg#active'); 
+  --icon__objects_dataview-index--disabled: url('#{$icons-path}objects/light/dataview-index.svg#disabled'); 
+  --icon__objects_datastore--enabled: url('#{$icons-path}objects/light/datastore.svg#enabled'); 
+  --icon__objects_datastore--hover: url('#{$icons-path}objects/light/datastore.svg#hover'); 
+  --icon__objects_datastore--active: url('#{$icons-path}objects/light/datastore.svg#active'); 
+  --icon__objects_datastore--disabled: url('#{$icons-path}objects/light/datastore.svg#disabled'); 
+  --icon__objects_datastore-category--enabled: url('#{$icons-path}objects/light/datastore-category.svg#enabled'); 
+  --icon__objects_datastore-category--hover: url('#{$icons-path}objects/light/datastore-category.svg#hover'); 
+  --icon__objects_datastore-category--active: url('#{$icons-path}objects/light/datastore-category.svg#active'); 
+  --icon__objects_datastore-category--disabled: url('#{$icons-path}objects/light/datastore-category.svg#disabled'); 
+  --icon__objects_data-view--enabled: url('#{$icons-path}objects/light/data-view.svg#enabled'); 
+  --icon__objects_data-view--hover: url('#{$icons-path}objects/light/data-view.svg#hover'); 
+  --icon__objects_data-view--active: url('#{$icons-path}objects/light/data-view.svg#active'); 
+  --icon__objects_data-view--disabled: url('#{$icons-path}objects/light/data-view.svg#disabled'); 
+  --icon__objects_data-selector--enabled: url('#{$icons-path}objects/light/data-selector.svg#enabled'); 
+  --icon__objects_data-selector--hover: url('#{$icons-path}objects/light/data-selector.svg#hover'); 
+  --icon__objects_data-selector--active: url('#{$icons-path}objects/light/data-selector.svg#active'); 
+  --icon__objects_data-selector--disabled: url('#{$icons-path}objects/light/data-selector.svg#disabled'); 
+  --icon__objects_data-provider--enabled: url('#{$icons-path}objects/light/data-provider.svg#enabled'); 
+  --icon__objects_data-provider--hover: url('#{$icons-path}objects/light/data-provider.svg#hover'); 
+  --icon__objects_data-provider--active: url('#{$icons-path}objects/light/data-provider.svg#active'); 
+  --icon__objects_data-provider--disabled: url('#{$icons-path}objects/light/data-provider.svg#disabled'); 
+  --icon__objects_dashboard--enabled: url('#{$icons-path}objects/light/dashboard.svg#enabled'); 
+  --icon__objects_dashboard--hover: url('#{$icons-path}objects/light/dashboard.svg#hover'); 
+  --icon__objects_dashboard--active: url('#{$icons-path}objects/light/dashboard.svg#active'); 
+  --icon__objects_dashboard--disabled: url('#{$icons-path}objects/light/dashboard.svg#disabled'); 
+  --icon__objects_customization--enabled: url('#{$icons-path}objects/light/customization.svg#enabled'); 
+  --icon__objects_customization--hover: url('#{$icons-path}objects/light/customization.svg#hover'); 
+  --icon__objects_customization--active: url('#{$icons-path}objects/light/customization.svg#active'); 
+  --icon__objects_customization--disabled: url('#{$icons-path}objects/light/customization.svg#disabled'); 
+  --icon__objects_conversational-flows--enabled: url('#{$icons-path}objects/light/conversational-flows.svg#enabled'); 
+  --icon__objects_conversational-flows--hover: url('#{$icons-path}objects/light/conversational-flows.svg#hover'); 
+  --icon__objects_conversational-flows--active: url('#{$icons-path}objects/light/conversational-flows.svg#active'); 
+  --icon__objects_conversational-flows--disabled: url('#{$icons-path}objects/light/conversational-flows.svg#disabled'); 
+  --icon__objects_category--enabled: url('#{$icons-path}objects/light/category.svg#enabled'); 
+  --icon__objects_category--hover: url('#{$icons-path}objects/light/category.svg#hover'); 
+  --icon__objects_category--active: url('#{$icons-path}objects/light/category.svg#active'); 
+  --icon__objects_category--disabled: url('#{$icons-path}objects/light/category.svg#disabled'); 
+  --icon__objects_calendars--enabled: url('#{$icons-path}objects/light/calendars.svg#enabled'); 
+  --icon__objects_calendars--hover: url('#{$icons-path}objects/light/calendars.svg#hover'); 
+  --icon__objects_calendars--active: url('#{$icons-path}objects/light/calendars.svg#active'); 
+  --icon__objects_calendars--disabled: url('#{$icons-path}objects/light/calendars.svg#disabled'); 
+  --icon__objects_business-process-diagram--enabled: url('#{$icons-path}objects/light/business-process-diagram.svg#enabled'); 
+  --icon__objects_business-process-diagram--hover: url('#{$icons-path}objects/light/business-process-diagram.svg#hover'); 
+  --icon__objects_business-process-diagram--active: url('#{$icons-path}objects/light/business-process-diagram.svg#active'); 
+  --icon__objects_business-process-diagram--disabled: url('#{$icons-path}objects/light/business-process-diagram.svg#disabled'); 
+  --icon__objects_bg-color--enabled: url('#{$icons-path}objects/light/bg-color.svg#enabled'); 
+  --icon__objects_bg-color--hover: url('#{$icons-path}objects/light/bg-color.svg#hover'); 
+  --icon__objects_bg-color--active: url('#{$icons-path}objects/light/bg-color.svg#active'); 
+  --icon__objects_bg-color--disabled: url('#{$icons-path}objects/light/bg-color.svg#disabled'); 
+  --icon__objects_attribute--enabled: url('#{$icons-path}objects/light/attribute.svg#enabled'); 
+  --icon__objects_attribute--hover: url('#{$icons-path}objects/light/attribute.svg#hover'); 
+  --icon__objects_attribute--active: url('#{$icons-path}objects/light/attribute.svg#active'); 
+  --icon__objects_attribute--disabled: url('#{$icons-path}objects/light/attribute.svg#disabled'); 
+  --icon__objects_api--enabled: url('#{$icons-path}objects/light/api.svg#enabled'); 
+  --icon__objects_api--hover: url('#{$icons-path}objects/light/api.svg#hover'); 
+  --icon__objects_api--active: url('#{$icons-path}objects/light/api.svg#active'); 
+  --icon__objects_api--disabled: url('#{$icons-path}objects/light/api.svg#disabled'); 
+
+  }
+
+  /* =================================
+  DARK CUSTOM PROPERTIES
+  ================================= */
+
+  :root.dark {
+  /*objects*/
+  --icon__objects_workflow--enabled: url('#{$icons-path}objects/dark/workflow.svg#enabled'); 
+  --icon__objects_workflow--hover: url('#{$icons-path}objects/dark/workflow.svg#hover'); 
+  --icon__objects_workflow--active: url('#{$icons-path}objects/dark/workflow.svg#active'); 
+  --icon__objects_workflow--disabled: url('#{$icons-path}objects/dark/workflow.svg#disabled'); 
+  --icon__objects_work-panel--enabled: url('#{$icons-path}objects/dark/work-panel.svg#enabled'); 
+  --icon__objects_work-panel--hover: url('#{$icons-path}objects/dark/work-panel.svg#hover'); 
+  --icon__objects_work-panel--active: url('#{$icons-path}objects/dark/work-panel.svg#active'); 
+  --icon__objects_work-panel--disabled: url('#{$icons-path}objects/dark/work-panel.svg#disabled'); 
+  --icon__objects_webpanel--enabled: url('#{$icons-path}objects/dark/webpanel.svg#enabled'); 
+  --icon__objects_webpanel--hover: url('#{$icons-path}objects/dark/webpanel.svg#hover'); 
+  --icon__objects_webpanel--active: url('#{$icons-path}objects/dark/webpanel.svg#active'); 
+  --icon__objects_webpanel--disabled: url('#{$icons-path}objects/dark/webpanel.svg#disabled'); 
+  --icon__objects_web-component--enabled: url('#{$icons-path}objects/dark/web-component.svg#enabled'); 
+  --icon__objects_web-component--hover: url('#{$icons-path}objects/dark/web-component.svg#hover'); 
+  --icon__objects_web-component--active: url('#{$icons-path}objects/dark/web-component.svg#active'); 
+  --icon__objects_web-component--disabled: url('#{$icons-path}objects/dark/web-component.svg#disabled'); 
+  --icon__objects_version--enabled: url('#{$icons-path}objects/dark/version.svg#enabled'); 
+  --icon__objects_version--hover: url('#{$icons-path}objects/dark/version.svg#hover'); 
+  --icon__objects_version--active: url('#{$icons-path}objects/dark/version.svg#active'); 
+  --icon__objects_version--disabled: url('#{$icons-path}objects/dark/version.svg#disabled'); 
+  --icon__objects_url-rewrite--enabled: url('#{$icons-path}objects/dark/url-rewrite.svg#enabled'); 
+  --icon__objects_url-rewrite--hover: url('#{$icons-path}objects/dark/url-rewrite.svg#hover'); 
+  --icon__objects_url-rewrite--active: url('#{$icons-path}objects/dark/url-rewrite.svg#active'); 
+  --icon__objects_url-rewrite--disabled: url('#{$icons-path}objects/dark/url-rewrite.svg#disabled'); 
+  --icon__objects_transaction--enabled: url('#{$icons-path}objects/dark/transaction.svg#enabled'); 
+  --icon__objects_transaction--hover: url('#{$icons-path}objects/dark/transaction.svg#hover'); 
+  --icon__objects_transaction--active: url('#{$icons-path}objects/dark/transaction.svg#active'); 
+  --icon__objects_transaction--disabled: url('#{$icons-path}objects/dark/transaction.svg#disabled'); 
+  --icon__objects_to-be-defined--enabled: url('#{$icons-path}objects/dark/to-be-defined.svg#enabled'); 
+  --icon__objects_to-be-defined--hover: url('#{$icons-path}objects/dark/to-be-defined.svg#hover'); 
+  --icon__objects_to-be-defined--active: url('#{$icons-path}objects/dark/to-be-defined.svg#active'); 
+  --icon__objects_to-be-defined--disabled: url('#{$icons-path}objects/dark/to-be-defined.svg#disabled'); 
+  --icon__objects_theme--enabled: url('#{$icons-path}objects/dark/theme.svg#enabled'); 
+  --icon__objects_theme--hover: url('#{$icons-path}objects/dark/theme.svg#hover'); 
+  --icon__objects_theme--active: url('#{$icons-path}objects/dark/theme.svg#active'); 
+  --icon__objects_theme--disabled: url('#{$icons-path}objects/dark/theme.svg#disabled'); 
+  --icon__objects_theme-web--enabled: url('#{$icons-path}objects/dark/theme-web.svg#enabled'); 
+  --icon__objects_theme-web--hover: url('#{$icons-path}objects/dark/theme-web.svg#hover'); 
+  --icon__objects_theme-web--active: url('#{$icons-path}objects/dark/theme-web.svg#active'); 
+  --icon__objects_theme-web--disabled: url('#{$icons-path}objects/dark/theme-web.svg#disabled'); 
+  --icon__objects_theme-for-sd--enabled: url('#{$icons-path}objects/dark/theme-for-sd.svg#enabled'); 
+  --icon__objects_theme-for-sd--hover: url('#{$icons-path}objects/dark/theme-for-sd.svg#hover'); 
+  --icon__objects_theme-for-sd--active: url('#{$icons-path}objects/dark/theme-for-sd.svg#active'); 
+  --icon__objects_theme-for-sd--disabled: url('#{$icons-path}objects/dark/theme-for-sd.svg#disabled'); 
+  --icon__objects_table--enabled: url('#{$icons-path}objects/dark/table.svg#enabled'); 
+  --icon__objects_table--hover: url('#{$icons-path}objects/dark/table.svg#hover'); 
+  --icon__objects_table--active: url('#{$icons-path}objects/dark/table.svg#active'); 
+  --icon__objects_table--disabled: url('#{$icons-path}objects/dark/table.svg#disabled'); 
+  --icon__objects_super-app--enabled: url('#{$icons-path}objects/dark/super-app.svg#enabled'); 
+  --icon__objects_super-app--hover: url('#{$icons-path}objects/dark/super-app.svg#hover'); 
+  --icon__objects_super-app--active: url('#{$icons-path}objects/dark/super-app.svg#active'); 
+  --icon__objects_super-app--disabled: url('#{$icons-path}objects/dark/super-app.svg#disabled'); 
+  --icon__objects_subtype-group--enabled: url('#{$icons-path}objects/dark/subtype-group.svg#enabled'); 
+  --icon__objects_subtype-group--hover: url('#{$icons-path}objects/dark/subtype-group.svg#hover'); 
+  --icon__objects_subtype-group--active: url('#{$icons-path}objects/dark/subtype-group.svg#active'); 
+  --icon__objects_subtype-group--disabled: url('#{$icons-path}objects/dark/subtype-group.svg#disabled'); 
+  --icon__objects_structured-data-type--enabled: url('#{$icons-path}objects/dark/structured-data-type.svg#enabled'); 
+  --icon__objects_structured-data-type--hover: url('#{$icons-path}objects/dark/structured-data-type.svg#hover'); 
+  --icon__objects_structured-data-type--active: url('#{$icons-path}objects/dark/structured-data-type.svg#active'); 
+  --icon__objects_structured-data-type--disabled: url('#{$icons-path}objects/dark/structured-data-type.svg#disabled'); 
+  --icon__objects_stencil--enabled: url('#{$icons-path}objects/dark/stencil.svg#enabled'); 
+  --icon__objects_stencil--hover: url('#{$icons-path}objects/dark/stencil.svg#hover'); 
+  --icon__objects_stencil--active: url('#{$icons-path}objects/dark/stencil.svg#active'); 
+  --icon__objects_stencil--disabled: url('#{$icons-path}objects/dark/stencil.svg#disabled'); 
+  --icon__objects_roles--enabled: url('#{$icons-path}objects/dark/roles.svg#enabled'); 
+  --icon__objects_roles--hover: url('#{$icons-path}objects/dark/roles.svg#hover'); 
+  --icon__objects_roles--active: url('#{$icons-path}objects/dark/roles.svg#active'); 
+  --icon__objects_roles--disabled: url('#{$icons-path}objects/dark/roles.svg#disabled'); 
+  --icon__objects_report--enabled: url('#{$icons-path}objects/dark/report.svg#enabled'); 
+  --icon__objects_report--hover: url('#{$icons-path}objects/dark/report.svg#hover'); 
+  --icon__objects_report--active: url('#{$icons-path}objects/dark/report.svg#active'); 
+  --icon__objects_report--disabled: url('#{$icons-path}objects/dark/report.svg#disabled'); 
+  --icon__objects_references--enabled: url('#{$icons-path}objects/dark/references.svg#enabled'); 
+  --icon__objects_references--hover: url('#{$icons-path}objects/dark/references.svg#hover'); 
+  --icon__objects_references--active: url('#{$icons-path}objects/dark/references.svg#active'); 
+  --icon__objects_references--disabled: url('#{$icons-path}objects/dark/references.svg#disabled'); 
+  --icon__objects_query--enabled: url('#{$icons-path}objects/dark/query.svg#enabled'); 
+  --icon__objects_query--hover: url('#{$icons-path}objects/dark/query.svg#hover'); 
+  --icon__objects_query--active: url('#{$icons-path}objects/dark/query.svg#active'); 
+  --icon__objects_query--disabled: url('#{$icons-path}objects/dark/query.svg#disabled'); 
+  --icon__objects_procedure--enabled: url('#{$icons-path}objects/dark/procedure.svg#enabled'); 
+  --icon__objects_procedure--hover: url('#{$icons-path}objects/dark/procedure.svg#hover'); 
+  --icon__objects_procedure--active: url('#{$icons-path}objects/dark/procedure.svg#active'); 
+  --icon__objects_procedure--disabled: url('#{$icons-path}objects/dark/procedure.svg#disabled'); 
+  --icon__objects_patterns--enabled: url('#{$icons-path}objects/dark/patterns.svg#enabled'); 
+  --icon__objects_patterns--hover: url('#{$icons-path}objects/dark/patterns.svg#hover'); 
+  --icon__objects_patterns--active: url('#{$icons-path}objects/dark/patterns.svg#active'); 
+  --icon__objects_patterns--disabled: url('#{$icons-path}objects/dark/patterns.svg#disabled'); 
+  --icon__objects_panel-for-sd--enabled: url('#{$icons-path}objects/dark/panel-for-sd.svg#enabled'); 
+  --icon__objects_panel-for-sd--hover: url('#{$icons-path}objects/dark/panel-for-sd.svg#hover'); 
+  --icon__objects_panel-for-sd--active: url('#{$icons-path}objects/dark/panel-for-sd.svg#active'); 
+  --icon__objects_panel-for-sd--disabled: url('#{$icons-path}objects/dark/panel-for-sd.svg#disabled'); 
+  --icon__objects_orphant-document--enabled: url('#{$icons-path}objects/dark/orphant-document.svg#enabled'); 
+  --icon__objects_orphant-document--hover: url('#{$icons-path}objects/dark/orphant-document.svg#hover'); 
+  --icon__objects_orphant-document--active: url('#{$icons-path}objects/dark/orphant-document.svg#active'); 
+  --icon__objects_orphant-document--disabled: url('#{$icons-path}objects/dark/orphant-document.svg#disabled'); 
+  --icon__objects_offline-database--enabled: url('#{$icons-path}objects/dark/offline-database.svg#enabled'); 
+  --icon__objects_offline-database--hover: url('#{$icons-path}objects/dark/offline-database.svg#hover'); 
+  --icon__objects_offline-database--active: url('#{$icons-path}objects/dark/offline-database.svg#active'); 
+  --icon__objects_offline-database--disabled: url('#{$icons-path}objects/dark/offline-database.svg#disabled'); 
+  --icon__objects_object--enabled: url('#{$icons-path}objects/dark/object.svg#enabled'); 
+  --icon__objects_object--hover: url('#{$icons-path}objects/dark/object.svg#hover'); 
+  --icon__objects_object--active: url('#{$icons-path}objects/dark/object.svg#active'); 
+  --icon__objects_object--disabled: url('#{$icons-path}objects/dark/object.svg#disabled'); 
+  --icon__objects_notification-templates--enabled: url('#{$icons-path}objects/dark/notification-templates.svg#enabled'); 
+  --icon__objects_notification-templates--hover: url('#{$icons-path}objects/dark/notification-templates.svg#hover'); 
+  --icon__objects_notification-templates--active: url('#{$icons-path}objects/dark/notification-templates.svg#active'); 
+  --icon__objects_notification-templates--disabled: url('#{$icons-path}objects/dark/notification-templates.svg#disabled'); 
+  --icon__objects_module--enabled: url('#{$icons-path}objects/dark/module.svg#enabled'); 
+  --icon__objects_module--hover: url('#{$icons-path}objects/dark/module.svg#hover'); 
+  --icon__objects_module--active: url('#{$icons-path}objects/dark/module.svg#active'); 
+  --icon__objects_module--disabled: url('#{$icons-path}objects/dark/module.svg#disabled'); 
+  --icon__objects_module-open--enabled: url('#{$icons-path}objects/dark/module-open.svg#enabled'); 
+  --icon__objects_module-open--hover: url('#{$icons-path}objects/dark/module-open.svg#hover'); 
+  --icon__objects_module-open--active: url('#{$icons-path}objects/dark/module-open.svg#active'); 
+  --icon__objects_module-open--disabled: url('#{$icons-path}objects/dark/module-open.svg#disabled'); 
+  --icon__objects_mini-app--enabled: url('#{$icons-path}objects/dark/mini-app.svg#enabled'); 
+  --icon__objects_mini-app--hover: url('#{$icons-path}objects/dark/mini-app.svg#hover'); 
+  --icon__objects_mini-app--active: url('#{$icons-path}objects/dark/mini-app.svg#active'); 
+  --icon__objects_mini-app--disabled: url('#{$icons-path}objects/dark/mini-app.svg#disabled'); 
+  --icon__objects_menubar--enabled: url('#{$icons-path}objects/dark/menubar.svg#enabled'); 
+  --icon__objects_menubar--hover: url('#{$icons-path}objects/dark/menubar.svg#hover'); 
+  --icon__objects_menubar--active: url('#{$icons-path}objects/dark/menubar.svg#active'); 
+  --icon__objects_menubar--disabled: url('#{$icons-path}objects/dark/menubar.svg#disabled'); 
+  --icon__objects_menu--enabled: url('#{$icons-path}objects/dark/menu.svg#enabled'); 
+  --icon__objects_menu--hover: url('#{$icons-path}objects/dark/menu.svg#hover'); 
+  --icon__objects_menu--active: url('#{$icons-path}objects/dark/menu.svg#active'); 
+  --icon__objects_menu--disabled: url('#{$icons-path}objects/dark/menu.svg#disabled'); 
+  --icon__objects_masterpage--enabled: url('#{$icons-path}objects/dark/masterpage.svg#enabled'); 
+  --icon__objects_masterpage--hover: url('#{$icons-path}objects/dark/masterpage.svg#hover'); 
+  --icon__objects_masterpage--active: url('#{$icons-path}objects/dark/masterpage.svg#active'); 
+  --icon__objects_masterpage--disabled: url('#{$icons-path}objects/dark/masterpage.svg#disabled'); 
+  --icon__objects_main-object--enabled: url('#{$icons-path}objects/dark/main-object.svg#enabled'); 
+  --icon__objects_main-object--hover: url('#{$icons-path}objects/dark/main-object.svg#hover'); 
+  --icon__objects_main-object--active: url('#{$icons-path}objects/dark/main-object.svg#active'); 
+  --icon__objects_main-object--disabled: url('#{$icons-path}objects/dark/main-object.svg#disabled'); 
+  --icon__objects_language--enabled: url('#{$icons-path}objects/dark/language.svg#enabled'); 
+  --icon__objects_language--hover: url('#{$icons-path}objects/dark/language.svg#hover'); 
+  --icon__objects_language--active: url('#{$icons-path}objects/dark/language.svg#active'); 
+  --icon__objects_language--disabled: url('#{$icons-path}objects/dark/language.svg#disabled'); 
+  --icon__objects_knowledge-base--enabled: url('#{$icons-path}objects/dark/knowledge-base.svg#enabled'); 
+  --icon__objects_knowledge-base--hover: url('#{$icons-path}objects/dark/knowledge-base.svg#hover'); 
+  --icon__objects_knowledge-base--active: url('#{$icons-path}objects/dark/knowledge-base.svg#active'); 
+  --icon__objects_knowledge-base--disabled: url('#{$icons-path}objects/dark/knowledge-base.svg#disabled'); 
+  --icon__objects_image--enabled: url('#{$icons-path}objects/dark/image.svg#enabled'); 
+  --icon__objects_image--hover: url('#{$icons-path}objects/dark/image.svg#hover'); 
+  --icon__objects_image--active: url('#{$icons-path}objects/dark/image.svg#active'); 
+  --icon__objects_image--disabled: url('#{$icons-path}objects/dark/image.svg#disabled'); 
+  --icon__objects_generator--enabled: url('#{$icons-path}objects/dark/generator.svg#enabled'); 
+  --icon__objects_generator--hover: url('#{$icons-path}objects/dark/generator.svg#hover'); 
+  --icon__objects_generator--active: url('#{$icons-path}objects/dark/generator.svg#active'); 
+  --icon__objects_generator--disabled: url('#{$icons-path}objects/dark/generator.svg#disabled'); 
+  --icon__objects_generator-category--enabled: url('#{$icons-path}objects/dark/generator-category.svg#enabled'); 
+  --icon__objects_generator-category--hover: url('#{$icons-path}objects/dark/generator-category.svg#hover'); 
+  --icon__objects_generator-category--active: url('#{$icons-path}objects/dark/generator-category.svg#active'); 
+  --icon__objects_generator-category--disabled: url('#{$icons-path}objects/dark/generator-category.svg#disabled'); 
+  --icon__objects_folder--enabled: url('#{$icons-path}objects/dark/folder.svg#enabled'); 
+  --icon__objects_folder--hover: url('#{$icons-path}objects/dark/folder.svg#hover'); 
+  --icon__objects_folder--active: url('#{$icons-path}objects/dark/folder.svg#active'); 
+  --icon__objects_folder--disabled: url('#{$icons-path}objects/dark/folder.svg#disabled'); 
+  --icon__objects_folder-open--enabled: url('#{$icons-path}objects/dark/folder-open.svg#enabled'); 
+  --icon__objects_folder-open--hover: url('#{$icons-path}objects/dark/folder-open.svg#hover'); 
+  --icon__objects_folder-open--active: url('#{$icons-path}objects/dark/folder-open.svg#active'); 
+  --icon__objects_folder-open--disabled: url('#{$icons-path}objects/dark/folder-open.svg#disabled'); 
+  --icon__objects_file--enabled: url('#{$icons-path}objects/dark/file.svg#enabled'); 
+  --icon__objects_file--hover: url('#{$icons-path}objects/dark/file.svg#hover'); 
+  --icon__objects_file--active: url('#{$icons-path}objects/dark/file.svg#active'); 
+  --icon__objects_file--disabled: url('#{$icons-path}objects/dark/file.svg#disabled'); 
+  --icon__objects_external-object--enabled: url('#{$icons-path}objects/dark/external-object.svg#enabled'); 
+  --icon__objects_external-object--hover: url('#{$icons-path}objects/dark/external-object.svg#hover'); 
+  --icon__objects_external-object--active: url('#{$icons-path}objects/dark/external-object.svg#active'); 
+  --icon__objects_external-object--disabled: url('#{$icons-path}objects/dark/external-object.svg#disabled'); 
+  --icon__objects_environment-select--enabled: url('#{$icons-path}objects/dark/environment-select.svg#enabled'); 
+  --icon__objects_environment-select--hover: url('#{$icons-path}objects/dark/environment-select.svg#hover'); 
+  --icon__objects_environment-select--active: url('#{$icons-path}objects/dark/environment-select.svg#active'); 
+  --icon__objects_environment-select--disabled: url('#{$icons-path}objects/dark/environment-select.svg#disabled'); 
+  --icon__objects_environment-no-select--enabled: url('#{$icons-path}objects/dark/environment-no-select.svg#enabled'); 
+  --icon__objects_environment-no-select--hover: url('#{$icons-path}objects/dark/environment-no-select.svg#hover'); 
+  --icon__objects_environment-no-select--active: url('#{$icons-path}objects/dark/environment-no-select.svg#active'); 
+  --icon__objects_environment-no-select--disabled: url('#{$icons-path}objects/dark/environment-no-select.svg#disabled'); 
+  --icon__objects_dso--enabled: url('#{$icons-path}objects/dark/dso.svg#enabled'); 
+  --icon__objects_dso--hover: url('#{$icons-path}objects/dark/dso.svg#hover'); 
+  --icon__objects_dso--active: url('#{$icons-path}objects/dark/dso.svg#active'); 
+  --icon__objects_dso--disabled: url('#{$icons-path}objects/dark/dso.svg#disabled'); 
+  --icon__objects_domain--enabled: url('#{$icons-path}objects/dark/domain.svg#enabled'); 
+  --icon__objects_domain--hover: url('#{$icons-path}objects/dark/domain.svg#hover'); 
+  --icon__objects_domain--active: url('#{$icons-path}objects/dark/domain.svg#active'); 
+  --icon__objects_domain--disabled: url('#{$icons-path}objects/dark/domain.svg#disabled'); 
+  --icon__objects_document--enabled: url('#{$icons-path}objects/dark/document.svg#enabled'); 
+  --icon__objects_document--hover: url('#{$icons-path}objects/dark/document.svg#hover'); 
+  --icon__objects_document--active: url('#{$icons-path}objects/dark/document.svg#active'); 
+  --icon__objects_document--disabled: url('#{$icons-path}objects/dark/document.svg#disabled'); 
+  --icon__objects_document-workflow--enabled: url('#{$icons-path}objects/dark/document-workflow.svg#enabled'); 
+  --icon__objects_document-workflow--hover: url('#{$icons-path}objects/dark/document-workflow.svg#hover'); 
+  --icon__objects_document-workflow--active: url('#{$icons-path}objects/dark/document-workflow.svg#active'); 
+  --icon__objects_document-workflow--disabled: url('#{$icons-path}objects/dark/document-workflow.svg#disabled'); 
+  --icon__objects_diagram--enabled: url('#{$icons-path}objects/dark/diagram.svg#enabled'); 
+  --icon__objects_diagram--hover: url('#{$icons-path}objects/dark/diagram.svg#hover'); 
+  --icon__objects_diagram--active: url('#{$icons-path}objects/dark/diagram.svg#active'); 
+  --icon__objects_diagram--disabled: url('#{$icons-path}objects/dark/diagram.svg#disabled'); 
+  --icon__objects_design--enabled: url('#{$icons-path}objects/dark/design.svg#enabled'); 
+  --icon__objects_design--hover: url('#{$icons-path}objects/dark/design.svg#hover'); 
+  --icon__objects_design--active: url('#{$icons-path}objects/dark/design.svg#active'); 
+  --icon__objects_design--disabled: url('#{$icons-path}objects/dark/design.svg#disabled'); 
+  --icon__objects_deployment-unit--enabled: url('#{$icons-path}objects/dark/deployment-unit.svg#enabled'); 
+  --icon__objects_deployment-unit--hover: url('#{$icons-path}objects/dark/deployment-unit.svg#hover'); 
+  --icon__objects_deployment-unit--active: url('#{$icons-path}objects/dark/deployment-unit.svg#active'); 
+  --icon__objects_deployment-unit--disabled: url('#{$icons-path}objects/dark/deployment-unit.svg#disabled'); 
+  --icon__objects_dataview-index--enabled: url('#{$icons-path}objects/dark/dataview-index.svg#enabled'); 
+  --icon__objects_dataview-index--hover: url('#{$icons-path}objects/dark/dataview-index.svg#hover'); 
+  --icon__objects_dataview-index--active: url('#{$icons-path}objects/dark/dataview-index.svg#active'); 
+  --icon__objects_dataview-index--disabled: url('#{$icons-path}objects/dark/dataview-index.svg#disabled'); 
+  --icon__objects_datastore--enabled: url('#{$icons-path}objects/dark/datastore.svg#enabled'); 
+  --icon__objects_datastore--hover: url('#{$icons-path}objects/dark/datastore.svg#hover'); 
+  --icon__objects_datastore--active: url('#{$icons-path}objects/dark/datastore.svg#active'); 
+  --icon__objects_datastore--disabled: url('#{$icons-path}objects/dark/datastore.svg#disabled'); 
+  --icon__objects_datastore-category--enabled: url('#{$icons-path}objects/dark/datastore-category.svg#enabled'); 
+  --icon__objects_datastore-category--hover: url('#{$icons-path}objects/dark/datastore-category.svg#hover'); 
+  --icon__objects_datastore-category--active: url('#{$icons-path}objects/dark/datastore-category.svg#active'); 
+  --icon__objects_datastore-category--disabled: url('#{$icons-path}objects/dark/datastore-category.svg#disabled'); 
+  --icon__objects_data-view--enabled: url('#{$icons-path}objects/dark/data-view.svg#enabled'); 
+  --icon__objects_data-view--hover: url('#{$icons-path}objects/dark/data-view.svg#hover'); 
+  --icon__objects_data-view--active: url('#{$icons-path}objects/dark/data-view.svg#active'); 
+  --icon__objects_data-view--disabled: url('#{$icons-path}objects/dark/data-view.svg#disabled'); 
+  --icon__objects_data-selector--enabled: url('#{$icons-path}objects/dark/data-selector.svg#enabled'); 
+  --icon__objects_data-selector--hover: url('#{$icons-path}objects/dark/data-selector.svg#hover'); 
+  --icon__objects_data-selector--active: url('#{$icons-path}objects/dark/data-selector.svg#active'); 
+  --icon__objects_data-selector--disabled: url('#{$icons-path}objects/dark/data-selector.svg#disabled'); 
+  --icon__objects_data-provider--enabled: url('#{$icons-path}objects/dark/data-provider.svg#enabled'); 
+  --icon__objects_data-provider--hover: url('#{$icons-path}objects/dark/data-provider.svg#hover'); 
+  --icon__objects_data-provider--active: url('#{$icons-path}objects/dark/data-provider.svg#active'); 
+  --icon__objects_data-provider--disabled: url('#{$icons-path}objects/dark/data-provider.svg#disabled'); 
+  --icon__objects_dashboard--enabled: url('#{$icons-path}objects/dark/dashboard.svg#enabled'); 
+  --icon__objects_dashboard--hover: url('#{$icons-path}objects/dark/dashboard.svg#hover'); 
+  --icon__objects_dashboard--active: url('#{$icons-path}objects/dark/dashboard.svg#active'); 
+  --icon__objects_dashboard--disabled: url('#{$icons-path}objects/dark/dashboard.svg#disabled'); 
+  --icon__objects_customization--enabled: url('#{$icons-path}objects/dark/customization.svg#enabled'); 
+  --icon__objects_customization--hover: url('#{$icons-path}objects/dark/customization.svg#hover'); 
+  --icon__objects_customization--active: url('#{$icons-path}objects/dark/customization.svg#active'); 
+  --icon__objects_customization--disabled: url('#{$icons-path}objects/dark/customization.svg#disabled'); 
+  --icon__objects_conversational-flows--enabled: url('#{$icons-path}objects/dark/conversational-flows.svg#enabled'); 
+  --icon__objects_conversational-flows--hover: url('#{$icons-path}objects/dark/conversational-flows.svg#hover'); 
+  --icon__objects_conversational-flows--active: url('#{$icons-path}objects/dark/conversational-flows.svg#active'); 
+  --icon__objects_conversational-flows--disabled: url('#{$icons-path}objects/dark/conversational-flows.svg#disabled'); 
+  --icon__objects_category--enabled: url('#{$icons-path}objects/dark/category.svg#enabled'); 
+  --icon__objects_category--hover: url('#{$icons-path}objects/dark/category.svg#hover'); 
+  --icon__objects_category--active: url('#{$icons-path}objects/dark/category.svg#active'); 
+  --icon__objects_category--disabled: url('#{$icons-path}objects/dark/category.svg#disabled'); 
+  --icon__objects_calendars--enabled: url('#{$icons-path}objects/dark/calendars.svg#enabled'); 
+  --icon__objects_calendars--hover: url('#{$icons-path}objects/dark/calendars.svg#hover'); 
+  --icon__objects_calendars--active: url('#{$icons-path}objects/dark/calendars.svg#active'); 
+  --icon__objects_calendars--disabled: url('#{$icons-path}objects/dark/calendars.svg#disabled'); 
+  --icon__objects_business-process-diagram--enabled: url('#{$icons-path}objects/dark/business-process-diagram.svg#enabled'); 
+  --icon__objects_business-process-diagram--hover: url('#{$icons-path}objects/dark/business-process-diagram.svg#hover'); 
+  --icon__objects_business-process-diagram--active: url('#{$icons-path}objects/dark/business-process-diagram.svg#active'); 
+  --icon__objects_business-process-diagram--disabled: url('#{$icons-path}objects/dark/business-process-diagram.svg#disabled'); 
+  --icon__objects_bg-color--enabled: url('#{$icons-path}objects/dark/bg-color.svg#enabled'); 
+  --icon__objects_bg-color--hover: url('#{$icons-path}objects/dark/bg-color.svg#hover'); 
+  --icon__objects_bg-color--active: url('#{$icons-path}objects/dark/bg-color.svg#active'); 
+  --icon__objects_bg-color--disabled: url('#{$icons-path}objects/dark/bg-color.svg#disabled'); 
+  --icon__objects_attribute--enabled: url('#{$icons-path}objects/dark/attribute.svg#enabled'); 
+  --icon__objects_attribute--hover: url('#{$icons-path}objects/dark/attribute.svg#hover'); 
+  --icon__objects_attribute--active: url('#{$icons-path}objects/dark/attribute.svg#active'); 
+  --icon__objects_attribute--disabled: url('#{$icons-path}objects/dark/attribute.svg#disabled'); 
+  --icon__objects_api--enabled: url('#{$icons-path}objects/dark/api.svg#enabled'); 
+  --icon__objects_api--hover: url('#{$icons-path}objects/dark/api.svg#hover'); 
+  --icon__objects_api--active: url('#{$icons-path}objects/dark/api.svg#active'); 
+  --icon__objects_api--disabled: url('#{$icons-path}objects/dark/api.svg#disabled'); 
+
+  }
+  
    $objects: workflow, work-panel, webpanel, web-component, version, url-rewrite, transaction, to-be-defined, theme, theme-web, theme-for-sd, table, super-app, subtype-group, structured-data-type, stencil, roles, report, references, query, procedure, patterns, panel-for-sd, orphant-document, offline-database, object, notification-templates, module, module-open, mini-app, menubar, menu, masterpage, main-object, language, knowledge-base, image, generator, generator-category, folder, folder-open, file, external-object, environment-select, environment-no-select, dso, domain, document, document-workflow, diagram, design, deployment-unit, dataview-index, datastore, datastore-category, data-view, data-selector, data-provider, dashboard, customization, conversational-flows, category, calendars, business-process-diagram, bg-color, attribute, api;
     %icon__objects {
   
-    /* =================================
-    LIGHT
-    ================================= */
-  
-    /* - - - - - - - - - - - - 
-    workflow.svg 
-    - - - - - - - - - - - - */
-    
-    &_workflow--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/workflow.svg#enabled");
-    }
-    
-    &_workflow--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/workflow.svg#hover");
-    }
-    
-    &_workflow--active-light {
-      --icon-path: url("#{$icons-path}objects/light/workflow.svg#active");
-    }
-    
-    &_workflow--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/workflow.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    work-panel.svg 
-    - - - - - - - - - - - - */
-    
-    &_work-panel--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/work-panel.svg#enabled");
-    }
-    
-    &_work-panel--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/work-panel.svg#hover");
-    }
-    
-    &_work-panel--active-light {
-      --icon-path: url("#{$icons-path}objects/light/work-panel.svg#active");
-    }
-    
-    &_work-panel--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/work-panel.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    webpanel.svg 
-    - - - - - - - - - - - - */
-    
-    &_webpanel--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/webpanel.svg#enabled");
-    }
-    
-    &_webpanel--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/webpanel.svg#hover");
-    }
-    
-    &_webpanel--active-light {
-      --icon-path: url("#{$icons-path}objects/light/webpanel.svg#active");
-    }
-    
-    &_webpanel--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/webpanel.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    web-component.svg 
-    - - - - - - - - - - - - */
-    
-    &_web-component--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/web-component.svg#enabled");
-    }
-    
-    &_web-component--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/web-component.svg#hover");
-    }
-    
-    &_web-component--active-light {
-      --icon-path: url("#{$icons-path}objects/light/web-component.svg#active");
-    }
-    
-    &_web-component--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/web-component.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    version.svg 
-    - - - - - - - - - - - - */
-    
-    &_version--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/version.svg#enabled");
-    }
-    
-    &_version--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/version.svg#hover");
-    }
-    
-    &_version--active-light {
-      --icon-path: url("#{$icons-path}objects/light/version.svg#active");
-    }
-    
-    &_version--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/version.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    url-rewrite.svg 
-    - - - - - - - - - - - - */
-    
-    &_url-rewrite--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/url-rewrite.svg#enabled");
-    }
-    
-    &_url-rewrite--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/url-rewrite.svg#hover");
-    }
-    
-    &_url-rewrite--active-light {
-      --icon-path: url("#{$icons-path}objects/light/url-rewrite.svg#active");
-    }
-    
-    &_url-rewrite--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/url-rewrite.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    transaction.svg 
-    - - - - - - - - - - - - */
-    
-    &_transaction--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/transaction.svg#enabled");
-    }
-    
-    &_transaction--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/transaction.svg#hover");
-    }
-    
-    &_transaction--active-light {
-      --icon-path: url("#{$icons-path}objects/light/transaction.svg#active");
-    }
-    
-    &_transaction--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/transaction.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    to-be-defined.svg 
-    - - - - - - - - - - - - */
-    
-    &_to-be-defined--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/to-be-defined.svg#enabled");
-    }
-    
-    &_to-be-defined--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/to-be-defined.svg#hover");
-    }
-    
-    &_to-be-defined--active-light {
-      --icon-path: url("#{$icons-path}objects/light/to-be-defined.svg#active");
-    }
-    
-    &_to-be-defined--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/to-be-defined.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    theme.svg 
-    - - - - - - - - - - - - */
-    
-    &_theme--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/theme.svg#enabled");
-    }
-    
-    &_theme--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/theme.svg#hover");
-    }
-    
-    &_theme--active-light {
-      --icon-path: url("#{$icons-path}objects/light/theme.svg#active");
-    }
-    
-    &_theme--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/theme.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    theme-web.svg 
-    - - - - - - - - - - - - */
-    
-    &_theme-web--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/theme-web.svg#enabled");
-    }
-    
-    &_theme-web--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/theme-web.svg#hover");
-    }
-    
-    &_theme-web--active-light {
-      --icon-path: url("#{$icons-path}objects/light/theme-web.svg#active");
-    }
-    
-    &_theme-web--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/theme-web.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    theme-for-sd.svg 
-    - - - - - - - - - - - - */
-    
-    &_theme-for-sd--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/theme-for-sd.svg#enabled");
-    }
-    
-    &_theme-for-sd--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/theme-for-sd.svg#hover");
-    }
-    
-    &_theme-for-sd--active-light {
-      --icon-path: url("#{$icons-path}objects/light/theme-for-sd.svg#active");
-    }
-    
-    &_theme-for-sd--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/theme-for-sd.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    table.svg 
-    - - - - - - - - - - - - */
-    
-    &_table--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/table.svg#enabled");
-    }
-    
-    &_table--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/table.svg#hover");
-    }
-    
-    &_table--active-light {
-      --icon-path: url("#{$icons-path}objects/light/table.svg#active");
-    }
-    
-    &_table--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/table.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    super-app.svg 
-    - - - - - - - - - - - - */
-    
-    &_super-app--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/super-app.svg#enabled");
-    }
-    
-    &_super-app--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/super-app.svg#hover");
-    }
-    
-    &_super-app--active-light {
-      --icon-path: url("#{$icons-path}objects/light/super-app.svg#active");
-    }
-    
-    &_super-app--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/super-app.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    subtype-group.svg 
-    - - - - - - - - - - - - */
-    
-    &_subtype-group--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/subtype-group.svg#enabled");
-    }
-    
-    &_subtype-group--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/subtype-group.svg#hover");
-    }
-    
-    &_subtype-group--active-light {
-      --icon-path: url("#{$icons-path}objects/light/subtype-group.svg#active");
-    }
-    
-    &_subtype-group--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/subtype-group.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    structured-data-type.svg 
-    - - - - - - - - - - - - */
-    
-    &_structured-data-type--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/structured-data-type.svg#enabled");
-    }
-    
-    &_structured-data-type--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/structured-data-type.svg#hover");
-    }
-    
-    &_structured-data-type--active-light {
-      --icon-path: url("#{$icons-path}objects/light/structured-data-type.svg#active");
-    }
-    
-    &_structured-data-type--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/structured-data-type.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    stencil.svg 
-    - - - - - - - - - - - - */
-    
-    &_stencil--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/stencil.svg#enabled");
-    }
-    
-    &_stencil--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/stencil.svg#hover");
-    }
-    
-    &_stencil--active-light {
-      --icon-path: url("#{$icons-path}objects/light/stencil.svg#active");
-    }
-    
-    &_stencil--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/stencil.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    roles.svg 
-    - - - - - - - - - - - - */
-    
-    &_roles--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/roles.svg#enabled");
-    }
-    
-    &_roles--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/roles.svg#hover");
-    }
-    
-    &_roles--active-light {
-      --icon-path: url("#{$icons-path}objects/light/roles.svg#active");
-    }
-    
-    &_roles--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/roles.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    report.svg 
-    - - - - - - - - - - - - */
-    
-    &_report--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/report.svg#enabled");
-    }
-    
-    &_report--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/report.svg#hover");
-    }
-    
-    &_report--active-light {
-      --icon-path: url("#{$icons-path}objects/light/report.svg#active");
-    }
-    
-    &_report--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/report.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    references.svg 
-    - - - - - - - - - - - - */
-    
-    &_references--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/references.svg#enabled");
-    }
-    
-    &_references--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/references.svg#hover");
-    }
-    
-    &_references--active-light {
-      --icon-path: url("#{$icons-path}objects/light/references.svg#active");
-    }
-    
-    &_references--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/references.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    query.svg 
-    - - - - - - - - - - - - */
-    
-    &_query--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/query.svg#enabled");
-    }
-    
-    &_query--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/query.svg#hover");
-    }
-    
-    &_query--active-light {
-      --icon-path: url("#{$icons-path}objects/light/query.svg#active");
-    }
-    
-    &_query--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/query.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    procedure.svg 
-    - - - - - - - - - - - - */
-    
-    &_procedure--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/procedure.svg#enabled");
-    }
-    
-    &_procedure--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/procedure.svg#hover");
-    }
-    
-    &_procedure--active-light {
-      --icon-path: url("#{$icons-path}objects/light/procedure.svg#active");
-    }
-    
-    &_procedure--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/procedure.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    patterns.svg 
-    - - - - - - - - - - - - */
-    
-    &_patterns--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/patterns.svg#enabled");
-    }
-    
-    &_patterns--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/patterns.svg#hover");
-    }
-    
-    &_patterns--active-light {
-      --icon-path: url("#{$icons-path}objects/light/patterns.svg#active");
-    }
-    
-    &_patterns--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/patterns.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    panel-for-sd.svg 
-    - - - - - - - - - - - - */
-    
-    &_panel-for-sd--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/panel-for-sd.svg#enabled");
-    }
-    
-    &_panel-for-sd--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/panel-for-sd.svg#hover");
-    }
-    
-    &_panel-for-sd--active-light {
-      --icon-path: url("#{$icons-path}objects/light/panel-for-sd.svg#active");
-    }
-    
-    &_panel-for-sd--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/panel-for-sd.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    orphant-document.svg 
-    - - - - - - - - - - - - */
-    
-    &_orphant-document--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/orphant-document.svg#enabled");
-    }
-    
-    &_orphant-document--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/orphant-document.svg#hover");
-    }
-    
-    &_orphant-document--active-light {
-      --icon-path: url("#{$icons-path}objects/light/orphant-document.svg#active");
-    }
-    
-    &_orphant-document--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/orphant-document.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    offline-database.svg 
-    - - - - - - - - - - - - */
-    
-    &_offline-database--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/offline-database.svg#enabled");
-    }
-    
-    &_offline-database--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/offline-database.svg#hover");
-    }
-    
-    &_offline-database--active-light {
-      --icon-path: url("#{$icons-path}objects/light/offline-database.svg#active");
-    }
-    
-    &_offline-database--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/offline-database.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    object.svg 
-    - - - - - - - - - - - - */
-    
-    &_object--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/object.svg#enabled");
-    }
-    
-    &_object--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/object.svg#hover");
-    }
-    
-    &_object--active-light {
-      --icon-path: url("#{$icons-path}objects/light/object.svg#active");
-    }
-    
-    &_object--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/object.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    notification-templates.svg 
-    - - - - - - - - - - - - */
-    
-    &_notification-templates--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/notification-templates.svg#enabled");
-    }
-    
-    &_notification-templates--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/notification-templates.svg#hover");
-    }
-    
-    &_notification-templates--active-light {
-      --icon-path: url("#{$icons-path}objects/light/notification-templates.svg#active");
-    }
-    
-    &_notification-templates--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/notification-templates.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    module.svg 
-    - - - - - - - - - - - - */
-    
-    &_module--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/module.svg#enabled");
-    }
-    
-    &_module--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/module.svg#hover");
-    }
-    
-    &_module--active-light {
-      --icon-path: url("#{$icons-path}objects/light/module.svg#active");
-    }
-    
-    &_module--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/module.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    module-open.svg 
-    - - - - - - - - - - - - */
-    
-    &_module-open--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/module-open.svg#enabled");
-    }
-    
-    &_module-open--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/module-open.svg#hover");
-    }
-    
-    &_module-open--active-light {
-      --icon-path: url("#{$icons-path}objects/light/module-open.svg#active");
-    }
-    
-    &_module-open--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/module-open.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    mini-app.svg 
-    - - - - - - - - - - - - */
-    
-    &_mini-app--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/mini-app.svg#enabled");
-    }
-    
-    &_mini-app--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/mini-app.svg#hover");
-    }
-    
-    &_mini-app--active-light {
-      --icon-path: url("#{$icons-path}objects/light/mini-app.svg#active");
-    }
-    
-    &_mini-app--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/mini-app.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    menubar.svg 
-    - - - - - - - - - - - - */
-    
-    &_menubar--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/menubar.svg#enabled");
-    }
-    
-    &_menubar--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/menubar.svg#hover");
-    }
-    
-    &_menubar--active-light {
-      --icon-path: url("#{$icons-path}objects/light/menubar.svg#active");
-    }
-    
-    &_menubar--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/menubar.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    menu.svg 
-    - - - - - - - - - - - - */
-    
-    &_menu--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/menu.svg#enabled");
-    }
-    
-    &_menu--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/menu.svg#hover");
-    }
-    
-    &_menu--active-light {
-      --icon-path: url("#{$icons-path}objects/light/menu.svg#active");
-    }
-    
-    &_menu--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/menu.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    masterpage.svg 
-    - - - - - - - - - - - - */
-    
-    &_masterpage--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/masterpage.svg#enabled");
-    }
-    
-    &_masterpage--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/masterpage.svg#hover");
-    }
-    
-    &_masterpage--active-light {
-      --icon-path: url("#{$icons-path}objects/light/masterpage.svg#active");
-    }
-    
-    &_masterpage--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/masterpage.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    main-object.svg 
-    - - - - - - - - - - - - */
-    
-    &_main-object--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/main-object.svg#enabled");
-    }
-    
-    &_main-object--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/main-object.svg#hover");
-    }
-    
-    &_main-object--active-light {
-      --icon-path: url("#{$icons-path}objects/light/main-object.svg#active");
-    }
-    
-    &_main-object--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/main-object.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    language.svg 
-    - - - - - - - - - - - - */
-    
-    &_language--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/language.svg#enabled");
-    }
-    
-    &_language--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/language.svg#hover");
-    }
-    
-    &_language--active-light {
-      --icon-path: url("#{$icons-path}objects/light/language.svg#active");
-    }
-    
-    &_language--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/language.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    knowledge-base.svg 
-    - - - - - - - - - - - - */
-    
-    &_knowledge-base--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/knowledge-base.svg#enabled");
-    }
-    
-    &_knowledge-base--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/knowledge-base.svg#hover");
-    }
-    
-    &_knowledge-base--active-light {
-      --icon-path: url("#{$icons-path}objects/light/knowledge-base.svg#active");
-    }
-    
-    &_knowledge-base--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/knowledge-base.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    image.svg 
-    - - - - - - - - - - - - */
-    
-    &_image--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/image.svg#enabled");
-    }
-    
-    &_image--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/image.svg#hover");
-    }
-    
-    &_image--active-light {
-      --icon-path: url("#{$icons-path}objects/light/image.svg#active");
-    }
-    
-    &_image--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/image.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    generator.svg 
-    - - - - - - - - - - - - */
-    
-    &_generator--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/generator.svg#enabled");
-    }
-    
-    &_generator--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/generator.svg#hover");
-    }
-    
-    &_generator--active-light {
-      --icon-path: url("#{$icons-path}objects/light/generator.svg#active");
-    }
-    
-    &_generator--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/generator.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    generator-category.svg 
-    - - - - - - - - - - - - */
-    
-    &_generator-category--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/generator-category.svg#enabled");
-    }
-    
-    &_generator-category--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/generator-category.svg#hover");
-    }
-    
-    &_generator-category--active-light {
-      --icon-path: url("#{$icons-path}objects/light/generator-category.svg#active");
-    }
-    
-    &_generator-category--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/generator-category.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    folder.svg 
-    - - - - - - - - - - - - */
-    
-    &_folder--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/folder.svg#enabled");
-    }
-    
-    &_folder--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/folder.svg#hover");
-    }
-    
-    &_folder--active-light {
-      --icon-path: url("#{$icons-path}objects/light/folder.svg#active");
-    }
-    
-    &_folder--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/folder.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    folder-open.svg 
-    - - - - - - - - - - - - */
-    
-    &_folder-open--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/folder-open.svg#enabled");
-    }
-    
-    &_folder-open--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/folder-open.svg#hover");
-    }
-    
-    &_folder-open--active-light {
-      --icon-path: url("#{$icons-path}objects/light/folder-open.svg#active");
-    }
-    
-    &_folder-open--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/folder-open.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    file.svg 
-    - - - - - - - - - - - - */
-    
-    &_file--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/file.svg#enabled");
-    }
-    
-    &_file--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/file.svg#hover");
-    }
-    
-    &_file--active-light {
-      --icon-path: url("#{$icons-path}objects/light/file.svg#active");
-    }
-    
-    &_file--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/file.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    external-object.svg 
-    - - - - - - - - - - - - */
-    
-    &_external-object--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/external-object.svg#enabled");
-    }
-    
-    &_external-object--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/external-object.svg#hover");
-    }
-    
-    &_external-object--active-light {
-      --icon-path: url("#{$icons-path}objects/light/external-object.svg#active");
-    }
-    
-    &_external-object--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/external-object.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    environment-select.svg 
-    - - - - - - - - - - - - */
-    
-    &_environment-select--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/environment-select.svg#enabled");
-    }
-    
-    &_environment-select--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/environment-select.svg#hover");
-    }
-    
-    &_environment-select--active-light {
-      --icon-path: url("#{$icons-path}objects/light/environment-select.svg#active");
-    }
-    
-    &_environment-select--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/environment-select.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    environment-no-select.svg 
-    - - - - - - - - - - - - */
-    
-    &_environment-no-select--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/environment-no-select.svg#enabled");
-    }
-    
-    &_environment-no-select--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/environment-no-select.svg#hover");
-    }
-    
-    &_environment-no-select--active-light {
-      --icon-path: url("#{$icons-path}objects/light/environment-no-select.svg#active");
-    }
-    
-    &_environment-no-select--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/environment-no-select.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    dso.svg 
-    - - - - - - - - - - - - */
-    
-    &_dso--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/dso.svg#enabled");
-    }
-    
-    &_dso--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/dso.svg#hover");
-    }
-    
-    &_dso--active-light {
-      --icon-path: url("#{$icons-path}objects/light/dso.svg#active");
-    }
-    
-    &_dso--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/dso.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    domain.svg 
-    - - - - - - - - - - - - */
-    
-    &_domain--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/domain.svg#enabled");
-    }
-    
-    &_domain--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/domain.svg#hover");
-    }
-    
-    &_domain--active-light {
-      --icon-path: url("#{$icons-path}objects/light/domain.svg#active");
-    }
-    
-    &_domain--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/domain.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    document.svg 
-    - - - - - - - - - - - - */
-    
-    &_document--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/document.svg#enabled");
-    }
-    
-    &_document--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/document.svg#hover");
-    }
-    
-    &_document--active-light {
-      --icon-path: url("#{$icons-path}objects/light/document.svg#active");
-    }
-    
-    &_document--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/document.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    document-workflow.svg 
-    - - - - - - - - - - - - */
-    
-    &_document-workflow--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/document-workflow.svg#enabled");
-    }
-    
-    &_document-workflow--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/document-workflow.svg#hover");
-    }
-    
-    &_document-workflow--active-light {
-      --icon-path: url("#{$icons-path}objects/light/document-workflow.svg#active");
-    }
-    
-    &_document-workflow--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/document-workflow.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    diagram.svg 
-    - - - - - - - - - - - - */
-    
-    &_diagram--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/diagram.svg#enabled");
-    }
-    
-    &_diagram--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/diagram.svg#hover");
-    }
-    
-    &_diagram--active-light {
-      --icon-path: url("#{$icons-path}objects/light/diagram.svg#active");
-    }
-    
-    &_diagram--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/diagram.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    design.svg 
-    - - - - - - - - - - - - */
-    
-    &_design--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/design.svg#enabled");
-    }
-    
-    &_design--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/design.svg#hover");
-    }
-    
-    &_design--active-light {
-      --icon-path: url("#{$icons-path}objects/light/design.svg#active");
-    }
-    
-    &_design--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/design.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    deployment-unit.svg 
-    - - - - - - - - - - - - */
-    
-    &_deployment-unit--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/deployment-unit.svg#enabled");
-    }
-    
-    &_deployment-unit--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/deployment-unit.svg#hover");
-    }
-    
-    &_deployment-unit--active-light {
-      --icon-path: url("#{$icons-path}objects/light/deployment-unit.svg#active");
-    }
-    
-    &_deployment-unit--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/deployment-unit.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    dataview-index.svg 
-    - - - - - - - - - - - - */
-    
-    &_dataview-index--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/dataview-index.svg#enabled");
-    }
-    
-    &_dataview-index--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/dataview-index.svg#hover");
-    }
-    
-    &_dataview-index--active-light {
-      --icon-path: url("#{$icons-path}objects/light/dataview-index.svg#active");
-    }
-    
-    &_dataview-index--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/dataview-index.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    datastore.svg 
-    - - - - - - - - - - - - */
-    
-    &_datastore--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/datastore.svg#enabled");
-    }
-    
-    &_datastore--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/datastore.svg#hover");
-    }
-    
-    &_datastore--active-light {
-      --icon-path: url("#{$icons-path}objects/light/datastore.svg#active");
-    }
-    
-    &_datastore--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/datastore.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    datastore-category.svg 
-    - - - - - - - - - - - - */
-    
-    &_datastore-category--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/datastore-category.svg#enabled");
-    }
-    
-    &_datastore-category--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/datastore-category.svg#hover");
-    }
-    
-    &_datastore-category--active-light {
-      --icon-path: url("#{$icons-path}objects/light/datastore-category.svg#active");
-    }
-    
-    &_datastore-category--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/datastore-category.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    data-view.svg 
-    - - - - - - - - - - - - */
-    
-    &_data-view--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/data-view.svg#enabled");
-    }
-    
-    &_data-view--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/data-view.svg#hover");
-    }
-    
-    &_data-view--active-light {
-      --icon-path: url("#{$icons-path}objects/light/data-view.svg#active");
-    }
-    
-    &_data-view--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/data-view.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    data-selector.svg 
-    - - - - - - - - - - - - */
-    
-    &_data-selector--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/data-selector.svg#enabled");
-    }
-    
-    &_data-selector--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/data-selector.svg#hover");
-    }
-    
-    &_data-selector--active-light {
-      --icon-path: url("#{$icons-path}objects/light/data-selector.svg#active");
-    }
-    
-    &_data-selector--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/data-selector.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    data-provider.svg 
-    - - - - - - - - - - - - */
-    
-    &_data-provider--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/data-provider.svg#enabled");
-    }
-    
-    &_data-provider--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/data-provider.svg#hover");
-    }
-    
-    &_data-provider--active-light {
-      --icon-path: url("#{$icons-path}objects/light/data-provider.svg#active");
-    }
-    
-    &_data-provider--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/data-provider.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    dashboard.svg 
-    - - - - - - - - - - - - */
-    
-    &_dashboard--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/dashboard.svg#enabled");
-    }
-    
-    &_dashboard--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/dashboard.svg#hover");
-    }
-    
-    &_dashboard--active-light {
-      --icon-path: url("#{$icons-path}objects/light/dashboard.svg#active");
-    }
-    
-    &_dashboard--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/dashboard.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    customization.svg 
-    - - - - - - - - - - - - */
-    
-    &_customization--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/customization.svg#enabled");
-    }
-    
-    &_customization--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/customization.svg#hover");
-    }
-    
-    &_customization--active-light {
-      --icon-path: url("#{$icons-path}objects/light/customization.svg#active");
-    }
-    
-    &_customization--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/customization.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    conversational-flows.svg 
-    - - - - - - - - - - - - */
-    
-    &_conversational-flows--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/conversational-flows.svg#enabled");
-    }
-    
-    &_conversational-flows--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/conversational-flows.svg#hover");
-    }
-    
-    &_conversational-flows--active-light {
-      --icon-path: url("#{$icons-path}objects/light/conversational-flows.svg#active");
-    }
-    
-    &_conversational-flows--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/conversational-flows.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    category.svg 
-    - - - - - - - - - - - - */
-    
-    &_category--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/category.svg#enabled");
-    }
-    
-    &_category--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/category.svg#hover");
-    }
-    
-    &_category--active-light {
-      --icon-path: url("#{$icons-path}objects/light/category.svg#active");
-    }
-    
-    &_category--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/category.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    calendars.svg 
-    - - - - - - - - - - - - */
-    
-    &_calendars--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/calendars.svg#enabled");
-    }
-    
-    &_calendars--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/calendars.svg#hover");
-    }
-    
-    &_calendars--active-light {
-      --icon-path: url("#{$icons-path}objects/light/calendars.svg#active");
-    }
-    
-    &_calendars--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/calendars.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    business-process-diagram.svg 
-    - - - - - - - - - - - - */
-    
-    &_business-process-diagram--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/business-process-diagram.svg#enabled");
-    }
-    
-    &_business-process-diagram--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/business-process-diagram.svg#hover");
-    }
-    
-    &_business-process-diagram--active-light {
-      --icon-path: url("#{$icons-path}objects/light/business-process-diagram.svg#active");
-    }
-    
-    &_business-process-diagram--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/business-process-diagram.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    bg-color.svg 
-    - - - - - - - - - - - - */
-    
-    &_bg-color--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/bg-color.svg#enabled");
-    }
-    
-    &_bg-color--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/bg-color.svg#hover");
-    }
-    
-    &_bg-color--active-light {
-      --icon-path: url("#{$icons-path}objects/light/bg-color.svg#active");
-    }
-    
-    &_bg-color--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/bg-color.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    attribute.svg 
-    - - - - - - - - - - - - */
-    
-    &_attribute--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/attribute.svg#enabled");
-    }
-    
-    &_attribute--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/attribute.svg#hover");
-    }
-    
-    &_attribute--active-light {
-      --icon-path: url("#{$icons-path}objects/light/attribute.svg#active");
-    }
-    
-    &_attribute--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/attribute.svg#disabled");
-    }
-    
-    /* - - - - - - - - - - - - 
-    api.svg 
-    - - - - - - - - - - - - */
-    
-    &_api--enabled-light {
-      --icon-path: url("#{$icons-path}objects/light/api.svg#enabled");
-    }
-    
-    &_api--hover-light {
-      --icon-path: url("#{$icons-path}objects/light/api.svg#hover");
-    }
-    
-    &_api--active-light {
-      --icon-path: url("#{$icons-path}objects/light/api.svg#active");
-    }
-    
-    &_api--disabled-light {
-      --icon-path: url("#{$icons-path}objects/light/api.svg#disabled");
-    }
-    
 
-    /* =================================
-    DARK
-    ================================= */
+  /* =================================
+  LIGHT PLACEHOLDERS SELECTORS
+  ================================= */
   
+
     /* - - - - - - - - - - - - 
     workflow.svg 
     - - - - - - - - - - - - */
     
-    &_workflow--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/workflow.svg#enabled");
+    &_workflow--enabled {
+      --icon-path: var(--icon__objects_workflow--enabled);
     }
-    
-    &_workflow--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/workflow.svg#hover");
+    &_workflow--hover {
+      --icon-path: var(--icon__objects_workflow--hover);
     }
-    
-    &_workflow--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/workflow.svg#active");
+    &_workflow--active {
+      --icon-path: var(--icon__objects_workflow--active);
     }
-    
-    &_workflow--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/workflow.svg#disabled");
+    &_workflow--disabled {
+      --icon-path: var(--icon__objects_workflow--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     work-panel.svg 
     - - - - - - - - - - - - */
     
-    &_work-panel--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/work-panel.svg#enabled");
+    &_work-panel--enabled {
+      --icon-path: var(--icon__objects_work-panel--enabled);
     }
-    
-    &_work-panel--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/work-panel.svg#hover");
+    &_work-panel--hover {
+      --icon-path: var(--icon__objects_work-panel--hover);
     }
-    
-    &_work-panel--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/work-panel.svg#active");
+    &_work-panel--active {
+      --icon-path: var(--icon__objects_work-panel--active);
     }
-    
-    &_work-panel--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/work-panel.svg#disabled");
+    &_work-panel--disabled {
+      --icon-path: var(--icon__objects_work-panel--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     webpanel.svg 
     - - - - - - - - - - - - */
     
-    &_webpanel--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/webpanel.svg#enabled");
+    &_webpanel--enabled {
+      --icon-path: var(--icon__objects_webpanel--enabled);
     }
-    
-    &_webpanel--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/webpanel.svg#hover");
+    &_webpanel--hover {
+      --icon-path: var(--icon__objects_webpanel--hover);
     }
-    
-    &_webpanel--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/webpanel.svg#active");
+    &_webpanel--active {
+      --icon-path: var(--icon__objects_webpanel--active);
     }
-    
-    &_webpanel--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/webpanel.svg#disabled");
+    &_webpanel--disabled {
+      --icon-path: var(--icon__objects_webpanel--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     web-component.svg 
     - - - - - - - - - - - - */
     
-    &_web-component--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/web-component.svg#enabled");
+    &_web-component--enabled {
+      --icon-path: var(--icon__objects_web-component--enabled);
     }
-    
-    &_web-component--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/web-component.svg#hover");
+    &_web-component--hover {
+      --icon-path: var(--icon__objects_web-component--hover);
     }
-    
-    &_web-component--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/web-component.svg#active");
+    &_web-component--active {
+      --icon-path: var(--icon__objects_web-component--active);
     }
-    
-    &_web-component--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/web-component.svg#disabled");
+    &_web-component--disabled {
+      --icon-path: var(--icon__objects_web-component--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     version.svg 
     - - - - - - - - - - - - */
     
-    &_version--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/version.svg#enabled");
+    &_version--enabled {
+      --icon-path: var(--icon__objects_version--enabled);
     }
-    
-    &_version--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/version.svg#hover");
+    &_version--hover {
+      --icon-path: var(--icon__objects_version--hover);
     }
-    
-    &_version--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/version.svg#active");
+    &_version--active {
+      --icon-path: var(--icon__objects_version--active);
     }
-    
-    &_version--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/version.svg#disabled");
+    &_version--disabled {
+      --icon-path: var(--icon__objects_version--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     url-rewrite.svg 
     - - - - - - - - - - - - */
     
-    &_url-rewrite--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/url-rewrite.svg#enabled");
+    &_url-rewrite--enabled {
+      --icon-path: var(--icon__objects_url-rewrite--enabled);
     }
-    
-    &_url-rewrite--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/url-rewrite.svg#hover");
+    &_url-rewrite--hover {
+      --icon-path: var(--icon__objects_url-rewrite--hover);
     }
-    
-    &_url-rewrite--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/url-rewrite.svg#active");
+    &_url-rewrite--active {
+      --icon-path: var(--icon__objects_url-rewrite--active);
     }
-    
-    &_url-rewrite--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/url-rewrite.svg#disabled");
+    &_url-rewrite--disabled {
+      --icon-path: var(--icon__objects_url-rewrite--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     transaction.svg 
     - - - - - - - - - - - - */
     
-    &_transaction--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/transaction.svg#enabled");
+    &_transaction--enabled {
+      --icon-path: var(--icon__objects_transaction--enabled);
     }
-    
-    &_transaction--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/transaction.svg#hover");
+    &_transaction--hover {
+      --icon-path: var(--icon__objects_transaction--hover);
     }
-    
-    &_transaction--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/transaction.svg#active");
+    &_transaction--active {
+      --icon-path: var(--icon__objects_transaction--active);
     }
-    
-    &_transaction--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/transaction.svg#disabled");
+    &_transaction--disabled {
+      --icon-path: var(--icon__objects_transaction--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     to-be-defined.svg 
     - - - - - - - - - - - - */
     
-    &_to-be-defined--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/to-be-defined.svg#enabled");
+    &_to-be-defined--enabled {
+      --icon-path: var(--icon__objects_to-be-defined--enabled);
     }
-    
-    &_to-be-defined--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/to-be-defined.svg#hover");
+    &_to-be-defined--hover {
+      --icon-path: var(--icon__objects_to-be-defined--hover);
     }
-    
-    &_to-be-defined--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/to-be-defined.svg#active");
+    &_to-be-defined--active {
+      --icon-path: var(--icon__objects_to-be-defined--active);
     }
-    
-    &_to-be-defined--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/to-be-defined.svg#disabled");
+    &_to-be-defined--disabled {
+      --icon-path: var(--icon__objects_to-be-defined--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     theme.svg 
     - - - - - - - - - - - - */
     
-    &_theme--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/theme.svg#enabled");
+    &_theme--enabled {
+      --icon-path: var(--icon__objects_theme--enabled);
     }
-    
-    &_theme--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/theme.svg#hover");
+    &_theme--hover {
+      --icon-path: var(--icon__objects_theme--hover);
     }
-    
-    &_theme--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/theme.svg#active");
+    &_theme--active {
+      --icon-path: var(--icon__objects_theme--active);
     }
-    
-    &_theme--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/theme.svg#disabled");
+    &_theme--disabled {
+      --icon-path: var(--icon__objects_theme--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     theme-web.svg 
     - - - - - - - - - - - - */
     
-    &_theme-web--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/theme-web.svg#enabled");
+    &_theme-web--enabled {
+      --icon-path: var(--icon__objects_theme-web--enabled);
     }
-    
-    &_theme-web--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/theme-web.svg#hover");
+    &_theme-web--hover {
+      --icon-path: var(--icon__objects_theme-web--hover);
     }
-    
-    &_theme-web--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/theme-web.svg#active");
+    &_theme-web--active {
+      --icon-path: var(--icon__objects_theme-web--active);
     }
-    
-    &_theme-web--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/theme-web.svg#disabled");
+    &_theme-web--disabled {
+      --icon-path: var(--icon__objects_theme-web--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     theme-for-sd.svg 
     - - - - - - - - - - - - */
     
-    &_theme-for-sd--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/theme-for-sd.svg#enabled");
+    &_theme-for-sd--enabled {
+      --icon-path: var(--icon__objects_theme-for-sd--enabled);
     }
-    
-    &_theme-for-sd--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/theme-for-sd.svg#hover");
+    &_theme-for-sd--hover {
+      --icon-path: var(--icon__objects_theme-for-sd--hover);
     }
-    
-    &_theme-for-sd--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/theme-for-sd.svg#active");
+    &_theme-for-sd--active {
+      --icon-path: var(--icon__objects_theme-for-sd--active);
     }
-    
-    &_theme-for-sd--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/theme-for-sd.svg#disabled");
+    &_theme-for-sd--disabled {
+      --icon-path: var(--icon__objects_theme-for-sd--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     table.svg 
     - - - - - - - - - - - - */
     
-    &_table--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/table.svg#enabled");
+    &_table--enabled {
+      --icon-path: var(--icon__objects_table--enabled);
     }
-    
-    &_table--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/table.svg#hover");
+    &_table--hover {
+      --icon-path: var(--icon__objects_table--hover);
     }
-    
-    &_table--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/table.svg#active");
+    &_table--active {
+      --icon-path: var(--icon__objects_table--active);
     }
-    
-    &_table--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/table.svg#disabled");
+    &_table--disabled {
+      --icon-path: var(--icon__objects_table--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     super-app.svg 
     - - - - - - - - - - - - */
     
-    &_super-app--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/super-app.svg#enabled");
+    &_super-app--enabled {
+      --icon-path: var(--icon__objects_super-app--enabled);
     }
-    
-    &_super-app--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/super-app.svg#hover");
+    &_super-app--hover {
+      --icon-path: var(--icon__objects_super-app--hover);
     }
-    
-    &_super-app--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/super-app.svg#active");
+    &_super-app--active {
+      --icon-path: var(--icon__objects_super-app--active);
     }
-    
-    &_super-app--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/super-app.svg#disabled");
+    &_super-app--disabled {
+      --icon-path: var(--icon__objects_super-app--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     subtype-group.svg 
     - - - - - - - - - - - - */
     
-    &_subtype-group--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/subtype-group.svg#enabled");
+    &_subtype-group--enabled {
+      --icon-path: var(--icon__objects_subtype-group--enabled);
     }
-    
-    &_subtype-group--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/subtype-group.svg#hover");
+    &_subtype-group--hover {
+      --icon-path: var(--icon__objects_subtype-group--hover);
     }
-    
-    &_subtype-group--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/subtype-group.svg#active");
+    &_subtype-group--active {
+      --icon-path: var(--icon__objects_subtype-group--active);
     }
-    
-    &_subtype-group--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/subtype-group.svg#disabled");
+    &_subtype-group--disabled {
+      --icon-path: var(--icon__objects_subtype-group--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     structured-data-type.svg 
     - - - - - - - - - - - - */
     
-    &_structured-data-type--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/structured-data-type.svg#enabled");
+    &_structured-data-type--enabled {
+      --icon-path: var(--icon__objects_structured-data-type--enabled);
     }
-    
-    &_structured-data-type--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/structured-data-type.svg#hover");
+    &_structured-data-type--hover {
+      --icon-path: var(--icon__objects_structured-data-type--hover);
     }
-    
-    &_structured-data-type--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/structured-data-type.svg#active");
+    &_structured-data-type--active {
+      --icon-path: var(--icon__objects_structured-data-type--active);
     }
-    
-    &_structured-data-type--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/structured-data-type.svg#disabled");
+    &_structured-data-type--disabled {
+      --icon-path: var(--icon__objects_structured-data-type--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     stencil.svg 
     - - - - - - - - - - - - */
     
-    &_stencil--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/stencil.svg#enabled");
+    &_stencil--enabled {
+      --icon-path: var(--icon__objects_stencil--enabled);
     }
-    
-    &_stencil--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/stencil.svg#hover");
+    &_stencil--hover {
+      --icon-path: var(--icon__objects_stencil--hover);
     }
-    
-    &_stencil--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/stencil.svg#active");
+    &_stencil--active {
+      --icon-path: var(--icon__objects_stencil--active);
     }
-    
-    &_stencil--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/stencil.svg#disabled");
+    &_stencil--disabled {
+      --icon-path: var(--icon__objects_stencil--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     roles.svg 
     - - - - - - - - - - - - */
     
-    &_roles--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/roles.svg#enabled");
+    &_roles--enabled {
+      --icon-path: var(--icon__objects_roles--enabled);
     }
-    
-    &_roles--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/roles.svg#hover");
+    &_roles--hover {
+      --icon-path: var(--icon__objects_roles--hover);
     }
-    
-    &_roles--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/roles.svg#active");
+    &_roles--active {
+      --icon-path: var(--icon__objects_roles--active);
     }
-    
-    &_roles--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/roles.svg#disabled");
+    &_roles--disabled {
+      --icon-path: var(--icon__objects_roles--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     report.svg 
     - - - - - - - - - - - - */
     
-    &_report--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/report.svg#enabled");
+    &_report--enabled {
+      --icon-path: var(--icon__objects_report--enabled);
     }
-    
-    &_report--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/report.svg#hover");
+    &_report--hover {
+      --icon-path: var(--icon__objects_report--hover);
     }
-    
-    &_report--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/report.svg#active");
+    &_report--active {
+      --icon-path: var(--icon__objects_report--active);
     }
-    
-    &_report--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/report.svg#disabled");
+    &_report--disabled {
+      --icon-path: var(--icon__objects_report--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     references.svg 
     - - - - - - - - - - - - */
     
-    &_references--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/references.svg#enabled");
+    &_references--enabled {
+      --icon-path: var(--icon__objects_references--enabled);
     }
-    
-    &_references--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/references.svg#hover");
+    &_references--hover {
+      --icon-path: var(--icon__objects_references--hover);
     }
-    
-    &_references--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/references.svg#active");
+    &_references--active {
+      --icon-path: var(--icon__objects_references--active);
     }
-    
-    &_references--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/references.svg#disabled");
+    &_references--disabled {
+      --icon-path: var(--icon__objects_references--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     query.svg 
     - - - - - - - - - - - - */
     
-    &_query--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/query.svg#enabled");
+    &_query--enabled {
+      --icon-path: var(--icon__objects_query--enabled);
     }
-    
-    &_query--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/query.svg#hover");
+    &_query--hover {
+      --icon-path: var(--icon__objects_query--hover);
     }
-    
-    &_query--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/query.svg#active");
+    &_query--active {
+      --icon-path: var(--icon__objects_query--active);
     }
-    
-    &_query--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/query.svg#disabled");
+    &_query--disabled {
+      --icon-path: var(--icon__objects_query--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     procedure.svg 
     - - - - - - - - - - - - */
     
-    &_procedure--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/procedure.svg#enabled");
+    &_procedure--enabled {
+      --icon-path: var(--icon__objects_procedure--enabled);
     }
-    
-    &_procedure--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/procedure.svg#hover");
+    &_procedure--hover {
+      --icon-path: var(--icon__objects_procedure--hover);
     }
-    
-    &_procedure--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/procedure.svg#active");
+    &_procedure--active {
+      --icon-path: var(--icon__objects_procedure--active);
     }
-    
-    &_procedure--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/procedure.svg#disabled");
+    &_procedure--disabled {
+      --icon-path: var(--icon__objects_procedure--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     patterns.svg 
     - - - - - - - - - - - - */
     
-    &_patterns--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/patterns.svg#enabled");
+    &_patterns--enabled {
+      --icon-path: var(--icon__objects_patterns--enabled);
     }
-    
-    &_patterns--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/patterns.svg#hover");
+    &_patterns--hover {
+      --icon-path: var(--icon__objects_patterns--hover);
     }
-    
-    &_patterns--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/patterns.svg#active");
+    &_patterns--active {
+      --icon-path: var(--icon__objects_patterns--active);
     }
-    
-    &_patterns--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/patterns.svg#disabled");
+    &_patterns--disabled {
+      --icon-path: var(--icon__objects_patterns--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     panel-for-sd.svg 
     - - - - - - - - - - - - */
     
-    &_panel-for-sd--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/panel-for-sd.svg#enabled");
+    &_panel-for-sd--enabled {
+      --icon-path: var(--icon__objects_panel-for-sd--enabled);
     }
-    
-    &_panel-for-sd--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/panel-for-sd.svg#hover");
+    &_panel-for-sd--hover {
+      --icon-path: var(--icon__objects_panel-for-sd--hover);
     }
-    
-    &_panel-for-sd--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/panel-for-sd.svg#active");
+    &_panel-for-sd--active {
+      --icon-path: var(--icon__objects_panel-for-sd--active);
     }
-    
-    &_panel-for-sd--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/panel-for-sd.svg#disabled");
+    &_panel-for-sd--disabled {
+      --icon-path: var(--icon__objects_panel-for-sd--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     orphant-document.svg 
     - - - - - - - - - - - - */
     
-    &_orphant-document--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/orphant-document.svg#enabled");
+    &_orphant-document--enabled {
+      --icon-path: var(--icon__objects_orphant-document--enabled);
     }
-    
-    &_orphant-document--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/orphant-document.svg#hover");
+    &_orphant-document--hover {
+      --icon-path: var(--icon__objects_orphant-document--hover);
     }
-    
-    &_orphant-document--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/orphant-document.svg#active");
+    &_orphant-document--active {
+      --icon-path: var(--icon__objects_orphant-document--active);
     }
-    
-    &_orphant-document--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/orphant-document.svg#disabled");
+    &_orphant-document--disabled {
+      --icon-path: var(--icon__objects_orphant-document--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     offline-database.svg 
     - - - - - - - - - - - - */
     
-    &_offline-database--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/offline-database.svg#enabled");
+    &_offline-database--enabled {
+      --icon-path: var(--icon__objects_offline-database--enabled);
     }
-    
-    &_offline-database--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/offline-database.svg#hover");
+    &_offline-database--hover {
+      --icon-path: var(--icon__objects_offline-database--hover);
     }
-    
-    &_offline-database--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/offline-database.svg#active");
+    &_offline-database--active {
+      --icon-path: var(--icon__objects_offline-database--active);
     }
-    
-    &_offline-database--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/offline-database.svg#disabled");
+    &_offline-database--disabled {
+      --icon-path: var(--icon__objects_offline-database--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     object.svg 
     - - - - - - - - - - - - */
     
-    &_object--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/object.svg#enabled");
+    &_object--enabled {
+      --icon-path: var(--icon__objects_object--enabled);
     }
-    
-    &_object--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/object.svg#hover");
+    &_object--hover {
+      --icon-path: var(--icon__objects_object--hover);
     }
-    
-    &_object--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/object.svg#active");
+    &_object--active {
+      --icon-path: var(--icon__objects_object--active);
     }
-    
-    &_object--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/object.svg#disabled");
+    &_object--disabled {
+      --icon-path: var(--icon__objects_object--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     notification-templates.svg 
     - - - - - - - - - - - - */
     
-    &_notification-templates--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/notification-templates.svg#enabled");
+    &_notification-templates--enabled {
+      --icon-path: var(--icon__objects_notification-templates--enabled);
     }
-    
-    &_notification-templates--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/notification-templates.svg#hover");
+    &_notification-templates--hover {
+      --icon-path: var(--icon__objects_notification-templates--hover);
     }
-    
-    &_notification-templates--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/notification-templates.svg#active");
+    &_notification-templates--active {
+      --icon-path: var(--icon__objects_notification-templates--active);
     }
-    
-    &_notification-templates--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/notification-templates.svg#disabled");
+    &_notification-templates--disabled {
+      --icon-path: var(--icon__objects_notification-templates--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     module.svg 
     - - - - - - - - - - - - */
     
-    &_module--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/module.svg#enabled");
+    &_module--enabled {
+      --icon-path: var(--icon__objects_module--enabled);
     }
-    
-    &_module--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/module.svg#hover");
+    &_module--hover {
+      --icon-path: var(--icon__objects_module--hover);
     }
-    
-    &_module--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/module.svg#active");
+    &_module--active {
+      --icon-path: var(--icon__objects_module--active);
     }
-    
-    &_module--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/module.svg#disabled");
+    &_module--disabled {
+      --icon-path: var(--icon__objects_module--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     module-open.svg 
     - - - - - - - - - - - - */
     
-    &_module-open--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/module-open.svg#enabled");
+    &_module-open--enabled {
+      --icon-path: var(--icon__objects_module-open--enabled);
     }
-    
-    &_module-open--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/module-open.svg#hover");
+    &_module-open--hover {
+      --icon-path: var(--icon__objects_module-open--hover);
     }
-    
-    &_module-open--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/module-open.svg#active");
+    &_module-open--active {
+      --icon-path: var(--icon__objects_module-open--active);
     }
-    
-    &_module-open--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/module-open.svg#disabled");
+    &_module-open--disabled {
+      --icon-path: var(--icon__objects_module-open--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     mini-app.svg 
     - - - - - - - - - - - - */
     
-    &_mini-app--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/mini-app.svg#enabled");
+    &_mini-app--enabled {
+      --icon-path: var(--icon__objects_mini-app--enabled);
     }
-    
-    &_mini-app--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/mini-app.svg#hover");
+    &_mini-app--hover {
+      --icon-path: var(--icon__objects_mini-app--hover);
     }
-    
-    &_mini-app--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/mini-app.svg#active");
+    &_mini-app--active {
+      --icon-path: var(--icon__objects_mini-app--active);
     }
-    
-    &_mini-app--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/mini-app.svg#disabled");
+    &_mini-app--disabled {
+      --icon-path: var(--icon__objects_mini-app--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     menubar.svg 
     - - - - - - - - - - - - */
     
-    &_menubar--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/menubar.svg#enabled");
+    &_menubar--enabled {
+      --icon-path: var(--icon__objects_menubar--enabled);
     }
-    
-    &_menubar--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/menubar.svg#hover");
+    &_menubar--hover {
+      --icon-path: var(--icon__objects_menubar--hover);
     }
-    
-    &_menubar--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/menubar.svg#active");
+    &_menubar--active {
+      --icon-path: var(--icon__objects_menubar--active);
     }
-    
-    &_menubar--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/menubar.svg#disabled");
+    &_menubar--disabled {
+      --icon-path: var(--icon__objects_menubar--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     menu.svg 
     - - - - - - - - - - - - */
     
-    &_menu--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/menu.svg#enabled");
+    &_menu--enabled {
+      --icon-path: var(--icon__objects_menu--enabled);
     }
-    
-    &_menu--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/menu.svg#hover");
+    &_menu--hover {
+      --icon-path: var(--icon__objects_menu--hover);
     }
-    
-    &_menu--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/menu.svg#active");
+    &_menu--active {
+      --icon-path: var(--icon__objects_menu--active);
     }
-    
-    &_menu--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/menu.svg#disabled");
+    &_menu--disabled {
+      --icon-path: var(--icon__objects_menu--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     masterpage.svg 
     - - - - - - - - - - - - */
     
-    &_masterpage--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/masterpage.svg#enabled");
+    &_masterpage--enabled {
+      --icon-path: var(--icon__objects_masterpage--enabled);
     }
-    
-    &_masterpage--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/masterpage.svg#hover");
+    &_masterpage--hover {
+      --icon-path: var(--icon__objects_masterpage--hover);
     }
-    
-    &_masterpage--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/masterpage.svg#active");
+    &_masterpage--active {
+      --icon-path: var(--icon__objects_masterpage--active);
     }
-    
-    &_masterpage--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/masterpage.svg#disabled");
+    &_masterpage--disabled {
+      --icon-path: var(--icon__objects_masterpage--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     main-object.svg 
     - - - - - - - - - - - - */
     
-    &_main-object--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/main-object.svg#enabled");
+    &_main-object--enabled {
+      --icon-path: var(--icon__objects_main-object--enabled);
     }
-    
-    &_main-object--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/main-object.svg#hover");
+    &_main-object--hover {
+      --icon-path: var(--icon__objects_main-object--hover);
     }
-    
-    &_main-object--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/main-object.svg#active");
+    &_main-object--active {
+      --icon-path: var(--icon__objects_main-object--active);
     }
-    
-    &_main-object--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/main-object.svg#disabled");
+    &_main-object--disabled {
+      --icon-path: var(--icon__objects_main-object--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     language.svg 
     - - - - - - - - - - - - */
     
-    &_language--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/language.svg#enabled");
+    &_language--enabled {
+      --icon-path: var(--icon__objects_language--enabled);
     }
-    
-    &_language--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/language.svg#hover");
+    &_language--hover {
+      --icon-path: var(--icon__objects_language--hover);
     }
-    
-    &_language--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/language.svg#active");
+    &_language--active {
+      --icon-path: var(--icon__objects_language--active);
     }
-    
-    &_language--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/language.svg#disabled");
+    &_language--disabled {
+      --icon-path: var(--icon__objects_language--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     knowledge-base.svg 
     - - - - - - - - - - - - */
     
-    &_knowledge-base--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/knowledge-base.svg#enabled");
+    &_knowledge-base--enabled {
+      --icon-path: var(--icon__objects_knowledge-base--enabled);
     }
-    
-    &_knowledge-base--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/knowledge-base.svg#hover");
+    &_knowledge-base--hover {
+      --icon-path: var(--icon__objects_knowledge-base--hover);
     }
-    
-    &_knowledge-base--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/knowledge-base.svg#active");
+    &_knowledge-base--active {
+      --icon-path: var(--icon__objects_knowledge-base--active);
     }
-    
-    &_knowledge-base--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/knowledge-base.svg#disabled");
+    &_knowledge-base--disabled {
+      --icon-path: var(--icon__objects_knowledge-base--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     image.svg 
     - - - - - - - - - - - - */
     
-    &_image--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/image.svg#enabled");
+    &_image--enabled {
+      --icon-path: var(--icon__objects_image--enabled);
     }
-    
-    &_image--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/image.svg#hover");
+    &_image--hover {
+      --icon-path: var(--icon__objects_image--hover);
     }
-    
-    &_image--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/image.svg#active");
+    &_image--active {
+      --icon-path: var(--icon__objects_image--active);
     }
-    
-    &_image--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/image.svg#disabled");
+    &_image--disabled {
+      --icon-path: var(--icon__objects_image--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     generator.svg 
     - - - - - - - - - - - - */
     
-    &_generator--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/generator.svg#enabled");
+    &_generator--enabled {
+      --icon-path: var(--icon__objects_generator--enabled);
     }
-    
-    &_generator--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/generator.svg#hover");
+    &_generator--hover {
+      --icon-path: var(--icon__objects_generator--hover);
     }
-    
-    &_generator--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/generator.svg#active");
+    &_generator--active {
+      --icon-path: var(--icon__objects_generator--active);
     }
-    
-    &_generator--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/generator.svg#disabled");
+    &_generator--disabled {
+      --icon-path: var(--icon__objects_generator--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     generator-category.svg 
     - - - - - - - - - - - - */
     
-    &_generator-category--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/generator-category.svg#enabled");
+    &_generator-category--enabled {
+      --icon-path: var(--icon__objects_generator-category--enabled);
     }
-    
-    &_generator-category--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/generator-category.svg#hover");
+    &_generator-category--hover {
+      --icon-path: var(--icon__objects_generator-category--hover);
     }
-    
-    &_generator-category--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/generator-category.svg#active");
+    &_generator-category--active {
+      --icon-path: var(--icon__objects_generator-category--active);
     }
-    
-    &_generator-category--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/generator-category.svg#disabled");
+    &_generator-category--disabled {
+      --icon-path: var(--icon__objects_generator-category--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     folder.svg 
     - - - - - - - - - - - - */
     
-    &_folder--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/folder.svg#enabled");
+    &_folder--enabled {
+      --icon-path: var(--icon__objects_folder--enabled);
     }
-    
-    &_folder--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/folder.svg#hover");
+    &_folder--hover {
+      --icon-path: var(--icon__objects_folder--hover);
     }
-    
-    &_folder--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/folder.svg#active");
+    &_folder--active {
+      --icon-path: var(--icon__objects_folder--active);
     }
-    
-    &_folder--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/folder.svg#disabled");
+    &_folder--disabled {
+      --icon-path: var(--icon__objects_folder--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     folder-open.svg 
     - - - - - - - - - - - - */
     
-    &_folder-open--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/folder-open.svg#enabled");
+    &_folder-open--enabled {
+      --icon-path: var(--icon__objects_folder-open--enabled);
     }
-    
-    &_folder-open--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/folder-open.svg#hover");
+    &_folder-open--hover {
+      --icon-path: var(--icon__objects_folder-open--hover);
     }
-    
-    &_folder-open--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/folder-open.svg#active");
+    &_folder-open--active {
+      --icon-path: var(--icon__objects_folder-open--active);
     }
-    
-    &_folder-open--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/folder-open.svg#disabled");
+    &_folder-open--disabled {
+      --icon-path: var(--icon__objects_folder-open--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     file.svg 
     - - - - - - - - - - - - */
     
-    &_file--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/file.svg#enabled");
+    &_file--enabled {
+      --icon-path: var(--icon__objects_file--enabled);
     }
-    
-    &_file--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/file.svg#hover");
+    &_file--hover {
+      --icon-path: var(--icon__objects_file--hover);
     }
-    
-    &_file--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/file.svg#active");
+    &_file--active {
+      --icon-path: var(--icon__objects_file--active);
     }
-    
-    &_file--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/file.svg#disabled");
+    &_file--disabled {
+      --icon-path: var(--icon__objects_file--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     external-object.svg 
     - - - - - - - - - - - - */
     
-    &_external-object--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/external-object.svg#enabled");
+    &_external-object--enabled {
+      --icon-path: var(--icon__objects_external-object--enabled);
     }
-    
-    &_external-object--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/external-object.svg#hover");
+    &_external-object--hover {
+      --icon-path: var(--icon__objects_external-object--hover);
     }
-    
-    &_external-object--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/external-object.svg#active");
+    &_external-object--active {
+      --icon-path: var(--icon__objects_external-object--active);
     }
-    
-    &_external-object--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/external-object.svg#disabled");
+    &_external-object--disabled {
+      --icon-path: var(--icon__objects_external-object--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     environment-select.svg 
     - - - - - - - - - - - - */
     
-    &_environment-select--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/environment-select.svg#enabled");
+    &_environment-select--enabled {
+      --icon-path: var(--icon__objects_environment-select--enabled);
     }
-    
-    &_environment-select--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/environment-select.svg#hover");
+    &_environment-select--hover {
+      --icon-path: var(--icon__objects_environment-select--hover);
     }
-    
-    &_environment-select--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/environment-select.svg#active");
+    &_environment-select--active {
+      --icon-path: var(--icon__objects_environment-select--active);
     }
-    
-    &_environment-select--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/environment-select.svg#disabled");
+    &_environment-select--disabled {
+      --icon-path: var(--icon__objects_environment-select--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     environment-no-select.svg 
     - - - - - - - - - - - - */
     
-    &_environment-no-select--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/environment-no-select.svg#enabled");
+    &_environment-no-select--enabled {
+      --icon-path: var(--icon__objects_environment-no-select--enabled);
     }
-    
-    &_environment-no-select--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/environment-no-select.svg#hover");
+    &_environment-no-select--hover {
+      --icon-path: var(--icon__objects_environment-no-select--hover);
     }
-    
-    &_environment-no-select--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/environment-no-select.svg#active");
+    &_environment-no-select--active {
+      --icon-path: var(--icon__objects_environment-no-select--active);
     }
-    
-    &_environment-no-select--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/environment-no-select.svg#disabled");
+    &_environment-no-select--disabled {
+      --icon-path: var(--icon__objects_environment-no-select--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     dso.svg 
     - - - - - - - - - - - - */
     
-    &_dso--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/dso.svg#enabled");
+    &_dso--enabled {
+      --icon-path: var(--icon__objects_dso--enabled);
     }
-    
-    &_dso--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/dso.svg#hover");
+    &_dso--hover {
+      --icon-path: var(--icon__objects_dso--hover);
     }
-    
-    &_dso--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/dso.svg#active");
+    &_dso--active {
+      --icon-path: var(--icon__objects_dso--active);
     }
-    
-    &_dso--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/dso.svg#disabled");
+    &_dso--disabled {
+      --icon-path: var(--icon__objects_dso--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     domain.svg 
     - - - - - - - - - - - - */
     
-    &_domain--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/domain.svg#enabled");
+    &_domain--enabled {
+      --icon-path: var(--icon__objects_domain--enabled);
     }
-    
-    &_domain--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/domain.svg#hover");
+    &_domain--hover {
+      --icon-path: var(--icon__objects_domain--hover);
     }
-    
-    &_domain--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/domain.svg#active");
+    &_domain--active {
+      --icon-path: var(--icon__objects_domain--active);
     }
-    
-    &_domain--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/domain.svg#disabled");
+    &_domain--disabled {
+      --icon-path: var(--icon__objects_domain--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     document.svg 
     - - - - - - - - - - - - */
     
-    &_document--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/document.svg#enabled");
+    &_document--enabled {
+      --icon-path: var(--icon__objects_document--enabled);
     }
-    
-    &_document--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/document.svg#hover");
+    &_document--hover {
+      --icon-path: var(--icon__objects_document--hover);
     }
-    
-    &_document--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/document.svg#active");
+    &_document--active {
+      --icon-path: var(--icon__objects_document--active);
     }
-    
-    &_document--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/document.svg#disabled");
+    &_document--disabled {
+      --icon-path: var(--icon__objects_document--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     document-workflow.svg 
     - - - - - - - - - - - - */
     
-    &_document-workflow--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/document-workflow.svg#enabled");
+    &_document-workflow--enabled {
+      --icon-path: var(--icon__objects_document-workflow--enabled);
     }
-    
-    &_document-workflow--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/document-workflow.svg#hover");
+    &_document-workflow--hover {
+      --icon-path: var(--icon__objects_document-workflow--hover);
     }
-    
-    &_document-workflow--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/document-workflow.svg#active");
+    &_document-workflow--active {
+      --icon-path: var(--icon__objects_document-workflow--active);
     }
-    
-    &_document-workflow--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/document-workflow.svg#disabled");
+    &_document-workflow--disabled {
+      --icon-path: var(--icon__objects_document-workflow--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     diagram.svg 
     - - - - - - - - - - - - */
     
-    &_diagram--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/diagram.svg#enabled");
+    &_diagram--enabled {
+      --icon-path: var(--icon__objects_diagram--enabled);
     }
-    
-    &_diagram--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/diagram.svg#hover");
+    &_diagram--hover {
+      --icon-path: var(--icon__objects_diagram--hover);
     }
-    
-    &_diagram--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/diagram.svg#active");
+    &_diagram--active {
+      --icon-path: var(--icon__objects_diagram--active);
     }
-    
-    &_diagram--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/diagram.svg#disabled");
+    &_diagram--disabled {
+      --icon-path: var(--icon__objects_diagram--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     design.svg 
     - - - - - - - - - - - - */
     
-    &_design--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/design.svg#enabled");
+    &_design--enabled {
+      --icon-path: var(--icon__objects_design--enabled);
     }
-    
-    &_design--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/design.svg#hover");
+    &_design--hover {
+      --icon-path: var(--icon__objects_design--hover);
     }
-    
-    &_design--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/design.svg#active");
+    &_design--active {
+      --icon-path: var(--icon__objects_design--active);
     }
-    
-    &_design--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/design.svg#disabled");
+    &_design--disabled {
+      --icon-path: var(--icon__objects_design--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     deployment-unit.svg 
     - - - - - - - - - - - - */
     
-    &_deployment-unit--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/deployment-unit.svg#enabled");
+    &_deployment-unit--enabled {
+      --icon-path: var(--icon__objects_deployment-unit--enabled);
     }
-    
-    &_deployment-unit--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/deployment-unit.svg#hover");
+    &_deployment-unit--hover {
+      --icon-path: var(--icon__objects_deployment-unit--hover);
     }
-    
-    &_deployment-unit--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/deployment-unit.svg#active");
+    &_deployment-unit--active {
+      --icon-path: var(--icon__objects_deployment-unit--active);
     }
-    
-    &_deployment-unit--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/deployment-unit.svg#disabled");
+    &_deployment-unit--disabled {
+      --icon-path: var(--icon__objects_deployment-unit--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     dataview-index.svg 
     - - - - - - - - - - - - */
     
-    &_dataview-index--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/dataview-index.svg#enabled");
+    &_dataview-index--enabled {
+      --icon-path: var(--icon__objects_dataview-index--enabled);
     }
-    
-    &_dataview-index--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/dataview-index.svg#hover");
+    &_dataview-index--hover {
+      --icon-path: var(--icon__objects_dataview-index--hover);
     }
-    
-    &_dataview-index--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/dataview-index.svg#active");
+    &_dataview-index--active {
+      --icon-path: var(--icon__objects_dataview-index--active);
     }
-    
-    &_dataview-index--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/dataview-index.svg#disabled");
+    &_dataview-index--disabled {
+      --icon-path: var(--icon__objects_dataview-index--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     datastore.svg 
     - - - - - - - - - - - - */
     
-    &_datastore--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/datastore.svg#enabled");
+    &_datastore--enabled {
+      --icon-path: var(--icon__objects_datastore--enabled);
     }
-    
-    &_datastore--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/datastore.svg#hover");
+    &_datastore--hover {
+      --icon-path: var(--icon__objects_datastore--hover);
     }
-    
-    &_datastore--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/datastore.svg#active");
+    &_datastore--active {
+      --icon-path: var(--icon__objects_datastore--active);
     }
-    
-    &_datastore--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/datastore.svg#disabled");
+    &_datastore--disabled {
+      --icon-path: var(--icon__objects_datastore--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     datastore-category.svg 
     - - - - - - - - - - - - */
     
-    &_datastore-category--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/datastore-category.svg#enabled");
+    &_datastore-category--enabled {
+      --icon-path: var(--icon__objects_datastore-category--enabled);
     }
-    
-    &_datastore-category--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/datastore-category.svg#hover");
+    &_datastore-category--hover {
+      --icon-path: var(--icon__objects_datastore-category--hover);
     }
-    
-    &_datastore-category--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/datastore-category.svg#active");
+    &_datastore-category--active {
+      --icon-path: var(--icon__objects_datastore-category--active);
     }
-    
-    &_datastore-category--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/datastore-category.svg#disabled");
+    &_datastore-category--disabled {
+      --icon-path: var(--icon__objects_datastore-category--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     data-view.svg 
     - - - - - - - - - - - - */
     
-    &_data-view--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/data-view.svg#enabled");
+    &_data-view--enabled {
+      --icon-path: var(--icon__objects_data-view--enabled);
     }
-    
-    &_data-view--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/data-view.svg#hover");
+    &_data-view--hover {
+      --icon-path: var(--icon__objects_data-view--hover);
     }
-    
-    &_data-view--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/data-view.svg#active");
+    &_data-view--active {
+      --icon-path: var(--icon__objects_data-view--active);
     }
-    
-    &_data-view--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/data-view.svg#disabled");
+    &_data-view--disabled {
+      --icon-path: var(--icon__objects_data-view--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     data-selector.svg 
     - - - - - - - - - - - - */
     
-    &_data-selector--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/data-selector.svg#enabled");
+    &_data-selector--enabled {
+      --icon-path: var(--icon__objects_data-selector--enabled);
     }
-    
-    &_data-selector--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/data-selector.svg#hover");
+    &_data-selector--hover {
+      --icon-path: var(--icon__objects_data-selector--hover);
     }
-    
-    &_data-selector--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/data-selector.svg#active");
+    &_data-selector--active {
+      --icon-path: var(--icon__objects_data-selector--active);
     }
-    
-    &_data-selector--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/data-selector.svg#disabled");
+    &_data-selector--disabled {
+      --icon-path: var(--icon__objects_data-selector--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     data-provider.svg 
     - - - - - - - - - - - - */
     
-    &_data-provider--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/data-provider.svg#enabled");
+    &_data-provider--enabled {
+      --icon-path: var(--icon__objects_data-provider--enabled);
     }
-    
-    &_data-provider--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/data-provider.svg#hover");
+    &_data-provider--hover {
+      --icon-path: var(--icon__objects_data-provider--hover);
     }
-    
-    &_data-provider--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/data-provider.svg#active");
+    &_data-provider--active {
+      --icon-path: var(--icon__objects_data-provider--active);
     }
-    
-    &_data-provider--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/data-provider.svg#disabled");
+    &_data-provider--disabled {
+      --icon-path: var(--icon__objects_data-provider--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     dashboard.svg 
     - - - - - - - - - - - - */
     
-    &_dashboard--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/dashboard.svg#enabled");
+    &_dashboard--enabled {
+      --icon-path: var(--icon__objects_dashboard--enabled);
     }
-    
-    &_dashboard--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/dashboard.svg#hover");
+    &_dashboard--hover {
+      --icon-path: var(--icon__objects_dashboard--hover);
     }
-    
-    &_dashboard--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/dashboard.svg#active");
+    &_dashboard--active {
+      --icon-path: var(--icon__objects_dashboard--active);
     }
-    
-    &_dashboard--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/dashboard.svg#disabled");
+    &_dashboard--disabled {
+      --icon-path: var(--icon__objects_dashboard--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     customization.svg 
     - - - - - - - - - - - - */
     
-    &_customization--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/customization.svg#enabled");
+    &_customization--enabled {
+      --icon-path: var(--icon__objects_customization--enabled);
     }
-    
-    &_customization--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/customization.svg#hover");
+    &_customization--hover {
+      --icon-path: var(--icon__objects_customization--hover);
     }
-    
-    &_customization--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/customization.svg#active");
+    &_customization--active {
+      --icon-path: var(--icon__objects_customization--active);
     }
-    
-    &_customization--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/customization.svg#disabled");
+    &_customization--disabled {
+      --icon-path: var(--icon__objects_customization--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     conversational-flows.svg 
     - - - - - - - - - - - - */
     
-    &_conversational-flows--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/conversational-flows.svg#enabled");
+    &_conversational-flows--enabled {
+      --icon-path: var(--icon__objects_conversational-flows--enabled);
     }
-    
-    &_conversational-flows--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/conversational-flows.svg#hover");
+    &_conversational-flows--hover {
+      --icon-path: var(--icon__objects_conversational-flows--hover);
     }
-    
-    &_conversational-flows--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/conversational-flows.svg#active");
+    &_conversational-flows--active {
+      --icon-path: var(--icon__objects_conversational-flows--active);
     }
-    
-    &_conversational-flows--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/conversational-flows.svg#disabled");
+    &_conversational-flows--disabled {
+      --icon-path: var(--icon__objects_conversational-flows--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     category.svg 
     - - - - - - - - - - - - */
     
-    &_category--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/category.svg#enabled");
+    &_category--enabled {
+      --icon-path: var(--icon__objects_category--enabled);
     }
-    
-    &_category--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/category.svg#hover");
+    &_category--hover {
+      --icon-path: var(--icon__objects_category--hover);
     }
-    
-    &_category--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/category.svg#active");
+    &_category--active {
+      --icon-path: var(--icon__objects_category--active);
     }
-    
-    &_category--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/category.svg#disabled");
+    &_category--disabled {
+      --icon-path: var(--icon__objects_category--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     calendars.svg 
     - - - - - - - - - - - - */
     
-    &_calendars--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/calendars.svg#enabled");
+    &_calendars--enabled {
+      --icon-path: var(--icon__objects_calendars--enabled);
     }
-    
-    &_calendars--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/calendars.svg#hover");
+    &_calendars--hover {
+      --icon-path: var(--icon__objects_calendars--hover);
     }
-    
-    &_calendars--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/calendars.svg#active");
+    &_calendars--active {
+      --icon-path: var(--icon__objects_calendars--active);
     }
-    
-    &_calendars--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/calendars.svg#disabled");
+    &_calendars--disabled {
+      --icon-path: var(--icon__objects_calendars--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     business-process-diagram.svg 
     - - - - - - - - - - - - */
     
-    &_business-process-diagram--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/business-process-diagram.svg#enabled");
+    &_business-process-diagram--enabled {
+      --icon-path: var(--icon__objects_business-process-diagram--enabled);
     }
-    
-    &_business-process-diagram--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/business-process-diagram.svg#hover");
+    &_business-process-diagram--hover {
+      --icon-path: var(--icon__objects_business-process-diagram--hover);
     }
-    
-    &_business-process-diagram--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/business-process-diagram.svg#active");
+    &_business-process-diagram--active {
+      --icon-path: var(--icon__objects_business-process-diagram--active);
     }
-    
-    &_business-process-diagram--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/business-process-diagram.svg#disabled");
+    &_business-process-diagram--disabled {
+      --icon-path: var(--icon__objects_business-process-diagram--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     bg-color.svg 
     - - - - - - - - - - - - */
     
-    &_bg-color--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/bg-color.svg#enabled");
+    &_bg-color--enabled {
+      --icon-path: var(--icon__objects_bg-color--enabled);
     }
-    
-    &_bg-color--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/bg-color.svg#hover");
+    &_bg-color--hover {
+      --icon-path: var(--icon__objects_bg-color--hover);
     }
-    
-    &_bg-color--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/bg-color.svg#active");
+    &_bg-color--active {
+      --icon-path: var(--icon__objects_bg-color--active);
     }
-    
-    &_bg-color--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/bg-color.svg#disabled");
+    &_bg-color--disabled {
+      --icon-path: var(--icon__objects_bg-color--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     attribute.svg 
     - - - - - - - - - - - - */
     
-    &_attribute--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/attribute.svg#enabled");
+    &_attribute--enabled {
+      --icon-path: var(--icon__objects_attribute--enabled);
     }
-    
-    &_attribute--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/attribute.svg#hover");
+    &_attribute--hover {
+      --icon-path: var(--icon__objects_attribute--hover);
     }
-    
-    &_attribute--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/attribute.svg#active");
+    &_attribute--active {
+      --icon-path: var(--icon__objects_attribute--active);
     }
-    
-    &_attribute--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/attribute.svg#disabled");
+    &_attribute--disabled {
+      --icon-path: var(--icon__objects_attribute--disabled);
     }
-    
+
     /* - - - - - - - - - - - - 
     api.svg 
     - - - - - - - - - - - - */
     
-    &_api--enabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/api.svg#enabled");
+    &_api--enabled {
+      --icon-path: var(--icon__objects_api--enabled);
     }
-    
-    &_api--hover-dark {
-      --icon-path: url("#{$icons-path}objects/dark/api.svg#hover");
+    &_api--hover {
+      --icon-path: var(--icon__objects_api--hover);
     }
-    
-    &_api--active-dark {
-      --icon-path: url("#{$icons-path}objects/dark/api.svg#active");
+    &_api--active {
+      --icon-path: var(--icon__objects_api--active);
     }
-    
-    &_api--disabled-dark {
-      --icon-path: url("#{$icons-path}objects/dark/api.svg#disabled");
+    &_api--disabled {
+      --icon-path: var(--icon__objects_api--disabled);
     }
+
+  
+  /* =================================
+  DARK PLACEHOLDERS SELECTORS
+  ================================= */
+  
+
+    /* - - - - - - - - - - - - 
+    workflow.svg 
+    - - - - - - - - - - - - */
     
+    &_workflow--enabled {
+      --icon-path: var(--icon__objects_workflow--enabled);
+    }
+    &_workflow--hover {
+      --icon-path: var(--icon__objects_workflow--hover);
+    }
+    &_workflow--active {
+      --icon-path: var(--icon__objects_workflow--active);
+    }
+    &_workflow--disabled {
+      --icon-path: var(--icon__objects_workflow--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    work-panel.svg 
+    - - - - - - - - - - - - */
+    
+    &_work-panel--enabled {
+      --icon-path: var(--icon__objects_work-panel--enabled);
+    }
+    &_work-panel--hover {
+      --icon-path: var(--icon__objects_work-panel--hover);
+    }
+    &_work-panel--active {
+      --icon-path: var(--icon__objects_work-panel--active);
+    }
+    &_work-panel--disabled {
+      --icon-path: var(--icon__objects_work-panel--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    webpanel.svg 
+    - - - - - - - - - - - - */
+    
+    &_webpanel--enabled {
+      --icon-path: var(--icon__objects_webpanel--enabled);
+    }
+    &_webpanel--hover {
+      --icon-path: var(--icon__objects_webpanel--hover);
+    }
+    &_webpanel--active {
+      --icon-path: var(--icon__objects_webpanel--active);
+    }
+    &_webpanel--disabled {
+      --icon-path: var(--icon__objects_webpanel--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    web-component.svg 
+    - - - - - - - - - - - - */
+    
+    &_web-component--enabled {
+      --icon-path: var(--icon__objects_web-component--enabled);
+    }
+    &_web-component--hover {
+      --icon-path: var(--icon__objects_web-component--hover);
+    }
+    &_web-component--active {
+      --icon-path: var(--icon__objects_web-component--active);
+    }
+    &_web-component--disabled {
+      --icon-path: var(--icon__objects_web-component--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    version.svg 
+    - - - - - - - - - - - - */
+    
+    &_version--enabled {
+      --icon-path: var(--icon__objects_version--enabled);
+    }
+    &_version--hover {
+      --icon-path: var(--icon__objects_version--hover);
+    }
+    &_version--active {
+      --icon-path: var(--icon__objects_version--active);
+    }
+    &_version--disabled {
+      --icon-path: var(--icon__objects_version--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    url-rewrite.svg 
+    - - - - - - - - - - - - */
+    
+    &_url-rewrite--enabled {
+      --icon-path: var(--icon__objects_url-rewrite--enabled);
+    }
+    &_url-rewrite--hover {
+      --icon-path: var(--icon__objects_url-rewrite--hover);
+    }
+    &_url-rewrite--active {
+      --icon-path: var(--icon__objects_url-rewrite--active);
+    }
+    &_url-rewrite--disabled {
+      --icon-path: var(--icon__objects_url-rewrite--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    transaction.svg 
+    - - - - - - - - - - - - */
+    
+    &_transaction--enabled {
+      --icon-path: var(--icon__objects_transaction--enabled);
+    }
+    &_transaction--hover {
+      --icon-path: var(--icon__objects_transaction--hover);
+    }
+    &_transaction--active {
+      --icon-path: var(--icon__objects_transaction--active);
+    }
+    &_transaction--disabled {
+      --icon-path: var(--icon__objects_transaction--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    to-be-defined.svg 
+    - - - - - - - - - - - - */
+    
+    &_to-be-defined--enabled {
+      --icon-path: var(--icon__objects_to-be-defined--enabled);
+    }
+    &_to-be-defined--hover {
+      --icon-path: var(--icon__objects_to-be-defined--hover);
+    }
+    &_to-be-defined--active {
+      --icon-path: var(--icon__objects_to-be-defined--active);
+    }
+    &_to-be-defined--disabled {
+      --icon-path: var(--icon__objects_to-be-defined--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    theme.svg 
+    - - - - - - - - - - - - */
+    
+    &_theme--enabled {
+      --icon-path: var(--icon__objects_theme--enabled);
+    }
+    &_theme--hover {
+      --icon-path: var(--icon__objects_theme--hover);
+    }
+    &_theme--active {
+      --icon-path: var(--icon__objects_theme--active);
+    }
+    &_theme--disabled {
+      --icon-path: var(--icon__objects_theme--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    theme-web.svg 
+    - - - - - - - - - - - - */
+    
+    &_theme-web--enabled {
+      --icon-path: var(--icon__objects_theme-web--enabled);
+    }
+    &_theme-web--hover {
+      --icon-path: var(--icon__objects_theme-web--hover);
+    }
+    &_theme-web--active {
+      --icon-path: var(--icon__objects_theme-web--active);
+    }
+    &_theme-web--disabled {
+      --icon-path: var(--icon__objects_theme-web--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    theme-for-sd.svg 
+    - - - - - - - - - - - - */
+    
+    &_theme-for-sd--enabled {
+      --icon-path: var(--icon__objects_theme-for-sd--enabled);
+    }
+    &_theme-for-sd--hover {
+      --icon-path: var(--icon__objects_theme-for-sd--hover);
+    }
+    &_theme-for-sd--active {
+      --icon-path: var(--icon__objects_theme-for-sd--active);
+    }
+    &_theme-for-sd--disabled {
+      --icon-path: var(--icon__objects_theme-for-sd--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    table.svg 
+    - - - - - - - - - - - - */
+    
+    &_table--enabled {
+      --icon-path: var(--icon__objects_table--enabled);
+    }
+    &_table--hover {
+      --icon-path: var(--icon__objects_table--hover);
+    }
+    &_table--active {
+      --icon-path: var(--icon__objects_table--active);
+    }
+    &_table--disabled {
+      --icon-path: var(--icon__objects_table--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    super-app.svg 
+    - - - - - - - - - - - - */
+    
+    &_super-app--enabled {
+      --icon-path: var(--icon__objects_super-app--enabled);
+    }
+    &_super-app--hover {
+      --icon-path: var(--icon__objects_super-app--hover);
+    }
+    &_super-app--active {
+      --icon-path: var(--icon__objects_super-app--active);
+    }
+    &_super-app--disabled {
+      --icon-path: var(--icon__objects_super-app--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    subtype-group.svg 
+    - - - - - - - - - - - - */
+    
+    &_subtype-group--enabled {
+      --icon-path: var(--icon__objects_subtype-group--enabled);
+    }
+    &_subtype-group--hover {
+      --icon-path: var(--icon__objects_subtype-group--hover);
+    }
+    &_subtype-group--active {
+      --icon-path: var(--icon__objects_subtype-group--active);
+    }
+    &_subtype-group--disabled {
+      --icon-path: var(--icon__objects_subtype-group--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    structured-data-type.svg 
+    - - - - - - - - - - - - */
+    
+    &_structured-data-type--enabled {
+      --icon-path: var(--icon__objects_structured-data-type--enabled);
+    }
+    &_structured-data-type--hover {
+      --icon-path: var(--icon__objects_structured-data-type--hover);
+    }
+    &_structured-data-type--active {
+      --icon-path: var(--icon__objects_structured-data-type--active);
+    }
+    &_structured-data-type--disabled {
+      --icon-path: var(--icon__objects_structured-data-type--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    stencil.svg 
+    - - - - - - - - - - - - */
+    
+    &_stencil--enabled {
+      --icon-path: var(--icon__objects_stencil--enabled);
+    }
+    &_stencil--hover {
+      --icon-path: var(--icon__objects_stencil--hover);
+    }
+    &_stencil--active {
+      --icon-path: var(--icon__objects_stencil--active);
+    }
+    &_stencil--disabled {
+      --icon-path: var(--icon__objects_stencil--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    roles.svg 
+    - - - - - - - - - - - - */
+    
+    &_roles--enabled {
+      --icon-path: var(--icon__objects_roles--enabled);
+    }
+    &_roles--hover {
+      --icon-path: var(--icon__objects_roles--hover);
+    }
+    &_roles--active {
+      --icon-path: var(--icon__objects_roles--active);
+    }
+    &_roles--disabled {
+      --icon-path: var(--icon__objects_roles--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    report.svg 
+    - - - - - - - - - - - - */
+    
+    &_report--enabled {
+      --icon-path: var(--icon__objects_report--enabled);
+    }
+    &_report--hover {
+      --icon-path: var(--icon__objects_report--hover);
+    }
+    &_report--active {
+      --icon-path: var(--icon__objects_report--active);
+    }
+    &_report--disabled {
+      --icon-path: var(--icon__objects_report--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    references.svg 
+    - - - - - - - - - - - - */
+    
+    &_references--enabled {
+      --icon-path: var(--icon__objects_references--enabled);
+    }
+    &_references--hover {
+      --icon-path: var(--icon__objects_references--hover);
+    }
+    &_references--active {
+      --icon-path: var(--icon__objects_references--active);
+    }
+    &_references--disabled {
+      --icon-path: var(--icon__objects_references--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    query.svg 
+    - - - - - - - - - - - - */
+    
+    &_query--enabled {
+      --icon-path: var(--icon__objects_query--enabled);
+    }
+    &_query--hover {
+      --icon-path: var(--icon__objects_query--hover);
+    }
+    &_query--active {
+      --icon-path: var(--icon__objects_query--active);
+    }
+    &_query--disabled {
+      --icon-path: var(--icon__objects_query--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    procedure.svg 
+    - - - - - - - - - - - - */
+    
+    &_procedure--enabled {
+      --icon-path: var(--icon__objects_procedure--enabled);
+    }
+    &_procedure--hover {
+      --icon-path: var(--icon__objects_procedure--hover);
+    }
+    &_procedure--active {
+      --icon-path: var(--icon__objects_procedure--active);
+    }
+    &_procedure--disabled {
+      --icon-path: var(--icon__objects_procedure--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    patterns.svg 
+    - - - - - - - - - - - - */
+    
+    &_patterns--enabled {
+      --icon-path: var(--icon__objects_patterns--enabled);
+    }
+    &_patterns--hover {
+      --icon-path: var(--icon__objects_patterns--hover);
+    }
+    &_patterns--active {
+      --icon-path: var(--icon__objects_patterns--active);
+    }
+    &_patterns--disabled {
+      --icon-path: var(--icon__objects_patterns--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    panel-for-sd.svg 
+    - - - - - - - - - - - - */
+    
+    &_panel-for-sd--enabled {
+      --icon-path: var(--icon__objects_panel-for-sd--enabled);
+    }
+    &_panel-for-sd--hover {
+      --icon-path: var(--icon__objects_panel-for-sd--hover);
+    }
+    &_panel-for-sd--active {
+      --icon-path: var(--icon__objects_panel-for-sd--active);
+    }
+    &_panel-for-sd--disabled {
+      --icon-path: var(--icon__objects_panel-for-sd--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    orphant-document.svg 
+    - - - - - - - - - - - - */
+    
+    &_orphant-document--enabled {
+      --icon-path: var(--icon__objects_orphant-document--enabled);
+    }
+    &_orphant-document--hover {
+      --icon-path: var(--icon__objects_orphant-document--hover);
+    }
+    &_orphant-document--active {
+      --icon-path: var(--icon__objects_orphant-document--active);
+    }
+    &_orphant-document--disabled {
+      --icon-path: var(--icon__objects_orphant-document--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    offline-database.svg 
+    - - - - - - - - - - - - */
+    
+    &_offline-database--enabled {
+      --icon-path: var(--icon__objects_offline-database--enabled);
+    }
+    &_offline-database--hover {
+      --icon-path: var(--icon__objects_offline-database--hover);
+    }
+    &_offline-database--active {
+      --icon-path: var(--icon__objects_offline-database--active);
+    }
+    &_offline-database--disabled {
+      --icon-path: var(--icon__objects_offline-database--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    object.svg 
+    - - - - - - - - - - - - */
+    
+    &_object--enabled {
+      --icon-path: var(--icon__objects_object--enabled);
+    }
+    &_object--hover {
+      --icon-path: var(--icon__objects_object--hover);
+    }
+    &_object--active {
+      --icon-path: var(--icon__objects_object--active);
+    }
+    &_object--disabled {
+      --icon-path: var(--icon__objects_object--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    notification-templates.svg 
+    - - - - - - - - - - - - */
+    
+    &_notification-templates--enabled {
+      --icon-path: var(--icon__objects_notification-templates--enabled);
+    }
+    &_notification-templates--hover {
+      --icon-path: var(--icon__objects_notification-templates--hover);
+    }
+    &_notification-templates--active {
+      --icon-path: var(--icon__objects_notification-templates--active);
+    }
+    &_notification-templates--disabled {
+      --icon-path: var(--icon__objects_notification-templates--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    module.svg 
+    - - - - - - - - - - - - */
+    
+    &_module--enabled {
+      --icon-path: var(--icon__objects_module--enabled);
+    }
+    &_module--hover {
+      --icon-path: var(--icon__objects_module--hover);
+    }
+    &_module--active {
+      --icon-path: var(--icon__objects_module--active);
+    }
+    &_module--disabled {
+      --icon-path: var(--icon__objects_module--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    module-open.svg 
+    - - - - - - - - - - - - */
+    
+    &_module-open--enabled {
+      --icon-path: var(--icon__objects_module-open--enabled);
+    }
+    &_module-open--hover {
+      --icon-path: var(--icon__objects_module-open--hover);
+    }
+    &_module-open--active {
+      --icon-path: var(--icon__objects_module-open--active);
+    }
+    &_module-open--disabled {
+      --icon-path: var(--icon__objects_module-open--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    mini-app.svg 
+    - - - - - - - - - - - - */
+    
+    &_mini-app--enabled {
+      --icon-path: var(--icon__objects_mini-app--enabled);
+    }
+    &_mini-app--hover {
+      --icon-path: var(--icon__objects_mini-app--hover);
+    }
+    &_mini-app--active {
+      --icon-path: var(--icon__objects_mini-app--active);
+    }
+    &_mini-app--disabled {
+      --icon-path: var(--icon__objects_mini-app--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    menubar.svg 
+    - - - - - - - - - - - - */
+    
+    &_menubar--enabled {
+      --icon-path: var(--icon__objects_menubar--enabled);
+    }
+    &_menubar--hover {
+      --icon-path: var(--icon__objects_menubar--hover);
+    }
+    &_menubar--active {
+      --icon-path: var(--icon__objects_menubar--active);
+    }
+    &_menubar--disabled {
+      --icon-path: var(--icon__objects_menubar--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    menu.svg 
+    - - - - - - - - - - - - */
+    
+    &_menu--enabled {
+      --icon-path: var(--icon__objects_menu--enabled);
+    }
+    &_menu--hover {
+      --icon-path: var(--icon__objects_menu--hover);
+    }
+    &_menu--active {
+      --icon-path: var(--icon__objects_menu--active);
+    }
+    &_menu--disabled {
+      --icon-path: var(--icon__objects_menu--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    masterpage.svg 
+    - - - - - - - - - - - - */
+    
+    &_masterpage--enabled {
+      --icon-path: var(--icon__objects_masterpage--enabled);
+    }
+    &_masterpage--hover {
+      --icon-path: var(--icon__objects_masterpage--hover);
+    }
+    &_masterpage--active {
+      --icon-path: var(--icon__objects_masterpage--active);
+    }
+    &_masterpage--disabled {
+      --icon-path: var(--icon__objects_masterpage--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    main-object.svg 
+    - - - - - - - - - - - - */
+    
+    &_main-object--enabled {
+      --icon-path: var(--icon__objects_main-object--enabled);
+    }
+    &_main-object--hover {
+      --icon-path: var(--icon__objects_main-object--hover);
+    }
+    &_main-object--active {
+      --icon-path: var(--icon__objects_main-object--active);
+    }
+    &_main-object--disabled {
+      --icon-path: var(--icon__objects_main-object--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    language.svg 
+    - - - - - - - - - - - - */
+    
+    &_language--enabled {
+      --icon-path: var(--icon__objects_language--enabled);
+    }
+    &_language--hover {
+      --icon-path: var(--icon__objects_language--hover);
+    }
+    &_language--active {
+      --icon-path: var(--icon__objects_language--active);
+    }
+    &_language--disabled {
+      --icon-path: var(--icon__objects_language--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    knowledge-base.svg 
+    - - - - - - - - - - - - */
+    
+    &_knowledge-base--enabled {
+      --icon-path: var(--icon__objects_knowledge-base--enabled);
+    }
+    &_knowledge-base--hover {
+      --icon-path: var(--icon__objects_knowledge-base--hover);
+    }
+    &_knowledge-base--active {
+      --icon-path: var(--icon__objects_knowledge-base--active);
+    }
+    &_knowledge-base--disabled {
+      --icon-path: var(--icon__objects_knowledge-base--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    image.svg 
+    - - - - - - - - - - - - */
+    
+    &_image--enabled {
+      --icon-path: var(--icon__objects_image--enabled);
+    }
+    &_image--hover {
+      --icon-path: var(--icon__objects_image--hover);
+    }
+    &_image--active {
+      --icon-path: var(--icon__objects_image--active);
+    }
+    &_image--disabled {
+      --icon-path: var(--icon__objects_image--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    generator.svg 
+    - - - - - - - - - - - - */
+    
+    &_generator--enabled {
+      --icon-path: var(--icon__objects_generator--enabled);
+    }
+    &_generator--hover {
+      --icon-path: var(--icon__objects_generator--hover);
+    }
+    &_generator--active {
+      --icon-path: var(--icon__objects_generator--active);
+    }
+    &_generator--disabled {
+      --icon-path: var(--icon__objects_generator--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    generator-category.svg 
+    - - - - - - - - - - - - */
+    
+    &_generator-category--enabled {
+      --icon-path: var(--icon__objects_generator-category--enabled);
+    }
+    &_generator-category--hover {
+      --icon-path: var(--icon__objects_generator-category--hover);
+    }
+    &_generator-category--active {
+      --icon-path: var(--icon__objects_generator-category--active);
+    }
+    &_generator-category--disabled {
+      --icon-path: var(--icon__objects_generator-category--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    folder.svg 
+    - - - - - - - - - - - - */
+    
+    &_folder--enabled {
+      --icon-path: var(--icon__objects_folder--enabled);
+    }
+    &_folder--hover {
+      --icon-path: var(--icon__objects_folder--hover);
+    }
+    &_folder--active {
+      --icon-path: var(--icon__objects_folder--active);
+    }
+    &_folder--disabled {
+      --icon-path: var(--icon__objects_folder--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    folder-open.svg 
+    - - - - - - - - - - - - */
+    
+    &_folder-open--enabled {
+      --icon-path: var(--icon__objects_folder-open--enabled);
+    }
+    &_folder-open--hover {
+      --icon-path: var(--icon__objects_folder-open--hover);
+    }
+    &_folder-open--active {
+      --icon-path: var(--icon__objects_folder-open--active);
+    }
+    &_folder-open--disabled {
+      --icon-path: var(--icon__objects_folder-open--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    file.svg 
+    - - - - - - - - - - - - */
+    
+    &_file--enabled {
+      --icon-path: var(--icon__objects_file--enabled);
+    }
+    &_file--hover {
+      --icon-path: var(--icon__objects_file--hover);
+    }
+    &_file--active {
+      --icon-path: var(--icon__objects_file--active);
+    }
+    &_file--disabled {
+      --icon-path: var(--icon__objects_file--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    external-object.svg 
+    - - - - - - - - - - - - */
+    
+    &_external-object--enabled {
+      --icon-path: var(--icon__objects_external-object--enabled);
+    }
+    &_external-object--hover {
+      --icon-path: var(--icon__objects_external-object--hover);
+    }
+    &_external-object--active {
+      --icon-path: var(--icon__objects_external-object--active);
+    }
+    &_external-object--disabled {
+      --icon-path: var(--icon__objects_external-object--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    environment-select.svg 
+    - - - - - - - - - - - - */
+    
+    &_environment-select--enabled {
+      --icon-path: var(--icon__objects_environment-select--enabled);
+    }
+    &_environment-select--hover {
+      --icon-path: var(--icon__objects_environment-select--hover);
+    }
+    &_environment-select--active {
+      --icon-path: var(--icon__objects_environment-select--active);
+    }
+    &_environment-select--disabled {
+      --icon-path: var(--icon__objects_environment-select--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    environment-no-select.svg 
+    - - - - - - - - - - - - */
+    
+    &_environment-no-select--enabled {
+      --icon-path: var(--icon__objects_environment-no-select--enabled);
+    }
+    &_environment-no-select--hover {
+      --icon-path: var(--icon__objects_environment-no-select--hover);
+    }
+    &_environment-no-select--active {
+      --icon-path: var(--icon__objects_environment-no-select--active);
+    }
+    &_environment-no-select--disabled {
+      --icon-path: var(--icon__objects_environment-no-select--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    dso.svg 
+    - - - - - - - - - - - - */
+    
+    &_dso--enabled {
+      --icon-path: var(--icon__objects_dso--enabled);
+    }
+    &_dso--hover {
+      --icon-path: var(--icon__objects_dso--hover);
+    }
+    &_dso--active {
+      --icon-path: var(--icon__objects_dso--active);
+    }
+    &_dso--disabled {
+      --icon-path: var(--icon__objects_dso--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    domain.svg 
+    - - - - - - - - - - - - */
+    
+    &_domain--enabled {
+      --icon-path: var(--icon__objects_domain--enabled);
+    }
+    &_domain--hover {
+      --icon-path: var(--icon__objects_domain--hover);
+    }
+    &_domain--active {
+      --icon-path: var(--icon__objects_domain--active);
+    }
+    &_domain--disabled {
+      --icon-path: var(--icon__objects_domain--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    document.svg 
+    - - - - - - - - - - - - */
+    
+    &_document--enabled {
+      --icon-path: var(--icon__objects_document--enabled);
+    }
+    &_document--hover {
+      --icon-path: var(--icon__objects_document--hover);
+    }
+    &_document--active {
+      --icon-path: var(--icon__objects_document--active);
+    }
+    &_document--disabled {
+      --icon-path: var(--icon__objects_document--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    document-workflow.svg 
+    - - - - - - - - - - - - */
+    
+    &_document-workflow--enabled {
+      --icon-path: var(--icon__objects_document-workflow--enabled);
+    }
+    &_document-workflow--hover {
+      --icon-path: var(--icon__objects_document-workflow--hover);
+    }
+    &_document-workflow--active {
+      --icon-path: var(--icon__objects_document-workflow--active);
+    }
+    &_document-workflow--disabled {
+      --icon-path: var(--icon__objects_document-workflow--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    diagram.svg 
+    - - - - - - - - - - - - */
+    
+    &_diagram--enabled {
+      --icon-path: var(--icon__objects_diagram--enabled);
+    }
+    &_diagram--hover {
+      --icon-path: var(--icon__objects_diagram--hover);
+    }
+    &_diagram--active {
+      --icon-path: var(--icon__objects_diagram--active);
+    }
+    &_diagram--disabled {
+      --icon-path: var(--icon__objects_diagram--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    design.svg 
+    - - - - - - - - - - - - */
+    
+    &_design--enabled {
+      --icon-path: var(--icon__objects_design--enabled);
+    }
+    &_design--hover {
+      --icon-path: var(--icon__objects_design--hover);
+    }
+    &_design--active {
+      --icon-path: var(--icon__objects_design--active);
+    }
+    &_design--disabled {
+      --icon-path: var(--icon__objects_design--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    deployment-unit.svg 
+    - - - - - - - - - - - - */
+    
+    &_deployment-unit--enabled {
+      --icon-path: var(--icon__objects_deployment-unit--enabled);
+    }
+    &_deployment-unit--hover {
+      --icon-path: var(--icon__objects_deployment-unit--hover);
+    }
+    &_deployment-unit--active {
+      --icon-path: var(--icon__objects_deployment-unit--active);
+    }
+    &_deployment-unit--disabled {
+      --icon-path: var(--icon__objects_deployment-unit--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    dataview-index.svg 
+    - - - - - - - - - - - - */
+    
+    &_dataview-index--enabled {
+      --icon-path: var(--icon__objects_dataview-index--enabled);
+    }
+    &_dataview-index--hover {
+      --icon-path: var(--icon__objects_dataview-index--hover);
+    }
+    &_dataview-index--active {
+      --icon-path: var(--icon__objects_dataview-index--active);
+    }
+    &_dataview-index--disabled {
+      --icon-path: var(--icon__objects_dataview-index--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    datastore.svg 
+    - - - - - - - - - - - - */
+    
+    &_datastore--enabled {
+      --icon-path: var(--icon__objects_datastore--enabled);
+    }
+    &_datastore--hover {
+      --icon-path: var(--icon__objects_datastore--hover);
+    }
+    &_datastore--active {
+      --icon-path: var(--icon__objects_datastore--active);
+    }
+    &_datastore--disabled {
+      --icon-path: var(--icon__objects_datastore--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    datastore-category.svg 
+    - - - - - - - - - - - - */
+    
+    &_datastore-category--enabled {
+      --icon-path: var(--icon__objects_datastore-category--enabled);
+    }
+    &_datastore-category--hover {
+      --icon-path: var(--icon__objects_datastore-category--hover);
+    }
+    &_datastore-category--active {
+      --icon-path: var(--icon__objects_datastore-category--active);
+    }
+    &_datastore-category--disabled {
+      --icon-path: var(--icon__objects_datastore-category--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    data-view.svg 
+    - - - - - - - - - - - - */
+    
+    &_data-view--enabled {
+      --icon-path: var(--icon__objects_data-view--enabled);
+    }
+    &_data-view--hover {
+      --icon-path: var(--icon__objects_data-view--hover);
+    }
+    &_data-view--active {
+      --icon-path: var(--icon__objects_data-view--active);
+    }
+    &_data-view--disabled {
+      --icon-path: var(--icon__objects_data-view--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    data-selector.svg 
+    - - - - - - - - - - - - */
+    
+    &_data-selector--enabled {
+      --icon-path: var(--icon__objects_data-selector--enabled);
+    }
+    &_data-selector--hover {
+      --icon-path: var(--icon__objects_data-selector--hover);
+    }
+    &_data-selector--active {
+      --icon-path: var(--icon__objects_data-selector--active);
+    }
+    &_data-selector--disabled {
+      --icon-path: var(--icon__objects_data-selector--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    data-provider.svg 
+    - - - - - - - - - - - - */
+    
+    &_data-provider--enabled {
+      --icon-path: var(--icon__objects_data-provider--enabled);
+    }
+    &_data-provider--hover {
+      --icon-path: var(--icon__objects_data-provider--hover);
+    }
+    &_data-provider--active {
+      --icon-path: var(--icon__objects_data-provider--active);
+    }
+    &_data-provider--disabled {
+      --icon-path: var(--icon__objects_data-provider--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    dashboard.svg 
+    - - - - - - - - - - - - */
+    
+    &_dashboard--enabled {
+      --icon-path: var(--icon__objects_dashboard--enabled);
+    }
+    &_dashboard--hover {
+      --icon-path: var(--icon__objects_dashboard--hover);
+    }
+    &_dashboard--active {
+      --icon-path: var(--icon__objects_dashboard--active);
+    }
+    &_dashboard--disabled {
+      --icon-path: var(--icon__objects_dashboard--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    customization.svg 
+    - - - - - - - - - - - - */
+    
+    &_customization--enabled {
+      --icon-path: var(--icon__objects_customization--enabled);
+    }
+    &_customization--hover {
+      --icon-path: var(--icon__objects_customization--hover);
+    }
+    &_customization--active {
+      --icon-path: var(--icon__objects_customization--active);
+    }
+    &_customization--disabled {
+      --icon-path: var(--icon__objects_customization--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    conversational-flows.svg 
+    - - - - - - - - - - - - */
+    
+    &_conversational-flows--enabled {
+      --icon-path: var(--icon__objects_conversational-flows--enabled);
+    }
+    &_conversational-flows--hover {
+      --icon-path: var(--icon__objects_conversational-flows--hover);
+    }
+    &_conversational-flows--active {
+      --icon-path: var(--icon__objects_conversational-flows--active);
+    }
+    &_conversational-flows--disabled {
+      --icon-path: var(--icon__objects_conversational-flows--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    category.svg 
+    - - - - - - - - - - - - */
+    
+    &_category--enabled {
+      --icon-path: var(--icon__objects_category--enabled);
+    }
+    &_category--hover {
+      --icon-path: var(--icon__objects_category--hover);
+    }
+    &_category--active {
+      --icon-path: var(--icon__objects_category--active);
+    }
+    &_category--disabled {
+      --icon-path: var(--icon__objects_category--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    calendars.svg 
+    - - - - - - - - - - - - */
+    
+    &_calendars--enabled {
+      --icon-path: var(--icon__objects_calendars--enabled);
+    }
+    &_calendars--hover {
+      --icon-path: var(--icon__objects_calendars--hover);
+    }
+    &_calendars--active {
+      --icon-path: var(--icon__objects_calendars--active);
+    }
+    &_calendars--disabled {
+      --icon-path: var(--icon__objects_calendars--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    business-process-diagram.svg 
+    - - - - - - - - - - - - */
+    
+    &_business-process-diagram--enabled {
+      --icon-path: var(--icon__objects_business-process-diagram--enabled);
+    }
+    &_business-process-diagram--hover {
+      --icon-path: var(--icon__objects_business-process-diagram--hover);
+    }
+    &_business-process-diagram--active {
+      --icon-path: var(--icon__objects_business-process-diagram--active);
+    }
+    &_business-process-diagram--disabled {
+      --icon-path: var(--icon__objects_business-process-diagram--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    bg-color.svg 
+    - - - - - - - - - - - - */
+    
+    &_bg-color--enabled {
+      --icon-path: var(--icon__objects_bg-color--enabled);
+    }
+    &_bg-color--hover {
+      --icon-path: var(--icon__objects_bg-color--hover);
+    }
+    &_bg-color--active {
+      --icon-path: var(--icon__objects_bg-color--active);
+    }
+    &_bg-color--disabled {
+      --icon-path: var(--icon__objects_bg-color--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    attribute.svg 
+    - - - - - - - - - - - - */
+    
+    &_attribute--enabled {
+      --icon-path: var(--icon__objects_attribute--enabled);
+    }
+    &_attribute--hover {
+      --icon-path: var(--icon__objects_attribute--hover);
+    }
+    &_attribute--active {
+      --icon-path: var(--icon__objects_attribute--active);
+    }
+    &_attribute--disabled {
+      --icon-path: var(--icon__objects_attribute--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    api.svg 
+    - - - - - - - - - - - - */
+    
+    &_api--enabled {
+      --icon-path: var(--icon__objects_api--enabled);
+    }
+    &_api--hover {
+      --icon-path: var(--icon__objects_api--hover);
+    }
+    &_api--active {
+      --icon-path: var(--icon__objects_api--active);
+    }
+    &_api--disabled {
+      --icon-path: var(--icon__objects_api--disabled);
+    }
   
     }
   

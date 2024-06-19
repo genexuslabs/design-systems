@@ -8,13 +8,13 @@
 @import "./monochrome/menus";
 @import "./monochrome/gemini-tools";
 
-$all-multicolor-lists: (
+$all-multicolor-lists: ( 
 objects: $objects,
 );
 
-$all-monochrome-lists: (
-windows-tools: $windows-tools,
-navigation: $navigation,
-menus: $menus,
+$all-monochrome-lists: ( 
+windows-tools: $windows-tools, 
+navigation: $navigation, 
+menus: $menus, 
 gemini-tools: $gemini-tools,
 );
