@@ -1,0 +1,20 @@
+
+/*multicolor lists*/
+@import "./multicolor/objects";
+
+/*monochrome lists*/
+@import "./monochrome/windows-tools";
+@import "./monochrome/navigation";
+@import "./monochrome/menus";
+@import "./monochrome/gemini-tools";
+
+$all-multicolor-lists: ( 
+objects: $objects,
+);
+
+$all-monochrome-lists: ( 
+windows-tools: $windows-tools, 
+navigation: $navigation, 
+menus: $menus, 
+gemini-tools: $gemini-tools,
+);
