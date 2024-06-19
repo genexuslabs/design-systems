@@ -13,15 +13,15 @@ Step 3: Copy the icons to 'showcase/icons/' as well so that the showcase folder 
 be distributed with its own icons, independently of 'dist/assets/icons'
 */
 
-const SVG_SASS_GENERATOR_GENERATED_FOLDER = "_generated";
-const ASSETS_SRC = "./src/assets/";
-const ASSETS_DIST = "./dist/assets/";
+const SVG_SASS_GENERATOR_GENERATED_FOLDER_NAME = "_generated";
+const ASSETS_SRC = "src/assets/";
+const ASSETS_DIST = "dist/assets/";
 const GENERATED_ICONS_PATH = path.join(
   ASSETS_SRC,
-  `icons/${SVG_SASS_GENERATOR_GENERATED_FOLDER}`
+  `icons/${SVG_SASS_GENERATOR_GENERATED_FOLDER_NAME}`
 );
 const DIST_ICONS_PATH = path.join(ASSETS_DIST, "icons");
-const SHOWCASE_PATH = "./showcase";
+const SHOWCASE_PATH = "showcase/";
 
 // Copy Assets
 const copyFolderSync = (source, target) => {
@@ -35,7 +35,7 @@ const copyFolderSync = (source, target) => {
     const sourcePath = path.join(source, item);
     const targetPath = path.join(target, item);
 
-    if (item === SVG_SASS_GENERATOR_GENERATED_FOLDER) {
+    if (item === SVG_SASS_GENERATOR_GENERATED_FOLDER_NAME) {
       console.log(`Skipping folder: ${sourcePath}`);
       return; // Skip the folder
     }

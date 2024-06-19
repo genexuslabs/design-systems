@@ -11,12 +11,13 @@
     "build": "npm run icons-svg && npm run icons-sass && npm run build.scss && npm run copy-tasks",
     "build-no-svg": "npm run build.scss && npm run copy-tasks",
     "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
-    "test": "sass test/test.scss  test/mercury.css",
+    "test": "sass test/test.scss test/mercury.css",
     "validate.ci": "npm run build",
     "icons-svg": "ssg-svg src/icons/svg-source src/assets/icons/_generated/ src/icons/svg-source/.config/color-states.json showcase/icons/ ./log ../assets/icons/",
     "icons-sass": "ssg-sass src/assets/icons/ src/icons/_generated/ src/icons/svg-source/.config/color-states.json",
     "watch:sass": "chokidar src/**/*.scss ../common/**/*.scss -c \"npm run build.scss\"",
-    "copy-tasks": "node copy-tasks.js"
+    "copy-tasks": "node copy-tasks.js",
+    "delete-tasks": "node delete-tasks.js"
   },
   "license": "MIT",
   "devDependencies": {
