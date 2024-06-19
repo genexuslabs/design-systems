@@ -35,6 +35,7 @@
 // Icons
 @import "./icons/button";
 @import "./icons/form-input";
+@import "./icons/_generated/svg-sass-mixins";
 
 // Components
 @import "./components/checkbox/checkbox-styles";
@@ -73,7 +74,8 @@
 
   // Icons
   $icons-path: "./assets/icons/",
-
+  $ignored-multicolor-categories: (),
+  $ignored-monochrome-categories: (),
   // Font face
   $font-face: true,
   $font-face-path: "./assets/fonts/",
@@ -106,21 +108,6 @@
   // - - - - - - - - - - - - - - - - - - - -
 
   @import "./icons/_generated/all-lists";
-
-  // Monochrome Icons
-  $gemini-tools-virtual-selectors: generate-icons-virtual-selectors(
-    $gemini-tools,
-    "gemini-tools"
-  );
-  $menus-virtual-selectors: generate-icons-virtual-selectors($menus, "menus");
-  $navigation-virtual-selectors: generate-icons-virtual-selectors(
-    $navigation,
-    "navigation"
-  );
-  $windows-tools-virtual-selectors: generate-icons-virtual-selectors(
-    $windows-tools,
-    "windows-tools"
-  );
 
   // - - - - - - - - - - - - - - - - - - - -
   //              Typography
@@ -377,10 +364,14 @@
   // - - - - - - - - - - - - - - - - - - - -
   @if ($icons-elements) {
     // Process icons lists
-    @include process-monochrome-icons-list($gemini-tools-virtual-selectors);
-    @include process-monochrome-icons-list($menus-virtual-selectors);
-    @include process-monochrome-icons-list($navigation-virtual-selectors);
-    @include process-monochrome-icons-list($windows-tools-virtual-selectors);
+    // @include generate-multicolor-icons-selectors(
+    //   $all-multicolor-lists,
+    //   $ignored-categories: $ignored-multicolor-categories
+    // );
+    @include generate-monochrome-icons-selectors(
+      $all-monochrome-lists,
+      $ignored-categories: $ignored-monochrome-categories
+    );
 
     // Button icon only
     @include button-icon-only();
