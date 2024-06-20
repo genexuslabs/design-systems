@@ -35,6 +35,7 @@
 // Icons
 @import "./icons/button";
 @import "./icons/form-input";
+@import "./icons/tree-view";
 @import "./icons/_generated/svg-sass-mixins";
 
 // Components
@@ -98,7 +99,7 @@
   $dialog: true,
   $checkbox: true,
   $radio-group: true,
-  $tree-view-primary: true,
+  $tree-view: true,
   $tabular-grid: true,
   $tab: true,
   $code: true
@@ -364,10 +365,10 @@
   // - - - - - - - - - - - - - - - - - - - -
   @if ($icons-elements) {
     // Process icons lists
-    // @include generate-multicolor-icons-selectors(
-    //   $all-multicolor-lists,
-    //   $ignored-categories: $ignored-multicolor-categories
-    // );
+    @include generate-multicolor-icons-selectors(
+      $all-multicolor-lists,
+      $ignored-categories: $ignored-multicolor-categories
+    );
     @include generate-monochrome-icons-selectors(
       $all-monochrome-lists,
       $ignored-categories: $ignored-monochrome-categories
@@ -384,6 +385,9 @@
 
     // Form input text
     @include form-input-icon();
+
+    // Tree view icons
+    @include tree-view-item__action-icon($objects, "objects", ".tree-view");
   }
 
   // - - - - - - - - - - - - - - - -  - - -
@@ -401,8 +405,8 @@
     }
 
     // tree view
-    @if $tree-view-primary {
-      @include tree-view-primary();
+    @if $tree-view {
+      @include tree-view();
     }
 
     // combo box

@@ -1,0 +1,34 @@
+// This mixins processes icons for the tree view action start part.
+@mixin tree-view-item__action-icon(
+  $icons-list,
+  $icons-list-name,
+  $tree-view-selector: ".tree-view"
+) {
+  @each $icon in $icons-list {
+    $icon-part-name: #{$icons-list-name}-#{$icon};
+    //enabled
+    $icon-variable: --icon__#{$icons-list-name}_#{$icon}--enabled;
+    #{$tree-view-selector}::part(item__action #{$icon-part-name}) {
+      &::before {
+        --icon-path: var(#{$icon-variable});
+        background-image: var(--icon-path);
+      }
+    }
+    //hover
+    $icon-variable: --icon__#{$icons-list-name}_#{$icon}--hover;
+    #{$tree-view-selector}::part(item__action #{$icon-part-name}):hover {
+      &::before {
+        --icon-path: var(#{$icon-variable});
+        background-image: var(--icon-path);
+      }
+    }
+    //active
+    $icon-variable: --icon__#{$icons-list-name}_#{$icon}--active;
+    #{$tree-view-selector}::part(item__action #{$icon-part-name}):active {
+      &::before {
+        --icon-path: var(#{$icon-variable});
+        background-image: var(--icon-path);
+      }
+    }
+  }
+}

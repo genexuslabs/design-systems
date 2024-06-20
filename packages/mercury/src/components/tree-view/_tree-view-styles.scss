@@ -6,6 +6,10 @@
   line-height: var(--mer-line-height--regular);
   padding: var(--tree-view__padding);
   min-inline-size: var(--tree-view__min-inline-size);
+
+  &--no-padding {
+    padding: 0;
+  }
 }
 
 // TODO: Improve this
@@ -62,38 +66,38 @@
 }
 
 /// @group Tree View
-/// @param {String} $tree-view-selector [".tree-view-primary"] -
-/// @param {String} $drag-preview-selector [".tree-view-primary::part(drag-preview)"] -
-/// @param {String} $drop-selector [".tree-view-primary::part(drop)"] -
-/// @param {String} $item--drag-enter-selector [".tree-view-primary::part(item drag-enter)"] -
-/// @param {String} $item__header-selector [".tree-view-primary::part(item__header)"] -
-/// @param {String} $item__header--not-selected-selector [".tree-view-primary::part(item__header not-selected)"] -
-/// @param {String} $item__header--selected-selector [".tree-view-primary::part(item__header selected)"] -
-/// @param {String} $item__action-selector [".tree-view-primary::part(item__action)"] -
-/// @param {String} $item__downloading-selector [".tree-view-primary::part(item__downloading)"] -
-/// @param {String} $item__line-selector [".tree-view-primary::part(item__line)"] -
-/// @param {String} $item__checkbox-selector [".tree-view-primary::part(item__checkbox)"] -
-/// @param {String} $item__checkbox-input-selector [".tree-view-primary::part(item__checkbox-input)"] -
-/// @param {String} $item__checkbox-input--disabled-selector [".tree-view-primary::part(item__checkbox-input disabled)"] -
-/// @param {String} $item__checkbox-input--checked-selector [".tree-view-primary::part(item__checkbox-input checked)"] -
-/// @param {String} $item__checkbox-input--indeterminate-selector [".tree-view-primary::part(item__checkbox-input indeterminate)"] -
-/// @param {String} $item__checkbox-option--disabled-selector [".tree-view-primary::part(item__checkbox-option disabled)"] -
-/// @param {String} $item__checkbox-option--checked-selector [".tree-view-primary::part(item__checkbox-option checked)"] -
-/// @param {String} $item__checkbox-option--indeterminate-selector [".tree-view-primary::part(item__checkbox-option indeterminate)"] -
+/// @param {String} $tree-view-selector [".tree-view"] -
+/// @param {String} $drag-preview-selector [".tree-view::part(drag-preview)"] -
+/// @param {String} $drop-selector [".tree-view::part(drop)"] -
+/// @param {String} $item--drag-enter-selector [".tree-view::part(item drag-enter)"] -
+/// @param {String} $item__header-selector [".tree-view::part(item__header)"] -
+/// @param {String} $item__header--not-selected-selector [".tree-view::part(item__header not-selected)"] -
+/// @param {String} $item__header--selected-selector [".tree-view::part(item__header selected)"] -
+/// @param {String} $item__action-selector [".tree-view::part(item__action)"] -
+/// @param {String} $item__downloading-selector [".tree-view::part(item__downloading)"] -
+/// @param {String} $item__line-selector [".tree-view::part(item__line)"] -
+/// @param {String} $item__checkbox-selector [".tree-view::part(item__checkbox)"] -
+/// @param {String} $item__checkbox-input-selector [".tree-view::part(item__checkbox-input)"] -
+/// @param {String} $item__checkbox-input--disabled-selector [".tree-view::part(item__checkbox-input disabled)"] -
+/// @param {String} $item__checkbox-input--checked-selector [".tree-view::part(item__checkbox-input checked)"] -
+/// @param {String} $item__checkbox-input--indeterminate-selector [".tree-view::part(item__checkbox-input indeterminate)"] -
+/// @param {String} $item__checkbox-option--disabled-selector [".tree-view::part(item__checkbox-option disabled)"] -
+/// @param {String} $item__checkbox-option--checked-selector [".tree-view::part(item__checkbox-option checked)"] -
+/// @param {String} $item__checkbox-option--indeterminate-selector [".tree-view::part(item__checkbox-option indeterminate)"] -
 /// @param {Boolean} $add--disabled [true] -
-/// @example scss - Default case: Using the `.tree-view-primary` class.
+/// @example scss - Default case: Using the `.tree-view` class.
 /// SCSS:
-///   @include tree-view-primary();
+///   @include tree-view();
 ///
 /// @example markup
 /// HTML/render:
-///   <ch-tree-view-render class="tree-view-primary">
+///   <ch-tree-view-render class="tree-view">
 ///   </ch-tree-view-render>
 ///
 /// @example scss - Advanced case: Style a `ch-tree-view-render` control inside a Shadow Root.
 /// SCSS:
 ///   my-component-with-shadow {
-///     @include tree-view-primary(
+///     @include tree-view(
 ///       // TODO
 ///     );
 ///   }
@@ -106,50 +110,50 @@
 ///     |  </ch-tree-view-render>
 ///   </my-component-with-shadow>
 ///
-@mixin tree-view-primary(
-  $tree-view-selector: ".tree-view-primary",
+@mixin tree-view(
+  $tree-view-selector: ".tree-view",
+  $tree-view--no-padding-selector: ".tree-view--no-padding",
 
   // Drag preview
-  $drag-preview-selector: ".tree-view-primary::part(drag-preview)",
+  $drag-preview-selector: ".tree-view::part(drag-preview)",
 
   // Drag enter on item
-  $item--drag-enter-selector: ".tree-view-primary::part(item drag-enter)",
+  $item--drag-enter-selector: ".tree-view::part(item drag-enter)",
 
   // Drop
-  $drop-selector: ".tree-view-primary::part(drop)",
+  $drop-selector: ".tree-view::part(drop)",
 
   // Item header
-  $item__header-selector: ".tree-view-primary::part(item__header)",
+  $item__header-selector: ".tree-view::part(item__header)",
   $item__header--not-selected-selector:
-    ".tree-view-primary::part(item__header not-selected)",
-  $item__header--selected-selector:
-    ".tree-view-primary::part(item__header selected)",
+    ".tree-view::part(item__header not-selected)",
+  $item__header--selected-selector: ".tree-view::part(item__header selected)",
 
   // Item action
-  $item__action-selector: ".tree-view-primary::part(item__action)",
+  $item__action-selector: ".tree-view::part(item__action)",
+  $item__icon-path-selector: ".tree-view::part(uses-icon-path)",
 
   // Item downloading
-  $item__downloading-selector: ".tree-view-primary::part(item__downloading)",
+  $item__downloading-selector: ".tree-view::part(item__downloading)",
 
   // Item line
-  $item__line-selector: ".tree-view-primary::part(item__line)",
+  $item__line-selector: ".tree-view::part(item__line)",
 
   // Checkbox
-  $item__checkbox-selector: ".tree-view-primary::part(item__checkbox)",
-  $item__checkbox-input-selector:
-    ".tree-view-primary::part(item__checkbox-input)",
+  $item__checkbox-selector: ".tree-view::part(item__checkbox)",
+  $item__checkbox-input-selector: ".tree-view::part(item__checkbox-input)",
   $item__checkbox-input--disabled-selector:
-    ".tree-view-primary::part(item__checkbox-input disabled)",
+    ".tree-view::part(item__checkbox-input disabled)",
   $item__checkbox-input--checked-selector:
-    ".tree-view-primary::part(item__checkbox-input checked)",
+    ".tree-view::part(item__checkbox-input checked)",
   $item__checkbox-input--indeterminate-selector:
-    ".tree-view-primary::part(item__checkbox-input indeterminate)",
+    ".tree-view::part(item__checkbox-input indeterminate)",
   $item__checkbox-option--disabled-selector:
-    ".tree-view-primary::part(item__checkbox-option disabled)",
+    ".tree-view::part(item__checkbox-option disabled)",
   $item__checkbox-option--checked-selector:
-    ".tree-view-primary::part(item__checkbox-option checked)",
+    ".tree-view::part(item__checkbox-option checked)",
   $item__checkbox-option--indeterminate-selector:
-    ".tree-view-primary::part(item__checkbox-option indeterminate)",
+    ".tree-view::part(item__checkbox-option indeterminate)",
 
   $add--disabled: true
 ) {
@@ -157,6 +161,10 @@
   #{$tree-view-selector} {
     @extend %tree-view;
     @include scrollbar-styles();
+  }
+
+  #{$tree-view--no-padding-selector} {
+    @extend %tree-view--no-padding;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -208,6 +216,9 @@
   // - - - - - - - - - - - - - - - - - - - -
   #{$item__action-selector} {
     @extend %tree-view-item__action;
+    &::after {
+      background-image: var(--icon-path);
+    }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
