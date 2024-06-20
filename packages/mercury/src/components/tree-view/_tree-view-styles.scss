@@ -216,9 +216,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   #{$item__action-selector} {
     @extend %tree-view-item__action;
-    &::after {
-      background-image: var(--icon-path);
-    }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
