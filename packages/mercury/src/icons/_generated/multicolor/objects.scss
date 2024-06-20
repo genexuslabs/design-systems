@@ -14,10 +14,10 @@
   --icon__objects_work-panel--hover: url('#{$icons-path}objects/light/work-panel.svg#hover'); 
   --icon__objects_work-panel--active: url('#{$icons-path}objects/light/work-panel.svg#active'); 
   --icon__objects_work-panel--disabled: url('#{$icons-path}objects/light/work-panel.svg#disabled'); 
-  --icon__objects_webpanel--enabled: url('#{$icons-path}objects/light/webpanel.svg#enabled'); 
-  --icon__objects_webpanel--hover: url('#{$icons-path}objects/light/webpanel.svg#hover'); 
-  --icon__objects_webpanel--active: url('#{$icons-path}objects/light/webpanel.svg#active'); 
-  --icon__objects_webpanel--disabled: url('#{$icons-path}objects/light/webpanel.svg#disabled'); 
+  --icon__objects_web-panel--enabled: url('#{$icons-path}objects/light/web-panel.svg#enabled'); 
+  --icon__objects_web-panel--hover: url('#{$icons-path}objects/light/web-panel.svg#hover'); 
+  --icon__objects_web-panel--active: url('#{$icons-path}objects/light/web-panel.svg#active'); 
+  --icon__objects_web-panel--disabled: url('#{$icons-path}objects/light/web-panel.svg#disabled'); 
   --icon__objects_web-component--enabled: url('#{$icons-path}objects/light/web-component.svg#enabled'); 
   --icon__objects_web-component--hover: url('#{$icons-path}objects/light/web-component.svg#hover'); 
   --icon__objects_web-component--active: url('#{$icons-path}objects/light/web-component.svg#active'); 
@@ -291,10 +291,10 @@
   --icon__objects_work-panel--hover: url('#{$icons-path}objects/dark/work-panel.svg#hover'); 
   --icon__objects_work-panel--active: url('#{$icons-path}objects/dark/work-panel.svg#active'); 
   --icon__objects_work-panel--disabled: url('#{$icons-path}objects/dark/work-panel.svg#disabled'); 
-  --icon__objects_webpanel--enabled: url('#{$icons-path}objects/dark/webpanel.svg#enabled'); 
-  --icon__objects_webpanel--hover: url('#{$icons-path}objects/dark/webpanel.svg#hover'); 
-  --icon__objects_webpanel--active: url('#{$icons-path}objects/dark/webpanel.svg#active'); 
-  --icon__objects_webpanel--disabled: url('#{$icons-path}objects/dark/webpanel.svg#disabled'); 
+  --icon__objects_web-panel--enabled: url('#{$icons-path}objects/dark/web-panel.svg#enabled'); 
+  --icon__objects_web-panel--hover: url('#{$icons-path}objects/dark/web-panel.svg#hover'); 
+  --icon__objects_web-panel--active: url('#{$icons-path}objects/dark/web-panel.svg#active'); 
+  --icon__objects_web-panel--disabled: url('#{$icons-path}objects/dark/web-panel.svg#disabled'); 
   --icon__objects_web-component--enabled: url('#{$icons-path}objects/dark/web-component.svg#enabled'); 
   --icon__objects_web-component--hover: url('#{$icons-path}objects/dark/web-component.svg#hover'); 
   --icon__objects_web-component--active: url('#{$icons-path}objects/dark/web-component.svg#active'); 
@@ -554,7 +554,7 @@
 
   }
   
-   $objects: workflow, work-panel, webpanel, web-component, version, url-rewrite, transaction, to-be-defined, theme, theme-web, theme-for-sd, table, super-app, subtype-group, structured-data-type, stencil, roles, report, references, query, procedure, patterns, panel-for-sd, orphant-document, offline-database, object, notification-templates, module, module-open, mini-app, menubar, menu, masterpage, main-object, language, knowledge-base, image, generator, generator-category, folder, folder-open, file, external-object, environment-select, environment-no-select, dso, domain, document, document-workflow, diagram, design, deployment-unit, dataview-index, datastore, datastore-category, data-view, data-selector, data-provider, dashboard, customization, conversational-flows, category, calendars, business-process-diagram, bg-color, attribute, api;
+   $objects: workflow, work-panel, web-panel, web-component, version, url-rewrite, transaction, to-be-defined, theme, theme-web, theme-for-sd, table, super-app, subtype-group, structured-data-type, stencil, roles, report, references, query, procedure, patterns, panel-for-sd, orphant-document, offline-database, object, notification-templates, module, module-open, mini-app, menubar, menu, masterpage, main-object, language, knowledge-base, image, generator, generator-category, folder, folder-open, file, external-object, environment-select, environment-no-select, dso, domain, document, document-workflow, diagram, design, deployment-unit, dataview-index, datastore, datastore-category, data-view, data-selector, data-provider, dashboard, customization, conversational-flows, category, calendars, business-process-diagram, bg-color, attribute, api;
     %icon__objects {
   
 
@@ -598,20 +598,20 @@
     }
 
     /* - - - - - - - - - - - - 
-    webpanel.svg 
+    web-panel.svg 
     - - - - - - - - - - - - */
     
-    &_webpanel--enabled {
-      --icon-path: var(--icon__objects_webpanel--enabled);
+    &_web-panel--enabled {
+      --icon-path: var(--icon__objects_web-panel--enabled);
     }
-    &_webpanel--hover {
-      --icon-path: var(--icon__objects_webpanel--hover);
+    &_web-panel--hover {
+      --icon-path: var(--icon__objects_web-panel--hover);
     }
-    &_webpanel--active {
-      --icon-path: var(--icon__objects_webpanel--active);
+    &_web-panel--active {
+      --icon-path: var(--icon__objects_web-panel--active);
     }
-    &_webpanel--disabled {
-      --icon-path: var(--icon__objects_webpanel--disabled);
+    &_web-panel--disabled {
+      --icon-path: var(--icon__objects_web-panel--disabled);
     }
 
     /* - - - - - - - - - - - - 
@@ -1743,20 +1743,20 @@
     }
 
     /* - - - - - - - - - - - - 
-    webpanel.svg 
+    web-panel.svg 
     - - - - - - - - - - - - */
     
-    &_webpanel--enabled {
-      --icon-path: var(--icon__objects_webpanel--enabled);
+    &_web-panel--enabled {
+      --icon-path: var(--icon__objects_web-panel--enabled);
     }
-    &_webpanel--hover {
-      --icon-path: var(--icon__objects_webpanel--hover);
+    &_web-panel--hover {
+      --icon-path: var(--icon__objects_web-panel--hover);
     }
-    &_webpanel--active {
-      --icon-path: var(--icon__objects_webpanel--active);
+    &_web-panel--active {
+      --icon-path: var(--icon__objects_web-panel--active);
     }
-    &_webpanel--disabled {
-      --icon-path: var(--icon__objects_webpanel--disabled);
+    &_web-panel--disabled {
+      --icon-path: var(--icon__objects_web-panel--disabled);
     }
 
     /* - - - - - - - - - - - - 
