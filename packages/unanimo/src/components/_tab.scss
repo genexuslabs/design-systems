@@ -1,6 +1,6 @@
 %tab {
-  --ch-list-image-size: var(--spacing-un-spacing--xl);
-  --ch-list-mask-image-size: calc(
+  --ch-tab-image-size: var(--spacing-un-spacing--xl);
+  --ch-tab-mask-image-size: calc(
     var(--spacing-un-spacing--xl) - var(--spacing-un-spacing--m)
   );
 }
@@ -26,6 +26,10 @@
   outline-offset: -1px;
 }
 
+%tab-caption-close-button {
+  margin-inline-start: 4px;
+}
+
 %tab-caption--selected {
   @extend %tab-caption--active;
 }
@@ -43,11 +47,16 @@
   $tab-caption-selector: ".tab::part(button)",
   $tab-caption--selected-selector: ".tab::part(button selected)",
   $tab-caption--disabled-selector: ".tab::part(button disabled)",
+  $tab-caption-close-button-selector: ".tab::part(close-button)",
   $tab-list-selector: ".tab::part(tab-list)",
+  $add--tab: true,
+  $add--tab-list: true,
   $add--disabled: true
 ) {
-  #{$tab-selector} {
-    @extend %tab;
+  @if $add--tab {
+    #{$tab-selector} {
+      @extend %tab;
+    }
   }
 
   #{$tab-caption-selector} {
@@ -67,12 +76,18 @@
     }
   }
 
+  #{$tab-caption-close-button-selector} {
+    @extend %tab-caption-close-button;
+  }
+
   #{$tab-caption--selected-selector} {
     @extend %tab-caption--selected;
   }
 
-  #{$tab-list-selector} {
-    @extend %tab-list;
+  @if $add--tab-list {
+    #{$tab-list-selector} {
+      @extend %tab-list;
+    }
   }
 
   @if $add--disabled {
