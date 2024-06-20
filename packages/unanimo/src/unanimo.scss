@@ -407,6 +407,11 @@
     }
 
     // tree-view-secondary
+    @if $tree-view-secondary {
+      @include tree-view-secondary();
+    }
+
+    // tree-view-secondary
     //  @if $tree-view-secondary {
     //   @include tree-view-secondary();
     // }
