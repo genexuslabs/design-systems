@@ -1,6 +1,7 @@
 // Base styles from packages/common
 @import "../../common/base";
 @import "../../common/utilities";
+@import "../../common/icons/tree-view";
 
 @import "./base/common";
 
@@ -387,7 +388,7 @@
     @include form-input-icon();
 
     // Tree view icons
-    @include tree-view-item__action-icon($objects, "objects", ".tree-view");
+    @include tree-view-icons($objects, "objects", ".tree-view");
   }
 
   // - - - - - - - - - - - - - - - -  - - -

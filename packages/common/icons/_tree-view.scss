@@ -24,7 +24,7 @@
   background-color: currentColor;
 }
 
-@include tree-view-item__action-icon(
+@mixin tree-view-item__action-icon(
   $position: "start",
   $item__action-with-icon-selector:
     ".tree-view-class::part(item__action custom-icon)",

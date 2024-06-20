@@ -1,5 +1,5 @@
 // This mixins processes icons for the tree view action start part.
-@mixin tree-view-item__action-icon(
+@mixin tree-view-icons(
   $icons-list,
   $icons-list-name,
   $tree-view-selector: ".tree-view"
@@ -7,28 +7,25 @@
   @each $icon in $icons-list {
     $icon-part-name: #{$icons-list-name}-#{$icon};
     //enabled
-    $icon-variable: --icon__#{$icons-list-name}_#{$icon}--enabled;
-    #{$tree-view-selector}::part(item__action #{$icon-part-name}) {
-      &::before {
-        --icon-path: var(#{$icon-variable});
-        background-image: var(--icon-path);
-      }
-    }
+    $icon-variable: var(--icon__#{$icons-list-name}_#{$icon}--enabled);
+    $enabled-selector: "#{$tree-view-selector}::part(item__action #{$icon-part-name})";
+    @include tree-view-item__action-icon(
+      $item__action-with-icon-selector: $enabled-selector,
+      $icon-path: $icon-variable
+    );
     //hover
-    $icon-variable: --icon__#{$icons-list-name}_#{$icon}--hover;
-    #{$tree-view-selector}::part(item__action #{$icon-part-name}):hover {
-      &::before {
-        --icon-path: var(#{$icon-variable});
-        background-image: var(--icon-path);
-      }
-    }
+    $icon-variable: var(--icon__#{$icons-list-name}_#{$icon}--hover);
+    $hover-selector: "#{$tree-view-selector}::part(item__action #{$icon-part-name}):hover";
+    @include tree-view-item__action-icon(
+      $item__action-with-icon-selector: $hover-selector,
+      $icon-path: $icon-variable
+    );
     //active
-    $icon-variable: --icon__#{$icons-list-name}_#{$icon}--active;
-    #{$tree-view-selector}::part(item__action #{$icon-part-name}):active {
-      &::before {
-        --icon-path: var(#{$icon-variable});
-        background-image: var(--icon-path);
-      }
-    }
+    $icon-variable: var(--icon__#{$icons-list-name}_#{$icon}--active);
+    $active-selector: "#{$tree-view-selector}::part(item__action #{$icon-part-name}):active";
+    @include tree-view-item__action-icon(
+      $item__action-with-icon-selector: $active-selector,
+      $icon-path: $icon-variable
+    );
   }
 }
