@@ -22,6 +22,7 @@ const SRC_PATH = await process.argv[2];
 const OUTPUT_PATH = await process.argv[3];
 const COLOR_STATES_PATH = await process.argv[4];
 const ALL_LISTS_FILENAME = "all-lists.scss";
+const CATEGORIES_IMPORTS_FILENAME = "categories-imports.scss";
 const MIXINS_FILENAME = "svg-sass-mixins.scss";
 
 // Start fresh (delete current output directory)
@@ -60,6 +61,7 @@ export function processIconsSass(sourceDir: string, iconsArray: string[]) {
   };
   processIconsCatalog(iconsCatalog, categoriesListsObject);
   saveIconsListsOnDisk(categoriesListsObject);
+  saveIconsCategoriesImportsOnDisk();
   saveMixinsOnDisk();
 }
 
@@ -320,25 +322,17 @@ const saveSassOnDisk = (
 const saveIconsListsOnDisk = (categoriesListsObject: categoriesLists) => {
   let output = ``;
 
-  // Multicolor Lists
-  output += `/* - - - - - - - - - - - 
-  Multicolor lists
-- - - - - - - - - - - */`;
+  // Monochrome Categories and Colors
+  output += `/* - - - - - - - - - - - - - - - -
+ Monochrome Categories and Colors
+ - - - - - - - - - - - - - - - - -*/\n\n`;
 
-  const multicolorCategoriesSassList = convertObjectCategoriesToSassLists(
-    categoriesListsObject.multicolor
-  );
-  output += multicolorCategoriesSassList;
-
-  output += `\n\n$all-multicolor-lists: (`;
-  multicolorCategoriesList.forEach((category) => {
-    output += ` \n${category}: $${category},`;
-  });
-  output += `\n);`;
+  output += monochromeColorsListString();
+  output += monochromeCategoriesListString();
 
   // Monochrome Lists
   output += `\n\n/* - - - - - - - - - - - 
-  Monochrome lists
+Monochrome lists
 - - - - - - - - - - - */`;
 
   const monochromeCategoriesSassList = convertObjectCategoriesToSassLists(
@@ -348,10 +342,27 @@ const saveIconsListsOnDisk = (categoriesListsObject: categoriesLists) => {
 
   output += `\n\n$all-monochrome-lists: (`;
   monochromeCategoriesList.forEach((category) => {
-    output += ` \n${category}: $${category},`;
+    output += `\n  ${category}: $${category},`;
   });
   output += `\n);`;
 
+  // Multicolor Lists
+  output += `\n\n/* - - - - - - - - - - - 
+Multicolor lists
+- - - - - - - - - - - */`;
+
+  const multicolorCategoriesSassList = convertObjectCategoriesToSassLists(
+    categoriesListsObject.multicolor
+  );
+  output += multicolorCategoriesSassList;
+
+  output += `\n\n$all-multicolor-lists: (`;
+  multicolorCategoriesList.forEach((category) => {
+    output += `\n  ${category}: $${category},`;
+  });
+  output += `\n);`;
+
+  // Save on disk
   const filePath = path.join(OUTPUT_PATH, ALL_LISTS_FILENAME);
 
   mkdir(OUTPUT_PATH, { recursive: true }, function (err) {
@@ -360,6 +371,35 @@ const saveIconsListsOnDisk = (categoriesListsObject: categoriesLists) => {
       writeFileSync(filePath, output);
     } catch (err) {
       const msg = `There was an error saving ${ALL_LISTS_FILENAME} the icon on disk. error: ${err}`;
+      console.error(`${RED} ${msg} ${RESET_COLOR}`);
+      return false;
+    }
+  });
+
+  return true;
+};
+
+const saveIconsCategoriesImportsOnDisk = (): boolean => {
+  let output = ``;
+
+  output += `\n/*multicolor lists*/`;
+  multicolorCategoriesList.forEach((category) => {
+    output += `\n@import "./multicolor/${category}";`;
+  });
+
+  output += `\n\n/*monochrome lists*/`;
+  monochromeCategoriesList.forEach((category) => {
+    output += `\n@import "./monochrome/${category}";`;
+  });
+
+  const filePath = path.join(OUTPUT_PATH, CATEGORIES_IMPORTS_FILENAME);
+
+  mkdir(OUTPUT_PATH, { recursive: true }, function (err) {
+    try {
+      // Write the content to the file synchronously
+      writeFileSync(filePath, output);
+    } catch (err) {
+      const msg = `There was an error saving ${CATEGORIES_IMPORTS_FILENAME} the icon on disk. error: ${err}`;
       console.error(`${RED} ${msg} ${RESET_COLOR}`);
       return false;
     }
@@ -395,6 +435,7 @@ const saveMixinsOnDisk = () => {
  */
 const getIconsSelectorsMixins = () => {
   let output = ``;
+  output += `@import "${ALL_LISTS_FILENAME}"; \n\n`;
   output += getMonochromeSassConstructs();
   output += getMulticolorSassConstructs();
   return output;
@@ -421,11 +462,9 @@ MONOCHROME CONSTRUCTS
 - - - - - - - - - - - - - - - - - - - - - */
 
 const getMonochromeSassConstructs = () => {
-  let output = `\n\n/* - - - - - - - - - - - - - - - - - - 
+  let output = `/* - - - - - - - - - - - - - - - - - - 
 MONOCHROME CONSTRUCTS
-- - - - - - - - - - - - - - - - - - */\n\n`;
-  output += monochromeColorsListString();
-  output += monochromeCategoriesListString();
+- - - - - - - - - - - - - - - - - - */`;
   output += monochromeMapFunctions();
   output += monochromeSelectorsMixin();
   return output;
@@ -437,14 +476,14 @@ const monochromeColorsListString = (): string => {
   monochromeColors.forEach((color, i) => {
     const isLastColor = i === monochromeColors.length - 1;
     const colorStates = Object.entries(color.states);
-    output += ` ${color.name}: (\n`;
+    output += `  ${color.name}: (\n`;
 
     colorStates.forEach(([stateName, colorValue], stateIndex, statesArray) => {
       if (!colorValue) {
         return;
       }
       const isLastState = stateIndex === statesArray.length - 1;
-      output += `   ${stateName}`;
+      output += `    ${stateName}`;
       output += !isLastState ? ",\n" : "\n";
     });
     output += !isLastColor ? " ),\n" : " )\n";
@@ -503,7 +542,7 @@ const monochromeMapFunctions = (): string => {
 };
 
 const monochromeSelectorsMixin = (): string => {
-  return `\n\n@mixin generate-monochrome-icons-selectors(
+  return `\n@mixin generate-monochrome-icons-selectors(
   $all-monochrome-lists,
   $css-prefix: "icon",
   $prefix-category-separator: "__",
