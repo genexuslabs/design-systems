@@ -13,7 +13,6 @@ import {
   getPathWithoutSrcDir,
 } from "./partials-common/utils.js";
 import { deleteDirectory } from "./partials-common/file-system-utils.js";
-import { createIconsObject } from "./processor-ts.js";
 
 let monochromeCategoriesList: string[] = [];
 let multicolorCategoriesList: string[] = [];
@@ -23,6 +22,7 @@ const SRC_PATH = await process.argv[2];
 const OUTPUT_PATH = await process.argv[3];
 const COLOR_STATES_PATH = await process.argv[4];
 const ALL_LISTS_FILENAME = "all-lists.scss";
+const CATEGORIES_IMPORTS_FILENAME = "categories-imports.scss";
 const MIXINS_FILENAME = "svg-sass-mixins.scss";
 
 // Start fresh (delete current output directory)
@@ -55,8 +55,14 @@ export function processIconsSass(sourceDir: string, iconsArray: string[]) {
   });
 
   // iconsCatalog is ready
-  processIconsCatalog(iconsCatalog);
-  const iconsObject = createIconsObject(iconsCatalog);
+  const categoriesListsObject: categoriesLists = {
+    monochrome: {},
+    multicolor: {},
+  };
+  processIconsCatalog(iconsCatalog, categoriesListsObject);
+  saveIconsListsOnDisk(categoriesListsObject);
+  saveIconsCategoriesImportsOnDisk();
+  saveMixinsOnDisk();
 }
 
 const addIconInCatalog = (
@@ -109,13 +115,17 @@ const updateIconsCatalog = (
   });
 };
 
-const processIconsCatalog = (iconsCatalog: iconsCatalog) => {
+const processIconsCatalog = (
+  iconsCatalog: iconsCatalog,
+  categoriesListsObject: categoriesLists
+) => {
   // 1. process monochrome
   for (const category in iconsCatalog.monochrome) {
     processCatalogCategory(
       "monochrome",
       category,
-      iconsCatalog.monochrome[category]
+      iconsCatalog.monochrome[category],
+      categoriesListsObject
     );
   }
 
@@ -124,37 +134,44 @@ const processIconsCatalog = (iconsCatalog: iconsCatalog) => {
     processCatalogCategory(
       "multicolor",
       category,
-      iconsCatalog.multicolor[category]
+      iconsCatalog.multicolor[category],
+      categoriesListsObject
     );
   }
 };
 
 const processCatalogCategory = (
-  type: IconType,
+  iconType: IconType,
   categoryName: string,
-  categoryIcons: lightDarkIcons
+  categoryIcons: lightDarkIcons,
+  categoriesListsObject: categoriesLists
 ) => {
-  saveCategory(type, categoryName);
-  const sassFileContent = createSassFileString(categoryName, categoryIcons);
-  saveSassOnDisk(sassFileContent, type, categoryName);
-  saveIconsListsOnDisk();
-  saveMixinsOnDisk();
+  saveCategory(iconType, categoryName);
+  const sassFileContent = createSassFileString(
+    categoryName,
+    categoryIcons,
+    categoriesListsObject,
+    iconType
+  );
+  saveSassOnDisk(sassFileContent, iconType, categoryName);
 };
 
 const createSassFileString = (
   categoryName: string,
-  categoryIcons: lightDarkIcons
+  categoryIcons: lightDarkIcons,
+  categoriesListsObject: categoriesLists,
+  iconType: IconType
 ): string => {
-  let categoryList = ` $${categoryName}: `;
-
+  // Save icon on categoriesListsObject for further use.
+  if (!categoriesListsObject[iconType].hasOwnProperty(categoryName)) {
+    categoriesListsObject[iconType][categoryName] = [];
+  }
   // category list (only once. iterate over dark or light, is the same)
   categoryIcons.dark.forEach((icon, index) => {
     const iconName = icon.fileName.substring(0, icon.fileName.lastIndexOf("."));
-    categoryList +=
-      index === categoryIcons.dark.length - 1
-        ? `${iconName};`
-        : `${iconName}, `;
+    categoriesListsObject[iconType][categoryName].push(iconName);
   });
+  // End of Save icon on categoriesListsObject for further use.
 
   // Icons Custom Properties
   const lightCustomProperties = createIconsCustomProperties(
@@ -210,7 +227,6 @@ const createSassFileString = (
 
   const output = `
   ${allIconsCustomProperties}
-  ${categoryList}
     %icon__${categoryName} {
   ${allPlaceholders}
     }
@@ -303,7 +319,67 @@ const saveSassOnDisk = (
   return true;
 };
 
-const saveIconsListsOnDisk = () => {
+const saveIconsListsOnDisk = (categoriesListsObject: categoriesLists) => {
+  let output = ``;
+
+  // Monochrome Categories and Colors
+  output += `/* - - - - - - - - - - - - - - - -
+ Monochrome Categories and Colors
+ - - - - - - - - - - - - - - - - -*/\n\n`;
+
+  output += monochromeColorsListString();
+  output += monochromeCategoriesListString();
+
+  // Monochrome Lists
+  output += `\n\n/* - - - - - - - - - - - 
+Monochrome lists
+- - - - - - - - - - - */`;
+
+  const monochromeCategoriesSassList = convertObjectCategoriesToSassLists(
+    categoriesListsObject.monochrome
+  );
+  output += monochromeCategoriesSassList;
+
+  output += `\n\n$all-monochrome-lists: (`;
+  monochromeCategoriesList.forEach((category) => {
+    output += `\n  ${category}: $${category},`;
+  });
+  output += `\n);`;
+
+  // Multicolor Lists
+  output += `\n\n/* - - - - - - - - - - - 
+Multicolor lists
+- - - - - - - - - - - */`;
+
+  const multicolorCategoriesSassList = convertObjectCategoriesToSassLists(
+    categoriesListsObject.multicolor
+  );
+  output += multicolorCategoriesSassList;
+
+  output += `\n\n$all-multicolor-lists: (`;
+  multicolorCategoriesList.forEach((category) => {
+    output += `\n  ${category}: $${category},`;
+  });
+  output += `\n);`;
+
+  // Save on disk
+  const filePath = path.join(OUTPUT_PATH, ALL_LISTS_FILENAME);
+
+  mkdir(OUTPUT_PATH, { recursive: true }, function (err) {
+    try {
+      // Write the content to the file synchronously
+      writeFileSync(filePath, output);
+    } catch (err) {
+      const msg = `There was an error saving ${ALL_LISTS_FILENAME} the icon on disk. error: ${err}`;
+      console.error(`${RED} ${msg} ${RESET_COLOR}`);
+      return false;
+    }
+  });
+
+  return true;
+};
+
+const saveIconsCategoriesImportsOnDisk = (): boolean => {
   let output = ``;
 
   output += `\n/*multicolor lists*/`;
@@ -316,26 +392,14 @@ const saveIconsListsOnDisk = () => {
     output += `\n@import "./monochrome/${category}";`;
   });
 
-  output += `\n\n$all-multicolor-lists: (`;
-  multicolorCategoriesList.forEach((category) => {
-    output += ` \n${category}: $${category},`;
-  });
-  output += `\n);`;
-
-  output += `\n\n$all-monochrome-lists: (`;
-  monochromeCategoriesList.forEach((category) => {
-    output += ` \n${category}: $${category},`;
-  });
-  output += `\n);`;
-
-  const filePath = path.join(OUTPUT_PATH, ALL_LISTS_FILENAME);
+  const filePath = path.join(OUTPUT_PATH, CATEGORIES_IMPORTS_FILENAME);
 
   mkdir(OUTPUT_PATH, { recursive: true }, function (err) {
     try {
       // Write the content to the file synchronously
       writeFileSync(filePath, output);
     } catch (err) {
-      const msg = `There was an error saving ${ALL_LISTS_FILENAME} the icon on disk. error: ${err}`;
+      const msg = `There was an error saving ${CATEGORIES_IMPORTS_FILENAME} the icon on disk. error: ${err}`;
       console.error(`${RED} ${msg} ${RESET_COLOR}`);
       return false;
     }
@@ -371,9 +435,26 @@ const saveMixinsOnDisk = () => {
  */
 const getIconsSelectorsMixins = () => {
   let output = ``;
+  output += `@import "${ALL_LISTS_FILENAME}"; \n\n`;
   output += getMonochromeSassConstructs();
   output += getMulticolorSassConstructs();
   return output;
+};
+
+const convertObjectCategoriesToSassLists = (
+  categoriesList: categoriesList
+): string => {
+  let sassString = ``;
+
+  for (const category in categoriesList) {
+    const categoryIcons = categoriesList[category];
+    const iconsString = categoryIcons.join(", ");
+    sassString += `
+ 
+// ${category}
+$${category}: ${iconsString};`;
+  }
+  return sassString;
 };
 
 /* - - - - - - - - - - - - - - - - - - - - -
@@ -381,11 +462,9 @@ MONOCHROME CONSTRUCTS
 - - - - - - - - - - - - - - - - - - - - - */
 
 const getMonochromeSassConstructs = () => {
-  let output = `\n\n/* - - - - - - - - - - - - - - - - - - 
+  let output = `/* - - - - - - - - - - - - - - - - - - 
 MONOCHROME CONSTRUCTS
-- - - - - - - - - - - - - - - - - - */\n\n`;
-  output += monochromeColorsListString();
-  output += monochromeCategoriesListString();
+- - - - - - - - - - - - - - - - - - */`;
   output += monochromeMapFunctions();
   output += monochromeSelectorsMixin();
   return output;
@@ -397,14 +476,14 @@ const monochromeColorsListString = (): string => {
   monochromeColors.forEach((color, i) => {
     const isLastColor = i === monochromeColors.length - 1;
     const colorStates = Object.entries(color.states);
-    output += ` ${color.name}: (\n`;
+    output += `  ${color.name}: (\n`;
 
     colorStates.forEach(([stateName, colorValue], stateIndex, statesArray) => {
       if (!colorValue) {
         return;
       }
       const isLastState = stateIndex === statesArray.length - 1;
-      output += `   ${stateName}`;
+      output += `    ${stateName}`;
       output += !isLastState ? ",\n" : "\n";
     });
     output += !isLastColor ? " ),\n" : " )\n";
@@ -463,7 +542,7 @@ const monochromeMapFunctions = (): string => {
 };
 
 const monochromeSelectorsMixin = (): string => {
-  return `\n\n@mixin generate-monochrome-icons-selectors(
+  return `\n@mixin generate-monochrome-icons-selectors(
   $all-monochrome-lists,
   $css-prefix: "icon",
   $prefix-category-separator: "__",
@@ -555,3 +634,12 @@ export type lightDarkIcons = {
   light: { fileName: string; states: string[]; iconType: IconType }[];
   dark: { fileName: string; states: string[]; iconType: IconType }[];
 };
+
+interface categoriesList {
+  [key: string]: string[];
+}
+
+interface categoriesLists {
+  monochrome: categoriesList;
+  multicolor: categoriesList;
+}
