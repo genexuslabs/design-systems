@@ -22,6 +22,8 @@ import { getIconType } from "./partials-svg/get-icon-type.js";
 import { log } from "./partials-svg/log.js";
 // showcase
 import { savedIcons, pushSavedIcon, generateShowcase } from "./showcase.js";
+// icons object
+import { generateIconsObject } from "./processor-object.js";
 
 //Files and Directories
 
@@ -30,6 +32,7 @@ const OUTPUT_PATH = await process.argv[3];
 const COLOR_STATES_PATH = await process.argv[4];
 const SHOWCASE_PATH = await process.argv[5];
 const LOG_PATH = await process.argv[6];
+const ICONS_OBJECT_NAME = await process.argv[7];
 
 // Optional Base URL for the showcase
 const showcaseBaseUrl = path.relative(SHOWCASE_PATH, OUTPUT_PATH) + path.sep;
@@ -52,13 +55,14 @@ const readyObj: readyObj = readyToProcess(
   COLOR_STATES_PATH,
   SHOWCASE_PATH,
   LOG_PATH,
+  ICONS_OBJECT_NAME,
   numberOfArgsProvided
 );
 
 if (readyObj.ready) {
   const iconsPromise = getIcons(SRC_PATH);
   iconsPromise
-    .then((result: string[]) => {
+    .then((iconsResult: string[]) => {
       // 1. Create monochrome maps for quickly access when creating the showcase
       // colors map
       const monochromeColorsMap: MonochromeColorsMap =
@@ -66,8 +70,10 @@ if (readyObj.ready) {
       // categories map
       const monochromeCategoriesMap: MonochromeCategoriesMap =
         createMonochromeCategoriesMap(readyObj.statesJson);
+
       // 2. Process icons (the important stuff!💥)
-      processIcons(result, readyObj.statesJson, monochromeColorsMap);
+      processIcons(iconsResult, readyObj.statesJson, monochromeColorsMap);
+
       // 3. Generate showcase (nice feature to have)
       generateShowcase(
         savedIconsOnDisk,
@@ -79,6 +85,16 @@ if (readyObj.ready) {
         monochromeCategoriesMap,
         SHOWCASE_BASE_HREF
       );
+      // 4. Generate icons object
+      if (ICONS_OBJECT_NAME) {
+        generateIconsObject(
+          iconsResult,
+          ICONS_OBJECT_NAME,
+          readyObj.statesJson,
+          monochromeColorsMap,
+          monochromeCategoriesMap
+        );
+      }
     })
     .catch((error) => {
       const msg = `There was an error processing the icons. error: ${error}.`;
