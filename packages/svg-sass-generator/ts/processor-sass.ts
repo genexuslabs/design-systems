@@ -13,7 +13,6 @@ import {
   getPathWithoutSrcDir,
 } from "./partials-common/utils.js";
 import { deleteDirectory } from "./partials-common/file-system-utils.js";
-import { createIconsObject } from "./processor-ts.js";
 
 let monochromeCategoriesList: string[] = [];
 let multicolorCategoriesList: string[] = [];
@@ -55,8 +54,13 @@ export function processIconsSass(sourceDir: string, iconsArray: string[]) {
   });
 
   // iconsCatalog is ready
-  processIconsCatalog(iconsCatalog);
-  const iconsObject = createIconsObject(iconsCatalog);
+  const categoriesListsObject: categoriesLists = {
+    monochrome: {},
+    multicolor: {},
+  };
+  processIconsCatalog(iconsCatalog, categoriesListsObject);
+  saveIconsListsOnDisk(categoriesListsObject);
+  saveMixinsOnDisk();
 }
 
 const addIconInCatalog = (
@@ -109,13 +113,17 @@ const updateIconsCatalog = (
   });
 };
 
-const processIconsCatalog = (iconsCatalog: iconsCatalog) => {
+const processIconsCatalog = (
+  iconsCatalog: iconsCatalog,
+  categoriesListsObject: categoriesLists
+) => {
   // 1. process monochrome
   for (const category in iconsCatalog.monochrome) {
     processCatalogCategory(
       "monochrome",
       category,
-      iconsCatalog.monochrome[category]
+      iconsCatalog.monochrome[category],
+      categoriesListsObject
     );
   }
 
@@ -124,37 +132,44 @@ const processIconsCatalog = (iconsCatalog: iconsCatalog) => {
     processCatalogCategory(
       "multicolor",
       category,
-      iconsCatalog.multicolor[category]
+      iconsCatalog.multicolor[category],
+      categoriesListsObject
     );
   }
 };
 
 const processCatalogCategory = (
-  type: IconType,
+  iconType: IconType,
   categoryName: string,
-  categoryIcons: lightDarkIcons
+  categoryIcons: lightDarkIcons,
+  categoriesListsObject: categoriesLists
 ) => {
-  saveCategory(type, categoryName);
-  const sassFileContent = createSassFileString(categoryName, categoryIcons);
-  saveSassOnDisk(sassFileContent, type, categoryName);
-  saveIconsListsOnDisk();
-  saveMixinsOnDisk();
+  saveCategory(iconType, categoryName);
+  const sassFileContent = createSassFileString(
+    categoryName,
+    categoryIcons,
+    categoriesListsObject,
+    iconType
+  );
+  saveSassOnDisk(sassFileContent, iconType, categoryName);
 };
 
 const createSassFileString = (
   categoryName: string,
-  categoryIcons: lightDarkIcons
+  categoryIcons: lightDarkIcons,
+  categoriesListsObject: categoriesLists,
+  iconType: IconType
 ): string => {
-  let categoryList = ` $${categoryName}: `;
-
+  // Save icon on categoriesListsObject for further use.
+  if (!categoriesListsObject[iconType].hasOwnProperty(categoryName)) {
+    categoriesListsObject[iconType][categoryName] = [];
+  }
   // category list (only once. iterate over dark or light, is the same)
   categoryIcons.dark.forEach((icon, index) => {
     const iconName = icon.fileName.substring(0, icon.fileName.lastIndexOf("."));
-    categoryList +=
-      index === categoryIcons.dark.length - 1
-        ? `${iconName};`
-        : `${iconName}, `;
+    categoriesListsObject[iconType][categoryName].push(iconName);
   });
+  // End of Save icon on categoriesListsObject for further use.
 
   // Icons Custom Properties
   const lightCustomProperties = createIconsCustomProperties(
@@ -210,7 +225,6 @@ const createSassFileString = (
 
   const output = `
   ${allIconsCustomProperties}
-  ${categoryList}
     %icon__${categoryName} {
   ${allPlaceholders}
     }
@@ -303,24 +317,34 @@ const saveSassOnDisk = (
   return true;
 };
 
-const saveIconsListsOnDisk = () => {
+const saveIconsListsOnDisk = (categoriesListsObject: categoriesLists) => {
   let output = ``;
 
-  output += `\n/*multicolor lists*/`;
-  multicolorCategoriesList.forEach((category) => {
-    output += `\n@import "./multicolor/${category}";`;
-  });
+  // Multicolor Lists
+  output += `/* - - - - - - - - - - - 
+  Multicolor lists
+- - - - - - - - - - - */`;
 
-  output += `\n\n/*monochrome lists*/`;
-  monochromeCategoriesList.forEach((category) => {
-    output += `\n@import "./monochrome/${category}";`;
-  });
+  const multicolorCategoriesSassList = convertObjectCategoriesToSassLists(
+    categoriesListsObject.multicolor
+  );
+  output += multicolorCategoriesSassList;
 
   output += `\n\n$all-multicolor-lists: (`;
   multicolorCategoriesList.forEach((category) => {
     output += ` \n${category}: $${category},`;
   });
   output += `\n);`;
+
+  // Monochrome Lists
+  output += `\n\n/* - - - - - - - - - - - 
+  Monochrome lists
+- - - - - - - - - - - */`;
+
+  const monochromeCategoriesSassList = convertObjectCategoriesToSassLists(
+    categoriesListsObject.monochrome
+  );
+  output += monochromeCategoriesSassList;
 
   output += `\n\n$all-monochrome-lists: (`;
   monochromeCategoriesList.forEach((category) => {
@@ -374,6 +398,22 @@ const getIconsSelectorsMixins = () => {
   output += getMonochromeSassConstructs();
   output += getMulticolorSassConstructs();
   return output;
+};
+
+const convertObjectCategoriesToSassLists = (
+  categoriesList: categoriesList
+): string => {
+  let sassString = ``;
+
+  for (const category in categoriesList) {
+    const categoryIcons = categoriesList[category];
+    const iconsString = categoryIcons.join(", ");
+    sassString += `
+ 
+// ${category}
+$${category}: ${iconsString};`;
+  }
+  return sassString;
 };
 
 /* - - - - - - - - - - - - - - - - - - - - -
@@ -555,3 +595,12 @@ export type lightDarkIcons = {
   light: { fileName: string; states: string[]; iconType: IconType }[];
   dark: { fileName: string; states: string[]; iconType: IconType }[];
 };
+
+interface categoriesList {
+  [key: string]: string[];
+}
+
+interface categoriesLists {
+  monochrome: categoriesList;
+  multicolor: categoriesList;
+}
