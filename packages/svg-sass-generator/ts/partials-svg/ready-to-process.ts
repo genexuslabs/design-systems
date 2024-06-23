@@ -23,6 +23,7 @@ export function readyToProcess(
   COLOR_STATES_PATH: string,
   SHOWCASE_PATH: string,
   LOG_PATH: string,
+  ICONS_OBJECT_FILEPATH: string,
   numberOfArgsProvided: number
 ): readyObj {
   const shouldWriteToLog = !!LOG_PATH;
@@ -38,7 +39,7 @@ export function readyToProcess(
   // and the second argument is the command for running the processor.
   // (we only care about configuration arguments provided by the user).
 
-  numberOfArgsProvided -= 2;
+  numberOfArgsProvided -= ICONS_OBJECT_FILEPATH ? 3 : 2;
   if (numberOfArgsProvided < 5) {
     const msg = `Error: 5 arguments are expected, but ${numberOfArgsProvided} were provided. Please provide the required arguments: \n
     1: icons source directory
