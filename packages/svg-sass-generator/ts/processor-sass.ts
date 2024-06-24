@@ -2,6 +2,7 @@
 import { writeFileSync, mkdir } from "fs";
 import path from "path";
 import cheerio from "cheerio";
+import minimist from "minimist";
 // partials-common
 import { getIcons } from "./partials-common/get-icons.js";
 import { ColorScheme, IconType } from "./partials-common/types.js";

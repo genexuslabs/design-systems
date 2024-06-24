@@ -1,6 +1,7 @@
 import path from "path";
 // libraries
 import cheerio from "cheerio";
+import minimist from "minimist";
 // partials-common
 import { getIcons } from "./partials-common/get-icons.js";
 import { RED, RESET_COLOR, getSvgString } from "./partials-common/utils.js";
@@ -26,20 +27,18 @@ import { savedIcons, pushSavedIcon, generateShowcase } from "./showcase.js";
 import { generateIconsObject } from "./processor-object.js";
 
 //Files and Directories
+const args = minimist(process.argv.slice(2));
 
-const SRC_PATH = await process.argv[2];
-const OUTPUT_PATH = await process.argv[3];
-const COLOR_STATES_PATH = await process.argv[4];
-const SHOWCASE_PATH = await process.argv[5];
-const LOG_PATH = await process.argv[6];
-const ICONS_OBJECT_NAME = await process.argv[7];
+const SRC_PATH = await args.srcDir;
+const OUTPUT_PATH = await args.outDir;
+const CONFIG_FILE_PATH = await args.configFilePath;
+const SHOWCASE_PATH = await args.showcaseDir;
+const SHOWCASE_BASE_HREF = await args.showcaseBaseHref;
+const LOG_PATH = await args.logDir;
+const ICONS_OBJECT_NAME = await args.objectFilePath;
 
 // Optional Base URL for the showcase
 const showcaseBaseUrl = path.relative(SHOWCASE_PATH, OUTPUT_PATH) + path.sep;
-
-const SHOWCASE_BASE_HREF = (await process.argv[7]) || showcaseBaseUrl;
-
-const numberOfArgsProvided = process.argv.length;
 const shouldWriteToLog = !!LOG_PATH;
 
 // for the showcase (showcase.js)
@@ -52,11 +51,9 @@ const savedIconsOnDisk: savedIcons = {
 const readyObj: readyObj = readyToProcess(
   SRC_PATH,
   OUTPUT_PATH,
-  COLOR_STATES_PATH,
+  CONFIG_FILE_PATH,
   SHOWCASE_PATH,
-  LOG_PATH,
-  ICONS_OBJECT_NAME,
-  numberOfArgsProvided
+  LOG_PATH
 );
 
 if (readyObj.ready) {
@@ -83,7 +80,7 @@ if (readyObj.ready) {
         readyObj.statesJson,
         monochromeColorsMap,
         monochromeCategoriesMap,
-        SHOWCASE_BASE_HREF
+        SHOWCASE_BASE_HREF || showcaseBaseUrl
       );
       // 4. Generate icons object
       if (ICONS_OBJECT_NAME) {
@@ -218,7 +215,7 @@ function processIcons(
         SRC_PATH,
         "light",
         LOG_PATH,
-        COLOR_STATES_PATH,
+        CONFIG_FILE_PATH,
         monochromeColorsMap
       );
 
@@ -264,7 +261,7 @@ function processIcons(
         SRC_PATH,
         "dark",
         LOG_PATH,
-        COLOR_STATES_PATH,
+        CONFIG_FILE_PATH,
         monochromeColorsMap
       );
 

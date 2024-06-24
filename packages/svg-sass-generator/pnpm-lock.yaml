@@ -11,6 +11,9 @@ dependencies:
   '@types/cheerio':
     specifier: ^0.22.35
     version: 0.22.35
+  '@types/minimist':
+    specifier: ^1.2.5
+    version: 1.2.5
   '@types/stringify-object':
     specifier: ^4.0.5
     version: 4.0.5
@@ -29,6 +32,9 @@ dependencies:
   json-colorizer:
     specifier: ^2.2.2
     version: 2.2.2
+  minimist:
+    specifier: ^1.2.8
+    version: 1.2.8
   sass:
     specifier: ~1.72.0
     version: 1.72.0
@@ -139,6 +145,10 @@ packages:
     resolution: {integrity: sha512-yD57BchKRvTV+JD53UZ6PD8KWY5g5rvvMLRnZR3EQBCZXiDT/HR+pKpMzFGlWNhFrXlo7VPZXtKvIEwZkAWOIA==}
     dependencies:
       '@types/node': 20.12.12
+    dev: false
+
+  /@types/minimist@1.2.5:
+    resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
     dev: false
 
   /@types/node@20.12.12:
@@ -771,6 +781,10 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       brace-expansion: 2.0.1
+    dev: false
+
+  /minimist@1.2.8:
+    resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
     dev: false
 
   /minipass@7.1.1:
