@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
+    <title>Typography</title>
 
     <script type="module">
       import { defineCustomElements } from "https://unpkg.com/@genexus/chameleon-controls-library@latest/dist/esm/loader.js";
@@ -20,47 +20,233 @@
   <body class="showcase" sidebar>
     <main class="main">
       <div class="container">
-        <!-- button primary -->
+        <!-- ----------------------------------------------------- 
+    HEADINGS
+    ------------------------------------------------------ -->
         <section class="section">
           <!-- header -->
           <header class="section__header">
-            <h1 class="section__title">typography</h1>
-            <p class="section__description">section description</p>
+            <h1 class="section__title">headings</h1>
+            <p class="section__description">
+              Using HTML headings provides structure and clarity to your web
+              content, enhancing both accessibility and SEO. The h1 tag should
+              be used only once per page as the main title, representing the
+              primary topic.
+            </p>
+            <p class="section__description section__description--note">
+              Subsequent headings (h2, h3, etc.) should follow a cascading
+              order: h2 under h1, h3 under h2, and so on. Skipping levels, like
+              using h4 before h3, disrupts this flow and can confuse users and
+              search engines. Proper heading use ensures clear, organized
+              content, improving user experience.
+            </p>
           </header>
           <div class="section__articles-container">
             <!-- ========================== 
-          text
+          heading 1
           =========================== -->
-            <article class="article" nav data-title="text only">
+            <article class="article" nav data-title="heading 1">
               <header class="article__header"></header>
-              <!-- main -->
+              <!-- heading -->
               <div class="article__main">
                 <div class="article__content">
-                  <p class="text">
-                    Got it! Here's a paragraph about GeneXus: GeneXus is a
-                    powerful software development platform designed to
-                    streamline the creation of applications across multiple
-                    platforms. It uses artificial intelligence to automate much
-                    of the coding process, allowing developers to focus on
-                    design and functionality. By defining high-level
-                    specifications, GeneXus can generate applications for web,
-                    mobile, and legacy systems, ensuring compatibility and
-                    integration. Its unique approach significantly reduces
-                    development time and costs, making it an invaluable tool for
-                    companies looking to innovate rapidly and efficiently. With
-                    robust support for various databases and languages, GeneXus
-                    is a versatile solution for modern software development
-                    challenges.
-                  </p>
+                  <h1 class="heading-1">
+                    Genexus: Shaping Tomorrow's Technology Landscape with
+                    Innovative Solutions
+                  </h1>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `<button class="button-primary">
-Caption
-</button>`;
+                    const markup1 = `<h1 class="heading-1"><-- Your content here --></h1>`;
                     document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          heading 2
+          =========================== -->
+            <article class="article" nav data-title="heading 2">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <h2 class="heading-2">
+                    Genexus: Shaping Tomorrow's Technology Landscape with
+                    Innovative Solutions
+                  </h2>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-2" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup2 = `<h2 class="heading-2"><-- Your content here --></h2>`;
+                    document.getElementById("ch-code-2").value = markup2;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          heading 3
+          =========================== -->
+            <article class="article" nav data-title="heading 3">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <h3 class="heading-3">
+                    Genexus: Shaping Tomorrow's Technology Landscape with
+                    Innovative Solutions
+                  </h3>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-3" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup3 = `<h3 class="heading-3"><-- Your content here --></h3>`;
+                    document.getElementById("ch-code-3").value = markup3;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          heading 4
+          =========================== -->
+            <article class="article" nav data-title="heading 4">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <h4 class="heading-4">
+                    Genexus: Shaping Tomorrow's Technology Landscape with
+                    Innovative Solutions
+                  </h4>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-4" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup4 = `<h4 class="heading-4"><-- Your content here --></h4>`;
+                    document.getElementById("ch-code-4").value = markup4;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          heading 5
+          =========================== -->
+            <article class="article" nav data-title="heading 5">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <h5 class="heading-5">
+                    Genexus: Shaping Tomorrow's Technology Landscape with
+                    Innovative Solutions
+                  </h5>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-5" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup5 = `<h5 class="heading-5"><-- Your content here --></h5>`;
+                    document.getElementById("ch-code-5").value = markup5;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          heading 6
+          =========================== -->
+            <article class="article" nav data-title="heading 6">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <h6 class="heading-6">
+                    Genexus: Shaping Tomorrow's Technology Landscape with
+                    Innovative Solutions
+                  </h6>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-6" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup6 = `<h6 class="heading-6"><-- Your content here --></h6>`;
+                    document.getElementById("ch-code-6").value = markup6;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+
+        <!-- ----------------------------------------------------- 
+    TEXT
+    ------------------------------------------------------ -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">text</h1>
+            <p class="section__description">
+              In web development, body text is essential for delivering content
+              to users. Properly structured and organized text ensures
+              readability and accessibility, enhancing the user experience by
+              making information easy to navigate and understand. Clear,
+              well-written text also improves SEO by providing search engines
+              with easily indexable content, helping your website rank higher in
+              search results.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+  heading 1
+  =========================== -->
+            <article class="article" nav data-title="text body">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <p class="text-body">
+                    Genexus is a development platform that automates application
+                    creation using a model-driven approach. It allows developers
+                    to focus on high-level design, generating code for web,
+                    mobile, and desktop applications, resulting in faster
+                    development cycles and fewer errors.
+                  </p>
+                  <p class="text-body">
+                    Genexus seamlessly integrates with existing systems and
+                    databases, enabling businesses to modernize while using
+                    their current infrastructure. Supporting various programming
+                    languages and technologies, it fosters collaboration and
+                    enhances efficiency and innovation in software development.
+                  </p>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-7" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup7 = `<p class="text-body"><-- Your content here --></p>`;
+                    document.getElementById("ch-code-7").value = markup7;
                   </script>
                 </div>
                 <!-- /.article__content -->
