@@ -1,106 +1,8 @@
-
+@import "all-lists.scss"; 
 
 /* - - - - - - - - - - - - - - - - - - 
 MONOCHROME CONSTRUCTS
 - - - - - - - - - - - - - - - - - - */
-
-$monochrome-colors: (
- on-surface: (
-   enabled,
-   hover,
-   active,
-   disabled
- ),
- on-primary: (
-   enabled,
-   hover,
-   active,
-   disabled
- ),
- on-disabled: (
-   enabled,
- ),
- on-message: (
-   enabled,
- ),
- on-elevation: (
-   enabled,
- ),
- primary: (
-   enabled,
-   hover,
-   active,
-   disabled
- ),
- error: (
-   enabled,
- ),
- warning: (
-   enabled,
- ),
- success: (
-   enabled,
- ),
- neutral: (
-   enabled,
-   hover,
-   active,
-   disabled
- ),
- highlighted: (
-   enabled,
- ),
- bright: (
-   enabled,
- )
-);
-
-$monochrome-categories: (
- gemini-tools: (
-   on-surface,
-   on-primary,
-   on-disabled,
-   on-message,
-   on-elevation,
-   primary,
-   neutral,
-   highlighted,
-   bright
- ),
- menus: (
-   on-surface,
-   on-primary,
-   on-disabled,
-   on-message,
-   on-elevation,
-   primary,
-   neutral,
-   highlighted,
-   bright
- ),
- navigation: (
-   on-surface,
-   on-primary,
-   on-disabled,
-   on-message,
-   on-elevation,
-   primary,
-   neutral,
-   highlighted,
-   bright
- ),
- windows-tools: (
-   on-surface,
-   on-primary,
-   on-disabled,
-   on-message,
-   on-elevation,
-   primary,
-   neutral,
-   highlighted,
-   bright
- )
-);
 
 // functions for monochrome or multicolor:
 @function category-is-excluded($category, $categories-list) {
@@ -121,7 +23,6 @@ $monochrome-categories: (
   $multicolorStates: (enabled, hover, active, disabled);
   @return $multicolorStates;
 }
-
 
 @mixin generate-monochrome-icons-selectors(
   $all-monochrome-lists,

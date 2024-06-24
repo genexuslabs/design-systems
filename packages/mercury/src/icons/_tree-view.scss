@@ -1,27 +1,27 @@
 // This mixins processes icons for the tree view action start part.
 @mixin tree-view-icons(
-  $icons-list,
-  $icons-list-name,
+  $icons-in-category,
+  $category-name,
   $tree-view-selector: ".tree-view"
 ) {
-  @each $icon in $icons-list {
-    $icon-part-name: #{$icons-list-name}-#{$icon};
+  @each $icon in $icons-in-category {
+    $icon-part-name: #{$category-name}-#{$icon};
     //enabled
-    $icon-variable: var(--icon__#{$icons-list-name}_#{$icon}--enabled);
+    $icon-variable: var(--icon__#{$category-name}_#{$icon}--enabled);
     $enabled-selector: "#{$tree-view-selector}::part(item__action #{$icon-part-name})";
     @include tree-view-item__action-icon(
       $item__action-with-icon-selector: $enabled-selector,
       $icon-path: $icon-variable
     );
     //hover
-    $icon-variable: var(--icon__#{$icons-list-name}_#{$icon}--hover);
+    $icon-variable: var(--icon__#{$category-name}_#{$icon}--hover);
     $hover-selector: "#{$tree-view-selector}::part(item__action #{$icon-part-name}):hover";
     @include tree-view-item__action-icon(
       $item__action-with-icon-selector: $hover-selector,
       $icon-path: $icon-variable
     );
     //active
-    $icon-variable: var(--icon__#{$icons-list-name}_#{$icon}--active);
+    $icon-variable: var(--icon__#{$category-name}_#{$icon}--active);
     $active-selector: "#{$tree-view-selector}::part(item__action #{$icon-part-name}):active";
     @include tree-view-item__action-icon(
       $item__action-with-icon-selector: $active-selector,
