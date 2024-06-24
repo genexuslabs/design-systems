@@ -1,14 +1,14 @@
 @mixin border() {
   // border widths
-  --mer-border-width--sm: 1px;
-  --mer-border-width--md: 2px;
-  --mer-border-width--lg: 4px;
+  --mer-border__width--sm: 1px;
+  --mer-border__width--md: 2px;
+  --mer-border__width--lg: 4px;
 
   //border radius
-  --mer-border-radius--2xs: 1px;
-  --mer-border-radius--xs: 2px;
-  --mer-border-radius--sm: 4px;
-  --mer-border-radius--md: 8px;
-  --mer-border-radius--lg: 12px;
-  --mer-border-radius--xl: 30px;
+  --mer-border__radius--2xs: 1px;
+  --mer-border__radius--xs: 2px;
+  --mer-border__radius--sm: 4px;
+  --mer-border__radius--md: 8px;
+  --mer-border__radius--lg: 12px;
+  --mer-border__radius--xl: 30px;
 }
