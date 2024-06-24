@@ -1,20 +1,135 @@
+/* - - - - - - - - - - - - - - - -
+ Monochrome Categories and Colors
+ - - - - - - - - - - - - - - - - -*/
 
-/*multicolor lists*/
-@import "./multicolor/objects";
-
-/*monochrome lists*/
-@import "./monochrome/windows-tools";
-@import "./monochrome/navigation";
-@import "./monochrome/menus";
-@import "./monochrome/gemini-tools";
-
-$all-multicolor-lists: ( 
-objects: $objects,
+$monochrome-colors: (
+  on-surface: (
+    enabled,
+    hover,
+    active,
+    disabled
+ ),
+  on-primary: (
+    enabled,
+    hover,
+    active,
+    disabled
+ ),
+  on-disabled: (
+    enabled,
+ ),
+  on-message: (
+    enabled,
+ ),
+  on-elevation: (
+    enabled,
+ ),
+  primary: (
+    enabled,
+    hover,
+    active,
+    disabled
+ ),
+  error: (
+    enabled,
+ ),
+  warning: (
+    enabled,
+ ),
+  success: (
+    enabled,
+ ),
+  neutral: (
+    enabled,
+    hover,
+    active,
+    disabled
+ ),
+  highlighted: (
+    enabled,
+ ),
+  bright: (
+    enabled,
+ )
 );
 
-$all-monochrome-lists: ( 
-windows-tools: $windows-tools, 
-navigation: $navigation, 
-menus: $menus, 
-gemini-tools: $gemini-tools,
+$monochrome-categories: (
+ gemini-tools: (
+   on-surface,
+   on-primary,
+   on-disabled,
+   on-message,
+   on-elevation,
+   primary,
+   neutral,
+   highlighted,
+   bright
+ ),
+ menus: (
+   on-surface,
+   on-primary,
+   on-disabled,
+   on-message,
+   on-elevation,
+   primary,
+   neutral,
+   highlighted,
+   bright
+ ),
+ navigation: (
+   on-surface,
+   on-primary,
+   on-disabled,
+   on-message,
+   on-elevation,
+   primary,
+   neutral,
+   highlighted,
+   bright
+ ),
+ windows-tools: (
+   on-surface,
+   on-primary,
+   on-disabled,
+   on-message,
+   on-elevation,
+   primary,
+   neutral,
+   highlighted,
+   bright
+ )
+);
+
+/* - - - - - - - - - - - 
+Monochrome lists
+- - - - - - - - - - - */
+ 
+// windows-tools
+$windows-tools: workflow, workflow-settings, work-with-attributes, watch, toolbox, teamdev, services, roles, rol, responsive-sizes, references, properties, preferences, performance-test-objects, output, logout, last-changes-view, kb-explorer, indexer-monitor, history, genexus-cloud, frontend, filter, filter-conditions, error-list, debugx, datastores, category-groups, breakpoints, backend, alphabetical-order;
+ 
+// navigation
+$navigation: pill-outlined, pill-filled, level-up, level-down, gx-arrow-right, drag, chevron-up, chevron-right, chevron-left, chevron-down, bullet, arrow-up, arrow-right, arrow-left, arrow-down, arrow-down-skyblue;
+ 
+// menus
+$menus: undo, undo-close-object, save, save-all, run, redo, properties, paste, open-object, new-object, find, delete, cut, create-database-tables, copy, cancel-build, build, build-all;
+ 
+// gemini-tools
+$gemini-tools: warning, success, show-more-vertical, show-more-horizontal, share, settings, search, reset, read-only, open-window, notice, more-info, minus, minus-circle, list-view, folder, flow-arrow, file, error, edit, edit-wand, duplicate, download, deleted, delete, data-provider, copy, copy-to-clipboard, color-picker, close, category-ungroup, category-group, card-view, add, add-circle;
+
+$all-monochrome-lists: (
+  windows-tools: $windows-tools,
+  navigation: $navigation,
+  menus: $menus,
+  gemini-tools: $gemini-tools,
+);
+
+/* - - - - - - - - - - - 
+Multicolor lists
+- - - - - - - - - - - */
+ 
+// objects
+$objects: workflow, work-panel, web-panel, web-component, version, url-rewrite, transaction, to-be-defined, theme, theme-web, theme-for-sd, table, super-app, subtype-group, structured-data-type, stencil, roles, report, references, query, procedure, patterns, panel-for-sd, orphant-document, offline-database, object, notification-templates, module, module-open, mini-app, menubar, menu, masterpage, main-object, language, knowledge-base, image, generator, generator-category, folder, folder-open, file, external-object, environment-select, environment-no-select, dso, domain, document, document-workflow, diagram, design, deployment-unit, dataview-index, datastore, datastore-category, data-view, data-selector, data-provider, dashboard, customization, conversational-flows, category, calendars, business-process-diagram, bg-color, attribute, api;
+
+$all-multicolor-lists: (
+  objects: $objects,
 );
