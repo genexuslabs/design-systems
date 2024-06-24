@@ -43,7 +43,8 @@ const includeStyles = () => {
   //mercury styles
   const mercuryLink = document.createElement("link");
   mercuryLink.rel = "stylesheet";
-  mercuryLink.href = "./css/mercury.css";
+  // mercuryLink.href = "./css/mercury.css"; // netlify
+  mercuryLink.href = "../dist/css/mercury.css"; // local development
   HEAD.appendChild(mercuryLink);
 };
 
