@@ -20,11 +20,9 @@ import { IconsColorsSchema } from "../partials-common/types.js";
 export function readyToProcess(
   SRC_PATH: string,
   OUTPUT_PATH: string,
-  COLOR_STATES_PATH: string,
+  CONFIG_FILE_PATH: string,
   SHOWCASE_PATH: string,
-  LOG_PATH: string,
-  ICONS_OBJECT_FILEPATH: string,
-  numberOfArgsProvided: number
+  LOG_PATH: string
 ): readyObj {
   const shouldWriteToLog = !!LOG_PATH;
   //clean the log directory first for a fresh log.
@@ -32,24 +30,47 @@ export function readyToProcess(
     deleteDirectory(LOG_PATH);
   }
 
-  // 1. check arguments quantity
-
-  // 5 arguments should have been provided:
-  // subtract 2 because the first argument is node,
-  // and the second argument is the command for running the processor.
-  // (we only care about configuration arguments provided by the user).
-
-  numberOfArgsProvided -= ICONS_OBJECT_FILEPATH ? 3 : 2;
-  if (numberOfArgsProvided < 5) {
-    const msg = `Error: 5 arguments are expected, but ${numberOfArgsProvided} were provided. Please provide the required arguments: \n
-    1: icons source directory
-    2: icons destination directory
-    3: color states json file
-    4: icons showcase directory
-    5: the directory path for the icons-log.txt file. (only directory, file name should not be included).
-    `;
+  // 1. validate that all the required arguments were provided:
+  // --srcDir
+  if (!SRC_PATH) {
+    const msg = `--srcDir argument was not provided. Please provide the source directory for the icons. ie.: --srcDir=my-icons/`;
     console.error(`${RED} ${msg} ${RESET_COLOR}`);
-
+    return {
+      ready: false,
+      statesJson: null,
+    };
+  }
+  // --outDir
+  if (!OUTPUT_PATH) {
+    const msg = `--outDir argument was not provided. Please provide the output directory for the icons. ie.: --outDir=generated-icons/`;
+    console.error(`${RED} ${msg} ${RESET_COLOR}`);
+    return {
+      ready: false,
+      statesJson: null,
+    };
+  }
+  // --configFilePath
+  if (!CONFIG_FILE_PATH) {
+    const msg = `--configFilePath argument was not provided. Please provide the configuration file, that should provide the required information about colors, categories, and states. ie.: --configFilePath=config/colors-config.json`;
+    console.error(`${RED} ${msg} ${RESET_COLOR}`);
+    return {
+      ready: false,
+      statesJson: null,
+    };
+  }
+  // --showcaseDir
+  if (!SHOWCASE_PATH) {
+    const msg = `--showcaseDir argument was not provided. Please provide the showcase directory for the icons. ie.: --showcaseDir=showcase/`;
+    console.error(`${RED} ${msg} ${RESET_COLOR}`);
+    return {
+      ready: false,
+      statesJson: null,
+    };
+  }
+  // --logDir
+  if (!LOG_PATH) {
+    const msg = `--logDir argument was not provided. Please provide the log directory. This is where errors will be logged in. ie.: --logDir=log/`;
+    console.error(`${RED} ${msg} ${RESET_COLOR}`);
     return {
       ready: false,
       statesJson: null,
@@ -95,18 +116,18 @@ export function readyToProcess(
   }
 
   // 4-A. validate "color states" filepath and extension
-  fs.access(COLOR_STATES_PATH, fs.constants.F_OK | fs.constants.R_OK, (err) => {
+  fs.access(CONFIG_FILE_PATH, fs.constants.F_OK | fs.constants.R_OK, (err) => {
     if (err) {
-      const msg = `"Color States" file validation error #1: "${COLOR_STATES_PATH}" is not a valid file or ${COLOR_STATES_PATH} does not exists. Please check that argument (argument number 3).`;
+      const msg = `"Color States" file validation error #1: "${CONFIG_FILE_PATH}" is not a valid file or ${CONFIG_FILE_PATH} does not exists. Please check that argument (argument number 3).`;
 
       log(msg, LOG_PATH, shouldWriteToLog);
       console.error(`${RED} ${msg} ${RESET_COLOR}`);
     } else {
       // Validate that extension is a.json
       const colorStatesIsJson =
-        extname(COLOR_STATES_PATH).toLowerCase() === ".json";
+        extname(CONFIG_FILE_PATH).toLowerCase() === ".json";
       if (!colorStatesIsJson) {
-        const msg = `"Color States" file validation error #1: the provided color states file "${COLOR_STATES_PATH}" is not a json file. This file is expected to be a json.`;
+        const msg = `"Color States" file validation error #1: the provided color states file "${CONFIG_FILE_PATH}" is not a json file. This file is expected to be a json.`;
         console.error(`${RED} ${msg} ${RESET_COLOR}`);
         log(msg, LOG_PATH, shouldWriteToLog);
       }
@@ -114,9 +135,9 @@ export function readyToProcess(
   });
 
   // 4-B. validate states json file
-  const statesResult = getStatesObject(COLOR_STATES_PATH);
+  const statesResult = getStatesObject(CONFIG_FILE_PATH);
   if (!statesResult.valid) {
-    const msg = `"Color States" file validation error #2: the provided color states json file ${COLOR_STATES_PATH}" is not valid. Errors found: ${statesResult.info}`;
+    const msg = `"Color States" file validation error #2: the provided color states json file ${CONFIG_FILE_PATH}" is not valid. Errors found: ${statesResult.info}`;
     console.error(`${RED} ${msg} ${RESET_COLOR}`);
     log(msg, LOG_PATH, shouldWriteToLog);
 
@@ -131,9 +152,9 @@ export function readyToProcess(
     statesResult.statesObject
   );
   if (!validateSchemaResult.isValid) {
-    let msgLog = `"Color States" Schema Error #3: color states file ${COLOR_STATES_PATH} schema is not valid. The following errors have been found: \n\n`;
+    let msgLog = `"Color States" Schema Error #3: color states file ${CONFIG_FILE_PATH} schema is not valid. The following errors have been found: \n\n`;
 
-    const msgConsole = `States Schema Error #3: color states file ${COLOR_STATES_PATH} schema is not valid. Please, read the log file under ${LOG_PATH} to know what went wrong.`;
+    const msgConsole = `States Schema Error #3: color states file ${CONFIG_FILE_PATH} schema is not valid. Please, read the log file under ${LOG_PATH} to know what went wrong.`;
 
     validateSchemaResult.errors.forEach((error) => {
       const errorString = JSON.stringify(error, null, 2);
