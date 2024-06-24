@@ -1,10 +1,8 @@
 @mixin font() {
   // families
-  --mer-font-family--inter-light: "Inter_Light", arial, sans-serif; // 300
-  --mer-font-family--inter-regular: "Inter_Regular", arial, sans-serif; // 400
-  --mer-font-family--inter-semi-bold: "Inter_SemiBold", arial, sans-serif; // 600
-  --mer-font-family--inter-bold: "Inter_Bold", arial, sans-serif; // 700
-  --mer-font-family--inter-extra-bold: "Inter_ExtraBold", arial, sans-serif; // 800
+  --mer-font-family--title: Inter, Helvetica, Arial, sans-serif;
+  --mer-font-family--body: Inter, Helvetica, Arial, sans-serif;
+  --mer-font-family--code: monospace;
 
   // weights
   --mer-font__weight--light: 300;

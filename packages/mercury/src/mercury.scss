@@ -118,37 +118,42 @@
   @if $font-face {
     //light
     @font-face {
-      font-family: Inter_Light; // 300
+      font-family: "Inter";
       src: url("#{$font-face-path}Inter_Light.woff2");
-      font-display: swap;
+      font-weight: 300;
+      font-style: normal;
     }
 
     //regular
     @font-face {
-      font-family: Inter_Regular; // 400
+      font-family: "Inter";
       src: url("#{$font-face-path}Inter_Regular.woff2");
-      font-display: swap;
+      font-weight: 400;
+      font-style: normal;
     }
 
     //semi-bold
     @font-face {
-      font-family: Inter_SemiBold; // 600
+      font-family: "Inter";
       src: url("#{$font-face-path}Inter_SemiBold.woff2");
-      font-display: swap;
+      font-weight: 600;
+      font-style: normal;
     }
 
     //bold
     @font-face {
-      font-family: Inter_Bold; // 700
+      font-family: "Inter";
       src: url("#{$font-face-path}Inter_Bold.woff2");
-      font-display: swap;
+      font-weight: 700;
+      font-style: normal;
     }
 
     //extra-bold
     @font-face {
-      font-family: Inter_ExtraBold; // 800
+      font-family: "Inter";
       src: url("#{$font-face-path}Inter_ExtraBold.woff2");
-      font-display: swap;
+      font-weight: 800;
+      font-style: normal;
     }
   }
 
@@ -278,11 +283,13 @@
       }
 
       @if $font {
-        line-height: var(--mer-line-height--regular);
+        line-height: var(--mer-body__line-height);
       }
 
       @if $font-face {
-        font-family: Inter_Regular;
+        font-family: var(--mer-body__font-family);
+        font-size: var(--mer-body__font-size);
+        font-weight: var(--mer-body__font-weight);
       }
     }
   }
