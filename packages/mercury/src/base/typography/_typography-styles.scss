@@ -12,7 +12,7 @@
 
 %heading-2 {
   @extend %heading-base;
-  font-size: var(--mer-spacing--lg);
+  font-size: var(--mer-font__size--lg); // 24px
   font-weight: var(--mer-font__weight--bold);
 }
 
@@ -24,7 +24,7 @@
 
 %heading-4 {
   @extend %heading-base;
-  font-size: var(--mer-spacing--md);
+  font-size: var(--mer-font__size--md); // 20px
   font-weight: var(--mer-font__weight--bold);
 }
 
@@ -36,12 +36,12 @@
 
 %heading-6 {
   @extend %heading-base;
-  font-size: var(--mer-spacing--sm);
+  font-size: var(--mer-font__size--sm); // 16px
   font-weight: var(--mer-font__weight--semi-bold);
 }
 
 %text-body {
-  font-size: var(--mer-font__size--xs);
+  font-size: var(--mer-font__size--xs); // 14px
   font-family: var(--mer-body__font-family);
   font-weight: var(--mer-body__font-weight);
   line-height: var(--mer-body__line-height);

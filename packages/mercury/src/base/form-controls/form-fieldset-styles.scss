@@ -1,0 +1,60 @@
+%fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mer-spacing--md);
+  border: none;
+
+  &__legend {
+    @extend %heading-6;
+    margin-block-end: var(--mer-spacing--md);
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+
+    &--row {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &--row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/// @group Fieldset
+/// @param {String} $fieldset-selector [".fieldset"] -
+/// @param {String} $legend-selector [".fieldset-legend"] -
+/// @param {String} $fieldset-group-selector [".fieldset-group"] -
+/// @param {String} $fieldset-group-orientation--row-selector [".fieldset-group--row"] -
+/// @param {String} $fieldset-orientation--row-selector [".fieldset--row"] -
+@mixin fieldset(
+  $fieldset-selector: ".fieldset",
+  $legend-selector: ".fieldset-legend",
+  $fieldset-group-selector: ".fieldset-group",
+  $fieldset-group-orientation--row-selector: ".fieldset-group--row",
+  $fieldset-orientation--row-selector: ".fieldset--row"
+) {
+  #{$fieldset-selector} {
+    @extend %fieldset;
+  }
+
+  #{$legend-selector} {
+    @extend %fieldset__legend;
+  }
+
+  #{$fieldset-group-selector} {
+    @extend %fieldset__group;
+  }
+
+  #{$fieldset-group-orientation--row-selector} {
+    @extend %fieldset__group--row;
+  }
+
+  #{$fieldset-orientation--row-selector} {
+    @extend %fieldset--row;
+  }
+}

@@ -2,7 +2,6 @@
 @import "../../common/base";
 @import "../../common/utilities";
 @import "../../common/icons/tree-view";
-
 @import "./base/common";
 
 // Resets
@@ -29,6 +28,7 @@
 @import "./base/label/label-styles"; // should be at the top, since other elements use it.
 @import "./base/button/button-styles";
 @import "./base/form-controls/form-input-styles";
+@import "./base/form-controls/form-fieldset-styles";
 @import "./base/icons";
 @import "./base/typography/typography-styles";
 @import "./base/layout/layout-styles";
@@ -352,6 +352,7 @@
     // Form control classes
     @if $form-controls-classes {
       @include form-input();
+      @include fieldset();
     }
 
     // Icon classes
