@@ -1,62 +1,125 @@
+%heading-base {
+  font-family: var(--mer-font-family--title);
+  color: var(--mer-color__neutral-gray--100);
+  line-height: var(--mer-line-height--tight);
+}
+
 %heading-1 {
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 32px; // 114.286%
-  letter-spacing: 0.4px;
+  @extend %heading-base;
+  font-size: 36px; //TODO (Update with token, or add token)
+  font-weight: var(--mer-font__weight--bold);
 }
 
 %heading-2 {
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 24px; // 109.091%
-  letter-spacing: 0.8px;
+  @extend %heading-base;
+  font-size: var(--mer-spacing--lg);
+  font-weight: var(--mer-font__weight--bold);
 }
 
 %heading-3 {
-  // WA. This is not the heading 3 definition from Unanimo
-  font-size: 18px;
-  line-height: 20px; // 109.091%
-  letter-spacing: 0.4px;
+  @extend %heading-base;
+  font-size: 20px; //TODO (Update with token, or add token)
+  font-weight: var(--mer-font__weight--bold);
 }
 
 %heading-4 {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 18px; // 128.571%
-  letter-spacing: 0.4px;
+  @extend %heading-base;
+  font-size: var(--mer-spacing--md);
+  font-weight: var(--mer-font__weight--bold);
+}
+
+%heading-5 {
+  @extend %heading-base;
+  font-size: 14px; //TODO (Update with token, or add token)
+  font-weight: var(--mer-font__weight--bold);
+}
+
+%heading-6 {
+  @extend %heading-base;
+  font-size: var(--mer-spacing--sm);
+  font-weight: var(--mer-font__weight--semi-bold);
 }
 
 %text-body {
   font-size: var(--mer-font__size--xs);
-  font-family: var(--mer-font-family--inter-regular);
-  line-height: var(--mer-line-height--regular);
-  margin-block: var(--mer-spacing--sm);
+  font-family: var(--mer-body__font-family);
+  font-weight: var(--mer-body__font-weight);
+  line-height: var(--mer-body__line-height);
+  margin-block: var(--mer-body__margin-block);
 }
 
+// tab
 %tab-text {
   font-family: var(--mer-font-family--inter-regular);
   font-size: var(--mer-font__size--2xs);
   line-height: var(--mer-font-family--inter-regular);
 }
 
-@mixin typography-classes() {
-  .heading-1 {
+// button
+%button-text {
+  font-family: var(--mer-font-family--body);
+  font-size: var(--mer-font__size--2xs);
+  line-height: var(--mer-line-height--regular);
+}
+
+%button-text--regular {
+  @extend %button-text;
+  font-weight: var(--mer-font__weight--semi-bold);
+}
+
+%button-text--light {
+  @extend %button-text;
+  font-weight: var(--mer-font__weight--semi-regular);
+}
+
+// tooltip
+%tooltip-text {
+  font-family: var(--mer-font-family--body);
+  font-size: var(--mer-font-size--2xs);
+}
+
+/// @group Typography
+/// @param {String} $heading--1-selector [".heading-1"] -
+/// @param {String} $heading--2-selector [".heading-2"] -
+/// @param {String} $heading--3-selector [".heading-3"] -
+/// @param {String} $heading--4-selector [".heading-4"] -
+/// @param {String} $heading--5-selector [".heading-5"] -
+/// @param {String} $heading--6-selector [".heading-6"] -
+/// @param {String} $text-body-selector [".text-body"] -
+@mixin typography-classes(
+  $heading--1-selector: ".heading-1",
+  $heading--2-selector: ".heading-2",
+  $heading--3-selector: ".heading-3",
+  $heading--4-selector: ".heading-4",
+  $heading--5-selector: ".heading-5",
+  $heading--6-selector: ".heading-6",
+  $text-body-selector: ".text-body"
+) {
+  #{$heading--1-selector} {
     @extend %heading-1;
   }
 
-  .heading-2 {
+  #{$heading--2-selector} {
     @extend %heading-2;
   }
 
-  .heading-3 {
+  #{$heading--3-selector} {
     @extend %heading-3;
   }
 
-  .heading-4 {
+  #{$heading--4-selector} {
     @extend %heading-4;
   }
 
-  .text-body {
+  #{$heading--5-selector} {
+    @extend %heading-5;
+  }
+
+  #{$heading--6-selector} {
+    @extend %heading-6;
+  }
+
+  #{$text-body-selector} {
     @extend %text-body;
   }
 }
