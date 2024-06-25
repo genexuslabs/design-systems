@@ -22,7 +22,7 @@ let multicolorCategoriesList: string[] = [];
 const SRC_PATH = await process.argv[2];
 const OUTPUT_PATH = await process.argv[3];
 const COLOR_STATES_PATH = await process.argv[4];
-const ALL_LISTS_FILENAME = "all-lists.scss";
+const ALL_LISTS_FILENAME = "categories-lists.scss";
 const CATEGORIES_IMPORTS_FILENAME = "categories-imports.scss";
 const MIXINS_FILENAME = "svg-sass-mixins.scss";
 
