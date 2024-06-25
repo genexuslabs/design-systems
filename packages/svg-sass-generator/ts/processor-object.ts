@@ -87,7 +87,12 @@ export const generateIconsObject = (
   icons: ${prettyIconsObject}
 };`;
 
-  writeFile(normalizedIconsObjectFilePath, output);
+  // Freeze all objects
+  const freezedObjectsOuput = output
+    .replace(/{/g, "Object.freeze({")
+    .replace(/}/g, "})");
+
+  writeFile(normalizedIconsObjectFilePath, freezedObjectsOuput);
 };
 
 /**
