@@ -57,7 +57,6 @@ export const generateIconsObject = (
       iconsObject[kebabToCamelCase(categoryNameCamelCase)] = {
         ...iconsObject[categoryNameCamelCase],
         [fileName]: {
-          path: `this.getIconPath(${categoryName}/${fileName}.svg)`,
           name: `${categoryName}_${fileName}`,
         },
       } as MulticolorCategory;
@@ -80,21 +79,11 @@ export const generateIconsObject = (
   const normalizedIconsObjectFilePath = normalizeFilePath(iconsObjectFilePath);
   const objectName = getFileNameFromPath(normalizedIconsObjectFilePath);
   const prettyIconsObject = stringifyObject(iconsObject, {
-    transform: (obj: any, prop: string, originalResult: string): string => {
-      if (prop === "iconPath") {
-        return `this.getIconPath("${obj[prop]}")`; // Use the value directly without stringifying
-      }
-      return originalResult;
-    },
     indent: "  ",
     singleQuotes: false,
   });
 
   const output = `export const ${objectName} = {
-  iconsPath: null,
-  getIconPath: (iconPath) => {
-    return this.iconsPath + iconPath
-  },
   icons: ${prettyIconsObject}
 };`;
 
@@ -160,8 +149,7 @@ const monochromeIconInfo = (
       for (const state in colorStates) {
         if (colorStates[state as ElementState]) {
           (colorsObj[kebabToCamelCase(color)][state] as unknown as Icon) = {
-            iconPath: `${categoryName}/${fileName}.svg#${color}--${state}`,
-            iconName: `${categoryName}_${fileName}_${color}--${state}`,
+            name: `${categoryName}_${fileName}_${color}--${state}`,
           } as Icon;
         }
       }
@@ -197,6 +185,5 @@ interface IconsObject {
 }
 
 type Icon = {
-  iconPath: string;
-  iconName: string;
+  name: string;
 };
