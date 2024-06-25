@@ -155,3 +155,15 @@ Window
   background-color: var(--mer-window__bg-color);
   box-shadow: var(--mer-box-shadow--01);
 }
+
+/*----------------------
+Dialog Footer
+----------------------*/
+// Defined here to be used on /components/dialog as well as to replicate
+// dialog footer styles on genexus-ide-ui components
+%dialog-footer {
+  padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
+  border-block-start: var(--mer-border__width--sm) solid
+    var(--mer-color__elevation--04);
+  gap: var(--mer-spacing--sm);
+}

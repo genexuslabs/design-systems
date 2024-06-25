@@ -34,10 +34,7 @@
 }
 
 %dialog__footer {
-  padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
-  border-block-start: var(--mer-border__width--sm) solid
-    var(--mer-color__elevation--04);
-  gap: var(--mer-spacing--sm);
+  @extend %dialog-footer;
 }
 
 %dialog__close {
