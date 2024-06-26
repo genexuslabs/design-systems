@@ -44,53 +44,44 @@
                   <!-- ch-dialog -->
                   <ch-dialog
                     class="dialog"
-                    caption="A Basic Dialog"
+                    caption="About GeneXus"
                     id="dialog-basic"
                     show-header
                     show-footer
                     resizable
                     allow-drag="box"
                   >
-                    <p class="text-body" style="margin-block-start: 0">
-                      GeneXus is a low-code development platform that
-                      streamlines the creation of enterprise applications by
-                      automatically generating code for various environments
-                      from a single specification.
-                    </p>
-                    <p class="text-body">
-                      It's ideal for developers who want to quickly prototype,
-                      develop, and deploy applications across web, mobile, and
-                      desktop platforms. With its model-driven approach, GeneXus
-                      minimizes the need for manual coding, allowing developers
-                      to focus on design and user experience.
-                    </p>
-                    <p class="text-body" style="margin-block-end: 0">
-                      The platform also excels in its robust integration
-                      capabilities, enabling seamless connectivity with various
-                      databases and third-party services. This flexibility
-                      ensures that applications built with GeneXus are scalable
-                      and maintainable, reducing the time and effort required
-                      for updates and enhancements.
-                    </p>
-                    <button
-                      slot="footer"
-                      type="button"
-                      class="button button-primary"
-                    >
+                    <div>
+                      <p class="text-body" style="margin-block-start: 0">
+                        GeneXus is a low-code development platform that
+                        streamlines the creation of enterprise applications by
+                        automatically generating code for various environments
+                        from a single specification.
+                      </p>
+                      <p class="text-body">
+                        It's ideal for developers who want to quickly prototype,
+                        develop, and deploy applications across web, mobile, and
+                        desktop platforms. With its model-driven approach,
+                        GeneXus minimizes the need for manual coding, allowing
+                        developers to focus on design and user experience.
+                      </p>
+                      <p class="text-body" style="margin-block-end: 0">
+                        The platform also excels in its robust integration
+                        capabilities, enabling seamless connectivity with
+                        various databases and third-party services. This
+                        flexibility ensures that applications built with GeneXus
+                        are scalable and maintainable, reducing the time and
+                        effort required for updates and enhancements.
+                      </p>
+                    </div>
+                    <button slot="footer" type="button" class="button-tertiary">
                       Cancel
                     </button>
-                    <button
-                      slot="footer"
-                      type="button"
-                      class="button button-tertiary"
-                    >
+                    <button slot="footer" type="button" class="button-primary">
                       Save
                     </button>
                   </ch-dialog>
-                  <button
-                    class="button button-secondary"
-                    id="btn-show-dialog-basic"
-                  >
+                  <button class="button-secondary" id="btn-show-dialog-basic">
                     Show Dialog
                   </button>
                   <script>
@@ -109,36 +100,13 @@
                   <script>
                     const markup1 = `<ch-dialog
 class="dialog"
-caption="A Basic Dialog"
-id="dialog-basic"
+caption="About GeneXus"
 show-header
 show-footer
-resizable
-allow-drag="box"
 >
-  <p class="text-body" style="margin-block-start: 0">
-    GeneXus is a low-code development platform that
-    streamlines the creation of enterprise applications by
-    automatically generating code for various environments
-    from a single specification.
-  </p>
-  <p class="text-body">
-    It's ideal for developers who want to quickly prototype,
-    develop, and deploy applications across web, mobile, and
-    desktop platforms. With its model-driven approach, GeneXus
-    minimizes the need for manual coding, allowing developers
-    to focus on design and user experience.
-  </p>
-  <p class="text-body" style="margin-block-end: 0">
-    The platform also excels in its robust integration
-    capabilities, enabling seamless connectivity with various
-    databases and third-party services. This flexibility
-    ensures that applications built with GeneXus are scalable
-    and maintainable, reducing the time and effort required
-    for updates and enhancements.
-  </p>
-  <button slot="footer" type="button" class="button button-primary">Cancel</button>
-  <button slot="footer" type="button" class="button button-tertiary" >Save</button>
+  <!-- Your content here -->
+  <button slot="footer" class="button-tertiary">Cancel</button>
+  <button slot="footer" class="button-primary">Save</button>
 </ch-dialog>`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>

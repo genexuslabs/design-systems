@@ -3,64 +3,101 @@
   border-radius: 0;
   background-color: var(--mer-color__elevation--01);
   box-shadow: var(--mer-box-shadow--01);
-}
 
-%dialog__backdrop {
-  background-color: color-mix(
-    in srgb,
-    var(--elevation-un-elevation--4) 25%,
-    transparent
-  );
-  backdrop-filter: blur(5px);
-  z-index: 108; // TODO: This is a WA to show the backdrop above the button of the dropdown
-}
+  &__backdrop {
+    background-image: url(../../src/assets/images/noise-texture-200x200.png);
+    background-color: rgba(32, 36, 40, 0.9);
+    backdrop-filter: blur(1.5px);
+    z-index: 108; // TODO: This is a WA to show the backdrop above the button of the dropdown
+  }
 
-%dialog__header {
-  align-items: flex-start;
-  gap: var(--mer-spacing--sm);
-  padding: var(--mer-spacing--md) var(--mer-spacing--sm);
-  border-block-end: var(--mer-border__width--sm) solid
-    var(--mer-color__elevation--04);
-}
+  &__header {
+    align-items: flex-start;
+    gap: var(--mer-spacing--sm);
+    padding: var(--mer-spacing--md) var(--mer-spacing--sm);
+    border-block-end: var(--mer-border__width--sm) solid
+      var(--mer-color__elevation--04);
+  }
 
-%dialog__content {
-  padding: var(--mer-spacing--lg) var(--mer-spacing--md);
-}
+  &__caption {
+    @extend %heading-5;
+    word-break: break-word;
+  }
 
-%dialog__caption {
-  color: var(--mer-text__on-elevation);
-  font-family: var(--mer-font-family--inter-bold);
-  word-break: break-word;
-}
+  &__close {
+    @extend %icon-size--md;
+  }
 
-%dialog__footer {
-  padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
-  border-block-start: var(--mer-border__width--sm) solid
-    var(--mer-color__elevation--04);
-  gap: var(--mer-spacing--sm);
-}
+  &__content {
+    padding: var(--mer-spacing--lg) var(--mer-spacing--md);
+    overflow: auto;
+  }
 
-%dialog__close {
-  @extend %icon-size--md;
+  &__footer {
+    @extend %control-footer;
+    @extend %control-footer--with-border;
+  }
+
+  /*------------------------------
+  Edges (For dragging)
+  -------------------------------*/
+  &__edge {
+    $edge-border-width: var(--mer-border__width--lg);
+    $edge-border-style: solid;
+    $edge-color: var(--mer-color__tinted-blue--20);
+    border-color: transparent;
+    transition: var(--mer-timing--fast) border-color;
+    &--hover {
+      border-color: $edge-color;
+    }
+    &-block-start {
+      border-block-start-width: $edge-border-width;
+      border-block-start-style: $edge-border-style;
+    }
+    &-inline-end {
+      border-inline-end-width: $edge-border-width;
+      border-inline-end-style: $edge-border-style;
+    }
+    &-block-end {
+      border-block-end-width: $edge-border-width;
+      border-block-end-style: $edge-border-style;
+    }
+    &-inline-start {
+      border-inline-start-width: $edge-border-width;
+      border-inline-start-style: $edge-border-style;
+    }
+  }
 }
 
 /// @group Dialog
 /// @param {String} $dialog-selector [".dialog::part(dialog)"] -
 /// @param {String} $backdrop-selector [".dialog.ch-dialog--modal"] -
 /// @param {String} $header-selector [".dialog::part(header)"] -
-/// @param {String} $content-selector [".dialog::part(content)"] -
 /// @param {String} $caption-selector [".dialog::part(caption)"] -
 /// @param {String} $close-selector [".dialog::part(close-button)"] -
+/// @param {String} $content-selector [".dialog::part(content)"] -
 /// @param {String} $footer-selector [".dialog::part(footer)"] -
+// Edges (For dragging)
+/// @param {String} $edge-selector [".dialog::part(edge)"] -
+/// @param {String} $edge-block-start-selector [".dialog::part(edge-block-start)"] -
+/// @param {String} $edge-inline-end-selector [".dialog::part(edge-inline-end)"] -
+/// @param {String} $edge-block-end-selector [".dialog::part(edge-block-end)"] -
+/// @param {String} $edge-inline-start-selector [".dialog::part(edge-inline-start)"] -
+// Icons
 /// @param {String} $icons-path [""] -
 @mixin dialog(
   $dialog-selector: ".dialog::part(dialog)",
   $backdrop-selector: ".dialog.ch-dialog--modal",
   $header-selector: ".dialog::part(header)",
-  $content-selector: ".dialog::part(content)",
   $caption-selector: ".dialog::part(caption)",
   $close-selector: ".dialog::part(close-button)",
+  $content-selector: ".dialog::part(content)",
   $footer-selector: ".dialog::part(footer)",
+  $edge-selector: ".dialog::part(edge)",
+  $edge-block-start-selector: ".dialog::part(edge-block-start)",
+  $edge-inline-end-selector: ".dialog::part(edge-inline-end)",
+  $edge-block-end-selector: ".dialog::part(edge-block-end)",
+  $edge-inline-start-selector: ".dialog::part(edge-inline-start)",
   $icons-path: ""
 ) {
   #{$dialog-selector} {
@@ -75,16 +112,8 @@
     @extend %dialog__header;
   }
 
-  #{$content-selector} {
-    @extend %dialog__content;
-  }
-
   #{$caption-selector} {
     @extend %dialog__caption;
-  }
-
-  #{$footer-selector} {
-    @extend %dialog__footer;
   }
 
   #{$close-selector} {
@@ -99,5 +128,40 @@
     &:disabled {
       @extend %icon__gemini-tools_close_neutral--disabled;
     }
+  }
+
+  #{$content-selector} {
+    @extend %dialog__content;
+    height: 100%;
+  }
+
+  #{$footer-selector} {
+    @extend %dialog__footer;
+  }
+
+  /*------------------------------
+  Edges (For dragging)
+  -------------------------------*/
+  #{$edge-selector} {
+    @extend %dialog__edge;
+    &:hover {
+      @extend %dialog__edge--hover;
+    }
+  }
+
+  #{$edge-block-start-selector} {
+    @extend %dialog__edge-block-start;
+  }
+
+  #{$edge-inline-end-selector} {
+    @extend %dialog__edge-inline-end;
+  }
+
+  #{$edge-block-end-selector} {
+    @extend %dialog__edge-block-end;
+  }
+
+  #{$edge-inline-start-selector} {
+    @extend %dialog__edge-inline-start;
   }
 }

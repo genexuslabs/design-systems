@@ -24,7 +24,7 @@
 
 %heading-4 {
   @extend %heading-base;
-  font-size: var(--mer-font__size--md); // 20px
+  font-size: var(--mer-font__size--sm); // 16px
   font-weight: var(--mer-font__weight--bold);
 }
 
@@ -36,7 +36,7 @@
 
 %heading-6 {
   @extend %heading-base;
-  font-size: var(--mer-font__size--sm); // 16px
+  font-size: var(--mer-font__size--2xs); // 12px
   font-weight: var(--mer-font__weight--semi-bold);
 }
 

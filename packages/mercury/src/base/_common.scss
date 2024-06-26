@@ -15,7 +15,7 @@ Focus
 /*----------------------
 Scrollbar
 ----------------------*/
-@mixin scrollbar-styles {
+%scrollbar-styles {
   //scrollbar
   &::-webkit-scrollbar {
     width: var(--mer-scrollbar__size);
@@ -43,6 +43,9 @@ Scrollbar
   &::-webkit-scrollbar-corner {
     background: var(--mer-scrollbar-corner__bg);
   }
+}
+@mixin scrollbar-styles() {
+  @extend %scrollbar-styles;
 }
 
 /*----------------------------------------------------
@@ -154,4 +157,35 @@ Window
   padding: var(--mer-window__padding);
   background-color: var(--mer-window__bg-color);
   box-shadow: var(--mer-box-shadow--01);
+}
+
+/*----------------------
+Dialog Footer
+----------------------*/
+// Defined here to be used on /components/dialog as well as to replicate
+// dialog footer styles on genexus-ide-ui components
+%control-footer {
+  padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
+  gap: var(--mer-spacing--sm);
+  align-items: center;
+
+  &--with-border {
+    border-block-start: var(--mer-border__width--sm) solid
+      var(--mer-color__elevation--04);
+  }
+}
+@mixin control-footer(
+  $selector: ".control-footer",
+  $with-border-selector: ".control-footer--border",
+  $with-border: true
+) {
+  #{$selector} {
+    @extend %control-footer;
+  }
+
+  @if $with-border {
+    #{$with-border-selector} {
+      @extend %control-footer--with-border;
+    }
+  }
 }
