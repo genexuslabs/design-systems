@@ -366,6 +366,7 @@
     // Layout classes
     @if $layout-classes {
       @include layout();
+      @include control-footer();
     }
   }
 
