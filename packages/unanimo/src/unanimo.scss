@@ -32,6 +32,7 @@
 @import "./components/flexible-layout";
 @import "./components/header";
 @import "./components/markdown";
+@import "./components/list-box";
 @import "./components/query-viewer-pivot-table";
 @import "./components/radio-group";
 @import "./components/segmented-control";
@@ -96,6 +97,7 @@
   $flexible-layout: true,
   $header: true,
   $markdown: true,
+  $list-box-secondary: true,
   $query-viewer-pivot-table: true,
   $radio-group: true,
   $segmented-control: true,
@@ -364,6 +366,11 @@
     // markdown
     @if $markdown {
       @include markdown();
+    }
+
+    // list-box-secondary
+    @if $list-box-secondary {
+      @include list-box-secondary();
     }
 
     // query-viewer-pivot-table
