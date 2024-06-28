@@ -21,6 +21,7 @@
 
   &__caption {
     @extend %heading-5;
+    @extend %heading__color--highlighted;
     word-break: break-word;
   }
 

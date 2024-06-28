@@ -1,7 +1,7 @@
 %heading-base {
   font-family: var(--mer-font-family--title);
-  color: var(--mer-color__neutral-gray--100);
   line-height: var(--mer-line-height--tight);
+  color: transparent;
 }
 
 %heading-1 {
@@ -38,6 +38,13 @@
   @extend %heading-base;
   font-size: var(--mer-font__size--2xs); // 12px
   font-weight: var(--mer-font__weight--semi-bold);
+}
+
+// Colors
+%heading__color {
+  &--highlighted {
+    color: var(--mer-text__highlighted);
+  }
 }
 
 %text-body {
@@ -79,44 +86,50 @@
 }
 
 /// @group Typography
-/// @param {String} $heading--1-selector [".heading-1"] -
-/// @param {String} $heading--2-selector [".heading-2"] -
-/// @param {String} $heading--3-selector [".heading-3"] -
-/// @param {String} $heading--4-selector [".heading-4"] -
-/// @param {String} $heading--5-selector [".heading-5"] -
-/// @param {String} $heading--6-selector [".heading-6"] -
-/// @param {String} $text-body-selector [".text-body"] -
+/// @param {String} $heading-1-selector [".heading-1"] -
+/// @param {String} $heading-2-selector [".heading-2"] -
+/// @param {String} $heading-3-selector [".heading-3"] -
+/// @param {String} $heading-4-selector [".heading-4"] -
+/// @param {String} $heading-5-selector [".heading-5"] -
+/// @param {String} $heading-6-selector [".heading-6"] -
+/// @param {String} $heading-highlighted-selector [".heading--highlighted"] -
+/// @param {String} $text-body-selector [".text--body"] -
 @mixin typography-classes(
-  $heading--1-selector: ".heading-1",
-  $heading--2-selector: ".heading-2",
-  $heading--3-selector: ".heading-3",
-  $heading--4-selector: ".heading-4",
-  $heading--5-selector: ".heading-5",
-  $heading--6-selector: ".heading-6",
+  $heading-1-selector: ".heading-1",
+  $heading-2-selector: ".heading-2",
+  $heading-3-selector: ".heading-3",
+  $heading-4-selector: ".heading-4",
+  $heading-5-selector: ".heading-5",
+  $heading-6-selector: ".heading-6",
+  $heading-highlighted: ".heading--highlighted",
   $text-body-selector: ".text-body"
 ) {
-  #{$heading--1-selector} {
+  #{$heading-1-selector} {
     @extend %heading-1;
   }
 
-  #{$heading--2-selector} {
+  #{$heading-2-selector} {
     @extend %heading-2;
   }
 
-  #{$heading--3-selector} {
+  #{$heading-3-selector} {
     @extend %heading-3;
   }
 
-  #{$heading--4-selector} {
+  #{$heading-4-selector} {
     @extend %heading-4;
   }
 
-  #{$heading--5-selector} {
+  #{$heading-5-selector} {
     @extend %heading-5;
   }
 
-  #{$heading--6-selector} {
+  #{$heading-6-selector} {
     @extend %heading-6;
+  }
+
+  #{$heading-highlighted} {
+    @extend %heading__color--highlighted;
   }
 
   #{$text-body-selector} {
