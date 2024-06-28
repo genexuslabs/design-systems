@@ -1,0 +1,142 @@
+%list-box-secondary {
+  @extend %text-body-2;
+
+  --ch-action-list-group__expandable-button-size: var(--spacing-un-spacing--l);
+  --ch-action-list-group__expandable-button-image-size: calc(100% - 4px);
+  --ch-action-list-item__image-size: var(--spacing-un-spacing--xl);
+  padding: var(--spacing-un-spacing--xs);
+
+  &-item-action {
+    border-radius: 4px;
+    padding: var(--spacing-un-spacing--m);
+
+    &--disabled {
+      color: var(--text-un-text__disabled);
+    }
+
+    &--focus-visible {
+      outline: 1px solid var(--accents-un-accent__secondary--active);
+      outline-offset: -1px;
+    }
+
+    &--not-selectable {
+      color: var(--text-un-text__primary--hover);
+    }
+
+    &--selectable {
+      background-color: var(--accents-un-accent__primary-dim--hover);
+    }
+
+    &--nested-expandable {
+      padding-inline-start: calc(
+        var(--spacing-un-spacing--l) + var(--spacing-un-spacing--s) +
+          var(--spacing-un-spacing--m)
+      );
+    }
+  }
+
+  &-group {
+    font-weight: 600;
+    gap: var(--spacing-un-spacing--s);
+  }
+
+  &-separator {
+    margin-block: var(--spacing-un-spacing--s);
+    background-color: var(--accents-un-accent__secondary--hover);
+  }
+}
+
+@mixin list-box-secondary(
+  $list-box-selector: ".list-box-secondary",
+
+  $item-action-selector: ".list-box-secondary::part(item__action)",
+  $group-action-selector: ".list-box-secondary::part(group__action)",
+  $group-caption-selector: ".list-box-secondary::part(group__caption)",
+
+  $item-action--nested-expandable-selector:
+    ".list-box-secondary::part(item__action nested-expandable)",
+
+  $item-action-not-selectable-selector:
+    ".list-box-secondary::part(item__action not-selectable)",
+  $group-action-not-selectable-selector:
+    ".list-box-secondary::part(group__action not-selectable)",
+
+  $item-action-selectable-selector:
+    ".list-box-secondary::part(item__action selectable)",
+  $group-action-selectable-selector:
+    ".list-box-secondary::part(group__action selectable)",
+
+  $item-action--disabled-selector:
+    ".list-box-secondary::part(item__action disabled)",
+  $group-action--disabled-selector:
+    ".list-box-secondary::part(group__action disabled)",
+  $group-caption--disabled-selector:
+    ".list-box-secondary::part(group__caption disabled)",
+
+  $separator-selector: ".list-box-secondary::part(separator)",
+
+  $add--disabled: true
+) {
+  #{$list-box-selector} {
+    @extend %list-box-secondary;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Action
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$item-action-selector},
+  #{$group-action-selector},
+  #{$group-caption-selector} {
+    @extend %list-box-secondary-item-action;
+  }
+
+  #{$item-action-selector}:focus-visible,
+  #{$group-action-selector}:focus-visible {
+    @extend %list-box-secondary-item-action--focus-visible;
+  }
+
+  // Not selectable
+  #{$item-action-not-selectable-selector}:hover,
+  #{$group-action-not-selectable-selector}:hover {
+    @extend %list-box-secondary-item-action--not-selectable;
+  }
+
+  // Selectable
+  #{$item-action-selectable-selector},
+  #{$group-action-selectable-selector},
+  #{$item-action-selectable-selector}:hover,
+  #{$group-action-selectable-selector}:hover {
+    @extend %list-box-secondary-item-action--selectable;
+  }
+
+  // Nested expandable
+  #{$item-action--nested-expandable-selector} {
+    @extend %list-box-secondary-item-action--nested-expandable;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Group
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$group-action-selector},
+  #{$group-caption-selector} {
+    @extend %list-box-secondary-group;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                Separator
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$separator-selector} {
+    @extend %list-box-secondary-separator;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                Disabled
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $add--disabled {
+    #{$item-action--disabled-selector},
+    #{$group-action--disabled-selector},
+    #{$group-caption--disabled-selector} {
+      @extend %list-box-secondary-item-action--disabled;
+    }
+  }
+}
