@@ -1,12 +1,19 @@
 // - - - - - - - - - - - - - - - - - - - -
-//              Icon Path
+//         Icon Mask / Background
 // - - - - - - - - - - - - - - - - - - - -
-
 /// @group Icon
 /// @param {String} $selector [".icon-mask"] -
 /// @param {type} $icon-path [null] -
 /// @param {type} $icon-class [null] -
-/// @output
+/// @example scss
+///   SCSS:
+///     @include icon-mask($selector: "icon__example", $icon-path: var(--icon__example));
+///
+/// @example markup
+///   HTML/render:
+///     <div class="icon__example icon-size-sm"></div>
+///     <div class="icon__example icon-size-md"></div>
+///
 @mixin icon-mask($selector: ".icon-mask", $icon-path: null, $icon-class: null) {
   #{$selector} {
     @if $icon-path != null {
@@ -23,7 +30,15 @@
 /// @param {String} $selector [".icon-background"] -
 /// @param {type} $icon-path [null] -
 /// @param {type} $icon-class [null] -
-/// @output
+/// @example scss
+///   SCSS:
+///     @include icon-background($selector: "icon__example", $icon-path: var(--icon__example));
+///
+/// @example markup
+///   HTML/render:
+///     <div class="icon__example icon-size-sm"></div>
+///     <div class="icon__example icon-size-md"></div>
+///
 @mixin icon-background(
   $selector: ".icon-background",
   $icon-path: null,
@@ -43,7 +58,6 @@
 // - - - - - - - - - - - - - - - - - - - -
 //               Icon Sizes
 // - - - - - - - - - - - - - - - - - - - -
-
 %icon-size--sm {
   @include icon-background-common-styles(
     $inline-size: var(--mer-icon__box--sm),
@@ -51,6 +65,7 @@
     $background-size: 100%
   );
 }
+
 %icon-size--md {
   @include icon-background-common-styles(
     $inline-size: var(--mer-icon__box--md),
@@ -60,19 +75,20 @@
 }
 
 /// @group Icon
-/// @param {String} $selector [".icon-size-sm"] -
+/// @param {String} $selector [".icon-size-sm"]
 @mixin icon-size-sm($selector: ".icon-size-sm") {
   #{$selector} {
-    ::before {
+    &::before {
       @extend %icon-size--sm;
     }
   }
 }
+
 /// @group Icon
-/// @param {String} $selector [".icon-size-sm"] -
-@mixin icon-size-sm($selector: ".icon-size-md") {
+/// @param {String} $selector [".icon-size-md"] -
+@mixin icon-size-md($selector: ".icon-size-md") {
   #{$selector} {
-    ::before {
+    &::before {
       @extend %icon-size--md;
     }
   }
@@ -81,7 +97,6 @@
 // - - - - - - - - - - - - - - - - - - - -
 //              Form Input
 // - - - - - - - - - - - - - - - - - - - -
-
 @mixin form-input-bg-x-rtl-support() {
   // has to be included in the root
   :root[dir="rtl"] {
