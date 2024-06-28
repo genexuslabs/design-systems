@@ -359,6 +359,9 @@
     @if $icon-classes {
       @include icon-mask();
       @include icon-background();
+      @include icon-size-sm();
+      @include icon-size-md();
+
       @include form-input-icon();
       @include form-input-bg-x-rtl-support();
     }
