@@ -8,7 +8,7 @@
 
   &-item-action {
     border-radius: 4px;
-    padding: var(--spacing-un-spacing--m);
+    padding-block: var(--spacing-un-spacing--m);
     column-gap: 4px;
 
     &--disabled {
@@ -30,8 +30,7 @@
 
     &--nested-expandable {
       padding-inline-start: calc(
-        var(--spacing-un-spacing--l) + var(--spacing-un-spacing--s) +
-          var(--spacing-un-spacing--m)
+        var(--spacing-un-spacing--l) + var(--spacing-un-spacing--s)
       );
     }
   }
@@ -39,6 +38,19 @@
   &-group {
     font-weight: 600;
     gap: var(--spacing-un-spacing--s);
+  }
+
+  &-additional-item--action {
+    color: var(--text-un-text__on-secondary);
+
+    &--hover {
+      color: var(--text-un-text__primary--hover);
+    }
+
+    &--focus-visible {
+      outline: 1px solid var(--accents-un-accent__secondary--active);
+      outline-offset: -1px;
+    }
   }
 
   &-separator {
@@ -74,9 +86,13 @@
   $group-caption--disabled-selector:
     ".list-box-secondary::part(group__caption disabled)",
 
+  $additional-item--action-selector:
+    ".list-box-secondary::part(item__additional-item action)",
+
   $separator-selector: ".list-box-secondary::part(separator)",
 
-  $add--disabled: true
+  $add--disabled: true,
+  $add--additional-item: true
 ) {
   #{$list-box-selector} {
     @extend %list-box-secondary;
@@ -138,6 +154,20 @@
     #{$group-action--disabled-selector},
     #{$group-caption--disabled-selector} {
       @extend %list-box-secondary-item-action--disabled;
+    }
+  }
+
+  @if $add--additional-item {
+    #{$additional-item--action-selector} {
+      @extend %list-box-secondary-additional-item--action;
+
+      &:hover {
+        @extend %list-box-secondary-additional-item--action--hover;
+      }
+
+      &:focus-visible {
+        @extend %list-box-secondary-additional-item--action--focus-visible;
+      }
     }
   }
 }
