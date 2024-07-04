@@ -3198,6 +3198,38 @@ export const MERCURY_ASSETS = Object.freeze({
         })
       })
     })
+  }),
+  editingStructures: Object.freeze({
+    "user-index": Object.freeze({
+      name: "editing-structures_user-index"
+    }),
+    "system-index": Object.freeze({
+      name: "editing-structures_system-index"
+    }),
+    "redundant-attribute": Object.freeze({
+      name: "editing-structures_redundant-attribute"
+    }),
+    platforms: Object.freeze({
+      name: "editing-structures_platforms"
+    }),
+    "logical-attributes": Object.freeze({
+      name: "editing-structures_logical-attributes"
+    }),
+    "formula-redundant": Object.freeze({
+      name: "editing-structures_formula-redundant"
+    }),
+    default: Object.freeze({
+      name: "editing-structures_default"
+    }),
+    "attribute-key": Object.freeze({
+      name: "editing-structures_attribute-key"
+    }),
+    "attribute-formula": Object.freeze({
+      name: "editing-structures_attribute-formula"
+    }),
+    "attribute-description": Object.freeze({
+      name: "editing-structures_attribute-description"
+    })
   })
 })
 });
