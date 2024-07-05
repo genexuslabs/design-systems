@@ -2,7 +2,6 @@
 
 %layout {
   display: grid;
-  grid-template-rows: 1fr;
   padding-block: var(--mer-spacing--md);
   padding-inline: var(--mer-spacing--lg);
   gap: var(--mer-spacing--md);
@@ -12,26 +11,35 @@
   }
 
   &--cols-1 {
+    // Do not add this property in the base class. Otherwise, putting this
+    // class in the Host of the component will override any grid-template
+    // property inside the Shadow DOM due to specificity
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr;
   }
 
   &--cols-2 {
+    grid-template-rows: 1fr;
     grid-template-columns: repeat(2, 1fr);
   }
 
   &--cols-3 {
+    grid-template-rows: 1fr;
     grid-template-columns: repeat(3, 1fr);
   }
 
   &--cols-4 {
+    grid-template-rows: 1fr;
     grid-template-columns: repeat(4, 1fr);
   }
 
   &--cols-1-2 {
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr 2fr;
   }
 
   &--cols-2-1 {
+    grid-template-rows: 1fr;
     grid-template-columns: 2fr 1fr;
   }
 }
