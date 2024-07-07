@@ -74,8 +74,20 @@
   /*-------------------------------------------------------------
   Inline Control (Should have the same height to look good inline)
   -------------------------------------------------------------*/
+  // regular
+  --mer-control__font-size--regular: var(--mer-font__size--2xs);
+  --mer-control__font-family: var(--mer-font-family--body);
+  --mer-control__font-weight: var(--mer-font__weight--regular);
+  --mer-control__line-height: var(--mer-line-height--regular);
+  --mer-control__padding-block: var(--mer-font__weight--regular);
+  --mer-control__padding-inline: var(--mer-font__weight--regular);
+  --mer-control__border-width: var(--mer-border__width--sm);
+  --mer-control__border: var(--mer-control__border-width) solid transparent; //border color could vary.
+
   --mer-control__block-size: var(--mer-spacing--lg);
-  --mer-control__block-size--tiny: var(--mer-spacing--md);
+  --mer-control__block-size--tiny: var(
+    --mer-spacing--md
+  ); //used for checkbox, and radio button
   --mer-control-tiny__border-radius: var(--mer-border__radius--2xs);
 
   /*----------------------
