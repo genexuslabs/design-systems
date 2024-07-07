@@ -58,93 +58,69 @@ Item (applies to every item (tree, grid, list, etc...)
 // are optional because items from different components could
 // display different styles for that particular group/$style
 
-@mixin item-styles($style: "enabled") {
-  @if $style == "border-list" {
-    border: var(--mer-item__border-width)
-      var(--mer-item__border-style)
-      transparent;
-    // border color depends on the state (enabled, hover, etc)
-  }
-  @if $style == "border-grid" {
-    border-block-end: var(--mer-item__border-width)
-      var(--mer-item__border-style)
-      var(--mer-item__border-color);
-    border-inline-end: var(--mer-item__border-width)
-      var(--mer-item__border-style)
-      var(--mer-item__border-color);
-    // border color depends on the state (enabled, hover, etc)
-  }
-  @if $style == "font" {
-    // optional
+@mixin item-styles($styles: "enabled") {
+  // Base
+  @if $styles == "base" {
+    border-style: solid;
+    border-color: transparent;
     font-family: var(--mer-item__font-family);
-    font-size: var(--mer-item__font-size);
+    font-weight: var(--mer-item__font-weight);
     line-height: var(--mer-item__line-height);
   }
-  @if $style == "structure" {
-    // optional
-    padding-inline: var(--mer-item__padding-inline);
-    padding-block: var(--mer-item__padding-block);
-    min-block-size: var(--mer-item__padding-min-block-size);
+  // Typography
+  @if $styles == "typography-sm" {
+    font-size: var(--mer-item__font-size--sm);
   }
-  @if $style == "colors" {
+  @if $styles == "typography-md" {
+    font-size: var(--mer-item__font-size--md);
+  }
+  // Layout
+  @if $styles == "layout--sm" {
+    //ie.: dropdown
+    gap: var(--mer-item__gap--sm);
+    padding-block: var(--mer-item__padding-block--sm);
+    padding-inline: var(--mer-item__padding-inline--sm);
+  }
+  @if $styles == "layout--md" {
+    //ie.: notifications
+    gap: var(--mer-item__gap--md);
+    padding-block: var(--mer-item__padding-block--md);
+    padding-inline: var(--mer-item__padding-inline--md);
+  }
+  // Border
+  @if $styles == "border-block" {
+    border-inline-width: 0;
+    border-block-width: var(--mer-item__border-width);
+  }
+  @if $styles == "border-inline-block" {
+    border-block-width: var(--mer-item__border-width);
+  }
+  // States
+  @if $styles == "colors-enabled" {
     background-color: var(--mer-item__bg-color);
     color: var(--mer-item__color);
     border-color: var(--mer-item__border-color);
   }
-  @if $style == "hover" {
+  @if $styles == "color-hover" {
     --mer-item__color: var(--mer-item__color--hover);
     --mer-item__bg-color: var(--mer-item__bg-color--hover);
     --mer-item__border-color: var(--mer-item__border-color--hover);
   }
-  @if $style == "selected" {
+  @if $styles == "colors-selected" {
     --mer-item__color: var(--mer-item__color--selected);
     --mer-item__bg-color: var(--mer-item__bg-color--selected);
     --mer-item__border-color: var(--mer-item__border-color--selected);
   }
-  @if $style == "selected-hover" {
+  @if $styles == "colors-selected-hover" {
     --mer-item__color: var(--mer-item__color--selected-hover);
     --mer-item__bg-color: var(--mer-item__bg-color--selected-hover);
     --mer-item__border-color: var(--mer-item__border-color--selected-hover);
   }
-  @if $style == "disabled" {
+  @if $styles == "colors-disabled" {
     --mer-item__color: var(--mer-item__color--disabled);
     --mer-item__bg-color: var(--mer-item__bg-color--disabled);
     --mer-item__border-color: var(--mer-item__border-color--disabled);
   }
-}
-
-%item-border-list {
-  @include item-styles("border-list");
-}
-%item-border-grid {
-  @include item-styles("border-grid");
-}
-%item-font {
-  @include item-styles("font");
-}
-%item-structure {
-  @include item-styles("structure");
-}
-%item-colors {
-  // enabled
-  @include item-styles("colors");
-}
-%item-hover {
-  @include item-styles("hover");
-}
-%item-selected {
-  @include item-styles("selected");
-}
-%item-selected-hover {
-  @include item-styles("selected-hover");
-}
-%item-disabled {
-  @include item-styles("disabled");
-}
-%item-common-states {
-  @include item-styles("enabled");
-  @include item-styles("hover");
-  @include item-styles("disabled");
 }
 
 /*----------------------
