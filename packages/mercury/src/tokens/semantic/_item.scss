@@ -2,51 +2,42 @@
   // note 1: all this tokens are applied on "@mixin item-styles", and the
   // styling of any component item should be applied through the mixin.
 
-  // note 2: tokens thar are commented as "optional, are optional because items
-  // from different components could have differences in those tokens.
-  // Tokens that are not commented as optional should in theory be applied to
-  // all component items.
-
   // generic (are independent of the item state)
-  --mer-item__border-width: var(--mer-border__width--sm);
-  --mer-item__border-style: solid;
-  --mer-item__line-height: var(--mer-line-height--tight);
-  --mer-item__padding-inline: var(--mer-spacing--xs); // optional
-  --mer-item__padding-block: var(--mer-spacing--xs); // optional
-  --mer-item__min-block-size: var(--mer-spacing--lg); // optional
-  --mer-item__font-family: var(--mer-font-family--inter-regular); // optional
-  --mer-item__font-size: var(--mer-body__font-size); // optional
-
-  --mer-item__color: var(--mer-item__color--enabled);
   --mer-item__bg-color: var(--mer-item__bg-color--enabled);
   --mer-item__border-color: var(--mer-item__border-color--enabled);
+  --mer-item__border-style: solid;
+  --mer-item__border-width: var(--mer-border__width--sm);
+  --mer-item__color: var(--mer-item__color--enabled);
+  --mer-item__font-family: var(--mer-font-family--inter-regular);
+  --mer-item__font-weight: var(--mer-font__weight--regular);
+  --mer-item__font-size: var(--mer-body__font-size);
+  --mer-item__line-height: var(--mer-line-height--tight);
+  --mer-item__min-block-size: var(--mer-spacing--lg);
+  --mer-item__padding-block: var(--mer-spacing--xs);
+  --mer-item__padding-inline: var(--mer-spacing--xs);
 
   // enabled
-  --mer-item__color--enabled: var(--mer-text__on-elevation);
   --mer-item__bg-color--enabled: var(--mer-color__elevation--01);
   --mer-item__border-color--enabled: var(--mer-color__elevation--04);
+  --mer-item__color--enabled: var(--mer-text__on-elevation);
 
   // hover
-  --mer-item__color--hover: var(--mer-color__neutral-gray--100); // ? (validate)
   --mer-item__bg-color--hover: var(--mer-color__tinted-blue--5);
   --mer-item__border-color--hover: var(--mer-color__tinted-blue--20);
+  --mer-item__color--hover: var(--mer-color__neutral-gray--100);
 
   // selected
-  --mer-item__color--selected: var(
-    --mer-color__neutral-gray--100
-  ); // ? (validate)
   --mer-item__bg-color--selected: var(--mer-color__tinted-blue--10);
   --mer-item__border-color--selected: var(--mer-color__tinted-blue--20);
+  --mer-item__color--selected: var(--mer-color__neutral-gray--100);
 
   // selected + hover
-  --mer-item__color--selected-hover: var(
-    --mer-color__neutral-gray--100
-  ); // ? (validate)
   --mer-item__bg-color--selected-hover: var(--mer-color__tinted-blue--10);
   --mer-item__border-color--selected-hover: var(--mer-color__tinted-blue--20);
+  --mer-item__color--selected-hover: var(--mer-color__neutral-gray--100);
 
   // disabled
-  --mer-item__color--disabled: var(); // ? (validate)
   --mer-item__bg-color--disabled: var();
   --mer-item__border-color--disabled: var();
+  --mer-item__color--disabled: var();
 }
