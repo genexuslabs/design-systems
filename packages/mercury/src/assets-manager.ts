@@ -4,6 +4,7 @@ const ASSETS_BY_VENDOR: { [key in string]: Assets } = {};
 const ALIAS_TO_VENDOR_NAME: { [key in string]: string } = {};
 
 const SEPARATOR = "/";
+const MERCURY_ALIAS = "mer";
 
 export type AssetsMetadata = {
   category: string;
@@ -128,7 +129,7 @@ export const getAsset = (
  */
 export const iconMetadataToPath = (
   iconMetadata: AssetsMetadata,
-  vendorAlias: string = "mer"
+  vendorAlias: string = MERCURY_ALIAS
 ) => {
   const additionalInfo = iconMetadata.colorType
     ? `${SEPARATOR}${iconMetadata.colorType}`
@@ -139,11 +140,16 @@ export const iconMetadataToPath = (
 
 const getCustomFullValue = (
   iconName: string,
+  vendorAliasOrName: string,
   suffix?: "enabled" | "hover" | "active" | "disabled"
-) =>
-  suffix
-    ? (`var(--icon__${iconName}--${suffix})` as const)
-    : (`var(--icon__${iconName})` as const);
+) => {
+  const vendorPrefix =
+    vendorAliasOrName === MERCURY_ALIAS ? "" : `${vendorAliasOrName}-`;
+
+  return suffix
+    ? (`var(--icon__${vendorPrefix}${iconName}--${suffix})` as const)
+    : (`var(--icon__${vendorPrefix}${iconName})` as const);
+};
 
 /**
  * Parses the incoming iconMetadata, assuming Mercury as the default vendor if
@@ -172,7 +178,7 @@ const parseIconMetadata = (
     const colorType: string | undefined = iconMetadata[2];
 
     return {
-      vendor: "mer",
+      vendor: MERCURY_ALIAS,
       category,
       name,
       colorType: colorType
@@ -206,19 +212,19 @@ export const getImagePathCallback = (
     }
 
     const result: ImageMultiState = {
-      base: getCustomFullValue(assetStates.enabled.name)
+      base: getCustomFullValue(assetStates.enabled.name, vendor)
     };
 
     if (assetStates.hover) {
-      result.hover = getCustomFullValue(assetStates.hover.name);
+      result.hover = getCustomFullValue(assetStates.hover.name, vendor);
     }
 
     if (assetStates.active) {
-      result.active = getCustomFullValue(assetStates.active.name);
+      result.active = getCustomFullValue(assetStates.active.name, vendor);
     }
 
     if (assetStates.disabled) {
-      result.disabled = getCustomFullValue(assetStates.disabled.name);
+      result.disabled = getCustomFullValue(assetStates.disabled.name, vendor);
     }
 
     return result;
@@ -234,7 +240,7 @@ export const getImagePathCallback = (
     }
 
     return {
-      base: getCustomFullValue(assetPath.name, "enabled")
+      base: getCustomFullValue(assetPath.name, vendor, "enabled")
     };
   }
 };
@@ -262,4 +268,4 @@ export const getTreeViewImagePathCallback = (
 };
 
 // Initialize Mercury at the start
-registerAssets("Mercury", "mer", MERCURY_ASSETS);
+registerAssets("Mercury", MERCURY_ALIAS, MERCURY_ASSETS);
