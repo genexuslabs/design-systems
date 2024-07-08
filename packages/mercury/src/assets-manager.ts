@@ -125,8 +125,6 @@ export const getAsset = (
 /**
  * Given the metadata of the icon, it transforms the metadata into a string
  * that contains the given information.
- * @param iconMetadata
- * @param vendorAlias
  */
 export const iconMetadataToPath = (
   iconMetadata: AssetsMetadata,
@@ -135,7 +133,8 @@ export const iconMetadataToPath = (
   const additionalInfo = iconMetadata.colorType
     ? `${SEPARATOR}${iconMetadata.colorType}`
     : "";
-  return `${vendorAlias}${SEPARATOR}${iconMetadata.category}${SEPARATOR}${iconMetadata.name}${additionalInfo}`;
+
+  return `${vendorAlias}${SEPARATOR}${iconMetadata.category}${SEPARATOR}${iconMetadata.name}${additionalInfo}` as const;
 };
 
 const getCustomFullValue = (
@@ -146,17 +145,59 @@ const getCustomFullValue = (
     ? (`var(--icon__${iconName}--${suffix})` as const)
     : (`var(--icon__${iconName})` as const);
 
+/**
+ * Parses the incoming iconMetadata, assuming Mercury as the default vendor if
+ * the vendor is not specified (it is not found in the register)
+ */
+const parseIconMetadata = (
+  iconPath: string
+): {
+  vendor: string;
+  category: string;
+  name: string;
+  colorType: string | undefined;
+} => {
+  const iconMetadata = iconPath.split(SEPARATOR);
+
+  const vendorAliasOrName = iconMetadata[0];
+
+  const vendorName =
+    ALIAS_TO_VENDOR_NAME[vendorAliasOrName] ?? vendorAliasOrName;
+  const vendorAssets = ASSETS_BY_VENDOR[vendorName];
+
+  // The vendor is not contained in the path, assume by default Mercury.
+  if (!vendorAssets) {
+    const category = iconMetadata[0]; // Assume that the first value is the category
+    const name = iconMetadata[1];
+    const colorType: string | undefined = iconMetadata[2];
+
+    return {
+      vendor: "mer",
+      category,
+      name,
+      colorType: colorType
+    };
+  }
+
+  const category = iconMetadata[1];
+  const name = iconMetadata[2];
+  const colorType: string | undefined = iconMetadata[3];
+
+  return {
+    vendor: vendorAliasOrName,
+    category,
+    name,
+    colorType: colorType
+  };
+};
+
 export const getImagePathCallback = (
   iconPath: string
 ): ImageMultiState | undefined => {
-  const iconMetadata = iconPath.split(SEPARATOR);
-  const vendorAlias = iconMetadata[0];
-  const category = iconMetadata[1];
-  const name = iconMetadata[2];
-  const colorType = iconMetadata[3];
+  const { vendor, category, name, colorType } = parseIconMetadata(iconPath);
 
   if (colorType) {
-    const assetStates = getAsset(vendorAlias, { category, name, colorType }) as
+    const assetStates = getAsset(vendor, { category, name, colorType }) as
       | AssetsColorType
       | undefined;
 
@@ -184,7 +225,7 @@ export const getImagePathCallback = (
   }
   // Monochrome icon without states
   else {
-    const assetPath = getAsset(vendorAlias, { category, name }) as
+    const assetPath = getAsset(vendor, { category, name }) as
       | AssetsIconMetadata
       | undefined;
 
