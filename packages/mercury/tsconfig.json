@@ -2,14 +2,13 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
-    "declaration": true,
     "experimentalDecorators": true,
     "lib": ["ES2022"],
     "moduleResolution": "node",
     "module": "esnext",
     "target": "ES2022",
 
-    "emitDeclarationOnly": true,
+    "declaration": true,
     "outDir": "dist/",
 
     // Linting
@@ -23,6 +22,6 @@
     "noUnusedParameters": true,
     "strict": true
   },
-  "include": ["src"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }
