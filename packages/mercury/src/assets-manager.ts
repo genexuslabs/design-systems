@@ -3,7 +3,7 @@ import { MERCURY_ASSETS } from "./MERCURY_ASSETS";
 const ASSETS_BY_VENDOR = {};
 const ALIAS_TO_VENDOR_NAME = {};
 
-const SEPARATOR = "__";
+const SEPARATOR = "/";
 
 /**
  * Given a vendor and its assets, it register the assets of the vendor. After
@@ -84,7 +84,7 @@ export const iconMetadataToPath = (iconMetadata, vendorAlias = "mer") => {
  * @param {"enabled" | "hover" | "active" | "disabled"} suffix
  */
 const getCustomFullValue = (iconName, suffix) =>
-  `var(--icon__${iconName}--${suffix})`;
+  suffix ? `var(--icon__${iconName}--${suffix})` : `var(--icon__${iconName})`;
 
 export const getImagePathCallback = iconPath => {
   const iconMetadata = iconPath.split(SEPARATOR);
@@ -94,25 +94,22 @@ export const getImagePathCallback = iconPath => {
   const colorType = iconMetadata[3];
 
   if (colorType) {
-    const assetStates = getAsset(vendorAlias, { category, name });
+    const assetStates = getAsset(vendorAlias, { category, name, colorType });
 
     const result = {
-      base: getCustomFullValue(assetStates.enabled.name, "enabled")
+      base: getCustomFullValue(assetStates.enabled.name)
     };
 
     if (assetStates.hover) {
-      result.hover = getCustomFullValue(assetStates.hover.name, "hover");
+      result.hover = getCustomFullValue(assetStates.hover.name);
     }
 
     if (assetStates.active) {
-      result.active = getCustomFullValue(assetStates.active.name, "active");
+      result.active = getCustomFullValue(assetStates.active.name);
     }
 
     if (assetStates.disabled) {
-      result.disabled = getCustomFullValue(
-        assetStates.disabled.name,
-        "disabled"
-      );
+      result.disabled = getCustomFullValue(assetStates.disabled.name);
     }
 
     return result;
@@ -132,7 +129,7 @@ export const getImagePathCallbackIde = (item, direction) => {
     direction === "start" ? item.startImgSrc : item.endImgSrc
   );
 
-  return { default: paths, expanded: paths };
+  return { default: paths };
 };
 
 // Initialize Mercury at the start
