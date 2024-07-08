@@ -1,9 +1,65 @@
-import { MERCURY_ASSETS } from "./MERCURY_ASSETS";
+import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS";
 
-const ASSETS_BY_VENDOR = {};
-const ALIAS_TO_VENDOR_NAME = {};
+const ASSETS_BY_VENDOR: { [key in string]: Assets } = {};
+const ALIAS_TO_VENDOR_NAME: { [key in string]: string } = {};
 
 const SEPARATOR = "/";
+
+export type AssetsMetadata = {
+  category: string;
+  name: string;
+  colorType?: string;
+};
+
+/**
+ * For example:
+ * ```
+ * {
+ *   icons: {
+ *     objects: {
+ *       stencil: {
+ *         name: "objects_stencil--enabled"
+ *       },
+ *       version: {
+ *         onPrimary: {
+ *           base: {
+ *             name: "objects_version_onPrimary_base--enabled"
+ *           },
+ *           hover: {
+ *             name: "objects_version_onPrimary_base--hover"
+ *           }
+ *         }
+ *       }
+ *     }
+ *   }
+ * }
+ * ```
+ */
+export type Assets = {
+  icons: { [key in string]: AssetsCategories };
+};
+
+export type AssetsCategories = { [key: string]: AssetsIconName };
+
+export type AssetsIconName =
+  | {
+      [key: string]: AssetsColorType;
+    }
+  | AssetsIconMetadata;
+
+export type AssetsColorType = { [key: string]: AssetsIconMetadata };
+
+export interface AssetsIconMetadata {
+  name: string;
+}
+
+export type ImageMultiState = {
+  base: string;
+  hover?: string;
+  active?: string;
+  focus?: string;
+  disabled?: string;
+};
 
 /**
  * Given a vendor and its assets, it register the assets of the vendor. After
@@ -13,7 +69,11 @@ const SEPARATOR = "/";
  * @param {string} vendorAlias The alias of the vendor (for example, "mer"). Must be unique.
  * @param {any} assets
  */
-export const registerAssets = (vendorName, vendorAlias, assets) => {
+export const registerAssets = (
+  vendorName: string,
+  vendorAlias: string,
+  assets: Assets
+) => {
   // Already registered
   if (ASSETS_BY_VENDOR[vendorName] || ALIAS_TO_VENDOR_NAME[vendorAlias]) {
     return;
@@ -24,18 +84,14 @@ export const registerAssets = (vendorName, vendorAlias, assets) => {
 };
 
 /**
- * @typedef {Object} AssetMetadata
- * @property {string} category - The category of the icon
- * @property {string} name - The state of the icon
- * @property {string=} colorType - The type of color of the icon
- */
-
-/**
- * @param {string} vendorAlias The name or alias of the vendor.
- * @param {AssetMetadata} assetMetadata The metadata required to retrieve the icon
+ * @param vendorAlias The name or alias of the vendor.
+ * @param assetMetadata The metadata required to retrieve the icon
  * @return The required asset or undefined if not found.
  */
-export const getAsset = (vendorAliasOrName, assetMetadata) => {
+export const getAsset = (
+  vendorAliasOrName: string,
+  assetMetadata: AssetsMetadata
+): AssetsColorType | AssetsIconMetadata | undefined => {
   const vendorName =
     ALIAS_TO_VENDOR_NAME[vendorAliasOrName] ?? vendorAliasOrName;
   const vendorAssets = ASSETS_BY_VENDOR[vendorName];
@@ -46,15 +102,11 @@ export const getAsset = (vendorAliasOrName, assetMetadata) => {
 
   const iconCategoryObject = vendorAssets.icons[assetMetadata.category];
 
-  console.log(iconCategoryObject);
-
   // The category does not exists
   if (!iconCategoryObject) {
     return undefined;
   }
   const iconNameObject = iconCategoryObject[assetMetadata.name];
-
-  console.log(iconNameObject);
 
   // The name in the category does not exists
   if (!iconNameObject) {
@@ -62,31 +114,41 @@ export const getAsset = (vendorAliasOrName, assetMetadata) => {
   }
 
   return assetMetadata.colorType
-    ? iconNameObject[assetMetadata.colorType]
-    : iconNameObject;
+    ? (
+        iconNameObject as {
+          [key: string]: AssetsColorType;
+        }
+      )[assetMetadata.colorType]
+    : (iconNameObject as AssetsIconMetadata);
 };
 
 /**
  * Given the metadata of the icon, it transforms the metadata into a string
  * that contains the given information.
- * @param {IconMetadata} iconMetadata
- * @param {string} vendorAlias
+ * @param iconMetadata
+ * @param vendorAlias
  */
-export const iconMetadataToPath = (iconMetadata, vendorAlias = "mer") => {
+export const iconMetadataToPath = (
+  iconMetadata: AssetsMetadata,
+  vendorAlias: string = "mer"
+) => {
   const additionalInfo = iconMetadata.colorType
     ? `${SEPARATOR}${iconMetadata.colorType}`
     : "";
   return `${vendorAlias}${SEPARATOR}${iconMetadata.category}${SEPARATOR}${iconMetadata.name}${additionalInfo}`;
 };
 
-/**
- * @param {string} iconName
- * @param {"enabled" | "hover" | "active" | "disabled"} suffix
- */
-const getCustomFullValue = (iconName, suffix) =>
-  suffix ? `var(--icon__${iconName}--${suffix})` : `var(--icon__${iconName})`;
+const getCustomFullValue = (
+  iconName: string,
+  suffix?: "enabled" | "hover" | "active" | "disabled"
+) =>
+  suffix
+    ? (`var(--icon__${iconName}--${suffix})` as const)
+    : (`var(--icon__${iconName})` as const);
 
-export const getImagePathCallback = iconPath => {
+export const getImagePathCallback = (
+  iconPath: string
+): ImageMultiState | undefined => {
   const iconMetadata = iconPath.split(SEPARATOR);
   const vendorAlias = iconMetadata[0];
   const category = iconMetadata[1];
@@ -94,9 +156,15 @@ export const getImagePathCallback = iconPath => {
   const colorType = iconMetadata[3];
 
   if (colorType) {
-    const assetStates = getAsset(vendorAlias, { category, name, colorType });
+    const assetStates = getAsset(vendorAlias, { category, name, colorType }) as
+      | AssetsColorType
+      | undefined;
 
-    const result = {
+    if (!assetStates) {
+      return undefined;
+    }
+
+    const result: ImageMultiState = {
       base: getCustomFullValue(assetStates.enabled.name)
     };
 
@@ -116,7 +184,13 @@ export const getImagePathCallback = iconPath => {
   }
   // Monochrome icon without states
   else {
-    const assetPath = getAsset(vendorAlias, { category, name });
+    const assetPath = getAsset(vendorAlias, { category, name }) as
+      | AssetsIconMetadata
+      | undefined;
+
+    if (!assetPath) {
+      return undefined;
+    }
 
     return {
       base: getCustomFullValue(assetPath.name, "enabled")
@@ -124,10 +198,24 @@ export const getImagePathCallback = iconPath => {
   }
 };
 
-export const getImagePathCallbackIde = (item, direction) => {
+export const getTreeViewImagePathCallback = (
+  item: { startImgSrc?: string; endImgSrc?: string },
+  direction: "start" | "end"
+): { default: ImageMultiState } | undefined => {
+  if (
+    (!item.startImgSrc && direction === "start") ||
+    (!item.endImgSrc && direction === "end")
+  ) {
+    return undefined;
+  }
+
   const paths = getImagePathCallback(
-    direction === "start" ? item.startImgSrc : item.endImgSrc
+    direction === "start" ? item.startImgSrc! : item.endImgSrc!
   );
+
+  if (!paths) {
+    return undefined;
+  }
 
   return { default: paths };
 };
