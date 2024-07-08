@@ -10,7 +10,7 @@
   --mer-form-input__font-size: var(--mer-body__font-size);
   --mer-form-input__font-weight: var(--mer-text__on-surface);
   --mer-form-input__icon-size: var(--mer-icon__box--sm);
-  --mer-form-input__font-family: var(--mer-font-family--inter-regular);
+  --mer-form-input__font-family: var(--mer-font-family--body);
   //--mer-form-input__padding-inline is defined globally in /tokens/semantic/_other/
   // (Form Input) because it the padding-inline value is required in the calculation
   // of background-x position for RTL support, and this calculation needs to be on the :root
