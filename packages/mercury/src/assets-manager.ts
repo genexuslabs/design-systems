@@ -132,7 +132,7 @@ export const getAsset = (
  * Given the metadata of the icon, it transforms the metadata into a string
  * that contains the given information.
  */
-export const iconMetadataToPath = (
+export const getIconPath = (
   iconMetadata: AssetsMetadata,
   vendorAlias: string = MERCURY_ALIAS
 ) => {
@@ -147,15 +147,12 @@ export const iconMetadataToPath = (
  * Given the metadata of the icon and the metadata of its expanded version, it
  * transforms both metadata into a string that contains the given information.
  */
-export const iconMetadataToPathExpanded = (
+export const getIconPathExpanded = (
   iconMetadata: AssetsMetadata,
   iconMetadataExpanded: AssetsMetadata,
   vendorAlias: string = MERCURY_ALIAS
 ) =>
-  `${iconMetadataToPath(
-    iconMetadata,
-    vendorAlias
-  )}${EXPANDED_SEPARATOR}${iconMetadataToPath(
+  `${getIconPath(iconMetadata, vendorAlias)}${EXPANDED_SEPARATOR}${getIconPath(
     iconMetadataExpanded,
     vendorAlias
   )}` as const;
