@@ -40,7 +40,7 @@ export const generateIconsObject = (
     const normalizedIconPath = path.normalize(iconPath);
     const fileName = path.parse(normalizedIconPath).name;
     const categoryName = path.basename(path.dirname(normalizedIconPath));
-    const categoryNameCamelCase = kebabToCamelCase(categoryName);
+    // const categoryNameCamelCase = kebabToCamelCase(categoryName);
 
     let iconType: IconType = monochromeCategoriesMap.has(categoryName)
       ? "monochrome"
@@ -48,23 +48,34 @@ export const generateIconsObject = (
 
     if (!iconsObject.hasOwnProperty(categoryName)) {
       if (iconType === "monochrome") {
-        iconsObject[categoryNameCamelCase] = {};
+        iconsObject[categoryName] = {};
       }
     }
 
     if (iconType === "multicolor") {
       // is multicolor
-      iconsObject[kebabToCamelCase(categoryNameCamelCase)] = {
-        ...iconsObject[categoryNameCamelCase],
+      iconsObject[`${categoryName}`] = {
+        ...iconsObject[categoryName],
         [fileName]: {
-          name: `${categoryName}_${fileName}`,
+          enabled: {
+            name: `${`${categoryName}`}_${fileName}--enabled`,
+          },
+          hover: {
+            name: `${`${categoryName}`}_${fileName}--hover`,
+          },
+          active: {
+            name: `${`${categoryName}`}_${fileName}--active`,
+          },
+          disabled: {
+            name: `${`${categoryName}`}_${fileName}--disabled`,
+          },
         },
       } as MulticolorCategory;
     } else {
       // is monochrome
-      iconsObject[categoryNameCamelCase] = {
-        ...iconsObject[categoryNameCamelCase],
-        [kebabToCamelCase(fileName)]: monochromeIconInfo(
+      iconsObject[`${categoryName}`] = {
+        ...iconsObject[categoryName],
+        [`${fileName}`]: monochromeIconInfo(
           categoryName,
           fileName,
           monochromeColors,
@@ -88,11 +99,11 @@ export const generateIconsObject = (
 };`;
 
   // Freeze all objects
-  const freezedObjectsOuput = output
+  const freezedObjectsOutput = output
     .replace(/{/g, "Object.freeze({")
     .replace(/}/g, "})");
 
-  writeFile(normalizedIconsObjectFilePath, freezedObjectsOuput);
+  writeFile(normalizedIconsObjectFilePath, freezedObjectsOutput);
 };
 
 /**
@@ -148,12 +159,12 @@ const monochromeIconInfo = (
   const iconColors = monochromeCategories[iconColorsIndex].colors;
   for (const color in iconColors) {
     if (iconColors[color]) {
-      colorsObj[kebabToCamelCase(color)] = {};
+      colorsObj[`${color}`] = {};
       const colorIndex = monochromeColorsMap.get(color);
       const colorStates: ElementStates = monochromeColors[colorIndex].states;
       for (const state in colorStates) {
         if (colorStates[state as ElementState]) {
-          (colorsObj[kebabToCamelCase(color)][state] as unknown as Icon) = {
+          (colorsObj[color][state] as unknown as Icon) = {
             name: `${categoryName}_${fileName}_${color}--${state}`,
           } as Icon;
         }
