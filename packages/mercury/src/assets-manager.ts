@@ -4,6 +4,7 @@ const ASSETS_BY_VENDOR: { [key in string]: Assets } = {};
 const ALIAS_TO_VENDOR_NAME: { [key in string]: string } = {};
 
 const SEPARATOR = "/";
+const EXPANDED_SEPARATOR = ":";
 const MERCURY_ALIAS = "mer";
 
 export type AssetsMetadata = {
@@ -131,7 +132,7 @@ export const getAsset = (
  * Given the metadata of the icon, it transforms the metadata into a string
  * that contains the given information.
  */
-export const iconMetadataToPath = (
+export const getIconPath = (
   iconMetadata: AssetsMetadata,
   vendorAlias: string = MERCURY_ALIAS
 ) => {
@@ -141,6 +142,20 @@ export const iconMetadataToPath = (
 
   return `${vendorAlias}${SEPARATOR}${iconMetadata.category}${SEPARATOR}${iconMetadata.name}${additionalInfo}` as const;
 };
+
+/**
+ * Given the metadata of the icon and the metadata of its expanded version, it
+ * transforms both metadata into a string that contains the given information.
+ */
+export const getIconPathExpanded = (
+  iconMetadata: AssetsMetadata,
+  iconMetadataExpanded: AssetsMetadata,
+  vendorAlias: string = MERCURY_ALIAS
+) =>
+  `${getIconPath(iconMetadata, vendorAlias)}${EXPANDED_SEPARATOR}${getIconPath(
+    iconMetadataExpanded,
+    vendorAlias
+  )}` as const;
 
 const getCustomFullValue = (
   iconName: string,
@@ -237,7 +252,7 @@ export const getImagePathCallback = (
 export const getTreeViewImagePathCallback = (
   item: { startImgSrc?: string; endImgSrc?: string },
   direction: "start" | "end"
-): { default: ImageMultiState } | undefined => {
+): { default: ImageMultiState; expanded?: ImageMultiState } | undefined => {
   if (
     (!item.startImgSrc && direction === "start") ||
     (!item.endImgSrc && direction === "end")
@@ -245,15 +260,24 @@ export const getTreeViewImagePathCallback = (
     return undefined;
   }
 
-  const paths = getImagePathCallback(
-    direction === "start" ? item.startImgSrc! : item.endImgSrc!
-  );
+  const imgSrc = direction === "start" ? item.startImgSrc! : item.endImgSrc!;
 
-  if (!paths) {
+  // Split the path into the collapsed (default) and expanded
+  const collapsedAndExpandedSrc = imgSrc.split(EXPANDED_SEPARATOR);
+
+  const defaultPath = getImagePathCallback(collapsedAndExpandedSrc[0]);
+
+  if (!defaultPath) {
     return undefined;
   }
 
-  return { default: paths };
+  // If the icon has expanded state, process the expanded state
+  return collapsedAndExpandedSrc[1]
+    ? {
+        default: defaultPath,
+        expanded: getImagePathCallback(collapsedAndExpandedSrc[1])
+      }
+    : { default: defaultPath };
 };
 
 // Initialize Mercury at the start
