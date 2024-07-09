@@ -15,6 +15,16 @@ let PARENT_NAV_SIDEBAR; // a reference if the page has sidebar
 let CURRENT_PAGE_NAV_ITEM; // a reference the navigation item for the actual actual page.
 let PAGE_ARTICLES; // a reference to all the page ".article[nav]"
 
+const includeChameleonEsm = () => {
+  const chameleonEsm = document.createElement("script");
+  chameleonEsm.setAttribute("type", "module");
+  chameleonEsm.setAttribute(
+    "src",
+    "https://unpkg.com/@genexus/chameleon-controls-library@latest/dist/chameleon/chameleon.esm.js"
+  );
+  HEAD.appendChild(chameleonEsm);
+};
+
 const includeStyles = () => {
   //reset styles
   const resetStylesLink = document.createElement("link");
@@ -405,6 +415,7 @@ const copyToClipBoard = text => {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
+  includeChameleonEsm();
   includeStyles();
   includeFavicon();
   addGoogleFonts();
