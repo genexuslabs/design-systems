@@ -28,9 +28,6 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@atao60/fse-cli": "^0.1.9",
-    "@types/cheerio": "^0.22.35",
-    "@types/minimist": "^1.2.5",
-    "@types/stringify-object": "^4.0.5",
     "ajv": "^8.12.0",
     "cheerio": "^1.0.0-rc.12",
     "glob": "^10.3.10",
@@ -42,6 +39,11 @@
     "svgo": "^3.2.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.4"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.35",
+    "@types/minimist": "^1.2.5",
+    "@types/stringify-object": "^4.0.5"
   },
   "engines": {
     "pnpm": ">=3"

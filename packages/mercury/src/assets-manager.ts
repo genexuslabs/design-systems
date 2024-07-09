@@ -46,7 +46,9 @@ export type AssetsIconName =
   | {
       [key: string]: AssetsColorType;
     }
-  | AssetsIconMetadata;
+  | {
+      [key: string]: AssetsIconMetadata;
+    };
 
 export type AssetsColorType = { [key: string]: AssetsIconMetadata };
 
@@ -120,7 +122,9 @@ export const getAsset = (
           [key: string]: AssetsColorType;
         }
       )[assetMetadata.colorType]
-    : (iconNameObject as AssetsIconMetadata);
+    : (iconNameObject as {
+        [key: string]: AssetsIconMetadata;
+      });
 };
 
 /**

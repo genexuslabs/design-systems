@@ -10,6 +10,7 @@
 
     "declaration": true,
     "outDir": "dist/",
+    "skipLibCheck": true,
 
     // Linting
     "allowUnreachableCode": false,
@@ -22,6 +23,6 @@
     "noUnusedParameters": true,
     "strict": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/assets-manager.ts"],
   "exclude": ["node_modules"]
 }
