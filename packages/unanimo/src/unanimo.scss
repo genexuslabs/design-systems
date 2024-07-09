@@ -268,6 +268,7 @@
     // Form control classes
     @if $form-controls-classes {
       @include form-input();
+      @include form-textarea();
       @include form-input__label();
       @include form-input__helper();
     }
