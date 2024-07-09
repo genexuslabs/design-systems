@@ -11,7 +11,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc && npm run icons-svg && npm run icons-sass && npm run build.scss && npm run copy-tasks && npm run showcase.scss",
-    "build-no-svg": "tsc && npm run build.scss && npm run copy-tasks",
+    "build-no-svg": "npm run build.scss && npm run copy-tasks",
     "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
     "test": "sass test/test.scss test/mercury.css",
     "validate.ci": "npm run build-no-svg",
