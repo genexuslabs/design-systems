@@ -1,112 +1,118 @@
 @mixin code() {
-  .hljs-doctag,
-  .hljs-keyword,
-  .hljs-meta .hljs-keyword,
-  .hljs-template-tag,
-  .hljs-template-variable,
-  .hljs-type,
-  .hljs-variable.language_ {
-    /* prettylights-syntax-keyword */
-    color: var(
-      --colors-foundation-un-color__purple--400
-    ); /* Light var(--colors-foundation-un-color__purple--100); */
-  }
+  .code {
+    > pre {
+      margin: 0;
+    }
 
-  .hljs-title,
-  .hljs-title.class_,
-  .hljs-title.class_.inherited__,
-  .hljs-title.function_ {
-    color: var(--text-un-text__on-surface--alternative);
-  }
+    .hljs-doctag,
+    .hljs-keyword,
+    .hljs-meta .hljs-keyword,
+    .hljs-template-tag,
+    .hljs-template-variable,
+    .hljs-type,
+    .hljs-variable.language_ {
+      /* prettylights-syntax-keyword */
+      color: var(
+        --colors-foundation-un-color__purple--400
+      ); /* Light var(--colors-foundation-un-color__purple--100); */
+    }
 
-  .hljs-attr,
-  .hljs-attribute,
-  .hljs-literal,
-  .hljs-meta,
-  .hljs-number,
-  .hljs-operator,
-  .hljs-variable,
-  .hljs-selector-attr,
-  .hljs-selector-class,
-  .hljs-selector-id {
-    color: var(
-      --colors-foundation-un-color__purple--200
-    ); /* Previously: --text-un-text__primary */
-  }
+    .hljs-title,
+    .hljs-title.class_,
+    .hljs-title.class_.inherited__,
+    .hljs-title.function_ {
+      color: var(--text-un-text__on-surface--alternative);
+    }
 
-  .hljs-regexp,
-  .hljs-string,
-  .hljs-meta .hljs-string {
-    color: var(
-      --colors-foundation-un-color__orange--200
-    ); /* DARK: color-mix(in srgb, var(--colors-foundation-un-color__red--300) 60%, #000) */
-  }
+    .hljs-attr,
+    .hljs-attribute,
+    .hljs-literal,
+    .hljs-meta,
+    .hljs-number,
+    .hljs-operator,
+    .hljs-variable,
+    .hljs-selector-attr,
+    .hljs-selector-class,
+    .hljs-selector-id {
+      color: var(
+        --colors-foundation-un-color__purple--200
+      ); /* Previously: --text-un-text__primary */
+    }
 
-  .hljs-built_in,
-  .hljs-symbol {
-    /* prettylights-syntax-variable */
-    color: #e36209;
-  }
+    .hljs-regexp,
+    .hljs-string,
+    .hljs-meta .hljs-string {
+      color: var(
+        --colors-foundation-un-color__orange--200
+      ); /* DARK: color-mix(in srgb, var(--colors-foundation-un-color__red--300) 60%, #000) */
+    }
 
-  .hljs-comment,
-  .hljs-code,
-  .hljs-formula {
-    color: var(--colors-foundation-un-color__green--200);
-  }
+    .hljs-built_in,
+    .hljs-symbol {
+      /* prettylights-syntax-variable */
+      color: #e36209;
+    }
 
-  .hljs-name,
-  .hljs-quote,
-  .hljs-selector-tag,
-  .hljs-selector-pseudo {
-    color: var(--colors-foundation-un-color__green--200);
-  }
+    .hljs-comment,
+    .hljs-code,
+    .hljs-formula {
+      color: var(--colors-foundation-un-color__green--200);
+    }
 
-  .hljs-subst {
-    /* prettylights-syntax-storage-modifier-import */
-    color: #24292e;
-  }
+    .hljs-name,
+    .hljs-quote,
+    .hljs-selector-tag,
+    .hljs-selector-pseudo {
+      color: var(--colors-foundation-un-color__green--200);
+    }
 
-  .hljs-section {
-    /* prettylights-syntax-markup-heading */
-    color: #005cc5;
-    font-weight: bold;
-  }
+    .hljs-subst {
+      /* prettylights-syntax-storage-modifier-import */
+      color: #24292e;
+    }
 
-  .hljs-bullet {
-    /* prettylights-syntax-markup-list */
-    color: #735c0f;
-  }
+    .hljs-section {
+      /* prettylights-syntax-markup-heading */
+      color: #005cc5;
+      font-weight: bold;
+    }
 
-  .hljs-emphasis {
-    /* prettylights-syntax-markup-italic */
-    color: #24292e;
-    font-style: italic;
-  }
+    .hljs-bullet {
+      /* prettylights-syntax-markup-list */
+      color: #735c0f;
+    }
 
-  .hljs-strong {
-    /* prettylights-syntax-markup-bold */
-    color: #24292e;
-    font-weight: bold;
-  }
+    .hljs-emphasis {
+      /* prettylights-syntax-markup-italic */
+      color: #24292e;
+      font-style: italic;
+    }
 
-  .hljs-addition {
-    /* prettylights-syntax-markup-inserted */
-    color: #22863a;
-    background-color: #f0fff4;
-  }
+    .hljs-strong {
+      /* prettylights-syntax-markup-bold */
+      color: #24292e;
+      font-weight: bold;
+    }
 
-  .hljs-deletion {
-    /* prettylights-syntax-markup-deleted */
-    color: #b31d28;
-    background-color: #ffeef0;
-  }
+    .hljs-addition {
+      /* prettylights-syntax-markup-inserted */
+      color: #22863a;
+      background-color: #f0fff4;
+    }
 
-  .hljs-char.escape_,
-  .hljs-link,
-  .hljs-params,
-  .hljs-property,
-  .hljs-punctuation,
-  .hljs-tag {
-    /* purposely ignored */
+    .hljs-deletion {
+      /* prettylights-syntax-markup-deleted */
+      color: #b31d28;
+      background-color: #ffeef0;
+    }
+
+    .hljs-char.escape_,
+    .hljs-link,
+    .hljs-params,
+    .hljs-property,
+    .hljs-punctuation,
+    .hljs-tag {
+      /* purposely ignored */
+    }
   }
 }
