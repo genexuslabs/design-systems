@@ -6341,6 +6341,358 @@ export const MERCURY_ASSETS = Object.freeze({
       })
     })
   }),
+  "gx-test": Object.freeze({
+    "unit-test": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_unit-test--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_unit-test--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_unit-test--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_unit-test--disabled"
+      })
+    }),
+    "unit-test-db": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_unit-test-db--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_unit-test-db--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_unit-test-db--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_unit-test-db--disabled"
+      })
+    }),
+    "ui-test-web": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_ui-test-web--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_ui-test-web--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_ui-test-web--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_ui-test-web--disabled"
+      })
+    }),
+    "ui-test-sd": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_ui-test-sd--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_ui-test-sd--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_ui-test-sd--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_ui-test-sd--disabled"
+      })
+    }),
+    "test-suite": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_test-suite--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_test-suite--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_test-suite--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_test-suite--disabled"
+      })
+    }),
+    "test-results": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_test-results--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_test-results--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_test-results--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_test-results--disabled"
+      })
+    }),
+    "test-folder": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_test-folder--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_test-folder--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_test-folder--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_test-folder--disabled"
+      })
+    }),
+    "test-folder-open": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_test-folder-open--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_test-folder-open--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_test-folder-open--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_test-folder-open--disabled"
+      })
+    }),
+    "screenshot-viewer": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_screenshot-viewer--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_screenshot-viewer--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_screenshot-viewer--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_screenshot-viewer--disabled"
+      })
+    }),
+    "run-unit-test": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_run-unit-test--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_run-unit-test--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_run-unit-test--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_run-unit-test--disabled"
+      })
+    }),
+    "run-ui-test-web": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_run-ui-test-web--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_run-ui-test-web--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_run-ui-test-web--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_run-ui-test-web--disabled"
+      })
+    }),
+    "run-ui-test-sd": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_run-ui-test-sd--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_run-ui-test-sd--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_run-ui-test-sd--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_run-ui-test-sd--disabled"
+      })
+    }),
+    "run-tests": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_run-tests--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_run-tests--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_run-tests--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_run-tests--disabled"
+      })
+    }),
+    "run-test-suite": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_run-test-suite--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_run-test-suite--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_run-test-suite--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_run-test-suite--disabled"
+      })
+    }),
+    "run-test-cancel": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_run-test-cancel--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_run-test-cancel--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_run-test-cancel--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_run-test-cancel--disabled"
+      })
+    }),
+    "result-warning": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_result-warning--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_result-warning--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_result-warning--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_result-warning--disabled"
+      })
+    }),
+    "result-skipped": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_result-skipped--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_result-skipped--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_result-skipped--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_result-skipped--disabled"
+      })
+    }),
+    "result-ok": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_result-ok--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_result-ok--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_result-ok--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_result-ok--disabled"
+      })
+    }),
+    "result-exception": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_result-exception--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_result-exception--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_result-exception--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_result-exception--disabled"
+      })
+    }),
+    "result-error": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_result-error--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_result-error--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_result-error--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_result-error--disabled"
+      })
+    }),
+    "record-mock": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_record-mock--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_record-mock--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_record-mock--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_record-mock--disabled"
+      })
+    }),
+    plus: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_plus--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_plus--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_plus--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_plus--disabled"
+      })
+    }),
+    image: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_image--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_image--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_image--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_image--disabled"
+      })
+    }),
+    explorer: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_explorer--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_explorer--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_explorer--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_explorer--disabled"
+      })
+    }),
+    cutfo: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-test_cutfo--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-test_cutfo--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-test_cutfo--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-test_cutfo--disabled"
+      })
+    })
+  }),
   "gemini-tools": Object.freeze({
     warning: Object.freeze({
       "on-surface": Object.freeze({
