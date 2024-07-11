@@ -10,6 +10,7 @@
         visibility: hidden;
       }
     </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
   </head>
   <body class="showcase" sidebar>
     <main class="main">
@@ -75,11 +76,18 @@
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <button
-                    class="button-primary button-icon-and-text icon__gemini-tools_add-circle_on-primary"
-                  >
+                  <button class="button-primary button-icon-and-text">
+                    <ch-image id="primary-text-with-icon"></ch-image>
                     Caption 1
                   </button>
+                  <script type="module">
+                    let chImage = document.getElementById(
+                      "primary-text-with-icon"
+                    );
+                    chImage.src =
+                      BUTTON_ICONS.GEMINI_TOOLS_ADD_CIRCLE_ON_PRIMARY;
+                    chImage.getImagePathCallback = getImagePathCallback;
+                  </script>
                 </div>
                 <div class="article__code">
                   <ch-code id="chCode3" language="xml" class="code"> </ch-code>
