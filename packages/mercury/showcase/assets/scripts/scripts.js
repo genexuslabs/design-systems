@@ -29,25 +29,25 @@ const includeStyles = () => {
   //reset styles
   const resetStylesLink = document.createElement("link");
   resetStylesLink.rel = "stylesheet";
-  resetStylesLink.href = "./assets/reset.css";
+  resetStylesLink.href = "./assets/styles/reset.css";
   HEAD.appendChild(resetStylesLink);
 
   //main styles
   const mainStylesLink = document.createElement("link");
   mainStylesLink.rel = "stylesheet";
-  mainStylesLink.href = "./assets/main.css";
+  mainStylesLink.href = "./assets/styles/main.css";
   HEAD.appendChild(mainStylesLink);
 
   //sidebar styles
   const sidebarStylesLink = document.createElement("link");
   sidebarStylesLink.rel = "stylesheet";
-  sidebarStylesLink.href = "./assets/sidebar.css";
+  sidebarStylesLink.href = "./assets/styles/sidebar.css";
   HEAD.appendChild(sidebarStylesLink);
 
   //top-bar styles
   const topBarStylesLink = document.createElement("link");
   topBarStylesLink.rel = "stylesheet";
-  topBarStylesLink.href = "./assets/top-bar.css";
+  topBarStylesLink.href = "./assets/styles/top-bar.css";
   HEAD.appendChild(topBarStylesLink);
 
   //mercury styles
@@ -111,7 +111,7 @@ const toggleRTLBtn = () => {
 
 const getNavbarItems = () => {
   // Fetch the list of the showcase html pages.
-  return fetch("./assets/navbar-items.json")
+  return fetch("./assets/json/navbar-items.json")
     .then(response => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
