@@ -4,14 +4,16 @@
 %icon-size--sm {
   @include icon-background-common-styles(
     $inline-size: var(--mer-icon__box--sm),
-    $block-size: var(--mer-icon__box--sm)
+    $block-size: var(--mer-icon__box--sm),
+    $background-size: var(--mer-icon__size--sm)
   );
 }
 
 %icon-size--md {
   @include icon-background-common-styles(
     $inline-size: var(--mer-icon__box--md),
-    $block-size: var(--mer-icon__box--md)
+    $block-size: var(--mer-icon__box--md),
+    $background-size: var(--mer-icon__size--md)
   );
 }
 
@@ -29,4 +31,17 @@
   #{$selector} {
     @extend %icon-size--md;
   }
+}
+
+// Icon background styles
+@mixin icon-background-common-styles(
+  $inline-size: var(--icon-size),
+  $block-size: var(--icon-size),
+  $background-size: var(--icon-background-size)
+) {
+  content: "";
+  display: block;
+  inline-size: $inline-size;
+  block-size: $block-size;
+  background: no-repeat center / $background-size var(--icon-path);
 }
