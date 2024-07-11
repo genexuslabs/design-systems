@@ -36,8 +36,6 @@
 // Icons
 @import "./icons/button";
 @import "./icons/form-input";
-@import "./icons/tree-view";
-@import "./icons/_generated/svg-sass-mixins";
 
 // Components
 @import "./components/checkbox/checkbox-styles";
@@ -76,8 +74,6 @@
 
   // Icons
   $icons-path: "./assets/icons/",
-  $ignored-multicolor-categories: (),
-  $ignored-monochrome-categories: (),
   // Font face
   $font-face: true,
   $font-face-path: "./assets/fonts/",
@@ -357,13 +353,8 @@
 
     // Icon classes
     @if $icon-classes {
-      @include icon-mask();
-      @include icon-background();
       @include icon-size-sm();
       @include icon-size-md();
-
-      @include form-input-icon();
-      @include form-input-bg-x-rtl-support();
     }
 
     // Layout classes
@@ -377,16 +368,6 @@
   //     Icons on Elements / Components
   // - - - - - - - - - - - - - - - - - - - -
   @if ($icons-elements) {
-    // Process icons lists
-    @include generate-multicolor-icons-selectors(
-      $all-multicolor-lists,
-      $ignored-categories: $ignored-multicolor-categories
-    );
-    @include generate-monochrome-icons-selectors(
-      $all-monochrome-lists,
-      $ignored-categories: $ignored-monochrome-categories
-    );
-
     // Button icon only
     @include button-icon-only();
 

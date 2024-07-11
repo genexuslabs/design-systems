@@ -7,13 +7,8 @@
 
 /// @group Form
 /// @param {String} $selector [".form-input--icon"] -
-/// @param {type} $icon-path [null] -
-@mixin form-input-icon($selector: ".form-input--icon", $icon-path: null) {
+@mixin form-input-icon($selector: ".form-input--icon") {
   #{$selector} {
-    @if $icon-path != null {
-      --icon-path: #{$icon-path};
-    }
     @extend %form-input-icon;
-    @extend %icon-input-background;
   }
 }

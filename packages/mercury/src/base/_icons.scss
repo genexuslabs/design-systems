@@ -1,76 +1,17 @@
 // - - - - - - - - - - - - - - - - - - - -
-//         Icon Mask / Background
-// - - - - - - - - - - - - - - - - - - - -
-/// @group Icon
-/// @param {String} $selector [".icon-mask"] -
-/// @param {type} $icon-path [null] -
-/// @param {type} $icon-class [null] -
-/// @example scss
-///   SCSS:
-///     @include icon-mask($selector: "icon__example", $icon-path: var(--icon__example));
-///
-/// @example markup
-///   HTML/render:
-///     <div class="icon__example icon-size-sm"></div>
-///     <div class="icon__example icon-size-md"></div>
-///
-@mixin icon-mask($selector: ".icon-mask", $icon-path: null, $icon-class: null) {
-  #{$selector} {
-    @if $icon-path != null {
-      --icon-path: #{$icon-path};
-    }
-
-    @if $icon-class != null {
-      @extend #{$icon-class} !optional;
-    }
-  }
-}
-
-/// @group Icon
-/// @param {String} $selector [".icon-background"] -
-/// @param {type} $icon-path [null] -
-/// @param {type} $icon-class [null] -
-/// @example scss
-///   SCSS:
-///     @include icon-background($selector: "icon__example", $icon-path: var(--icon__example));
-///
-/// @example markup
-///   HTML/render:
-///     <div class="icon__example icon-size-sm"></div>
-///     <div class="icon__example icon-size-md"></div>
-///
-@mixin icon-background(
-  $selector: ".icon-background",
-  $icon-path: null,
-  $icon-class: null
-) {
-  #{$selector} {
-    @if $icon-path != null {
-      --icon-path: #{$icon-path};
-    }
-
-    @if $icon-class != null {
-      @extend #{$icon-class} !optional;
-    }
-  }
-}
-
-// - - - - - - - - - - - - - - - - - - - -
 //               Icon Sizes
 // - - - - - - - - - - - - - - - - - - - -
 %icon-size--sm {
   @include icon-background-common-styles(
     $inline-size: var(--mer-icon__box--sm),
-    $block-size: var(--mer-icon__box--sm),
-    $background-size: 100%
+    $block-size: var(--mer-icon__box--sm)
   );
 }
 
 %icon-size--md {
   @include icon-background-common-styles(
     $inline-size: var(--mer-icon__box--md),
-    $block-size: var(--mer-icon__box--md),
-    $background-size: 100%
+    $block-size: var(--mer-icon__box--md)
   );
 }
 
@@ -78,9 +19,7 @@
 /// @param {String} $selector [".icon-size-sm"]
 @mixin icon-size-sm($selector: ".icon-size-sm") {
   #{$selector} {
-    &::before {
-      @extend %icon-size--sm;
-    }
+    @extend %icon-size--sm;
   }
 }
 
@@ -88,35 +27,6 @@
 /// @param {String} $selector [".icon-size-md"] -
 @mixin icon-size-md($selector: ".icon-size-md") {
   #{$selector} {
-    &::before {
-      @extend %icon-size--md;
-    }
+    @extend %icon-size--md;
   }
-}
-
-// - - - - - - - - - - - - - - - - - - - -
-//              Form Input
-// - - - - - - - - - - - - - - - - - - - -
-@mixin form-input-bg-x-rtl-support() {
-  // has to be included in the root
-  :root[dir="rtl"] {
-    --mer-form-input__bg-position--x: calc(
-      100% - var(--mer-form-input__bg-position--x-value)
-    );
-  }
-}
-
-@mixin icon-input-background-common-styles(
-  $background-size: "0",
-  $background-position-x: "0"
-) {
-  background: var(--icon-path) $background-position-x center / $background-size
-    no-repeat;
-}
-
-%icon-input-background {
-  @include icon-input-background-common-styles(
-    $background-size: var(--mer-form-input__icon-size),
-    $background-position-x: var(--mer-form-input__bg-position--x)
-  );
 }
