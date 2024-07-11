@@ -41,6 +41,7 @@
 @import "./components/checkbox/checkbox-styles";
 @import "./components/combo-box/combo-box-styles";
 @import "./components/dialog/dialog-styles";
+@import "./components/image/image-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
 @import "./components/tree-view/tree-view-styles";
@@ -94,6 +95,7 @@
   $components: true,
   $combo-box: true,
   $dialog: true,
+  $image: true,
   $checkbox: true,
   $radio-group: true,
   $tree-view: true,
@@ -408,6 +410,11 @@
     // dialog
     @if $dialog {
       @include dialog();
+    }
+
+    // image
+    @if $image {
+      @include icon();
     }
 
     // tabular grid
