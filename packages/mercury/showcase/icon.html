@@ -9,14 +9,8 @@
       html:not(.hydrated) {
         visibility: hidden;
       }
-      .icon {
-        block-size: 24px;
-        inline-size: 24px;
+      .icon-wrapper {
         display: inline-flex;
-      }
-      :root ch-image {
-        --ch-image-size: 100%;
-        --ch-image-background-size: 100%;
       }
     </style>
   </head>
@@ -38,41 +32,82 @@
           </header>
           <div class="section__articles-container">
             <!-- ========================== 
-          button-primary text only
+          size small
           =========================== -->
-            <article class="article" nav data-title="objects">
+            <article class="article" nav data-title="size small">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <span class="icon">
-                    <ch-image id="objects-attribute"></ch-image>
-                    <script type="module">
-                      import {
-                        getImagePathCallback,
-                        getIconPath
-                      } from "./assets/scripts/assets-manager.js";
-                      const chImageObjectsAttribute =
-                        document.getElementById("objects-attribute");
-                      const OBJECTS_ATTRIBUTE_ICON = getIconPath({
-                        category: "objects",
-                        name: "attribute"
-                      });
-                      chImageObjectsAttribute.src = OBJECTS_ATTRIBUTE_ICON;
-                      chImageObjectsAttribute.getImagePathCallback =
-                        getImagePathCallback;
-                    </script>
+                  <span class="icon-wrapper">
+                    <ch-image id="icon-1" class="icon-sm"></ch-image>
                   </span>
+                  <script type="module">
+                    import {
+                      getImagePathCallback,
+                      getIconPath
+                    } from "./assets/scripts/assets-manager.js";
+                    const chImage01 = document.getElementById("icon-1");
+                    const ICON_1 = getIconPath({
+                      category: "objects",
+                      name: "attribute"
+                    });
+                    chImage01.src = ICON_1;
+                    chImage01.getImagePathCallback = getImagePathCallback;
+                  </script>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `const OBJECTS_ATTRIBUTE_ICON = iconMetadataToPath(
+                    const markup1 = `const ICON = iconMetadataToPath(
   { category: "objects", name: "attribute" }
 );
-<ch-image src={FILE_SYSTEM_ICON} getImagePathCallback={getImagePathCallback}></ch-image>`;
+<ch-image src={ICON} getImagePathCallback={getImagePathCallback}></ch-image>`;
                     document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          size medium
+          =========================== -->
+            <article class="article" nav data-title="size medium">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <span>
+                    <span class="icon-wrapper">
+                      <ch-image id="icon-2" class="icon-md"></ch-image>
+                    </span>
+                  </span>
+                  <script type="module">
+                    import {
+                      getImagePathCallback,
+                      getIconPath
+                    } from "./assets/scripts/assets-manager.js";
+                    const chImage02 = document.getElementById("icon-2");
+                    const ICON_2 = getIconPath({
+                      category: "objects",
+                      name: "attribute"
+                    });
+                    chImage02.src = ICON_2;
+                    chImage02.getImagePathCallback = getImagePathCallback;
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-2" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup2 = `const ICON = iconMetadataToPath(
+{ category: "objects", name: "attribute" }
+);
+<ch-image src={ICON} getImagePathCallback={getImagePathCallback}></ch-image>`;
+                    document.getElementById("ch-code-2").value = markup2;
                   </script>
                 </div>
                 <!-- /.article__content -->
