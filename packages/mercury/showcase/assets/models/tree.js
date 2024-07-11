@@ -182,7 +182,7 @@ export const iconsModel = [
       {
         id: "Root_Module",
         caption: "Root Module",
-        startImgSrc: "item--module",
+        startImgSrc: "objects/module",
         expanded: true,
         items: [
           {
