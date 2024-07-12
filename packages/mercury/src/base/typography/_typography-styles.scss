@@ -1,87 +1,103 @@
-%heading-base {
-  font-family: var(--mer-font-family--title);
-  line-height: var(--mer-line-height--tight);
-}
+@import "tokens";
 
-%heading-1 {
-  @extend %heading-base;
-  font-size: var(--mer-font__size--xl); // 36px
-  font-weight: var(--mer-font__weight--bold);
-}
+// heading
+%heading {
+  &-base {
+    @include heading-tokens();
+    font-family: var(--mer-font-family--title);
+    line-height: var(--mer-line-height--tight);
+    color: var(--heading__color);
+  }
 
-%heading-2 {
-  @extend %heading-base;
-  font-size: var(--mer-font__size--lg); // 24px
-  font-weight: var(--mer-font__weight--bold);
-}
+  &-1 {
+    @extend %heading-base;
+    font-size: var(--mer-font__size--xl); // 36px
+    font-weight: var(--mer-font__weight--bold);
+    line-height: var(--heading-h1__line-height);
+  }
 
-%heading-3 {
-  @extend %heading-base;
-  font-size: var(--mer-font__size--sm); // 16px
-  font-weight: var(--mer-font__weight--bold);
-}
+  &-2 {
+    @extend %heading-base;
+    font-size: var(--mer-font__size--lg); // 24px
+    font-weight: var(--mer-font__weight--bold);
+    line-height: var(--heading-h2__line-height);
+  }
 
-%heading-4 {
-  @extend %heading-base;
-  font-size: var(--mer-font__size--xs); // 14px
-  font-weight: var(--mer-font__weight--bold);
-}
+  &-3 {
+    @extend %heading-base;
+    font-size: var(--mer-font__size--sm); // 16px
+    font-weight: var(--mer-font__weight--bold);
+    line-height: var(--heading-h3__line-height);
+  }
 
-%heading-5 {
-  @extend %heading-base;
-  font-size: var(--mer-font__size--2xs); // 13px
-  font-weight: var(--mer-font__weight--bold);
-}
+  &-4 {
+    @extend %heading-base;
+    font-size: var(--mer-font__size--xs); // 14px
+    font-weight: var(--mer-font__weight--bold);
+    line-height: var(--heading-h4__line-height);
+  }
 
-%heading-6 {
-  @extend %heading-base;
-  font-size: var(--mer-font__size--3xs); // 12px
-  font-weight: var(--mer-font__weight--semi-bold);
-}
+  &-5 {
+    @extend %heading-base;
+    font-size: var(--mer-font__size--2xs); // 13px
+    font-weight: var(--mer-font__weight--bold);
+    line-height: var(--heading-h5__line-height);
+  }
 
-// Colors
-%heading__color {
-  &--highlighted {
-    color: var(--mer-text__highlighted);
+  &-6 {
+    @extend %heading-base;
+    font-size: var(--mer-font__size--3xs); // 12px
+    font-weight: var(--mer-font__weight--semi-bold);
+    line-height: var(--heading-h6__line-height);
+  }
+
+  &__color {
+    &--highlighted {
+      --heading__color: var(--mer-text__highlighted);
+    }
   }
 }
 
+// body
 %text-body {
-  font-size: var(--mer-font__size--xs); // 14px
-  font-family: var(--mer-body__font-family);
-  font-weight: var(--mer-body__font-weight);
-  line-height: var(--mer-body__line-height);
-  margin-block: var(--mer-body__margin-block);
+  @include body-tokens();
+  font-size: var(--text-body__font-size);
+  font-family: var(--text-body__font-family);
+  font-weight: var(--text-body__font-weight);
+  line-height: var(--text-body__line-height);
+  margin-block: var(--text-body__margin-block);
 }
 
 // tab
 %tab-text {
-  font-family: var(--mer-font-family--inter-regular);
-  font-size: var(--mer-font__size--3xs);
-  line-height: var(--mer-font-family--inter-regular);
+  @include tab-tokens();
+  font-family: var(--text-tab__font-family);
+  font-size: var(--text-tab__font-size);
+  line-height: var(--text-tab__line-height);
 }
 
 // button
 %button-text {
-  font-family: var(--mer-font-family--body);
-  font-size: var(--mer-font__size--3xs);
-  line-height: var(--mer-line-height--regular);
-}
+  @include button-tokens();
+  font-family: var(--text-button__font-family);
+  font-size: var(--text-button__font-size);
+  line-height: var(--text-button__line-height);
 
-%button-text--regular {
-  @extend %button-text;
-  font-weight: var(--mer-font__weight--semi-bold);
-}
-
-%button-text--light {
-  @extend %button-text;
-  font-weight: var(--mer-font__weight--semi-regular);
+  &--semi-bold {
+    @extend %button-text;
+    font-weight: var(--mer-font__weight--semi-bold);
+  }
+  &--regular {
+    @extend %button-text;
+    font-weight: var(--mer-font__weight--regular);
+  }
 }
 
 // tooltip
 %tooltip-text {
-  font-family: var(--mer-font-family--body);
-  font-size: var(--mer-font-size--2xs);
+  @include tooltip-tokens();
+  font-family: var(--mer-text-tooltip__font-family);
+  font-size: var(--mer-text-tooltip__font-size);
 }
 
 /// @group Typography
