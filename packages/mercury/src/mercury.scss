@@ -432,3 +432,119 @@
     }
   }
 }
+
+@mixin mercury-only(
+  // Resets
+  $resets: false,
+  $box-sizing-reset: false,
+  $button-reset: false,
+  $input-reset: false,
+  $other-reset: false,
+  $typography-reset: false,
+
+  // body
+  $body: false,
+
+  // Theme
+  $light-theme: false,
+  $dark-theme: false,
+  $prefers-color-scheme-light: false,
+  $prefers-color-scheme-dark: false,
+
+  // Tokens
+  $tokens: false,
+  $border: false,
+  $colors: false,
+  $elevation: false,
+  $font: false,
+  $spacing: false,
+  $timing: false,
+
+  // Icons
+  $icons-path: "./assets/icons/",
+  $ignored-multicolor-categories: (),
+  $ignored-monochrome-categories: (),
+  $icons-variables: false,
+
+  // Font face
+  $font-face: false,
+  $font-face-path: "./assets/fonts/",
+
+  // Base
+  $base-classes: false,
+  $label: false,
+  $button-classes: false,
+  $form-controls-classes: false,
+  $icon-classes: false,
+  $typography-classes: false,
+  $layout-classes: false,
+
+  // Components
+  $components: false,
+  $combo-box: false,
+  $dialog: false,
+  $checkbox: false,
+  $radio-group: false,
+  $tree-view: false,
+  $tabular-grid: false,
+  $tab: false,
+  $code: false
+) {
+  @include mercury(
+    // Resets
+    $resets: $resets,
+    $box-sizing-reset: $box-sizing-reset,
+    $button-reset: $button-reset,
+    $input-reset: $input-reset,
+    $other-reset: $other-reset,
+    $typography-reset: $typography-reset,
+
+    // body
+    $body: $body,
+
+    // Theme
+    $light-theme: $light-theme,
+    $dark-theme: $dark-theme,
+    $prefers-color-scheme-light: $prefers-color-scheme-light,
+    $prefers-color-scheme-dark: $prefers-color-scheme-dark,
+
+    // Tokens
+    $tokens: $tokens,
+    $border: $border,
+    $colors: $colors,
+    $elevation: $elevation,
+    $font: $font,
+    $spacing: $spacing,
+    $timing: $timing,
+
+    // Icons
+    $icons-path: $icons-path,
+    $ignored-multicolor-categories: $ignored-multicolor-categories,
+    $ignored-monochrome-categories: $ignored-monochrome-categories,
+    $icons-variables: $icons-variables,
+
+    // Font face
+    $font-face: $font-face,
+    $font-face-path: $font-face-path,
+
+    // Base
+    $base-classes: $base-classes,
+    $label: $label,
+    $button-classes: $button-classes,
+    $form-controls-classes: $form-controls-classes,
+    $icon-classes: $icon-classes,
+    $typography-classes: $typography-classes,
+    $layout-classes: $layout-classes,
+
+    // Components
+    $components: $components,
+    $combo-box: $combo-box,
+    $dialog: $dialog,
+    $checkbox: $checkbox,
+    $radio-group: $radio-group,
+    $tree-view: $tree-view,
+    $tabular-grid: $tabular-grid,
+    $tab: $tab,
+    $code: $code
+  );
+}
