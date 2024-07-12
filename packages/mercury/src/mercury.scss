@@ -36,18 +36,17 @@
 // Icons
 @import "./icons/button";
 @import "./icons/form-input";
-@import "./icons/_generated/svg-sass-mixins";
 
 // Components
 @import "./components/checkbox/checkbox-styles";
+@import "./components/code/code-styles";
 @import "./components/combo-box/combo-box-styles";
 @import "./components/dialog/dialog-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
-@import "./components/tree-view/tree-view-styles";
-@import "./components/tabular-grid/tabular-grid-styles";
 @import "./components/tab/tab-styles";
-@import "./components/code/code-styles";
+@import "./components/tabular-grid/tabular-grid-styles";
+@import "./components/tree-view/tree-view-styles";
 
 @mixin mercury(
   // Resets
@@ -97,14 +96,14 @@
 
   // Components
   $components: true,
+  $checkbox: true,
+  $code: true,
   $combo-box: true,
   $dialog: true,
-  $checkbox: true,
   $radio-group: true,
-  $tree-view: true,
-  $tabular-grid: true,
   $tab: true,
-  $code: true
+  $tabular-grid: true,
+  $tree-view: true
 ) {
   // - - - - - - - - - - - - - - - - - - - -
   //                  Icons
@@ -393,14 +392,9 @@
       @include checkbox();
     }
 
-    // radio-group
-    @if $radio-group {
-      @include radio-group();
-    }
-
-    // tree view
-    @if $tree-view {
-      @include tree-view();
+    // code
+    @if $code {
+      @include code();
     }
 
     // combo box
@@ -413,9 +407,9 @@
       @include dialog();
     }
 
-    // tabular grid
-    @if $tabular-grid {
-      @include tabular-grid();
+    // radio-group
+    @if $radio-group {
+      @include radio-group();
     }
 
     // tab
@@ -423,9 +417,14 @@
       @include tab();
     }
 
-    // code
-    @if $code {
-      @include code();
+    // tabular grid
+    @if $tabular-grid {
+      @include tabular-grid();
+    }
+
+    // tree view
+    @if $tree-view {
+      @include tree-view();
     }
   }
 }
@@ -478,14 +477,14 @@
 
   // Components
   $components: false,
+  $checkbox: false,
+  $code: false,
   $combo-box: false,
   $dialog: false,
-  $checkbox: false,
   $radio-group: false,
-  $tree-view: false,
-  $tabular-grid: false,
   $tab: false,
-  $code: false
+  $tabular-grid: false,
+  $tree-view: false
 ) {
   @include mercury(
     // Resets
@@ -535,13 +534,13 @@
 
     // Components
     $components: $components,
+    $checkbox: $checkbox,
+    $code: $code,
     $combo-box: $combo-box,
     $dialog: $dialog,
-    $checkbox: $checkbox,
     $radio-group: $radio-group,
-    $tree-view: $tree-view,
-    $tabular-grid: $tabular-grid,
     $tab: $tab,
-    $code: $code
+    $tabular-grid: $tabular-grid,
+    $tree-view: $tree-view
   );
 }
