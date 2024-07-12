@@ -19,12 +19,18 @@ let monochromeCategoriesList: string[] = [];
 let multicolorCategoriesList: string[] = [];
 
 // Files and Directories
-const SRC_PATH = await process.argv[2];
-const OUTPUT_PATH = await process.argv[3];
-const COLOR_STATES_PATH = await process.argv[4];
+
+const args = minimist(process.argv.slice(2));
+
+const SRC_PATH = await args.srcDir;
+const OUTPUT_PATH = await args.outDir;
+const COLOR_STATES_PATH = await args.configFilePath;
+const ICONS_PREFIX = await args.iconsPrefix;
 const ALL_LISTS_FILENAME = "categories-lists.scss";
 const CATEGORIES_IMPORTS_FILENAME = "categories-imports.scss";
 const MIXINS_FILENAME = "svg-sass-mixins.scss";
+
+const ICON_PREFIX = ICONS_PREFIX ? `--icon-${ICONS_PREFIX}` : `--icon`;
 
 // Start fresh (delete current output directory)
 deleteDirectory(OUTPUT_PATH);
@@ -259,7 +265,7 @@ const createPlaceholders = (
     icon.states.forEach((state) => {
       placeholderSelectors += `
     &_${iconName}${stateSeparator}${state} {
-      --icon-path: var(--icon__${categoryName}_${iconName}${stateSeparator}${state});
+      --icon-path: var(${ICON_PREFIX}__${categoryName}_${iconName}${stateSeparator}${state});
     }`;
     });
   });
@@ -280,7 +286,7 @@ const createIconsCustomProperties = (
     const iconStates = icon.states;
     if (iconStates) {
       iconStates.forEach((iconState) => {
-        iconsCustomProperties += `  --icon__${categoryName}_${iconName}${stateSeparator}${iconState}: url('#{$icons-path}${categoryName}/${scheme}/${icon.fileName}#${iconState}'); \n`;
+        iconsCustomProperties += `  ${ICON_PREFIX}__${categoryName}_${iconName}${stateSeparator}${iconState}: url('#{$icons-path}${categoryName}/${scheme}/${icon.fileName}#${iconState}'); \n`;
       });
     }
   });
