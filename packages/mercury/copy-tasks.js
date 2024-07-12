@@ -22,7 +22,7 @@ can be distributed with its own fonts/, independently of 'dist/assets/fonts/'
 const SVG_SASS_GENERATOR_GENERATED_FOLDER = "_generated";
 const ASSETS_SRC = "./src/assets/";
 const ASSETS_DIST = "./dist/assets/";
-const ASSETS_CSS = "./dist/css/";
+const ASSETS_CSS = "./dist/bundles/css/";
 const ASSETS_FONTS = "./dist/assets/fonts/";
 const GENERATED_ICONS_PATH = path.join(
   ASSETS_SRC,
