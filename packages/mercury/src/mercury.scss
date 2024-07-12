@@ -35,7 +35,6 @@
 
 // Icons
 @import "./icons/button";
-@import "./icons/form-input";
 
 // Components
 @import "./components/checkbox/checkbox-styles";
@@ -87,12 +86,11 @@
 
   // Base
   $base-classes: true,
-  $label: true,
   $button-classes: true,
   $form-controls-classes: true,
   $icon-classes: true,
-  $typography-classes: true,
   $layout-classes: true,
+  $typography-classes: true,
 
   // Components
   $components: true,
@@ -100,6 +98,7 @@
   $code: true,
   $combo-box: true,
   $dialog: true,
+  $edit: true,
   $radio-group: true,
   $tab: true,
   $tabular-grid: true,
@@ -319,22 +318,12 @@
     @if $typography-reset {
       @include typography-reset();
     }
-
-    // Typography classes
-    @if $typography-classes {
-      @include typography-classes();
-    }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
   //              Base classes
   // - - - - - - - - - - - - - - - - - - - -
   @if $base-classes {
-    // Label classes
-    @if $label {
-      @include label();
-    }
-
     // Button classes
     @if $button-classes {
       // Button primary
@@ -358,11 +347,8 @@
 
     // Form control classes
     @if $form-controls-classes {
-      @include form-input();
       @include fieldset();
-
-      // Form input text
-      @include form-input-icon();
+      @include label();
     }
 
     // Icon classes
@@ -371,15 +357,17 @@
       @include icon-background();
       @include icon-size-sm();
       @include icon-size-md();
-
-      @include form-input-icon();
-      @include form-input-bg-x-rtl-support();
     }
 
     // Layout classes
     @if $layout-classes {
       @include layout();
       @include control-footer();
+    }
+
+    // Typography classes
+    @if $typography-classes {
+      @include typography-classes();
     }
   }
 
@@ -405,6 +393,11 @@
     // dialog
     @if $dialog {
       @include dialog();
+    }
+
+    // edit
+    @if $edit {
+      @include form-input();
     }
 
     // radio-group
@@ -481,6 +474,7 @@
   $code: false,
   $combo-box: false,
   $dialog: false,
+  $edit: false,
   $radio-group: false,
   $tab: false,
   $tabular-grid: false,
@@ -525,12 +519,11 @@
 
     // Base
     $base-classes: $base-classes,
-    $label: $label,
     $button-classes: $button-classes,
     $form-controls-classes: $form-controls-classes,
     $icon-classes: $icon-classes,
-    $typography-classes: $typography-classes,
     $layout-classes: $layout-classes,
+    $typography-classes: $typography-classes,
 
     // Components
     $components: $components,
@@ -538,6 +531,7 @@
     $code: $code,
     $combo-box: $combo-box,
     $dialog: $dialog,
+    $edit: $edit,
     $radio-group: $radio-group,
     $tab: $tab,
     $tabular-grid: $tabular-grid,
