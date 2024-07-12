@@ -1,4 +1,10 @@
 import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS";
+export {
+  MercuryBundles,
+  MercuryBundle,
+  MercuryBundleBase,
+  MercuryBundleComponent
+} from "./bundles/bundles";
 
 const ASSETS_BY_VENDOR: { [key in string]: Assets } = {};
 const ALIAS_TO_VENDOR_NAME: { [key in string]: string } = {};
