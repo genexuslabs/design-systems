@@ -3,7 +3,9 @@ export {
   MercuryBundles,
   MercuryBundle,
   MercuryBundleBase,
-  MercuryBundleComponent
+  MercuryBundleComponent,
+  MercuryBundleReset,
+  MercuryBundleUtil
 } from "./bundles/bundles";
 
 const ASSETS_BY_VENDOR: { [key in string]: Assets } = {};
