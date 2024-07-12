@@ -1,4 +1,6 @@
 :root {
+  --dashed-border-color: var(--mer-color__neutral-gray--600);
+  --dashed-border-width: 1px;
   --sc-base__border-color: var(--mer-color__neutral-gray--700);
   /* TOKENS MAIN */
   --body__font-size: 16px;
@@ -77,7 +79,6 @@ body.all-hidden .section__header {
 }
 .dummy-box {
   display: block;
-  inline-size: 200px;
   block-size: 32px;
   border: 2px dashed var(--mer-color__elevation--03);
   display: flex;
@@ -85,10 +86,46 @@ body.all-hidden .section__header {
   justify-content: center;
   color: var(--mer-color__neutral-gray--500);
 }
-.dummy-box--lg {
-  inline-size: 400px;
-}
 
+.dashed-border {
+  background-image: repeating-linear-gradient(
+      0deg,
+      var(--dashed-border-color),
+      var(--dashed-border-color) 12px,
+      transparent 12px,
+      transparent 20px,
+      var(--dashed-border-color) 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--dashed-border-color),
+      var(--dashed-border-color) 12px,
+      transparent 12px,
+      transparent 20px,
+      var(--dashed-border-color) 20px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      var(--dashed-border-color),
+      var(--dashed-border-color) 12px,
+      transparent 12px,
+      transparent 20px,
+      var(--dashed-border-color) 20px
+    ),
+    repeating-linear-gradient(
+      270deg,
+      var(--dashed-border-color),
+      var(--dashed-border-color) 12px,
+      transparent 12px,
+      transparent 20px,
+      var(--dashed-border-color) 20px
+    );
+  background-size: var(--dashed-border-width) 100%,
+    100% var(--dashed-border-width), var(--dashed-border-width) 100%,
+    100% var(--dashed-border-width);
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+  background-repeat: no-repeat;
+}
 /* List */
 .article__list li {
   position: relative;
