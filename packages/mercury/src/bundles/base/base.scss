@@ -19,5 +19,6 @@
   $timing: true,
 
   $resets: true,
-  $box-sizing-reset: true
+  // TODO: By the time we remove TheiaJS, this reset will likely no longer be necessary
+  $input-reset: true
 );
