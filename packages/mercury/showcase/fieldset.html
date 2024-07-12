@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fieldset</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body class="showcase" sidebar>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">fieldset</h1>
+            <p class="section__description">
+              A primary HTML fieldset is a fundamental form element that groups
+              related fields together, enhancing the organization and
+              readability of a form. It typically includes a legend to provide a
+              clear label for the grouped elements, making the form more
+              accessible and user-friendly.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          with legend
+          =========================== -->
+            <article class="article" nav data-title="with legend">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  Using a <code>fieldset</code> with a
+                  <code>legend</code> element improves form accessibility and
+                  organization by grouping related elements with a descriptive
+                  title, enhancing both usability and visual clarity.
+                </p>
+                <div class="article__content">
+                  <fieldset class="fieldset">
+                    <legend class="fieldset__legend">User Details</legend>
+                  </fieldset>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-1" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup1 = `<fieldset class="fieldset">
+  <legend class="fieldset__legend">User Details</legend>
+  <-- Your controls here -->
+</fieldset>`;
+                    document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          display rows
+          =========================== -->
+            <article class="article" nav data-title="display: rows">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  Displaying fieldset controls in a vertical or rows layout
+                  improves form readability and usability, facilitating easier
+                  scanning and sequential data entry, especially on narrower
+                  screens and mobile devices. (This is the default orientation.
+                  There is no need to add an additional class).
+                </p>
+                <div class="article__content">
+                  <fieldset class="fieldset">
+                    <span class="dummy-box">your control</span>
+                    <span class="dummy-box">your control</span>
+                  </fieldset>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-2" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup2 = `<fieldset class="fieldset">
+  <-- Your controls here -->
+</fieldset>`;
+                    document.getElementById("ch-code-2").value = markup2;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          display grid 2 columns
+          =========================== -->
+            <article class="article" nav data-title="display: grid 2 columns">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  Displaying a <code>fieldset</code> with a grid layout of two
+                  columns improves form organization and usability by neatly
+                  pairing related form controls side by side, enhancing
+                  readability and user interaction.
+                </p>
+                <div class="article__content">
+                  <fieldset class="fieldset fieldset--grid-2">
+                    <span class="dummy-box">your control</span>
+                    <span class="dummy-box">your control</span>
+                  </fieldset>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-3" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup3 = `<fieldset class="fieldset fieldset--grid-2">
+  <-- Your controls here -->
+</fieldset>`;
+                    document.getElementById("ch-code-3").value = markup3;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          display grid 3 columns
+          =========================== -->
+            <article class="article" nav data-title="display: grid 3 columns">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  This layout optimizes space usage, improves readability, and
+                  facilitates quick comparison and interaction among grouped
+                  inputs or options, enhancing overall user experience.
+                </p>
+                <div class="article__content">
+                  <fieldset class="fieldset fieldset--grid-3">
+                    <span class="dummy-box">your control</span>
+                    <span class="dummy-box">your control</span>
+                    <span class="dummy-box">your control</span>
+                  </fieldset>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-4" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup4 = `<fieldset class="fieldset fieldset--grid-3">
+<-- Your controls here -->
+</fieldset>`;
+                    document.getElementById("ch-code-4").value = markup4;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          fieldset group: column
+          =========================== -->
+            <article class="article" nav data-title="fieldset group: column">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  A custom <code>fieldset</code> group, allows precise control
+                  over label and control positioning and spacing independently
+                  of the fieldset layout.(By default the
+                  <code>.fieldset__group</code> arranges the content with a
+                  column direction).
+                </p>
+                <div class="article__content">
+                  <fieldset class="fieldset">
+                    <div class="fieldset__group">
+                      <label class="label">User Name</label>
+                      <span class="dummy-box">your input text</span>
+                    </div>
+                    <div class="fieldset__group">
+                      <label class="label">User Email</label>
+                      <span class="dummy-box">your input email</span>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-5" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup5 = `<fieldset class="fieldset">
+  <div class="fieldset__group">
+    Your label here
+    Your control here
+  </div>
+  <div class="fieldset__group">
+    Your label here
+    Your control here
+  </div>
+</fieldset>`;
+                    document.getElementById("ch-code-5").value = markup5;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          fieldset group: row
+          =========================== -->
+            <!-- TO BE DEFINED -->
+            <article
+              class="article"
+              nav
+              data-title="fieldset group: row (⚠️ to be done)"
+              hidden
+            >
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  Displaying the fieldset group content as row, enhances form
+                  clarity and usability by presenting label and control pairs
+                  side by side for efficient user interaction.
+                </p>
+                <div class="article__content">
+                  <fieldset class="fieldset">
+                    <div class="fieldset__group fieldset__group--row">
+                      <label class="label">User Name</label>
+                      <span class="dummy-box">your input text</span>
+                    </div>
+                    <div class="fieldset__group fieldset__group--row">
+                      <label class="label">User Email</label>
+                      <span class="dummy-box">your input email</span>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-6" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup6 = `<fieldset class="fieldset">
+<div class="fieldset__group fieldset__group--row">
+  Your label here
+  Your control here
+</div>
+<div class="fieldset__group fieldset__group--row">
+  Your label here
+  Your control here
+</div>
+</fieldset>`;
+                    document.getElementById("ch-code-6").value = markup6;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          no border
+          =========================== -->
+            <article class="article" nav data-title="no border">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  Removing the border from a <code>fieldset</code> can create a
+                  cleaner and more modern look, especially in minimalist
+                  designs.
+                </p>
+                <div class="article__content">
+                  <fieldset
+                    class="fieldset fieldset--grid-2 fieldset--no-border"
+                  >
+                    <div class="fieldset__group">
+                      <label class="label">User Name</label>
+                      <span class="dummy-box">your input text</span>
+                    </div>
+                    <div class="fieldset__group">
+                      <label class="label">User Email</label>
+                      <span class="dummy-box">your input email</span>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-7" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup7 = `<fieldset class="fieldset fieldset--no-border">
+  Your controls here
+</fieldset>`;
+                    document.getElementById("ch-code-7").value = markup7;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          no padding
+          =========================== -->
+            <article class="article" nav data-title="no padding">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  In cases where the fieldset is placed inside a container with
+                  padding (internal spacing) you may wish to remove the fieldset
+                  padding (as well as the <code>fieldset</code> border), to
+                  prevent the total padding from being excessive.
+                </p>
+                <p class="article__description">
+                  In this example, the dashed line around the fieldset is not
+                  part of its design; it has been added to help you see the
+                  absence of padding.
+                </p>
+                <div class="article__content">
+                  <fieldset
+                    class="fieldset fieldset--grid-2 fieldset--no-border fieldset--no-padding dashed-border"
+                  >
+                    <div class="fieldset__group">
+                      <label class="label">User Name</label>
+                      <span class="dummy-box">your input text</span>
+                    </div>
+                    <div class="fieldset__group">
+                      <label class="label">User Email</label>
+                      <span class="dummy-box">your input email</span>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-8" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup8 = `<fieldset class="fieldset fieldset--no-border fieldset--no-padding">
+  Your controls here
+</fieldset>`;
+                    document.getElementById("ch-code-8").value = markup8;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          no padding
+          =========================== -->
+            <article class="article" nav data-title="no padding + legend">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  A fieldset with <code>.fieldset--no-padding</code> with
+                  automatically add spacing between the legend and the content.
+                </p>
+                <div class="article__content">
+                  <fieldset
+                    class="fieldset fieldset--grid-2 fieldset--no-border fieldset--no-padding dashed-border"
+                  >
+                    <legend class="fieldset__legend">User Details</legend>
+                    <div class="fieldset__group">
+                      <label class="label">User Name</label>
+                      <span class="dummy-box">your input text</span>
+                    </div>
+                    <div class="fieldset__group">
+                      <label class="label">User Email</label>
+                      <span class="dummy-box">your input email</span>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-9" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup9 = `<fieldset class="fieldset fieldset--no-border fieldset--no-padding">
+  Your controls here
+</fieldset>`;
+                    document.getElementById("ch-code-9").value = markup9;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./assets/scripts.js"></script>
+  </body>
+</html>

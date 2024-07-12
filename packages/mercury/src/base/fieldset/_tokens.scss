@@ -1,0 +1,17 @@
+@mixin fieldset-tokens() {
+  // fieldset
+  --fieldset__border: var(--mer-system__border-width)
+    var(--mer-system__border-style) var(--mer-system__border-color);
+  --fieldset__border-radius: var(--mer-border__radius--sm);
+  --fieldset__padding: var(--mer-spacing--sm);
+  --fieldset__row-gap: var(--mer-spacing--md);
+  --fieldset__column-gap: var(--mer-spacing--md);
+
+  // fieldset group
+  --fieldset-group__row-gap: var(--mer-spacing--xs);
+  --fieldset-group__column-gap: var(--mer-spacing--xs);
+
+  // fieldset legend
+  --fieldset-legend__padding-inline: var(--mer-spacing--sm);
+  --fieldset-legend__margin-block-end: var(--mer-spacing--sm);
+}

@@ -27,11 +27,11 @@
 // Base classes
 @import "./base/label/label-styles"; // should be at the top, since other elements use it.
 @import "./base/button/button-styles";
+@import "./base/fieldset/fieldset-styles";
 @import "./base/form-controls/form-input-styles";
-@import "./base/form-controls/form-fieldset-styles";
 @import "./base/icons";
-@import "./base/typography/typography-styles";
 @import "./base/layout/layout-styles";
+@import "./base/typography/typography-styles";
 
 // Icons
 @import "./icons/button";
@@ -84,26 +84,26 @@
 
   // Base
   $base-classes: true,
-  $label: true,
   $button-classes: true,
   $form-controls-classes: true,
   $icon-classes: true,
-  $typography-classes: true,
+  $label: true,
   $layout-classes: true,
+  $typography-classes: true,
 
   // Icons
   $icons-elements: true,
 
   // Components
   $components: true,
+  $checkbox: true,
+  $code: true,
   $combo-box: true,
   $dialog: true,
-  $checkbox: true,
   $radio-group: true,
-  $tree-view: true,
-  $tabular-grid: true,
   $tab: true,
-  $code: true
+  $tabular-grid: true,
+  $tree-view: true
 ) {
   // - - - - - - - - - - - - - - - - - - - -
   //              Icons

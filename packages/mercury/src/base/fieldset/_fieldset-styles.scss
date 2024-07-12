@@ -1,0 +1,106 @@
+@import "tokens";
+
+%fieldset {
+  @include fieldset-tokens();
+
+  border: var(--fieldset__border);
+  border-radius: var(--fieldset__border-radius);
+  padding: var(--fieldset__padding);
+  display: grid;
+  row-gap: var(--fieldset__row-gap);
+  column-gap: var(--fieldset__column-gap);
+
+  &__legend {
+    @extend %heading-4;
+    padding-inline: var(--fieldset-legend__padding-inline);
+  }
+
+  &--grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &--grid-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fieldset-group__column-gap);
+  }
+
+  &__group--row {
+    // TO BE DEFINED
+    flex-direction: row;
+    width: 100%;
+    gap: var(--fieldset-group__row-gap);
+  }
+
+  &--no-border {
+    --fieldset__border: none;
+  }
+
+  &--no-padding {
+    --fieldset__padding: 0;
+
+    &-legend {
+      margin-block-end: var(--fieldset-legend__margin-block-end);
+    }
+  }
+}
+
+/// @group Fieldset
+/// @param {String} $fieldset-selector [".fieldset"] -
+/// @param {String} $fieldset__legend-selector [".fieldset__legend"] -
+/// @param {String} $fieldset--grid-2-selector [".fieldset--grid-2"] -
+/// @param {String} $fieldset--grid-3-selector [".fieldset--grid-3"] -
+/// @param {String} $fieldset__group-selector [".fieldset__group"] -
+/// @param {String} $fieldset__group--row-selector [".fieldset__group--row"] -
+/// @param {String} $fieldset--no-border-selector [".fieldset--no-border"] -
+/// @param {String} $fieldset--no-padding-selector [".fieldset--no-padding"] -
+@mixin fieldset(
+  $fieldset-selector: ".fieldset",
+  $fieldset__legend-selector: ".fieldset__legend",
+  $fieldset--grid-2-selector: ".fieldset--grid-2",
+  $fieldset--grid-3-selector: ".fieldset--grid-3",
+  $fieldset__group-selector: ".fieldset__group",
+  $fieldset__group--row-selector: ".fieldset__group--row",
+  $fieldset--no-border-selector: ".fieldset--no-border",
+  $fieldset--no-padding-selector: ".fieldset--no-padding"
+) {
+  #{$fieldset-selector} {
+    @extend %fieldset;
+  }
+
+  #{$fieldset__legend-selector} {
+    @extend %fieldset__legend;
+  }
+
+  #{$fieldset--grid-2-selector} {
+    @extend %fieldset--grid-2;
+  }
+
+  #{$fieldset--grid-3-selector} {
+    @extend %fieldset--grid-3;
+  }
+
+  #{$fieldset__group-selector} {
+    @extend %fieldset__group;
+  }
+
+  #{$fieldset__group--row-selector} {
+    @extend %fieldset__group--row;
+  }
+
+  #{$fieldset--no-border-selector} {
+    @extend %fieldset--no-border;
+  }
+
+  #{$fieldset--no-padding-selector} {
+    @extend %fieldset--no-padding;
+
+    #{$fieldset__legend-selector} {
+      @extend %fieldset--no-padding-legend;
+    }
+  }
+}
