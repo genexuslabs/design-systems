@@ -154,21 +154,30 @@ const processCatalogCategory = (
   categoriesListsObject: categoriesLists
 ) => {
   saveCategory(iconType, categoryName);
-  const sassFileContent = createSassFileString(
+  const sassFilesContent = createSassFiles(
     categoryName,
     categoryIcons,
     categoriesListsObject,
     iconType
   );
-  saveSassOnDisk(sassFileContent, iconType, categoryName);
+  saveSassOnDisk(
+    sassFilesContent.customPropertiesSass,
+    iconType,
+    `${categoryName}__variables`
+  );
+  saveSassOnDisk(
+    sassFilesContent.placeHoldersSelectorsSass,
+    iconType,
+    `${categoryName}__placeholders`
+  );
 };
 
-const createSassFileString = (
+const createSassFiles = (
   categoryName: string,
   categoryIcons: lightDarkIcons,
   categoriesListsObject: categoriesLists,
   iconType: IconType
-): string => {
+): SassFiles => {
   // Save icon on categoriesListsObject for further use.
   if (!categoriesListsObject[iconType].hasOwnProperty(categoryName)) {
     categoriesListsObject[iconType][categoryName] = [];
@@ -232,14 +241,12 @@ const createSassFileString = (
   ${darkPlaceholders}
   `;
 
-  const output = `
-  ${allIconsCustomProperties}
-    %icon__${categoryName} {
-  ${allPlaceholders}
-    }
-  `;
-
-  return output;
+  return {
+    customPropertiesSass: allIconsCustomProperties,
+    placeHoldersSelectorsSass: `%icon__${categoryName} {
+      ${allPlaceholders}
+    }`,
+  };
 };
 
 const createPlaceholders = (
@@ -640,6 +647,11 @@ export type catalogCategory = {
 export type lightDarkIcons = {
   light: { fileName: string; states: string[]; iconType: IconType }[];
   dark: { fileName: string; states: string[]; iconType: IconType }[];
+};
+
+type SassFiles = {
+  customPropertiesSass: string;
+  placeHoldersSelectorsSass: string;
 };
 
 interface categoriesList {
