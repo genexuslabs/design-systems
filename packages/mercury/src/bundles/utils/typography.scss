@@ -1,0 +1,9 @@
+@import "config";
+@import "../../../dist/mercury.scss";
+
+@include mercury-only(
+  $resets: true,
+  $typography-reset: true,
+  $base-classes: true,
+  $typography-classes: true
+);
