@@ -25,12 +25,12 @@ const args = minimist(process.argv.slice(2));
 const SRC_PATH = await args.srcDir;
 const OUTPUT_PATH = await args.outDir;
 const COLOR_STATES_PATH = await args.configFilePath;
-const ICONS_PREFIX = await args.iconsPrefix;
+const VENDOR_ALIAS = await args.vendorAlias;
 const ALL_LISTS_FILENAME = "categories-lists.scss";
 const CATEGORIES_IMPORTS_FILENAME = "categories-imports.scss";
 const MIXINS_FILENAME = "svg-sass-mixins.scss";
 
-const ICON_PREFIX = ICONS_PREFIX ? `--icon-${ICONS_PREFIX}` : `--icon`;
+const ICON_PREFIX = VENDOR_ALIAS ? `--icon-${VENDOR_ALIAS}` : `--icon`;
 
 // Start fresh (delete current output directory)
 deleteDirectory(OUTPUT_PATH);
