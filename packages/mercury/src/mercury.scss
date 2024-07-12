@@ -36,7 +36,6 @@
 // Icons
 @import "./icons/button";
 @import "./icons/form-input";
-@import "./icons/tree-view";
 @import "./icons/_generated/svg-sass-mixins";
 
 // Components
@@ -59,6 +58,9 @@
   $other-reset: true,
   $typography-reset: true,
 
+  // body
+  $body: true,
+
   // Theme
   $light-theme: true,
   $dark-theme: true,
@@ -78,6 +80,8 @@
   $icons-path: "./assets/icons/",
   $ignored-multicolor-categories: (),
   $ignored-monochrome-categories: (),
+  $icons-variables: true,
+
   // Font face
   $font-face: true,
   $font-face-path: "./assets/fonts/",
@@ -91,9 +95,6 @@
   $typography-classes: true,
   $layout-classes: true,
 
-  // Icons
-  $icons-elements: true,
-
   // Components
   $components: true,
   $combo-box: true,
@@ -106,17 +107,18 @@
   $code: true
 ) {
   // - - - - - - - - - - - - - - - - - - - -
-  //              Icons
+  //                  Icons
   // - - - - - - - - - - - - - - - - - - - -
-
-  @import "./icons/_generated/categories-imports";
+  @if $icons-variables {
+    @import "./icons/_generated/categories-imports";
+  }
 
   // - - - - - - - - - - - - - - - - - - - -
   //              Typography
   // - - - - - - - - - - - - - - - - - - - -
   // font-face
   @if $font-face {
-    //light
+    // Light
     @font-face {
       font-family: "Inter";
       src: url("#{$font-face-path}Inter_Light.woff2");
@@ -124,7 +126,7 @@
       font-style: normal;
     }
 
-    //regular
+    // Regular
     @font-face {
       font-family: "Inter";
       src: url("#{$font-face-path}Inter_Regular.woff2");
@@ -132,7 +134,7 @@
       font-style: normal;
     }
 
-    //semi-bold
+    // Semi Bold
     @font-face {
       font-family: "Inter";
       src: url("#{$font-face-path}Inter_SemiBold.woff2");
@@ -140,7 +142,7 @@
       font-style: normal;
     }
 
-    //bold
+    // Bold
     @font-face {
       font-family: "Inter";
       src: url("#{$font-face-path}Inter_Bold.woff2");
@@ -148,7 +150,7 @@
       font-style: normal;
     }
 
-    //extra-bold
+    // Extra Bold
     @font-face {
       font-family: "Inter";
       src: url("#{$font-face-path}Inter_ExtraBold.woff2");
@@ -160,7 +162,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   //              Color Schemes
   // - - - - - - - - - - - - - - - - - - - -
-
   // Light
   @if $colors and $light-theme and $tokens {
     :root.light {
@@ -215,7 +216,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   //        Other Tokens than Colors
   // - - - - - - - - - - - - - - - - - - - -
-
   // Primitive
   @if $tokens and ($border or $elevation or $font or $spacing or $timing) {
     :root {
@@ -272,24 +272,26 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                General
   // - - - - - - - - - - - - - - - - - - - -
-  body {
-    @include document-common-styles();
+  @if $body {
+    body {
+      @include document-common-styles();
 
-    @if $tokens {
-      // Default background-color and color
-      @if $colors {
-        background-color: var(--mer-color__surface);
-        color: var(--mer-text__on-surface);
-      }
+      @if $tokens {
+        // Default background-color and color
+        @if $colors {
+          background-color: var(--mer-color__surface);
+          color: var(--mer-text__on-surface);
+        }
 
-      @if $font {
-        line-height: var(--mer-body__line-height);
-      }
+        @if $font {
+          line-height: var(--mer-body__line-height);
+        }
 
-      @if $font-face {
-        font-family: var(--mer-body__font-family);
-        font-size: var(--mer-body__font-size);
-        font-weight: var(--mer-body__font-weight);
+        @if $font-face {
+          font-family: var(--mer-body__font-family);
+          font-size: var(--mer-body__font-size);
+          font-weight: var(--mer-body__font-weight);
+        }
       }
     }
   }
@@ -347,12 +349,24 @@
 
       // Button tertiary
       @include button-tertiary();
+
+      // Button icon only
+      @include button-icon-only();
+
+      // Button icon and text
+      @include button-icon-and-text();
+
+      // Button icon after and text
+      @include button-icon-after-and-text();
     }
 
     // Form control classes
     @if $form-controls-classes {
       @include form-input();
       @include fieldset();
+
+      // Form input text
+      @include form-input-icon();
     }
 
     // Icon classes
@@ -371,33 +385,6 @@
       @include layout();
       @include control-footer();
     }
-  }
-
-  // - - - - - - - - - - - - - - - - - - - -
-  //     Icons on Elements / Components
-  // - - - - - - - - - - - - - - - - - - - -
-  @if ($icons-elements) {
-    // Process icons lists
-    @include generate-multicolor-icons-selectors(
-      $all-multicolor-lists,
-      $ignored-categories: $ignored-multicolor-categories
-    );
-    @include generate-monochrome-icons-selectors(
-      $all-monochrome-lists,
-      $ignored-categories: $ignored-monochrome-categories
-    );
-
-    // Button icon only
-    @include button-icon-only();
-
-    // Button icon and text
-    @include button-icon-and-text();
-
-    // Button icon after and text
-    @include button-icon-after-and-text();
-
-    // Form input text
-    @include form-input-icon();
   }
 
   // - - - - - - - - - - - - - - - -  - - -
