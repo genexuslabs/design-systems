@@ -16,9 +16,6 @@
       .article__content--large {
         height: 640px;
       }
-      .tree-view--no-padding {
-        border: 1px dashed var(--mer-color__elevation--03);
-      }
     </style>
   </head>
   <body class="showcase" sidebar>
@@ -266,13 +263,13 @@ show-lines="none"></ch-tree-view-render>`;
                   padding to prevent the total padding from being excessive.
                 </p>
                 <p class="article__description">
-                  In this example the dashed line all around is not part of the
-                  tree design. It has been added to allow you to see the absence
-                  of padding.
+                  In this example, the dashed line around the fieldset is not
+                  part of its design; it has been added to help you see the
+                  absence of padding.
                 </p>
                 <div class="article__content">
                   <ch-tree-view-render
-                    class="tree-view tree-view--no-padding"
+                    class="tree-view tree-view--no-padding dashed-border"
                     show-lines="all"
                     id="tree-no-padding"
                   ></ch-tree-view-render>
