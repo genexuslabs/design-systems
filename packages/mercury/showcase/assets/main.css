@@ -15,7 +15,7 @@
   --section-title__color: var(--mer-color__neutral-gray--100);
   --section-title__font-family: var(--mer-font-family--inter-light);
   --section-description__font-size: 16px;
-  --section-description__line-height: var(--mer-line-height--comfortable);
+  --section-description__line-height: var(--mer-line-height--spaced);
   --section-description__max-width: 640px;
   --articles-container__gap: 0;
   /* article */
@@ -256,7 +256,7 @@ Articles
 .article__description {
   font-size: var(--article-description__font-size);
   max-width: var(--article-description__max-width);
-  line-height: var(--mer-line-height--comfortable);
+  line-height: var(--mer-line-height--spaced);
 }
 .article__sub-title {
   font-size: var(--article-sub-title__font-size);
