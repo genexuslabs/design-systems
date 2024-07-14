@@ -4,53 +4,63 @@
 @import "tokens-cell";
 
 // - - - - - - - - - - - - - - - - - - - -
-//               ch-grid
+//                 Grid
 // - - - - - - - - - - - - - - - - - - - -
+
 %tabular-grid {
   @include tabular-grid-tokens();
   @include tabular-grid-row-tokens();
   @include tabular-grid-column-tokens();
   @include tabular-grid-cell-tokens();
-}
 
-%tabular-grid__main {
-  background-color: var(--grid-main__bg-color);
-}
+  &--align-cell-vertical {
+  }
 
-// - - - - - - - - - - - - - - - - - - - -
-//            ch-grid-column
-// - - - - - - - - - - - - - - - - - - - -
+  &--align-cell-horizontal {
+  }
 
-%tabular-grid-column__bar {
-  position: relative;
-  width: 100%;
-  gap: var(--grid-column-bar__gap);
-  background-color: var(--grid-column-bar__bg-color);
-  color: var(--grid-column-bar__color);
-  padding-inline: var(--grid-column-bar__padding-inline);
-  padding-block: var(--grid-column-bar__padding-block);
-  font-size: var(--grid-column-bar__font-size);
-  font-family: var(--grid-column-bar__font-family);
-  line-height: var(--mer-item__line-height);
-}
-
-%tabular-grid-column__bar-resize-split {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  right: 0;
-  inline-size: var(--grid-bar-resize-split__inline-size);
-  border-inline-end: var(--grid-bar-resize-split__border-inline-end);
-  background-color: var(--grid-bar-resize-split__bg-color);
-  &--hover {
-    border-inline-end-color: var(
-      --grid-bar-resize-split__border-inline-end-color--hover
-    );
+  &__main {
+    background-color: var(--grid-main__bg-color);
+    gap: 1px;
   }
 }
 
 // - - - - - - - - - - - - - - - - - - - -
-//            ch-grid-row
+//               Grid Column
+// - - - - - - - - - - - - - - - - - - - -
+
+%tabular-grid-column {
+  &__bar {
+    position: relative;
+    width: 100%;
+    gap: var(--grid-column-bar__gap);
+    background-color: var(--grid-column-bar__bg-color);
+    color: var(--grid-column-bar__color);
+    padding-inline: var(--grid-column-bar__padding-inline);
+    padding-block: var(--grid-column-bar__padding-block);
+    font-size: var(--grid-column-bar__font-size);
+    font-family: var(--grid-column-bar__font-family);
+    line-height: var(--mer-item__line-height);
+  }
+
+  &__bar-resize-split {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    inline-size: var(--grid-bar-resize-split__inline-size);
+    border-inline-end: var(--grid-bar-resize-split__border-inline-end);
+    background-color: var(--grid-bar-resize-split__bg-color);
+    &--hover {
+      border-inline-end-color: var(
+        --grid-bar-resize-split__border-inline-end-color--hover
+      );
+    }
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - -
+//               Grid Row
 // - - - - - - - - - - - - - - - - - - - -
 
 // no styles on ch-grid-row, since it has "display:contents"
@@ -60,14 +70,16 @@
 }
 
 // - - - - - - - - - - - - - - - - - - - -
-//            ch-grid-rowset
+//              Grid Rowset
 // - - - - - - - - - - - - - - - - - - - -
+
 %tabular-grid-rowset {
 }
 
 // - - - - - - - - - - - - - - - - - - - -
-//        ch-grid-rowset-legend
+//           Grid Rowset Legend
 // - - - - - - - - - - - - - - - - - - - -
+
 %tabular-grid-rowset-legend {
   cursor: pointer;
   font-family: var(--grid-rowset-legend__font-family);
@@ -87,17 +99,16 @@
     var(--indent) * (var(--level) - 1) + var(--grid-column-bar__padding-inline)
   );
   --indent: var(--grid-rowset-legend__indent);
-}
 
-// Parts
-// TODO
-%tabular-grid-rowset-legend__caret {
-}
-%tabular-grid-rowset-legend__selector-label {
-}
-%tabular-grid-rowset-legend__selector {
-}
-%tabular-grid-rowset-legend__icon {
+  // Parts: TODO
+  &__caret {
+  }
+  &__selector-label {
+  }
+  &__selector {
+  }
+  &__icon {
+  }
 }
 
 // no styles on ch-grid-row, since it has "display:contents"
@@ -105,7 +116,7 @@
 }
 
 // - - - - - - - - - - - - - - - - - - - -
-//            ch-grid-cell
+//               Grid Cell
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-cell {
@@ -134,161 +145,187 @@
     background-color: var(--mer-item__bg-color);
     z-index: -1;
   }
-}
-%tabular-grid-cell__selector-label {
-  line-height: 0;
-  font-size: 0;
-  background-color: transparent;
-  margin-inline-end: var(--mer-label__space);
-  block-size: var(--mer-control__block-size--tiny);
-  inline-size: var(--mer-control__block-size--tiny);
-}
-%tabular-grid-cell__selector {
-  position: relative;
-  margin: 0;
-  width: 0;
-  height: 0;
-}
-%tabular-grid-cell__selector--before {
-  content: "";
-  display: inline-block;
-  width: var(--mer-control__block-size--tiny);
-  height: var(--mer-control__block-size--tiny);
-  border: var(--mer-form-input__border);
-  border-radius: var(--mer-control-tiny__border-radius);
-  box-sizing: border-box;
-}
-%tabular-grid-cell__selector--after {
-  position: absolute;
-  content: "";
-  display: inline-block;
-  border-color: var(--mer-form-input-check__border-color);
-  top: calc(var(--mer-control__block-size--tiny) / 4);
-  left: calc(var(--mer-control__block-size--tiny) / 4);
-}
-%tabular-grid-cell__selector--after-checked {
-  inline-size: calc(var(--mer-control__block-size--tiny) / 2);
-  block-size: calc(var(--mer-control__block-size--tiny) / 2);
-  background-color: currentColor;
-  pointer-events: none;
-  -webkit-mask: no-repeat center / 100%
-    var(--mer-checkbox__option-checked-image);
-  color: var(--mer-form-input-check__border-color);
-}
-%tabular-grid-cell__selector--after-indeterminate {
-  inline-size: 8px;
-  block-size: var(--mer-form-input-check__border-width);
-  border-radius: 2px;
-  background-color: var(--mer-form-input-check__border-color);
-  top: calc(
-    var(--mer-control__block-size--tiny) / 2 -
-      var(--mer-form-input-check__border-width) / 2
-  );
+
+  &__selector-label {
+    line-height: 0;
+    font-size: 0;
+    background-color: transparent;
+    margin-inline-end: var(--mer-label__space);
+    block-size: var(--mer-control__block-size--tiny);
+    inline-size: var(--mer-control__block-size--tiny);
+  }
+
+  &__selector {
+    position: relative;
+    margin: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__selector--before {
+    content: "";
+    display: inline-block;
+    width: var(--mer-control__block-size--tiny);
+    height: var(--mer-control__block-size--tiny);
+    border: var(--mer-form-input__border);
+    border-radius: var(--mer-control-tiny__border-radius);
+    box-sizing: border-box;
+  }
+
+  &__selector--after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    border-color: var(--mer-form-input-check__border-color);
+    top: calc(var(--mer-control__block-size--tiny) / 4);
+    left: calc(var(--mer-control__block-size--tiny) / 4);
+  }
+
+  &__selector--after-checked {
+    inline-size: calc(var(--mer-control__block-size--tiny) / 2);
+    block-size: calc(var(--mer-control__block-size--tiny) / 2);
+    background-color: currentColor;
+    pointer-events: none;
+    -webkit-mask: no-repeat center / 100%
+      var(--mer-checkbox__option-checked-image);
+    color: var(--mer-form-input-check__border-color);
+  }
+
+  &__selector--after-indeterminate {
+    inline-size: 8px;
+    block-size: var(--mer-form-input-check__border-width);
+    border-radius: 2px;
+    background-color: var(--mer-form-input-check__border-color);
+    top: calc(
+      var(--mer-control__block-size--tiny) / 2 -
+        var(--mer-form-input-check__border-width) / 2
+    );
+  }
 }
 
 // - - - - - - - - - - - - - - - - - - - -
-//          ch-grid-row-actions
+//             Grid Row Actions
 // - - - - - - - - - - - - - - - - - - - -
+
 %tabular-grid-row-actions {
-}
-%tabular-grid-row-actions__window {
-  @extend %window-styles;
-}
-%tabular-grid-row-actions__main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--mer-window__gap);
+  &__window {
+    @extend %window-styles;
+  }
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mer-window__gap);
+  }
 }
 
-/// @group ch-grid
+/// @group TabularGrid
+// Grid
 /// @param {String} $tabular-grid-selector [".tabular-grid"] -
-/// @param {String} $tabular-grid__main [".tabular-grid::part(main)"] -
+/// @param {String} $tabular-grid--align-cell-vertical-selector [".tabular-grid--align-cell-vertical::part(main)"] -
+/// @param {String} $tabular-grid--align-horizontal-vertical-selector [".tabular-grid--align-cell-horizontal::part(main)"] -
+/// @param {String} $tabular-grid__main-selector [".tabular-grid::part(main)"] -
 
-/// @group ch-grid-column
-/// @param {String} $tabular-grid__bar [".tabular-grid-column::part(bar)"] -
-/// @param {String} $tabular-grid__bar-resize-split [".tabular-grid-column::part(bar-resize-split)"] -
-/// @param {String} $tabular-grid-column__selector-label [".tabular-grid-column::part(selector-label)"] -
-/// @param {String} $tabular-grid-column__selector [".tabular-grid-column::part(selector)"] -
-/// @param {String} $tabular-grid-column__selector--checked [".tabular-grid-column::part(selector checked)"] -
-/// @param {String} $tabular-grid-column__selector--indeterminate [".tabular-grid-column::part(selector indeterminate)"] -
+// Grid Column
+/// @param {String} $tabular-grid__bar-selector [".tabular-grid-column::part(bar)"] -
+/// @param {String} $tabular-grid__bar-resize-split-selector [".tabular-grid-column::part(bar-resize-split)"] -
+/// @param {String} $tabular-grid-column__selector-label-selector [".tabular-grid-column::part(selector-label)"] -
+/// @param {String} $tabular-grid-column__selector-selector [".tabular-grid-column::part(selector)"] -
+/// @param {String} $tabular-grid-column__selector--checked-selector [".tabular-grid-column::part(selector checked)"] -
+/// @param {String} $tabular-grid-column__selector--indeterminate-selector [".tabular-grid-column::part(selector indeterminate)"] -
 
-/// @group ch-grid-row
-/// @param {String} $tabular-grid-row [".tabular-grid-row"] -
+// Grid Row
+/// @param {String} $tabular-grid-row-selector [".tabular-grid-row"] -
 
-/// @group ch-grid-rowset
-/// @param {String} $tabular-grid-rowset [".tabular-grid-rowset"] -
+// Grid Rowset
+/// @param {String} $tabular-grid-rowset-selector [".tabular-grid-rowset"] -
 
-/// @group ch-grid-rowset-legend
-/// @param {String} $tabular-grid-rowset-legend [".tabular-grid-rowset-legend"] -
-/// @param {String} $tabular-grid-rowset-legend__caret [".tabular-grid-rowset-legend::part(caret)"] -
-/// @param {String} $tabular-grid-rowset-legend__selector-label [".tabular-grid-rowset-legend::part(selector-label)"] -
-/// @param {String} $tabular-grid-rowset-legend__selector [".tabular-grid-rowset-legend::part(selector)"] -
-/// @param {String} $tabular-grid-rowset-legend__icon [".tabular-grid-rowset-legend::part(icon)"] -
+// Grid Rowset Legend
+/// @param {String} $tabular-grid-rowset-legend-selector [".tabular-grid-rowset-legend"] -
+/// @param {String} $tabular-grid-rowset-legend__caret-selector [".tabular-grid-rowset-legend::part(caret)"] -
+/// @param {String} $tabular-grid-rowset-legend__selector-label-selector [".tabular-grid-rowset-legend::part(selector-label)"] -
+/// @param {String} $tabular-grid-rowset-legend__selector-selector [".tabular-grid-rowset-legend::part(selector)"] -
+/// @param {String} $tabular-grid-rowset-legend__icon-selector [".tabular-grid-rowset-legend::part(icon)"] -
 
-/// @group ch-grid-cell
-/// @param {String} $tabular-grid-cell [".tabular-grid-cell"] -
-/// @param {String} $tabular-grid-cell__drag-icon [".tabular-grid-cell::part(drag-icon)"] -
-/// @param {String} $tabular-grid-cell__selector-label [".tabular-grid-cell::part(selector-label)"] -
-/// @param {String} $tabular-grid-cell__selector [".tabular-grid-cell::part(selector)"] -
-/// @param {String} $tabular-grid-cell__selector--checked [".tabular-grid-cell::part(selector checked)"] -
-/// @param {String} $tabular-grid-cell__actions-icon [".tabular-grid-cell::part(actions-icon)"] -
+// Grid Cell
+/// @param {String} $tabular-grid-cell-selector [".tabular-grid-cell"] -
+/// @param {String} $tabular-grid-cell__drag-icon-selector [".tabular-grid-cell::part(drag-icon)"] -
+/// @param {String} $tabular-grid-cell__selector-label-selector [".tabular-grid-cell::part(selector-label)"] -
+/// @param {String} $tabular-grid-cell__selector-selector [".tabular-grid-cell::part(selector)"] -
+/// @param {String} $tabular-grid-cell__selector--checked-selector [".tabular-grid-cell::part(selector checked)"] -
+/// @param {String} $tabular-grid-cell--align-vertical-selector [".tabular-grid-cell--align-vertical::part(selector)"] -
+/// @param {String} $tabular-grid-cell--align-horizontal-selector [".tabular-grid-cell--align-horizontal::part(selector)"] -
+/// @param {String} $tabular-grid-cell__actions-icon-selector [".tabular-grid-cell::part(actions-icon)"] -
 
-/// @group ch-grid-row-actions
+// Grid Row Actions
+/// @param {String} $tabular-grid-row-actions-selector [".tabular-grid-row-actions"] -
+/// @param {String} $tabular-grid-row-actions__window-selector [".tabular-grid-row-actions::part(window)"] -
+/// @param {String} $tabular-grid-row-actions__main-selector [".tabular-grid-row-actions::part(main)"] -
+
 @mixin tabular-grid(
-  // ch-grid
+  // Grid
   $tabular-grid-selector: ".tabular-grid",
-  $tabular-grid__main: ".tabular-grid::part(main)",
-  $tabular-grid__main--align-cell-vertical:
-    ".tabular-grid--align-cell-horizontal::part(main)",
-  $tabular-grid__main--align-cell-horizontal:
-    ".tabular-grid--align-cell-horizontal::part(main)",
+  $tabular-grid--align-cell-vertical-selector:
+    ".tabular-grid--align-cell-vertical",
+  $tabular-grid--align-cell-horizontal-selector:
+    ".tabular-grid--align-cell-horizontal",
+  $tabular-grid__main-selector: ".tabular-grid::part(main)",
 
-  // ch-grid-column
-  $tabular-grid-column__bar: ".tabular-grid-column::part(bar)",
-  $tabular-grid-column__bar-resize-split:
+  // Grid Column
+  $tabular-grid-column__bar-selector: ".tabular-grid-column::part(bar)",
+  $tabular-grid-column__bar-resize-split-selector:
     ".tabular-grid-column::part(bar-resize-split)",
-  $tabular-grid-column__selector-label:
+  $tabular-grid-column__selector-label-selector:
     ".tabular-grid-column::part(selector-label)",
-  $tabular-grid-column__selector: ".tabular-grid-column::part(selector)",
-  $tabular-grid-column__selector--checked:
+  $tabular-grid-column__selector-selector:
+    ".tabular-grid-column::part(selector)",
+  $tabular-grid-column__selector--checked-selector:
     ".tabular-grid-column::part(selector checked)",
-  $tabular-grid-column__selector--indeterminate:
+  $tabular-grid-column__selector--indeterminate-selector:
     ".tabular-grid-column::part(selector indeterminate)",
 
-  // ch-grid-row
-  $tabular-grid-row: ".tabular-grid-row",
+  // Grid Row
+  $tabular-grid-row-selector: ".tabular-grid-row",
 
-  // ch-grid-rowset
-  $tabular-grid-rowset: ".tabular-grid-rowset",
+  // Grid Rowset
+  $tabular-grid-rowset-selector: ".tabular-grid-rowset",
 
-  // ch-grid-rowset-legend
-  $tabular-grid-rowset-legend: ".tabular-grid-rowset-legend",
-  $tabular-grid-rowset-legend__caret: ".tabular-grid-rowset-legend::part(caret)",
-  $tabular-grid-rowset-legend__selector-label:
+  // Grid Rowset Legend
+  $tabular-grid-rowset-legend-selector: ".tabular-grid-rowset-legend",
+  $tabular-grid-rowset-legend__caret-selector:
+    ".tabular-grid-rowset-legend::part(caret)",
+  $tabular-grid-rowset-legend__selector-label-selector:
     ".tabular-grid-rowset-legend::part(selector-label)",
-  $tabular-grid-rowset-legend__selector:
+  $tabular-grid-rowset-legend__selector-selector:
     ".tabular-grid-rowset-legend::part(selector)",
-  $tabular-grid-rowset-legend__icon: ".tabular-grid-rowset-legend::part(icon)",
+  $tabular-grid-rowset-legend__icon-selector:
+    ".tabular-grid-rowset-legend::part(icon)",
 
-  // ch-grid-cell
-  $tabular-grid-cell: ".tabular-grid-cell",
-  $tabular-grid-cell__drag-icon: ".tabular-grid-cell::part(drag-icon)",
-  $tabular-grid-cell__selector-label: ".tabular-grid-cell::part(selector-label)",
-  $tabular-grid-cell__selector: ".tabular-grid-cell::part(selector)",
-  $tabular-grid-cell__selector--checked:
+  // Grid Cell
+  $tabular-grid-cell-selector: ".tabular-grid-cell",
+  $tabular-grid-cell__drag-icon-selector: ".tabular-grid-cell::part(drag-icon)",
+  $tabular-grid-cell__selector-label-selector:
+    ".tabular-grid-cell::part(selector-label)",
+  $tabular-grid-cell__selector-selector: ".tabular-grid-cell::part(selector)",
+  $tabular-grid-cell__selector--checked-selector:
     ".tabular-grid-cell::part(selector checked)",
-  $tabular-grid-cell__selector--align-vertical:
+  $tabular-grid-cell--align-vertical-selector:
     ".tabular-grid-cell--align-vertical::part(selector)",
-  $tabular-grid-cell__selector--align-horizontal:
+  $tabular-grid-cell--align-horizontal-selector:
     ".tabular-grid-cell--align-horizontal::part(selector)",
-  $tabular-grid-cell__actions-icon: ".tabular-grid-cell::part(actions-icon)",
+  $tabular-grid-cell__actions-icon-selector:
+    ".tabular-grid-cell::part(actions-icon)",
 
-  // ch-grid-row-actions
-  $tabular-grid-row-actions: ".tabular-grid-row-actions",
-  $tabular-grid-row-actions__window: ".tabular-grid-row-actions::part(window)",
-  $tabular-grid-row-actions__main: ".tabular-grid-row-actions::part(main)"
+  // Grid Row Actions
+  $tabular-grid-row-actions-selector: ".tabular-grid-row-actions",
+  $tabular-grid-row-actions__window-selector:
+    ".tabular-grid-row-actions::part(window)",
+  $tabular-grid-row-actions__main-selector:
+    ".tabular-grid-row-actions::part(main)"
 ) {
-  // Base style
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Grid
+  // - - - - - - - - - - - - - - - - - - - -
+
   #{$tabular-grid-selector} {
     @extend %tabular-grid;
     &:focus {
@@ -296,34 +333,36 @@
     }
   }
 
-  // - - - - - - - - - - - - - - - - - - - -
-  //               ch-grid
-  // - - - - - - - - - - - - - - - - - - - -
+  #{$tabular-grid--align-cell-vertical-selector} {
+    @extend %tabular-grid--align-cell-vertical;
+  }
 
-  #{$tabular-grid__main} {
+  #{$tabular-grid--align-cell-horizontal-selector} {
+    @extend %tabular-grid--align-cell-horizontal;
+  }
+
+  #{$tabular-grid__main-selector} {
     @extend %tabular-grid__main;
-    background-color: var(--grid-main__bg-color);
-    gap: 1px;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //            ch-grid-column
+  //               Grid Column
   // - - - - - - - - - - - - - - - - - - - -
 
-  #{$tabular-grid-column__bar} {
+  #{$tabular-grid-column__bar-selector} {
     @extend %tabular-grid-column__bar;
   }
-  #{$tabular-grid-column__bar-resize-split} {
+  #{$tabular-grid-column__bar-resize-split-selector} {
     @extend %tabular-grid-column__bar-resize-split;
     &:hover {
       @extend %tabular-grid-column__bar-resize-split--hover;
     }
   }
   // checkbox (same styles add cell checkbox)
-  #{$tabular-grid-column__selector-label} {
+  #{$tabular-grid-column__selector-label-selector} {
     @extend %tabular-grid-cell__selector-label;
   }
-  #{$tabular-grid-column__selector} {
+  #{$tabular-grid-column__selector-selector} {
     @extend %tabular-grid-cell__selector;
     &::before {
       @extend %tabular-grid-cell__selector--before;
@@ -338,34 +377,34 @@
       }
     }
   }
-  #{$tabular-grid-column__selector--checked} {
+  #{$tabular-grid-column__selector--checked-selector} {
     &::after {
       @extend %tabular-grid-cell__selector--after-checked;
     }
   }
-  #{$tabular-grid-column__selector--indeterminate} {
+  #{$tabular-grid-column__selector--indeterminate-selector} {
     &::after {
       @extend %tabular-grid-cell__selector--after-indeterminate;
     }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //            ch-grid-row
+  //                Grid Row
   // - - - - - - - - - - - - - - - - - - - -
 
-  #{$tabular-grid-row} {
+  #{$tabular-grid-row-selector} {
     @extend %tabular-grid-row;
     // the following styles have to be applied here, because they depend on the
     // $tabular-grid-cell selector, which is not known in the '%tabular-grid-row' placeholder.
     &[highlighted] {
-      #{$tabular-grid-cell} {
+      #{$tabular-grid-cell-selector} {
         &:after {
           @extend %item-hover;
         }
       }
     }
     &[selected] {
-      #{$tabular-grid-cell} {
+      #{$tabular-grid-cell-selector} {
         &:after {
           @extend %item-selected;
         }
@@ -381,72 +420,72 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //             ch-grid-rowset
+  //              Grid Rowset
   // - - - - - - - - - - - - - - - - - - - -
 
-  #{$tabular-grid-rowset} {
+  #{$tabular-grid-rowset-selector} {
     @extend %tabular-grid-rowset;
 
     // part::(caret)
-    #{$tabular-grid-rowset-legend__caret} {
+    #{$tabular-grid-rowset-legend__caret-selector} {
       @extend %icon__gemini-tools_minus_on-surface--enabled;
     }
     &[collapsed] {
-      #{$tabular-grid-rowset-legend__caret} {
+      #{$tabular-grid-rowset-legend__caret-selector} {
         @extend %icon__gemini-tools_add_on-surface--enabled;
       }
     }
 
     &[collapsed]:not(:last-child) {
-      #{$tabular-grid-rowset-legend} {
+      #{$tabular-grid-rowset-legend-selector} {
         margin-block-end: 1px;
       }
     }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //         ch-grid-rowset-legend
+  //           Grid Rowset Legend
   // - - - - - - - - - - - - - - - - - - - -
 
-  #{$tabular-grid-rowset-legend} {
+  #{$tabular-grid-rowset-legend-selector} {
     @extend %tabular-grid-rowset-legend;
     display: flex;
     align-items: center;
     gap: var(--grid-base__icon-gap);
   }
-  #{$tabular-grid-rowset-legend__caret} {
+  #{$tabular-grid-rowset-legend__caret-selector} {
     @extend %icon-size--md;
   }
-  #{$tabular-grid-rowset-legend__selector-label} {
+  #{$tabular-grid-rowset-legend__selector-label-selector} {
     @extend %tabular-grid-rowset-legend__selector-label;
   }
-  #{$tabular-grid-rowset-legend__selector} {
+  #{$tabular-grid-rowset-legend__selector-selector} {
     @extend %tabular-grid-rowset-legend__selector;
   }
-  #{$tabular-grid-rowset-legend__icon} {
+  #{$tabular-grid-rowset-legend__icon-selector} {
     @extend %tabular-grid-rowset-legend__icon;
     @extend %icon-size--md;
     @extend %icon__gemini-tools_category-group_on-surface--enabled;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //            ch-grid-cell
+  //               Grid Cell
   // - - - - - - - - - - - - - - - - - - - -
 
-  #{$tabular-grid-cell} {
+  #{$tabular-grid-cell-selector} {
     @extend %tabular-grid-cell;
   }
   // drag icon
-  #{$tabular-grid-cell__drag-icon} {
+  #{$tabular-grid-cell__drag-icon-selector} {
     @extend %icon-size--md;
     @extend %icon__navigation_drag_on-surface--enabled;
     margin-inline-end: var(--grid-base__icon-gap);
   }
   // checkbox
-  #{$tabular-grid-cell__selector-label} {
+  #{$tabular-grid-cell__selector-label-selector} {
     @extend %tabular-grid-cell__selector-label;
   }
-  #{$tabular-grid-cell__selector} {
+  #{$tabular-grid-cell__selector-selector} {
     @extend %tabular-grid-cell__selector;
     &::before {
       @extend %tabular-grid-cell__selector--before;
@@ -461,13 +500,13 @@
       }
     }
   }
-  #{$tabular-grid-cell__selector--checked} {
+  #{$tabular-grid-cell__selector--checked-selector} {
     &::after {
       @extend %tabular-grid-cell__selector--after-checked;
     }
   }
   // actions icon
-  #{$tabular-grid-cell__actions-icon} {
+  #{$tabular-grid-cell__actions-icon-selector} {
     width: 100%;
     @extend %icon-size--md;
     @extend %icon__gemini-tools_show-more-vertical_on-surface--enabled;
@@ -475,17 +514,17 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //          ch-grid-row-actions
+  //             Grid Row Actions
   // - - - - - - - - - - - - - - - - - - - -
-  #{$tabular-grid-row-actions} {
+  #{$tabular-grid-row-actions-selector} {
     &[show-on-row-hover]::part(window) {
       margin-inline-end: var(--mer-spacing--xs);
     }
   }
-  #{$tabular-grid-row-actions__window} {
+  #{$tabular-grid-row-actions__window-selector} {
     @extend %tabular-grid-row-actions__window;
   }
-  #{$tabular-grid-row-actions__main} {
+  #{$tabular-grid-row-actions__main-selector} {
     @extend %tabular-grid-row-actions__main;
   }
 }
