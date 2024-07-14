@@ -238,6 +238,10 @@
   // ch-grid
   $tabular-grid-selector: ".tabular-grid",
   $tabular-grid__main: ".tabular-grid::part(main)",
+  $tabular-grid__main--align-cell-vertical:
+    ".tabular-grid--align-cell-horizontal::part(main)",
+  $tabular-grid__main--align-cell-horizontal:
+    ".tabular-grid--align-cell-horizontal::part(main)",
 
   // ch-grid-column
   $tabular-grid-column__bar: ".tabular-grid-column::part(bar)",
@@ -273,6 +277,10 @@
   $tabular-grid-cell__selector: ".tabular-grid-cell::part(selector)",
   $tabular-grid-cell__selector--checked:
     ".tabular-grid-cell::part(selector checked)",
+  $tabular-grid-cell__selector--align-vertical:
+    ".tabular-grid-cell--align-vertical::part(selector)",
+  $tabular-grid-cell__selector--align-horizontal:
+    ".tabular-grid-cell--align-horizontal::part(selector)",
   $tabular-grid-cell__actions-icon: ".tabular-grid-cell::part(actions-icon)",
 
   // ch-grid-row-actions
