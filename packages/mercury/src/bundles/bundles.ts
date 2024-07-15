@@ -24,5 +24,6 @@ export type MercuryBundleReset = "resets/box-sizing";
 
 export type MercuryBundleUtil =
   | "utils/form"
+  | "utils/form--full"
   | "utils/layout"
   | "utils/typography";
