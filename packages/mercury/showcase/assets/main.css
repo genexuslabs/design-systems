@@ -107,6 +107,20 @@ body.all-hidden .section__header {
   background-color: var(--sc-base__border-color);
 }
 
+/*Highlighted text or border*/
+.color--green {
+  color: var(--mer-color__primary-blue--200);
+}
+.color--blue {
+  color: var(--mer-color__message-green--200);
+}
+.border--green {
+  border: 1px dashed var(--mer-color__message-green--200);
+}
+.border--blue {
+  border: 1px dashed var(--mer-color__primary-blue--200);
+}
+
 /*====================
 Top Bar
 ====================*/
