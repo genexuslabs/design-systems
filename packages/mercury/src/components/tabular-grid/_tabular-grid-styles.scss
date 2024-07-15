@@ -13,12 +13,6 @@
   @include tabular-grid-column-tokens();
   @include tabular-grid-cell-tokens();
 
-  &--align-cell-vertical {
-  }
-
-  &--align-cell-horizontal {
-  }
-
   &__main {
     background-color: var(--grid-main__bg-color);
     gap: 1px;
@@ -124,6 +118,14 @@
   @extend %item-font;
   color: var(--mer-item__color);
 
+  &--align-vertical {
+    align-items: center;
+  }
+
+  &--align-horizontal {
+    justify-content: center;
+  }
+
   &[focused] {
     @include focus-style(true);
   }
@@ -221,8 +223,8 @@
 /// @group TabularGrid
 // Grid
 /// @param {String} $tabular-grid-selector [".tabular-grid"] -
-/// @param {String} $tabular-grid--align-cell-vertical-selector [".tabular-grid--align-cell-vertical::part(main)"] -
-/// @param {String} $tabular-grid--align-horizontal-vertical-selector [".tabular-grid--align-cell-horizontal::part(main)"] -
+/// @param {String} $tabular-grid--align-vertical-selector [".tabular-grid--align-vertical::part(main)"] -
+/// @param {String} $tabular-grid--align-horizontal-vertical-selector [".tabular-grid--align-horizontal::part(main)"] -
 /// @param {String} $tabular-grid__main-selector [".tabular-grid::part(main)"] -
 
 // Grid Column
@@ -248,12 +250,12 @@
 
 // Grid Cell
 /// @param {String} $tabular-grid-cell-selector [".tabular-grid-cell"] -
+/// @param {String} $tabular-grid-cell--align-vertical-selector [".tabular-grid-cell--align-vertical::part(selector)"] -
+/// @param {String} $tabular-grid-cell--align-horizontal-selector [".tabular-grid-cell--align-horizontal::part(selector)"] -
 /// @param {String} $tabular-grid-cell__drag-icon-selector [".tabular-grid-cell::part(drag-icon)"] -
 /// @param {String} $tabular-grid-cell__selector-label-selector [".tabular-grid-cell::part(selector-label)"] -
 /// @param {String} $tabular-grid-cell__selector-selector [".tabular-grid-cell::part(selector)"] -
 /// @param {String} $tabular-grid-cell__selector--checked-selector [".tabular-grid-cell::part(selector checked)"] -
-/// @param {String} $tabular-grid-cell--align-vertical-selector [".tabular-grid-cell--align-vertical::part(selector)"] -
-/// @param {String} $tabular-grid-cell--align-horizontal-selector [".tabular-grid-cell--align-horizontal::part(selector)"] -
 /// @param {String} $tabular-grid-cell__actions-icon-selector [".tabular-grid-cell::part(actions-icon)"] -
 
 // Grid Row Actions
@@ -264,10 +266,8 @@
 @mixin tabular-grid(
   // Grid
   $tabular-grid-selector: ".tabular-grid",
-  $tabular-grid--align-cell-vertical-selector:
-    ".tabular-grid--align-cell-vertical",
-  $tabular-grid--align-cell-horizontal-selector:
-    ".tabular-grid--align-cell-horizontal",
+  $tabular-grid--align-vertical-selector: ".tabular-grid--align-vertical",
+  $tabular-grid--align-horizontal-selector: ".tabular-grid--align-horizontal",
   $tabular-grid__main-selector: ".tabular-grid::part(main)",
 
   // Grid Column
@@ -309,9 +309,9 @@
   $tabular-grid-cell__selector--checked-selector:
     ".tabular-grid-cell::part(selector checked)",
   $tabular-grid-cell--align-vertical-selector:
-    ".tabular-grid-cell--align-vertical::part(selector)",
+    ".tabular-grid-cell--align-vertical",
   $tabular-grid-cell--align-horizontal-selector:
-    ".tabular-grid-cell--align-horizontal::part(selector)",
+    ".tabular-grid-cell--align-horizontal",
   $tabular-grid-cell__actions-icon-selector:
     ".tabular-grid-cell::part(actions-icon)",
 
@@ -333,12 +333,16 @@
     }
   }
 
-  #{$tabular-grid--align-cell-vertical-selector} {
-    @extend %tabular-grid--align-cell-vertical;
+  #{$tabular-grid--align-vertical-selector} {
+    #{$tabular-grid-cell-selector} {
+      @extend %tabular-grid-cell--align-vertical;
+    }
   }
 
-  #{$tabular-grid--align-cell-horizontal-selector} {
-    @extend %tabular-grid--align-cell-horizontal;
+  #{$tabular-grid--align-horizontal-selector} {
+    #{$tabular-grid-cell-selector} {
+      @extend %tabular-grid-cell--align-horizontal;
+    }
   }
 
   #{$tabular-grid__main-selector} {
@@ -474,6 +478,12 @@
 
   #{$tabular-grid-cell-selector} {
     @extend %tabular-grid-cell;
+  }
+  #{$tabular-grid-cell--align-vertical-selector} {
+    @extend %tabular-grid-cell--align-vertical;
+  }
+  #{$tabular-grid-cell--align-horizontal-selector} {
+    @extend %tabular-grid-cell--align-horizontal;
   }
   // drag icon
   #{$tabular-grid-cell__drag-icon-selector} {

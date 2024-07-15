@@ -2685,7 +2685,7 @@ keyboard-navigation-mode="focus">
         <section class="section">
           <!-- header -->
           <header class="section__header">
-            <h1 class="section__title">styling utilities (to be done)</h1>
+            <h1 class="section__title">styling utilities</h1>
             <p class="section__description">
               Styling utilities provide a set of predefined classes to easily
               customize the appearance of your tabular grid component.
@@ -2701,12 +2701,15 @@ keyboard-navigation-mode="focus">
               <div class="article__main">
                 <div class="article__description">
                   <p>
-                    The align-vertical class allows you to vertically align the
-                    cell content within the tabular grid.
+                    To vertically align all the cells of the tabular grid, add
+                    <code>.tabular-grid--align-vertical</code> css class.
                   </p>
                 </div>
                 <div class="article__content">
-                  <ch-grid class="tabular-grid" row-selection-mode="multiple">
+                  <ch-grid
+                    class="tabular-grid tabular-grid--align-vertical"
+                    row-selection-mode="multiple"
+                  >
                     <ch-grid-columnset>
                       <ch-grid-column
                         class="tabular-grid-column"
@@ -2735,71 +2738,272 @@ keyboard-navigation-mode="focus">
                     </ch-grid-columnset>
 
                     <ch-grid-row class="tabular-grid-row" rowid="ar">
-                      <ch-grid-cell
-                        class="tabular-grid-cell tabular-grid-cell--align-vertical"
-                        >AR</ch-grid-cell
-                      >
-                      <ch-grid-cell
-                        class="tabular-grid-cell tabular-grid-cell--align-vertical"
+                      <ch-grid-cell class="tabular-grid-cell">AR</ch-grid-cell>
+                      <ch-grid-cell class="tabular-grid-cell"
                         >Argentina</ch-grid-cell
                       >
-                      <ch-grid-cell
-                        class="tabular-grid-cell tabular-grid-cell--align-vertical"
+                      <ch-grid-cell class="tabular-grid-cell"
                         >Argentina is a large South American country known for
                         its diverse landscapes, rich cultural heritage, and
                         vibrant cities like Buenos Aires. It's famous for tango
                         music and dance, delicious cuisine like asado, and
                         passionate football culture.</ch-grid-cell
                       >
-                      <ch-grid-cell
-                        class="tabular-grid-cell tabular-grid-cell--align-vertical"
+                      <ch-grid-cell class="tabular-grid-cell"
                         >Español</ch-grid-cell
                       >
                     </ch-grid-row>
                     <ch-grid-row class="tabular-grid-row" rowid="bo">
-                      <ch-grid-cell
-                        class="tabular-grid-cell tabular-grid-cell--align-vertical"
-                        >BO</ch-grid-cell
-                      >
-                      <ch-grid-cell
-                        class="tabular-grid-cell tabular-grid-cell--align-vertical"
+                      <ch-grid-cell class="tabular-grid-cell">BO</ch-grid-cell>
+                      <ch-grid-cell class="tabular-grid-cell"
                         >Bolivia</ch-grid-cell
                       >
-                      <ch-grid-cell
-                        class="tabular-grid-cell tabular-grid-cell--align-vertical"
-                        >(Bolivia description to be defined)</ch-grid-cell
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >Bolivia is a landlocked country in South America known
+                        for its stunning Andean landscapes, rich indigenous
+                        culture, and vibrant cities like La Paz and Sucre. It's
+                        famous for its diverse ecosystems, traditional
+                        festivals, and unique cuisine, including dishes like
+                        salteñas and anticuchos. Bolivia is also known for its
+                        historical sites, such as the ancient ruins of Tiwanaku
+                        and the Uyuni Salt Flats, the largest salt flat in the
+                        world.</ch-grid-cell
                       >
-                      <ch-grid-cell
-                        class="tabular-grid-cell tabular-grid-cell--align-vertical"
+                      <ch-grid-cell class="tabular-grid-cell"
                         >Español</ch-grid-cell
                       >
                     </ch-grid-row>
                     <ch-grid-row class="tabular-grid-row" rowid="br">
-                      <ch-grid-cell
-                        class="tabular-grid-cell tabular-grid-cell--align-vertical"
-                        >BR</ch-grid-cell
-                      >
-                      <ch-grid-cell
-                        class="tabular-grid-cell tabular-grid-cell--align-vertical"
+                      <ch-grid-cell class="tabular-grid-cell">BR</ch-grid-cell>
+                      <ch-grid-cell class="tabular-grid-cell"
                         >Brasil</ch-grid-cell
                       >
-                      <ch-grid-cell
-                        class="tabular-grid-cell tabular-grid-cell--align-vertical"
-                        >(Brazil description to be defined)</ch-grid-cell
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >Brazil is the largest country in South America, known
+                        for its vast rainforests, vibrant cities like Rio de
+                        Janeiro and São Paulo, and lively cultural scene. It's
+                        famous for its iconic Carnival festival, samba music and
+                        dance, beautiful beaches, and the Amazon Rainforest.
+                        Brazil is also renowned for its rich cuisine, including
+                        feijoada and pão de queijo, and its passionate football
+                        culture.</ch-grid-cell
                       >
-                      <ch-grid-cell
-                        class="tabular-grid-cell tabular-grid-cell--align-vertical"
+                      <ch-grid-cell class="tabular-grid-cell"
                         >Português</ch-grid-cell
                       >
                     </ch-grid-row>
                   </ch-grid>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-1" language="xml" class="code">
+                  <ch-code id="ch-code-11" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `to be done`;
-                    document.getElementById("ch-code-1").value = markup1;
+                    const markup11 = `<ch-grid
+class="tabular-grid tabular-grid--align-vertical">
+  Your tabular grid content here
+</ch-grid>`;
+                    document.getElementById("ch-code-11").value = markup11;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          horizontal alignment
+          =========================== -->
+            <article class="article" nav data-title="horizontal alignment">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__description">
+                  <p>
+                    To horizontally align all the cells of the tabular grid, add
+                    <code>.tabular-grid--align-horizontal</code> css class.
+                  </p>
+                </div>
+                <div class="article__content">
+                  <ch-grid
+                    class="tabular-grid tabular-grid--align-horizontal"
+                    row-selection-mode="multiple"
+                  >
+                    <ch-grid-columnset>
+                      <ch-grid-column
+                        class="tabular-grid-column"
+                        column-id="code"
+                        column-name="Country Code"
+                        settingable="false"
+                      ></ch-grid-column>
+                      <ch-grid-column
+                        class="tabular-grid-column"
+                        column-id="name"
+                        column-name="Country Name"
+                        settingable="false"
+                      ></ch-grid-column>
+                      <ch-grid-column
+                        class="tabular-grid-column"
+                        column-id="description"
+                        column-name="Country Population"
+                        settingable="false"
+                      ></ch-grid-column>
+                      <ch-grid-column
+                        class="tabular-grid-column"
+                        column-id="language"
+                        column-name="Country Language"
+                        settingable="false"
+                      ></ch-grid-column>
+                    </ch-grid-columnset>
+
+                    <ch-grid-row class="tabular-grid-row" rowid="ar">
+                      <ch-grid-cell class="tabular-grid-cell">AR</ch-grid-cell>
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >Argentina</ch-grid-cell
+                      >
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >45.400.000</ch-grid-cell
+                      >
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >Español</ch-grid-cell
+                      >
+                    </ch-grid-row>
+                    <ch-grid-row class="tabular-grid-row" rowid="bo">
+                      <ch-grid-cell class="tabular-grid-cell">BO</ch-grid-cell>
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >Bolivia</ch-grid-cell
+                      >
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >11.800.000</ch-grid-cell
+                      >
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >Español</ch-grid-cell
+                      >
+                    </ch-grid-row>
+                    <ch-grid-row class="tabular-grid-row" rowid="br">
+                      <ch-grid-cell class="tabular-grid-cell">BR</ch-grid-cell>
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >Brasil</ch-grid-cell
+                      >
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >212.600.000</ch-grid-cell
+                      >
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >Português</ch-grid-cell
+                      >
+                    </ch-grid-row>
+                  </ch-grid>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-12" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup12 = `<ch-grid
+class="tabular-grid tabular-grid--align-horizontal">
+  Your tabular grid content here
+</ch-grid>`;
+                    document.getElementById("ch-code-12").value = markup12;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          cell individual alignment
+          =========================== -->
+            <article class="article" nav data-title="cell individual alignment">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__description">
+                  <p>
+                    You can also align
+                    <span class="color--blue">vertically</span> or
+                    <span class="color--green">horizontally</span> an individual
+                    cell. The Tabular Grid is a flexible component 😎
+                  </p>
+                </div>
+                <div class="article__content">
+                  <ch-grid class="tabular-grid" row-selection-mode="multiple">
+                    <ch-grid-columnset>
+                      <ch-grid-column
+                        class="tabular-grid-column"
+                        column-id="code"
+                        column-name="Country Code"
+                        settingable="false"
+                      ></ch-grid-column>
+                      <ch-grid-column
+                        class="tabular-grid-column"
+                        column-id="name"
+                        column-name="Country Name"
+                        settingable="false"
+                      ></ch-grid-column>
+                      <ch-grid-column
+                        class="tabular-grid-column"
+                        column-id="description"
+                        column-name="Country Population"
+                        settingable="false"
+                      ></ch-grid-column>
+                      <ch-grid-column
+                        class="tabular-grid-column"
+                        column-id="language"
+                        column-name="Country Language"
+                        settingable="false"
+                      ></ch-grid-column>
+                    </ch-grid-columnset>
+
+                    <ch-grid-row class="tabular-grid-row" rowid="ar">
+                      <ch-grid-cell
+                        class="tabular-grid-cell tabular-grid-cell--align-vertical border--green"
+                        >AR</ch-grid-cell
+                      >
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >Argentina</ch-grid-cell
+                      >
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >Argentina is a large South American country known for
+                        its diverse landscapes, rich cultural heritage, and
+                        vibrant cities like Buenos Aires. It's famous for tango
+                        music and dance, delicious cuisine like asado, and
+                        passionate football culture.</ch-grid-cell
+                      >
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >Español</ch-grid-cell
+                      >
+                    </ch-grid-row>
+                    <ch-grid-row class="tabular-grid-row" rowid="bo">
+                      <ch-grid-cell class="tabular-grid-cell">BO</ch-grid-cell>
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >Bolivia</ch-grid-cell
+                      >
+                      <ch-grid-cell class="tabular-grid-cell"
+                        >Bolivia is a landlocked country in South America known
+                        for its stunning Andean landscapes, rich indigenous
+                        culture, and vibrant cities like La Paz and Sucre. It's
+                        famous for its diverse ecosystems, traditional
+                        festivals, and unique cuisine, including dishes like
+                        salteñas and anticuchos. Bolivia is also known for its
+                        historical sites, such as the ancient ruins of Tiwanaku
+                        and the Uyuni Salt Flats, the largest salt flat in the
+                        world.</ch-grid-cell
+                      >
+                      <ch-grid-cell
+                        class="tabular-grid-cell tabular-grid-cell--align-horizontal border--blue"
+                        >Español</ch-grid-cell
+                      >
+                    </ch-grid-row>
+                  </ch-grid>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-13" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup13 = `<ch-grid
+class="tabular-grid tabular-grid--align-horizontal">
+Your tabular grid content here
+</ch-grid>`;
+                    document.getElementById("ch-code-13").value = markup13;
                   </script>
                 </div>
                 <!-- /.article__content -->
