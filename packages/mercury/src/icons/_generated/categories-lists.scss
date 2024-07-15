@@ -130,10 +130,14 @@ Multicolor lists
 // objects
 $objects: workflow, work-panel, web-panel, web-component, version, url-rewrite, transaction, to-be-defined, theme, theme-web, theme-for-sd, table, super-app, subtype-group, structured-data-type, stencil, roles, report, references, query, procedure, patterns, panel-for-sd, orphant-document, offline-database, object, notification-templates, module, module-open, mini-app, menubar, menu, masterpage, main-object, language, knowledge-base, image, generator, generator-category, folder, folder-open, file, external-object, environment-select, environment-no-select, dso, domain, document, document-workflow, diagram, design, deployment-unit, dataview-index, datastore, datastore-category, data-view, data-selector, data-provider, dashboard, customization, conversational-flows, category, calendars, business-process-diagram, bg-color, attribute, api;
  
+// gx-test
+$gx-test: unit-test, unit-test-db, ui-test-web, ui-test-sd, test-suite, test-results, test-folder, test-folder-open, screenshot-viewer, run-unit-test, run-ui-test-web, run-ui-test-sd, run-tests, run-test-suite, run-test-cancel, result-warning, result-skipped, result-ok, result-exception, result-error, record-mock, plus, image, explorer, cutfo;
+ 
 // editing-structures
 $editing-structures: user-index, system-index, redundant-attribute, platforms, logical-attributes, formula-redundant, default, attribute-key, attribute-formula, attribute-description;
 
 $all-multicolor-lists: (
   objects: $objects,
+  gx-test: $gx-test,
   editing-structures: $editing-structures,
 );

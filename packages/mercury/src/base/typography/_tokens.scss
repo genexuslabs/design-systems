@@ -1,0 +1,57 @@
+@mixin heading-tokens() {
+  // heading base
+  --heading-base__font-family: var(--mer-font-family--title);
+  --heading__color: transparent;
+
+  //h1
+  --heading-h1__font-size: var(--mer-font__size--xl);
+  --heading-h1__font-weight: var(--mer-font__weight--bold);
+  --heading-h1__line-height: var(--mer-line-height--tight);
+  //h2
+  --heading-h2__font-size: var(--mer-font__size--lg);
+  --heading-h2__font-weight: var(--mer-font__weight--bold);
+  --heading-h2__line-height: var(--mer-line-height--tight);
+  //h3
+  --heading-h3__font-size: var(--mer-font__size--sm);
+  --heading-h3__font-weight: var(--mer-font__weight--bold);
+  --heading-h3__line-height: var(--mer-line-height--regular);
+  //h4
+  --heading-h4__font-size: var(--mer-font__size--xs);
+  --heading-h4__font-weight: var(--mer-font__weight--bold);
+  --heading-h4__line-height: var(--mer-line-height--spaced);
+  //h5
+  --heading-h5__font-size: var(--mer-font__size--2xs);
+  --heading-h5__font-weight: var(--mer-font__weight--bold);
+  --heading-h5__line-height: var(--mer-line-height--spaced);
+  //h6
+  --heading-h6__font-size: var(--mer-font__size--3xs);
+  --heading-h6__font-weight: var(--mer-font__weight--semi-bold);
+  --heading-h6__line-height: var(--mer-line-height--spaced);
+}
+
+@mixin body-tokens() {
+  --text-body__font-size: var(--mer-font__size--xs);
+  --text-body__font-family: var(--mer-body__font-family);
+  --text-body__font-weight: var(--mer-body__font-weight);
+  --text-body__line-height: var(--mer-body__line-height);
+  --text-body__margin-block: var(--mer-body__margin-block);
+}
+
+@mixin tab-tokens() {
+  --text-tab__font-family: var(--mer-font-family--inter-regular);
+  --text-tab__font-size: var(--mer-font__size--3xs);
+  --text-tab__line-height: var(--mer-line-height--regular);
+}
+
+@mixin button-tokens() {
+  --text-button__font-family: var(--mer-font-family--inter-regular);
+  --text-button__font-size: var(--mer-font__size--3xs);
+  --text-button__line-height: var(--mer-line-height--regular);
+  --text-button__font-weight--semi-bold: var(--mer-font__weight--semi-bold);
+  --text-button__font-weight--regular: var(--mer-font__weight--regular);
+}
+
+@mixin tooltip-tokens() {
+  --mer-text-tooltip__font-family: var(--mer-font-family--body);
+  --mer-text-tooltip__font-size: var(--mer-font-size--2xs);
+}

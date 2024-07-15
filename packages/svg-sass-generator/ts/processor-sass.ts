@@ -19,12 +19,18 @@ let monochromeCategoriesList: string[] = [];
 let multicolorCategoriesList: string[] = [];
 
 // Files and Directories
-const SRC_PATH = await process.argv[2];
-const OUTPUT_PATH = await process.argv[3];
-const COLOR_STATES_PATH = await process.argv[4];
+
+const args = minimist(process.argv.slice(2));
+
+const SRC_PATH = await args.srcDir;
+const OUTPUT_PATH = await args.outDir;
+const COLOR_STATES_PATH = await args.configFilePath;
+const VENDOR_ALIAS = await args.vendorAlias;
 const ALL_LISTS_FILENAME = "categories-lists.scss";
 const CATEGORIES_IMPORTS_FILENAME = "categories-imports.scss";
 const MIXINS_FILENAME = "svg-sass-mixins.scss";
+
+const ICON_PREFIX = VENDOR_ALIAS ? `--icon-${VENDOR_ALIAS}` : `--icon`;
 
 // Start fresh (delete current output directory)
 deleteDirectory(OUTPUT_PATH);
@@ -148,21 +154,30 @@ const processCatalogCategory = (
   categoriesListsObject: categoriesLists
 ) => {
   saveCategory(iconType, categoryName);
-  const sassFileContent = createSassFileString(
+  const sassFilesContent = createSassFiles(
     categoryName,
     categoryIcons,
     categoriesListsObject,
     iconType
   );
-  saveSassOnDisk(sassFileContent, iconType, categoryName);
+  saveSassOnDisk(
+    sassFilesContent.customPropertiesSass,
+    iconType,
+    `${categoryName}__variables`
+  );
+  saveSassOnDisk(
+    sassFilesContent.placeHoldersSelectorsSass,
+    iconType,
+    `${categoryName}__placeholders`
+  );
 };
 
-const createSassFileString = (
+const createSassFiles = (
   categoryName: string,
   categoryIcons: lightDarkIcons,
   categoriesListsObject: categoriesLists,
   iconType: IconType
-): string => {
+): SassFiles => {
   // Save icon on categoriesListsObject for further use.
   if (!categoriesListsObject[iconType].hasOwnProperty(categoryName)) {
     categoriesListsObject[iconType][categoryName] = [];
@@ -226,14 +241,12 @@ const createSassFileString = (
   ${darkPlaceholders}
   `;
 
-  const output = `
-  ${allIconsCustomProperties}
-    %icon__${categoryName} {
-  ${allPlaceholders}
-    }
-  `;
-
-  return output;
+  return {
+    customPropertiesSass: allIconsCustomProperties,
+    placeHoldersSelectorsSass: `%icon__${categoryName} {
+      ${allPlaceholders}
+    }`,
+  };
 };
 
 const createPlaceholders = (
@@ -259,7 +272,7 @@ const createPlaceholders = (
     icon.states.forEach((state) => {
       placeholderSelectors += `
     &_${iconName}${stateSeparator}${state} {
-      --icon-path: var(--icon__${categoryName}_${iconName}${stateSeparator}${state});
+      --icon-path: var(${ICON_PREFIX}__${categoryName}_${iconName}${stateSeparator}${state});
     }`;
     });
   });
@@ -280,7 +293,7 @@ const createIconsCustomProperties = (
     const iconStates = icon.states;
     if (iconStates) {
       iconStates.forEach((iconState) => {
-        iconsCustomProperties += `  --icon__${categoryName}_${iconName}${stateSeparator}${iconState}: url('#{$icons-path}${categoryName}/${scheme}/${icon.fileName}#${iconState}'); \n`;
+        iconsCustomProperties += `  ${ICON_PREFIX}__${categoryName}_${iconName}${stateSeparator}${iconState}: url('#{$icons-path}${categoryName}/${scheme}/${icon.fileName}#${iconState}'); \n`;
       });
     }
   });
@@ -634,6 +647,11 @@ export type catalogCategory = {
 export type lightDarkIcons = {
   light: { fileName: string; states: string[]; iconType: IconType }[];
   dark: { fileName: string; states: string[]; iconType: IconType }[];
+};
+
+type SassFiles = {
+  customPropertiesSass: string;
+  placeHoldersSelectorsSass: string;
 };
 
 interface categoriesList {

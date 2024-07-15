@@ -1,6 +1,6 @@
 {
   "name": "@genexus/svg-sass-generator",
-  "version": "1.1.15",
+  "version": "1.1.17",
   "description": "SVG Icon Generator: A Node.js tool for creating customizable SVG icons with color states like hover and active effects. It generates SVG icons and Sass placeholder selectors, simplifying integration into projects with generated CSS class names for scalable and dynamic iconography.",
   "main": "index.js",
   "type": "module",
@@ -20,7 +20,7 @@
     "copy-to-bin": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet ./js ./bin",
     "watch": "tsc --watch",
     "svg": "node ./js/processor-svg.js --srcDir=source-sample/ --outDir=dist/_generated/ --configFilePath=source-sample/my-color-states.json --showcaseDir=showcase/ --showcaseBaseHref=../dist/_generated/ --logDir=log/ --objectFilePath=object/ICONS_ASSETS.js",
-    "sass": "node ./js/processor-sass.js dist/ sass/_generated/ source-sample/my-color-states.json",
+    "sass": "node ./js/processor-sass.js --srcDir=dist/ --outDir=sass/_generated/ --configFilePath=source-sample/my-color-states.json --vendorAlias=ibm",
     "validate.ci": "npm run build",
     "test-mixin": "sass ./tests/tests.scss ./tests/tests.css"
   },
@@ -28,9 +28,6 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@atao60/fse-cli": "^0.1.9",
-    "@types/cheerio": "^0.22.35",
-    "@types/minimist": "^1.2.5",
-    "@types/stringify-object": "^4.0.5",
     "ajv": "^8.12.0",
     "cheerio": "^1.0.0-rc.12",
     "glob": "^10.3.10",
@@ -42,6 +39,11 @@
     "svgo": "^3.2.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.4"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.35",
+    "@types/minimist": "^1.2.5",
+    "@types/stringify-object": "^4.0.5"
   },
   "engines": {
     "pnpm": ">=3"
