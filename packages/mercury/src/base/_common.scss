@@ -195,52 +195,36 @@ should have the same height, in order to "look good" inline.
 --------------------------------------------------------*/
 @mixin control-styles($styles: "") {
   // Base
-  @if $styles == "base-block-size" {
-    // --mer-control__padding-block: var(--mer-control-regular__padding-block);
-    // --mer-control__padding-inline: var(--mer-control-regular__padding-inline);
+  @if $styles == "base" {
+    --mer-control__padding-block: 0; // mary vary depending on the control type
+    --mer-control__padding-inline: 0; // mary vary depending on the control type
     border: var(--mer-control__border);
     font-family: var(--mer-control__font-family);
     font-weight: var(--mer-control__font-weight);
     line-height: var(--mer-control__line-height);
     text-transform: var(--mer-control__text-transform);
-    block-size: var(--mer-control-md__block-size);
-  }
-  @if $styles == "base-min-block-size" {
-    // --mer-control__padding-block: var(--mer-control-regular__padding-block);
-    // --mer-control__padding-inline: var(--mer-control-regular__padding-inline);
-    border: var(--mer-control__border);
-    font-family: var(--mer-control__font-family);
-    font-weight: var(--mer-control__font-weight);
-    line-height: var(--mer-control__line-height);
-    text-transform: var(--mer-control__text-transform);
-    min-block-size: var(--mer-control-md__block-size);
+    align-items: center;
+    padding-block: var(--mer-control__padding-block);
+    padding-inline: var(--mer-control__padding-inline);
   }
   // Layout
   @if $styles == "layout-regular" {
     //ie.: button, form-text, combo-box
-    border-radius: var(--mer-control-regular__border-radius);
+    --mer-control__padding-block: var(--mer-control-regular__padding-block);
+    --mer-control__padding-inline: var(--mer-control-regular__padding-inline);
     gap: var(--mer-control-regular__gap);
-    padding-block: var(--mer-control__padding-block);
-    padding-inline: var(--mer-control__padding-inline);
-  }
-  @if $styles == "layout-regular-squared" {
-    //ie.: button-icon-only
-    block-size: var(--mer-control-regular__size);
-    inline-size: var(--mer-control-regular__size);
-    --mer-control__padding-block: 0;
-    --mer-control__padding-inline: 0;
+    border-radius: var(--mer-control-regular__border-radius);
+    block-size: var(--mer-control-regular__block-size);
   }
   @if $styles == "layout-tiny" {
     //ie.: checkbox, radio-button
-    block-size: var(--mer-control-tiny__size);
-    inline-size: var(--mer-control-tiny__size);
-    --mer-control__padding-block: 0;
-    --mer-control__padding-inline: 0;
+    block-size: var(--mer-control-tiny__block-size);
+    inline-size: var(--mer-control-tiny__inline-size);
   }
   // Typography
   @if $styles == "typography-regular" {
     //ie.: button, form-text, combo-box
-    font-size: var(--mer-control-regular__font-size--md);
+    font-size: var(--mer-control-regular__font-size);
   }
 }
 %control-base {
