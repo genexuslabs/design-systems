@@ -1,28 +1,23 @@
 @import "tokens";
+@import "../../../../common/resets";
 
 %combo-box {
   @include combo-box-tokens();
 }
 
 %combo-box__window {
-  background-color: var(--mer-window__bg-color);
-  border: var(--mer-color__elevation--01);
-  border-radius: var(--mer-window__border-radius);
-  box-shadow: var(--mer-window__box-shadow);
-  padding: var(--mer-spacing--2xs);
+  @extend %window-styles;
 }
 
 %combo-box__group {
   border-block-end: var(--mer-border__width--sm) solid
     var(--mer-color__elevation--04);
+  padding-block-end: 6px;
+  margin-block-end: 6px;
 }
 
 %combo-box__group-header {
-  font-family: var(--mer-font-family--inter-semi-bold);
-  padding-block: var(--mer-spacing--3xs);
-  padding-inline: var(--mer-spacing--xs);
-  color: var(--mer-text__bright);
-
+  @extend %item-styles-header;
   &-expandable--hover {
     background-color: var(--mer-item__bg-color--selected);
     color: var(--mer-item__color--hover);
@@ -30,15 +25,12 @@
 }
 
 %combo-box__item {
-  border-radius: var(--mer-border__radius--sm);
-  padding-block: var(--mer-spacing--3xs);
-  padding-inline: var(--mer-spacing--xs);
-  color: var(--mer-text__on-elevation);
-  font-family: var(--mer-font-family--inter-regular);
-
-  &--disabled {
-    color: var(--mer-text__on-disabled);
-  }
+  @extend %item-styles-base;
+  @extend %item-typography-large;
+  @extend %item-layout-regular;
+  @extend %item-border-inline-block;
+  @extend %item-colors-enabled;
+  @extend %item-border-radius;
 
   &--nested {
     padding-inline-start: calc(
@@ -49,8 +41,11 @@
   }
 
   &--selected {
-    background-color: var(--mer-item__bg-color--selected);
-    color: var(--mer-item__color--hover);
+    @extend %item-colors-selected;
+  }
+
+  &--disabled {
+    @extend %item-colors-disabled;
   }
 }
 

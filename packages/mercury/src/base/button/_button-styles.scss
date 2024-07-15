@@ -1,19 +1,11 @@
 @import "../button/button-tokens";
 
 %button-base {
-  @include button-tokens-base();
   @include button-common-styles();
-  border: var(--button-base__border-width);
-  border-radius: var(--button-base__border-radius);
-  block-size: var(--button-base__block-size);
-  border: var(--button-base__border-width) var(--button-base__border-style)
-    var(--button-base__border-color);
-  font-family: var(--button-base__font-family);
-  font-size: var(--button-base__font-size);
-  gap: var(--button-base__gap); // Used when the button has icons
-  line-height: var(--button-base__line-height);
-  padding-inline: var(--button-base__padding-inline);
-  text-transform: var(--button-base__text-transform);
+  @extend %control-base;
+  @extend %control-layout-regular;
+  @extend %control-typography-regular;
+
   &--focus-visible {
     @include focus-style($outline: true);
   }
@@ -100,6 +92,8 @@
   }
 }
 
+/// @group Button
+/// @param {String} $selector [".button-primary"] -
 @mixin button-primary($selector: ".button-primary", $add--disabled: true) {
   #{$selector} {
     @extend %button-primary;
@@ -120,6 +114,8 @@
   }
 }
 
+/// @group Button
+/// @param {String} $selector [".button-secondary"] -
 @mixin button-secondary($selector: ".button-secondary", $add--disabled: true) {
   #{$selector} {
     @extend %button-secondary;
@@ -141,6 +137,8 @@
   }
 }
 
+/// @group Button
+/// @param {String} $selector [".button-tertiary"] -
 @mixin button-tertiary($selector: ".button-tertiary", $add--disabled: true) {
   #{$selector} {
     @extend %button-tertiary;

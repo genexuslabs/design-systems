@@ -5,9 +5,9 @@
   // generic (are independent of the item state)
   --mer-item__border-style: solid;
   --mer-item__border-width: var(--mer-border__width--sm);
-  --mer-item__font-family: var(--mer-font-family--inter-regular);
+  --mer-item__font-family: var(--mer-font-family--body);
   --mer-item__font-weight: var(--mer-font__weight--regular);
-  --mer-item__line-height: var(--mer-line-height--tight);
+  --mer-item__line-height: var(--mer-line-height--regular);
 
   // - - - - - - - Typography  - - - - - - -
 
@@ -21,7 +21,7 @@
 
   // sm
   --mer-item__gap--sm: var(--mer-spacing--xs);
-  --mer-item__padding-block--sm: var(--mer-spacing--xs);
+  --mer-item__padding-block--sm: var(--mer-spacing--2xs);
   --mer-item__padding-inline--sm: var(--mer-spacing--xs);
 
   // md
@@ -29,11 +29,25 @@
   --mer-item__padding-block--md: var(--mer-spacing--sm);
   --mer-item__padding-inline--md: var(--mer-spacing--md);
 
+  // - - - - - - - Border  - - - - - - -
+
+  --mer-item__border-radius: var(--mer-border__radius--sm);
+
+  // - - - - - - - Items Header  - - - - - - -
+
+  --mer-item-title__padding-block: var(--mer-spacing--2xs);
+  --mer-item-title__padding-inline: var(--mer-spacing--xs);
+  --mer-item-title__font-family: var(--mer-font-family--title);
+  --mer-item-title__font-size: var(--mer-font__size--xs);
+  --mer-item-title__font-weight: var(--mer-font__weight--semi-bold);
+  --mer-item-title__line-height: var(--mer-line-height--regular);
+  --mer-item-title__color: var(--mer-text__bright);
+
   // - - - - - - - States - - - - - - -
 
   // enabled
   --mer-item__bg-color--enabled: var(--mer-color__elevation--01);
-  --mer-item__border-color--enabled: var(--mer-color__elevation--04);
+  --mer-item__border-color--enabled: transparent;
   --mer-item__color--enabled: var(--mer-text__on-elevation);
 
   // hover
@@ -53,7 +67,7 @@
   --mer-item__color--selected-hover: var(--mer-color__neutral-gray--100);
 
   // disabled
-  --mer-item__bg-color--disabled: var();
-  --mer-item__border-color--disabled: var();
-  --mer-item__color--disabled: var();
+  --mer-item__bg-color--disabled: transparent;
+  --mer-item__border-color--disabled: transparent;
+  --mer-item__color--disabled: var(--mer-item__color--enabled);
 }

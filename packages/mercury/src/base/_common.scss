@@ -61,27 +61,38 @@ Item (applies to every item (tree, grid, list, etc...)
 @mixin item-styles($styles: "enabled") {
   // Base
   @if $styles == "base" {
-    border-style: solid;
-    border-color: transparent;
     font-family: var(--mer-item__font-family);
     font-weight: var(--mer-item__font-weight);
     line-height: var(--mer-item__line-height);
+    // states styles
+    color: var(--mer-item__color);
+    background-color: var(--mer-item__bg-color);
+    border: 0 var(--mer-item__border-style) var(--mer-item__border-color);
   }
   // Typography
-  @if $styles == "typography-sm" {
+  @if $styles == "header" {
+    padding-block: var(--mer-item-title__padding-block);
+    padding-inline: var(--mer-item-title__padding-inline);
+    font-family: var(--mer-item-title__font-family);
+    font-size: var(--mer-item-title__font-size);
+    font-weight: var(--mer-item-title__font-weight);
+    line-height: var(--mer-item-title__line-height);
+    color: var(--mer-item-title__color);
+  }
+  @if $styles == "typography-regular" {
     font-size: var(--mer-item__font-size--sm);
   }
-  @if $styles == "typography-md" {
+  @if $styles == "typography-large" {
     font-size: var(--mer-item__font-size--md);
   }
   // Layout
-  @if $styles == "layout--sm" {
+  @if $styles == "layout-regular" {
     //ie.: dropdown
     gap: var(--mer-item__gap--sm);
     padding-block: var(--mer-item__padding-block--sm);
     padding-inline: var(--mer-item__padding-inline--sm);
   }
-  @if $styles == "layout--md" {
+  @if $styles == "layout-large" {
     //ie.: notifications
     gap: var(--mer-item__gap--md);
     padding-block: var(--mer-item__padding-block--md);
@@ -89,19 +100,27 @@ Item (applies to every item (tree, grid, list, etc...)
   }
   // Border
   @if $styles == "border-block" {
-    border-inline-width: 0;
     border-block-width: var(--mer-item__border-width);
+  }
+  @if $styles == "border-block-end" {
+    &:not(:last-child) {
+      border-block-end-width: var(--mer-item__border-width);
+    }
   }
   @if $styles == "border-inline-block" {
     border-block-width: var(--mer-item__border-width);
+    border-inline-width: var(--mer-item__border-width);
+  }
+  @if $styles == "border-radius" {
+    border-radius: var(--mer-item__border-radius);
   }
   // States
   @if $styles == "colors-enabled" {
-    background-color: var(--mer-item__bg-color);
-    color: var(--mer-item__color);
-    border-color: var(--mer-item__border-color);
+    --mer-item__color: var(--mer-item__color--enabled);
+    --mer-item__bg-color: var(--mer-item__bg-color--enabled);
+    --mer-item__border-color: var(--mer-item__border-color--enabled);
   }
-  @if $styles == "color-hover" {
+  @if $styles == "colors-hover" {
     --mer-item__color: var(--mer-item__color--hover);
     --mer-item__bg-color: var(--mer-item__bg-color--hover);
     --mer-item__border-color: var(--mer-item__border-color--hover);
@@ -117,10 +136,127 @@ Item (applies to every item (tree, grid, list, etc...)
     --mer-item__border-color: var(--mer-item__border-color--selected-hover);
   }
   @if $styles == "colors-disabled" {
+    opacity: 0.5;
     --mer-item__color: var(--mer-item__color--disabled);
     --mer-item__bg-color: var(--mer-item__bg-color--disabled);
     --mer-item__border-color: var(--mer-item__border-color--disabled);
   }
+}
+%item-styles-base {
+  @include item-styles($styles: "base");
+}
+%item-styles-header {
+  @include item-styles($styles: "header");
+}
+%item-typography-regular {
+  @include item-styles($styles: "typography-regular");
+}
+%item-typography-large {
+  @include item-styles($styles: "typography-large");
+}
+%item-layout-regular {
+  @include item-styles($styles: "layout-regular");
+}
+%item-layout-large {
+  @include item-styles($styles: "layout-large");
+}
+%item-border-block {
+  @include item-styles($styles: "border-block");
+}
+%item-border-block-end {
+  @include item-styles($styles: "border-block-end");
+}
+%item-border-inline-block {
+  @include item-styles($styles: "border-inline-block");
+}
+%item-border-radius {
+  @include item-styles($styles: "border-radius");
+}
+%item-colors-enabled {
+  @include item-styles($styles: "colors-enabled");
+}
+%item-colors-hover {
+  @include item-styles($styles: "colors-hover");
+}
+%item-colors-selected {
+  @include item-styles($styles: "colors-selected");
+}
+%item-colors-selected-hover {
+  @include item-styles($styles: "colors-selected-hover");
+}
+%item-colors-disabled {
+  @include item-styles($styles: "colors-disabled");
+}
+
+/*--------------------------------------------------------
+Control (applies to controls which height's should be equal.
+Note: Controls like button, form-text, combo-box, etc.. 
+should have the same height, in order to "look good" inline.
+--------------------------------------------------------*/
+@mixin control-styles($styles: "") {
+  // Base
+  @if $styles == "base-block-size" {
+    // --mer-control__padding-block: var(--mer-control-regular__padding-block);
+    // --mer-control__padding-inline: var(--mer-control-regular__padding-inline);
+    border: var(--mer-control__border);
+    font-family: var(--mer-control__font-family);
+    font-weight: var(--mer-control__font-weight);
+    line-height: var(--mer-control__line-height);
+    text-transform: var(--mer-control__text-transform);
+    block-size: var(--mer-control-md__block-size);
+  }
+  @if $styles == "base-min-block-size" {
+    // --mer-control__padding-block: var(--mer-control-regular__padding-block);
+    // --mer-control__padding-inline: var(--mer-control-regular__padding-inline);
+    border: var(--mer-control__border);
+    font-family: var(--mer-control__font-family);
+    font-weight: var(--mer-control__font-weight);
+    line-height: var(--mer-control__line-height);
+    text-transform: var(--mer-control__text-transform);
+    min-block-size: var(--mer-control-md__block-size);
+  }
+  // Layout
+  @if $styles == "layout-regular" {
+    //ie.: button, form-text, combo-box
+    border-radius: var(--mer-control-regular__border-radius);
+    gap: var(--mer-control-regular__gap);
+    padding-block: var(--mer-control__padding-block);
+    padding-inline: var(--mer-control__padding-inline);
+  }
+  @if $styles == "layout-regular-squared" {
+    //ie.: button-icon-only
+    block-size: var(--mer-control-regular__size);
+    inline-size: var(--mer-control-regular__size);
+    --mer-control__padding-block: 0;
+    --mer-control__padding-inline: 0;
+  }
+  @if $styles == "layout-tiny" {
+    //ie.: checkbox, radio-button
+    block-size: var(--mer-control-tiny__size);
+    inline-size: var(--mer-control-tiny__size);
+    --mer-control__padding-block: 0;
+    --mer-control__padding-inline: 0;
+  }
+  // Typography
+  @if $styles == "typography-regular" {
+    //ie.: button, form-text, combo-box
+    font-size: var(--mer-control-regular__font-size--md);
+  }
+}
+%control-base {
+  @include control-styles($styles: "base");
+}
+%control-layout-regular {
+  @include control-styles($styles: "layout-regular");
+}
+%control-layout-regular-squared {
+  @include control-styles($styles: "layout-regular-squared");
+}
+%control-layout-tiny {
+  @include control-styles($styles: "layout-tiny");
+}
+%control-typography-regular {
+  @include control-styles($styles: "typography-regular");
 }
 
 /*----------------------

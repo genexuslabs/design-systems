@@ -11,6 +11,7 @@
   @include tabular-grid-row-tokens();
   @include tabular-grid-column-tokens();
   @include tabular-grid-cell-tokens();
+  --mer-item__border-color--enabled: var(--mer-color__elevation--04);
 }
 
 %tabular-grid__main {
@@ -109,8 +110,8 @@
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-cell {
-  @extend %item-structure;
-  @extend %item-font;
+  @extend %item-layout-regular;
+  @extend %item-typography-regular;
   color: var(--mer-item__color);
 
   &[focused] {
@@ -140,8 +141,8 @@
   font-size: 0;
   background-color: transparent;
   margin-inline-end: var(--mer-label__space);
-  block-size: var(--mer-control__block-size--tiny);
-  inline-size: var(--mer-control__block-size--tiny);
+  block-size: var(--mer-control-tiny__size);
+  inline-size: var(--mer-control-tiny__size);
 }
 %tabular-grid-cell__selector {
   position: relative;
@@ -152,8 +153,8 @@
 %tabular-grid-cell__selector--before {
   content: "";
   display: inline-block;
-  width: var(--mer-control__block-size--tiny);
-  height: var(--mer-control__block-size--tiny);
+  width: var(--mer-control-tiny__size);
+  height: var(--mer-control-tiny__size);
   border: var(--mer-form-input__border);
   border-radius: var(--mer-control-tiny__border-radius);
   box-sizing: border-box;
@@ -163,12 +164,12 @@
   content: "";
   display: inline-block;
   border-color: var(--mer-form-input-check__border-color);
-  top: calc(var(--mer-control__block-size--tiny) / 4);
-  left: calc(var(--mer-control__block-size--tiny) / 4);
+  top: calc(var(--mer-control-tiny__size) / 4);
+  left: calc(var(--mer-control-tiny__size) / 4);
 }
 %tabular-grid-cell__selector--after-checked {
-  inline-size: calc(var(--mer-control__block-size--tiny) / 2);
-  block-size: calc(var(--mer-control__block-size--tiny) / 2);
+  inline-size: calc(var(--mer-control-tiny__size) / 2);
+  block-size: calc(var(--mer-control-tiny__size) / 2);
   background-color: currentColor;
   pointer-events: none;
   -webkit-mask: no-repeat center / 100%
@@ -181,7 +182,7 @@
   border-radius: 2px;
   background-color: var(--mer-form-input-check__border-color);
   top: calc(
-    var(--mer-control__block-size--tiny) / 2 -
+    var(--mer-control-tiny__size) / 2 -
       var(--mer-form-input-check__border-width) / 2
   );
 }
@@ -294,7 +295,6 @@
 
   #{$tabular-grid__main} {
     @extend %tabular-grid__main;
-    background-color: var(--grid-main__bg-color);
     gap: 1px;
   }
 
@@ -352,14 +352,14 @@
     &[highlighted] {
       #{$tabular-grid-cell} {
         &:after {
-          @extend %item-hover;
+          @extend %item-colors-hover;
         }
       }
     }
     &[selected] {
       #{$tabular-grid-cell} {
         &:after {
-          @extend %item-selected;
+          @extend %item-colors-selected;
         }
       }
     }

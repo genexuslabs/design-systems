@@ -76,11 +76,14 @@
   -------------------------------------------------------------*/
   // base
   --mer-control__font-family: var(--mer-font-family--body);
-  --mer-control__line-height: var(--mer-line-height--tight);
+  --mer-control__line-height: var(--mer-line-height--regular);
   --mer-control__border-width: var(--mer-border__width--sm);
-  --mer-control__border: var(--mer-control__border-width) solid transparent; //border color could vary.
+  --mer-control__border-color: transparent;
+  --mer-control__border: var(--mer-control__border-width) solid
+    var(--mer-control__border-color); //border color could vary.
   --mer-control__font-weight: var(--mer-font__weight--regular);
   --mer-control__text-transform: capitalize;
+  --mer-control-md__block-size: 28px; // button, form-input-text, combo-box, etc
 
   // regular
   --mer-control-regular__font-size--md: var(--mer-font__size--2xs);
@@ -101,6 +104,14 @@
   --mer-control__block-size: var(--mer-spacing--lg);
   --mer-control-tiny__size: var(--mer-spacing--md);
   --mer-control-tiny__border-radius: var(--mer-border__radius--2xs);
+
+  // - - - - - - - States - - - - - - -
+
+  // hover
+  --mer-control__border-color--hover: var();
+
+  // disabled
+  --mer-control__border-color--disabled: var();
 
   /*----------------------
   Label
