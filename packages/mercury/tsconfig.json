@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["ES2022"],
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "ES2022",
+
+    "declaration": true,
+    "outDir": "dist/",
+    "skipLibCheck": true,
+
+    // Linting
+    "allowUnreachableCode": false,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true
+  },
+  "include": ["src/assets-manager.ts"],
+  "exclude": ["node_modules"]
+}
