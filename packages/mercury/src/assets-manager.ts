@@ -1,4 +1,4 @@
-import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS";
+import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS.js";
 export {
   MercuryBundles,
   MercuryBundle,
