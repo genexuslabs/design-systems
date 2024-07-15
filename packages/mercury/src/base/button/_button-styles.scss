@@ -1,7 +1,7 @@
 @import "../button/button-tokens";
 
 %button-base {
-  @include button-common-styles();
+  @include button-common-styles(); // packages/common/base.scss
   @extend %control-base;
   @extend %control-layout-regular;
   @extend %control-typography-regular;
