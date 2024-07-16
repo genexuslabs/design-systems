@@ -125,8 +125,8 @@
 
   @if $radio-item__label {
     #{$radio-item__label} {
-      @extend %label;
-      @extend %label--after;
+      @extend %label-styles-base;
+      @extend %label-styles-position-inline;
     }
   }
 
