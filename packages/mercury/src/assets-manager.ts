@@ -4,19 +4,11 @@ import {
   TreeViewItemModel
 } from "@genexus/chameleon-controls-library";
 import { RegistryGetImagePathCallback } from "@genexus/chameleon-controls-library/dist/types/index";
-
 import { TreeViewItemImageMultiState } from "@genexus/chameleon-controls-library/dist/types/components/tree-view/types";
 
 import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS.js";
-export {
-  MercuryBundles,
-  MercuryBundleOptimized,
-  MercuryBundleFull,
-  MercuryBundleBase,
-  MercuryBundleComponent,
-  MercuryBundleReset,
-  MercuryBundleUtil
-} from "./bundles/bundles";
+
+export * from "./bundles/bundles";
 
 const ASSETS_BY_VENDOR: { [key in string]: Assets } = {};
 const ALIAS_TO_VENDOR_NAME: { [key in string]: string } = {};
