@@ -1,7 +1,16 @@
-@import "form.css";
+@import "../../../dist/mercury.scss";
 
-@import "../components/button.css";
-@import "../components/checkbox.css";
-@import "../components/combo-box.css";
-@import "../components/edit.css";
-@import "../components/radio-group.css";
+// TODO: This is a WA that duplicates the CSS as the import CSS rule does not
+// work on constructed stylesheets
+@include mercury-only(
+  $base-classes: true,
+  $button-classes: true,
+  $resets: true,
+  $button-reset: true,
+
+  $components: true,
+  $checkbox: true,
+  $combo-box: true,
+  $edit: true,
+  $radio-group: true
+);
