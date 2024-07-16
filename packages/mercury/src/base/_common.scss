@@ -206,6 +206,7 @@ should have the same height, in order to "look good" inline.
     align-items: center;
     padding-block: var(--mer-control__padding-block);
     padding-inline: var(--mer-control__padding-inline);
+    box-sizing: border-box; // WA until we discover why @mixin box-sizing() from common/_resets.scss is not working.
   }
   // Layout
   @if $styles == "layout-regular" {
