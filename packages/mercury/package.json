@@ -10,8 +10,8 @@
   ],
   "type": "module",
   "scripts": {
-    "build": "tsc && npm run icons-svg && npm run icons-sass && npm run build.scss && npm run copy-tasks && npm run showcase.scss",
-    "build-no-svg": "tsc && npm run build.scss && npm run copy-tasks",
+    "build": "tsc && npm run icons-svg && npm run icons-sass && npm run copy-tasks && npm run build.scss && npm run showcase.scss",
+    "build-no-svg": "tsc && npm run copy-tasks && npm run build.scss",
     "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && npm run build.bundles",
     "build.bundles": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/bundles/scss dist/bundles/scss && sass --load-path=src --no-source-map --style compressed dist/bundles/scss:dist/bundles/css",
     "validate.ci": "npm run build-no-svg",
