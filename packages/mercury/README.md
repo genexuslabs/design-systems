@@ -90,6 +90,13 @@ npm i @genexus/mercury
         ```
 
     3.  Run the following command to transpile the bundles with the new path for the assets:
+
         ```bash
-        npx sass --load-path=path/to/config/file/directory --no-source-map --style compressed node_modules/@genexus/mercury/dist/bundles:untracked-folder/bundles
+        npx sass --load-path=path/to/config/file/directory --no-source-map --style compressed node_modules/@genexus/mercury/dist/bundles/scss:untracked-folder/bundles
+        ```
+
+        For example:
+
+        ```bash
+        npx sass --load-path=src --no-source-map --style compressed node_modules/@genexus/mercury/dist/bundles/scss:untracked-folder/bundles
         ```
