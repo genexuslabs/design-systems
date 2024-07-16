@@ -412,7 +412,8 @@
 
     // tabular grid
     @if $tabular-grid {
-      @include tabular-grid();
+      // TODO: This is a WA to transpile the file
+      @include tabular-grid($icons-path: $icons-path);
     }
 
     // tree view

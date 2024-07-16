@@ -20,7 +20,6 @@
 // - - - - - - - - - - - - - - - - - - - -
 //            ch-grid-column
 // - - - - - - - - - - - - - - - - - - - -
-
 %tabular-grid-column__bar {
   position: relative;
   width: 100%;
@@ -107,7 +106,6 @@
 // - - - - - - - - - - - - - - - - - - - -
 //            ch-grid-cell
 // - - - - - - - - - - - - - - - - - - - -
-
 %tabular-grid-cell {
   @extend %item-structure;
   @extend %item-font;
@@ -135,6 +133,7 @@
     z-index: -1;
   }
 }
+
 %tabular-grid-cell__selector-label {
   line-height: 0;
   font-size: 0;
@@ -143,12 +142,14 @@
   block-size: var(--mer-control__block-size--tiny);
   inline-size: var(--mer-control__block-size--tiny);
 }
+
 %tabular-grid-cell__selector {
   position: relative;
   margin: 0;
   width: 0;
   height: 0;
 }
+
 %tabular-grid-cell__selector--before {
   content: "";
   display: inline-block;
@@ -158,6 +159,7 @@
   border-radius: var(--mer-control-tiny__border-radius);
   box-sizing: border-box;
 }
+
 %tabular-grid-cell__selector--after {
   position: absolute;
   content: "";
@@ -166,6 +168,7 @@
   top: calc(var(--mer-control__block-size--tiny) / 4);
   left: calc(var(--mer-control__block-size--tiny) / 4);
 }
+
 %tabular-grid-cell__selector--after-checked {
   inline-size: calc(var(--mer-control__block-size--tiny) / 2);
   block-size: calc(var(--mer-control__block-size--tiny) / 2);
@@ -175,6 +178,7 @@
     var(--mer-checkbox__option-checked-image);
   color: var(--mer-form-input-check__border-color);
 }
+
 %tabular-grid-cell__selector--after-indeterminate {
   inline-size: 8px;
   block-size: var(--mer-form-input-check__border-width);
@@ -278,11 +282,19 @@
   // ch-grid-row-actions
   $tabular-grid-row-actions: ".tabular-grid-row-actions",
   $tabular-grid-row-actions__window: ".tabular-grid-row-actions::part(window)",
-  $tabular-grid-row-actions__main: ".tabular-grid-row-actions::part(main)"
+  $tabular-grid-row-actions__main: ".tabular-grid-row-actions::part(main)",
+
+  // TODO: This is a WA to transpile the file
+  $icons-path: "./assets/icons/"
 ) {
+  // TODO: This is a WA to transpile the file
+  @import "../../icons/_generated/monochrome/gemini-tools.scss";
+  @import "../../icons/_generated/monochrome/navigation.scss";
+
   // Base style
   #{$tabular-grid-selector} {
     @extend %tabular-grid;
+
     &:focus {
       outline: none;
     }
@@ -291,7 +303,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   //               ch-grid
   // - - - - - - - - - - - - - - - - - - - -
-
   #{$tabular-grid__main} {
     @extend %tabular-grid__main;
     background-color: var(--grid-main__bg-color);
@@ -301,40 +312,48 @@
   // - - - - - - - - - - - - - - - - - - - -
   //            ch-grid-column
   // - - - - - - - - - - - - - - - - - - - -
-
   #{$tabular-grid-column__bar} {
     @extend %tabular-grid-column__bar;
   }
+
   #{$tabular-grid-column__bar-resize-split} {
     @extend %tabular-grid-column__bar-resize-split;
     &:hover {
       @extend %tabular-grid-column__bar-resize-split--hover;
     }
   }
+
   // checkbox (same styles add cell checkbox)
   #{$tabular-grid-column__selector-label} {
     @extend %tabular-grid-cell__selector-label;
   }
+
   #{$tabular-grid-column__selector} {
     @extend %tabular-grid-cell__selector;
+
     &::before {
       @extend %tabular-grid-cell__selector--before;
     }
+
     &::after {
       @extend %tabular-grid-cell__selector--after;
     }
+
     &:focus {
       outline: none;
+
       &:before {
         @include focus-style();
       }
     }
   }
+
   #{$tabular-grid-column__selector--checked} {
     &::after {
       @extend %tabular-grid-cell__selector--after-checked;
     }
   }
+
   #{$tabular-grid-column__selector--indeterminate} {
     &::after {
       @extend %tabular-grid-cell__selector--after-indeterminate;
@@ -356,6 +375,7 @@
         }
       }
     }
+
     &[selected] {
       #{$tabular-grid-cell} {
         &:after {
@@ -363,10 +383,12 @@
         }
       }
     }
+
     &[focused] {
       border-style: dotted;
       @include focus-style();
     }
+
     &[dragging] {
       box-shadow: var(--mer-box-shadow--01);
     }
@@ -375,7 +397,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   //             ch-grid-rowset
   // - - - - - - - - - - - - - - - - - - - -
-
   #{$tabular-grid-rowset} {
     @extend %tabular-grid-rowset;
 
@@ -399,22 +420,25 @@
   // - - - - - - - - - - - - - - - - - - - -
   //         ch-grid-rowset-legend
   // - - - - - - - - - - - - - - - - - - - -
-
   #{$tabular-grid-rowset-legend} {
     @extend %tabular-grid-rowset-legend;
     display: flex;
     align-items: center;
     gap: var(--grid-base__icon-gap);
   }
+
   #{$tabular-grid-rowset-legend__caret} {
     @extend %icon-size--md;
   }
+
   #{$tabular-grid-rowset-legend__selector-label} {
     @extend %tabular-grid-rowset-legend__selector-label;
   }
+
   #{$tabular-grid-rowset-legend__selector} {
     @extend %tabular-grid-rowset-legend__selector;
   }
+
   #{$tabular-grid-rowset-legend__icon} {
     @extend %tabular-grid-rowset-legend__icon;
     @extend %icon-size--md;
@@ -424,40 +448,47 @@
   // - - - - - - - - - - - - - - - - - - - -
   //            ch-grid-cell
   // - - - - - - - - - - - - - - - - - - - -
-
   #{$tabular-grid-cell} {
     @extend %tabular-grid-cell;
   }
+
   // drag icon
   #{$tabular-grid-cell__drag-icon} {
     @extend %icon-size--md;
     @extend %icon__navigation_drag_on-surface--enabled;
     margin-inline-end: var(--grid-base__icon-gap);
   }
+
   // checkbox
   #{$tabular-grid-cell__selector-label} {
     @extend %tabular-grid-cell__selector-label;
   }
+
   #{$tabular-grid-cell__selector} {
     @extend %tabular-grid-cell__selector;
     &::before {
       @extend %tabular-grid-cell__selector--before;
     }
+
     &::after {
       @extend %tabular-grid-cell__selector--after;
     }
+
     &:focus {
       outline: none;
+
       &:before {
         @include focus-style();
       }
     }
   }
+
   #{$tabular-grid-cell__selector--checked} {
     &::after {
       @extend %tabular-grid-cell__selector--after-checked;
     }
   }
+
   // actions icon
   #{$tabular-grid-cell__actions-icon} {
     width: 100%;
@@ -474,9 +505,11 @@
       margin-inline-end: var(--mer-spacing--xs);
     }
   }
+
   #{$tabular-grid-row-actions__window} {
     @extend %tabular-grid-row-actions__window;
   }
+
   #{$tabular-grid-row-actions__main} {
     @extend %tabular-grid-row-actions__main;
   }
