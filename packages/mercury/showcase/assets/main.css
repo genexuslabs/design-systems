@@ -13,7 +13,8 @@
   --section-header__gap: 24px;
   --section-title__font-size: 36px;
   --section-title__color: var(--mer-color__neutral-gray--100);
-  --section-title__font-family: var(--mer-font-family--inter-light);
+  --section-title__font-family: var(--mer-font-family--title);
+  --section-title__font-weight: var(--mer-font__weight--light);
   --section-description__font-size: 16px;
   --section-description__line-height: var(--mer-line-height--spaced);
   --section-description__max-width: 640px;
@@ -184,6 +185,7 @@ Section
   color: var(--section-title__color);
   font-size: var(--section-title__font-size);
   font-family: var(--section-title__font-family);
+  font-weight: var(--mer-font__weight--light);
 }
 .section__title--mono {
   font-family: monospace;
