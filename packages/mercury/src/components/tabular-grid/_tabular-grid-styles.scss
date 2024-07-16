@@ -140,7 +140,7 @@
   line-height: 0;
   font-size: 0;
   background-color: transparent;
-  margin-inline-end: var(--mer-label__space);
+  margin-inline-end: var(--mer-label__gap--inline);
   block-size: var(--mer-control-tiny__size);
   inline-size: var(--mer-control-tiny__size);
 }
@@ -352,14 +352,14 @@
     &[highlighted] {
       #{$tabular-grid-cell} {
         &:after {
-          @extend %item-colors-hover;
+          @extend %item-hover;
         }
       }
     }
     &[selected] {
       #{$tabular-grid-cell} {
         &:after {
-          @extend %item-colors-selected;
+          @extend %item-selected;
         }
       }
     }

@@ -29,7 +29,7 @@
   @extend %item-typography-large;
   @extend %item-layout-regular;
   @extend %item-border-inline-block;
-  @extend %item-colors-enabled;
+  @extend %item-enabled;
   @extend %item-border-radius;
 
   &--nested {
@@ -41,11 +41,11 @@
   }
 
   &--selected {
-    @extend %item-colors-selected;
+    @extend %item-selected;
   }
 
   &--disabled {
-    @extend %item-colors-disabled;
+    @extend %item-disabled;
   }
 }
 

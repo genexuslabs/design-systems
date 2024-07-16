@@ -115,27 +115,27 @@ Item (applies to every item (tree, grid, list, etc...)
     border-radius: var(--mer-item__border-radius);
   }
   // States
-  @if $styles == "colors-enabled" {
+  @if $styles == "enabled" {
     --mer-item__color: var(--mer-item__color--enabled);
     --mer-item__bg-color: var(--mer-item__bg-color--enabled);
     --mer-item__border-color: var(--mer-item__border-color--enabled);
   }
-  @if $styles == "colors-hover" {
+  @if $styles == "hover" {
     --mer-item__color: var(--mer-item__color--hover);
     --mer-item__bg-color: var(--mer-item__bg-color--hover);
     --mer-item__border-color: var(--mer-item__border-color--hover);
   }
-  @if $styles == "colors-selected" {
+  @if $styles == "selected" {
     --mer-item__color: var(--mer-item__color--selected);
     --mer-item__bg-color: var(--mer-item__bg-color--selected);
     --mer-item__border-color: var(--mer-item__border-color--selected);
   }
-  @if $styles == "colors-selected-hover" {
+  @if $styles == "selected-hover" {
     --mer-item__color: var(--mer-item__color--selected-hover);
     --mer-item__bg-color: var(--mer-item__bg-color--selected-hover);
     --mer-item__border-color: var(--mer-item__border-color--selected-hover);
   }
-  @if $styles == "colors-disabled" {
+  @if $styles == "disabled" {
     opacity: 0.5;
     --mer-item__color: var(--mer-item__color--disabled);
     --mer-item__bg-color: var(--mer-item__bg-color--disabled);
@@ -172,19 +172,19 @@ Item (applies to every item (tree, grid, list, etc...)
 %item-border-radius {
   @include item-styles($styles: "border-radius");
 }
-%item-colors-enabled {
+%item-enabled {
   @include item-styles($styles: "colors-enabled");
 }
-%item-colors-hover {
+%item-hover {
   @include item-styles($styles: "colors-hover");
 }
-%item-colors-selected {
+%item-selected {
   @include item-styles($styles: "colors-selected");
 }
-%item-colors-selected-hover {
+%item-selected-hover {
   @include item-styles($styles: "colors-selected-hover");
 }
-%item-colors-disabled {
+%item-disabled {
   @include item-styles($styles: "colors-disabled");
 }
 
@@ -244,6 +244,47 @@ should have the same height, in order to "look good" inline.
   @include control-styles($styles: "typography-regular");
 }
 
+/*----------------------
+Label
+----------------------*/
+// Defined here to facilitate the application of the label styles on the label element,
+// as well as on the ch-checkbox label.
+@mixin label-styles($styles: "base") {
+  @if $styles == "base" {
+    font-size: var(--mer-label__font-size);
+    font-family: var(--mer-label__font-family);
+    font-weight: var(--mer-label__font-weight);
+    line-height: var(--mer-label__line-height);
+    color: var(--mer-label__color--enabled);
+  }
+  @if $styles == "hover" {
+    color: var(--mer-label__color--hover);
+  }
+  @if $styles == "disabled" {
+    color: var(---mer-label__color--disabled);
+  }
+  @if $styles == "position-inline" {
+    margin-inline-start: var(--mer-label__gap--inline);
+  }
+  @if $styles == "position-block" {
+    margin-block-end: var(--mer-label__gap--block);
+  }
+}
+%label-styles-base {
+  @include label-styles($styles: "base");
+}
+%label-styles-hover {
+  @include label-styles($styles: "hover");
+}
+%label-styles-disabled {
+  @include label-styles($styles: "disabled");
+}
+%label-styles-position-block {
+  @include label-styles($styles: "position-block");
+}
+%label-styles-position-inline {
+  @include label-styles($styles: "position-inline");
+}
 /*----------------------
 Window
 ----------------------*/
