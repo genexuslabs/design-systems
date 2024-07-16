@@ -1,3 +1,5 @@
+import { ThemeModel } from "@genexus/chameleon-controls-library";
+
 export type MercuryBundles = MercuryBundleOptimized[] | MercuryBundleFull[];
 
 export type MercuryBundleOptimized =
@@ -38,3 +40,59 @@ export type MercuryBundleUtil =
   | "utils/typography";
 
 export type MercuryBundleUtilFormFull = "utils/form--full";
+
+type BundleNames =
+  | MercuryBundleComponent
+  | MercuryBundleComponentForm
+  | MercuryBundleReset
+  | MercuryBundleUtil
+  | MercuryBundleUtilFormFull;
+
+const getThemeModelItem = <T extends BundleNames>(
+  assetsPath: string,
+  bundleName: T
+) =>
+  ({
+    name: bundleName,
+    url: `${assetsPath}css/${bundleName}.css`
+  } as const);
+
+/**
+ * Given the basePath, returns all bundles (except base and icons) in the
+ * format of type `ThemeModel`.
+ *
+ * This is useful for defining the following in an `index.html`:
+ *
+ * ```tsx
+ * const THEME_BUNDLES = getThemeBundles("<base path>");
+ *
+ * HTML/render/template:
+ *   <body>
+ *     <ch-theme model={THEME_BUNDLES}></ch-theme>
+ *     ...
+ *   </body>
+ * ```
+ */
+export const getThemeBundles = (basePath: string) =>
+  [
+    // Components
+    getThemeModelItem(basePath, "components/button"),
+    getThemeModelItem(basePath, "components/checkbox"),
+    getThemeModelItem(basePath, "components/code"),
+    getThemeModelItem(basePath, "components/combo-box"),
+    getThemeModelItem(basePath, "components/dialog"),
+    getThemeModelItem(basePath, "components/edit"),
+    getThemeModelItem(basePath, "components/radio-group"),
+    getThemeModelItem(basePath, "components/tab"),
+    getThemeModelItem(basePath, "components/tabular-grid"),
+    getThemeModelItem(basePath, "components/tree-view"),
+
+    // Resets
+    getThemeModelItem(basePath, "resets/box-sizing"),
+
+    // Utils
+    getThemeModelItem(basePath, "utils/form"),
+    getThemeModelItem(basePath, "utils/form--full"),
+    getThemeModelItem(basePath, "utils/layout"),
+    getThemeModelItem(basePath, "utils/typography")
+  ] as const satisfies ThemeModel;

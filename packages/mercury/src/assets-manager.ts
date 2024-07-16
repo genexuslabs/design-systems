@@ -8,7 +8,19 @@ import { TreeViewItemImageMultiState } from "@genexus/chameleon-controls-library
 
 import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS.js";
 
-export * from "./bundles/bundles";
+export {
+  MercuryBundleBase,
+  MercuryBundleComponent,
+  MercuryBundleComponentForm,
+  MercuryBundleFull,
+  MercuryBundleOptimized,
+  MercuryBundleReset,
+  MercuryBundleUtil,
+  MercuryBundleUtilFormFull,
+  MercuryBundles
+} from "./bundles/bundles";
+
+export { getThemeBundles } from "./bundles/bundles.js";
 
 const ASSETS_BY_VENDOR: { [key in string]: Assets } = {};
 const ALIAS_TO_VENDOR_NAME: { [key in string]: string } = {};
