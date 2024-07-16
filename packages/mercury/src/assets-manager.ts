@@ -3,6 +3,7 @@ import {
   TreeViewImagePathCallback,
   TreeViewItemModel
 } from "@genexus/chameleon-controls-library";
+import { RegistryGetImagePathCallback } from "@genexus/chameleon-controls-library/dist/types/index";
 
 import { TreeViewItemImageMultiState } from "@genexus/chameleon-controls-library/dist/types/components/tree-view/types";
 
@@ -288,6 +289,21 @@ export const getTreeViewImagePathCallback: TreeViewImagePathCallback = (
         expanded: getImagePathCallback(collapsedAndExpandedSrc[1])
       }
     : { default: defaultPath };
+};
+
+/**
+ * This object is used to register the getImagePathCallback definitions for all
+ * controls in Chameleon.
+ *
+ * @example
+ * ```ts
+ * registryProperty("getImagePathCallback", getImagePathCallbackDefinitions);
+ * ```
+ */
+export const getImagePathCallbackDefinitions: RegistryGetImagePathCallback = {
+  "ch-edit": getImagePathCallback,
+  "ch-image": getImagePathCallback,
+  "ch-tree-view-render": getTreeViewImagePathCallback
 };
 
 // Initialize Mercury at the start
