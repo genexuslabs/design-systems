@@ -1,29 +1,40 @@
-export type MercuryBundles = MercuryBundle[];
+export type MercuryBundles = MercuryBundleOptimized[] | MercuryBundleFull[];
 
-export type MercuryBundle =
+export type MercuryBundleOptimized =
+  | MercuryBundleBase
+  | MercuryBundleComponent
+  | MercuryBundleComponentForm
+  | MercuryBundleReset
+  | MercuryBundleUtil;
+
+export type MercuryBundleFull =
   | MercuryBundleBase
   | MercuryBundleComponent
   | MercuryBundleReset
-  | MercuryBundleUtil;
+  | MercuryBundleUtil
+  | MercuryBundleUtilFormFull;
 
 export type MercuryBundleBase = "base/base" | "base/icons";
 
 export type MercuryBundleComponent =
-  | "components/button"
-  | "components/checkbox"
   | "components/code"
-  | "components/combo-box"
   | "components/dialog"
-  | "components/edit"
-  | "components/radio-group"
   | "components/tab"
   | "components/tabular-grid"
   | "components/tree-view";
+
+export type MercuryBundleComponentForm =
+  | "components/button"
+  | "components/checkbox"
+  | "components/combo-box"
+  | "components/edit"
+  | "components/radio-group";
 
 export type MercuryBundleReset = "resets/box-sizing";
 
 export type MercuryBundleUtil =
   | "utils/form"
-  | "utils/form--full"
   | "utils/layout"
   | "utils/typography";
+
+export type MercuryBundleUtilFormFull = "utils/form--full";

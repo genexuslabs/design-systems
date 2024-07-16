@@ -1,7 +1,8 @@
 import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS.js";
 export {
   MercuryBundles,
-  MercuryBundle,
+  MercuryBundleOptimized,
+  MercuryBundleFull,
   MercuryBundleBase,
   MercuryBundleComponent,
   MercuryBundleReset,
