@@ -97,26 +97,26 @@
 // - - - - - - - - - - - - - - - - - - - -
 //              Form Input
 // - - - - - - - - - - - - - - - - - - - -
-@mixin form-input-bg-x-rtl-support() {
-  // has to be included in the root
-  :root[dir="rtl"] {
-    --mer-form-input__bg-position--x: calc(
-      100% - var(--mer-form-input__bg-position--x-value)
-    );
-  }
-}
+// @mixin form-input-bg-x-rtl-support() {
+//   // has to be included in the root
+//   :root[dir="rtl"] {
+//     --mer-form-input__bg-position--x: calc(
+//       100% - var(--mer-form-input__bg-position--x-value)
+//     );
+//   }
+// }
 
-@mixin icon-input-background-common-styles(
-  $background-size: "0",
-  $background-position-x: "0"
-) {
-  background: var(--icon-path) $background-position-x center / $background-size
-    no-repeat;
-}
+// @mixin icon-input-background-common-styles(
+//   $background-size: "0",
+//   $background-position-x: "0"
+// ) {
+//   background: var(--icon-path) $background-position-x center / $background-size
+//     no-repeat;
+// }
 
-%icon-input-background {
-  @include icon-input-background-common-styles(
-    $background-size: var(--mer-form-input__icon-size),
-    $background-position-x: var(--mer-form-input__bg-position--x)
-  );
-}
+// %icon-input-background {
+//   @include icon-input-background-common-styles(
+//     $background-size: var(--mer-form-input__icon-size),
+//     $background-position-x: var(--mer-form-input__bg-position--x)
+//   );
+// }

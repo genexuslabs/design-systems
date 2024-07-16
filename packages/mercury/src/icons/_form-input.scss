@@ -1,19 +1,19 @@
-%form-input-icon {
-  @extend %form-input;
-  padding-inline-start: calc(
-    var(--mer-form-input__padding-inline) * 2 + var(--mer-form-input__icon-size)
-  );
-}
+// %form-input-icon {
+//   @extend %form-input;
+//   padding-inline-start: calc(
+//     var(--mer-form-input__padding-inline) * 2 + var(--mer-form-input__icon-size)
+//   );
+// }
 
-/// @group Form
-/// @param {String} $selector [".form-input--icon"] -
-/// @param {type} $icon-path [null] -
-@mixin form-input-icon($selector: ".form-input--icon", $icon-path: null) {
-  #{$selector} {
-    @if $icon-path != null {
-      --icon-path: #{$icon-path};
-    }
-    @extend %form-input-icon;
-    @extend %icon-input-background;
-  }
-}
+// /// @group Form
+// /// @param {String} $selector [".form-input--icon"] -
+// /// @param {type} $icon-path [null] -
+// @mixin form-input-icon($selector: ".form-input--icon", $icon-path: null) {
+//   #{$selector} {
+//     @if $icon-path != null {
+//       --icon-path: #{$icon-path};
+//     }
+//     @extend %form-input-icon;
+//     @extend %icon-input-background;
+//   }
+// }

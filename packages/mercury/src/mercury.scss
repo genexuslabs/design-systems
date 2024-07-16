@@ -35,20 +35,17 @@
 
 // Icons
 @import "./icons/button";
-@import "./icons/form-input";
-@import "./icons/tree-view";
-@import "./icons/_generated/svg-sass-mixins";
 
 // Components
 @import "./components/checkbox/checkbox-styles";
+@import "./components/code/code-styles";
 @import "./components/combo-box/combo-box-styles";
 @import "./components/dialog/dialog-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
-@import "./components/tree-view/tree-view-styles";
-@import "./components/tabular-grid/tabular-grid-styles";
 @import "./components/tab/tab-styles";
-@import "./components/code/code-styles";
+@import "./components/tabular-grid/tabular-grid-styles";
+@import "./components/tree-view/tree-view-styles";
 
 @mixin mercury(
   // Resets
@@ -58,6 +55,9 @@
   $input-reset: true,
   $other-reset: true,
   $typography-reset: true,
+
+  // body
+  $body: true,
 
   // Theme
   $light-theme: true,
@@ -78,45 +78,45 @@
   $icons-path: "./assets/icons/",
   $ignored-multicolor-categories: (),
   $ignored-monochrome-categories: (),
+  $icons-variables: true,
+
   // Font face
   $font-face: true,
   $font-face-path: "./assets/fonts/",
 
   // Base
   $base-classes: true,
-  $label: true,
   $button-classes: true,
   $form-controls-classes: true,
   $icon-classes: true,
-  $typography-classes: true,
   $layout-classes: true,
-
-  // Icons
-  $icons-elements: true,
+  $typography-classes: true,
 
   // Components
   $components: true,
+  $checkbox: true,
+  $code: true,
   $combo-box: true,
   $dialog: true,
-  $checkbox: true,
+  $edit: true,
   $radio-group: true,
-  $tree-view: true,
-  $tabular-grid: true,
   $tab: true,
-  $code: true
+  $tabular-grid: true,
+  $tree-view: true
 ) {
   // - - - - - - - - - - - - - - - - - - - -
-  //              Icons
+  //                  Icons
   // - - - - - - - - - - - - - - - - - - - -
-
-  @import "./icons/_generated/categories-imports";
+  @if $icons-variables {
+    @import "./icons/_generated/categories-imports";
+  }
 
   // - - - - - - - - - - - - - - - - - - - -
   //              Typography
   // - - - - - - - - - - - - - - - - - - - -
   // font-face
   @if $font-face {
-    //light
+    // Light
     @font-face {
       font-family: "Inter";
       src: url("#{$font-face-path}Inter_Light.woff2");
@@ -124,7 +124,7 @@
       font-style: normal;
     }
 
-    //regular
+    // Regular
     @font-face {
       font-family: "Inter";
       src: url("#{$font-face-path}Inter_Regular.woff2");
@@ -132,7 +132,7 @@
       font-style: normal;
     }
 
-    //semi-bold
+    // Semi Bold
     @font-face {
       font-family: "Inter";
       src: url("#{$font-face-path}Inter_SemiBold.woff2");
@@ -140,7 +140,7 @@
       font-style: normal;
     }
 
-    //bold
+    // Bold
     @font-face {
       font-family: "Inter";
       src: url("#{$font-face-path}Inter_Bold.woff2");
@@ -148,7 +148,7 @@
       font-style: normal;
     }
 
-    //extra-bold
+    // Extra Bold
     @font-face {
       font-family: "Inter";
       src: url("#{$font-face-path}Inter_ExtraBold.woff2");
@@ -160,7 +160,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   //              Color Schemes
   // - - - - - - - - - - - - - - - - - - - -
-
   // Light
   @if $colors and $light-theme and $tokens {
     :root.light {
@@ -201,31 +200,34 @@
     }
   }
 
-  // Semantic Colors (Are independent of color scheme)
-  @if $colors and $tokens {
-    :root {
-      @include semantic-accent();
-      @include semantic-border();
-      @include semantic-icon();
-      @include semantic-item();
-      @include semantic-text();
-    }
-  }
-
   // - - - - - - - - - - - - - - - - - - - -
   //        Other Tokens than Colors
   // - - - - - - - - - - - - - - - - - - - -
-
   // Primitive
-  @if $tokens and ($border or $elevation or $font or $spacing or $timing) {
+  @if $tokens and
+    ($border or $colors or $elevation or $font or $spacing or $timing)
+  {
     :root {
       // Border
       @if $border {
         @include border();
       }
 
+      // Semantic (Other than colors)
+      @include semantic-other();
+
+      // Semantic Colors (Are independent of color scheme)
+      @if $colors {
+        @include semantic-accent();
+        @include semantic-border();
+        @include semantic-icon();
+        @include semantic-item();
+        @include semantic-text();
+      }
+
       // Elevation Light
       @if $elevation and $light-theme {
+        // TODO: This appears to be placed in the wrong selector
         @include elevation--light();
       }
       @if $elevation and $prefers-color-scheme-light {
@@ -236,6 +238,7 @@
 
       // Elevation Dark
       @if $elevation and $dark-theme {
+        // TODO: This appears to be placed in the wrong selector
         @include elevation--dark();
       }
       @if $elevation and $prefers-color-scheme-dark {
@@ -261,35 +264,29 @@
     }
   }
 
-  // Semantic (Other than colors)
-  @if $tokens {
-    :root {
-      // Other
-      @include semantic-other();
-    }
-  }
-
   // - - - - - - - - - - - - - - - - - - - -
   //                General
   // - - - - - - - - - - - - - - - - - - - -
-  body {
-    @include document-common-styles();
+  @if $body {
+    body {
+      @include document-common-styles();
 
-    @if $tokens {
-      // Default background-color and color
-      @if $colors {
-        background-color: var(--mer-color__surface);
-        color: var(--mer-text__on-surface);
-      }
+      @if $tokens {
+        // Default background-color and color
+        @if $colors {
+          background-color: var(--mer-color__surface);
+          color: var(--mer-text__on-surface);
+        }
 
-      @if $font {
-        line-height: var(--mer-body__line-height);
-      }
+        @if $font {
+          line-height: var(--mer-body__line-height);
+        }
 
-      @if $font-face {
-        font-family: var(--mer-body__font-family);
-        font-size: var(--mer-body__font-size);
-        font-weight: var(--mer-body__font-weight);
+        @if $font-face {
+          font-family: var(--mer-body__font-family);
+          font-size: var(--mer-body__font-size);
+          font-weight: var(--mer-body__font-weight);
+        }
       }
     }
   }
@@ -321,22 +318,12 @@
     @if $typography-reset {
       @include typography-reset();
     }
-
-    // Typography classes
-    @if $typography-classes {
-      @include typography-classes();
-    }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
   //              Base classes
   // - - - - - - - - - - - - - - - - - - - -
   @if $base-classes {
-    // Label classes
-    @if $label {
-      @include label();
-    }
-
     // Button classes
     @if $button-classes {
       // Button primary
@@ -347,12 +334,21 @@
 
       // Button tertiary
       @include button-tertiary();
+
+      // Button icon only
+      @include button-icon-only();
+
+      // Button icon and text
+      @include button-icon-and-text();
+
+      // Button icon after and text
+      @include button-icon-after-and-text();
     }
 
     // Form control classes
     @if $form-controls-classes {
-      @include form-input();
       @include fieldset();
+      @include label();
     }
 
     // Icon classes
@@ -361,9 +357,6 @@
       @include icon-background();
       @include icon-size-sm();
       @include icon-size-md();
-
-      @include form-input-icon();
-      @include form-input-bg-x-rtl-support();
     }
 
     // Layout classes
@@ -371,33 +364,11 @@
       @include layout();
       @include control-footer();
     }
-  }
 
-  // - - - - - - - - - - - - - - - - - - - -
-  //     Icons on Elements / Components
-  // - - - - - - - - - - - - - - - - - - - -
-  @if ($icons-elements) {
-    // Process icons lists
-    @include generate-multicolor-icons-selectors(
-      $all-multicolor-lists,
-      $ignored-categories: $ignored-multicolor-categories
-    );
-    @include generate-monochrome-icons-selectors(
-      $all-monochrome-lists,
-      $ignored-categories: $ignored-monochrome-categories
-    );
-
-    // Button icon only
-    @include button-icon-only();
-
-    // Button icon and text
-    @include button-icon-and-text();
-
-    // Button icon after and text
-    @include button-icon-after-and-text();
-
-    // Form input text
-    @include form-input-icon();
+    // Typography classes
+    @if $typography-classes {
+      @include typography-classes();
+    }
   }
 
   // - - - - - - - - - - - - - - - -  - - -
@@ -409,14 +380,9 @@
       @include checkbox();
     }
 
-    // radio-group
-    @if $radio-group {
-      @include radio-group();
-    }
-
-    // tree view
-    @if $tree-view {
-      @include tree-view();
+    // code
+    @if $code {
+      @include code();
     }
 
     // combo box
@@ -429,9 +395,14 @@
       @include dialog();
     }
 
-    // tabular grid
-    @if $tabular-grid {
-      @include tabular-grid();
+    // edit
+    @if $edit {
+      @include form-input();
+    }
+
+    // radio-group
+    @if $radio-group {
+      @include radio-group();
     }
 
     // tab
@@ -439,9 +410,132 @@
       @include tab();
     }
 
-    // code
-    @if $code {
-      @include code();
+    // tabular grid
+    @if $tabular-grid {
+      // TODO: This is a WA to transpile the file
+      @include tabular-grid($icons-path: $icons-path);
+    }
+
+    // tree view
+    @if $tree-view {
+      @include tree-view();
     }
   }
+}
+
+@mixin mercury-only(
+  // Resets
+  $resets: false,
+  $box-sizing-reset: false,
+  $button-reset: false,
+  $input-reset: false,
+  $other-reset: false,
+  $typography-reset: false,
+
+  // body
+  $body: false,
+
+  // Theme
+  $light-theme: false,
+  $dark-theme: false,
+  $prefers-color-scheme-light: false,
+  $prefers-color-scheme-dark: false,
+
+  // Tokens
+  $tokens: false,
+  $border: false,
+  $colors: false,
+  $elevation: false,
+  $font: false,
+  $spacing: false,
+  $timing: false,
+
+  // Icons
+  $icons-path: "./assets/icons/",
+  $ignored-multicolor-categories: (),
+  $ignored-monochrome-categories: (),
+  $icons-variables: false,
+
+  // Font face
+  $font-face: false,
+  $font-face-path: "./assets/fonts/",
+
+  // Base
+  $base-classes: false,
+  $label: false,
+  $button-classes: false,
+  $form-controls-classes: false,
+  $icon-classes: false,
+  $typography-classes: false,
+  $layout-classes: false,
+
+  // Components
+  $components: false,
+  $checkbox: false,
+  $code: false,
+  $combo-box: false,
+  $dialog: false,
+  $edit: false,
+  $radio-group: false,
+  $tab: false,
+  $tabular-grid: false,
+  $tree-view: false
+) {
+  @include mercury(
+    // Resets
+    $resets: $resets,
+    $box-sizing-reset: $box-sizing-reset,
+    $button-reset: $button-reset,
+    $input-reset: $input-reset,
+    $other-reset: $other-reset,
+    $typography-reset: $typography-reset,
+
+    // body
+    $body: $body,
+
+    // Theme
+    $light-theme: $light-theme,
+    $dark-theme: $dark-theme,
+    $prefers-color-scheme-light: $prefers-color-scheme-light,
+    $prefers-color-scheme-dark: $prefers-color-scheme-dark,
+
+    // Tokens
+    $tokens: $tokens,
+    $border: $border,
+    $colors: $colors,
+    $elevation: $elevation,
+    $font: $font,
+    $spacing: $spacing,
+    $timing: $timing,
+
+    // Icons
+    $icons-path: $icons-path,
+    $ignored-multicolor-categories: $ignored-multicolor-categories,
+    $ignored-monochrome-categories: $ignored-monochrome-categories,
+    $icons-variables: $icons-variables,
+
+    // Font face
+    $font-face: $font-face,
+    $font-face-path: $font-face-path,
+
+    // Base
+    $base-classes: $base-classes,
+    $button-classes: $button-classes,
+    $form-controls-classes: $form-controls-classes,
+    $icon-classes: $icon-classes,
+    $layout-classes: $layout-classes,
+    $typography-classes: $typography-classes,
+
+    // Components
+    $components: $components,
+    $checkbox: $checkbox,
+    $code: $code,
+    $combo-box: $combo-box,
+    $dialog: $dialog,
+    $edit: $edit,
+    $radio-group: $radio-group,
+    $tab: $tab,
+    $tabular-grid: $tabular-grid,
+    $tree-view: $tree-view
+  );
 }

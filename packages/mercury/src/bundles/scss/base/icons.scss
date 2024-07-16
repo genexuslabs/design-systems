@@ -1,0 +1,4 @@
+@import "config";
+@import "../../../mercury.scss";
+
+@include mercury-only($icons-path: $icons-path, $icons-variables: true);

@@ -12,8 +12,8 @@
   "scripts": {
     "build": "tsc && npm run icons-svg && npm run icons-sass && npm run build.scss && npm run copy-tasks && npm run showcase.scss",
     "build-no-svg": "tsc && npm run build.scss && npm run copy-tasks",
-    "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && sass test/test.scss dist/css/mercury.css",
-    "test": "sass test/test.scss test/mercury.css",
+    "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && npm run build.bundles",
+    "build.bundles": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/bundles/scss dist/bundles/scss && sass --load-path=src --no-source-map --style compressed dist/bundles/scss:dist/bundles/css",
     "validate.ci": "npm run build-no-svg",
     "icons-svg": "ssg-svg --srcDir=src/icons/svg-source --outDir=src/assets/icons/_generated/ --configFilePath=src/icons/svg-source/.config/color-states.json --showcaseDir=showcase/icons/ --showcaseBaseHref=../assets/icons/ --logDir=./log --objectFilePath=src/assets/MERCURY_ASSETS.ts",
     "icons-sass": "ssg-sass src/assets/icons/ src/icons/_generated/ src/icons/svg-source/.config/color-states.json",
@@ -24,6 +24,7 @@
   "license": "MIT",
   "devDependencies": {
     "@atao60/fse-cli": "^0.1.9",
+    "@genexus/chameleon-controls-library": ">=6.0.0-next.19",
     "@genexus/svg-sass-generator": "1.1.16",
     "chokidar": "^3.6.0",
     "chokidar-cli": "^3.0.0",

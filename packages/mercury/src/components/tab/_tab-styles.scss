@@ -130,22 +130,23 @@
     @extend %tab-caption--selected-block;
   }
 
-  #{$tab-caption__close-button-selector} {
-    &:after {
-      -webkit-mask: none;
-      @extend %tab-caption__close-button--after;
-      @extend %icon__gemini-tools_close_neutral--enabled;
-    }
-    &:hover {
-      @extend %icon__gemini-tools_close_neutral--hover;
-    }
-    &:active {
-      @extend %icon__gemini-tools_close_neutral--active;
-    }
-    &:disabled {
-      @extend %icon__gemini-tools_close_neutral--disabled;
-    }
-  }
+  // WA to transpile the file
+  // #{$tab-caption__close-button-selector} {
+  //   &:after {
+  //     -webkit-mask: none;
+  //     @extend %tab-caption__close-button--after;
+  //     @extend %icon__gemini-tools_close_neutral--enabled;
+  //   }
+  //   &:hover {
+  //     @extend %icon__gemini-tools_close_neutral--hover;
+  //   }
+  //   &:active {
+  //     @extend %icon__gemini-tools_close_neutral--active;
+  //   }
+  //   &:disabled {
+  //     @extend %icon__gemini-tools_close_neutral--disabled;
+  //   }
+  // }
 
   #{$tab-list-selector} {
     @extend %tab-list;
