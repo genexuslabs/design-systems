@@ -18,9 +18,9 @@ export {
   MercuryBundleUtil,
   MercuryBundleUtilFormFull,
   MercuryBundles
-} from "./bundles/bundles";
+} from "./bundles.js";
 
-export { getThemeBundles } from "./bundles/bundles.js";
+export { getThemeBundles } from "./bundles.js";
 
 const ASSETS_BY_VENDOR: { [key in string]: Assets } = {};
 const ALIAS_TO_VENDOR_NAME: { [key in string]: string } = {};
