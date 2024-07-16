@@ -1,3 +1,11 @@
+import {
+  GxImageMultiState,
+  TreeViewImagePathCallback,
+  TreeViewItemModel
+} from "@genexus/chameleon-controls-library";
+
+import { TreeViewItemImageMultiState } from "@genexus/chameleon-controls-library/dist/types/components/tree-view/types";
+
 import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS.js";
 export {
   MercuryBundles,
@@ -67,14 +75,6 @@ export type AssetsColorType = { [key: string]: AssetsIconMetadata };
 export interface AssetsIconMetadata {
   name: string;
 }
-
-export type ImageMultiState = {
-  base: string;
-  hover?: string;
-  active?: string;
-  focus?: string;
-  disabled?: string;
-};
 
 /**
  * Given a vendor and its assets, it register the assets of the vendor. After
@@ -227,7 +227,7 @@ const parseIconMetadata = (
 
 export const getImagePathCallback = (
   iconPath: string
-): ImageMultiState | undefined => {
+): GxImageMultiState | undefined => {
   const { vendor, category, name, colorType } = parseIconMetadata(iconPath);
 
   const assetStates: AssetsColorType | undefined = getAsset(
@@ -239,7 +239,7 @@ export const getImagePathCallback = (
     return undefined;
   }
 
-  const result: ImageMultiState = {
+  const result: GxImageMultiState = {
     base: getCustomFullValue(assetStates.enabled.name, vendor)
   };
 
@@ -258,18 +258,19 @@ export const getImagePathCallback = (
   return result;
 };
 
-export const getTreeViewImagePathCallback = (
-  item: { startImgSrc?: string; endImgSrc?: string },
-  direction: "start" | "end"
-): { default: ImageMultiState; expanded?: ImageMultiState } | undefined => {
+export const getTreeViewImagePathCallback: TreeViewImagePathCallback = (
+  item: TreeViewItemModel,
+  iconDirection: "start" | "end"
+): string | TreeViewItemImageMultiState | undefined => {
   if (
-    (!item.startImgSrc && direction === "start") ||
-    (!item.endImgSrc && direction === "end")
+    (!item.startImgSrc && iconDirection === "start") ||
+    (!item.endImgSrc && iconDirection === "end")
   ) {
     return undefined;
   }
 
-  const imgSrc = direction === "start" ? item.startImgSrc! : item.endImgSrc!;
+  const imgSrc =
+    iconDirection === "start" ? item.startImgSrc! : item.endImgSrc!;
 
   // Split the path into the collapsed (default) and expanded
   const collapsedAndExpandedSrc = imgSrc.split(EXPANDED_SEPARATOR);
