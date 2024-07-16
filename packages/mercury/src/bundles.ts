@@ -49,12 +49,12 @@ type BundleNames =
   | MercuryBundleUtilFormFull;
 
 const getThemeModelItem = <T extends BundleNames>(
-  assetsPath: string,
+  basePath: string,
   bundleName: T
 ) =>
   ({
     name: bundleName,
-    url: `${assetsPath}css/${bundleName}.css`
+    url: `${basePath}${bundleName}.css`
   } as const);
 
 /**
