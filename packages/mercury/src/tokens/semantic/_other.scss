@@ -93,8 +93,8 @@
   --mer-control-regular__block-size: 26px;
 
   // size: tiny: checkbox, radio-button, etc...
-  --mer-control-tiny__block-size: var(--mer-control-regular__block-size);
-  --mer-control-tiny__inline-size: var(--mer-control-regular__block-size);
+  --mer-control-tiny__block-size: var(--mer-spacing--md);
+  --mer-control-tiny__inline-size: var(--mer-spacing--md);
   --mer-control-tiny__border-radius: var(--mer-border__radius--2xs);
 
   // - - - - - - - States - - - - - - -
@@ -108,11 +108,19 @@
   /*----------------------
   Label
   ----------------------*/
-  // space between label and control
-  --mer-label__space: var(--mer-spacing--xs);
-  --mer-label__font-size: inherit;
+  --mer-label__gap--inline: var(
+    --mer-spacing--xs
+  ); // inline gap between label and control
+  --mer-label__gap--block: var(
+    --mer-spacing--xs
+  ); // block gap between label and control
+  --mer-label__font-size: var(--mer-font__size--3xs);
+  --mer-label__font-family: var(--mer-font-family--body);
   --mer-label__font-weight: var(--mer-font__weight--semi-bold);
-  --mer-label__color: inherit;
+  --mer-label__line-height: var(--mer-line-height--regular);
+  --mer-label__color--enabled: var(--mer-text__neutral);
+  --mer-label__color--hover: var(--mer-text__highlighted);
+  --mer-label__color--disabled: var(--mer-text__primary--disabled);
 
   /*----------------------
   Window
