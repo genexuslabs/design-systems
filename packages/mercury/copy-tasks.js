@@ -5,23 +5,27 @@ import * as fs from "fs";
 Steps:
 
 Step 1: Copy 'src/assets/' to 'dist/assets/', except from '_generated' directory
-(we don't want '_generated' in the /dist, only the folders inside '_generated')
+(we don't want '_generated' in the /dist, only the folders inside '_generated').
 
-Step 2: Copy 'src/assets/icons/_generated/*' to 'dist/assets/icons/'
+Step 2: Copy 'src/assets/icons/_generated/*' to 'dist/assets/icons/'.
 
-Step 3: Copy generated icons to 'showcase/assets/icons/' as well so that the showcase folder
-can be distributed with its own icons, independently of 'dist/assets/icons'
+Step 3: Copy generated icons to 'showcase/assets/icons/' as well so that the
+showcase folder can be distributed with its own icons, independently of
+'dist/assets/icons'.
 
-Step 4: Copy "dist/css/" to 'showcase/css/' as well so that the showcase folder
-can be distributed with its own css/, independently of 'dist/css/'
+Step 4: Copy 'dist/css/' to 'showcase/css/' as well so that the showcase folder
+can be distributed with its own css/, independently of 'dist/css/'.
 
-Step 5: Copy "dist/assets/fonts/" to 'showcase/assets/fonts/' as well so that the showcase folder
-can be distributed with its own fonts/, independently of 'dist/assets/fonts/'
+Step 5: Copy 'dist/assets/fonts/' to 'showcase/assets/fonts/' as well so that
+the showcase folder can be distributed with its own fonts, independently of
+'dist/assets/fonts/'.
 
-Step 6: Copy 'dist/assets/MERCURY_ASSETS.js' to 'showcase/assets/scripts/MERCURY_ASSETS.js' 
+Step 6: Copy 'dist/assets/MERCURY_ASSETS.js' to 'showcase/assets/scripts/
+MERCURY_ASSETS.js'.
 
-Note: /dist/assets-manager.js is also required on "./showcase/assets/scripts/", but it needs "./assets/MERCURY_ASSETS"
-to be updated to "./MERCURY_ASSETS.js", so this file has to be manually copied every time the source changes:
+Note: /dist/assets-manager.js is also required on "./showcase/assets/scripts/",
+but it needs "./assets/MERCURY_ASSETS" to be updated to "./MERCURY_ASSETS.js",
+so this file has to be manually copied every time the source changes:
 /src/assets-manager.ts. This file is not expected to be updated often anyway.
 */
 
