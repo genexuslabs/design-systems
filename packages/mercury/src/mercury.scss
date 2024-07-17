@@ -22,16 +22,15 @@
 @import "./tokens/semantic/item";
 @import "./tokens/semantic/other";
 @import "./tokens/semantic/text";
-@import "./tokens/semantic/accent";
 
 // Base classes
 @import "./base/label/label-styles"; // should be at the top, since other elements use it.
 @import "./base/button/button-styles";
-@import "./base/form-controls/form-input-styles";
 @import "./base/form-controls/form-fieldset-styles";
+@import "./base/form-controls/form-input-styles";
 @import "./base/icons";
-@import "./base/typography/typography-styles";
 @import "./base/layout/layout-styles";
+@import "./base/typography/typography-styles";
 
 // Icons
 @import "./icons/button";
@@ -61,10 +60,10 @@
   $body: true,
 
   // Theme
-  $light-theme: true,
   $dark-theme: true,
-  $prefers-color-scheme-light: false,
+  $light-theme: true,
   $prefers-color-scheme-dark: false,
+  $prefers-color-scheme-light: false,
 
   // Tokens
   $tokens: true,
@@ -77,7 +76,6 @@
 
   // Icons
   $icons-path: "./assets/icons/",
-  $icons-elements: true,
   $icons-variables: true,
   $icons-placeholders: true,
 
@@ -88,7 +86,7 @@
   // Base
   $base-classes: true,
   $button-classes: true,
-  $form-controls-classes: true,
+  $form-control-classes: true,
   $icon-classes: true,
   $layout-classes: true,
   $typography-classes: true,
@@ -99,8 +97,8 @@
   $code: true,
   $combo-box: true,
   $dialog: true,
-  $image: true,
   $edit: true,
+  $image: true,
   $radio-group: true,
   $tab: true,
   $tabular-grid: true,
@@ -340,18 +338,20 @@
       // Button tertiary
       @include button-tertiary();
 
-      // Button icon only
-      @include button-icon-only();
+      @if $icon-classes {
+        // Button icon only
+        @include button-icon-only();
 
-      // Button icon and text
-      @include button-icon-and-text();
+        // Button icon and text
+        @include button-icon-and-text();
+      }
 
       // Button icon after and text
       @include button-icon-after-and-text();
     }
 
     // Form control classes
-    @if $form-controls-classes {
+    @if $form-control-classes {
       @include fieldset();
       @include label();
     }
@@ -374,81 +374,59 @@
     }
   }
 
-  // - - - - - - - - - - - - - - - - - - - -
-  //     Icons on Elements / Components
-  // - - - - - - - - - - - - - - - - - - - -
-
-  @if ($icons-elements) {
-    // Button icon only
-    @include button-icon-only();
-
-    // Button icon and text
-    @include button-icon-and-text();
-
-    // Button icon after and text
-    @include button-icon-after-and-text();
-  }
-
   // - - - - - - - - - - - - - - - -  - - -
   //               Components
   // - - - - - - - - - - - - - - - - - - -
 
-  @if $components {
-    // checkbox
-    @if $checkbox {
-      @include checkbox();
-    }
+  // checkbox
+  @if $checkbox {
+    @include checkbox();
+  }
 
-    // code
-    @if $code {
-      @include code();
-    }
+  // code
+  @if $code {
+    @include code();
+  }
 
-    // combo box
-    @if $combo-box {
-      @include combo-box();
-    }
+  // combo box
+  @if $combo-box {
+    @include combo-box();
+  }
 
-    // dialog
-    @if $dialog {
-      @include dialog();
-    }
+  // dialog
+  @if $dialog {
+    @include dialog();
+  }
 
-    // image
-    @if $image {
-      @include icon();
-    }
+  // edit
+  @if $edit {
+    @include form-input();
+  }
 
-    // tabular grid
-    @if $tabular-grid {
-      @include tabular-grid();
-    }
+  // image
+  @if $image {
+    @include icon();
+  }
 
-    // edit
-    @if $edit {
-      @include form-input();
-    }
+  // radio-group
+  @if $radio-group {
+    @include radio-group();
+  }
 
-    // radio-group
-    @if $radio-group {
-      @include radio-group();
-    }
+  // tab
+  @if $tab {
+    @include tab();
+  }
 
-    // tab
-    @if $tab {
-      @include tab();
-    }
+  // tabular grid
+  @if $tabular-grid {
+    // TODO: This is a WA to transpile the file
+    @include tabular-grid($icons-path: $icons-path);
+  }
 
-    // tabular grid
-    @if $tabular-grid {
-      // TODO: This is a WA to transpile the file
-      @include tabular-grid($icons-path: $icons-path);
-    }
-
-    // tree view
-    @if $tree-view {
-      @include tree-view();
-    }
+  // tree view
+  @if $tree-view {
+    @include tree-view();
   }
 }
 
@@ -465,10 +443,10 @@
   $body: false,
 
   // Theme
-  $light-theme: false,
   $dark-theme: false,
-  $prefers-color-scheme-light: false,
+  $light-theme: false,
   $prefers-color-scheme-dark: false,
+  $prefers-color-scheme-light: false,
 
   // Tokens
   $tokens: false,
@@ -482,6 +460,7 @@
   // Icons
   $icons-path: "./assets/icons/",
   $icons-variables: false,
+  $icons-placeholders: false,
 
   // Font face
   $font-face: false,
@@ -489,12 +468,11 @@
 
   // Base
   $base-classes: false,
-  $label: false,
   $button-classes: false,
-  $form-controls-classes: false,
+  $form-control-classes: false,
   $icon-classes: false,
-  $typography-classes: false,
   $layout-classes: false,
+  $typography-classes: false,
 
   // Components
   $components: false,
@@ -503,6 +481,7 @@
   $combo-box: false,
   $dialog: false,
   $edit: false,
+  $image: false,
   $radio-group: false,
   $tab: false,
   $tabular-grid: false,
@@ -521,10 +500,10 @@
     $body: $body,
 
     // Theme
-    $light-theme: $light-theme,
     $dark-theme: $dark-theme,
-    $prefers-color-scheme-light: $prefers-color-scheme-light,
+    $light-theme: $light-theme,
     $prefers-color-scheme-dark: $prefers-color-scheme-dark,
+    $prefers-color-scheme-light: $prefers-color-scheme-light,
 
     // Tokens
     $tokens: $tokens,
@@ -538,6 +517,7 @@
     // Icons
     $icons-path: $icons-path,
     $icons-variables: $icons-variables,
+    $icons-placeholders: $icons-placeholders,
 
     // Font face
     $font-face: $font-face,
@@ -546,7 +526,7 @@
     // Base
     $base-classes: $base-classes,
     $button-classes: $button-classes,
-    $form-controls-classes: $form-controls-classes,
+    $form-control-classes: $form-control-classes,
     $icon-classes: $icon-classes,
     $layout-classes: $layout-classes,
     $typography-classes: $typography-classes,
