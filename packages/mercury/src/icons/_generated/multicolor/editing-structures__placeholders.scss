@@ -1,0 +1,355 @@
+%icon__editing-structures {
+      
+
+  /* =================================
+  LIGHT PLACEHOLDERS SELECTORS
+  ================================= */
+  
+
+    /* - - - - - - - - - - - - 
+    user-index.svg 
+    - - - - - - - - - - - - */
+    
+    &_user-index--enabled {
+      --icon-path: var(--icon-mer__editing-structures_user-index--enabled);
+    }
+    &_user-index--hover {
+      --icon-path: var(--icon-mer__editing-structures_user-index--hover);
+    }
+    &_user-index--active {
+      --icon-path: var(--icon-mer__editing-structures_user-index--active);
+    }
+    &_user-index--disabled {
+      --icon-path: var(--icon-mer__editing-structures_user-index--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    system-index.svg 
+    - - - - - - - - - - - - */
+    
+    &_system-index--enabled {
+      --icon-path: var(--icon-mer__editing-structures_system-index--enabled);
+    }
+    &_system-index--hover {
+      --icon-path: var(--icon-mer__editing-structures_system-index--hover);
+    }
+    &_system-index--active {
+      --icon-path: var(--icon-mer__editing-structures_system-index--active);
+    }
+    &_system-index--disabled {
+      --icon-path: var(--icon-mer__editing-structures_system-index--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    redundant-attribute.svg 
+    - - - - - - - - - - - - */
+    
+    &_redundant-attribute--enabled {
+      --icon-path: var(--icon-mer__editing-structures_redundant-attribute--enabled);
+    }
+    &_redundant-attribute--hover {
+      --icon-path: var(--icon-mer__editing-structures_redundant-attribute--hover);
+    }
+    &_redundant-attribute--active {
+      --icon-path: var(--icon-mer__editing-structures_redundant-attribute--active);
+    }
+    &_redundant-attribute--disabled {
+      --icon-path: var(--icon-mer__editing-structures_redundant-attribute--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    platforms.svg 
+    - - - - - - - - - - - - */
+    
+    &_platforms--enabled {
+      --icon-path: var(--icon-mer__editing-structures_platforms--enabled);
+    }
+    &_platforms--hover {
+      --icon-path: var(--icon-mer__editing-structures_platforms--hover);
+    }
+    &_platforms--active {
+      --icon-path: var(--icon-mer__editing-structures_platforms--active);
+    }
+    &_platforms--disabled {
+      --icon-path: var(--icon-mer__editing-structures_platforms--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    logical-attributes.svg 
+    - - - - - - - - - - - - */
+    
+    &_logical-attributes--enabled {
+      --icon-path: var(--icon-mer__editing-structures_logical-attributes--enabled);
+    }
+    &_logical-attributes--hover {
+      --icon-path: var(--icon-mer__editing-structures_logical-attributes--hover);
+    }
+    &_logical-attributes--active {
+      --icon-path: var(--icon-mer__editing-structures_logical-attributes--active);
+    }
+    &_logical-attributes--disabled {
+      --icon-path: var(--icon-mer__editing-structures_logical-attributes--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    formula-redundant.svg 
+    - - - - - - - - - - - - */
+    
+    &_formula-redundant--enabled {
+      --icon-path: var(--icon-mer__editing-structures_formula-redundant--enabled);
+    }
+    &_formula-redundant--hover {
+      --icon-path: var(--icon-mer__editing-structures_formula-redundant--hover);
+    }
+    &_formula-redundant--active {
+      --icon-path: var(--icon-mer__editing-structures_formula-redundant--active);
+    }
+    &_formula-redundant--disabled {
+      --icon-path: var(--icon-mer__editing-structures_formula-redundant--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    default.svg 
+    - - - - - - - - - - - - */
+    
+    &_default--enabled {
+      --icon-path: var(--icon-mer__editing-structures_default--enabled);
+    }
+    &_default--hover {
+      --icon-path: var(--icon-mer__editing-structures_default--hover);
+    }
+    &_default--active {
+      --icon-path: var(--icon-mer__editing-structures_default--active);
+    }
+    &_default--disabled {
+      --icon-path: var(--icon-mer__editing-structures_default--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    attribute-key.svg 
+    - - - - - - - - - - - - */
+    
+    &_attribute-key--enabled {
+      --icon-path: var(--icon-mer__editing-structures_attribute-key--enabled);
+    }
+    &_attribute-key--hover {
+      --icon-path: var(--icon-mer__editing-structures_attribute-key--hover);
+    }
+    &_attribute-key--active {
+      --icon-path: var(--icon-mer__editing-structures_attribute-key--active);
+    }
+    &_attribute-key--disabled {
+      --icon-path: var(--icon-mer__editing-structures_attribute-key--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    attribute-formula.svg 
+    - - - - - - - - - - - - */
+    
+    &_attribute-formula--enabled {
+      --icon-path: var(--icon-mer__editing-structures_attribute-formula--enabled);
+    }
+    &_attribute-formula--hover {
+      --icon-path: var(--icon-mer__editing-structures_attribute-formula--hover);
+    }
+    &_attribute-formula--active {
+      --icon-path: var(--icon-mer__editing-structures_attribute-formula--active);
+    }
+    &_attribute-formula--disabled {
+      --icon-path: var(--icon-mer__editing-structures_attribute-formula--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    attribute-description.svg 
+    - - - - - - - - - - - - */
+    
+    &_attribute-description--enabled {
+      --icon-path: var(--icon-mer__editing-structures_attribute-description--enabled);
+    }
+    &_attribute-description--hover {
+      --icon-path: var(--icon-mer__editing-structures_attribute-description--hover);
+    }
+    &_attribute-description--active {
+      --icon-path: var(--icon-mer__editing-structures_attribute-description--active);
+    }
+    &_attribute-description--disabled {
+      --icon-path: var(--icon-mer__editing-structures_attribute-description--disabled);
+    }
+
+  
+  /* =================================
+  DARK PLACEHOLDERS SELECTORS
+  ================================= */
+  
+
+    /* - - - - - - - - - - - - 
+    user-index.svg 
+    - - - - - - - - - - - - */
+    
+    &_user-index--enabled {
+      --icon-path: var(--icon-mer__editing-structures_user-index--enabled);
+    }
+    &_user-index--hover {
+      --icon-path: var(--icon-mer__editing-structures_user-index--hover);
+    }
+    &_user-index--active {
+      --icon-path: var(--icon-mer__editing-structures_user-index--active);
+    }
+    &_user-index--disabled {
+      --icon-path: var(--icon-mer__editing-structures_user-index--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    system-index.svg 
+    - - - - - - - - - - - - */
+    
+    &_system-index--enabled {
+      --icon-path: var(--icon-mer__editing-structures_system-index--enabled);
+    }
+    &_system-index--hover {
+      --icon-path: var(--icon-mer__editing-structures_system-index--hover);
+    }
+    &_system-index--active {
+      --icon-path: var(--icon-mer__editing-structures_system-index--active);
+    }
+    &_system-index--disabled {
+      --icon-path: var(--icon-mer__editing-structures_system-index--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    redundant-attribute.svg 
+    - - - - - - - - - - - - */
+    
+    &_redundant-attribute--enabled {
+      --icon-path: var(--icon-mer__editing-structures_redundant-attribute--enabled);
+    }
+    &_redundant-attribute--hover {
+      --icon-path: var(--icon-mer__editing-structures_redundant-attribute--hover);
+    }
+    &_redundant-attribute--active {
+      --icon-path: var(--icon-mer__editing-structures_redundant-attribute--active);
+    }
+    &_redundant-attribute--disabled {
+      --icon-path: var(--icon-mer__editing-structures_redundant-attribute--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    platforms.svg 
+    - - - - - - - - - - - - */
+    
+    &_platforms--enabled {
+      --icon-path: var(--icon-mer__editing-structures_platforms--enabled);
+    }
+    &_platforms--hover {
+      --icon-path: var(--icon-mer__editing-structures_platforms--hover);
+    }
+    &_platforms--active {
+      --icon-path: var(--icon-mer__editing-structures_platforms--active);
+    }
+    &_platforms--disabled {
+      --icon-path: var(--icon-mer__editing-structures_platforms--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    logical-attributes.svg 
+    - - - - - - - - - - - - */
+    
+    &_logical-attributes--enabled {
+      --icon-path: var(--icon-mer__editing-structures_logical-attributes--enabled);
+    }
+    &_logical-attributes--hover {
+      --icon-path: var(--icon-mer__editing-structures_logical-attributes--hover);
+    }
+    &_logical-attributes--active {
+      --icon-path: var(--icon-mer__editing-structures_logical-attributes--active);
+    }
+    &_logical-attributes--disabled {
+      --icon-path: var(--icon-mer__editing-structures_logical-attributes--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    formula-redundant.svg 
+    - - - - - - - - - - - - */
+    
+    &_formula-redundant--enabled {
+      --icon-path: var(--icon-mer__editing-structures_formula-redundant--enabled);
+    }
+    &_formula-redundant--hover {
+      --icon-path: var(--icon-mer__editing-structures_formula-redundant--hover);
+    }
+    &_formula-redundant--active {
+      --icon-path: var(--icon-mer__editing-structures_formula-redundant--active);
+    }
+    &_formula-redundant--disabled {
+      --icon-path: var(--icon-mer__editing-structures_formula-redundant--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    default.svg 
+    - - - - - - - - - - - - */
+    
+    &_default--enabled {
+      --icon-path: var(--icon-mer__editing-structures_default--enabled);
+    }
+    &_default--hover {
+      --icon-path: var(--icon-mer__editing-structures_default--hover);
+    }
+    &_default--active {
+      --icon-path: var(--icon-mer__editing-structures_default--active);
+    }
+    &_default--disabled {
+      --icon-path: var(--icon-mer__editing-structures_default--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    attribute-key.svg 
+    - - - - - - - - - - - - */
+    
+    &_attribute-key--enabled {
+      --icon-path: var(--icon-mer__editing-structures_attribute-key--enabled);
+    }
+    &_attribute-key--hover {
+      --icon-path: var(--icon-mer__editing-structures_attribute-key--hover);
+    }
+    &_attribute-key--active {
+      --icon-path: var(--icon-mer__editing-structures_attribute-key--active);
+    }
+    &_attribute-key--disabled {
+      --icon-path: var(--icon-mer__editing-structures_attribute-key--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    attribute-formula.svg 
+    - - - - - - - - - - - - */
+    
+    &_attribute-formula--enabled {
+      --icon-path: var(--icon-mer__editing-structures_attribute-formula--enabled);
+    }
+    &_attribute-formula--hover {
+      --icon-path: var(--icon-mer__editing-structures_attribute-formula--hover);
+    }
+    &_attribute-formula--active {
+      --icon-path: var(--icon-mer__editing-structures_attribute-formula--active);
+    }
+    &_attribute-formula--disabled {
+      --icon-path: var(--icon-mer__editing-structures_attribute-formula--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    attribute-description.svg 
+    - - - - - - - - - - - - */
+    
+    &_attribute-description--enabled {
+      --icon-path: var(--icon-mer__editing-structures_attribute-description--enabled);
+    }
+    &_attribute-description--hover {
+      --icon-path: var(--icon-mer__editing-structures_attribute-description--hover);
+    }
+    &_attribute-description--active {
+      --icon-path: var(--icon-mer__editing-structures_attribute-description--active);
+    }
+    &_attribute-description--disabled {
+      --icon-path: var(--icon-mer__editing-structures_attribute-description--disabled);
+    }
+  
+    }
