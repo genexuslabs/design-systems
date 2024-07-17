@@ -35,7 +35,6 @@
 
 // Icons
 @import "./icons/button";
-@import "./icons/form-input";
 
 // Components
 @import "./components/checkbox/checkbox-styles";
@@ -78,9 +77,9 @@
 
   // Icons
   $icons-path: "./assets/icons/",
-  $ignored-multicolor-categories: (),
-  $ignored-monochrome-categories: (),
+  $icons-elements: true,
   $icons-variables: true,
+  $icons-placeholders: true,
 
   // Font face
   $font-face: true,
@@ -101,7 +100,6 @@
   $combo-box: true,
   $dialog: true,
   $image: true,
-  $checkbox: true,
   $edit: true,
   $radio-group: true,
   $tab: true,
@@ -112,7 +110,10 @@
   //                  Icons
   // - - - - - - - - - - - - - - - - - - - -
   @if $icons-variables {
-    @import "./icons/_generated/categories-imports";
+    @import "./icons/_generated/categories-variables-imports";
+  }
+  @if $icons-placeholders {
+    @import "./icons/_generated/categories-placeholders-imports";
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -386,9 +387,6 @@
 
     // Button icon after and text
     @include button-icon-after-and-text();
-
-    // Form input text
-    @include form-input-icon();
   }
 
   // - - - - - - - - - - - - - - - -  - - -
@@ -483,8 +481,6 @@
 
   // Icons
   $icons-path: "./assets/icons/",
-  $ignored-multicolor-categories: (),
-  $ignored-monochrome-categories: (),
   $icons-variables: false,
 
   // Font face
@@ -541,8 +537,6 @@
 
     // Icons
     $icons-path: $icons-path,
-    $ignored-multicolor-categories: $ignored-multicolor-categories,
-    $ignored-monochrome-categories: $ignored-monochrome-categories,
     $icons-variables: $icons-variables,
 
     // Font face
