@@ -11,19 +11,10 @@ let topBarRef = null;
 const HTML = document.querySelector("html");
 const HEAD = document.head;
 const BODY = document.querySelector("body");
+const SIDEBAR_DATA_ATTR = "data-sidebar";
 let PARENT_NAV_SIDEBAR; // a reference if the page has sidebar
 let CURRENT_PAGE_NAV_ITEM; // a reference the navigation item for the actual actual page.
 let PAGE_ARTICLES; // a reference to all the page ".article[nav]"
-
-const includeChameleonEsm = () => {
-  const chameleonEsm = document.createElement("script");
-  chameleonEsm.setAttribute("type", "module");
-  chameleonEsm.setAttribute(
-    "src",
-    "https://unpkg.com/@genexus/chameleon-controls-library@latest/dist/chameleon/chameleon.esm.js"
-  );
-  HEAD.appendChild(chameleonEsm);
-};
 
 const includeStyles = () => {
   //reset styles
@@ -129,7 +120,7 @@ const getNavbarItems = () => {
 const includeSidebarPageInternalNav = () => {
   // This is the navigation items for the current page articles.
   // Let's call this the internal navigation.
-  const includeSidebar = BODY.hasAttribute("sidebar");
+  const includeSidebar = BODY.getAttribute(SIDEBAR_DATA_ATTR);
   if (includeSidebar && CURRENT_PAGE_NAV_ITEM) {
     // CURRENT_PAGE_NAV_ITEM is a reference to the item on the sidebar
     // that refers to the actual page.
@@ -232,8 +223,8 @@ const generateArticleId = (title, i) => {
 const includeSidebarNav = async () => {
   // This is the navigation items for the showcase html pages.
   // Let's call this the external navigation.
-
-  const includeSidebar = BODY.hasAttribute("sidebar");
+  console.log("hola");
+  const includeSidebar = BODY.hasAttribute(SIDEBAR_DATA_ATTR);
   if (includeSidebar) {
     const navbarItems = await getNavbarItems();
     if (navbarItems && navbarItems.items.length) {
@@ -276,7 +267,7 @@ const includeSidebar = () => {
   // the following js is credit to chat-gpt.
   // I just gave him the html, amazing!
 
-  const includeSidebar = BODY.hasAttribute("sidebar");
+  const includeSidebar = BODY.hasAttribute(SIDEBAR_DATA_ATTR);
   if (includeSidebar) {
     // Create aside element
     const aside = document.createElement("aside");
@@ -415,7 +406,6 @@ const copyToClipBoard = text => {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
-  includeChameleonEsm();
   includeStyles();
   includeFavicon();
   addGoogleFonts();

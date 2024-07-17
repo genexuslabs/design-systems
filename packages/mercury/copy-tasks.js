@@ -4,44 +4,48 @@ import * as fs from "fs";
 /*
 Steps:
 
-Step 1: Copy 'src/assets/' to 'dist/assets/', except from '_generated' directory
+- - - - - - - - - - - - - 
+Copy to /DIST
+- - - - - - - - - - - - - 
+
+Step 1: Copy 'src/assets/', except from '_generated' directory
 (we don't want '_generated' in the /dist, only the folders inside '_generated').
+Step 2: Copy 'src/assets/icons/_generated/*'
 
-Step 2: Copy 'src/assets/icons/_generated/*' to 'dist/assets/icons/'.
+- - - - - - - - - - - - - 
+Copy to /showcase 
+- - - - - - - - - - - - - 
+(all required files should be copied to /showcase, so that the showcase can be
+distributed with absolute independence of /dist).
 
-Step 3: Copy generated icons to 'showcase/assets/icons/' as well so that the
-showcase folder can be distributed with its own icons, independently of
-'dist/assets/icons'.
-
-Step 4: Copy 'dist/css/' to 'showcase/css/' as well so that the showcase folder
-can be distributed with its own css/, independently of 'dist/css/'.
-
-Step 5: Copy 'dist/assets/fonts/' to 'showcase/assets/fonts/' as well so that
-the showcase folder can be distributed with its own fonts, independently of
-'dist/assets/fonts/'.
-
-Step 6: Copy 'dist/assets/MERCURY_ASSETS.js' to 'showcase/assets/scripts/
-MERCURY_ASSETS.js'.
-
-Note: /dist/assets-manager.js is also required on "./showcase/assets/scripts/",
-but it needs "./assets/MERCURY_ASSETS" to be updated to "./MERCURY_ASSETS.js",
-so this file has to be manually copied every time the source changes:
-/src/assets-manager.ts. This file is not expected to be updated often anyway.
+Step 3: Copy generated icons
+Step 4: Copy 'dist/bundles/css/all.css'
+Step 5: Copy 'dist/assets/fonts/'
+Step 6: Copy 'dist/assets-manager.js' 
+Step 7: Copy 'dist/bundles.js' 
+Step 8: Copy 'dist/assets/MERCURY_ASSETS.js' 
 */
 
+const ASSETS_MANAGER_JS = "assets-manager.js";
+const BUNDLES_JS = "bundles.js";
+const MERCURY_ASSETS_JS = "MERCURY_ASSETS.js";
+
 const SVG_SASS_GENERATOR_GENERATED_FOLDER = "_generated";
-const ASSETS_SRC = "./src/assets/";
-const ASSETS_DIST = "./dist/assets/";
-const ASSETS_CSS = "./dist/bundles/css/";
-const ASSETS_FONTS = "./dist/assets/fonts/";
-const GENERATED_ICONS_PATH = path.join(
-  ASSETS_SRC,
+const SRC_ASSETS_DIR = "./src/assets/";
+const GENERATED_ICONS_DIR = path.join(
+  SRC_ASSETS_DIR,
   `icons/${SVG_SASS_GENERATOR_GENERATED_FOLDER}`
 );
-const DIST_ICONS_PATH = path.join(ASSETS_DIST, "icons");
+
+const DIST_ASSETS_DIR = "./dist/assets/";
+const DIST_BUNDLES_CSS_DIR = "./dist/bundles/css/";
+const DIST_FONTS_DIR = "./dist/assets/fonts/";
+const DIST_ICONS_DIR = path.join(DIST_ASSETS_DIR, "icons");
+
 const SHOWCASE_PATH = "showcase/";
-const ASSETS_MANAGER = "assets-manager.js";
-const MERCURY_ASSETS = "MERCURY_ASSETS.js";
+const SHOWCASE_SCRIPTS_DIR = path.join(SHOWCASE_PATH, "assets/scripts");
+const SHOWCASE_ICONS_DIR = path.join(SHOWCASE_PATH, "assets/icons");
+const SHOWCASE_FONTS_DIR = path.join(SHOWCASE_PATH, "assets/fonts");
 
 // Copy Folders
 const copyFolderSync = (source, target) => {
@@ -99,27 +103,30 @@ const copyFileToFolder = (sourceFile, targetFolder) => {
 };
 
 // Step 1:
-copyFolderSync(ASSETS_SRC, ASSETS_DIST);
+copyFolderSync(SRC_ASSETS_DIR, DIST_ASSETS_DIR);
 
 // Step 2
-copyFolderSync(GENERATED_ICONS_PATH, DIST_ICONS_PATH);
+copyFolderSync(GENERATED_ICONS_DIR, DIST_ICONS_DIR);
 
 // Step 3
-copyFolderSync(
-  GENERATED_ICONS_PATH,
-  path.join(SHOWCASE_PATH, "assets", "icons")
-);
+copyFolderSync(GENERATED_ICONS_DIR, path.join(SHOWCASE_ICONS_DIR));
 
 // Step 4
-copyFolderSync(ASSETS_CSS, path.join(SHOWCASE_PATH, "css/"));
+copyFileToFolder(path.join(DIST_BUNDLES_CSS_DIR, "all.css"), SHOWCASE_PATH);
 
 // Step 5
-copyFolderSync(ASSETS_FONTS, path.join(SHOWCASE_PATH, "assets", "fonts"));
+copyFolderSync(DIST_FONTS_DIR, SHOWCASE_FONTS_DIR);
 
 // Step 6
+copyFileToFolder(path.join("dist/", ASSETS_MANAGER_JS), SHOWCASE_SCRIPTS_DIR);
+
+// Step 7
+copyFileToFolder(path.join("dist/", BUNDLES_JS), SHOWCASE_SCRIPTS_DIR);
+
+// Step 8
 copyFileToFolder(
-  path.join("dist", "assets", MERCURY_ASSETS),
-  path.join(SHOWCASE_PATH, "assets", "scripts")
+  path.join(DIST_ASSETS_DIR, MERCURY_ASSETS_JS),
+  path.join(SHOWCASE_SCRIPTS_DIR, "assets")
 );
 
-console.log("copy-task.js copied successfully");
+console.log("copy-tasks.js copied successfully");

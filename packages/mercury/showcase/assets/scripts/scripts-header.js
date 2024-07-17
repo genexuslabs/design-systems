@@ -1,5 +1,13 @@
 import { BUTTON_ICONS } from "./icons-showcase-paths.js";
-import { getImagePathCallback } from "./assets-manager.js";
-// Make all globally accessible
-window.getImagePathCallback = getImagePathCallback;
+// All definitions in this script are used for local testing purposes
+// only. The IDE Web's SDK implements all this and more
+import { defineCustomElements } from "https://unpkg.com/@genexus/chameleon-controls-library@latest/dist/esm/loader.js";
+import { registryProperty } from "https://unpkg.com/@genexus/chameleon-controls-library@latest/dist/esm/index.js";
+import { getImagePathCallbackDefinitions } from "./assets-manager.js";
+
+// Register getImagePath callbacks
+registryProperty("getImagePathCallback", getImagePathCallbackDefinitions);
+
 window.BUTTON_ICONS = BUTTON_ICONS;
+
+defineCustomElements(window);
