@@ -81,7 +81,7 @@ npm i @genexus/mercury
         npm i -D sass
         ```
 
-    2.  Add a config file in your project to determine the path to the assets.  
+    2.  Add a config file (called `config.scss`) in your project to determine the path to the assets.  
         Include the following configuration:
 
         ```scss
