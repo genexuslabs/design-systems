@@ -1,0 +1,24 @@
+@import "config";
+@import "../../../mercury.scss";
+
+@include mercury-only(
+  $body: true,
+
+  $light-theme: true,
+  $dark-theme: true,
+
+  $font-face: true,
+  $font-face-path: $font-face-path,
+
+  $tokens: true,
+  $colors: true,
+  $border: true,
+  $elevation: true,
+  $font: true,
+  $spacing: true,
+  $timing: true,
+
+  $resets: true,
+  // TODO: By the time we remove TheiaJS, this reset will likely no longer be necessary
+  $input-reset: true
+);

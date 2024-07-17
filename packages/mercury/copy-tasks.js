@@ -28,7 +28,7 @@ to be updated to "./MERCURY_ASSETS.js", so this file has to be manually copied e
 const SVG_SASS_GENERATOR_GENERATED_FOLDER = "_generated";
 const ASSETS_SRC = "./src/assets/";
 const ASSETS_DIST = "./dist/assets/";
-const ASSETS_CSS = "./dist/css/";
+const ASSETS_CSS = "./dist/bundles/css/";
 const ASSETS_FONTS = "./dist/assets/fonts/";
 const GENERATED_ICONS_PATH = path.join(
   ASSETS_SRC,
