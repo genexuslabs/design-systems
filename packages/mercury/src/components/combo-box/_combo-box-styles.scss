@@ -17,7 +17,7 @@
 }
 
 %combo-box__group-header {
-  @extend %item-styles-header;
+  @extend %control-item-header;
   &-expandable--hover {
     background-color: var(--mer-item__bg-color--selected);
     color: var(--mer-item__color--hover);
@@ -25,7 +25,7 @@
 }
 
 %combo-box__item {
-  @extend %item-styles-base;
+  @extend %control-item-base;
   @extend %item-typography-large;
   @extend %item-layout-regular;
   @extend %item-border-inline-block;
