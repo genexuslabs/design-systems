@@ -8,15 +8,6 @@ dependencies:
   '@atao60/fse-cli':
     specifier: ^0.1.9
     version: 0.1.9
-  '@types/cheerio':
-    specifier: ^0.22.35
-    version: 0.22.35
-  '@types/minimist':
-    specifier: ^1.2.5
-    version: 1.2.5
-  '@types/stringify-object':
-    specifier: ^4.0.5
-    version: 4.0.5
   ajv:
     specifier: ^8.12.0
     version: 8.13.0
@@ -50,6 +41,17 @@ dependencies:
   typescript:
     specifier: ^5.4.4
     version: 5.4.5
+
+devDependencies:
+  '@types/cheerio':
+    specifier: ^0.22.35
+    version: 0.22.35
+  '@types/minimist':
+    specifier: ^1.2.5
+    version: 1.2.5
+  '@types/stringify-object':
+    specifier: ^4.0.5
+    version: 4.0.5
 
 packages:
 
@@ -145,21 +147,20 @@ packages:
     resolution: {integrity: sha512-yD57BchKRvTV+JD53UZ6PD8KWY5g5rvvMLRnZR3EQBCZXiDT/HR+pKpMzFGlWNhFrXlo7VPZXtKvIEwZkAWOIA==}
     dependencies:
       '@types/node': 20.12.12
-    dev: false
+    dev: true
 
   /@types/minimist@1.2.5:
     resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
-    dev: false
+    dev: true
 
   /@types/node@20.12.12:
     resolution: {integrity: sha512-eWLDGF/FOSPtAvEqeRAQ4C8LSA7M1I7i0ky1I8U7kD1J5ITyW3AsRhQrKVoWf5pFKZ2kILsEGJhsI9r93PYnOw==}
     dependencies:
       undici-types: 5.26.5
-    dev: false
 
   /@types/stringify-object@4.0.5:
     resolution: {integrity: sha512-TzX5V+njkbJ8iJ0mrj+Vqveep/1JBH4SSA3J2wYrE1eUrOhdsjTBCb0kao4EquSQ8KgPpqY4zSVP2vCPWKBElg==}
-    dev: false
+    dev: true
 
   /acorn-walk@8.3.2:
     resolution: {integrity: sha512-cjkyv4OtNCIeqhHrfS81QWXoCBPExR/J62oyEqepVw8WaQeSqpW2uhuLPh1m9eWhDuOo/jUXVTlifvesOWp/4A==}
@@ -1141,7 +1142,6 @@ packages:
 
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
-    dev: false
 
   /universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}

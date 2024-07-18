@@ -27,9 +27,12 @@ const OUTPUT_PATH = await args.outDir;
 const COLOR_STATES_PATH = await args.configFilePath;
 const VENDOR_ALIAS = await args.vendorAlias;
 const ALL_LISTS_FILENAME = "categories-lists.scss";
-const CATEGORIES_IMPORTS_FILENAME = "categories-imports.scss";
-const MIXINS_FILENAME = "svg-sass-mixins.scss";
-
+const CATEGORIES_VARIABLES_IMPORTS_FILENAME =
+  "categories-variables-imports.scss";
+const CATEGORIES_PLACEHOLDERS_IMPORTS_FILENAME =
+  "categories-placeholders-imports.scss";
+const CATEGORY_VARIABLES_FILENAME_SUFFIX = "__variables";
+const CATEGORY_PLACEHOLDERS_FILENAME_SUFFIX = "__placeholders";
 const ICON_PREFIX = VENDOR_ALIAS ? `--icon-${VENDOR_ALIAS}` : `--icon`;
 
 // Start fresh (delete current output directory)
@@ -68,8 +71,9 @@ export function processIconsSass(sourceDir: string, iconsArray: string[]) {
   };
   processIconsCatalog(iconsCatalog, categoriesListsObject);
   saveIconsListsOnDisk(categoriesListsObject);
-  saveIconsCategoriesImportsOnDisk();
-  saveMixinsOnDisk();
+  saveIconsCategoriesImportsOnDisk("variables");
+  saveIconsCategoriesImportsOnDisk("placeholders");
+  // saveMixinsOnDisk();
 }
 
 const addIconInCatalog = (
@@ -163,12 +167,12 @@ const processCatalogCategory = (
   saveSassOnDisk(
     sassFilesContent.customPropertiesSass,
     iconType,
-    `${categoryName}__variables`
+    `${categoryName}${CATEGORY_VARIABLES_FILENAME_SUFFIX}`
   );
   saveSassOnDisk(
     sassFilesContent.placeHoldersSelectorsSass,
     iconType,
-    `${categoryName}__placeholders`
+    `${categoryName}${CATEGORY_PLACEHOLDERS_FILENAME_SUFFIX}`
   );
 };
 
@@ -393,66 +397,43 @@ Multicolor lists
   return true;
 };
 
-const saveIconsCategoriesImportsOnDisk = (): boolean => {
+const saveIconsCategoriesImportsOnDisk = (
+  fileType: "variables" | "placeholders"
+): boolean => {
   let output = ``;
+  const fileName =
+    fileType === "variables"
+      ? CATEGORIES_VARIABLES_IMPORTS_FILENAME
+      : CATEGORIES_PLACEHOLDERS_IMPORTS_FILENAME;
+  const fileNamSuffix =
+    fileType === "variables"
+      ? CATEGORY_VARIABLES_FILENAME_SUFFIX
+      : CATEGORY_PLACEHOLDERS_FILENAME_SUFFIX;
 
   output += `\n/*multicolor lists*/`;
   multicolorCategoriesList.forEach((category) => {
-    output += `\n@import "./multicolor/${category}";`;
+    output += `\n@import "./multicolor/${category}${fileNamSuffix}";`;
   });
 
   output += `\n\n/*monochrome lists*/`;
   monochromeCategoriesList.forEach((category) => {
-    output += `\n@import "./monochrome/${category}";`;
+    output += `\n@import "./monochrome/${category}${fileNamSuffix}";`;
   });
 
-  const filePath = path.join(OUTPUT_PATH, CATEGORIES_IMPORTS_FILENAME);
+  const filePath = path.join(OUTPUT_PATH, fileName);
 
   mkdir(OUTPUT_PATH, { recursive: true }, function (err) {
     try {
       // Write the content to the file synchronously
       writeFileSync(filePath, output);
     } catch (err) {
-      const msg = `There was an error saving ${CATEGORIES_IMPORTS_FILENAME} the icon on disk. error: ${err}`;
+      const msg = `There was an error saving ${fileName} the icon on disk. error: ${err}`;
       console.error(`${RED} ${msg} ${RESET_COLOR}`);
       return false;
     }
   });
 
   return true;
-};
-
-const saveMixinsOnDisk = () => {
-  //Icons selectors mixins
-  const output = getIconsSelectorsMixins();
-
-  const filePath = path.join(OUTPUT_PATH, MIXINS_FILENAME);
-
-  mkdir(OUTPUT_PATH, { recursive: true }, function (err) {
-    try {
-      // Write the content to the file synchronously
-      writeFileSync(filePath, output);
-    } catch (err) {
-      const msg = `There was an error saving ${MIXINS_FILENAME} the icon on disk. error: ${err}`;
-      console.error(`${RED} ${msg} ${RESET_COLOR}`);
-      return false;
-    }
-  });
-
-  return true;
-};
-
-/**
- * @description It includes a couple of mixins (one for monochrome icons, and another for
- * multicolor icons that will allow the final user to generate css classes for each icon.
- * It also includes a couple of lists and functions that are required for the mixing to work.
- */
-const getIconsSelectorsMixins = () => {
-  let output = ``;
-  output += `@import "${ALL_LISTS_FILENAME}"; \n\n`;
-  output += getMonochromeSassConstructs();
-  output += getMulticolorSassConstructs();
-  return output;
 };
 
 const convertObjectCategoriesToSassLists = (
@@ -469,19 +450,6 @@ const convertObjectCategoriesToSassLists = (
 $${category}: ${iconsString};`;
   }
   return sassString;
-};
-
-/* - - - - - - - - - - - - - - - - - - - - -
-MONOCHROME CONSTRUCTS
-- - - - - - - - - - - - - - - - - - - - - */
-
-const getMonochromeSassConstructs = () => {
-  let output = `/* - - - - - - - - - - - - - - - - - - 
-MONOCHROME CONSTRUCTS
-- - - - - - - - - - - - - - - - - - */`;
-  output += monochromeMapFunctions();
-  output += monochromeSelectorsMixin();
-  return output;
 };
 
 const monochromeColorsListString = (): string => {
@@ -582,50 +550,6 @@ const monochromeSelectorsMixin = (): string => {
                   --icon#{$prefix-category-separator}#{$category-name}#{$category-icon-separator}#{$icon}#{$icon-color-separator}#{$color}#{$color-state-separator}#{$state}
                 );
               }
-            }
-          }
-        }
-      }
-    }
-  }
-}`;
-};
-
-/* - - - - - - - - - - - - - - - - - - - - -
-MULTICOLOR CONSTRUCTS
-- - - - - - - - - - - - - - - - - - - - - */
-
-const getMulticolorSassConstructs = () => {
-  let output = `\n\n/* - - - - - - - - - - - - - - - - - - 
-MULTICOLOR CONSTRUCTS
-- - - - - - - - - - - - - - - - - - */`;
-  output += multicolorSelectorsMixin();
-  return output;
-};
-
-const multicolorSelectorsMixin = (): string => {
-  return `\n\n@mixin generate-multicolor-icons-selectors(
-  $all-multicolor-lists,
-  $css-prefix: "icon",
-  $prefix-category-separator: "__",
-  $category-icon-separator: "_",
-  $icon-state-separator: "--",
-  $ignored-categories
-) {
-  @each $category-name, $category-icons in $all-multicolor-lists {
-    $category-is-excluded: category-is-excluded(
-      $category-name,
-      $ignored-categories
-    );
-    @if (not($category-is-excluded)) {
-      @each $icon in $category-icons {
-        $icon-states: get-multicolor-color-states();
-        @each $state in $icon-states {
-          .#{$css-prefix}#{$prefix-category-separator}#{$category-name}#{$category-icon-separator}#{$icon} {
-            &:#{$state} {
-              --icon-path: var(
-                --icon#{$prefix-category-separator}#{$category-name}#{$category-icon-separator}#{$icon}#{$icon-state-separator}#{$state}
-              );
             }
           }
         }
