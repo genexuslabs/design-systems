@@ -1,8 +1,15 @@
 @mixin semantic-item() {
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Item
+  // - - - - - - - - - - - - - - - - - - - -
+
   // note 1: all this tokens are applied on "@mixin item-styles", and the
   // styling of any component item should be applied through the mixin.
 
   // generic (are independent of the item state)
+  --mer-item__bg-color: ; // depend on the item state (enabled, hover, active, disabled)
+  --mer-item__color: ; // depend on the item state (enabled, hover, active, disabled)
+  --mer-item__border-color: ; // depend on the item state (enabled, hover, active, disabled)
   --mer-item__border-style: solid;
   --mer-item__border-width: var(--mer-border__width--sm);
   --mer-item__font-family: var(--mer-font-family--body);
@@ -57,7 +64,7 @@
 
   // selected
   --mer-item__bg-color--selected: var(--mer-color__tinted-blue--10);
-  --mer-item__border-color--selected: var(--mer-color__tinted-blue--20);
+  --mer-item__border-color--selected: var(--mer-color__tinted-blue--30);
   --mer-item__color--selected: var(--mer-color__neutral-gray--100);
   --mer-item__font-weight--selected: var(--mer-font__weight--semi-bold);
 
@@ -69,5 +76,33 @@
   // disabled
   --mer-item__bg-color--disabled: transparent;
   --mer-item__border-color--disabled: transparent;
-  --mer-item__color--disabled: var(--mer-item__color--enabled);
+  --mer-item__color--disabled: var(--mer-text__primary--disabled);
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //           Items Container
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // Base (should apply to every item's container
+  --mer-items-container__bg-color: var(--mer-color__elevation--01);
+  --mer-items-container__border-width: var(--mer-border__width--sm);
+  --mer-items-container__border-style: solid;
+  --mer-items-container__border-color: var(--mer-border-color__on-surface);
+  --mer-items-container__border: var(--mer-items-container__border-width)
+    var(--mer-items-container__border-style)
+    var(--mer-items-container__border-color);
+  --mer-items-container__box-shadow: var(--mer-box-shadow--01);
+
+  // Size: regular
+  --mer-items-container__padding-inline--regular: var(--mer-spacing--xs);
+  --mer-items-container__padding-block--regular: var(--mer-spacing--xs);
+  --mer-items-container__gap--regular: var(--mer-spacing--xs);
+  --mer-items-container__border-radius--regular: var(--mer-border__radius--sm);
+
+  // Size: X (to be completed)
+
+  // Generic size variables (should be defined later depending con the container size)
+  --mer-items-container__padding-inline: ;
+  --mer-items-container__padding-block: ;
+  --mer-items-container__gap: ;
+  --mer-items-container__border-radius: ;
 }
