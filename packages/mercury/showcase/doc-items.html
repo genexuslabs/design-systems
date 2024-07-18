@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Item</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+
+      .dummy-item {
+      }
+    </style>
+    <link rel="stylesheet" href="./css/dummy-items.css" />
+  </head>
+  <body class="showcase" sidebar>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">items</h1>
+            <p class="section__description">
+              Many controls are constructed and depend on items. Although a
+              control items styles may differ a bit from other controls, the
+              base styles should remain the same in order to keep consistence.
+              "Base styles" refers to
+              <code>color</code>, <code>border-color</code>, and
+              <code>background-color</code>, in the four states:
+              <code>enabled</code>, <code>hover</code>, <code>active</code> and
+              <code>disabled</code>. Other styles that affect the item
+              structure, like <code>font-size</code>,
+              <code>line-height</code> and <code>padding</code> should also
+              maintain consistence in general, but because there might be some
+              controls that are bigger or smaller, these styles are "allowed" to
+              change in this cases. This page is a documentation of the controls
+              items colors and structure styles.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          item color: enabled
+          =========================== -->
+            <article class="article" nav data-title="item color: enabled">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="dummy-item-container">
+                    <div
+                      class="dummy-item dummy-item--layout-regular dummy-item--enabled"
+                    >
+                      This is how an enabled control item looks like
+                    </div>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-1" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup1 = `background-color: var(--mer-item__bg-color--enabled);
+border-color: var(--mer-item__border-color--enabled);
+color: var(--mer-item__color--enabled);                    
+
+* custom properties values:                    
+--mer-item__bg-color--enabled: var(--mer-color__elevation--01);
+--mer-item__border-color--enabled: transparent;
+--mer-item__color--enabled: var(--mer-text__on-elevation);
+`;
+                    document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          item color: hover
+          =========================== -->
+            <article class="article" nav data-title="item color: hover">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="dummy-item-container">
+                    <div
+                      class="dummy-item dummy-item--layout-regular dummy-item--hover"
+                    >
+                      This is how an hovered control item looks like
+                    </div>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-2" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup2 = `background-color: var(--mer-item__bg-color--hover);
+border-color: var(--mer-item__border-color--hover);
+color: var(--mer-item__color--hover);                    
+
+* custom properties values:                    
+--mer-item__bg-color--hover: var(--mer-color__tinted-blue--5);
+--mer-item__border-color--hover: var(--mer-color__tinted-blue--20);
+--mer-item__color--hover: var(--mer-color__neutral-gray--100);
+`;
+                    document.getElementById("ch-code-2").value = markup2;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          item color: selected
+          =========================== -->
+            <article class="article" nav data-title="item color: selected">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="dummy-item-container">
+                    <div
+                      class="dummy-item dummy-item--layout-regular dummy-item--selected"
+                    >
+                      This is how a selected control item looks like
+                    </div>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-3" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup3 = `background-color: var(--mer-item__bg-color--selected);
+border-color: var(--mer-item__border-color--selected);
+color: var(--mer-item__color--selected);                    
+
+* custom properties values:                    
+--mer-item__bg-color--selected: var(--mer-color__tinted-blue--10);
+--mer-item__border-color--selected: var(--mer-color__tinted-blue--30);
+--mer-item__color--selected: var(--mer-color__neutral-gray--100);
+`;
+                    document.getElementById("ch-code-3").value = markup3;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          item color: selected + hover
+          =========================== -->
+            <article
+              class="article"
+              nav
+              data-title="item color: selected + hover"
+            >
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="dummy-item-container">
+                    <div
+                      class="dummy-item dummy-item--layout-regular dummy-item--selected-hover"
+                    >
+                      This is how a selected + hover control item looks like
+                    </div>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-4" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup4 = `background-color: var(--mer-item__bg-color--selected-hover);
+border-color: var(--mer-item__border-color--selected-hover);
+color: var(--mer-item__color--selected-hover);                    
+
+* custom properties values:                    
+--mer-item__bg-color--selected-hover: var(--mer-color__tinted-blue--10);
+--mer-item__border-color--selected-hover: var(--mer-color__tinted-blue--20);
+--mer-item__color--selected-hover: var(--mer-color__neutral-gray--100);
+`;
+                    document.getElementById("ch-code-4").value = markup4;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          item color: disabled
+          =========================== -->
+            <article class="article" nav data-title="item color: disabled">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="dummy-item-container">
+                    <div
+                      class="dummy-item dummy-item--layout-regular dummy-item--disabled"
+                    >
+                      This is how a disabled control item looks like
+                    </div>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-5" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup5 = `background-color: var(--mer-item__bg-color--disabled);
+border-color: var(--mer-item__border-color--disabled);
+color: var(--mer-item__color--disabled);                    
+
+* custom properties values:                    
+--mer-item__bg-color--disabled: transparent;
+--mer-item__border-color--disabled: transparent;
+--mer-item__color--disabled: var(--mer-text__primary--disabled);
+`;
+                    document.getElementById("ch-code-5").value = markup5;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          item color: all together
+          =========================== -->
+            <article class="article" nav data-title="item color: all together">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ul class="dummy-items-container">
+                    <li
+                      class="dummy-item dummy-item--layout-regular dummy-item--enabled"
+                    >
+                      This is how an enabled control item looks like
+                    </li>
+                    <li
+                      class="dummy-item dummy-item--layout-regular dummy-item--hover"
+                    >
+                      This is how an hovered control item looks like
+                    </li>
+                    <li
+                      class="dummy-item dummy-item--layout-regular dummy-item--selected"
+                    >
+                      This is how a selected control item looks like
+                    </li>
+                    <li
+                      class="dummy-item dummy-item--layout-regular dummy-item--selected-hover"
+                    >
+                      This is how a selected + hover control item looks like
+                    </li>
+                    <li
+                      class="dummy-item dummy-item--layout-regular dummy-item--disabled"
+                    >
+                      This is how a disabled control item looks like
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./assets/scripts.js"></script>
+  </body>
+</html>

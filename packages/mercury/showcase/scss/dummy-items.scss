@@ -1,0 +1,46 @@
+@import "../../src/base/common";
+.dummy-item {
+  @extend %control-item-base;
+
+  // colors
+  &--enabled {
+    @extend %item-enabled;
+  }
+  &--hover {
+    @extend %item-hover;
+  }
+  &--selected {
+    @extend %item-selected;
+  }
+  &--selected-hover {
+    @extend %item-selected-hover;
+  }
+  &--disabled {
+    @extend %item-disabled;
+  }
+
+  // structure
+  &--layout-regular {
+    @extend %item-typography-regular;
+    @extend %item-layout-regular;
+  }
+
+  // other
+  &--border-radius {
+    @extend %item-border-radius;
+  }
+}
+
+.dummy-items-container {
+  // copied from combo-box "window__content" part
+  display: grid;
+  grid-auto-rows: max-content;
+  overflow: auto;
+  box-sizing: border-box;
+
+  @extend %control-items-container-base;
+
+  &--layout-regular {
+    @extend %control-items-container-layout-regular;
+  }
+}
