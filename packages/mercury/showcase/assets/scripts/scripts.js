@@ -120,7 +120,7 @@ const getNavbarItems = () => {
 const includeSidebarPageInternalNav = () => {
   // This is the navigation items for the current page articles.
   // Let's call this the internal navigation.
-  const includeSidebar = BODY.getAttribute(SIDEBAR_DATA_ATTR);
+  const includeSidebar = BODY.hasAttribute(SIDEBAR_DATA_ATTR);
   if (includeSidebar && CURRENT_PAGE_NAV_ITEM) {
     // CURRENT_PAGE_NAV_ITEM is a reference to the item on the sidebar
     // that refers to the actual page.
@@ -223,7 +223,6 @@ const generateArticleId = (title, i) => {
 const includeSidebarNav = async () => {
   // This is the navigation items for the showcase html pages.
   // Let's call this the external navigation.
-  console.log("hola");
   const includeSidebar = BODY.hasAttribute(SIDEBAR_DATA_ATTR);
   if (includeSidebar) {
     const navbarItems = await getNavbarItems();
