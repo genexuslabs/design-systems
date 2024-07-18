@@ -1,5 +1,5 @@
 :root {
-  --sc-base__border-color: var(--mer-color__neutral-gray--700);
+  --sc-base__border-color: var(--mer-color__neutral-gray--500);
   /* TOKENS MAIN */
   --body__font-size: 16px;
   --body__line-height: 16px;
@@ -32,7 +32,7 @@
   --article-description__max-width: 640px;
   --article-sub-title__font-size: 16px;
   --article-mini-title__font-size: 12px;
-  --article-border-block-end: 1px solid var(--mer-color__neutral-gray--1000);
+  --article-border-block-end: 1px solid var(--mer-color__neutral-gray--700);
   /* pills */
   --article-pills__gap: 12px;
   --article-pill__font-family: "JetBrains Mono", monospace;
@@ -196,14 +196,19 @@ Section
   line-height: var(--section-description__line-height);
 }
 .section__description--note::before {
-  content: "note";
+  content: "📃 note";
   display: block;
   font-weight: 600;
+  margin-block-end: var(--mer-spacing--2xs);
 }
 .section__description--note {
-  font-size: var(--mer-font__size--xs);
-  padding-inline-start: var(--mer-spacing--md);
-  border-inline-start: 2px solid var(--mer-text__on-surface);
+  color: var(--mer-color__neutral-gray--400);
+  font-size: var(--mer-font__size--2xs);
+  padding-block: var(--mer-spacing--sm);
+  padding-inline: var(--mer-spacing--md);
+  border-inline-start: 2px solid var(--mer-border-color__on-surface);
+  background-color: var(--mer-color__elevation--01);
+  border-radius: var(--mer-border__radius--sm);
 }
 /*====================
 Articles
@@ -353,9 +358,9 @@ body.ctrl-cmd-pressed .article__pill {
 }
 /* generated header and copy button (/showcase/assets/scripts.js) */
 .code__header {
-  --code-header__color: var(--mer-color__neutral-gray--300);
+  --code-header__color: var(--mer-color__neutral-gray--400);
   font-size: var(--mer-font__size--3xs);
-  background-color: var(--mer-color__elevation--01);
+  background-color: var(--mer-color__elevation--02);
   display: flex;
   justify-content: end;
   overflow: hidden;
@@ -381,6 +386,7 @@ body.ctrl-cmd-pressed .article__pill {
 .code__button:hover {
   cursor: pointer;
   --code-header__color: var(--mer-color__neutral-gray--100);
+  background-color: var(--mer-color__elevation--03);
 }
 .code__button:active {
   --code-header__color: var(--mer-color__neutral-gray--400);
@@ -416,6 +422,6 @@ body.ctrl-cmd-pressed .article__pill {
     background-color: var(--mer-color__neutral-gray--800);
   }
   to {
-    background-color: var(--mer-color__elevation--01);
+    background-color: var(--mer-color__neutral-gray--700);
   }
 }
