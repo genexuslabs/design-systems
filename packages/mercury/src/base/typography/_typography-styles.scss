@@ -51,9 +51,9 @@
     line-height: var(--heading-h6__line-height);
   }
 
-  &__color {
-    &--highlighted {
-      --heading__color: var(--mer-text__highlighted);
+  &-color {
+    &__gray--light {
+      --heading__color: var(--mer-heading__gray--light);
     }
   }
 }
@@ -107,7 +107,7 @@
 /// @param {String} $heading-4-selector [".heading-4"] -
 /// @param {String} $heading-5-selector [".heading-5"] -
 /// @param {String} $heading-6-selector [".heading-6"] -
-/// @param {String} $heading-highlighted-selector [".heading--highlighted"] -
+/// @param {String} $heading-color__gray-light-selector [".heading-gray--light"] -
 /// @param {String} $text-body-selector [".text--body"] -
 @mixin typography-classes(
   $heading-1-selector: ".heading-1",
@@ -116,7 +116,7 @@
   $heading-4-selector: ".heading-4",
   $heading-5-selector: ".heading-5",
   $heading-6-selector: ".heading-6",
-  $heading-highlighted: ".heading--highlighted",
+  $heading-color__gray-light-selector: ".heading-gray--light",
   $text-body-selector: ".text-body"
 ) {
   #{$heading-1-selector} {
@@ -143,8 +143,8 @@
     @extend %heading-6;
   }
 
-  #{$heading-highlighted} {
-    @extend %heading__color--highlighted;
+  #{$heading-color__gray-light-selector} {
+    @extend %heading-color__gray--light;
   }
 
   #{$text-body-selector} {
