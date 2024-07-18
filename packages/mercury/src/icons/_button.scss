@@ -16,51 +16,21 @@
   order: 1;
 }
 
-@mixin button-icon-only($selector: ".button-icon-only", $icon-path: null) {
+@mixin button-icon-only($selector: ".button-icon-only") {
   #{$selector} {
     @extend %button-icon-only;
-
-    @if $icon-path != null {
-      --icon-path: #{$icon-path};
-    }
-
-    &::before {
-      @extend %icon-size--md;
-    }
   }
 }
 
-@mixin button-icon-and-text(
-  $selector: ".button-icon-and-text",
-  $icon-path: null
-) {
+@mixin button-icon-and-text($selector: ".button-icon-and-text") {
   #{$selector} {
     @extend %button-icon-and-text;
-
-    @if $icon-path != null {
-      --icon-path: #{$icon-path};
-    }
-
-    &::before {
-      @extend %icon-size--md;
-    }
   }
 }
 
-@mixin button-icon-after-and-text(
-  $selector: ".button-icon-after-and-text",
-  $icon-path: null
-) {
+@mixin button-icon-after-and-text($selector: ".button-icon-after-and-text") {
   #{$selector} {
     @extend %button-icon-and-text;
-
-    @if $icon-path != null {
-      --icon-path: #{$icon-path};
-    }
-
-    &::before {
-      @extend %icon-size--md;
-      @extend %button-icon-after-and-text--before;
-    }
+    @extend %button-icon-after-and-text--before;
   }
 }

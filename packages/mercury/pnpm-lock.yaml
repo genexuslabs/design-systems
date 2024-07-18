@@ -12,8 +12,8 @@ devDependencies:
     specifier: '>=6.0.0-next.19'
     version: 6.0.0-next.19(@genexus/web-standard-functions@0.65.0)(@stencil/core@4.19.2)
   '@genexus/svg-sass-generator':
-    specifier: 1.1.16
-    version: 1.1.16(@types/node@20.12.12)
+    specifier: 1.1.18
+    version: 1.1.18(@types/node@20.12.12)
   chokidar:
     specifier: ^3.6.0
     version: 3.6.0
@@ -95,15 +95,12 @@ packages:
       - supports-color
     dev: true
 
-  /@genexus/svg-sass-generator@1.1.16(@types/node@20.12.12):
-    resolution: {integrity: sha512-S8sijcglTAk6JtUJqBVat2Kq18T4FFFJB223i63e2dBalLFgg0nQ0s64opNaI0YgZ2odr0A8/xuvrsABhSatJA==}
+  /@genexus/svg-sass-generator@1.1.18(@types/node@20.12.12):
+    resolution: {integrity: sha512-/ajmOzB7D8M0JLJQ48ECQ/jO5ZPvZOisolOSp3/oaK4orM8Bwvf402rdr/VSx27rYM5aGMXqOeSucGHq4qpWsw==}
     engines: {pnpm: '>=3'}
     hasBin: true
     dependencies:
       '@atao60/fse-cli': 0.1.9
-      '@types/cheerio': 0.22.35
-      '@types/minimist': 1.2.5
-      '@types/stringify-object': 4.0.5
       ajv: 8.17.1
       cheerio: 1.0.0-rc.12
       glob: 10.4.5
@@ -627,12 +624,6 @@ packages:
     resolution: {integrity: sha512-v+dxizsFVyXgD3EpFuqT9YjdEjbJmPxNf1QIX9ohZOhxh1ZF2yhqv3vYaeum9lg3VghhxS5S0a6yldN9J9lPEQ==}
     dev: true
 
-  /@types/cheerio@0.22.35:
-    resolution: {integrity: sha512-yD57BchKRvTV+JD53UZ6PD8KWY5g5rvvMLRnZR3EQBCZXiDT/HR+pKpMzFGlWNhFrXlo7VPZXtKvIEwZkAWOIA==}
-    dependencies:
-      '@types/node': 20.12.12
-    dev: true
-
   /@types/debug@4.1.12:
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
     dependencies:
@@ -678,10 +669,6 @@ packages:
     resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
     dev: true
 
-  /@types/minimist@1.2.5:
-    resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
-    dev: true
-
   /@types/ms@0.7.34:
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
     dev: true
@@ -701,10 +688,6 @@ packages:
 
   /@types/shimmer@1.2.0:
     resolution: {integrity: sha512-UE7oxhQLLd9gub6JKIAhDq06T0F6FnztwMNRvYgjeQSBeMc1ZG/tA47EwfduvkuQS8apbkM/lpLpWsaCeYsXVg==}
-    dev: true
-
-  /@types/stringify-object@4.0.5:
-    resolution: {integrity: sha512-TzX5V+njkbJ8iJ0mrj+Vqveep/1JBH4SSA3J2wYrE1eUrOhdsjTBCb0kao4EquSQ8KgPpqY4zSVP2vCPWKBElg==}
     dev: true
 
   /@types/unist@3.0.2:

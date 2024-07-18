@@ -288,8 +288,8 @@
   $icons-path: "./assets/icons/"
 ) {
   // TODO: This is a WA to transpile the file
-  @import "../../icons/_generated/monochrome/gemini-tools.scss";
-  @import "../../icons/_generated/monochrome/navigation.scss";
+  @import "../../icons/_generated/monochrome/gemini-tools__placeholders.scss";
+  @import "../../icons/_generated/monochrome/navigation__placeholders.scss";
 
   // Base style
   #{$tabular-grid-selector} {
