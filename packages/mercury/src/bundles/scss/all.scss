@@ -1,0 +1,4 @@
+@import "config";
+@import "../../mercury.scss";
+
+@include mercury($font-face-path: $font-face-path, $icons-path: $icons-path);

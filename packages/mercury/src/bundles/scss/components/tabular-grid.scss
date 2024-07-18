@@ -1,0 +1,10 @@
+@import "config";
+@import "../../../mercury.scss";
+
+@include mercury-only(
+  $components: true,
+  $tabular-grid: true,
+
+  // TODO: This is a WA to transpile the file
+  $icons-path: $icons-path
+);

@@ -1,4 +1,26 @@
-import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS";
+import {
+  GxImageMultiState,
+  TreeViewImagePathCallback,
+  TreeViewItemModel
+} from "@genexus/chameleon-controls-library";
+import { RegistryGetImagePathCallback } from "@genexus/chameleon-controls-library/dist/types/index";
+import { TreeViewItemImageMultiState } from "@genexus/chameleon-controls-library/dist/types/components/tree-view/types";
+
+import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS.js";
+
+export {
+  MercuryBundleBase,
+  MercuryBundleComponent,
+  MercuryBundleComponentForm,
+  MercuryBundleFull,
+  MercuryBundleOptimized,
+  MercuryBundleReset,
+  MercuryBundleUtil,
+  MercuryBundleUtilFormFull,
+  MercuryBundles
+} from "./bundles.js";
+
+export { getThemeBundles } from "./bundles.js";
 
 const ASSETS_BY_VENDOR: { [key in string]: Assets } = {};
 const ALIAS_TO_VENDOR_NAME: { [key in string]: string } = {};
@@ -58,14 +80,6 @@ export type AssetsColorType = { [key: string]: AssetsIconMetadata };
 export interface AssetsIconMetadata {
   name: string;
 }
-
-export type ImageMultiState = {
-  base: string;
-  hover?: string;
-  active?: string;
-  focus?: string;
-  disabled?: string;
-};
 
 /**
  * Given a vendor and its assets, it register the assets of the vendor. After
@@ -218,7 +232,7 @@ const parseIconMetadata = (
 
 export const getImagePathCallback = (
   iconPath: string
-): ImageMultiState | undefined => {
+): GxImageMultiState | undefined => {
   const { vendor, category, name, colorType } = parseIconMetadata(iconPath);
 
   const assetStates: AssetsColorType | undefined = getAsset(
@@ -230,7 +244,7 @@ export const getImagePathCallback = (
     return undefined;
   }
 
-  const result: ImageMultiState = {
+  const result: GxImageMultiState = {
     base: getCustomFullValue(assetStates.enabled.name, vendor)
   };
 
@@ -249,18 +263,19 @@ export const getImagePathCallback = (
   return result;
 };
 
-export const getTreeViewImagePathCallback = (
-  item: { startImgSrc?: string; endImgSrc?: string },
-  direction: "start" | "end"
-): { default: ImageMultiState; expanded?: ImageMultiState } | undefined => {
+export const getTreeViewImagePathCallback: TreeViewImagePathCallback = (
+  item: TreeViewItemModel,
+  iconDirection: "start" | "end"
+): string | TreeViewItemImageMultiState | undefined => {
   if (
-    (!item.startImgSrc && direction === "start") ||
-    (!item.endImgSrc && direction === "end")
+    (!item.startImgSrc && iconDirection === "start") ||
+    (!item.endImgSrc && iconDirection === "end")
   ) {
     return undefined;
   }
 
-  const imgSrc = direction === "start" ? item.startImgSrc! : item.endImgSrc!;
+  const imgSrc =
+    iconDirection === "start" ? item.startImgSrc! : item.endImgSrc!;
 
   // Split the path into the collapsed (default) and expanded
   const collapsedAndExpandedSrc = imgSrc.split(EXPANDED_SEPARATOR);
@@ -278,6 +293,21 @@ export const getTreeViewImagePathCallback = (
         expanded: getImagePathCallback(collapsedAndExpandedSrc[1])
       }
     : { default: defaultPath };
+};
+
+/**
+ * This object is used to register the getImagePathCallback definitions for all
+ * controls in Chameleon.
+ *
+ * @example
+ * ```ts
+ * registryProperty("getImagePathCallback", getImagePathCallbackDefinitions);
+ * ```
+ */
+export const getImagePathCallbackDefinitions: RegistryGetImagePathCallback = {
+  "ch-edit": getImagePathCallback,
+  "ch-image": getImagePathCallback,
+  "ch-tree-view-render": getTreeViewImagePathCallback
 };
 
 // Initialize Mercury at the start

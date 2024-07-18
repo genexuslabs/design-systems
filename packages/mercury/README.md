@@ -72,3 +72,31 @@ npm i @genexus/mercury
       ]
     });
     ```
+
+  - Using the bundles from this repository.
+
+    1.  Install `sass` dependency to transpile the bundles.
+
+        ```bash
+        npm i -D sass
+        ```
+
+    2.  Add a config file (called `config.scss`) in your project to determine the path to the assets.  
+        Include the following configuration:
+
+        ```scss
+        $icons-path: "assets/custom/path/icons/";
+        $font-face-path: "assets/custom/path/fonts/";
+        ```
+
+    3.  Run the following command to transpile the bundles with the new path for the assets:
+
+        ```bash
+        npx sass --load-path=path/to/config/file/directory --no-source-map --style compressed node_modules/@genexus/mercury/dist/bundles/scss:untracked-folder/bundles
+        ```
+
+        For example:
+
+        ```bash
+        npx sass --load-path=src --no-source-map --style compressed node_modules/@genexus/mercury/dist/bundles/scss:untracked-folder/bundles
+        ```

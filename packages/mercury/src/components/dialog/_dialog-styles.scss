@@ -1,11 +1,9 @@
 %dialog {
   --ch-dialog-max-inline-size: 800px;
-  border-radius: 0;
   background-color: var(--mer-color__elevation--01);
   box-shadow: var(--mer-box-shadow--01);
 
   &__backdrop {
-    background-image: url(../../src/assets/images/noise-texture-200x200.png);
     background-color: rgba(32, 36, 40, 0.9);
     backdrop-filter: blur(1.5px);
     z-index: 108; // TODO: This is a WA to show the backdrop above the button of the dropdown
@@ -14,7 +12,8 @@
   &__header {
     align-items: flex-start;
     gap: var(--mer-spacing--sm);
-    padding: var(--mer-spacing--md) var(--mer-spacing--sm);
+    padding-block: var(--mer-spacing--md);
+    padding-inline: var(--mer-spacing--sm);
     border-block-end: var(--mer-border__width--sm) solid
       var(--mer-color__elevation--04);
   }
@@ -30,7 +29,8 @@
   }
 
   &__content {
-    padding: var(--mer-spacing--lg) var(--mer-spacing--md);
+    padding-block: var(--mer-spacing--lg);
+    padding-inline: var(--mer-spacing--md);
     overflow: auto;
   }
 
@@ -48,21 +48,26 @@
     $edge-color: var(--mer-color__tinted-blue--20);
     border-color: transparent;
     transition: var(--mer-timing--fast) border-color;
+
     &--hover {
       border-color: $edge-color;
     }
+
     &-block-start {
       border-block-start-width: $edge-border-width;
       border-block-start-style: $edge-border-style;
     }
+
     &-inline-end {
       border-inline-end-width: $edge-border-width;
       border-inline-end-style: $edge-border-style;
     }
+
     &-block-end {
       border-block-end-width: $edge-border-width;
       border-block-end-style: $edge-border-style;
     }
+
     &-inline-start {
       border-inline-start-width: $edge-border-width;
       border-inline-start-style: $edge-border-style;
@@ -119,21 +124,23 @@
 
   #{$close-selector} {
     @extend %dialog__close;
-    @extend %icon__gemini-tools_close_neutral--enabled;
-    &:hover {
-      @extend %icon__gemini-tools_close_neutral--hover;
-    }
-    &:active {
-      @extend %icon__gemini-tools_close_neutral--active;
-    }
-    &:disabled {
-      @extend %icon__gemini-tools_close_neutral--disabled;
-    }
+    // @extend %icon__gemini-tools_close_neutral--enabled;
+
+    // &:hover {
+    //   @extend %icon__gemini-tools_close_neutral--hover;
+    // }
+
+    // &:active {
+    //   @extend %icon__gemini-tools_close_neutral--active;
+    // }
+
+    // &:disabled {
+    //   @extend %icon__gemini-tools_close_neutral--disabled;
+    // }
   }
 
   #{$content-selector} {
     @extend %dialog__content;
-    height: 100%;
   }
 
   #{$footer-selector} {
