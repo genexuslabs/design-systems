@@ -20,6 +20,7 @@
         border: 1px dashed var(--mer-color__elevation--03);
       }
     </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
   </head>
   <body class="showcase" data-sidebar>
     <main class="main">
@@ -100,12 +101,9 @@ show-lines="all"></ch-tree-view-render>`;
                   ></ch-tree-view-render>
                   <script type="module">
                     import { iconsModel } from "./assets/models/tree.js";
-                    import { getTreeViewImagePathCallback } from "./assets/scripts/assets-manager.js";
                     const treeWithIcons =
                       document.getElementById("tree-with-icons");
                     treeWithIcons.model = iconsModel;
-                    treeWithIcons.getImagePathCallback =
-                      getTreeViewImagePathCallback;
                   </script>
                 </div>
                 <div class="article__code">
