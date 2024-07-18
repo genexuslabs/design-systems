@@ -84,6 +84,9 @@
   --mer-control__font-weight: var(--mer-font__weight--regular);
   --mer-control__text-transform: capitalize;
 
+  // size: large: button only, at the time of writing.
+  --mer-control-large__font-size: var(--mer-font__size--xs);
+
   // size: regular: button, combo-box, etc...
   --mer-control-regular__font-size: var(--mer-font__size--2xs);
   --mer-control-regular__gap: var(--mer-spacing--xs);
