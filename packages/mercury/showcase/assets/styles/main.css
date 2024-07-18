@@ -400,10 +400,7 @@ body.ctrl-cmd-pressed .article__pill {
   height: var(--mer-spacing--lg);
   display: inline-block;
   background-color: var(--code-header__color);
-  mask-image: url("../images/copy.svg");
-  mask-size: 75%;
-  mask-position: center center;
-  mask-repeat: no-repeat;
+  -webkit-mask: no-repeat center / 75% url("../images/copy.svg");
 }
 .code--highlight {
   animation: bgChange 0.1s linear 2;
