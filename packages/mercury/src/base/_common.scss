@@ -58,7 +58,7 @@ Item (applies to every item (tree, grid, list, etc...)
 // are optional because items from different components could
 // display different styles for that particular group/$style
 
-@mixin item-styles($styles: "enabled") {
+@mixin control-item($styles: "enabled") {
   // Base
   @if $styles == "base" {
     font-family: var(--mer-item__font-family);
@@ -67,7 +67,9 @@ Item (applies to every item (tree, grid, list, etc...)
     // states styles
     color: var(--mer-item__color);
     background-color: var(--mer-item__bg-color);
-    border: 0 var(--mer-item__border-style) var(--mer-item__border-color);
+    border: var(--mer-item__border-width)
+      var(--mer-item__border-style)
+      var(--mer-item__border-color);
   }
   // Typography
   @if $styles == "header" {
@@ -116,76 +118,116 @@ Item (applies to every item (tree, grid, list, etc...)
   }
   // States
   @if $styles == "enabled" {
-    --mer-item__color: var(--mer-item__color--enabled);
     --mer-item__bg-color: var(--mer-item__bg-color--enabled);
     --mer-item__border-color: var(--mer-item__border-color--enabled);
+    --mer-item__color: var(--mer-item__color--enabled);
   }
   @if $styles == "hover" {
-    --mer-item__color: var(--mer-item__color--hover);
     --mer-item__bg-color: var(--mer-item__bg-color--hover);
     --mer-item__border-color: var(--mer-item__border-color--hover);
+    --mer-item__color: var(--mer-item__color--hover);
   }
   @if $styles == "selected" {
-    --mer-item__color: var(--mer-item__color--selected);
     --mer-item__bg-color: var(--mer-item__bg-color--selected);
     --mer-item__border-color: var(--mer-item__border-color--selected);
+    --mer-item__color: var(--mer-item__color--selected);
   }
   @if $styles == "selected-hover" {
-    --mer-item__color: var(--mer-item__color--selected-hover);
     --mer-item__bg-color: var(--mer-item__bg-color--selected-hover);
     --mer-item__border-color: var(--mer-item__border-color--selected-hover);
+    --mer-item__color: var(--mer-item__color--selected-hover);
   }
   @if $styles == "disabled" {
-    opacity: 0.5;
-    --mer-item__color: var(--mer-item__color--disabled);
     --mer-item__bg-color: var(--mer-item__bg-color--disabled);
     --mer-item__border-color: var(--mer-item__border-color--disabled);
+    --mer-item__color: var(--mer-item__color--disabled);
   }
 }
-%item-styles-base {
-  @include item-styles($styles: "base");
+%control-item-base {
+  @include control-item($styles: "base");
 }
-%item-styles-header {
-  @include item-styles($styles: "header");
+%control-item-header {
+  @include control-item($styles: "header");
 }
 %item-typography-regular {
-  @include item-styles($styles: "typography-regular");
+  @include control-item($styles: "typography-regular");
 }
 %item-typography-large {
-  @include item-styles($styles: "typography-large");
+  @include control-item($styles: "typography-large");
 }
 %item-layout-regular {
-  @include item-styles($styles: "layout-regular");
+  @include control-item($styles: "layout-regular");
 }
 %item-layout-large {
-  @include item-styles($styles: "layout-large");
+  @include control-item($styles: "layout-large");
 }
 %item-border-block {
-  @include item-styles($styles: "border-block");
+  @include control-item($styles: "border-block");
 }
 %item-border-block-end {
-  @include item-styles($styles: "border-block-end");
+  @include control-item($styles: "border-block-end");
 }
 %item-border-inline-block {
-  @include item-styles($styles: "border-inline-block");
+  @include control-item($styles: "border-inline-block");
 }
 %item-border-radius {
-  @include item-styles($styles: "border-radius");
+  @include control-item($styles: "border-radius");
 }
 %item-enabled {
-  @include item-styles($styles: "colors-enabled");
+  @include control-item($styles: "enabled");
 }
 %item-hover {
-  @include item-styles($styles: "colors-hover");
+  @include control-item($styles: "hover");
 }
 %item-selected {
-  @include item-styles($styles: "colors-selected");
+  @include control-item($styles: "selected");
 }
 %item-selected-hover {
-  @include item-styles($styles: "colors-selected-hover");
+  @include control-item($styles: "selected-hover");
 }
 %item-disabled {
-  @include item-styles($styles: "colors-disabled");
+  @include control-item($styles: "disabled");
+}
+
+/*------------------------------------------------------------------------
+Item Container (applies to every item container (tree, grid, list, etc...)
+-------------------------------------------------------------------------*/
+
+@mixin control-items-container($styles: "base") {
+  // Base
+  @if $styles == "base" {
+    background-color: var(--mer-items-container__bg-color);
+    border: var(--mer-items-container__border);
+    box-shadow: var(--mer-items-container__box-shadow);
+    // structure: (depend on the layout size)
+    padding-inline: var(--mer-items-container__padding-inline);
+    padding-block: var(--mer-items-container__padding-block);
+    gap: var(--mer-items-container__gap--regular);
+    border-radius: var(--mer-items-container__border-radius);
+  }
+  // Layout
+  @if $styles == "layout-regular" {
+    --mer-items-container__padding-inline: var(
+      --mer-items-container__padding-inline--regular
+    );
+    --mer-items-container__padding-block: var(
+      --mer-items-container__padding-block--regular
+    );
+    --mer-items-container__gap: var(--mer-items-container__gap--regular);
+    --mer-items-container__border-radius: var(
+      --mer-items-container__border-radius--regular
+    );
+  }
+  // Base
+  @if $styles == "layout-x" {
+    // To be completed
+  }
+}
+%control-items-container-base {
+  @include control-items-container($styles: "base");
+}
+%control-items-container-layout-regular {
+  @include control-items-container($styles: "layout-regular");
 }
 
 /*--------------------------------------------------------
@@ -198,7 +240,9 @@ should have the same height, in order to "look good" inline.
   @if $styles == "base" {
     --mer-control__padding-block: 0; // mary vary depending on the control type
     --mer-control__padding-inline: 0; // mary vary depending on the control type
-    border: var(--mer-control__border);
+    border-style: solid;
+    border-color: var(--mer-control__border-color);
+    border-width: var(--mer-control__border-width);
     font-family: var(--mer-control__font-family);
     font-weight: var(--mer-control__font-weight);
     line-height: var(--mer-control__line-height);
@@ -206,7 +250,7 @@ should have the same height, in order to "look good" inline.
     align-items: center;
     padding-block: var(--mer-control__padding-block);
     padding-inline: var(--mer-control__padding-inline);
-    box-sizing: border-box; // WA until we discover why @mixin box-sizing() from common/_resets.scss is not working.
+    box-sizing: border-box;
   }
   // Layout
   @if $styles == "layout-regular" {
@@ -227,6 +271,10 @@ should have the same height, in order to "look good" inline.
     //ie.: button, form-text, combo-box
     font-size: var(--mer-control-regular__font-size);
   }
+  @if $styles == "typography-large" {
+    //ie.: button, form-text, combo-box
+    font-size: var(--mer-control-large__font-size);
+  }
 }
 %control-base {
   @include control-styles($styles: "base");
@@ -242,6 +290,9 @@ should have the same height, in order to "look good" inline.
 }
 %control-typography-regular {
   @include control-styles($styles: "typography-regular");
+}
+%control-typography-large {
+  @include control-styles($styles: "typography-large");
 }
 
 /*----------------------
