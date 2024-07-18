@@ -12,10 +12,6 @@
   padding-inline: var(--button-base__padding-inline);
 }
 
-%button-icon-after-and-text--before {
-  order: 1;
-}
-
 @mixin button-icon-only($selector: ".button-icon-only") {
   #{$selector} {
     @extend %button-icon-only;
@@ -25,12 +21,5 @@
 @mixin button-icon-and-text($selector: ".button-icon-and-text") {
   #{$selector} {
     @extend %button-icon-and-text;
-  }
-}
-
-@mixin button-icon-after-and-text($selector: ".button-icon-after-and-text") {
-  #{$selector} {
-    @extend %button-icon-and-text;
-    @extend %button-icon-after-and-text--before;
   }
 }
