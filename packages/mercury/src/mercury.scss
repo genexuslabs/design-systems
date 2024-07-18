@@ -22,16 +22,15 @@
 @import "./tokens/semantic/item";
 @import "./tokens/semantic/other";
 @import "./tokens/semantic/text";
-@import "./tokens/semantic/accent";
 
 // Base classes
 @import "./base/label/label-styles"; // should be at the top, since other elements use it.
 @import "./base/button/button-styles";
-@import "./base/form-controls/form-input-styles";
 @import "./base/form-controls/form-fieldset-styles";
+@import "./base/form-controls/form-input-styles";
 @import "./base/icons";
-@import "./base/typography/typography-styles";
 @import "./base/layout/layout-styles";
+@import "./base/typography/typography-styles";
 
 // Icons
 @import "./icons/button";
@@ -41,6 +40,7 @@
 @import "./components/code/code-styles";
 @import "./components/combo-box/combo-box-styles";
 @import "./components/dialog/dialog-styles";
+@import "./components/image/image-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
 @import "./components/tab/tab-styles";
@@ -60,10 +60,10 @@
   $body: true,
 
   // Theme
-  $light-theme: true,
   $dark-theme: true,
-  $prefers-color-scheme-light: false,
+  $light-theme: true,
   $prefers-color-scheme-dark: false,
+  $prefers-color-scheme-light: false,
 
   // Tokens
   $tokens: true,
@@ -76,9 +76,8 @@
 
   // Icons
   $icons-path: "./assets/icons/",
-  $ignored-multicolor-categories: (),
-  $ignored-monochrome-categories: (),
   $icons-variables: true,
+  $icons-placeholders: true,
 
   // Font face
   $font-face: true,
@@ -87,7 +86,7 @@
   // Base
   $base-classes: true,
   $button-classes: true,
-  $form-controls-classes: true,
+  $form-control-classes: true,
   $icon-classes: true,
   $layout-classes: true,
   $typography-classes: true,
@@ -99,6 +98,7 @@
   $combo-box: true,
   $dialog: true,
   $edit: true,
+  $image: true,
   $radio-group: true,
   $tab: true,
   $tabular-grid: true,
@@ -108,7 +108,10 @@
   //                  Icons
   // - - - - - - - - - - - - - - - - - - - -
   @if $icons-variables {
-    @import "./icons/_generated/categories-imports";
+    @import "./icons/_generated/categories-variables-imports";
+  }
+  @if $icons-placeholders {
+    @import "./icons/_generated/categories-placeholders-imports";
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -335,26 +338,26 @@
       // Button tertiary
       @include button-tertiary();
 
-      // Button icon only
-      @include button-icon-only();
+      @if $icon-classes {
+        // Button icon only
+        @include button-icon-only();
 
-      // Button icon and text
-      @include button-icon-and-text();
+        // Button icon and text
+        @include button-icon-and-text();
+      }
 
       // Button icon after and text
       @include button-icon-after-and-text();
     }
 
     // Form control classes
-    @if $form-controls-classes {
+    @if $form-control-classes {
       @include fieldset();
       @include label();
     }
 
     // Icon classes
     @if $icon-classes {
-      @include icon-mask();
-      @include icon-background();
       @include icon-size-sm();
       @include icon-size-md();
     }
@@ -374,52 +377,56 @@
   // - - - - - - - - - - - - - - - -  - - -
   //               Components
   // - - - - - - - - - - - - - - - - - - -
-  @if $components {
-    // checkbox
-    @if $checkbox {
-      @include checkbox();
-    }
 
-    // code
-    @if $code {
-      @include code();
-    }
+  // checkbox
+  @if $checkbox {
+    @include checkbox();
+  }
 
-    // combo box
-    @if $combo-box {
-      @include combo-box();
-    }
+  // code
+  @if $code {
+    @include code();
+  }
 
-    // dialog
-    @if $dialog {
-      @include dialog();
-    }
+  // combo box
+  @if $combo-box {
+    @include combo-box();
+  }
 
-    // edit
-    @if $edit {
-      @include form-input();
-    }
+  // dialog
+  @if $dialog {
+    @include dialog();
+  }
 
-    // radio-group
-    @if $radio-group {
-      @include radio-group();
-    }
+  // edit
+  @if $edit {
+    @include form-input();
+  }
 
-    // tab
-    @if $tab {
-      @include tab();
-    }
+  // image
+  @if $image {
+    @include icon();
+  }
 
-    // tabular grid
-    @if $tabular-grid {
-      // TODO: This is a WA to transpile the file
-      @include tabular-grid($icons-path: $icons-path);
-    }
+  // radio-group
+  @if $radio-group {
+    @include radio-group();
+  }
 
-    // tree view
-    @if $tree-view {
-      @include tree-view();
-    }
+  // tab
+  @if $tab {
+    @include tab();
+  }
+
+  // tabular grid
+  @if $tabular-grid {
+    // TODO: This is a WA to transpile the file
+    @include tabular-grid($icons-path: $icons-path);
+  }
+
+  // tree view
+  @if $tree-view {
+    @include tree-view();
   }
 }
 
@@ -436,10 +443,10 @@
   $body: false,
 
   // Theme
-  $light-theme: false,
   $dark-theme: false,
-  $prefers-color-scheme-light: false,
+  $light-theme: false,
   $prefers-color-scheme-dark: false,
+  $prefers-color-scheme-light: false,
 
   // Tokens
   $tokens: false,
@@ -452,9 +459,8 @@
 
   // Icons
   $icons-path: "./assets/icons/",
-  $ignored-multicolor-categories: (),
-  $ignored-monochrome-categories: (),
   $icons-variables: false,
+  $icons-placeholders: false,
 
   // Font face
   $font-face: false,
@@ -462,12 +468,11 @@
 
   // Base
   $base-classes: false,
-  $label: false,
   $button-classes: false,
-  $form-controls-classes: false,
+  $form-control-classes: false,
   $icon-classes: false,
-  $typography-classes: false,
   $layout-classes: false,
+  $typography-classes: false,
 
   // Components
   $components: false,
@@ -476,6 +481,7 @@
   $combo-box: false,
   $dialog: false,
   $edit: false,
+  $image: false,
   $radio-group: false,
   $tab: false,
   $tabular-grid: false,
@@ -494,10 +500,10 @@
     $body: $body,
 
     // Theme
-    $light-theme: $light-theme,
     $dark-theme: $dark-theme,
-    $prefers-color-scheme-light: $prefers-color-scheme-light,
+    $light-theme: $light-theme,
     $prefers-color-scheme-dark: $prefers-color-scheme-dark,
+    $prefers-color-scheme-light: $prefers-color-scheme-light,
 
     // Tokens
     $tokens: $tokens,
@@ -510,9 +516,8 @@
 
     // Icons
     $icons-path: $icons-path,
-    $ignored-multicolor-categories: $ignored-multicolor-categories,
-    $ignored-monochrome-categories: $ignored-monochrome-categories,
     $icons-variables: $icons-variables,
+    $icons-placeholders: $icons-placeholders,
 
     // Font face
     $font-face: $font-face,
@@ -521,7 +526,7 @@
     // Base
     $base-classes: $base-classes,
     $button-classes: $button-classes,
-    $form-controls-classes: $form-controls-classes,
+    $form-control-classes: $form-control-classes,
     $icon-classes: $icon-classes,
     $layout-classes: $layout-classes,
     $typography-classes: $typography-classes,

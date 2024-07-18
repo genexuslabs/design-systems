@@ -21,7 +21,7 @@
       }
     </style>
   </head>
-  <body class="showcase" sidebar>
+  <body class="showcase" data-sidebar>
     <main class="main">
       <div class="container">
         <!-- button primary -->
@@ -100,9 +100,12 @@ show-lines="all"></ch-tree-view-render>`;
                   ></ch-tree-view-render>
                   <script type="module">
                     import { iconsModel } from "./assets/models/tree.js";
+                    import { getTreeViewImagePathCallback } from "./assets/scripts/assets-manager.js";
                     const treeWithIcons =
                       document.getElementById("tree-with-icons");
                     treeWithIcons.model = iconsModel;
+                    treeWithIcons.getImagePathCallback =
+                      getTreeViewImagePathCallback;
                   </script>
                 </div>
                 <div class="article__code">
@@ -297,56 +300,10 @@ show-lines="none"></ch-tree-view-render>`;
               </div>
               <!-- /.article__main -->
             </article>
-
-            <!-- ========================== 
-          tree mercury icons
-          =========================== -->
-            <article class="article" nav data-title="objects icons">
-              <header class="article__header"></header>
-              <!-- main -->
-              <div class="article__main">
-                <p class="article__description">
-                  The tree comes in Mercury with a set of predefined object
-                  icons. To set any of these icons to a tree item, you have to
-                  provide the name of the icon on the <code>parts</code> item
-                  property. Every icon name has to be provided with the
-                  <code>objects-</code> prefix. So, for example, to set the
-                  <em>web-panel</em> icon on an item, you would have to set the
-                  item data to something like this:
-                </p>
-                <pre class="article__description m-0"><code>{
-  id: "Main_Programs.Login",
-  caption: "Login",
-  <strong>parts: "objects-web-panel"</strong>
-}</code>
-</pre>
-                <p class="article__description">
-                  The following is the list of all the objects icons that are
-                  available in the tree view:
-                </p>
-
-                <div class="article__content article__content--large">
-                  <ch-tree-view-render
-                    class="tree-view"
-                    show-lines="all"
-                    id="tree-all-object-icons"
-                  ></ch-tree-view-render>
-                  <script type="module">
-                    import { allObjectsIcons } from "./assets/models/tree.js";
-                    const treeAllObjectIcons = document.getElementById(
-                      "tree-all-object-icons"
-                    );
-                    treeAllObjectIcons.model = allObjectsIcons;
-                  </script>
-                </div>
-                <!-- /.article__content -->
-              </div>
-              <!-- /.article__main -->
-            </article>
           </div>
         </section>
       </div>
     </main>
-    <script src="./assets/scripts.js"></script>
+    <script src="./assets/scripts/scripts.js"></script>
   </body>
 </html>
