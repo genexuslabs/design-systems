@@ -40,7 +40,7 @@
 @import "./components/code/code-styles";
 @import "./components/combo-box/combo-box-styles";
 @import "./components/dialog/dialog-styles";
-@import "./components/image/image-styles";
+@import "./components/icon/icon-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
 @import "./components/tab/tab-styles";
@@ -98,7 +98,7 @@
   $combo-box: true,
   $dialog: true,
   $edit: true,
-  $image: true,
+  $icon: true,
   $radio-group: true,
   $tab: true,
   $tabular-grid: true,
@@ -345,9 +345,6 @@
         // Button icon and text
         @include button-icon-and-text();
       }
-
-      // Button icon after and text
-      @include button-icon-after-and-text();
     }
 
     // Form control classes
@@ -403,8 +400,8 @@
     @include form-input();
   }
 
-  // image
-  @if $image {
+  // icon
+  @if $icon {
     @include icon();
   }
 
@@ -481,7 +478,7 @@
   $combo-box: false,
   $dialog: false,
   $edit: false,
-  $image: false,
+  $icon: false,
   $radio-group: false,
   $tab: false,
   $tabular-grid: false,
