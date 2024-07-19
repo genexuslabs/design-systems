@@ -18,7 +18,7 @@
     "validate.ci": "npm run build-no-svg",
     "icons-svg": "ssg-svg --srcDir=src/icons/svg-source --outDir=src/assets/icons/_generated/ --configFilePath=src/icons/svg-source/.config/color-states.json --showcaseDir=showcase/icons/ --showcaseBaseHref=../assets/icons/ --logDir=./log --objectFilePath=src/assets/MERCURY_ASSETS.ts",
     "icons-sass": "ssg-sass --srcDir=src/assets/icons/ --outDir=src/icons/_generated/ --configFilePath=src/icons/svg-source/.config/color-states.json --vendorPrefix=",
-    "watch:sass": "chokidar src/**/*.scss ../common/**/*.scss -c \"npm run build.scss\"",
+    "watch.sass.mac": "chokidar 'src/**/*.scss' '../common/**/*.scss' -c \"npm run build.scss\"",
     "copy-tasks": "node copy-tasks.js",
     "showcase.scss": "sass showcase/scss/dummy-items.scss showcase/css/dummy-items.css"
   },
