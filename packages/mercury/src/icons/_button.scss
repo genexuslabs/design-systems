@@ -2,7 +2,7 @@
 
 %button-icon-only {
   @include button-tokens-icon-only();
-  inline-size: var(--button-icon-only__inline-size);
+  inline-size: var(--mer-control__block-size);
   padding: var(--button-icon-only__padding);
 }
 
