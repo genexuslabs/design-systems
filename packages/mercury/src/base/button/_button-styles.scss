@@ -3,7 +3,7 @@
 %button-base {
   @include button-common-styles(); // packages/common/base.scss
   @extend %control-base;
-  @extend %control-layout-regular;
+  @extend %control-size-regular;
   @extend %control-typography-large;
 
   &--focus-visible {
