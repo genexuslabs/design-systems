@@ -16,39 +16,6 @@ let PARENT_NAV_SIDEBAR; // a reference if the page has sidebar
 let CURRENT_PAGE_NAV_ITEM; // a reference the navigation item for the actual actual page.
 let PAGE_ARTICLES; // a reference to all the page ".article[nav]"
 
-const includeStyles = () => {
-  //reset styles
-  const resetStylesLink = document.createElement("link");
-  resetStylesLink.rel = "stylesheet";
-  resetStylesLink.href = "./assets/styles/reset.css";
-  HEAD.appendChild(resetStylesLink);
-
-  //main styles
-  const mainStylesLink = document.createElement("link");
-  mainStylesLink.rel = "stylesheet";
-  mainStylesLink.href = "./assets/styles/main.css";
-  HEAD.appendChild(mainStylesLink);
-
-  //sidebar styles
-  const sidebarStylesLink = document.createElement("link");
-  sidebarStylesLink.rel = "stylesheet";
-  sidebarStylesLink.href = "./assets/styles/sidebar.css";
-  HEAD.appendChild(sidebarStylesLink);
-
-  //top-bar styles
-  const topBarStylesLink = document.createElement("link");
-  topBarStylesLink.rel = "stylesheet";
-  topBarStylesLink.href = "./assets/styles/top-bar.css";
-  HEAD.appendChild(topBarStylesLink);
-
-  //mercury styles
-  const mercuryLink = document.createElement("link");
-  mercuryLink.rel = "stylesheet";
-  // mercuryLink.href = "./css/mercury.css"; // netlify
-  mercuryLink.href = "../dist/bundles/css/all.css"; // local development
-  HEAD.appendChild(mercuryLink);
-};
-
 const includeFavicon = () => {
   const linkElement = document.createElement("link");
   linkElement.rel = "icon";
@@ -120,7 +87,7 @@ const getNavbarItems = () => {
 const includeSidebarPageInternalNav = () => {
   // This is the navigation items for the current page articles.
   // Let's call this the internal navigation.
-  const includeSidebar = BODY.getAttribute(SIDEBAR_DATA_ATTR);
+  const includeSidebar = BODY.hasAttribute(SIDEBAR_DATA_ATTR);
   if (includeSidebar && CURRENT_PAGE_NAV_ITEM) {
     // CURRENT_PAGE_NAV_ITEM is a reference to the item on the sidebar
     // that refers to the actual page.
@@ -223,7 +190,6 @@ const generateArticleId = (title, i) => {
 const includeSidebarNav = async () => {
   // This is the navigation items for the showcase html pages.
   // Let's call this the external navigation.
-  console.log("hola");
   const includeSidebar = BODY.hasAttribute(SIDEBAR_DATA_ATTR);
   if (includeSidebar) {
     const navbarItems = await getNavbarItems();
@@ -406,7 +372,6 @@ const copyToClipBoard = text => {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
-  includeStyles();
   includeFavicon();
   addGoogleFonts();
   addArticleTitles();

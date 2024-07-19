@@ -13,8 +13,16 @@
         display: inline-flex;
       }
     </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
   </head>
   <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
     <main class="main">
       <div class="container">
         <!-- button primary -->
@@ -43,27 +51,20 @@
                     <ch-image id="icon-1" class="icon-sm"></ch-image>
                   </span>
                   <script type="module">
-                    import {
-                      getImagePathCallback,
-                      getIconPath
-                    } from "./assets/scripts/assets-manager.js";
+                    import { getIconPath } from "./assets/scripts/assets-manager.js";
                     const chImage01 = document.getElementById("icon-1");
-                    const ICON_1 = getIconPath({
+                    chImage01.src = getIconPath({
                       category: "objects",
                       name: "attribute"
                     });
-                    chImage01.src = ICON_1;
-                    chImage01.getImagePathCallback = getImagePathCallback;
                   </script>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `const ICON = iconMetadataToPath(
-  { category: "objects", name: "attribute" }
-);
-<ch-image src={ICON} getImagePathCallback={getImagePathCallback}></ch-image>`;
+                    const markup1 = `const ICON = getIconPath({ category: "objects", name: "attribute" });
+<ch-image src={ICON}></ch-image>`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
                 </div>
@@ -86,27 +87,20 @@
                     </span>
                   </span>
                   <script type="module">
-                    import {
-                      getImagePathCallback,
-                      getIconPath
-                    } from "./assets/scripts/assets-manager.js";
+                    import { getIconPath } from "./assets/scripts/assets-manager.js";
                     const chImage02 = document.getElementById("icon-2");
-                    const ICON_2 = getIconPath({
+                    chImage02.src = getIconPath({
                       category: "objects",
                       name: "attribute"
                     });
-                    chImage02.src = ICON_2;
-                    chImage02.getImagePathCallback = getImagePathCallback;
                   </script>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-2" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup2 = `const ICON = iconMetadataToPath(
-{ category: "objects", name: "attribute" }
-);
-<ch-image src={ICON} getImagePathCallback={getImagePathCallback}></ch-image>`;
+                    const markup2 = `const ICON = getIconPath({ category: "objects", name: "attribute" });
+<ch-image src={ICON}></ch-image>`;
                     document.getElementById("ch-code-2").value = markup2;
                   </script>
                 </div>
@@ -118,6 +112,5 @@
         </section>
       </div>
     </main>
-    <script src="./assets/scripts/scripts.js"></script>
   </body>
 </html>

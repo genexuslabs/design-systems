@@ -10,8 +10,16 @@
         visibility: hidden;
       }
     </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
   </head>
   <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
     <main class="main">
       <div class="container">
         <!-- button primary -->
@@ -49,10 +57,12 @@
                   </ch-code>
                   <script>
                     const markup1 = `<ch-checkbox
-class="checkbox"
-checked-value="true"
-un-checked-value="false"
-value="true"></ch-checkbox>`;
+  class="checkbox"
+  checked-value="true"
+  un-checked-value="false"
+  value="true"
+>
+</ch-checkbox>`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
                 </div>
@@ -82,10 +92,12 @@ value="true"></ch-checkbox>`;
                   </ch-code>
                   <script>
                     const markup2 = `<ch-checkbox
-class="checkbox"
-checked-value="true"
-un-checked-value="false"
-value="false"></ch-checkbox>`;
+  class="checkbox"
+  checked-value="true"
+  un-checked-value="false"
+  value="false"
+>
+</ch-checkbox>`;
                     document.getElementById("ch-code-2").value = markup2;
                   </script>
                 </div>
@@ -116,11 +128,13 @@ value="false"></ch-checkbox>`;
                   </ch-code>
                   <script>
                     const markup3 = `<ch-checkbox
-class="checkbox"
-checked-value="true"
-un-checked-value="false"
-value="false"
-indeterminate></ch-checkbox>`;
+  class="checkbox"
+  checked-value="true"
+  un-checked-value="false"
+  value="false"
+  indeterminate
+>
+</ch-checkbox>`;
                     document.getElementById("ch-code-3").value = markup3;
                   </script>
                 </div>
@@ -151,11 +165,13 @@ indeterminate></ch-checkbox>`;
                   </ch-code>
                   <script>
                     const markup4 = `<ch-checkbox
-class="checkbox"
-checked-value="true"
-un-checked-value="false"
-value="false"
-indeterminate></ch-checkbox>`;
+  caption="Caption"
+  class="checkbox checkbox--error"
+  checked-value="true"
+  un-checked-value="false"
+  value="false"
+>
+</ch-checkbox>`;
                     document.getElementById("ch-code-4").value = markup4;
                   </script>
                 </div>
@@ -167,6 +183,5 @@ indeterminate></ch-checkbox>`;
         </section>
       </div>
     </main>
-    <script src="./assets/scripts/scripts.js"></script>
   </body>
 </html>
