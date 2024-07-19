@@ -1,5 +1,6 @@
 :root {
   --sc-base__border-color: var(--mer-color__neutral-gray--500);
+  --sc-base__body-line-height: 1.7;
   /* TOKENS MAIN */
   --body__font-size: 16px;
   --body__line-height: 16px;
@@ -16,7 +17,7 @@
   --section-title__font-family: var(--mer-font-family--title);
   --section-title__font-weight: var(--mer-font__weight--light);
   --section-description__font-size: 16px;
-  --section-description__line-height: var(--mer-line-height--spaced);
+  --section-description__line-height: var(--sc-base__body-line-height);
   --section-description__max-width: 640px;
   --articles-container__gap: 0;
   /* article */
@@ -263,7 +264,7 @@ Articles
 .article__description {
   font-size: var(--article-description__font-size);
   max-width: var(--article-description__max-width);
-  line-height: var(--mer-line-height--spaced);
+  line-height: var(--sc-base__body-line-height);
 }
 .article__sub-title {
   font-size: var(--article-sub-title__font-size);
