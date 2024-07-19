@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // libraries
 import { writeFileSync, mkdir } from "fs";
 import path from "path";
