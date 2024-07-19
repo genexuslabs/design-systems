@@ -14,8 +14,9 @@
       }
     </style>
     <link rel="stylesheet" href="./css/dummy-items.css" />
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
   </head>
-  <body class="showcase" sidebar>
+  <body class="showcase" data-sidebar>
     <main class="main">
       <div class="container">
         <!-- button primary -->
@@ -231,40 +232,46 @@ color: var(--mer-item__color--disabled);
             </article>
 
             <!-- ========================== 
-          item color: all together
+          items container
           =========================== -->
-            <article class="article" nav data-title="item color: all together">
+            <article
+              class="article"
+              nav
+              data-title="items container: layout regular"
+            >
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <ul class="dummy-items-container">
-                    <li
+                  <div
+                    class="dummy-items-container dummy-items-container--layout-regular"
+                  >
+                    <div
                       class="dummy-item dummy-item--layout-regular dummy-item--enabled"
                     >
                       This is how an enabled control item looks like
-                    </li>
-                    <li
+                    </div>
+                    <div
                       class="dummy-item dummy-item--layout-regular dummy-item--hover"
                     >
                       This is how an hovered control item looks like
-                    </li>
-                    <li
+                    </div>
+                    <div
                       class="dummy-item dummy-item--layout-regular dummy-item--selected"
                     >
                       This is how a selected control item looks like
-                    </li>
-                    <li
+                    </div>
+                    <div
                       class="dummy-item dummy-item--layout-regular dummy-item--selected-hover"
                     >
                       This is how a selected + hover control item looks like
-                    </li>
-                    <li
+                    </div>
+                    <div
                       class="dummy-item dummy-item--layout-regular dummy-item--disabled"
                     >
                       This is how a disabled control item looks like
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
               <!-- /.article__main -->
@@ -273,6 +280,6 @@ color: var(--mer-item__color--disabled);
         </section>
       </div>
     </main>
-    <script src="./assets/scripts.js"></script>
+    <script src="./assets/scripts/scripts.js"></script>
   </body>
 </html>
