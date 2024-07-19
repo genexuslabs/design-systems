@@ -9,14 +9,21 @@
       html:not(.hydrated) {
         visibility: hidden;
       }
-
-      .dummy-item {
-      }
     </style>
-    <link rel="stylesheet" href="./css/dummy-items.css" />
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <!-- local development -->
+    <!-- <link rel="stylesheet" href="../dist/bundles/css/all.css" /> -->
+    <!-- showcase (netlify) -->
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+    <link rel="stylesheet" href="./css/dummy-items.css" />
   </head>
   <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
     <main class="main">
       <div class="container">
         <!-- button primary -->
@@ -52,7 +59,7 @@
                 <div class="article__content">
                   <div class="dummy-item-container">
                     <div
-                      class="dummy-item dummy-item--layout-regular dummy-item--enabled"
+                      class="dummy-item dummy-item--size-regular dummy-item--enabled"
                     >
                       This is how an enabled control item looks like
                     </div>
@@ -89,7 +96,7 @@ color: var(--mer-item__color--enabled);
                 <div class="article__content">
                   <div class="dummy-item-container">
                     <div
-                      class="dummy-item dummy-item--layout-regular dummy-item--hover"
+                      class="dummy-item dummy-item--size-regular dummy-item--hover"
                     >
                       This is how an hovered control item looks like
                     </div>
@@ -126,7 +133,7 @@ color: var(--mer-item__color--hover);
                 <div class="article__content">
                   <div class="dummy-item-container">
                     <div
-                      class="dummy-item dummy-item--layout-regular dummy-item--selected"
+                      class="dummy-item dummy-item--size-regular dummy-item--selected"
                     >
                       This is how a selected control item looks like
                     </div>
@@ -167,7 +174,7 @@ color: var(--mer-item__color--selected);
                 <div class="article__content">
                   <div class="dummy-item-container">
                     <div
-                      class="dummy-item dummy-item--layout-regular dummy-item--selected-hover"
+                      class="dummy-item dummy-item--size-regular dummy-item--selected-hover"
                     >
                       This is how a selected + hover control item looks like
                     </div>
@@ -204,7 +211,7 @@ color: var(--mer-item__color--selected-hover);
                 <div class="article__content">
                   <div class="dummy-item-container">
                     <div
-                      class="dummy-item dummy-item--layout-regular dummy-item--disabled"
+                      class="dummy-item dummy-item--size-regular dummy-item--disabled"
                     >
                       This is how a disabled control item looks like
                     </div>
@@ -232,42 +239,40 @@ color: var(--mer-item__color--disabled);
             </article>
 
             <!-- ========================== 
-          items container
+          items colors: all together
           =========================== -->
             <article
               class="article"
               nav
-              data-title="items container: layout regular"
+              data-title="items colors: all together"
             >
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <div
-                    class="dummy-items-container dummy-items-container--layout-regular"
-                  >
+                  <div class="colors-all-together-container">
                     <div
-                      class="dummy-item dummy-item--layout-regular dummy-item--enabled"
+                      class="dummy-item dummy-item--size-regular dummy-item--enabled"
                     >
                       This is how an enabled control item looks like
                     </div>
                     <div
-                      class="dummy-item dummy-item--layout-regular dummy-item--hover"
+                      class="dummy-item dummy-item--size-regular dummy-item--hover"
                     >
                       This is how an hovered control item looks like
                     </div>
                     <div
-                      class="dummy-item dummy-item--layout-regular dummy-item--selected"
+                      class="dummy-item dummy-item--size-regular dummy-item--selected"
                     >
                       This is how a selected control item looks like
                     </div>
                     <div
-                      class="dummy-item dummy-item--layout-regular dummy-item--selected-hover"
+                      class="dummy-item dummy-item--size-regular dummy-item--selected-hover"
                     >
                       This is how a selected + hover control item looks like
                     </div>
                     <div
-                      class="dummy-item dummy-item--layout-regular dummy-item--disabled"
+                      class="dummy-item dummy-item--size-regular dummy-item--disabled"
                     >
                       This is how a disabled control item looks like
                     </div>
@@ -276,10 +281,81 @@ color: var(--mer-item__color--disabled);
               </div>
               <!-- /.article__main -->
             </article>
+
+            <!-- ========================== 
+          items container: regular
+          =========================== -->
+            <article class="article" nav data-title="items container: regular">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  Control items are always contained inside a container that
+                  determines structural styles, such as the padding around
+                  items, as well as the gap between them, besides other
+                  aesthetic properties like <code>border-radius</code>, and
+                  <code>box-shadow</code>.
+                </p>
+                <div class="article__content">
+                  <div
+                    class="dummy-items-container dummy-items-container--size-regular"
+                  >
+                    <span
+                      class="dummy-item dummy-item--size-regular dummy-item--enabled"
+                    >
+                      This is the first enabled control item
+                    </span>
+                    <span
+                      class="dummy-item dummy-item--size-regular dummy-item--enabled"
+                    >
+                      This is the second enabled control item
+                    </span>
+                    <span
+                      class="dummy-item dummy-item--size-regular dummy-item--selected"
+                    >
+                      This is the third selected control item
+                    </span>
+                    <span
+                      class="dummy-item dummy-item--size-regular dummy-item--selected"
+                    >
+                      This is the fourth selected control item
+                    </span>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-6" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup6 = `// colors
+background-color: var(--mer-items-container__bg-color);
+border: var(--mer-items-container__border);
+box-shadow: var(--mer-items-container__box-shadow);
+
+// structure
+border-radius: var(--mer-items-container__border-radius);
+gap: var(--mer-items-container__gap);
+padding-block: var(--mer-items-container__padding-block);
+padding-inline: var(--mer-items-container__padding-inline);
+                
+* custom properties values:                    
+--mer-items-container__bg-color: var(--mer-color__elevation--01);
+--mer-items-container__border: var(--mer-items-container__border-width) var(--mer-items-container__border-style) var(--mer-items-container__border-color);
+--mer-items-container__box-shadow: var(--mer-box-shadow--01);
+--mer-items-container__border-radius: var(--mer-border__radius--sm);
+--mer-items-container__gap: var(--mer-spacing--2xs);
+--mer-items-container__padding-block: var(--mer-spacing--xs);
+--mer-items-container__padding-inline: var(--mer-spacing--xs);
+`;
+                    document.getElementById("ch-code-6").value = markup6;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
           </div>
         </section>
       </div>
     </main>
-    <script src="./assets/scripts/scripts.js"></script>
   </body>
 </html>

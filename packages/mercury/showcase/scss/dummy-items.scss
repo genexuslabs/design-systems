@@ -19,10 +19,9 @@
     @extend %item-disabled;
   }
 
-  // structure
-  &--layout-regular {
-    @extend %item-typography-regular;
-    @extend %item-layout-regular;
+  // size
+  &--size-regular {
+    @extend %item-size-regular;
   }
 
   // other
@@ -39,8 +38,16 @@
   box-sizing: border-box;
 
   @extend %control-items-container-base;
+  @extend %control-items-container-size-regular;
 
-  &--layout-regular {
-    @extend %control-items-container-layout-regular;
+  &--size-regular {
   }
+}
+.colors-all-together-container {
+  // copied from combo-box "window__content" part
+  display: grid;
+  grid-auto-rows: max-content;
+  overflow: auto;
+  box-sizing: border-box;
+  gap: var(--mer-spacing--xs);
 }
