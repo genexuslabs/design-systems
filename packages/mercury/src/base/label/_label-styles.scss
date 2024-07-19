@@ -3,7 +3,7 @@
 
 %label {
   @include label-tokens();
-  @include label-styles($styles: "baser"); // (contains enabled color)
+  @include label-styles($styles: "base"); // (contains enabled color)
 
   // a label by itself should't have :hover styles.
   // :hover styles should be defined by the control that uses the label.
