@@ -263,51 +263,43 @@ export const checkboxesModel = [
     editable: false,
     expanded: true,
     leaf: false,
-    checkbox: true,
     items: [
       {
         id: "Main_Programs",
         caption: "Main Programs",
         editable: false,
         expanded: true,
-        checkbox: true,
         items: [
           {
             id: "Main_Programs.Prompt",
             caption: "Prompt",
             leaf: true,
-            metadata: "Panel",
-            checkbox: true
+            metadata: "Panel"
           },
           {
             id: "Main_Programs.ApiHealthCheck",
             caption: "ApiHealthCheck",
-            leaf: true,
-            checkbox: true
+            leaf: true
           },
           {
             id: "Main_Programs.BackHome",
             caption: "BackHome",
-            leaf: true,
-            checkbox: true
+            leaf: true
           },
           {
             id: "Main_Programs.Login",
             caption: "Login",
-            leaf: true,
-            checkbox: true
+            leaf: true
           },
           {
             id: "Main_Programs.ProvisioningServices",
             caption: "ProvisioningServices",
-            leaf: true,
-            checkbox: true
+            leaf: true
           },
           {
             id: "Main_Programs.VersionCheck",
             caption: "VersionCheck",
-            leaf: true,
-            checkbox: true
+            leaf: true
           }
         ]
       },
@@ -315,65 +307,55 @@ export const checkboxesModel = [
         id: "Root_Module",
         caption: "Root Module",
         expanded: true,
-        checkbox: true,
         items: [
           {
             id: "Root_Module.Images",
             caption: "Images",
-            leaf: true,
-            checkbox: true
+            leaf: true
           },
           {
             id: "Root_Module.GXNext",
             caption: "GXNext",
-            leaf: true,
-            checkbox: true
+            leaf: true
           },
           {
             id: "Root_Module.GeneXusNext",
             caption: "GeneXusNext",
-            leaf: true,
-            checkbox: true
+            leaf: true
           },
           {
             id: "Root_Module.Files",
             caption: "Files",
             editable: false,
-            leaf: true,
-            checkbox: true
+            leaf: true
           },
           {
             id: "Root_Module.Domain",
             caption: "Domain",
             editable: false,
-            leaf: true,
-            checkbox: true
+            leaf: true
           }
         ]
       },
       {
         id: "References",
         caption: "References",
-        editable: false,
-        checkbox: true
+        editable: false
       },
       {
         id: "Customization",
         caption: "Customization",
         expanded: true,
-        checkbox: true,
         items: [
           {
             id: "Customization.Files",
             caption: "Files",
-            leaf: true,
-            checkbox: true
+            leaf: true
           },
           {
             id: "Customization.Images",
             caption: "Images",
-            leaf: true,
-            checkbox: true
+            leaf: true
           }
         ]
       },
@@ -381,8 +363,7 @@ export const checkboxesModel = [
         id: "Documentation",
         caption: "Documentation",
         editable: false,
-        leaf: true,
-        checkbox: true
+        leaf: true
       }
     ]
   }
