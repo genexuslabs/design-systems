@@ -14,8 +14,15 @@
       }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
   </head>
   <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
     <main class="main">
       <div class="container">
         <!-- button primary -->
@@ -56,9 +63,7 @@
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `const ICON = iconMetadataToPath(
-  { category: "objects", name: "attribute" }
-);
+                    const markup1 = `const ICON = getIconPath({ category: "objects", name: "attribute" });
 <ch-image src={ICON}></ch-image>`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
@@ -94,9 +99,7 @@
                   <ch-code id="ch-code-2" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup2 = `const ICON = iconMetadataToPath(
-{ category: "objects", name: "attribute" }
-);
+                    const markup2 = `const ICON = getIconPath({ category: "objects", name: "attribute" });
 <ch-image src={ICON}></ch-image>`;
                     document.getElementById("ch-code-2").value = markup2;
                   </script>
@@ -109,6 +112,5 @@
         </section>
       </div>
     </main>
-    <script src="./assets/scripts/scripts.js"></script>
   </body>
 </html>

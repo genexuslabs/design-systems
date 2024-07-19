@@ -20,8 +20,15 @@
       }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
   </head>
   <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
     <main class="main">
       <div class="container">
         <!-- button primary -->
@@ -46,7 +53,12 @@
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <ch-tab-render class="tab" id="tab-1" direction="block">
+                  <ch-tab-render
+                    class="tab"
+                    id="tab-1"
+                    direction="block"
+                    selected-id="item1"
+                  >
                     <div slot="item1" class="slot">
                       <p class="text-body">Content of the item 1</p>
                     </div>
@@ -74,7 +86,11 @@
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `<ch-tab-render class="tab" direction="block"></ch-tab-render>`;
+                    const markup1 = `<ch-tab-render
+  class="tab"
+  direction="block"
+  selected-id="item1"
+></ch-tab-render>`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
                 </div>
@@ -91,7 +107,12 @@
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <ch-tab-render class="tab" id="tab-2" direction="inline">
+                  <ch-tab-render
+                    class="tab"
+                    id="tab-2"
+                    direction="inline"
+                    selected-id="item1"
+                  >
                     <div slot="item1" class="slot">
                       <p class="text-body">Content of the item 1</p>
                     </div>
@@ -119,7 +140,11 @@
                   <ch-code id="ch-code-2" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup2 = `<ch-tab-render class="tab" direction="inline"></ch-tab-render>`;
+                    const markup2 = `<ch-tab-render
+  class="tab"
+  direction="inline"
+  selected-id="item1"
+></ch-tab-render>`;
                     document.getElementById("ch-code-2").value = markup2;
                   </script>
                 </div>
@@ -131,6 +156,5 @@
         </section>
       </div>
     </main>
-    <script src="./assets/scripts/scripts.js"></script>
   </body>
 </html>
