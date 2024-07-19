@@ -87,7 +87,7 @@
   // Base
   $base-classes: true,
   $button-classes: true,
-  $form-control-classes: true,
+  $form-controls-classes: true,
   $icon-classes: true,
   $layout-classes: true,
   $typography-classes: true,
@@ -346,13 +346,10 @@
         // Button icon and text
         @include button-icon-and-text();
       }
-
-      // Button icon after and text
-      @include button-icon-after-and-text();
     }
 
     // Form control classes
-    @if $form-control-classes {
+    @if $form-controls-classes {
       @include fieldset();
       @include label();
     }
@@ -470,7 +467,7 @@
   // Base
   $base-classes: false,
   $button-classes: false,
-  $form-control-classes: false,
+  $form-controls-classes: false,
   $icon-classes: false,
   $layout-classes: false,
   $typography-classes: false,
@@ -527,7 +524,7 @@
     // Base
     $base-classes: $base-classes,
     $button-classes: $button-classes,
-    $form-control-classes: $form-control-classes,
+    $form-controls-classes: $form-controls-classes,
     $icon-classes: $icon-classes,
     $layout-classes: $layout-classes,
     $typography-classes: $typography-classes,
