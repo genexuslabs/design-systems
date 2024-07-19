@@ -76,6 +76,15 @@
   /*-------------------------------------------------------------
   Inline Control (Should have the same height to look good inline)
   -------------------------------------------------------------*/
+
+  // depend of item size
+  --mer-control__border-radius: ;
+  --mer-control__block-size: ;
+  --mer-control__font-size: ;
+  --mer-control__padding-block: 0;
+  --mer-control__padding-inline: 0;
+  --mer-control__gap: 0;
+
   // base
   --mer-control__font-family: var(--mer-font-family--body);
   --mer-control__line-height: var(--mer-line-height--regular);
@@ -90,12 +99,12 @@
   --mer-control-large__font-size: var(--mer-font__size--xs);
 
   // size: regular: button, combo-box, etc...
+  --mer-control-regular__border-radius: var(--mer-border__radius--sm);
+  --mer-control-regular__block-size: 26px;
   --mer-control-regular__font-size: var(--mer-font__size--2xs);
   --mer-control-regular__gap: var(--mer-spacing--xs);
   --mer-control-regular__padding-block: 0; // 0 because the height should be fixed.
   --mer-control-regular__padding-inline: var(--mer-spacing--xs);
-  --mer-control-regular__border-radius: var(--mer-border__radius--sm);
-  --mer-control-regular__block-size: 26px;
 
   // size: tiny: checkbox, radio-button, etc...
   --mer-control-tiny__block-size: var(--mer-spacing--md);
