@@ -1,7 +1,7 @@
 /*----------------------
 Focus
 ----------------------*/
-@mixin focus($outline: false) {
+@mixin focus-style($outline: false) {
   @if $outline == true {
     outline: var(--mer-focus__outline-width)
       var(--mer-focus__outline-style)
@@ -336,19 +336,19 @@ Label
     margin-block-end: var(--mer-label__gap--block);
   }
 }
-%label-base {
+%label-styles-base {
   @include label-styles($styles: "base");
 }
-%label-hover {
+%label-styles-hover {
   @include label-styles($styles: "hover");
 }
-%label-disabled {
+%label-styles-disabled {
   @include label-styles($styles: "disabled");
 }
-%label-position-block {
+%label-styles-position-block {
   @include label-styles($styles: "position-block");
 }
-%label-position-inline {
+%label-styles-position-inline {
   @include label-styles($styles: "position-inline");
 }
 /*----------------------

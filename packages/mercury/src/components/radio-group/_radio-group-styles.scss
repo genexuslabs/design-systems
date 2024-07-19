@@ -45,8 +45,8 @@
   font-size: 12px;
 }
 
-%radio__label--disabled {
-  @extend %label--disabled;
+%radio__label-disabled {
+  @extend %label-styles-disabled;
 }
 
 /// @group Radio Group
@@ -132,7 +132,7 @@
 
   @if $add--disabled {
     #{$radio-item__label--disabled-selector} {
-      @extend %radio__label--disabled;
+      @extend %radio__label-disabled;
     }
   }
 }

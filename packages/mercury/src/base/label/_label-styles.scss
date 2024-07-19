@@ -34,12 +34,12 @@
     @extend %label;
   }
   #{$label--disabled-selector} {
-    @extend %label--disabled;
+    @extend %label-styles-disabled;
   }
   #{$label--position-block-selector} {
-    @extend %label--position-block;
+    @extend %label-styles-position-block;
   }
   #{$label--position-inline-selector} {
-    @extend %label--position-inline;
+    @extend %label-styles-position-inline;
   }
 }
