@@ -11,7 +11,10 @@
       }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
-    
+
+    <!-- local development -->
+    <!-- <link rel="stylesheet" href="../dist/bundles/css/all.css" /> -->
+    <!-- showcase (netlify) -->
     <link rel="stylesheet" href="./all.css" />
     <link rel="stylesheet" href="./assets/styles/top-bar.css" />
     <link rel="stylesheet" href="./assets/styles/sidebar.css" />
@@ -27,7 +30,14 @@
           <!-- header -->
           <header class="section__header">
             <h1 class="section__title">radio group</h1>
-            <p class="section__description">A radio group is an essential UI component in HTML, designed to allow users to select one option from a set of choices. Each radio button within the group represents a distinct option, ensuring mutual exclusivity. This setup is commonly used in forms to facilitate decisions such as choosing a payment method, selecting a preferred contact time, or specifying a shipping option.</p>
+            <p class="section__description">
+              A radio group is an essential UI component in HTML, designed to
+              allow users to select one option from a set of choices. Each radio
+              button within the group represents a distinct option, ensuring
+              mutual exclusivity. This setup is commonly used in forms to
+              facilitate decisions such as choosing a payment method, selecting
+              a preferred contact time, or specifying a shipping option.
+            </p>
           </header>
           <div class="section__articles-container">
             <!-- ========================== 
@@ -38,7 +48,10 @@
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <ch-radio-group-render class="radio-group" id="radio-group-1"></ch-radio-group>
+                  <ch-radio-group-render
+                    class="radio-group"
+                    id="radio-group-1"
+                  ></ch-radio-group-render>
                   <script>
                     const radioGroup1 =
                       document.getElementById("radio-group-1");
@@ -70,7 +83,7 @@
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `<ch-radio-group-render class="radio-group"></ch-radio-group-render>`
+                    const markup1 = `<ch-radio-group-render class="radio-group"></ch-radio-group-render>`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
                 </div>
