@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import stringifyObject from "stringify-object";
 import path from "path";
 import * as fs from "fs";
