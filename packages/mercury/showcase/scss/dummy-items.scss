@@ -1,32 +1,33 @@
 @import "../../src/base/common";
 .dummy-item {
+  // copied from combo-box "item" part
+  display: inline-flex;
+  align-items: center;
+
   @extend %control-item-base;
 
   // colors
-  &--enabled {
-    @extend %item-enabled;
-  }
   &--hover {
-    @extend %item-hover;
+    @extend %control-item-hover;
   }
   &--selected {
-    @extend %item-selected;
+    @extend %control-item-selected;
   }
   &--selected-hover {
-    @extend %item-selected-hover;
+    @extend %control-item-selected-hover;
   }
   &--disabled {
-    @extend %item-disabled;
+    @extend %control-item-disabled;
   }
 
   // size
   &--size-regular {
-    @extend %item-size-regular;
+    @extend %control-item-size-regular;
   }
 
   // other
   &--border-radius {
-    @extend %item-border-radius;
+    @extend %control-item-border-radius;
   }
 }
 
@@ -38,7 +39,8 @@
   box-sizing: border-box;
 
   @extend %control-items-container-base;
-  @extend %control-items-container-size-regular;
+  @extend %control-items-container-type-regular;
+  @extend %dropdown-styles;
 
   &--size-regular {
   }
@@ -49,5 +51,5 @@
   grid-auto-rows: max-content;
   overflow: auto;
   box-sizing: border-box;
-  gap: var(--mer-spacing--xs);
+  gap: var(--mer-spacing--2xs);
 }
