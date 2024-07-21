@@ -18,11 +18,15 @@
 // Tokens Semantic
 @import "./tokens/semantic/accent";
 @import "./tokens/semantic/border";
+@import "./tokens/semantic/control";
 @import "./tokens/semantic/icon";
 @import "./tokens/semantic/item";
-@import "./tokens/semantic/other";
+@import "./tokens/semantic/general";
 @import "./tokens/semantic/text";
 @import "./tokens/semantic/heading";
+
+// Tokens Other
+@import "./tokens/chameleon";
 
 // Base classes
 @import "./base/label/label-styles"; // should be at the top, since other elements use it.
@@ -218,7 +222,8 @@
       }
 
       // Semantic (Other than colors)
-      @include semantic-other();
+      @include semantic-general();
+      @include semantic-control();
 
       // Semantic Colors (Are independent of color scheme)
       @if $colors {
