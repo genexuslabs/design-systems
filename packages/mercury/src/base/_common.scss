@@ -48,6 +48,153 @@ Scrollbar
   @extend %scrollbar-styles;
 }
 
+/*--------------------------------------------------------
+Control (applies to controls which height's should be equal.
+Note: Controls like button, form-text, combo-box, etc.. 
+should have the same height, in order to "look good" inline.
+--------------------------------------------------------*/
+@mixin control($styles: "") {
+  // Base
+  @if $styles == "base" {
+    // generic styles
+    border-style: var(--mer-control__border-style);
+    border-color: var(--mer-control__border-color);
+    border-width: var(--mer-control__border-width);
+    font-family: var(--mer-control__font-family);
+    font-size: var(--mer-control__font-size);
+    font-style: var(--mer-control__font-style);
+    font-weight: var(--mer-control__font-weight);
+    line-height: var(--mer-control__line-height);
+    text-transform: var(--mer-control__text-transform);
+    align-items: center; // WA (review this)
+
+    // structure styles (depend on size)
+    border-radius: var(--mer-control__border-radius);
+    block-size: var(--mer-control__block-size);
+    padding-block: var(--mer-control__padding-block);
+    padding-inline: 8px;
+    box-sizing: border-box; // WA (To be removed)
+
+    // color styles (depend on state)
+    background-color: var(--mer-control__background-color);
+    border-color: var(--mer-control__border-color);
+    color: var(--mer-control__color);
+  }
+  // States
+  @if $styles == "hover" {
+    background-color: var(--mer-control__background-color--hover);
+    border-color: var(--mer-control__border-color--hover);
+  }
+  @if $styles == "disabled" {
+    background-color: var(--mer-control__background-color--disabled);
+    border-color: var(--mer-control__border-color--disabled);
+    --mer-control__color: var(--mer-control__color--disabled);
+  }
+  // Size
+  @if $styles == "size-regular" {
+    //ie.: button, form-text, combo-box
+    --mer-control__border-radius: var(--mer-control-regular__border-radius);
+    --mer-control__block-size: var(--mer-control-regular__block-size);
+    --mer-control__padding-block: var(--mer-control-regular__padding-block);
+    --mer-control__padding-inline: var(--mer-control-regular__padding-inline);
+    --mer-control__padding-inline: 8px;
+  }
+  @if $styles == "size-tiny" {
+    //ie.: checkbox, radio-button
+    --mer-control__block-size: var(--mer-control-tiny__block-size);
+    inline-size: var(--mer-control-tiny__inline-size);
+  }
+  // Typography
+  @if $styles == "typography-regular" {
+    //ie.: button, form-text, combo-box
+    --mer-control__font-size: var(--mer-control-regular__font-size);
+  }
+  @if $styles == "typography-large" {
+    //ie.: button, form-text, combo-box
+    --mer-control__font-size: var(--mer-control-large__font-size);
+  }
+  // Placeholder
+  @if $styles == "placeholder" {
+    &::placeholder {
+      color: var(--mer-control-placeholder__color);
+    }
+  }
+}
+%control-base {
+  @include control($styles: "base");
+}
+%control-hover {
+  @include control($styles: "hover");
+}
+%control-disabled {
+  @include control($styles: "disabled");
+}
+%control-size-regular {
+  @include control($styles: "size-regular");
+}
+%control-size-regular-squared {
+  @include control($styles: "size-regular-squared");
+}
+%control-layout-tiny {
+  @include control($styles: "layout-tiny");
+}
+%control-typography-regular {
+  @include control($styles: "typography-regular");
+}
+%control-typography-large {
+  @include control($styles: "typography-large");
+}
+%control-placeholder {
+  @include control($styles: "placeholder");
+}
+
+/*------------------------------------------------------------------------
+Items Container (applies to every item container (tree, grid, list, etc...)
+-------------------------------------------------------------------------*/
+
+@mixin control-items-container($styles: "base") {
+  // Base
+  @if $styles == "base" {
+    background-color: var(--mer-items-container__bg-color);
+    border-color: var(--mer-items-container__border-color);
+    border-style: var(--mer-items-container__border-style);
+    border-width: var(--mer-items-container__border-width);
+    padding-block: var(--mer-items-container__padding-block);
+    padding-inline: var(--mer-items-container__padding-inline);
+  }
+  // Type
+  @if $styles == "type-regular" {
+    --mer-items-container__border-width: var(
+      --mer-items-container-regular__border-width
+    );
+    --mer-items-container__border-color: var(
+      --mer-items-container-regular__border-color
+    );
+    gap: var(--mer-items-container__gap);
+    --mer-items-container__padding-block: var(
+      --mer-items-container-regular__padding-block
+    );
+    --mer-items-container__padding-inline: var(
+      --mer-items-container-regular__padding-inline
+    );
+    --mer-items-container__gap: var(--mer-items-container-regular__gap);
+  }
+  @if $styles == "gap-regular" {
+    // (ie.: a group inside a container that also needs gap).
+    gap: var(--mer-items-container__gap);
+    --mer-items-container__gap: var(--mer-items-container-regular__gap);
+  }
+}
+%control-items-container-base {
+  @include control-items-container($styles: "base");
+}
+%control-items-container-type-regular {
+  @include control-items-container($styles: "type-regular");
+}
+%control-items-container-gap-regular {
+  @include control-items-container($styles: "gap-regular");
+}
+
 /*----------------------------------------------------
 Item (applies to every item (tree, grid, list, etc...)
 ----------------------------------------------------*/
@@ -59,10 +206,37 @@ Item (applies to every item (tree, grid, list, etc...)
 // display different styles for that particular group/$style
 
 @mixin control-item($styles: "enabled") {
-  // Base
+  // Header
+  @if $styles == "header-base" {
+    background-color: var(--mer-item-group-header__bg-color);
+    color: var(--mer-item-group-header__color);
+    font-family: var(--mer-item-group-header__font-family);
+    font-size: var(--mer-item-group-header__font-size);
+    font-weight: var(--mer-item-group-header__font-weight);
+    line-height: var(--mer-item-group-header__line-height);
+    height: var(--mer-item-group-header__height);
+    padding-block: var(--mer-item-group-header__padding-block);
+    padding-inline: var(--mer-item-group-header__padding-inline);
+    border-radius: var(--mer-item-group-header__border-radius);
+  }
+  @if $styles == "header-hover" {
+    --mer-item-group-header__bg-color: var(
+      --mer-item-group-header__bg-color--hover
+    );
+  }
+  @if $styles == "header-disabled" {
+    --mer-item-group-header__bg-color: var(
+      --mer-item-group-header__bg-color--disabled
+    );
+    --mer-item-group-header__color: var(
+      --mer-item-group-header__color--disabled
+    );
+  }
+  // Item Base
   @if $styles == "base" {
     // generic styles
     font-family: var(--mer-item__font-family);
+    font-weight: var(--mer-item__font-weight);
     line-height: var(--mer-item__line-height);
 
     // states styles
@@ -72,52 +246,37 @@ Item (applies to every item (tree, grid, list, etc...)
       var(--mer-item__border-color);
     color: var(--mer-item__color);
     font-weight: var(--mer-item__font-weight);
-    gap: var(--mer-item__gap);
-    font-weight: var(--mer-item__font-weight);
 
     // structure styles (depend on size)
+    border-radius: var(--mer-item__border-radius);
     font-size: var(--mer-item__font-size);
     gap: var(--mer-item__gap);
+    height: var(--mer-item__height);
     padding-block: var(--mer-item__padding-block);
     padding-inline: var(--mer-item__padding-inline);
   }
-  // Typography
-  @if $styles == "header" {
-    padding-block: var(--mer-item-title__padding-block);
-    padding-inline: var(--mer-item-title__padding-inline);
-    font-family: var(--mer-item-title__font-family);
-    font-size: var(--mer-item-title__font-size);
-    font-weight: var(--mer-item-title__font-weight);
-    line-height: var(--mer-item-title__line-height);
-    color: var(--mer-item-title__color);
-  }
-  @if $styles == "typography-regular" {
-    font-size: var(--mer-item__font-size--sm);
-  }
-  @if $styles == "typography-large" {
-    font-size: var(--mer-item__font-size--md);
-  }
-  // Layout
-  @if $styles == "size-regular" {
+  // Item Size
+  @if $styles == "size-small" {
     //ie.: dropdown
-    gap: var(--mer-item__gap--sm);
-    padding-block: var(--mer-item__padding-block--sm);
-    padding-inline: var(--mer-item__padding-inline--sm);
+    --mer-item__border-radius: var(--mer-item-small__border-radius);
+    --mer-item__font-size: var(--mer-item-small__font-size);
+    --mer-item__gap: var(--mer-item-small__gap);
+    --mer-item__height: var(--mer-item-small__height);
+    --mer-item__padding-block: var(--mer-item-small__padding-block);
+    --mer-item__padding-inline: var(--mer-item-small__padding-inline);
   }
-  @if $styles == "size-large" {
+  @if $styles == "size-regular" {
     //ie.: notifications
-    gap: var(--mer-item__gap--md);
-    padding-block: var(--mer-item__padding-block--md);
-    padding-inline: var(--mer-item__padding-inline--md);
+    --mer-item__border-radius: var(--mer-item-regular__border-radius);
+    --mer-item__font-size: var(--mer-item-regular__font-size);
+    --mer-item__gap: var(--mer-item-regular__gap);
+    --mer-item__height: var(--mer-item-regular__height);
+    --mer-item__padding-block: var(--mer-item-regular__padding-block);
+    --mer-item__padding-inline: var(--mer-item-regular__padding-inline);
   }
-  // Border
+  // Item Border
   @if $styles == "border-block" {
     border-block-width: var(--mer-item__border-width);
-  }
-  @if $styles == "border-block-end" {
-    &:not(:last-child) {
-      border-block-end-width: var(--mer-item__border-width);
-    }
   }
   @if $styles == "border-inline-block" {
     border-block-width: var(--mer-item__border-width);
@@ -126,13 +285,7 @@ Item (applies to every item (tree, grid, list, etc...)
   @if $styles == "border-radius" {
     border-radius: var(--mer-item__border-radius);
   }
-  // States
-  @if $styles == "enabled" {
-    --mer-item__bg-color: var(--mer-item__bg-color--enabled);
-    --mer-item__border-color: var(--mer-item__border-color--enabled);
-    --mer-item__color: var(--mer-item__color--enabled);
-    --mer-item__font-weight: var(--mer-item__font-weight--enabled);
-  }
+  // Item States
   @if $styles == "hover" {
     --mer-item__bg-color: var(--mer-item__bg-color--hover);
     --mer-item__border-color: var(--mer-item__border-color--hover);
@@ -156,158 +309,44 @@ Item (applies to every item (tree, grid, list, etc...)
     --mer-item__color: var(--mer-item__color--disabled);
   }
 }
+%control-items-header-base {
+  @include control-item($styles: "header-base");
+}
+%control-items-header-hover {
+  @include control-item($styles: "header-hover");
+}
+%control-items-header-disabled {
+  @include control-item($styles: "header-disabled");
+}
 %control-item-base {
   @include control-item($styles: "base");
 }
-%control-item-header {
-  @include control-item($styles: "header");
+%control-item-size-small {
+  @include control-item($styles: "size-small");
 }
-%item-typography-regular {
-  @include control-item($styles: "typography-regular");
-}
-%item-typography-large {
-  @include control-item($styles: "typography-large");
-}
-%item-size-regular {
+%control-item-size-regular {
   @include control-item($styles: "size-regular");
-}
-%item-size-large {
-  @include control-item($styles: "size-large");
 }
 %item-border-block {
   @include control-item($styles: "border-block");
 }
-%item-border-block-end {
-  @include control-item($styles: "border-block-end");
-}
-%item-border-inline-block {
+%control-item-border-inline-block {
   @include control-item($styles: "border-inline-block");
 }
-%item-border-radius {
+%control-item-border-radius {
   @include control-item($styles: "border-radius");
 }
-%item-enabled {
-  @include control-item($styles: "enabled");
-}
-%item-hover {
+%control-item-hover {
   @include control-item($styles: "hover");
 }
-%item-selected {
+%control-item-selected {
   @include control-item($styles: "selected");
 }
-%item-selected-hover {
+%control-item-selected-hover {
   @include control-item($styles: "selected-hover");
 }
-%item-disabled {
+%control-item-disabled {
   @include control-item($styles: "disabled");
-}
-
-/*------------------------------------------------------------------------
-Item Container (applies to every item container (tree, grid, list, etc...)
--------------------------------------------------------------------------*/
-
-@mixin control-items-container($styles: "base") {
-  // Base
-  @if $styles == "base" {
-    background-color: var(--mer-items-container__bg-color);
-    border: var(--mer-items-container__border);
-    box-shadow: var(--mer-items-container__box-shadow);
-    // structure: (depend on the layout size)
-    border-radius: var(--mer-items-container__border-radius);
-    gap: var(--mer-items-container__gap);
-    padding-block: var(--mer-items-container__padding-block);
-    padding-inline: var(--mer-items-container__padding-inline);
-  }
-  // Layout
-  @if $styles == "size-regular" {
-    --mer-items-container__border-radius: var(
-      --mer-items-container-regular__border-radius
-    );
-    --mer-items-container__gap: var(--mer-items-container-regular__gap);
-    --mer-items-container__padding-block: var(
-      --mer-items-container-regular__padding-block
-    );
-    --mer-items-container__padding-inline: var(
-      --mer-items-container-regular__padding-inline
-    );
-  }
-  @if $styles == "layout-x" {
-    // To be completed
-  }
-}
-%control-items-container-base {
-  @include control-items-container($styles: "base");
-}
-%control-items-container-size-regular {
-  @include control-items-container($styles: "size-regular");
-}
-
-/*--------------------------------------------------------
-Control (applies to controls which height's should be equal.
-Note: Controls like button, form-text, combo-box, etc.. 
-should have the same height, in order to "look good" inline.
---------------------------------------------------------*/
-@mixin control($styles: "") {
-  // Base
-  @if $styles == "base" {
-    // generic styles
-    border-style: solid;
-    border-color: var(--mer-control__border-color);
-    border-width: var(--mer-control__border-width);
-    font-family: var(--mer-control__font-family);
-    font-weight: var(--mer-control__font-weight);
-    font-size: var(--mer-control__font-size);
-    line-height: var(--mer-control__line-height);
-    text-transform: var(--mer-control__text-transform);
-    align-items: center;
-
-    // structure styles (depend on size)
-    border-radius: var(--mer-control__border-radius);
-    block-size: var(--mer-control__block-size);
-    padding-block: var(--mer-control__padding-block);
-    padding-inline: var(--mer-control__padding-inline);
-    box-sizing: border-box; // WA (To be removed)
-  }
-  // Layout
-  @if $styles == "size-regular" {
-    //ie.: button, form-text, combo-box
-    --mer-control__border-radius: var(--mer-control-regular__border-radius);
-    --mer-control__block-size: var(--mer-control-regular__block-size);
-    --mer-control__padding-block: var(--mer-control-regular__padding-block);
-    --mer-control__padding-inline: var(--mer-control-regular__padding-inline);
-  }
-  @if $styles == "layout-tiny" {
-    //ie.: checkbox, radio-button
-    --mer-control__block-size: var(--mer-control-tiny__block-size);
-    inline-size: var(--mer-control-tiny__inline-size);
-  }
-  // Typography
-  @if $styles == "typography-regular" {
-    //ie.: button, form-text, combo-box
-    --mer-control__font-size: var(--mer-control-regular__font-size);
-  }
-  @if $styles == "typography-large" {
-    //ie.: button, form-text, combo-box
-    --mer-control__font-size: var(--mer-control-large__font-size);
-  }
-}
-%control-base {
-  @include control($styles: "base");
-}
-%control-size-regular {
-  @include control($styles: "size-regular");
-}
-%control-size-regular-squared {
-  @include control($styles: "size-regular-squared");
-}
-%control-layout-tiny {
-  @include control($styles: "layout-tiny");
-}
-%control-typography-regular {
-  @include control($styles: "typography-regular");
-}
-%control-typography-large {
-  @include control($styles: "typography-large");
 }
 
 /*----------------------
@@ -354,13 +393,22 @@ Label
 /*----------------------
 Window
 ----------------------*/
-// TODO: This styles should better be applied on the ch-window ?
+@mixin label-styles($styles: "base") {
+}
 %window-styles {
   border: var(--mer-window__border);
   border-radius: var(--mer-window__border-radius);
   padding: var(--mer-window__padding);
   background-color: var(--mer-window__bg-color);
   box-shadow: var(--mer-box-shadow--01);
+}
+
+/*----------------------
+Dropdown
+----------------------*/
+%dropdown-styles {
+  box-shadow: var(--mer-box-shadow--01);
+  border-radius: var(--mer-border__radius--sm);
 }
 
 /*----------------------
