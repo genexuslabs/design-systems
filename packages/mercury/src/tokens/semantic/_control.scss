@@ -1,0 +1,75 @@
+@mixin semantic-control() {
+  /*-------------------------------------------------------------
+  Inline Control (Should have the same height to look good inline)
+  -------------------------------------------------------------*/
+
+  // base
+  --mer-control__color: var(--mer-text__neutral);
+  --mer-control__border-width: var(--mer-border__width--sm);
+  --mer-control__border-style: solid;
+  --mer-control__border-color: transparent;
+  --mer-control__border: var(--mer-control__border-width)
+    var(--mer-control__border-style) var(--mer-control__border-color); //border varies depending on the control state (enabled, hover, or disabled);
+  --mer-control__font-family: var(--mer-font-family--body);
+  --mer-control__font-style: var(--mer-font-family--body);
+  --mer-control__font-weight: var(--mer-font__weight--regular);
+  --mer-control__line-height: var(--mer-line-height--regular);
+  --mer-control__text-transform: capitalize;
+
+  // - - - - - - - Size - - - - - - -
+  --mer-control__border-radius: ;
+  --mer-control__block-size: ;
+  --mer-control__font-size: ;
+  --mer-control__padding-block: 0;
+  --mer-control__padding-inline: 0;
+  --mer-control__gap: 0;
+
+  // size: tiny: checkbox, radio-button, etc...
+  --mer-control-tiny__block-size: var(--mer-spacing--md);
+  --mer-control-tiny__inline-size: var(--mer-spacing--md);
+  --mer-control-tiny__border-radius: var(--mer-border__radius--2xs);
+
+  // size: regular: button, combo-box, etc...
+  --mer-control-regular__border-radius: var(--mer-border__radius--sm);
+  --mer-control-regular__block-size: 26px;
+  --mer-control-regular__font-size: var(--mer-font__size--2xs);
+  --mer-control-regular__gap: var(--mer-spacing--xs);
+  --mer-control-regular__padding-block: 0; // 0 because the height should be fixed.
+  --mer-control-regular__padding-inline: 8px;
+
+  // size: large: button only, at the time of writing.
+  --mer-control-large__font-size: var(--mer-font__size--xs);
+
+  // - - - - - - - States - - - - - - -
+
+  --mer-control__bg-color: var(--mer-control__background-color--enabled);
+  --mer-control__border-color: var(--mer-control__border-color--enabled);
+
+  // enabled
+  --mer-control__background-color--enabled: transparent;
+  --mer-control__border-color--enabled: var(--mer-border-color__neutral);
+
+  // hover
+  --mer-control__background-color--hover: transparent;
+  --mer-control__border-color--hover: var(--mer-border-color__neutral--hover);
+
+  // disabled
+  --mer-control__background-color--disabled: var(
+    --mer-accent__primary--disabled
+  );
+  --mer-control__border-color--disabled: var(
+    --mer-control__background-color--disabled
+  );
+
+  // - - - - - - - Placeholder - - - - - - -
+
+  --mer-control-placeholder__color: var(
+    --ch-placeholder-color,
+    var(--mer-text__neutral)
+  );
+
+  // - - - - - - - Label - - - - - - -
+
+  --mer-control-label__color: var();
+  --mer-control-label__font-style: italic;
+}

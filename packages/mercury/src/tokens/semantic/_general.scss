@@ -1,4 +1,4 @@
-@mixin semantic-other() {
+@mixin semantic-general() {
   /*----------------------
   Body
   ----------------------*/
@@ -72,52 +72,6 @@
     --mer-accent__primary--disabled
   );
   --mer-checkbox__option-checked-image: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='currentColor' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/></svg>");
-
-  /*-------------------------------------------------------------
-  Inline Control (Should have the same height to look good inline)
-  -------------------------------------------------------------*/
-
-  // depend of item size
-  --mer-control__border-radius: ;
-  --mer-control__block-size: ;
-  --mer-control__font-size: ;
-  --mer-control__padding-block: 0;
-  --mer-control__padding-inline: 0;
-  --mer-control__gap: 0;
-
-  // base
-  --mer-control__font-family: var(--mer-font-family--body);
-  --mer-control__line-height: var(--mer-line-height--regular);
-  --mer-control__border-width: var(--mer-border__width--sm);
-  --mer-control__border-color: transparent;
-  --mer-control__border: var(--mer-control__border-width) solid
-    var(--mer-control__border-color); //border color could vary.
-  --mer-control__font-weight: var(--mer-font__weight--regular);
-  --mer-control__text-transform: capitalize;
-
-  // size: large: button only, at the time of writing.
-  --mer-control-large__font-size: var(--mer-font__size--xs);
-
-  // size: regular: button, combo-box, etc...
-  --mer-control-regular__border-radius: var(--mer-border__radius--sm);
-  --mer-control-regular__block-size: 26px;
-  --mer-control-regular__font-size: var(--mer-font__size--2xs);
-  --mer-control-regular__gap: var(--mer-spacing--xs);
-  --mer-control-regular__padding-block: 0; // 0 because the height should be fixed.
-  --mer-control-regular__padding-inline: var(--mer-spacing--xs);
-
-  // size: tiny: checkbox, radio-button, etc...
-  --mer-control-tiny__block-size: var(--mer-spacing--md);
-  --mer-control-tiny__inline-size: var(--mer-spacing--md);
-  --mer-control-tiny__border-radius: var(--mer-border__radius--2xs);
-
-  // - - - - - - - States - - - - - - -
-
-  // hover
-  --mer-control__border-color--hover: var();
-
-  // disabled
-  --mer-control__border-color--disabled: var();
 
   /*----------------------
   Label
