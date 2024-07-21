@@ -108,8 +108,8 @@
 //            ch-grid-cell
 // - - - - - - - - - - - - - - - - - - - -
 %tabular-grid-cell {
-  @extend %item-layout-regular;
-  @extend %item-typography-regular;
+  @extend %control-item-size-regular;
+  font-size: var(--mer-item-small__font-size);
   color: var(--mer-item__color);
 
   &[focused] {
@@ -371,7 +371,7 @@
     &[highlighted] {
       #{$tabular-grid-cell} {
         &:after {
-          @extend %item-hover;
+          @extend %control-item-hover;
         }
       }
     }
@@ -379,7 +379,7 @@
     &[selected] {
       #{$tabular-grid-cell} {
         &:after {
-          @extend %item-selected;
+          @extend %control-item-selected;
         }
       }
     }
