@@ -1,51 +1,21 @@
 @import "tokens";
 @import "../../../../common/resets";
+@import "../../base/common";
+@import "../../tokens/chameleon.scss";
 
 %combo-box {
   @include combo-box-tokens();
-}
+  @extend %control-base;
+  @extend %control-size-regular;
 
-%combo-box__window {
-  @extend %window-styles;
-}
-
-%combo-box__group {
-  border-block-end: var(--mer-border__width--sm) solid
-    var(--mer-color__elevation--04);
-  padding-block-end: 6px;
-  margin-block-end: 6px;
-}
-
-%combo-box__group-header {
-  @extend %control-item-header;
-  &-expandable--hover {
-    background-color: var(--mer-item__bg-color--selected);
-    color: var(--mer-item__color--hover);
-  }
-}
-
-%combo-box__item {
-  @extend %control-item-base;
-  @extend %item-typography-large;
-  @extend %item-size-regular;
-  @extend %item-border-inline-block;
-  @extend %item-enabled;
-  @extend %item-border-radius;
-
-  &--nested {
-    padding-inline-start: calc(
-      var(--ch-combo-box-item-gap) +
-        var(--ch-combo-box-group__expandable-button-size) +
-        var(--mer-spacing--2xs)
-    );
-  }
-
-  &--selected {
-    @extend %item-selected;
-  }
-
-  &--disabled {
-    @extend %item-disabled;
+  &__item {
+    &--nested {
+      padding-inline-start: calc(
+        var(--ch-combo-box-item-gap) +
+          var(--ch-combo-box-group__expandable-button-size) +
+          var(--mer-spacing--2xs)
+      );
+    }
   }
 }
 
@@ -54,7 +24,9 @@
 /// @param {String} $combo-box--disabled-selector [".combo-box[disabled]"] -
 /// @param {String} $combo-box__placeholder-selector [".combo-box::part(placeholder)"] -
 /// @param {String} $window-selector [".combo-box::part(window)"] -
+/// @param {String} $window__content-selector [".combo-box::part(window__content)"] -
 /// @param {String} $group__selector [".combo-box::part(group)"] -
+/// @param {String} $group__content-selector [".combo-box::part(group__content)"] -
 /// @param {String} $group__header-selector [".combo-box::part(group__header)"] -
 /// @param {String} $group__header--disabled-selector [".combo-box::part(group__header disabled)"] -
 /// @param {String} $group__header--expandable-selector [".combo-box::part(group__header expandable)"] -
@@ -71,7 +43,9 @@
   $combo-box--disabled-selector: ".combo-box[disabled]",
   $combo-box__placeholder-selector: ".combo-box::part(placeholder)",
   $window-selector: ".combo-box::part(window)",
+  $window__content-selector: ".combo-box::part(window__content)",
   $group__selector: ".combo-box::part(group)",
+  $group__content-selector: ".combo-box::part(group__content)",
   $group__header-selector: ".combo-box::part(group__header)",
   $group__header--disabled-selector: ".combo-box::part(group__header disabled)",
   $group__header--expandable-selector:
@@ -88,64 +62,83 @@
   // TODO: IMPROVE STYLE. Unanimo's implementation does not work well in Sidebar Menus
 
   #{$combo-box-selector} {
-    @extend %form-input;
     @extend %combo-box;
+
+    &:hover {
+      @extend %control-hover;
+    }
+
     &:focus {
-      @extend %form-input--focus;
+      @include focus-style();
     }
 
     @if $add--placeholder-var {
-      // @include form-input-placeholder-var();
     }
   }
 
   @if $add--placeholder {
     #{$combo-box__placeholder-selector} {
-      @extend %form-input__placeholder;
+      color: red;
+      &::placeholder {
+        color: red;
+      }
     }
   }
 
   @if $add--disabled {
     #{$combo-box--disabled-selector} {
-      @extend %form-input--disabled;
+      @extend %control-disabled;
     }
 
     #{$group__header--disabled-selector} {
-      @extend %combo-box__item--disabled;
+      @extend %control-items-header-disabled;
     }
 
     #{$item--disabled-selector} {
-      @extend %combo-box__item--disabled;
+      @extend %control-item-disabled;
     }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
   //                 Window
   // - - - - - - - - - - - - - - - - - - - -
+
   #{$window-selector} {
-    @extend %combo-box__window;
+  }
+
+  #{$window__content-selector} {
+    @extend %dropdown-styles;
+    @extend %control-items-container-base;
+    @extend %control-items-container-type-regular;
+    @extend %control-items-container-gap-regular;
+    max-block-size: var(--mer-items-container__max-block-size);
   }
 
   // - - - - - - - - - - - - - - - - - - - -
   //                  Group
   // - - - - - - - - - - - - - - - - - - - -
-  #{$group__selector} {
-    @extend %combo-box__group;
-  }
 
   #{$group__header-selector} {
-    @extend %combo-box__group-header;
+    @extend %control-items-header-base;
   }
 
-  #{$group__header--expandable-selector}:hover {
-    @extend %combo-box__group-header-expandable--hover;
+  #{$group__header--expandable-selector} {
+    @extend %control-items-header-base;
+    &:hover {
+      @extend %control-items-header-hover;
+    }
+  }
+  #{$group__content-selector} {
+    @extend %control-items-container-gap-regular;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
   //                  Item
   // - - - - - - - - - - - - - - - - - - - -
   #{$item-selector} {
-    @extend %combo-box__item;
+    @extend %control-item-base;
+    @extend %control-item-size-regular;
+    @extend %control-item-border-inline-block;
   }
 
   #{$item--nested-selector} {
@@ -153,6 +146,6 @@
   }
 
   #{$item--selected-selector} {
-    @extend %combo-box__item--selected;
+    @extend %control-item-selected;
   }
 }
