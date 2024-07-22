@@ -1,126 +1,93 @@
 @mixin semantic-item() {
   // - - - - - - - - - - - - - - - - - - - -
-  //               Items Header
-  // - - - - - - - - - - - - - - - - - - - -
-
-  --mer-item-group-header__bg-color: transparent;
-  // --mer-item-group-header__padding-block: var(--mer-spacing--2xs); to be defined
-  --mer-item-group-header__padding-block: 0;
-  --mer-item-group-header__padding-inline: var(--mer-spacing--xs);
-  --mer-item-group-header__font-family: var(--mer-font-family--title);
-  --mer-item-group-header__font-size: var(--mer-font__size--xs);
-  --mer-item-group-header__font-weight: var(--mer-font__weight--semi-bold);
-  --mer-item-group-header__height: var(--mer-spacing--xl);
-  --mer-item-group-header__line-height: var(--mer-line-height--regular);
-  --mer-item-group-header__color: var(--mer-text__bright);
-  --mer-item-group-header__border-color: transparent;
-  --mer-item-group-header__border-radius: var(--mer-border__radius--sm);
-
-  // - - - - - - - States - - - - - - -
-  // depend on item state (hover, disabled)
-
-  // hover
-  --mer-item-group-header__bg-color--hover: var(--mer-color__tinted-blue--5);
-
-  // disabled
-  --mer-item-group-header__bg-color--disabled: ; // to be defined
-  --mer-item-group-header_color--disabled: ; // to be defined
-
-  // - - - - - - - - - - - - - - - - - - - -
   //                 Items
   // - - - - - - - - - - - - - - - - - - - -
 
-  // note 1: all this tokens are applied on "@mixin item-styles", and the
-  // styling of any component item should be applied through the mixin.
+  // - - - - - - - Colors - - - - - - -
 
-  // generic (are independent of the item state)
-  --mer-item__font-family: var(--mer-font-family--body);
-  --mer-item__font-weight: var(--mer-font__weight--regular);
-  --mer-item__line-height: var(--mer-line-height--regular);
-  --mer-item__border-width: var(--mer-border__width--sm);
-  --mer-item__border-style: solid;
-
-  // - - - - - - - Size - - - - - - -
-
-  // depend of item size
-  --mer-item__font-size: ;
-  --mer-item__gap: ;
-  --mer-item__padding-block: ;
-  --mer-item__padding-inline: ;
-  --mer-item__border-radius: ;
-  --mer-item__height: ;
-
-  // small (to be defined)
-  --mer-item-small__border-radius: ;
-  --mer-item-small__padding-inline: ;
-  --mer-item-small__gap: ;
-  --mer-item-small__height: ;
-  --mer-item-small__padding-block: ;
-  --mer-item-small__padding-inline: ;
-
-  // regular
-  --mer-item-regular__border-radius: var(--mer-border__radius--sm);
-  --mer-item-regular__font-size: var(--mer-font__size--xs);
-  --mer-item-regular__gap: var(--mer-spacing--md);
-  // --mer-item-regular__padding-block: var(--mer-spacing--2xs); to be defined
-  --mer-item-regular__padding-block: 0;
-  --mer-item-regular__height: var(--mer-spacing--xl);
-  --mer-item-regular__padding-inline: var(--mer-spacing--xs);
-
-  // - - - - - - - States - - - - - - -
-
-  --mer-item__bg-color: var(--mer-item__bg-color--enabled);
-  --mer-item__border-color: var(--mer-item__border-color--enabled);
-  --mer-item__color: var(--mer-item__color--enabled);
+  --item__bg-color: var(--item__bg-color--enabled);
+  --item__border-color: var(--item__border-color--enabled);
+  --item__color: var(--item__color--enabled);
 
   // enabled
-  --mer-item__bg-color--enabled: var(--mer-color__elevation--01);
-  --mer-item__border-color--enabled: transparent;
-  --mer-item__color--enabled: var(--mer-text__on-elevation);
+  --item__bg-color--enabled: var(--mer-color__elevation--01);
+  --item__border-color--enabled: transparent;
+  --item__color--enabled: var(--mer-text__on-elevation);
 
   // hover
-  --mer-item__bg-color--hover: var(--mer-color__tinted-blue--5);
-  --mer-item__border-color--hover: var(--mer-color__tinted-blue--20);
-  --mer-item__color--hover: var(--mer-color__neutral-gray--100);
+  --item__bg-color--hover: var(--mer-color__tinted-blue--5);
+  --item__border-color--hover: var(--mer-color__tinted-blue--20);
+  --item__color--hover: var(--mer-color__neutral-gray--100);
 
   // selected
-  --mer-item__bg-color--selected: var(--mer-color__tinted-blue--10);
-  --mer-item__border-color--selected: var(--mer-color__tinted-blue--30);
-  --mer-item__color--selected: var(--mer-color__neutral-gray--100);
+  --item__bg-color--selected: var(--mer-color__tinted-blue--10);
+  --item__border-color--selected: var(--mer-color__tinted-blue--30);
+  --item__color--selected: var(--mer-color__neutral-gray--100);
 
   // selected + hover
-  --mer-item__bg-color--selected-hover: var(--mer-color__tinted-blue--10);
-  --mer-item__border-color--selected-hover: var(--mer-color__tinted-blue--20);
-  --mer-item__color--selected-hover: var(--mer-color__neutral-gray--100);
+  --item__bg-color--selected-hover: var(--mer-color__tinted-blue--10);
+  --item__border-color--selected-hover: var(--mer-color__tinted-blue--20);
+  --item__color--selected-hover: var(--mer-color__neutral-gray--100);
 
   // disabled
-  --mer-item__bg-color--disabled: transparent;
-  --mer-item__border-color--disabled: transparent;
-  --mer-item__color--disabled: var(--mer-text__primary--disabled);
+  --item__bg-color--disabled: transparent;
+  --item__border-color--disabled: transparent;
+  --item__color--disabled: var(--mer-text__primary--disabled);
+
+  // - - - - - - - Border - - - - - - -
+
+  --item__border-width: var(--mer-border__width--sm);
+  --item__border-style: solid;
+
+  // - - - - - - - Border Radius - - - - - - -
+
+  --item__border-radius: var(--mer-border__radius--sm);
+
+  // - - - - - - - Padding - - - - - - -
+
+  --item__padding-block: var(--mer-spacing--xs);
+  --item__padding-inline: var(--mer-spacing--xs);
+
+  // - - - - - - - Height - - - - - - -
+
+  --item__height--regular: var(--mer-spacing--xl); // ie.: Combo box
+  --item__height--large: 36px; // ie.: Grid
+
+  // - - - - - - - Font Face - - - - - - -
+
+  --item__font-family: var(--mer-font-family--body);
+  --item__font-weight: var(--mer-font__weight--regular);
+  --mer-item-header__font-weight: var(--mer-font__weight--semi-bold);
+
+  // - - - - - - - Font Size - - - - - - -
+
+  --item__font-size--small: var(--mer-font__size--3xs);
+  --item__font-size--regular: var(--mer-font__size--xs);
 
   // - - - - - - - - - - - - - - - - - - - -
   //           Items Container
   // - - - - - - - - - - - - - - - - - - - -
 
-  // Generic size variables (should be defined later depending con the container size)
-  --mer-items-container__bg-color: var(--mer-color__elevation--01);
-  --mer-items-container__border-color: transparent;
-  --mer-items-container__border-radius: 0;
-  --mer-items-container__border-style: solid;
-  --mer-items-container__border-width: 0;
-  --mer-items-container__gap: 0;
-  --mer-items-container__padding-block: 0;
-  --mer-items-container__padding-inline: 0;
-  --mer-items-container__max-block-size: 300px;
+  // - - - - - - - Colors - - - - - - -
 
-  // - - - - - - - Types - - - - - - -
+  --items-container__bg-color: var(--mer-color__elevation--01);
+  --items-container__border-color: var(--mer-border-color__on-surface);
 
-  // Regular (ie.: Combo Box)
-  --mer-items-container-regular__border-color: var(
-    --mer-border-color__on-surface
-  );
-  --mer-items-container-regular__border-width: var(--mer-border__width--sm);
-  --mer-items-container-regular__gap: var(--mer-spacing--2xs);
-  --mer-items-container-regular__padding-block: var(--mer-spacing--xs);
-  --mer-items-container-regular__padding-inline: var(--mer-spacing--xs);
+  // - - - - - - - Padding - - - - - - -
+
+  --items-container__padding-block: var(--mer-spacing--xs);
+  --items-container__padding-inline: var(--mer-spacing--xs);
+
+  // - - - - - - - Type Dropdown - - - - - - -
+
+  --items-container__border-radius: var(--mer-border__radius--sm);
+  --items-container__box-shadow: var(--mer-box-shadow--01);
+
+  // - - - - - - - Gap - - - - - - -
+
+  --items-container__gap: var(--mer-spacing--2xs);
+
+  // - - - - - - - Height - - - - - - -
+
+  --items-container__max-block-size: 300px;
 }
