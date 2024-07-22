@@ -4,35 +4,25 @@
   display: flex;
   align-items: center;
 
-  @extend %item-colors-enabled;
-  @extend %item-font-size-regular;
-  @extend %item-border;
-  @extend %item-border-radius;
-  @extend %item-padding-inline;
-  @extend %item-height-regular;
+  @include item-colors-enabled();
+  @include item-font-size-regular();
+  @include item-border();
+  @include item-border-radius();
+  @include item-padding-inline();
+  @include item-height-regular();
 
   // colors
   &--hover {
-    @extend %item-colors-hover;
+    @include item-colors-hover();
   }
   &--selected {
-    @extend %item-colors-selected;
+    @include item-colors-selected();
   }
   &--selected-hover {
-    @extend %item-colors-selected-hover;
+    @include item-colors-hover();
   }
   &--disabled {
-    @extend %item-colors-disabled;
-  }
-
-  // size
-  &--font-face {
-    @extend %item-font-size-regular;
-  }
-
-  // other
-  &--border-radius {
-    @extend %item-border-radius;
+    @include item-colors-disabled();
   }
 }
 
@@ -43,10 +33,10 @@
   overflow: auto;
   box-sizing: border-box;
 
-  @extend %items-container-colors;
-  @extend %items-container-padding;
-  @extend %items-container-type-dropdown;
-  @extend %items-container-gap;
+  @include items-container-colors();
+  @include items-container-padding();
+  @include items-container-dropdown();
+  @include items-container-gap();
 }
 .colors-all-together-container {
   // copied from combo-box "window__content" part

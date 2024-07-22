@@ -10,9 +10,9 @@
   $label--position-inline-selector: ".label--before"
 ) {
   #{$label-selector} {
-    @extend %label-font;
+    @include label-font();
   }
   #{$label--disabled-selector} {
-    @extend %label-color-disabled;
+    @include label-color-disabled();
   }
 }

@@ -3,6 +3,7 @@
 /*----------------------
 Focus
 ----------------------*/
+
 @mixin focus-style($outline: false) {
   @if $outline == true {
     outline: var(--focus__outline-width)
@@ -17,7 +18,8 @@ Focus
 /*----------------------
 Scrollbar
 ----------------------*/
-%scrollbar-styles {
+
+@mixin scrollbar-styles() {
   //scrollbar
   &::-webkit-scrollbar {
     width: var(--scrollbar__size);
@@ -46,377 +48,219 @@ Scrollbar
     background: var(--scrollbar-corner__bg);
   }
 }
-@mixin scrollbar-styles() {
-  @extend %scrollbar-styles;
+
+/*----------------------
+Control
+----------------------*/
+
+// Colors
+@mixin control-colors-enabled() {
+  background-color: var(--control__bg-color);
+  color: var(--control__color);
+  // enabled border color is defined in control-border()
+}
+@mixin control-colors-hover() {
+  --control__border-color: var(--control__border-color--hover);
+}
+@mixin control-colors-disabled() {
+  --control__bg-color: var(--control__background-color--disabled);
+  --control__border-color: var(--control__border-color--disabled);
+  --control__color: var(--control__color--disabled);
+}
+@mixin control-colors-hover() {
+  border-color: var(--control__border-color);
+}
+// Border
+@mixin control-border() {
+  border-width: var(--control__border-width);
+  border-style: var(--control__border-style);
+  border-color: var(--control__border-color);
+  border-radius: var(--control__border-radius);
+}
+// Font
+@mixin control-font-weight-regular() {
+  font-weight: var(--control__font-weight--regular);
+}
+@mixin control-font-weight-semi-bold() {
+  font-weight: var(--control__font-weight--semi-bold);
+}
+// Font Size
+@mixin control-font-size-small() {
+  font-size: var(--control__font-size--small);
+}
+@mixin control-font-size-regular() {
+  font-size: var(--control__font-size--regular);
+}
+// Height
+@mixin control-height-regular() {
+  block-size: var(--control__height);
+}
+// Padding
+@mixin control-padding-inline-block() {
+  padding-block: var(--control__padding-block);
+  padding-inline: var(--control__padding-inline);
+}
+@mixin control-padding-inline() {
+  padding-inline: var(--control__padding-inline);
+}
+// Placeholder
+@mixin control-placeholder() {
+  color: var(--control-placeholder__color);
+  font-style: var(--control-placeholder__font-style);
 }
 
-/*--------------------------------------------------------
-Controls (button, combo-box, form-text, etc...)
-Note: not every styles should apply. For example, the button
-has its own colors, but it should share the same block-size.
---------------------------------------------------------*/
-@mixin control($styles) {
-  // Colors
-  @if $styles == "colors-enabled" {
-    background-color: var(--control__bg-color);
-    color: var(--control__color);
-  }
-  @if $styles == "colors-hover" {
-    --control__border-color: var(--control__border-color--hover);
-  }
-  @if $styles == "colors-disabled" {
-    --control__bg-color: var(--control__background-color--disabled);
-    --control__border-color: var(--control__border-color--disabled);
-    --control__color: var(--control__color--disabled);
-  }
-  // Border
-  @if $styles == "border" {
-    border-width: var(--control__border-width);
-    border-style: var(--control__border-style);
-    border-color: var(--control__border-color);
-    border-radius: var(--control__border-radius);
-  }
-  // Font Face
-  @if $styles == "font-face" {
-    font-family: var(--control__font-family);
-    font-weight: var(--control__font-weight);
-  }
-  // Font Size
-  @if $styles == "font-size-small" {
-    font-size: var(--control__font-size--small);
-  }
-  @if $styles == "font-size-regular" {
-    font-size: var(--control__font-size--regular);
-  }
-  // Height
-  @if $styles == "height" {
-    block-size: var(--control__height);
-  }
-  // Padding
-  @if $styles == "padding" {
-    padding-block: var(--control__padding-block);
-    padding-inline: var(--control__padding-inline);
-  }
-  @if $styles == "padding-inline" {
-    padding-inline: var(--control__padding-inline);
-  }
-  @if $styles == "icon-gap" {
-    @include icon-gap-common-styles(var(--control__icon-gap));
-  }
-  // Placeholder
-  @if $styles == "placeholder" {
-    color: var(--control-placeholder__color);
-    font-style: var(--control-placeholder__font-style);
-  }
+/*----------------------
+Control Tiny
+----------------------*/
+
+@mixin control-tiny-size() {
+  block-size: var(--control-tiny__size);
+  inline-size: var(--control-tiny__size);
 }
-%control-colors-enabled {
-  @include control($styles: "colors-enabled");
+@mixin control-tiny-border() {
+  border-width: var(--control__border-width);
+  border-style: var(--control__border-style);
+  border-color: var(--control__border-color);
+  border-radius: var(--control__border-radius);
 }
-%control-colors-hover {
-  @include control($styles: "colors-hover");
+@mixin control-tiny-border-hover() {
+  --control__border-color: var(--control__border-color--hover);
 }
-%control-colors-disabled {
-  @include control($styles: "colors-disabled");
+@mixin control-tiny-border-disabled() {
+  --control__border-color: var(--control__border-color--disabled);
 }
-%control-border {
-  @include control($styles: "border");
-}
-%control-font-face {
-  @include control($styles: "font-face");
-}
-%control-font-size-small {
-  @include control($styles: "font-size-small");
-}
-%control-font-size-regular {
-  @include control($styles: "font-size-regular");
-}
-%control-height {
-  @include control($styles: "height");
-}
-%control-padding {
-  @include control($styles: "padding");
-}
-%control-padding-inline {
-  @include control($styles: "padding-inline");
-}
-%control-icon-gap {
-  @include control($styles: "icon-gap");
-}
-%control-placeholder {
-  @include control($styles: "placeholder");
+@mixin control-tiny-border-error() {
+  --control__border-color: var(--control__border-color--error);
 }
 
-/*--------------------------------------------------------
-Control Tiny (checkbox, radio-button)
---------------------------------------------------------*/
+/*----------------------
+Items Container
+----------------------*/
 
-@mixin control-tiny($styles) {
-  @if $styles == "size" {
-    // in chameleon this is determined by the custom property "--ch-checkbox__container-size"
-    block-size: var(--control-tiny__size);
-    inline-size: var(--control-tiny__size);
-  }
-  @if $styles == "border" {
-    border-width: var(--label-border__width);
-    border-style: var(--label-border__style);
-    border-color: var(--control__border-color);
-    border-radius: var(--label-border__radius);
-  }
-  @if $styles == "border-hover" {
-    --control__border-color: var(--control__border-color--hover);
-  }
-  @if $styles == "border-disabled" {
-    --control__border-color: var(--control__border-color--disabled);
-  }
-  @if $styles == "border-error" {
-    --control__border-color: var(--control__border-color--error);
-  }
+@mixin items-container-colors() {
+  background-color: var(--items-container__bg-color);
+  border-color: var(--items-container__border-color);
 }
-%control-tiny-size {
-  @include control-tiny($styles: "size");
+@mixin items-container-padding() {
+  padding-block: var(--items-container__padding-block);
+  padding-inline: var(--items-container__padding-inline);
 }
-%control-tiny-border {
-  @include control-tiny($styles: "border");
+@mixin items-container-dropdown() {
+  border-radius: var(--items-container__border-radius);
+  box-shadow: var(--items-container__box-shadow);
 }
-%control-tiny-border-hover {
-  @include control-tiny($styles: "border-hover");
+@mixin items-container-gap() {
+  gap: var(--items-container__gap);
 }
-%control-tiny-border-disabled {
-  @include control-tiny($styles: "border-disabled");
-}
-%control-tiny-border-error {
-  @include control-tiny($styles: "border-error");
+@mixin items-container-max-height() {
+  max-block-size: var(--items-container__max-block-size);
 }
 
-/*------------------------------------------------------------------------
-Items Container (applies to every item container (tree, grid, list, etc...)
--------------------------------------------------------------------------*/
+/*----------------------
+Single Item
+----------------------*/
 
-@mixin items-container($styles) {
-  // Colors
-  @if $styles == "colors" {
-    background-color: var(--items-container__bg-color);
-    border-color: var(--items-container__border-color);
-  }
-  // Padding
-  @if $styles == "padding" {
-    padding-block: var(--items-container__padding-block);
-    padding-inline: var(--items-container__padding-inline);
-  }
-  // Type
-  @if $styles == "type-dropdown" {
-    border-radius: var(--items-container__border-radius);
-    box-shadow: var(--items-container__box-shadow);
-  }
-  // Gap
-  @if $styles == "gap" {
-    gap: var(--items-container__gap);
-  }
-  // Height
-  @if $styles == "max-height" {
-    max-block-size: var(--items-container__max-block-size);
-  }
+@mixin item-colors-enabled() {
+  background-color: var(--item__bg-color);
+  border-color: var(--item__border-color);
+  color: var(--item__color);
 }
-%items-container-colors {
-  @include items-container($styles: "colors");
+@mixin item-colors-hover() {
+  --item__bg-color: var(--item__bg-color--hover);
+  --item__border-color: var(--item__border-color--hover);
+  --item__color: var(--item__color--hover);
 }
-%items-container-padding {
-  @include items-container($styles: "padding");
+@mixin item-colors-selected() {
+  --item__bg-color: var(--item__bg-color--selected);
+  --item__border-color: var(--item__border-color--selected);
+  --item__color: var(--item__color--selected);
 }
-%items-container-type-dropdown {
-  @include items-container($styles: "type-dropdown");
+@mixin item-colors-selected-hover() {
+  --item__bg-color: var(--item__bg-color--selected-hover);
+  --item__border-color: var(--item__border-color--selected-hover);
+  --item__color: var(--item__color--selected-hover);
 }
-%items-container-gap {
-  @include items-container($styles: "gap");
+@mixin item-colors-disabled() {
+  --item__bg-color: var(--item__bg-color--disabled);
+  --item__border-color: var(--item__border-color--disabled);
+  --item__color: var(--item__color--disabled);
 }
-%items-container-max-height {
-  @include items-container($styles: "max-height");
+@mixin item-border() {
+  border: var(--item__border-width) var(--item__border-style)
+    var(--item__border-color);
 }
-
-/*-------------------------------------------------------------------
-Item (applies to every item (tree, grid, list, etc...) or Item Header
--------------------------------------------------------------------*/
-
-@mixin item($styles) {
-  // Colors
-  @if $styles == "colors-enabled" {
-    background-color: var(--item__bg-color);
-    border-color: var(--item__border-color);
-    color: var(--item__color);
-  }
-  @if $styles == "colors-hover" {
-    --item__bg-color: var(--item__bg-color--hover);
-    --item__border-color: var(--item__border-color--hover);
-    --item__color: var(--item__color--hover);
-  }
-  @if $styles == "colors-selected" {
-    --item__bg-color: var(--item__bg-color--selected);
-    --item__border-color: var(--item__border-color--selected);
-    --item__color: var(--item__color--selected);
-  }
-  @if $styles == "colors-selected-hover" {
-    --item__bg-color: var(--item__bg-color--selected-hover);
-    --item__border-color: var(--item__border-color--selected-hover);
-    --item__color: var(--item__color--selected-hover);
-  }
-  @if $styles == "colors-disabled" {
-    --item__bg-color: var(--item__bg-color--disabled);
-    --item__border-color: var(--item__border-color--disabled);
-    --item__color: var(--item__color--disabled);
-  }
-  // Border
-  @if $styles == "border" {
-    border: var(--item__border-width)
-      var(--item__border-style)
-      var(--item__border-color);
-  }
-  @if $styles == "border-block-end" {
-    border-block-end: var(--item__border-width)
-      var(--item__border-style)
-      var(--item__border-color);
-  }
-  // Border Radius
-  @if $styles == "border-radius" {
-    border-radius: var(--item__border-radius);
-  }
-  // Padding
-  @if $styles == "padding" {
-    padding-block: var(--item__padding-block);
-    padding-inline: var(--item__padding-inline);
-  }
-  @if $styles == "padding-inline" {
-    padding-inline: var(--item__padding-inline);
-  }
-  // Height
-  @if $styles == "height-regular" {
-    block-size: var(--item__height--regular);
-  }
-  @if $styles == "height-large" {
-    block-size: var(--item__height--large);
-  }
-  // Font Face
-  @if $styles == "font-face-header" {
-    font-family: var(--item__font-family);
-    font-weight: var(--mer-item-header__font-weight);
-  }
-  @if $styles == "font-face-item" {
-    font-family: var(--item__font-family);
-    font-weight: var(--item__font-weight);
-  }
-  // Font Size
-  @if $styles == "font-size-small" {
-    font-size: var(--item__font-size--small);
-  }
-  @if $styles == "font-size-regular" {
-    font-size: var(--item__font-size--regular);
-  }
+@mixin item-border-block-end() {
+  border-block-end: var(--item__border-width) var(--item__border-style)
+    var(--item__border-color);
 }
-%item-colors-enabled {
-  @include item($styles: "colors-enabled");
+@mixin item-border-radius() {
+  border-radius: var(--item__border-radius);
 }
-%item-colors-hover {
-  @include item($styles: "colors-hover");
+@mixin item-padding() {
+  padding-block: var(--item__padding-block);
+  padding-inline: var(--item__padding-inline);
 }
-%item-colors-selected {
-  @include item($styles: "colors-selected");
+@mixin item-padding-inline() {
+  padding-inline: var(--item__padding-inline);
 }
-%item-colors-selected-hover {
-  @include item($styles: "colors-selected-hover");
+@mixin item-height-regular() {
+  block-size: var(--item__height--regular);
 }
-%item-colors-disabled {
-  @include item($styles: "colors-disabled");
+@mixin item-height-large() {
+  block-size: var(--item__height--large);
 }
-%item-border {
-  @include item($styles: "border");
+@mixin item-font-weight() {
+  font-weight: var(--item__font-weight);
 }
-%item-border-block-end {
-  @include item($styles: "border-block-end");
+@mixin item-font-weight-header() {
+  font-weight: var(--mer-item-header__font-weight);
 }
-%item-padding {
-  @include item($styles: "padding");
+@mixin item-font-size-small() {
+  font-size: var(--item__font-size--small);
 }
-%item-padding-inline {
-  @include item($styles: "padding-inline");
-}
-%item-height-regular {
-  @include item($styles: "height-regular");
-}
-%item-height-large {
-  @include item($styles: "height-large");
-}
-%item-border-radius {
-  @include item($styles: "border-radius");
-}
-%item-font-face-header {
-  @include item($styles: "font-face-header");
-}
-%item-font-face-item {
-  @include item($styles: "font-face-item");
-}
-%item-font-size-small {
-  @include item($styles: "font-size-small");
-}
-%item-font-size-regular {
-  @include item($styles: "font-size-regular");
+@mixin item-font-size-regular() {
+  font-size: var(--item__font-size--regular);
 }
 
 /*----------------------
 Label
 ----------------------*/
-// Defined here to facilitate the application of the label styles on the label element,
-// as well as on the ch-checkbox label.
-@mixin label-styles($styles) {
-  @if $styles == "font" {
-    color: var(--label__color);
-    font-family: var(--label__font-family);
-    font-weight: var(--label__font-weight);
-    font-size: var(--label__font-size);
-    line-height: var(--label__line-height);
-  }
-  @if $styles == "gap" {
-    gap: 8px;
-  }
-  @if $styles == "color-hover" {
-    --label__color: var(--label__color--hover);
-  }
-  @if $styles == "color-disabled" {
-    --label__color: var(--label__color--disabled);
-  }
-  @if $styles == "color-error" {
-    --label__color: var(--label__color--error);
-  }
+
+@mixin label-font() {
+  color: var(--label__color);
+  font-family: var(--label__font-family);
+  font-weight: var(--label__font-weight);
+  font-size: var(--label__font-size);
+  line-height: var(--label__line-height);
 }
-%label-font {
-  @include label-styles($styles: "font");
+@mixin label-gap() {
+  gap: var(--label__gap);
 }
-%label-gap {
-  @include label-styles($styles: "gap");
+@mixin label-color-hover() {
+  --label__color: var(--label__color--hover);
 }
-%label-color-hover {
-  @include label-styles($styles: "color-hover");
-}
-%label-color-disabled {
-  @include label-styles($styles: "color-disabled");
-}
-%label-color-error {
-  @include label-styles($styles: "color-error");
+@mixin label-color-disabled() {
+  --label__color: var(--label__color--disabled);
 }
 
 /*----------------------
 Window
 ----------------------*/
+
+// TODO: This styles should better be applied on the ch-window ?
 %window-styles {
-  border: var(--window__border);
-  border-radius: var(--window__border-radius);
-  padding: var(--window__padding);
-  background-color: var(--window__bg-color);
+  border: var(--mer-window__border);
+  border-radius: var(--mer-window__border-radius);
+  padding: var(--mer-window__padding);
+  background-color: var(--mer-window__bg-color);
   box-shadow: var(--mer-box-shadow--01);
 }
 
 /*----------------------
 Dropdown
 ----------------------*/
-%dropdown-styles {
+
+@mixin dropdown-styles() {
   box-shadow: var(--mer-box-shadow--01);
   border-radius: var(--mer-border__radius--sm);
 }

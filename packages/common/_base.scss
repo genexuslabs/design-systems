@@ -55,9 +55,9 @@
 //    Icons | Gap
 // - - - - - - - - - - - - - - - - - - - -
 
-@mixin icon-gap-common-styles($gap: var(--icon-size)) {
+@mixin icon-gap-common-styles($gap) {
   display: inline-grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: max-content 1fr;
   align-items: center;
   gap: $gap;
 }

@@ -6,7 +6,7 @@
 }
 
 %radio-item {
-  @extend %label-gap;
+  @include label-gap();
 }
 
 %radio__container {
@@ -33,11 +33,11 @@
 }
 
 %radio__label {
-  @extend %label-font;
+  @include label-font();
 }
 
 %radio__label-disabled {
-  @extend %label-color-disabled;
+  @include label-color-disabled();
 }
 
 /// @group Radio Group
@@ -116,13 +116,13 @@
 
   @if $radio-item__label {
     #{$radio-item__label} {
-      @extend %label-font;
+      @include label-font();
     }
   }
 
   @if $add--disabled {
     #{$radio-item__label--disabled-selector} {
-      @extend %label-color-disabled;
+      @include label-color-disabled();
     }
   }
 }

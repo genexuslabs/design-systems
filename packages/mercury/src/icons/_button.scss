@@ -7,9 +7,7 @@
 }
 
 %button-icon-and-text {
-  // same as regular base button
-  padding-inline: var(--button-base__padding-inline);
-  @extend %control-icon-gap;
+  @include icon-gap-common-styles(var(--mer-spacing--xs));
 }
 
 @mixin button-icon-only($selector: ".button-icon-only") {

@@ -5,12 +5,12 @@
 
 %combo-box {
   @include combo-box-tokens();
-  @extend %control-colors-enabled;
-  @extend %control-font-face;
-  @extend %control-font-size-regular;
-  @extend %control-height;
-  @extend %control-border;
-  @extend %control-padding-inline;
+  @include control-colors-enabled();
+  @include control-font-weight-regular();
+  @include control-font-size-regular();
+  @include control-height-regular();
+  @include control-border();
+  @include control-padding-inline();
 
   &__item {
     &--nested {
@@ -69,7 +69,7 @@
     @extend %combo-box;
 
     &:hover {
-      @extend %control-colors-hover;
+      @include control-colors-hover();
     }
 
     &:focus {
@@ -82,21 +82,21 @@
 
   @if $add--placeholder {
     #{$combo-box__placeholder-selector} {
-      @extend %control-placeholder;
+      @include control-placeholder();
     }
   }
 
   @if $add--disabled {
     #{$combo-box--disabled-selector} {
-      @extend %control-colors-disabled;
+      @include control-colors-disabled();
     }
 
     #{$group__header--disabled-selector} {
-      @extend %item-colors-disabled;
+      @include item-colors-disabled();
     }
 
     #{$item--disabled-selector} {
-      @extend %item-colors-disabled;
+      @include item-colors-disabled();
     }
   }
 
@@ -108,13 +108,11 @@
   }
 
   #{$window__content-selector} {
-    @extend %items-container-type-dropdown;
-    @extend %items-container-colors;
-    @extend %items-container-padding;
-    @extend %items-container-gap;
-    @extend %items-container-max-height;
-    @extend %items-container-type-dropdown;
-    max-block-size: var(--items-container__max-block-size);
+    @include items-container-colors();
+    @include items-container-padding();
+    @include items-container-dropdown();
+    @include items-container-gap();
+    @include items-container-max-height();
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -122,40 +120,40 @@
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$group__header-selector} {
-    @extend %item-colors-enabled;
-    @extend %item-height-regular;
-    @extend %item-padding-inline;
-    @extend %item-font-face-header;
+    @include item-colors-enabled();
+    @include item-height-regular();
+    @include item-padding-inline();
+    @include item-font-weight-header();
   }
 
   #{$group__header--expandable-selector} {
-    @extend %item-colors-enabled;
-    @extend %item-height-regular;
-    @extend %item-border-radius;
-    @extend %item-font-face-header;
-    @extend %item-font-size-regular;
+    @include item-colors-enabled();
+    @include item-height-regular();
+    @include item-padding-inline();
+    @include item-font-weight-header();
+    @include item-border-radius();
 
     &:hover {
-      @extend %item-colors-hover;
+      @include item-colors-hover();
     }
   }
   #{$group-selector} {
-    @extend %items-container-gap;
+    @include items-container-gap();
   }
   #{$group__content-selector} {
-    @extend %items-container-gap;
+    @include items-container-gap();
   }
 
   // - - - - - - - - - - - - - - - - - - - -
   //                  Item
   // - - - - - - - - - - - - - - - - - - - -
   #{$item-selector} {
-    @extend %item-colors-enabled;
-    @extend %item-font-size-regular;
-    @extend %item-border;
-    @extend %item-border-radius;
-    @extend %item-padding-inline;
-    @extend %item-height-regular;
+    @include item-border-radius();
+    @include item-colors-enabled();
+    @include item-font-size-regular();
+    @include item-font-weight-header();
+    @include item-height-regular();
+    @include item-padding-inline();
   }
 
   #{$item--nested-selector} {
@@ -163,6 +161,6 @@
   }
 
   #{$item--selected-selector} {
-    @extend %item-colors-selected;
+    @include item-colors-selected();
   }
 }

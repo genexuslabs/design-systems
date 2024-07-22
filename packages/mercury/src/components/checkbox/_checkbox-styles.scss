@@ -1,21 +1,20 @@
-@import "tokens";
-@import "../../base/common";
-
 %checkbox {
-  @include checkbox-tokens();
-  @extend %label-gap;
+  --ch-checkbox__container-size: var(--control-tiny__size);
+  --ch-checkbox__option-size: calc(var(--control-tiny__size) / 2);
+  @include label-gap();
 
   &:hover {
-    @extend %control-tiny-border-hover;
+    @include control-tiny-border-hover();
     &::part(label) {
-      // @extend %label-color-hover; // Not working
-      --label__color: var(--label__color--hover); // WA
+      @include label-color-hover();
     }
   }
 
   // Input
   &__input {
-    @extend %control-tiny-border;
+    // --checkbox-border-color: var(--control__border-color);
+    // border-color: var(--checkbox-border-color);
+    @include control-tiny-border();
 
     &--focus {
       @include focus-style(true);
@@ -31,12 +30,12 @@
 
   // Option
   &__option {
-    color: var(--control__border-color);
+    background-color: var(--control-tiny-option__color);
+
     &--checked {
     }
 
     &--indeterminate {
-      color: var(--mer-color__neutral-gray--300);
       block-size: var(--mer-spacing--3xs);
     }
 
@@ -45,17 +44,15 @@
     }
 
     &--disabled {
-      color: var(--mer-accent__primary--disabled);
-      border-color: var(-mer-border-color__primary--disabled);
     }
   }
 
   // Label
   &__label {
-    @extend %label-font;
+    @include label-font();
 
     &--disabled {
-      @extend %label-color-disabled;
+      @include label-color-disabled();
     }
   }
 }
@@ -147,12 +144,12 @@
   @if $add--disabled {
     // Input
     #{$checkbox__input--disabled-selector} {
-      @extend %control-tiny-border-disabled;
+      --control__border-color: var(--control__border-color--disabled);
     }
 
     // Option
     #{$checkbox__option--disabled-selector} {
-      @extend %checkbox__option--disabled;
+      --control__border-color: var(--control__border-color--disabled);
     }
 
     // Label
@@ -168,12 +165,10 @@
   @if $add--error {
     // Input
     #{$checkbox__input--error-selector} {
-      @extend %checkbox__input--error;
     }
 
     // Option
     #{$checkbox__option--error-selector} {
-      @extend %checkbox__option--error;
     }
   }
 }

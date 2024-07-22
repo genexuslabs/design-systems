@@ -1,12 +1,12 @@
 @import "../button/button-tokens";
 
 %button-base {
-  @include button-common-styles(); // packages/common/base.scss
-  @extend %control-font-face;
-  @extend %control-font-size-regular;
-  @extend %control-height;
-  @extend %control-border;
-  @extend %control-padding-inline;
+  @include button-common-styles();
+  @include control-height-regular();
+  @include control-border();
+  @include control-font-size-regular();
+  @include control-padding-inline();
+  padding-inline: var(--control__padding-inline);
 
   &--focus-visible {
     @include focus-style($outline: true);
@@ -15,10 +15,10 @@
 
 %button-primary {
   @include button-tokens-primary();
+  @include control-font-weight-semi-bold();
   @extend %button-base;
 
   //overwrite some control default styles
-  --control__font-weight: var(--mer-font__weight--semi-bold);
   --control__border-color: var(--button-primary__border-color);
 
   background-color: var(--button-primary__background-color);
@@ -48,7 +48,6 @@
   @extend %button-base;
 
   //overwrite some control default styles
-  --control__font-weight: var(--mer-font__weight--semi-bold);
   --control__border-color: var(--button-secondary__border-color);
 
   background-color: var(--button-secondary__background-color);
@@ -75,6 +74,7 @@
 
 %button-tertiary {
   @include button-tokens-tertiary();
+  @include control-font-weight-regular();
   @extend %button-base;
 
   //overwrite some control default styles

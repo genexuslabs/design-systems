@@ -108,8 +108,7 @@
 //            ch-grid-cell
 // - - - - - - - - - - - - - - - - - - - -
 %tabular-grid-cell {
-  @extend %item-font-size-regular;
-  font-size: var(--mer-item-small__font-size);
+  @include item-font-size-regular();
   color: var(--item__color);
 
   &[focused] {
@@ -371,7 +370,7 @@
     &[highlighted] {
       #{$tabular-grid-cell} {
         &:after {
-          @extend %item-colors-hover;
+          @include item-colors-hover();
         }
       }
     }
@@ -379,7 +378,7 @@
     &[selected] {
       #{$tabular-grid-cell} {
         &:after {
-          @extend %item-colors-selected;
+          @include item-colors-selected();
         }
       }
     }
