@@ -11,7 +11,7 @@
   @include tabular-grid-row-tokens();
   @include tabular-grid-column-tokens();
   @include tabular-grid-cell-tokens();
-  --mer-item__border-color--enabled: var(--mer-color__elevation--04);
+  --item__border-color--enabled: var(--mer-color__elevation--04);
 }
 
 %tabular-grid__main {
@@ -31,7 +31,7 @@
   padding-block: var(--grid-column-bar__padding-block);
   font-size: var(--grid-column-bar__font-size);
   font-family: var(--grid-column-bar__font-family);
-  line-height: var(--mer-item__line-height);
+  line-height: var(--item__line-height);
 }
 
 %tabular-grid-column__bar-resize-split {
@@ -108,9 +108,9 @@
 //            ch-grid-cell
 // - - - - - - - - - - - - - - - - - - - -
 %tabular-grid-cell {
-  @extend %control-item-size-regular;
+  @extend %item-font-size-regular;
   font-size: var(--mer-item-small__font-size);
-  color: var(--mer-item__color);
+  color: var(--item__color);
 
   &[focused] {
     @include focus-style(true);
@@ -130,7 +130,7 @@
     height: 100%;
     left: 0;
     top: 0;
-    background-color: var(--mer-item__bg-color);
+    background-color: var(--item__bg-color);
     z-index: -1;
   }
 }
@@ -139,9 +139,9 @@
   line-height: 0;
   font-size: 0;
   background-color: transparent;
-  margin-inline-end: var(--mer-label__gap--inline);
-  block-size: var(--mer-control-tiny__size);
-  inline-size: var(--mer-control-tiny__size);
+  margin-inline-end: var(--label__gap--inline);
+  block-size: var(--control-tiny__size);
+  inline-size: var(--control-tiny__size);
 }
 
 %tabular-grid-cell__selector {
@@ -154,10 +154,10 @@
 %tabular-grid-cell__selector--before {
   content: "";
   display: inline-block;
-  width: var(--mer-control-tiny__size);
-  height: var(--mer-control-tiny__size);
+  width: var(--control-tiny__size);
+  height: var(--control-tiny__size);
   border: var(--mer-form-input__border);
-  border-radius: var(--mer-control-tiny__border-radius);
+  border-radius: var(--control-tiny__border-radius);
   box-sizing: border-box;
 }
 
@@ -166,13 +166,13 @@
   content: "";
   display: inline-block;
   border-color: var(--mer-form-input-check__border-color);
-  top: calc(var(--mer-control-tiny__size) / 4);
-  left: calc(var(--mer-control-tiny__size) / 4);
+  top: calc(var(--control-tiny__size) / 4);
+  left: calc(var(--control-tiny__size) / 4);
 }
 
 %tabular-grid-cell__selector--after-checked {
-  inline-size: calc(var(--mer-control-tiny__size) / 2);
-  block-size: calc(var(--mer-control-tiny__size) / 2);
+  inline-size: calc(var(--control-tiny__size) / 2);
+  block-size: calc(var(--control-tiny__size) / 2);
   background-color: currentColor;
   pointer-events: none;
   -webkit-mask: no-repeat center / 100%
@@ -186,8 +186,8 @@
   border-radius: 2px;
   background-color: var(--mer-form-input-check__border-color);
   top: calc(
-    var(--mer-control-tiny__size) / 2 -
-      var(--mer-form-input-check__border-width) / 2
+    var(--control-tiny__size) / 2 - var(--mer-form-input-check__border-width) /
+      2
   );
 }
 
@@ -202,7 +202,7 @@
 %tabular-grid-row-actions__main {
   display: flex;
   flex-direction: column;
-  gap: var(--mer-window__gap);
+  gap: var(--window__gap);
 }
 
 /// @group ch-grid
@@ -371,7 +371,7 @@
     &[highlighted] {
       #{$tabular-grid-cell} {
         &:after {
-          @extend %control-item-hover;
+          @extend %item-colors-hover;
         }
       }
     }
@@ -379,7 +379,7 @@
     &[selected] {
       #{$tabular-grid-cell} {
         &:after {
-          @extend %control-item-selected;
+          @extend %item-colors-selected;
         }
       }
     }
