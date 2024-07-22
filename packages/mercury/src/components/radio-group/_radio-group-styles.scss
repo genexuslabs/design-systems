@@ -2,20 +2,11 @@
 
 %radio-group {
   @include radio-group-tokens();
-
-  // TODO : Extend form input styles
-
-  // Css properties provided by the ch-radio-group-render
-  --ch-radio-group__radio-container-size: var(--mer-control-tiny__size);
-  --ch-radio-group__radio-option-size: calc(var(--mer-spacing--2xs) * 1.5);
-  // /End
-
-  color: var(--mer-body__color);
-  gap: var(--radio-group_gap);
+  gap: var(--mer-spacing--sm);
 }
 
 %radio-item {
-  // gas is set as margin-inline-start on the "radio__label" part
+  @extend %label-gap;
 }
 
 %radio__container {
@@ -42,11 +33,11 @@
 }
 
 %radio__label {
-  font-size: 12px;
+  @extend %label-font;
 }
 
 %radio__label-disabled {
-  @extend %label-styles-disabled;
+  @extend %label-color-disabled;
 }
 
 /// @group Radio Group
@@ -125,14 +116,13 @@
 
   @if $radio-item__label {
     #{$radio-item__label} {
-      @extend %label-styles-base;
-      @extend %label-styles-position-inline;
+      @extend %label-font;
     }
   }
 
   @if $add--disabled {
     #{$radio-item__label--disabled-selector} {
-      @extend %radio__label-disabled;
+      @extend %label-color-disabled;
     }
   }
 }
