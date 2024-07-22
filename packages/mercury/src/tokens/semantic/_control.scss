@@ -1,75 +1,104 @@
 @mixin semantic-control() {
   /*-------------------------------------------------------------
-  Inline Control (Should have the same height to look good inline)
-  -------------------------------------------------------------*/
+  Inline Controls should have the same height to look good inline
+  --------------------------------------------------------------*/
 
-  // base
-  --mer-control__color: var(--mer-text__neutral);
-  --mer-control__border-width: var(--mer-border__width--sm);
-  --mer-control__border-style: solid;
-  --mer-control__border-color: transparent;
-  --mer-control__border: var(--mer-control__border-width)
-    var(--mer-control__border-style) var(--mer-control__border-color); //border varies depending on the control state (enabled, hover, or disabled);
-  --mer-control__font-family: var(--mer-font-family--body);
-  --mer-control__font-style: var(--mer-font-family--body);
-  --mer-control__font-weight: var(--mer-font__weight--regular);
-  --mer-control__line-height: var(--mer-line-height--regular);
-  --mer-control__text-transform: capitalize;
+  // - - - - - - - Colors - - - - - - -
 
-  // - - - - - - - Size - - - - - - -
-  --mer-control__border-radius: ;
-  --mer-control__block-size: ;
-  --mer-control__font-size: ;
-  --mer-control__padding-block: 0;
-  --mer-control__padding-inline: 0;
-  --mer-control__gap: 0;
-
-  // size: tiny: checkbox, radio-button, etc...
-  --mer-control-tiny__block-size: var(--mer-spacing--md);
-  --mer-control-tiny__inline-size: var(--mer-spacing--md);
-  --mer-control-tiny__border-radius: var(--mer-border__radius--2xs);
-
-  // size: regular: button, combo-box, etc...
-  --mer-control-regular__border-radius: var(--mer-border__radius--sm);
-  --mer-control-regular__block-size: 26px;
-  --mer-control-regular__font-size: var(--mer-font__size--2xs);
-  --mer-control-regular__gap: var(--mer-spacing--xs);
-  --mer-control-regular__padding-block: 0; // 0 because the height should be fixed.
-  --mer-control-regular__padding-inline: 8px;
-
-  // size: large: button only, at the time of writing.
-  --mer-control-large__font-size: var(--mer-font__size--xs);
-
-  // - - - - - - - States - - - - - - -
-
-  --mer-control__bg-color: var(--mer-control__background-color--enabled);
-  --mer-control__border-color: var(--mer-control__border-color--enabled);
+  --control__bg-color: var(--control__bg-color--enabled);
+  --control__border-color: var(--control__border-color--enabled);
+  --control__color: var(--control__color--enabled);
 
   // enabled
-  --mer-control__background-color--enabled: transparent;
-  --mer-control__border-color--enabled: var(--mer-border-color__neutral);
+  --control__bg-color--enabled: transparent;
+  --control__border-color--enabled: var(--mer-border-color__neutral);
+  --control__color--enabled: var(--mer-text__neutral);
 
   // hover
-  --mer-control__background-color--hover: transparent;
-  --mer-control__border-color--hover: var(--mer-border-color__neutral--hover);
+  --control__border-color--hover: var(--mer-border-color__neutral--hover);
 
   // disabled
-  --mer-control__background-color--disabled: var(
-    --mer-accent__primary--disabled
-  );
-  --mer-control__border-color--disabled: var(
-    --mer-control__background-color--disabled
-  );
+  --control__background-color--disabled: var(--mer-accent__primary--disabled);
+  --control__border-color--disabled: var(--control__background-color--disabled);
+  --control__color--disabled: var(--mer-text__on-disabled);
+
+  // error
+  --control__border-color--error: var(--mer-border-color__error);
+
+  // - - - - - - - Border - - - - - - -
+  --control__border-width: var(--mer-border__width--sm);
+  --control__border-style: solid;
+  --control__border-radius: var(--mer-border__radius--sm);
+
+  // - - - - - - - Font Face - - - - - - -
+
+  --control__font-family: var(--mer-font-family--body);
+  --control__font-weight: var(--mer-font__weight--regular);
+
+  // - - - - - - - Font Size - - - - - - -
+
+  --control__font-size--small: var(--mer-font__size--3xs);
+  --control__font-size--regular: var(--mer-font__size--xs);
+
+  // - - - - - - - Height - - - - - - -
+
+  --control__height: 26px;
+
+  // - - - - - - - Padding - - - - - - -
+
+  --control__padding-block: var(--mer-spacing--xs);
+  --control__padding-inline: var(--mer-spacing--xs);
+
+  // - - - - - - - Gap - - - - - - -
+
+  --control__icon-gap: var(--mer-spacing--xs);
 
   // - - - - - - - Placeholder - - - - - - -
 
-  --mer-control-placeholder__color: var(
+  --control-placeholder__color: var(
     --ch-placeholder-color,
     var(--mer-text__neutral)
   );
+  --control-placeholder__font-style: italic;
 
-  // - - - - - - - Label - - - - - - -
+  /*-------------------------------------------------------------
+  Tiny controls (ie.: checkbox, radio-button)
+  --------------------------------------------------------------*/
 
-  --mer-control-label__color: var();
-  --mer-control-label__font-style: italic;
+  // border colors are the same from "--control__***" tokens
+
+  --control-tiny__size: var(--mer-spacing--md);
+  --control-tiny__border-width: 1.2px;
+  --control-tiny__border-style: solid;
+  --control-tiny__border-radius-sm: 1px;
+  --control-tiny__border-radius-rounded: 50%;
+  --control-tiny-option__color: ;
+
+  /*-------------------------------------------------------------
+  Controls Label
+  --------------------------------------------------------------*/
+
+  // fixed values
+  --label__font-family: var(--mer-font-family--body);
+  --label__font-size: var(--mer-font__size--3xs);
+  --label__font-weight: var(--mer-font__weight--semi-bold);
+  --label__line-height: var(--mer-line-height--regular);
+  --label-border__width: 1.2px;
+  --label-border__style: solid;
+  --label-border__radius: var(--mer-border__radius--2xs);
+  --label__gap: var(--mer-spacing--xs);
+  // depend on state
+  --label__color: var(--label__color--enabled);
+
+  // enabled
+  --label__color--enabled: var(--mer-text__neutral);
+
+  // hover
+  --label__color--hover: var(--mer-text__highlighted);
+
+  // disabled
+  --label__color--disabled: var(--mer-text__primary--disabled);
+
+  // error
+  --label__color--error: var(--mer-text__neutral);
 }
