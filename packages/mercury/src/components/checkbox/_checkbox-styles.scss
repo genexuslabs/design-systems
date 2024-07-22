@@ -3,40 +3,36 @@
 
 %checkbox {
   @include checkbox-tokens();
-  // TODO (inherit this from the form-control
-  font-family: var(--mer-form-input__font-family);
-  font-size: var(--mer-form-input__font-size);
-  line-height: var(--mer-line-height--regular);
-  color: var(--mer-form-input__color);
-  // END TODO (inherit this from the form-control)
+  @extend %label-gap;
+
+  &:hover {
+    @extend %control-tiny-border-hover;
+    &::part(label) {
+      // @extend %label-color-hover; // Not working
+      --label__color: var(--label__color--hover); // WA
+    }
+  }
 
   // Input
   &__input {
-    border: var(--mer-form-input__border);
-    border-radius: var(--mer-border__radius--2xs);
+    @extend %control-tiny-border;
 
     &--focus {
       @include focus-style(true);
     }
 
     &--checked-and-indeterminate {
-      border-color: var(--mer-color__neutral-gray--300);
     }
 
     // Not implemented yet in the control
     &--error {
-      background-color: var(--colors-Foundation-un-color__red--5);
-    }
-
-    &--disabled {
-      border-color: var(--mer-border-color__primary--disabled);
     }
   }
 
   // Option
   &__option {
+    color: var(--control__border-color);
     &--checked {
-      color: var(--mer-border-color__neutral--active);
     }
 
     &--indeterminate {
@@ -46,8 +42,6 @@
 
     // Not implemented yet in the control
     &--error {
-      color: var(--mer-color__message-red--100);
-      border-color: var(--mer-border-color__error);
     }
 
     &--disabled {
@@ -58,10 +52,10 @@
 
   // Label
   &__label {
-    @extend %label-styles-base;
-    @extend %label-styles-position-inline;
+    @extend %label-font;
 
     &--disabled {
+      @extend %label-color-disabled;
     }
   }
 }
@@ -115,12 +109,6 @@
 ) {
   #{$checkbox-selector} {
     @extend %checkbox;
-    &:hover {
-      &::part(label) {
-        // extend doesn't seem to work here.
-        @include label-styles("hover"); //WA
-      }
-    }
   }
 
   // Input
@@ -159,7 +147,7 @@
   @if $add--disabled {
     // Input
     #{$checkbox__input--disabled-selector} {
-      @extend %checkbox__input--disabled;
+      @extend %control-tiny-border-disabled;
     }
 
     // Option
@@ -176,6 +164,7 @@
   }
 
   // Error
+  // Not implemented yet in the control
   @if $add--error {
     // Input
     #{$checkbox__input--error-selector} {
