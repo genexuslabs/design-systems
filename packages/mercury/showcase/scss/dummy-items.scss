@@ -1,33 +1,38 @@
 @import "../../src/base/common";
 .dummy-item {
   // copied from combo-box "item" part
-  display: inline-flex;
+  display: flex;
   align-items: center;
 
-  @extend %control-item-base;
+  @extend %item-colors-enabled;
+  @extend %item-font-size-regular;
+  @extend %item-border;
+  @extend %item-border-radius;
+  @extend %item-padding-inline;
+  @extend %item-height-regular;
 
   // colors
   &--hover {
-    @extend %control-item-hover;
+    @extend %item-colors-hover;
   }
   &--selected {
-    @extend %control-item-selected;
+    @extend %item-colors-selected;
   }
   &--selected-hover {
-    @extend %control-item-selected-hover;
+    @extend %item-colors-selected-hover;
   }
   &--disabled {
-    @extend %control-item-disabled;
+    @extend %item-colors-disabled;
   }
 
   // size
-  &--size-regular {
-    @extend %control-item-size-regular;
+  &--font-face {
+    @extend %item-font-size-regular;
   }
 
   // other
   &--border-radius {
-    @extend %control-item-border-radius;
+    @extend %item-border-radius;
   }
 }
 
@@ -38,12 +43,10 @@
   overflow: auto;
   box-sizing: border-box;
 
-  @extend %control-items-container-base;
-  @extend %control-items-container-type-regular;
-  @extend %dropdown-styles;
-
-  &--size-regular {
-  }
+  @extend %items-container-colors;
+  @extend %items-container-padding;
+  @extend %items-container-type-dropdown;
+  @extend %items-container-gap;
 }
 .colors-all-together-container {
   // copied from combo-box "window__content" part
