@@ -13,9 +13,9 @@
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
 
     <!-- local development -->
-    <link rel="stylesheet" href="../dist/bundles/css/all.css" />
+    <!-- <link rel="stylesheet" href="../dist/bundles/css/all.css" /> -->
     <!-- showcase (netlify) -->
-    <!-- <link rel="stylesheet" href="./all.css" /> -->
+    <link rel="stylesheet" href="./all.css" />
     <link rel="stylesheet" href="./assets/styles/top-bar.css" />
     <link rel="stylesheet" href="./assets/styles/sidebar.css" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
@@ -67,14 +67,14 @@
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `background-color: var(--mer-item__bg-color--enabled);
-border-color: var(--mer-item__border-color--enabled);
-color: var(--mer-item__color--enabled);                    
+                    const markup1 = `background-color: var(--item__bg-color--enabled);
+border-color: var(--item__border-color--enabled);
+color: var(--item__color--enabled);                    
 
 * values:                    
---mer-item__bg-color--enabled: var(--mer-color__elevation--01);
---mer-item__border-color--enabled: transparent;
---mer-item__color--enabled: var(--mer-text__on-elevation);
+--item__bg-color--enabled: var(--mer-color__elevation--01);
+--item__border-color--enabled: transparent;
+--item__color--enabled: var(--mer-text__on-elevation);
 `;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
@@ -104,14 +104,14 @@ color: var(--mer-item__color--enabled);
                   <ch-code id="ch-code-2" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup2 = `background-color: var(--mer-item__bg-color--hover);
-border-color: var(--mer-item__border-color--hover);
-color: var(--mer-item__color--hover);                    
+                    const markup2 = `background-color: var(--item__bg-color--hover);
+border-color: var(--item__border-color--hover);
+color: var(--item__color--hover);                    
 
 * values:                    
---mer-item__bg-color--hover: var(--mer-color__tinted-blue--5);
---mer-item__border-color--hover: var(--mer-color__tinted-blue--20);
---mer-item__color--hover: var(--mer-color__neutral-gray--100);
+--item__bg-color--hover: var(--mer-color__tinted-blue--5);
+--item__border-color--hover: var(--mer-color__tinted-blue--20);
+--item__color--hover: var(--mer-color__neutral-gray--100);
 `;
                     document.getElementById("ch-code-2").value = markup2;
                   </script>
@@ -141,14 +141,14 @@ color: var(--mer-item__color--hover);
                   <ch-code id="ch-code-3" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup3 = `background-color: var(--mer-item__bg-color--selected);
-border-color: var(--mer-item__border-color--selected);
-color: var(--mer-item__color--selected);                    
+                    const markup3 = `background-color: var(--item__bg-color--selected);
+border-color: var(--item__border-color--selected);
+color: var(--item__color--selected);                    
 
 * values:                    
---mer-item__bg-color--selected: var(--mer-color__tinted-blue--10);
---mer-item__border-color--selected: var(--mer-color__tinted-blue--30);
---mer-item__color--selected: var(--mer-color__neutral-gray--100);
+--item__bg-color--selected: var(--mer-color__tinted-blue--10);
+--item__border-color--selected: var(--mer-color__tinted-blue--30);
+--item__color--selected: var(--mer-color__neutral-gray--100);
 `;
                     document.getElementById("ch-code-3").value = markup3;
                   </script>
@@ -182,14 +182,14 @@ color: var(--mer-item__color--selected);
                   <ch-code id="ch-code-4" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup4 = `background-color: var(--mer-item__bg-color--selected-hover);
-border-color: var(--mer-item__border-color--selected-hover);
-color: var(--mer-item__color--selected-hover);                    
+                    const markup4 = `background-color: var(--item__bg-color--selected-hover);
+border-color: var(--item__border-color--selected-hover);
+color: var(--item__color--selected-hover);                    
 
 * values:                    
---mer-item__bg-color--selected-hover: var(--mer-color__tinted-blue--10);
---mer-item__border-color--selected-hover: var(--mer-color__tinted-blue--20);
---mer-item__color--selected-hover: var(--mer-color__neutral-gray--100);
+--item__bg-color--selected-hover: var(--mer-color__tinted-blue--10);
+--item__border-color--selected-hover: var(--mer-color__tinted-blue--20);
+--item__color--selected-hover: var(--mer-color__neutral-gray--100);
 `;
                     document.getElementById("ch-code-4").value = markup4;
                   </script>
@@ -219,14 +219,14 @@ color: var(--mer-item__color--selected-hover);
                   <ch-code id="ch-code-5" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup5 = `background-color: var(--mer-item__bg-color--disabled);
-border-color: var(--mer-item__border-color--disabled);
-color: var(--mer-item__color--disabled);                    
+                    const markup5 = `background-color: var(--item__bg-color--disabled);
+border-color: var(--item__border-color--disabled);
+color: var(--item__color--disabled);                    
 
 * values:                    
---mer-item__bg-color--disabled: transparent;
---mer-item__border-color--disabled: transparent;
---mer-item__color--disabled: var(--mer-text__primary--disabled);
+--item__bg-color--disabled: transparent;
+--item__border-color--disabled: transparent;
+--item__color--disabled: var(--mer-text__primary--disabled);
 `;
                     document.getElementById("ch-code-5").value = markup5;
                   </script>
@@ -319,33 +319,33 @@ color: var(--mer-item__color--disabled);
                   </ch-code>
                   <script>
                     const markup6 = `// colors
-background-color: var(--mer-items-container__bg-color);
-border: var(--mer-items-container__border);
-box-shadow: var(--mer-items-container__box-shadow);
+background-color: var(--items-container__bg-color);
+border: var(--items-container__border);
+box-shadow: var(--items-container__box-shadow);
 
 // structure
-gap: var(--mer-items-container__gap);
-padding-block: var(--mer-items-container__padding-block);
-padding-inline: var(--mer-items-container__padding-inline);
+gap: var(--items-container__gap);
+padding-block: var(--items-container__padding-block);
+padding-inline: var(--items-container__padding-inline);
 
 // other
-border-radius: var(--mer-items-container__border-radius);
+border-radius: var(--items-container__border-radius);
                 
 * colors values:                    
---mer-items-container__bg-color: var(--mer-color__elevation--01);
---mer-items-container__border: 
-  var(--mer-items-container__border-width)
-  var(--mer-items-container__border-style
-  var(--mer-items-container__border-color);
---mer-items-container__box-shadow: var(--mer-box-shadow--01);
+--items-container__bg-color: var(--mer-color__elevation--01);
+--items-container__border: 
+  var(--items-container__border-width)
+  var(--items-container__border-style
+  var(--items-container__border-color);
+--items-container__box-shadow: var(--mer-box-shadow--01);
 
 * structural values:
---mer-items-container__gap: var(--mer-spacing--2xs);
---mer-items-container__padding-block: var(--mer-spacing--xs);
---mer-items-container__padding-inline: var(--mer-spacing--xs);
+--items-container__gap: var(--mer-spacing--2xs);
+--items-container__padding-block: var(--mer-spacing--xs);
+--items-container__padding-inline: var(--mer-spacing--xs);
 
 * other values:
---mer-items-container__border-radius: var(--mer-border__radius--sm);
+--items-container__border-radius: var(--mer-border__radius--sm);
 `;
                     document.getElementById("ch-code-6").value = markup6;
                   </script>
