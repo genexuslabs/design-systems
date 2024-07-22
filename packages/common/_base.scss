@@ -50,3 +50,14 @@
   block-size: $block-size;
   background: no-repeat center / $background-size var(--icon-path);
 }
+
+// - - - - - - - - - - - - - - - - - - - -
+//    Icons | Gap
+// - - - - - - - - - - - - - - - - - - - -
+
+@mixin icon-gap-common-styles($gap: var(--icon-size)) {
+  display: inline-grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: $gap;
+}
