@@ -1,3 +1,5 @@
+@import "../../../common/base";
+
 /*----------------------
 Focus
 ----------------------*/
@@ -142,6 +144,48 @@ has its own colors, but it should share the same block-size.
 }
 %control-placeholder {
   @include control($styles: "placeholder");
+}
+
+/*--------------------------------------------------------
+Control Tiny (checkbox, radio-button)
+--------------------------------------------------------*/
+
+@mixin control-tiny($styles) {
+  @if $styles == "size" {
+    // in chameleon this is determined by the custom property "--ch-checkbox__container-size"
+    block-size: var(--control-tiny__size);
+    inline-size: var(--control-tiny__size);
+  }
+  @if $styles == "border" {
+    border-width: var(--label-border__width);
+    border-style: var(--label-border__style);
+    border-color: var(--control__border-color);
+    border-radius: var(--label-border__radius);
+  }
+  @if $styles == "border-hover" {
+    --control__border-color: var(--control__border-color--hover);
+  }
+  @if $styles == "border-disabled" {
+    --control__border-color: var(--control__border-color--disabled);
+  }
+  @if $styles == "border-error" {
+    --control__border-color: var(--control__border-color--error);
+  }
+}
+%control-tiny-size {
+  @include control-tiny($styles: "size");
+}
+%control-tiny-border {
+  @include control-tiny($styles: "border");
+}
+%control-tiny-border-hover {
+  @include control-tiny($styles: "border-hover");
+}
+%control-tiny-border-disabled {
+  @include control-tiny($styles: "border-disabled");
+}
+%control-tiny-border-error {
+  @include control-tiny($styles: "border-error");
 }
 
 /*------------------------------------------------------------------------
@@ -321,23 +365,41 @@ Label
 ----------------------*/
 // Defined here to facilitate the application of the label styles on the label element,
 // as well as on the ch-checkbox label.
-@mixin label-styles($styles: "base") {
-  @if $styles == "base" {
-    color: var(--label__color--enabled);
+@mixin label-styles($styles) {
+  @if $styles == "font" {
+    color: var(--label__color);
     font-family: var(--label__font-family);
-    font-size: var(--label__font-size);
     font-weight: var(--label__font-weight);
+    font-size: var(--label__font-size);
     line-height: var(--label__line-height);
   }
-  @if $styles == "disabled" {
-    color: var(---label__color--disabled);
+  @if $styles == "gap" {
+    gap: 8px;
+  }
+  @if $styles == "color-hover" {
+    --label__color: var(--label__color--hover);
+  }
+  @if $styles == "color-disabled" {
+    --label__color: var(--label__color--disabled);
+  }
+  @if $styles == "color-error" {
+    --label__color: var(--label__color--error);
   }
 }
-%label-base {
-  @include label-styles($styles: "base");
+%label-font {
+  @include label-styles($styles: "font");
 }
-%label-colors-disabled {
-  @include label-styles($styles: "colors-disabled");
+%label-gap {
+  @include label-styles($styles: "gap");
+}
+%label-color-hover {
+  @include label-styles($styles: "color-hover");
+}
+%label-color-disabled {
+  @include label-styles($styles: "color-disabled");
+}
+%label-color-error {
+  @include label-styles($styles: "color-error");
 }
 
 /*----------------------
