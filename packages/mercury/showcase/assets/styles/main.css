@@ -142,18 +142,18 @@ Container
 }
 .main::-webkit-scrollbar {
   width: var(--mer-spacing--sm);
-  height: var(--mer-scrollbar__size);
+  height: var(--scrollbar__size);
 }
 .main::-webkit-scrollbar-track {
-  background-color: var(--mer-scrollbar-track__bg-color);
-  border-radius: var(--mer-scrollbar-track__border-radius);
+  background-color: var(--scrollbar-track__bg-color);
+  border-radius: var(--scrollbar-track__border-radius);
 }
 .main::-webkit-scrollbar-thumb {
-  background-color: var(--mer-scrollbar-thumb__bg-color);
-  border-radius: var(--mer-scrollbar-thumb__border-radius);
+  background-color: var(--scrollbar-thumb__bg-color);
+  border-radius: var(--scrollbar-thumb__border-radius);
 }
 .main::-webkit-scrollbar-thumb:hover {
-  background-color: var(--mer-scrollbar-thumb__bg-color--hover);
+  background-color: var(--scrollbar-thumb__bg-color--hover);
 }
 .main::-webkit-scrollbar-corner {
   background: transparent;

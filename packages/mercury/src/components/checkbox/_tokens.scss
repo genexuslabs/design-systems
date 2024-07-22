@@ -1,5 +1,5 @@
 @mixin checkbox-tokens() {
   // size
-  --ch-checkbox__container-size: var(--mer-control-tiny__block-size);
-  --ch-checkbox__option-size: calc(var(--mer-control-tiny__block-size) / 2);
+  --ch-checkbox__container-size: var(--control-tiny__block-size);
+  --ch-checkbox__option-size: calc(var(--control-tiny__block-size) / 2);
 }
