@@ -5,8 +5,12 @@
 
 %combo-box {
   @include combo-box-tokens();
-  @extend %control-base;
-  @extend %control-size-regular;
+  @extend %control-colors-enabled;
+  @extend %control-font-face;
+  @extend %control-font-size-regular;
+  @extend %control-height;
+  @extend %control-border;
+  @extend %control-padding-inline;
 
   &__item {
     &--nested {
@@ -25,7 +29,7 @@
 /// @param {String} $combo-box__placeholder-selector [".combo-box::part(placeholder)"] -
 /// @param {String} $window-selector [".combo-box::part(window)"] -
 /// @param {String} $window__content-selector [".combo-box::part(window__content)"] -
-/// @param {String} $group__selector [".combo-box::part(group)"] -
+/// @param {String} $group-selector [".combo-box::part(group)"] -
 /// @param {String} $group__content-selector [".combo-box::part(group__content)"] -
 /// @param {String} $group__header-selector [".combo-box::part(group__header)"] -
 /// @param {String} $group__header--disabled-selector [".combo-box::part(group__header disabled)"] -
@@ -44,7 +48,7 @@
   $combo-box__placeholder-selector: ".combo-box::part(placeholder)",
   $window-selector: ".combo-box::part(window)",
   $window__content-selector: ".combo-box::part(window__content)",
-  $group__selector: ".combo-box::part(group)",
+  $group-selector: ".combo-box::part(group)",
   $group__content-selector: ".combo-box::part(group__content)",
   $group__header-selector: ".combo-box::part(group__header)",
   $group__header--disabled-selector: ".combo-box::part(group__header disabled)",
@@ -65,7 +69,7 @@
     @extend %combo-box;
 
     &:hover {
-      @extend %control-hover;
+      @extend %control-colors-hover;
     }
 
     &:focus {
@@ -78,24 +82,21 @@
 
   @if $add--placeholder {
     #{$combo-box__placeholder-selector} {
-      color: red;
-      &::placeholder {
-        color: red;
-      }
+      @extend %control-placeholder;
     }
   }
 
   @if $add--disabled {
     #{$combo-box--disabled-selector} {
-      @extend %control-disabled;
+      @extend %control-colors-disabled;
     }
 
     #{$group__header--disabled-selector} {
-      @extend %control-items-header-disabled;
+      @extend %item-colors-disabled;
     }
 
     #{$item--disabled-selector} {
-      @extend %control-item-disabled;
+      @extend %item-colors-disabled;
     }
   }
 
@@ -107,11 +108,13 @@
   }
 
   #{$window__content-selector} {
-    @extend %dropdown-styles;
-    @extend %control-items-container-base;
-    @extend %control-items-container-type-regular;
-    @extend %control-items-container-gap-regular;
-    max-block-size: var(--mer-items-container__max-block-size);
+    @extend %items-container-type-dropdown;
+    @extend %items-container-colors;
+    @extend %items-container-padding;
+    @extend %items-container-gap;
+    @extend %items-container-max-height;
+    @extend %items-container-type-dropdown;
+    max-block-size: var(--items-container__max-block-size);
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -119,26 +122,40 @@
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$group__header-selector} {
-    @extend %control-items-header-base;
+    @extend %item-colors-enabled;
+    @extend %item-height-regular;
+    @extend %item-padding-inline;
+    @extend %item-font-face-header;
   }
 
   #{$group__header--expandable-selector} {
-    @extend %control-items-header-base;
+    @extend %item-colors-enabled;
+    @extend %item-height-regular;
+    @extend %item-border-radius;
+    @extend %item-font-face-header;
+    @extend %item-font-size-regular;
+
     &:hover {
-      @extend %control-items-header-hover;
+      @extend %item-colors-hover;
     }
   }
+  #{$group-selector} {
+    @extend %items-container-gap;
+  }
   #{$group__content-selector} {
-    @extend %control-items-container-gap-regular;
+    @extend %items-container-gap;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
   //                  Item
   // - - - - - - - - - - - - - - - - - - - -
   #{$item-selector} {
-    @extend %control-item-base;
-    @extend %control-item-size-regular;
-    @extend %control-item-border-inline-block;
+    @extend %item-colors-enabled;
+    @extend %item-font-size-regular;
+    @extend %item-border;
+    @extend %item-border-radius;
+    @extend %item-padding-inline;
+    @extend %item-height-regular;
   }
 
   #{$item--nested-selector} {
@@ -146,6 +163,6 @@
   }
 
   #{$item--selected-selector} {
-    @extend %control-item-selected;
+    @extend %item-colors-selected;
   }
 }
