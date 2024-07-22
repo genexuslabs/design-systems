@@ -2,9 +2,11 @@
 
 %button-base {
   @include button-common-styles(); // packages/common/base.scss
-  @extend %control-base;
-  @extend %control-size-regular;
-  @extend %control-typography-large;
+  @extend %control-font-face;
+  @extend %control-font-size-regular;
+  @extend %control-height;
+  @extend %control-border;
+  @extend %control-padding-inline;
 
   &--focus-visible {
     @include focus-style($outline: true);
@@ -14,88 +16,88 @@
 %button-primary {
   @include button-tokens-primary();
   @extend %button-base;
-  // font-weight is defined on --mer-control__font-weight.
-  // border-color is defined on --mer-control__border-color.
-  --mer-control__font-weight: var(--mer-font__weight--semi-bold);
-  --mer-control__border-color: var(--button-primary__border-color);
+
+  //overwrite some control default styles
+  --control__font-weight: var(--mer-font__weight--semi-bold);
+  --control__border-color: var(--button-primary__border-color);
 
   background-color: var(--button-primary__background-color);
   color: var(--button-primary__color);
 
   &--hover {
     background-color: var(--button-primary__background-color--hover);
-    --mer-control__border-color: var(--button-primary__border-color--hover);
+    --control__border-color: var(--button-primary__border-color--hover);
     color: var(--button-primary__color--hover);
   }
 
   &--active {
     background-color: var(--button-primary__background-color--active);
-    --mer-control__border-color: var(--button-primary__border-color--active);
+    --control__border-color: var(--button-primary__border-color--active);
     color: var(--button-primary__color--active);
   }
 
   &--disabled {
     background-color: var(--button-primary__background-color--disabled);
-    --mer-control__border-color: var(--button-primary__border-color--disabled);
+    --control__border-color: var(--button-primary__background-color--disabled);
     color: var(--button-primary__color--disabled);
   }
 }
 
 %button-secondary {
-  // font weight is defined on --mer-control__font-weight.
-  // font weight is defined on --mer-control__font-weight.
-  --mer-control__font-weight: var(--mer-font__weight--semi-bold);
-  --mer-control__border-color: var(--button-secondary__border-color);
-
   @include button-tokens-secondary();
   @extend %button-base;
+
+  //overwrite some control default styles
+  --control__font-weight: var(--mer-font__weight--semi-bold);
+  --control__border-color: var(--button-secondary__border-color);
+
   background-color: var(--button-secondary__background-color);
   color: var(--button-secondary__color);
 
   &--hover {
     background-color: var(--button-secondary__background-color--hover);
-    --mer-control__border-color: var(--button-secondary__border-color--hover);
+    --control__border-color: var(--button-secondary__border-color--hover);
     color: var(--button-secondary__color--hover);
   }
 
   &--active {
     background-color: var(--button-secondary__background-color--active);
-    --mer-control__border-color: var(--button-secondary__border-color--active);
+    --control__border-color: var(--button-secondary__border-color--active);
     color: var(--button-secondary__color--active);
   }
 
   &--disabled {
     background-color: var(--button-secondary__background-color--disabled);
-    --mer-control__border-color: var(
-      --button-secondary__border-color--disabled
-    );
+    --control__border-color: var(--button-secondary__border-color--disabled);
     color: var(--button-secondary__color--disabled);
   }
 }
 
 %button-tertiary {
-  // font weight is defined on --mer-control__font-weight.
   @include button-tokens-tertiary();
   @extend %button-base;
+
+  //overwrite some control default styles
+  --control__border-color: var(--button-tertiary__border-color);
+
   background-color: var(--button-tertiary__background-color);
-  --mer-control__border-color: var(--button-tertiary__border-color);
   color: var(--button-tertiary__color);
 
   &--hover {
     background-color: var(--button-tertiary__background-color--hover);
-    --mer-control__border-color: var(--button-tertiary__border-color--hover);
+    --control__border-color: var(--button-tertiary__border-color--hover);
     color: var(--button-tertiary__color--hover);
   }
 
   &--active {
     background-color: var(--button-tertiary__background-color--active);
-    --mer-control__border-color: var(--button-tertiary__border-color--active);
+    --control__border-color: var(--button-tertiary__border-color--active);
     color: var(--button-tertiary__color--active);
   }
 
   &--disabled {
     background-color: var(--button-tertiary__background-color--disabled);
-    --mer-control__border-color: var(--button-tertiary__border-color--disabled);
+    --control__border-color: var(--button-tertiary__border-color--disabled);
     color: var(--button-tertiary__color--disabled);
   }
 }
