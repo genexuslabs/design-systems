@@ -28,11 +28,10 @@ const OUTPUT_PATH = await args.outDir;
 const COLOR_STATES_PATH = await args.configFilePath;
 const VENDOR_ALIAS = await args.vendorAlias;
 const ALL_LISTS_FILENAME = "categories-lists.scss";
-const CATEGORIES_VARIABLES_IMPORTS_FILENAME =
-  "categories-variables-imports.scss";
+const CATEGORIES_VARIABLES_IMPORTS_FILENAME = "categories.scss";
 const CATEGORIES_PLACEHOLDERS_IMPORTS_FILENAME =
   "categories-placeholders-imports.scss";
-const CATEGORY_VARIABLES_FILENAME_SUFFIX = "__variables";
+const CATEGORY_VARIABLES_FILENAME_SUFFIX = ""; // used to be __variables.scss
 const CATEGORY_PLACEHOLDERS_FILENAME_SUFFIX = "__placeholders";
 const ICON_PREFIX = VENDOR_ALIAS ? `--icon-${VENDOR_ALIAS}` : `--icon`;
 
