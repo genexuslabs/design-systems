@@ -177,11 +177,13 @@ const getCustomFullValue = (
   suffix?: "enabled" | "hover" | "active" | "disabled"
 ) => {
   const vendorPrefix =
-    vendorAliasOrName === MERCURY_ALIAS ? "" : `${vendorAliasOrName}-`;
+    vendorAliasOrName === MERCURY_ALIAS
+      ? ""
+      : (`-${vendorAliasOrName}` as const);
 
   return suffix
-    ? (`var(--icon__${vendorPrefix}${iconName}--${suffix})` as const)
-    : (`var(--icon__${vendorPrefix}${iconName})` as const);
+    ? (`var(--icon${vendorPrefix}__${iconName}--${suffix})` as const)
+    : (`var(--icon${vendorPrefix}__${iconName})` as const);
 };
 
 /**
