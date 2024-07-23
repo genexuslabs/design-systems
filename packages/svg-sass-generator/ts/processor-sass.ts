@@ -71,9 +71,12 @@ export function processIconsSass(sourceDir: string, iconsArray: string[]) {
     multicolor: {},
   };
   processIconsCatalog(iconsCatalog, categoriesListsObject);
-  saveIconsListsOnDisk(categoriesListsObject);
   saveIconsCategoriesImportsOnDisk("variables");
-  saveIconsCategoriesImportsOnDisk("placeholders");
+  // The following functions were commented because at the time of writing it only makes sense
+  // to generate the custom properties. If we need to generate placeholders or categories lists
+  // in the future, these functions are here ready to be applied.
+  // saveIconsListsOnDisk(categoriesListsObject);
+  // saveIconsCategoriesImportsOnDisk("placeholders");
   // saveMixinsOnDisk();
 }
 
@@ -170,11 +173,12 @@ const processCatalogCategory = (
     iconType,
     `${categoryName}${CATEGORY_VARIABLES_FILENAME_SUFFIX}`
   );
-  saveSassOnDisk(
-    sassFilesContent.placeHoldersSelectorsSass,
-    iconType,
-    `${categoryName}${CATEGORY_PLACEHOLDERS_FILENAME_SUFFIX}`
-  );
+  // At the time of writing we no longer want to generate the placeholders selectors.
+  // saveSassOnDisk(
+  //   sassFilesContent.placeHoldersSelectorsSass,
+  //   iconType,
+  //   `${categoryName}${CATEGORY_PLACEHOLDERS_FILENAME_SUFFIX}`
+  // );
 };
 
 const createSassFiles = (
