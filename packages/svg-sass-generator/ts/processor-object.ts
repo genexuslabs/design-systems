@@ -15,6 +15,11 @@ import {
   ElementStates,
 } from "./partials-common/types.js";
 
+const FREEZE_FUNCTION = `const freeze = <T extends { [key in string]: any }>(objectToFreeze: T) =>
+  Object.freeze(objectToFreeze);
+
+`;
+
 /**
  *
  * @param description: This function receives an array of source icons paths, and generates an
@@ -100,9 +105,8 @@ export const generateIconsObject = (
 };`;
 
   // Freeze all objects
-  const freezedObjectsOutput = output
-    .replace(/{/g, "Object.freeze({")
-    .replace(/}/g, "})");
+  const freezedObjectsOutput =
+    FREEZE_FUNCTION + output.replace(/{/g, "freeze({").replace(/}/g, "})");
 
   writeFile(normalizedIconsObjectFilePath, freezedObjectsOutput);
 };
