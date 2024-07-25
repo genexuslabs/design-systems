@@ -4,7 +4,7 @@ const _URL = new URL(window.location.href);
 const PAGE_URL = `${_URL.origin}${_URL.pathname}`;
 const ARTICLE_HEADER_CLASS = ".article__header";
 const ARTICLE_SELECTOR = ".article[nav]";
-const CONTAINER_REF = document.querySelector(".container");
+let CONTAINER_REF;
 let topBarRef = null;
 
 // references
@@ -173,7 +173,6 @@ const addTitleAnchors = () => {
       const articleId = article.getAttribute("id");
       if (header && articleId) {
         header.addEventListener("click", () => {
-          console.log(PAGE_URL);
           copyToClipBoard(`${PAGE_URL}#${articleId}`);
         });
       }
@@ -372,6 +371,7 @@ const copyToClipBoard = text => {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
+  CONTAINER_REF = document.querySelector(".container");
   includeFavicon();
   addGoogleFonts();
   addArticleTitles();
