@@ -11,11 +11,7 @@
       }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
-
-    <!-- local development -->
-    <link rel="stylesheet" href="../dist/bundles/css/all.css" />
-    <!-- showcase (netlify) -->
-    <!-- <link rel="stylesheet" href="./all.css" /> -->
+    <link rel="stylesheet" href="./all.css" />
     <link rel="stylesheet" href="./assets/styles/top-bar.css" />
     <link rel="stylesheet" href="./assets/styles/sidebar.css" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
@@ -158,33 +154,46 @@
             </article>
 
             <!-- ========================== 
-          with error
+          grouping checkboxes
           =========================== -->
-            <article class="article" nav data-title="with error" hidden>
+            <article class="article" nav data-title="grouping checkboxes">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <ch-checkbox
-                    class="checkbox checkbox--error"
-                    checked-value="true"
-                    un-checked-value="false"
-                    value="false"
-                    caption="The Caption"
-                  ></ch-checkbox>
+                  <div class="controls__container">
+                    <ch-checkbox
+                      class="checkbox"
+                      checked-value="true"
+                      un-checked-value="false"
+                      value="false"
+                      caption="The Caption 1"
+                    ></ch-checkbox>
+                    <ch-checkbox
+                      class="checkbox"
+                      checked-value="true"
+                      un-checked-value="false"
+                      value="false"
+                      caption="The Caption 2"
+                    ></ch-checkbox>
+                    <ch-checkbox
+                      class="checkbox"
+                      checked-value="true"
+                      un-checked-value="false"
+                      value="false"
+                      caption="The Caption 3"
+                    ></ch-checkbox>
+                  </div>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-5" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup5 = `<ch-checkbox
-  caption="Caption"
-  class="checkbox checkbox--error"
-  checked-value="true"
-  un-checked-value="false"
-  value="false"
->
-</ch-checkbox>`;
+                    const markup5 = `<div class="controls__container">
+  <ch-checkbox class="checkbox"></ch-checkbox>
+  <ch-checkbox class="checkbox"></ch-checkbox>
+  <ch-checkbox class="checkbox"></ch-checkbox>
+</div>`;
                     document.getElementById("ch-code-5").value = markup5;
                   </script>
                 </div>
