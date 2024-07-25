@@ -11,10 +11,6 @@
       }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
-
-    <!-- local development -->
-    <!-- <link rel="stylesheet" href="../dist/bundles/css/all.css" /> -->
-    <!-- showcase (netlify) -->
     <link rel="stylesheet" href="./all.css" />
     <link rel="stylesheet" href="./assets/styles/top-bar.css" />
     <link rel="stylesheet" href="./assets/styles/sidebar.css" />
@@ -103,15 +99,8 @@
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `<ch-dialog
-  class="dialog"
-  caption="About GeneXus"
-  show-header
-  show-footer
->
+                    const markup1 = `<ch-dialog class="dialog">
   <!-- Your content here -->
-  <button slot="footer" class="button-tertiary">Cancel</button>
-  <button slot="footer" class="button-primary">Save</button>
 </ch-dialog>`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
