@@ -81,14 +81,15 @@
   --------------------------------------------------------------*/
 
   // fixed values
-  --label__font-family: var(--mer-font-family--body);
   --label__font-size: var(--mer-font__size--3xs);
   --label__font-weight: var(--mer-font__weight--semi-bold);
   --label__line-height: var(--mer-line-height--regular);
-  --label-border__width: 1.2px;
-  --label-border__style: solid;
-  --label-border__radius: var(--mer-border__radius--2xs);
-  --label__gap: var(--mer-spacing--xs);
+  --label__border-width: 1.2px;
+  --label__border-style: solid;
+  --label__border-radius: var(--mer-border__radius--2xs);
+  --label__gap--inline: var(--mer-spacing--xs);
+  --label__gap--block: var(--mer-spacing--xs);
+
   // depend on state
   --label__color: var(--label__color--enabled);
 
@@ -103,4 +104,12 @@
 
   // error
   --label__color--error: var(--mer-text__neutral);
+
+  /*-------------------------------------------------------------
+  Controls Container
+  --------------------------------------------------------------*/
+
+  --controls__container-row-gap: var(--mer-spacing--md);
+  --controls__group-gap--block: var(--mer-spacing--sm);
+  --controls__group-gap--inline: var(--mer-spacing--md);
 }
