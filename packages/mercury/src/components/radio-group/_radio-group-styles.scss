@@ -2,11 +2,11 @@
 
 %radio-group {
   @include radio-group-tokens();
-  gap: var(--mer-spacing--sm);
+  gap: var(--controls__container-row-gap);
 }
 
 %radio-item {
-  @include label-gap();
+  @include label-gap-inline();
 }
 
 %radio__container {
@@ -14,7 +14,7 @@
   flex-shrink: 0;
 
   &--focus {
-    @include focus-style(true);
+    @include focus-outline();
   }
 
   &--disabled {
