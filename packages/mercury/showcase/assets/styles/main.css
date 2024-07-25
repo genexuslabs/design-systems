@@ -79,13 +79,18 @@ body.all-hidden .section__header {
 }
 .dummy-box {
   display: block;
-  inline-size: 200px;
   block-size: 32px;
   border: 2px dashed var(--mer-color__elevation--03);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--mer-color__neutral-gray--500);
+}
+.dummy-box--sm {
+  inline-size: 150px;
+}
+.dummy-box--md {
+  inline-size: 200px;
 }
 .dummy-box--lg {
   inline-size: 400px;
