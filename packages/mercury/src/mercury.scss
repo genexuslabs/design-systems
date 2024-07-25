@@ -31,7 +31,7 @@
 // Base classes
 @import "./base/label/label-styles"; // should be at the top, since other elements use it.
 @import "./base/button/button-styles";
-@import "./base/form-controls/form-fieldset-styles";
+@import "./base/form-controls/controls-styles";
 @import "./base/form-controls/form-input-styles";
 @import "./base/icons";
 @import "./base/layout/layout-styles";
@@ -46,6 +46,7 @@
 @import "./components/combo-box/combo-box-styles";
 @import "./components/dialog/dialog-styles";
 @import "./components/icon/icon-styles";
+@import "./components/list-box/list-box-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
 @import "./components/tab/tab-styles";
@@ -104,6 +105,7 @@
   $dialog: true,
   $edit: true,
   $icon: true,
+  $list-box: true,
   $radio-group: true,
   $tab: true,
   $tabular-grid: true,
@@ -355,7 +357,8 @@
 
     // Form control classes
     @if $form-controls-classes {
-      @include fieldset();
+      @include controls();
+      @include form-input();
       @include label();
     }
 
@@ -411,6 +414,11 @@
     @include icon();
   }
 
+  // list-box
+  @if $list-box {
+    @include list-box();
+  }
+
   // radio-group
   @if $radio-group {
     @include radio-group();
@@ -423,8 +431,7 @@
 
   // tabular grid
   @if $tabular-grid {
-    // TODO: This is a WA to transpile the file
-    @include tabular-grid($icons-path: $icons-path);
+    @include tabular-grid();
   }
 
   // tree view
@@ -485,6 +492,7 @@
   $dialog: false,
   $edit: false,
   $icon: false,
+  $list-box: false,
   $radio-group: false,
   $tab: false,
   $tabular-grid: false,
@@ -541,6 +549,7 @@
     $combo-box: $combo-box,
     $dialog: $dialog,
     $edit: $edit,
+    $list-box: $list-box,
     $radio-group: $radio-group,
     $tab: $tab,
     $tabular-grid: $tabular-grid,
