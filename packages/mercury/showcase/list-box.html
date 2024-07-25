@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Box</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+  </head>
+  <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">list box (work in progress)</h1>
+            <p class="section__description">section description</p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          base
+          =========================== -->
+            <article class="article" nav data-title="base">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content" style="height: 300px">
+                  <ch-action-list-render
+                    selection="multiple"
+                    class="list-box"
+                    id="action-list-1"
+                  ></ch-action-list-render>
+                  <script type="module">
+                    import { actionListModel } from "./assets/models/action-list.js";
+                    const actionList1 =
+                      document.getElementById("action-list-1");
+                    actionList1.model = actionListModel;
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-1" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup1 = ``;
+                    document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
