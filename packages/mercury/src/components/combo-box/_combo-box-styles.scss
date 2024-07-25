@@ -1,16 +1,26 @@
-@import "tokens";
 @import "../../../../common/resets";
 @import "../../base/common";
 @import "../../tokens/chameleon.scss";
 
 %combo-box {
-  @include combo-box-tokens();
+  --ch-combo-box-separation-y: var(--mer-spacing--3xs);
+  --ch-combo-box-item-gap: var(--mer-spacing--xs);
+
+  --ch-combo-box-item__image-size: var(--mer-spacing--md);
+  --ch-combo-box-group__expandable-button-size: var(--mer-spacing--md);
+
+  --ch-combo-box-group__expandable-button-image-size: var(--mer-spacing--sm);
+  --ch-combo-box-item__background-image-size: 100%;
+
   @include control-colors-enabled();
   @include control-font-weight-regular();
-  @include control-font-size-regular();
   @include control-height-regular();
   @include control-border();
   @include control-padding-inline();
+
+  &:hover {
+    @include control-colors-hover();
+  }
 
   &__item {
     &--nested {
@@ -68,12 +78,8 @@
   #{$combo-box-selector} {
     @extend %combo-box;
 
-    &:hover {
-      @include control-colors-hover();
-    }
-
     &:focus {
-      @include focus-style();
+      @include focus-border();
     }
 
     @if $add--placeholder-var {
@@ -121,9 +127,10 @@
 
   #{$group__header-selector} {
     @include item-colors-enabled();
+    @include item-font-size-regular();
+    @include item-font-weight-header();
     @include item-height-regular();
     @include item-padding-inline();
-    @include item-font-weight-header();
   }
 
   #{$group__header--expandable-selector} {
@@ -148,11 +155,12 @@
   //                  Item
   // - - - - - - - - - - - - - - - - - - - -
   #{$item-selector} {
-    @include item-border-radius();
     @include item-colors-enabled();
-    @include item-font-size-regular();
-    @include item-font-weight-header();
+    @include item-border();
+    @include item-border-radius();
     @include item-height-regular();
+    @include item-font-size-regular();
+    @include item-font-weight();
     @include item-padding-inline();
   }
 
