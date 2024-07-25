@@ -11,7 +11,6 @@
       }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
-
     <link rel="stylesheet" href="./all.css" />
     <link rel="stylesheet" href="./assets/styles/top-bar.css" />
     <link rel="stylesheet" href="./assets/styles/sidebar.css" />
@@ -49,19 +48,14 @@
                     checked-value="true"
                     un-checked-value="false"
                     value="true"
+                    caption="The Caption"
                   ></ch-checkbox>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `<ch-checkbox
-  class="checkbox"
-  checked-value="true"
-  un-checked-value="false"
-  value="true"
->
-</ch-checkbox>`;
+                    const markup1 = `<ch-checkbox class="checkbox"></ch-checkbox>`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
                 </div>
@@ -83,19 +77,14 @@
                     checked-value="true"
                     un-checked-value="false"
                     value="false"
+                    caption="The Caption"
                   ></ch-checkbox>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-2" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup2 = `<ch-checkbox
-  class="checkbox"
-  checked-value="true"
-  un-checked-value="false"
-  value="false"
->
-</ch-checkbox>`;
+                    const markup2 = `<ch-checkbox class="checkbox"></ch-checkbox>`;
                     document.getElementById("ch-code-2").value = markup2;
                   </script>
                 </div>
@@ -118,20 +107,14 @@
                     un-checked-value="false"
                     value="false"
                     indeterminate
+                    caption="The Caption"
                   ></ch-checkbox>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-3" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup3 = `<ch-checkbox
-  class="checkbox"
-  checked-value="true"
-  un-checked-value="false"
-  value="false"
-  indeterminate
->
-</ch-checkbox>`;
+                    const markup3 = `<ch-checkbox class="checkbox"></ch-checkbox>`;
                     document.getElementById("ch-code-3").value = markup3;
                   </script>
                 </div>
@@ -141,34 +124,77 @@
             </article>
 
             <!-- ========================== 
-          with label
+          disabled
           =========================== -->
-            <article class="article" nav data-title="with label">
+            <article class="article" nav data-title="disabled">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
                   <ch-checkbox
-                    class="checkbox checkbox--error"
+                    class="checkbox"
                     checked-value="true"
                     un-checked-value="false"
                     value="false"
-                    caption="Caption"
+                    caption="The Caption"
+                    disabled
                   ></ch-checkbox>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-4" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup4 = `<ch-checkbox
-  caption="Caption"
-  class="checkbox checkbox--error"
-  checked-value="true"
-  un-checked-value="false"
-  value="false"
->
-</ch-checkbox>`;
+                    const markup4 = `<ch-checkbox class="checkbox checkbox--disabled"></ch-checkbox>`;
                     document.getElementById("ch-code-4").value = markup4;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          grouping checkboxes
+          =========================== -->
+            <article class="article" nav data-title="grouping checkboxes">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="controls__container">
+                    <ch-checkbox
+                      class="checkbox"
+                      checked-value="true"
+                      un-checked-value="false"
+                      value="false"
+                      caption="The Caption 1"
+                    ></ch-checkbox>
+                    <ch-checkbox
+                      class="checkbox"
+                      checked-value="true"
+                      un-checked-value="false"
+                      value="false"
+                      caption="The Caption 2"
+                    ></ch-checkbox>
+                    <ch-checkbox
+                      class="checkbox"
+                      checked-value="true"
+                      un-checked-value="false"
+                      value="false"
+                      caption="The Caption 3"
+                    ></ch-checkbox>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-5" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup5 = `<div class="controls__container">
+  <ch-checkbox class="checkbox"></ch-checkbox>
+  <ch-checkbox class="checkbox"></ch-checkbox>
+  <ch-checkbox class="checkbox"></ch-checkbox>
+</div>`;
+                    document.getElementById("ch-code-5").value = markup5;
                   </script>
                 </div>
                 <!-- /.article__content -->

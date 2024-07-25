@@ -1,4 +1,4 @@
-@mixin semantic-other() {
+@mixin semantic-general() {
   /*----------------------
   Body
   ----------------------*/
@@ -27,16 +27,16 @@
   Scrollbar
   ----------------------*/
   // scrollbar
-  --mer-scrollbar__size: var(--mer-spacing--xs);
+  --scrollbar__size: var(--mer-spacing--xs);
   // scrollbar-track
-  --mer-scrollbar-track__bg-color: var(--mer-color__elevation--03);
-  --mer-scrollbar-track__border-radius: var(--mer-spacing--xs);
+  --scrollbar-track__bg-color: var(--mer-color__elevation--03);
+  --scrollbar-track__border-radius: var(--mer-spacing--xs);
   // scrollbar-thumb
-  --mer-scrollbar-thumb__bg-color: var(--mer-color__elevation--04);
-  --mer-scrollbar-thumb__bg-color--hover: #42474c;
-  --mer-scrollbar-thumb__border-radius: var(--mer-spacing--xs);
+  --scrollbar-thumb__bg-color: var(--mer-color__elevation--04);
+  --scrollbar-thumb__bg-color--hover: #42474c;
+  --scrollbar-thumb__border-radius: var(--mer-spacing--xs);
   // scrollbar-thumb
-  --mer-scrollbar-corner__bg: transparent;
+  --scrollbar-corner__bg: transparent;
 
   /*----------------------
   Icon Size
@@ -73,40 +73,24 @@
   );
   --mer-checkbox__option-checked-image: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='currentColor' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/></svg>");
 
-  /*-------------------------------------------------------------
-  Inline Control (Should have the same height to look good inline)
-  -------------------------------------------------------------*/
-  --mer-control__block-size: var(--mer-spacing--lg);
-  --mer-control__block-size--tiny: var(--mer-spacing--md);
-  --mer-control-tiny__border-radius: var(--mer-border__radius--2xs);
-
-  /*----------------------
-  Label
-  ----------------------*/
-  // space between label and control
-  --mer-label__space: var(--mer-spacing--xs);
-  --mer-label__font-size: inherit;
-  --mer-label__font-weight: var(--mer-font__weight--semi-bold);
-  --mer-label__color: inherit;
-
   /*----------------------
   Window
   ----------------------*/
   // TODO: This styles should better be applied on the ch-window.
-  --mer-window__border: var(--mer-border__width--sm) solid
+  --window__border: var(--mer-border__width--sm) solid
     var(--mer-color__elevation--04);
-  --mer-window__border-radius: var(--mer-border__radius--sm);
-  --mer-window__padding: var(--mer-spacing--xs);
-  --mer-window__bg-color: var(--mer-color__elevation--01);
-  --mer-window__gap: var(--mer-spacing--xs);
-  --mer-window__box-shadow: var(--mer-box-shadow--01);
+  --window__border-radius: var(--mer-border__radius--sm);
+  --window__padding: var(--mer-spacing--xs);
+  --window__bg-color: var(--mer-color__elevation--01);
+  --window__gap: var(--mer-spacing--xs);
+  --window__box-shadow: var(--mer-box-shadow--01);
 
   /*----------------------
   Focus
   ----------------------*/
-  --mer-focus__outline-width: var(--mer-border__width--sm);
-  --mer-focus__outline-style: solid;
-  --mer-focus__outline-color: var(--mer-color__primary-blue--200);
-  --mer-focus__outline-offset: calc(var(--mer-system__border-width) * -1);
-  --borders-un-border-color__focused: var(--mer-focus__outline-color);
+  --focus__outline-width: var(--mer-border__width--sm);
+  --focus__outline-style: solid;
+  --focus__outline-color: var(--mer-color__primary-blue--200);
+  --focus__outline-offset: calc(var(--mer-system__border-width) * -1);
+  --borders-un-border-color__focused: var(--focus__outline-color);
 }

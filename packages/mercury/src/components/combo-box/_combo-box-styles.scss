@@ -1,56 +1,35 @@
-@import "tokens";
+@import "../../../../common/resets";
+@import "../../base/common";
+@import "../../tokens/chameleon.scss";
 
 %combo-box {
-  @include combo-box-tokens();
-}
+  --ch-combo-box-separation-y: var(--mer-spacing--3xs);
+  --ch-combo-box-item-gap: var(--mer-spacing--xs);
 
-%combo-box__window {
-  background-color: var(--mer-window__bg-color);
-  border: var(--mer-color__elevation--01);
-  border-radius: var(--mer-window__border-radius);
-  box-shadow: var(--mer-window__box-shadow);
-  padding: var(--mer-spacing--2xs);
-}
+  --ch-combo-box-item__image-size: var(--mer-spacing--md);
+  --ch-combo-box-group__expandable-button-size: var(--mer-spacing--md);
 
-%combo-box__group {
-  border-block-end: var(--mer-border__width--sm) solid
-    var(--mer-color__elevation--04);
-}
+  --ch-combo-box-group__expandable-button-image-size: var(--mer-spacing--sm);
+  --ch-combo-box-item__background-image-size: 100%;
 
-%combo-box__group-header {
-  font-family: var(--mer-font-family--inter-semi-bold);
-  padding-block: var(--mer-spacing--3xs);
-  padding-inline: var(--mer-spacing--xs);
-  color: var(--mer-text__bright);
+  @include control-colors-enabled();
+  @include control-font-weight-regular();
+  @include control-height-regular();
+  @include control-border();
+  @include control-padding-inline();
 
-  &-expandable--hover {
-    background-color: var(--mer-item__bg-color--selected);
-    color: var(--mer-item__color--hover);
-  }
-}
-
-%combo-box__item {
-  border-radius: var(--mer-border__radius--sm);
-  padding-block: var(--mer-spacing--3xs);
-  padding-inline: var(--mer-spacing--xs);
-  color: var(--mer-text__on-elevation);
-  font-family: var(--mer-font-family--inter-regular);
-
-  &--disabled {
-    color: var(--mer-text__on-disabled);
+  &:hover {
+    @include control-colors-hover();
   }
 
-  &--nested {
-    padding-inline-start: calc(
-      var(--ch-combo-box-item-gap) +
-        var(--ch-combo-box-group__expandable-button-size) +
-        var(--mer-spacing--2xs)
-    );
-  }
-
-  &--selected {
-    background-color: var(--mer-item__bg-color--selected);
-    color: var(--mer-item__color--hover);
+  &__item {
+    &--nested {
+      padding-inline-start: calc(
+        var(--ch-combo-box-item-gap) +
+          var(--ch-combo-box-group__expandable-button-size) +
+          var(--mer-spacing--2xs)
+      );
+    }
   }
 }
 
@@ -59,7 +38,9 @@
 /// @param {String} $combo-box--disabled-selector [".combo-box[disabled]"] -
 /// @param {String} $combo-box__placeholder-selector [".combo-box::part(placeholder)"] -
 /// @param {String} $window-selector [".combo-box::part(window)"] -
-/// @param {String} $group__selector [".combo-box::part(group)"] -
+/// @param {String} $window__content-selector [".combo-box::part(window__content)"] -
+/// @param {String} $group-selector [".combo-box::part(group)"] -
+/// @param {String} $group__content-selector [".combo-box::part(group__content)"] -
 /// @param {String} $group__header-selector [".combo-box::part(group__header)"] -
 /// @param {String} $group__header--disabled-selector [".combo-box::part(group__header disabled)"] -
 /// @param {String} $group__header--expandable-selector [".combo-box::part(group__header expandable)"] -
@@ -76,7 +57,9 @@
   $combo-box--disabled-selector: ".combo-box[disabled]",
   $combo-box__placeholder-selector: ".combo-box::part(placeholder)",
   $window-selector: ".combo-box::part(window)",
-  $group__selector: ".combo-box::part(group)",
+  $window__content-selector: ".combo-box::part(window__content)",
+  $group-selector: ".combo-box::part(group)",
+  $group__content-selector: ".combo-box::part(group__content)",
   $group__header-selector: ".combo-box::part(group__header)",
   $group__header--disabled-selector: ".combo-box::part(group__header disabled)",
   $group__header--expandable-selector:
@@ -93,64 +76,92 @@
   // TODO: IMPROVE STYLE. Unanimo's implementation does not work well in Sidebar Menus
 
   #{$combo-box-selector} {
-    @extend %form-input;
     @extend %combo-box;
+
     &:focus {
-      @extend %form-input--focus;
+      @include focus-border();
     }
 
     @if $add--placeholder-var {
-      // @include form-input-placeholder-var();
     }
   }
 
   @if $add--placeholder {
     #{$combo-box__placeholder-selector} {
-      @extend %form-input__placeholder;
+      @include control-placeholder();
     }
   }
 
   @if $add--disabled {
     #{$combo-box--disabled-selector} {
-      @extend %form-input--disabled;
+      @include control-colors-disabled();
     }
 
     #{$group__header--disabled-selector} {
-      @extend %combo-box__item--disabled;
+      @include item-colors-disabled();
     }
 
     #{$item--disabled-selector} {
-      @extend %combo-box__item--disabled;
+      @include item-colors-disabled();
     }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
   //                 Window
   // - - - - - - - - - - - - - - - - - - - -
+
   #{$window-selector} {
-    @extend %combo-box__window;
+  }
+
+  #{$window__content-selector} {
+    @include items-container-colors();
+    @include items-container-padding();
+    @include items-container-dropdown();
+    @include items-container-gap();
+    @include items-container-max-height();
   }
 
   // - - - - - - - - - - - - - - - - - - - -
   //                  Group
   // - - - - - - - - - - - - - - - - - - - -
-  #{$group__selector} {
-    @extend %combo-box__group;
-  }
 
   #{$group__header-selector} {
-    @extend %combo-box__group-header;
+    @include item-colors-enabled();
+    @include item-font-size-regular();
+    @include item-font-weight-header();
+    @include item-height-regular();
+    @include item-padding-inline();
   }
 
-  #{$group__header--expandable-selector}:hover {
-    @extend %combo-box__group-header-expandable--hover;
+  #{$group__header--expandable-selector} {
+    @include item-colors-enabled();
+    @include item-height-regular();
+    @include item-padding-inline();
+    @include item-font-weight-header();
+    @include item-border-radius();
+
+    &:hover {
+      @include item-colors-hover();
+    }
+  }
+  #{$group-selector} {
+    @include items-container-gap();
+  }
+  #{$group__content-selector} {
+    @include items-container-gap();
   }
 
   // - - - - - - - - - - - - - - - - - - - -
   //                  Item
   // - - - - - - - - - - - - - - - - - - - -
   #{$item-selector} {
-    @extend %combo-box__item;
+    @include item-colors-enabled();
+    @include item-border();
+    @include item-border-radius();
+    @include item-height-regular();
+    @include item-font-size-regular();
+    @include item-font-weight();
+    @include item-padding-inline();
   }
 
   #{$item--nested-selector} {
@@ -158,6 +169,6 @@
   }
 
   #{$item--selected-selector} {
-    @extend %combo-box__item--selected;
+    @include item-colors-selected();
   }
 }

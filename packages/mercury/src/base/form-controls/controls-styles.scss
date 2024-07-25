@@ -1,0 +1,42 @@
+%controls {
+  &__container {
+    display: grid;
+    row-gap: var(--controls__container-row-gap);
+  }
+
+  &__group--block {
+    display: grid;
+    gap: var(--controls__group-gap--block);
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  &__group--inline {
+    display: grid;
+    gap: var(--controls__group-gap--inline);
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+  }
+}
+
+/// @group Controls
+/// @param {String} $controls__container-selector [".controls__container"] -
+/// @param {String} $controls__group-selector [".controls__group"] -
+@mixin controls(
+  $controls__container-selector: ".controls__container",
+  $controls__group--block-selector: ".controls__group--block",
+  $controls__group--inline-selector: ".controls__group--inline"
+) {
+  #{$controls__container-selector} {
+    @extend %controls__container;
+  }
+
+  #{$controls__group--block-selector} {
+    @extend %controls__group--block;
+  }
+
+  #{$controls__group--inline-selector} {
+    @extend %controls__group--inline;
+  }
+}

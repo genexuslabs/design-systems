@@ -1,52 +1,99 @@
 @mixin semantic-item() {
-  // note 1: all this tokens are applied on "@mixin item-styles", and the
-  // styling of any component item should be applied through the mixin.
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Items
+  // - - - - - - - - - - - - - - - - - - - -
 
-  // note 2: tokens thar are commented as "optional, are optional because items
-  // from different components could have differences in those tokens.
-  // Tokens that are not commented as optional should in theory be applied to
-  // all component items.
+  // - - - - - - - Colors - - - - - - -
 
-  // generic (are independent of the item state)
-  --mer-item__border-width: var(--mer-border__width--sm);
-  --mer-item__border-style: solid;
-  --mer-item__line-height: var(--mer-line-height--tight);
-  --mer-item__padding-inline: var(--mer-spacing--xs); // optional
-  --mer-item__padding-block: var(--mer-spacing--xs); // optional
-  --mer-item__min-block-size: var(--mer-spacing--lg); // optional
-  --mer-item__font-family: var(--mer-font-family--inter-regular); // optional
-  --mer-item__font-size: var(--mer-body__font-size); // optional
-
-  --mer-item__color: var(--mer-item__color--enabled);
-  --mer-item__bg-color: var(--mer-item__bg-color--enabled);
-  --mer-item__border-color: var(--mer-item__border-color--enabled);
+  --item__bg-color: var(--item__bg-color--enabled);
+  --item__border-color: var(--item__border-color--enabled);
+  --item__color: var(--item__color--enabled);
 
   // enabled
-  --mer-item__color--enabled: var(--mer-text__on-elevation);
-  --mer-item__bg-color--enabled: var(--mer-color__elevation--01);
-  --mer-item__border-color--enabled: var(--mer-color__elevation--04);
+  --item__bg-color--enabled: var(--mer-color__elevation--01);
+  --item__border-color--enabled: transparent;
+  --item__color--enabled: var(--mer-text__on-elevation);
 
   // hover
-  --mer-item__color--hover: var(--mer-color__neutral-gray--100); // ? (validate)
-  --mer-item__bg-color--hover: var(--mer-color__tinted-blue--5);
-  --mer-item__border-color--hover: var(--mer-color__tinted-blue--20);
+  --item__bg-color--hover: var(--mer-color__tinted-blue--5);
+  --item__border-color--hover: var(--mer-color__tinted-blue--20);
+  --item__color--hover: var(--mer-color__neutral-gray--100);
 
   // selected
-  --mer-item__color--selected: var(
-    --mer-color__neutral-gray--100
-  ); // ? (validate)
-  --mer-item__bg-color--selected: var(--mer-color__tinted-blue--10);
-  --mer-item__border-color--selected: var(--mer-color__tinted-blue--20);
+  --item__bg-color--selected: var(--mer-color__tinted-blue--10);
+  --item__border-color--selected: var(--mer-color__tinted-blue--30);
+  --item__color--selected: var(--mer-color__neutral-gray--100);
 
   // selected + hover
-  --mer-item__color--selected-hover: var(
-    --mer-color__neutral-gray--100
-  ); // ? (validate)
-  --mer-item__bg-color--selected-hover: var(--mer-color__tinted-blue--10);
-  --mer-item__border-color--selected-hover: var(--mer-color__tinted-blue--20);
+  --item__bg-color--selected-hover: var(--mer-color__tinted-blue--10);
+  --item__border-color--selected-hover: var(--mer-color__tinted-blue--20);
+  --item__color--selected-hover: var(--mer-color__neutral-gray--100);
 
   // disabled
-  --mer-item__color--disabled: var(); // ? (validate)
-  --mer-item__bg-color--disabled: var();
-  --mer-item__border-color--disabled: var();
+  --item__bg-color--disabled: transparent;
+  --item__border-color--disabled: transparent;
+  --item__color--disabled: var(--mer-text__primary--disabled);
+
+  // - - - - - - - Border - - - - - - -
+
+  --item__border-width: var(--mer-border__width--sm);
+  --item__border-style: solid;
+
+  // - - - - - - - Border Radius - - - - - - -
+
+  --item__border-radius: var(--mer-border__radius--sm);
+
+  // - - - - - - - Padding - - - - - - -
+
+  --item__padding-block: var(--mer-spacing--xs);
+  --item__padding-inline: var(--mer-spacing--xs);
+
+  // - - - - - - - Height - - - - - - -
+
+  --item__height--regular: var(--mer-spacing--xl); // ie.: Combo box
+  --item__height--large: 36px; // ie.: Grid
+
+  // - - - - - - - Font Face - - - - - - -
+
+  --item__font-family: var(--mer-font-family--body);
+  --item__font-weight: var(--mer-font__weight--regular);
+  --mer-item-header__font-weight: var(--mer-font__weight--semi-bold);
+
+  // - - - - - - - Font Size - - - - - - -
+
+  --item__font-size--small: var(--mer-font__size--3xs);
+  --item__font-size--regular: var(--mer-font__size--xs);
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //           Items Container
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // - - - - - - - Colors - - - - - - -
+
+  --items-container__bg-color: var(--mer-color__elevation--01);
+  --items-container__border-color: var(--mer-border-color__on-surface);
+
+  // - - - - - - - Padding - - - - - - -
+
+  --items-container__padding-block: var(--mer-spacing--xs);
+  --items-container__padding-inline: var(--mer-spacing--xs);
+
+  // - - - - - - - Type Dropdown - - - - - - -
+
+  --items-container__border-radius: var(--mer-border__radius--sm);
+  --items-container__box-shadow: var(--mer-box-shadow--01);
+
+  // - - - - - - - Gap - - - - - - -
+
+  --items-container__gap: var(--mer-spacing--2xs);
+
+  // - - - - - - - Height - - - - - - -
+
+  --items-container__max-block-size: 300px;
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //               Grid Cell
+  // - - - - - - - - - - - - - - - - - - - -
+  --grid-cell__box-shadow--inline-block: 0 0 0 1px
+    var(--mer-color__elevation--04);
 }

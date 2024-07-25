@@ -6,22 +6,24 @@
   --mer-color__primary-blue--600: #335884;
 
   // neutral
-  --mer-color__neutral-gray--00: #363636;
-  --mer-color__neutral-gray--100: #525151;
-  --mer-color__neutral-gray--200: #616161;
-  --mer-color__neutral-gray--300: #696969;
-  --mer-color__neutral-gray--400: #666666;
-  --mer-color__neutral-gray--500: #7f7f7f;
-  --mer-color__neutral-gray--600: #999999;
-  --mer-color__neutral-gray--700: #b3b3b3;
-  // 800 to 1400 do not exist anymore in figma (check with designer) ⚠️
-  --mer-color__neutral-gray--800: #cccccc;
-  --mer-color__neutral-gray--900: #ffffff;
-  --mer-color__neutral-gray--1000: #f8f8f8;
-  --mer-color__neutral-gray--1100: #f1f1f1;
-  --mer-color__neutral-gray--1200: #e4e4e4;
-  --mer-color__neutral-gray--1300: #dedede;
-  --mer-color__neutral-gray--1400: #ffffff;
+  --mer-color__neutral-gray--100: #11151c;
+  --mer-color__neutral-gray--200: #181f2a;
+  --mer-color__neutral-gray--300: #242d3c;
+  --mer-color__neutral-gray--400: #2d3a48;
+  --mer-color__neutral-gray--450: #394552;
+  --mer-color__neutral-gray--500: #485665;
+  --mer-color__neutral-gray--550: #56677a;
+  --mer-color__neutral-gray--600: #9da9b6;
+  --mer-color__neutral-gray--650: #c0ccd9;
+  --mer-color__neutral-gray--700: #c0ccd9;
+  --mer-color__neutral-gray--800: #d2ddeb;
+  --mer-color__neutral-gray--900: #e1ecf9;
+  // 1000 to 1400 do not exist anymore in figma (check with designer)
+  --mer-color__neutral-gray--1000: #;
+  --mer-color__neutral-gray--1100: #;
+  --mer-color__neutral-gray--1200: #;
+  --mer-color__neutral-gray--1300: #;
+  --mer-color__neutral-gray--1400: #;
 
   // tinted grays
   --mer-color__tinted-yellow--5: #ffc96b0d;
@@ -34,28 +36,26 @@
   --mer-color__tinted-blue--8: #2070ce14;
   --mer-color__tinted-blue--10: #2070ce1a;
   --mer-color__tinted-blue--20: #2070ce33;
+  --mer-color__tinted-blue--30: #2070ce4d;
   --mer-color__tinted-blue--50: #2070ce80;
 
   // message
   --mer-color__message-green--100: #3fa89b;
-  --mer-color__message-green--200: #3fa89b;
+  --mer-color__message-green--200: #3fa89b; // not anymore in figma (check with designer)
   --mer-color__message-yellow--100: #ffc96b;
-  --mer-color__message-yellow--200: #ffc96b;
+  --mer-color__message-yellow--200: #ffc96b; // not anymore in figma (check with designer)
   --mer-color__message-red--100: #fb7c84;
-  --mer-color__message-red--200: #fb7c84;
-  --mer-color__message-red--300: #dd8f94;
+  --mer-color__message-red--200: #fb7c84; // not anymore in figma (check with designer)
+  --mer-color__message-red--300: #dd8f94; // not anymore in figma (check with designer)
 
   // surface
-  --mer-color__surface: #f4f5f5;
+  --mer-color__surface: var(--mer-color__neutral-gray--100);
 
   // elevation
-  --mer-color__elevation--01: #f1f1f1;
+  --mer-color__elevation--01: var(--mer-color__neutral-gray--200);
   --mer-color__elevation--02: #e4e4e4;
   --mer-color__elevation--03: #dedede;
   --mer-color__elevation--04: #ffffff;
-
-  // secondary
-  --mer-color__secondary-green--200: #3fa89b;
 }
 
 @mixin foundation-colors--dark() {
@@ -66,22 +66,24 @@
   --mer-color__primary-blue--600: #335884;
 
   // neutral
-  --mer-color__neutral-gray--00: #ffffff;
-  --mer-color__neutral-gray--100: #cccccc;
-  --mer-color__neutral-gray--200: #b3b3b3;
-  --mer-color__neutral-gray--300: #999999;
-  --mer-color__neutral-gray--400: #7f7f7f;
-  --mer-color__neutral-gray--500: #666666;
-  --mer-color__neutral-gray--600: #4d4d4d;
-  --mer-color__neutral-gray--700: #333333;
-  // 800 to 1400 do not exist anymore in figma (check with designer) ⚠️
-  --mer-color__neutral-gray--800: #1a1a1a;
-  --mer-color__neutral-gray--900: #000000;
-  --mer-color__neutral-gray--1000: #1f2225;
-  --mer-color__neutral-gray--1100: #24272a;
-  --mer-color__neutral-gray--1200: #2d3032;
-  --mer-color__neutral-gray--1300: #3b3e40;
-  --mer-color__neutral-gray--1400: #2d3134;
+  --mer-color__neutral-gray--100: #e1ecf9;
+  --mer-color__neutral-gray--200: #d2ddeb;
+  --mer-color__neutral-gray--300: #c0ccd9;
+  --mer-color__neutral-gray--400: #9da9b6;
+  --mer-color__neutral-gray--450: #828b96;
+  --mer-color__neutral-gray--500: #56677a;
+  --mer-color__neutral-gray--550: #485665;
+  --mer-color__neutral-gray--600: #394552;
+  --mer-color__neutral-gray--650: #2d3a48;
+  --mer-color__neutral-gray--700: #242d3c;
+  --mer-color__neutral-gray--800: #181f2a;
+  --mer-color__neutral-gray--900: #11151c;
+  // 1000 to 1400 do not exist anymore in figma (check with designer)
+  --mer-color__neutral-gray--1000: #;
+  --mer-color__neutral-gray--1100: #;
+  --mer-color__neutral-gray--1200: #;
+  --mer-color__neutral-gray--1300: #;
+  --mer-color__neutral-gray--1400: #;
 
   // tinted grays
   --mer-color__tinted-yellow--5: #ffc96b0d;
@@ -94,26 +96,24 @@
   --mer-color__tinted-blue--8: #5ba7ff14;
   --mer-color__tinted-blue--10: #5ba7ff1a;
   --mer-color__tinted-blue--20: #5ba7ff33;
+  --mer-color__tinted-blue--30: #5ba7ff4d;
   --mer-color__tinted-blue--50: #5ba7ff80;
 
   // message
   --mer-color__message-green--100: #3fa89b;
-  --mer-color__message-green--200: #3fa89b;
-  --mer-color__message-yellow--100: #ffc96b;
-  --mer-color__message-yellow--200: #f9bd56;
-  --mer-color__message-red--100: #fb7c84;
-  --mer-color__message-red--200: #e35861;
-  --mer-color__message-red--300: #dd8f94;
+  --mer-color__message-green--200: #3fa89b; // not anymore in figma (check with designer)
+  --mer-color__message-yellow--100: #f9bd56;
+  --mer-color__message-yellow--200: #f9bd56; // not anymore in figma (check with designer)
+  --mer-color__message-red--100: #e35861;
+  --mer-color__message-red--200: #e35861; // not anymore in figma (check with designer)
+  --mer-color__message-red--300: #dd8f94; // not anymore in figma (check with designer)
 
   // surface
-  --mer-color__surface: #1a1d20;
+  --mer-color__surface: var(--mer-color__neutral-gray--900);
 
   // elevation
-  --mer-color__elevation--01: #202428;
-  --mer-color__elevation--02: #262a2f;
-  --mer-color__elevation--03: #2b3237;
-  --mer-color__elevation--04: #3b4044;
-
-  // secondary
-  --mer-color__secondary-green--200: #3fa89b;
+  --mer-color__elevation--01: var(--mer-color__neutral-gray--800);
+  --mer-color__elevation--02: var(--mer-color__neutral-gray--700);
+  --mer-color__elevation--03: var(--mer-color__neutral-gray--650);
+  --mer-color__elevation--04: var(--mer-color__neutral-gray--600);
 }

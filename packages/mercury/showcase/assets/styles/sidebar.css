@@ -1,3 +1,18 @@
+:root.dark {
+  /*values for the showcase that I prefer*/
+  --mer-color__old-neutral-gray--100: #525151;
+  --mer-color__old-neutral-gray--300: #999999;
+  --mer-color__old-neutral-gray--700: #333333;
+  --mer-color__old-neutral-gray--800: #1a1a1a;
+}
+:root.light {
+  /*values for the showcase that I prefer*/
+  --mer-color__old-neutral-gray--100: #cccccc;
+  --mer-color__old-neutral-gray--300: #696969;
+  --mer-color__old-neutral-gray--700: #b3b3b3;
+  --mer-color__old-neutral-gray--800: #cccccc;
+}
+
 :root {
   /*Sidebar*/
   --sc-sidebar__width: 250px;
@@ -93,7 +108,7 @@ Nav
 
 /*List*/
 .sidebar__list li {
-  line-height: 1.4em;
+  line-height: 1.6em;
 }
 .sidebar__list li:not(:last-child) {
 }

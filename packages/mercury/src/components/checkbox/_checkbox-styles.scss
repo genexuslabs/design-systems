@@ -1,63 +1,59 @@
-@import "tokens";
-
 %checkbox {
-  @include checkbox-tokens();
-  // TODO (inherit this from the form-control
-  font-family: var(--mer-form-input__font-family);
-  font-size: var(--mer-form-input__font-size);
-  line-height: var(--mer-line-height--regular);
-  color: var(--mer-form-input__color);
-  // END TODO (inherit this from the form-control)
+  --ch-checkbox__container-size: var(--control-tiny__size);
+  --ch-checkbox__option-size: calc(var(--control-tiny__size) / 2);
+  @include label-gap-inline();
+
+  &:hover {
+    @include control-tiny-border-hover();
+    &::part(label) {
+      @include label-color-hover();
+    }
+  }
 
   // Input
   &__input {
-    border: var(--mer-form-input__border);
-    border-radius: var(--mer-border__radius--2xs);
+    // --checkbox-border-color: var(--control__border-color);
+    // border-color: var(--checkbox-border-color);
+    @include control-tiny-border();
 
     &--focus {
-      @include focus-style(true);
+      @include focus-outline();
     }
 
     &--checked-and-indeterminate {
-      border-color: var(--mer-color__neutral-gray--300);
     }
 
     // Not implemented yet in the control
     &--error {
-      background-color: var(--colors-Foundation-un-color__red--5);
-    }
-
-    &--disabled {
-      border-color: var(--mer-border-color__primary--disabled);
     }
   }
 
   // Option
   &__option {
+    background-color: var(--control-tiny-option__color);
+
     &--checked {
-      color: var(--mer-border-color__neutral--active);
     }
 
     &--indeterminate {
-      color: var(--mer-color__neutral-gray--300);
       block-size: var(--mer-spacing--3xs);
     }
 
     // Not implemented yet in the control
     &--error {
-      color: var(--mer-color__message-red--100);
-      border-color: var(--mer-border-color__error);
     }
 
     &--disabled {
-      color: var(--mer-accent__primary--disabled);
-      border-color: var(-mer-border-color__primary--disabled);
     }
   }
 
   // Label
-  &__label--disabled {
-    color: var(--mer-text__primary--disabled);
+  &__label {
+    @include label-font();
+
+    &--disabled {
+      @include label-color-disabled();
+    }
   }
 }
 
@@ -140,8 +136,7 @@
   // Label
   @if $add--label {
     #{$checkbox__label-selector} {
-      @extend %label;
-      margin-inline-start: var(--label__inline-margin);
+      @extend %checkbox__label;
     }
   }
 
@@ -149,12 +144,12 @@
   @if $add--disabled {
     // Input
     #{$checkbox__input--disabled-selector} {
-      @extend %checkbox__input--disabled;
+      --control__border-color: var(--control__border-color--disabled);
     }
 
     // Option
     #{$checkbox__option--disabled-selector} {
-      @extend %checkbox__option--disabled;
+      --control__border-color: var(--control__border-color--disabled);
     }
 
     // Label
@@ -166,15 +161,14 @@
   }
 
   // Error
+  // Not implemented yet in the control
   @if $add--error {
     // Input
     #{$checkbox__input--error-selector} {
-      @extend %checkbox__input--error;
     }
 
     // Option
     #{$checkbox__option--error-selector} {
-      @extend %checkbox__option--error;
     }
   }
 }

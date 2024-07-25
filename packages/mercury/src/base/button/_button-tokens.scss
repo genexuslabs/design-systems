@@ -1,30 +1,7 @@
-@mixin button-tokens-base() {
-  //font
-  --button-base__font-family: inherit;
-  --button-base__font-size: var(--mer-font__size--3xs);
-  //--button-base__font-weight: var(--mer-font__weight--semi-bold);
-  --button-base__line-height: var(--mer-line-height--tight);
-  //--button-base__color: var(--mer-text__on-primary);
-  --button-base__text-transform: capitalize;
-  //border
-  --button-base__border-width: var(--mer-border__width--sm);
-  --button-base__border-style: solid;
-  --button-base__border-color: transparent;
-  --button-base__border-radius: var(--mer-border__radius--sm);
-  //other
-  --button-base__block-size: var(--mer-control__block-size);
-  --button-base__gap: var(--mer-spacing--xs);
-  --button-base__padding-inline: var(--mer-spacing--sm);
-  //with icon
-  --button-icon-only__padding: 0;
-  --button-icon-only__inline-size: var(--mer-control__block-size);
-}
-
 @mixin button-tokens-primary() {
   --button-primary__background-color: var(--mer-accent__primary);
   --button-primary__border-color: var(--button-primary__background-color);
   --button-primary__color: var(--mer-text__on-primary);
-  --button-primary__font-weight: var(--mer-font__weight--semi-bold);
   //hover
   --button-primary__background-color--hover: var(--mer-accent__primary--hover);
   --button-primary__border-color--hover: var(
@@ -55,7 +32,6 @@
   --button-secondary__background-color: transparent;
   --button-secondary__border-color: var(--mer-border-color__neutral);
   --button-secondary__color: var(--mer-text__neutral);
-  --button-secondary__font-weight: var(--mer-font__weight--semi-bold);
   //hover
   --button-secondary__background-color--hover: transparent;
   --button-secondary__border-color--hover: var(
@@ -78,7 +54,6 @@
   --button-tertiary__background-color: transparent;
   --button-tertiary__border-color: transparent;
   --button-tertiary__color: var(--mer-text__primary);
-  --button-tertiary__font-weight: var(--mer-font__weight--semi-bold);
   //hover
   --button-tertiary__background-color--hover: transparent;
   --button-tertiary__border-color--hover: transparent;
@@ -91,8 +66,4 @@
   --button-tertiary__background-color--disabled: transparent;
   --button-tertiary__border-color--disabled: transparent;
   --button-tertiary__color--disabled: var(--mer-text__on-disabled);
-}
-
-@mixin button-tokens-icon-only() {
-  --button-icon-only__padding-inline: var(--mer-spacing--xs);
 }

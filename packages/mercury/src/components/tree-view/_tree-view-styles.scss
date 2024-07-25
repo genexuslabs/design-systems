@@ -23,7 +23,7 @@
 
 %tree-view-item--drag-enter {
   background-color: var(--tree-view-item__bg-color--hover);
-  @include focus-style(true);
+  @include focus-outline();
 }
 
 %tree-view-drop--after {
@@ -35,7 +35,7 @@
   padding-inline-end: var(--tree-view-item-custom__padding-inline-end);
 
   &--focus-visible {
-    @include focus-style(true);
+    @include focus-outline();
   }
 
   &--not-selected-hover {

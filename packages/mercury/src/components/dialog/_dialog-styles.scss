@@ -20,7 +20,7 @@
 
   &__caption {
     @extend %heading-5;
-    @extend %heading__color--highlighted;
+    @extend %heading-color__gray--light;
     word-break: break-word;
   }
 
@@ -103,8 +103,7 @@
   $edge-block-start-selector: ".dialog::part(edge-block-start)",
   $edge-inline-end-selector: ".dialog::part(edge-inline-end)",
   $edge-block-end-selector: ".dialog::part(edge-block-end)",
-  $edge-inline-start-selector: ".dialog::part(edge-inline-start)",
-  $icons-path: ""
+  $edge-inline-start-selector: ".dialog::part(edge-inline-start)"
 ) {
   #{$dialog-selector} {
     @extend %dialog;

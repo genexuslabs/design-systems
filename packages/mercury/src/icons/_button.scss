@@ -1,14 +1,13 @@
 @import "../base/button/button-tokens";
 
 %button-icon-only {
-  @include button-tokens-icon-only();
-  inline-size: var(--button-icon-only__inline-size);
-  padding: var(--button-icon-only__padding);
+  --control__padding-inline: 0;
+  inline-size: var(--control__height);
+  block-size: var(--control__height);
 }
 
 %button-icon-and-text {
-  // same as regular base button
-  padding-inline: var(--button-base__padding-inline);
+  @include icon-gap-common-styles(var(--mer-spacing--xs));
 }
 
 @mixin button-icon-only($selector: ".button-icon-only") {

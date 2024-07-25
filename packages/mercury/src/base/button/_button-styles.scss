@@ -1,47 +1,44 @@
 @import "../button/button-tokens";
 
 %button-base {
-  @include button-tokens-base();
   @include button-common-styles();
-  border: var(--button-base__border-width);
-  border-radius: var(--button-base__border-radius);
-  block-size: var(--button-base__block-size);
-  border: var(--button-base__border-width) var(--button-base__border-style)
-    var(--button-base__border-color);
-  font-family: var(--button-base__font-family);
-  font-size: var(--button-base__font-size);
-  gap: var(--button-base__gap); // Used when the button has icons
-  line-height: var(--button-base__line-height);
-  padding-inline: var(--button-base__padding-inline);
-  text-transform: var(--button-base__text-transform);
+  @include control-height-regular();
+  @include control-border();
+  @include control-font-size-regular();
+  @include control-padding-inline();
+  padding-inline: var(--control__padding-inline);
+
   &--focus-visible {
-    @include focus-style($outline: true);
+    @include focus-outline();
   }
 }
 
 %button-primary {
   @include button-tokens-primary();
+  @include control-font-weight-semi-bold();
   @extend %button-base;
+
+  //overwrite some control default styles
+  --control__border-color: var(--button-primary__border-color);
+
   background-color: var(--button-primary__background-color);
-  border-color: var(--button-primary__border-color);
   color: var(--button-primary__color);
-  font-weight: var(--button-primary__font-weight);
 
   &--hover {
     background-color: var(--button-primary__background-color--hover);
-    border-color: var(--button-primary__border-color--hover);
+    --control__border-color: var(--button-primary__border-color--hover);
     color: var(--button-primary__color--hover);
   }
 
   &--active {
     background-color: var(--button-primary__background-color--active);
-    border-color: var(--button-primary__border-color--active);
+    --control__border-color: var(--button-primary__border-color--active);
     color: var(--button-primary__color--active);
   }
 
   &--disabled {
     background-color: var(--button-primary__background-color--disabled);
-    border-color: var(--button-primary__border-color--disabled);
+    --control__border-color: var(--button-primary__background-color--disabled);
     color: var(--button-primary__color--disabled);
   }
 }
@@ -49,57 +46,64 @@
 %button-secondary {
   @include button-tokens-secondary();
   @extend %button-base;
+
+  //overwrite some control default styles
+  --control__border-color: var(--button-secondary__border-color);
+
   background-color: var(--button-secondary__background-color);
-  border-color: var(--button-secondary__border-color);
   color: var(--button-secondary__color);
-  font-weight: var(--button-secondary__font-weight);
 
   &--hover {
     background-color: var(--button-secondary__background-color--hover);
-    border-color: var(--button-secondary__border-color--hover);
+    --control__border-color: var(--button-secondary__border-color--hover);
     color: var(--button-secondary__color--hover);
   }
 
   &--active {
     background-color: var(--button-secondary__background-color--active);
-    border-color: var(--button-secondary__border-color--active);
+    --control__border-color: var(--button-secondary__border-color--active);
     color: var(--button-secondary__color--active);
   }
 
   &--disabled {
     background-color: var(--button-secondary__background-color--disabled);
-    border-color: var(--button-secondary__border-color--disabled);
+    --control__border-color: var(--button-secondary__border-color--disabled);
     color: var(--button-secondary__color--disabled);
   }
 }
 
 %button-tertiary {
   @include button-tokens-tertiary();
+  @include control-font-weight-regular();
   @extend %button-base;
+
+  //overwrite some control default styles
+  --control__border-color: var(--button-tertiary__border-color);
+
   background-color: var(--button-tertiary__background-color);
-  border-color: var(--button-tertiary__border-color);
   color: var(--button-tertiary__color);
-  font-weight: var(--button-tertiary__font-weight);
 
   &--hover {
     background-color: var(--button-tertiary__background-color--hover);
-    border-color: var(--button-tertiary__border-color--hover);
+    --control__border-color: var(--button-tertiary__border-color--hover);
     color: var(--button-tertiary__color--hover);
   }
 
   &--active {
     background-color: var(--button-tertiary__background-color--active);
-    border-color: var(--button-tertiary__border-color--active);
+    --control__border-color: var(--button-tertiary__border-color--active);
     color: var(--button-tertiary__color--active);
   }
 
   &--disabled {
     background-color: var(--button-tertiary__background-color--disabled);
-    border-color: var(--button-tertiary__border-color--disabled);
+    --control__border-color: var(--button-tertiary__border-color--disabled);
     color: var(--button-tertiary__color--disabled);
   }
 }
 
+/// @group Button
+/// @param {String} $selector [".button-primary"] -
 @mixin button-primary($selector: ".button-primary", $add--disabled: true) {
   #{$selector} {
     @extend %button-primary;
@@ -120,6 +124,8 @@
   }
 }
 
+/// @group Button
+/// @param {String} $selector [".button-secondary"] -
 @mixin button-secondary($selector: ".button-secondary", $add--disabled: true) {
   #{$selector} {
     @extend %button-secondary;
@@ -141,6 +147,8 @@
   }
 }
 
+/// @group Button
+/// @param {String} $selector [".button-tertiary"] -
 @mixin button-tertiary($selector: ".button-tertiary", $add--disabled: true) {
   #{$selector} {
     @extend %button-tertiary;

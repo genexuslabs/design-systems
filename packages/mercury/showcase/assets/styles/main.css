@@ -1,5 +1,6 @@
 :root {
-  --sc-base__border-color: var(--mer-color__neutral-gray--700);
+  --sc-base__border-color: var(--mer-color__neutral-gray--500);
+  --sc-base__body-line-height: 1.7;
   /* TOKENS MAIN */
   --body__font-size: 16px;
   --body__line-height: 16px;
@@ -13,9 +14,10 @@
   --section-header__gap: 24px;
   --section-title__font-size: 36px;
   --section-title__color: var(--mer-color__neutral-gray--100);
-  --section-title__font-family: var(--mer-font-family--inter-light);
+  --section-title__font-family: var(--mer-font-family--title);
+  --section-title__font-weight: var(--mer-font__weight--light);
   --section-description__font-size: 16px;
-  --section-description__line-height: var(--mer-line-height--spaced);
+  --section-description__line-height: var(--sc-base__body-line-height);
   --section-description__max-width: 640px;
   --articles-container__gap: 0;
   /* article */
@@ -31,7 +33,7 @@
   --article-description__max-width: 640px;
   --article-sub-title__font-size: 16px;
   --article-mini-title__font-size: 12px;
-  --article-border-block-end: 1px solid var(--mer-color__neutral-gray--1000);
+  --article-border-block-end: 1px solid var(--mer-color__neutral-gray--700);
   /* pills */
   --article-pills__gap: 12px;
   --article-pill__font-family: "JetBrains Mono", monospace;
@@ -77,13 +79,18 @@ body.all-hidden .section__header {
 }
 .dummy-box {
   display: block;
-  inline-size: 200px;
   block-size: 32px;
   border: 2px dashed var(--mer-color__elevation--03);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--mer-color__neutral-gray--500);
+}
+.dummy-box--sm {
+  inline-size: 150px;
+}
+.dummy-box--md {
+  inline-size: 200px;
 }
 .dummy-box--lg {
   inline-size: 400px;
@@ -140,18 +147,18 @@ Container
 }
 .main::-webkit-scrollbar {
   width: var(--mer-spacing--sm);
-  height: var(--mer-scrollbar__size);
+  height: var(--scrollbar__size);
 }
 .main::-webkit-scrollbar-track {
-  background-color: var(--mer-scrollbar-track__bg-color);
-  border-radius: var(--mer-scrollbar-track__border-radius);
+  background-color: var(--scrollbar-track__bg-color);
+  border-radius: var(--scrollbar-track__border-radius);
 }
 .main::-webkit-scrollbar-thumb {
-  background-color: var(--mer-scrollbar-thumb__bg-color);
-  border-radius: var(--mer-scrollbar-thumb__border-radius);
+  background-color: var(--scrollbar-thumb__bg-color);
+  border-radius: var(--scrollbar-thumb__border-radius);
 }
 .main::-webkit-scrollbar-thumb:hover {
-  background-color: var(--mer-scrollbar-thumb__bg-color--hover);
+  background-color: var(--scrollbar-thumb__bg-color--hover);
 }
 .main::-webkit-scrollbar-corner {
   background: transparent;
@@ -184,6 +191,7 @@ Section
   color: var(--section-title__color);
   font-size: var(--section-title__font-size);
   font-family: var(--section-title__font-family);
+  font-weight: var(--mer-font__weight--light);
 }
 .section__title--mono {
   font-family: monospace;
@@ -197,11 +205,16 @@ Section
   content: "note";
   display: block;
   font-weight: 600;
+  margin-block-end: var(--mer-spacing--2xs);
 }
 .section__description--note {
-  font-size: var(--mer-font__size--xs);
-  padding-inline-start: var(--mer-spacing--md);
-  border-inline-start: 2px solid var(--mer-text__on-surface);
+  color: var(--mer-color__neutral-gray--400);
+  font-size: var(--mer-font__size--2xs);
+  padding-block: var(--mer-spacing--sm);
+  padding-inline: var(--mer-spacing--md);
+  border-inline-start: 2px solid var(--mer-border-color__on-surface);
+  background-color: var(--mer-color__elevation--01);
+  border-radius: var(--mer-border__radius--sm);
 }
 /*====================
 Articles
@@ -256,7 +269,7 @@ Articles
 .article__description {
   font-size: var(--article-description__font-size);
   max-width: var(--article-description__max-width);
-  line-height: var(--mer-line-height--spaced);
+  line-height: var(--sc-base__body-line-height);
 }
 .article__sub-title {
   font-size: var(--article-sub-title__font-size);
@@ -351,9 +364,9 @@ body.ctrl-cmd-pressed .article__pill {
 }
 /* generated header and copy button (/showcase/assets/scripts.js) */
 .code__header {
-  --code-header__color: var(--mer-color__neutral-gray--300);
+  --code-header__color: var(--mer-color__neutral-gray--400);
   font-size: var(--mer-font__size--3xs);
-  background-color: var(--mer-color__elevation--01);
+  background-color: var(--mer-color__elevation--02);
   display: flex;
   justify-content: end;
   overflow: hidden;
@@ -379,6 +392,7 @@ body.ctrl-cmd-pressed .article__pill {
 .code__button:hover {
   cursor: pointer;
   --code-header__color: var(--mer-color__neutral-gray--100);
+  background-color: var(--mer-color__elevation--03);
 }
 .code__button:active {
   --code-header__color: var(--mer-color__neutral-gray--400);
@@ -411,6 +425,6 @@ body.ctrl-cmd-pressed .article__pill {
     background-color: var(--mer-color__neutral-gray--800);
   }
   to {
-    background-color: var(--mer-color__elevation--01);
+    background-color: var(--mer-color__neutral-gray--700);
   }
 }

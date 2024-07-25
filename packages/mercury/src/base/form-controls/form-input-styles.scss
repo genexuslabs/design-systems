@@ -1,27 +1,20 @@
-@import "form-input-tokens";
-
 %form-input {
-  @include form-input-tokens();
-  font-family: var(--mer-form-input__font-family);
-  border: var(--mer-form-input__border);
-  border-radius: var(--mer-form-input__border-radius);
-  color: var(--mer-form-input__color);
-  font-size: var(--mer-form-input__font-size);
-  block-size: var(--mer-control__block-size);
-  padding-inline: var(--mer-form-input__padding-inline);
+  @include control-colors-enabled();
+  @include control-border();
+  @include control-font-weight-regular();
+  @include control-height-regular();
+  @include control-padding-inline();
 
   &--focus {
-    @include focus-style(false);
+    @include focus-border();
   }
 
   &--hover {
-    border-color: var(--mer-form-input__border-color--hover);
+    @include control-colors-hover();
   }
 
   &--disabled {
-    color: var(--mer-form-input__color--disabled);
-    border-color: var(--mer-form-input__border-color--disabled);
-    background-color: var(--mer-form-input__bg-color--disabled);
+    @include control-colors-disabled();
   }
 
   &--disabled-placeholder {
@@ -56,13 +49,16 @@
   #{$selector} {
     @extend %form-input;
 
+    &:hover {
+      @extend %form-input--hover;
+    }
+
     @if $add--placeholder-var {
-      // @include form-input-placeholder-var(); TODO
     }
 
     @if $add--placeholder {
       &::placeholder {
-        @extend %form-input__placeholder;
+        @include control-placeholder();
       }
     }
 
@@ -79,7 +75,7 @@
 
     @if $add--error {
       &--error {
-        @extend %form-input--error;
+        @include control-colors-error();
       }
     }
   }

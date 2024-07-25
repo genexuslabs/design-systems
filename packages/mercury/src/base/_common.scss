@@ -1,167 +1,308 @@
+@import "../../../common/base";
+
 /*----------------------
 Focus
 ----------------------*/
-@mixin focus-style($outline: false) {
-  @if $outline == true {
-    outline: var(--mer-focus__outline-width)
-      var(--mer-focus__outline-style)
-      var(--mer-focus__outline-color);
-    outline-offset: var(--mer-focus__outline-offset);
-  } @else {
-    border-color: var(--borders-un-border-color__focused);
-  }
+
+@mixin focus-outline($outline: false) {
+  outline: var(--focus__outline-width) var(--focus__outline-style)
+    var(--focus__outline-color);
+  outline-offset: var(--focus__outline-offset);
+}
+@mixin focus-border($outline: false) {
+  border-color: var(--borders-un-border-color__focused);
 }
 
 /*----------------------
 Scrollbar
 ----------------------*/
-%scrollbar-styles {
+
+@mixin scrollbar-styles() {
   //scrollbar
   &::-webkit-scrollbar {
-    width: var(--mer-scrollbar__size);
-    height: var(--mer-scrollbar__size);
+    width: var(--scrollbar__size);
+    height: var(--scrollbar__size);
   }
 
   // track
   &::-webkit-scrollbar-track {
-    background-color: var(--mer-scrollbar-track__bg-color);
-    border-radius: var(--mer-scrollbar-track__border-radius);
+    background-color: var(--scrollbar-track__bg-color);
+    border-radius: var(--scrollbar-track__border-radius);
   }
 
   // thumb
   &::-webkit-scrollbar-thumb {
-    background-color: var(--mer-scrollbar-thumb__bg-color);
-    border-radius: var(--mer-scrollbar-thumb__border-radius);
+    background-color: var(--scrollbar-thumb__bg-color);
+    border-radius: var(--scrollbar-thumb__border-radius);
   }
 
   // thumb:hover
   &::-webkit-scrollbar-thumb:hover {
-    background-color: var(--mer-scrollbar-thumb__bg-color--hover);
+    background-color: var(--scrollbar-thumb__bg-color--hover);
   }
 
   // corner
   &::-webkit-scrollbar-corner {
-    background: var(--mer-scrollbar-corner__bg);
-  }
-}
-@mixin scrollbar-styles() {
-  @extend %scrollbar-styles;
-}
-
-/*----------------------------------------------------
-Item (applies to every item (tree, grid, list, etc...)
-----------------------------------------------------*/
-
-// note: $style's that are not marked as ¨optional¨ should be
-// applied to every item on the design system, in order to
-// keep consistency. $style's that are not marked as "optional"
-// are optional because items from different components could
-// display different styles for that particular group/$style
-
-@mixin item-styles($style: "enabled") {
-  @if $style == "border-list" {
-    border: var(--mer-item__border-width)
-      var(--mer-item__border-style)
-      transparent;
-    // border color depends on the state (enabled, hover, etc)
-  }
-  @if $style == "border-grid" {
-    border-block-end: var(--mer-item__border-width)
-      var(--mer-item__border-style)
-      var(--mer-item__border-color);
-    border-inline-end: var(--mer-item__border-width)
-      var(--mer-item__border-style)
-      var(--mer-item__border-color);
-    // border color depends on the state (enabled, hover, etc)
-  }
-  @if $style == "font" {
-    // optional
-    font-family: var(--mer-item__font-family);
-    font-size: var(--mer-item__font-size);
-    line-height: var(--mer-item__line-height);
-  }
-  @if $style == "structure" {
-    // optional
-    padding-inline: var(--mer-item__padding-inline);
-    padding-block: var(--mer-item__padding-block);
-    min-block-size: var(--mer-item__padding-min-block-size);
-  }
-  @if $style == "colors" {
-    background-color: var(--mer-item__bg-color);
-    color: var(--mer-item__color);
-    border-color: var(--mer-item__border-color);
-  }
-  @if $style == "hover" {
-    --mer-item__color: var(--mer-item__color--hover);
-    --mer-item__bg-color: var(--mer-item__bg-color--hover);
-    --mer-item__border-color: var(--mer-item__border-color--hover);
-  }
-  @if $style == "selected" {
-    --mer-item__color: var(--mer-item__color--selected);
-    --mer-item__bg-color: var(--mer-item__bg-color--selected);
-    --mer-item__border-color: var(--mer-item__border-color--selected);
-  }
-  @if $style == "selected-hover" {
-    --mer-item__color: var(--mer-item__color--selected-hover);
-    --mer-item__bg-color: var(--mer-item__bg-color--selected-hover);
-    --mer-item__border-color: var(--mer-item__border-color--selected-hover);
-  }
-  @if $style == "disabled" {
-    --mer-item__color: var(--mer-item__color--disabled);
-    --mer-item__bg-color: var(--mer-item__bg-color--disabled);
-    --mer-item__border-color: var(--mer-item__border-color--disabled);
+    background: var(--scrollbar-corner__bg);
   }
 }
 
-%item-border-list {
-  @include item-styles("border-list");
+/*----------------------
+Control
+----------------------*/
+
+// Colors
+@mixin control-colors-enabled() {
+  background-color: var(--control__bg-color);
+  color: var(--control__color);
+  // enabled border color is defined in control-border()
 }
-%item-border-grid {
-  @include item-styles("border-grid");
+@mixin control-colors-hover() {
+  --control__border-color: var(--control__border-color--hover);
 }
-%item-font {
-  @include item-styles("font");
+@mixin control-colors-disabled() {
+  --control__bg-color: var(--control__background-color--disabled);
+  --control__border-color: var(--control__border-color--disabled);
+  --control__color: var(--control__color--disabled);
 }
-%item-structure {
-  @include item-styles("structure");
+@mixin control-colors-error() {
+  --control__border-color: var(--control__border-color--error);
 }
-%item-colors {
-  // enabled
-  @include item-styles("colors");
+// Border
+@mixin control-border() {
+  border-width: var(--control__border-width);
+  border-style: var(--control__border-style);
+  border-color: var(--control__border-color);
+  border-radius: var(--control__border-radius);
 }
-%item-hover {
-  @include item-styles("hover");
+// Font
+@mixin control-font-weight-regular() {
+  font-weight: var(--control__font-weight--regular);
 }
-%item-selected {
-  @include item-styles("selected");
+@mixin control-font-weight-semi-bold() {
+  font-weight: var(--control__font-weight--semi-bold);
 }
-%item-selected-hover {
-  @include item-styles("selected-hover");
+// Font Size
+@mixin control-font-size-small() {
+  font-size: var(--control__font-size--small);
 }
-%item-disabled {
-  @include item-styles("disabled");
+@mixin control-font-size-regular() {
+  font-size: var(--control__font-size--regular);
 }
-%item-common-states {
-  @include item-styles("enabled");
-  @include item-styles("hover");
-  @include item-styles("disabled");
+// Height
+@mixin control-height-regular() {
+  block-size: var(--control__height);
+}
+// Padding
+@mixin control-padding-inline-block() {
+  padding-block: var(--control__padding-block);
+  padding-inline: var(--control__padding-inline);
+}
+@mixin control-padding-inline() {
+  padding-inline: var(--control__padding-inline);
+}
+// Placeholder
+@mixin control-placeholder() {
+  color: var(--control-placeholder__color);
+  font-style: var(--control-placeholder__font-style);
+}
+
+/*----------------------
+Control Tiny
+----------------------*/
+
+@mixin control-tiny-size() {
+  block-size: var(--control-tiny__size);
+  inline-size: var(--control-tiny__size);
+}
+@mixin control-tiny-border() {
+  border-width: var(--control__border-width);
+  border-style: var(--control__border-style);
+  border-color: var(--control__border-color);
+  border-radius: var(--control__border-radius);
+}
+@mixin control-tiny-border-hover() {
+  --control__border-color: var(--control__border-color--hover);
+}
+@mixin control-tiny-border-disabled() {
+  --control__border-color: var(--control__border-color--disabled);
+}
+@mixin control-tiny-border-error() {
+  --control__border-color: var(--control__border-color--error);
+}
+
+/*----------------------
+Items Container
+----------------------*/
+
+@mixin items-container-colors() {
+  background-color: var(--items-container__bg-color);
+  border-color: var(--items-container__border-color);
+}
+@mixin items-container-padding() {
+  padding-block: var(--items-container__padding-block);
+  padding-inline: var(--items-container__padding-inline);
+}
+@mixin items-container-dropdown() {
+  border-radius: var(--items-container__border-radius);
+  box-shadow: var(--items-container__box-shadow);
+}
+@mixin items-container-gap() {
+  gap: var(--items-container__gap);
+}
+@mixin items-container-gap() {
+  gap: var(--items-container__gap);
+}
+@mixin items-container-max-height() {
+  max-block-size: var(--items-container__max-block-size);
+}
+
+/*---------------------------------
+Single Item (Every item except grid)
+----------------------------------*/
+
+@mixin item-colors-enabled() {
+  background-color: var(--item__bg-color);
+  border-color: var(--item__border-color);
+  color: var(--item__color);
+}
+@mixin item-colors-hover() {
+  --item__bg-color: var(--item__bg-color--hover);
+  --item__border-color: var(--item__border-color--hover);
+  --item__color: var(--item__color--hover);
+}
+@mixin item-colors-selected() {
+  --item__bg-color: var(--item__bg-color--selected);
+  --item__border-color: var(--item__border-color--selected);
+  --item__color: var(--item__color--selected);
+}
+@mixin item-colors-selected-hover() {
+  --item__bg-color: var(--item__bg-color--selected-hover);
+  --item__border-color: var(--item__border-color--selected-hover);
+  --item__color: var(--item__color--selected-hover);
+}
+@mixin item-colors-disabled() {
+  --item__bg-color: var(--item__bg-color--disabled);
+  --item__border-color: var(--item__border-color--disabled);
+  --item__color: var(--item__color--disabled);
+}
+@mixin item-border() {
+  border: var(--item__border-width) var(--item__border-style)
+    var(--item__border-color);
+}
+@mixin item-border-block-end() {
+  border-block-end: var(--item__border-width) var(--item__border-style)
+    var(--item__border-color);
+}
+@mixin item-border-radius() {
+  border-radius: var(--item__border-radius);
+}
+@mixin item-padding() {
+  padding-block: var(--item__padding-block);
+  padding-inline: var(--item__padding-inline);
+}
+@mixin item-padding-block() {
+  padding-block: var(--item__padding-inline);
+}
+@mixin item-padding-inline() {
+  padding-inline: var(--item__padding-inline);
+}
+@mixin item-height-regular() {
+  block-size: var(--item__height--regular);
+}
+@mixin item-height-large() {
+  block-size: var(--item__height--large);
+}
+@mixin item-font-weight() {
+  font-weight: var(--item__font-weight);
+}
+@mixin item-font-weight-header() {
+  font-weight: var(--mer-item-header__font-weight);
+}
+@mixin item-font-size-small() {
+  font-size: var(--item__font-size--small);
+}
+@mixin item-font-size-regular() {
+  font-size: var(--item__font-size--regular);
+}
+
+/*---------------------------------
+Grid Item
+----------------------------------*/
+
+// Row
+@mixin grid-row-colors-enabled() {
+  background-color: var(--item__bg-color);
+  color: var(--item__color);
+}
+@mixin grid-row-colors-highlighted() {
+  --item__bg-color: var(--item__bg-color--hover);
+  --item__color: var(--item__color--hover);
+}
+@mixin grid-row-colors-selected() {
+  --item__bg-color: var(--item__bg-color--selected);
+  --item__color: var(--item__color--selected);
+}
+@mixin grid-cell-border-inline-block() {
+  box-shadow: var(--grid-cell__box-shadow--inline-block);
+}
+@mixin grid-cell-colors-selected() {
+  background-color: var(--item__bg-color--selected);
+}
+@mixin grid-rowset-legend-padding-block() {
+  padding-block-start: var(--mer-spacing--3xs);
+  padding-block-end: var(--mer-spacing--3xs);
+}
+
+/*----------------------
+Label
+----------------------*/
+
+@mixin label-font() {
+  color: var(--label__color);
+  font-weight: var(--label__font-weight);
+  font-size: var(--label__font-size);
+  line-height: var(--label__line-height);
+}
+@mixin label-gap-block() {
+  gap: var(--label__gap--block);
+}
+@mixin label-gap-inline() {
+  gap: var(--label__gap--inline);
+}
+@mixin label-color-hover() {
+  --label__color: var(--label__color--hover);
+}
+@mixin label-color-disabled() {
+  --label__color: var(--label__color--disabled);
 }
 
 /*----------------------
 Window
 ----------------------*/
+
 // TODO: This styles should better be applied on the ch-window ?
 %window-styles {
-  border: var(--mer-window__border);
-  border-radius: var(--mer-window__border-radius);
-  padding: var(--mer-window__padding);
-  background-color: var(--mer-window__bg-color);
+  border: var(--window__border);
+  border-radius: var(--window__border-radius);
+  padding: var(---window__padding);
+  background-color: var(--window__bg-color);
   box-shadow: var(--mer-box-shadow--01);
+}
+
+/*----------------------
+Dropdown
+----------------------*/
+
+@mixin dropdown-styles() {
+  box-shadow: var(--mer-box-shadow--01);
+  border-radius: var(--mer-border__radius--sm);
 }
 
 /*----------------------
 Dialog Footer
 ----------------------*/
+
 // Defined here to be used on /components/dialog as well as to replicate
 // dialog footer styles on genexus-ide-ui components
 %control-footer {

@@ -1,11 +1,11 @@
-@import "tokens";
-
 %layout {
-  display: grid;
-  padding-block: var(--mer-spacing--md);
-  padding-inline: var(--mer-spacing--lg);
-  gap: var(--mer-spacing--md);
+  --layout__padding-block: var(--mer-spacing--md);
+  --layout__padding-inline: var(--mer-spacing--lg);
 
+  display: grid;
+  padding-block: var(--layout__padding-block);
+  padding-inline: var(--layout__padding-inline);
+  gap: var(--mer-spacing--md);
   &__panel {
     display: grid;
   }
@@ -42,6 +42,19 @@
     grid-template-rows: 1fr;
     grid-template-columns: 2fr 1fr;
   }
+
+  &--no-padding {
+    --layout__padding-block: 0;
+    --layout__padding-inline: 0;
+  }
+
+  &--no-block-padding {
+    --layout__padding-block: 0;
+  }
+
+  &--no-inline-padding {
+    --layout__padding-inline: 0;
+  }
 }
 
 /// @group Layout
@@ -53,6 +66,9 @@
 /// @param {String} $layout--cols-4-selector [".layout--cols-4"] -
 /// @param {String} $layout--cols-1-2-selector [".layout--cols-1-2"] -
 /// @param {String} $layout--cols-2-1-selector [".layout--cols-2-1"] -
+/// @param {String} $layout--no-padding-selector [".layout--no-padding"] -
+/// @param {String} $layout--no-block-padding-selector [".layout--no-block-padding"] -
+/// @param {String} $layout--no-inline-padding-selector [".layout--no-inline-padding"] -
 @mixin layout(
   $layout-selector: ".layout",
   $panel-selector: ".layout__panel",
@@ -61,7 +77,10 @@
   $layout--cols-3-selector: ".layout--cols-3",
   $layout--cols-4-selector: ".layout--cols-4",
   $layout--cols-1-2-selector: ".layout--cols-1-2",
-  $layout--cols-2-1-selector: ".layout--cols-2-1"
+  $layout--cols-2-1-selector: ".layout--cols-2-1",
+  $layout--no-padding-selector: ".layout--no-padding",
+  $layout--no-block-padding-selector: ".layout--no-block-padding",
+  $layout--no-inline-padding-selector: ".layout--no-inline-padding"
 ) {
   #{$layout-selector} {
     @extend %layout;
@@ -93,5 +112,17 @@
 
   #{$layout--cols-2-1-selector} {
     @extend %layout--cols-2-1;
+  }
+
+  #{$layout--no-padding-selector} {
+    @extend %layout--no-padding;
+  }
+
+  #{$layout--no-block-padding-selector} {
+    @extend %layout--no-block-padding;
+  }
+
+  #{$layout--no-inline-padding-selector} {
+    @extend %layout--no-inline-padding;
   }
 }

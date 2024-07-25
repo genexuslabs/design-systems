@@ -24,7 +24,7 @@
   }
 
   &--focus-visible {
-    @include focus-style(true);
+    @include focus-outline();
   }
 
   &--block {
