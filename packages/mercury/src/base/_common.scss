@@ -4,15 +4,13 @@
 Focus
 ----------------------*/
 
-@mixin focus-style($outline: false) {
-  @if $outline == true {
-    outline: var(--focus__outline-width)
-      var(--focus__outline-style)
-      var(--focus__outline-color);
-    outline-offset: var(--focus__outline-offset);
-  } @else {
-    border-color: var(--borders-un-border-color__focused);
-  }
+@mixin focus-outline($outline: false) {
+  outline: var(--focus__outline-width) var(--focus__outline-style)
+    var(--focus__outline-color);
+  outline-offset: var(--focus__outline-offset);
+}
+@mixin focus-border($outline: false) {
+  border-color: var(--borders-un-border-color__focused);
 }
 
 /*----------------------
@@ -67,8 +65,8 @@ Control
   --control__border-color: var(--control__border-color--disabled);
   --control__color: var(--control__color--disabled);
 }
-@mixin control-colors-hover() {
-  border-color: var(--control__border-color);
+@mixin control-colors-error() {
+  --control__border-color: var(--control__border-color--error);
 }
 // Border
 @mixin control-border() {
@@ -152,13 +150,16 @@ Items Container
 @mixin items-container-gap() {
   gap: var(--items-container__gap);
 }
+@mixin items-container-gap() {
+  gap: var(--items-container__gap);
+}
 @mixin items-container-max-height() {
   max-block-size: var(--items-container__max-block-size);
 }
 
-/*----------------------
-Single Item
-----------------------*/
+/*---------------------------------
+Single Item (Every item except grid)
+----------------------------------*/
 
 @mixin item-colors-enabled() {
   background-color: var(--item__bg-color);
@@ -200,6 +201,9 @@ Single Item
   padding-block: var(--item__padding-block);
   padding-inline: var(--item__padding-inline);
 }
+@mixin item-padding-block() {
+  padding-block: var(--item__padding-inline);
+}
 @mixin item-padding-inline() {
   padding-inline: var(--item__padding-inline);
 }
@@ -222,19 +226,49 @@ Single Item
   font-size: var(--item__font-size--regular);
 }
 
+/*---------------------------------
+Grid Item
+----------------------------------*/
+
+// Row
+@mixin grid-row-colors-enabled() {
+  background-color: var(--item__bg-color);
+  color: var(--item__color);
+}
+@mixin grid-row-colors-highlighted() {
+  --item__bg-color: var(--item__bg-color--hover);
+  --item__color: var(--item__color--hover);
+}
+@mixin grid-row-colors-selected() {
+  --item__bg-color: var(--item__bg-color--selected);
+  --item__color: var(--item__color--selected);
+}
+@mixin grid-cell-border-inline-block() {
+  box-shadow: var(--grid-cell__box-shadow--inline-block);
+}
+@mixin grid-cell-colors-selected() {
+  background-color: var(--item__bg-color--selected);
+}
+@mixin grid-rowset-legend-padding-block() {
+  padding-block-start: var(--mer-spacing--3xs);
+  padding-block-end: var(--mer-spacing--3xs);
+}
+
 /*----------------------
 Label
 ----------------------*/
 
 @mixin label-font() {
   color: var(--label__color);
-  font-family: var(--label__font-family);
   font-weight: var(--label__font-weight);
   font-size: var(--label__font-size);
   line-height: var(--label__line-height);
 }
-@mixin label-gap() {
-  gap: var(--label__gap);
+@mixin label-gap-block() {
+  gap: var(--label__gap--block);
+}
+@mixin label-gap-inline() {
+  gap: var(--label__gap--inline);
 }
 @mixin label-color-hover() {
   --label__color: var(--label__color--hover);
@@ -249,10 +283,10 @@ Window
 
 // TODO: This styles should better be applied on the ch-window ?
 %window-styles {
-  border: var(--mer-window__border);
-  border-radius: var(--mer-window__border-radius);
-  padding: var(--mer-window__padding);
-  background-color: var(--mer-window__bg-color);
+  border: var(--window__border);
+  border-radius: var(--window__border-radius);
+  padding: var(---window__padding);
+  background-color: var(--window__bg-color);
   box-shadow: var(--mer-box-shadow--01);
 }
 
@@ -268,6 +302,7 @@ Dropdown
 /*----------------------
 Dialog Footer
 ----------------------*/
+
 // Defined here to be used on /components/dialog as well as to replicate
 // dialog footer styles on genexus-ide-ui components
 %control-footer {
