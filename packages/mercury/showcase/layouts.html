@@ -33,10 +33,6 @@
       }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
-
-    <!-- local development -->
-    <!-- <link rel="stylesheet" href="../dist/bundles/css/all.css" /> -->
-    <!-- showcase (netlify) -->
     <link rel="stylesheet" href="./all.css" />
     <link rel="stylesheet" href="./assets/styles/top-bar.css" />
     <link rel="stylesheet" href="./assets/styles/sidebar.css" />
@@ -243,59 +239,28 @@
               </div>
               <!-- /.article__main -->
             </article>
-          </div>
-        </section>
 
-        <!-- ----------------------------------------------------- 
-    FIELDSET
-    ------------------------------------------------------ -->
-        <section class="section">
-          <!-- header -->
-          <header class="section__header">
-            <h1 class="section__title">fieldset</h1>
-            <p class="section__description">
-              The <code>fieldset</code> element in HTML is used to group related
-              form elements together within a <code>form</code> element. It
-              helps to organize and structure the form by visually grouping
-              related controls. Typically, it's paired with the
-              <code>legend</code> element, which provides a caption or title for
-              the group of form controls within the <code>fieldset</code>. This
-              combination (<code>fieldset</code> with <code>legend</code> ) is
-              especially useful for improving accessibility and usability in web
-              forms.
-            </p>
-          </header>
-          <div class="section__articles-container">
             <!-- ========================== 
-            orientation column
-      =========================== -->
-            <article class="article" nav data-title="fieldset: column" show>
+          no padding
+          =========================== -->
+            <article class="article" nav data-title="no padding">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
-                <p class="article__description">
-                  Displaying controls <em>vertically</em> organizes larger form
-                  elements clearly, improving readability and accessibility.
-                  Grouping related controls aids navigation and interaction,
-                  while conserving horizontal space suits responsive designs and
-                  smaller screens well.
-                </p>
                 <div class="article__content">
-                  <fieldset class="fieldset">
-                    <legend class="fieldset-legend">Fieldset Legend</legend>
-                    <span class="dummy-box dummy-box--lg">your control</span>
-                    <span class="dummy-box dummy-box--lg">your control</span>
-                    <span class="dummy-box dummy-box--lg">your control</span>
-                  </fieldset>
+                  <div class="layout layout--cols-2-1 layout--no-padding">
+                    <div class="layout__panel">Content of column 1</div>
+                    <div class="layout__panel">Content of column 2</div>
+                  </div>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-7" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup7 = `<fieldset class="fieldset">
-  <legend class="fieldset-legend">Fieldset Legend</legend>
-  <-- Your controls here -->
-</fieldset>`;
+                    const markup7 = `<div class="layout layout--no-padding">
+  <div class="layout__panel">Content of column</div>
+  <div class="layout__panel">Content of column</div>
+</div>`;
                     document.getElementById("ch-code-7").value = markup7;
                   </script>
                 </div>
@@ -305,36 +270,28 @@
             </article>
 
             <!-- ========================== 
-            orientation row
-      =========================== -->
-            <article class="article" nav data-title="fieldset: row">
+          no inline padding
+          =========================== -->
+            <article class="article" nav data-title="no inline padding">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
-                <div class="article__description">
-                  Displaying controls <em>horizontally</em> is beneficial for
-                  shorter form elements, conserving vertical space on wider
-                  screens. This layout facilitates side-by-side comparison of
-                  related controls, improving usability by offering a quick
-                  overview and simplifying form completion without excessive
-                  scrolling.
-                </div>
                 <div class="article__content">
-                  <fieldset class="fieldset fieldset--row">
-                    <legend class="fieldset-legend">Fieldset Legend</legend>
-                    <span class="dummy-box">your control</span>
-                    <span class="dummy-box">your control</span>
-                    <span class="dummy-box">your control</span>
-                  </fieldset>
+                  <div
+                    class="layout layout--cols-2-1 layout--no-inline-padding"
+                  >
+                    <div class="layout__panel">Content of column 1</div>
+                    <div class="layout__panel">Content of column 2</div>
+                  </div>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-8" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup8 = `<fieldset class="fieldset fieldset--row">
-<legend class="fieldset-legend">Fieldset Legend</legend>
-<-- Your controls here -->
-</fieldset>`;
+                    const markup8 = `<div class="layout layout--inline-padding">
+  <div class="layout__panel">Content of column</div>
+  <div class="layout__panel">Content of column</div>
+</div>`;
                     document.getElementById("ch-code-8").value = markup8;
                   </script>
                 </div>
@@ -344,120 +301,27 @@
             </article>
 
             <!-- ========================== 
-            fieldset group: column
-      =========================== -->
-            <article
-              class="article"
-              nav
-              data-title="fieldset group: column"
-              show
-            >
+          no block padding
+          =========================== -->
+            <article class="article" nav data-title="no block padding">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
-                <div class="article__description">
-                  When displaying controls than need to be grouped with a label,
-                  you might want to wrap the label with the control inside a
-                  <code>.fieldset-group</code>. By default the orientation of
-                  the <code>.fieldset-group</code> is vertical.
-                </div>
                 <div class="article__content">
-                  <fieldset class="fieldset">
-                    <legend class="fieldset-legend">Fieldset Legend</legend>
-
-                    <div class="fieldset-group">
-                      <label class="label label--above"
-                        >The Control Label</label
-                      >
-                      <span class="dummy-box">your control</span>
-                    </div>
-
-                    <div class="fieldset-group">
-                      <label class="label label--above"
-                        >The Control Label</label
-                      >
-                      <span class="dummy-box">your control</span>
-                    </div>
-
-                    <div class="fieldset-group">
-                      <label class="label label--above"
-                        >The Control Label</label
-                      >
-                      <span class="dummy-box">your control</span>
-                    </div>
-                  </fieldset>
+                  <div class="layout layout--cols-2-1 layout--no-block-padding">
+                    <div class="layout__panel">Content of column 1</div>
+                    <div class="layout__panel">Content of column 2</div>
+                  </div>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-9" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup9 = `<fieldset class="fieldset">
-<legend class="fieldset-legend">Fieldset Legend</legend>
-<div class="fieldset-group">
-<label class="label label--above">The Control Label</label>
-<-- Your control here -->
-</div>
-</fieldset>`;
+                    const markup9 = `<div class="layout layout--block-padding">
+  <div class="layout__panel">Content of column</div>
+  <div class="layout__panel">Content of column</div>
+</div>`;
                     document.getElementById("ch-code-9").value = markup9;
-                  </script>
-                </div>
-                <!-- /.article__content -->
-              </div>
-              <!-- /.article__main -->
-            </article>
-
-            <!-- ========================== 
-            fieldset group: column
-      =========================== -->
-            <article class="article" nav data-title="fieldset group: row" show>
-              <header class="article__header"></header>
-              <!-- main -->
-              <div class="article__main">
-                <div class="article__description">
-                  When displaying controls than need to be grouped with a label,
-                  you might want to wrap the label with the control inside a
-                  <code>.fieldset-group</code>. To set horizontal orientation on
-                  the <code>-fieldset-group</code> just add an additional
-                  <code>.fieldset-group--row</code> class.
-                </div>
-                <div class="article__content">
-                  <fieldset class="fieldset">
-                    <legend class="fieldset-legend">Fieldset Legend</legend>
-
-                    <div class="fieldset-group fieldset-group--row">
-                      <label class="label label--before"
-                        >The Control Label</label
-                      >
-                      <span class="dummy-box">your control</span>
-                    </div>
-
-                    <div class="fieldset-group fieldset-group--row">
-                      <label class="label label--before"
-                        >The Control Label</label
-                      >
-                      <span class="dummy-box">your control</span>
-                    </div>
-
-                    <div class="fieldset-group fieldset-group--row">
-                      <label class="label label--before"
-                        >The Control Label</label
-                      >
-                      <span class="dummy-box">your control</span>
-                    </div>
-                  </fieldset>
-                </div>
-                <div class="article__code">
-                  <ch-code id="ch-code-10" language="xml" class="code">
-                  </ch-code>
-                  <script>
-                    const markup10 = `<fieldset class="fieldset">
-  <legend class="fieldset-legend">Fieldset Legend</legend>
-  <div class="fieldset-group fieldset-group--row">
-    <label class="label label--above">The Control Label</label>
-    <-- Your control here -->
-  </div>
-</fieldset>`;
-                    document.getElementById("ch-code-10").value = markup10;
                   </script>
                 </div>
                 <!-- /.article__content -->
