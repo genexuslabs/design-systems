@@ -9,7 +9,7 @@
   padding-inline: var(--control__padding-inline);
 
   &--focus-visible {
-    @include focus-style($outline: true);
+    @include focus-outline();
   }
 }
 
