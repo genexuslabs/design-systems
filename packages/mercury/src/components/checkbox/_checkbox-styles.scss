@@ -1,7 +1,7 @@
 %checkbox {
   --ch-checkbox__container-size: var(--control-tiny__size);
   --ch-checkbox__option-size: calc(var(--control-tiny__size) / 2);
-  @include label-gap();
+  @include label-gap-inline();
 
   &:hover {
     @include control-tiny-border-hover();
@@ -17,7 +17,7 @@
     @include control-tiny-border();
 
     &--focus {
-      @include focus-style(true);
+      @include focus-outline();
     }
 
     &--checked-and-indeterminate {
