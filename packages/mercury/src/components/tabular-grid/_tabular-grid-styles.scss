@@ -76,9 +76,9 @@
 
 %tabular-grid-rowset-legend {
   cursor: pointer;
-
-  &:hover {
-  }
+  padding-inline-start: var(--grid-base__icon-gap);
+  box-shadow: calc(var(--indent) * (var(--level) - 1) * -1) 0px 0px 0px
+    var(--mer-color__elevation--02);
 }
 
 // Parts
