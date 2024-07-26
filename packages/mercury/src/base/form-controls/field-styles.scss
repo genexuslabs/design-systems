@@ -34,15 +34,17 @@
 /// @param {String} $field-selector [".field"] -
 /// @param {String} $field-block-selector [".field-block"] -
 /// @param {String} $field-inline-selector [".field-inline"] -
-/// @param {String} $field-group-cols-2 [".field-group-cols-2"] -
-/// @param {String} $field-label-selector [".label"] -
+/// @param {String} $field-inline__label-selector [".field-inline > .label"] -
+/// @param {String} $field-group-cols-2-selector [".field-group-cols-2"] -
+/// @param {String} $field-group-cols-2__label-selector [".field-group-cols-2 > .label"] -
 @mixin field(
   $field-group-selector: ".field-group",
   $field-selector: ".field",
   $field-block-selector: ".field-block",
   $field-inline-selector: ".field-inline",
-  $field-group-cols-2: ".field-group-cols-2",
-  $field-label-selector: ".label"
+  $field-inline__label-selector: ".field-inline > .label",
+  $field-group-cols-2-selector: ".field-group-cols-2",
+  $field-group-cols-2__label-selector: ".field-group-cols-2 > .label"
 ) {
   #{$field-group-selector} {
     @extend %field-group;
@@ -58,15 +60,17 @@
 
   #{$field-inline-selector} {
     @extend %field-inline;
-    > #{$field-label-selector} {
-      @extend %field-inline__label;
-    }
   }
 
-  #{$field-group-cols-2} {
+  #{$field-inline__label-selector} {
+    @extend %field-inline__label;
+  }
+
+  #{$field-group-cols-2-selector} {
     @extend %field-group-cols-2;
-    > #{$field-label-selector} {
-      @extend %field-inline__label;
-    }
+  }
+
+  #{$field-group-cols-2__label-selector} {
+    @extend %field-inline__label;
   }
 }
