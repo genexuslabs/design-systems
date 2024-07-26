@@ -228,10 +228,12 @@
                 <div class="article__description">
                   A custom grid layout allows for flexible arrangement of form
                   controls, such as placing two controls in the first row and a
-                  full-width control in the second. This approach provides a
-                  tailored, organized appearance, enhancing usability by
-                  adapting the layout to specific needs and improving overall
-                  user experience.
+                  full-width control in the second row. For custom grids you
+                  should always apply the <code>.field-group</code> class on the
+                  container, as this class defines the spacing between columns
+                  and rows. Then, for defining your custom layout, we suggest
+                  using <code>grid-template-areas</code> such as in the next
+                  example.
                 </div>
                 <div class="article__content">
                   <style>
