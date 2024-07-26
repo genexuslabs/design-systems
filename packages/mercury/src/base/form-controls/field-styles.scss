@@ -5,24 +5,27 @@
     display: grid;
     row-gap: var(--field-group__row-gap);
     column-gap: var(--field-group__column-gap);
+
+    &-cols-2 {
+      display: grid;
+      column-gap: var(--field__column-gap);
+      row-gap: var(--field-group__row-gap);
+      grid-template-columns: max-content auto;
+    }
   }
 
   &-block {
     row-gap: var(--field__row-gap);
+    grid-template-rows: max-content 1fr;
   }
 
   &-inline {
     column-gap: var(--field__column-gap);
-    grid-template-columns: max-content auto;
-    align-items: center;
-  }
+    grid-template-columns: max-content 1fr;
 
-  &-group-inline {
-    display: grid;
-    column-gap: var(--field__column-gap);
-    row-gap: var(--field-group__row-gap);
-    grid-template-columns: max-content auto;
-    align-items: center;
+    &__label {
+      margin-block-start: var(--field-inline-label__margin-block-start);
+    }
   }
 }
 
@@ -31,13 +34,15 @@
 /// @param {String} $field-selector [".field"] -
 /// @param {String} $field-block-selector [".field-block"] -
 /// @param {String} $field-inline-selector [".field-inline"] -
-/// @param {String} $field-group-inline-selector [".field-group-inline"] -
+/// @param {String} $field-group-cols-2 [".field-group-cols-2"] -
+/// @param {String} $field-label-selector [".label"] -
 @mixin field(
   $field-group-selector: ".field-group",
   $field-selector: ".field",
   $field-block-selector: ".field-block",
   $field-inline-selector: ".field-inline",
-  $field-group-inline-selector: ".field-group-inline"
+  $field-group-cols-2: ".field-group-cols-2",
+  $field-label-selector: ".label"
 ) {
   #{$field-group-selector} {
     @extend %field-group;
@@ -53,9 +58,15 @@
 
   #{$field-inline-selector} {
     @extend %field-inline;
+    > #{$field-label-selector} {
+      @extend %field-inline__label;
+    }
   }
 
-  #{$field-group-inline-selector} {
-    @extend %field-group-inline;
+  #{$field-group-cols-2} {
+    @extend %field-group-cols-2;
+    > #{$field-label-selector} {
+      @extend %field-inline__label;
+    }
   }
 }
