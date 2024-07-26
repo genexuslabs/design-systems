@@ -1,9 +1,10 @@
 @mixin semantic-field() {
   // field group
   --field-group__row-gap: var(--mer-spacing--md);
-  --field-group__column-gap: var(--mer-spacing--xs);
+  --field-group__column-gap: var(--mer-spacing--md);
 
   // field
   --field__row-gap: var(--mer-spacing--xs);
   --field__column-gap: var(--mer-spacing--md);
+  --field-inline-label__margin-block-start: var(--mer-spacing--2xs);
 }
