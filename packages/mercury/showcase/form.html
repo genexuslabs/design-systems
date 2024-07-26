@@ -111,8 +111,16 @@
                   <script>
                     const markup2 = `<form class="field-group">
   <div class="field field-block">
-    <label class="label" htmlFor="control-id-1">Your control caption</label>
+    <label class="label" htmlFor="control-id-1">First Control Caption</label>
     <!-- You "control-id-1" control here -->
+  </div>
+  <div class="field field-block">
+    <label class="label" htmlFor="control-id-2">Second Control Caption</label>
+    <!-- You "control-id-2" control here -->
+  </div>
+  <div class="field field-block">
+    <label class="label" htmlFor="control-id-3">Third Control Caption</label>
+    <!-- You "control-id-3" control here -->
   </div>
   <!-- Add more field's as needed... -->
 </form>`;
@@ -158,8 +166,16 @@
                   <script>
                     const markup3 = `<form class="field-group">
   <div class="field field-inline">
-    <label class="label" htmlFor="control-id-1">Your control caption</label>
+    <label class="label" htmlFor="control-id-1">First Control Caption</label>
     <!-- You "control-id-1" control here -->
+  </div>
+  <div class="field field-inline">
+    <label class="label" htmlFor="control-id-2">Second Control Long Caption</label>
+    <!-- You "control-id-2" control here -->
+  </div>
+  <div class="field field-inline">
+    <label class="label" htmlFor="control-id-1">Third Control Caption</label>
+    <!-- You "control-id-3" control here -->
   </div>
   <!-- Add more field's as needed... -->
 </form>`;
@@ -172,9 +188,9 @@
             </article>
 
             <!-- ========================== 
-          field group inline
+          field group cols 2
           =========================== -->
-            <article class="article" nav data-title="field group inline">
+            <article class="article" nav data-title="field group: cols 2">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
@@ -205,7 +221,10 @@
                     const markup4 = `<form class="field-group-cols-2">
   <label class="label" htmlFor="control-id-1">First Control Caption</label>
   <!-- Your "control-id-1" control here -->
-  <!-- Add more (label + control) as needed... -->
+  <label class="label" htmlFor="control-id-2">Second Control Long Caption</label>
+  <!-- Your "control-id-2" control here -->
+  <label class="label" htmlFor="control-id-3">Third Control Caption</label>
+  <!-- Your "control-id-3" control here -->
 </form>`;
                     document.getElementById("ch-code-4").value = markup4;
                   </script>
