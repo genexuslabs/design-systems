@@ -52,21 +52,21 @@
                   user experience.
                 </p>
                 <div class="article__content">
-                  <div class="field-group">
+                  <form class="field-group">
                     <span class="dummy-box">your control</span>
                     <span class="dummy-box">your control</span>
                     <span class="dummy-box">your control</span>
-                  </div>
+                  </form>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `<div class="field-group">
+                    const markup1 = `<form class="field-group">
   <!-- You control here -->
   <!-- You control here -->
   <!-- You control here -->
-</div>`;
+</form>`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
                 </div>
@@ -90,7 +90,7 @@
                   purpose while providing a clean and organized appearance.
                 </p>
                 <div class="article__content">
-                  <div class="field-group">
+                  <form class="field-group">
                     <div class="field field-block">
                       <label class="label">First Control Caption</label>
                       <span class="dummy-box">your control</span>
@@ -103,19 +103,19 @@
                       <label class="label">Third Control Caption</label>
                       <span class="dummy-box">your control</span>
                     </div>
-                  </div>
+                  </form>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-2" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup2 = `<div class="field-group">
+                    const markup2 = `<form class="field-group">
   <div class="field field-block">
-    <label class="label">Your control caption</label>
-    <!-- You control here -->
-  </div>
+    <label class="label" htmlFor="control-id-1">Your control caption</label>
+    <!-- You "control-id-1" control here -->
+    </div>
   <!-- Add more field's as needed... -->
-</div>`;
+</form>`;
                     document.getElementById("ch-code-2").value = markup2;
                   </script>
                 </div>
@@ -137,7 +137,7 @@
                   more compact and easier to scan.
                 </div>
                 <div class="article__content">
-                  <div class="field-group">
+                  <form class="field-group">
                     <div class="field field-inline">
                       <label class="label">First Control Caption</label>
                       <span class="dummy-box">your control</span>
@@ -150,19 +150,19 @@
                       <label class="label">Third Control Caption</label>
                       <span class="dummy-box">your control</span>
                     </div>
-                  </div>
+                  </form>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-3" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup3 = `<div class="field-group">
+                    const markup3 = `<form class="field-group">
   <div class="field field-inline">
-    <label class="label">Your control caption</label>
-    <!-- You control here -->
+    <label class="label" htmlFor="control-id-1">Your control caption</label>
+    <!-- You "control-id-1" control here -->
   </div>
   <!-- Add more field's as needed... -->
-</div>`;
+</form>`;
                     document.getElementById("ch-code-3").value = markup3;
                   </script>
                 </div>
@@ -186,7 +186,7 @@
                   overall user experience.
                 </div>
                 <div class="article__content">
-                  <div class="field-group-inline">
+                  <form class="field-group-inline">
                     <!-- first control -->
                     <label class="label">First Control Caption</label>
                     <span class="dummy-box">your control</span>
@@ -196,20 +196,20 @@
                     <!-- third control -->
                     <label class="label">Third Control Caption</label>
                     <span class="dummy-box">your control</span>
-                  </div>
+                  </form>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-4" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup4 = `<div class="field-group-inline">
-  <label class="label">First Control Caption</label>
-  Your control here
-  <label class="label">Second Control Long Caption</label>
-  Your control here
-  <label class="label">Third Control Caption</label>
-  Your control here
-</div>`;
+                    const markup4 = `<form class="field-group-inline">
+  <label class="label" htmlFor="control-id-1">First Control Caption</label>
+  Your "control-id-1" control here
+  <label class="label" htmlFor="control-id-2">Second Control Long Caption</label>
+  Your "control-id-2" control here
+  <label class="label" htmlFor="control-id-3">Third Control Caption</label>
+  Your "control-id-3" control here
+</form>`;
                     document.getElementById("ch-code-4").value = markup4;
                   </script>
                 </div>
@@ -238,11 +238,9 @@
                 <div class="article__content">
                   <style>
                     .user-layout {
-                      grid-template-areas:
-                        "first-name last-name"
-                        "email email";
-                      grid-template-columns: 1fr 1fr;
-                      grid-template-rows: auto auto;
+                      grid-template:
+                        "first-name last-name" max-content
+                        "email email" max-content / 1fr 1fr;
                     }
                     .first-name {
                       grid-area: first-name;
@@ -254,55 +252,53 @@
                       grid-area: email;
                     }
                   </style>
-                  <div class="field-group-inline user-layout">
+                  <form class="field-group-inline user-layout">
                     <!-- first name label -->
                     <div class="field field-block first-name">
                       <label class="label">Name</label>
-                      <span class="dummy-box">John control</span>
+                      <span class="dummy-box">Control for Name</span>
                     </div>
                     <!-- last name label -->
                     <div class="field field-block last-name">
                       <label class="label">Last Name</label>
-                      <span class="dummy-box">Doe</span>
+                      <span class="dummy-box">Control for Last Name</span>
                     </div>
                     <!-- email label -->
                     <div class="field field-block email">
                       <label class="label">Email</label>
-                      <span class="dummy-box">john.deo@gmail.com</span>
+                      <span class="dummy-box">Control for Email</span>
                     </div>
-                  </div>
+                  </form>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-5" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup5 = `<div class="field-group-inline user-layout">
+                    const markup5 = `<form class="field-group-inline user-layout">
   <!-- First Name -->
   <div class="field field-block first-name">
-    <label class="label">Name</label>
-    <span class="dummy-box">John control</span>
+    <label class="label" htmlFor="name">Name</label>
+    Your "name" control here
   </div>
 
   <!-- Last Name -->
   <div class="field field-block last-name">
-    <label class="label">Last Name</label>
-    <span class="dummy-box">Doe</span>
+    <label class="label" htmlFor="last-name">Last Name</label>
+    Your "last name" control here
   </div>
 
   <!-- Email -->
   <div class="field field-block email">
-    <label class="label">Email</label>
-    <span class="dummy-box">john.deo@gmail.com</span>
+    <label class="label" htmlFor="email">Email</label>
+    Your "email" control here
   </div>
-</div>
+</form>
 
 <style>
   .user-layout {
-    grid-template-areas:
-    "first-name last-name"
-    "email email";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template:
+      "first-name last-name" max-content
+      "email email" max-content / 1fr 1fr;
   }
   .first-name {
     grid-area: first-name;
