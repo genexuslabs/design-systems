@@ -19,6 +19,7 @@
 @import "./tokens/semantic/accent";
 @import "./tokens/semantic/border";
 @import "./tokens/semantic/control";
+@import "./tokens/semantic/field";
 @import "./tokens/semantic/icon";
 @import "./tokens/semantic/item";
 @import "./tokens/semantic/general";
@@ -31,7 +32,7 @@
 // Base classes
 @import "./base/label/label-styles"; // should be at the top, since other elements use it.
 @import "./base/button/button-styles";
-@import "./base/form-controls/controls-styles";
+@import "./base/form-controls/field-styles";
 @import "./base/form-controls/form-input-styles";
 @import "./base/icons";
 @import "./base/layout/layout-styles";
@@ -226,6 +227,7 @@
       // Semantic (Other than colors)
       @include semantic-general();
       @include semantic-control();
+      @include semantic-field();
 
       // Semantic Colors (Are independent of color scheme)
       @if $colors {
@@ -334,6 +336,7 @@
   // - - - - - - - - - - - - - - - - - - - -
   //              Base classes
   // - - - - - - - - - - - - - - - - - - - -
+
   @if $base-classes {
     // Button classes
     @if $button-classes {
@@ -357,7 +360,7 @@
 
     // Form control classes
     @if $form-controls-classes {
-      @include controls();
+      @include field();
       @include form-input();
       @include label();
     }

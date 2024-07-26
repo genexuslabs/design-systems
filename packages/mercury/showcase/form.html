@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>From Classes</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+  </head>
+  <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">form classes</h1>
+            <p class="section__description">
+              Using form CSS classes for spacing and alignment streamlines the
+              styling process by providing a consistent and reusable set of
+              styles. This approach ensures uniformity across the application,
+              reduces the need for repetitive code, and simplifies maintenance.
+              It also enhances readability and efficiency, making it easier for
+              developers to apply and adjust styles quickly. Overall, form CSS
+              classes improve the user experience by delivering a more polished
+              and cohesive interface.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          field group
+          =========================== -->
+            <article class="article" nav data-title="field group">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  Displaying controls in a vertical layout enhances readability,
+                  especially on mobile devices, by aligning with natural
+                  scrolling. It organizes related controls intuitively and
+                  adapts well to various screen sizes, ensuring a consistent
+                  user experience.
+                </p>
+                <div class="article__content">
+                  <div class="field-group">
+                    <span class="dummy-box">your control</span>
+                    <span class="dummy-box">your control</span>
+                    <span class="dummy-box">your control</span>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-1" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup1 = `<div class="field-group">
+  <!-- You control here -->
+  <!-- You control here -->
+  <!-- You control here -->
+</div>`;
+                    document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          field block
+          =========================== -->
+            <article class="article" nav data-title="field block">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  Adding labels to controls improves accessibility and usability
+                  by clearly indicating the purpose of each control. A block
+                  layout with the label above the control improves clarity and
+                  readability, making it easier to understand the control's
+                  purpose while providing a clean and organized appearance.
+                </p>
+                <div class="article__content">
+                  <div class="field-group">
+                    <div class="field field-block">
+                      <label class="label">First Control Caption</label>
+                      <span class="dummy-box">your control</span>
+                    </div>
+                    <div class="field field-block">
+                      <label class="label">Second Control Caption</label>
+                      <span class="dummy-box">your control</span>
+                    </div>
+                    <div class="field field-block">
+                      <label class="label">Third Control Caption</label>
+                      <span class="dummy-box">your control</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-2" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup2 = `<div class="field-group">
+  <div class="field field-block">
+    <label class="label">Your control caption</label>
+    <!-- You control here -->
+  </div>
+  <!-- Add more field's as needed... -->
+</div>`;
+                    document.getElementById("ch-code-2").value = markup2;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          field inline
+          =========================== -->
+            <article class="article" nav data-title="field inline">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__description">
+                  Displaying a control and its label in an inline layout
+                  improves clarity and space efficiency, making the interface
+                  more compact and easier to scan.
+                </div>
+                <div class="article__content">
+                  <div class="field-group">
+                    <div class="field field-inline">
+                      <label class="label">First Control Caption</label>
+                      <span class="dummy-box">your control</span>
+                    </div>
+                    <div class="field field-inline">
+                      <label class="label">Second Control Long Caption</label>
+                      <span class="dummy-box">your control</span>
+                    </div>
+                    <div class="field field-inline">
+                      <label class="label">Third Control Caption</label>
+                      <span class="dummy-box">your control</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-3" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup3 = `<div class="field-group">
+  <div class="field field-inline">
+    <label class="label">Your control caption</label>
+    <!-- You control here -->
+  </div>
+  <!-- Add more field's as needed... -->
+</div>`;
+                    document.getElementById("ch-code-3").value = markup3;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          field group inline
+          =========================== -->
+            <article class="article" nav data-title="field group inline">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__description">
+                  A grid layout with aligned labels and controls ensures
+                  consistency and readability, making it easier to scan and
+                  understand the form. Each label and control having the same
+                  width provides a clean, organized appearance, enhancing the
+                  overall user experience.
+                </div>
+                <div class="article__content">
+                  <div class="field-group-inline">
+                    <!-- first control -->
+                    <label class="label">First Control Caption</label>
+                    <span class="dummy-box">your control</span>
+                    <!-- second control -->
+                    <label class="label">Second Control Long Caption</label>
+                    <span class="dummy-box">your control</span>
+                    <!-- third control -->
+                    <label class="label">Third Control Caption</label>
+                    <span class="dummy-box">your control</span>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-4" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup4 = `<div class="field-group-inline">
+  <label class="label">First Control Caption</label>
+  Your control here
+  <label class="label">Second Control Long Caption</label>
+  Your control here
+  <label class="label">Third Control Caption</label>
+  Your control here
+</div>`;
+                    document.getElementById("ch-code-4").value = markup4;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          custom layout
+          =========================== -->
+            <article class="article" nav data-title="custom layout">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__description">
+                  A custom grid layout allows for flexible arrangement of form
+                  controls, such as placing two controls in the first row and a
+                  full-width control in the second. This approach provides a
+                  tailored, organized appearance, enhancing usability by
+                  adapting the layout to specific needs and improving overall
+                  user experience.
+                </div>
+                <div class="article__content">
+                  <style>
+                    .user-layout {
+                      grid-template-areas:
+                        "first-name last-name"
+                        "email email";
+                      grid-template-columns: 1fr 1fr;
+                      grid-template-rows: auto auto;
+                    }
+                    .first-name {
+                      grid-area: first-name;
+                    }
+                    .last-name {
+                      grid-area: last-name;
+                    }
+                    .email {
+                      grid-area: email;
+                    }
+                  </style>
+                  <div class="field-group-inline user-layout">
+                    <!-- first name label -->
+                    <div class="field field-block first-name">
+                      <label class="label">Name</label>
+                      <span class="dummy-box">John control</span>
+                    </div>
+                    <!-- last name label -->
+                    <div class="field field-block last-name">
+                      <label class="label">Last Name</label>
+                      <span class="dummy-box">Doe</span>
+                    </div>
+                    <!-- email label -->
+                    <div class="field field-block email">
+                      <label class="label">Email</label>
+                      <span class="dummy-box">john.deo@gmail.com</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-5" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup5 = `<div class="field-group-inline user-layout">
+  <!-- First Name -->
+  <div class="field field-block first-name">
+    <label class="label">Name</label>
+    <span class="dummy-box">John control</span>
+  </div>
+
+  <!-- Last Name -->
+  <div class="field field-block last-name">
+    <label class="label">Last Name</label>
+    <span class="dummy-box">Doe</span>
+  </div>
+
+  <!-- Email -->
+  <div class="field field-block email">
+    <label class="label">Email</label>
+    <span class="dummy-box">john.deo@gmail.com</span>
+  </div>
+</div>
+
+<style>
+  .user-layout {
+    grid-template-areas:
+    "first-name last-name"
+    "email email";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  .first-name {
+    grid-area: first-name;
+  }
+  .last-name {
+    grid-area: last-name;
+  }
+  .email {
+    grid-area: email;
+  }
+</style>`;
+                    document.getElementById("ch-code-5").value = markup5;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
