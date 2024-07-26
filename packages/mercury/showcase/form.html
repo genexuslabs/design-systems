@@ -53,9 +53,9 @@
                 </p>
                 <div class="article__content">
                   <form class="field-group">
-                    <span class="dummy-box">your control</span>
-                    <span class="dummy-box">your control</span>
-                    <span class="dummy-box">your control</span>
+                    <span class="dummy-control">your control</span>
+                    <span class="dummy-control">your control</span>
+                    <span class="dummy-control">your control</span>
                   </form>
                 </div>
                 <div class="article__code">
@@ -93,15 +93,15 @@
                   <form class="field-group">
                     <div class="field field-block">
                       <label class="label">First Control Caption</label>
-                      <span class="dummy-box">your control</span>
+                      <span class="dummy-control">your control</span>
                     </div>
                     <div class="field field-block">
                       <label class="label">Second Control Caption</label>
-                      <span class="dummy-box">your control</span>
+                      <span class="dummy-control">your control</span>
                     </div>
                     <div class="field field-block">
                       <label class="label">Third Control Caption</label>
-                      <span class="dummy-box">your control</span>
+                      <span class="dummy-control">your control</span>
                     </div>
                   </form>
                 </div>
@@ -113,7 +113,7 @@
   <div class="field field-block">
     <label class="label" htmlFor="control-id-1">Your control caption</label>
     <!-- You "control-id-1" control here -->
-    </div>
+  </div>
   <!-- Add more field's as needed... -->
 </form>`;
                     document.getElementById("ch-code-2").value = markup2;
@@ -140,15 +140,15 @@
                   <form class="field-group">
                     <div class="field field-inline">
                       <label class="label">First Control Caption</label>
-                      <span class="dummy-box">your control</span>
+                      <span class="dummy-control">your control</span>
                     </div>
                     <div class="field field-inline">
                       <label class="label">Second Control Long Caption</label>
-                      <span class="dummy-box">your control</span>
+                      <span class="dummy-control">your control</span>
                     </div>
                     <div class="field field-inline">
                       <label class="label">Third Control Caption</label>
-                      <span class="dummy-box">your control</span>
+                      <span class="dummy-control">your control</span>
                     </div>
                   </form>
                 </div>
@@ -186,29 +186,26 @@
                   overall user experience.
                 </div>
                 <div class="article__content">
-                  <form class="field-group-inline">
+                  <form class="field-group-cols-2">
                     <!-- first control -->
                     <label class="label">First Control Caption</label>
-                    <span class="dummy-box">your control</span>
+                    <span class="dummy-control">your control</span>
                     <!-- second control -->
                     <label class="label">Second Control Long Caption</label>
-                    <span class="dummy-box">your control</span>
+                    <span class="dummy-control">your control</span>
                     <!-- third control -->
                     <label class="label">Third Control Caption</label>
-                    <span class="dummy-box">your control</span>
+                    <span class="dummy-control">your control</span>
                   </form>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-4" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup4 = `<form class="field-group-inline">
+                    const markup4 = `<form class="field-group-cols-2">
   <label class="label" htmlFor="control-id-1">First Control Caption</label>
-  Your "control-id-1" control here
-  <label class="label" htmlFor="control-id-2">Second Control Long Caption</label>
-  Your "control-id-2" control here
-  <label class="label" htmlFor="control-id-3">Third Control Caption</label>
-  Your "control-id-3" control here
+  <!-- Your "control-id-1" control here -->
+  <!-- Add more (label + control) as needed... -->
 </form>`;
                     document.getElementById("ch-code-4").value = markup4;
                   </script>
@@ -232,8 +229,7 @@
                   should always apply the <code>.field-group</code> class on the
                   container, as this class defines the spacing between columns
                   and rows. Then, for defining your custom layout, we suggest
-                  using <code>grid-template-areas</code> such as in the next
-                  example.
+                  using <code>grid-template</code> such as in the next example.
                 </div>
                 <div class="article__content">
                   <style>
@@ -252,21 +248,21 @@
                       grid-area: email;
                     }
                   </style>
-                  <form class="field-group-inline user-layout">
+                  <form class="field-group user-layout">
                     <!-- first name label -->
                     <div class="field field-block first-name">
                       <label class="label">Name</label>
-                      <span class="dummy-box">Control for Name</span>
+                      <span class="dummy-control">Control for Name</span>
                     </div>
                     <!-- last name label -->
                     <div class="field field-block last-name">
                       <label class="label">Last Name</label>
-                      <span class="dummy-box">Control for Last Name</span>
+                      <span class="dummy-control">Control for Last Name</span>
                     </div>
                     <!-- email label -->
                     <div class="field field-block email">
                       <label class="label">Email</label>
-                      <span class="dummy-box">Control for Email</span>
+                      <span class="dummy-control">Control for Email</span>
                     </div>
                   </form>
                 </div>
@@ -274,23 +270,21 @@
                   <ch-code id="ch-code-5" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup5 = `<form class="field-group-inline user-layout">
+                    const markup5 = `<form class="field-group user-layout">
   <!-- First Name -->
   <div class="field field-block first-name">
     <label class="label" htmlFor="name">Name</label>
-    Your "name" control here
+    <!-- Your "name" control here -->
   </div>
-
   <!-- Last Name -->
   <div class="field field-block last-name">
     <label class="label" htmlFor="last-name">Last Name</label>
-    Your "last name" control here
+    <!-- Your "last name" control here -->
   </div>
-
   <!-- Email -->
   <div class="field field-block email">
     <label class="label" htmlFor="email">Email</label>
-    Your "email" control here
+    <!-- Your "email" control here -->
   </div>
 </form>
 

@@ -78,13 +78,12 @@ body.all-hidden .section__header {
   display: none;
 }
 .dummy-box {
-  display: block;
-  block-size: 32px;
-  border: 2px dotted var(--mer-color__elevation--03);
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px dotted var(--mer-color__elevation--03);
   color: var(--mer-color__neutral-gray--500);
+  padding: var(--mer-spacing--xs);
 }
 .dummy-box--sm {
   inline-size: 150px;
@@ -94,6 +93,14 @@ body.all-hidden .section__header {
 }
 .dummy-box--lg {
   inline-size: 400px;
+}
+.dummy-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dotted var(--mer-color__elevation--03);
+  color: var(--mer-color__neutral-gray--500);
+  block-size: var(--control__height);
 }
 
 /* List */
