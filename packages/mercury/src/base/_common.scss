@@ -243,6 +243,9 @@ Grid Item
   --item__bg-color: var(--item__bg-color--selected);
   --item__color: var(--item__color--selected);
 }
+@mixin grid-row-dragging() {
+  box-shadow: var(--mer-box-shadow--01);
+}
 @mixin grid-cell-border-inline-block() {
   box-shadow: var(--grid-cell__box-shadow--inline-block);
 }
