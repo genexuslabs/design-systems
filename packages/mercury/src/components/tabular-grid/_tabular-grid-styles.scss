@@ -52,14 +52,20 @@
 
 // no styles on ch-grid-row, since it has "display:contents"
 %tabular-grid-row {
-  @include grid-row-colors-enabled();
-
-  &--highlighted {
-    @include grid-row-colors-highlighted();
+  &--focused {
   }
-
+  &--highlighted {
+    &__cell {
+      @include grid-row-colors-highlighted();
+    }
+  }
   &--selected {
-    @include grid-row-colors-selected();
+    &__cell {
+      @include grid-row-colors-selected();
+    }
+  }
+  &--dragging {
+    @include grid-row-dragging();
   }
 }
 
@@ -103,10 +109,15 @@
 %tabular-grid-cell {
   @include grid-cell-border-inline-block();
   @include control-padding-inline-block();
+  @include grid-row-colors-enabled();
   border: 0; //WA
 
-  &[focused] {
+  &--focused {
     @include focus-outline();
+  }
+
+  &--selected {
+    // to be defined by design
   }
 }
 
@@ -192,6 +203,13 @@
 /// @param {String} $tabular-grid-column__selector--checked-selector [".tabular-grid-column::part(selector checked)"] -
 /// @param {String} $tabular-grid-column__selector--indeterminate-selector [".tabular-grid-column::part(selector indeterminate)"] -
 /// @param {String} $tabular-grid-row-selector [".tabular-grid-row"] -
+/// @param {String} $tabular-grid-row--focused-selector [".tabular-grid-row[focused]"] -
+/// @param {String} $tabular-grid-row--highlighted-selector [".tabular-grid-row[highlighted]"] -
+/// @param {String} $tabular-grid-row--selected-selector [".tabular-grid-row[selected]"] -
+/// @param {String} $tabular-grid-row--dragging-selector [".tabular-grid-row[dragging]"] -
+/// @param {String} $tabular-grid-row--focused__cell-selector [".tabular-grid-row[focused] > .tabular-grid-cell"] -
+/// @param {String} $tabular-grid-row--highlighted__cell-selector [".tabular-grid-row[highlighted] > .tabular-grid-cell"] -
+/// @param {String} $tabular-grid-row--selected__cell-selector [".tabular-grid-row[selected] > .tabular-grid-cell"] -
 /// @param {String} $tabular-grid-rowset-selector [".tabular-grid-rowset"] -
 /// @param {String} $tabular-grid-rowset-legend-selector [".tabular-grid-rowset-legend"] -
 /// @param {String} $tabular-grid-rowset-legend__caret-selector [".tabular-grid-rowset-legend::part(caret)"] -
@@ -199,6 +217,8 @@
 /// @param {String} $tabular-grid-rowset-legend__selector-selector [".tabular-grid-rowset-legend::part(selector)"] -
 /// @param {String} $tabular-grid-rowset-legend__icon-selector [".tabular-grid-rowset-legend::part(icon)"] -
 /// @param {String} $tabular-grid-cell-selector [".tabular-grid-cell"] -
+/// @param {String} $tabular-grid-cell--focused-selector [".tabular-grid-cell[focused]"] -
+/// @param {String} $tabular-grid-cell--selected-selector [".tabular-grid-cell[selected]"] -
 /// @param {String} $tabular-grid-cell__drag-icon-selector [".tabular-grid-cell::part(drag-icon)"] -
 /// @param {String} $tabular-grid-cell__selector-label-selector [".tabular-grid-cell::part(selector-label)"] -
 /// @param {String} $tabular-grid-cell__selector-selector [".tabular-grid-cell::part(selector)"] -
@@ -225,6 +245,16 @@
     ".tabular-grid-column::part(selector indeterminate)",
   // ch-grid-row
   $tabular-grid-row-selector: ".tabular-grid-row",
+  $tabular-grid-row--focused-selector: ".tabular-grid-row[focused]",
+  $tabular-grid-row--highlighted-selector: ".tabular-grid-row[highlighted]",
+  $tabular-grid-row--selected-selector: ".tabular-grid-row[selected]",
+  $tabular-grid-row--dragging-selector: ".tabular-grid-row[dragging]",
+  $tabular-grid-row--focused__cell-selector:
+    ".tabular-grid-row[focused] > .tabular-grid-cell",
+  $tabular-grid-row--highlighted__cell-selector:
+    ".tabular-grid-row[highlighted] > .tabular-grid-cell",
+  $tabular-grid-row--selected__cell-selector:
+    ".tabular-grid-row[selected] > .tabular-grid-cell",
   // ch-grid-rowset
   $tabular-grid-rowset-selector: ".tabular-grid-rowset",
   // ch-grid-rowset-legend
@@ -239,6 +269,8 @@
     ".tabular-grid-rowset-legend::part(icon)",
   // ch-grid-cell
   $tabular-grid-cell-selector: ".tabular-grid-cell",
+  $tabular-grid-cell--focused-selector: ".tabular-grid-cell[focused]",
+  $tabular-grid-cell--selected-selector: ".tabular-grid-cell[selected]",
   $tabular-grid-cell__drag-icon-selector: ".tabular-grid-cell::part(drag-icon)",
   $tabular-grid-cell__selector-label-selector:
     ".tabular-grid-cell::part(selector-label)",
@@ -327,24 +359,32 @@
   //            ch-grid-row
   // - - - - - - - - - - - - - - - - - - - -
 
+  // row
   #{$tabular-grid-row-selector} {
     @extend %tabular-grid-row;
-    // the following styles have to be applied here, because they depend on the
-    // $tabular-grid-cell selector, which is not known in the '%tabular-grid-row' placeholder.
-    &[highlighted] {
-      @extend %tabular-grid-row--highlighted;
-    }
+  }
+  #{$tabular-grid-row--focused-selector} {
+    @extend %tabular-grid-row--focused;
+  }
+  #{$tabular-grid-row--highlighted-selector} {
+    @extend %tabular-grid-row--highlighted;
+  }
+  #{$tabular-grid-row--selected-selector} {
+    @extend %tabular-grid-row--selected;
+  }
+  #{$tabular-grid-row--dragging-selector} {
+    @extend %tabular-grid-row--dragging;
+  }
 
-    &[selected] {
-      @extend %tabular-grid-row--selected;
-    }
-
-    &[focused] {
-    }
-
-    &[dragging] {
-      box-shadow: var(--mer-box-shadow--01);
-    }
+  // row[some-state] > cell
+  #{$tabular-grid-row--focused__cell-selector} {
+    @extend %tabular-grid-row--focused__cell;
+  }
+  #{$tabular-grid-row--highlighted__cell-selector} {
+    @extend %tabular-grid-row--highlighted__cell;
+  }
+  #{$tabular-grid-row--selected__cell-selector} {
+    @extend %tabular-grid-row--selected__cell;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -405,10 +445,14 @@
 
   #{$tabular-grid-cell-selector} {
     @extend %tabular-grid-cell;
+  }
 
-    &[selected] {
-      @include grid-cell-colors-selected();
-    }
+  #{$tabular-grid-cell--focused-selector} {
+    @extend %tabular-grid-cell--focused;
+  }
+
+  #{$tabular-grid-cell--selected-selector} {
+    @extend %tabular-grid-cell--selected;
   }
 
   // drag icon
