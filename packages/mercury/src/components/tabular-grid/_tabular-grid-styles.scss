@@ -4,7 +4,7 @@
 @import "tokens-cell";
 
 // - - - - - - - - - - - - - - - - - - - -
-//               ch-grid
+//            ch-tabular-grid
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid {
@@ -24,7 +24,7 @@
 }
 
 // - - - - - - - - - - - - - - - - - - - -
-//            ch-grid-column
+//         ch-tabular-grid-column
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-column__bar {
@@ -47,10 +47,10 @@
 }
 
 // - - - - - - - - - - - - - - - - - - - -
-//            ch-grid-row
+//          ch-tabular-grid-row
 // - - - - - - - - - - - - - - - - - - - -
 
-// no styles on ch-grid-row, since it has "display:contents"
+// no styles on ch-tabular-grid-row, since it has "display:contents"
 %tabular-grid-row {
   &--focused {
   }
@@ -70,14 +70,14 @@
 }
 
 // - - - - - - - - - - - - - - - - - - - -
-//            ch-grid-rowset
+//         ch-tabular-grid-rowset
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-rowset {
 }
 
 // - - - - - - - - - - - - - - - - - - - -
-//        ch-grid-rowset-legend
+//     ch-tabular-grid-rowset-legend
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-rowset-legend {
@@ -98,12 +98,12 @@
 %tabular-grid-rowset-legend__icon {
 }
 
-// no styles on ch-grid-row, since it has "display:contents"
+// no styles on ch-tabular-grid-row, since it has "display:contents"
 %tabular-grid-row {
 }
 
 // - - - - - - - - - - - - - - - - - - - -
-//            ch-grid-cell
+//         ch-tabular-grid-cell
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-cell {
@@ -179,7 +179,7 @@
 // End Checkbox
 
 // - - - - - - - - - - - - - - - - - - - -
-//          ch-grid-row-actions
+//       ch-tabular-grid-row-actions
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-row-actions {
@@ -228,10 +228,10 @@
 /// @param {String} $tabular-grid-row-actions__window-selector [".tabular-grid-row-actions::part(window)"] -
 /// @param {String} $tabular-grid-row-actions__main-selector [".tabular-grid-row-actions::part(main)"] -
 @mixin tabular-grid(
-  // ch-grid
+  // ch-tabular-grid
   $tabular-grid-selector: ".tabular-grid",
   $tabular-grid__main-selector: ".tabular-grid::part(main)",
-  // ch-grid-column
+  // ch-tabular-grid-column
   $tabular-grid-column__bar-selector: ".tabular-grid-column::part(bar)",
   $tabular-grid-column__bar-resize-split-selector:
     ".tabular-grid-column::part(bar-resize-split)",
@@ -243,7 +243,7 @@
     ".tabular-grid-column::part(selector checked)",
   $tabular-grid-column__selector--indeterminate-selector:
     ".tabular-grid-column::part(selector indeterminate)",
-  // ch-grid-row
+  // ch-tabular-grid-row
   $tabular-grid-row-selector: ".tabular-grid-row",
   $tabular-grid-row--focused-selector: ".tabular-grid-row[focused]",
   $tabular-grid-row--highlighted-selector: ".tabular-grid-row[highlighted]",
@@ -255,9 +255,9 @@
     ".tabular-grid-row[highlighted] > .tabular-grid-cell",
   $tabular-grid-row--selected__cell-selector:
     ".tabular-grid-row[selected] > .tabular-grid-cell",
-  // ch-grid-rowset
+  // ch-tabular-grid-rowset
   $tabular-grid-rowset-selector: ".tabular-grid-rowset",
-  // ch-grid-rowset-legend
+  // ch-tabular-grid-rowset-legend
   $tabular-grid-rowset-legend-selector: ".tabular-grid-rowset-legend",
   $tabular-grid-rowset-legend__caret-selector:
     ".tabular-grid-rowset-legend::part(caret)",
@@ -267,7 +267,7 @@
     ".tabular-grid-rowset-legend::part(selector)",
   $tabular-grid-rowset-legend__icon-selector:
     ".tabular-grid-rowset-legend::part(icon)",
-  // ch-grid-cell
+  // ch-tabular-grid-cell
   $tabular-grid-cell-selector: ".tabular-grid-cell",
   $tabular-grid-cell--focused-selector: ".tabular-grid-cell[focused]",
   $tabular-grid-cell--selected-selector: ".tabular-grid-cell[selected]",
@@ -279,7 +279,7 @@
     ".tabular-grid-cell::part(selector checked)",
   $tabular-grid-cell__actions-icon-selector:
     ".tabular-grid-cell::part(actions-icon)",
-  // ch-grid-row-actions
+  // ch-tabular-grid-row-actions
   $tabular-grid-row-actions-selector: ".tabular-grid-row-actions",
   $tabular-grid-row-actions__window-selector:
     ".tabular-grid-row-actions::part(window)",
@@ -295,7 +295,7 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //               ch-grid
+  //             ch-tabular-grid
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$tabular-grid__main-selector} {
@@ -304,7 +304,7 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //            ch-grid-column
+  //          ch-tabular-grid-column
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$tabular-grid-column__bar-selector} {
@@ -356,7 +356,7 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //            ch-grid-row
+  //          ch-tabular-grid-row
   // - - - - - - - - - - - - - - - - - - - -
 
   // row
@@ -388,7 +388,7 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //             ch-grid-rowset
+  //             ch-tabular-grid-rowset
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$tabular-grid-rowset-selector} {
@@ -413,7 +413,7 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //         ch-grid-rowset-legend
+  //     ch-tabular-grid-rowset-legend
   // - - - - - - - - - - - - - - - - - - - -
   #{$tabular-grid-rowset-legend-selector} {
     background-color: var(--mer-color__elevation--02);
@@ -440,7 +440,7 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //            ch-grid-cell
+  //           ch-tabular-grid-cell
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$tabular-grid-cell-selector} {
@@ -499,7 +499,7 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //          ch-grid-row-actions
+  //      ch-tabular-grid-row-actions
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$tabular-grid-row-actions-selector} {
