@@ -62,10 +62,12 @@ export const getIconPath = (iconMetadata, vendorAlias = MERCURY_ALIAS) => {
  */
 export const getIconPathExpanded = (iconMetadata, iconMetadataExpanded, vendorAlias = MERCURY_ALIAS) => `${getIconPath(iconMetadata, vendorAlias)}${EXPANDED_SEPARATOR}${getIconPath(iconMetadataExpanded, vendorAlias)}`;
 const getCustomFullValue = (iconName, vendorAliasOrName, suffix) => {
-    const vendorPrefix = vendorAliasOrName === MERCURY_ALIAS ? "" : `${vendorAliasOrName}-`;
+    const vendorPrefix = vendorAliasOrName === MERCURY_ALIAS
+        ? ""
+        : `-${vendorAliasOrName}`;
     return suffix
-        ? `var(--icon__${vendorPrefix}${iconName}--${suffix})`
-        : `var(--icon__${vendorPrefix}${iconName})`;
+        ? `var(--icon${vendorPrefix}__${iconName}--${suffix})`
+        : `var(--icon${vendorPrefix}__${iconName})`;
 };
 /**
  * Parses the incoming iconMetadata, assuming Mercury as the default vendor if
