@@ -65,7 +65,7 @@
                     resizable
                     allow-drag="box"
                   >
-                    <div>
+                    <div class="spacing-body">
                       <p class="text-body" style="margin-block-start: 0">
                         GeneXus is a low-code development platform that
                         streamlines the creation of enterprise applications by
@@ -88,12 +88,6 @@
                         effort required for updates and enhancements.
                       </p>
                     </div>
-                    <button slot="footer" type="button" class="button-tertiary">
-                      Cancel
-                    </button>
-                    <button slot="footer" type="button" class="button-primary">
-                      Save
-                    </button>
                   </ch-dialog>
                   <button class="button-secondary" id="btn-show-dialog-basic">
                     Show Dialog
@@ -112,12 +106,21 @@
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `.dialog::part(content) {
-  --spacing-body-block: var(--mer-spacing--lg);
-  --spacing-body-inline: var(--mer-spacing--md);
-  padding-block: var(--spacing-body-block);
-  padding-inline: var(--spacing-body-inline);
-}`;
+                    const markup1 = `<ch-dialog class="dialog" caption="About GeneXus" show-header>
+  <div class="spacing-body"><!-- Your dialog content here --></div>
+</ch-dialog>
+
+<!--
+Complete spacing classes:
+.spacing-body
+.spacing-body-block
+.spacing-body-block-start
+.spacing-body-block-end
+.spacing-body-inline
+.spacing-body-inline-start
+.spacing-body-inline-end
+-->
+`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
                 </div>

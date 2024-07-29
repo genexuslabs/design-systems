@@ -1,4 +1,8 @@
 %dialog {
+  --spacing-body-block-start: var(--mer-spacing--lg);
+  --spacing-body-block-end: var(--mer-spacing--lg);
+  --spacing-body-inline-start: var(--mer-spacing--md);
+  --spacing-body-inline-end: var(--mer-spacing--md);
   --ch-dialog-max-inline-size: 800px;
   background-color: var(--mer-color__elevation--01);
   box-shadow: var(--mer-box-shadow--01);
@@ -29,10 +33,6 @@
   }
 
   &__content {
-    --spacing-body-block: var(--mer-spacing--lg);
-    --spacing-body-inline: var(--mer-spacing--md);
-    padding-block: var(--spacing-body-block);
-    padding-inline: var(--spacing-body-inline);
     overflow: auto;
   }
 
