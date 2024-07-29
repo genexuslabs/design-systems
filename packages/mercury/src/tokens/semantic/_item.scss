@@ -94,6 +94,8 @@
   // - - - - - - - - - - - - - - - - - - - -
   //               Grid Cell
   // - - - - - - - - - - - - - - - - - - - -
-  --grid-cell__box-shadow--inline-block: 0 0 0 1px
-    var(--mer-color__elevation--04);
+  --grid-cell__border-color: var(--mer-color__elevation--04);
+  --grid-cell__border: var(--mer-border__width--sm) solid
+    var(--grid-cell__border-color);
+  --grid-cell__box-shadow-inline-block: 0 0 0 1px var(--grid-cell__border-color);
 }
