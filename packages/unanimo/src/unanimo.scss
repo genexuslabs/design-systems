@@ -14,10 +14,10 @@
 @import "./tokens/spacing";
 
 // Base classes
+@import "./base/typography"; // Must be placed before the button imports
 @import "./base/button";
 @import "./base/form-controls";
 @import "./base/icons";
-@import "./base/typography";
 
 // Icons on components
 @import "./icons/button";
@@ -70,6 +70,8 @@
   // Font face
   $font-face: true,
   $font-face-path: "./assets/fonts/",
+
+  $body: true,
 
   // Base
   $base-classes: true,
@@ -208,7 +210,22 @@
   }
 
   // Default background-color and color
-  @if $tokens and $colors {
+  @if $body and $tokens and $colors {
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: var(--accents-un-accent__secondary) transparent;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--accents-un-accent__secondary);
+      }
+    }
+
     body {
       @include document-common-styles();
       background-color: var(--surface-un-surface--alternative);

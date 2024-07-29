@@ -2,11 +2,7 @@
   @include button-common-styles();
   gap: var(--spacing-un-spacing--s); // Used when the button has icons
   min-block-size: 32px;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 18px; // 128.571%
-  letter-spacing: 0.2px;
-  text-transform: uppercase;
+  @include button-text();
 }
 
 %button-primary {

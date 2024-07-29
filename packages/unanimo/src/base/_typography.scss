@@ -1,50 +1,90 @@
-%heading-1 {
+@mixin heading-1() {
   font-size: 28px;
   font-weight: 700;
   line-height: 32px; // 114.286%
   letter-spacing: 0.4px;
 }
 
-%heading-2 {
+@mixin heading-2() {
   font-size: 22px;
   font-weight: 700;
   line-height: 24px; // 109.091%
   letter-spacing: 0.8px;
 }
 
-%heading-3 {
+@mixin heading-3() {
   font-size: 18px;
   font-weight: 400;
   line-height: 24px; // 109.091%
   letter-spacing: 0.4px;
 }
 
-%heading-4 {
+@mixin heading-4() {
   font-size: 14px;
   font-weight: 700;
   line-height: 18px; // 128.571%
   letter-spacing: 0.4px;
 }
 
-%text-body-1 {
+@mixin text-body-1() {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px; // 150%
   letter-spacing: 0.4px;
 }
 
-%text-body-2 {
+@mixin text-body-2() {
   font-size: 14px;
   font-weight: 400;
   line-height: 18px; // 128.571%
   letter-spacing: 0.2px;
 }
 
-%tab-text {
+@mixin tab-text() {
   font-weight: 600;
   font-size: 14px;
   line-height: 18px; // 128.571%
   letter-spacing: 0.8px;
+}
+
+@mixin button-text() {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px; // 128.571%
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+%heading-1 {
+  @include heading-1();
+}
+
+%heading-2 {
+  @include heading-2();
+}
+
+%heading-3 {
+  @include heading-3();
+}
+
+%heading-4 {
+  @include heading-4();
+}
+
+%text-body-1 {
+  @include text-body-1();
+}
+
+%text-body-2 {
+  @include text-body-2();
+}
+
+%tab-text {
+  @include tab-text();
+}
+
+%button-text {
+  @include button-text();
 }
 
 @mixin typography-classes() {
