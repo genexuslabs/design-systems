@@ -29,8 +29,10 @@
   }
 
   &__content {
-    padding-block: var(--mer-spacing--lg);
-    padding-inline: var(--mer-spacing--md);
+    --spacing-body-block: var(--mer-spacing--lg);
+    --spacing-body-inline: var(--mer-spacing--md);
+    padding-block: var(--spacing-body-block);
+    padding-inline: var(--spacing-body-inline);
     overflow: auto;
   }
 

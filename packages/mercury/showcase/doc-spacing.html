@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spacing</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <!-- local development -->
+    <!-- <link rel="stylesheet" href="../dist/bundles/css/all.css" /> -->
+    <!-- showcase (netlify) -->
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+  </head>
+  <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">Spacing</h1>
+            <p class="section__description">
+              Using global variables like --spacing-body-block and
+              --spacing-body-inline for defining padding in web components
+              offers several benefits. First, it centralizes the management of
+              spacing, making it easier to maintain consistency across different
+              components. By redefining these variables within each component,
+              you ensure that each component can still have customized spacing
+              tailored to its specific needs without hardcoding values. This
+              approach enhances scalability, as changes to the global variables
+              will automatically propagate to all components, simplifying
+              updates and reducing the risk of inconsistencies. Additionally, it
+              promotes a clean and modular design, making the codebase more
+              readable and maintainable.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          dialog spacing
+          =========================== -->
+            <article class="article" nav data-title="spacing for dialog">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <!-- <p class="article__description">Article Description</p> -->
+                <div class="article__content">
+                  <!-- ch-dialog -->
+                  <ch-dialog
+                    class="dialog"
+                    caption="About GeneXus"
+                    id="dialog-basic"
+                    show-header
+                    show-footer
+                    resizable
+                    allow-drag="box"
+                  >
+                    <div>
+                      <p class="text-body" style="margin-block-start: 0">
+                        GeneXus is a low-code development platform that
+                        streamlines the creation of enterprise applications by
+                        automatically generating code for various environments
+                        from a single specification.
+                      </p>
+                      <p class="text-body">
+                        It's ideal for developers who want to quickly prototype,
+                        develop, and deploy applications across web, mobile, and
+                        desktop platforms. With its model-driven approach,
+                        GeneXus minimizes the need for manual coding, allowing
+                        developers to focus on design and user experience.
+                      </p>
+                      <p class="text-body" style="margin-block-end: 0">
+                        The platform also excels in its robust integration
+                        capabilities, enabling seamless connectivity with
+                        various databases and third-party services. This
+                        flexibility ensures that applications built with GeneXus
+                        are scalable and maintainable, reducing the time and
+                        effort required for updates and enhancements.
+                      </p>
+                    </div>
+                    <button slot="footer" type="button" class="button-tertiary">
+                      Cancel
+                    </button>
+                    <button slot="footer" type="button" class="button-primary">
+                      Save
+                    </button>
+                  </ch-dialog>
+                  <button class="button-secondary" id="btn-show-dialog-basic">
+                    Show Dialog
+                  </button>
+                  <script>
+                    const showDialogBasic = document.getElementById(
+                      "btn-show-dialog-basic"
+                    );
+                    const dialogBasic = document.getElementById("dialog-basic");
+                    showDialogBasic.addEventListener("click", () => {
+                      dialogBasic.hidden = false;
+                    });
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-1" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup1 = `.dialog::part(content) {
+  --spacing-body-block: var(--mer-spacing--lg);
+  --spacing-body-inline: var(--mer-spacing--md);
+  padding-block: var(--spacing-body-block);
+  padding-inline: var(--spacing-body-inline);
+}`;
+                    document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
