@@ -19,7 +19,7 @@
       }
       .items-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px; /* Adjust the gap between grid items as needed */
       }
       .item {
@@ -49,6 +49,13 @@
       .item--yellow-60-no {
         background-color: #ad8a53;
       }
+      /*valor del token actual*/
+      .item--yellow-5-token {
+        background-color: var(--mer-color__tinted-yellow--5);
+      }
+      .item--yellow-60-token {
+        background-color: var(--mer-color__tinted-yellow--60);
+      }
       /* - - - - - - - - - - - 
       Tinted Reds
       - - - - - - - - - - - */
@@ -66,6 +73,13 @@
       .item--red-60-no {
         background-color: #aa5962;
       }
+      /*valor del token actual*/
+      .item--red-5-token {
+        background-color: var(--mer-color__tinted-red--5);
+      }
+      .item--red-60-token {
+        background-color: var(--mer-color__tinted-red--60);
+      }
       /* - - - - - - - - - - - 
       Tinted Greens
       - - - - - - - - - - - */
@@ -82,6 +96,13 @@
       }
       .item--green-60-no {
         background-color: #317571;
+      }
+      /*valor del token actual*/
+      .item--green-5-token {
+        background-color: var(--mer-color__tinted-green--5);
+      }
+      .item--green-60-token {
+        background-color: var(--mer-color__tinted-green--60);
       }
       /* - - - - - - - - - - - 
       Tinted Blues
@@ -124,6 +145,25 @@
       .item--blue-50-no {
         background-color: #3c689c;
       }
+      /*valor del token actual*/
+      .item--blue-5-token {
+        background-color: var(--mer-color__tinted-blue--5);
+      }
+      .item--blue-8-token {
+        background-color: var(--mer-color__tinted-blue--8);
+      }
+      .item--blue-10-token {
+        background-color: var(--mer-color__tinted-blue--10);
+      }
+      .item--blue-20-token {
+        background-color: var(--mer-color__tinted-blue--20);
+      }
+      .item--blue-30-token {
+        background-color: var(--mer-color__tinted-blue--30);
+      }
+      .item--blue-50-token {
+        background-color: var(--mer-color__tinted-blue--50);
+      }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
 
@@ -159,41 +199,56 @@
               <div class="article__main">
                 <p class="article__description">
                   Los colores con opacidad han presentado algunos problemas en
-                  el tabular grid.<br />La solución es usar colores sin
-                  opacidad.
+                  el tabular grid. La solución es usar colores sin opacidad. Las
+                  primeras dos columnas aplican colores fijos definidos en esta
+                  página. La tercer columna (token actual) aplica el valor
+                  actual de los tokens.
                 </p>
                 <div class="article__content">
                   <div class="elevation-01 items-container">
                     <p class="items-title">con opacidad (figma)</p>
                     <p class="items-title">sin opacidad</p>
+                    <p class="items-title">token actual</p>
                     <!-- yellows -->
                     <span class="item item--yellow-5-o">yellow-5</span>
                     <span class="item item--yellow-5-no">yellow-5</span>
+                    <span class="item item--yellow-5-token">yellow-5</span>
                     <span class="item item--yellow-60-o">yellow-60</span>
                     <span class="item item--yellow-60-no">yellow-60</span>
+                    <span class="item item--yellow-60-token">yellow-60</span>
                     <!-- reds -->
                     <span class="item item--red-5-o">red-5</span>
                     <span class="item item--red-5-no">red-5</span>
+                    <span class="item item--red-5-token">red-5</span>
                     <span class="item item--red-60-o">red-60</span>
                     <span class="item item--red-60-no">red-60</span>
+                    <span class="item item--red-60-token">red-60</span>
                     <!-- greens -->
                     <span class="item item--green-5-o">green-5</span>
                     <span class="item item--green-5-no">green-5</span>
+                    <span class="item item--green-5-token">green-5</span>
                     <span class="item item--green-60-o">green-60</span>
                     <span class="item item--green-60-no">green-60</span>
+                    <span class="item item--green-60-token">green-60</span>
                     <!-- blues -->
                     <span class="item item--blue-5-o">blue-5</span>
                     <span class="item item--blue-5-no">blue-5</span>
+                    <span class="item item--blue-5-token">blue-5</span>
                     <span class="item item--blue-8-o">blue-8</span>
                     <span class="item item--blue-8-no">blue-8</span>
+                    <span class="item item--blue-8-token">blue-8</span>
                     <span class="item item--blue-10-o">blue-10</span>
                     <span class="item item--blue-10-no">blue-10</span>
+                    <span class="item item--blue-10-token">blue-10</span>
                     <span class="item item--blue-20-o">blue-20</span>
                     <span class="item item--blue-20-no">blue-20</span>
+                    <span class="item item--blue-20-token">blue-20</span>
                     <span class="item item--blue-30-o">blue-30</span>
                     <span class="item item--blue-30-no">blue-30</span>
+                    <span class="item item--blue-30-token">blue-30</span>
                     <span class="item item--blue-50-o">blue-50</span>
                     <span class="item item--blue-50-no">blue-50</span>
+                    <span class="item item--blue-50-token">blue-50</span>
                   </div>
                 </div>
                 <div class="article__code">
