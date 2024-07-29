@@ -22,7 +22,6 @@
 @import "./tokens/semantic/field";
 @import "./tokens/semantic/icon";
 @import "./tokens/semantic/item";
-@import "./tokens/semantic/spacing";
 @import "./tokens/semantic/general";
 @import "./tokens/semantic/text";
 @import "./tokens/semantic/heading";
@@ -269,7 +268,7 @@
       // Spacing
       @if $spacing {
         @include spacing();
-        @include semantic-spacing();
+        @include spacing-body();
       }
 
       // Timing

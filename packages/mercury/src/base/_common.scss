@@ -342,3 +342,71 @@ Dialog Footer
     }
   }
 }
+
+/*----------------------
+Body Spacing
+----------------------*/
+
+/* This custom properties define the block and inline spacing of containers. ie.:
+  dialog, layout, etc.. */
+
+%spacing-body {
+  padding-block: var(--spacing-body-block-start) var(--spacing-body-block-end);
+  padding-inline: var(--spacing-body-inline-start)
+    var(--spacing-body-inline-end);
+}
+
+%spacing-body-block {
+  padding-block: var(--spacing-body-block-start) var(--spacing-body-block-end);
+}
+%spacing-body-block-start {
+  padding-block-start: var(--spacing-body-block-start);
+}
+%spacing-body-block-end {
+  padding-block-end: var(--spacing-body-block-end);
+}
+
+%spacing-body-inline {
+  padding-inline: var(--spacing-body-inline-start)
+    var(--spacing-body-inline-end);
+}
+%spacing-body-inline-start {
+  padding-inline-start: var(--spacing-body-inline-start);
+}
+%spacing-body-inline-end {
+  padding-inline-end: var(--spacing-body-inline-end);
+}
+
+@mixin spacing-body(
+  $body-selector: ".spacing-body",
+  $body-block-selector: ".spacing-body-block",
+  $body-block-start-selector: ".spacing-body-block-start",
+  $body-block-end-selector: ".spacing-body-block-end",
+  $body-inline-selector: ".spacing-body-inline",
+  $body-inline-start-selector: ".spacing-body-inline-start",
+  $body-inline-end-selector: ".spacing-body-inline-end"
+) {
+  #{$body-selector} {
+    @extend %spacing-body;
+  }
+  // block
+  #{$body-block-selector} {
+    @extend %spacing-body-block;
+  }
+  #{$body-block-start-selector} {
+    @extend %spacing-body-block-start;
+  }
+  #{$body-block-end-selector} {
+    @extend %spacing-body-block-end;
+  }
+  // inline
+  #{$body-inline-selector} {
+    @extend %spacing-body-inline;
+  }
+  #{$body-inline-start-selector} {
+    @extend %spacing-body-inline-start;
+  }
+  #{$body-inline-end-selector} {
+    @extend %spacing-body-inline-end;
+  }
+}
