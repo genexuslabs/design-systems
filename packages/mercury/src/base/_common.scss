@@ -247,14 +247,23 @@ Grid Item
   box-shadow: var(--mer-box-shadow--01);
 }
 @mixin grid-cell-border-inline-block() {
-  box-shadow: var(--grid-cell__box-shadow--inline-block);
-}
-@mixin grid-cell-colors-selected() {
-  background-color: var(--item__bg-color--selected);
+  // this mixin uses the box-shadow property, but it looks
+  // as a border to the user.
+  box-shadow: var(--grid-cell__box-shadow-inline-block);
 }
 @mixin grid-rowset-legend-padding-block() {
-  padding-block-start: var(--mer-spacing--3xs);
-  padding-block-end: var(--mer-spacing--3xs);
+  padding-block-start: var(--mer-spacing--2xs);
+  padding-block-end: var(--mer-spacing--2xs);
+}
+@mixin grid-rowset-legend-colors-enabled() {
+  --grid-rowset-legend__bg-color: var(--mer-color__elevation--02);
+  background-color: var(--grid-rowset-legend__bg-color);
+}
+@mixin grid-rowset-legend-colors-hover() {
+  --grid-rowset-legend__bg-color: var(--mer-color__elevation--03);
+}
+@mixin grid-rowset-legend-colors-active() {
+  --grid-rowset-legend__bg-color: var(--mer-color__elevation--02);
 }
 
 /*----------------------
