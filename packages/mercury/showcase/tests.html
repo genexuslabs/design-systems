@@ -33,7 +33,58 @@
         text-decoration: underline;
       }
       /* - - - - - - - - - - - 
-      TINTED BLUES
+      Tinted Yellows
+      - - - - - - - - - - - */
+      /*con opacidad (figma)*/
+      .item--yellow-5-o {
+        background-color: #ffc96b0d;
+      }
+      .item--yellow-60-o {
+        background-color: #ffc96b99;
+      }
+      /*sin opacidad*/
+      .item--yellow-5-no {
+        background-color: #282a2d;
+      }
+      .item--yellow-60-no {
+        background-color: #ad8a53;
+      }
+      /* - - - - - - - - - - - 
+      Tinted Reds
+      - - - - - - - - - - - */
+      /*con opacidad (figma)*/
+      .item--red-5-o {
+        background-color: #fb7c840d;
+      }
+      .item--red-60-o {
+        background-color: #fb7c8499;
+      }
+      /*sin opacidad*/
+      .item--red-5-no {
+        background-color: #29252f;
+      }
+      .item--red-60-no {
+        background-color: #aa5962;
+      }
+      /* - - - - - - - - - - - 
+      Tinted Greens
+      - - - - - - - - - - - */
+      /*con opacidad (figma)*/
+      .item--green-5-o {
+        background-color: #3fa89b0d;
+      }
+      .item--green-60-o {
+        background-color: #3fa89b99;
+      }
+      /*sin opacidad*/
+      .item--green-5-no {
+        background-color: #1c2830;
+      }
+      .item--green-60-no {
+        background-color: #317571;
+      }
+      /* - - - - - - - - - - - 
+      Tinted Blues
       - - - - - - - - - - - */
       /*con opacidad (figma)*/
       .item--blue-5-o {
@@ -102,50 +153,35 @@
             <!-- ========================== 
           button-primary text only
           =========================== -->
-            <article class="article" nav data-title="colores con opacidad: tinted-blues">
+            <article class="article" nav data-title="opacidad en colores">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <p class="article__description">
                   Los colores con opacidad han presentado algunos problemas en
-                  el tabular grid. En el caso del tree-grid, las columnas
-                  permiten tener scroll horizontal, escondiéndose una colmna
-                  detrás de la otra. Al estar una row en estado hover o
-                  selected, el background aplica una tinta azul con opacidad,
-                  resultando en la combinación de los background de ambas
-                  columnas:
-                </p>
-                <img
-                  src="../showcase/assets/tests/grid-01.png"
-                  alt=""
-                  width="293"
-                />
-                <p class="article__description">
-                  O en la superposición de textos:
-                </p>
-                <img
-                  src="../showcase/assets/tests/grid-02.png"
-                  alt=""
-                  width="293"
-                />
-                <a href="/showcase/tabular-grid.html#tree-grid-10"
-                  >caso del tree-grid</a
-                >
-                <p class="article__description">
-                  Una propuesta podría ser definir los colores sin opacidad. En el siguiente ejemplo los tonos de azul de la derecha no tienen opacidad. Tomé el valor con un cuenta gotas de los originales con opacidad, sobre un fondo
-                  <code
-                    >--mer-color__elevation--01 =
-                    --mer-color__neutral-gray--800</code
-                  >.
-                  <p class="article__description">
-                    Otra propuesta podría ser mantener los originales, y tener un segundo conjunto de azules sin opacidad, sólo para este caso particular del tree-grid. En este segundo caso, si más adelante los valores de la tintas azules cambinan, hay que recordar acualizar los valores del segundo grupo.
-
-                  </p>
+                  el tabular grid.<br />La solución es usar colores sin
+                  opacidad.
                 </p>
                 <div class="article__content">
                   <div class="elevation-01 items-container">
                     <p class="items-title">con opacidad (figma)</p>
                     <p class="items-title">sin opacidad</p>
+                    <!-- yellows -->
+                    <span class="item item--yellow-5-o">yellow-5</span>
+                    <span class="item item--yellow-5-no">yellow-5</span>
+                    <span class="item item--yellow-60-o">yellow-60</span>
+                    <span class="item item--yellow-60-no">yellow-60</span>
+                    <!-- reds -->
+                    <span class="item item--red-5-o">red-5</span>
+                    <span class="item item--red-5-no">red-5</span>
+                    <span class="item item--red-60-o">red-60</span>
+                    <span class="item item--red-60-no">red-60</span>
+                    <!-- greens -->
+                    <span class="item item--green-5-o">green-5</span>
+                    <span class="item item--green-5-no">green-5</span>
+                    <span class="item item--green-60-o">green-60</span>
+                    <span class="item item--green-60-no">green-60</span>
+                    <!-- blues -->
                     <span class="item item--blue-5-o">blue-5</span>
                     <span class="item item--blue-5-no">blue-5</span>
                     <span class="item item--blue-8-o">blue-8</span>
@@ -158,30 +194,32 @@
                     <span class="item item--blue-30-no">blue-30</span>
                     <span class="item item--blue-50-o">blue-50</span>
                     <span class="item item--blue-50-no">blue-50</span>
-                    <!-- no opacity -->
                   </div>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `con opacidad (figma)
-- - - - - - - - - -
-blue-5: #5ba7ff0d;
-blue-8: #5ba7ff14;
-blue-10: #5ba7ff1a;
-blue-20: #5ba7ff33;
-blue-30: #5ba7ff4d;
-blue-50: #5ba7ff80;
+                    const markup1 = `            con opacidad    sin opacidad  
 
-sin opacidad
-- - - - - - - - - -
-blue-5: #1d2838;
-blue-8: #1f2c3f;
-blue-10: #1f2e43;
-blue-20: #293d5c;
-blue-30: #2e4e72;
-blue-50: #3c689c;`;
+yellow-5    |   #ffc96b0d   |   #282a2d
+yellow-60   |   #ffc96b99   |   #ad8a53
+            |               |       
+red-5       |   #fb7c840d   |   #29252f
+red-60      |   #fb7c8499   |   #aa5962
+            |               |
+green-5     |   #3fa89b0d   |   #1c2830
+green-60    |   #3fa89b99   |   #317571
+            |               |
+blue-5:     |   #5ba7ff0d;  |   #1d2838;
+blue-8:     |   #5ba7ff14;  |   #1f2c3f;
+blue-10:    |   #5ba7ff1a;  |   #1f2e43;
+blue-20:    |   #5ba7ff33;  |   #293d5c;
+blue-30:    |   #5ba7ff4d;  |   #2e4e72;
+blue-50:    |   #5ba7ff80;  |   #3c689c;
+
+color de fondo del contenedor:
+--mer-color__elevation--01`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
                 </div>
