@@ -85,10 +85,8 @@
   @include grid-row-colors-enabled();
   @include control-padding-inline-block();
   @include control-font-weight-semi-bold();
-  position: relative;
-  width: 100%;
   gap: var(--grid-common__gap);
-  line-height: var(--item__line-height);
+  width: 100%;
 }
 
 %tabular-grid-column__bar-resize-split {
