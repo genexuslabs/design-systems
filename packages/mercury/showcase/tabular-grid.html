@@ -38,7 +38,11 @@
             <!-- ========================== 
           basic
           =========================== -->
-            <article class="article" nav data-title="basic">
+            <article
+              class="article"
+              nav
+              data-title="selection: none + keyboard: focus"
+            >
               <!-- header -->
               <header class="article__header"></header>
               <!-- main -->
@@ -49,7 +53,7 @@
                     row-selection-mode="none"
                     keyboard-navigation-mode="focus"
                   >
-                    <ch-tabular-grid-columnset>
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
                       <ch-tabular-grid-column
                         class="tabular-grid-column"
                         column-id="code"
@@ -216,7 +220,7 @@
                   <script>
                     const chCode1 = `<ch-tabular-grid class="tabular-grid" row-selection-mode="none" keyboard-navigation-mode="focus">
 
-  <ch-tabular-grid-columnset>
+  <ch-tabular-grid-columnset class="tabular-grid-column-set">
     <ch-tabular-grid-column
       class="tabular-grid-column"
       column-id="code"
@@ -245,7 +249,7 @@
             <!-- ========================== 
           group
           =========================== -->
-            <article class="article" nav data-title="group">
+            <article class="article" nav data-title="row-set">
               <!-- header -->
               <header class="article__header"></header>
               <!-- main -->
@@ -255,7 +259,7 @@
                     class="tabular-grid"
                     row-selection-mode="none"
                   >
-                    <ch-tabular-grid-columnset>
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
                       <ch-tabular-grid-column
                         class="tabular-grid-column"
                         column-id="code"
@@ -486,7 +490,7 @@
                   <script>
                     const chCode2 = `<ch-tabular-grid class="tabular-grid" row-selection-mode="none">
 
-  <ch-tabular-grid-columnset>
+  <ch-tabular-grid-columnset class="tabular-grid-column-set">
     <ch-tabular-grid-column
       class="tabular-grid-column"
       column-id="code"
@@ -520,8 +524,7 @@
     </ch-tabular-grid-rowset>
   </ch-tabular-grid-rowset>
 
-</ch-tabular-grid>
-`;
+</ch-tabular-grid>`;
                     document.getElementById("chCode2").value = chCode2;
                   </script>
                 </div>
@@ -535,7 +538,7 @@
             <article
               class="article"
               nav
-              data-title="single selection with keyboard focus"
+              data-title="selection: simple + keyboard: focus"
             >
               <header class="article__header"></header>
               <!-- main -->
@@ -549,7 +552,7 @@
                     row-selection-mode="simple"
                     keyboard-navigation-mode="focus"
                   >
-                    <ch-tabular-grid-columnset>
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
                       <ch-tabular-grid-column
                         class="tabular-grid-column"
                         column-id="code"
@@ -710,7 +713,7 @@
                   <script>
                     const markup3 = `<ch-tabular-grid class="tabular-grid" row-selection-mode="simple" keyboard-navigation-mode="focus">
                       
-  <ch-tabular-grid-columnset>
+  <ch-tabular-grid-columnset class="tabular-grid-column-set">
     <ch-tabular-grid-column
       class="tabular-grid-column"
       column-id="code"
@@ -742,7 +745,7 @@
             <article
               class="article"
               nav
-              data-title="single selection with keyboard select"
+              data-title="selection: simple + keyboard: select"
             >
               <header class="article__header"></header>
               <!-- main -->
@@ -756,7 +759,7 @@
                     row-selection-mode="simple"
                     keyboard-navigation-mode="select"
                   >
-                    <ch-tabular-grid-columnset>
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
                       <ch-tabular-grid-column
                         class="tabular-grid-column"
                         column-id="code"
@@ -917,7 +920,7 @@
                   <script>
                     const markup4 = `<ch-tabular-grid class="tabular-grid" row-selection-mode="simple" keyboard-navigation-mode="select">
 
-  <ch-tabular-grid-columnset>
+  <ch-tabular-grid-columnset class="tabular-grid-column-set">
     <ch-tabular-grid-column
       class="tabular-grid-column"
       column-id="code"
@@ -948,7 +951,7 @@
             <article
               class="article"
               nav
-              data-title="selection multiple with keyboard focus"
+              data-title="selection: multiple + keyboard: focus"
             >
               <header class="article__header"></header>
               <!-- main -->
@@ -964,7 +967,7 @@
                     row-selection-mode="multiple"
                     keyboard-navigation-mode="focus"
                   >
-                    <ch-tabular-grid-columnset>
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
                       <ch-tabular-grid-column
                         class="tabular-grid-column"
                         column-id="code"
@@ -1126,7 +1129,7 @@
                   <script>
                     const markup5 = `<ch-tabular-grid class="tabular-grid" row-selection-mode="multiple" keyboard-navigation-mode="focus">
 
-  <ch-tabular-grid-columnset>
+  <ch-tabular-grid-columnset class="tabular-grid-column-set">
     <ch-tabular-grid-column
       class="tabular-grid-column"
       column-id="code"
@@ -1157,7 +1160,7 @@
             <article
               class="article"
               nav
-              data-title="selection multiple with keyboard selection"
+              data-title="selection: multiple + keyboard: selection"
             >
               <header class="article__header"></header>
               <!-- main -->
@@ -1174,7 +1177,7 @@
                     row-selection-mode="multiple"
                     keyboard-navigation-mode="selection"
                   >
-                    <ch-tabular-grid-columnset>
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
                       <ch-tabular-grid-column
                         class="tabular-grid-column"
                         column-id="code"
@@ -1337,7 +1340,7 @@
   row-selection-mode="multiple"
   keyboard-navigation-mode="selection">
 
-  <ch-tabular-grid-columnset>
+  <ch-tabular-grid-columnset class="tabular-grid-column-set">
     <ch-tabular-grid-column
       class="tabular-grid-column"
       column-id="code"
@@ -1363,12 +1366,12 @@
             </article>
 
             <!-- ================================== 
-          row-mark with keyboard-select
+          row mark with keyboard-select
           =================================== -->
             <article
               class="article"
               nav
-              data-title="row-mark with keyboard-select"
+              data-title="row mark + keyboard: select"
             >
               <header class="article__header"></header>
               <!-- main -->
@@ -1386,7 +1389,7 @@
                     row-selection-mode="multiple"
                     keyboard-navigation-mode="select"
                   >
-                    <ch-tabular-grid-columnset>
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
                       <ch-tabular-grid-column
                         class="tabular-grid-column"
                         column-id="code"
@@ -1549,7 +1552,7 @@
                   <script>
                     const markup7 = `<ch-tabular-grid class="tabular-grid" row-selection-mode="multiple" keyboard-navigation-mode="select">
 
-  <ch-tabular-grid-columnset>
+  <ch-tabular-grid-columnset class="tabular-grid-column-set">
     <ch-tabular-grid-column
       class="tabular-grid-column"
       column-id="code"
@@ -1584,12 +1587,12 @@
             </article>
 
             <!-- ================================== 
-          row-mark with keyboard-focus
+          row mark with keyboard-focus
           =================================== -->
             <article
               class="article"
               nav
-              data-title="row-mark with keyboard-focus"
+              data-title="row mark + keyboard: focus"
             >
               <header class="article__header"></header>
               <!-- main -->
@@ -1609,7 +1612,7 @@
                     row-selection-mode="multiple"
                     keyboard-navigation-mode="focus"
                   >
-                    <ch-tabular-grid-columnset>
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
                       <ch-tabular-grid-column
                         class="tabular-grid-column"
                         column-id="code"
@@ -1772,7 +1775,7 @@
                   <script>
                     const markup8 = `<ch-tabular-grid class="tabular-grid" row-selection-mode="multiple" keyboard-navigation-mode="focus">
 
-  <ch-tabular-grid-columnset>
+  <ch-tabular-grid-columnset class="tabular-grid-column-set">
     <ch-tabular-grid-column
       class="tabular-grid-column"
       column-id="code"
@@ -1808,9 +1811,9 @@
             </article>
 
             <!-- ================================== 
-          row reorder
+          row reorder/dragging
           =================================== -->
-            <article class="article" nav data-title="row reorder">
+            <article class="article" nav data-title="row reorder (dragging)">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
@@ -1822,7 +1825,7 @@
                     class="tabular-grid"
                     row-selection-mode="multiple"
                   >
-                    <ch-tabular-grid-columnset>
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
                       <ch-tabular-grid-column
                         class="tabular-grid-column"
                         column-id="code"
@@ -1984,7 +1987,7 @@
                   <script>
                     const markup9 = `<ch-tabular-grid class="tabular-grid" row-selection-mode="multiple">
 
-  <ch-tabular-grid-columnset>
+  <ch-tabular-grid-columnset class="tabular-grid-column-set">
     <ch-tabular-grid-column
       class="tabular-grid-column"
       column-id="code"
@@ -2038,7 +2041,7 @@
                     class="tabular-grid"
                     row-selection-mode="multiple"
                   >
-                    <ch-tabular-grid-columnset>
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
                       <ch-tabular-grid-column
                         class="tabular-grid-column"
                         column-id="code"
@@ -2264,7 +2267,7 @@
                   <script>
                     const markup10 = `<ch-tabular-grid class="tabular-grid" row-selection-mode="multiple">
 
-  <ch-tabular-grid-columnset>
+  <ch-tabular-grid-columnset class="tabular-grid-column-set">
     <ch-tabular-grid-column
       class="tabular-grid-column"
       column-id="code"
@@ -2314,6 +2317,555 @@
 
 </ch-tabular-grid>`;
                     document.getElementById("ch-code-10").value = markup10;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ================================== 
+          tree grid
+          =================================== -->
+            <article class="article" nav data-title="tree grid">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__description">
+                  <p></p>
+                </div>
+
+                <div class="article__content">
+                  <ch-tabular-grid class="tabular-grid">
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-name="Name"
+                        settingable="false"
+                        column-type="tree"
+                        freeze="start"
+                        size="20%"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-name="Type"
+                        settingable="false"
+                        size="80%"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-name="Description"
+                        settingable="false"
+                        size="500px"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-name="Is Collection"
+                        settingable="false"
+                        size="100px"
+                      ></ch-tabular-grid-column>
+                    </ch-tabular-grid-columnset>
+
+                    <ch-tabular-grid-row class="tabular-grid-row">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Target</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell
+                        class="tabular-grid-cell"
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Target</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >false</ch-tabular-grid-cell
+                      >
+
+                      <ch-tabular-grid-rowset class="tabular-grid-rowset">
+                        <ch-tabular-grid-row class="tabular-grid-row">
+                          <ch-tabular-grid-cell class="tabular-grid-cell"
+                            >Devices</ch-tabular-grid-cell
+                          >
+                          <ch-tabular-grid-cell
+                            class="tabular-grid-cell"
+                          ></ch-tabular-grid-cell>
+                          <ch-tabular-grid-cell class="tabular-grid-cell"
+                            >Devices List</ch-tabular-grid-cell
+                          >
+                          <ch-tabular-grid-cell class="tabular-grid-cell"
+                            >true</ch-tabular-grid-cell
+                          >
+
+                          <ch-tabular-grid-rowset class="tabular-grid-rowset">
+                            <ch-tabular-grid-row class="tabular-grid-row">
+                              <ch-tabular-grid-cell class="tabular-grid-cell"
+                                >Device</ch-tabular-grid-cell
+                              >
+                              <ch-tabular-grid-cell
+                                class="tabular-grid-cell"
+                              ></ch-tabular-grid-cell>
+                              <ch-tabular-grid-cell
+                                class="tabular-grid-cell"
+                              ></ch-tabular-grid-cell>
+                              <ch-tabular-grid-cell
+                                class="tabular-grid-cell"
+                              ></ch-tabular-grid-cell>
+
+                              <ch-tabular-grid-rowset
+                                class="tabular-grid-rowset"
+                              >
+                                <ch-tabular-grid-row class="tabular-grid-row">
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >DeviceToken</ch-tabular-grid-cell
+                                  >
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >Character(500)</ch-tabular-grid-cell
+                                  >
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >DeviceToken</ch-tabular-grid-cell
+                                  >
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >false</ch-tabular-grid-cell
+                                  >
+                                </ch-tabular-grid-row>
+                              </ch-tabular-grid-rowset>
+                            </ch-tabular-grid-row>
+                          </ch-tabular-grid-rowset>
+                        </ch-tabular-grid-row>
+                        <ch-tabular-grid-row class="tabular-grid-row">
+                          <ch-tabular-grid-cell class="tabular-grid-cell"
+                            >Groups</ch-tabular-grid-cell
+                          >
+                          <ch-tabular-grid-cell
+                            class="tabular-grid-cell"
+                          ></ch-tabular-grid-cell>
+                          <ch-tabular-grid-cell class="tabular-grid-cell"
+                            >Groups</ch-tabular-grid-cell
+                          >
+                          <ch-tabular-grid-cell class="tabular-grid-cell"
+                            >true</ch-tabular-grid-cell
+                          >
+
+                          <ch-tabular-grid-rowset class="tabular-grid-rowset">
+                            <ch-tabular-grid-row class="tabular-grid-row">
+                              <ch-tabular-grid-cell class="tabular-grid-cell"
+                                >Group</ch-tabular-grid-cell
+                              >
+                              <ch-tabular-grid-cell
+                                class="tabular-grid-cell"
+                              ></ch-tabular-grid-cell>
+                              <ch-tabular-grid-cell
+                                class="tabular-grid-cell"
+                              ></ch-tabular-grid-cell>
+                              <ch-tabular-grid-cell
+                                class="tabular-grid-cell"
+                              ></ch-tabular-grid-cell>
+
+                              <ch-tabular-grid-rowset
+                                class="tabular-grid-rowset"
+                              >
+                                <ch-tabular-grid-row class="tabular-grid-row">
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >Name</ch-tabular-grid-cell
+                                  >
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >Character(100)</ch-tabular-grid-cell
+                                  >
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >Name</ch-tabular-grid-cell
+                                  >
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >false</ch-tabular-grid-cell
+                                  >
+                                </ch-tabular-grid-row>
+                              </ch-tabular-grid-rowset>
+                            </ch-tabular-grid-row>
+                          </ch-tabular-grid-rowset>
+                        </ch-tabular-grid-row>
+                        <ch-tabular-grid-row class="tabular-grid-row">
+                          <ch-tabular-grid-cell class="tabular-grid-cell"
+                            >Targets</ch-tabular-grid-cell
+                          >
+                          <ch-tabular-grid-cell
+                            class="tabular-grid-cell"
+                          ></ch-tabular-grid-cell>
+                          <ch-tabular-grid-cell class="tabular-grid-cell"
+                            >Targets</ch-tabular-grid-cell
+                          >
+                          <ch-tabular-grid-cell class="tabular-grid-cell"
+                            >true</ch-tabular-grid-cell
+                          >
+
+                          <ch-tabular-grid-rowset class="tabular-grid-rowset">
+                            <ch-tabular-grid-row class="tabular-grid-row">
+                              <ch-tabular-grid-cell class="tabular-grid-cell"
+                                >Filter</ch-tabular-grid-cell
+                              >
+                              <ch-tabular-grid-cell
+                                class="tabular-grid-cell"
+                              ></ch-tabular-grid-cell>
+                              <ch-tabular-grid-cell
+                                class="tabular-grid-cell"
+                              ></ch-tabular-grid-cell>
+                              <ch-tabular-grid-cell
+                                class="tabular-grid-cell"
+                              ></ch-tabular-grid-cell>
+
+                              <ch-tabular-grid-rowset
+                                class="tabular-grid-rowset"
+                              >
+                                <ch-tabular-grid-row class="tabular-grid-row">
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >Name</ch-tabular-grid-cell
+                                  >
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >Character(100)</ch-tabular-grid-cell
+                                  >
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >Name</ch-tabular-grid-cell
+                                  >
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >false</ch-tabular-grid-cell
+                                  >
+                                </ch-tabular-grid-row>
+                                <ch-tabular-grid-row class="tabular-grid-row">
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >Value</ch-tabular-grid-cell
+                                  >
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >Character(100)</ch-tabular-grid-cell
+                                  >
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >Name</ch-tabular-grid-cell
+                                  >
+                                  <ch-tabular-grid-cell
+                                    class="tabular-grid-cell"
+                                    >false</ch-tabular-grid-cell
+                                  >
+                                </ch-tabular-grid-row>
+                              </ch-tabular-grid-rowset>
+                            </ch-tabular-grid-row>
+                          </ch-tabular-grid-rowset>
+                        </ch-tabular-grid-row>
+                      </ch-tabular-grid-rowset>
+                    </ch-tabular-grid-row>
+                  </ch-tabular-grid>
+                </div>
+                <div class="article__code">
+                  <ch-code
+                    id="ch-code-11"
+                    language="xml"
+                    class="code"
+                  ></ch-code>
+                  <script>
+                    const markup11 = `<ch-tabular-grid class="tabular-grid">
+
+<ch-tabular-grid-columnset class="tabular-grid-column-set">
+  <ch-tabular-grid-column class="tabular-grid-column" column-name="Name" settingable="false" column-type="tree" freeze="start" size="20%"></ch-tabular-grid-column>
+  <ch-tabular-grid-column class="tabular-grid-column" column-name="Type" settingable="false" size="80%"></ch-tabular-grid-column>
+  <ch-tabular-grid-column class="tabular-grid-column" column-name="Description" settingable="false" size="500px"></ch-tabular-grid-column>
+  <ch-tabular-grid-column class="tabular-grid-column" column-name="Is Collection" settingable="false" size="100px"></ch-tabular-grid-column>
+</ch-tabular-grid-columnset>
+
+<ch-tabular-grid-row class="tabular-grid-row">
+  <ch-tabular-grid-cell class="tabular-grid-cell">Target</ch-tabular-grid-cell>
+  <ch-tabular-grid-cell class="tabular-grid-cell"></ch-tabular-grid-cell>
+  <ch-tabular-grid-cell class="tabular-grid-cell">Target</ch-tabular-grid-cell>
+  <ch-tabular-grid-cell class="tabular-grid-cell">false</ch-tabular-grid-cell>
+
+  <ch-tabular-grid-rowset class="tabular-grid-rowset">
+      <ch-tabular-grid-row class="tabular-grid-row">
+        <ch-tabular-grid-cell class="tabular-grid-cell">Devices</ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell">Devices List</ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell">true</ch-tabular-grid-cell>
+
+        <ch-tabular-grid-rowset class="tabular-grid-rowset">
+          <ch-tabular-grid-row class="tabular-grid-row">
+            <ch-tabular-grid-cell class="tabular-grid-cell">Device</ch-tabular-grid-cell>
+            <ch-tabular-grid-cell class="tabular-grid-cell"></ch-tabular-grid-cell>
+            <ch-tabular-grid-cell class="tabular-grid-cell"></ch-tabular-grid-cell>
+            <ch-tabular-grid-cell class="tabular-grid-cell"></ch-tabular-grid-cell>
+
+            <ch-tabular-grid-rowset class="tabular-grid-rowset">
+              <ch-tabular-grid-row class="tabular-grid-row">
+                <ch-tabular-grid-cell class="tabular-grid-cell">DeviceToken</ch-tabular-grid-cell>
+                <ch-tabular-grid-cell class="tabular-grid-cell">Character(500)</ch-tabular-grid-cell>
+                <ch-tabular-grid-cell class="tabular-grid-cell">DeviceToken</ch-tabular-grid-cell>
+                <ch-tabular-grid-cell class="tabular-grid-cell">false</ch-tabular-grid-cell>
+              </ch-tabular-grid-row>
+            </ch-tabular-grid-rowset>
+
+          </ch-tabular-grid-row>
+        </ch-tabular-grid-rowset>
+
+      </ch-tabular-grid-row>
+      <!-- Add more ch-tabular-grid-row as needed... -->
+
+  </ch-tabular-grid-rowset>
+</ch-tabular-grid-row>
+</ch-tabular-grid>`;
+                    document.getElementById("ch-code-11").value = markup11;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ================================== 
+          tree grid
+          =================================== -->
+            <article class="article" nav data-title="property grid">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__description">
+                  <p></p>
+                </div>
+
+                <div class="article__content">
+                  <ch-tabular-grid class="tabular-grid">
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
+                      <ch-tabular-grid-column
+                        column-name="Property"
+                        settingable="false"
+                        column-type="tree"
+                        size="50%"
+                        class="tabular-grid-column"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        column-name="Value"
+                        settingable="false"
+                        size="minmax(auto, calc(100% - var(--ch-tabular-grid-column-1-width)))"
+                        class="tabular-grid-column"
+                      ></ch-tabular-grid-column>
+                    </ch-tabular-grid-columnset>
+
+                    <ch-tabular-grid-row class="tabular-grid-row">
+                      <ch-tabular-grid-cell class="tabular-grid-cell">Nombre</ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell">Productos</ch-tabular-grid-cell>
+
+                      <ch-tabular-grid-rowset class="tabular-grid-rowset">
+                        <ch-tabular-grid-row class="tabular-grid-row">
+                          <ch-tabular-grid-cell class="tabular-grid-cell">English</ch-tabular-grid-cell>
+                          <ch-tabular-grid-cell class="tabular-grid-cell">Products</ch-tabular-grid-cell>
+                        </ch-tabular-grid-row>
+                        <ch-tabular-grid-row class="tabular-grid-row">
+                          <ch-tabular-grid-cell class="tabular-grid-cell">Português</ch-tabular-grid-cell>
+                          <ch-tabular-grid-cell class="tabular-grid-cell">Produtos</ch-tabular-grid-cell>
+                        </ch-tabular-grid-row>
+                      </ch-tabular-grid-rowset class="tabular-grid-rowset">
+                    </ch-tabular-grid-row>
+                    <ch-tabular-grid-row class="tabular-grid-row">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Redireccionar a</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell">
+                        <div style="width: 100%">
+                          <div style="white-space: nowrap; overflow: hidden">
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                            Tecnologías soportadas; Tecnologías soportadas;
+                          </div>
+                        </div>
+                      </ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                    <ch-tabular-grid-row class="tabular-grid-row">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Tipo de redirección</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell">Found</ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+
+                    <ch-tabular-grid-rowset class="tabular-grid-rowset">
+                      <ch-tabular-grid-rowset-legend class="tabular-grid-rowset-legend"
+                        >Url</ch-tabular-grid-rowset-legend
+                      >
+
+                      <ch-tabular-grid-row class="tabular-grid-row">
+                        <ch-tabular-grid-cell class="tabular-grid-cell"
+                          >Url amigable</ch-tabular-grid-cell
+                        >
+                        <ch-tabular-grid-cell class="tabular-grid-cell">productos</ch-tabular-grid-cell>
+
+                        <ch-tabular-grid-rowset class="tabular-grid-rowset">
+                          <ch-tabular-grid-row class="tabular-grid-row">
+                            <ch-tabular-grid-cell class="tabular-grid-cell">English</ch-tabular-grid-cell>
+                            <ch-tabular-grid-cell class="tabular-grid-cell"
+                              >products</ch-tabular-grid-cell
+                            >
+                          </ch-tabular-grid-row>
+                          <ch-tabular-grid-row class="tabular-grid-row">
+                            <ch-tabular-grid-cell class="tabular-grid-cell"
+                              >Português</ch-tabular-grid-cell
+                            >
+                            <ch-tabular-grid-cell class="tabular-grid-cell"
+                              >produtos</ch-tabular-grid-cell
+                            >
+                          </ch-tabular-grid-row>
+                        </ch-tabular-grid-rowset>
+                      </ch-tabular-grid-row>
+
+                      <ch-tabular-grid-rowset class="tabular-grid-rowset">
+                        <ch-tabular-grid-rowset-legend class="tabular-grid-rowset-legend"
+                          >Permalink</ch-tabular-grid-rowset-legend
+                        >
+
+                        <ch-tabular-grid-row rowid="row-permalink" class="tabular-grid-row">
+                          <ch-tabular-grid-cell cellid="cell-permalink-label-id"  class="tabular-grid-cell" 
+                            >Id</ch-tabular-grid-cell
+                          >
+                          <ch-tabular-grid-cell class="tabular-grid-cell">7867</ch-tabular-grid-cell>
+                        </ch-tabular-grid-row>
+
+                        <ch-tabular-grid-rowset class="tabular-grid-rowset">
+                          <ch-tabular-grid-row class="tabular-grid-row">
+                            <ch-tabular-grid-cell class="tabular-grid-cell">Guid</ch-tabular-grid-cell>
+                            <ch-tabular-grid-cell class="tabular-grid-cell"
+                              >abcdef-peodfg-293845-3947</ch-tabular-grid-cell
+                            >
+                          </ch-tabular-grid-row>
+                        </ch-tabular-grid-rowset>
+                      </ch-tabular-grid-rowset>
+                    </ch-tabular-grid-rowset>
+                  </ch-tabular-grid>
+                </div>
+                <div class="article__code">
+                  <ch-code
+                    id="ch-code-12"
+                    language="xml"
+                    class="code"
+                  ></ch-code>
+                  <script>
+                    const markup12 = `<ch-tabular-grid class="tabular-grid">
+  <ch-tabular-grid-columnset class="tabular-grid-column-set">
+    <ch-tabular-grid-column column-name="Property" settingable="false" column-type="tree" size="50%" class="tabular-grid-column"></ch-tabular-grid-column>
+    <ch-tabular-grid-column column-name="Value" settingable="false" size="minmax(auto, calc(100% - var(--ch-tabular-grid-column-1-width)))" class="tabular-grid-column"></ch-tabular-grid-column>
+  </ch-tabular-grid-columnset>
+
+  <ch-tabular-grid-row class="tabular-grid-row">
+    <ch-tabular-grid-cell class="tabular-grid-cell">Nombre</ch-tabular-grid-cell>
+    <ch-tabular-grid-cell class="tabular-grid-cell">Productos</ch-tabular-grid-cell>
+    <ch-tabular-grid-rowset class="tabular-grid-rowset">
+      <ch-tabular-grid-row class="tabular-grid-row">
+        <ch-tabular-grid-cell class="tabular-grid-cell">English</ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell">Products</ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row">
+        <ch-tabular-grid-cell class="tabular-grid-cell">Português</ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell">Produtos</ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+    </ch-tabular-grid-rowset class="tabular-grid-rowset">
+  </ch-tabular-grid-row>
+  <ch-tabular-grid-row class="tabular-grid-row">
+    <ch-tabular-grid-cell class="tabular-grid-cell" >Redireccionar a</ch-tabular-grid-cell>
+    <ch-tabular-grid-cell class="tabular-grid-cell">
+      <div style="width: 100%">
+        <div style="white-space: nowrap; overflow: hidden">
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+          Tecnologías soportadas; Tecnologías soportadas;
+        </div>
+      </div>
+    </ch-tabular-grid-cell>
+  </ch-tabular-grid-row>
+  <ch-tabular-grid-row class="tabular-grid-row">
+    <ch-tabular-grid-cell class="tabular-grid-cell">Tipo de redirección</ch-tabular-grid-cell>
+    <ch-tabular-grid-cell class="tabular-grid-cell">Found</ch-tabular-grid-cell>
+  </ch-tabular-grid-row>
+
+  <ch-tabular-grid-rowset class="tabular-grid-rowset">
+    <ch-tabular-grid-rowset-legend class="tabular-grid-rowset-legend">Url</ch-tabular-grid-rowset-legend>
+
+    <ch-tabular-grid-row class="tabular-grid-row">
+      <ch-tabular-grid-cell class="tabular-grid-cell">Url amigable</ch-tabular-grid-cell>
+      <ch-tabular-grid-cell class="tabular-grid-cell">productos</ch-tabular-grid-cell>
+
+      <ch-tabular-grid-rowset class="tabular-grid-rowset">
+        <ch-tabular-grid-row class="tabular-grid-row">
+          <ch-tabular-grid-cell class="tabular-grid-cell">English</ch-tabular-grid-cell>
+          <ch-tabular-grid-cell class="tabular-grid-cell">products</ch-tabular-grid-cell>
+        </ch-tabular-grid-row>
+        <ch-tabular-grid-row class="tabular-grid-row">
+          <ch-tabular-grid-cell class="tabular-grid-cell">Português</ch-tabular-grid-cell>
+          <ch-tabular-grid-cell class="tabular-grid-cell">produtos</ch-tabular-grid-cell>
+        </ch-tabular-grid-row>
+      </ch-tabular-grid-rowset>
+    </ch-tabular-grid-row>
+
+    <ch-tabular-grid-rowset class="tabular-grid-rowset">
+      <ch-tabular-grid-rowset-legend class="tabular-grid-rowset-legend">Permalink</ch-tabular-grid-rowset-legend>
+
+      <ch-tabular-grid-row rowid="row-permalink" class="tabular-grid-row">
+        <ch-tabular-grid-cell cellid="cell-permalink-label-id"  class="tabular-grid-cell" >Id</ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell">7867</ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+
+      <ch-tabular-grid-rowset class="tabular-grid-rowset">
+        <ch-tabular-grid-row class="tabular-grid-row">
+          <ch-tabular-grid-cell class="tabular-grid-cell">Guid</ch-tabular-grid-cell>
+          <ch-tabular-grid-cell class="tabular-grid-cell">abcdef-peodfg-293845-3947</ch-tabular-grid-cell>
+        </ch-tabular-grid-row>
+      </ch-tabular-grid-rowset>
+    </ch-tabular-grid-rowset>
+  </ch-tabular-grid-rowset>
+</ch-tabular-grid>`;
+                    document.getElementById("ch-code-12").value = markup12;
                   </script>
                 </div>
                 <!-- /.article__content -->

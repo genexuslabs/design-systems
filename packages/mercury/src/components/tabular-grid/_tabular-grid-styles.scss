@@ -4,15 +4,61 @@
 @import "tokens-cell";
 
 // - - - - - - - - - - - - - - - - - - - -
-//               ch-grid
+//           general settings
+// - - - - - - - - - - - - - - - - - - - -
+
+%tabular-grid__icon {
+  &-size {
+    @extend %icon-size--md;
+    margin-inline-end: var(--grid-common__gap);
+    flex-shrink: 0; // WA
+  }
+  &-caret {
+    // collapsed
+    &-collapsed--enabled {
+      --icon-path: var(--icon__gemini-tools_add_neutral--enabled);
+      cursor: pointer;
+    }
+    &-collapsed--hover {
+      --icon-path: var(--icon__gemini-tools_add_neutral--hover);
+    }
+    &-collapsed--active {
+      --icon-path: var(--icon__gemini-tools_add_neutral--active);
+    }
+    // expanded
+    &-expanded--enabled {
+      --icon-path: var(--icon__gemini-tools_minus_neutral--enabled);
+      cursor: pointer;
+    }
+    &-expanded--hover {
+      --icon-path: var(--icon__gemini-tools_minus_neutral--hover);
+    }
+    &-expanded--active {
+      --icon-path: var(--icon__gemini-tools_minus_neutral--active);
+    }
+  }
+  &-node {
+    --icon-path: var(--icon__gemini-tools_folder_on-surface--enabled);
+    &--leaf {
+      --icon-path: var(--icon__gemini-tools_file_on-surface--enabled);
+    }
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - -
+//            ch-tabular-grid
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid {
+  --focus__outline-offset: -2px; // WA since the box-shadow hides the outline-block-end and outline-inline-end.
+  --grid-label__gap: var(--mer-spacing--xs);
+  --grid-common__gap: var(--mer-spacing--xs);
+
   --indent: 16px;
   @include items-container-colors();
 
   --item__border-color--enabled: var(--mer-color__elevation--04);
-  @include tabular-grid-tokens();
+  // @include tabular-grid-tokens();
   @include tabular-grid-row-tokens();
   @include tabular-grid-column-tokens();
   @include tabular-grid-cell-tokens();
@@ -24,66 +70,94 @@
 }
 
 // - - - - - - - - - - - - - - - - - - - -
-//            ch-grid-column
+//       ch-tabular-grid-column-set
+// - - - - - - - - - - - - - - - - - - - -
+%tabular-grid-column-set {
+  border-block-end: var(--grid-cell__border);
+}
+
+// - - - - - - - - - - - - - - - - - - - -
+//         ch-tabular-grid-column
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-column__bar {
+  --grid-label__gap: 0;
+  @include grid-row-colors-enabled();
   @include control-padding-inline-block();
   @include control-font-weight-semi-bold();
-  position: relative;
+  gap: var(--grid-common__gap);
   width: 100%;
-  gap: var(--grid-column-bar__gap);
-  line-height: var(--item__line-height);
 }
 
 %tabular-grid-column__bar-resize-split {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  right: 0;
+  background-color: var(--mer-color__elevation--04);
   inline-size: var(--grid-bar-resize-split__inline-size);
   &--hover {
+    background-color: var(--mer-accent__primary--hover);
   }
 }
 
 // - - - - - - - - - - - - - - - - - - - -
-//            ch-grid-row
+//          ch-tabular-grid-row
 // - - - - - - - - - - - - - - - - - - - -
 
-// no styles on ch-grid-row, since it has "display:contents"
+// no styles on ch-tabular-grid-row, since it has "display:contents"
 %tabular-grid-row {
-  @include grid-row-colors-enabled();
-
-  &--highlighted {
-    @include grid-row-colors-highlighted();
+  &--focused {
   }
-
+  &--highlighted {
+    &__cell {
+      @include grid-row-colors-highlighted();
+    }
+  }
   &--selected {
-    @include grid-row-colors-selected();
+    &__cell {
+      @include grid-row-colors-selected();
+    }
+  }
+  &--dragging {
+    @include grid-row-dragging();
   }
 }
 
 // - - - - - - - - - - - - - - - - - - - -
-//            ch-grid-rowset
+//         ch-tabular-grid-rowset
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-rowset {
+  &--collapsed {
+    &__legend {
+      border-block-end: var(--grid-cell__border);
+    }
+  }
 }
 
 // - - - - - - - - - - - - - - - - - - - -
-//        ch-grid-rowset-legend
+//     ch-tabular-grid-rowset-legend
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-rowset-legend {
+  @include grid-rowset-legend-colors-enabled();
+  @include grid-rowset-legend-padding-block();
+  display: flex;
+  align-items: center;
   cursor: pointer;
-
-  &:hover {
+  padding-inline-start: var(--grid-common__gap);
+  box-shadow: calc(var(--indent) * (var(--level) - 1) * -1) 0px 0px 0px
+    var(--grid-rowset-legend__bg-color);
+  &--hover {
+    @include grid-rowset-legend-colors-hover();
+  }
+  &--active {
+    @include grid-rowset-legend-colors-active();
   }
 }
 
 // Parts
 // TODO
 %tabular-grid-rowset-legend__caret {
+  @extend %tabular-grid__icon-size;
+  --icon-path: var(--icon__gemini-tools_minus_on-surface--enabled);
 }
 %tabular-grid-rowset-legend__selector-label {
 }
@@ -92,26 +166,31 @@
 %tabular-grid-rowset-legend__icon {
 }
 
-// no styles on ch-grid-row, since it has "display:contents"
+// no styles on ch-tabular-grid-row, since it has "display:contents"
 %tabular-grid-row {
 }
 
 // - - - - - - - - - - - - - - - - - - - -
-//            ch-grid-cell
+//         ch-tabular-grid-cell
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-cell {
   @include grid-cell-border-inline-block();
   @include control-padding-inline-block();
+  @include grid-row-colors-enabled();
   border: 0; //WA
 
-  &[focused] {
+  &--focused {
     @include focus-outline();
+  }
+
+  &--selected {
+    // to be defined by design
   }
 }
 
 %tabular-grid-cell__selector-label {
-  margin-inline-end: var(--label__gap--inline);
+  margin-inline-end: var(--grid-label__gap);
   block-size: var(--control-tiny__size);
   inline-size: var(--control-tiny__size);
 }
@@ -168,7 +247,7 @@
 // End Checkbox
 
 // - - - - - - - - - - - - - - - - - - - -
-//          ch-grid-row-actions
+//       ch-tabular-grid-row-actions
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid-row-actions {
@@ -183,35 +262,62 @@
 }
 
 /// @group TabularGrid
+// ch-tabular-grid
 /// @param {String} $tabular-grid-selector [".tabular-grid"] -
 /// @param {String} $tabular-grid__main-selector [".tabular-grid::part(main)"] -
-/// @param {String} $tabular-grid__bar-selector [".tabular-grid-column::part(bar)"] -
-/// @param {String} $tabular-grid__bar-resize-split-selector [".tabular-grid-column::part(bar-resize-split)"] -
+// ch-tabular-grid-column-set
+/// @param {String} $tabular-grid-column-set [".tabular-grid-column-set"] -
+// ch-tabular-grid-column
+/// @param {String} $tabular-grid-column__bar-selector [".tabular-grid-column::part(bar)"] -
+/// @param {String} $tabular-grid-column__bar-resize-split-selector [".tabular-grid-column::part(bar-resize-split)"] -
 /// @param {String} $tabular-grid-column__selector-label-selector [".tabular-grid-column::part(selector-label)"] -
 /// @param {String} $tabular-grid-column__selector-selector [".tabular-grid-column::part(selector)"] -
 /// @param {String} $tabular-grid-column__selector--checked-selector [".tabular-grid-column::part(selector checked)"] -
 /// @param {String} $tabular-grid-column__selector--indeterminate-selector [".tabular-grid-column::part(selector indeterminate)"] -
+// ch-tabular-grid-row
 /// @param {String} $tabular-grid-row-selector [".tabular-grid-row"] -
+/// @param {String} $tabular-grid-row--focused-selector [".tabular-grid-row[focused]"] -
+/// @param {String} $tabular-grid-row--highlighted-selector [".tabular-grid-row[highlighted]"] -
+/// @param {String} $tabular-grid-row--selected-selector [".tabular-grid-row[selected]"] -
+/// @param {String} $tabular-grid-row--dragging-selector [".tabular-grid-row[dragging]"] -
+/// @param {String} $tabular-grid-row--highlighted__cell-selector [".tabular-grid-row[highlighted] > .tabular-grid-cell"] -
+// ch-tabular-grid-row  > cell
+/// @param {String} $tabular-grid-row--selected__cell-selector [".tabular-grid-row[selected] > .tabular-grid-cell"] -
+// ch-tabular-grid-rowset
 /// @param {String} $tabular-grid-rowset-selector [".tabular-grid-rowset"] -
+/// @param {String} $tabular-grid-rowset--collapsed__legend-selector [".tabular-grid-rowset[collapsed] > .tabular-grid-rowset-legend"] -
+// ch-tabular-grid-rowset-legend
 /// @param {String} $tabular-grid-rowset-legend-selector [".tabular-grid-rowset-legend"] -
-/// @param {String} $tabular-grid-rowset-legend__caret-selector [".tabular-grid-rowset-legend::part(caret)"] -
+/// @param {String} $tabular-grid-rowset-legend__caret-selector--collapsed [".tabular-grid-rowset[collapsed] > .tabular-grid-rowset-legend::part(caret)"] -
+/// @param {String} $tabular-grid-rowset-legend__caret-selector--expanded [".tabular-grid-rowset > .tabular-grid-rowset-legend::part(caret)"] -
 /// @param {String} $tabular-grid-rowset-legend__selector-label-selector [".tabular-grid-rowset-legend::part(selector-label)"] -
 /// @param {String} $tabular-grid-rowset-legend__selector-selector [".tabular-grid-rowset-legend::part(selector)"] -
 /// @param {String} $tabular-grid-rowset-legend__icon-selector [".tabular-grid-rowset-legend::part(icon)"] -
+// ch-tabular-grid-cell
 /// @param {String} $tabular-grid-cell-selector [".tabular-grid-cell"] -
-/// @param {String} $tabular-grid-cell__drag-icon-selector [".tabular-grid-cell::part(drag-icon)"] -
+/// @param {String} $tabular-grid-cell--focused-selector [".tabular-grid-cell[focused]"] -
+/// @param {String} $tabular-grid-cell--selected-selector [".tabular-grid-cell[selected]"] -
 /// @param {String} $tabular-grid-cell__selector-label-selector [".tabular-grid-cell::part(selector-label)"] -
 /// @param {String} $tabular-grid-cell__selector-selector [".tabular-grid-cell::part(selector)"] -
 /// @param {String} $tabular-grid-cell__selector--checked-selector [".tabular-grid-cell::part(selector checked)"] -
+// ch-tabular-grid-cell (icons)
 /// @param {String} $tabular-grid-cell__actions-icon-selector [".tabular-grid-cell::part(actions-icon)"] -
+/// @param {String} $tabular-grid-cell__caret-icon-selector--collapsed [".tabular-grid-row:is( [collapsed], [leaf="false"]:not(:has(> .tabular-grid-rowset)) ) > .tabular-grid-cell::part(caret)"] -
+/// @param {String} $tabular-grid-cell__caret-icon-selector--expanded [".tabular-grid-row > .tabular-grid-cell::part(caret)"] -
+/// @param {String} $tabular-grid-cell__drag-icon-selector [".tabular-grid-cell::part(drag-icon)"] -
+/// @param {String} $tabular-grid-cell__node-icon-selector [".tabular-grid-row:has(> .tabular-grid-rowset) > .tabular-grid-cell::part(node-icon)"] -
+/// @param {String} $tabular-grid-cell__node-leaf-icon-selector [".tabular-grid-cell::part(node-icon)"] -
+// row-actions
 /// @param {String} $tabular-grid-row-actions-selector [".tabular-grid-row-actions"] -
 /// @param {String} $tabular-grid-row-actions__window-selector [".tabular-grid-row-actions::part(window)"] -
 /// @param {String} $tabular-grid-row-actions__main-selector [".tabular-grid-row-actions::part(main)"] -
 @mixin tabular-grid(
-  // ch-grid
+  // ch-tabular-grid
   $tabular-grid-selector: ".tabular-grid",
   $tabular-grid__main-selector: ".tabular-grid::part(main)",
-  // ch-grid-column
+  // ch-tabular-grid-column-set
+  $tabular-grid-column-set: ".tabular-grid-column-set",
+  // ch-tabular-grid-column
   $tabular-grid-column__bar-selector: ".tabular-grid-column::part(bar)",
   $tabular-grid-column__bar-resize-split-selector:
     ".tabular-grid-column::part(bar-resize-split)",
@@ -223,38 +329,94 @@
     ".tabular-grid-column::part(selector checked)",
   $tabular-grid-column__selector--indeterminate-selector:
     ".tabular-grid-column::part(selector indeterminate)",
-  // ch-grid-row
+  // ch-tabular-grid-row
   $tabular-grid-row-selector: ".tabular-grid-row",
-  // ch-grid-rowset
+  $tabular-grid-row--focused-selector: ".tabular-grid-row[focused]",
+  $tabular-grid-row--highlighted-selector: ".tabular-grid-row[highlighted]",
+  $tabular-grid-row--selected-selector: ".tabular-grid-row[selected]",
+  $tabular-grid-row--dragging-selector: ".tabular-grid-row[dragging]",
+  $tabular-grid-row--highlighted__cell-selector:
+    ".tabular-grid-row[highlighted] > .tabular-grid-cell",
+  $tabular-grid-row--selected__cell-selector:
+    ".tabular-grid-row[selected] > .tabular-grid-cell",
+  // ch-tabular-grid-rowset
   $tabular-grid-rowset-selector: ".tabular-grid-rowset",
-  // ch-grid-rowset-legend
+  $tabular-grid-rowset--collapsed__legend-selector:
+    ".tabular-grid-rowset[collapsed] > .tabular-grid-rowset-legend",
+  // ch-tabular-grid-rowset-legend
   $tabular-grid-rowset-legend-selector: ".tabular-grid-rowset-legend",
-  $tabular-grid-rowset-legend__caret-selector:
-    ".tabular-grid-rowset-legend::part(caret)",
+  $tabular-grid-rowset-legend__caret-selector--collapsed:
+    ".tabular-grid-rowset[collapsed] > .tabular-grid-rowset-legend::part(caret)",
+  $tabular-grid-rowset-legend__caret-selector--expanded:
+    ".tabular-grid-rowset > .tabular-grid-rowset-legend::part(caret)",
   $tabular-grid-rowset-legend__selector-label-selector:
     ".tabular-grid-rowset-legend::part(selector-label)",
   $tabular-grid-rowset-legend__selector-selector:
     ".tabular-grid-rowset-legend::part(selector)",
   $tabular-grid-rowset-legend__icon-selector:
     ".tabular-grid-rowset-legend::part(icon)",
-  // ch-grid-cell
+  // ch-tabular-grid-cell
   $tabular-grid-cell-selector: ".tabular-grid-cell",
-  $tabular-grid-cell__drag-icon-selector: ".tabular-grid-cell::part(drag-icon)",
+  $tabular-grid-cell--focused-selector: ".tabular-grid-cell[focused]",
+  $tabular-grid-cell--selected-selector: ".tabular-grid-cell[selected]",
   $tabular-grid-cell__selector-label-selector:
     ".tabular-grid-cell::part(selector-label)",
   $tabular-grid-cell__selector-selector: ".tabular-grid-cell::part(selector)",
   $tabular-grid-cell__selector--checked-selector:
     ".tabular-grid-cell::part(selector checked)",
+  // ch-tabular-grid-cell (icons)
   $tabular-grid-cell__actions-icon-selector:
     ".tabular-grid-cell::part(actions-icon)",
-  // ch-grid-row-actions
+  $tabular-grid-cell__caret-icon-selector--collapsed:
+    ".tabular-grid-row:is( [collapsed], [leaf='false']:not(:has(> .tabular-grid-rowset)) ) > .tabular-grid-cell::part(caret)",
+  $tabular-grid-cell__caret-icon-selector--expanded:
+    ".tabular-grid-cell::part(caret)",
+  $tabular-grid-cell__drag-icon-selector: ".tabular-grid-cell::part(drag-icon)",
+  $tabular-grid-cell__node-icon-selector:
+    ".tabular-grid-row:has(> .tabular-grid-rowset) > .tabular-grid-cell::part(node-icon)",
+  $tabular-grid-cell__node-leaf-icon-selector:
+    ".tabular-grid-cell::part(node-icon)",
+  // ch-tabular-grid-row-actions
   $tabular-grid-row-actions-selector: ".tabular-grid-row-actions",
   $tabular-grid-row-actions__window-selector:
     ".tabular-grid-row-actions::part(window)",
   $tabular-grid-row-actions__main-selector:
     ".tabular-grid-row-actions::part(main)"
 ) {
-  // Base style
+  // - - - - - - - - - - - - - - - - - - - - - - - - -
+  //    icons that are present in more than one place
+  // - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  // caret collapsed
+  #{$tabular-grid-rowset-legend__caret-selector--collapsed},
+  #{$tabular-grid-cell__caret-icon-selector--collapsed} {
+    @extend %tabular-grid__icon-size;
+    @extend %tabular-grid__icon-caret-collapsed--enabled;
+    &:hover {
+      @extend %tabular-grid__icon-caret-collapsed--hover;
+    }
+    &:active {
+      @extend %tabular-grid__icon-caret-collapsed--active;
+    }
+  }
+
+  // caret expanded
+  #{$tabular-grid-rowset-legend__caret-selector--expanded},
+  #{$tabular-grid-cell__caret-icon-selector--expanded} {
+    @extend %tabular-grid__icon-size;
+    @extend %tabular-grid__icon-caret-expanded--enabled;
+    &:hover {
+      @extend %tabular-grid__icon-caret-expanded--hover;
+    }
+    &:active {
+      @extend %tabular-grid__icon-caret-expanded--active;
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //             ch-tabular-grid
+  // - - - - - - - - - - - - - - - - - - - -
+
   #{$tabular-grid-selector} {
     @extend %tabular-grid;
     &:focus {
@@ -262,17 +424,20 @@
     }
   }
 
-  // - - - - - - - - - - - - - - - - - - - -
-  //               ch-grid
-  // - - - - - - - - - - - - - - - - - - - -
-
   #{$tabular-grid__main-selector} {
     @extend %tabular-grid__main;
-    gap: 1px;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //            ch-grid-column
+  //      ch-tabular-grid-column-set
+  // - - - - - - - - - - - - - - - - - - - -
+
+  #{$tabular-grid-column-set} {
+    @extend %tabular-grid-column-set;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //          ch-tabular-grid-column
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$tabular-grid-column__bar-selector} {
@@ -304,10 +469,6 @@
 
     &:focus {
       outline: none;
-
-      &:before {
-        @include focus-outline();
-      }
     }
   }
 
@@ -324,65 +485,57 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //            ch-grid-row
+  //          ch-tabular-grid-row
   // - - - - - - - - - - - - - - - - - - - -
 
+  // row
   #{$tabular-grid-row-selector} {
     @extend %tabular-grid-row;
-    // the following styles have to be applied here, because they depend on the
-    // $tabular-grid-cell selector, which is not known in the '%tabular-grid-row' placeholder.
-    &[highlighted] {
-      @extend %tabular-grid-row--highlighted;
-    }
+  }
+  #{$tabular-grid-row--focused-selector} {
+    @extend %tabular-grid-row--focused;
+  }
+  #{$tabular-grid-row--highlighted-selector} {
+    @extend %tabular-grid-row--highlighted;
+  }
+  #{$tabular-grid-row--selected-selector} {
+    @extend %tabular-grid-row--selected;
+  }
+  #{$tabular-grid-row--dragging-selector} {
+    @extend %tabular-grid-row--dragging;
+  }
 
-    &[selected] {
-      @extend %tabular-grid-row--selected;
-    }
-
-    &[focused] {
-    }
-
-    &[dragging] {
-      box-shadow: var(--mer-box-shadow--01);
-    }
+  // row[some-state] > cell
+  #{$tabular-grid-row--highlighted__cell-selector} {
+    @extend %tabular-grid-row--highlighted__cell;
+  }
+  #{$tabular-grid-row--selected__cell-selector} {
+    @extend %tabular-grid-row--selected__cell;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //             ch-grid-rowset
+  //             ch-tabular-grid-rowset
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$tabular-grid-rowset-selector} {
     @extend %tabular-grid-rowset;
-
-    // part::(caret)
-    #{$tabular-grid-rowset-legend__caret-selector} {
-      @extend %icon-size--md;
-      --icon-path: var(--icon__gemini-tools_minus_on-surface--enabled);
-    }
-    &[collapsed] {
-      #{$tabular-grid-rowset-legend__caret-selector} {
-        --icon-path: var(--icon__gemini-tools_add_on-surface--enabled);
-      }
-    }
-
-    &[collapsed]:not(:last-child) {
-      #{$tabular-grid-rowset-legend-selector} {
-        margin-block-end: 1px;
-      }
-    }
+  }
+  #{$tabular-grid-rowset--collapsed__legend-selector} {
+    @extend %tabular-grid-rowset--collapsed__legend;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //         ch-grid-rowset-legend
+  //     ch-tabular-grid-rowset-legend
   // - - - - - - - - - - - - - - - - - - - -
-  #{$tabular-grid-rowset-legend-selector} {
-    background-color: var(--mer-color__elevation--02);
-    @include grid-rowset-legend-padding-block();
 
+  #{$tabular-grid-rowset-legend-selector} {
     @extend %tabular-grid-rowset-legend;
-    display: flex;
-    align-items: center;
-    gap: var(--grid-base__icon-gap);
+    &:hover {
+      @extend %tabular-grid-rowset-legend--hover;
+    }
+    &:active {
+      @extend %tabular-grid-rowset-legend--active;
+    }
   }
 
   #{$tabular-grid-rowset-legend__selector-label-selector} {
@@ -395,27 +548,24 @@
 
   #{$tabular-grid-rowset-legend__icon-selector} {
     @extend %tabular-grid-rowset-legend__icon;
-    @extend %icon-size--md;
+    @extend %tabular-grid__icon-size;
     --icon-path: var(--icon__gemini-tools_category-group_on-surface--enabled);
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //            ch-grid-cell
+  //           ch-tabular-grid-cell
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$tabular-grid-cell-selector} {
     @extend %tabular-grid-cell;
-
-    &[selected] {
-      @include grid-cell-colors-selected();
-    }
   }
 
-  // drag icon
-  #{$tabular-grid-cell__drag-icon-selector} {
-    @extend %icon-size--md;
-    --icon-path: var(--icon__navigation_drag_on-surface--enabled);
-    margin-inline-end: var(--grid-base__icon-gap);
+  #{$tabular-grid-cell--focused-selector} {
+    @extend %tabular-grid-cell--focused;
+  }
+
+  #{$tabular-grid-cell--selected-selector} {
+    @extend %tabular-grid-cell--selected;
   }
 
   // checkbox
@@ -444,18 +594,34 @@
     }
   }
 
-  // actions icon
+  // Icons
   #{$tabular-grid-cell__actions-icon-selector} {
     width: 100%;
-    @extend %icon-size--md;
+    @extend %tabular-grid__icon-size;
     --icon-path: var(
       --icon__gemini-tools_show-more-vertical_on-surface--enabled
     );
     border: none;
   }
 
+  #{$tabular-grid-cell__drag-icon-selector} {
+    @extend %tabular-grid__icon-size;
+    --icon-path: var(--icon__navigation_drag_on-surface--enabled);
+    margin-inline-end: var(--grid-common__gap);
+  }
+
+  #{$tabular-grid-cell__node-icon-selector} {
+    @extend %tabular-grid__icon-size;
+    @extend %tabular-grid__icon-node;
+  }
+
+  #{$tabular-grid-cell__node-leaf-icon-selector} {
+    @extend %tabular-grid__icon-size;
+    @extend %tabular-grid__icon-node--leaf;
+  }
+
   // - - - - - - - - - - - - - - - - - - - -
-  //          ch-grid-row-actions
+  //      ch-tabular-grid-row-actions
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$tabular-grid-row-actions-selector} {
