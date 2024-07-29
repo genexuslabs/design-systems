@@ -241,14 +241,14 @@
             </article>
 
             <!-- ========================== 
-          no padding
+          padding
           =========================== -->
-            <article class="article" nav data-title="no padding">
+            <article class="article" nav data-title="padding">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <div class="layout layout--cols-2-1 layout--no-padding">
+                  <div class="layout layout--cols-2-1 spacing-body">
                     <div class="layout__panel">Content of column 1</div>
                     <div class="layout__panel">Content of column 2</div>
                   </div>
@@ -257,71 +257,23 @@
                   <ch-code id="ch-code-7" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup7 = `<div class="layout layout--no-padding">
+                    const markup7 = `<div class="layout layout--cols-2-1 spacing-body">
   <div class="layout__panel">Content of column</div>
   <div class="layout__panel">Content of column</div>
-</div>`;
+</div>
+
+<!--
+Complete spacing classes:
+.spacing-body
+.spacing-body-block
+.spacing-body-block-start
+.spacing-body-block-end
+.spacing-body-inline
+.spacing-body-inline-start
+.spacing-body-inline-end
+-->
+`;
                     document.getElementById("ch-code-7").value = markup7;
-                  </script>
-                </div>
-                <!-- /.article__content -->
-              </div>
-              <!-- /.article__main -->
-            </article>
-
-            <!-- ========================== 
-          no inline padding
-          =========================== -->
-            <article class="article" nav data-title="no inline padding">
-              <header class="article__header"></header>
-              <!-- main -->
-              <div class="article__main">
-                <div class="article__content">
-                  <div
-                    class="layout layout--cols-2-1 layout--no-inline-padding"
-                  >
-                    <div class="layout__panel">Content of column 1</div>
-                    <div class="layout__panel">Content of column 2</div>
-                  </div>
-                </div>
-                <div class="article__code">
-                  <ch-code id="ch-code-8" language="xml" class="code">
-                  </ch-code>
-                  <script>
-                    const markup8 = `<div class="layout layout--inline-padding">
-  <div class="layout__panel">Content of column</div>
-  <div class="layout__panel">Content of column</div>
-</div>`;
-                    document.getElementById("ch-code-8").value = markup8;
-                  </script>
-                </div>
-                <!-- /.article__content -->
-              </div>
-              <!-- /.article__main -->
-            </article>
-
-            <!-- ========================== 
-          no block padding
-          =========================== -->
-            <article class="article" nav data-title="no block padding">
-              <header class="article__header"></header>
-              <!-- main -->
-              <div class="article__main">
-                <div class="article__content">
-                  <div class="layout layout--cols-2-1 layout--no-block-padding">
-                    <div class="layout__panel">Content of column 1</div>
-                    <div class="layout__panel">Content of column 2</div>
-                  </div>
-                </div>
-                <div class="article__code">
-                  <ch-code id="ch-code-9" language="xml" class="code">
-                  </ch-code>
-                  <script>
-                    const markup9 = `<div class="layout layout--block-padding">
-  <div class="layout__panel">Content of column</div>
-  <div class="layout__panel">Content of column</div>
-</div>`;
-                    document.getElementById("ch-code-9").value = markup9;
                   </script>
                 </div>
                 <!-- /.article__content -->
