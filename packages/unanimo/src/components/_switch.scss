@@ -7,10 +7,10 @@
   );
 
   --ch-switch-track__unchecked-background-color: var(
-    --colors-foundation-un-color__gray--400
+    --colors-foundation__gray--400
   );
   --ch-switch-track__checked-background-color: var(
-    --colors-foundation-un-color__gray--500
+    --colors-foundation__gray--500
   );
 
   --ch-switch-thumb__state-transition-duration: 200ms;
@@ -22,7 +22,7 @@
   // Track
   &__track--disabled {
     --ch-switch-track__unchecked-background-color: var(
-      --colors-foundation-un-color__gray--500
+      --colors-foundation__gray--500
     );
   }
 

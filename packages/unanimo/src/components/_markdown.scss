@@ -72,8 +72,7 @@
       margin-inline: 0;
       padding-block: var(--spacing--m);
       padding-inline: calc(var(--spacing--xxl) - 4px) var(--spacing--xxl);
-      border-inline-start: 4px solid
-        var(--colors-foundation-un-color__gray--400);
+      border-inline-start: 4px solid var(--colors-foundation__gray--400);
 
       // First <p> don't add margin-block-start, because the <blockquote> adds it
       & > p:first-of-type {
@@ -127,7 +126,7 @@
 
     thead > tr,
     tbody > tr:nth-child(2n) {
-      background-color: var(--colors-foundation-un-color__gray--100);
+      background-color: var(--colors-foundation__gray--100);
     }
 
     // - - - - - - - - - - - - - - - - - - - -
@@ -166,7 +165,7 @@
 
       background-color: var(
         --surface-un-surface--positive
-      ); // color-mix(in srgb, var(--surface-un-surface--alternative) 70%, var(--colors-foundation-un-color__gray--100))
+      ); // color-mix(in srgb, var(--surface-un-surface--alternative) 70%, var(--colors-foundation__gray--100))
       border-radius: var(--border-radius-un-border__radius--s);
       font-size: calc(1em - 2px);
     }
@@ -195,8 +194,8 @@
     .hljs-variable.language_ {
       /* prettylights-syntax-keyword */
       color: var(
-        --colors-foundation-un-color__purple--400
-      ); /* Light var(--colors-foundation-un-color__purple--100); */
+        --colors-foundation__purple--400
+      ); /* Light var(--colors-foundation__purple--100); */
     }
 
     .hljs-title,
@@ -217,7 +216,7 @@
     .hljs-selector-class,
     .hljs-selector-id {
       color: var(
-        --colors-foundation-un-color__purple--200
+        --colors-foundation__purple--200
       ); /* Previously: --text-un-text__primary */
     }
 
@@ -225,8 +224,8 @@
     .hljs-string,
     .hljs-meta .hljs-string {
       color: var(
-        --colors-foundation-un-color__orange--200
-      ); /* DARK: color-mix(in srgb, var(--colors-foundation-un-color__red--300) 60%, #000) */
+        --colors-foundation__orange--200
+      ); /* DARK: color-mix(in srgb, var(--colors-foundation__red--300) 60%, #000) */
     }
 
     .hljs-built_in,
@@ -238,14 +237,14 @@
     .hljs-comment,
     .hljs-code,
     .hljs-formula {
-      color: var(--colors-foundation-un-color__green--200);
+      color: var(--colors-foundation__green--200);
     }
 
     .hljs-name,
     .hljs-quote,
     .hljs-selector-tag,
     .hljs-selector-pseudo {
-      color: var(--colors-foundation-un-color__green--200);
+      color: var(--colors-foundation__green--200);
     }
 
     .hljs-subst {
