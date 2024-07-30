@@ -128,7 +128,7 @@
   #{$group__header-selector} {
     @include item-colors-enabled();
     @include item-font-size-regular();
-    @include item-font-weight-header();
+    @include item-font-header();
     @include item-height-regular();
     @include item-padding-inline();
   }
@@ -137,7 +137,7 @@
     @include item-colors-enabled();
     @include item-height-regular();
     @include item-padding-inline();
-    @include item-font-weight-header();
+    @include item-font-header();
     @include item-border-radius();
 
     &:hover {
