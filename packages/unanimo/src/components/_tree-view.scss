@@ -25,7 +25,7 @@ $tree-view-secondary-hover: color-mix(
 
 %tree-view-primary {
   @extend %text-body-2;
-  color: var(--text-un-text__on-secondary);
+  color: var(--text__on-secondary);
   scrollbar-width: thin;
   scrollbar-color: var(--sidebar-un-sidebar__background-color--active)
     transparent;
@@ -66,7 +66,7 @@ $tree-view-secondary-hover: color-mix(
   background-color: var(--surface--alternative);
   border-radius: var(--border-radius-un-border__radius--l);
   box-shadow: var(--box-shadows-un-box-shadow--2);
-  color: var(--text-un-text__on-surface--alternative);
+  color: var(--text__on-surface--alternative);
 }
 
 %tree-view-primary--drag-enter {
@@ -111,8 +111,8 @@ $tree-view-secondary-hover: color-mix(
   &--not-selected-hover {
     color: color-mix(
       in srgb,
-      var(--text-un-text__primary--hover),
-      var(--text-un-text__on-surface--positive)
+      var(--text__primary--hover),
+      var(--text__on-surface--positive)
     );
     background-color: $tree-view-secondary-hover;
   }

@@ -5,7 +5,7 @@
   background-color: var(--header-primary__background-color);
   border-radius: var(--border-radius-un-border__radius--l);
   box-shadow: var(--box-shadows-un-box-shadow--1);
-  color: var(--text-un-text__on-secondary);
+  color: var(--text__on-secondary);
 }
 
 // Secondary
@@ -15,7 +15,7 @@
   background-color: var(--elevation--1);
   border-radius: var(--border-radius-un-border__radius--l);
   box-shadow: var(--box-shadows-un-box-shadow--1);
-  color: var(--text-un-text__on-surface--positive);
+  color: var(--text__on-surface--positive);
 }
 
 // Conversational
@@ -25,7 +25,7 @@
   border-end-start-radius: var(--border-radius-un-border__radius--m);
   border-end-end-radius: var(--border-radius-un-border__radius--m);
   box-shadow: var(--box-shadows-un-box-shadow--4);
-  color: var(--text-un-text__on-secondary);
+  color: var(--text__on-secondary);
   gap: var(--spacing--m);
 }
 
@@ -48,7 +48,7 @@
 
   &--active {
     background-color: var(--accents__primary-dim--hover);
-    color: var(--text-un-text__primary--active);
+    color: var(--text__primary--active);
   }
 }
 

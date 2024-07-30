@@ -42,7 +42,7 @@
 
   &--disabled {
     border-color: var(--borders-un-border-color__disabled);
-    color: var(--text-un-text__disabled);
+    color: var(--text__disabled);
   }
 }
 
@@ -212,7 +212,7 @@
 
     @if $add--disabled {
       &--disabled {
-        color: var(--text-un-text__disabled);
+        color: var(--text__disabled);
       }
     }
   }
@@ -230,7 +230,7 @@
 
     @if $add--disabled {
       &--disabled {
-        color: var(--text-un-text__disabled);
+        color: var(--text__disabled);
       }
     }
   }

@@ -12,7 +12,7 @@
     column-gap: 4px;
 
     &--disabled {
-      color: var(--text-un-text__disabled);
+      color: var(--text__disabled);
     }
 
     &--focus-visible {
@@ -21,7 +21,7 @@
     }
 
     &--not-selectable {
-      color: var(--text-un-text__primary--hover);
+      color: var(--text__primary--hover);
     }
 
     &--selectable {
@@ -39,10 +39,10 @@
   }
 
   &-additional-item--action {
-    color: var(--text-un-text__on-secondary);
+    color: var(--text__on-secondary);
 
     &--hover {
-      color: var(--text-un-text__primary--hover);
+      color: var(--text__primary--hover);
     }
 
     &--focus-visible {

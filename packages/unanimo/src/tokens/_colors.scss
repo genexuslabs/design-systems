@@ -160,11 +160,11 @@
   --accents__secondary--hover: var(--colors-foundation__purple--500);
   --body-texts-un-body-m__font-color--gray: var(--colors-foundation__gray--500);
   --body-texts-un-body-m__font-color--positive: var(
-    --text-un-text__on-surface--positive
+    --text__on-surface--positive
   );
   --body-texts-un-body-s-font-color--gray: var(--colors-foundation__gray--500);
   --body-texts-un-body-s-font-color--positive: var(
-    --text-un-text__on-surface--positive
+    --text__on-surface--positive
   );
   --borders-un-border-color__destructive: var(--accents__destructive);
   --borders-un-border-color__disabled: var(--accents__disabled);
@@ -177,9 +177,7 @@
   --borders-un-border-color__strong: var(--colors-foundation__gray--600);
   --borders-un-border-color__success: var(--colors-foundation__green--200);
   --borders-un-border-color__warning: var(--colors-foundation__orange--200);
-  --headings-un-h1-font-color--positive: var(
-    --text-un-text__on-surface--positive
-  );
+  --headings-un-h1-font-color--positive: var(--text__on-surface--positive);
   --icons-un-icon__destructive: var(--colors-foundation__red--300);
   --icons-un-icon__disabled: var(--colors-foundation__gray--400);
   --icons-un-icon__error: var(--colors-foundation__red--300);
@@ -193,18 +191,18 @@
   --icons-un-icon__primary--hover: var(--colors-foundation__purple--200);
   --icons-un-icon__success: var(--colors-foundation__green--200);
   --icons-un-icon__warning: var(--colors-foundation__orange--200);
-  --link-un-link__font-color: var(--text-un-text__primary);
-  --text-un-text__destructive: var(--colors-foundation__red--300);
-  --text-un-text__disabled: var(--colors-foundation__gray--400);
-  --text-un-text__error: var(--colors-foundation__red--300);
-  --text-un-text__on-alert: var(--colors-foundation__positive);
-  --text-un-text__on-disabled: var(--colors-foundation__gray--300);
-  --text-un-text__on-primary: var(--colors-foundation__positive);
-  --text-un-text__on-secondary: var(--colors-foundation__white);
-  --text-un-text__on-surface--alternative: var(--colors-foundation__negative);
-  --text-un-text__on-surface--negative: var(--colors-foundation__positive);
-  --text-un-text__on-surface--positive: var(--colors-foundation__negative);
-  --text-un-text__primary: var(--accents__primary);
-  --text-un-text__primary--active: var(--colors-foundation__purple--300);
-  --text-un-text__primary--hover: var(--accents__primary--hover);
+  --link-un-link__font-color: var(--text__primary);
+  --text__destructive: var(--colors-foundation__red--300);
+  --text__disabled: var(--colors-foundation__gray--400);
+  --text__error: var(--colors-foundation__red--300);
+  --text__on-alert: var(--colors-foundation__positive);
+  --text__on-disabled: var(--colors-foundation__gray--300);
+  --text__on-primary: var(--colors-foundation__positive);
+  --text__on-secondary: var(--colors-foundation__white);
+  --text__on-surface--alternative: var(--colors-foundation__negative);
+  --text__on-surface--negative: var(--colors-foundation__positive);
+  --text__on-surface--positive: var(--colors-foundation__negative);
+  --text__primary: var(--accents__primary);
+  --text__primary--active: var(--colors-foundation__purple--300);
+  --text__primary--hover: var(--accents__primary--hover);
 }

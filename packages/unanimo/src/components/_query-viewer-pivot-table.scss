@@ -36,7 +36,7 @@
       --gx-query-viewer-pivot-icon: url("#{$icons-path}close.svg");
       inline-size: 22px;
       block-size: 22px;
-      color: var(--text-un-text__on-surface--positive);
+      color: var(--text__on-surface--positive);
     }
   }
 
@@ -93,7 +93,7 @@
     & > .spanHoverLabel {
       font-family: SourceSansPro;
       font-weight: 400;
-      color: var(--text-un-text__on-surface--negative);
+      color: var(--text__on-surface--negative);
       text-align: start;
       padding: var(--spacing--m);
       background-color: var(--borders-un-border-color__strong);
@@ -287,6 +287,6 @@
   .oat_winrect_container,
   .gx-query-viewer-pivot-container {
     background-color: var(--surface--positive);
-    color: var(--text-un-text__on-surface--positive);
+    color: var(--text__on-surface--positive);
   }
 }
