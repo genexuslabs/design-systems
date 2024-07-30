@@ -379,7 +379,7 @@
     }
 
     // Spacing classes
-    @if $typography-classes {
+    @if $spacing-classes {
       @include spacing-body();
     }
 
