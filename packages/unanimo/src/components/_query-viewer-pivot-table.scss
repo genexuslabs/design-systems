@@ -5,7 +5,7 @@
 
   gx-query-viewer-pivot {
     --gx-query-viewer-pivot__border-color: var(--borders-un-border-color__mild);
-    --gx-query-viewer-pivot__icon-color: var(--icons-un-icon__primary);
+    --gx-query-viewer-pivot__icon-color: var(--icons__primary);
     --gx-query-viewer-pivot__cell-padding-inline: 8px;
     --gx-query-viewer-pivot__cell-padding-block: 5px;
   }
@@ -226,7 +226,7 @@
   .uncheck_item_img i,
   .uncheck_item_img_small i,
   .first_popup_subdiv i {
-    color: var(--icons-un-icon__primary);
+    color: var(--icons__primary);
   }
 
   @include button-secondary(
