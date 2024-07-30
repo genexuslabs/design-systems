@@ -228,7 +228,7 @@
 
     body {
       @include document-common-styles();
-      background-color: var(--surface-un-surface--alternative);
+      background-color: var(--surface--alternative);
       color: var(--text-un-text__on-surface--positive);
 
       @if $font-face {

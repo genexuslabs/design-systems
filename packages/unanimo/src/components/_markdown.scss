@@ -149,7 +149,7 @@
         align-items: center;
         padding-inline: var(--spacing--l);
         padding-block: var(--spacing--m);
-        background-color: var(--surface-un-surface--alternative);
+        background-color: var(--surface--alternative);
       }
 
       & > .code-block__content {
@@ -164,8 +164,8 @@
       padding-inline: var(--spacing--s);
 
       background-color: var(
-        --surface-un-surface--positive
-      ); // color-mix(in srgb, var(--surface-un-surface--alternative) 70%, var(--colors-foundation__gray--100))
+        --surface--positive
+      ); // color-mix(in srgb, var(--surface--alternative) 70%, var(--colors-foundation__gray--100))
       border-radius: var(--border-radius-un-border__radius--s);
       font-size: calc(1em - 2px);
     }

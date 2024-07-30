@@ -40,8 +40,8 @@
   --elevation--2: var(--colors-foundation__positive);
   --elevation--3: var(--colors-foundation__positive);
   --elevation--4: var(--colors-foundation__positive);
-  --surface-un-surface--alternative: var(--colors-foundation__gray--200);
-  --surface-un-surface--positive: var(--colors-foundation__white);
+  --surface--alternative: var(--colors-foundation__gray--200);
+  --surface--positive: var(--colors-foundation__white);
 }
 
 @mixin foundation-colors--dark() {
@@ -86,8 +86,8 @@
   --elevation--2: var(--colors-foundation__gray--900);
   --elevation--3: var(--colors-foundation__gray--800);
   --elevation--4: var(--colors-foundation__gray--700);
-  --surface-un-surface--alternative: var(--colors-foundation__gray--200);
-  --surface-un-surface--positive: var(--colors-foundation__black);
+  --surface--alternative: var(--colors-foundation__gray--200);
+  --surface--positive: var(--colors-foundation__black);
 }
 
 @mixin semantic-colors--light() {
@@ -97,9 +97,7 @@
   );
   --un-alert-success__background-color: var(--colors-foundation__green--100);
   --un-alert-warning__background-color: var(--colors-foundation__orange--100);
-  --breadcrumb-un-breadcrumb__background-color: var(
-    --surface-un-surface--positive
-  );
+  --breadcrumb-un-breadcrumb__background-color: var(--surface--positive);
   --chatbot-un-chatbot-bubble__background-color: var(
     --colors-foundation__gray--300
   );
@@ -141,9 +139,7 @@
   --un-alert-notification__background-color: var(--elevation--3);
   --un-alert-success__background-color: var(--elevation--3);
   --un-alert-warning__background-color: var(--elevation--3);
-  --breadcrumb-un-breadcrumb__background-color: var(
-    --surface-un-surface--alternative
-  );
+  --breadcrumb-un-breadcrumb__background-color: var(--surface--alternative);
   --chatbot-un-chatbot-bubble__background-color: var(--elevation--1);
   --chatbot-un-chatbot-header__background-color: var(--elevation--1);
   --header-un-header-primary__background-color: var(--elevation--1);
