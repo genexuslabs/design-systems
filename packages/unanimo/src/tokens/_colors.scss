@@ -102,16 +102,10 @@
   --header-primary__background-color--active: var(--accents__secondary--active);
   --header-primary__background-color--hover: var(--accents__secondary--hover);
   --header-primary__border-color: var(--accents__primary);
-  --sidebar-un-sidebar-dropdown__background-color: var(
-    --accents__secondary--active
-  );
-  --sidebar-un-sidebar__background-color: var(--accents__secondary);
-  --sidebar-un-sidebar__background-color--active: var(
-    --accents__secondary--active
-  );
-  --sidebar-un-sidebar__background-color--hover: var(
-    --accents__secondary--hover
-  );
+  --sidebar-dropdown__background-color: var(--accents__secondary--active);
+  --sidebar__background-color: var(--accents__secondary);
+  --sidebar__background-color--active: var(--accents__secondary--active);
+  --sidebar__background-color--hover: var(--accents__secondary--hover);
   --tag__background-color--error: var(--colors-foundation__red--100);
   --tag__background-color--primary: var(--accents__primary-dim--hover);
   --tag__background-color--success: var(--colors-foundation__green--100);
@@ -134,14 +128,10 @@
     --colors-foundation__gray--800
   );
   --header-primary__border-color: var(--colors-foundation__gray--300);
-  --sidebar-un-sidebar-dropdown__background-color: var(--elevation--3);
-  --sidebar-un-sidebar__background-color: var(--elevation--1);
-  --sidebar-un-sidebar__background-color--active: var(
-    --colors-foundation__gray--300
-  );
-  --sidebar-un-sidebar__background-color--hover: var(
-    --colors-foundation__gray--400
-  );
+  --sidebar-dropdown__background-color: var(--elevation--3);
+  --sidebar__background-color: var(--elevation--1);
+  --sidebar__background-color--active: var(--colors-foundation__gray--300);
+  --sidebar__background-color--hover: var(--colors-foundation__gray--400);
   --tag__background-color--error: var(--elevation--1);
   --tag__background-color--primary: var(--elevation--1);
   --tag__background-color--success: var(--elevation--1);

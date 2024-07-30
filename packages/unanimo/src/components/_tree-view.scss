@@ -10,16 +10,12 @@
 $tree-view-primary-hover: color-mix(
   in srgb,
   var(--accents__secondary--active) 30%,
-  color-mix(
-    in srgb,
-    var(--sidebar-un-sidebar__background-color--hover) 20%,
-    transparent
-  )
+  color-mix(in srgb, var(--sidebar__background-color--hover) 20%, transparent)
 );
 
 $tree-view-secondary-hover: color-mix(
   in srgb,
-  var(--sidebar-un-sidebar__background-color--hover) 10%,
+  var(--sidebar__background-color--hover) 10%,
   transparent
 );
 
@@ -27,8 +23,7 @@ $tree-view-secondary-hover: color-mix(
   @extend %text-body-2;
   color: var(--text__on-secondary);
   scrollbar-width: thin;
-  scrollbar-color: var(--sidebar-un-sidebar__background-color--active)
-    transparent;
+  scrollbar-color: var(--sidebar__background-color--active) transparent;
 
   &--webkit-scrollbar {
     width: 8px;
@@ -37,7 +32,7 @@ $tree-view-secondary-hover: color-mix(
   }
 
   &--webkit-scrollbar-thumb {
-    background-color: var(--sidebar-un-sidebar__background-color--active);
+    background-color: var(--sidebar__background-color--active);
   }
 }
 
@@ -45,8 +40,7 @@ $tree-view-secondary-hover: color-mix(
   @extend %text-body-2;
   padding: var(--spacing--s);
   scrollbar-width: thin;
-  scrollbar-color: var(--sidebar-un-sidebar__background-color--active)
-    transparent;
+  scrollbar-color: var(--sidebar__background-color--active) transparent;
 
   &--webkit-scrollbar {
     width: 8px;
@@ -55,7 +49,7 @@ $tree-view-secondary-hover: color-mix(
   }
 
   &--webkit-scrollbar-thumb {
-    background-color: var(--sidebar-un-sidebar__background-color--active);
+    background-color: var(--sidebar__background-color--active);
   }
 }
 
@@ -96,7 +90,7 @@ $tree-view-secondary-hover: color-mix(
   }
 
   &--selected {
-    background-color: var(--sidebar-un-sidebar__background-color--active);
+    background-color: var(--sidebar__background-color--active);
   }
 }
 
@@ -104,7 +98,7 @@ $tree-view-secondary-hover: color-mix(
   border-radius: var(--border-radius-un-border__radius--m);
 
   &--focus-visible {
-    outline: 1px solid var(--sidebar-un-sidebar__background-color--active);
+    outline: 1px solid var(--sidebar__background-color--active);
     outline-offset: -1px;
   }
 
@@ -120,7 +114,7 @@ $tree-view-secondary-hover: color-mix(
   &--selected {
     background-color: color-mix(
       in srgb,
-      var(--sidebar-un-sidebar__background-color--active) 25%,
+      var(--sidebar__background-color--active) 25%,
       transparent
     );
   }
