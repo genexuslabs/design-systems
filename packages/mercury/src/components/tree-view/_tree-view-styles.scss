@@ -6,10 +6,6 @@
   line-height: var(--mer-line-height--regular);
   padding: var(--tree-view__padding);
   min-inline-size: var(--tree-view__min-inline-size);
-
-  &--no-padding {
-    padding: 0;
-  }
 }
 
 // TODO: Improve this
@@ -112,7 +108,6 @@
 ///
 @mixin tree-view(
   $tree-view-selector: ".tree-view",
-  $tree-view--no-padding-selector: ".tree-view--no-padding",
 
   // Drag preview
   $drag-preview-selector: ".tree-view::part(drag-preview)",
@@ -161,10 +156,6 @@
   #{$tree-view-selector} {
     @extend %tree-view;
     @include scrollbar-styles();
-  }
-
-  #{$tree-view--no-padding-selector} {
-    @extend %tree-view--no-padding;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
