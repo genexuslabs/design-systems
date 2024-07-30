@@ -1,6 +1,6 @@
 %dialog-primary {
   border-radius: var(--border-radius-un-border__radius--l);
-  background-color: var(--elevation-un-elevation--2);
+  background-color: var(--elevation--2);
   box-shadow: var(--box-shadows-un-box-shadow--2);
   padding: var(--spacing--l);
 }
@@ -15,11 +15,7 @@
 
 %dialog-primary__backdrop,
 %dialog-secondary__backdrop {
-  background-color: color-mix(
-    in srgb,
-    var(--elevation-un-elevation--4) 25%,
-    transparent
-  );
+  background-color: color-mix(in srgb, var(--elevation--4) 25%, transparent);
   backdrop-filter: blur(5px);
   z-index: 108; // TODO: This is a WA to show the backdrop above the button of the dropdown
 }

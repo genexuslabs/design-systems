@@ -36,10 +36,10 @@
   --colors-query-viewer-08: #182f53;
   --colors-query-viewer-09: #8d89a3;
   --colors-query-viewer-10: #aa6890;
-  --elevation-un-elevation--1: var(--colors-foundation__positive);
-  --elevation-un-elevation--2: var(--colors-foundation__positive);
-  --elevation-un-elevation--3: var(--colors-foundation__positive);
-  --elevation-un-elevation--4: var(--colors-foundation__positive);
+  --elevation--1: var(--colors-foundation__positive);
+  --elevation--2: var(--colors-foundation__positive);
+  --elevation--3: var(--colors-foundation__positive);
+  --elevation--4: var(--colors-foundation__positive);
   --surface-un-surface--alternative: var(--colors-foundation__gray--200);
   --surface-un-surface--positive: var(--colors-foundation__white);
 }
@@ -82,10 +82,10 @@
   --colors-query-viewer-08: #345a8c;
   --colors-query-viewer-09: #b9b7c8;
   --colors-query-viewer-10: #c490af;
-  --elevation-un-elevation--1: var(--colors-foundation__gray--1000);
-  --elevation-un-elevation--2: var(--colors-foundation__gray--900);
-  --elevation-un-elevation--3: var(--colors-foundation__gray--800);
-  --elevation-un-elevation--4: var(--colors-foundation__gray--700);
+  --elevation--1: var(--colors-foundation__gray--1000);
+  --elevation--2: var(--colors-foundation__gray--900);
+  --elevation--3: var(--colors-foundation__gray--800);
+  --elevation--4: var(--colors-foundation__gray--700);
   --surface-un-surface--alternative: var(--colors-foundation__gray--200);
   --surface-un-surface--positive: var(--colors-foundation__black);
 }
@@ -137,22 +137,16 @@
 }
 
 @mixin semantic-colors--dark() {
-  --un-alert-error__background-color: var(--elevation-un-elevation--3);
-  --un-alert-notification__background-color: var(--elevation-un-elevation--3);
-  --un-alert-success__background-color: var(--elevation-un-elevation--3);
-  --un-alert-warning__background-color: var(--elevation-un-elevation--3);
+  --un-alert-error__background-color: var(--elevation--3);
+  --un-alert-notification__background-color: var(--elevation--3);
+  --un-alert-success__background-color: var(--elevation--3);
+  --un-alert-warning__background-color: var(--elevation--3);
   --breadcrumb-un-breadcrumb__background-color: var(
     --surface-un-surface--alternative
   );
-  --chatbot-un-chatbot-bubble__background-color: var(
-    --elevation-un-elevation--1
-  );
-  --chatbot-un-chatbot-header__background-color: var(
-    --elevation-un-elevation--1
-  );
-  --header-un-header-primary__background-color: var(
-    --elevation-un-elevation--1
-  );
+  --chatbot-un-chatbot-bubble__background-color: var(--elevation--1);
+  --chatbot-un-chatbot-header__background-color: var(--elevation--1);
+  --header-un-header-primary__background-color: var(--elevation--1);
   --header-un-header-primary__background-color--active: var(
     --colors-foundation__gray--700
   );
@@ -160,20 +154,18 @@
     --colors-foundation__gray--800
   );
   --header-un-header-primary__border-color: var(--colors-foundation__gray--300);
-  --sidebar-un-sidebar-dropdown__background-color: var(
-    --elevation-un-elevation--3
-  );
-  --sidebar-un-sidebar__background-color: var(--elevation-un-elevation--1);
+  --sidebar-un-sidebar-dropdown__background-color: var(--elevation--3);
+  --sidebar-un-sidebar__background-color: var(--elevation--1);
   --sidebar-un-sidebar__background-color--active: var(
     --colors-foundation__gray--300
   );
   --sidebar-un-sidebar__background-color--hover: var(
     --colors-foundation__gray--400
   );
-  --tag-un-tag__background-color--error: var(--elevation-un-elevation--1);
-  --tag-un-tag__background-color--primary: var(--elevation-un-elevation--1);
-  --tag-un-tag__background-color--success: var(--elevation-un-elevation--1);
-  --tag-un-tag__background-color--warning: var(--elevation-un-elevation--1);
+  --tag-un-tag__background-color--error: var(--elevation--1);
+  --tag-un-tag__background-color--primary: var(--elevation--1);
+  --tag-un-tag__background-color--success: var(--elevation--1);
+  --tag-un-tag__background-color--warning: var(--elevation--1);
 }
 
 @mixin semantic-colors--general() {
