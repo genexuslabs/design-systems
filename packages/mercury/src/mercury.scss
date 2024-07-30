@@ -48,7 +48,6 @@
 @import "./components/dialog/dialog-styles";
 @import "./components/icon/icon-styles";
 @import "./components/list-box/list-box-styles";
-@import "./components/property-grid/property-grid-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
 @import "./components/tab/tab-styles";
@@ -109,7 +108,6 @@
   $edit: true,
   $icon: true,
   $list-box: true,
-  $property-grid: true,
   $radio-group: true,
   $tab: true,
   $tabular-grid: true,
@@ -430,11 +428,6 @@
     @include list-box();
   }
 
-  // property grid
-  @if $property-grid {
-    @include property-grid();
-  }
-
   // radio-group
   @if $radio-group {
     @include radio-group();
@@ -510,7 +503,6 @@
   $edit: false,
   $icon: false,
   $list-box: false,
-  $property-grid: false,
   $radio-group: false,
   $tab: false,
   $tabular-grid: false,
@@ -569,7 +561,6 @@
     $dialog: $dialog,
     $edit: $edit,
     $list-box: $list-box,
-    $property-grid: $property-grid,
     $radio-group: $radio-group,
     $tab: $tab,
     $tabular-grid: $tabular-grid,
