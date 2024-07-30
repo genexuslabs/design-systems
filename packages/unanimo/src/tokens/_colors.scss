@@ -148,14 +148,10 @@
   --accents__secondary: var(--colors-foundation__purple--600);
   --accents__secondary--active: var(--colors-foundation__purple--400);
   --accents__secondary--hover: var(--colors-foundation__purple--500);
-  --body-texts-un-body-m__font-color--gray: var(--colors-foundation__gray--500);
-  --body-texts-un-body-m__font-color--positive: var(
-    --text__on-surface--positive
-  );
-  --body-texts-un-body-s-font-color--gray: var(--colors-foundation__gray--500);
-  --body-texts-un-body-s-font-color--positive: var(
-    --text__on-surface--positive
-  );
+  --body-m__font-color--gray: var(--colors-foundation__gray--500);
+  --body-m__font-color--positive: var(--text__on-surface--positive);
+  --body-s-font-color--gray: var(--colors-foundation__gray--500);
+  --body-s-font-color--positive: var(--text__on-surface--positive);
   --border-color__destructive: var(--accents__destructive);
   --border-color__disabled: var(--accents__disabled);
   --border-color__error: var(--colors-foundation__red--300);

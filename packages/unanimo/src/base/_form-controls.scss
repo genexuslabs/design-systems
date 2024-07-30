@@ -33,7 +33,7 @@
   border-radius: var(--border-radius-un-border__radius--m);
   border: var(--border-radius-un-border__radius--xs) solid
     var(--border-color__strong);
-  color: var(--body-texts-un-body-m__font-color--positive);
+  color: var(--body-m__font-color--positive);
 
   &--focus {
     outline: 2px solid currentColor;
@@ -57,15 +57,15 @@
   border-radius: var(--border-radius-un-border__radius--m);
   border: var(--border-radius-un-border__radius--xs) solid
     var(--border-color__strong);
-  color: var(--body-texts-un-body-m__font-color--positive);
+  color: var(--body-m__font-color--positive);
 }
 
 %form-input__placeholder {
-  color: var(--body-texts-un-body-m__font-color--gray);
+  color: var(--body-m__font-color--gray);
 }
 
 @mixin form-input-placeholder-var() {
-  --ch-placeholder-color: var(--body-texts-un-body-m__font-color--gray);
+  --ch-placeholder-color: var(--body-m__font-color--gray);
 }
 
 /// @group Form
