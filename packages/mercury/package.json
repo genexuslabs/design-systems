@@ -12,7 +12,7 @@
   "scripts": {
     "build": "tsc && npm run icons-svg && npm run icons-sass && npm run build.scss && npm run copy-tasks",
     "build-no-svg": "tsc && npm run build.scss && npm run copy-tasks",
-    "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && npm run build.bundles && npm run copy-all.css npm run showcase.scss",
+    "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && npm run build.bundles && npm run copy-all.css && npm run showcase.scss",
     "build.bundles": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/bundles/scss dist/bundles/scss && sass --load-path=src --no-source-map --style compressed dist/bundles/scss:dist/bundles/css",
     "start": "vite --port 5200 --open showcase/button.html",
     "validate.ci": "npm run build-no-svg",
