@@ -34,9 +34,11 @@
   /*Sidebar List Child*/
   --sc-sidebar-list-child__margin-inline-start: var(--mer-spacing--md);
 }
+
 /*====================
 General
 ====================*/
+
 body.showcase[data-sidebar] {
   display: grid;
   grid-template-columns: var(--sc-sidebar__width) 1fr; /* 250px for aside, rest for main */
@@ -47,6 +49,7 @@ body.showcase[data-sidebar] {
 /*====================
 General
 ====================*/
+
 .sidebar {
   background-color: var(--sc-sidebar__bg-color);
   color: var(--sc-sidebar__color);
@@ -58,6 +61,7 @@ General
 /*====================
 Header
 ====================*/
+
 .sidebar__header,
 .sidebar__footer {
   text-align: center;
@@ -76,7 +80,7 @@ Header
   height: var(--sc-top-bar__height);
 }
 .sidebar__header {
-  border-block-end: 1px solid var(--sc-sidebar__border-color);
+  border-block-end: 1px solid var(--mer-color__elevation--02);
 }
 .sidebar__footer {
   display: none;
@@ -99,6 +103,7 @@ Header
 /*====================
 Nav
 ====================*/
+
 .sidebar__nav {
   padding-block: var(--sc-sidebar-nav__padding-block);
   padding-inline: var(--sc-sidebar-nav__padding-inline);
@@ -106,7 +111,43 @@ Nav
   flex-grow: 1;
 }
 
-/*List*/
+/*====================
+Section
+====================*/
+
+.sidebar__section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar__section:not(:last-child) {
+  padding-block-end: 16px;
+  margin-block-end: 16px;
+  border-block-end: 1px solid var(--mer-color__neutral-gray--700);
+}
+
+/* Title */
+.sidebar__section-title {
+  font-weight: var(--mer-font__weight--semi-bold);
+  text-transform: capitalize;
+  color: var(--mer-color__neutral-gray--200);
+}
+
+/*====================
+List
+====================*/
+
+.sidebar__list > li > a {
+  letter-spacing: 0.05em;
+}
+
+.sidebar__list > li {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+}
+
 .sidebar__list li {
   line-height: 1.6em;
 }
