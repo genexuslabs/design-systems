@@ -7,38 +7,38 @@
     // - - - - - - - - - - - - - - - - - - - -
     h1 {
       @extend %heading-1;
-      margin-block: var(--spacing-un-spacing--l) var(--spacing-un-spacing--m);
-      padding-block-end: var(--spacing-un-spacing--m);
+      margin-block: var(--spacing--l) var(--spacing--m);
+      padding-block-end: var(--spacing--m);
     }
 
     h2 {
       @extend %heading-2;
-      margin-block: 12px 6px; // It does not exists the --spacing-un-spacing--xm value
-      padding-block-end: 6px; // It does not exists the --spacing-un-spacing--xm value
+      margin-block: 12px 6px; // It does not exists the --spacing--xm value
+      padding-block-end: 6px; // It does not exists the --spacing--xm value
     }
 
     h3 {
       @extend %heading-3;
-      margin-block: var(--spacing-un-spacing--m) var(--spacing-un-spacing--s);
-      padding-block-end: var(--spacing-un-spacing--s);
+      margin-block: var(--spacing--m) var(--spacing--s);
+      padding-block-end: var(--spacing--s);
     }
 
     h4 {
       @extend %heading-4;
-      margin-block: var(--spacing-un-spacing--s) var(--spacing-un-spacing--xs);
-      padding-block-end: var(--spacing-un-spacing--xs);
+      margin-block: var(--spacing--s) var(--spacing--xs);
+      padding-block-end: var(--spacing--xs);
     }
 
     h5 {
       @extend %heading-4; // WA to improve visualization
-      margin-block: var(--spacing-un-spacing--s) var(--spacing-un-spacing--xs);
-      padding-block-end: var(--spacing-un-spacing--xs);
+      margin-block: var(--spacing--s) var(--spacing--xs);
+      padding-block-end: var(--spacing--xs);
     }
 
     h6 {
       @extend %heading-4; // WA to improve visualization
-      margin-block: var(--spacing-un-spacing--s) var(--spacing-un-spacing--xs);
-      padding-block-end: var(--spacing-un-spacing--xs);
+      margin-block: var(--spacing--s) var(--spacing--xs);
+      padding-block-end: var(--spacing--xs);
     }
 
     h1,
@@ -55,12 +55,12 @@
     ol,
     table,
     pre {
-      margin-block: var(--spacing-un-spacing--m);
+      margin-block: var(--spacing--m);
     }
 
     ul,
     ol {
-      padding-inline-start: var(--spacing-un-spacing--xxl);
+      padding-inline-start: var(--spacing--xxl);
     }
 
     a {
@@ -68,11 +68,10 @@
     }
 
     blockquote {
-      margin-block: var(--spacing-un-spacing--m);
+      margin-block: var(--spacing--m);
       margin-inline: 0;
-      padding-block: var(--spacing-un-spacing--m);
-      padding-inline: calc(var(--spacing-un-spacing--xxl) - 4px)
-        var(--spacing-un-spacing--xxl);
+      padding-block: var(--spacing--m);
+      padding-inline: calc(var(--spacing--xxl) - 4px) var(--spacing--xxl);
       border-inline-start: 4px solid
         var(--colors-foundation-un-color__gray--400);
 
@@ -116,7 +115,7 @@
     // Header and body cells
     th,
     td {
-      padding: var(--spacing-un-spacing--m);
+      padding: var(--spacing--m);
       border-inline-start: 1px solid var(--borders-un-border-color__mild);
     }
 
@@ -149,21 +148,21 @@
         display: grid;
         grid-template-columns: 1fr max-content;
         align-items: center;
-        padding-inline: var(--spacing-un-spacing--l);
-        padding-block: var(--spacing-un-spacing--m);
+        padding-inline: var(--spacing--l);
+        padding-block: var(--spacing--m);
         background-color: var(--surface-un-surface--alternative);
       }
 
       & > .code-block__content {
         // Override inline padding
-        padding: var(--spacing-un-spacing--l);
+        padding: var(--spacing--l);
       }
     }
 
     // Inline code
     code {
-      padding-block: var(--spacing-un-spacing--xs);
-      padding-inline: var(--spacing-un-spacing--s);
+      padding-block: var(--spacing--xs);
+      padding-inline: var(--spacing--s);
 
       background-color: var(
         --surface-un-surface--positive

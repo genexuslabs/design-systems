@@ -1,9 +1,9 @@
 %combo-box {
   --ch-combo-box-separation-y: 2px;
-  --ch-combo-box-item-gap: var(--spacing-un-spacing--s);
+  --ch-combo-box-item-gap: var(--spacing--s);
 
-  --ch-combo-box-item__image-size: var(--spacing-un-spacing--l);
-  --ch-combo-box-group__expandable-button-size: var(--spacing-un-spacing--l);
+  --ch-combo-box-item__image-size: var(--spacing--l);
+  --ch-combo-box-group__expandable-button-size: var(--spacing--l);
 
   --ch-combo-box-group__expandable-button-image-size: 12px;
   --ch-combo-box-item__background-image-size: 12px;
@@ -13,13 +13,13 @@
   background-color: var(--elevation-un-elevation--3);
   border-radius: 4px;
   box-shadow: var(--box-shadows-un-box-shadow--1);
-  padding: var(--spacing-un-spacing--xs);
+  padding: var(--spacing--xs);
 }
 
 %combo-box__group-header {
   font-weight: 600;
-  padding-block: var(--spacing-un-spacing--s);
-  padding-inline: var(--spacing-un-spacing--m);
+  padding-block: var(--spacing--s);
+  padding-inline: var(--spacing--m);
 
   &-expandable--hover {
     color: var(--text-un-text__primary--hover);
@@ -28,8 +28,8 @@
 
 %combo-box__item {
   border-radius: 4px;
-  padding-block: var(--spacing-un-spacing--s);
-  padding-inline: var(--spacing-un-spacing--m);
+  padding-block: var(--spacing--s);
+  padding-inline: var(--spacing--m);
 
   &--disabled {
     color: var(--text-un-text__disabled);
@@ -38,8 +38,7 @@
   &--nested {
     padding-inline-start: calc(
       var(--ch-combo-box-item-gap) +
-        var(--ch-combo-box-group__expandable-button-size) +
-        var(--spacing-un-spacing--m)
+        var(--ch-combo-box-group__expandable-button-size) + var(--spacing--m)
     );
   }
 

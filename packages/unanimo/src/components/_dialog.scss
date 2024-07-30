@@ -2,7 +2,7 @@
   border-radius: var(--border-radius-un-border__radius--l);
   background-color: var(--elevation-un-elevation--2);
   box-shadow: var(--box-shadows-un-box-shadow--2);
-  padding: var(--spacing-un-spacing--l);
+  padding: var(--spacing--l);
 }
 
 %dialog-secondary {
@@ -10,7 +10,7 @@
   background-color: var(--surface-un-surface--positive);
   border: 1px solid var(--borders-un-border-color__mild);
   box-shadow: var(--box-shadows-un-box-shadow--2);
-  padding: var(--spacing-un-spacing--l);
+  padding: var(--spacing--l);
 }
 
 %dialog-primary__backdrop,
@@ -26,13 +26,13 @@
 
 %dialog-primary__header {
   align-items: flex-start;
-  gap: var(--spacing-un-spacing--l);
-  margin-block-end: var(--spacing-un-spacing--xl);
+  gap: var(--spacing--l);
+  margin-block-end: var(--spacing--xl);
 }
 
 %dialog-secondary__header {
-  gap: var(--spacing-un-spacing--l);
-  margin-block-end: var(--spacing-un-spacing--xl);
+  gap: var(--spacing--l);
+  margin-block-end: var(--spacing--xl);
 }
 
 %dialog-primary__caption {

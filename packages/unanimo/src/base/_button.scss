@@ -1,6 +1,6 @@
 %button-base {
   @include button-common-styles();
-  gap: var(--spacing-un-spacing--s); // Used when the button has icons
+  gap: var(--spacing--s); // Used when the button has icons
   min-block-size: 32px;
   @include button-text();
 }
@@ -15,7 +15,7 @@
 
   border-radius: var(--border-radius-un-border__radius--s);
   color: var(--text-un-text__on-primary);
-  padding-inline: var(--spacing-un-spacing--xl);
+  padding-inline: var(--spacing--xl);
 
   &--focus-visible {
     @include focus-style($outline: true);
@@ -45,7 +45,7 @@
     var(--borders-un-border-color__primary);
   border-radius: var(--border-radius-un-border__radius--s);
   color: var(--text-un-text__primary);
-  padding-inline: var(--spacing-un-spacing--xl);
+  padding-inline: var(--spacing--xl);
 
   &--focus-visible {
     @include focus-style($outline: true);
@@ -76,7 +76,7 @@
 %button-tertiary {
   @extend %button-base;
   color: var(--text-un-text__primary);
-  padding-inline: var(--spacing-un-spacing--l);
+  padding-inline: var(--spacing--l);
 
   &--focus-visible {
     @include focus-style($outline: true);

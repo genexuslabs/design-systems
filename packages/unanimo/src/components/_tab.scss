@@ -1,16 +1,13 @@
 %tab {
-  --ch-tab-image-size: var(--spacing-un-spacing--xl);
-  --ch-tab-mask-image-size: calc(
-    var(--spacing-un-spacing--xl) - var(--spacing-un-spacing--m)
-  );
+  --ch-tab-image-size: var(--spacing--xl);
+  --ch-tab-mask-image-size: calc(var(--spacing--xl) - var(--spacing--m));
 }
 
 %tab-caption {
-  padding-inline: var(--spacing-un-spacing--m);
-  padding-block: var(--spacing-un-spacing--m)
-    calc(var(--spacing-un-spacing--m) - 2px); // due to border-block-end-width: 2px;
+  padding-inline: var(--spacing--m);
+  padding-block: var(--spacing--m) calc(var(--spacing--m) - 2px); // due to border-block-end-width: 2px;
   border-block-end: 2px solid transparent;
-  gap: var(--spacing-un-spacing--s);
+  gap: var(--spacing--s);
 }
 
 %tab-caption--hover {
@@ -39,7 +36,7 @@
 }
 
 %tab-list {
-  gap: var(--spacing-un-spacing--s);
+  gap: var(--spacing--s);
 }
 
 @mixin tab(

@@ -1,10 +1,10 @@
 %tree-view {
-  --ch-tree-view-item__checkbox-size: var(--spacing-un-spacing--l);
-  --ch-tree-view-item__expandable-button-size: var(--spacing-un-spacing--l);
-  --ch-tree-view-item__image-size: var(--spacing-un-spacing--l);
-  --ch-tree-view-item-gap: calc(var(--spacing-un-spacing--s) + 1px);
-  --ch-tree-view-item__line--inset-inline-end: var(--spacing-un-spacing--s);
-  --ch-tree-view-item-custom-padding-inline-start: var(--spacing-un-spacing--m);
+  --ch-tree-view-item__checkbox-size: var(--spacing--l);
+  --ch-tree-view-item__expandable-button-size: var(--spacing--l);
+  --ch-tree-view-item__image-size: var(--spacing--l);
+  --ch-tree-view-item-gap: calc(var(--spacing--s) + 1px);
+  --ch-tree-view-item__line--inset-inline-end: var(--spacing--s);
+  --ch-tree-view-item-custom-padding-inline-start: var(--spacing--m);
 }
 
 $tree-view-primary-hover: color-mix(
@@ -43,7 +43,7 @@ $tree-view-secondary-hover: color-mix(
 
 %tree-view-secondary {
   @extend %text-body-2;
-  padding: var(--spacing-un-spacing--s);
+  padding: var(--spacing--s);
   scrollbar-width: thin;
   scrollbar-color: var(--sidebar-un-sidebar__background-color--active)
     transparent;
@@ -61,8 +61,8 @@ $tree-view-secondary-hover: color-mix(
 
 %tree-view--drag-preview {
   @extend %text-body-2;
-  padding-inline: var(--spacing-un-spacing--m);
-  padding-block: var(--spacing-un-spacing--xs);
+  padding-inline: var(--spacing--m);
+  padding-block: var(--spacing--xs);
   background-color: var(--surface-un-surface--alternative);
   border-radius: var(--border-radius-un-border__radius--l);
   box-shadow: var(--box-shadows-un-box-shadow--2);
@@ -82,7 +82,7 @@ $tree-view-secondary-hover: color-mix(
 }
 
 %tree-view-item__header {
-  padding-inline-end: var(--spacing-un-spacing--m);
+  padding-inline-end: var(--spacing--m);
 }
 
 %tree-view-primary-item__header {
@@ -127,7 +127,7 @@ $tree-view-secondary-hover: color-mix(
 }
 
 %tree-view-item__action {
-  padding-block: var(--spacing-un-spacing--xs);
+  padding-block: var(--spacing--xs);
 }
 
 /// @group Tree View
