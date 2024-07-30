@@ -20,7 +20,7 @@ const includeFavicon = () => {
   const linkElement = document.createElement("link");
   linkElement.rel = "icon";
   linkElement.type = "image/png";
-  linkElement.href = "../../dist/assets/images/mercury-favicon-32x32.png";
+  linkElement.href = "./assets/images/favicon.png";
   linkElement.sizes = "32x32";
   document.head.appendChild(linkElement);
 };
