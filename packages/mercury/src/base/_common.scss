@@ -216,8 +216,9 @@ Single Item (Every item except grid)
 @mixin item-font-weight() {
   font-weight: var(--item__font-weight);
 }
-@mixin item-font-weight-header() {
-  font-weight: var(--mer-item-header__font-weight);
+@mixin item-font-header() {
+  font-size: var(--item-header__font-size);
+  font-weight: var(--item-header__font-weight);
 }
 @mixin item-font-size-small() {
   font-size: var(--item__font-size--small);
