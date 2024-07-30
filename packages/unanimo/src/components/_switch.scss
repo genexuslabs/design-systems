@@ -1,16 +1,12 @@
 %switch {
-  --ch-switch-thumb__unchecked-background-color: var(
-    --elevation-un-elevation--1
-  );
-  --ch-switch-thumb__checked-background-color: var(
-    --accents-un-accent__primary--hover
-  );
+  --ch-switch-thumb__unchecked-background-color: var(--elevation--1);
+  --ch-switch-thumb__checked-background-color: var(--accents__primary--hover);
 
   --ch-switch-track__unchecked-background-color: var(
-    --colors-foundation-un-color__gray--400
+    --colors-foundation__gray--400
   );
   --ch-switch-track__checked-background-color: var(
-    --colors-foundation-un-color__gray--500
+    --colors-foundation__gray--500
   );
 
   --ch-switch-thumb__state-transition-duration: 200ms;
@@ -22,7 +18,7 @@
   // Track
   &__track--disabled {
     --ch-switch-track__unchecked-background-color: var(
-      --colors-foundation-un-color__gray--500
+      --colors-foundation__gray--500
     );
   }
 
@@ -32,26 +28,22 @@
       drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1));
 
     &--focus {
-      border: 2px solid var(--borders-un-border-color__focused);
+      border: 2px solid var(--border-color__focused);
     }
 
     &--disabled {
-      --ch-switch-thumb__checked-background-color: var(
-        --accents-un-accent__disabled
-      );
-      --ch-switch-thumb__unchecked-background-color: var(
-        --accents-un-accent__disabled
-      );
+      --ch-switch-thumb__checked-background-color: var(--accents__disabled);
+      --ch-switch-thumb__unchecked-background-color: var(--accents__disabled);
     }
   }
 
   // Label
   &__caption {
     @extend %form-input__text;
-    margin-inline-start: var(--spacing-un-spacing--m);
+    margin-inline-start: var(--spacing--m);
 
     &--disabled {
-      color: var(--borders-un-border-color__disabled);
+      color: var(--border-color__disabled);
     }
   }
 }

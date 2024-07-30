@@ -1,73 +1,73 @@
 // Primary
 %dropdown-window-primary {
   @extend %text-body-2;
-  padding-block: var(--spacing-un-spacing--m);
-  background-color: var(--header-un-header-primary__background-color);
-  border-radius: var(--border-radius-un-border__radius--l);
-  box-shadow: var(--box-shadows-un-box-shadow--1);
-  color: var(--text-un-text__on-secondary);
+  padding-block: var(--spacing--m);
+  background-color: var(--header-primary__background-color);
+  border-radius: var(--border-radius--l);
+  box-shadow: var(--box-shadow--1);
+  color: var(--text__on-secondary);
 }
 
 // Secondary
 %dropdown-window-secondary {
   @extend %text-body-2;
-  padding-block: var(--spacing-un-spacing--m);
-  background-color: var(--elevation-un-elevation--1);
-  border-radius: var(--border-radius-un-border__radius--l);
-  box-shadow: var(--box-shadows-un-box-shadow--1);
-  color: var(--text-un-text__on-surface--positive);
+  padding-block: var(--spacing--m);
+  background-color: var(--elevation--1);
+  border-radius: var(--border-radius--l);
+  box-shadow: var(--box-shadow--1);
+  color: var(--text__on-surface--positive);
 }
 
 // Conversational
 %dropdown-window-conversational {
-  padding: var(--spacing-un-spacing--xl);
-  background-color: var(--header-un-header-primary__background-color);
-  border-end-start-radius: var(--border-radius-un-border__radius--m);
-  border-end-end-radius: var(--border-radius-un-border__radius--m);
-  box-shadow: var(--box-shadows-un-box-shadow--4);
-  color: var(--text-un-text__on-secondary);
-  gap: var(--spacing-un-spacing--m);
+  padding: var(--spacing--xl);
+  background-color: var(--header-primary__background-color);
+  border-end-start-radius: var(--border-radius--m);
+  border-end-end-radius: var(--border-radius--m);
+  box-shadow: var(--box-shadow--4);
+  color: var(--text__on-secondary);
+  gap: var(--spacing--m);
 }
 
 // Primary
 %dropdown-item-action-primary {
   &--hover {
-    background-color: var(--header-un-header-primary__background-color--hover);
+    background-color: var(--header-primary__background-color--hover);
   }
 
   &--active {
-    background-color: var(--header-un-header-primary__background-color--active);
+    background-color: var(--header-primary__background-color--active);
   }
 }
 
 // Secondary
 %dropdown-item-action-secondary {
   &--hover {
-    background-color: var(--accents-un-accent__primary-dim--hover);
+    background-color: var(--accents__primary-dim--hover);
   }
 
   &--active {
-    background-color: var(--accents-un-accent__primary-dim--hover);
-    color: var(--text-un-text__primary--active);
+    background-color: var(--accents__primary-dim--hover);
+    color: var(--text__primary--active);
   }
 }
 
 %dropdown-item-action-conversational {
   &--hover {
-    background-color: var(--header-un-header-primary__background-color--hover);
+    background-color: var(--header-primary__background-color--hover);
   }
 
   &--active {
-    background-color: var(--header-un-header-primary__background-color--active);
+    background-color: var(--header-primary__background-color--active);
   }
 }
 
 // Primary and secondary
 %dropdown-item-action {
   --ch-dropdown-item__image-size: 24px;
-  padding-inline: var(--spacing-un-spacing--l);
-  padding-block: var(--spacing-un-spacing--xs);
-  gap: var(--spacing-un-spacing--s);
+  padding-inline: var(--spacing--l);
+  padding-block: var(--spacing--xs);
+  gap: var(--spacing--s);
 
   &--focus {
     @include focus-style($outline: true);
@@ -76,8 +76,8 @@
 
 %dropdown-item-action-conversational {
   --ch-dropdown-item__image-size: 24px;
-  padding-block: var(--spacing-un-spacing--xs);
-  gap: var(--spacing-un-spacing--s);
+  padding-block: var(--spacing--xs);
+  gap: var(--spacing--s);
   @include form-input__label-base();
 
   &--focus {
@@ -86,7 +86,7 @@
 }
 
 %dropdown-separator {
-  margin-block: var(--spacing-un-spacing--s);
+  margin-block: var(--spacing--s);
 }
 
 %dropdown-expandable-action-chevron {

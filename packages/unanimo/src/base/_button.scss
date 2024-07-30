@@ -1,107 +1,106 @@
 %button-base {
   @include button-common-styles();
-  gap: var(--spacing-un-spacing--s); // Used when the button has icons
+  gap: var(--spacing--s); // Used when the button has icons
   min-block-size: 32px;
   @include button-text();
 }
 
 %button-primary {
   @extend %button-base;
-  background-color: var(--accents-un-accent__primary);
+  background-color: var(--accents__primary);
 
   // This is necessary to avoid CLS issues when using the segmented control,
   // due to the secondary button style has borders but the primary style doesn't
-  border: var(--border-radius-un-border__radius--xs) solid transparent;
+  border: var(--border-radius--xs) solid transparent;
 
-  border-radius: var(--border-radius-un-border__radius--s);
-  color: var(--text-un-text__on-primary);
-  padding-inline: var(--spacing-un-spacing--xl);
+  border-radius: var(--border-radius--s);
+  color: var(--text__on-primary);
+  padding-inline: var(--spacing--xl);
 
   &--focus-visible {
     @include focus-style($outline: true);
   }
 
   &--hover {
-    background-color: var(--accents-un-accent__primary--hover);
+    background-color: var(--accents__primary--hover);
   }
 
   &--active {
-    background-color: var(--accents-un-accent__primary--active);
+    background-color: var(--accents__primary--active);
   }
 
   &--disabled {
-    background-color: var(--accents-un-accent__disabled);
-    color: var(--text-un-text__on-disabled);
+    background-color: var(--accents__disabled);
+    color: var(--text__on-disabled);
   }
 
   &--error {
-    background: var(--accents-un-accent__destructive);
+    background: var(--accents__destructive);
   }
 }
 
 %button-secondary {
   @extend %button-base;
-  border: var(--border-radius-un-border__radius--xs) solid
-    var(--borders-un-border-color__primary);
-  border-radius: var(--border-radius-un-border__radius--s);
-  color: var(--text-un-text__primary);
-  padding-inline: var(--spacing-un-spacing--xl);
+  border: var(--border-radius--xs) solid var(--border-color__primary);
+  border-radius: var(--border-radius--s);
+  color: var(--text__primary);
+  padding-inline: var(--spacing--xl);
 
   &--focus-visible {
     @include focus-style($outline: true);
   }
 
   &--hover {
-    background-color: var(--accents-un-accent__primary-dim--hover);
-    border-color: var(--borders-un-border-color__primary--hover);
-    color: var(--text-un-text__primary--hover);
+    background-color: var(--accents__primary-dim--hover);
+    border-color: var(--border-color__primary--hover);
+    color: var(--text__primary--hover);
   }
 
   &--active {
-    color: var(--text-un-text__primary--active);
-    border-color: var(--borders-un-border-color__primary--active);
+    color: var(--text__primary--active);
+    border-color: var(--border-color__primary--active);
   }
 
   &--disabled {
-    border-color: var(--borders-un-border-color__disabled);
-    color: var(--text-un-text__on-disabled);
+    border-color: var(--border-color__disabled);
+    color: var(--text__on-disabled);
   }
 
   &--error {
-    border-color: var(--borders-un-border-color__destructive);
-    color: var(--text-un-text__destructive);
+    border-color: var(--border-color__destructive);
+    color: var(--text__destructive);
   }
 }
 
 %button-tertiary {
   @extend %button-base;
-  color: var(--text-un-text__primary);
-  padding-inline: var(--spacing-un-spacing--l);
+  color: var(--text__primary);
+  padding-inline: var(--spacing--l);
 
   &--focus-visible {
     @include focus-style($outline: true);
   }
 
   &--hover {
-    background-color: var(--accents-un-accent__primary-dim--hover);
-    color: var(--text-un-text__primary--hover);
+    background-color: var(--accents__primary-dim--hover);
+    color: var(--text__primary--hover);
   }
 
   &--active {
-    color: var(--text-un-text__primary--active);
+    color: var(--text__primary--active);
   }
 
   &--disabled {
-    color: var(--text-un-text__on-disabled);
+    color: var(--text__on-disabled);
   }
 
   &--error {
-    color: var(--text-un-text__destructive);
+    color: var(--text__destructive);
   }
 }
 
 %text-link {
-  color: var(--link-un-link__font-color);
+  color: var(--link__font-color);
   font-size: 14px;
   line-height: 18px; // 128.571%
   letter-spacing: 0.4px;
