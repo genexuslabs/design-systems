@@ -98,12 +98,8 @@
   --alert-success__background-color: var(--colors-foundation__green--100);
   --alert-warning__background-color: var(--colors-foundation__orange--100);
   --breadcrumb__background-color: var(--surface--positive);
-  --chatbot-un-chatbot-bubble__background-color: var(
-    --colors-foundation__gray--300
-  );
-  --chatbot-un-chatbot-header__background-color: var(
-    --accents-un-accent__secondary
-  );
+  --chatbot-bubble__background-color: var(--colors-foundation__gray--300);
+  --chatbot-header__background-color: var(--accents-un-accent__secondary);
   --header-un-header-primary__background-color: var(
     --accents-un-accent__secondary
   );
@@ -138,8 +134,8 @@
   --alert-success__background-color: var(--elevation--3);
   --alert-warning__background-color: var(--elevation--3);
   --breadcrumb__background-color: var(--surface--alternative);
-  --chatbot-un-chatbot-bubble__background-color: var(--elevation--1);
-  --chatbot-un-chatbot-header__background-color: var(--elevation--1);
+  --chatbot-bubble__background-color: var(--elevation--1);
+  --chatbot-header__background-color: var(--elevation--1);
   --header-un-header-primary__background-color: var(--elevation--1);
   --header-un-header-primary__background-color--active: var(
     --colors-foundation__gray--700
