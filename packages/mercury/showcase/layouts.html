@@ -10,22 +10,6 @@
         visibility: hidden;
       }
       .article__content {
-      }
-      .layout {
-        background-color: var(--mer-color__elevation--01);
-        height: 300px;
-      }
-      .layout__panel {
-        border: var(--mer-border__width--sm) solid
-          var(--mer-color__elevation--04);
-        border-radius: var(--mer-border__radius--sm);
-        background-color: var(--mer-color__elevation--02);
-        display: grid;
-        align-content: center;
-        justify-content: center;
-        font-size: var(--mer-font__size--xs);
-      }
-      .article__content {
         display: grid;
       }
       .example--short {
@@ -241,40 +225,23 @@
             </article>
 
             <!-- ========================== 
-          padding
+          spacing classes
           =========================== -->
-            <article class="article" nav data-title="padding">
+            <article class="article" nav data-title="spacing classes">
               <header class="article__header"></header>
+
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <div class="layout layout--cols-2-1 spacing-body">
-                    <div class="layout__panel">Content of column 1</div>
-                    <div class="layout__panel">Content of column 2</div>
+                  <div class="article__content">
+                    <div class="dummy-grid-container">
+                      <a
+                        href="./spacing.doc.html"
+                        class="dummy-grid-container__item"
+                        >this component adheres to the spacing body classes</a
+                      >
+                    </div>
                   </div>
-                </div>
-                <div class="article__code">
-                  <ch-code id="ch-code-7" language="xml" class="code">
-                  </ch-code>
-                  <script>
-                    const markup7 = `<div class="layout layout--cols-2-1 spacing-body">
-  <div class="layout__panel">Content of column</div>
-  <div class="layout__panel">Content of column</div>
-</div>
-
-<!--
-Complete spacing classes:
-.spacing-body
-.spacing-body-block
-.spacing-body-block-start
-.spacing-body-block-end
-.spacing-body-inline
-.spacing-body-inline-start
-.spacing-body-inline-end
--->
-`;
-                    document.getElementById("ch-code-7").value = markup7;
-                  </script>
                 </div>
                 <!-- /.article__content -->
               </div>
