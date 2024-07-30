@@ -3,7 +3,7 @@
   @extend %text-body-2;
   padding-block: var(--spacing--m);
   background-color: var(--header-primary__background-color);
-  border-radius: var(--border-radius-un-border__radius--l);
+  border-radius: var(--border-radius--l);
   box-shadow: var(--box-shadow--1);
   color: var(--text__on-secondary);
 }
@@ -13,7 +13,7 @@
   @extend %text-body-2;
   padding-block: var(--spacing--m);
   background-color: var(--elevation--1);
-  border-radius: var(--border-radius-un-border__radius--l);
+  border-radius: var(--border-radius--l);
   box-shadow: var(--box-shadow--1);
   color: var(--text__on-surface--positive);
 }
@@ -22,8 +22,8 @@
 %dropdown-window-conversational {
   padding: var(--spacing--xl);
   background-color: var(--header-primary__background-color);
-  border-end-start-radius: var(--border-radius-un-border__radius--m);
-  border-end-end-radius: var(--border-radius-un-border__radius--m);
+  border-end-start-radius: var(--border-radius--m);
+  border-end-end-radius: var(--border-radius--m);
   box-shadow: var(--box-shadow--4);
   color: var(--text__on-secondary);
   gap: var(--spacing--m);

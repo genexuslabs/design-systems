@@ -11,9 +11,9 @@
 
   // This is necessary to avoid CLS issues when using the segmented control,
   // due to the secondary button style has borders but the primary style doesn't
-  border: var(--border-radius-un-border__radius--xs) solid transparent;
+  border: var(--border-radius--xs) solid transparent;
 
-  border-radius: var(--border-radius-un-border__radius--s);
+  border-radius: var(--border-radius--s);
   color: var(--text__on-primary);
   padding-inline: var(--spacing--xl);
 
@@ -41,9 +41,8 @@
 
 %button-secondary {
   @extend %button-base;
-  border: var(--border-radius-un-border__radius--xs) solid
-    var(--border-color__primary);
-  border-radius: var(--border-radius-un-border__radius--s);
+  border: var(--border-radius--xs) solid var(--border-color__primary);
+  border-radius: var(--border-radius--s);
   color: var(--text__primary);
   padding-inline: var(--spacing--xl);
 

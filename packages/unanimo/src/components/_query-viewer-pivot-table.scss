@@ -98,7 +98,7 @@
       padding: var(--spacing--m);
       background-color: var(--border-color__strong);
       border-color: var(--border-color__strong);
-      border-radius: var(--border-radius-un-border__radius--m);
+      border-radius: var(--border-radius--m);
       opacity: 0.9;
     }
 
@@ -143,15 +143,15 @@
   }
 
   .oat_winrect_container {
-    border-radius: var(--border-radius-un-border__radius--m);
+    border-radius: var(--border-radius--m);
   }
 
   .pivot_title_div,
   .gx-query-viewer-pivot-container > span,
   .oatgrid_top_div {
     border: 1px solid var(--gx-query-viewer-pivot__border-color);
-    border-start-start-radius: var(--border-radius-un-border__radius--m);
-    border-start-end-radius: var(--border-radius-un-border__radius--m);
+    border-start-start-radius: var(--border-radius--m);
+    border-start-end-radius: var(--border-radius--m);
   }
 
   .pivot_table > tbody > tr:nth-child(1),
@@ -211,8 +211,7 @@
   }
 
   .pivot_filter_div > span:first-child {
-    border: var(--border-radius-un-border__radius--xs) dotted
-      var(--border-color__primary);
+    border: var(--border-radius--xs) dotted var(--border-color__primary);
     padding: var(--spacing--s);
   }
 
@@ -239,8 +238,8 @@
     border-radius: unset;
 
     &:nth-child(1) {
-      border-start-start-radius: var(--border-radius-un-border__radius--m);
-      border-end-start-radius: var(--border-radius-un-border__radius--m);
+      border-start-start-radius: var(--border-radius--m);
+      border-end-start-radius: var(--border-radius--m);
     }
 
     &:nth-child(2) {
@@ -248,8 +247,8 @@
     }
 
     &:nth-child(3) {
-      border-start-end-radius: var(--border-radius-un-border__radius--m);
-      border-end-end-radius: var(--border-radius-un-border__radius--m);
+      border-start-end-radius: var(--border-radius--m);
+      border-end-end-radius: var(--border-radius--m);
     }
 
     &:hover {
@@ -275,8 +274,8 @@
   }
 
   .pivot_pag_div {
-    border-end-start-radius: var(--border-radius-un-border__radius--m);
-    border-end-end-radius: var(--border-radius-un-border__radius--m);
+    border-end-start-radius: var(--border-radius--m);
+    border-end-end-radius: var(--border-radius--m);
     & input {
       @extend %form-input;
       padding-inline: unset;

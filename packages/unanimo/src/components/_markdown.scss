@@ -141,7 +141,7 @@
 
       // Override inline border-radius
       border: 1px solid var(--border-color__mild);
-      border-radius: var(--border-radius-un-border__radius--m);
+      border-radius: var(--border-radius--m);
 
       & > .code-block__header {
         display: grid;
@@ -166,7 +166,7 @@
       background-color: var(
         --surface--positive
       ); // color-mix(in srgb, var(--surface--alternative) 70%, var(--colors-foundation__gray--100))
-      border-radius: var(--border-radius-un-border__radius--s);
+      border-radius: var(--border-radius--s);
       font-size: calc(1em - 2px);
     }
 
