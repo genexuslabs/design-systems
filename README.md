@@ -1,7 +1,7 @@
-# design-systems
+# Design Systems
+
+## Unanimo
 
 ## Mercury
 
-### Links of interest
-
-[Click here to see the Mercury showcase](https://mercury-showcase.netlify.app/button.html).
+[Mercury showcase](https://mercury-showcase.netlify.app/button.html).
