@@ -2,7 +2,7 @@
 %dropdown-window-primary {
   @extend %text-body-2;
   padding-block: var(--spacing--m);
-  background-color: var(--header-un-header-primary__background-color);
+  background-color: var(--header-primary__background-color);
   border-radius: var(--border-radius-un-border__radius--l);
   box-shadow: var(--box-shadows-un-box-shadow--1);
   color: var(--text-un-text__on-secondary);
@@ -21,7 +21,7 @@
 // Conversational
 %dropdown-window-conversational {
   padding: var(--spacing--xl);
-  background-color: var(--header-un-header-primary__background-color);
+  background-color: var(--header-primary__background-color);
   border-end-start-radius: var(--border-radius-un-border__radius--m);
   border-end-end-radius: var(--border-radius-un-border__radius--m);
   box-shadow: var(--box-shadows-un-box-shadow--4);
@@ -32,11 +32,11 @@
 // Primary
 %dropdown-item-action-primary {
   &--hover {
-    background-color: var(--header-un-header-primary__background-color--hover);
+    background-color: var(--header-primary__background-color--hover);
   }
 
   &--active {
-    background-color: var(--header-un-header-primary__background-color--active);
+    background-color: var(--header-primary__background-color--active);
   }
 }
 
@@ -54,11 +54,11 @@
 
 %dropdown-item-action-conversational {
   &--hover {
-    background-color: var(--header-un-header-primary__background-color--hover);
+    background-color: var(--header-primary__background-color--hover);
   }
 
   &--active {
-    background-color: var(--header-un-header-primary__background-color--active);
+    background-color: var(--header-primary__background-color--active);
   }
 }
 

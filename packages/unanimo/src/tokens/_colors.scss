@@ -100,16 +100,14 @@
   --breadcrumb__background-color: var(--surface--positive);
   --chatbot-bubble__background-color: var(--colors-foundation__gray--300);
   --chatbot-header__background-color: var(--accents-un-accent__secondary);
-  --header-un-header-primary__background-color: var(
-    --accents-un-accent__secondary
-  );
-  --header-un-header-primary__background-color--active: var(
+  --header-primary__background-color: var(--accents-un-accent__secondary);
+  --header-primary__background-color--active: var(
     --accents-un-accent__secondary--active
   );
-  --header-un-header-primary__background-color--hover: var(
+  --header-primary__background-color--hover: var(
     --accents-un-accent__secondary--hover
   );
-  --header-un-header-primary__border-color: var(--accents-un-accent__primary);
+  --header-primary__border-color: var(--accents-un-accent__primary);
   --sidebar-un-sidebar-dropdown__background-color: var(
     --accents-un-accent__secondary--active
   );
@@ -136,14 +134,14 @@
   --breadcrumb__background-color: var(--surface--alternative);
   --chatbot-bubble__background-color: var(--elevation--1);
   --chatbot-header__background-color: var(--elevation--1);
-  --header-un-header-primary__background-color: var(--elevation--1);
-  --header-un-header-primary__background-color--active: var(
+  --header-primary__background-color: var(--elevation--1);
+  --header-primary__background-color--active: var(
     --colors-foundation__gray--700
   );
-  --header-un-header-primary__background-color--hover: var(
+  --header-primary__background-color--hover: var(
     --colors-foundation__gray--800
   );
-  --header-un-header-primary__border-color: var(--colors-foundation__gray--300);
+  --header-primary__border-color: var(--colors-foundation__gray--300);
   --sidebar-un-sidebar-dropdown__background-color: var(--elevation--3);
   --sidebar-un-sidebar__background-color: var(--elevation--1);
   --sidebar-un-sidebar__background-color--active: var(
