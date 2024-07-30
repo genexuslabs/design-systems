@@ -63,7 +63,7 @@
                   </ch-code>
                   <script>
                     const markup1 = `<div class="layout layout--cols-1">
-  <div class="layout__panel"><!-- your content here--></div>
+  <div class="layout__panel"><!-- Content of column --></div>
 </div>`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
@@ -91,8 +91,8 @@
                   </ch-code>
                   <script>
                     const markup2 = `<div class="layout layout--cols-2">
-  <div class="layout__panel">Content of column</div>
-  <div class="layout__panel">Content of column</div>
+  <div class="layout__panel"><!-- Content of column 1 --></div>
+  <div class="layout__panel"><!-- Content of column 2 --></div>
 </div>`;
                     document.getElementById("ch-code-2").value = markup2;
                   </script>
@@ -121,9 +121,9 @@
                   </ch-code>
                   <script>
                     const markup3 = `<div class="layout layout--cols-3">
-  <div class="layout__panel">Content of column</div>
-  <div class="layout__panel">Content of column</div>
-  <div class="layout__panel">Content of column</div>
+  <div class="layout__panel"><!-- Content of column 1 --></div>
+  <div class="layout__panel"><!-- Content of column 2 --></div>
+  <div class="layout__panel"><!-- Content of column 3 --></div>
 </div>`;
                     document.getElementById("ch-code-3").value = markup3;
                   </script>
@@ -153,10 +153,10 @@
                   </ch-code>
                   <script>
                     const markup4 = `<div class="layout layout--cols-4">
-  <div class="layout__panel">Content of column</div>
-  <div class="layout__panel">Content of column</div>
-  <div class="layout__panel">Content of column</div>
-  <div class="layout__panel">Content of column</div>
+  <div class="layout__panel"><!-- Content of column 1 --></div>
+  <div class="layout__panel"><!-- Content of column 2 --></div>
+  <div class="layout__panel"><!-- Content of column 3 --></div>
+  <div class="layout__panel"><!-- Content of column 4 --></div>
 </div>`;
                     document.getElementById("ch-code-4").value = markup4;
                   </script>
@@ -184,8 +184,8 @@
                   </ch-code>
                   <script>
                     const markup5 = `<div class="layout layout--cols-1-2">
-  <div class="layout__panel">Content of column</div>
-  <div class="layout__panel">Content of column</div>
+  <div class="layout__panel"><!-- Content of column 1 --></div>
+  <div class="layout__panel"><!-- Content of column 2 --></div>
 </div>`;
                     document.getElementById("ch-code-5").value = markup5;
                   </script>
@@ -213,8 +213,8 @@
                   </ch-code>
                   <script>
                     const markup6 = `<div class="layout layout--cols-2-1">
-  <div class="layout__panel">Content of column</div>
-  <div class="layout__panel">Content of column</div>
+  <div class="layout__panel"><!-- Content of column 1 --></div>
+  <div class="layout__panel"><!-- Content of column 2 --></div>
 </div>`;
                     document.getElementById("ch-code-6").value = markup6;
                   </script>
@@ -229,22 +229,41 @@
           =========================== -->
             <article class="article" nav data-title="spacing classes">
               <header class="article__header"></header>
-
               <!-- main -->
               <div class="article__main">
+                <p class="article__description">
+                  By default the layout does not provide any padding. To apply
+                  padding to the layout you have to include
+                  <a href="./spacing.doc.html"
+                    >any of the global body padding classes</a
+                  >
+                  to the <code>.layout</code> container.
+                </p>
                 <div class="article__content">
-                  <div class="article__content">
-                    <div class="dummy-grid-container">
-                      <a
-                        href="./spacing.doc.html"
-                        class="dummy-grid-container__item"
-                        >this component adheres to the spacing body classes</a
-                      >
-                    </div>
+                  <div class="layout layout--cols-1 spacing-body">
+                    <div class="layout__panel">Content of column</div>
                   </div>
                 </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-7" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup7 = `<div class="layout layout--cols-1 spacing-body">
+  <div class="layout__panel"><!-- Content of column --></div>
+</div>`;
+                    document.getElementById("ch-code-7").value = markup7;
+                  </script>
+                </div>
                 <!-- /.article__content -->
+                <div class="dummy-grid-container">
+                  <a
+                    href="./spacing.doc.html"
+                    class="dummy-grid-container__item"
+                    >this component adheres to the spacing body classes</a
+                  >
+                </div>
               </div>
+
               <!-- /.article__main -->
             </article>
           </div>
