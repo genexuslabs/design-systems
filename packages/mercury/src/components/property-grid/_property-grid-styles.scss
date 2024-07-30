@@ -391,26 +391,26 @@
   // caret collapsed
   #{$property-grid-rowset-legend__caret-selector--collapsed},
   #{$property-grid-cell__caret-icon-selector--collapsed} {
-    @extend %property-grid__icon-size;
-    @extend %property-grid__icon-caret-collapsed--enabled;
+    @extend %tabular-grid__icon-size;
+    @extend %tabular-grid__icon-caret-collapsed--enabled;
     &:hover {
-      @extend %property-grid__icon-caret-collapsed--hover;
+      @extend %tabular-grid__icon-caret-collapsed--hover;
     }
     &:active {
-      @extend %property-grid__icon-caret-collapsed--active;
+      @extend %tabular-grid__icon-caret-collapsed--active;
     }
   }
 
   // caret expanded
   #{$property-grid-rowset-legend__caret-selector--expanded},
   #{$property-grid-cell__caret-icon-selector--expanded} {
-    @extend %property-grid__icon-size;
-    @extend %property-grid__icon-caret-expanded--enabled;
+    @extend %tabular-grid__icon-size;
+    @extend %tabular-grid__icon-caret-expanded--enabled;
     &:hover {
-      @extend %property-grid__icon-caret-expanded--hover;
+      @extend %tabular-grid__icon-caret-expanded--hover;
     }
     &:active {
-      @extend %property-grid__icon-caret-expanded--active;
+      @extend %tabular-grid__icon-caret-expanded--active;
     }
   }
 
@@ -419,14 +419,14 @@
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$property-grid-selector} {
-    @extend %property-grid;
+    @extend %tabular-grid;
     &:focus {
       outline: none;
     }
   }
 
   #{$property-grid__main-selector} {
-    @extend %property-grid__main;
+    @extend %tabular-grid__main;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -434,7 +434,7 @@
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$property-grid-column-set} {
-    @extend %property-grid-column-set;
+    @extend %tabular-grid-column-set;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -442,30 +442,30 @@
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$property-grid-column__bar-selector} {
-    @extend %property-grid-column__bar;
+    @extend %tabular-grid-column__bar;
   }
 
   #{$property-grid-column__bar-resize-split-selector} {
-    @extend %property-grid-column__bar-resize-split;
+    @extend %tabular-grid-column__bar-resize-split;
     &:hover {
-      @extend %property-grid-column__bar-resize-split--hover;
+      @extend %tabular-grid-column__bar-resize-split--hover;
     }
   }
 
   // checkbox (same styles add cell checkbox)
   #{$property-grid-column__selector-label-selector} {
-    @extend %property-grid-cell__selector-label;
+    @extend %tabular-grid-cell__selector-label;
   }
 
   #{$property-grid-column__selector-selector} {
-    @extend %property-grid-cell__selector;
+    @extend %tabular-grid-cell__selector;
 
     &::before {
-      @extend %property-grid-cell__selector--before;
+      @extend %tabular-grid-cell__selector--before;
     }
 
     &::after {
-      @extend %property-grid-cell__selector--after;
+      @extend %tabular-grid-cell__selector--after;
     }
 
     &:focus {
@@ -475,13 +475,13 @@
 
   #{$property-grid-column__selector--checked-selector} {
     &::after {
-      @extend %property-grid-cell__selector--after-checked;
+      @extend %tabular-grid-cell__selector--after-checked;
     }
   }
 
   #{$property-grid-column__selector--indeterminate-selector} {
     &::after {
-      @extend %property-grid-cell__selector--after-indeterminate;
+      @extend %tabular-grid-cell__selector--after-indeterminate;
     }
   }
 
@@ -491,38 +491,38 @@
 
   // row
   #{$property-grid-row-selector} {
-    @extend %property-grid-row;
+    @extend %tabular-grid-row;
   }
   #{$property-grid-row--focused-selector} {
-    @extend %property-grid-row--focused;
+    @extend %tabular-grid-row--focused;
   }
   #{$property-grid-row--highlighted-selector} {
-    @extend %property-grid-row--highlighted;
+    @extend %tabular-grid-row--highlighted;
   }
   #{$property-grid-row--selected-selector} {
-    @extend %property-grid-row--selected;
+    @extend %tabular-grid-row--selected;
   }
   #{$property-grid-row--dragging-selector} {
-    @extend %property-grid-row--dragging;
+    @extend %tabular-grid-row--dragging;
   }
 
   // row[some-state] > cell
   #{$property-grid-row--highlighted__cell-selector} {
-    @extend %property-grid-row--highlighted__cell;
+    @extend %tabular-grid-row--highlighted__cell;
   }
   #{$property-grid-row--selected__cell-selector} {
-    @extend %property-grid-row--selected__cell;
+    @extend %tabular-grid-row--selected__cell;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //             ch-property-grid-rowset
+  //         ch-tabular-grid-rowset
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$property-grid-rowset-selector} {
-    @extend %property-grid-rowset;
+    @extend %tabular-grid-rowset;
   }
   #{$property-grid-rowset--collapsed__legend-selector} {
-    @extend %property-grid-rowset--collapsed__legend;
+    @extend %tabular-grid-rowset--collapsed__legend;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -530,26 +530,26 @@
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$property-grid-rowset-legend-selector} {
-    @extend %property-grid-rowset-legend;
+    @extend %tabular-grid-rowset-legend;
     &:hover {
-      @extend %property-grid-rowset-legend--hover;
+      @extend %tabular-grid-rowset-legend--hover;
     }
     &:active {
-      @extend %property-grid-rowset-legend--active;
+      @extend %tabular-grid-rowset-legend--active;
     }
   }
 
   #{$property-grid-rowset-legend__selector-label-selector} {
-    @extend %property-grid-rowset-legend__selector-label;
+    @extend %tabular-grid-rowset-legend__selector-label;
   }
 
   #{$property-grid-rowset-legend__selector-selector} {
-    @extend %property-grid-rowset-legend__selector;
+    @extend %tabular-grid-rowset-legend__selector;
   }
 
   #{$property-grid-rowset-legend__icon-selector} {
-    @extend %property-grid-rowset-legend__icon;
-    @extend %property-grid__icon-size;
+    @extend %tabular-grid-rowset-legend__icon;
+    @extend %tabular-grid__icon-size;
     --icon-path: var(--icon__gemini-tools_category-group_on-surface--enabled);
   }
 
@@ -558,30 +558,30 @@
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$property-grid-cell-selector} {
-    @extend %property-grid-cell;
+    @extend %tabular-grid-cell;
   }
 
   #{$property-grid-cell--focused-selector} {
-    @extend %property-grid-cell--focused;
+    @extend %tabular-grid-cell--focused;
   }
 
   #{$property-grid-cell--selected-selector} {
-    @extend %property-grid-cell--selected;
+    @extend %tabular-grid-cell--selected;
   }
 
   // checkbox
   #{$property-grid-cell__selector-label-selector} {
-    @extend %property-grid-cell__selector-label;
+    @extend %tabular-grid-cell__selector-label;
   }
 
   #{$property-grid-cell__selector-selector} {
-    @extend %property-grid-cell__selector;
+    @extend %tabular-grid-cell__selector;
     &::before {
-      @extend %property-grid-cell__selector--before;
+      @extend %tabular-grid-cell__selector--before;
     }
 
     &::after {
-      @extend %property-grid-cell__selector--after;
+      @extend %tabular-grid-cell__selector--after;
     }
 
     &:focus {
@@ -591,14 +591,14 @@
 
   #{$property-grid-cell__selector--checked-selector} {
     &::after {
-      @extend %property-grid-cell__selector--after-checked;
+      @extend %tabular-grid-cell__selector--after-checked;
     }
   }
 
   // Icons
   #{$property-grid-cell__actions-icon-selector} {
     width: 100%;
-    @extend %property-grid__icon-size;
+    @extend %tabular-grid__icon-size;
     --icon-path: var(
       --icon__gemini-tools_show-more-vertical_on-surface--enabled
     );
@@ -606,23 +606,23 @@
   }
 
   #{$property-grid-cell__drag-icon-selector} {
-    @extend %property-grid__icon-size;
+    @extend %tabular-grid__icon-size;
     --icon-path: var(--icon__navigation_drag_on-surface--enabled);
     margin-inline-end: var(--grid-common__gap);
   }
 
   #{$property-grid-cell__node-icon-selector} {
-    @extend %property-grid__icon-size;
-    @extend %property-grid__icon-node;
+    @extend %tabular-grid__icon-size;
+    @extend %tabular-grid__icon-node;
   }
 
   #{$property-grid-cell__node-leaf-icon-selector} {
-    @extend %property-grid__icon-size;
-    @extend %property-grid__icon-node--leaf;
+    @extend %tabular-grid__icon-size;
+    @extend %tabular-grid__icon-node--leaf;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //      ch-property-grid-row-actions
+  //      ch-tabular-grid-row-actions
   // - - - - - - - - - - - - - - - - - - - -
 
   #{$property-grid-row-actions-selector} {
@@ -632,10 +632,10 @@
   }
 
   #{$property-grid-row-actions__window-selector} {
-    @extend %property-grid-row-actions__window;
+    @extend %tabular-grid-row-actions__window;
   }
 
   #{$property-grid-row-actions__main-selector} {
-    @extend %property-grid-row-actions__main;
+    @extend %tabular-grid-row-actions__main;
   }
 }
