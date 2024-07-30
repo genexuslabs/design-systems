@@ -91,12 +91,12 @@
 }
 
 @mixin semantic-colors--light() {
-  --un-alert-error__background-color: var(--colors-foundation__red--100);
-  --un-alert-notification__background-color: var(
+  --alert-error__background-color: var(--colors-foundation__red--100);
+  --alert-notification__background-color: var(
     --accents-un-accent__primary-dim--hover
   );
-  --un-alert-success__background-color: var(--colors-foundation__green--100);
-  --un-alert-warning__background-color: var(--colors-foundation__orange--100);
+  --alert-success__background-color: var(--colors-foundation__green--100);
+  --alert-warning__background-color: var(--colors-foundation__orange--100);
   --breadcrumb-un-breadcrumb__background-color: var(--surface--positive);
   --chatbot-un-chatbot-bubble__background-color: var(
     --colors-foundation__gray--300
@@ -133,10 +133,10 @@
 }
 
 @mixin semantic-colors--dark() {
-  --un-alert-error__background-color: var(--elevation--3);
-  --un-alert-notification__background-color: var(--elevation--3);
-  --un-alert-success__background-color: var(--elevation--3);
-  --un-alert-warning__background-color: var(--elevation--3);
+  --alert-error__background-color: var(--elevation--3);
+  --alert-notification__background-color: var(--elevation--3);
+  --alert-success__background-color: var(--elevation--3);
+  --alert-warning__background-color: var(--elevation--3);
   --breadcrumb-un-breadcrumb__background-color: var(--surface--alternative);
   --chatbot-un-chatbot-bubble__background-color: var(--elevation--1);
   --chatbot-un-chatbot-header__background-color: var(--elevation--1);
