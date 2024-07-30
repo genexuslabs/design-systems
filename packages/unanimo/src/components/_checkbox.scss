@@ -9,11 +9,11 @@
 
   // Input
   &__input {
-    border-color: var(--borders-un-border-color__strong);
+    border-color: var(--border-color__strong);
     border-radius: 3px;
 
     &--focus {
-      border-color: var(--borders-un-border-color__focused);
+      border-color: var(--border-color__focused);
       border-width: 2px;
     }
 
@@ -27,7 +27,7 @@
     }
 
     &--disabled {
-      border-color: var(--borders-un-border-color__disabled);
+      border-color: var(--border-color__disabled);
     }
   }
 
@@ -43,17 +43,17 @@
 
     // Not implemented yet in the control
     &--error {
-      color: var(--borders-un-border-color__error);
+      color: var(--border-color__error);
     }
 
     &--disabled {
-      color: var(--borders-un-border-color__disabled);
+      color: var(--border-color__disabled);
     }
   }
 
   // Label
   &__label--disabled {
-    color: var(--borders-un-border-color__disabled);
+    color: var(--border-color__disabled);
   }
 }
 

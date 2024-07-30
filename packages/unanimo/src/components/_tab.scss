@@ -11,15 +11,15 @@
 }
 
 %tab-caption--hover {
-  border-block-end-color: var(--borders-un-border-color__primary--hover);
+  border-block-end-color: var(--border-color__primary--hover);
 }
 
 %tab-caption--active {
-  border-block-end-color: var(--borders-un-border-color__primary--active);
+  border-block-end-color: var(--border-color__primary--active);
 }
 
 %tab-caption--focus-visible {
-  outline: 1px solid var(--borders-un-border-color__focused);
+  outline: 1px solid var(--border-color__focused);
   outline-offset: -1px;
 }
 

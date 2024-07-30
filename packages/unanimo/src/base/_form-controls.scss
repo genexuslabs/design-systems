@@ -32,7 +32,7 @@
   padding-inline: var(--spacing--m);
   border-radius: var(--border-radius-un-border__radius--m);
   border: var(--border-radius-un-border__radius--xs) solid
-    var(--borders-un-border-color__strong);
+    var(--border-color__strong);
   color: var(--body-texts-un-body-m__font-color--positive);
 
   &--focus {
@@ -41,7 +41,7 @@
   }
 
   &--disabled {
-    border-color: var(--borders-un-border-color__disabled);
+    border-color: var(--border-color__disabled);
     color: var(--text__disabled);
   }
 }
@@ -56,7 +56,7 @@
   padding-block: 6px;
   border-radius: var(--border-radius-un-border__radius--m);
   border: var(--border-radius-un-border__radius--xs) solid
-    var(--borders-un-border-color__strong);
+    var(--border-color__strong);
   color: var(--body-texts-un-body-m__font-color--positive);
 }
 
@@ -109,7 +109,7 @@
 
     @if $add--error {
       &--error {
-        border-color: var(--borders-un-border-color__error);
+        border-color: var(--border-color__error);
 
         &::after {
           content: "";
@@ -175,7 +175,7 @@
 
     @if $add--error {
       &--error {
-        border-color: var(--borders-un-border-color__error);
+        border-color: var(--border-color__error);
 
         &::after {
           content: "";

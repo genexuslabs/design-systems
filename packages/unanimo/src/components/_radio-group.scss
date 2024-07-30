@@ -13,15 +13,15 @@
 }
 
 %radio__container {
-  border-color: var(--borders-un-border-color__strong);
+  border-color: var(--border-color__strong);
 
   &--focus {
-    border-color: var(--borders-un-border-color__focused);
+    border-color: var(--border-color__focused);
     border-width: 2px;
   }
 
   &--disabled {
-    color: var(--borders-un-border-color__disabled);
+    color: var(--border-color__disabled);
   }
 
   &--checked {
@@ -31,12 +31,12 @@
   // Not implemented yet in the control
   &--error {
     background-color: var(--colors-Foundation__red--100);
-    color: var(--borders-un-border-color__error);
+    color: var(--border-color__error);
   }
 }
 
 %radio__label--disabled {
-  color: var(--borders-un-border-color__disabled);
+  color: var(--border-color__disabled);
 }
 
 /// @group Radio Group

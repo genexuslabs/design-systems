@@ -4,7 +4,7 @@
   }
 
   gx-query-viewer-pivot {
-    --gx-query-viewer-pivot__border-color: var(--borders-un-border-color__mild);
+    --gx-query-viewer-pivot__border-color: var(--border-color__mild);
     --gx-query-viewer-pivot__icon-color: var(--icons__primary);
     --gx-query-viewer-pivot__cell-padding-inline: 8px;
     --gx-query-viewer-pivot__cell-padding-block: 5px;
@@ -96,8 +96,8 @@
       color: var(--text__on-surface--negative);
       text-align: start;
       padding: var(--spacing--m);
-      background-color: var(--borders-un-border-color__strong);
-      border-color: var(--borders-un-border-color__strong);
+      background-color: var(--border-color__strong);
+      border-color: var(--border-color__strong);
       border-radius: var(--border-radius-un-border__radius--m);
       opacity: 0.9;
     }
@@ -111,7 +111,7 @@
 
   .oat_winrect_title {
     margin-inline: calc(var(--gx-query-viewer-pivot__popup-padding) * -1);
-    border-block-end: 1px solid var(--borders-un-border-color__mild);
+    border-block-end: 1px solid var(--border-color__mild);
     padding-inline: 5px;
     padding-block-end: 8px;
 
@@ -167,7 +167,7 @@
         th.h2subtitle.grandtotaltitle,
         th.h2subtitle.subtitleFirstLevel
       ) {
-      border-block-end: 2px solid var(--borders-un-border-color__primary);
+      border-block-end: 2px solid var(--border-color__primary);
     }
 
     :is(th.even, td.even) :is(.expanded, .collapsed) {
@@ -212,7 +212,7 @@
 
   .pivot_filter_div > span:first-child {
     border: var(--border-radius-un-border__radius--xs) dotted
-      var(--borders-un-border-color__primary);
+      var(--border-color__primary);
     padding: var(--spacing--s);
   }
 
@@ -253,8 +253,8 @@
     }
 
     &:hover {
-      background-color: var(--borders-un-border-color__primary);
-      border-color: var(--borders-un-border-color__primary);
+      background-color: var(--border-color__primary);
+      border-color: var(--border-color__primary);
       color: var(--surface--alternative);
     }
   }
@@ -264,7 +264,7 @@
     @extend %text-body-2;
     hr {
       margin-inline: calc(var(--gx-query-viewer-pivot__popup-padding) * -1);
-      border: 0.5px solid var(--borders-un-border-color__mild);
+      border: 0.5px solid var(--border-color__mild);
     }
   }
 

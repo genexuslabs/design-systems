@@ -28,7 +28,7 @@
       drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1));
 
     &--focus {
-      border: 2px solid var(--borders-un-border-color__focused);
+      border: 2px solid var(--border-color__focused);
     }
 
     &--disabled {
@@ -43,7 +43,7 @@
     margin-inline-start: var(--spacing--m);
 
     &--disabled {
-      color: var(--borders-un-border-color__disabled);
+      color: var(--border-color__disabled);
     }
   }
 }
