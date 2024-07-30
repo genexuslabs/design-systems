@@ -91,6 +91,12 @@ a.dummy-grid-container__item:active {
   --item__border-color: var(--item__border-color--selected);
   --item__color: var(--item__color--selected);
 }
+/*====================
+Dashed dummy border
+====================*/
+.dummy-border {
+  border: 1px dashed var(--mer-border-color__primary);
+}
 
 /*====================
 Dummy Layout
