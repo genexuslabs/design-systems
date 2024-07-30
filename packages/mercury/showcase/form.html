@@ -330,6 +330,62 @@
               </div>
               <!-- /.article__main -->
             </article>
+
+            <!-- ========================== 
+          spacing classes
+          =========================== -->
+            <article class="article" nav data-title="spacing classes">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  By default field group does not provide any padding. To apply
+                  padding to the field group have to include
+                  <a href="./spacing.doc.html"
+                    >any of the global body padding classes</a
+                  >
+                  to the <code>.field-group</code> element. In this example the
+                  dashed line all around is not part of the tree design. It has
+                  been added to allow you to see the presence of padding.
+                </p>
+                <div class="article__content">
+                  <form class="field-group spacing-body dummy-border">
+                    <div class="field field-block">
+                      <label class="label">First Control Caption</label>
+                      <span class="dummy-control">your control</span>
+                    </div>
+                    <div class="field field-block">
+                      <label class="label">Second Control Caption</label>
+                      <span class="dummy-control">your control</span>
+                    </div>
+                    <div class="field field-block">
+                      <label class="label">Third Control Caption</label>
+                      <span class="dummy-control">your control</span>
+                    </div>
+                  </form>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-7" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup7 = `<div class="layout layout--cols-1 spacing-body">
+<div class="layout__panel"><!-- Content of column --></div>
+</div>`;
+                    document.getElementById("ch-code-7").value = markup7;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+                <div class="dummy-grid-container">
+                  <a
+                    href="./spacing.doc.html"
+                    class="dummy-grid-container__item"
+                    >this component adheres to the spacing body classes</a
+                  >
+                </div>
+              </div>
+
+              <!-- /.article__main -->
+            </article>
           </div>
         </section>
       </div>
