@@ -7,6 +7,7 @@
   @include items-container-colors();
   @include items-container-padding();
   @include items-container-dropdown();
+  @include items-container-gap();
 
   &-item-action {
     @include item-colors-enabled();
@@ -27,11 +28,20 @@
     }
 
     &--not-selectable {
+      &--hover {
+        @include item-colors-hover();
+      }
     }
 
     &--selectable {
       &--hover {
-        opacity: 0.5;
+        @include item-colors-hover();
+      }
+      &--selected {
+        @include item-colors-selected();
+        &--hover {
+          @include item-colors-selected-hover();
+        }
       }
     }
 
@@ -43,8 +53,15 @@
   }
 
   &-group {
-    font-weight: 600;
-    gap: var(--spacing-un-spacing--s);
+    @include items-container-gap();
+    &-action,
+    &-caption {
+      @include items-container-gap();
+      @include item-font-header();
+    }
+    &-expandable {
+      @include items-container-gap();
+    }
   }
 
   &-additional-item--action {
@@ -69,6 +86,9 @@
 @mixin list-box(
   $list-box-selector: ".list-box",
 
+  $group-selector: ".list-box::part(group)",
+  $group-expandable-selector: ".list-box::part(group__expandable)",
+
   $item-action-selector: ".list-box::part(item__action)",
   $group-action-selector: ".list-box::part(group__action)",
   $group-caption-selector: ".list-box::part(group__caption)",
@@ -88,6 +108,8 @@
   $group-action--disabled-selector: ".list-box::part(group__action disabled)",
   $group-caption--disabled-selector: ".list-box::part(group__caption disabled)",
 
+  $additional-item--image-selector:
+    ".list-box::part(item__additional-item image)",
   $additional-item--action-selector:
     ".list-box::part(item__additional-item action)",
 
@@ -117,16 +139,22 @@
   // Not selectable
   #{$item-action-not-selectable-selector}:hover,
   #{$group-action-not-selectable-selector}:hover {
-    @extend %list-box-item-action--not-selectable;
+    @extend %list-box-item-action--not-selectable--hover;
   }
 
   // Selectable
-  // #{$item-action-selectable-selector}
-  // #{$item-action-selectable-selector},
-  // #{$group-action-selectable-selector},
   #{$item-action-selectable-selector}:hover,
   #{$group-action-selectable-selector}:hover {
     @extend %list-box-item-action--selectable--hover;
+  }
+
+  // Selectable Selected
+  #{$item-action-selectable-selector},
+  #{$group-action-selectable-selector} {
+    @extend %list-box-item-action--selectable--selected;
+    &:hover {
+      @extend %list-box-item-action--selectable--selected--hover;
+    }
   }
 
   // Nested expandable
@@ -137,9 +165,18 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                  Group
   // - - - - - - - - - - - - - - - - - - - -
-  #{$group-action-selector},
-  #{$group-caption-selector} {
+  #{$group-selector} {
     @extend %list-box-group;
+  }
+  #{$group-expandable-selector} {
+    @extend %list-box-group-expandable;
+  }
+
+  #{$group-action-selector} {
+    @extend %list-box-group-action;
+  }
+  #{$group-caption-selector} {
+    @extend %list-box-group-caption;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -161,7 +198,9 @@
   }
 
   @if $add--additional-item {
-    #{$additional-item--action-selector} {
+    #{$additional-item--action-selector},
+    #{$additional-item--image-selector} {
+      display: none;
       @extend %list-box-additional-item--action;
 
       &:hover {
