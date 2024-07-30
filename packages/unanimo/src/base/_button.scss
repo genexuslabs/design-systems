@@ -7,7 +7,7 @@
 
 %button-primary {
   @extend %button-base;
-  background-color: var(--accents-un-accent__primary);
+  background-color: var(--accents__primary);
 
   // This is necessary to avoid CLS issues when using the segmented control,
   // due to the secondary button style has borders but the primary style doesn't
@@ -22,20 +22,20 @@
   }
 
   &--hover {
-    background-color: var(--accents-un-accent__primary--hover);
+    background-color: var(--accents__primary--hover);
   }
 
   &--active {
-    background-color: var(--accents-un-accent__primary--active);
+    background-color: var(--accents__primary--active);
   }
 
   &--disabled {
-    background-color: var(--accents-un-accent__disabled);
+    background-color: var(--accents__disabled);
     color: var(--text-un-text__on-disabled);
   }
 
   &--error {
-    background: var(--accents-un-accent__destructive);
+    background: var(--accents__destructive);
   }
 }
 
@@ -52,7 +52,7 @@
   }
 
   &--hover {
-    background-color: var(--accents-un-accent__primary-dim--hover);
+    background-color: var(--accents__primary-dim--hover);
     border-color: var(--borders-un-border-color__primary--hover);
     color: var(--text-un-text__primary--hover);
   }
@@ -83,7 +83,7 @@
   }
 
   &--hover {
-    background-color: var(--accents-un-accent__primary-dim--hover);
+    background-color: var(--accents__primary-dim--hover);
     color: var(--text-un-text__primary--hover);
   }
 

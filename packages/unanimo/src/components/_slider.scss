@@ -1,9 +1,7 @@
 %slider-primary__slider {
   --ch-slider-track-block-size: 2px;
 
-  --ch-slider-track__selected-background-color: var(
-    --accents-un-accent__primary
-  );
+  --ch-slider-track__selected-background-color: var(--accents__primary);
 
   --ch-slider-track__unselected-background-color: var(
     --colors-foundation__gray--300
@@ -27,9 +25,7 @@
 %slider-secondary__slider {
   --ch-slider-track-block-size: 6px;
 
-  --ch-slider-track__selected-background-color: var(
-    --accents-un-accent__primary
-  );
+  --ch-slider-track__selected-background-color: var(--accents__primary);
 
   --ch-slider-track__unselected-background-color: var(
     --colors-foundation__gray--300
@@ -37,7 +33,7 @@
 
   --ch-slider-thumb-size: 16px;
 
-  --ch-slider-thumb-background-color: var(--accents-un-accent__primary--active);
+  --ch-slider-thumb-background-color: var(--accents__primary--active);
 }
 
 %slider-secondary__track {

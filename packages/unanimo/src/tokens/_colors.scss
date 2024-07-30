@@ -92,36 +92,28 @@
 
 @mixin semantic-colors--light() {
   --alert-error__background-color: var(--colors-foundation__red--100);
-  --alert-notification__background-color: var(
-    --accents-un-accent__primary-dim--hover
-  );
+  --alert-notification__background-color: var(--accents__primary-dim--hover);
   --alert-success__background-color: var(--colors-foundation__green--100);
   --alert-warning__background-color: var(--colors-foundation__orange--100);
   --breadcrumb__background-color: var(--surface--positive);
   --chatbot-bubble__background-color: var(--colors-foundation__gray--300);
-  --chatbot-header__background-color: var(--accents-un-accent__secondary);
-  --header-primary__background-color: var(--accents-un-accent__secondary);
-  --header-primary__background-color--active: var(
-    --accents-un-accent__secondary--active
-  );
-  --header-primary__background-color--hover: var(
-    --accents-un-accent__secondary--hover
-  );
-  --header-primary__border-color: var(--accents-un-accent__primary);
+  --chatbot-header__background-color: var(--accents__secondary);
+  --header-primary__background-color: var(--accents__secondary);
+  --header-primary__background-color--active: var(--accents__secondary--active);
+  --header-primary__background-color--hover: var(--accents__secondary--hover);
+  --header-primary__border-color: var(--accents__primary);
   --sidebar-un-sidebar-dropdown__background-color: var(
-    --accents-un-accent__secondary--active
+    --accents__secondary--active
   );
-  --sidebar-un-sidebar__background-color: var(--accents-un-accent__secondary);
+  --sidebar-un-sidebar__background-color: var(--accents__secondary);
   --sidebar-un-sidebar__background-color--active: var(
-    --accents-un-accent__secondary--active
+    --accents__secondary--active
   );
   --sidebar-un-sidebar__background-color--hover: var(
-    --accents-un-accent__secondary--hover
+    --accents__secondary--hover
   );
   --tag__background-color--error: var(--colors-foundation__red--100);
-  --tag__background-color--primary: var(
-    --accents-un-accent__primary-dim--hover
-  );
+  --tag__background-color--primary: var(--accents__primary-dim--hover);
   --tag__background-color--success: var(--colors-foundation__green--100);
   --tag__background-color--warning: var(--colors-foundation__orange--100);
 }
@@ -157,15 +149,15 @@
 }
 
 @mixin semantic-colors--general() {
-  --accents-un-accent__destructive: var(--colors-foundation__red--300);
-  --accents-un-accent__disabled: var(--colors-foundation__gray--400);
-  --accents-un-accent__primary: var(--colors-foundation__purple--100);
-  --accents-un-accent__primary--active: var(--colors-foundation__purple--300);
-  --accents-un-accent__primary--hover: var(--colors-foundation__purple--200);
-  --accents-un-accent__primary-dim--hover: var(--colors-foundation__purple--10);
-  --accents-un-accent__secondary: var(--colors-foundation__purple--600);
-  --accents-un-accent__secondary--active: var(--colors-foundation__purple--400);
-  --accents-un-accent__secondary--hover: var(--colors-foundation__purple--500);
+  --accents__destructive: var(--colors-foundation__red--300);
+  --accents__disabled: var(--colors-foundation__gray--400);
+  --accents__primary: var(--colors-foundation__purple--100);
+  --accents__primary--active: var(--colors-foundation__purple--300);
+  --accents__primary--hover: var(--colors-foundation__purple--200);
+  --accents__primary-dim--hover: var(--colors-foundation__purple--10);
+  --accents__secondary: var(--colors-foundation__purple--600);
+  --accents__secondary--active: var(--colors-foundation__purple--400);
+  --accents__secondary--hover: var(--colors-foundation__purple--500);
   --body-texts-un-body-m__font-color--gray: var(--colors-foundation__gray--500);
   --body-texts-un-body-m__font-color--positive: var(
     --text-un-text__on-surface--positive
@@ -174,18 +166,14 @@
   --body-texts-un-body-s-font-color--positive: var(
     --text-un-text__on-surface--positive
   );
-  --borders-un-border-color__destructive: var(--accents-un-accent__destructive);
-  --borders-un-border-color__disabled: var(--accents-un-accent__disabled);
+  --borders-un-border-color__destructive: var(--accents__destructive);
+  --borders-un-border-color__disabled: var(--accents__disabled);
   --borders-un-border-color__error: var(--colors-foundation__red--300);
-  --borders-un-border-color__focused: var(--accents-un-accent__secondary);
+  --borders-un-border-color__focused: var(--accents__secondary);
   --borders-un-border-color__mild: var(--colors-foundation__gray--300);
-  --borders-un-border-color__primary: var(--accents-un-accent__primary);
-  --borders-un-border-color__primary--active: var(
-    --accents-un-accent__primary--active
-  );
-  --borders-un-border-color__primary--hover: var(
-    --accents-un-accent__primary--hover
-  );
+  --borders-un-border-color__primary: var(--accents__primary);
+  --borders-un-border-color__primary--active: var(--accents__primary--active);
+  --borders-un-border-color__primary--hover: var(--accents__primary--hover);
   --borders-un-border-color__strong: var(--colors-foundation__gray--600);
   --borders-un-border-color__success: var(--colors-foundation__green--200);
   --borders-un-border-color__warning: var(--colors-foundation__orange--200);
@@ -216,7 +204,7 @@
   --text-un-text__on-surface--alternative: var(--colors-foundation__negative);
   --text-un-text__on-surface--negative: var(--colors-foundation__positive);
   --text-un-text__on-surface--positive: var(--colors-foundation__negative);
-  --text-un-text__primary: var(--accents-un-accent__primary);
+  --text-un-text__primary: var(--accents__primary);
   --text-un-text__primary--active: var(--colors-foundation__purple--300);
-  --text-un-text__primary--hover: var(--accents-un-accent__primary--hover);
+  --text-un-text__primary--hover: var(--accents__primary--hover);
 }

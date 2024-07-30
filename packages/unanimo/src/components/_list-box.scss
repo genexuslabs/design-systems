@@ -16,7 +16,7 @@
     }
 
     &--focus-visible {
-      outline: 1px solid var(--accents-un-accent__secondary--active);
+      outline: 1px solid var(--accents__secondary--active);
       outline-offset: -1px;
     }
 
@@ -25,7 +25,7 @@
     }
 
     &--selectable {
-      background-color: var(--accents-un-accent__primary-dim--hover);
+      background-color: var(--accents__primary-dim--hover);
     }
 
     &--nested-expandable {
@@ -46,14 +46,14 @@
     }
 
     &--focus-visible {
-      outline: 1px solid var(--accents-un-accent__secondary--active);
+      outline: 1px solid var(--accents__secondary--active);
       outline-offset: -1px;
     }
   }
 
   &-separator {
     margin-block: var(--spacing--s);
-    background-color: var(--accents-un-accent__secondary--hover);
+    background-color: var(--accents__secondary--hover);
   }
 }
 

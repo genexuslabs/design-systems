@@ -18,7 +18,7 @@
     }
 
     &--checked-and-indeterminate {
-      border-color: var(--accents-un-accent__primary);
+      border-color: var(--accents__primary);
     }
 
     // Not implemented yet in the control
@@ -34,11 +34,11 @@
   // Option
   &__option {
     &--checked {
-      color: var(--accents-un-accent__primary);
+      color: var(--accents__primary);
     }
 
     &--indeterminate {
-      color: var(--accents-un-accent__primary);
+      color: var(--accents__primary);
     }
 
     // Not implemented yet in the control

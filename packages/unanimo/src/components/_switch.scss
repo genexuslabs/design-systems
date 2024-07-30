@@ -1,8 +1,6 @@
 %switch {
   --ch-switch-thumb__unchecked-background-color: var(--elevation--1);
-  --ch-switch-thumb__checked-background-color: var(
-    --accents-un-accent__primary--hover
-  );
+  --ch-switch-thumb__checked-background-color: var(--accents__primary--hover);
 
   --ch-switch-track__unchecked-background-color: var(
     --colors-foundation__gray--400
@@ -34,12 +32,8 @@
     }
 
     &--disabled {
-      --ch-switch-thumb__checked-background-color: var(
-        --accents-un-accent__disabled
-      );
-      --ch-switch-thumb__unchecked-background-color: var(
-        --accents-un-accent__disabled
-      );
+      --ch-switch-thumb__checked-background-color: var(--accents__disabled);
+      --ch-switch-thumb__unchecked-background-color: var(--accents__disabled);
     }
   }
 
