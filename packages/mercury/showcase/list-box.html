@@ -46,15 +46,19 @@
               <div class="article__main">
                 <div class="article__content" style="height: 240px">
                   <ch-action-list-render
-                    selection="multiple"
+                    selection="none"
                     class="list-box"
                     id="action-list-1"
                   ></ch-action-list-render>
                   <script type="module">
-                    import { actionListModel } from "./assets/models/action-list.js";
+                    import { keyboardNavigation } from "./assets/models/action-list.js";
                     const actionList1 =
                       document.getElementById("action-list-1");
-                    actionList1.model = actionListModel;
+                    actionList1.model = keyboardNavigation;
+                    setTimeout(() => {
+                      // WA to avoid "undefined" when initial selection != "none"
+                      actionList1.selection = "multiple";
+                    }, 500);
                   </script>
                 </div>
                 <div class="article__code">
