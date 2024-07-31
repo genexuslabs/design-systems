@@ -1,26 +1,21 @@
-@import "../tabular-grid/tokens-grid";
-@import "../tabular-grid/tokens-row";
-@import "../tabular-grid/tokens-column";
-@import "../tabular-grid/tokens-cell";
-
 // - - - - - - - - - - - - - - - - - - - -
 //            ch-property-grid
 // - - - - - - - - - - - - - - - - - - - -
 
 %property-grid {
-  &__property {
-    background-color: rgba(253, 40, 40, 0.142);
+  --mer-text__on-surface &__property {
     &--readonly {
-      font-style: italic;
+      @extend %text-readonly;
     }
   }
   &__value {
-    background-color: rgba(255, 255, 0, 0.098);
+    @extend %ellipsis;
+
     &--readonly {
-      font-style: italic;
+      @extend %text-readonly;
     }
     &--edited {
-      font-weight: 800;
+      @extend %text-edited;
     }
   }
 }

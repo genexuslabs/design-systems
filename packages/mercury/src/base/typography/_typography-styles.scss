@@ -1,6 +1,9 @@
 @import "tokens";
 
-// heading
+/*----------------------
+Heading
+----------------------*/
+
 %heading {
   &-base {
     @include heading-tokens();
@@ -150,4 +153,15 @@
   #{$text-body-selector} {
     @extend %text-body;
   }
+}
+
+/*-------------------------------------
+Text States e.g.: for the property-grid
+-------------------------------------*/
+
+%text-edited {
+  font-weight: var(--mer-font__weight--bold);
+}
+%text-readonly {
+  font-style: italic;
 }

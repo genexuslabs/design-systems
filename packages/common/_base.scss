@@ -61,3 +61,14 @@
   align-items: center;
   gap: $gap;
 }
+
+// - - - - - - - - - - - - - - - - - - - -
+//    Ellipsis
+// - - - - - - - - - - - - - - - - - - - -
+
+%ellipsis {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
