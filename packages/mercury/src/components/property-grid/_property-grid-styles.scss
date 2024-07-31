@@ -388,7 +388,7 @@
 
   // Icons
   #{$property-grid-cell__actions-icon-selector} {
-    width: 100%;
+    inline-size: 100%;
     @extend %tabular-grid__icon-size;
     --icon-path: var(
       --icon__gemini-tools_show-more-vertical_on-surface--enabled
