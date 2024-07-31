@@ -2,21 +2,21 @@
   &-tab-caption {
     background-color: color-mix(
       in srgb,
-      var(--colors-foundation-un-color__gray--300) 20%,
+      var(--colors-foundation__gray--300) 20%,
       transparent
     );
 
     &--selected {
       background-color: color-mix(
         in srgb,
-        var(--colors-foundation-un-color__gray--300) 50%,
+        var(--colors-foundation__gray--300) 50%,
         transparent
       );
     }
   }
 
   &-tab-list--inline {
-    background-color: var(--colors-foundation-un-color__gray--300);
+    background-color: var(--colors-foundation__gray--300);
     inline-size: 48px;
     gap: 4px;
   }
@@ -24,7 +24,7 @@
   &-tab-list--block {
     background-color: color-mix(
       in srgb,
-      var(--colors-foundation-un-color__gray--300) 15%,
+      var(--colors-foundation__gray--300) 15%,
       transparent
     );
     overflow: auto;
@@ -33,7 +33,7 @@
   &-droppable-area {
     background-color: color-mix(
       in srgb,
-      var(--accents-un-accent__secondary--hover) 25%,
+      var(--accents__secondary--hover) 25%,
       transparent
     );
   }

@@ -1,38 +1,34 @@
 %dialog-primary {
-  border-radius: var(--border-radius-un-border__radius--l);
-  background-color: var(--elevation-un-elevation--2);
-  box-shadow: var(--box-shadows-un-box-shadow--2);
-  padding: var(--spacing-un-spacing--l);
+  border-radius: var(--border-radius--l);
+  background-color: var(--elevation--2);
+  box-shadow: var(--box-shadow--2);
+  padding: var(--spacing--l);
 }
 
 %dialog-secondary {
-  border-radius: var(--border-radius-un-border__radius--l);
-  background-color: var(--surface-un-surface--positive);
-  border: 1px solid var(--borders-un-border-color__mild);
-  box-shadow: var(--box-shadows-un-box-shadow--2);
-  padding: var(--spacing-un-spacing--l);
+  border-radius: var(--border-radius--l);
+  background-color: var(--surface--positive);
+  border: 1px solid var(--border-color__mild);
+  box-shadow: var(--box-shadow--2);
+  padding: var(--spacing--l);
 }
 
 %dialog-primary__backdrop,
 %dialog-secondary__backdrop {
-  background-color: color-mix(
-    in srgb,
-    var(--elevation-un-elevation--4) 25%,
-    transparent
-  );
+  background-color: color-mix(in srgb, var(--elevation--4) 25%, transparent);
   backdrop-filter: blur(5px);
   z-index: 108; // TODO: This is a WA to show the backdrop above the button of the dropdown
 }
 
 %dialog-primary__header {
   align-items: flex-start;
-  gap: var(--spacing-un-spacing--l);
-  margin-block-end: var(--spacing-un-spacing--xl);
+  gap: var(--spacing--l);
+  margin-block-end: var(--spacing--xl);
 }
 
 %dialog-secondary__header {
-  gap: var(--spacing-un-spacing--l);
-  margin-block-end: var(--spacing-un-spacing--xl);
+  gap: var(--spacing--l);
+  margin-block-end: var(--spacing--xl);
 }
 
 %dialog-primary__caption {

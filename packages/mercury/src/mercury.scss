@@ -96,6 +96,7 @@
   $form-controls-classes: true,
   $icon-classes: true,
   $layout-classes: true,
+  $spacing-classes: true,
   $typography-classes: true,
 
   // Components
@@ -377,6 +378,11 @@
       @include control-footer();
     }
 
+    // Spacing classes
+    @if $spacing-classes {
+      @include spacing-body();
+    }
+
     // Typography classes
     @if $typography-classes {
       @include typography-classes();
@@ -485,6 +491,7 @@
   $form-controls-classes: false,
   $icon-classes: false,
   $layout-classes: false,
+  $spacing-classes: false,
   $typography-classes: false,
 
   // Components
@@ -543,6 +550,7 @@
     $form-controls-classes: $form-controls-classes,
     $icon-classes: $icon-classes,
     $layout-classes: $layout-classes,
+    $spacing-classes: $spacing-classes,
     $typography-classes: $typography-classes,
 
     // Components

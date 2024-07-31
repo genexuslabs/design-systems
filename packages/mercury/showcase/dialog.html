@@ -52,7 +52,7 @@
                     resizable
                     allow-drag="box"
                   >
-                    <div>
+                    <div class="spacing-body">
                       <p class="text-body" style="margin-block-start: 0">
                         GeneXus is a low-code development platform that
                         streamlines the creation of enterprise applications by
@@ -99,11 +99,44 @@
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `<ch-dialog class="dialog">
-  <!-- Your content here -->
-</ch-dialog>`;
+                    const markup1 = `<ch-dialog class="dialog" caption="About GeneXus" show-header>
+  <div class="spacing-body"><!-- Your dialog content here --></div>
+</ch-dialog>
+`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          spacing classes
+          =========================== -->
+            <article class="article" nav data-title="spacing classes">
+              <header class="article__header"></header>
+
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  By default the dialog does not provide any padding to the
+                  content. To apply padding to the content you have to include a
+                  wrapper element with
+                  <a href="./spacing.doc.html"
+                    >any of the global body padding classes</a
+                  >.
+                </p>
+                <div class="article__content">
+                  <div class="article__content">
+                    <div class="dummy-grid-container">
+                      <a
+                        href="./spacing.doc.html"
+                        class="dummy-grid-container__item"
+                        >this component adheres to the spacing body classes</a
+                      >
+                    </div>
+                  </div>
                 </div>
                 <!-- /.article__content -->
               </div>

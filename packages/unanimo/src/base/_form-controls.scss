@@ -13,7 +13,7 @@
 
 %form-input__label {
   @include label-common-styles();
-  gap: var(--spacing-un-spacing--m); // Used for images
+  gap: var(--spacing--m); // Used for images
   @include form-input__label-base();
 }
 
@@ -29,11 +29,10 @@
   position: relative;
   block-size: 32px;
   max-block-size: 32px;
-  padding-inline: var(--spacing-un-spacing--m);
-  border-radius: var(--border-radius-un-border__radius--m);
-  border: var(--border-radius-un-border__radius--xs) solid
-    var(--borders-un-border-color__strong);
-  color: var(--body-texts-un-body-m__font-color--positive);
+  padding-inline: var(--spacing--m);
+  border-radius: var(--border-radius--m);
+  border: var(--border-radius--xs) solid var(--border-color__strong);
+  color: var(--body-m__font-color--positive);
 
   &--focus {
     outline: 2px solid currentColor;
@@ -41,8 +40,8 @@
   }
 
   &--disabled {
-    border-color: var(--borders-un-border-color__disabled);
-    color: var(--text-un-text__disabled);
+    border-color: var(--border-color__disabled);
+    color: var(--text__disabled);
   }
 }
 
@@ -52,20 +51,19 @@
   position: relative;
   min-block-size: 32px;
   max-block-size: 102px;
-  padding-inline: var(--spacing-un-spacing--m);
+  padding-inline: var(--spacing--m);
   padding-block: 6px;
-  border-radius: var(--border-radius-un-border__radius--m);
-  border: var(--border-radius-un-border__radius--xs) solid
-    var(--borders-un-border-color__strong);
-  color: var(--body-texts-un-body-m__font-color--positive);
+  border-radius: var(--border-radius--m);
+  border: var(--border-radius--xs) solid var(--border-color__strong);
+  color: var(--body-m__font-color--positive);
 }
 
 %form-input__placeholder {
-  color: var(--body-texts-un-body-m__font-color--gray);
+  color: var(--body-m__font-color--gray);
 }
 
 @mixin form-input-placeholder-var() {
-  --ch-placeholder-color: var(--body-texts-un-body-m__font-color--gray);
+  --ch-placeholder-color: var(--body-m__font-color--gray);
 }
 
 /// @group Form
@@ -109,25 +107,25 @@
 
     @if $add--error {
       &--error {
-        border-color: var(--borders-un-border-color__error);
+        border-color: var(--border-color__error);
 
         &::after {
           content: "";
           position: absolute;
-          inset-block: calc(50% - var(--spacing-un-spacing--l) / 2);
+          inset-block: calc(50% - var(--spacing--l) / 2);
           inset-inline-start: calc(
-            100% + 1px + var(--spacing-un-spacing--xs)
+            100% + 1px + var(--spacing--xs)
           ); // 1px of border-width
 
-          inline-size: var(--spacing-un-spacing--xl);
-          block-size: var(--spacing-un-spacing--xl);
+          inline-size: var(--spacing--xl);
+          block-size: var(--spacing--xl);
           -webkit-mask: url("../assets/icons/error.svg")
             50%
             50% /
-            var(--spacing-un-spacing--l)
-            var(--spacing-un-spacing--l)
+            var(--spacing--l)
+            var(--spacing--l)
             no-repeat;
-          background-color: var(--icons-un-icon__error);
+          background-color: var(--icons__error);
         }
       }
     }
@@ -175,25 +173,25 @@
 
     @if $add--error {
       &--error {
-        border-color: var(--borders-un-border-color__error);
+        border-color: var(--border-color__error);
 
         &::after {
           content: "";
           position: absolute;
-          inset-block: calc(50% - var(--spacing-un-spacing--l) / 2);
+          inset-block: calc(50% - var(--spacing--l) / 2);
           inset-inline-start: calc(
-            100% + 1px + var(--spacing-un-spacing--xs)
+            100% + 1px + var(--spacing--xs)
           ); // 1px of border-width
 
-          inline-size: var(--spacing-un-spacing--xl);
-          block-size: var(--spacing-un-spacing--xl);
+          inline-size: var(--spacing--xl);
+          block-size: var(--spacing--xl);
           -webkit-mask: url("../assets/icons/error.svg")
             50%
             50% /
-            var(--spacing-un-spacing--l)
-            var(--spacing-un-spacing--l)
+            var(--spacing--l)
+            var(--spacing--l)
             no-repeat;
-          background-color: var(--icons-un-icon__error);
+          background-color: var(--icons__error);
         }
       }
     }
@@ -212,7 +210,7 @@
 
     @if $add--disabled {
       &--disabled {
-        color: var(--text-un-text__disabled);
+        color: var(--text__disabled);
       }
     }
   }
@@ -230,7 +228,7 @@
 
     @if $add--disabled {
       &--disabled {
-        color: var(--text-un-text__disabled);
+        color: var(--text__disabled);
       }
     }
   }

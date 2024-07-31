@@ -4,6 +4,7 @@ const _URL = new URL(window.location.href);
 const PAGE_URL = `${_URL.origin}${_URL.pathname}`;
 const ARTICLE_HEADER_CLASS = ".article__header";
 const ARTICLE_SELECTOR = ".article[nav]";
+let SIDEBAR_NAV; // A reference to the sidebar nav.
 let CONTAINER_REF;
 let topBarRef = null;
 
@@ -12,7 +13,6 @@ const HTML = document.querySelector("html");
 const HEAD = document.head;
 const BODY = document.querySelector("body");
 const SIDEBAR_DATA_ATTR = "data-sidebar";
-let PARENT_NAV_SIDEBAR; // a reference if the page has sidebar
 let CURRENT_PAGE_NAV_ITEM; // a reference the navigation item for the actual actual page.
 let PAGE_ARTICLES; // a reference to all the page ".article[nav]"
 
@@ -20,7 +20,7 @@ const includeFavicon = () => {
   const linkElement = document.createElement("link");
   linkElement.rel = "icon";
   linkElement.type = "image/png";
-  linkElement.href = "../dist/assets/images/mercury-favicon-32x32.png";
+  linkElement.href = "./assets/images/favicon.png";
   linkElement.sizes = "32x32";
   document.head.appendChild(linkElement);
 };
@@ -191,14 +191,38 @@ const includeSidebarNav = async () => {
   // Let's call this the external navigation.
   const includeSidebar = BODY.hasAttribute(SIDEBAR_DATA_ATTR);
   if (includeSidebar) {
-    const navbarItems = await getNavbarItems();
-    if (navbarItems && navbarItems.items.length) {
+    const renderSidebarItems = itemsObj => {
       // get page url name to identify the navigation item
       // for this page later.
-
       const pageName = PAGE_URL.split("/").pop().split(".")[0];
+      const listCaption = itemsObj.listCaption;
+      const listItemsArr = itemsObj.items;
 
-      navbarItems.items.forEach(item => {
+      // list section element
+      const listSectionEl = document.createElement("section");
+      listSectionEl.classList.add("sidebar__section");
+
+      // list section title element
+      let listSectionTitleEl;
+      if (listCaption) {
+        listSectionTitleEl = document.createElement("h2");
+        listSectionTitleEl.classList.add("sidebar__section-title");
+        listSectionTitleEl.textContent = listCaption;
+        listSectionEl.appendChild(listSectionTitleEl);
+      }
+
+      // list element
+      const ul = document.createElement("ul");
+      ul.classList.add("sidebar__list");
+
+      // sort alphabetically
+      listItemsArr.sort((a, b) => {
+        if (a.caption < b.caption) return -1;
+        if (a.caption > b.caption) return 1;
+        return 0;
+      });
+
+      listItemsArr.forEach(item => {
         const li = document.createElement("li");
         const a = document.createElement("a");
         a.href = item.url;
@@ -216,8 +240,22 @@ const includeSidebarNav = async () => {
         }
 
         li.appendChild(a);
-        PARENT_NAV_SIDEBAR.appendChild(li);
+        ul.appendChild(li);
       });
+
+      listSectionEl.appendChild(ul);
+      SIDEBAR_NAV.appendChild(listSectionEl);
+    };
+
+    const navbarItems = await getNavbarItems();
+    const componentsItemsObj = navbarItems?.components;
+    const documentationItemsObj = navbarItems?.documentation;
+
+    if (navbarItems && componentsItemsObj.items?.length) {
+      renderSidebarItems(componentsItemsObj);
+    }
+    if (navbarItems && documentationItemsObj.items?.length) {
+      renderSidebarItems(documentationItemsObj);
     }
   }
 
@@ -245,16 +283,9 @@ const includeSidebar = () => {
     aside.appendChild(header);
 
     // Create nav element
-    const nav = document.createElement("nav");
-    nav.classList.add("sidebar__nav");
-    aside.appendChild(nav);
-
-    // Create ul element
-    const ul = document.createElement("ul");
-    ul.classList.add("sidebar__list", "sidebar__list--parent");
-    ul.id = "parent-sidebar";
-    PARENT_NAV_SIDEBAR = ul;
-    nav.appendChild(ul);
+    SIDEBAR_NAV = document.createElement("nav");
+    SIDEBAR_NAV.classList.add("sidebar__nav");
+    aside.appendChild(SIDEBAR_NAV);
 
     // Create footer element
     const footer = document.createElement("footer");

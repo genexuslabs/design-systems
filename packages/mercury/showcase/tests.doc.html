@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tests</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+
+      .elevation-01 {
+        background-color: var(--mer-color__elevation--01);
+        display: flex;
+        padding: 16px;
+        gap: 16px;
+        flex-direction: column;
+      }
+      .items-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px; /* Adjust the gap between grid items as needed */
+      }
+      .item {
+        padding: 8px 16px;
+        border-radius: 4px;
+      }
+      .items-title {
+        font-size: var(--mer-font__size--sm);
+      }
+      .main a {
+        text-decoration: underline;
+      }
+      /* - - - - - - - - - - - 
+      Tinted Yellows
+      - - - - - - - - - - - */
+      /*con opacidad (figma)*/
+      .item--yellow-5-o {
+        background-color: #ffc96b0d;
+      }
+      .item--yellow-60-o {
+        background-color: #ffc96b99;
+      }
+      /*sin opacidad*/
+      .item--yellow-5-no {
+        background-color: #282a2d;
+      }
+      .item--yellow-60-no {
+        background-color: #ad8a53;
+      }
+      /*valor del token actual*/
+      .item--yellow-5-token {
+        background-color: var(--mer-color__tinted-yellow--5);
+      }
+      .item--yellow-60-token {
+        background-color: var(--mer-color__tinted-yellow--60);
+      }
+      /* - - - - - - - - - - - 
+      Tinted Reds
+      - - - - - - - - - - - */
+      /*con opacidad (figma)*/
+      .item--red-5-o {
+        background-color: #fb7c840d;
+      }
+      .item--red-60-o {
+        background-color: #fb7c8499;
+      }
+      /*sin opacidad*/
+      .item--red-5-no {
+        background-color: #29252f;
+      }
+      .item--red-60-no {
+        background-color: #aa5962;
+      }
+      /*valor del token actual*/
+      .item--red-5-token {
+        background-color: var(--mer-color__tinted-red--5);
+      }
+      .item--red-60-token {
+        background-color: var(--mer-color__tinted-red--60);
+      }
+      /* - - - - - - - - - - - 
+      Tinted Greens
+      - - - - - - - - - - - */
+      /*con opacidad (figma)*/
+      .item--green-5-o {
+        background-color: #3fa89b0d;
+      }
+      .item--green-60-o {
+        background-color: #3fa89b99;
+      }
+      /*sin opacidad*/
+      .item--green-5-no {
+        background-color: #1c2830;
+      }
+      .item--green-60-no {
+        background-color: #317571;
+      }
+      /*valor del token actual*/
+      .item--green-5-token {
+        background-color: var(--mer-color__tinted-green--5);
+      }
+      .item--green-60-token {
+        background-color: var(--mer-color__tinted-green--60);
+      }
+      /* - - - - - - - - - - - 
+      Tinted Blues
+      - - - - - - - - - - - */
+      /*con opacidad (figma)*/
+      .item--blue-5-o {
+        background-color: #5ba7ff0d;
+      }
+      .item--blue-8-o {
+        background-color: #5ba7ff14;
+      }
+      .item--blue-10-o {
+        background-color: #5ba7ff1a;
+      }
+      .item--blue-20-o {
+        background-color: #5ba7ff33;
+      }
+      .item--blue-30-o {
+        background-color: #5ba7ff4d;
+      }
+      .item--blue-50-o {
+        background-color: #5ba7ff80;
+      }
+      /*sin opacidad*/
+      .item--blue-5-no {
+        background-color: #1d2838;
+      }
+      .item--blue-8-no {
+        background-color: #1f2c3f;
+      }
+      .item--blue-10-no {
+        background-color: #1f2e43;
+      }
+      .item--blue-20-no {
+        background-color: #293d5c;
+      }
+      .item--blue-30-no {
+        background-color: #2e4e72;
+      }
+      .item--blue-50-no {
+        background-color: #3c689c;
+      }
+      /*valor del token actual*/
+      .item--blue-5-token {
+        background-color: var(--mer-color__tinted-blue--5);
+      }
+      .item--blue-8-token {
+        background-color: var(--mer-color__tinted-blue--8);
+      }
+      .item--blue-10-token {
+        background-color: var(--mer-color__tinted-blue--10);
+      }
+      .item--blue-20-token {
+        background-color: var(--mer-color__tinted-blue--20);
+      }
+      .item--blue-30-token {
+        background-color: var(--mer-color__tinted-blue--30);
+      }
+      .item--blue-50-token {
+        background-color: var(--mer-color__tinted-blue--50);
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <!-- local development -->
+    <!-- <link rel="stylesheet" href="./dist/bundles/css/all.css" /> -->
+    <!-- showcase (netlify) -->
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+  </head>
+  <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">tests</h1>
+            <p class="section__description">
+              Esta página está destinada a realizar pruebas.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          button-primary text only
+          =========================== -->
+            <article class="article" nav data-title="opacidad en colores">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  Los colores con opacidad han presentado algunos problemas en
+                  el tabular grid. La solución es usar colores sin opacidad. Las
+                  primeras dos columnas aplican colores fijos definidos en esta
+                  página. La tercer columna (token actual) aplica el valor
+                  actual de los tokens.
+                </p>
+                <div class="article__content">
+                  <div class="elevation-01 items-container">
+                    <p class="items-title">con opacidad (figma)</p>
+                    <p class="items-title">sin opacidad</p>
+                    <p class="items-title">token actual</p>
+                    <!-- yellows -->
+                    <span class="item item--yellow-5-o">yellow-5</span>
+                    <span class="item item--yellow-5-no">yellow-5</span>
+                    <span class="item item--yellow-5-token">yellow-5</span>
+                    <span class="item item--yellow-60-o">yellow-60</span>
+                    <span class="item item--yellow-60-no">yellow-60</span>
+                    <span class="item item--yellow-60-token">yellow-60</span>
+                    <!-- reds -->
+                    <span class="item item--red-5-o">red-5</span>
+                    <span class="item item--red-5-no">red-5</span>
+                    <span class="item item--red-5-token">red-5</span>
+                    <span class="item item--red-60-o">red-60</span>
+                    <span class="item item--red-60-no">red-60</span>
+                    <span class="item item--red-60-token">red-60</span>
+                    <!-- greens -->
+                    <span class="item item--green-5-o">green-5</span>
+                    <span class="item item--green-5-no">green-5</span>
+                    <span class="item item--green-5-token">green-5</span>
+                    <span class="item item--green-60-o">green-60</span>
+                    <span class="item item--green-60-no">green-60</span>
+                    <span class="item item--green-60-token">green-60</span>
+                    <!-- blues -->
+                    <span class="item item--blue-5-o">blue-5</span>
+                    <span class="item item--blue-5-no">blue-5</span>
+                    <span class="item item--blue-5-token">blue-5</span>
+                    <span class="item item--blue-8-o">blue-8</span>
+                    <span class="item item--blue-8-no">blue-8</span>
+                    <span class="item item--blue-8-token">blue-8</span>
+                    <span class="item item--blue-10-o">blue-10</span>
+                    <span class="item item--blue-10-no">blue-10</span>
+                    <span class="item item--blue-10-token">blue-10</span>
+                    <span class="item item--blue-20-o">blue-20</span>
+                    <span class="item item--blue-20-no">blue-20</span>
+                    <span class="item item--blue-20-token">blue-20</span>
+                    <span class="item item--blue-30-o">blue-30</span>
+                    <span class="item item--blue-30-no">blue-30</span>
+                    <span class="item item--blue-30-token">blue-30</span>
+                    <span class="item item--blue-50-o">blue-50</span>
+                    <span class="item item--blue-50-no">blue-50</span>
+                    <span class="item item--blue-50-token">blue-50</span>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-1" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup1 = `            con opacidad    sin opacidad  
+
+yellow-5    |   #ffc96b0d   |   #282a2d
+yellow-60   |   #ffc96b99   |   #ad8a53
+            |               |       
+red-5       |   #fb7c840d   |   #29252f
+red-60      |   #fb7c8499   |   #aa5962
+            |               |
+green-5     |   #3fa89b0d   |   #1c2830
+green-60    |   #3fa89b99   |   #317571
+            |               |
+blue-5:     |   #5ba7ff0d;  |   #1d2838;
+blue-8:     |   #5ba7ff14;  |   #1f2c3f;
+blue-10:    |   #5ba7ff1a;  |   #1f2e43;
+blue-20:    |   #5ba7ff33;  |   #293d5c;
+blue-30:    |   #5ba7ff4d;  |   #2e4e72;
+blue-50:    |   #5ba7ff80;  |   #3c689c;
+
+color de fondo del contenedor:
+--mer-color__elevation--01`;
+                    document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

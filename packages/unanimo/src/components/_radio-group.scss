@@ -4,39 +4,39 @@
   --ch-radio-group__radio-container-size: 16px;
   --ch-radio-group__radio-option-size: 8px;
 
-  color: var(--text-un-text__on-surface--positive);
-  gap: var(--spacing-un-spacing--m);
+  color: var(--text__on-surface--positive);
+  gap: var(--spacing--m);
 }
 
 %radio-item {
-  gap: var(--spacing-un-spacing--m);
+  gap: var(--spacing--m);
 }
 
 %radio__container {
-  border-color: var(--borders-un-border-color__strong);
+  border-color: var(--border-color__strong);
 
   &--focus {
-    border-color: var(--borders-un-border-color__focused);
+    border-color: var(--border-color__focused);
     border-width: 2px;
   }
 
   &--disabled {
-    color: var(--borders-un-border-color__disabled);
+    color: var(--border-color__disabled);
   }
 
   &--checked {
-    color: var(--accents-un-accent__primary);
+    color: var(--accents__primary);
   }
 
   // Not implemented yet in the control
   &--error {
-    background-color: var(--colors-Foundation-un-color__red--100);
-    color: var(--borders-un-border-color__error);
+    background-color: var(--colors-Foundation__red--100);
+    color: var(--border-color__error);
   }
 }
 
 %radio__label--disabled {
-  color: var(--borders-un-border-color__disabled);
+  color: var(--border-color__disabled);
 }
 
 /// @group Radio Group

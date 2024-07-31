@@ -4,56 +4,56 @@
   --ch-checkbox__container-size: 16px;
   --ch-checkbox__option-size: 10px;
 
-  color: var(--text-un-text__on-surface--positive);
-  gap: var(--spacing-un-spacing--m);
+  color: var(--text__on-surface--positive);
+  gap: var(--spacing--m);
 
   // Input
   &__input {
-    border-color: var(--borders-un-border-color__strong);
+    border-color: var(--border-color__strong);
     border-radius: 3px;
 
     &--focus {
-      border-color: var(--borders-un-border-color__focused);
+      border-color: var(--border-color__focused);
       border-width: 2px;
     }
 
     &--checked-and-indeterminate {
-      border-color: var(--accents-un-accent__primary);
+      border-color: var(--accents__primary);
     }
 
     // Not implemented yet in the control
     &--error {
-      background-color: var(--colors-Foundation-un-color__red--100);
+      background-color: var(--colors-Foundation__red--100);
     }
 
     &--disabled {
-      border-color: var(--borders-un-border-color__disabled);
+      border-color: var(--border-color__disabled);
     }
   }
 
   // Option
   &__option {
     &--checked {
-      color: var(--accents-un-accent__primary);
+      color: var(--accents__primary);
     }
 
     &--indeterminate {
-      color: var(--accents-un-accent__primary);
+      color: var(--accents__primary);
     }
 
     // Not implemented yet in the control
     &--error {
-      color: var(--borders-un-border-color__error);
+      color: var(--border-color__error);
     }
 
     &--disabled {
-      color: var(--borders-un-border-color__disabled);
+      color: var(--border-color__disabled);
     }
   }
 
   // Label
   &__label--disabled {
-    color: var(--borders-un-border-color__disabled);
+    color: var(--border-color__disabled);
   }
 }
 
