@@ -66,18 +66,12 @@
 //    Ellipsis
 // - - - - - - - - - - - - - - - - - - - -
 
-%ellipsis {
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-@mixin elipsis() {
+@mixin ellipsis() {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 %ellipsis {
-  @include elipsis();
+  @include ellipsis();
 }
