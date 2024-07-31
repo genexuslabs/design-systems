@@ -18,12 +18,13 @@
   --mer-color__neutral-gray--700: #c0ccd9;
   --mer-color__neutral-gray--800: #d2ddeb;
   --mer-color__neutral-gray--900: #e1ecf9;
-  // 1000 to 1400 do not exist anymore in figma (check with designer)
-  --mer-color__neutral-gray--1000: #;
-  --mer-color__neutral-gray--1100: #;
-  --mer-color__neutral-gray--1200: #;
-  --mer-color__neutral-gray--1300: #;
-  --mer-color__neutral-gray--1400: #;
+  // 1000 to 1400 do not exist anymore in figma but can not be removed yet
+  // because gemini is dependent on this tokens (check with designer)
+  --mer-color__neutral-gray--1000: #f8f8f8;
+  --mer-color__neutral-gray--1100: #f1f1f1;
+  --mer-color__neutral-gray--1200: #e4e4e4;
+  --mer-color__neutral-gray--1300: #dedede;
+  --mer-color__neutral-gray--1400: #ffffff;
 
   // tinted
   --mer-color__tinted-yellow--5: #ffc96b0d;
@@ -78,14 +79,18 @@
   --mer-color__neutral-gray--700: #242d3c;
   --mer-color__neutral-gray--800: #181f2a;
   --mer-color__neutral-gray--900: #11151c;
-  // 1000 to 1400 do not exist anymore in figma (check with designer)
-  --mer-color__neutral-gray--1000: #;
-  --mer-color__neutral-gray--1100: #;
-  --mer-color__neutral-gray--1200: #;
-  --mer-color__neutral-gray--1300: #;
-  --mer-color__neutral-gray--1400: #;
+  // 1000 to 1400 do not exist anymore in figma but can not be removed yet
+  // because gemini is dependent on this tokens (check with designer)
+  --mer-color__neutral-gray--1000: #1f2225;
+  --mer-color__neutral-gray--1100: #24272a;
+  --mer-color__neutral-gray--1200: #2d3032;
+  --mer-color__neutral-gray--1300: #3b3e40;
+  --mer-color__neutral-gray--1400: #2d3134;
 
-  // tinted (with opacity)
+  // tinted (with opacity) this values had to be updated to the no opacity
+  // version (see below), because colors with opacity caused some issues when
+  // overlapping. Until this is not a definitive edition
+
   // --mer-color__tinted-yellow--5: #ffc96b0d;
   // --mer-color__tinted-yellow--60: #ffc96b99;
   // --mer-color__tinted-red--5: #fb7c840d;
