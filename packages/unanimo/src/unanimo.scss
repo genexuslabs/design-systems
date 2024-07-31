@@ -213,7 +213,7 @@
   @if $body and $tokens and $colors {
     html {
       scrollbar-width: thin;
-      scrollbar-color: var(--accents-un-accent__secondary) transparent;
+      scrollbar-color: var(--accents__secondary) transparent;
 
       &::-webkit-scrollbar {
         width: 8px;
@@ -222,14 +222,14 @@
       }
 
       &::-webkit-scrollbar-thumb {
-        background-color: var(--accents-un-accent__secondary);
+        background-color: var(--accents__secondary);
       }
     }
 
     body {
       @include document-common-styles();
-      background-color: var(--surface-un-surface--alternative);
-      color: var(--text-un-text__on-surface--positive);
+      background-color: var(--surface--alternative);
+      color: var(--text__on-surface--positive);
 
       @if $font-face {
         font-family: SourceSansPro;
@@ -371,7 +371,7 @@
       @include dropdown-conversational();
     }
 
-    // flexible-layout
+    // flexible layout
     @if $flexible-layout {
       @include flexible-layout();
     }

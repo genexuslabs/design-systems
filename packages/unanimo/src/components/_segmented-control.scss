@@ -5,7 +5,7 @@
 );
 
 %segmented-control-item-base {
-  padding-inline: var(--spacing-un-spacing--l);
+  padding-inline: var(--spacing--l);
   border-radius: unset;
 }
 
@@ -16,8 +16,8 @@
 );
 
 %segmented-control-item--first {
-  border-start-start-radius: var(--border-radius-un-border__radius--s);
-  border-end-start-radius: var(--border-radius-un-border__radius--s);
+  border-start-start-radius: var(--border-radius--s);
+  border-end-start-radius: var(--border-radius--s);
   border-inline-end-width: 0;
 }
 
@@ -26,8 +26,8 @@
 }
 
 %segmented-control-item--last {
-  border-start-end-radius: var(--border-radius-un-border__radius--s);
-  border-end-end-radius: var(--border-radius-un-border__radius--s);
+  border-start-end-radius: var(--border-radius--s);
+  border-end-end-radius: var(--border-radius--s);
   border-inline-end-width: 1px;
 }
 

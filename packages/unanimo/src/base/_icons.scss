@@ -1,15 +1,15 @@
 %icon-mask--before {
   @include icon-mask-common-styles(
-    $inline-size: var(--spacing-un-spacing--xl),
-    $block-size: var(--spacing-un-spacing--xl),
+    $inline-size: var(--spacing--xl),
+    $block-size: var(--spacing--xl),
     $mask-size: 100%
   );
 }
 
 %icon-background--before {
   @include icon-background-common-styles(
-    $inline-size: var(--spacing-un-spacing--xl),
-    $block-size: var(--spacing-un-spacing--xl),
+    $inline-size: var(--spacing--xl),
+    $block-size: var(--spacing--xl),
     $background-size: 100%
   );
 }
