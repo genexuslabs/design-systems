@@ -72,3 +72,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+@mixin elipsis() {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+%ellipsis {
+  @include elipsis();
+}
