@@ -1,13 +1,16 @@
 %list-box {
-  --ch-action-list-group__expandable-button-size: 30px;
-  // --ch-action-list-group__expandable-button-image-size: calc(100% - 4px);
-  --ch-action-list-group__expandable-button-image-size: 40px;
+  --ch-action-list-group__expandable-button-image-size: var(
+    --mer-icon__box--md
+  );
+  --ch-action-list-group__expandable-button-size: var(--mer-icon__box--md);
+  --ch-action-list-item__background-image-size: var(--mer-icon__size--md);
   --ch-action-list-item__image-size: var(--mer-icon__box--md);
 
+  @include items-container-border();
   @include items-container-colors();
-  @include items-container-padding();
   @include items-container-dropdown();
   @include items-container-gap();
+  @include items-container-padding();
 
   &-item-action {
     @include item-colors-enabled();
@@ -17,7 +20,8 @@
     @include item-font-size-regular();
     @include item-font-weight();
     @include item-padding-inline();
-    align-content: center; // WA
+    align-content: center; // WA to align vertically, since the items
+    // apply a fixed block-size.
 
     &--disabled {
       @include item-colors-disabled();
@@ -37,27 +41,47 @@
       &--hover {
         @include item-colors-hover();
       }
-      &--selected {
-        @include item-colors-selected();
-        &--hover {
-          @include item-colors-selected-hover();
-        }
+    }
+    &--selected {
+      @include item-colors-selected();
+      &--hover {
+        @include item-colors-selected-hover();
+      }
+    }
+    &--not-selected {
+      &--hover {
       }
     }
 
     &--nested-expandable {
-      padding-inline-start: calc(
-        var(--spacing-un-spacing--l) + var(--spacing-un-spacing--s)
-      );
     }
   }
 
   &-group {
     @include items-container-gap();
+    &-action {
+      @include item-gap();
+      &--hover {
+        @include item-colors-hover();
+        border-color: transparent; // WA to hide the border.
+        // without border the item does not align with the items
+        // that implement border.
+      }
+    }
     &-action,
     &-caption {
-      @include items-container-gap();
       @include item-font-header();
+      @include item-colors-enabled();
+    }
+    &-caption {
+      @include item-height-regular();
+      @include item-padding-inline();
+      @include item-border();
+
+      // WA to hide the ::before and align vertically
+      display: grid;
+      grid-template-columns: 0 1fr;
+      align-items: center;
     }
     &-expandable {
       @include items-container-gap();
@@ -65,21 +89,19 @@
   }
 
   &-additional-item--action {
-    color: var(--text-un-text__on);
+    // to be defined later
 
     &--hover {
-      color: var(--text-un-text__primary--hover);
+      // to be defined later
     }
 
     &--focus-visible {
-      outline: 1px solid var(--accents-un-accent__secondary--active);
-      outline-offset: -1px;
+      @include focus-outline();
     }
   }
 
   &-separator {
-    margin-block: var(--spacing-un-spacing--s);
-    background-color: var(--accents-un-accent__secondary--hover);
+    @include items-container-separator();
   }
 }
 
@@ -104,6 +126,16 @@
   $item-action-selectable-selector: ".list-box::part(item__action selectable)",
   $group-action-selectable-selector: ".list-box::part(group__action selectable)",
 
+  $item-action--selected-selector:
+    ".list-box::part(item__action selectable selected)",
+  $group-action--selected-selector:
+    ".list-box::part(group__action selectable selected)",
+
+  $item-action--not-selected-selector:
+    ".list-box::part(item__action selectable not-selected)",
+  $group-action--not-selected-selector:
+    ".list-box::part(group__action selectable not-selected)",
+
   $item-action--disabled-selector: ".list-box::part(item__action disabled)",
   $group-action--disabled-selector: ".list-box::part(group__action disabled)",
   $group-caption--disabled-selector: ".list-box::part(group__caption disabled)",
@@ -126,9 +158,12 @@
   //                 Action
   // - - - - - - - - - - - - - - - - - - - -
   #{$item-action-selector},
-  #{$group-action-selector},
-  #{$group-caption-selector} {
+  #{$group-action-selector} {
     @extend %list-box-item-action;
+  }
+
+  #{$group-caption-selector} {
+    @extend %list-box-group-caption;
   }
 
   #{$item-action-selector}:focus-visible,
@@ -149,11 +184,20 @@
   }
 
   // Selectable Selected
-  #{$item-action-selectable-selector},
-  #{$group-action-selectable-selector} {
-    @extend %list-box-item-action--selectable--selected;
+  #{$item-action--selected-selector},
+  #{$group-action--selected-selector} {
+    @extend %list-box-item-action--selected;
     &:hover {
-      @extend %list-box-item-action--selectable--selected--hover;
+      @extend %list-box-item-action--selected--hover;
+    }
+  }
+
+  // Selectable Not Selected
+  #{$item-action--not-selected-selector},
+  #{$group-action--not-selected-selector} {
+    @extend %list-box-item-action--not-selected;
+    &:hover {
+      @extend %list-box-item-action--not-selected--hover;
     }
   }
 
@@ -165,6 +209,7 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                  Group
   // - - - - - - - - - - - - - - - - - - - -
+
   #{$group-selector} {
     @extend %list-box-group;
   }
@@ -174,6 +219,9 @@
 
   #{$group-action-selector} {
     @extend %list-box-group-action;
+    &:hover {
+      @extend %list-box-group-action--hover;
+    }
   }
   #{$group-caption-selector} {
     @extend %list-box-group-caption;
@@ -200,7 +248,7 @@
   @if $add--additional-item {
     #{$additional-item--action-selector},
     #{$additional-item--image-selector} {
-      display: none;
+      display: none; // To be defined later.
       @extend %list-box-additional-item--action;
 
       &:hover {
