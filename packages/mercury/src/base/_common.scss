@@ -135,6 +135,10 @@ Control Tiny
 Items Container
 ----------------------*/
 
+@mixin items-container-border() {
+  border-style: var(--items-container__border-style);
+  border-width: var(--items-container__border-width);
+}
 @mixin items-container-colors() {
   background-color: var(--items-container__bg-color);
   border-color: var(--items-container__border-color);
@@ -150,11 +154,13 @@ Items Container
 @mixin items-container-gap() {
   gap: var(--items-container__gap);
 }
-@mixin items-container-gap() {
-  gap: var(--items-container__gap);
-}
 @mixin items-container-max-height() {
   max-block-size: var(--items-container__max-block-size);
+}
+@mixin items-container-separator() {
+  block-size: var(--items-container-separator__block-size);
+  inline-size: var(--items-container-separator__inline-size);
+  background-color: var(--items-container-separator__bg-color);
 }
 
 /*---------------------------------
@@ -196,6 +202,9 @@ Single Item (Every item except grid)
 }
 @mixin item-border-radius() {
   border-radius: var(--item__border-radius);
+}
+@mixin item-gap() {
+  gap: var(--item__gap--regular);
 }
 @mixin item-padding() {
   padding-block: var(--item__padding-block);
