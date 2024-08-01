@@ -65,9 +65,18 @@
   --item__font-size--small: var(--mer-font__size--3xs);
   --item__font-size--regular: var(--mer-font__size--xs);
 
+  // - - - - - - - Item Gap - - - - - - -
+  // For example, the gap between the icon and the caption
+  --item__gap--regular: var(--mer-spacing--xs);
+
   // - - - - - - - - - - - - - - - - - - - -
   //           Items Container
   // - - - - - - - - - - - - - - - - - - - -
+
+  // - - - - - - - Border - - - - - - -
+
+  --items-container__border-width: var(--mer-border__width--sm);
+  --items-container__border-style: solid;
 
   // - - - - - - - Colors - - - - - - -
 
@@ -91,6 +100,14 @@
   // - - - - - - - Height - - - - - - -
 
   --items-container__max-block-size: 300px;
+
+  // - - - - - - - Separator - - - - - - -
+  // The separator is an element that separates
+  // two groups inside the container.
+
+  --items-container-separator__block-size: var(--mer-border__width--sm);
+  --items-container-separator__inline-size: 100%;
+  --items-container-separator__bg-color: var(--items-container__border-color);
 
   // - - - - - - - - - - - - - - - - - - - -
   //               Grid Cell
