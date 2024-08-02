@@ -1,12 +1,15 @@
 @import "../button/button-tokens";
 
 %button-base {
+  @include button-tokens-primary();
+  @include button-tokens-secondary();
+  @include button-tokens-tertiary();
+
   @include button-common-styles();
   @include control-height-regular();
   @include control-border();
   @include control-font-size-regular();
   @include control-padding-inline();
-  padding-inline: var(--control__padding-inline);
 
   &--focus-visible {
     @include focus-outline();
@@ -14,7 +17,6 @@
 }
 
 %button-primary {
-  @include button-tokens-primary();
   @include control-font-weight-semi-bold();
   @extend %button-base;
 
@@ -44,7 +46,6 @@
 }
 
 %button-secondary {
-  @include button-tokens-secondary();
   @extend %button-base;
 
   //overwrite some control default styles
@@ -73,7 +74,6 @@
 }
 
 %button-tertiary {
-  @include button-tokens-tertiary();
   @include control-font-weight-regular();
   @extend %button-base;
 
