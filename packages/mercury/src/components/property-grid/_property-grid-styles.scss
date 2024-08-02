@@ -6,17 +6,19 @@
   // shared properties
   &__property,
   &__value {
-    align-content: center;
+    align-items: center;
   }
+
   &__property {
     &--readonly {
       @extend %text-readonly;
     }
   }
   &__value {
-    @extend %ellipsis;
+    --control__inline-size: 100%;
     @include control-remove-border();
-    justify-items: stretch;
+    @extend %ellipsis;
+
     &--readonly {
       @extend %text-readonly;
     }
@@ -24,6 +26,7 @@
       @extend %text-edited;
     }
     &--editing {
+      display: flex;
       padding: 0;
     }
   }
