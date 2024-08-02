@@ -16,12 +16,8 @@
     @include item-colors-enabled();
     @include item-border();
     @include item-border-radius();
-    @include item-height-regular();
-    @include item-font-size-regular();
-    @include item-font-weight();
-    @include item-padding-inline();
-    align-content: center; // WA to align vertically, since the items
-    // apply a fixed block-size.
+    @include item-font();
+    @include item-padding();
 
     &--disabled {
       @include item-colors-disabled();
@@ -74,14 +70,8 @@
       @include item-colors-enabled();
     }
     &-caption {
-      @include item-height-regular();
-      @include item-padding-inline();
+      @include item-padding();
       @include item-border();
-
-      // WA to hide the ::before and align vertically
-      display: grid;
-      grid-template-columns: 0 1fr;
-      align-items: center;
     }
     &-expandable {
       @include items-container-gap();

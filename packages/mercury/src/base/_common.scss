@@ -222,18 +222,21 @@ Single Item (Every item except grid)
 @mixin item-height-large() {
   block-size: var(--item__height--large);
 }
-@mixin item-font-weight() {
+@mixin item-font() {
+  line-height: var(--item__line-height);
+  font-size: var(--item__font-size);
   font-weight: var(--item__font-weight);
 }
 @mixin item-font-header() {
-  font-size: var(--item-header__font-size);
+  // item header font-size and line-height has to be the same as
+  // item font-size and line-height in order for the computed height
+  // to be the same.
+  line-height: var(--item__line-height);
+  font-size: var(--item__font-size);
   font-weight: var(--item-header__font-weight);
 }
 @mixin item-font-size-small() {
-  font-size: var(--item__font-size--small);
-}
-@mixin item-font-size-regular() {
-  font-size: var(--item__font-size--regular);
+  --item__font-size: var(--item__font-size--small);
 }
 
 /*---------------------------------

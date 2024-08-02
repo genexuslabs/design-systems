@@ -127,9 +127,7 @@
 
   #{$group__header-selector} {
     @include item-colors-enabled();
-    @include item-font-size-regular();
     @include item-font-header();
-    @include item-height-regular();
     @include item-padding-inline();
   }
 
@@ -158,9 +156,7 @@
     @include item-colors-enabled();
     @include item-border();
     @include item-border-radius();
-    @include item-height-regular();
-    @include item-font-size-regular();
-    @include item-font-weight();
+    @include item-font();
     @include item-padding-inline();
   }
 
