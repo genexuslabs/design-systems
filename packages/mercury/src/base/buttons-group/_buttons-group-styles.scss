@@ -1,16 +1,13 @@
 %buttons-group {
-  --spacing-body-block-start: var(--mer-spacing--2xs);
-  --spacing-body-block-end: var(--mer-spacing--2xs);
-  --spacing-body-inline-start: var(--mer-spacing--2xs);
-  --spacing-body-inline-end: var(--mer-spacing--2xs);
-
+  --buttons-group__bg-color: var(--mer-color__elevation--02);
+  --buttons-group__bg-color--disabled: var(--mer-accent__primary--disabled);
   --buttons-group__border: var(--mer-border__width--sm) solid
     var(--mer-border-color__on-elevation--01);
   --buttons-group__border-radius: var(--mer-border__radius--sm);
-  --buttons-group__bg-color: var(--mer-color__elevation--02);
-  --buttons-group__bg-color--disabled: var(--mer-accent__primary--disabled);
   --buttons-group__gap: var(--mer-spacing--xs);
   --buttons-group__padding: var(--mer-spacing--xs);
+  --buttons-group__padding-block: var(--mer-spacing--2xs);
+  --buttons-group__padding-inline: var(--mer-spacing--2xs);
 
   display: grid;
   background-color: var(--buttons-group__bg-color);
@@ -18,6 +15,8 @@
   border-radius: var(--buttons-group__border-radius);
   gap: var(--buttons-group__gap);
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  padding-block: var(--buttons-group__padding-block);
+  padding-inline: var(--buttons-group__padding-inline);
 
   &--disabled {
     background-color: var(--buttons-group__bg-color--disabled);
