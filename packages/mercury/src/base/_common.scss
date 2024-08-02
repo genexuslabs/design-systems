@@ -113,6 +113,10 @@ Control
   color: var(--control-placeholder__color);
   font-style: var(--control-placeholder__font-style);
 }
+// Size
+@mixin control-inline-size() {
+  inline-size: var(--control__inline-size);
+}
 
 /*----------------------
 Control Tiny
