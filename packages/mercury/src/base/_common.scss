@@ -75,6 +75,13 @@ Control
   border-color: var(--control__border-color);
   border-radius: var(--control__border-radius);
 }
+@mixin control-remove-border() {
+  // This resets the border applied
+  // (for controls inside the property grid)
+  --control__border-width: 0;
+  --control__border-color: transparent;
+  --control__border-radius: 0;
+}
 // Font
 @mixin control-font-weight-regular() {
   font-weight: var(--control__font-weight--regular);
