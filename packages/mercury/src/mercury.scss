@@ -32,6 +32,7 @@
 // Base classes
 @import "./base/label/label-styles"; // should be at the top, since other elements use it.
 @import "./base/button/button-styles";
+@import "./base/buttons-group/buttons-group-styles";
 @import "./base/form-controls/field-styles";
 @import "./base/form-controls/form-input-styles";
 @import "./base/icons";
@@ -349,6 +350,9 @@
 
       // Button tertiary
       @include button-tertiary();
+
+      // Buttons Group
+      @include buttons-group();
 
       @if $icon-classes {
         // Button icon only

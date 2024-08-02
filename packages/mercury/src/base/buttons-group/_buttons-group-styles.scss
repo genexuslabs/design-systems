@@ -1,0 +1,108 @@
+%buttons-group {
+  --spacing-body-block-start: var(--mer-spacing--2xs);
+  --spacing-body-block-end: var(--mer-spacing--2xs);
+  --spacing-body-inline-start: var(--mer-spacing--2xs);
+  --spacing-body-inline-end: var(--mer-spacing--2xs);
+
+  --buttons-group__border: var(--mer-border__width--sm) solid
+    var(--mer-border-color__on-elevation--01);
+  --buttons-group__border-radius: var(--mer-border__radius--sm);
+  --buttons-group__bg-color: var(--mer-color__elevation--02);
+  --buttons-group__bg-color--disabled: var(--mer-accent__primary--disabled);
+  --buttons-group__gap: var(--mer-spacing--xs);
+  --buttons-group__padding: var(--mer-spacing--xs);
+
+  display: grid;
+  background-color: var(--buttons-group__bg-color);
+  border: var(--buttons-group__border);
+  border-radius: var(--buttons-group__border-radius);
+  gap: var(--buttons-group__gap);
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+
+  &--disabled {
+    background-color: var(--buttons-group__bg-color--disabled);
+  }
+
+  &__button {
+    @extend %button-base;
+    @include control-font-weight-semi-bold();
+    --control__border-color: transparent;
+
+    &-filled {
+      &--hover {
+        background-color: var(--button-primary__background-color--hover);
+        --control__border-color: var(--button-primary__border-color--hover);
+        color: var(--button-primary__color--hover);
+      }
+      &--active {
+        background-color: var(--button-primary__background-color--active);
+        --control__border-color: var(--button-primary__border-color--active);
+        color: var(--button-primary__color--active);
+      }
+    }
+
+    &-outlined {
+      &--hover {
+        --control__border-color: var(--button-primary__border-color--active);
+      }
+      &--active {
+        background-color: var(--mer-color__tinted-blue--20);
+        --control__border-color: var(--mer-color__tinted-blue--50);
+      }
+    }
+
+    &--disabled {
+      color: var(--mer-text__on-disabled);
+    }
+  }
+}
+
+/// @group ButtonsGroup
+/// @param {String} $filled-selector [".buttons-group-filled"] -
+/// @param {String} $outlined-selector [".buttons-group-outlined"] -
+/// @param {String} $disabled-selector [".buttons-group-disabled"] -
+/// @param {String} $button-selector [".button"] -
+@mixin buttons-group(
+  $filled-selector: ".buttons-group-filled",
+  $outlined-selector: ".buttons-group-outlined",
+  $disabled-selector: ".buttons-group-disabled",
+  $button-selector: ".buttons-group-button",
+  $add--disabled: true
+) {
+  #{$filled-selector},
+  #{$outlined-selector} {
+    @extend %buttons-group;
+
+    #{$button-selector} {
+      @extend %buttons-group__button;
+    }
+  }
+
+  #{$filled-selector} {
+    #{$button-selector}:hover {
+      @extend %buttons-group__button-filled--hover;
+    }
+    #{$button-selector}:active {
+      @extend %buttons-group__button-filled--active;
+    }
+  }
+
+  #{$outlined-selector} {
+    #{$button-selector}:hover {
+      @extend %buttons-group__button-outlined--hover;
+    }
+    #{$button-selector}:active {
+      @extend %buttons-group__button-outlined--active;
+    }
+  }
+
+  #{$disabled-selector} {
+    @extend %buttons-group--disabled;
+  }
+
+  @if $add--disabled {
+    #{$button-selector}:disabled {
+      @extend %buttons-group__button--disabled;
+    }
+  }
+}

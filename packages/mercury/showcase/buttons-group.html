@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buttons Group</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+  </head>
+  <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- ----------------------------------------------------- 
+    BUTTONS GROUP FILLED
+    ------------------------------------------------------ -->
+        <section class="section">
+          <header class="section__header">
+            <h1 class="section__title">buttons group</h1>
+            <p class="section__description">
+              A button group is a collection of buttons grouped together,
+              usually for related actions. It helps organize multiple actions in
+              a cohesive way, providing users with clear options. Button groups
+              can be used for navigation, formatting, or other sets of actions,
+              enhancing the user interface by making interactions intuitive and
+              accessible.
+            </p>
+          </header>
+          <div class="articles-container">
+            <!-- buttons-group filled: enabled -->
+            <article class="article" nav data-title="filled : enabled">
+              <header class="article__header"></header>
+              <div class="article__main">
+                <p class="article__description">
+                  Displays a group of filled buttons on a flat surface. These
+                  buttons have solid background colors, making them visually
+                  prominent and ideal for primary actions.
+                </p>
+                <div class="article__content">
+                  <div class="buttons-group-filled spacing-body">
+                    <button class="buttons-group-button">Caption 1</button>
+                    <button class="buttons-group-button">Caption 2</button>
+                    <button class="buttons-group-button">Caption 3</button>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="chCode1" language="xml" class="code"></ch-code>
+                  <script>
+                    let chCode1 = `<div class="buttons-group-filled spacing-body">
+  <button class="buttons-group-button">Caption 1</button>
+  <button class="buttons-group-button">Caption 2</button>
+  <button class="buttons-group-button">Caption 3</button>
+</div>`;
+                    document.getElementById("chCode1").value = chCode1;
+                  </script>
+                </div>
+              </div>
+            </article>
+
+            <!-- buttons-group filled: disabled -->
+            <article class="article" nav data-title="filled : disabled">
+              <header class="article__header"></header>
+              <div class="article__main">
+                <div class="article__content">
+                  <div
+                    class="buttons-group-filled buttons-group-disabled spacing-body"
+                  >
+                    <button class="buttons-group-button" disabled>
+                      Caption 1
+                    </button>
+                    <button class="buttons-group-button" disabled>
+                      Caption 2
+                    </button>
+                    <button class="buttons-group-button" disabled>
+                      Caption 3
+                    </button>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="chCode2" language="xml" class="code"></ch-code>
+                  <script>
+                    let chCode2 = `<div class="buttons-group-filled buttons-group-disabled spacing-body">
+  <button class="buttons-group-button" disabled>Caption 1</button>
+  <button class="buttons-group-button" disabled>Caption 2</button>
+  <button class="buttons-group-button" disabled>Caption 3</button>
+</div>`;
+                    document.getElementById("chCode2").value = chCode2;
+                  </script>
+                </div>
+              </div>
+            </article>
+
+            <!-- buttons-group outlined: enabled -->
+            <article class="article" nav data-title="outlined : enabled">
+              <header class="article__header"></header>
+              <div class="article__main">
+                <p class="article__description">
+                  Displays a group of outlined buttons on a flat surface. These
+                  buttons have borders without a solid background, making them
+                  less visually intrusive and suitable for secondary actions.
+                </p>
+                <div class="article__content">
+                  <div class="buttons-group-outlined spacing-body">
+                    <button class="buttons-group-button">Caption 1</button>
+                    <button class="buttons-group-button">Caption 2</button>
+                    <button class="buttons-group-button">Caption 3</button>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="chCode3" language="xml" class="code"></ch-code>
+                  <script>
+                    let chCode3 = `<div class="buttons-group-outlined spacing-body">
+  <button class="buttons-group-button">Caption 1</button>
+  <button class="buttons-group-button">Caption 2</button>
+  <button class="buttons-group-button">Caption 3</button>
+</div>`;
+                    document.getElementById("chCode3").value = chCode3;
+                  </script>
+                </div>
+              </div>
+            </article>
+
+            <!-- buttons-group outlined: disabled -->
+            <article class="article" nav data-title="outlined : disabled">
+              <header class="article__header"></header>
+              <div class="article__main">
+                <div class="article__content">
+                  <div
+                    class="buttons-group-outlined buttons-group-disabled spacing-body"
+                  >
+                    <button class="buttons-group-button" disabled>
+                      Caption 1
+                    </button>
+                    <button class="buttons-group-button" disabled>
+                      Caption 2
+                    </button>
+                    <button class="buttons-group-button" disabled>
+                      Caption 3
+                    </button>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="chCode4" language="xml" class="code"></ch-code>
+                  <script>
+                    let chCode4 = `<div class="buttons-group-outlined buttons-group-disabled spacing-body">
+  <button class="buttons-group-button" disabled>Caption 1</button>
+  <button class="buttons-group-button" disabled>Caption 2</button>
+  <button class="buttons-group-button" disabled>Caption 3</button>
+</div>`;
+                    document.getElementById("chCode4").value = chCode4;
+                  </script>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
