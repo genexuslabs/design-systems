@@ -262,6 +262,19 @@ Section
   padding-block: var(--section__padding-block);
   gap: var(--section__gap);
 }
+
+.section__articles-container {
+  display: flex;
+  flex-direction: column;
+}
+.section__articles-container.reverse {
+  flex-direction: column-reverse;
+}
+.section__articles-container.reverse .article {
+  padding-block-end: var(--article-padding-block);
+  padding-block-start: 0;
+}
+
 .section:not(:last-of-type) {
   border-bottom: 3px dashed var(--mer-color__neutral-gray--700);
 }
