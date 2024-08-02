@@ -17,6 +17,7 @@
   @include control-height-regular();
   @include control-border();
   @include control-padding-inline();
+  @include control-inline-size();
 
   &:hover {
     @include control-colors-hover();
