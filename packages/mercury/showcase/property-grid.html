@@ -187,7 +187,10 @@
               <!-- main -->
               <div class="article__main">
                 <div class="article__description">
-                  <p></p>
+                  <p>
+                    For setting as editing:
+                    <code>.property-grid-value-editing</code>
+                  </p>
                 </div>
 
                 <div class="article__content--short">
@@ -213,8 +216,8 @@
                       <ch-tabular-grid-cell class="property-grid-cell"
                         >Combo Box</ch-tabular-grid-cell
                       >
-                      <ch-tabular-grid-cell class="property-grid-cell"
-                        ><ch-combo-box
+                      <ch-tabular-grid-cell class="property-grid-cell">
+                        <ch-combo-box
                           accessible-name="Colors"
                           id="combo-box-1"
                           class="combo-box"
@@ -236,15 +239,55 @@
                     </ch-tabular-grid-row>
                   </ch-tabular-grid>
                 </div>
-                <!-- <div class="article__code">
+                <div class="article__code">
                   <ch-code id="ch-code-1" language="xml" class="code"></ch-code>
                   <script>
-                    const markup1 = `
-                      
-                    `;
+                    const markup1 = `<ch-tabular-grid class="property-grid">
+<ch-tabular-grid-columnset class="property-grid-column-set">
+  <ch-tabular-grid-column
+    column-name="Property"
+    settingable="false"
+    size="50%"
+    class="property-grid-column"
+  ></ch-tabular-grid-column>
+  <ch-tabular-grid-column
+    column-name="Value"
+    settingable="false"
+    size="minmax(auto, calc(100% - var(--ch-tabular-grid-column-1-width)))"
+    class="property-grid-column"
+  ></ch-tabular-grid-column>
+</ch-tabular-grid-columnset>
+
+<ch-tabular-grid-row
+  class="property-grid-row property-grid-value-editing"
+>
+  <ch-tabular-grid-cell class="property-grid-cell"
+    >Combo Box</ch-tabular-grid-cell
+  >
+  <ch-tabular-grid-cell class="property-grid-cell">
+    <ch-combo-box
+      accessible-name="Colors"
+      id="combo-box-1"
+      class="combo-box"
+    ></ch-combo-box>
+  </ch-tabular-grid-cell>
+</ch-tabular-grid-row>
+<ch-tabular-grid-row
+  class="property-grid-row property-grid-value-editing"
+>
+  <ch-tabular-grid-cell class="property-grid-cell"
+    >Form Input</ch-tabular-grid-cell
+  >
+  <ch-tabular-grid-cell class="property-grid-cell"
+    ><input
+      type="text"
+      placeholder="Enter your name"
+      class="form-input"
+  /></ch-tabular-grid-cell>
+</ch-tabular-grid-row></ch-tabular-grid>`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
-                </div> -->
+                </div>
               </div>
               <!-- /.article__main -->
               <script type="module">
