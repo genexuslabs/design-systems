@@ -3,20 +3,33 @@
 // - - - - - - - - - - - - - - - - - - - -
 
 %property-grid {
-  --mer-text__on-surface &__property {
+  // shared properties
+  &__property,
+  &__value {
+    align-content: center;
+  }
+  &__property {
     &--readonly {
       @extend %text-readonly;
     }
   }
   &__value {
     @extend %ellipsis;
-
+    @include control-remove-border();
+    justify-items: stretch;
     &--readonly {
       @extend %text-readonly;
     }
     &--edited {
       @extend %text-edited;
     }
+    &--editing {
+      padding: 0;
+    }
+  }
+
+  &-column-set {
+    display: none; // Property grid should not display the column-set by design
   }
 }
 
@@ -111,6 +124,8 @@
     ".property-grid-value-readonly > .property-grid-cell:nth-child(2)",
   $property-grid__value--edited-selector:
     ".property-grid-value-edited > .property-grid-cell:nth-child(2)",
+  $property-grid__value--editing-selector:
+    ".property-grid-value-editing > .property-grid-cell:nth-child(2)",
 
   // ch-property-grid-rowset
   $property-grid-rowset-selector: ".property-grid-rowset",
@@ -208,6 +223,7 @@
 
   #{$property-grid-column-set} {
     @extend %tabular-grid-column-set;
+    @extend %property-grid-column-set;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -303,6 +319,9 @@
   }
   #{$property-grid__value--edited-selector} {
     @extend %property-grid__value--edited;
+  }
+  #{$property-grid__value--editing-selector} {
+    @extend %property-grid__value--editing;
   }
 
   // - - - - - - - - - - - - - - - - - - - -

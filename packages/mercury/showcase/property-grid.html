@@ -9,12 +9,12 @@
       html:not(.hydrated) {
         visibility: hidden;
       }
+      .article__content--short {
+        max-width: 500px;
+      }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
 
-    <!-- local development -->
-    <!-- <link rel="stylesheet" href="./dist/bundles/css/all.css" /> -->
-    <!-- showcase (netlify) -->
     <link rel="stylesheet" href="./all.css" />
     <link rel="stylesheet" href="./assets/styles/top-bar.css" />
     <link rel="stylesheet" href="./assets/styles/sidebar.css" />
@@ -30,7 +30,17 @@
           <!-- header -->
           <header class="section__header">
             <h1 class="section__title">property grid</h1>
-            <p class="section__description">section description</p>
+            <p class="section__description">
+              A property grid is a specialized tabular component designed to
+              display data in a two-column format. The first column lists
+              property names, while the second column displays their
+              corresponding values. This structure is ideal for presenting
+              key-value pairs, such as settings, attributes, or metadata, in a
+              clear and organized manner. Unlike traditional tables with
+              multiple columns, the property grid focuses on simplicity and
+              readability, making it an efficient choice for displaying concise,
+              structured information.
+            </p>
           </header>
           <div class="section__articles-container">
             <!-- ================================== 
@@ -41,16 +51,151 @@
               <!-- main -->
               <div class="article__main">
                 <div class="article__description">
-                  <p></p>
+                  <p>
+                    For readonly property name:
+                    <code>.property-grid-property-readonly</code><br />
+                    For readonly property value:
+                    <code>.property-grid-property-value</code><br />
+                    For edited property value:
+                    <code>.property-grid-property-edited</code>
+                  </p>
                 </div>
 
-                <div class="article__content">
+                <div class="article__content article__content--short">
                   <ch-tabular-grid class="property-grid">
                     <ch-tabular-grid-columnset class="property-grid-column-set">
                       <ch-tabular-grid-column
                         column-name="Property"
                         settingable="false"
-                        column-type="tree"
+                        size="50%"
+                        class="property-grid-column"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        column-name="Value"
+                        settingable="false"
+                        size="minmax(auto, calc(100% - var(--ch-tabular-grid-column-1-width)))"
+                        class="property-grid-column"
+                      ></ch-tabular-grid-column>
+                    </ch-tabular-grid-columnset>
+
+                    <!-- Property Name in Read Only -->
+                    <ch-tabular-grid-row
+                      class="property-grid-row property-grid-property-readonly"
+                    >
+                      <ch-tabular-grid-cell class="property-grid-cell"
+                        >Property Name: Read Only</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="property-grid-cell"
+                        >Property Value: No State
+                      </ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+
+                    <!-- Property Value in Read Only -->
+                    <ch-tabular-grid-row
+                      class="property-grid-row property-grid-value-readonly"
+                    >
+                      <ch-tabular-grid-cell class="property-grid-cell"
+                        >Property Name: No State</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="property-grid-cell"
+                        >Property Value: Read Only
+                      </ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+
+                    <!-- Property Value Edited -->
+                    <ch-tabular-grid-row
+                      class="property-grid-row property-grid-value-edited"
+                    >
+                      <ch-tabular-grid-cell class="property-grid-cell"
+                        >Property Name: No State</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="property-grid-cell"
+                        >Property Value: Edited
+                      </ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                  </ch-tabular-grid>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-2" language="xml" class="code"></ch-code>
+                  <script>
+                    const markup2 = `<ch-tabular-grid class="property-grid">
+  <ch-tabular-grid-columnset class="property-grid-column-set">
+    <ch-tabular-grid-column
+      column-name="Property"
+      settingable="false"
+      size="50%"
+      class="property-grid-column"
+    ></ch-tabular-grid-column>
+    <ch-tabular-grid-column
+      column-name="Value"
+      settingable="false"
+      size="minmax(auto, calc(100% - var(--ch-tabular-grid-column-1-width)))"
+      class="property-grid-column"
+    ></ch-tabular-grid-column>
+  </ch-tabular-grid-columnset>
+
+  <!-- Property Name in Read Only -->
+  <ch-tabular-grid-row
+    class="property-grid-row property-grid-property-readonly"
+  >
+    <ch-tabular-grid-cell class="property-grid-cell"
+      >Property Name: Read Only</ch-tabular-grid-cell
+    >
+    <ch-tabular-grid-cell class="property-grid-cell"
+      >Property Value: No State
+    </ch-tabular-grid-cell>
+  </ch-tabular-grid-row>
+
+  <!-- Property Value in Read Only -->
+  <ch-tabular-grid-row
+    class="property-grid-row property-grid-value-readonly"
+  >
+    <ch-tabular-grid-cell class="property-grid-cell"
+      >Property Name: No State</ch-tabular-grid-cell
+    >
+    <ch-tabular-grid-cell class="property-grid-cell"
+      >Property Value: Read Only
+    </ch-tabular-grid-cell>
+  </ch-tabular-grid-row>
+
+  <!-- Property Value Edited -->
+  <ch-tabular-grid-row
+    class="property-grid-row property-grid-value-edited"
+  >
+    <ch-tabular-grid-cell class="property-grid-cell"
+      >Property Name: No State</ch-tabular-grid-cell
+    >
+    <ch-tabular-grid-cell class="property-grid-cell"
+      >Property Value: Edited
+    </ch-tabular-grid-cell>
+  </ch-tabular-grid-row>
+</ch-tabular-grid>
+`;
+                    document.getElementById("ch-code-2").value = markup2;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ================================== 
+          property grid
+          =================================== -->
+            <article class="article" nav data-title="test controls appearance">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__description">
+                  <p></p>
+                </div>
+
+                <div class="article__content--short">
+                  <ch-tabular-grid class="property-grid">
+                    <ch-tabular-grid-columnset class="property-grid-column-set">
+                      <ch-tabular-grid-column
+                        column-name="Property"
+                        settingable="false"
                         size="50%"
                         class="property-grid-column"
                       ></ch-tabular-grid-column>
@@ -63,296 +208,52 @@
                     </ch-tabular-grid-columnset>
 
                     <ch-tabular-grid-row
-                      class="property-grid-row property-grid-property-readonly"
+                      class="property-grid-row property-grid-value-editing"
                     >
                       <ch-tabular-grid-cell class="property-grid-cell"
-                        >Name</ch-tabular-grid-cell
+                        >Combo Box</ch-tabular-grid-cell
                       >
                       <ch-tabular-grid-cell class="property-grid-cell"
-                        >Products</ch-tabular-grid-cell
-                      >
-
-                      <ch-tabular-grid-rowset class="property-grid-rowset">
-                        <ch-tabular-grid-row
-                          class="property-grid-row property-grid-value-readonly"
-                        >
-                          <ch-tabular-grid-cell class="property-grid-cell"
-                            >English</ch-tabular-grid-cell
-                          >
-                          <ch-tabular-grid-cell class="property-grid-cell"
-                            >Products</ch-tabular-grid-cell
-                          >
-                        </ch-tabular-grid-row>
-                        <ch-tabular-grid-row
-                          class="property-grid-row property-grid-value-edited"
-                        >
-                          <ch-tabular-grid-cell class="property-grid-cell"
-                            >Portuguese</ch-tabular-grid-cell
-                          >
-                          <ch-tabular-grid-cell class="property-grid-cell"
-                            >Products</ch-tabular-grid-cell
-                          >
-                        </ch-tabular-grid-row>
-                      </ch-tabular-grid-rowset>
+                        ><ch-combo-box
+                          accessible-name="Colors"
+                          id="combo-box-1"
+                          class="combo-box"
+                        ></ch-combo-box>
+                      </ch-tabular-grid-cell>
                     </ch-tabular-grid-row>
                     <ch-tabular-grid-row
-                      class="property-grid-row property-grid-value-edited property-grid-value-readonly"
+                      class="property-grid-row property-grid-value-editing"
                     >
                       <ch-tabular-grid-cell class="property-grid-cell"
-                        >Redirect to
-                      </ch-tabular-grid-cell>
-                      <ch-tabular-grid-cell class="property-grid-cell">
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                        Supported Technologies; Supported Technologies;
-                      </ch-tabular-grid-cell>
-                    </ch-tabular-grid-row>
-                    <ch-tabular-grid-row class="property-grid-row">
-                      <ch-tabular-grid-cell class="property-grid-cell"
-                        >Redirect type
-                      </ch-tabular-grid-cell>
-                      <ch-tabular-grid-cell class="property-grid-cell"
-                        >Found</ch-tabular-grid-cell
+                        >Form Input</ch-tabular-grid-cell
                       >
+                      <ch-tabular-grid-cell class="property-grid-cell"
+                        ><input
+                          type="text"
+                          placeholder="Enter your name"
+                          class="form-input"
+                      /></ch-tabular-grid-cell>
                     </ch-tabular-grid-row>
-
-                    <ch-tabular-grid-rowset class="property-grid-rowset">
-                      <ch-tabular-grid-rowset-legend
-                        class="property-grid-rowset-legend"
-                        >Url</ch-tabular-grid-rowset-legend
-                      >
-
-                      <ch-tabular-grid-row class="property-grid-row">
-                        <ch-tabular-grid-cell class="property-grid-cell"
-                          >Friendly URL
-                        </ch-tabular-grid-cell>
-                        <ch-tabular-grid-cell class="property-grid-cell"
-                          >Products</ch-tabular-grid-cell
-                        >
-
-                        <ch-tabular-grid-rowset class="property-grid-rowset">
-                          <ch-tabular-grid-row class="property-grid-row">
-                            <ch-tabular-grid-cell class="property-grid-cell"
-                              >English</ch-tabular-grid-cell
-                            >
-                            <ch-tabular-grid-cell class="property-grid-cell"
-                              >Products</ch-tabular-grid-cell
-                            >
-                          </ch-tabular-grid-row>
-                          <ch-tabular-grid-row class="property-grid-row">
-                            <ch-tabular-grid-cell class="property-grid-cell"
-                              >Portuguese
-                            </ch-tabular-grid-cell>
-                            <ch-tabular-grid-cell class="property-grid-cell"
-                              >Products</ch-tabular-grid-cell
-                            >
-                          </ch-tabular-grid-row>
-                        </ch-tabular-grid-rowset>
-                      </ch-tabular-grid-row>
-
-                      <ch-tabular-grid-rowset class="property-grid-rowset">
-                        <ch-tabular-grid-rowset-legend
-                          class="property-grid-rowset-legend"
-                          >Permalink</ch-tabular-grid-rowset-legend
-                        >
-
-                        <ch-tabular-grid-row
-                          rowid="row-permalink"
-                          class="property-grid-row"
-                        >
-                          <ch-tabular-grid-cell
-                            cellid="cell-permalink-label-id"
-                            class="property-grid-cell"
-                            >Id</ch-tabular-grid-cell
-                          >
-                          <ch-tabular-grid-cell class="property-grid-cell"
-                            >7867</ch-tabular-grid-cell
-                          >
-                        </ch-tabular-grid-row>
-
-                        <ch-tabular-grid-rowset class="property-grid-rowset">
-                          <ch-tabular-grid-row class="property-grid-row">
-                            <ch-tabular-grid-cell class="property-grid-cell"
-                              >Guid</ch-tabular-grid-cell
-                            >
-                            <ch-tabular-grid-cell class="property-grid-cell"
-                              >abcdef-peodfg-293845-3947</ch-tabular-grid-cell
-                            >
-                          </ch-tabular-grid-row>
-                        </ch-tabular-grid-rowset>
-                      </ch-tabular-grid-rowset>
-                    </ch-tabular-grid-rowset>
                   </ch-tabular-grid>
                 </div>
-                <div class="article__code">
-                  <ch-code
-                    id="ch-code-12"
-                    language="xml"
-                    class="code"
-                  ></ch-code>
+                <!-- <div class="article__code">
+                  <ch-code id="ch-code-1" language="xml" class="code"></ch-code>
                   <script>
-                    const markup12 = `<ch-tabular-grid class="property-grid">
-  <ch-tabular-grid-columnset class="property-grid-column-set">
-    <ch-tabular-grid-column
-      column-name="Property"
-      settingable="false"
-      column-type="tree"
-      size="50%"
-      class="property-grid-column"
-    ></ch-tabular-grid-column>
-    <ch-tabular-grid-column
-      column-name="Value"
-      settingable="false"
-      size="minmax(auto, calc(100% - var(--ch-tabular-grid-column-1-width)))"
-      class="property-grid-column"
-    ></ch-tabular-grid-column>
-  </ch-tabular-grid-columnset>
-  <ch-tabular-grid-row
-    class="property-grid-row property-grid-property-readonly"
-  >
-    <ch-tabular-grid-cell class="property-grid-cell"
-      >Name</ch-tabular-grid-cell
-    >
-    <ch-tabular-grid-cell class="property-grid-cell"
-      >Products</ch-tabular-grid-cell
-    >
-    <ch-tabular-grid-rowset class="property-grid-rowset">
-      <ch-tabular-grid-row
-        class="property-grid-row property-grid-value-readonly"
-      >
-        <ch-tabular-grid-cell class="property-grid-cell"
-          >English</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="property-grid-cell"
-          >Products</ch-tabular-grid-cell
-        >
-      </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="property-grid-row property-grid-value-edited">
-        <ch-tabular-grid-cell class="property-grid-cell"
-          >Portuguese</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="property-grid-cell"
-          >Products</ch-tabular-grid-cell
-        >
-      </ch-tabular-grid-row>
-    </ch-tabular-grid-rowset>
-  </ch-tabular-grid-row>
-  <ch-tabular-grid-row
-    class="property-grid-row property-grid-value-edited property-grid-value-readonly"
-  >
-    <ch-tabular-grid-cell class="property-grid-cell"
-      >Redirect to</ch-tabular-grid-cell
-    >
-    <ch-tabular-grid-cell class="property-grid-cell">
-      Supported Technologies; Supported Technologies; Supported Technologies;
-      Supported Technologies; Supported Technologies; Supported Technologies;
-      Supported Technologies; Supported Technologies; Supported Technologies;
-      Supported Technologies; Supported Technologies; Supported Technologies;
-      Supported Technologies; Supported Technologies; Supported Technologies;
-      Supported Technologies; Supported Technologies; Supported Technologies;
-      Supported Technologies; Supported Technologies; Supported Technologies;
-      Supported Technologies; Supported Technologies; Supported Technologies;
-      Supported Technologies; Supported Technologies; Supported Technologies;
-      Supported Technologies; Supported Technologies; Supported Technologies;
-      Supported Technologies; Supported Technologies; Supported Technologies;
-      Supported Technologies; Supported Technologies; Supported Technologies;
-      Supported Technologies; Supported Technologies; Supported Technologies;
-      Supported Technologies; Supported Technologies; Supported Technologies;
-      Supported Technologies; Supported Technologies; Supported Technologies;
-      Supported Technologies;
-    </ch-tabular-grid-cell>
-  </ch-tabular-grid-row>
-  <ch-tabular-grid-row class="property-grid-row">
-    <ch-tabular-grid-cell class="property-grid-cell"
-      >Redirect type</ch-tabular-grid-cell
-    >
-    <ch-tabular-grid-cell class="property-grid-cell"
-      >Found</ch-tabular-grid-cell
-    >
-  </ch-tabular-grid-row>
-  <ch-tabular-grid-rowset class="property-grid-rowset">
-    <ch-tabular-grid-rowset-legend class="property-grid-rowset-legend"
-      >Url</ch-tabular-grid-rowset-legend
-    >
-    <ch-tabular-grid-row class="property-grid-row">
-      <ch-tabular-grid-cell class="property-grid-cell"
-        >Friendly URL</ch-tabular-grid-cell
-      >
-      <ch-tabular-grid-cell class="property-grid-cell"
-        >Products</ch-tabular-grid-cell
-      >
-      <ch-tabular-grid-rowset class="property-grid-rowset">
-        <ch-tabular-grid-row class="property-grid-row">
-          <ch-tabular-grid-cell class="property-grid-cell"
-            >English</ch-tabular-grid-cell
-          >
-          <ch-tabular-grid-cell class="property-grid-cell"
-            >products</ch-tabular-grid-cell
-          >
-        </ch-tabular-grid-row>
-        <ch-tabular-grid-row class="property-grid-row">
-          <ch-tabular-grid-cell class="property-grid-cell"
-            >Portuguese</ch-tabular-grid-cell
-          >
-          <ch-tabular-grid-cell class="property-grid-cell"
-            >Products</ch-tabular-grid-cell
-          >
-        </ch-tabular-grid-row>
-      </ch-tabular-grid-rowset>
-    </ch-tabular-grid-row>
-    <ch-tabular-grid-rowset class="property-grid-rowset">
-      <ch-tabular-grid-rowset-legend class="property-grid-rowset-legend"
-        >Permalink</ch-tabular-grid-rowset-legend
-      >
-      <ch-tabular-grid-row rowid="row-permalink" class="property-grid-row">
-        <ch-tabular-grid-cell
-          cellid="cell-permalink-label-id"
-          class="property-grid-cell"
-          >Id</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="property-grid-cell"
-          >7867</ch-tabular-grid-cell
-        >
-      </ch-tabular-grid-row>
-      <ch-tabular-grid-rowset class="property-grid-rowset">
-        <ch-tabular-grid-row class="property-grid-row">
-          <ch-tabular-grid-cell class="property-grid-cell"
-            >Guid</ch-tabular-grid-cell
-          >
-          <ch-tabular-grid-cell class="property-grid-cell"
-            >abcdef-peodfg-293845-3947</ch-tabular-grid-cell
-          >
-        </ch-tabular-grid-row>
-      </ch-tabular-grid-rowset>
-    </ch-tabular-grid-rowset>
-  </ch-tabular-grid-rowset>
-</ch-tabular-grid>`;
-                    document.getElementById("ch-code-12").value = markup12;
+                    const markup1 = `
+                      
+                    `;
+                    document.getElementById("ch-code-1").value = markup1;
                   </script>
-                </div>
-                <!-- /.article__content -->
+                </div> -->
               </div>
               <!-- /.article__main -->
+              <script type="module">
+                import { comboBox1Model } from "./assets/models/combo-box.js";
+                const comboBox1 = document.getElementById("combo-box-1");
+                comboBox1.model = comboBox1Model;
+                comboBox1.placeholder = "Option";
+                // comboBox1.filterType = "caption";
+              </script>
             </article>
           </div>
         </section>
