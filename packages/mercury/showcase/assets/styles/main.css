@@ -50,6 +50,16 @@
   --article-pill__color--property-number: #ba7cfb99;
   /* content */
 }
+/*====================
+DS overrides
+For the showcase some DS styles are better overridden
+====================*/
+
+.field-group-cols-2 > .label,
+.field-inline > .label {
+  /*because the .dummy-control block size is a little bit higher than the mercury controls block size value.*/
+  margin-block-start: 10px !important;
+}
 
 /*====================
 Grid items
