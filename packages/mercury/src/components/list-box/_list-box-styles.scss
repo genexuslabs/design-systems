@@ -236,9 +236,7 @@
   }
 
   @if $add--additional-item {
-    #{$additional-item--action-selector},
     #{$additional-item--image-selector} {
-      display: none; // To be defined later.
       @extend %list-box-additional-item--action;
 
       &:hover {
