@@ -4,7 +4,6 @@
   @include control-font-weight-regular();
   @include control-height-regular();
   @include control-padding-inline();
-  @include control-inline-size();
 
   &--focus {
     @include focus-border();

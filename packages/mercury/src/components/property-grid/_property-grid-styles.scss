@@ -15,7 +15,6 @@
     }
   }
   &__value {
-    --control__inline-size: 100%;
     @include control-remove-border();
     @extend %ellipsis;
 
@@ -26,7 +25,7 @@
       @extend %text-edited;
     }
     &--editing {
-      display: flex;
+      display: grid;
       padding: 0;
     }
   }
