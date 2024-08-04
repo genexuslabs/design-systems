@@ -55,6 +55,7 @@ Control
 @mixin control-colors-enabled() {
   background-color: var(--control__bg-color);
   color: var(--control__color);
+  --ch-placeholder-color: var(--control-placeholder__color);
   // enabled border color is defined in control-border()
 }
 @mixin control-colors-hover() {
@@ -64,6 +65,7 @@ Control
   --control__bg-color: var(--control__background-color--disabled);
   --control__border-color: var(--control__border-color--disabled);
   --control__color: var(--control__color--disabled);
+  --ch-placeholder-color: var(--control-placeholder__color--disabled);
 }
 @mixin control-colors-error() {
   --control__border-color: var(--control__border-color--error);
@@ -74,6 +76,13 @@ Control
   border-style: var(--control__border-style);
   border-color: var(--control__border-color);
   border-radius: var(--control__border-radius);
+}
+@mixin control-remove-border() {
+  // This resets the border applied
+  // (for controls inside the property grid)
+  --control__border-width: 0;
+  --control__border-color: transparent;
+  --control__border-radius: 0;
 }
 // Font
 @mixin control-font-weight-regular() {

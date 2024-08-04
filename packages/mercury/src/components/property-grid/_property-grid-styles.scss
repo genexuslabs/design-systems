@@ -1,0 +1,453 @@
+// - - - - - - - - - - - - - - - - - - - -
+//            ch-property-grid
+// - - - - - - - - - - - - - - - - - - - -
+
+%property-grid {
+  // shared properties
+  &__property,
+  &__value {
+    align-items: center;
+  }
+
+  &__property {
+    &--readonly {
+      @extend %text-readonly;
+    }
+  }
+  &__value {
+    @include control-remove-border();
+    @extend %ellipsis;
+
+    &--readonly {
+      @extend %text-readonly;
+    }
+    &--edited {
+      @extend %text-edited;
+    }
+    &--editing {
+      display: grid;
+      padding: 0;
+    }
+  }
+
+  &-column-set {
+    display: none; // Property grid should not display the column-set by design
+  }
+}
+
+/// @group Grid
+// ch-property-grid
+/// @param {String} $property-grid-selector [".property-grid"] -
+/// @param {String} $property-grid__main-selector [".property-grid::part(main)"] -
+// ch-property-grid-column-set
+/// @param {String} $property-grid-column-set [".property-grid-column-set"] -
+// ch-property-grid-column
+/// @param {String} $property-grid-column__bar-selector [".property-grid-column::part(bar)"] -
+/// @param {String} $property-grid-column__bar-resize-split-selector [".property-grid-column::part(bar-resize-split)"] -
+/// @param {String} $property-grid-column__selector-label-selector [".property-grid-column::part(selector-label)"] -
+/// @param {String} $property-grid-column__selector-selector [".property-grid-column::part(selector)"] -
+/// @param {String} $property-grid-column__selector--checked-selector [".property-grid-column::part(selector checked)"] -
+/// @param {String} $property-grid-column__selector--indeterminate-selector [".property-grid-column::part(selector indeterminate)"] -
+// ch-property-grid-row
+/// @param {String} $property-grid-row-selector [".property-grid-row"] -
+/// @param {String} $property-grid-row--focused-selector [".property-grid-row[focused]"] -
+/// @param {String} $property-grid-row--highlighted-selector [".property-grid-row[highlighted]"] -
+/// @param {String} $property-grid-row--selected-selector [".property-grid-row[selected]"] -
+/// @param {String} $property-grid-row--dragging-selector [".property-grid-row[dragging]"] -
+/// @param {String} $property-grid-row--highlighted__cell-selector [".property-grid-row[highlighted] > .property-grid-cell"] -
+// ch-property-grid-row  > cell
+/// @param {String} $property-grid-row--selected__cell-selector [".property-grid-row[selected] > .property-grid-cell"] -
+// ch-property-grid-rowset
+/// @param {String} $property-grid-rowset-selector [".property-grid-rowset"] -
+/// @param {String} $property-grid-rowset--collapsed__legend-selector [".property-grid-rowset[collapsed] > .property-grid-rowset-legend"] -
+// ch-property-grid-rowset-legend
+/// @param {String} $property-grid-rowset-legend-selector [".property-grid-rowset-legend"] -
+/// @param {String} $property-grid-rowset-legend__caret-selector--collapsed [".property-grid-rowset[collapsed] > .property-grid-rowset-legend::part(caret)"] -
+/// @param {String} $property-grid-rowset-legend__caret-selector--expanded [".property-grid-rowset > .property-grid-rowset-legend::part(caret)"] -
+/// @param {String} $property-grid-rowset-legend__selector-label-selector [".property-grid-rowset-legend::part(selector-label)"] -
+/// @param {String} $property-grid-rowset-legend__selector-selector [".property-grid-rowset-legend::part(selector)"] -
+/// @param {String} $property-grid-rowset-legend__icon-selector [".property-grid-rowset-legend::part(icon)"] -
+// ch-property-grid-cell
+/// @param {String} $property-grid-cell-selector [".property-grid-cell"] -
+/// @param {String} $property-grid-cell--focused-selector [".property-grid-cell[focused]"] -
+/// @param {String} $property-grid-cell--selected-selector [".property-grid-cell[selected]"] -
+/// @param {String} $property-grid-cell__selector-label-selector [".property-grid-cell::part(selector-label)"] -
+/// @param {String} $property-grid-cell__selector-selector [".property-grid-cell::part(selector)"] -
+/// @param {String} $property-grid-cell__selector--checked-selector [".property-grid-cell::part(selector checked)"] -
+// ch-property-grid-cell (icons)
+/// @param {String} $property-grid-cell__actions-icon-selector [".property-grid-cell::part(actions-icon)"] -
+/// @param {String} $property-grid-cell__caret-icon-selector--collapsed [".property-grid-row:is( [collapsed], [leaf="false"]:not(:has(> .property-grid-rowset)) ) > .property-grid-cell::part(caret)"] -
+/// @param {String} $property-grid-cell__caret-icon-selector--expanded [".property-grid-row > .property-grid-cell::part(caret)"] -
+/// @param {String} $property-grid-cell__drag-icon-selector [".property-grid-cell::part(drag-icon)"] -
+/// @param {String} $property-grid-cell__node-icon-selector [".property-grid-row:has(> .property-grid-rowset) > .property-grid-cell::part(node-icon)"] -
+/// @param {String} $property-grid-cell__node-leaf-icon-selector [".property-grid-cell::part(node-icon)"] -
+// row-actions
+/// @param {String} $property-grid-row-actions-selector [".property-grid-row-actions"] -
+/// @param {String} $property-grid-row-actions__window-selector [".property-grid-row-actions::part(window)"] -
+/// @param {String} $property-grid-row-actions__main-selector [".property-grid-row-actions::part(main)"] -
+@mixin property-grid(
+  // ch-property-grid
+  $property-grid-selector: ".property-grid",
+  $property-grid__main-selector: ".property-grid::part(main)",
+  // ch-property-grid-column-set
+  $property-grid-column-set: ".property-grid-column-set",
+  // ch-property-grid-column
+  $property-grid-column__bar-selector: ".property-grid-column::part(bar)",
+  $property-grid-column__bar-resize-split-selector:
+    ".property-grid-column::part(bar-resize-split)",
+  $property-grid-column__selector-label-selector:
+    ".property-grid-column::part(selector-label)",
+  $property-grid-column__selector-selector:
+    ".property-grid-column::part(selector)",
+  $property-grid-column__selector--checked-selector:
+    ".property-grid-column::part(selector checked)",
+  $property-grid-column__selector--indeterminate-selector:
+    ".property-grid-column::part(selector indeterminate)",
+  // ch-property-grid-row
+  $property-grid-row-selector: ".property-grid-row",
+  // ch-property-grid-row
+  // interaction states
+  $property-grid-row--focused-selector: ".property-grid-row[focused]",
+  $property-grid-row--highlighted-selector: ".property-grid-row[highlighted]",
+  $property-grid-row--selected-selector: ".property-grid-row[selected]",
+  $property-grid-row--dragging-selector: ".property-grid-row[dragging]",
+  $property-grid-row--highlighted__cell-selector:
+    ".property-grid-row[highlighted] > .property-grid-cell",
+  $property-grid-row--selected__cell-selector:
+    ".property-grid-row[selected] > .property-grid-cell",
+  // functional states (properties and values)
+  $property-grid__property-selector:
+    ".property-grid-row > .property-grid-cell:nth-child(1)",
+  $property-grid__value-selector:
+    ".property-grid-row > .property-grid-cell:nth-child(2)",
+  $property-grid__property--readonly-selector:
+    ".property-grid-property-readonly > .property-grid-cell:nth-child(1)",
+  $property-grid__value--readonly-selector:
+    ".property-grid-value-readonly > .property-grid-cell:nth-child(2)",
+  $property-grid__value--edited-selector:
+    ".property-grid-value-edited > .property-grid-cell:nth-child(2)",
+  $property-grid__value--editing-selector:
+    ".property-grid-value-editing > .property-grid-cell:nth-child(2)",
+
+  // ch-property-grid-rowset
+  $property-grid-rowset-selector: ".property-grid-rowset",
+  $property-grid-rowset--collapsed__legend-selector:
+    ".property-grid-rowset[collapsed] > .property-grid-rowset-legend",
+  // ch-property-grid-rowset-legend
+  $property-grid-rowset-legend-selector: ".property-grid-rowset-legend",
+  $property-grid-rowset-legend__caret-selector--collapsed:
+    ".property-grid-rowset[collapsed] > .property-grid-rowset-legend::part(caret)",
+  $property-grid-rowset-legend__caret-selector--expanded:
+    ".property-grid-rowset > .property-grid-rowset-legend::part(caret)",
+  $property-grid-rowset-legend__selector-label-selector:
+    ".property-grid-rowset-legend::part(selector-label)",
+  $property-grid-rowset-legend__selector-selector:
+    ".property-grid-rowset-legend::part(selector)",
+  $property-grid-rowset-legend__icon-selector:
+    ".property-grid-rowset-legend::part(icon)",
+  // ch-property-grid-cell
+  $property-grid-cell-selector: ".property-grid-cell",
+  $property-grid-cell--focused-selector: ".property-grid-cell[focused]",
+  $property-grid-cell--selected-selector: ".property-grid-cell[selected]",
+  $property-grid-cell__selector-label-selector:
+    ".property-grid-cell::part(selector-label)",
+  $property-grid-cell__selector-selector: ".property-grid-cell::part(selector)",
+  $property-grid-cell__selector--checked-selector:
+    ".property-grid-cell::part(selector checked)",
+  // ch-property-grid-cell (icons)
+  $property-grid-cell__actions-icon-selector:
+    ".property-grid-cell::part(actions-icon)",
+  $property-grid-cell__caret-icon-selector--collapsed:
+    ".property-grid-row:is( [collapsed], [leaf='false']:not(:has(> .property-grid-rowset)) ) > .property-grid-cell::part(caret)",
+  $property-grid-cell__caret-icon-selector--expanded:
+    ".property-grid-cell::part(caret)",
+  $property-grid-cell__drag-icon-selector:
+    ".property-grid-cell::part(drag-icon)",
+  $property-grid-cell__node-icon-selector:
+    ".property-grid-row:has(> .property-grid-rowset) > .property-grid-cell::part(node-icon)",
+  $property-grid-cell__node-leaf-icon-selector:
+    ".property-grid-cell::part(node-icon)",
+  // ch-property-grid-row-actions
+  $property-grid-row-actions-selector: ".property-grid-row-actions",
+  $property-grid-row-actions__window-selector:
+    ".property-grid-row-actions::part(window)",
+  $property-grid-row-actions__main-selector:
+    ".property-grid-row-actions::part(main)"
+) {
+  // - - - - - - - - - - - - - - - - - - - - - - - - -
+  //    icons that are present in more than one place
+  // - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  // caret collapsed
+  #{$property-grid-rowset-legend__caret-selector--collapsed},
+  #{$property-grid-cell__caret-icon-selector--collapsed} {
+    @extend %tabular-grid__icon-size;
+    @extend %tabular-grid__icon-caret-collapsed--enabled;
+    &:hover {
+      @extend %tabular-grid__icon-caret-collapsed--hover;
+    }
+    &:active {
+      @extend %tabular-grid__icon-caret-collapsed--active;
+    }
+  }
+
+  // caret expanded
+  #{$property-grid-rowset-legend__caret-selector--expanded},
+  #{$property-grid-cell__caret-icon-selector--expanded} {
+    @extend %tabular-grid__icon-size;
+    @extend %tabular-grid__icon-caret-expanded--enabled;
+    &:hover {
+      @extend %tabular-grid__icon-caret-expanded--hover;
+    }
+    &:active {
+      @extend %tabular-grid__icon-caret-expanded--active;
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //             ch-property-grid
+  // - - - - - - - - - - - - - - - - - - - -
+
+  #{$property-grid-selector} {
+    @extend %tabular-grid;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  #{$property-grid__main-selector} {
+    @extend %tabular-grid__main;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //      ch-property-grid-column-set
+  // - - - - - - - - - - - - - - - - - - - -
+
+  #{$property-grid-column-set} {
+    @extend %tabular-grid-column-set;
+    @extend %property-grid-column-set;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //         ch-property-grid-column
+  // - - - - - - - - - - - - - - - - - - - -
+
+  #{$property-grid-column__bar-selector} {
+    @extend %tabular-grid-column__bar;
+  }
+
+  #{$property-grid-column__bar-resize-split-selector} {
+    @extend %tabular-grid-column__bar-resize-split;
+    &:hover {
+      @extend %tabular-grid-column__bar-resize-split--hover;
+    }
+  }
+
+  // checkbox (same styles add cell checkbox)
+  #{$property-grid-column__selector-label-selector} {
+    @extend %tabular-grid-cell__selector-label;
+  }
+
+  #{$property-grid-column__selector-selector} {
+    @extend %tabular-grid-cell__selector;
+
+    &::before {
+      @extend %tabular-grid-cell__selector--before;
+    }
+
+    &::after {
+      @extend %tabular-grid-cell__selector--after;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  #{$property-grid-column__selector--checked-selector} {
+    &::after {
+      @extend %tabular-grid-cell__selector--after-checked;
+    }
+  }
+
+  #{$property-grid-column__selector--indeterminate-selector} {
+    &::after {
+      @extend %tabular-grid-cell__selector--after-indeterminate;
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //          ch-property-grid-row
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // row
+  #{$property-grid-row-selector} {
+    @extend %tabular-grid-row;
+  }
+  #{$property-grid-row--focused-selector} {
+    @extend %tabular-grid-row--focused;
+  }
+  #{$property-grid-row--highlighted-selector} {
+    @extend %tabular-grid-row--highlighted;
+  }
+  #{$property-grid-row--selected-selector} {
+    @extend %tabular-grid-row--selected;
+  }
+  #{$property-grid-row--dragging-selector} {
+    @extend %tabular-grid-row--dragging;
+  }
+
+  // row[some-state] > cell
+  #{$property-grid-row--highlighted__cell-selector} {
+    @extend %tabular-grid-row--highlighted__cell;
+  }
+  #{$property-grid-row--selected__cell-selector} {
+    @extend %tabular-grid-row--selected__cell;
+  }
+
+  // Functional States
+  #{$property-grid__property-selector} {
+    @extend %property-grid__property;
+  }
+  #{$property-grid__property--readonly-selector} {
+    @extend %property-grid__property--readonly;
+  }
+
+  #{$property-grid__value-selector} {
+    @extend %property-grid__value;
+  }
+  #{$property-grid__value--readonly-selector} {
+    @extend %property-grid__value--readonly;
+  }
+  #{$property-grid__value--edited-selector} {
+    @extend %property-grid__value--edited;
+  }
+  #{$property-grid__value--editing-selector} {
+    @extend %property-grid__value--editing;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //        ch-property-grid-rowset
+  // - - - - - - - - - - - - - - - - - - - -
+
+  #{$property-grid-rowset-selector} {
+    @extend %tabular-grid-rowset;
+  }
+  #{$property-grid-rowset--collapsed__legend-selector} {
+    @extend %tabular-grid-rowset--collapsed__legend;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //     ch-property-grid-rowset-legend
+  // - - - - - - - - - - - - - - - - - - - -
+
+  #{$property-grid-rowset-legend-selector} {
+    @extend %tabular-grid-rowset-legend;
+    &:hover {
+      @extend %tabular-grid-rowset-legend--hover;
+    }
+    &:active {
+      @extend %tabular-grid-rowset-legend--active;
+    }
+  }
+
+  #{$property-grid-rowset-legend__selector-label-selector} {
+    @extend %tabular-grid-rowset-legend__selector-label;
+  }
+
+  #{$property-grid-rowset-legend__selector-selector} {
+    @extend %tabular-grid-rowset-legend__selector;
+  }
+
+  #{$property-grid-rowset-legend__icon-selector} {
+    @extend %tabular-grid-rowset-legend__icon;
+    @extend %tabular-grid__icon-size;
+    --icon-path: var(--icon__gemini-tools_category-group_on-surface--enabled);
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //           ch-property-grid-cell
+  // - - - - - - - - - - - - - - - - - - - -
+
+  #{$property-grid-cell-selector} {
+    @extend %tabular-grid-cell;
+  }
+
+  #{$property-grid-cell--focused-selector} {
+    @extend %tabular-grid-cell--focused;
+  }
+
+  #{$property-grid-cell--selected-selector} {
+    @extend %tabular-grid-cell--selected;
+  }
+
+  // checkbox
+  #{$property-grid-cell__selector-label-selector} {
+    @extend %tabular-grid-cell__selector-label;
+  }
+
+  #{$property-grid-cell__selector-selector} {
+    @extend %tabular-grid-cell__selector;
+    &::before {
+      @extend %tabular-grid-cell__selector--before;
+    }
+
+    &::after {
+      @extend %tabular-grid-cell__selector--after;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  #{$property-grid-cell__selector--checked-selector} {
+    &::after {
+      @extend %tabular-grid-cell__selector--after-checked;
+    }
+  }
+
+  // Icons
+  #{$property-grid-cell__actions-icon-selector} {
+    inline-size: 100%;
+    @extend %tabular-grid__icon-size;
+    --icon-path: var(
+      --icon__gemini-tools_show-more-vertical_on-surface--enabled
+    );
+    border: none;
+  }
+
+  #{$property-grid-cell__drag-icon-selector} {
+    @extend %tabular-grid__icon-size;
+    --icon-path: var(--icon__navigation_drag_on-surface--enabled);
+    margin-inline-end: var(--grid-common__gap);
+  }
+
+  #{$property-grid-cell__node-icon-selector} {
+    @extend %tabular-grid__icon-size;
+    @extend %tabular-grid__icon-node;
+  }
+
+  #{$property-grid-cell__node-leaf-icon-selector} {
+    @extend %tabular-grid__icon-size;
+    @extend %tabular-grid__icon-node--leaf;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //     ch-property-grid-row-actions
+  // - - - - - - - - - - - - - - - - - - - -
+
+  #{$property-grid-row-actions-selector} {
+    &[show-on-row-hover]::part(window) {
+      margin-inline-end: var(--mer-spacing--xs);
+    }
+  }
+
+  #{$property-grid-row-actions__window-selector} {
+    @extend %tabular-grid-row-actions__window;
+  }
+
+  #{$property-grid-row-actions__main-selector} {
+    @extend %tabular-grid-row-actions__main;
+  }
+}

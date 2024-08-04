@@ -6,5 +6,5 @@
   // field
   --field__row-gap: var(--mer-spacing--xs);
   --field__column-gap: var(--mer-spacing--md);
-  --field-inline-label__margin-block-start: var(--mer-spacing--2xs);
+  --field-inline-label__margin-block-start: 6px; // 6px is the proper value, but it does not exists on the mercury ds.
 }

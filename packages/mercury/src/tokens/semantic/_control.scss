@@ -57,9 +57,9 @@
 
   // - - - - - - - Placeholder - - - - - - -
 
-  --control-placeholder__color: var(
-    --ch-placeholder-color,
-    var(--mer-text__neutral)
+  --control-placeholder__color: var(--ch-placeholder-color);
+  --control-placeholder__color--disabled: var(
+    --mer-form-input__color--disabled
   );
   --control-placeholder__font-style: italic;
 
