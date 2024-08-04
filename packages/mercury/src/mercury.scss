@@ -26,14 +26,10 @@
 @import "./tokens/semantic/text";
 @import "./tokens/semantic/heading";
 
-// Tokens Other
-@import "./tokens/chameleon";
-
 // Base classes
 @import "./base/label/label-styles"; // should be at the top, since other elements use it.
 @import "./base/button/button-styles";
 @import "./base/form-controls/field-styles";
-@import "./base/form-controls/form-input-styles";
 @import "./base/icons";
 @import "./base/layout/layout-styles";
 @import "./base/typography/typography-styles";
@@ -47,7 +43,9 @@
 @import "./components/combo-box/combo-box-styles";
 @import "./components/dialog/dialog-styles";
 @import "./components/icon/icon-styles";
+@import "./components/form-input/form-input-styles";
 @import "./components/list-box/list-box-styles";
+@import "./components/property-grid/property-grid-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
 @import "./components/tab/tab-styles";
@@ -362,7 +360,6 @@
     // Form control classes
     @if $form-controls-classes {
       @include field();
-      @include form-input();
       @include label();
     }
 
@@ -441,6 +438,7 @@
   // tabular grid
   @if $tabular-grid {
     @include tabular-grid();
+    @include property-grid(); // property-grid extends tabular-grid
   }
 
   // tree view

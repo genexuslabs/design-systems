@@ -61,3 +61,17 @@
   align-items: center;
   gap: $gap;
 }
+
+// - - - - - - - - - - - - - - - - - - - -
+//    Ellipsis
+// - - - - - - - - - - - - - - - - - - - -
+
+@mixin ellipsis() {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+%ellipsis {
+  @include ellipsis();
+}

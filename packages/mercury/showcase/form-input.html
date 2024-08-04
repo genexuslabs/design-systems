@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Input</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+  </head>
+  <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">form input</h1>
+            <p class="section__description">
+              A primary HTML input element is a crucial part of a webpage's
+              form, designed to capture user data and facilitate interactions.
+              It serves as the main interface for users to enter information
+              such as text, numbers, or dates, making it essential for data
+              collection and user engagement.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          placeholder
+          =========================== -->
+            <article class="article" nav data-title="placeholder">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-edit
+                    class="form-input"
+                    placeholder="e.g. Mike Shinoda"
+                  ></ch-edit>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-1" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup1 = `<ch-edit class="form-input" placeholder="e.g. Mike Shinoda"></ch-edit>`;
+                    document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          placeholder: disabled
+          =========================== -->
+            <article class="article" nav data-title="placeholder: disabled">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-edit
+                    class="form-input"
+                    placeholder="e.g. Mike Shinoda"
+                    disabled
+                  ></ch-edit>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-2" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup2 = `<ch-edit class="form-input" placeholder="e.g. Mike Shinoda" disabled></ch-edit>`;
+                    document.getElementById("ch-code-2").value = markup2;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          enabled
+          =========================== -->
+            <article class="article" nav data-title="enabled">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-edit class="form-input" value="Pat Taylor"></ch-edit>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-3" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup3 = `<ch-edit class="form-input" value="Pat Taylor"></ch-edit>`;
+                    document.getElementById("ch-code-3").value = markup3;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          disabled
+          =========================== -->
+            <article class="article" nav data-title="disabled">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-edit
+                    class="form-input"
+                    value="Pat Taylor"
+                    disabled
+                  ></ch-edit>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-4" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup4 = `<ch-edit class="form-input" value="Pat Taylor" disabled></ch-edit>`;
+                    document.getElementById("ch-code-4").value = markup4;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          with icon
+          =========================== -->
+            <article class="article" nav data-title="with icon">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">(to be completed)</p>
+                <div class="article__content">
+                  <ch-edit
+                    class="form-input"
+                    value="Pat Taylor"
+                    id="edit-with-icon"
+                    start-img-src="https://icons.veryicon.com/png/o/file-type/file-type-1/jpg-icon.png"
+                    picture="https://icons.veryicon.com/png/o/file-type/file-type-1/jpg-icon.png"
+                    start-img-type="background"
+                    type="text"
+                  ></ch-edit>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-5" language="xml" class="code">
+                  </ch-code>
+                  <script type="module">
+                    // picture
+                    import { getIconPath } from "./assets/scripts/assets-manager.js";
+                    const chEdit5 = document.getElementById("edit-with-icon");
+                    // chEdit5.startImgSrc = "https://icons.veryicon.com/png/o/file-type/file-type-1/jpg-icon.png";
+                    // markup
+                    // chEdit5.getImagePathCallbackImage = imgSrc => {
+                    //   return {
+                    //     base: "https://icons.veryicon.com/png/o/file-type/file-type-1/jpg-icon.png",
+                    //     active:
+                    //       "https://icons.veryicon.com/png/o/file-type/file-type-1/jpg-icon.png",
+                    //     hover:
+                    //       "https://icons.veryicon.com/png/o/file-type/file-type-1/jpg-icon.png",
+                    //     disabled:
+                    //       "https://icons.veryicon.com/png/o/file-type/file-type-1/jpg-icon.png"
+                    //   };
+                    // };
+                    const markup5 = `<ch-edit class="form-input" value="Pat Taylor" disabled></ch-edit>`;
+                    document.getElementById("ch-code-5").value = markup5;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          with error
+          =========================== -->
+            <article class="article" nav data-title="with error">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-edit
+                    class="form-input form-input-error"
+                    value="Pat Taylor"
+                  ></ch-edit>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-6" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup6 = `<ch-edit class="form-input form-input-error" value="Pat Taylor"></ch-edit>`;
+                    document.getElementById("ch-code-6").value = markup6;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          with label
+          =========================== -->
+            <article class="article" nav data-title="with label">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  To display a <code>.form-input</code> input with a label, you
+                  will have to provide a label with the corresponding class, as
+                  well as a div wrapper around the label and the control with
+                  the corresponding classes to get the proper styling and
+                  spacing. These styles are documented on the <em>label</em> and
+                  <em>form</em>
+                  sections, correspondingly. The links to those pages are
+                  provided below this code example.
+                </p>
+                <div class="article__content">
+                  <div class="field field-block">
+                    <label class="label">Beneficiary Name</label>
+                    <ch-edit class="form-input" value="Pat Taylor"></ch-edit>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-7" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup7 = `<div class="field field-block">
+  <label class="label">Beneficiary Name</label>
+  <ch-edit class="form-input" value="Pat Taylor"></ch-edit>
+</div>`;
+                    document.getElementById("ch-code-7").value = markup7;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <ul class="dummy-grid-container dummy-grid-container-2">
+                    <li>
+                      <a href="./label.html" class="dummy-grid-container__item"
+                        >label styles</a
+                      >
+                    </li>
+                    <li>
+                      <a href="./form.html" class="dummy-grid-container__item"
+                        >field styles</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
