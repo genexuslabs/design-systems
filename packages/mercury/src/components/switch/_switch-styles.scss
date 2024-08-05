@@ -1,0 +1,212 @@
+%switch {
+  // - - - - - - - - - - - - - - - - - - - -
+  //   Chameleon (do not change the name)
+  // - - - - - - - - - - - - - - - - - - - -
+  // by default "small" switch values are applied
+  // and then overridden if the switch is type "large"
+
+  --ch-switch-thumb__unchecked-background-color: var(--switch-thumb__bg-color);
+  --ch-switch-thumb__checked-background-color: var(--switch-thumb__bg-color);
+
+  --ch-switch-track__unchecked-background-color: var(
+    --switch-track__bg-color--unchecked
+  );
+  --ch-switch-track__checked-background-color: var(
+    --switch-track__bg-color--checked
+  );
+
+  --ch-switch-thumb__state-transition-duration: 100ms;
+
+  --ch-switch-track-block-size: var(--switch-track__block-size);
+  --ch-switch-track-inline-size: var(--switch-track__inline-size);
+  --ch-switch-thumb-size: var(--switch-thumb__size);
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //            Custom Properties
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // colors track
+  --switch-track__bg-color--unchecked: var(--mer-color__neutral-gray--650);
+  --switch-track__bg-color--checked: var(--mer-color__tinted-blue--50);
+  --switch-track__bg-color--disabled: var(
+    --control__background-color--disabled
+  ); // to be validated with designer
+  // colors thumb
+  --switch-thumb__bg-color: var(--mer-icon__neutral);
+  --switch-thumb__bg-color--disabled: var(--mer-icon__on-disabled);
+  // sizes track
+  --switch-track__block-size: var(--switch-track__block-size--small);
+  --switch-track__inline-size: var(--switch-track__inline-size--small);
+  // sizes thumb
+  --switch-thumb__size: var(--switch-thumb__size--small);
+  --switch-thumb__separation--on: calc(
+    (var(--switch-track__block-size) - var(--switch-thumb__size)) / 2
+  );
+  --switch-thumb__separation--off: calc(
+    var(--switch-track__inline-size) - var(--switch-thumb__separation--on) -
+      var(--switch-thumb__size)
+  );
+
+  // large
+  --switch-track__block-size--large: 26px;
+  --switch-track__inline-size--large: 50px;
+  --switch-thumb__size--large: 16px;
+
+  --switch-track__block-size--small: 16px;
+  --switch-track__inline-size--small: 30px;
+  --switch-thumb__size--small: 9px;
+
+  &-large {
+    --switch-track__block-size: var(--switch-track__block-size--large);
+    --switch-track__inline-size: var(--switch-track__inline-size--large);
+    --switch-thumb__size: var(--switch-thumb__size--large);
+  }
+
+  // Track
+  &__track {
+    transition: background-color linear
+      var(--ch-switch-thumb__state-transition-duration);
+
+    &--checked {
+    }
+    &--unchecked {
+    }
+    &--disabled {
+      --ch-switch-track__unchecked-background-color: var(
+        --switch-track__bg-color--disabled
+      );
+      --ch-switch-track__checked-background-color: var(
+        --switch-track__bg-color--disabled
+      );
+    }
+  }
+
+  // Thumb
+  &__thumb {
+    border-radius: 50%;
+
+    filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.12))
+      drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1));
+
+    &--unchecked {
+      inset-inline-start: var(--switch-thumb__separation--off);
+    }
+
+    &--checked {
+      inset-inline-start: var(--switch-thumb__separation--on);
+    }
+
+    &--focus {
+      @include focus-outline();
+    }
+
+    &--disabled {
+      --ch-switch-thumb__checked-background-color: var(
+        --switch-thumb__bg-color--disabled
+      );
+      --ch-switch-thumb__unchecked-background-color: var(
+        --switch-thumb__bg-color--disabled
+      );
+    }
+  }
+
+  // Label
+  &__caption {
+    @include label-font();
+    margin-inline-start: var(--label__gap--inline);
+
+    &--disabled {
+      @include label-color-disabled();
+    }
+  }
+}
+
+@mixin switch(
+  $switch-selector: ".switch",
+  $switch-large-selector: ".switch-large",
+  // track
+  $track-selector: ".switch::part(track)",
+  $track--checked-selector: ".switch::part(track checked)",
+  $track--unchecked-selector: ".switch::part(track unchecked)",
+  $track--disabled-selector: ".switch::part(track disabled)",
+  // thumb
+  $thumb-selector: ".switch::part(thumb)",
+  $thumb--checked-selector: ".switch::part(thumb checked)",
+  $thumb--unchecked-selector: ".switch::part(thumb unchecked)",
+  $thumb--disabled-selector: ".switch::part(thumb disabled)",
+  // caption
+  $caption-selector: ".switch::part(caption)",
+  $caption--disabled-selector: ".switch::part(caption disabled)",
+
+  $add--disabled: true,
+  $add--caption: true
+) {
+  #{$switch-selector} {
+    @extend %switch;
+  }
+  #{$switch-large-selector} {
+    @extend %switch-large;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Track
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$track-selector} {
+    @extend %switch__track;
+  }
+  #{track--checked-selector} {
+    @extend %switch__track--checked;
+  }
+  #{track--unchecked-selector} {
+    @extend %switch__track--unchecked;
+  }
+  #{track--disabled-selector} {
+    @extend %switch__track--disabled;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Thumb
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$thumb-selector} {
+    @extend %switch__thumb;
+
+    &:focus {
+      @extend %switch__thumb--focus;
+    }
+  }
+  #{$thumb--checked-selector} {
+    @extend %switch__thumb--checked;
+  }
+  #{$thumb--unchecked-selector} {
+    @extend %switch__thumb--unchecked;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Caption
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $add--caption {
+    #{$caption-selector} {
+      @extend %switch__caption;
+    }
+  }
+
+  // Disabled
+  @if $add--disabled {
+    // Track
+    #{$track--disabled-selector} {
+      @extend %switch__track--disabled;
+    }
+
+    // Thumb
+    #{$thumb--disabled-selector} {
+      @extend %switch__thumb--disabled;
+    }
+
+    // Caption
+    @if $add--caption {
+      #{$caption--disabled-selector} {
+        @extend %switch__caption--disabled;
+      }
+    }
+  }
+}

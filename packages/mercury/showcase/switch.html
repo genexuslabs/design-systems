@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+  </head>
+  <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">switch</h1>
+            <p class="section__description">
+              A primary HTML switch is an interactive element on a webpage, used
+              to toggle between two states, typically on and off. It often
+              controls settings or features, providing a clear visual cue for
+              the current state and allowing users to easily change it with a
+              simple click.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          checked
+          =========================== -->
+            <article class="article" nav data-title="checked">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-switch
+                    class="switch"
+                    checked-caption="on"
+                    un-checked-caption="off"
+                    checked-value="on"
+                    un-checked-value="off"
+                    value="on"
+                  ></ch-switch>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-1" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup1 = `<ch-switch class="switch"></ch-switch>`;
+                    document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          unchecked
+          =========================== -->
+            <article class="article" nav data-title="unchecked">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-switch
+                    class="switch"
+                    checked-caption="on"
+                    un-checked-caption="off"
+                    checked-value="on"
+                    un-checked-value="off"
+                    value="off"
+                  ></ch-switch>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-2" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup2 = `<ch-switch class="switch"></ch-switch>`;
+                    document.getElementById("ch-code-2").value = markup2;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          checked: disabled
+          =========================== -->
+            <article class="article" nav data-title="checked: disabled">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-switch
+                    class="switch"
+                    checked-caption="on"
+                    un-checked-caption="off"
+                    checked-value="on"
+                    un-checked-value="off"
+                    value="on"
+                    disabled
+                  ></ch-switch>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-3" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup3 = `<ch-switch class="switch" disabled></ch-switch>`;
+                    document.getElementById("ch-code-3").value = markup3;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          unchecked: disabled
+          =========================== -->
+            <article class="article" nav data-title="unchecked: disabled">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-switch
+                    class="switch"
+                    checked-caption="on"
+                    un-checked-caption="off"
+                    checked-value="on"
+                    un-checked-value="off"
+                    value="off"
+                    disabled
+                  ></ch-switch>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-4" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup4 = `<ch-switch class="switch" disabled></ch-switch>`;
+                    document.getElementById("ch-code-4").value = markup4;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          large
+          =========================== -->
+            <article class="article" nav data-title="large">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-switch
+                    class="switch switch-large"
+                    checked-caption="on"
+                    un-checked-caption="off"
+                    checked-value="on"
+                    un-checked-value="off"
+                  ></ch-switch>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-5" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup5 = `<ch-switch class="switch switch-large"></ch-switch>`;
+                    document.getElementById("ch-code-5").value = markup5;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
