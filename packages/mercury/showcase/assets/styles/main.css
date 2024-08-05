@@ -489,6 +489,11 @@ body.ctrl-cmd-pressed .article__pill {
 .code__button:active {
   --code-header__color: var(--mer-color__neutral-gray--400);
 }
+.code__button:focus-visible {
+  outline: var(--focus__outline-width) var(--focus__outline-style)
+    var(--focus__outline-color);
+  outline-offset: var(--focus__outline-offset);
+}
 .code__header + .code {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
