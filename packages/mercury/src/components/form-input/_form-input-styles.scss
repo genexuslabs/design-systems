@@ -1,0 +1,61 @@
+%form-input {
+  // ch-chameleon custom vars (do not edit their names)
+  // --ch-edit-auto-fill-background-color: var(); not defined by design yet
+  --ch-edit-gap: var(--control__icon-gap);
+  --ch-edit__image-size: var(--mer-icon__box--md);
+
+  @include control-colors-enabled();
+  @include control-border();
+  @include control-font-weight-regular();
+  @include control-height-regular();
+  @include control-padding-inline();
+
+  &--focus {
+    @include focus-border();
+  }
+
+  &--hover {
+    @include control-colors-hover();
+  }
+
+  &--disabled {
+    @include control-colors-disabled();
+  }
+}
+
+/// @group Form
+/// @param {String} $selector [".form-input"] -
+/// @param {String} $error-selector [".form-input-error"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @param {Boolean} $add--error [true] -
+@mixin form-input(
+  $selector: ".form-input",
+  $error-selector: ".form-input-error",
+  $add--disabled: true,
+  $add--error: true,
+  $add--placeholder: true
+) {
+  #{$selector} {
+    @extend %form-input;
+
+    &:hover {
+      @extend %form-input--hover;
+    }
+
+    &:focus {
+      @extend %form-input--focus;
+    }
+
+    @if $add--disabled {
+      &:disabled {
+        @extend %form-input--disabled;
+      }
+    }
+  }
+
+  @if $add--error {
+    #{$error-selector} {
+      @include control-colors-error();
+    }
+  }
+}
