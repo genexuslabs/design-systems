@@ -1,10 +1,6 @@
-@import "../button/button-tokens";
+@import "../../tokens/semantic/custom/button";
 
 %button-base {
-  @include button-tokens-primary();
-  @include button-tokens-secondary();
-  @include button-tokens-tertiary();
-
   @include button-common-styles();
   @include control-height-regular();
   @include control-border();

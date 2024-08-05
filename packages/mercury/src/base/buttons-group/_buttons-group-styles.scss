@@ -1,14 +1,4 @@
 %buttons-group {
-  --buttons-group__bg-color: var(--mer-color__elevation--02);
-  --buttons-group__bg-color--disabled: var(--mer-accent__primary--disabled);
-  --buttons-group__border: var(--mer-border__width--sm) solid
-    var(--mer-border-color__on-elevation--01);
-  --buttons-group__border-radius: var(--mer-border__radius--sm);
-  --buttons-group__gap: var(--mer-spacing--xs);
-  --buttons-group__padding: var(--mer-spacing--xs);
-  --buttons-group__padding-block: var(--mer-spacing--2xs);
-  --buttons-group__padding-inline: var(--mer-spacing--2xs);
-
   display: grid;
   background-color: var(--buttons-group__bg-color);
   border: var(--buttons-group__border);
@@ -23,8 +13,17 @@
   }
 
   &__button {
-    @extend %button-base;
+    @include button-common-styles();
+    @include control-height-regular();
+    @include control-border();
+    @include control-font-size-regular();
+    @include control-padding-inline();
     @include control-font-weight-semi-bold();
+
+    &--focus-visible {
+      @include focus-outline();
+    }
+
     --control__border-color: transparent;
 
     &-filled {
@@ -53,6 +52,10 @@
     &--disabled {
       color: var(--mer-text__on-disabled);
     }
+
+    &--focus-visible {
+      @include focus-outline();
+    }
   }
 }
 
@@ -74,6 +77,9 @@
 
     #{$button-selector} {
       @extend %buttons-group__button;
+    }
+    #{$button-selector}:focus-visible {
+      @extend %buttons-group__button--focus-visible;
     }
   }
 

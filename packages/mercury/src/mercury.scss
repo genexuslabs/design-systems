@@ -16,15 +16,20 @@
 @import "./tokens/primitive/timing";
 
 // Tokens Semantic
-@import "./tokens/semantic/accent";
-@import "./tokens/semantic/border";
-@import "./tokens/semantic/control";
-@import "./tokens/semantic/field";
-@import "./tokens/semantic/icon";
-@import "./tokens/semantic/item";
-@import "./tokens/semantic/general";
-@import "./tokens/semantic/text";
-@import "./tokens/semantic/heading";
+// figma
+@import "./tokens/semantic/figma/accent";
+@import "./tokens/semantic/figma/border";
+@import "./tokens/semantic/figma/heading";
+@import "./tokens/semantic/figma/icon";
+@import "./tokens/semantic/figma/text";
+// custom base
+@import "./tokens/semantic/custom/button";
+@import "./tokens/semantic/custom/buttons-group";
+// custom generic
+@import "./tokens/semantic/custom/control";
+@import "./tokens/semantic/custom/field";
+@import "./tokens/semantic/custom/general";
+@import "./tokens/semantic/custom/item";
 
 // Tokens Other
 @import "./tokens/chameleon";
@@ -94,6 +99,7 @@
   // Base
   $base-classes: true,
   $button-classes: true,
+  $buttons-group-classes: true,
   $form-controls-classes: true,
   $icon-classes: true,
   $layout-classes: true,
@@ -216,29 +222,11 @@
   // - - - - - - - - - - - - - - - - - - - -
   //        Other Tokens than Colors
   // - - - - - - - - - - - - - - - - - - - -
-  // Primitive
   @if $tokens and
     ($border or $colors or $elevation or $font or $spacing or $timing)
   {
     :root {
-      // Border
-      @if $border {
-        @include border();
-      }
-
-      // Semantic (Other than colors)
-      @include semantic-general();
-      @include semantic-control();
-      @include semantic-field();
-
-      // Semantic Colors (Are independent of color scheme)
-      @if $colors {
-        @include semantic-accent();
-        @include semantic-border();
-        @include semantic-icon();
-        @include semantic-item();
-        @include semantic-text();
-      }
+      /* - - - - - - - Primitive - - - - - - - - */
 
       // Elevation Light
       @if $elevation and $light-theme {
@@ -276,6 +264,41 @@
       @if $timing {
         @include timing();
       }
+
+      /* - - - - - - - Semantic/Figma - - - - - - - - */
+
+      // Border
+      @if $border {
+        @include border();
+      }
+
+      // Colors (are independent of color scheme)
+      @if $colors {
+        @include semantic-accent();
+        @include semantic-border();
+        @include semantic-heading();
+        @include semantic-icon();
+        @include semantic-text();
+      }
+
+      /* - - - - - - - Semantic/Custom - - - - - - - - */
+
+      // Base
+      @if $button-classes or $buttons-group-classes {
+        // buttons-group depends on some button's tokens
+        @include semantic-button();
+      }
+      @if $buttons-group-classes {
+        @include semantic-buttons-group();
+      }
+      @if $form-controls-classes {
+        @include semantic-field();
+      }
+
+      // Generic
+      @include semantic-control();
+      @include semantic-general();
+      @include semantic-item();
     }
   }
 
@@ -351,9 +374,6 @@
       // Button tertiary
       @include button-tertiary();
 
-      // Buttons Group
-      @include buttons-group();
-
       @if $icon-classes {
         // Button icon only
         @include button-icon-only();
@@ -361,6 +381,12 @@
         // Button icon and text
         @include button-icon-and-text();
       }
+    }
+
+    // Buttons group classes
+    @if $buttons-group-classes {
+      // Buttons Group
+      @include buttons-group();
     }
 
     // Form control classes
@@ -492,6 +518,7 @@
   // Base
   $base-classes: false,
   $button-classes: false,
+  $buttons-group-classes: false,
   $form-controls-classes: false,
   $icon-classes: false,
   $layout-classes: false,
@@ -551,6 +578,7 @@
     // Base
     $base-classes: $base-classes,
     $button-classes: $button-classes,
+    $buttons-group-classes: $buttons-group-classes,
     $form-controls-classes: $form-controls-classes,
     $icon-classes: $icon-classes,
     $layout-classes: $layout-classes,

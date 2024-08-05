@@ -1,0 +1,11 @@
+@mixin semantic-buttons-group() {
+  --buttons-group__bg-color: var(--mer-color__elevation--02);
+  --buttons-group__bg-color--disabled: var(--mer-accent__primary--disabled);
+  --buttons-group__border: var(--mer-border__width--sm) solid
+    var(--mer-border-color__on-elevation--01);
+  --buttons-group__border-radius: var(--mer-border__radius--sm);
+  --buttons-group__gap: var(--mer-spacing--xs);
+  --buttons-group__padding: var(--mer-spacing--xs);
+  --buttons-group__padding-block: var(--mer-spacing--2xs);
+  --buttons-group__padding-inline: var(--mer-spacing--2xs);
+}
