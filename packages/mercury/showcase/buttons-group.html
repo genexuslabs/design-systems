@@ -28,7 +28,7 @@
           <header class="section__header">
             <h1 class="section__title">buttons group</h1>
             <p class="section__description">
-              A button group is a collection of buttons grouped together,
+              A buttons group is a collection of buttons grouped together,
               usually for related actions. It helps organize multiple actions in
               a cohesive way, providing users with clear options. Button groups
               can be used for navigation, formatting, or other sets of actions,
@@ -47,7 +47,7 @@
                   prominent and ideal for primary actions.
                 </p>
                 <div class="article__content">
-                  <div class="buttons-group-filled spacing-body">
+                  <div class="buttons-group-filled">
                     <button class="buttons-group-button">Caption 1</button>
                     <button class="buttons-group-button">Caption 2</button>
                     <button class="buttons-group-button">Caption 3</button>
@@ -56,7 +56,7 @@
                 <div class="article__code">
                   <ch-code id="chCode1" language="xml" class="code"></ch-code>
                   <script>
-                    let chCode1 = `<div class="buttons-group-filled spacing-body">
+                    let chCode1 = `<div class="buttons-group-filled">
   <button class="buttons-group-button">Caption 1</button>
   <button class="buttons-group-button">Caption 2</button>
   <button class="buttons-group-button">Caption 3</button>
@@ -71,10 +71,14 @@
             <article class="article" nav data-title="filled : disabled">
               <header class="article__header"></header>
               <div class="article__main">
+                <p class="article__description">
+                  Because the buttons-group container is a div element, it does
+                  not support the <code>disabled</code> state. For this reason
+                  an additional class <code>.buttons-group-disabled</code> is
+                  needed on the wrapper to apply the disabled style.
+                </p>
                 <div class="article__content">
-                  <div
-                    class="buttons-group-filled buttons-group-disabled spacing-body"
-                  >
+                  <div class="buttons-group-filled buttons-group-disabled">
                     <button class="buttons-group-button" disabled>
                       Caption 1
                     </button>
@@ -89,7 +93,7 @@
                 <div class="article__code">
                   <ch-code id="chCode2" language="xml" class="code"></ch-code>
                   <script>
-                    let chCode2 = `<div class="buttons-group-filled buttons-group-disabled spacing-body">
+                    let chCode2 = `<div class="buttons-group-filled buttons-group-disabled">
   <button class="buttons-group-button" disabled>Caption 1</button>
   <button class="buttons-group-button" disabled>Caption 2</button>
   <button class="buttons-group-button" disabled>Caption 3</button>
@@ -110,7 +114,7 @@
                   less visually intrusive and suitable for secondary actions.
                 </p>
                 <div class="article__content">
-                  <div class="buttons-group-outlined spacing-body">
+                  <div class="buttons-group-outlined">
                     <button class="buttons-group-button">Caption 1</button>
                     <button class="buttons-group-button">Caption 2</button>
                     <button class="buttons-group-button">Caption 3</button>
@@ -119,7 +123,7 @@
                 <div class="article__code">
                   <ch-code id="chCode3" language="xml" class="code"></ch-code>
                   <script>
-                    let chCode3 = `<div class="buttons-group-outlined spacing-body">
+                    let chCode3 = `<div class="buttons-group-outlined">
   <button class="buttons-group-button">Caption 1</button>
   <button class="buttons-group-button">Caption 2</button>
   <button class="buttons-group-button">Caption 3</button>
@@ -134,10 +138,14 @@
             <article class="article" nav data-title="outlined : disabled">
               <header class="article__header"></header>
               <div class="article__main">
+                <p class="article__description">
+                  Because the buttons-group container is a div element, it does
+                  not support the <code>disabled</code> state. For this reason
+                  an additional class <code>.buttons-group-disabled</code> is
+                  needed on the wrapper to apply the disabled style.
+                </p>
                 <div class="article__content">
-                  <div
-                    class="buttons-group-outlined buttons-group-disabled spacing-body"
-                  >
+                  <div class="buttons-group-outlined buttons-group-disabled">
                     <button class="buttons-group-button" disabled>
                       Caption 1
                     </button>
@@ -152,7 +160,7 @@
                 <div class="article__code">
                   <ch-code id="chCode4" language="xml" class="code"></ch-code>
                   <script>
-                    let chCode4 = `<div class="buttons-group-outlined buttons-group-disabled spacing-body">
+                    let chCode4 = `<div class="buttons-group-outlined buttons-group-disabled">
   <button class="buttons-group-button" disabled>Caption 1</button>
   <button class="buttons-group-button" disabled>Caption 2</button>
   <button class="buttons-group-button" disabled>Caption 3</button>
