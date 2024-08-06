@@ -6693,6 +6693,386 @@ export const MERCURY_ASSETS = Object.freeze({
                 })
             })
         }),
+        general: Object.freeze({
+            version: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_version--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_version--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_version--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_version--disabled"
+                })
+            }),
+            swift: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_swift--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_swift--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_swift--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_swift--disabled"
+                })
+            }),
+            "sql-server": Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_sql-server--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_sql-server--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_sql-server--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_sql-server--disabled"
+                })
+            }),
+            services: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_services--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_services--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_services--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_services--disabled"
+                })
+            }),
+            sd: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_sd--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_sd--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_sd--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_sd--disabled"
+                })
+            }),
+            "sd-web": Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_sd-web--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_sd-web--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_sd-web--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_sd-web--disabled"
+                })
+            }),
+            "sap-hana": Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_sap-hana--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_sap-hana--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_sap-hana--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_sap-hana--disabled"
+                })
+            }),
+            references: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_references--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_references--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_references--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_references--disabled"
+                })
+            }),
+            "qr-code": Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_qr-code--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_qr-code--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_qr-code--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_qr-code--disabled"
+                })
+            }),
+            "postgre-sql": Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_postgre-sql--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_postgre-sql--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_postgre-sql--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_postgre-sql--disabled"
+                })
+            }),
+            patterns: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_patterns--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_patterns--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_patterns--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_patterns--disabled"
+                })
+            }),
+            oracle: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_oracle--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_oracle--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_oracle--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_oracle--disabled"
+                })
+            }),
+            mysql: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_mysql--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_mysql--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_mysql--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_mysql--disabled"
+                })
+            }),
+            launchpad: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_launchpad--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_launchpad--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_launchpad--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_launchpad--disabled"
+                })
+            }),
+            "knowledge-base": Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_knowledge-base--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_knowledge-base--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_knowledge-base--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_knowledge-base--disabled"
+                })
+            }),
+            java: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_java--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_java--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_java--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_java--disabled"
+                })
+            }),
+            informix: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_informix--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_informix--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_informix--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_informix--disabled"
+                })
+            }),
+            generator: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_generator--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_generator--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_generator--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_generator--disabled"
+                })
+            }),
+            "environment-select": Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_environment-select--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_environment-select--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_environment-select--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_environment-select--disabled"
+                })
+            }),
+            "environment-no-select": Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_environment-no-select--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_environment-no-select--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_environment-no-select--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_environment-no-select--disabled"
+                })
+            }),
+            db2: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_db2--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_db2--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_db2--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_db2--disabled"
+                })
+            }),
+            datastore: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_datastore--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_datastore--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_datastore--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_datastore--disabled"
+                })
+            }),
+            customization: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_customization--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_customization--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_customization--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_customization--disabled"
+                })
+            }),
+            csharp: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_csharp--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_csharp--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_csharp--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_csharp--disabled"
+                })
+            }),
+            apple: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_apple--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_apple--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_apple--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_apple--disabled"
+                })
+            }),
+            angular: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_angular--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_angular--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_angular--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_angular--disabled"
+                })
+            }),
+            android: Object.freeze({
+                enabled: Object.freeze({
+                    name: "general_android--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "general_android--hover"
+                }),
+                active: Object.freeze({
+                    name: "general_android--active"
+                }),
+                disabled: Object.freeze({
+                    name: "general_android--disabled"
+                })
+            })
+        }),
         "gemini-tools": Object.freeze({
             warning: Object.freeze({
                 "on-surface": Object.freeze({
