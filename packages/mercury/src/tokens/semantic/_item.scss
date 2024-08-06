@@ -10,7 +10,7 @@
   --item__color: var(--item__color--enabled);
 
   // enabled
-  --item__bg-color--enabled: var(--mer-color__elevation--01);
+  --item__bg-color--enabled: transparent;
   --item__border-color--enabled: transparent;
   --item__color--enabled: var(--mer-text__on-elevation);
 
@@ -97,6 +97,7 @@
   // - - - - - - - Gap - - - - - - -
 
   --items-container__gap: var(--mer-spacing--2xs);
+  --items-container__gap--small: var(--mer-spacing--2xs);
 
   // - - - - - - - Height - - - - - - -
 
