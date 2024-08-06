@@ -134,6 +134,12 @@ $all-monochrome-lists: (
 Multicolor lists
 - - - - - - - - - - - */
  
+// patterns
+$patterns: workwith-for-sd, work-with-web, tabs, tab, structure, row, pattern-category, parameters, parameter, orders, list, fixed-data, filters, events, documentation, detail, cell, attributes;
+ 
+// objects-parts
+$objects-parts: variables, rules, events, conditions, condition;
+ 
 // objects
 $objects: workflow, work-panel, web-panel, web-component, version, url-rewrite, transaction, to-be-defined, theme, theme-web, theme-for-sd, table, super-app, subtype-group, structured-data-type, stencil, roles, report, references, query, procedure, patterns, panel-for-sd, orphant-document, offline-database, object, notification-templates, module, module-open, mini-app, menubar, menu, masterpage, main-object, language, knowledge-base, image, generator, generator-category, folder, folder-open, file, external-object, environment-select, environment-no-select, dso, domain, document, document-workflow, diagram, design, deployment-unit, dataview-index, datastore, datastore-category, data-view, data-selector, data-provider, dashboard, customization, conversational-flows, category, calendars, business-process-diagram, bg-color, attribute, api;
  
@@ -153,6 +159,8 @@ $editing-structures: user-index, system-index, redundant-attribute, platforms, l
 $controls: variable, treeview, text-block, tag-html, table, table-row, table-column, table-cell, tab, tab-page, snippet, smart-table, section, pop-up, messages, media-player, id-html, hyperlink, html, horizontal-line, history-manager, gx-scheduler, group, grid, google-geomap, google-charts, google-annotated-tmeline, google-analytics, free-style-grid, font, flex, file-upload, error-viewer, embedded-page, default, component, class-html, canva, call-target, button, button-group, action-group, action-group-item;
 
 $all-multicolor-lists: (
+  patterns: $patterns,
+  objects-parts: $objects-parts,
   objects: $objects,
   gx-test: $gx-test,
   gx-server: $gx-server,

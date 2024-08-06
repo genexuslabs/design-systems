@@ -2575,6 +2575,78 @@ export const MERCURY_ASSETS = Object.freeze({
                 })
             })
         }),
+        "objects-parts": Object.freeze({
+            variables: Object.freeze({
+                enabled: Object.freeze({
+                    name: "objects-parts_variables--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "objects-parts_variables--hover"
+                }),
+                active: Object.freeze({
+                    name: "objects-parts_variables--active"
+                }),
+                disabled: Object.freeze({
+                    name: "objects-parts_variables--disabled"
+                })
+            }),
+            rules: Object.freeze({
+                enabled: Object.freeze({
+                    name: "objects-parts_rules--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "objects-parts_rules--hover"
+                }),
+                active: Object.freeze({
+                    name: "objects-parts_rules--active"
+                }),
+                disabled: Object.freeze({
+                    name: "objects-parts_rules--disabled"
+                })
+            }),
+            events: Object.freeze({
+                enabled: Object.freeze({
+                    name: "objects-parts_events--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "objects-parts_events--hover"
+                }),
+                active: Object.freeze({
+                    name: "objects-parts_events--active"
+                }),
+                disabled: Object.freeze({
+                    name: "objects-parts_events--disabled"
+                })
+            }),
+            conditions: Object.freeze({
+                enabled: Object.freeze({
+                    name: "objects-parts_conditions--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "objects-parts_conditions--hover"
+                }),
+                active: Object.freeze({
+                    name: "objects-parts_conditions--active"
+                }),
+                disabled: Object.freeze({
+                    name: "objects-parts_conditions--disabled"
+                })
+            }),
+            condition: Object.freeze({
+                enabled: Object.freeze({
+                    name: "objects-parts_condition--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "objects-parts_condition--hover"
+                }),
+                active: Object.freeze({
+                    name: "objects-parts_condition--active"
+                }),
+                disabled: Object.freeze({
+                    name: "objects-parts_condition--disabled"
+                })
+            })
+        }),
         objects: Object.freeze({
             workflow: Object.freeze({
                 enabled: Object.freeze({
@@ -6690,6 +6762,148 @@ export const MERCURY_ASSETS = Object.freeze({
                 }),
                 disabled: Object.freeze({
                     name: "gx-test_cutfo--disabled"
+                })
+            })
+        }),
+        "gx-server": Object.freeze({
+            public: Object.freeze({
+                enabled: Object.freeze({
+                    name: "gx-server_public--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "gx-server_public--hover"
+                }),
+                active: Object.freeze({
+                    name: "gx-server_public--active"
+                }),
+                disabled: Object.freeze({
+                    name: "gx-server_public--disabled"
+                })
+            }),
+            private: Object.freeze({
+                enabled: Object.freeze({
+                    name: "gx-server_private--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "gx-server_private--hover"
+                }),
+                active: Object.freeze({
+                    name: "gx-server_private--active"
+                }),
+                disabled: Object.freeze({
+                    name: "gx-server_private--disabled"
+                })
+            }),
+            new: Object.freeze({
+                enabled: Object.freeze({
+                    name: "gx-server_new--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "gx-server_new--hover"
+                }),
+                active: Object.freeze({
+                    name: "gx-server_new--active"
+                }),
+                disabled: Object.freeze({
+                    name: "gx-server_new--disabled"
+                })
+            }),
+            "lock-without-changes": Object.freeze({
+                enabled: Object.freeze({
+                    name: "gx-server_lock-without-changes--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "gx-server_lock-without-changes--hover"
+                }),
+                active: Object.freeze({
+                    name: "gx-server_lock-without-changes--active"
+                }),
+                disabled: Object.freeze({
+                    name: "gx-server_lock-without-changes--disabled"
+                })
+            }),
+            "lock-by-user-reserve": Object.freeze({
+                enabled: Object.freeze({
+                    name: "gx-server_lock-by-user-reserve--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "gx-server_lock-by-user-reserve--hover"
+                }),
+                active: Object.freeze({
+                    name: "gx-server_lock-by-user-reserve--active"
+                }),
+                disabled: Object.freeze({
+                    name: "gx-server_lock-by-user-reserve--disabled"
+                })
+            }),
+            "lock-by-user-changes": Object.freeze({
+                enabled: Object.freeze({
+                    name: "gx-server_lock-by-user-changes--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "gx-server_lock-by-user-changes--hover"
+                }),
+                active: Object.freeze({
+                    name: "gx-server_lock-by-user-changes--active"
+                }),
+                disabled: Object.freeze({
+                    name: "gx-server_lock-by-user-changes--disabled"
+                })
+            }),
+            internal: Object.freeze({
+                enabled: Object.freeze({
+                    name: "gx-server_internal--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "gx-server_internal--hover"
+                }),
+                active: Object.freeze({
+                    name: "gx-server_internal--active"
+                }),
+                disabled: Object.freeze({
+                    name: "gx-server_internal--disabled"
+                })
+            }),
+            delete: Object.freeze({
+                enabled: Object.freeze({
+                    name: "gx-server_delete--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "gx-server_delete--hover"
+                }),
+                active: Object.freeze({
+                    name: "gx-server_delete--active"
+                }),
+                disabled: Object.freeze({
+                    name: "gx-server_delete--disabled"
+                })
+            }),
+            conflict: Object.freeze({
+                enabled: Object.freeze({
+                    name: "gx-server_conflict--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "gx-server_conflict--hover"
+                }),
+                active: Object.freeze({
+                    name: "gx-server_conflict--active"
+                }),
+                disabled: Object.freeze({
+                    name: "gx-server_conflict--disabled"
+                })
+            }),
+            "changes-commit-pending": Object.freeze({
+                enabled: Object.freeze({
+                    name: "gx-server_changes-commit-pending--enabled"
+                }),
+                hover: Object.freeze({
+                    name: "gx-server_changes-commit-pending--hover"
+                }),
+                active: Object.freeze({
+                    name: "gx-server_changes-commit-pending--active"
+                }),
+                disabled: Object.freeze({
+                    name: "gx-server_changes-commit-pending--disabled"
                 })
             })
         }),

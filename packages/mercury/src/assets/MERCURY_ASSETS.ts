@@ -2575,6 +2575,332 @@ export const MERCURY_ASSETS = Object.freeze({
       })
     })
   }),
+  patterns: Object.freeze({
+    "workwith-for-sd": Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_workwith-for-sd--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_workwith-for-sd--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_workwith-for-sd--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_workwith-for-sd--disabled"
+      })
+    }),
+    "work-with-web": Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_work-with-web--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_work-with-web--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_work-with-web--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_work-with-web--disabled"
+      })
+    }),
+    tabs: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_tabs--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_tabs--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_tabs--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_tabs--disabled"
+      })
+    }),
+    tab: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_tab--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_tab--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_tab--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_tab--disabled"
+      })
+    }),
+    structure: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_structure--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_structure--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_structure--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_structure--disabled"
+      })
+    }),
+    row: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_row--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_row--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_row--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_row--disabled"
+      })
+    }),
+    "pattern-category": Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_pattern-category--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_pattern-category--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_pattern-category--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_pattern-category--disabled"
+      })
+    }),
+    parameters: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_parameters--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_parameters--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_parameters--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_parameters--disabled"
+      })
+    }),
+    parameter: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_parameter--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_parameter--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_parameter--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_parameter--disabled"
+      })
+    }),
+    orders: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_orders--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_orders--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_orders--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_orders--disabled"
+      })
+    }),
+    list: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_list--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_list--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_list--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_list--disabled"
+      })
+    }),
+    "fixed-data": Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_fixed-data--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_fixed-data--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_fixed-data--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_fixed-data--disabled"
+      })
+    }),
+    filters: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_filters--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_filters--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_filters--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_filters--disabled"
+      })
+    }),
+    events: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_events--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_events--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_events--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_events--disabled"
+      })
+    }),
+    documentation: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_documentation--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_documentation--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_documentation--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_documentation--disabled"
+      })
+    }),
+    detail: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_detail--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_detail--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_detail--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_detail--disabled"
+      })
+    }),
+    cell: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_cell--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_cell--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_cell--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_cell--disabled"
+      })
+    }),
+    attributes: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_attributes--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_attributes--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_attributes--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_attributes--disabled"
+      })
+    })
+  }),
+  "objects-parts": Object.freeze({
+    variables: Object.freeze({
+      enabled: Object.freeze({
+        name: "objects-parts_variables--enabled"
+      }),
+      hover: Object.freeze({
+        name: "objects-parts_variables--hover"
+      }),
+      active: Object.freeze({
+        name: "objects-parts_variables--active"
+      }),
+      disabled: Object.freeze({
+        name: "objects-parts_variables--disabled"
+      })
+    }),
+    rules: Object.freeze({
+      enabled: Object.freeze({
+        name: "objects-parts_rules--enabled"
+      }),
+      hover: Object.freeze({
+        name: "objects-parts_rules--hover"
+      }),
+      active: Object.freeze({
+        name: "objects-parts_rules--active"
+      }),
+      disabled: Object.freeze({
+        name: "objects-parts_rules--disabled"
+      })
+    }),
+    events: Object.freeze({
+      enabled: Object.freeze({
+        name: "objects-parts_events--enabled"
+      }),
+      hover: Object.freeze({
+        name: "objects-parts_events--hover"
+      }),
+      active: Object.freeze({
+        name: "objects-parts_events--active"
+      }),
+      disabled: Object.freeze({
+        name: "objects-parts_events--disabled"
+      })
+    }),
+    conditions: Object.freeze({
+      enabled: Object.freeze({
+        name: "objects-parts_conditions--enabled"
+      }),
+      hover: Object.freeze({
+        name: "objects-parts_conditions--hover"
+      }),
+      active: Object.freeze({
+        name: "objects-parts_conditions--active"
+      }),
+      disabled: Object.freeze({
+        name: "objects-parts_conditions--disabled"
+      })
+    }),
+    condition: Object.freeze({
+      enabled: Object.freeze({
+        name: "objects-parts_condition--enabled"
+      }),
+      hover: Object.freeze({
+        name: "objects-parts_condition--hover"
+      }),
+      active: Object.freeze({
+        name: "objects-parts_condition--active"
+      }),
+      disabled: Object.freeze({
+        name: "objects-parts_condition--disabled"
+      })
+    })
+  }),
   objects: Object.freeze({
     workflow: Object.freeze({
       enabled: Object.freeze({
