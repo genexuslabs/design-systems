@@ -1,0 +1,1477 @@
+%icon__controls {
+      
+
+  /* =================================
+  LIGHT PLACEHOLDERS SELECTORS
+  ================================= */
+  
+
+    /* - - - - - - - - - - - - 
+    variable.svg 
+    - - - - - - - - - - - - */
+    
+    &_variable--enabled {
+      --icon-path: var(--icon__controls_variable--enabled);
+    }
+    &_variable--hover {
+      --icon-path: var(--icon__controls_variable--hover);
+    }
+    &_variable--active {
+      --icon-path: var(--icon__controls_variable--active);
+    }
+    &_variable--disabled {
+      --icon-path: var(--icon__controls_variable--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    treeview.svg 
+    - - - - - - - - - - - - */
+    
+    &_treeview--enabled {
+      --icon-path: var(--icon__controls_treeview--enabled);
+    }
+    &_treeview--hover {
+      --icon-path: var(--icon__controls_treeview--hover);
+    }
+    &_treeview--active {
+      --icon-path: var(--icon__controls_treeview--active);
+    }
+    &_treeview--disabled {
+      --icon-path: var(--icon__controls_treeview--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    text-block.svg 
+    - - - - - - - - - - - - */
+    
+    &_text-block--enabled {
+      --icon-path: var(--icon__controls_text-block--enabled);
+    }
+    &_text-block--hover {
+      --icon-path: var(--icon__controls_text-block--hover);
+    }
+    &_text-block--active {
+      --icon-path: var(--icon__controls_text-block--active);
+    }
+    &_text-block--disabled {
+      --icon-path: var(--icon__controls_text-block--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    tag-html.svg 
+    - - - - - - - - - - - - */
+    
+    &_tag-html--enabled {
+      --icon-path: var(--icon__controls_tag-html--enabled);
+    }
+    &_tag-html--hover {
+      --icon-path: var(--icon__controls_tag-html--hover);
+    }
+    &_tag-html--active {
+      --icon-path: var(--icon__controls_tag-html--active);
+    }
+    &_tag-html--disabled {
+      --icon-path: var(--icon__controls_tag-html--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    table.svg 
+    - - - - - - - - - - - - */
+    
+    &_table--enabled {
+      --icon-path: var(--icon__controls_table--enabled);
+    }
+    &_table--hover {
+      --icon-path: var(--icon__controls_table--hover);
+    }
+    &_table--active {
+      --icon-path: var(--icon__controls_table--active);
+    }
+    &_table--disabled {
+      --icon-path: var(--icon__controls_table--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    table-row.svg 
+    - - - - - - - - - - - - */
+    
+    &_table-row--enabled {
+      --icon-path: var(--icon__controls_table-row--enabled);
+    }
+    &_table-row--hover {
+      --icon-path: var(--icon__controls_table-row--hover);
+    }
+    &_table-row--active {
+      --icon-path: var(--icon__controls_table-row--active);
+    }
+    &_table-row--disabled {
+      --icon-path: var(--icon__controls_table-row--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    table-column.svg 
+    - - - - - - - - - - - - */
+    
+    &_table-column--enabled {
+      --icon-path: var(--icon__controls_table-column--enabled);
+    }
+    &_table-column--hover {
+      --icon-path: var(--icon__controls_table-column--hover);
+    }
+    &_table-column--active {
+      --icon-path: var(--icon__controls_table-column--active);
+    }
+    &_table-column--disabled {
+      --icon-path: var(--icon__controls_table-column--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    table-cell.svg 
+    - - - - - - - - - - - - */
+    
+    &_table-cell--enabled {
+      --icon-path: var(--icon__controls_table-cell--enabled);
+    }
+    &_table-cell--hover {
+      --icon-path: var(--icon__controls_table-cell--hover);
+    }
+    &_table-cell--active {
+      --icon-path: var(--icon__controls_table-cell--active);
+    }
+    &_table-cell--disabled {
+      --icon-path: var(--icon__controls_table-cell--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    tab.svg 
+    - - - - - - - - - - - - */
+    
+    &_tab--enabled {
+      --icon-path: var(--icon__controls_tab--enabled);
+    }
+    &_tab--hover {
+      --icon-path: var(--icon__controls_tab--hover);
+    }
+    &_tab--active {
+      --icon-path: var(--icon__controls_tab--active);
+    }
+    &_tab--disabled {
+      --icon-path: var(--icon__controls_tab--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    tab-page.svg 
+    - - - - - - - - - - - - */
+    
+    &_tab-page--enabled {
+      --icon-path: var(--icon__controls_tab-page--enabled);
+    }
+    &_tab-page--hover {
+      --icon-path: var(--icon__controls_tab-page--hover);
+    }
+    &_tab-page--active {
+      --icon-path: var(--icon__controls_tab-page--active);
+    }
+    &_tab-page--disabled {
+      --icon-path: var(--icon__controls_tab-page--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    snippet.svg 
+    - - - - - - - - - - - - */
+    
+    &_snippet--enabled {
+      --icon-path: var(--icon__controls_snippet--enabled);
+    }
+    &_snippet--hover {
+      --icon-path: var(--icon__controls_snippet--hover);
+    }
+    &_snippet--active {
+      --icon-path: var(--icon__controls_snippet--active);
+    }
+    &_snippet--disabled {
+      --icon-path: var(--icon__controls_snippet--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    smart-table.svg 
+    - - - - - - - - - - - - */
+    
+    &_smart-table--enabled {
+      --icon-path: var(--icon__controls_smart-table--enabled);
+    }
+    &_smart-table--hover {
+      --icon-path: var(--icon__controls_smart-table--hover);
+    }
+    &_smart-table--active {
+      --icon-path: var(--icon__controls_smart-table--active);
+    }
+    &_smart-table--disabled {
+      --icon-path: var(--icon__controls_smart-table--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    section.svg 
+    - - - - - - - - - - - - */
+    
+    &_section--enabled {
+      --icon-path: var(--icon__controls_section--enabled);
+    }
+    &_section--hover {
+      --icon-path: var(--icon__controls_section--hover);
+    }
+    &_section--active {
+      --icon-path: var(--icon__controls_section--active);
+    }
+    &_section--disabled {
+      --icon-path: var(--icon__controls_section--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    pop-up.svg 
+    - - - - - - - - - - - - */
+    
+    &_pop-up--enabled {
+      --icon-path: var(--icon__controls_pop-up--enabled);
+    }
+    &_pop-up--hover {
+      --icon-path: var(--icon__controls_pop-up--hover);
+    }
+    &_pop-up--active {
+      --icon-path: var(--icon__controls_pop-up--active);
+    }
+    &_pop-up--disabled {
+      --icon-path: var(--icon__controls_pop-up--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    messages.svg 
+    - - - - - - - - - - - - */
+    
+    &_messages--enabled {
+      --icon-path: var(--icon__controls_messages--enabled);
+    }
+    &_messages--hover {
+      --icon-path: var(--icon__controls_messages--hover);
+    }
+    &_messages--active {
+      --icon-path: var(--icon__controls_messages--active);
+    }
+    &_messages--disabled {
+      --icon-path: var(--icon__controls_messages--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    media-player.svg 
+    - - - - - - - - - - - - */
+    
+    &_media-player--enabled {
+      --icon-path: var(--icon__controls_media-player--enabled);
+    }
+    &_media-player--hover {
+      --icon-path: var(--icon__controls_media-player--hover);
+    }
+    &_media-player--active {
+      --icon-path: var(--icon__controls_media-player--active);
+    }
+    &_media-player--disabled {
+      --icon-path: var(--icon__controls_media-player--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    id-html.svg 
+    - - - - - - - - - - - - */
+    
+    &_id-html--enabled {
+      --icon-path: var(--icon__controls_id-html--enabled);
+    }
+    &_id-html--hover {
+      --icon-path: var(--icon__controls_id-html--hover);
+    }
+    &_id-html--active {
+      --icon-path: var(--icon__controls_id-html--active);
+    }
+    &_id-html--disabled {
+      --icon-path: var(--icon__controls_id-html--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    hyperlink.svg 
+    - - - - - - - - - - - - */
+    
+    &_hyperlink--enabled {
+      --icon-path: var(--icon__controls_hyperlink--enabled);
+    }
+    &_hyperlink--hover {
+      --icon-path: var(--icon__controls_hyperlink--hover);
+    }
+    &_hyperlink--active {
+      --icon-path: var(--icon__controls_hyperlink--active);
+    }
+    &_hyperlink--disabled {
+      --icon-path: var(--icon__controls_hyperlink--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    html.svg 
+    - - - - - - - - - - - - */
+    
+    &_html--enabled {
+      --icon-path: var(--icon__controls_html--enabled);
+    }
+    &_html--hover {
+      --icon-path: var(--icon__controls_html--hover);
+    }
+    &_html--active {
+      --icon-path: var(--icon__controls_html--active);
+    }
+    &_html--disabled {
+      --icon-path: var(--icon__controls_html--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    horizontal-line.svg 
+    - - - - - - - - - - - - */
+    
+    &_horizontal-line--enabled {
+      --icon-path: var(--icon__controls_horizontal-line--enabled);
+    }
+    &_horizontal-line--hover {
+      --icon-path: var(--icon__controls_horizontal-line--hover);
+    }
+    &_horizontal-line--active {
+      --icon-path: var(--icon__controls_horizontal-line--active);
+    }
+    &_horizontal-line--disabled {
+      --icon-path: var(--icon__controls_horizontal-line--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    history-manager.svg 
+    - - - - - - - - - - - - */
+    
+    &_history-manager--enabled {
+      --icon-path: var(--icon__controls_history-manager--enabled);
+    }
+    &_history-manager--hover {
+      --icon-path: var(--icon__controls_history-manager--hover);
+    }
+    &_history-manager--active {
+      --icon-path: var(--icon__controls_history-manager--active);
+    }
+    &_history-manager--disabled {
+      --icon-path: var(--icon__controls_history-manager--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    gx-scheduler.svg 
+    - - - - - - - - - - - - */
+    
+    &_gx-scheduler--enabled {
+      --icon-path: var(--icon__controls_gx-scheduler--enabled);
+    }
+    &_gx-scheduler--hover {
+      --icon-path: var(--icon__controls_gx-scheduler--hover);
+    }
+    &_gx-scheduler--active {
+      --icon-path: var(--icon__controls_gx-scheduler--active);
+    }
+    &_gx-scheduler--disabled {
+      --icon-path: var(--icon__controls_gx-scheduler--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    group.svg 
+    - - - - - - - - - - - - */
+    
+    &_group--enabled {
+      --icon-path: var(--icon__controls_group--enabled);
+    }
+    &_group--hover {
+      --icon-path: var(--icon__controls_group--hover);
+    }
+    &_group--active {
+      --icon-path: var(--icon__controls_group--active);
+    }
+    &_group--disabled {
+      --icon-path: var(--icon__controls_group--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    grid.svg 
+    - - - - - - - - - - - - */
+    
+    &_grid--enabled {
+      --icon-path: var(--icon__controls_grid--enabled);
+    }
+    &_grid--hover {
+      --icon-path: var(--icon__controls_grid--hover);
+    }
+    &_grid--active {
+      --icon-path: var(--icon__controls_grid--active);
+    }
+    &_grid--disabled {
+      --icon-path: var(--icon__controls_grid--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    google-geomap.svg 
+    - - - - - - - - - - - - */
+    
+    &_google-geomap--enabled {
+      --icon-path: var(--icon__controls_google-geomap--enabled);
+    }
+    &_google-geomap--hover {
+      --icon-path: var(--icon__controls_google-geomap--hover);
+    }
+    &_google-geomap--active {
+      --icon-path: var(--icon__controls_google-geomap--active);
+    }
+    &_google-geomap--disabled {
+      --icon-path: var(--icon__controls_google-geomap--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    google-charts.svg 
+    - - - - - - - - - - - - */
+    
+    &_google-charts--enabled {
+      --icon-path: var(--icon__controls_google-charts--enabled);
+    }
+    &_google-charts--hover {
+      --icon-path: var(--icon__controls_google-charts--hover);
+    }
+    &_google-charts--active {
+      --icon-path: var(--icon__controls_google-charts--active);
+    }
+    &_google-charts--disabled {
+      --icon-path: var(--icon__controls_google-charts--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    google-annotated-tmeline.svg 
+    - - - - - - - - - - - - */
+    
+    &_google-annotated-tmeline--enabled {
+      --icon-path: var(--icon__controls_google-annotated-tmeline--enabled);
+    }
+    &_google-annotated-tmeline--hover {
+      --icon-path: var(--icon__controls_google-annotated-tmeline--hover);
+    }
+    &_google-annotated-tmeline--active {
+      --icon-path: var(--icon__controls_google-annotated-tmeline--active);
+    }
+    &_google-annotated-tmeline--disabled {
+      --icon-path: var(--icon__controls_google-annotated-tmeline--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    google-analytics.svg 
+    - - - - - - - - - - - - */
+    
+    &_google-analytics--enabled {
+      --icon-path: var(--icon__controls_google-analytics--enabled);
+    }
+    &_google-analytics--hover {
+      --icon-path: var(--icon__controls_google-analytics--hover);
+    }
+    &_google-analytics--active {
+      --icon-path: var(--icon__controls_google-analytics--active);
+    }
+    &_google-analytics--disabled {
+      --icon-path: var(--icon__controls_google-analytics--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    free-style-grid.svg 
+    - - - - - - - - - - - - */
+    
+    &_free-style-grid--enabled {
+      --icon-path: var(--icon__controls_free-style-grid--enabled);
+    }
+    &_free-style-grid--hover {
+      --icon-path: var(--icon__controls_free-style-grid--hover);
+    }
+    &_free-style-grid--active {
+      --icon-path: var(--icon__controls_free-style-grid--active);
+    }
+    &_free-style-grid--disabled {
+      --icon-path: var(--icon__controls_free-style-grid--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    font.svg 
+    - - - - - - - - - - - - */
+    
+    &_font--enabled {
+      --icon-path: var(--icon__controls_font--enabled);
+    }
+    &_font--hover {
+      --icon-path: var(--icon__controls_font--hover);
+    }
+    &_font--active {
+      --icon-path: var(--icon__controls_font--active);
+    }
+    &_font--disabled {
+      --icon-path: var(--icon__controls_font--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    flex.svg 
+    - - - - - - - - - - - - */
+    
+    &_flex--enabled {
+      --icon-path: var(--icon__controls_flex--enabled);
+    }
+    &_flex--hover {
+      --icon-path: var(--icon__controls_flex--hover);
+    }
+    &_flex--active {
+      --icon-path: var(--icon__controls_flex--active);
+    }
+    &_flex--disabled {
+      --icon-path: var(--icon__controls_flex--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    file-upload.svg 
+    - - - - - - - - - - - - */
+    
+    &_file-upload--enabled {
+      --icon-path: var(--icon__controls_file-upload--enabled);
+    }
+    &_file-upload--hover {
+      --icon-path: var(--icon__controls_file-upload--hover);
+    }
+    &_file-upload--active {
+      --icon-path: var(--icon__controls_file-upload--active);
+    }
+    &_file-upload--disabled {
+      --icon-path: var(--icon__controls_file-upload--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    error-viewer.svg 
+    - - - - - - - - - - - - */
+    
+    &_error-viewer--enabled {
+      --icon-path: var(--icon__controls_error-viewer--enabled);
+    }
+    &_error-viewer--hover {
+      --icon-path: var(--icon__controls_error-viewer--hover);
+    }
+    &_error-viewer--active {
+      --icon-path: var(--icon__controls_error-viewer--active);
+    }
+    &_error-viewer--disabled {
+      --icon-path: var(--icon__controls_error-viewer--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    embedded-page.svg 
+    - - - - - - - - - - - - */
+    
+    &_embedded-page--enabled {
+      --icon-path: var(--icon__controls_embedded-page--enabled);
+    }
+    &_embedded-page--hover {
+      --icon-path: var(--icon__controls_embedded-page--hover);
+    }
+    &_embedded-page--active {
+      --icon-path: var(--icon__controls_embedded-page--active);
+    }
+    &_embedded-page--disabled {
+      --icon-path: var(--icon__controls_embedded-page--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    default.svg 
+    - - - - - - - - - - - - */
+    
+    &_default--enabled {
+      --icon-path: var(--icon__controls_default--enabled);
+    }
+    &_default--hover {
+      --icon-path: var(--icon__controls_default--hover);
+    }
+    &_default--active {
+      --icon-path: var(--icon__controls_default--active);
+    }
+    &_default--disabled {
+      --icon-path: var(--icon__controls_default--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    component.svg 
+    - - - - - - - - - - - - */
+    
+    &_component--enabled {
+      --icon-path: var(--icon__controls_component--enabled);
+    }
+    &_component--hover {
+      --icon-path: var(--icon__controls_component--hover);
+    }
+    &_component--active {
+      --icon-path: var(--icon__controls_component--active);
+    }
+    &_component--disabled {
+      --icon-path: var(--icon__controls_component--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    class-html.svg 
+    - - - - - - - - - - - - */
+    
+    &_class-html--enabled {
+      --icon-path: var(--icon__controls_class-html--enabled);
+    }
+    &_class-html--hover {
+      --icon-path: var(--icon__controls_class-html--hover);
+    }
+    &_class-html--active {
+      --icon-path: var(--icon__controls_class-html--active);
+    }
+    &_class-html--disabled {
+      --icon-path: var(--icon__controls_class-html--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    canva.svg 
+    - - - - - - - - - - - - */
+    
+    &_canva--enabled {
+      --icon-path: var(--icon__controls_canva--enabled);
+    }
+    &_canva--hover {
+      --icon-path: var(--icon__controls_canva--hover);
+    }
+    &_canva--active {
+      --icon-path: var(--icon__controls_canva--active);
+    }
+    &_canva--disabled {
+      --icon-path: var(--icon__controls_canva--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    call-target.svg 
+    - - - - - - - - - - - - */
+    
+    &_call-target--enabled {
+      --icon-path: var(--icon__controls_call-target--enabled);
+    }
+    &_call-target--hover {
+      --icon-path: var(--icon__controls_call-target--hover);
+    }
+    &_call-target--active {
+      --icon-path: var(--icon__controls_call-target--active);
+    }
+    &_call-target--disabled {
+      --icon-path: var(--icon__controls_call-target--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    button.svg 
+    - - - - - - - - - - - - */
+    
+    &_button--enabled {
+      --icon-path: var(--icon__controls_button--enabled);
+    }
+    &_button--hover {
+      --icon-path: var(--icon__controls_button--hover);
+    }
+    &_button--active {
+      --icon-path: var(--icon__controls_button--active);
+    }
+    &_button--disabled {
+      --icon-path: var(--icon__controls_button--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    button-group.svg 
+    - - - - - - - - - - - - */
+    
+    &_button-group--enabled {
+      --icon-path: var(--icon__controls_button-group--enabled);
+    }
+    &_button-group--hover {
+      --icon-path: var(--icon__controls_button-group--hover);
+    }
+    &_button-group--active {
+      --icon-path: var(--icon__controls_button-group--active);
+    }
+    &_button-group--disabled {
+      --icon-path: var(--icon__controls_button-group--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    action-group.svg 
+    - - - - - - - - - - - - */
+    
+    &_action-group--enabled {
+      --icon-path: var(--icon__controls_action-group--enabled);
+    }
+    &_action-group--hover {
+      --icon-path: var(--icon__controls_action-group--hover);
+    }
+    &_action-group--active {
+      --icon-path: var(--icon__controls_action-group--active);
+    }
+    &_action-group--disabled {
+      --icon-path: var(--icon__controls_action-group--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    action-group-item.svg 
+    - - - - - - - - - - - - */
+    
+    &_action-group-item--enabled {
+      --icon-path: var(--icon__controls_action-group-item--enabled);
+    }
+    &_action-group-item--hover {
+      --icon-path: var(--icon__controls_action-group-item--hover);
+    }
+    &_action-group-item--active {
+      --icon-path: var(--icon__controls_action-group-item--active);
+    }
+    &_action-group-item--disabled {
+      --icon-path: var(--icon__controls_action-group-item--disabled);
+    }
+
+  
+  /* =================================
+  DARK PLACEHOLDERS SELECTORS
+  ================================= */
+  
+
+    /* - - - - - - - - - - - - 
+    variable.svg 
+    - - - - - - - - - - - - */
+    
+    &_variable--enabled {
+      --icon-path: var(--icon__controls_variable--enabled);
+    }
+    &_variable--hover {
+      --icon-path: var(--icon__controls_variable--hover);
+    }
+    &_variable--active {
+      --icon-path: var(--icon__controls_variable--active);
+    }
+    &_variable--disabled {
+      --icon-path: var(--icon__controls_variable--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    treeview.svg 
+    - - - - - - - - - - - - */
+    
+    &_treeview--enabled {
+      --icon-path: var(--icon__controls_treeview--enabled);
+    }
+    &_treeview--hover {
+      --icon-path: var(--icon__controls_treeview--hover);
+    }
+    &_treeview--active {
+      --icon-path: var(--icon__controls_treeview--active);
+    }
+    &_treeview--disabled {
+      --icon-path: var(--icon__controls_treeview--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    text-block.svg 
+    - - - - - - - - - - - - */
+    
+    &_text-block--enabled {
+      --icon-path: var(--icon__controls_text-block--enabled);
+    }
+    &_text-block--hover {
+      --icon-path: var(--icon__controls_text-block--hover);
+    }
+    &_text-block--active {
+      --icon-path: var(--icon__controls_text-block--active);
+    }
+    &_text-block--disabled {
+      --icon-path: var(--icon__controls_text-block--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    tag-html.svg 
+    - - - - - - - - - - - - */
+    
+    &_tag-html--enabled {
+      --icon-path: var(--icon__controls_tag-html--enabled);
+    }
+    &_tag-html--hover {
+      --icon-path: var(--icon__controls_tag-html--hover);
+    }
+    &_tag-html--active {
+      --icon-path: var(--icon__controls_tag-html--active);
+    }
+    &_tag-html--disabled {
+      --icon-path: var(--icon__controls_tag-html--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    table.svg 
+    - - - - - - - - - - - - */
+    
+    &_table--enabled {
+      --icon-path: var(--icon__controls_table--enabled);
+    }
+    &_table--hover {
+      --icon-path: var(--icon__controls_table--hover);
+    }
+    &_table--active {
+      --icon-path: var(--icon__controls_table--active);
+    }
+    &_table--disabled {
+      --icon-path: var(--icon__controls_table--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    table-row.svg 
+    - - - - - - - - - - - - */
+    
+    &_table-row--enabled {
+      --icon-path: var(--icon__controls_table-row--enabled);
+    }
+    &_table-row--hover {
+      --icon-path: var(--icon__controls_table-row--hover);
+    }
+    &_table-row--active {
+      --icon-path: var(--icon__controls_table-row--active);
+    }
+    &_table-row--disabled {
+      --icon-path: var(--icon__controls_table-row--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    table-column.svg 
+    - - - - - - - - - - - - */
+    
+    &_table-column--enabled {
+      --icon-path: var(--icon__controls_table-column--enabled);
+    }
+    &_table-column--hover {
+      --icon-path: var(--icon__controls_table-column--hover);
+    }
+    &_table-column--active {
+      --icon-path: var(--icon__controls_table-column--active);
+    }
+    &_table-column--disabled {
+      --icon-path: var(--icon__controls_table-column--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    table-cell.svg 
+    - - - - - - - - - - - - */
+    
+    &_table-cell--enabled {
+      --icon-path: var(--icon__controls_table-cell--enabled);
+    }
+    &_table-cell--hover {
+      --icon-path: var(--icon__controls_table-cell--hover);
+    }
+    &_table-cell--active {
+      --icon-path: var(--icon__controls_table-cell--active);
+    }
+    &_table-cell--disabled {
+      --icon-path: var(--icon__controls_table-cell--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    tab.svg 
+    - - - - - - - - - - - - */
+    
+    &_tab--enabled {
+      --icon-path: var(--icon__controls_tab--enabled);
+    }
+    &_tab--hover {
+      --icon-path: var(--icon__controls_tab--hover);
+    }
+    &_tab--active {
+      --icon-path: var(--icon__controls_tab--active);
+    }
+    &_tab--disabled {
+      --icon-path: var(--icon__controls_tab--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    tab-page.svg 
+    - - - - - - - - - - - - */
+    
+    &_tab-page--enabled {
+      --icon-path: var(--icon__controls_tab-page--enabled);
+    }
+    &_tab-page--hover {
+      --icon-path: var(--icon__controls_tab-page--hover);
+    }
+    &_tab-page--active {
+      --icon-path: var(--icon__controls_tab-page--active);
+    }
+    &_tab-page--disabled {
+      --icon-path: var(--icon__controls_tab-page--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    snippet.svg 
+    - - - - - - - - - - - - */
+    
+    &_snippet--enabled {
+      --icon-path: var(--icon__controls_snippet--enabled);
+    }
+    &_snippet--hover {
+      --icon-path: var(--icon__controls_snippet--hover);
+    }
+    &_snippet--active {
+      --icon-path: var(--icon__controls_snippet--active);
+    }
+    &_snippet--disabled {
+      --icon-path: var(--icon__controls_snippet--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    smart-table.svg 
+    - - - - - - - - - - - - */
+    
+    &_smart-table--enabled {
+      --icon-path: var(--icon__controls_smart-table--enabled);
+    }
+    &_smart-table--hover {
+      --icon-path: var(--icon__controls_smart-table--hover);
+    }
+    &_smart-table--active {
+      --icon-path: var(--icon__controls_smart-table--active);
+    }
+    &_smart-table--disabled {
+      --icon-path: var(--icon__controls_smart-table--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    section.svg 
+    - - - - - - - - - - - - */
+    
+    &_section--enabled {
+      --icon-path: var(--icon__controls_section--enabled);
+    }
+    &_section--hover {
+      --icon-path: var(--icon__controls_section--hover);
+    }
+    &_section--active {
+      --icon-path: var(--icon__controls_section--active);
+    }
+    &_section--disabled {
+      --icon-path: var(--icon__controls_section--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    pop-up.svg 
+    - - - - - - - - - - - - */
+    
+    &_pop-up--enabled {
+      --icon-path: var(--icon__controls_pop-up--enabled);
+    }
+    &_pop-up--hover {
+      --icon-path: var(--icon__controls_pop-up--hover);
+    }
+    &_pop-up--active {
+      --icon-path: var(--icon__controls_pop-up--active);
+    }
+    &_pop-up--disabled {
+      --icon-path: var(--icon__controls_pop-up--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    messages.svg 
+    - - - - - - - - - - - - */
+    
+    &_messages--enabled {
+      --icon-path: var(--icon__controls_messages--enabled);
+    }
+    &_messages--hover {
+      --icon-path: var(--icon__controls_messages--hover);
+    }
+    &_messages--active {
+      --icon-path: var(--icon__controls_messages--active);
+    }
+    &_messages--disabled {
+      --icon-path: var(--icon__controls_messages--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    media-player.svg 
+    - - - - - - - - - - - - */
+    
+    &_media-player--enabled {
+      --icon-path: var(--icon__controls_media-player--enabled);
+    }
+    &_media-player--hover {
+      --icon-path: var(--icon__controls_media-player--hover);
+    }
+    &_media-player--active {
+      --icon-path: var(--icon__controls_media-player--active);
+    }
+    &_media-player--disabled {
+      --icon-path: var(--icon__controls_media-player--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    id-html.svg 
+    - - - - - - - - - - - - */
+    
+    &_id-html--enabled {
+      --icon-path: var(--icon__controls_id-html--enabled);
+    }
+    &_id-html--hover {
+      --icon-path: var(--icon__controls_id-html--hover);
+    }
+    &_id-html--active {
+      --icon-path: var(--icon__controls_id-html--active);
+    }
+    &_id-html--disabled {
+      --icon-path: var(--icon__controls_id-html--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    hyperlink.svg 
+    - - - - - - - - - - - - */
+    
+    &_hyperlink--enabled {
+      --icon-path: var(--icon__controls_hyperlink--enabled);
+    }
+    &_hyperlink--hover {
+      --icon-path: var(--icon__controls_hyperlink--hover);
+    }
+    &_hyperlink--active {
+      --icon-path: var(--icon__controls_hyperlink--active);
+    }
+    &_hyperlink--disabled {
+      --icon-path: var(--icon__controls_hyperlink--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    html.svg 
+    - - - - - - - - - - - - */
+    
+    &_html--enabled {
+      --icon-path: var(--icon__controls_html--enabled);
+    }
+    &_html--hover {
+      --icon-path: var(--icon__controls_html--hover);
+    }
+    &_html--active {
+      --icon-path: var(--icon__controls_html--active);
+    }
+    &_html--disabled {
+      --icon-path: var(--icon__controls_html--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    horizontal-line.svg 
+    - - - - - - - - - - - - */
+    
+    &_horizontal-line--enabled {
+      --icon-path: var(--icon__controls_horizontal-line--enabled);
+    }
+    &_horizontal-line--hover {
+      --icon-path: var(--icon__controls_horizontal-line--hover);
+    }
+    &_horizontal-line--active {
+      --icon-path: var(--icon__controls_horizontal-line--active);
+    }
+    &_horizontal-line--disabled {
+      --icon-path: var(--icon__controls_horizontal-line--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    history-manager.svg 
+    - - - - - - - - - - - - */
+    
+    &_history-manager--enabled {
+      --icon-path: var(--icon__controls_history-manager--enabled);
+    }
+    &_history-manager--hover {
+      --icon-path: var(--icon__controls_history-manager--hover);
+    }
+    &_history-manager--active {
+      --icon-path: var(--icon__controls_history-manager--active);
+    }
+    &_history-manager--disabled {
+      --icon-path: var(--icon__controls_history-manager--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    gx-scheduler.svg 
+    - - - - - - - - - - - - */
+    
+    &_gx-scheduler--enabled {
+      --icon-path: var(--icon__controls_gx-scheduler--enabled);
+    }
+    &_gx-scheduler--hover {
+      --icon-path: var(--icon__controls_gx-scheduler--hover);
+    }
+    &_gx-scheduler--active {
+      --icon-path: var(--icon__controls_gx-scheduler--active);
+    }
+    &_gx-scheduler--disabled {
+      --icon-path: var(--icon__controls_gx-scheduler--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    group.svg 
+    - - - - - - - - - - - - */
+    
+    &_group--enabled {
+      --icon-path: var(--icon__controls_group--enabled);
+    }
+    &_group--hover {
+      --icon-path: var(--icon__controls_group--hover);
+    }
+    &_group--active {
+      --icon-path: var(--icon__controls_group--active);
+    }
+    &_group--disabled {
+      --icon-path: var(--icon__controls_group--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    grid.svg 
+    - - - - - - - - - - - - */
+    
+    &_grid--enabled {
+      --icon-path: var(--icon__controls_grid--enabled);
+    }
+    &_grid--hover {
+      --icon-path: var(--icon__controls_grid--hover);
+    }
+    &_grid--active {
+      --icon-path: var(--icon__controls_grid--active);
+    }
+    &_grid--disabled {
+      --icon-path: var(--icon__controls_grid--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    google-geomap.svg 
+    - - - - - - - - - - - - */
+    
+    &_google-geomap--enabled {
+      --icon-path: var(--icon__controls_google-geomap--enabled);
+    }
+    &_google-geomap--hover {
+      --icon-path: var(--icon__controls_google-geomap--hover);
+    }
+    &_google-geomap--active {
+      --icon-path: var(--icon__controls_google-geomap--active);
+    }
+    &_google-geomap--disabled {
+      --icon-path: var(--icon__controls_google-geomap--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    google-charts.svg 
+    - - - - - - - - - - - - */
+    
+    &_google-charts--enabled {
+      --icon-path: var(--icon__controls_google-charts--enabled);
+    }
+    &_google-charts--hover {
+      --icon-path: var(--icon__controls_google-charts--hover);
+    }
+    &_google-charts--active {
+      --icon-path: var(--icon__controls_google-charts--active);
+    }
+    &_google-charts--disabled {
+      --icon-path: var(--icon__controls_google-charts--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    google-annotated-tmeline.svg 
+    - - - - - - - - - - - - */
+    
+    &_google-annotated-tmeline--enabled {
+      --icon-path: var(--icon__controls_google-annotated-tmeline--enabled);
+    }
+    &_google-annotated-tmeline--hover {
+      --icon-path: var(--icon__controls_google-annotated-tmeline--hover);
+    }
+    &_google-annotated-tmeline--active {
+      --icon-path: var(--icon__controls_google-annotated-tmeline--active);
+    }
+    &_google-annotated-tmeline--disabled {
+      --icon-path: var(--icon__controls_google-annotated-tmeline--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    google-analytics.svg 
+    - - - - - - - - - - - - */
+    
+    &_google-analytics--enabled {
+      --icon-path: var(--icon__controls_google-analytics--enabled);
+    }
+    &_google-analytics--hover {
+      --icon-path: var(--icon__controls_google-analytics--hover);
+    }
+    &_google-analytics--active {
+      --icon-path: var(--icon__controls_google-analytics--active);
+    }
+    &_google-analytics--disabled {
+      --icon-path: var(--icon__controls_google-analytics--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    free-style-grid.svg 
+    - - - - - - - - - - - - */
+    
+    &_free-style-grid--enabled {
+      --icon-path: var(--icon__controls_free-style-grid--enabled);
+    }
+    &_free-style-grid--hover {
+      --icon-path: var(--icon__controls_free-style-grid--hover);
+    }
+    &_free-style-grid--active {
+      --icon-path: var(--icon__controls_free-style-grid--active);
+    }
+    &_free-style-grid--disabled {
+      --icon-path: var(--icon__controls_free-style-grid--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    font.svg 
+    - - - - - - - - - - - - */
+    
+    &_font--enabled {
+      --icon-path: var(--icon__controls_font--enabled);
+    }
+    &_font--hover {
+      --icon-path: var(--icon__controls_font--hover);
+    }
+    &_font--active {
+      --icon-path: var(--icon__controls_font--active);
+    }
+    &_font--disabled {
+      --icon-path: var(--icon__controls_font--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    flex.svg 
+    - - - - - - - - - - - - */
+    
+    &_flex--enabled {
+      --icon-path: var(--icon__controls_flex--enabled);
+    }
+    &_flex--hover {
+      --icon-path: var(--icon__controls_flex--hover);
+    }
+    &_flex--active {
+      --icon-path: var(--icon__controls_flex--active);
+    }
+    &_flex--disabled {
+      --icon-path: var(--icon__controls_flex--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    file-upload.svg 
+    - - - - - - - - - - - - */
+    
+    &_file-upload--enabled {
+      --icon-path: var(--icon__controls_file-upload--enabled);
+    }
+    &_file-upload--hover {
+      --icon-path: var(--icon__controls_file-upload--hover);
+    }
+    &_file-upload--active {
+      --icon-path: var(--icon__controls_file-upload--active);
+    }
+    &_file-upload--disabled {
+      --icon-path: var(--icon__controls_file-upload--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    error-viewer.svg 
+    - - - - - - - - - - - - */
+    
+    &_error-viewer--enabled {
+      --icon-path: var(--icon__controls_error-viewer--enabled);
+    }
+    &_error-viewer--hover {
+      --icon-path: var(--icon__controls_error-viewer--hover);
+    }
+    &_error-viewer--active {
+      --icon-path: var(--icon__controls_error-viewer--active);
+    }
+    &_error-viewer--disabled {
+      --icon-path: var(--icon__controls_error-viewer--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    embedded-page.svg 
+    - - - - - - - - - - - - */
+    
+    &_embedded-page--enabled {
+      --icon-path: var(--icon__controls_embedded-page--enabled);
+    }
+    &_embedded-page--hover {
+      --icon-path: var(--icon__controls_embedded-page--hover);
+    }
+    &_embedded-page--active {
+      --icon-path: var(--icon__controls_embedded-page--active);
+    }
+    &_embedded-page--disabled {
+      --icon-path: var(--icon__controls_embedded-page--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    default.svg 
+    - - - - - - - - - - - - */
+    
+    &_default--enabled {
+      --icon-path: var(--icon__controls_default--enabled);
+    }
+    &_default--hover {
+      --icon-path: var(--icon__controls_default--hover);
+    }
+    &_default--active {
+      --icon-path: var(--icon__controls_default--active);
+    }
+    &_default--disabled {
+      --icon-path: var(--icon__controls_default--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    component.svg 
+    - - - - - - - - - - - - */
+    
+    &_component--enabled {
+      --icon-path: var(--icon__controls_component--enabled);
+    }
+    &_component--hover {
+      --icon-path: var(--icon__controls_component--hover);
+    }
+    &_component--active {
+      --icon-path: var(--icon__controls_component--active);
+    }
+    &_component--disabled {
+      --icon-path: var(--icon__controls_component--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    class-html.svg 
+    - - - - - - - - - - - - */
+    
+    &_class-html--enabled {
+      --icon-path: var(--icon__controls_class-html--enabled);
+    }
+    &_class-html--hover {
+      --icon-path: var(--icon__controls_class-html--hover);
+    }
+    &_class-html--active {
+      --icon-path: var(--icon__controls_class-html--active);
+    }
+    &_class-html--disabled {
+      --icon-path: var(--icon__controls_class-html--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    canva.svg 
+    - - - - - - - - - - - - */
+    
+    &_canva--enabled {
+      --icon-path: var(--icon__controls_canva--enabled);
+    }
+    &_canva--hover {
+      --icon-path: var(--icon__controls_canva--hover);
+    }
+    &_canva--active {
+      --icon-path: var(--icon__controls_canva--active);
+    }
+    &_canva--disabled {
+      --icon-path: var(--icon__controls_canva--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    call-target.svg 
+    - - - - - - - - - - - - */
+    
+    &_call-target--enabled {
+      --icon-path: var(--icon__controls_call-target--enabled);
+    }
+    &_call-target--hover {
+      --icon-path: var(--icon__controls_call-target--hover);
+    }
+    &_call-target--active {
+      --icon-path: var(--icon__controls_call-target--active);
+    }
+    &_call-target--disabled {
+      --icon-path: var(--icon__controls_call-target--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    button.svg 
+    - - - - - - - - - - - - */
+    
+    &_button--enabled {
+      --icon-path: var(--icon__controls_button--enabled);
+    }
+    &_button--hover {
+      --icon-path: var(--icon__controls_button--hover);
+    }
+    &_button--active {
+      --icon-path: var(--icon__controls_button--active);
+    }
+    &_button--disabled {
+      --icon-path: var(--icon__controls_button--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    button-group.svg 
+    - - - - - - - - - - - - */
+    
+    &_button-group--enabled {
+      --icon-path: var(--icon__controls_button-group--enabled);
+    }
+    &_button-group--hover {
+      --icon-path: var(--icon__controls_button-group--hover);
+    }
+    &_button-group--active {
+      --icon-path: var(--icon__controls_button-group--active);
+    }
+    &_button-group--disabled {
+      --icon-path: var(--icon__controls_button-group--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    action-group.svg 
+    - - - - - - - - - - - - */
+    
+    &_action-group--enabled {
+      --icon-path: var(--icon__controls_action-group--enabled);
+    }
+    &_action-group--hover {
+      --icon-path: var(--icon__controls_action-group--hover);
+    }
+    &_action-group--active {
+      --icon-path: var(--icon__controls_action-group--active);
+    }
+    &_action-group--disabled {
+      --icon-path: var(--icon__controls_action-group--disabled);
+    }
+
+    /* - - - - - - - - - - - - 
+    action-group-item.svg 
+    - - - - - - - - - - - - */
+    
+    &_action-group-item--enabled {
+      --icon-path: var(--icon__controls_action-group-item--enabled);
+    }
+    &_action-group-item--hover {
+      --icon-path: var(--icon__controls_action-group-item--hover);
+    }
+    &_action-group-item--active {
+      --icon-path: var(--icon__controls_action-group-item--active);
+    }
+    &_action-group-item--disabled {
+      --icon-path: var(--icon__controls_action-group-item--disabled);
+    }
+  
+    }

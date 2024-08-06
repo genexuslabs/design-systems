@@ -2575,6 +2575,376 @@ export const MERCURY_ASSETS = Object.freeze({
       })
     })
   }),
+  "patterns-default-associated": Object.freeze({
+    synchronized: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns-default-associated_synchronized--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns-default-associated_synchronized--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns-default-associated_synchronized--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns-default-associated_synchronized--disabled"
+      })
+    }),
+    modified: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns-default-associated_modified--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns-default-associated_modified--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns-default-associated_modified--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns-default-associated_modified--disabled"
+      })
+    }),
+    "default-associated": Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns-default-associated_default-associated--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns-default-associated_default-associated--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns-default-associated_default-associated--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns-default-associated_default-associated--disabled"
+      })
+    })
+  }),
+  patterns: Object.freeze({
+    "workwith-for-sd": Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_workwith-for-sd--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_workwith-for-sd--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_workwith-for-sd--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_workwith-for-sd--disabled"
+      })
+    }),
+    "work-with-web": Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_work-with-web--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_work-with-web--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_work-with-web--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_work-with-web--disabled"
+      })
+    }),
+    tabs: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_tabs--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_tabs--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_tabs--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_tabs--disabled"
+      })
+    }),
+    tab: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_tab--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_tab--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_tab--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_tab--disabled"
+      })
+    }),
+    structure: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_structure--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_structure--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_structure--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_structure--disabled"
+      })
+    }),
+    row: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_row--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_row--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_row--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_row--disabled"
+      })
+    }),
+    "pattern-category": Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_pattern-category--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_pattern-category--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_pattern-category--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_pattern-category--disabled"
+      })
+    }),
+    parameters: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_parameters--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_parameters--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_parameters--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_parameters--disabled"
+      })
+    }),
+    parameter: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_parameter--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_parameter--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_parameter--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_parameter--disabled"
+      })
+    }),
+    orders: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_orders--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_orders--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_orders--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_orders--disabled"
+      })
+    }),
+    list: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_list--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_list--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_list--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_list--disabled"
+      })
+    }),
+    "fixed-data": Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_fixed-data--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_fixed-data--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_fixed-data--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_fixed-data--disabled"
+      })
+    }),
+    filters: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_filters--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_filters--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_filters--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_filters--disabled"
+      })
+    }),
+    events: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_events--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_events--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_events--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_events--disabled"
+      })
+    }),
+    documentation: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_documentation--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_documentation--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_documentation--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_documentation--disabled"
+      })
+    }),
+    detail: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_detail--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_detail--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_detail--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_detail--disabled"
+      })
+    }),
+    cell: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_cell--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_cell--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_cell--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_cell--disabled"
+      })
+    }),
+    attributes: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_attributes--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_attributes--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_attributes--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_attributes--disabled"
+      })
+    })
+  }),
+  "objects-parts": Object.freeze({
+    variables: Object.freeze({
+      enabled: Object.freeze({
+        name: "objects-parts_variables--enabled"
+      }),
+      hover: Object.freeze({
+        name: "objects-parts_variables--hover"
+      }),
+      active: Object.freeze({
+        name: "objects-parts_variables--active"
+      }),
+      disabled: Object.freeze({
+        name: "objects-parts_variables--disabled"
+      })
+    }),
+    rules: Object.freeze({
+      enabled: Object.freeze({
+        name: "objects-parts_rules--enabled"
+      }),
+      hover: Object.freeze({
+        name: "objects-parts_rules--hover"
+      }),
+      active: Object.freeze({
+        name: "objects-parts_rules--active"
+      }),
+      disabled: Object.freeze({
+        name: "objects-parts_rules--disabled"
+      })
+    }),
+    events: Object.freeze({
+      enabled: Object.freeze({
+        name: "objects-parts_events--enabled"
+      }),
+      hover: Object.freeze({
+        name: "objects-parts_events--hover"
+      }),
+      active: Object.freeze({
+        name: "objects-parts_events--active"
+      }),
+      disabled: Object.freeze({
+        name: "objects-parts_events--disabled"
+      })
+    }),
+    conditions: Object.freeze({
+      enabled: Object.freeze({
+        name: "objects-parts_conditions--enabled"
+      }),
+      hover: Object.freeze({
+        name: "objects-parts_conditions--hover"
+      }),
+      active: Object.freeze({
+        name: "objects-parts_conditions--active"
+      }),
+      disabled: Object.freeze({
+        name: "objects-parts_conditions--disabled"
+      })
+    }),
+    condition: Object.freeze({
+      enabled: Object.freeze({
+        name: "objects-parts_condition--enabled"
+      }),
+      hover: Object.freeze({
+        name: "objects-parts_condition--hover"
+      }),
+      active: Object.freeze({
+        name: "objects-parts_condition--active"
+      }),
+      disabled: Object.freeze({
+        name: "objects-parts_condition--disabled"
+      })
+    })
+  }),
   objects: Object.freeze({
     workflow: Object.freeze({
       enabled: Object.freeze({
@@ -6693,6 +7063,528 @@ export const MERCURY_ASSETS = Object.freeze({
       })
     })
   }),
+  "gx-server": Object.freeze({
+    public: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_public--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_public--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_public--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_public--disabled"
+      })
+    }),
+    private: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_private--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_private--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_private--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_private--disabled"
+      })
+    }),
+    new: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_new--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_new--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_new--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_new--disabled"
+      })
+    }),
+    "lock-without-changes": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_lock-without-changes--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_lock-without-changes--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_lock-without-changes--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_lock-without-changes--disabled"
+      })
+    }),
+    "lock-by-user-reserve": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_lock-by-user-reserve--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_lock-by-user-reserve--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_lock-by-user-reserve--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_lock-by-user-reserve--disabled"
+      })
+    }),
+    "lock-by-user-changes": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_lock-by-user-changes--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_lock-by-user-changes--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_lock-by-user-changes--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_lock-by-user-changes--disabled"
+      })
+    }),
+    internal: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_internal--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_internal--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_internal--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_internal--disabled"
+      })
+    }),
+    delete: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_delete--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_delete--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_delete--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_delete--disabled"
+      })
+    }),
+    conflict: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_conflict--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_conflict--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_conflict--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_conflict--disabled"
+      })
+    }),
+    "changes-commit-pending": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_changes-commit-pending--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_changes-commit-pending--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_changes-commit-pending--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_changes-commit-pending--disabled"
+      })
+    })
+  }),
+  general: Object.freeze({
+    version: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_version--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_version--hover"
+      }),
+      active: Object.freeze({
+        name: "general_version--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_version--disabled"
+      })
+    }),
+    swift: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_swift--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_swift--hover"
+      }),
+      active: Object.freeze({
+        name: "general_swift--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_swift--disabled"
+      })
+    }),
+    "sql-server": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_sql-server--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_sql-server--hover"
+      }),
+      active: Object.freeze({
+        name: "general_sql-server--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_sql-server--disabled"
+      })
+    }),
+    services: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_services--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_services--hover"
+      }),
+      active: Object.freeze({
+        name: "general_services--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_services--disabled"
+      })
+    }),
+    sd: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_sd--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_sd--hover"
+      }),
+      active: Object.freeze({
+        name: "general_sd--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_sd--disabled"
+      })
+    }),
+    "sd-web": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_sd-web--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_sd-web--hover"
+      }),
+      active: Object.freeze({
+        name: "general_sd-web--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_sd-web--disabled"
+      })
+    }),
+    "sap-hana": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_sap-hana--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_sap-hana--hover"
+      }),
+      active: Object.freeze({
+        name: "general_sap-hana--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_sap-hana--disabled"
+      })
+    }),
+    references: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_references--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_references--hover"
+      }),
+      active: Object.freeze({
+        name: "general_references--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_references--disabled"
+      })
+    }),
+    "qr-code": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_qr-code--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_qr-code--hover"
+      }),
+      active: Object.freeze({
+        name: "general_qr-code--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_qr-code--disabled"
+      })
+    }),
+    "postgre-sql": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_postgre-sql--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_postgre-sql--hover"
+      }),
+      active: Object.freeze({
+        name: "general_postgre-sql--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_postgre-sql--disabled"
+      })
+    }),
+    patterns: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_patterns--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_patterns--hover"
+      }),
+      active: Object.freeze({
+        name: "general_patterns--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_patterns--disabled"
+      })
+    }),
+    oracle: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_oracle--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_oracle--hover"
+      }),
+      active: Object.freeze({
+        name: "general_oracle--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_oracle--disabled"
+      })
+    }),
+    mysql: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_mysql--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_mysql--hover"
+      }),
+      active: Object.freeze({
+        name: "general_mysql--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_mysql--disabled"
+      })
+    }),
+    launchpad: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_launchpad--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_launchpad--hover"
+      }),
+      active: Object.freeze({
+        name: "general_launchpad--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_launchpad--disabled"
+      })
+    }),
+    "knowledge-base": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_knowledge-base--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_knowledge-base--hover"
+      }),
+      active: Object.freeze({
+        name: "general_knowledge-base--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_knowledge-base--disabled"
+      })
+    }),
+    java: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_java--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_java--hover"
+      }),
+      active: Object.freeze({
+        name: "general_java--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_java--disabled"
+      })
+    }),
+    informix: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_informix--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_informix--hover"
+      }),
+      active: Object.freeze({
+        name: "general_informix--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_informix--disabled"
+      })
+    }),
+    generator: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_generator--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_generator--hover"
+      }),
+      active: Object.freeze({
+        name: "general_generator--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_generator--disabled"
+      })
+    }),
+    "environment-select": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_environment-select--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_environment-select--hover"
+      }),
+      active: Object.freeze({
+        name: "general_environment-select--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_environment-select--disabled"
+      })
+    }),
+    "environment-no-select": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_environment-no-select--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_environment-no-select--hover"
+      }),
+      active: Object.freeze({
+        name: "general_environment-no-select--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_environment-no-select--disabled"
+      })
+    }),
+    db2: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_db2--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_db2--hover"
+      }),
+      active: Object.freeze({
+        name: "general_db2--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_db2--disabled"
+      })
+    }),
+    datastore: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_datastore--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_datastore--hover"
+      }),
+      active: Object.freeze({
+        name: "general_datastore--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_datastore--disabled"
+      })
+    }),
+    customization: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_customization--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_customization--hover"
+      }),
+      active: Object.freeze({
+        name: "general_customization--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_customization--disabled"
+      })
+    }),
+    csharp: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_csharp--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_csharp--hover"
+      }),
+      active: Object.freeze({
+        name: "general_csharp--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_csharp--disabled"
+      })
+    }),
+    apple: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_apple--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_apple--hover"
+      }),
+      active: Object.freeze({
+        name: "general_apple--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_apple--disabled"
+      })
+    }),
+    angular: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_angular--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_angular--hover"
+      }),
+      active: Object.freeze({
+        name: "general_angular--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_angular--disabled"
+      })
+    }),
+    android: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_android--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_android--hover"
+      }),
+      active: Object.freeze({
+        name: "general_android--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_android--disabled"
+      })
+    })
+  }),
   "gemini-tools": Object.freeze({
     warning: Object.freeze({
       "on-surface": Object.freeze({
@@ -9739,6 +10631,1492 @@ export const MERCURY_ASSETS = Object.freeze({
       }),
       disabled: Object.freeze({
         name: "editing-structures_attribute-description--disabled"
+      })
+    })
+  }),
+  controls: Object.freeze({
+    variable: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_variable--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_variable--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_variable--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_variable--disabled"
+      })
+    }),
+    treeview: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_treeview--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_treeview--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_treeview--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_treeview--disabled"
+      })
+    }),
+    "text-block": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_text-block--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_text-block--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_text-block--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_text-block--disabled"
+      })
+    }),
+    "tag-html": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_tag-html--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_tag-html--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_tag-html--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_tag-html--disabled"
+      })
+    }),
+    table: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_table--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_table--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_table--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_table--disabled"
+      })
+    }),
+    "table-row": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_table-row--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_table-row--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_table-row--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_table-row--disabled"
+      })
+    }),
+    "table-column": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_table-column--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_table-column--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_table-column--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_table-column--disabled"
+      })
+    }),
+    "table-cell": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_table-cell--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_table-cell--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_table-cell--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_table-cell--disabled"
+      })
+    }),
+    tab: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_tab--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_tab--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_tab--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_tab--disabled"
+      })
+    }),
+    "tab-page": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_tab-page--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_tab-page--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_tab-page--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_tab-page--disabled"
+      })
+    }),
+    snippet: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_snippet--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_snippet--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_snippet--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_snippet--disabled"
+      })
+    }),
+    "smart-table": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_smart-table--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_smart-table--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_smart-table--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_smart-table--disabled"
+      })
+    }),
+    section: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_section--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_section--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_section--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_section--disabled"
+      })
+    }),
+    "pop-up": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_pop-up--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_pop-up--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_pop-up--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_pop-up--disabled"
+      })
+    }),
+    messages: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_messages--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_messages--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_messages--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_messages--disabled"
+      })
+    }),
+    "media-player": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_media-player--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_media-player--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_media-player--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_media-player--disabled"
+      })
+    }),
+    "id-html": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_id-html--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_id-html--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_id-html--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_id-html--disabled"
+      })
+    }),
+    hyperlink: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_hyperlink--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_hyperlink--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_hyperlink--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_hyperlink--disabled"
+      })
+    }),
+    html: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_html--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_html--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_html--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_html--disabled"
+      })
+    }),
+    "horizontal-line": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_horizontal-line--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_horizontal-line--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_horizontal-line--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_horizontal-line--disabled"
+      })
+    }),
+    "history-manager": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_history-manager--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_history-manager--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_history-manager--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_history-manager--disabled"
+      })
+    }),
+    "gx-scheduler": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_gx-scheduler--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_gx-scheduler--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_gx-scheduler--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_gx-scheduler--disabled"
+      })
+    }),
+    group: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_group--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_group--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_group--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_group--disabled"
+      })
+    }),
+    grid: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_grid--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_grid--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_grid--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_grid--disabled"
+      })
+    }),
+    "google-geomap": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_google-geomap--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_google-geomap--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_google-geomap--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_google-geomap--disabled"
+      })
+    }),
+    "google-charts": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_google-charts--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_google-charts--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_google-charts--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_google-charts--disabled"
+      })
+    }),
+    "google-annotated-tmeline": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_google-annotated-tmeline--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_google-annotated-tmeline--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_google-annotated-tmeline--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_google-annotated-tmeline--disabled"
+      })
+    }),
+    "google-analytics": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_google-analytics--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_google-analytics--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_google-analytics--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_google-analytics--disabled"
+      })
+    }),
+    "free-style-grid": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_free-style-grid--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_free-style-grid--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_free-style-grid--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_free-style-grid--disabled"
+      })
+    }),
+    font: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_font--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_font--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_font--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_font--disabled"
+      })
+    }),
+    flex: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_flex--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_flex--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_flex--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_flex--disabled"
+      })
+    }),
+    "file-upload": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_file-upload--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_file-upload--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_file-upload--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_file-upload--disabled"
+      })
+    }),
+    "error-viewer": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_error-viewer--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_error-viewer--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_error-viewer--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_error-viewer--disabled"
+      })
+    }),
+    "embedded-page": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_embedded-page--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_embedded-page--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_embedded-page--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_embedded-page--disabled"
+      })
+    }),
+    default: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_default--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_default--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_default--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_default--disabled"
+      })
+    }),
+    component: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_component--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_component--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_component--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_component--disabled"
+      })
+    }),
+    "class-html": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_class-html--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_class-html--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_class-html--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_class-html--disabled"
+      })
+    }),
+    canva: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_canva--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_canva--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_canva--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_canva--disabled"
+      })
+    }),
+    "call-target": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_call-target--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_call-target--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_call-target--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_call-target--disabled"
+      })
+    }),
+    button: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_button--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_button--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_button--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_button--disabled"
+      })
+    }),
+    "button-group": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_button-group--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_button-group--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_button-group--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_button-group--disabled"
+      })
+    }),
+    "action-group": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_action-group--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_action-group--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_action-group--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_action-group--disabled"
+      })
+    }),
+    "action-group-item": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_action-group-item--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_action-group-item--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_action-group-item--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_action-group-item--disabled"
+      })
+    })
+  }),
+  bpm: Object.freeze({
+    "timer-6": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_timer-6_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_timer-6_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_timer-6_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_timer-6_neutral--disabled"
+        })
+      })
+    }),
+    "timer-5": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_timer-5_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_timer-5_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_timer-5_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_timer-5_neutral--disabled"
+        })
+      })
+    }),
+    "timer-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_timer-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_timer-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_timer-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_timer-2_neutral--disabled"
+        })
+      })
+    }),
+    "timer-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_timer-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_timer-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_timer-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_timer-1_neutral--disabled"
+        })
+      })
+    }),
+    "terminale-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_terminale-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_terminale-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_terminale-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_terminale-4_neutral--disabled"
+        })
+      })
+    }),
+    tasks: Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_tasks_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_tasks_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_tasks_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_tasks_neutral--disabled"
+        })
+      })
+    }),
+    subprocess: Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_subprocess_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_subprocess_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_subprocess_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_subprocess_neutral--disabled"
+        })
+      })
+    }),
+    "signal-6": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_signal-6_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_signal-6_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_signal-6_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_signal-6_neutral--disabled"
+        })
+      })
+    }),
+    "signal-5": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_signal-5_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_signal-5_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_signal-5_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_signal-5_neutral--disabled"
+        })
+      })
+    }),
+    "signal-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_signal-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_signal-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_signal-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_signal-4_neutral--disabled"
+        })
+      })
+    }),
+    "signal-3": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_signal-3_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_signal-3_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_signal-3_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_signal-3_neutral--disabled"
+        })
+      })
+    }),
+    "signal-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_signal-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_signal-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_signal-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_signal-2_neutral--disabled"
+        })
+      })
+    }),
+    "signal-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_signal-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_signal-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_signal-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_signal-1_neutral--disabled"
+        })
+      })
+    }),
+    person: Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_person_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_person_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_person_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_person_neutral--disabled"
+        })
+      })
+    }),
+    "paralell-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_paralell-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_paralell-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_paralell-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_paralell-4_neutral--disabled"
+        })
+      })
+    }),
+    "paralell-3": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_paralell-3_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_paralell-3_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_paralell-3_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_paralell-3_neutral--disabled"
+        })
+      })
+    }),
+    "paralell-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_paralell-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_paralell-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_paralell-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_paralell-2_neutral--disabled"
+        })
+      })
+    }),
+    "paralell-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_paralell-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_paralell-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_paralell-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_paralell-1_neutral--disabled"
+        })
+      })
+    }),
+    oval: Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_oval_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_oval_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_oval_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_oval_neutral--disabled"
+        })
+      })
+    }),
+    "oval-doble": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_oval-doble_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_oval-doble_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_oval-doble_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_oval-doble_neutral--disabled"
+        })
+      })
+    }),
+    "multiple-6": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_multiple-6_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_multiple-6_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_multiple-6_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_multiple-6_neutral--disabled"
+        })
+      })
+    }),
+    "multiple-5": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_multiple-5_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_multiple-5_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_multiple-5_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_multiple-5_neutral--disabled"
+        })
+      })
+    }),
+    "multiple-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_multiple-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_multiple-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_multiple-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_multiple-4_neutral--disabled"
+        })
+      })
+    }),
+    "multiple-3": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_multiple-3_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_multiple-3_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_multiple-3_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_multiple-3_neutral--disabled"
+        })
+      })
+    }),
+    "multiple-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_multiple-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_multiple-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_multiple-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_multiple-2_neutral--disabled"
+        })
+      })
+    }),
+    "multiple-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_multiple-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_multiple-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_multiple-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_multiple-1_neutral--disabled"
+        })
+      })
+    }),
+    "message-6": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_message-6_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_message-6_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_message-6_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_message-6_neutral--disabled"
+        })
+      })
+    }),
+    "message-5": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_message-5_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_message-5_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_message-5_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_message-5_neutral--disabled"
+        })
+      })
+    }),
+    "message-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_message-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_message-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_message-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_message-4_neutral--disabled"
+        })
+      })
+    }),
+    "message-3": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_message-3_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_message-3_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_message-3_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_message-3_neutral--disabled"
+        })
+      })
+    }),
+    "message-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_message-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_message-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_message-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_message-2_neutral--disabled"
+        })
+      })
+    }),
+    "message-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_message-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_message-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_message-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_message-1_neutral--disabled"
+        })
+      })
+    }),
+    "link-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_link-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_link-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_link-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_link-4_neutral--disabled"
+        })
+      })
+    }),
+    "link-3": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_link-3_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_link-3_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_link-3_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_link-3_neutral--disabled"
+        })
+      })
+    }),
+    "escalation-6": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_escalation-6_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_escalation-6_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_escalation-6_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_escalation-6_neutral--disabled"
+        })
+      })
+    }),
+    "escalation-5": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_escalation-5_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_escalation-5_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_escalation-5_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_escalation-5_neutral--disabled"
+        })
+      })
+    }),
+    "escalation-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_escalation-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_escalation-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_escalation-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_escalation-4_neutral--disabled"
+        })
+      })
+    }),
+    "escalation-3": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_escalation-3_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_escalation-3_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_escalation-3_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_escalation-3_neutral--disabled"
+        })
+      })
+    }),
+    "escalation-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_escalation-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_escalation-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_escalation-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_escalation-2_neutral--disabled"
+        })
+      })
+    }),
+    "escalation-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_escalation-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_escalation-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_escalation-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_escalation-1_neutral--disabled"
+        })
+      })
+    }),
+    "error-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_error-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_error-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_error-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_error-2_neutral--disabled"
+        })
+      })
+    }),
+    "error-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_error-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_error-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_error-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_error-1_neutral--disabled"
+        })
+      })
+    }),
+    delete: Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_delete_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_delete_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_delete_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_delete_neutral--disabled"
+        })
+      })
+    }),
+    conditional: Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_conditional_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_conditional_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_conditional_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_conditional_neutral--disabled"
+        })
+      })
+    }),
+    "conditional-6": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_conditional-6_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_conditional-6_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_conditional-6_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_conditional-6_neutral--disabled"
+        })
+      })
+    }),
+    "conditional-5": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_conditional-5_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_conditional-5_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_conditional-5_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_conditional-5_neutral--disabled"
+        })
+      })
+    }),
+    "conditional-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_conditional-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_conditional-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_conditional-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_conditional-2_neutral--disabled"
+        })
+      })
+    }),
+    "conditional-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_conditional-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_conditional-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_conditional-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_conditional-1_neutral--disabled"
+        })
+      })
+    }),
+    "compensation-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_compensation-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_compensation-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_compensation-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_compensation-4_neutral--disabled"
+        })
+      })
+    }),
+    "compensation-3": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_compensation-3_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_compensation-3_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_compensation-3_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_compensation-3_neutral--disabled"
+        })
+      })
+    }),
+    "compensation-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_compensation-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_compensation-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_compensation-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_compensation-2_neutral--disabled"
+        })
+      })
+    }),
+    "compensation-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_compensation-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_compensation-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_compensation-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_compensation-1_neutral--disabled"
+        })
+      })
+    }),
+    "cancel-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_cancel-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_cancel-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_cancel-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_cancel-4_neutral--disabled"
+        })
+      })
+    }),
+    "cancel-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_cancel-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_cancel-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_cancel-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_cancel-2_neutral--disabled"
+        })
+      })
+    }),
+    arrows: Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_arrows_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_arrows_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_arrows_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_arrows_neutral--disabled"
+        })
       })
     })
   })

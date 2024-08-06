@@ -1,0 +1,99 @@
+
+  /* =================================
+  LIGHT CUSTOM PROPERTIES
+  ================================= */
+
+  :root.light {
+  /*gx-server*/
+  --icon__gx-server_public--enabled: url('#{$icons-path}gx-server/light/public.svg#enabled'); 
+  --icon__gx-server_public--hover: url('#{$icons-path}gx-server/light/public.svg#hover'); 
+  --icon__gx-server_public--active: url('#{$icons-path}gx-server/light/public.svg#active'); 
+  --icon__gx-server_public--disabled: url('#{$icons-path}gx-server/light/public.svg#disabled'); 
+  --icon__gx-server_private--enabled: url('#{$icons-path}gx-server/light/private.svg#enabled'); 
+  --icon__gx-server_private--hover: url('#{$icons-path}gx-server/light/private.svg#hover'); 
+  --icon__gx-server_private--active: url('#{$icons-path}gx-server/light/private.svg#active'); 
+  --icon__gx-server_private--disabled: url('#{$icons-path}gx-server/light/private.svg#disabled'); 
+  --icon__gx-server_new--enabled: url('#{$icons-path}gx-server/light/new.svg#enabled'); 
+  --icon__gx-server_new--hover: url('#{$icons-path}gx-server/light/new.svg#hover'); 
+  --icon__gx-server_new--active: url('#{$icons-path}gx-server/light/new.svg#active'); 
+  --icon__gx-server_new--disabled: url('#{$icons-path}gx-server/light/new.svg#disabled'); 
+  --icon__gx-server_lock-without-changes--enabled: url('#{$icons-path}gx-server/light/lock-without-changes.svg#enabled'); 
+  --icon__gx-server_lock-without-changes--hover: url('#{$icons-path}gx-server/light/lock-without-changes.svg#hover'); 
+  --icon__gx-server_lock-without-changes--active: url('#{$icons-path}gx-server/light/lock-without-changes.svg#active'); 
+  --icon__gx-server_lock-without-changes--disabled: url('#{$icons-path}gx-server/light/lock-without-changes.svg#disabled'); 
+  --icon__gx-server_lock-by-user-reserve--enabled: url('#{$icons-path}gx-server/light/lock-by-user-reserve.svg#enabled'); 
+  --icon__gx-server_lock-by-user-reserve--hover: url('#{$icons-path}gx-server/light/lock-by-user-reserve.svg#hover'); 
+  --icon__gx-server_lock-by-user-reserve--active: url('#{$icons-path}gx-server/light/lock-by-user-reserve.svg#active'); 
+  --icon__gx-server_lock-by-user-reserve--disabled: url('#{$icons-path}gx-server/light/lock-by-user-reserve.svg#disabled'); 
+  --icon__gx-server_lock-by-user-changes--enabled: url('#{$icons-path}gx-server/light/lock-by-user-changes.svg#enabled'); 
+  --icon__gx-server_lock-by-user-changes--hover: url('#{$icons-path}gx-server/light/lock-by-user-changes.svg#hover'); 
+  --icon__gx-server_lock-by-user-changes--active: url('#{$icons-path}gx-server/light/lock-by-user-changes.svg#active'); 
+  --icon__gx-server_lock-by-user-changes--disabled: url('#{$icons-path}gx-server/light/lock-by-user-changes.svg#disabled'); 
+  --icon__gx-server_internal--enabled: url('#{$icons-path}gx-server/light/internal.svg#enabled'); 
+  --icon__gx-server_internal--hover: url('#{$icons-path}gx-server/light/internal.svg#hover'); 
+  --icon__gx-server_internal--active: url('#{$icons-path}gx-server/light/internal.svg#active'); 
+  --icon__gx-server_internal--disabled: url('#{$icons-path}gx-server/light/internal.svg#disabled'); 
+  --icon__gx-server_delete--enabled: url('#{$icons-path}gx-server/light/delete.svg#enabled'); 
+  --icon__gx-server_delete--hover: url('#{$icons-path}gx-server/light/delete.svg#hover'); 
+  --icon__gx-server_delete--active: url('#{$icons-path}gx-server/light/delete.svg#active'); 
+  --icon__gx-server_delete--disabled: url('#{$icons-path}gx-server/light/delete.svg#disabled'); 
+  --icon__gx-server_conflict--enabled: url('#{$icons-path}gx-server/light/conflict.svg#enabled'); 
+  --icon__gx-server_conflict--hover: url('#{$icons-path}gx-server/light/conflict.svg#hover'); 
+  --icon__gx-server_conflict--active: url('#{$icons-path}gx-server/light/conflict.svg#active'); 
+  --icon__gx-server_conflict--disabled: url('#{$icons-path}gx-server/light/conflict.svg#disabled'); 
+  --icon__gx-server_changes-commit-pending--enabled: url('#{$icons-path}gx-server/light/changes-commit-pending.svg#enabled'); 
+  --icon__gx-server_changes-commit-pending--hover: url('#{$icons-path}gx-server/light/changes-commit-pending.svg#hover'); 
+  --icon__gx-server_changes-commit-pending--active: url('#{$icons-path}gx-server/light/changes-commit-pending.svg#active'); 
+  --icon__gx-server_changes-commit-pending--disabled: url('#{$icons-path}gx-server/light/changes-commit-pending.svg#disabled'); 
+
+  }
+
+  /* =================================
+  DARK CUSTOM PROPERTIES
+  ================================= */
+
+  :root.dark {
+  /*gx-server*/
+  --icon__gx-server_public--enabled: url('#{$icons-path}gx-server/dark/public.svg#enabled'); 
+  --icon__gx-server_public--hover: url('#{$icons-path}gx-server/dark/public.svg#hover'); 
+  --icon__gx-server_public--active: url('#{$icons-path}gx-server/dark/public.svg#active'); 
+  --icon__gx-server_public--disabled: url('#{$icons-path}gx-server/dark/public.svg#disabled'); 
+  --icon__gx-server_private--enabled: url('#{$icons-path}gx-server/dark/private.svg#enabled'); 
+  --icon__gx-server_private--hover: url('#{$icons-path}gx-server/dark/private.svg#hover'); 
+  --icon__gx-server_private--active: url('#{$icons-path}gx-server/dark/private.svg#active'); 
+  --icon__gx-server_private--disabled: url('#{$icons-path}gx-server/dark/private.svg#disabled'); 
+  --icon__gx-server_new--enabled: url('#{$icons-path}gx-server/dark/new.svg#enabled'); 
+  --icon__gx-server_new--hover: url('#{$icons-path}gx-server/dark/new.svg#hover'); 
+  --icon__gx-server_new--active: url('#{$icons-path}gx-server/dark/new.svg#active'); 
+  --icon__gx-server_new--disabled: url('#{$icons-path}gx-server/dark/new.svg#disabled'); 
+  --icon__gx-server_lock-without-changes--enabled: url('#{$icons-path}gx-server/dark/lock-without-changes.svg#enabled'); 
+  --icon__gx-server_lock-without-changes--hover: url('#{$icons-path}gx-server/dark/lock-without-changes.svg#hover'); 
+  --icon__gx-server_lock-without-changes--active: url('#{$icons-path}gx-server/dark/lock-without-changes.svg#active'); 
+  --icon__gx-server_lock-without-changes--disabled: url('#{$icons-path}gx-server/dark/lock-without-changes.svg#disabled'); 
+  --icon__gx-server_lock-by-user-reserve--enabled: url('#{$icons-path}gx-server/dark/lock-by-user-reserve.svg#enabled'); 
+  --icon__gx-server_lock-by-user-reserve--hover: url('#{$icons-path}gx-server/dark/lock-by-user-reserve.svg#hover'); 
+  --icon__gx-server_lock-by-user-reserve--active: url('#{$icons-path}gx-server/dark/lock-by-user-reserve.svg#active'); 
+  --icon__gx-server_lock-by-user-reserve--disabled: url('#{$icons-path}gx-server/dark/lock-by-user-reserve.svg#disabled'); 
+  --icon__gx-server_lock-by-user-changes--enabled: url('#{$icons-path}gx-server/dark/lock-by-user-changes.svg#enabled'); 
+  --icon__gx-server_lock-by-user-changes--hover: url('#{$icons-path}gx-server/dark/lock-by-user-changes.svg#hover'); 
+  --icon__gx-server_lock-by-user-changes--active: url('#{$icons-path}gx-server/dark/lock-by-user-changes.svg#active'); 
+  --icon__gx-server_lock-by-user-changes--disabled: url('#{$icons-path}gx-server/dark/lock-by-user-changes.svg#disabled'); 
+  --icon__gx-server_internal--enabled: url('#{$icons-path}gx-server/dark/internal.svg#enabled'); 
+  --icon__gx-server_internal--hover: url('#{$icons-path}gx-server/dark/internal.svg#hover'); 
+  --icon__gx-server_internal--active: url('#{$icons-path}gx-server/dark/internal.svg#active'); 
+  --icon__gx-server_internal--disabled: url('#{$icons-path}gx-server/dark/internal.svg#disabled'); 
+  --icon__gx-server_delete--enabled: url('#{$icons-path}gx-server/dark/delete.svg#enabled'); 
+  --icon__gx-server_delete--hover: url('#{$icons-path}gx-server/dark/delete.svg#hover'); 
+  --icon__gx-server_delete--active: url('#{$icons-path}gx-server/dark/delete.svg#active'); 
+  --icon__gx-server_delete--disabled: url('#{$icons-path}gx-server/dark/delete.svg#disabled'); 
+  --icon__gx-server_conflict--enabled: url('#{$icons-path}gx-server/dark/conflict.svg#enabled'); 
+  --icon__gx-server_conflict--hover: url('#{$icons-path}gx-server/dark/conflict.svg#hover'); 
+  --icon__gx-server_conflict--active: url('#{$icons-path}gx-server/dark/conflict.svg#active'); 
+  --icon__gx-server_conflict--disabled: url('#{$icons-path}gx-server/dark/conflict.svg#disabled'); 
+  --icon__gx-server_changes-commit-pending--enabled: url('#{$icons-path}gx-server/dark/changes-commit-pending.svg#enabled'); 
+  --icon__gx-server_changes-commit-pending--hover: url('#{$icons-path}gx-server/dark/changes-commit-pending.svg#hover'); 
+  --icon__gx-server_changes-commit-pending--active: url('#{$icons-path}gx-server/dark/changes-commit-pending.svg#active'); 
+  --icon__gx-server_changes-commit-pending--disabled: url('#{$icons-path}gx-server/dark/changes-commit-pending.svg#disabled'); 
+
+  }
+  
