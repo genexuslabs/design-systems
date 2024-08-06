@@ -90,6 +90,7 @@ Grid items
 }
 a.dummy-grid-container__item {
   color: inherit !important;
+  --item__bg-color: var(--mer-color__elevation--01);
 }
 a.dummy-grid-container__item:hover {
   --item__bg-color: var(--item__bg-color--hover);
