@@ -142,9 +142,13 @@ $gx-test: unit-test, unit-test-db, ui-test-web, ui-test-sd, test-suite, test-res
  
 // editing-structures
 $editing-structures: user-index, system-index, redundant-attribute, platforms, logical-attributes, formula-redundant, default, attribute-key, attribute-formula, attribute-description;
+ 
+// controls
+$controls: variable, treeview, text-block, tag-html, table, table-row, table-column, table-cell, tab, tab-page, snippet, smart-table, section, pop-up, messages, media-player, id-html, hyperlink, html, horizontal-line, history-manager, gx-scheduler, group, grid, google-geomap, google-charts, google-annotated-tmeline, google-analytics, free-style-grid, font, flex, file-upload, error-viewer, embedded-page, default, component, class-html, canva, call-target, button, button-group, action-group, action-group-item;
 
 $all-multicolor-lists: (
   objects: $objects,
   gx-test: $gx-test,
   editing-structures: $editing-structures,
+  controls: $controls,
 );
