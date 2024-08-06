@@ -140,6 +140,9 @@ $objects: workflow, work-panel, web-panel, web-component, version, url-rewrite, 
 // gx-test
 $gx-test: unit-test, unit-test-db, ui-test-web, ui-test-sd, test-suite, test-results, test-folder, test-folder-open, screenshot-viewer, run-unit-test, run-ui-test-web, run-ui-test-sd, run-tests, run-test-suite, run-test-cancel, result-warning, result-skipped, result-ok, result-exception, result-error, record-mock, plus, image, explorer, cutfo;
  
+// general
+$general: version, swift, sql-server, services, sd, sd-web, sap-hana, references, postgre-sql, patterns, oracle, launchpad, knowledge-base, java, informix, generator, environment-select, environment-no-select, db2, datastore, customization, csharp, apple, angular, android;
+ 
 // editing-structures
 $editing-structures: user-index, system-index, redundant-attribute, platforms, logical-attributes, formula-redundant, default, attribute-key, attribute-formula, attribute-description;
  
@@ -149,6 +152,7 @@ $controls: variable, treeview, text-block, tag-html, table, table-row, table-col
 $all-multicolor-lists: (
   objects: $objects,
   gx-test: $gx-test,
+  general: $general,
   editing-structures: $editing-structures,
   controls: $controls,
 );
