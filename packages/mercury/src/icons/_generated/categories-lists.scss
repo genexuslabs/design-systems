@@ -134,6 +134,9 @@ $all-monochrome-lists: (
 Multicolor lists
 - - - - - - - - - - - */
  
+// patterns-default-associated
+$patterns-default-associated: synchronized, modified, default-associated;
+ 
 // patterns
 $patterns: workwith-for-sd, work-with-web, tabs, tab, structure, row, pattern-category, parameters, parameter, orders, list, fixed-data, filters, events, documentation, detail, cell, attributes;
  
@@ -159,6 +162,7 @@ $editing-structures: user-index, system-index, redundant-attribute, platforms, l
 $controls: variable, treeview, text-block, tag-html, table, table-row, table-column, table-cell, tab, tab-page, snippet, smart-table, section, pop-up, messages, media-player, id-html, hyperlink, html, horizontal-line, history-manager, gx-scheduler, group, grid, google-geomap, google-charts, google-annotated-tmeline, google-analytics, free-style-grid, font, flex, file-upload, error-viewer, embedded-page, default, component, class-html, canva, call-target, button, button-group, action-group, action-group-item;
 
 $all-multicolor-lists: (
+  patterns-default-associated: $patterns-default-associated,
   patterns: $patterns,
   objects-parts: $objects-parts,
   objects: $objects,

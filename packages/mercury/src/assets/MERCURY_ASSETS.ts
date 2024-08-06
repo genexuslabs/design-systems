@@ -2575,6 +2575,50 @@ export const MERCURY_ASSETS = Object.freeze({
       })
     })
   }),
+  "patterns-default-associated": Object.freeze({
+    synchronized: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns-default-associated_synchronized--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns-default-associated_synchronized--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns-default-associated_synchronized--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns-default-associated_synchronized--disabled"
+      })
+    }),
+    modified: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns-default-associated_modified--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns-default-associated_modified--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns-default-associated_modified--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns-default-associated_modified--disabled"
+      })
+    }),
+    "default-associated": Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns-default-associated_default-associated--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns-default-associated_default-associated--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns-default-associated_default-associated--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns-default-associated_default-associated--disabled"
+      })
+    })
+  }),
   patterns: Object.freeze({
     "workwith-for-sd": Object.freeze({
       enabled: Object.freeze({
