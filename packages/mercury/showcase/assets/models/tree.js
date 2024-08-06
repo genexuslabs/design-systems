@@ -91,11 +91,6 @@ export const noIconsModel = [
         ]
       },
       {
-        id: "References",
-        caption: "References",
-        editable: false
-      },
-      {
         id: "Customization",
         caption: "Customization",
         expanded: true,
