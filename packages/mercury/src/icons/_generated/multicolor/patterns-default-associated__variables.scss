@@ -1,0 +1,43 @@
+
+  /* =================================
+  LIGHT CUSTOM PROPERTIES
+  ================================= */
+
+  :root.light {
+  /*patterns-default-associated*/
+  --icon__patterns-default-associated_synchronized--enabled: url('#{$icons-path}patterns-default-associated/light/synchronized.svg#enabled'); 
+  --icon__patterns-default-associated_synchronized--hover: url('#{$icons-path}patterns-default-associated/light/synchronized.svg#hover'); 
+  --icon__patterns-default-associated_synchronized--active: url('#{$icons-path}patterns-default-associated/light/synchronized.svg#active'); 
+  --icon__patterns-default-associated_synchronized--disabled: url('#{$icons-path}patterns-default-associated/light/synchronized.svg#disabled'); 
+  --icon__patterns-default-associated_modified--enabled: url('#{$icons-path}patterns-default-associated/light/modified.svg#enabled'); 
+  --icon__patterns-default-associated_modified--hover: url('#{$icons-path}patterns-default-associated/light/modified.svg#hover'); 
+  --icon__patterns-default-associated_modified--active: url('#{$icons-path}patterns-default-associated/light/modified.svg#active'); 
+  --icon__patterns-default-associated_modified--disabled: url('#{$icons-path}patterns-default-associated/light/modified.svg#disabled'); 
+  --icon__patterns-default-associated_default-associated--enabled: url('#{$icons-path}patterns-default-associated/light/default-associated.svg#enabled'); 
+  --icon__patterns-default-associated_default-associated--hover: url('#{$icons-path}patterns-default-associated/light/default-associated.svg#hover'); 
+  --icon__patterns-default-associated_default-associated--active: url('#{$icons-path}patterns-default-associated/light/default-associated.svg#active'); 
+  --icon__patterns-default-associated_default-associated--disabled: url('#{$icons-path}patterns-default-associated/light/default-associated.svg#disabled'); 
+
+  }
+
+  /* =================================
+  DARK CUSTOM PROPERTIES
+  ================================= */
+
+  :root.dark {
+  /*patterns-default-associated*/
+  --icon__patterns-default-associated_synchronized--enabled: url('#{$icons-path}patterns-default-associated/dark/synchronized.svg#enabled'); 
+  --icon__patterns-default-associated_synchronized--hover: url('#{$icons-path}patterns-default-associated/dark/synchronized.svg#hover'); 
+  --icon__patterns-default-associated_synchronized--active: url('#{$icons-path}patterns-default-associated/dark/synchronized.svg#active'); 
+  --icon__patterns-default-associated_synchronized--disabled: url('#{$icons-path}patterns-default-associated/dark/synchronized.svg#disabled'); 
+  --icon__patterns-default-associated_modified--enabled: url('#{$icons-path}patterns-default-associated/dark/modified.svg#enabled'); 
+  --icon__patterns-default-associated_modified--hover: url('#{$icons-path}patterns-default-associated/dark/modified.svg#hover'); 
+  --icon__patterns-default-associated_modified--active: url('#{$icons-path}patterns-default-associated/dark/modified.svg#active'); 
+  --icon__patterns-default-associated_modified--disabled: url('#{$icons-path}patterns-default-associated/dark/modified.svg#disabled'); 
+  --icon__patterns-default-associated_default-associated--enabled: url('#{$icons-path}patterns-default-associated/dark/default-associated.svg#enabled'); 
+  --icon__patterns-default-associated_default-associated--hover: url('#{$icons-path}patterns-default-associated/dark/default-associated.svg#hover'); 
+  --icon__patterns-default-associated_default-associated--active: url('#{$icons-path}patterns-default-associated/dark/default-associated.svg#active'); 
+  --icon__patterns-default-associated_default-associated--disabled: url('#{$icons-path}patterns-default-associated/dark/default-associated.svg#disabled'); 
+
+  }
+  
