@@ -2,8 +2,8 @@
 
 %tree-view {
   @include tree-view-tokens();
-  font-size: var(--tree-view__font-size);
-  line-height: var(--mer-line-height--regular);
+  @include item-font();
+  @include item-font-size-small();
   min-inline-size: var(--tree-view__min-inline-size);
 }
 
@@ -26,21 +26,23 @@
 }
 
 %tree-view-item__header {
-  border-radius: var(--tree-view-item-header__border-radius);
-  padding-inline-end: var(--tree-view-item-custom__padding-inline-end);
+  @include item-colors-enabled();
+  @include item-border();
+  @include item-border-radius();
 
   &--focus-visible {
     @include focus-outline();
   }
 
   &--not-selected-hover {
-    background-color: var(--tree-view-item__bg-color--hover);
-    color: var(--tree-view-item__color--hover);
+    @include item-colors-hover();
   }
 
   &--selected {
-    background-color: var(--tree-view-item__bg-color--selected);
-    color: var(--tree-view-item__color--selected);
+    @include item-colors-selected();
+    &-hover {
+      @include item-colors-selected-hover();
+    }
   }
 }
 
@@ -64,6 +66,8 @@
 /// @param {String} $tree-view-selector [".tree-view"] -
 /// @param {String} $drag-preview-selector [".tree-view::part(drag-preview)"] -
 /// @param {String} $drop-selector [".tree-view::part(drop)"] -
+/// @param {String} $item-selector [".tree-view::part(item)"] -
+/// @param {String} $item__group-selector [".tree-view::part(item__group)"] -
 /// @param {String} $item--drag-enter-selector [".tree-view::part(item drag-enter)"] -
 /// @param {String} $item__header-selector [".tree-view::part(item__header)"] -
 /// @param {String} $item__header--not-selected-selector [".tree-view::part(item__header not-selected)"] -
@@ -117,23 +121,24 @@
   // Drop
   $drop-selector: ".tree-view::part(drop)",
 
-  // Item header
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Item
+  // - - - - - - - - - - - - - - - - - - - -
+  $item-selector: ".tree-view::part(item)",
+  $item__group-selector: ".tree-view::part(item__group)",
+
   $item__header-selector: ".tree-view::part(item__header)",
   $item__header--not-selected-selector:
     ".tree-view::part(item__header not-selected)",
   $item__header--selected-selector: ".tree-view::part(item__header selected)",
 
-  // Item action
   $item__action-selector: ".tree-view::part(item__action)",
   $item__icon-path-selector: ".tree-view::part(uses-icon-path)",
 
-  // Item downloading
   $item__downloading-selector: ".tree-view::part(item__downloading)",
 
-  // Item line
   $item__line-selector: ".tree-view::part(item__line)",
 
-  // Checkbox
   $item__checkbox-selector: ".tree-view::part(item__checkbox)",
   $item__checkbox-input-selector: ".tree-view::part(item__checkbox-input)",
   $item__checkbox-input--disabled-selector:
@@ -175,6 +180,11 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                  Item
   // - - - - - - - - - - - - - - - - - - - -
+  #{$item-selector},
+  #{$item__group-selector} {
+    @include items-container-gap-small();
+  }
+
   // Drag enter
   #{$item--drag-enter-selector} {
     @extend %tree-view-item--drag-enter;
@@ -199,6 +209,9 @@
   // Item selected and item with active
   #{$item__header--selected-selector} {
     @extend %tree-view-item__header--selected;
+  }
+  #{$item__header--selected-selector}:hover {
+    @extend %tree-view-item__header--selected-hover;
   }
 
   // - - - - - - - - - - - - - - - - - - - -

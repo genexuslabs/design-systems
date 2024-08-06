@@ -2,7 +2,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   //               Tree View
   // - - - - - - - - - - - - - - - - - - - -
-  --tree-view__font-size: var(--mer-body__font-size);
 
   // - - - - - - - - - - - - - - - - - - - -
   //     Item (Provided by the ch-tree)
@@ -26,12 +25,12 @@
   //               Item states
   // - - - - - - - - - - - - - - - - - - - -
   // Hover
-  --tree-view-item__color--hover: var(--item__color--hover);
-  --tree-view-item__bg-color--hover: var(--item__bg-color--hover);
+  // --tree-view-item__color--hover: var(--item__color--hover);
+  // --tree-view-item__bg-color--hover: var(--item__bg-color--hover);
 
   // Selected
-  --tree-view-item__color--selected: var(--item__color--selected);
-  --tree-view-item__bg-color--selected: var(--item__bg-color--selected);
+  // --tree-view-item__color--selected: var(--item__color--selected);
+  // --tree-view-item__bg-color--selected: var(--item__bg-color--selected);
 
   // - - - - - - - - - - - - - - - - - - - -
   //                Item line
@@ -42,7 +41,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   //               Item header
   // - - - - - - - - - - - - - - - - - - - -
-  --tree-view-item-header__border-radius: var(--mer-border__radius--sm);
   --tree-view-item-header__padding-block: calc(var(--mer-spacing--3xs));
 
   // - - - - - - - - - - - - - - - - - - - -
