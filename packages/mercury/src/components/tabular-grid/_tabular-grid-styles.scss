@@ -53,6 +53,7 @@
   --focus__outline-offset: -2px; // WA since the box-shadow hides the outline-block-end and outline-inline-end.
   --grid-label__gap: var(--mer-spacing--xs);
   --grid-common__gap: var(--mer-spacing--xs);
+  max-block-size: 100%; //otherwise the grid will be as tall as possible
 
   --indent: 16px;
   @include items-container-colors();
