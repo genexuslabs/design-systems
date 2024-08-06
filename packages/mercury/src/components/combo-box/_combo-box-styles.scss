@@ -127,14 +127,13 @@
   #{$group__header-selector} {
     @include item-colors-enabled();
     @include item-font-header();
-    @include item-padding-inline();
+    @include item-padding();
   }
 
   #{$group__header--expandable-selector} {
     @include item-colors-enabled();
-    @include item-height-regular();
-    @include item-padding-inline();
     @include item-font-header();
+    @include item-padding();
     @include item-border-radius();
 
     &:hover {
@@ -156,7 +155,7 @@
     @include item-border();
     @include item-border-radius();
     @include item-font();
-    @include item-padding-inline();
+    @include item-padding();
   }
 
   #{$item--nested-selector} {
