@@ -144,6 +144,10 @@ Control Tiny
 Items Container
 ----------------------*/
 
+@mixin items-container-border() {
+  border-style: var(--items-container__border-style);
+  border-width: var(--items-container__border-width);
+}
 @mixin items-container-colors() {
   background-color: var(--items-container__bg-color);
   border-color: var(--items-container__border-color);
@@ -159,11 +163,13 @@ Items Container
 @mixin items-container-gap() {
   gap: var(--items-container__gap);
 }
-@mixin items-container-gap() {
-  gap: var(--items-container__gap);
-}
 @mixin items-container-max-height() {
   max-block-size: var(--items-container__max-block-size);
+}
+@mixin items-container-separator() {
+  block-size: var(--items-container-separator__block-size);
+  inline-size: var(--items-container-separator__inline-size);
+  background-color: var(--items-container-separator__bg-color);
 }
 
 /*---------------------------------
@@ -206,6 +212,9 @@ Single Item (Every item except grid)
 @mixin item-border-radius() {
   border-radius: var(--item__border-radius);
 }
+@mixin item-gap() {
+  gap: var(--item__gap--regular);
+}
 @mixin item-padding() {
   padding-block: var(--item__padding-block);
   padding-inline: var(--item__padding-inline);
@@ -222,17 +231,21 @@ Single Item (Every item except grid)
 @mixin item-height-large() {
   block-size: var(--item__height--large);
 }
-@mixin item-font-weight() {
+@mixin item-font() {
+  line-height: var(--item__line-height);
+  font-size: var(--item__font-size);
   font-weight: var(--item__font-weight);
 }
-@mixin item-font-weight-header() {
-  font-weight: var(--mer-item-header__font-weight);
+@mixin item-font-header() {
+  // item header font-size and line-height has to be the same as
+  // item font-size and line-height in order for the computed height
+  // to be the same.
+  line-height: var(--item__line-height);
+  font-size: var(--item__font-size);
+  font-weight: var(--item-header__font-weight);
 }
 @mixin item-font-size-small() {
-  font-size: var(--item__font-size--small);
-}
-@mixin item-font-size-regular() {
-  font-size: var(--item__font-size--regular);
+  --item__font-size: var(--item__font-size--small);
 }
 
 /*---------------------------------
