@@ -1,5 +1,52 @@
+/*
+Explanation: 
+
+- multicolor: There is one article for all the icons
+- monochrome: There is one article for each color state
+
+- - - - - - - - - - - - - - - - - - - - - - - - - -
+
+multicolor: 
+
+section 
+    section__header
+        section__title
+    section__articles-container
+        article (just one)
+            article__main
+                article__content
+                    icons-grid
+                        icons-grid__item
+                            icons-grid__item-title (icon name)
+                            icons-grid__list
+
+- - - - - - - - - - - - - - - - - - - - - - - - - -
+
+monochrome: 
+
+section 
+    section__header
+        section__title
+    section__articles-container
+        article (one article per icon)
+            article__header * 
+                article__title * (icon name)
+            article__main
+                article__content
+                    icons-grid
+                        icons-grid__item
+                            icons-grid__item-title (color state)
+                            icons-grid__list
+
+- - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
 import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS-test.js";
 const CONTAINER_EL = document.querySelector(".container");
+
+/* - - - - - - - - - - - - - - - - - - - -
+Helper Render Functions
+- - - - - - - - - - - - - - - - - - - - */
 
 const createSection = name => {
   const sectionElement = document.createElement("section");
@@ -76,7 +123,10 @@ const createIconsStatesList = statesObject => {
   return ulElement;
 };
 
-// Main function
+/* - - - - - - - - - - - - - - - - - - - -
+Main function
+- - - - - - - - - - - - - - - - - - - - */
+
 const generateIconsForShowcase = () => {
   const designSystemIcons = MERCURY_ASSETS.icons;
   if (Object.keys(designSystemIcons).length === 0) {
@@ -88,8 +138,11 @@ const generateIconsForShowcase = () => {
     if (Object.keys(categoryIcons).length === 0) {
       continue;
     }
-    // elements
+
+    // CATEGORIES
+    // .section + .section__header + .section__title
     let sectionEl = createSection(category);
+
     let sectionArticlesContainerEl = createSectionArticlesContainer();
     let articleEl = createArticle();
     let articleMainEl = createArticleMain();
@@ -102,6 +155,7 @@ const generateIconsForShowcase = () => {
         continue;
       }
 
+      // CATEGORIES ICONS
       const iconsGridItemEl = createIconsGridItem();
       const icon = categoryIcons[categoryIcon];
 
@@ -109,7 +163,8 @@ const generateIconsForShowcase = () => {
       // if it is multicolor, the first icon property should have a property called "name"
       // else it is a monochrome
       const iconFirstPropertyName = Object.keys(icon)[0];
-      if (icon[iconFirstPropertyName].hasOwnProperty("name")) {
+      const isMultiColor = icon[iconFirstPropertyName].hasOwnProperty("name");
+      if (isMultiColor) {
         // is multicolor
         const listTitleEl = createItemTitle(categoryIcon);
         const statesListEl = createIconsStatesList(categoryIcons[categoryIcon]);
