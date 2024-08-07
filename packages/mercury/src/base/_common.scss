@@ -295,16 +295,16 @@ Grid Item
 Tab Caption (Button)
 ----------------------*/
 @mixin tab-button-border-block() {
-  border-block-width: var(--tab-caption__border-width);
-  border-style: var(--tab-caption__border-style);
+  border-block: var(--tab-caption__border-width)
+    var(--tab-caption__border-style) var(--tab-caption__border-color);
 }
 @mixin tab-button-border-block-end() {
-  border-block-end-width: var(--tab-caption__border-width);
-  border-style: var(--tab-caption__border-style);
+  border-block-end: var(--tab-caption__border-width)
+    var(--tab-caption__border-style) var(--tab-caption__border-color);
 }
 @mixin tab-button-border-block-start() {
-  border-block-start-width: var(--tab-caption__border-width);
-  border-style: var(--tab-caption__border-style);
+  border-block-start: var(--tab-caption__border-width)
+    var(--tab-caption__border-style) var(--tab-caption__border-color);
 }
 @mixin tab-button-font() {
   font-size: var(--tab-caption__font-size);
