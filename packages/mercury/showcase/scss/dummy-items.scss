@@ -5,7 +5,7 @@
   align-items: center;
 
   @include item-colors-enabled();
-  @include item-font-size-regular();
+  @include item-font();
   @include item-border();
   @include item-border-radius();
   @include item-padding-inline();
