@@ -12,11 +12,8 @@
       .article__content {
         block-size: 300px;
       }
-      .slot {
-        padding: 12px;
-      }
-      .slot *:first-child {
-        margin-block-start: 0;
+      .text-body {
+        margin-block-start: 0 !important; /*override for this example*/
       }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
@@ -45,30 +42,31 @@
           </header>
           <div class="section__articles-container">
             <!-- ========================== 
-          direction block
+          direction block: indicator start
           =========================== -->
-            <article class="article" nav data-title="direction block">
+            <article
+              class="article"
+              nav
+              data-title="direction block: indicator start"
+            >
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
                   <ch-tab-render
-                    class="tab"
+                    class="tab tab-indicator-start"
                     id="tab-1"
                     direction="block"
                     selected-id="item1"
                   >
-                    <div slot="item1" class="slot">
+                    <div slot="item1" class="slot spacing-body">
                       <p class="text-body">Content of the item 1</p>
                     </div>
-                    <div slot="item2" class="slot">
+                    <div slot="item2" class="slot spacing-body">
                       <p class="text-body">Content of the item 2</p>
                     </div>
-                    <div slot="item3" class="slot">
+                    <div slot="item3" class="slot spacing-body">
                       <p class="text-body">Content of the item 3</p>
-                    </div>
-                    <div slot="item4" class="slot">
-                      <p class="text-body">Content of the item 4</p>
                     </div>
                   </ch-tab-render>
                   <script>
@@ -76,8 +74,7 @@
                     tab1.model = [
                       { id: "item1", name: "Item 1" },
                       { id: "item2", name: "Item 2" },
-                      { id: "item3", name: "Item 3" },
-                      { id: "item4", name: "Item 4" }
+                      { id: "item3", name: "Item 3" }
                     ];
                   </script>
                 </div>
@@ -85,8 +82,78 @@
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `<ch-tab-render class="tab" direction="block" selected-id="item1"></ch-tab-render>`;
+                    const markup1 = `<ch-tab-render class="tab tab-indicator-start" direction="block">
+  <div slot="item1" class="slot spacing-body">
+    <p class="text-body"><!-- Content of the item 1 --></p>
+  </div>
+  <div slot="item2" class="slot spacing-body">
+    <p class="text-body"><!-- Content of the item 2 --></p>
+  </div>
+  <div slot="item3" class="slot spacing-body">
+    <p class="text-body"><!-- Content of the item 3 --></p>
+  </div>       
+</ch-tab-render>`;
                     document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          direction block: indicator end
+          =========================== -->
+            <article
+              class="article"
+              nav
+              data-title="direction block: indicator end"
+            >
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-tab-render
+                    class="tab tab-indicator-end"
+                    id="tab-2"
+                    direction="block"
+                    selected-id="item1"
+                  >
+                    <div slot="item1" class="slot spacing-body">
+                      <p class="text-body">Content of the item 1</p>
+                    </div>
+                    <div slot="item2" class="slot spacing-body">
+                      <p class="text-body">Content of the item 2</p>
+                    </div>
+                    <div slot="item3" class="slot spacing-body">
+                      <p class="text-body">Content of the item 3</p>
+                    </div>
+                  </ch-tab-render>
+                  <script>
+                    const tab2 = document.getElementById("tab-2");
+                    tab2.model = [
+                      { id: "item1", name: "Item 1" },
+                      { id: "item2", name: "Item 2" },
+                      { id: "item3", name: "Item 3" }
+                    ];
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-2" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup2 = `<ch-tab-render class="tab tab-indicator-end" direction="block">
+  <div slot="item1" class="slot spacing-body">
+    <p class="text-body"><!-- Content of the item 1 --></p>
+  </div>
+  <div slot="item2" class="slot spacing-body">
+    <p class="text-body"><!-- Content of the item 2 --></p>
+  </div>
+  <div slot="item3" class="slot spacing-body">
+    <p class="text-body"><!-- Content of the item 3 --></p>
+  </div>                                
+</ch-tab-render>`;
+                    document.getElementById("ch-code-2").value = markup2;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -104,40 +171,133 @@
                 <div class="article__content">
                   <ch-tab-render
                     class="tab"
-                    id="tab-2"
+                    id="tab-3"
                     direction="inline"
                     selected-id="item1"
                   >
-                    <div slot="item1" class="slot">
+                    <div slot="item1" class="slot spacing-body">
                       <p class="text-body">Content of the item 1</p>
                     </div>
-                    <div slot="item2" class="slot">
+                    <div slot="item2" class="slot spacing-body">
                       <p class="text-body">Content of the item 2</p>
                     </div>
-                    <div slot="item3" class="slot">
+                    <div slot="item3" class="slot spacing-body">
                       <p class="text-body">Content of the item 3</p>
-                    </div>
-                    <div slot="item4" class="slot">
-                      <p class="text-body">Content of the item 4</p>
                     </div>
                   </ch-tab-render>
                   <script>
-                    const tab2 = document.getElementById("tab-2");
-                    tab2.model = [
+                    const tab3 = document.getElementById("tab-3");
+                    tab3.model = [
                       { id: "item1", name: "Item 1" },
                       { id: "item2", name: "Item 2" },
-                      { id: "item3", name: "Item 3" },
-                      { id: "item4", name: "Item 4" }
+                      { id: "item3", name: "Item 3" }
                     ];
                   </script>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-2" language="xml" class="code">
+                  <ch-code id="ch-code-3" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup2 = `<ch-tab-render class="tab" direction="inline" selected-id="item1"></ch-tab-render>`;
-                    document.getElementById("ch-code-2").value = markup2;
+                    const markup3 = `<ch-tab-render class="tab" direction="inline">
+  <div slot="item1" class="slot spacing-body">
+    <p class="text-body"><!-- Content of the item 1 --></p>
+  </div>
+  <div slot="item2" class="slot spacing-body">
+    <p class="text-body"><!-- Content of the item 2 --></p>
+  </div>
+  <div slot="item3" class="slot spacing-body">
+    <p class="text-body"><!-- Content of the item 3 --></p>
+  </div>                              
+</ch-tab-render>`;
+                    document.getElementById("ch-code-3").value = markup3;
                   </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          disabled
+          =========================== -->
+            <article class="article" nav data-title="disabled (to be done)">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-tab-render
+                    class="tab"
+                    id="tab-4"
+                    direction="inline"
+                    selected-id="item1"
+                    disabled
+                  >
+                    <div slot="item1" class="slot spacing-body">
+                      <p class="text-body">Content of the item 1</p>
+                    </div>
+                    <div slot="item2" class="slot spacing-body">
+                      <p class="text-body">Content of the item 2</p>
+                    </div>
+                    <div slot="item3" class="slot spacing-body">
+                      <p class="text-body">Content of the item 3</p>
+                    </div>
+                  </ch-tab-render>
+                  <script>
+                    const tab4 = document.getElementById("tab-4");
+                    tab4.model = [
+                      { id: "item1", name: "Item 1" },
+                      { id: "item2", name: "Item 2" },
+                      { id: "item3", name: "Item 3" }
+                    ];
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-4" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup4 = `<ch-tab-render class="tab" direction="inline" disabled>
+  <div slot="item1" class="slot spacing-body">
+    <p class="text-body"><!-- Content of the item 1 --></p>
+  </div>
+  <div slot="item2" class="slot spacing-body">
+    <p class="text-body"><!-- Content of the item 2 --></p>
+  </div>
+  <div slot="item3" class="slot spacing-body">
+    <p class="text-body"><!-- Content of the item 3 --></p>
+  </div>                               
+</ch-tab-render>`;
+                    document.getElementById("ch-code-4").value = markup4;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          spacing classes
+          =========================== -->
+            <article class="article" nav data-title="spacing classes">
+              <header class="article__header"></header>
+
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  By default the tab do not provide any padding to the content.
+                  To apply padding to the content, you have to provide the
+                  slotted wrapper with
+                  <a href="./spacing.doc.html"
+                    >any of the global body padding classes</a
+                  >.
+                </p>
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./spacing.doc.html"
+                      class="dummy-grid-container__item"
+                      >this component adheres to the spacing body classes</a
+                    >
+                  </div>
                 </div>
                 <!-- /.article__content -->
               </div>
