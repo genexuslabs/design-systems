@@ -4,6 +4,7 @@
   @include tree-view-tokens();
   @include item-font();
   @include item-font-size-small();
+  line-height: var(--tree-view-item__line-height);
   min-inline-size: var(--tree-view__min-inline-size);
 }
 
@@ -27,8 +28,8 @@
 
 %tree-view-item__header {
   @include item-colors-enabled();
-  @include item-border();
   @include item-border-radius();
+  @include item-border();
 
   &--focus-visible {
     @include focus-outline();
@@ -182,7 +183,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   #{$item-selector},
   #{$item__group-selector} {
-    @include items-container-gap-small();
   }
 
   // Drag enter
