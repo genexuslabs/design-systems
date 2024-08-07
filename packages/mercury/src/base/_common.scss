@@ -292,6 +292,64 @@ Grid Item
 }
 
 /*----------------------
+Tab Caption (Button)
+----------------------*/
+@mixin tab-button-border-block() {
+  border-block-width: var(--tab-caption__border-width);
+  border-style: var(--tab-caption__border-style);
+}
+@mixin tab-button-border-block-end() {
+  border-block-end-width: var(--tab-caption__border-width);
+  border-style: var(--tab-caption__border-style);
+}
+@mixin tab-button-border-block-start() {
+  border-block-start-width: var(--tab-caption__border-width);
+  border-style: var(--tab-caption__border-style);
+}
+@mixin tab-button-font() {
+  font-size: var(--tab-caption__font-size);
+  font-weight: var(--tab-caption__font-weight);
+}
+@mixin tab-button-gap() {
+  gap: var(--tab-caption__gap);
+}
+@mixin tab-button-colors-enabled() {
+  background-color: var(--tab-caption__bg-color);
+  color: var(--tab-caption__color);
+  border-color: var(--tab-caption__border-color);
+}
+@mixin tab-button-colors-hover() {
+  --tab-caption__bg-color: var(--tab-caption__bg-color--hover);
+  // color remains the same
+  // border-color remains the same
+}
+@mixin tab-button-colors-disabled() {
+  --tab-caption__bg-color: var(--tab-caption__bg-color--disabled);
+  --tab-caption__color: var(--tab-caption__bg-color--disabled);
+  --tab-caption__border-color: var(--tab-caption__bg-color--disabled);
+}
+@mixin tab-button-colors-selected-inline() {
+  --tab-caption__bg-color: var(--tab-caption__bg-color--selected-inline);
+  --tab-caption__color: var(--tab-caption__color--selected);
+  --tab-caption__border-color: var(
+    --tab-caption__border-color--selected-inline
+  );
+}
+@mixin tab-button-colors-selected-stack() {
+  --tab-caption__bg-color: var(--tab-caption__bg-color--selected-stack);
+  --tab-caption__color: var(--tab-caption__color--selected);
+  --tab-caption__border-color: var(--tab-caption__border-color--selected-stack);
+}
+@mixin tab-button-padding-inline() {
+  padding-block: var(--tab-caption__padding-block);
+  padding-inline: var(--tab-caption__padding-inline);
+}
+@mixin tab-button-padding-stack() {
+  padding-block: var(--tab-caption__padding-block);
+  padding-inline: var(--tab-caption__padding-inline);
+}
+
+/*----------------------
 Label
 ----------------------*/
 
