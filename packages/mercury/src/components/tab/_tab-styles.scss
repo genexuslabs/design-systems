@@ -1,10 +1,6 @@
-@import "tokens";
-
 %tab {
-  --ch-tab-image-size: var(--spacing-un-spacing--xl);
-  --ch-tab-mask-image-size: calc(
-    var(--spacing-un-spacing--xl) - var(--spacing-un-spacing--m)
-  );
+  --ch-tab-close-button__background-image-size: var(--mer-icon__size--md);
+  --ch-tab-close-button__image-size: var(--mer-icon__box--md);
 
   --spacing-body-block-start: var(--mer-spacing--md);
   --spacing-body-block-end: var(--mer-spacing--md);
@@ -60,9 +56,6 @@
   &__close-button {
     &--focus {
       @include focus-outline();
-    }
-    &--after {
-      @extend %icon-size--md;
     }
   }
 }
@@ -140,20 +133,6 @@
   }
 
   #{$tab-caption__close-button-selector} {
-    &:after {
-      -webkit-mask: none;
-      @extend %tab-caption__close-button--after;
-      --icon-path: var(--icon__gemini-tools_close_neutral--enabled);
-    }
-    &:hover:after {
-      --icon-path: var(--icon__gemini-tools_close_neutral--hover);
-    }
-    &:active:after {
-      --icon-path: var(--icon__gemini-tools_close_neutral--active);
-    }
-    &:disabled:after {
-      --icon-path: var(--icon__gemini-tools_close_neutral--disabled);
-    }
     &:focus-visible {
       @extend %tab-caption__close-button--focus;
     }
