@@ -114,8 +114,58 @@
   // - - - - - - - - - - - - - - - - - - - -
   //               Grid Cell
   // - - - - - - - - - - - - - - - - - - - -
+
   --grid-cell__border-color: var(--mer-color__elevation--04);
   --grid-cell__border: var(--mer-border__width--sm) solid
     var(--grid-cell__border-color);
   --grid-cell__box-shadow-inline-block: 0 0 0 1px var(--grid-cell__border-color);
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //          Tab Caption (Button)
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // - - - - - - - Color Generic - - - - - - -
+  --tab-caption__bg-color: var(--tab-caption__bg-color--enabled);
+  --tab-caption__color: var(--tab-caption__color--enabled);
+  --tab-caption__border-color: transparent;
+
+  // - - - - - - - Border - - - - - - -
+  --tab-caption__border-style: solid;
+  --tab-caption__border-width: var(--mer-border__width--sm);
+
+  // - - - - - - - Colors - - - - - - -
+  // enabled
+  --tab-caption__bg-color--enabled: transparent;
+  --tab-caption__border-color--enabled: transparent;
+  --tab-caption__color--enabled: var(--mer-text__neutral);
+
+  // hover
+  --tab-caption__bg-color--hover: var(--mer-color__tinted-blue--10);
+
+  // selected
+  --tab-caption__bg-color--selected-inline: transparent;
+  --tab-caption__bg-color--selected-stack: var(--mer-color__tinted-blue--10);
+  --tab-caption__border-color--selected-inline: var(--mer-accent__primary);
+  --tab-caption__border-color--selected-stack: var(
+    --mer-color__tinted-blue--20
+  );
+  --tab-caption__color--selected: var(--mer-text__highlighted);
+
+  // disabled
+  --tab-caption__bg-color--disabled: var(--mer-color__tinted-blue--10);
+  --tab-caption__border-color--disabled: var(
+    --mer-border-color__on-elevation--01
+  );
+  --tab-caption__color--disabled: var(--mer-text__primary--disabled);
+
+  // - - - - - - - Font - - - - - - -
+  --tab-caption__font-size: var(--mer-font__size--3xs);
+  --tab-caption__font-weight: var(--mer-font__weight--semi-bold);
+
+  // - - - - - - - Padding - - - - - - -
+  --tab-caption__padding-block: var(--mer-spacing--xs);
+  --tab-caption__padding-inline: var(--mer-spacing--sm) var(--mer-spacing--xs);
+
+  // - - - - - - - Gap - - - - - - -
+  --tab-caption__gap: var(--mer-spacing--xs); // 6px does not exist on the ds.
 }
