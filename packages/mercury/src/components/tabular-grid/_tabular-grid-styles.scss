@@ -81,6 +81,11 @@
 //         ch-tabular-grid-column
 // - - - - - - - - - - - - - - - - - - - -
 
+%tabular-grid-column {
+  // should equal the tabular-grid background-color
+  background-color: var(--items-container__bg-color);
+}
+
 %tabular-grid-column__bar {
   --grid-label__gap: 0;
   @include grid-row-colors-enabled();
@@ -270,6 +275,7 @@
 // ch-tabular-grid-column-set
 /// @param {String} $tabular-grid-column-set [".tabular-grid-column-set"] -
 // ch-tabular-grid-column
+/// @param {String} $tabular-grid-column-selector [".tabular-grid-column"] -
 /// @param {String} $tabular-grid-column__bar-selector [".tabular-grid-column::part(bar)"] -
 /// @param {String} $tabular-grid-column__bar-resize-split-selector [".tabular-grid-column::part(bar-resize-split)"] -
 /// @param {String} $tabular-grid-column__selector-label-selector [".tabular-grid-column::part(selector-label)"] -
@@ -320,6 +326,7 @@
   // ch-tabular-grid-column-set
   $tabular-grid-column-set: ".tabular-grid-column-set",
   // ch-tabular-grid-column
+  $tabular-grid-column-selector: ".tabular-grid-column",
   $tabular-grid-column__bar-selector: ".tabular-grid-column::part(bar)",
   $tabular-grid-column__bar-resize-split-selector:
     ".tabular-grid-column::part(bar-resize-split)",
@@ -441,6 +448,10 @@
   // - - - - - - - - - - - - - - - - - - - -
   //          ch-tabular-grid-column
   // - - - - - - - - - - - - - - - - - - - -
+
+  #{$tabular-grid-column-selector} {
+    @extend %tabular-grid-column;
+  }
 
   #{$tabular-grid-column__bar-selector} {
     @extend %tabular-grid-column__bar;
