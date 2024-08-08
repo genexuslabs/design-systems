@@ -2,8 +2,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   //   Chameleon (do not change the name)
   // - - - - - - - - - - - - - - - - - - - -
-  // by default "small" switch values are applied
-  // and then overridden if the switch is type "large"
 
   --ch-switch-thumb__unchecked-background-color: var(--switch-thumb__bg-color);
   --ch-switch-thumb__checked-background-color: var(--switch-thumb__bg-color);
@@ -35,10 +33,10 @@
   --switch-thumb__bg-color: var(--mer-icon__neutral);
   --switch-thumb__bg-color--disabled: var(--mer-icon__on-disabled);
   // sizes track
-  --switch-track__block-size: var(--switch-track__block-size--small);
-  --switch-track__inline-size: var(--switch-track__inline-size--small);
+  --switch-track__block-size: var(--switch-track__block-size);
+  --switch-track__inline-size: var(--switch-track__inline-size);
   // sizes thumb
-  --switch-thumb__size: var(--switch-thumb__size--small);
+  --switch-thumb__size: var(--switch-thumb__size);
   --switch-thumb__separation--on: calc(
     (var(--switch-track__block-size) - var(--switch-thumb__size)) / 2
   );
@@ -47,20 +45,9 @@
       var(--switch-thumb__size)
   );
 
-  // large
-  --switch-track__block-size--large: 26px;
-  --switch-track__inline-size--large: 50px;
-  --switch-thumb__size--large: 16px;
-
-  --switch-track__block-size--small: 16px;
-  --switch-track__inline-size--small: 30px;
-  --switch-thumb__size--small: 9px;
-
-  &-large {
-    --switch-track__block-size: var(--switch-track__block-size--large);
-    --switch-track__inline-size: var(--switch-track__inline-size--large);
-    --switch-thumb__size: var(--switch-thumb__size--large);
-  }
+  --switch-track__block-size: 16px;
+  --switch-track__inline-size: 30px;
+  --switch-thumb__size: 9px;
 
   // Track
   &__track {
@@ -123,7 +110,6 @@
 
 @mixin switch(
   $switch-selector: ".switch",
-  $switch-large-selector: ".switch-large",
   // track
   $track-selector: ".switch::part(track)",
   $track--checked-selector: ".switch::part(track checked)",
@@ -143,9 +129,6 @@
 ) {
   #{$switch-selector} {
     @extend %switch;
-  }
-  #{$switch-large-selector} {
-    @extend %switch-large;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
