@@ -1,51 +1,8 @@
-/*
-Explanation: 
-
-- multicolor: There is one article for all the icons
-- monochrome: There is one article for each color state
-
-- - - - - - - - - - - - - - - - - - - - - - - - - -
-
-multicolor: 
-
-section 
-    section__header
-        section__title
-    section__articles-container
-        article (just one)
-            article__main
-                article__content
-                    icons-grid
-                        icons-grid__item
-                            icons-grid__item-title (icon name)
-                            icons-grid__list
-
-- - - - - - - - - - - - - - - - - - - - - - - - - -
-
-monochrome: 
-
-section 
-    section__header
-        section__title
-    section__articles-container
-        article (one article per icon)
-            article__header * 
-                article__title * (icon name)
-            article__main
-                article__content
-                    icons-grid
-                        icons-grid__item
-                            icons-grid__item-title (color state)
-                            icons-grid__list
-
-- - - - - - - - - - - - - - - - - - - - - - - - - -
-*/
-
 import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS-test.js";
 const CONTAINER_EL = document.querySelector(".container");
 
 /* - - - - - - - - - - - - - - - - - - - -
-Helper Render Functions
+Helper Render Functions (Elements)
 - - - - - - - - - - - - - - - - - - - - */
 
 const createSection = name => {
@@ -93,11 +50,6 @@ const createIconsGrid = () => {
   iconsGridEl.className = "icons-grid";
   return iconsGridEl;
 };
-const createIconsGridItem = () => {
-  const iconsGridItem = document.createElement("div");
-  iconsGridItem.className = "icons-grid__item";
-  return iconsGridItem;
-};
 const createItemTitle = listTitle => {
   const iconsGridItemTitle = document.createElement("h2");
   iconsGridItemTitle.className = "icons-grid__item-title";
@@ -122,6 +74,54 @@ const createIconsStatesList = statesObject => {
   }
   return ulElement;
 };
+const createIconsGridItem = (itemName, itemSatesObject) => {
+  const iconsGridItem = document.createElement("div");
+  iconsGridItem.className = "icons-grid__item";
+  // item title
+  const title = createItemTitle(itemName);
+  // list
+  const statesList = createIconsStatesList(itemSatesObject);
+  iconsGridItem.appendChild(title);
+  iconsGridItem.appendChild(statesList);
+  return iconsGridItem;
+};
+
+/* - - - - - - - - - - - - - - - - - - - -
+Render Multicolor or Monochrome
+- - - - - - - - - - - - - - - - - - - - */
+
+const renderMulticolorArticle = (categoryIcons, categoryIcon) => {
+  const articleEl = createArticle(iconName);
+  const articleMailEl = createArticleMain();
+  const articleContent = createArticleContent();
+  const iconsGridEl = createIconsGrid();
+  for (let color in iconColorsObject) {
+    const gridItemEl = createIconsGridItem(color, iconColorsObject[color]);
+    iconsGridEl.appendChild(gridItemEl);
+  }
+  articleContent.appendChild(iconsGridEl);
+  articleMailEl.appendChild(articleContent);
+  articleEl.appendChild(articleHeaderEl);
+  articleEl.appendChild(articleMailEl);
+  return articleEl;
+};
+
+const renderMonochromeArticle = (iconName, iconColorsObject) => {
+  const articleEl = createArticle(iconName);
+  const articleHeaderEl = createArticleHeader();
+  const articleMailEl = createArticleMain();
+  const articleContent = createArticleContent();
+  const iconsGridEl = createIconsGrid();
+  for (let color in iconColorsObject) {
+    const gridItemEl = createIconsGridItem(color, iconColorsObject[color]);
+    iconsGridEl.appendChild(gridItemEl);
+  }
+  articleContent.appendChild(iconsGridEl);
+  articleMailEl.appendChild(articleContent);
+  articleEl.appendChild(articleHeaderEl);
+  articleEl.appendChild(articleMailEl);
+  return articleEl;
+};
 
 /* - - - - - - - - - - - - - - - - - - - -
 Main function
@@ -133,70 +133,46 @@ const generateIconsForShowcase = () => {
     return;
   }
 
+  // For each category...
   for (let category in designSystemIcons) {
     const categoryIcons = designSystemIcons[category];
     if (Object.keys(categoryIcons).length === 0) {
       continue;
     }
 
-    // CATEGORIES
-    // .section + .section__header + .section__title
+    // createSection = .section + .section__header + .section__title
     let sectionEl = createSection(category);
-
     let sectionArticlesContainerEl = createSectionArticlesContainer();
-    let articleEl = createArticle();
-    let articleMainEl = createArticleMain();
-    let articleContentEl = createArticleContent();
-    let iconsGridEl = createIconsGrid();
 
-    // loop through the icons of the current category:
-    for (let categoryIcon in categoryIcons) {
-      if (Object.keys(categoryIcon).length === 0) {
+    // For each icon of the current category...
+    for (let icon in categoryIcons) {
+      if (Object.keys(icon).length === 0) {
         continue;
       }
-
-      // CATEGORIES ICONS
-      const iconsGridItemEl = createIconsGridItem();
-      const icon = categoryIcons[categoryIcon];
 
       // is this monochrome or multicolor?
       // if it is multicolor, the first icon property should have a property called "name"
       // else it is a monochrome
       const iconFirstPropertyName = Object.keys(icon)[0];
       const isMultiColor = icon[iconFirstPropertyName].hasOwnProperty("name");
+
       if (isMultiColor) {
-        // is multicolor
-        const listTitleEl = createItemTitle(categoryIcon);
-        const statesListEl = createIconsStatesList(categoryIcons[categoryIcon]);
-        iconsGridItemEl.appendChild(listTitleEl);
-        iconsGridItemEl.appendChild(statesListEl);
-        iconsGridEl.appendChild(iconsGridItemEl);
-        articleContentEl.appendChild(iconsGridEl);
-        articleMainEl.appendChild(articleContentEl);
-        articleEl.appendChild(articleMainEl);
-        sectionArticlesContainerEl.appendChild(articleEl);
-        sectionEl.appendChild(sectionArticlesContainerEl);
+        const multicolorArticle = renderMulticolorArticle(
+          icon,
+          categoryIcons[icon]
+        );
+        sectionArticlesContainerEl.appendChild(multicolorArticle);
       } else {
-        // // is monochrome
-        const articleHeaderEl = createArticleHeader();
-        for (let iconColor in icon) {
-          const listTitleEl = createItemTitle(iconColor);
-          const statesListEl = createIconsStatesList(icon[iconColor]);
-          iconsGridItemEl.appendChild(listTitleEl);
-          iconsGridItemEl.appendChild(statesListEl);
-          iconsGridEl.appendChild(iconsGridItemEl);
-          articleContentEl.appendChild(iconsGridEl);
-          articleMainEl.appendChild(articleContentEl);
-          articleEl.appendChild(articleHeaderEl);
-          articleEl.appendChild(articleMainEl);
-        }
-        sectionArticlesContainerEl.appendChild(articleEl);
-        sectionEl.appendChild(sectionArticlesContainerEl);
+        // is monochrome
+        const monochromeArticle = renderMonochromeArticle(
+          icon,
+          categoryIcons[icon]
+        );
+        sectionArticlesContainerEl.appendChild(monochromeArticle);
       }
     }
+    sectionEl.appendChild(sectionArticlesContainerEl);
     CONTAINER_EL.appendChild(sectionEl);
   }
 };
 generateIconsForShowcase();
-
-// --icon__objects_attribute--disabled);

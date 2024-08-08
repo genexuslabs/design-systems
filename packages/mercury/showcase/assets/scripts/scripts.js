@@ -3,7 +3,8 @@
 const _URL = new URL(window.location.href);
 const PAGE_URL = `${_URL.origin}${_URL.pathname}`;
 const ARTICLE_HEADER_CLASS = ".article__header";
-const ARTICLE_SELECTOR = ".article[nav]";
+const ARTICLE_SELECTOR = ".article";
+const ARTICLE_SIDEBAR_SELECTOR = ".article[nav]";
 let SIDEBAR_NAV; // A reference to the sidebar nav.
 let CONTAINER_REF;
 let topBarRef = null;
@@ -14,7 +15,7 @@ const HEAD = document.head;
 const BODY = document.querySelector("body");
 const SIDEBAR_DATA_ATTR = "data-sidebar";
 let CURRENT_PAGE_NAV_ITEM; // a reference the navigation item for the actual actual page.
-let PAGE_ARTICLES; // a reference to all the page ".article[nav]"
+let PAGE_ARTICLES; // a reference to all the page ".article"
 
 const includeFavicon = () => {
   const linkElement = document.createElement("link");
@@ -91,13 +92,11 @@ const includeSidebarPageInternalNav = () => {
   if (includeSidebar && CURRENT_PAGE_NAV_ITEM) {
     // CURRENT_PAGE_NAV_ITEM is a reference to the item on the sidebar
     // that refers to the actual page.
-    if (!PAGE_ARTICLES) {
-      PAGE_ARTICLES = document.querySelectorAll(ARTICLE_SELECTOR);
-    }
-    if (PAGE_ARTICLES.length) {
+    SIDEBAR_ARTICLES = document.querySelectorAll(ARTICLE_SIDEBAR_SELECTOR);
+    if (SIDEBAR_ARTICLES.length) {
       const pageUlEl = document.createElement("ul");
       pageUlEl.classList.add("sidebar__list--child");
-      PAGE_ARTICLES.forEach(article => {
+      SIDEBAR_ARTICLES.forEach(article => {
         const hasId = article.hasAttribute("id");
         const hasTitle = article.hasAttribute("data-title");
         const isHidden = article.hasAttribute("hidden");
