@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+  </head>
+  <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">slider</h1>
+            <p class="section__description">
+              A primary HTML slider is a versatile component used to allow users
+              to select a value or range within a predefined spectrum. It is
+              designed to be visually prominent and intuitive, often serving as
+              a control for adjusting settings like volume, brightness, or other
+              continuous data points.
+            </p>
+            <p class="section__description section__description--note">
+              Apply <code>display:grid</code> to the slider's container to make
+              the slider stretch to 100% width.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          enabled
+          =========================== -->
+            <article class="article" nav data-title="enabled">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content d-grid">
+                  <ch-slider
+                    class="slider"
+                    min-value="250"
+                    max-value="500"
+                    show-value
+                    step="10"
+                    value="350"
+                  ></ch-slider>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-1" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup1 = `<ch-slider class="slider"></ch-slider>`;
+                    document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          disabled
+          =========================== -->
+            <article class="article" nav data-title="disabled">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content d-grid">
+                  <ch-slider
+                    class="slider"
+                    min-value="250"
+                    max-value="500"
+                    show-value
+                    step="10"
+                    value="350"
+                    disabled
+                  ></ch-slider>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-2" language="xml" class="code">
+                  </ch-code>
+                  <script>
+                    const markup2 = `<ch-slider class="slider" disabled></ch-slider>`;
+                    document.getElementById("ch-code-2").value = markup2;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
