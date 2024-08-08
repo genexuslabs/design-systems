@@ -48,6 +48,7 @@
 @import "./components/property-grid/property-grid-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
+@import "./components/slider/slider-styles";
 @import "./components/tab/tab-styles";
 @import "./components/tabular-grid/tabular-grid-styles";
 @import "./components/tree-view/tree-view-styles";
@@ -107,6 +108,7 @@
   $icon: true,
   $list-box: true,
   $radio-group: true,
+  $slider: true,
   $tab: true,
   $tabular-grid: true,
   $tree-view: true
@@ -431,6 +433,11 @@
     @include radio-group();
   }
 
+  // slider
+  @if $slider {
+    @include slider();
+  }
+
   // tab
   @if $tab {
     @include tab();
@@ -503,6 +510,7 @@
   $icon: false,
   $list-box: false,
   $radio-group: false,
+  $slider: false,
   $tab: false,
   $tabular-grid: false,
   $tree-view: false
@@ -561,6 +569,7 @@
     $edit: $edit,
     $list-box: $list-box,
     $radio-group: $radio-group,
+    $slider: $slider,
     $tab: $tab,
     $tabular-grid: $tabular-grid,
     $tree-view: $tree-view
