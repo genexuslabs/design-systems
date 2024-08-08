@@ -26,12 +26,7 @@
 
   &--block {
     @include tab-button-padding-inline();
-    &-start {
-      @include tab-button-border-block-start();
-    }
-    &-end {
-      @include tab-button-border-block-end();
-    }
+    @include tab-button-border-block-end();
   }
 
   &--inline {
@@ -73,8 +68,6 @@
 
 @mixin tab(
   $tab-selector: ".tab",
-  $tab-selector-indicator-start: ".tab-indicator-start::part(button block)",
-  $tab-selector-indicator-end: ".tab-indicator-end::part(button block)",
   $tab-caption-selector: ".tab::part(button)",
   $tab-caption--block-selector: ".tab::part(button block)",
   $tab-caption--inline-selector: ".tab::part(button inline)",
@@ -90,12 +83,6 @@
 ) {
   #{$tab-selector} {
     @extend %tab;
-  }
-  #{$tab-selector-indicator-start} {
-    @extend %tab-caption--block-start;
-  }
-  #{$tab-selector-indicator-end} {
-    @extend %tab-caption--block-end;
   }
 
   #{$tab-caption-selector} {

@@ -39,7 +39,7 @@
 // - - - - - - - - - - - - - - - - - - - -
 
 %icon-and-text {
-  @include icon-and-text-common($gap: var(--control__icon-gap));
+  @include icon-and-text-styles($gap: var(--control__icon-gap));
 }
 
 /// @group Icon

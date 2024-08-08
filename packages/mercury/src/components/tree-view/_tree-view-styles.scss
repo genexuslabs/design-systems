@@ -67,8 +67,6 @@
 /// @param {String} $tree-view-selector [".tree-view"] -
 /// @param {String} $drag-preview-selector [".tree-view::part(drag-preview)"] -
 /// @param {String} $drop-selector [".tree-view::part(drop)"] -
-/// @param {String} $item-selector [".tree-view::part(item)"] -
-/// @param {String} $item__group-selector [".tree-view::part(item__group)"] -
 /// @param {String} $item--drag-enter-selector [".tree-view::part(item drag-enter)"] -
 /// @param {String} $item__header-selector [".tree-view::part(item__header)"] -
 /// @param {String} $item__header--not-selected-selector [".tree-view::part(item__header not-selected)"] -
@@ -125,9 +123,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                  Item
   // - - - - - - - - - - - - - - - - - - - -
-  $item-selector: ".tree-view::part(item)",
-  $item__group-selector: ".tree-view::part(item__group)",
-
   $item__header-selector: ".tree-view::part(item__header)",
   $item__header--not-selected-selector:
     ".tree-view::part(item__header not-selected)",
@@ -181,9 +176,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                  Item
   // - - - - - - - - - - - - - - - - - - - -
-  #{$item-selector},
-  #{$item__group-selector} {
-  }
 
   // Drag enter
   #{$item--drag-enter-selector} {

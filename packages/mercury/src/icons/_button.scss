@@ -7,7 +7,7 @@
 }
 
 %button-icon-and-text {
-  @include icon-and-text-common(var(--mer-spacing--xs));
+  @include icon-and-text-styles(var(--mer-spacing--xs));
 }
 
 @mixin button-icon-only($selector: ".button-icon-only") {

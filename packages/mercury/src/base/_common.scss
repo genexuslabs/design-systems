@@ -325,8 +325,11 @@ Tab Caption (Button)
 }
 @mixin tab-button-colors-disabled() {
   --tab-caption__bg-color: var(--tab-caption__bg-color--disabled);
-  --tab-caption__color: var(--tab-caption__bg-color--disabled);
-  --tab-caption__border-color: var(--tab-caption__bg-color--disabled);
+  --tab-caption__color: var(--mer-text__primary--disabled);
+  --tab-caption__border-color--selected-inline: var(
+    --mer-border-color__primary--disabled
+  );
+  --tab-caption__border-color--selected-stack: var(--mer-color__elevation--02);
 }
 @mixin tab-button-colors-selected-inline() {
   --tab-caption__bg-color: var(--tab-caption__bg-color--selected-inline);
