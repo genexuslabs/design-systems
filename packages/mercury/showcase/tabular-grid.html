@@ -2331,12 +2331,19 @@
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
-                <div class="article__description">
-                  <p></p>
+                <div class="article__description section__description--note">
+                  <p>
+                    By default, node icons and node-leaf icons are not
+                    displayed. To display these icons you have to add
+                    <code>tabular-grid-show-node-icons</code> on the
+                    <code>ch-tabular-grid</code>
+                  </p>
                 </div>
 
                 <div class="article__content">
-                  <ch-tabular-grid class="tabular-grid">
+                  <ch-tabular-grid
+                    class="tabular-grid tabular-grid-show-node-icons"
+                  >
                     <ch-tabular-grid-columnset class="tabular-grid-column-set">
                       <ch-tabular-grid-column
                         class="tabular-grid-column"
@@ -2572,7 +2579,7 @@
                     class="code"
                   ></ch-code>
                   <script>
-                    const markup11 = `<ch-tabular-grid class="tabular-grid">
+                    const markup11 = `<ch-tabular-grid class="tabular-grid tabular-grid-show-node-icons">
 
 <ch-tabular-grid-columnset class="tabular-grid-column-set">
   <ch-tabular-grid-column class="tabular-grid-column" column-name="Name" settingable="false" column-type="tree" freeze="start" size="20%"></ch-tabular-grid-column>
@@ -2628,18 +2635,22 @@
             </article>
 
             <!-- ================================== 
-          tree grid
+          property grid
           =================================== -->
             <article class="article" nav data-title="property grid">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
-                <div class="article__description">
-                  <p></p>
+                <div class="article__description section__description--note">
+                  <p>
+                    By default, node icons and node-leaf icons are not
+                    displayed. To display these icons you have to add
+                    <code>tabular-grid-show-node-icons</code> on the
+                    <code>ch-tabular-grid</code>
+                  </p>
                 </div>
-
                 <div class="article__content">
-                  <ch-tabular-grid class="tabular-grid">
+                  <ch-tabular-grid class="tabular-grid grid-show-node-icons">
                     <ch-tabular-grid-columnset class="tabular-grid-column-set">
                       <ch-tabular-grid-column
                         column-name="Property"
@@ -2801,7 +2812,7 @@
                     class="code"
                   ></ch-code>
                   <script>
-                    const markup12 = `<ch-tabular-grid class="tabular-grid">
+                    const markup12 = `<ch-tabular-grid class="tabular-grid tabular-grid-show-node-icons">
   <ch-tabular-grid-columnset class="tabular-grid-column-set">
     <ch-tabular-grid-column column-name="Property" settingable="false" column-type="tree" size="50%" class="tabular-grid-column"></ch-tabular-grid-column>
     <ch-tabular-grid-column column-name="Value" settingable="false" size="minmax(auto, calc(100% - var(--ch-tabular-grid-column-1-width)))" class="tabular-grid-column"></ch-tabular-grid-column>

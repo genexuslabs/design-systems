@@ -39,8 +39,16 @@
   }
   &-node {
     --icon-path: var(--icon__gemini-tools_folder_on-surface--enabled);
-    &--leaf {
+    display: none; // an additional class is required to be displayed.
+    &-visible {
+      display: block;
+    }
+    &-leaf {
       --icon-path: var(--icon__gemini-tools_file_on-surface--enabled);
+      display: none; // an additional class is required to be displayed.
+      &-visible {
+        display: block;
+      }
     }
   }
 }
@@ -319,6 +327,7 @@
 /// @param {String} $tabular-grid-row-actions-selector [".tabular-grid-row-actions"] -
 /// @param {String} $tabular-grid-row-actions__window-selector [".tabular-grid-row-actions::part(window)"] -
 /// @param {String} $tabular-grid-row-actions__main-selector [".tabular-grid-row-actions::part(main)"] -
+/// @param {String} $tabular-grid-show-tree-icons-selector:".tabular-grid-row:has(> .tabular-grid-rowset) > .tabular-grid-cell::part(node-icon), .tabular-grid-cell::part(node-icon)"
 @mixin tabular-grid(
   // ch-tabular-grid
   $tabular-grid-selector: ".tabular-grid",
@@ -390,7 +399,10 @@
   $tabular-grid-row-actions__window-selector:
     ".tabular-grid-row-actions::part(window)",
   $tabular-grid-row-actions__main-selector:
-    ".tabular-grid-row-actions::part(main)"
+    ".tabular-grid-row-actions::part(main)",
+  // additional/utilities selectors
+  $tabular-grid-show-tree-icons-selector:
+    ".tabular-grid-show-node-icons .tabular-grid-row:has(> .tabular-grid-rowset) > .tabular-grid-cell::part(node-icon), .tabular-grid-cell::part(node-icon)"
 ) {
   // - - - - - - - - - - - - - - - - - - - - - - - - -
   //    icons that are present in more than one place
@@ -630,7 +642,7 @@
 
   #{$tabular-grid-cell__node-leaf-icon-selector} {
     @extend %tabular-grid__icon-size;
-    @extend %tabular-grid__icon-node--leaf;
+    @extend %tabular-grid__icon-node-leaf;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -649,5 +661,15 @@
 
   #{$tabular-grid-row-actions__main-selector} {
     @extend %tabular-grid-row-actions__main;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //      additional/utilities classes
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // displays "node" and "node-lead" icons on grid "tree" type
+  #{$tabular-grid-show-tree-icons-selector} {
+    @extend %tabular-grid__icon-node-visible;
+    @extend %tabular-grid__icon-node-leaf-visible;
   }
 }
