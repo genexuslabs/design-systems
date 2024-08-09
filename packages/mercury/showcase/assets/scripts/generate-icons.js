@@ -1,5 +1,6 @@
 import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS-test.js";
 const CONTAINER_EL = document.querySelector(".container");
+const NOT_AVAILABLE_ICON = `url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgMzAgMzAiIHdpZHRoPSIzMHB4IiBoZWlnaHQ9IjMwcHgiPjxwYXRoIGQ9Ik0gMTUgMyBDIDExLjc4MzA1OSAzIDguODY0MTk4MiA0LjI4MDc5MjYgNi43MDcwMzEyIDYuMzQ5NjA5NCBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgNi4zNDc2NTYyIDYuNzA3MDMxMiBDIDQuMjc5Mzc2NiA4Ljg2NDEwNzEgMyAxMS43ODM1MzEgMyAxNSBDIDMgMjEuNjE1NTcyIDguMzg0NDI3NiAyNyAxNSAyNyBDIDE4LjIxMDAwNyAyNyAyMS4xMjM0NzUgMjUuNzI0OTk1IDIzLjI3OTI5NyAyMy42NjQwNjIgQSAxLjAwMDEgMS4wMDAxIDAgMCAwIDIzLjY2MjEwOSAyMy4yODEyNSBDIDI1LjcyNDE2OCAyMS4xMjUyMzUgMjcgMTguMjEwOTk4IDI3IDE1IEMgMjcgOC4zODQ0Mjc2IDIxLjYxNTU3MiAzIDE1IDMgeiBNIDE1IDUgQyAyMC41MzQ2OTIgNSAyNSA5LjQ2NTMwNzkgMjUgMTUgQyAyNSAxNy40MDYzNyAyNC4xNTUxNzMgMTkuNjA5MDYyIDIyLjc0NjA5NCAyMS4zMzIwMzEgTCA4LjY2Nzk2ODggNy4yNTM5MDYyIEMgMTAuMzkwOTM4IDUuODQ0ODI3NCAxMi41OTM2MyA1IDE1IDUgeiBNIDcuMjUzOTA2MiA4LjY2Nzk2ODggTCAyMS4zMzIwMzEgMjIuNzQ2MDk0IEMgMTkuNjA5MDYyIDI0LjE1NTE3MyAxNy40MDYzNyAyNSAxNSAyNSBDIDkuNDY1MzA3OSAyNSA1IDIwLjUzNDY5MiA1IDE1IEMgNSAxMi41OTM2MyA1Ljg0NDgyNzQgMTAuMzkwOTM4IDcuMjUzOTA2MiA4LjY2Nzk2ODggeiIvPjwvc3ZnPg==)`;
 
 /* - - - - - - - - - - - - - - - - - - - -
 Helper Render Functions (Elements)
@@ -61,6 +62,7 @@ const createIconsStatesList = statesObject => {
   const ulElement = document.createElement("ul");
   ulElement.className = "icons-grid__list";
   // list items
+  let notImplementedStates = ["enabled", "hover", "active", "disabled"];
   for (let state in statesObject) {
     const customVar = `var(--icon__${statesObject[state].name})`;
     const liEl = document.createElement("li");
@@ -71,6 +73,11 @@ const createIconsStatesList = statesObject => {
     liEl.appendChild(iEl);
     liEl.appendChild(stateTextNode);
     ulElement.appendChild(liEl);
+    // remove state from notImplementedStates
+    const implementedStateIndex = notImplementedStates.indexOf(state);
+    if (implementedStateIndex !== -1) {
+      notImplementedStates.splice(implementedStateIndex, 1);
+    }
   }
   return ulElement;
 };
