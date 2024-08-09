@@ -1,2577 +1,438 @@
 export const MERCURY_ASSETS = Object.freeze({
     icons: Object.freeze({
-        "windows-tools": Object.freeze({
+        "window-tools": Object.freeze({
             workflow: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_workflow_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_workflow_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_workflow_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_workflow--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_workflow_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_workflow_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_workflow_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_workflow--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_workflow--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_workflow_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_workflow_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_workflow_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_workflow_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_workflow_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_workflow_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_workflow--disabled"
                 })
             }),
             "workflow-settings": Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow-settings_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_workflow-settings_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_workflow-settings_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_workflow-settings_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_workflow-settings--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow-settings_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_workflow-settings_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_workflow-settings_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_workflow-settings_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_workflow-settings--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow-settings_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_workflow-settings--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow-settings_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow-settings_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow-settings_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_workflow-settings_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_workflow-settings_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_workflow-settings_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow-settings_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_workflow-settings_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_workflow-settings_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_workflow-settings_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow-settings_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_workflow-settings_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_workflow-settings--disabled"
                 })
             }),
             "work-with-attributes": Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_work-with-attributes_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_work-with-attributes_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_work-with-attributes_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_work-with-attributes_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_work-with-attributes--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_work-with-attributes_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_work-with-attributes_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_work-with-attributes_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_work-with-attributes_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_work-with-attributes--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_work-with-attributes_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_work-with-attributes--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_work-with-attributes_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_work-with-attributes_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_work-with-attributes_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_work-with-attributes_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_work-with-attributes_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_work-with-attributes_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_work-with-attributes_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_work-with-attributes_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_work-with-attributes_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_work-with-attributes_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_work-with-attributes_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_work-with-attributes_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_work-with-attributes--disabled"
                 })
             }),
             watch: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_watch_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_watch_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_watch_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_watch_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_watch--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_watch_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_watch_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_watch_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_watch_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_watch--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_watch_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_watch--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_watch_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_watch_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_watch_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_watch_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_watch_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_watch_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_watch_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_watch_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_watch_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_watch_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_watch_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_watch_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_watch--disabled"
                 })
             }),
             toolbox: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_toolbox_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_toolbox_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_toolbox_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_toolbox_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_toolbox--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_toolbox_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_toolbox_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_toolbox_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_toolbox_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_toolbox--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_toolbox_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_toolbox--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_toolbox_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_toolbox_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_toolbox_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_toolbox_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_toolbox_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_toolbox_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_toolbox_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_toolbox_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_toolbox_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_toolbox_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_toolbox_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_toolbox_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_toolbox--disabled"
                 })
             }),
             teamdev: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_teamdev_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_teamdev_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_teamdev_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_teamdev_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_teamdev--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_teamdev_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_teamdev_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_teamdev_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_teamdev_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_teamdev--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_teamdev_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_teamdev--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_teamdev_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_teamdev_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_teamdev_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_teamdev_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_teamdev_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_teamdev_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_teamdev_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_teamdev_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_teamdev_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_teamdev_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_teamdev_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_teamdev_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_teamdev--disabled"
                 })
             }),
             services: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_services_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_services_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_services_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_services_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_services--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_services_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_services_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_services_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_services_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_services--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_services_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_services--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_services_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_services_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_services_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_services_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_services_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_services_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_services_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_services_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_services_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_services_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_services_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_services_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_services--disabled"
                 })
             }),
             roles: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_roles_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_roles_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_roles_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_roles_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_roles--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_roles_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_roles_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_roles_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_roles_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_roles--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_roles_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_roles--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_roles_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_roles_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_roles_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_roles_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_roles_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_roles_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_roles_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_roles_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_roles_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_roles_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_roles_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_roles_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_roles--disabled"
                 })
             }),
             rol: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_rol_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_rol_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_rol_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_rol_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_rol--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_rol_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_rol_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_rol_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_rol_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_rol--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_rol_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_rol--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_rol_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_rol_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_rol_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_rol_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_rol_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_rol_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_rol_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_rol_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_rol_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_rol_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_rol_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_rol_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_rol--disabled"
                 })
             }),
             "responsive-sizes": Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_responsive-sizes_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_responsive-sizes_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_responsive-sizes_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_responsive-sizes_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_responsive-sizes--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_responsive-sizes_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_responsive-sizes_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_responsive-sizes_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_responsive-sizes_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_responsive-sizes--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_responsive-sizes_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_responsive-sizes--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_responsive-sizes_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_responsive-sizes_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_responsive-sizes_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_responsive-sizes_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_responsive-sizes_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_responsive-sizes_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_responsive-sizes_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_responsive-sizes_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_responsive-sizes_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_responsive-sizes_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_responsive-sizes_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_responsive-sizes_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_responsive-sizes--disabled"
                 })
             }),
             references: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_references_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_references_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_references_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_references_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_references--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_references_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_references_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_references_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_references_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_references--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_references_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_references--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_references_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_references_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_references_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_references_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_references_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_references_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_references_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_references_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_references_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_references_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_references_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_references_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_references--disabled"
                 })
             }),
             properties: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_properties_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_properties_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_properties_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_properties_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_properties--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_properties_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_properties_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_properties_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_properties_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_properties--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_properties_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_properties--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_properties_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_properties_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_properties_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_properties_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_properties_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_properties_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_properties_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_properties_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_properties_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_properties_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_properties_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_properties_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_properties--disabled"
                 })
             }),
             preferences: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_preferences_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_preferences_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_preferences_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_preferences_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_preferences--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_preferences_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_preferences_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_preferences_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_preferences_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_preferences--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_preferences_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_preferences--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_preferences_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_preferences_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_preferences_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_preferences_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_preferences_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_preferences_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_preferences_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_preferences_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_preferences_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_preferences_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_preferences_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_preferences_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_preferences--disabled"
                 })
             }),
             "performance-test-objects": Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_performance-test-objects_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_performance-test-objects_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_performance-test-objects_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_performance-test-objects_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_performance-test-objects--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_performance-test-objects_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_performance-test-objects_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_performance-test-objects_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_performance-test-objects_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_performance-test-objects--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_performance-test-objects_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_performance-test-objects--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_performance-test-objects_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_performance-test-objects_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_performance-test-objects_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_performance-test-objects_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_performance-test-objects_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_performance-test-objects_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_performance-test-objects_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_performance-test-objects_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_performance-test-objects_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_performance-test-objects_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_performance-test-objects_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_performance-test-objects_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_performance-test-objects--disabled"
                 })
             }),
             output: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_output_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_output_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_output_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_output_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_output--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_output_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_output_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_output_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_output_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_output--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_output_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_output--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_output_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_output_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_output_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_output_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_output_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_output_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_output_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_output_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_output_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_output_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_output_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_output_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_output--disabled"
                 })
             }),
             logout: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_logout_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_logout_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_logout_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_logout_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_logout--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_logout_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_logout_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_logout_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_logout_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_logout--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_logout_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_logout--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_logout_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_logout_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_logout_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_logout_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_logout_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_logout_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_logout_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_logout_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_logout_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_logout_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_logout_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_logout_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_logout--disabled"
                 })
             }),
             "last-changes-view": Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_last-changes-view_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_last-changes-view_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_last-changes-view_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_last-changes-view_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_last-changes-view--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_last-changes-view_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_last-changes-view_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_last-changes-view_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_last-changes-view_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_last-changes-view--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_last-changes-view_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_last-changes-view--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_last-changes-view_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_last-changes-view_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_last-changes-view_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_last-changes-view_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_last-changes-view_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_last-changes-view_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_last-changes-view_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_last-changes-view_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_last-changes-view_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_last-changes-view_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_last-changes-view_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_last-changes-view_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_last-changes-view--disabled"
                 })
             }),
             "kb-explorer": Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_kb-explorer_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_kb-explorer_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_kb-explorer_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_kb-explorer_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_kb-explorer--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_kb-explorer_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_kb-explorer_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_kb-explorer_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_kb-explorer_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_kb-explorer--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_kb-explorer_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_kb-explorer--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_kb-explorer_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_kb-explorer_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_kb-explorer_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_kb-explorer_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_kb-explorer_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_kb-explorer_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_kb-explorer_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_kb-explorer_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_kb-explorer_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_kb-explorer_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_kb-explorer_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_kb-explorer_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_kb-explorer--disabled"
                 })
             }),
             "indexer-monitor": Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_indexer-monitor_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_indexer-monitor_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_indexer-monitor_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_indexer-monitor_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_indexer-monitor--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_indexer-monitor_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_indexer-monitor_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_indexer-monitor_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_indexer-monitor_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_indexer-monitor--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_indexer-monitor_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_indexer-monitor--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_indexer-monitor_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_indexer-monitor_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_indexer-monitor_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_indexer-monitor_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_indexer-monitor_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_indexer-monitor_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_indexer-monitor_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_indexer-monitor_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_indexer-monitor_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_indexer-monitor_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_indexer-monitor_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_indexer-monitor_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_indexer-monitor--disabled"
                 })
             }),
             history: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_history_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_history_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_history_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_history_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_history--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_history_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_history_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_history_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_history_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_history--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_history_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_history--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_history_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_history_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_history_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_history_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_history_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_history_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_history_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_history_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_history_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_history_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_history_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_history_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_history--disabled"
                 })
             }),
             "genexus-cloud": Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_genexus-cloud_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_genexus-cloud_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_genexus-cloud_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_genexus-cloud_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_genexus-cloud--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_genexus-cloud_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_genexus-cloud_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_genexus-cloud_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_genexus-cloud_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_genexus-cloud--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_genexus-cloud_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_genexus-cloud--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_genexus-cloud_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_genexus-cloud_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_genexus-cloud_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_genexus-cloud_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_genexus-cloud_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_genexus-cloud_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_genexus-cloud_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_genexus-cloud_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_genexus-cloud_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_genexus-cloud_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_genexus-cloud_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_genexus-cloud_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_genexus-cloud--disabled"
                 })
             }),
             frontend: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_frontend_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_frontend_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_frontend_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_frontend_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_frontend--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_frontend_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_frontend_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_frontend_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_frontend_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_frontend--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_frontend_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_frontend--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_frontend_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_frontend_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_frontend_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_frontend_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_frontend_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_frontend_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_frontend_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_frontend_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_frontend_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_frontend_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_frontend_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_frontend_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_frontend--disabled"
                 })
             }),
             filter: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_filter_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_filter_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_filter_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_filter--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_filter_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_filter_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_filter_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_filter--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_filter--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_filter_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_filter_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_filter_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_filter_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_filter_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_filter_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_filter--disabled"
                 })
             }),
             "filter-conditions": Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter-conditions_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_filter-conditions_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_filter-conditions_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_filter-conditions_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_filter-conditions--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter-conditions_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_filter-conditions_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_filter-conditions_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_filter-conditions_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_filter-conditions--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter-conditions_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_filter-conditions--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter-conditions_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter-conditions_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter-conditions_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_filter-conditions_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_filter-conditions_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_filter-conditions_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter-conditions_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_filter-conditions_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_filter-conditions_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_filter-conditions_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter-conditions_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_filter-conditions_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_filter-conditions--disabled"
                 })
             }),
             "error-list": Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_error-list_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_error-list_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_error-list_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_error-list_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_error-list--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_error-list_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_error-list_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_error-list_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_error-list_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_error-list--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_error-list_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_error-list--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_error-list_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_error-list_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_error-list_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_error-list_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_error-list_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_error-list_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_error-list_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_error-list_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_error-list_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_error-list_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_error-list_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_error-list_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_error-list--disabled"
                 })
             }),
             debugx: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_debugx_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_debugx_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_debugx_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_debugx_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_debugx--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_debugx_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_debugx_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_debugx_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_debugx_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_debugx--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_debugx_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_debugx--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_debugx_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_debugx_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_debugx_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_debugx_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_debugx_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_debugx_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_debugx_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_debugx_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_debugx_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_debugx_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_debugx_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_debugx_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_debugx--disabled"
                 })
             }),
             datastores: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_datastores_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_datastores_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_datastores_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_datastores_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_datastores--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_datastores_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_datastores_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_datastores_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_datastores_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_datastores--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_datastores_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_datastores--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_datastores_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_datastores_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_datastores_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_datastores_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_datastores_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_datastores_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_datastores_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_datastores_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_datastores_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_datastores_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_datastores_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_datastores_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_datastores--disabled"
                 })
             }),
             "category-groups": Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_category-groups_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_category-groups_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_category-groups_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_category-groups_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_category-groups--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_category-groups_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_category-groups_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_category-groups_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_category-groups_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_category-groups--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_category-groups_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_category-groups--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_category-groups_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_category-groups_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_category-groups_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_category-groups_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_category-groups_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_category-groups_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_category-groups_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_category-groups_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_category-groups_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_category-groups_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_category-groups_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_category-groups_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_category-groups--disabled"
                 })
             }),
             breakpoints: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_breakpoints_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_breakpoints_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_breakpoints_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_breakpoints_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_breakpoints--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_breakpoints_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_breakpoints_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_breakpoints_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_breakpoints_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_breakpoints--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_breakpoints_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_breakpoints--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_breakpoints_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_breakpoints_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_breakpoints_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_breakpoints_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_breakpoints_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_breakpoints_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_breakpoints_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_breakpoints_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_breakpoints_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_breakpoints_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_breakpoints_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_breakpoints_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_breakpoints--disabled"
                 })
             }),
             backend: Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_backend_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_backend_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_backend_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_backend_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_backend--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_backend_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_backend_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_backend_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_backend_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_backend--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_backend_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_backend--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_backend_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_backend_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_backend_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_backend_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_backend_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_backend_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_backend_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_backend_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_backend_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_backend_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_backend_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_backend_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_backend--disabled"
                 })
             }),
             "alphabetical-order": Object.freeze({
-                "on-surface": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_alphabetical-order_on-surface--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_alphabetical-order_on-surface--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_alphabetical-order_on-surface--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_alphabetical-order_on-surface--disabled"
-                    })
+                enabled: Object.freeze({
+                    name: "window-tools_alphabetical-order--enabled"
                 }),
-                "on-primary": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_alphabetical-order_on-primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_alphabetical-order_on-primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_alphabetical-order_on-primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_alphabetical-order_on-primary--disabled"
-                    })
+                hover: Object.freeze({
+                    name: "window-tools_alphabetical-order--hover"
                 }),
-                "on-disabled": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_alphabetical-order_on-disabled--enabled"
-                    })
+                active: Object.freeze({
+                    name: "window-tools_alphabetical-order--active"
                 }),
-                "on-message": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_alphabetical-order_on-message--enabled"
-                    })
-                }),
-                "on-elevation": Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_alphabetical-order_on-elevation--enabled"
-                    })
-                }),
-                primary: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_alphabetical-order_primary--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_alphabetical-order_primary--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_alphabetical-order_primary--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_alphabetical-order_primary--disabled"
-                    })
-                }),
-                neutral: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_alphabetical-order_neutral--enabled"
-                    }),
-                    hover: Object.freeze({
-                        name: "windows-tools_alphabetical-order_neutral--hover"
-                    }),
-                    active: Object.freeze({
-                        name: "windows-tools_alphabetical-order_neutral--active"
-                    }),
-                    disabled: Object.freeze({
-                        name: "windows-tools_alphabetical-order_neutral--disabled"
-                    })
-                }),
-                highlighted: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_alphabetical-order_highlighted--enabled"
-                    })
-                }),
-                bright: Object.freeze({
-                    enabled: Object.freeze({
-                        name: "windows-tools_alphabetical-order_bright--enabled"
-                    })
+                disabled: Object.freeze({
+                    name: "window-tools_alphabetical-order--disabled"
                 })
             })
         }),
@@ -2974,18 +835,18 @@ export const MERCURY_ASSETS = Object.freeze({
                     name: "objects_work-panel--disabled"
                 })
             }),
-            "web-panel": Object.freeze({
+            webpanel: Object.freeze({
                 enabled: Object.freeze({
-                    name: "objects_web-panel--enabled"
+                    name: "objects_webpanel--enabled"
                 }),
                 hover: Object.freeze({
-                    name: "objects_web-panel--hover"
+                    name: "objects_webpanel--hover"
                 }),
                 active: Object.freeze({
-                    name: "objects_web-panel--active"
+                    name: "objects_webpanel--active"
                 }),
                 disabled: Object.freeze({
-                    name: "objects_web-panel--disabled"
+                    name: "objects_webpanel--disabled"
                 })
             }),
             "web-component": Object.freeze({
