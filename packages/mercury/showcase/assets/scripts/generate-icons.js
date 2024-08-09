@@ -79,6 +79,18 @@ const createIconsStatesList = statesObject => {
       notImplementedStates.splice(implementedStateIndex, 1);
     }
   }
+  notImplementedStates.forEach(notImplementedState => {
+    const liEl = document.createElement("li");
+    liEl.classList.add("icon-not-implemented");
+    liEl.classList.add("line-through");
+    const iEl = document.createElement("i");
+    const stateTextNode = document.createTextNode(notImplementedState);
+    iEl.className = "icon icon-sm";
+    iEl.style.setProperty("--icon-path", NOT_AVAILABLE_ICON);
+    liEl.appendChild(iEl);
+    liEl.appendChild(stateTextNode);
+    ulElement.appendChild(liEl);
+  });
   return ulElement;
 };
 const createIconsGridItem = (itemName, itemSatesObject) => {
