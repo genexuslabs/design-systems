@@ -107,9 +107,6 @@ $monochrome-categories: (
 Monochrome lists
 - - - - - - - - - - - */
  
-// windows-tools
-$windows-tools: workflow, workflow-settings, work-with-attributes, watch, toolbox, teamdev, services, roles, rol, responsive-sizes, references, properties, preferences, performance-test-objects, output, logout, last-changes-view, kb-explorer, indexer-monitor, history, genexus-cloud, frontend, filter, filter-conditions, error-list, debugx, datastores, category-groups, breakpoints, backend, alphabetical-order;
- 
 // navigation
 $navigation: pill-outlined, pill-filled, level-up, level-down, gx-arrow-right, drag, chevron-up, chevron-right, chevron-left, chevron-down, bullet, arrow-up, arrow-right, arrow-left, arrow-down, arrow-down-skyblue;
  
@@ -123,7 +120,6 @@ $gemini-tools: warning, success, show-more-vertical, show-more-horizontal, share
 $bpm: timer-6, timer-5, timer-2, timer-1, terminale-4, tasks, subprocess, signal-6, signal-5, signal-4, signal-3, signal-2, signal-1, person, paralell-4, paralell-3, paralell-2, paralell-1, oval, oval-doble, multiple-6, multiple-5, multiple-4, multiple-3, multiple-2, multiple-1, message-6, message-5, message-4, message-3, message-2, message-1, link-4, link-3, escalation-6, escalation-5, escalation-4, escalation-3, escalation-2, escalation-1, error-2, error-1, delete, conditional, conditional-6, conditional-5, conditional-2, conditional-1, compensation-4, compensation-3, compensation-2, compensation-1, cancel-4, cancel-2, arrows;
 
 $all-monochrome-lists: (
-  windows-tools: $windows-tools,
   navigation: $navigation,
   menus: $menus,
   gemini-tools: $gemini-tools,
@@ -144,7 +140,7 @@ $patterns: workwith-for-sd, work-with-web, tabs, tab, structure, row, pattern-ca
 $objects-parts: variables, rules, events, conditions, condition;
  
 // objects
-$objects: workflow, work-panel, web-panel, web-component, version, url-rewrite, transaction, to-be-defined, theme, theme-web, theme-for-sd, table, super-app, subtype-group, structured-data-type, stencil, roles, report, references, query, procedure, patterns, panel-for-sd, orphant-document, offline-database, object, notification-templates, module, module-open, mini-app, menubar, menu, masterpage, main-object, language, knowledge-base, image, generator, generator-category, folder, folder-open, file, external-object, environment-select, environment-no-select, dso, domain, document, document-workflow, diagram, design, deployment-unit, dataview-index, datastore, datastore-category, data-view, data-selector, data-provider, dashboard, customization, conversational-flows, category, calendars, business-process-diagram, bg-color, attribute, api;
+$objects: workflow, work-panel, webpanel, web-component, version, url-rewrite, transaction, to-be-defined, theme, theme-web, theme-for-sd, table, super-app, subtype-group, structured-data-type, stencil, roles, report, references, query, procedure, patterns, panel-for-sd, orphant-document, offline-database, object, notification-templates, module, module-open, mini-app, menubar, menu, masterpage, main-object, language, knowledge-base, image, generator, generator-category, folder, folder-open, file, external-object, environment-select, environment-no-select, dso, domain, document, document-workflow, diagram, design, deployment-unit, dataview-index, datastore, datastore-category, data-view, data-selector, data-provider, dashboard, customization, conversational-flows, category, calendars, business-process-diagram, bg-color, attribute, api;
  
 // gx-test
 $gx-test: unit-test, unit-test-db, ui-test-web, ui-test-sd, test-suite, test-results, test-folder, test-folder-open, screenshot-viewer, run-unit-test, run-ui-test-web, run-ui-test-sd, run-tests, run-test-suite, run-test-cancel, result-warning, result-skipped, result-ok, result-exception, result-error, record-mock, plus, image, explorer, cutfo;
