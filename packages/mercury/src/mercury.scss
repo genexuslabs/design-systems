@@ -371,6 +371,7 @@
     @if $icon-classes {
       @include icon-size-sm();
       @include icon-size-md();
+      @include icon-and-text();
     }
 
     // Layout classes

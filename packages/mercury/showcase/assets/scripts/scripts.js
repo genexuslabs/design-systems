@@ -287,36 +287,36 @@ const includeSidebar = () => {
     SIDEBAR_NAV.classList.add("sidebar__nav");
     aside.appendChild(SIDEBAR_NAV);
 
-    // Create footer element
-    const footer = document.createElement("footer");
-    footer.classList.add("sidebar__footer");
-    aside.appendChild(footer);
+    // // Create footer element
+    // const footer = document.createElement("footer");
+    // footer.classList.add("sidebar__footer");
+    // aside.appendChild(footer);
 
-    // Create anchor element
-    const anchor = document.createElement("a");
-    anchor.classList.add("sidebar__footer-link");
-    anchor.href = "#";
-    footer.appendChild(anchor);
-    // temporary until tokens are ready:
-    anchor.addEventListener("click", () => {
-      alert("Tokens showcase is not ready yet!");
-    });
+    // // Create anchor element
+    // const anchor = document.createElement("a");
+    // anchor.classList.add("sidebar__footer-link");
+    // anchor.href = "#";
+    // footer.appendChild(anchor);
+    // // temporary until tokens are ready:
+    // anchor.addEventListener("click", () => {
+    //   alert("Tokens showcase is not ready yet!");
+    // });
 
-    // Create span elements for footer text
-    const span1 = document.createElement("span");
-    span1.classList.add("sidebar__footer-text");
-    span1.textContent = "⚛️ The Tokens";
+    // // Create span elements for footer text
+    // const span1 = document.createElement("span");
+    // span1.classList.add("sidebar__footer-text");
+    // span1.textContent = "⚛️ The Tokens";
 
-    const span2 = document.createElement("span");
-    span2.classList.add(
-      "sidebar__footer-text",
-      "sidebar__footer-text--the-gold"
-    );
-    span2.textContent = "✨ The Gold !";
+    // const span2 = document.createElement("span");
+    // span2.classList.add(
+    //   "sidebar__footer-text",
+    //   "sidebar__footer-text--the-gold"
+    // );
+    // span2.textContent = "✨ The Gold !";
 
-    // Append span elements to anchor element
-    anchor.appendChild(span1);
-    anchor.appendChild(span2);
+    // // Append span elements to anchor element
+    // anchor.appendChild(span1);
+    // anchor.appendChild(span2);
 
     // Prepend the aside element as the first child of the body
     const body = document.body;

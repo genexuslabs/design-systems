@@ -3,7 +3,7 @@
   --ch-checkbox__option-size: calc(var(--control-tiny__size) / 2);
   @include label-gap-inline();
 
-  &:hover {
+  &--hover {
     @include control-tiny-border-hover();
     &::part(label) {
       @include label-color-hover();
@@ -106,6 +106,10 @@
 ) {
   #{$checkbox-selector} {
     @extend %checkbox;
+
+    &:hover {
+      @extend %checkbox--hover;
+    }
   }
 
   // Input
