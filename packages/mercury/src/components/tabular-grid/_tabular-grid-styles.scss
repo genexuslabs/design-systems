@@ -327,7 +327,7 @@
 /// @param {String} $tabular-grid-row-actions-selector [".tabular-grid-row-actions"] -
 /// @param {String} $tabular-grid-row-actions__window-selector [".tabular-grid-row-actions::part(window)"] -
 /// @param {String} $tabular-grid-row-actions__main-selector [".tabular-grid-row-actions::part(main)"] -
-/// @param {String} $tabular-grid-show-tree-icons-selector:".tabular-grid-row:has(> .tabular-grid-rowset) > .tabular-grid-cell::part(node-icon), .tabular-grid-cell::part(node-icon)"
+/// @param {String} $tabular-grid-show-tree-icons-selector:".tabular-grid-show-node-icons .tabular-grid-row:has(> .tabular-grid-rowset) > .tabular-grid-cell::part(node-icon), .tabular-grid-show-node-icons .tabular-grid-cell::part(node-icon)"
 @mixin tabular-grid(
   // ch-tabular-grid
   $tabular-grid-selector: ".tabular-grid",
@@ -402,7 +402,7 @@
     ".tabular-grid-row-actions::part(main)",
   // additional/utilities selectors
   $tabular-grid-show-tree-icons-selector:
-    ".tabular-grid-show-node-icons .tabular-grid-row:has(> .tabular-grid-rowset) > .tabular-grid-cell::part(node-icon), .tabular-grid-cell::part(node-icon)"
+    ".tabular-grid-show-node-icons .tabular-grid-row:has(> .tabular-grid-rowset) > .tabular-grid-cell::part(node-icon), .tabular-grid-show-node-icons .tabular-grid-cell::part(node-icon)"
 ) {
   // - - - - - - - - - - - - - - - - - - - - - - - - -
   //    icons that are present in more than one place
