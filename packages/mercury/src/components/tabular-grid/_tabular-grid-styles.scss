@@ -39,8 +39,16 @@
   }
   &-node {
     --icon-path: var(--icon__gemini-tools_folder_on-surface--enabled);
-    &--leaf {
+    display: none; // an additional class is required to be displayed.
+    &-visible {
+      display: block;
+    }
+    &-leaf {
       --icon-path: var(--icon__gemini-tools_file_on-surface--enabled);
+      display: none; // an additional class is required to be displayed.
+      &-visible {
+        display: block;
+      }
     }
   }
 }
@@ -53,6 +61,7 @@
   --focus__outline-offset: -2px; // WA since the box-shadow hides the outline-block-end and outline-inline-end.
   --grid-label__gap: var(--mer-spacing--xs);
   --grid-common__gap: var(--mer-spacing--xs);
+  max-block-size: 100%; // TODO: This reset must be placed in the control implementation. This property is a WA.
 
   --indent: 16px;
   @include items-container-colors();
@@ -79,6 +88,11 @@
 // - - - - - - - - - - - - - - - - - - - -
 //         ch-tabular-grid-column
 // - - - - - - - - - - - - - - - - - - - -
+
+%tabular-grid-column {
+  // should equal the tabular-grid background-color
+  background-color: var(--items-container__bg-color);
+}
 
 %tabular-grid-column__bar {
   --grid-label__gap: 0;
@@ -178,6 +192,7 @@
   @include grid-cell-border-inline-block();
   @include control-padding-inline-block();
   @include grid-row-colors-enabled();
+  --item__bg-color: var(--items-container__bg-color);
   border: 0; //WA
 
   &--focused {
@@ -268,6 +283,7 @@
 // ch-tabular-grid-column-set
 /// @param {String} $tabular-grid-column-set [".tabular-grid-column-set"] -
 // ch-tabular-grid-column
+/// @param {String} $tabular-grid-column-selector [".tabular-grid-column"] -
 /// @param {String} $tabular-grid-column__bar-selector [".tabular-grid-column::part(bar)"] -
 /// @param {String} $tabular-grid-column__bar-resize-split-selector [".tabular-grid-column::part(bar-resize-split)"] -
 /// @param {String} $tabular-grid-column__selector-label-selector [".tabular-grid-column::part(selector-label)"] -
@@ -311,6 +327,7 @@
 /// @param {String} $tabular-grid-row-actions-selector [".tabular-grid-row-actions"] -
 /// @param {String} $tabular-grid-row-actions__window-selector [".tabular-grid-row-actions::part(window)"] -
 /// @param {String} $tabular-grid-row-actions__main-selector [".tabular-grid-row-actions::part(main)"] -
+/// @param {String} $tabular-grid-show-tree-icons-selector:".tabular-grid-row:has(> .tabular-grid-rowset) > .tabular-grid-cell::part(node-icon), .tabular-grid-cell::part(node-icon)"
 @mixin tabular-grid(
   // ch-tabular-grid
   $tabular-grid-selector: ".tabular-grid",
@@ -318,6 +335,7 @@
   // ch-tabular-grid-column-set
   $tabular-grid-column-set: ".tabular-grid-column-set",
   // ch-tabular-grid-column
+  $tabular-grid-column-selector: ".tabular-grid-column",
   $tabular-grid-column__bar-selector: ".tabular-grid-column::part(bar)",
   $tabular-grid-column__bar-resize-split-selector:
     ".tabular-grid-column::part(bar-resize-split)",
@@ -381,7 +399,10 @@
   $tabular-grid-row-actions__window-selector:
     ".tabular-grid-row-actions::part(window)",
   $tabular-grid-row-actions__main-selector:
-    ".tabular-grid-row-actions::part(main)"
+    ".tabular-grid-row-actions::part(main)",
+  // additional/utilities selectors
+  $tabular-grid-show-tree-icons-selector:
+    ".tabular-grid-show-node-icons .tabular-grid-row:has(> .tabular-grid-rowset) > .tabular-grid-cell::part(node-icon), .tabular-grid-cell::part(node-icon)"
 ) {
   // - - - - - - - - - - - - - - - - - - - - - - - - -
   //    icons that are present in more than one place
@@ -439,6 +460,10 @@
   // - - - - - - - - - - - - - - - - - - - -
   //          ch-tabular-grid-column
   // - - - - - - - - - - - - - - - - - - - -
+
+  #{$tabular-grid-column-selector} {
+    @extend %tabular-grid-column;
+  }
 
   #{$tabular-grid-column__bar-selector} {
     @extend %tabular-grid-column__bar;
@@ -617,7 +642,7 @@
 
   #{$tabular-grid-cell__node-leaf-icon-selector} {
     @extend %tabular-grid__icon-size;
-    @extend %tabular-grid__icon-node--leaf;
+    @extend %tabular-grid__icon-node-leaf;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -636,5 +661,15 @@
 
   #{$tabular-grid-row-actions__main-selector} {
     @extend %tabular-grid-row-actions__main;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //      additional/utilities classes
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // displays "node" and "node-lead" icons on grid "tree" type
+  #{$tabular-grid-show-tree-icons-selector} {
+    @extend %tabular-grid__icon-node-visible;
+    @extend %tabular-grid__icon-node-leaf-visible;
   }
 }

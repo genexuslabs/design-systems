@@ -1,6 +1,7 @@
 // - - - - - - - - - - - - - - - - - - - -
 //               Icon Sizes
 // - - - - - - - - - - - - - - - - - - - -
+
 %icon-size--sm {
   @include icon-background-common-styles(
     $inline-size: var(--mer-icon__box--sm),
@@ -30,5 +31,21 @@
 @mixin icon-size-md($selector: ".icon-size-md") {
   #{$selector} {
     @extend %icon-size--md;
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - -
+//             Icon and Text
+// - - - - - - - - - - - - - - - - - - - -
+
+%icon-and-text {
+  @include icon-and-text-styles($gap: var(--control__icon-gap));
+}
+
+/// @group Icon
+/// @param {String} $selector [".icon-and-text"] -
+@mixin icon-and-text($selector: ".icon-and-text") {
+  #{$selector} {
+    @extend %icon-and-text;
   }
 }
