@@ -49,11 +49,11 @@
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <ch-combo-box
+                  <ch-combo-box-render
                     accessible-name="Colors"
                     id="combo-box-1"
                     class="combo-box"
-                  ></ch-combo-box>
+                  ></ch-combo-box-render>
                   <script type="module">
                     import { comboBox1Model } from "./assets/models/combo-box.js";
                     const comboBox1 = document.getElementById("combo-box-1");
@@ -66,7 +66,7 @@
                   <ch-code id="ch-code-1" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `<ch-combo-box class="combo-box"></ch-combo-box>`;
+                    const markup1 = `<ch-combo-box-render class="combo-box"></ch-combo-box-render>`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
                 </div>
@@ -83,12 +83,12 @@
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <ch-combo-box
+                  <ch-combo-box-render
                     accessible-name="Colors"
                     id="combo-box-2"
                     class="combo-box"
                     disabled
-                  ></ch-combo-box>
+                  ></ch-combo-box-render>
                   <script type="module">
                     import { comboBox1Model } from "./assets/models/combo-box.js";
                     const comboBox1 = document.getElementById("combo-box-2");
@@ -101,7 +101,7 @@
                   <ch-code id="ch-code-2" language="xml" class="code">
                   </ch-code>
                   <script>
-                    const markup2 = `<ch-combo-box class="combo-box" disabled></ch-combo-box>`;
+                    const markup2 = `<ch-combo-box-render class="combo-box" disabled></ch-combo-box-render>`;
                     document.getElementById("ch-code-2").value = markup2;
                   </script>
                 </div>
