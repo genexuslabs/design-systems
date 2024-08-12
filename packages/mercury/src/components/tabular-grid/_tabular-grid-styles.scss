@@ -202,6 +202,14 @@
   &--selected {
     // to be defined by design
   }
+
+  &--align-block {
+    align-items: center;
+  }
+
+  &--align-inline {
+    justify-content: center;
+  }
 }
 
 %tabular-grid-cell__selector-label {
@@ -297,8 +305,10 @@
 /// @param {String} $tabular-grid-row--selected-selector [".tabular-grid-row[selected]"] -
 /// @param {String} $tabular-grid-row--dragging-selector [".tabular-grid-row[dragging]"] -
 /// @param {String} $tabular-grid-row--highlighted__cell-selector [".tabular-grid-row[highlighted] > .tabular-grid-cell"] -
-// ch-tabular-grid-row  > cell
+// ch-tabular-grid-row > cell
 /// @param {String} $tabular-grid-row--selected__cell-selector [".tabular-grid-row[selected] > .tabular-grid-cell"] -
+/// @param {String} $tabular-grid-align-cells-block-selector [".tabular-grid-align-cells-block .tabular-grid-cell"] -
+/// @param {String} $tabular-grid-align-cells-block-inline [".tabular-grid-align-cells-inline .tabular-grid-cell"] -
 // ch-tabular-grid-rowset
 /// @param {String} $tabular-grid-rowset-selector [".tabular-grid-rowset"] -
 /// @param {String} $tabular-grid-rowset--collapsed__legend-selector [".tabular-grid-rowset[collapsed] > .tabular-grid-rowset-legend"] -
@@ -357,6 +367,10 @@
     ".tabular-grid-row[highlighted] > .tabular-grid-cell",
   $tabular-grid-row--selected__cell-selector:
     ".tabular-grid-row[selected] > .tabular-grid-cell",
+  $tabular-grid-align-cells-block-selector:
+    ".tabular-grid-align-cells-block .tabular-grid-cell",
+  $tabular-grid-align-cells-inline-selector:
+    ".tabular-grid-align-cells-inline .tabular-grid-cell",
   // ch-tabular-grid-rowset
   $tabular-grid-rowset-selector: ".tabular-grid-rowset",
   $tabular-grid-rowset--collapsed__legend-selector:
@@ -643,6 +657,15 @@
   #{$tabular-grid-cell__node-leaf-icon-selector} {
     @extend %tabular-grid__icon-size;
     @extend %tabular-grid__icon-node-leaf;
+  }
+
+  // Alignment
+
+  #{$tabular-grid-align-cells-block-selector} {
+    @extend %tabular-grid-cell--align-block;
+  }
+  #{$tabular-grid-align-cells-inline-selector} {
+    @extend %tabular-grid-cell--align-inline;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
