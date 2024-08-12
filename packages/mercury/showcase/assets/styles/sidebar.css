@@ -53,9 +53,9 @@ General
 .sidebar {
   background-color: var(--sc-sidebar__bg-color);
   color: var(--sc-sidebar__color);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow-y: auto;
 }
 
 /*====================
@@ -109,6 +109,7 @@ Nav
   padding-inline: var(--sc-sidebar-nav__padding-inline);
   font-size: var(--sc-sidebar__font-size);
   flex-grow: 1;
+  overflow-y: auto;
 }
 
 /*====================

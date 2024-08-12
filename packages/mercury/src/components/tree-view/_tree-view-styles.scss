@@ -2,8 +2,9 @@
 
 %tree-view {
   @include tree-view-tokens();
-  font-size: var(--tree-view__font-size);
-  line-height: var(--mer-line-height--regular);
+  @include item-font();
+  @include item-font-size-small();
+  line-height: var(--tree-view-item__line-height);
   min-inline-size: var(--tree-view__min-inline-size);
 }
 
@@ -26,21 +27,23 @@
 }
 
 %tree-view-item__header {
-  border-radius: var(--tree-view-item-header__border-radius);
-  padding-inline-end: var(--tree-view-item-custom__padding-inline-end);
+  @include item-colors-enabled();
+  @include item-border-radius();
+  @include item-border();
 
   &--focus-visible {
     @include focus-outline();
   }
 
   &--not-selected-hover {
-    background-color: var(--tree-view-item__bg-color--hover);
-    color: var(--tree-view-item__color--hover);
+    @include item-colors-hover();
   }
 
   &--selected {
-    background-color: var(--tree-view-item__bg-color--selected);
-    color: var(--tree-view-item__color--selected);
+    @include item-colors-selected();
+    &-hover {
+      @include item-colors-selected-hover();
+    }
   }
 }
 
@@ -117,23 +120,21 @@
   // Drop
   $drop-selector: ".tree-view::part(drop)",
 
-  // Item header
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Item
+  // - - - - - - - - - - - - - - - - - - - -
   $item__header-selector: ".tree-view::part(item__header)",
   $item__header--not-selected-selector:
     ".tree-view::part(item__header not-selected)",
   $item__header--selected-selector: ".tree-view::part(item__header selected)",
 
-  // Item action
   $item__action-selector: ".tree-view::part(item__action)",
   $item__icon-path-selector: ".tree-view::part(uses-icon-path)",
 
-  // Item downloading
   $item__downloading-selector: ".tree-view::part(item__downloading)",
 
-  // Item line
   $item__line-selector: ".tree-view::part(item__line)",
 
-  // Checkbox
   $item__checkbox-selector: ".tree-view::part(item__checkbox)",
   $item__checkbox-input-selector: ".tree-view::part(item__checkbox-input)",
   $item__checkbox-input--disabled-selector:
@@ -175,6 +176,7 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                  Item
   // - - - - - - - - - - - - - - - - - - - -
+
   // Drag enter
   #{$item--drag-enter-selector} {
     @extend %tree-view-item--drag-enter;
@@ -199,6 +201,9 @@
   // Item selected and item with active
   #{$item__header--selected-selector} {
     @extend %tree-view-item__header--selected;
+  }
+  #{$item__header--selected-selector}:hover {
+    @extend %tree-view-item__header--selected-hover;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
