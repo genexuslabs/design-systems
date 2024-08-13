@@ -5,8 +5,8 @@
   position: fixed;
   top: 0;
   left: var(--sc-sidebar__width);
-  width: calc(100vw - var(--sc-sidebar__width));
-  height: var(--sc-top-bar__height);
+  inline-size: calc(100vw - var(--sc-sidebar__width));
+  block-size: var(--sc-top-bar__height);
   z-index: 99;
 
   background-color: var(--mer-color__surface);
