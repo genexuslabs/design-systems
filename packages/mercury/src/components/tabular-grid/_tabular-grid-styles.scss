@@ -58,7 +58,9 @@
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid {
+  @include tabular-grid-tokens();
   --focus__outline-offset: -2px; // WA since the box-shadow hides the outline-block-end and outline-inline-end.
+  font-size: var(--grid__font-size);
   --grid-label__gap: var(--mer-spacing--xs);
   --grid-common__gap: var(--mer-spacing--xs);
   max-block-size: 100%; // TODO: This reset must be placed in the control implementation. This property is a WA.
@@ -71,8 +73,6 @@
   @include tabular-grid-row-tokens();
   @include tabular-grid-column-tokens();
   @include tabular-grid-cell-tokens();
-
-  @include item-font-size-small();
 }
 
 %tabular-grid__main {
@@ -203,12 +203,24 @@
     // to be defined by design
   }
 
-  &--align-block {
+  // Alignment
+  &--align-block-start {
+    align-items: flex-start;
+  }
+  &--align-block-center {
     align-items: center;
   }
-
-  &--align-inline {
+  &--align-block-end {
+    align-items: flex-end;
+  }
+  &--align-inline-start {
+    justify-content: flex-start;
+  }
+  &--align-inline-center {
     justify-content: center;
+  }
+  &--align-inline-end {
+    justify-content: flex-end;
   }
 }
 
@@ -307,8 +319,6 @@
 /// @param {String} $tabular-grid-row--highlighted__cell-selector [".tabular-grid-row[highlighted] > .tabular-grid-cell"] -
 // ch-tabular-grid-row > cell
 /// @param {String} $tabular-grid-row--selected__cell-selector [".tabular-grid-row[selected] > .tabular-grid-cell"] -
-/// @param {String} $tabular-grid-align-cells-block-selector [".tabular-grid-align-cells-block .tabular-grid-cell"] -
-/// @param {String} $tabular-grid-align-cells-block-inline [".tabular-grid-align-cells-inline .tabular-grid-cell"] -
 // ch-tabular-grid-rowset
 /// @param {String} $tabular-grid-rowset-selector [".tabular-grid-rowset"] -
 /// @param {String} $tabular-grid-rowset--collapsed__legend-selector [".tabular-grid-rowset[collapsed] > .tabular-grid-rowset-legend"] -
@@ -333,6 +343,13 @@
 /// @param {String} $tabular-grid-cell__drag-icon-selector [".tabular-grid-cell::part(drag-icon)"] -
 /// @param {String} $tabular-grid-cell__node-icon-selector [".tabular-grid-row:has(> .tabular-grid-rowset) > .tabular-grid-cell::part(node-icon)"] -
 /// @param {String} $tabular-grid-cell__node-leaf-icon-selector [".tabular-grid-cell::part(node-icon)"] -
+// ch-tabular-grid-cell (alignment)
+/// @param {String} $tabular-grid-align-cells-block-start-selector [".tabular-grid-align-cells-block-start .tabular-grid-cell"] -
+/// @param {String} $tabular-grid-align-cells-block-center-selector [".tabular-grid-align-cells-block-center .tabular-grid-cell"] -
+/// @param {String} $tabular-grid-align-cells-block-end-selector [".tabular-grid-align-cells-block-end .tabular-grid-cell"] -
+/// @param {String} $tabular-grid-align-cells-inline-start-selector [".tabular-grid-align-cells-inline-start .tabular-grid-cell"] -
+/// @param {String} $tabular-grid-align-cells-inline-center-selector [".tabular-grid-align-cells-inline-center .tabular-grid-cell"] -
+/// @param {String} $tabular-grid-align-cells-inline-end-selector [".tabular-grid-align-cells-inline-end .tabular-grid-cell"] -
 // row-actions
 /// @param {String} $tabular-grid-row-actions-selector [".tabular-grid-row-actions"] -
 /// @param {String} $tabular-grid-row-actions__window-selector [".tabular-grid-row-actions::part(window)"] -
@@ -367,10 +384,6 @@
     ".tabular-grid-row[highlighted] > .tabular-grid-cell",
   $tabular-grid-row--selected__cell-selector:
     ".tabular-grid-row[selected] > .tabular-grid-cell",
-  $tabular-grid-align-cells-block-selector:
-    ".tabular-grid-align-cells-block .tabular-grid-cell",
-  $tabular-grid-align-cells-inline-selector:
-    ".tabular-grid-align-cells-inline .tabular-grid-cell",
   // ch-tabular-grid-rowset
   $tabular-grid-rowset-selector: ".tabular-grid-rowset",
   $tabular-grid-rowset--collapsed__legend-selector:
@@ -408,6 +421,19 @@
     ".tabular-grid-row:has(> .tabular-grid-rowset) > .tabular-grid-cell::part(node-icon)",
   $tabular-grid-cell__node-leaf-icon-selector:
     ".tabular-grid-cell::part(node-icon)",
+  // ch-tabular-grid-cell (alignment)
+  $tabular-grid-align-cells-block-start-selector:
+    ".tabular-grid-align-cells-block-start .tabular-grid-cell",
+  $tabular-grid-align-cells-block-center-selector:
+    ".tabular-grid-align-cells-block-center .tabular-grid-cell",
+  $tabular-grid-align-cells-block-end-selector:
+    ".tabular-grid-align-cells-block-end .tabular-grid-cell",
+  $tabular-grid-align-cells-inline-start-selector:
+    ".tabular-grid-align-cells-inline-start .tabular-grid-cell",
+  $tabular-grid-align-cells-inline-center-selector:
+    ".tabular-grid-align-cells-inline-center .tabular-grid-cell",
+  $tabular-grid-align-cells-inline-end-selector:
+    ".tabular-grid-align-cells-inline-end .tabular-grid-cell",
   // ch-tabular-grid-row-actions
   $tabular-grid-row-actions-selector: ".tabular-grid-row-actions",
   $tabular-grid-row-actions__window-selector:
@@ -659,13 +685,24 @@
     @extend %tabular-grid__icon-node-leaf;
   }
 
-  // Alignment
-
-  #{$tabular-grid-align-cells-block-selector} {
-    @extend %tabular-grid-cell--align-block;
+  // Cells Alignment
+  #{$tabular-grid-align-cells-block-start-selector} {
+    @extend %tabular-grid-cell--align-block-start;
   }
-  #{$tabular-grid-align-cells-inline-selector} {
-    @extend %tabular-grid-cell--align-inline;
+  #{$tabular-grid-align-cells-block-center-selector} {
+    @extend %tabular-grid-cell--align-block-center;
+  }
+  #{$tabular-grid-align-cells-block-end-selector} {
+    @extend %tabular-grid-cell--align-block-end;
+  }
+  #{$tabular-grid-align-cells-inline-start-selector} {
+    @extend %tabular-grid-cell--align-inline-start;
+  }
+  #{$tabular-grid-align-cells-inline-center-selector} {
+    @extend %tabular-grid-cell--align-inline-center;
+  }
+  #{$tabular-grid-align-cells-inline-end-selector} {
+    @extend %tabular-grid-cell--align-inline-end;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
