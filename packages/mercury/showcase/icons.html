@@ -9,11 +9,14 @@
       html:not(.hydrated) {
         visibility: hidden;
       }
+
+      /*Specific styles only for this page*/
       .icon {
         display: block;
         background-image: var(--icon-path);
         block-size: 24px;
         inline-size: 24px;
+        background-size: contain;
       }
       .icons-grid {
         display: grid;
@@ -37,7 +40,15 @@
         display: flex;
         gap: 16px;
         align-items: center;
-        color: var(--mer-color__neutral-gray--450);
+        color: var(--mer-color__neutral-gray--350);
+      }
+      .not-applicable {
+        text-decoration: line-through;
+        color: var(--mer-text__primary--disabled) !important;
+      }
+      .not-applicable .icon {
+        background-color: var(--mer-icon__primary--disabled);
+        mask-size: 100%;
       }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>

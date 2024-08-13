@@ -82,11 +82,11 @@ const createIconsStatesList = statesObject => {
   notImplementedStates.forEach(notImplementedState => {
     const liEl = document.createElement("li");
     liEl.classList.add("icon-not-implemented");
-    liEl.classList.add("line-through");
+    liEl.classList.add("not-applicable");
     const iEl = document.createElement("i");
     const stateTextNode = document.createTextNode(notImplementedState);
     iEl.className = "icon icon-sm";
-    iEl.style.setProperty("--icon-path", NOT_AVAILABLE_ICON);
+    iEl.style.setProperty("mask-image", NOT_AVAILABLE_ICON);
     liEl.appendChild(iEl);
     liEl.appendChild(stateTextNode);
     ulElement.appendChild(liEl);
