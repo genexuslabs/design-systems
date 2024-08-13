@@ -3,6 +3,19 @@ const CONTAINER_EL = document.querySelector(".container");
 const NOT_AVAILABLE_ICON = `url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgMzAgMzAiIHdpZHRoPSIzMHB4IiBoZWlnaHQ9IjMwcHgiPjxwYXRoIGQ9Ik0gMTUgMyBDIDExLjc4MzA1OSAzIDguODY0MTk4MiA0LjI4MDc5MjYgNi43MDcwMzEyIDYuMzQ5NjA5NCBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgNi4zNDc2NTYyIDYuNzA3MDMxMiBDIDQuMjc5Mzc2NiA4Ljg2NDEwNzEgMyAxMS43ODM1MzEgMyAxNSBDIDMgMjEuNjE1NTcyIDguMzg0NDI3NiAyNyAxNSAyNyBDIDE4LjIxMDAwNyAyNyAyMS4xMjM0NzUgMjUuNzI0OTk1IDIzLjI3OTI5NyAyMy42NjQwNjIgQSAxLjAwMDEgMS4wMDAxIDAgMCAwIDIzLjY2MjEwOSAyMy4yODEyNSBDIDI1LjcyNDE2OCAyMS4xMjUyMzUgMjcgMTguMjEwOTk4IDI3IDE1IEMgMjcgOC4zODQ0Mjc2IDIxLjYxNTU3MiAzIDE1IDMgeiBNIDE1IDUgQyAyMC41MzQ2OTIgNSAyNSA5LjQ2NTMwNzkgMjUgMTUgQyAyNSAxNy40MDYzNyAyNC4xNTUxNzMgMTkuNjA5MDYyIDIyLjc0NjA5NCAyMS4zMzIwMzEgTCA4LjY2Nzk2ODggNy4yNTM5MDYyIEMgMTAuMzkwOTM4IDUuODQ0ODI3NCAxMi41OTM2MyA1IDE1IDUgeiBNIDcuMjUzOTA2MiA4LjY2Nzk2ODggTCAyMS4zMzIwMzEgMjIuNzQ2MDk0IEMgMTkuNjA5MDYyIDI0LjE1NTE3MyAxNy40MDYzNyAyNSAxNSAyNSBDIDkuNDY1MzA3OSAyNSA1IDIwLjUzNDY5MiA1IDE1IEMgNSAxMi41OTM2MyA1Ljg0NDgyNzQgMTAuMzkwOTM4IDcuMjUzOTA2MiA4LjY2Nzk2ODggeiIvPjwvc3ZnPg==)`;
 
 /* - - - - - - - - - - - - - - - - - - - -
+On colors mapping
+- - - - - - - - - - - - - - - - - - - - */
+// the following "on" colors are not definitive.
+// they should be validated with the designer.
+const ON_COLORS = {
+  "on-primary": "--mer-accent__primary",
+  "on-surface": "--mer-color__surface",
+  "on-message": "--mer-color__message-yellow--100",
+  "on-elevation": "--mer-color__elevation--01",
+  "on-disabled": "--mer-accent__primary--disabled"
+};
+
+/* - - - - - - - - - - - - - - - - - - - -
 Helper Render Functions (Elements)
 - - - - - - - - - - - - - - - - - - - - */
 
@@ -57,7 +70,7 @@ const createItemTitle = listTitle => {
   iconsGridItemTitle.textContent = listTitle;
   return iconsGridItemTitle;
 };
-const createIconsStatesList = statesObject => {
+const createIconsStatesList = (statesObject, isMonochrome, itemName) => {
   // list
   const ulElement = document.createElement("ul");
   ulElement.className = "icons-grid__list";
@@ -70,6 +83,15 @@ const createIconsStatesList = statesObject => {
     const stateTextNode = document.createTextNode(state);
     iEl.className = "icon icon-sm";
     iEl.style.setProperty("--icon-path", customVar);
+
+    if (isMonochrome && itemName.includes("on-")) {
+      // some monochrome icons are expected to be applied on specific background colors.
+      // these icons color begin with "on". ie.: "on-surface".
+      const suffix = state !== "enabled" ? `--${state}` : "";
+      const color = `${ON_COLORS[itemName]}${suffix}`;
+      iEl.style.backgroundColor = `var(${color})`;
+    }
+
     liEl.appendChild(iEl);
     liEl.appendChild(stateTextNode);
     ulElement.appendChild(liEl);
@@ -93,13 +115,17 @@ const createIconsStatesList = statesObject => {
   });
   return ulElement;
 };
-const createIconsGridItem = (itemName, itemSatesObject) => {
+const createIconsGridItem = (itemName, itemSatesObject, isMonochrome) => {
   const iconsGridItem = document.createElement("div");
   iconsGridItem.className = "icons-grid__item";
   // item title
   const title = createItemTitle(itemName);
   // list
-  const statesList = createIconsStatesList(itemSatesObject);
+  const statesList = createIconsStatesList(
+    itemSatesObject,
+    isMonochrome,
+    itemName
+  );
   iconsGridItem.appendChild(title);
   iconsGridItem.appendChild(statesList);
   return iconsGridItem;
@@ -115,7 +141,11 @@ const renderMulticolorArticle = (categoryIcons, categoryIcon) => {
   const articleContent = createArticleContent();
   const iconsGridEl = createIconsGrid();
   for (let color in iconColorsObject) {
-    const gridItemEl = createIconsGridItem(color, iconColorsObject[color]);
+    const gridItemEl = createIconsGridItem(
+      color,
+      iconColorsObject[color],
+      false
+    );
     iconsGridEl.appendChild(gridItemEl);
   }
   articleContent.appendChild(iconsGridEl);
@@ -132,7 +162,11 @@ const renderMonochromeArticle = (iconName, iconColorsObject) => {
   const articleContent = createArticleContent();
   const iconsGridEl = createIconsGrid();
   for (let color in iconColorsObject) {
-    const gridItemEl = createIconsGridItem(color, iconColorsObject[color]);
+    const gridItemEl = createIconsGridItem(
+      color,
+      iconColorsObject[color],
+      true
+    );
     iconsGridEl.appendChild(gridItemEl);
   }
   articleContent.appendChild(iconsGridEl);
