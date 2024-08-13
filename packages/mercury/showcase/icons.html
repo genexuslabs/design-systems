@@ -11,12 +11,20 @@
       }
 
       /*Specific styles only for this page*/
+      :root {
+        --icon-showcase-box-size: var(--mer-spacing--xl);
+        --icon-showcase-icon-size: 80%;
+      }
       .icon {
         display: block;
         background-image: var(--icon-path);
-        block-size: 24px;
-        inline-size: 24px;
-        background-size: contain;
+        block-size: var(--icon-showcase-box-size);
+        inline-size: var(--icon-showcase-box-size);
+        background-size: var(--icon-showcase-icon-size);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        border-radius: var(--mer-border__width--md);
       }
       .icons-grid {
         display: grid;
