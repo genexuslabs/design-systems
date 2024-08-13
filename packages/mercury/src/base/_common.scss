@@ -144,6 +144,10 @@ Control Tiny
 Items Container
 ----------------------*/
 
+@mixin items-container-border() {
+  border-style: var(--items-container__border-style);
+  border-width: var(--items-container__border-width);
+}
 @mixin items-container-colors() {
   background-color: var(--items-container__bg-color);
   border-color: var(--items-container__border-color);
@@ -159,11 +163,16 @@ Items Container
 @mixin items-container-gap() {
   gap: var(--items-container__gap);
 }
-@mixin items-container-gap() {
-  gap: var(--items-container__gap);
+@mixin items-container-gap-small() {
+  gap: var(--items-container__gap--small);
 }
 @mixin items-container-max-height() {
   max-block-size: var(--items-container__max-block-size);
+}
+@mixin items-container-separator() {
+  block-size: var(--items-container-separator__block-size);
+  inline-size: var(--items-container-separator__inline-size);
+  background-color: var(--items-container-separator__bg-color);
 }
 
 /*---------------------------------
@@ -206,6 +215,9 @@ Single Item (Every item except grid)
 @mixin item-border-radius() {
   border-radius: var(--item__border-radius);
 }
+@mixin item-gap() {
+  gap: var(--item__gap--regular);
+}
 @mixin item-padding() {
   padding-block: var(--item__padding-block);
   padding-inline: var(--item__padding-inline);
@@ -222,17 +234,21 @@ Single Item (Every item except grid)
 @mixin item-height-large() {
   block-size: var(--item__height--large);
 }
-@mixin item-font-weight() {
+@mixin item-font() {
+  line-height: var(--item__line-height);
+  font-size: var(--item__font-size);
   font-weight: var(--item__font-weight);
 }
-@mixin item-font-weight-header() {
-  font-weight: var(--mer-item-header__font-weight);
-}
 @mixin item-font-size-small() {
-  font-size: var(--item__font-size--small);
+  --item__font-size: var(--item__font-size--small);
 }
-@mixin item-font-size-regular() {
-  font-size: var(--item__font-size--regular);
+@mixin item-font-header() {
+  // item header font-size and line-height has to be the same as
+  // item font-size and line-height in order for the computed height
+  // to be the same.
+  line-height: var(--item__line-height);
+  font-size: var(--item__font-size);
+  font-weight: var(--item-header__font-weight);
 }
 
 /*---------------------------------
@@ -273,6 +289,67 @@ Grid Item
 }
 @mixin grid-rowset-legend-colors-active() {
   --grid-rowset-legend__bg-color: var(--mer-color__elevation--02);
+}
+
+/*----------------------
+Tab Caption (Button)
+----------------------*/
+@mixin tab-button-border-block() {
+  border-block: var(--tab-caption__border-width)
+    var(--tab-caption__border-style) var(--tab-caption__border-color);
+}
+@mixin tab-button-border-block-end() {
+  border-block-end: var(--tab-caption__border-width)
+    var(--tab-caption__border-style) var(--tab-caption__border-color);
+}
+@mixin tab-button-border-block-start() {
+  border-block-start: var(--tab-caption__border-width)
+    var(--tab-caption__border-style) var(--tab-caption__border-color);
+}
+@mixin tab-button-font() {
+  font-size: var(--tab-caption__font-size);
+  font-weight: var(--tab-caption__font-weight);
+}
+@mixin tab-button-gap() {
+  gap: var(--tab-caption__gap);
+}
+@mixin tab-button-colors-enabled() {
+  background-color: var(--tab-caption__bg-color);
+  color: var(--tab-caption__color);
+  border-color: var(--tab-caption__border-color);
+}
+@mixin tab-button-colors-hover() {
+  --tab-caption__bg-color: var(--tab-caption__bg-color--hover);
+  // color remains the same
+  // border-color remains the same
+}
+@mixin tab-button-colors-disabled() {
+  --tab-caption__bg-color: var(--tab-caption__bg-color--disabled);
+  --tab-caption__color: var(--mer-text__primary--disabled);
+  --tab-caption__border-color--selected-inline: var(
+    --mer-border-color__primary--disabled
+  );
+  --tab-caption__border-color--selected-stack: var(--mer-color__elevation--02);
+}
+@mixin tab-button-colors-selected-inline() {
+  --tab-caption__bg-color: var(--tab-caption__bg-color--selected-inline);
+  --tab-caption__color: var(--tab-caption__color--selected);
+  --tab-caption__border-color: var(
+    --tab-caption__border-color--selected-inline
+  );
+}
+@mixin tab-button-colors-selected-stack() {
+  --tab-caption__bg-color: var(--tab-caption__bg-color--selected-stack);
+  --tab-caption__color: var(--tab-caption__color--selected);
+  --tab-caption__border-color: var(--tab-caption__border-color--selected-stack);
+}
+@mixin tab-button-padding-inline() {
+  padding-block: var(--tab-caption__padding-block);
+  padding-inline: var(--tab-caption__padding-inline);
+}
+@mixin tab-button-padding-stack() {
+  padding-block: var(--tab-caption__padding-block);
+  padding-inline: var(--tab-caption__padding-inline);
 }
 
 /*----------------------

@@ -126,17 +126,14 @@
 
   #{$group__header-selector} {
     @include item-colors-enabled();
-    @include item-font-size-regular();
-    @include item-font-weight-header();
-    @include item-height-regular();
-    @include item-padding-inline();
+    @include item-font-header();
+    @include item-padding();
   }
 
   #{$group__header--expandable-selector} {
     @include item-colors-enabled();
-    @include item-height-regular();
-    @include item-padding-inline();
-    @include item-font-weight-header();
+    @include item-font-header();
+    @include item-padding();
     @include item-border-radius();
 
     &:hover {
@@ -157,10 +154,8 @@
     @include item-colors-enabled();
     @include item-border();
     @include item-border-radius();
-    @include item-height-regular();
-    @include item-font-size-regular();
-    @include item-font-weight();
-    @include item-padding-inline();
+    @include item-font();
+    @include item-padding();
   }
 
   #{$item--nested-selector} {

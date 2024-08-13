@@ -1,2577 +1,2947 @@
 export const MERCURY_ASSETS = Object.freeze({
   icons: Object.freeze({
-  "windows-tools": Object.freeze({
+  "window-tools": Object.freeze({
     workflow: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow_on-surface--enabled"
+          name: "window-tools_workflow_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_workflow_on-surface--hover"
+          name: "window-tools_workflow_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_workflow_on-surface--active"
+          name: "window-tools_workflow_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_workflow_on-surface--disabled"
+          name: "window-tools_workflow_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow_on-primary--enabled"
+          name: "window-tools_workflow_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_workflow_on-primary--hover"
+          name: "window-tools_workflow_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_workflow_on-primary--active"
+          name: "window-tools_workflow_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_workflow_on-primary--disabled"
+          name: "window-tools_workflow_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow_on-disabled--enabled"
+          name: "window-tools_workflow_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow_on-message--enabled"
+          name: "window-tools_workflow_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow_on-elevation--enabled"
+          name: "window-tools_workflow_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow_primary--enabled"
+          name: "window-tools_workflow_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_workflow_primary--hover"
+          name: "window-tools_workflow_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_workflow_primary--active"
+          name: "window-tools_workflow_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_workflow_primary--disabled"
+          name: "window-tools_workflow_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow_neutral--enabled"
+          name: "window-tools_workflow_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_workflow_neutral--hover"
+          name: "window-tools_workflow_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_workflow_neutral--active"
+          name: "window-tools_workflow_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_workflow_neutral--disabled"
+          name: "window-tools_workflow_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow_highlighted--enabled"
+          name: "window-tools_workflow_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow_bright--enabled"
+          name: "window-tools_workflow_bright--enabled"
         })
       })
     }),
     "workflow-settings": Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow-settings_on-surface--enabled"
+          name: "window-tools_workflow-settings_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_workflow-settings_on-surface--hover"
+          name: "window-tools_workflow-settings_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_workflow-settings_on-surface--active"
+          name: "window-tools_workflow-settings_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_workflow-settings_on-surface--disabled"
+          name: "window-tools_workflow-settings_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow-settings_on-primary--enabled"
+          name: "window-tools_workflow-settings_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_workflow-settings_on-primary--hover"
+          name: "window-tools_workflow-settings_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_workflow-settings_on-primary--active"
+          name: "window-tools_workflow-settings_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_workflow-settings_on-primary--disabled"
+          name: "window-tools_workflow-settings_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow-settings_on-disabled--enabled"
+          name: "window-tools_workflow-settings_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow-settings_on-message--enabled"
+          name: "window-tools_workflow-settings_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow-settings_on-elevation--enabled"
+          name: "window-tools_workflow-settings_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow-settings_primary--enabled"
+          name: "window-tools_workflow-settings_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_workflow-settings_primary--hover"
+          name: "window-tools_workflow-settings_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_workflow-settings_primary--active"
+          name: "window-tools_workflow-settings_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_workflow-settings_primary--disabled"
+          name: "window-tools_workflow-settings_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow-settings_neutral--enabled"
+          name: "window-tools_workflow-settings_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_workflow-settings_neutral--hover"
+          name: "window-tools_workflow-settings_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_workflow-settings_neutral--active"
+          name: "window-tools_workflow-settings_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_workflow-settings_neutral--disabled"
+          name: "window-tools_workflow-settings_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow-settings_highlighted--enabled"
+          name: "window-tools_workflow-settings_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_workflow-settings_bright--enabled"
+          name: "window-tools_workflow-settings_bright--enabled"
         })
       })
     }),
     "work-with-attributes": Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_work-with-attributes_on-surface--enabled"
+          name: "window-tools_work-with-attributes_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_work-with-attributes_on-surface--hover"
+          name: "window-tools_work-with-attributes_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_work-with-attributes_on-surface--active"
+          name: "window-tools_work-with-attributes_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_work-with-attributes_on-surface--disabled"
+          name: "window-tools_work-with-attributes_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_work-with-attributes_on-primary--enabled"
+          name: "window-tools_work-with-attributes_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_work-with-attributes_on-primary--hover"
+          name: "window-tools_work-with-attributes_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_work-with-attributes_on-primary--active"
+          name: "window-tools_work-with-attributes_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_work-with-attributes_on-primary--disabled"
+          name: "window-tools_work-with-attributes_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_work-with-attributes_on-disabled--enabled"
+          name: "window-tools_work-with-attributes_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_work-with-attributes_on-message--enabled"
+          name: "window-tools_work-with-attributes_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_work-with-attributes_on-elevation--enabled"
+          name: "window-tools_work-with-attributes_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_work-with-attributes_primary--enabled"
+          name: "window-tools_work-with-attributes_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_work-with-attributes_primary--hover"
+          name: "window-tools_work-with-attributes_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_work-with-attributes_primary--active"
+          name: "window-tools_work-with-attributes_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_work-with-attributes_primary--disabled"
+          name: "window-tools_work-with-attributes_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_work-with-attributes_neutral--enabled"
+          name: "window-tools_work-with-attributes_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_work-with-attributes_neutral--hover"
+          name: "window-tools_work-with-attributes_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_work-with-attributes_neutral--active"
+          name: "window-tools_work-with-attributes_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_work-with-attributes_neutral--disabled"
+          name: "window-tools_work-with-attributes_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_work-with-attributes_highlighted--enabled"
+          name: "window-tools_work-with-attributes_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_work-with-attributes_bright--enabled"
+          name: "window-tools_work-with-attributes_bright--enabled"
         })
       })
     }),
     watch: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_watch_on-surface--enabled"
+          name: "window-tools_watch_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_watch_on-surface--hover"
+          name: "window-tools_watch_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_watch_on-surface--active"
+          name: "window-tools_watch_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_watch_on-surface--disabled"
+          name: "window-tools_watch_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_watch_on-primary--enabled"
+          name: "window-tools_watch_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_watch_on-primary--hover"
+          name: "window-tools_watch_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_watch_on-primary--active"
+          name: "window-tools_watch_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_watch_on-primary--disabled"
+          name: "window-tools_watch_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_watch_on-disabled--enabled"
+          name: "window-tools_watch_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_watch_on-message--enabled"
+          name: "window-tools_watch_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_watch_on-elevation--enabled"
+          name: "window-tools_watch_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_watch_primary--enabled"
+          name: "window-tools_watch_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_watch_primary--hover"
+          name: "window-tools_watch_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_watch_primary--active"
+          name: "window-tools_watch_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_watch_primary--disabled"
+          name: "window-tools_watch_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_watch_neutral--enabled"
+          name: "window-tools_watch_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_watch_neutral--hover"
+          name: "window-tools_watch_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_watch_neutral--active"
+          name: "window-tools_watch_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_watch_neutral--disabled"
+          name: "window-tools_watch_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_watch_highlighted--enabled"
+          name: "window-tools_watch_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_watch_bright--enabled"
+          name: "window-tools_watch_bright--enabled"
         })
       })
     }),
     toolbox: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_toolbox_on-surface--enabled"
+          name: "window-tools_toolbox_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_toolbox_on-surface--hover"
+          name: "window-tools_toolbox_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_toolbox_on-surface--active"
+          name: "window-tools_toolbox_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_toolbox_on-surface--disabled"
+          name: "window-tools_toolbox_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_toolbox_on-primary--enabled"
+          name: "window-tools_toolbox_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_toolbox_on-primary--hover"
+          name: "window-tools_toolbox_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_toolbox_on-primary--active"
+          name: "window-tools_toolbox_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_toolbox_on-primary--disabled"
+          name: "window-tools_toolbox_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_toolbox_on-disabled--enabled"
+          name: "window-tools_toolbox_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_toolbox_on-message--enabled"
+          name: "window-tools_toolbox_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_toolbox_on-elevation--enabled"
+          name: "window-tools_toolbox_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_toolbox_primary--enabled"
+          name: "window-tools_toolbox_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_toolbox_primary--hover"
+          name: "window-tools_toolbox_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_toolbox_primary--active"
+          name: "window-tools_toolbox_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_toolbox_primary--disabled"
+          name: "window-tools_toolbox_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_toolbox_neutral--enabled"
+          name: "window-tools_toolbox_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_toolbox_neutral--hover"
+          name: "window-tools_toolbox_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_toolbox_neutral--active"
+          name: "window-tools_toolbox_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_toolbox_neutral--disabled"
+          name: "window-tools_toolbox_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_toolbox_highlighted--enabled"
+          name: "window-tools_toolbox_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_toolbox_bright--enabled"
+          name: "window-tools_toolbox_bright--enabled"
         })
       })
     }),
     teamdev: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_teamdev_on-surface--enabled"
+          name: "window-tools_teamdev_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_teamdev_on-surface--hover"
+          name: "window-tools_teamdev_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_teamdev_on-surface--active"
+          name: "window-tools_teamdev_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_teamdev_on-surface--disabled"
+          name: "window-tools_teamdev_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_teamdev_on-primary--enabled"
+          name: "window-tools_teamdev_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_teamdev_on-primary--hover"
+          name: "window-tools_teamdev_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_teamdev_on-primary--active"
+          name: "window-tools_teamdev_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_teamdev_on-primary--disabled"
+          name: "window-tools_teamdev_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_teamdev_on-disabled--enabled"
+          name: "window-tools_teamdev_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_teamdev_on-message--enabled"
+          name: "window-tools_teamdev_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_teamdev_on-elevation--enabled"
+          name: "window-tools_teamdev_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_teamdev_primary--enabled"
+          name: "window-tools_teamdev_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_teamdev_primary--hover"
+          name: "window-tools_teamdev_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_teamdev_primary--active"
+          name: "window-tools_teamdev_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_teamdev_primary--disabled"
+          name: "window-tools_teamdev_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_teamdev_neutral--enabled"
+          name: "window-tools_teamdev_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_teamdev_neutral--hover"
+          name: "window-tools_teamdev_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_teamdev_neutral--active"
+          name: "window-tools_teamdev_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_teamdev_neutral--disabled"
+          name: "window-tools_teamdev_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_teamdev_highlighted--enabled"
+          name: "window-tools_teamdev_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_teamdev_bright--enabled"
+          name: "window-tools_teamdev_bright--enabled"
         })
       })
     }),
     services: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_services_on-surface--enabled"
+          name: "window-tools_services_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_services_on-surface--hover"
+          name: "window-tools_services_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_services_on-surface--active"
+          name: "window-tools_services_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_services_on-surface--disabled"
+          name: "window-tools_services_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_services_on-primary--enabled"
+          name: "window-tools_services_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_services_on-primary--hover"
+          name: "window-tools_services_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_services_on-primary--active"
+          name: "window-tools_services_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_services_on-primary--disabled"
+          name: "window-tools_services_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_services_on-disabled--enabled"
+          name: "window-tools_services_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_services_on-message--enabled"
+          name: "window-tools_services_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_services_on-elevation--enabled"
+          name: "window-tools_services_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_services_primary--enabled"
+          name: "window-tools_services_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_services_primary--hover"
+          name: "window-tools_services_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_services_primary--active"
+          name: "window-tools_services_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_services_primary--disabled"
+          name: "window-tools_services_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_services_neutral--enabled"
+          name: "window-tools_services_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_services_neutral--hover"
+          name: "window-tools_services_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_services_neutral--active"
+          name: "window-tools_services_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_services_neutral--disabled"
+          name: "window-tools_services_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_services_highlighted--enabled"
+          name: "window-tools_services_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_services_bright--enabled"
+          name: "window-tools_services_bright--enabled"
         })
       })
     }),
     roles: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_roles_on-surface--enabled"
+          name: "window-tools_roles_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_roles_on-surface--hover"
+          name: "window-tools_roles_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_roles_on-surface--active"
+          name: "window-tools_roles_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_roles_on-surface--disabled"
+          name: "window-tools_roles_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_roles_on-primary--enabled"
+          name: "window-tools_roles_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_roles_on-primary--hover"
+          name: "window-tools_roles_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_roles_on-primary--active"
+          name: "window-tools_roles_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_roles_on-primary--disabled"
+          name: "window-tools_roles_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_roles_on-disabled--enabled"
+          name: "window-tools_roles_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_roles_on-message--enabled"
+          name: "window-tools_roles_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_roles_on-elevation--enabled"
+          name: "window-tools_roles_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_roles_primary--enabled"
+          name: "window-tools_roles_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_roles_primary--hover"
+          name: "window-tools_roles_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_roles_primary--active"
+          name: "window-tools_roles_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_roles_primary--disabled"
+          name: "window-tools_roles_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_roles_neutral--enabled"
+          name: "window-tools_roles_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_roles_neutral--hover"
+          name: "window-tools_roles_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_roles_neutral--active"
+          name: "window-tools_roles_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_roles_neutral--disabled"
+          name: "window-tools_roles_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_roles_highlighted--enabled"
+          name: "window-tools_roles_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_roles_bright--enabled"
+          name: "window-tools_roles_bright--enabled"
         })
       })
     }),
     rol: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_rol_on-surface--enabled"
+          name: "window-tools_rol_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_rol_on-surface--hover"
+          name: "window-tools_rol_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_rol_on-surface--active"
+          name: "window-tools_rol_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_rol_on-surface--disabled"
+          name: "window-tools_rol_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_rol_on-primary--enabled"
+          name: "window-tools_rol_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_rol_on-primary--hover"
+          name: "window-tools_rol_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_rol_on-primary--active"
+          name: "window-tools_rol_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_rol_on-primary--disabled"
+          name: "window-tools_rol_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_rol_on-disabled--enabled"
+          name: "window-tools_rol_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_rol_on-message--enabled"
+          name: "window-tools_rol_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_rol_on-elevation--enabled"
+          name: "window-tools_rol_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_rol_primary--enabled"
+          name: "window-tools_rol_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_rol_primary--hover"
+          name: "window-tools_rol_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_rol_primary--active"
+          name: "window-tools_rol_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_rol_primary--disabled"
+          name: "window-tools_rol_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_rol_neutral--enabled"
+          name: "window-tools_rol_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_rol_neutral--hover"
+          name: "window-tools_rol_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_rol_neutral--active"
+          name: "window-tools_rol_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_rol_neutral--disabled"
+          name: "window-tools_rol_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_rol_highlighted--enabled"
+          name: "window-tools_rol_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_rol_bright--enabled"
+          name: "window-tools_rol_bright--enabled"
         })
       })
     }),
     "responsive-sizes": Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_responsive-sizes_on-surface--enabled"
+          name: "window-tools_responsive-sizes_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_responsive-sizes_on-surface--hover"
+          name: "window-tools_responsive-sizes_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_responsive-sizes_on-surface--active"
+          name: "window-tools_responsive-sizes_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_responsive-sizes_on-surface--disabled"
+          name: "window-tools_responsive-sizes_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_responsive-sizes_on-primary--enabled"
+          name: "window-tools_responsive-sizes_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_responsive-sizes_on-primary--hover"
+          name: "window-tools_responsive-sizes_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_responsive-sizes_on-primary--active"
+          name: "window-tools_responsive-sizes_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_responsive-sizes_on-primary--disabled"
+          name: "window-tools_responsive-sizes_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_responsive-sizes_on-disabled--enabled"
+          name: "window-tools_responsive-sizes_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_responsive-sizes_on-message--enabled"
+          name: "window-tools_responsive-sizes_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_responsive-sizes_on-elevation--enabled"
+          name: "window-tools_responsive-sizes_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_responsive-sizes_primary--enabled"
+          name: "window-tools_responsive-sizes_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_responsive-sizes_primary--hover"
+          name: "window-tools_responsive-sizes_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_responsive-sizes_primary--active"
+          name: "window-tools_responsive-sizes_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_responsive-sizes_primary--disabled"
+          name: "window-tools_responsive-sizes_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_responsive-sizes_neutral--enabled"
+          name: "window-tools_responsive-sizes_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_responsive-sizes_neutral--hover"
+          name: "window-tools_responsive-sizes_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_responsive-sizes_neutral--active"
+          name: "window-tools_responsive-sizes_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_responsive-sizes_neutral--disabled"
+          name: "window-tools_responsive-sizes_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_responsive-sizes_highlighted--enabled"
+          name: "window-tools_responsive-sizes_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_responsive-sizes_bright--enabled"
+          name: "window-tools_responsive-sizes_bright--enabled"
         })
       })
     }),
     references: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_references_on-surface--enabled"
+          name: "window-tools_references_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_references_on-surface--hover"
+          name: "window-tools_references_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_references_on-surface--active"
+          name: "window-tools_references_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_references_on-surface--disabled"
+          name: "window-tools_references_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_references_on-primary--enabled"
+          name: "window-tools_references_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_references_on-primary--hover"
+          name: "window-tools_references_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_references_on-primary--active"
+          name: "window-tools_references_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_references_on-primary--disabled"
+          name: "window-tools_references_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_references_on-disabled--enabled"
+          name: "window-tools_references_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_references_on-message--enabled"
+          name: "window-tools_references_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_references_on-elevation--enabled"
+          name: "window-tools_references_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_references_primary--enabled"
+          name: "window-tools_references_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_references_primary--hover"
+          name: "window-tools_references_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_references_primary--active"
+          name: "window-tools_references_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_references_primary--disabled"
+          name: "window-tools_references_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_references_neutral--enabled"
+          name: "window-tools_references_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_references_neutral--hover"
+          name: "window-tools_references_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_references_neutral--active"
+          name: "window-tools_references_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_references_neutral--disabled"
+          name: "window-tools_references_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_references_highlighted--enabled"
+          name: "window-tools_references_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_references_bright--enabled"
+          name: "window-tools_references_bright--enabled"
         })
       })
     }),
     properties: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_properties_on-surface--enabled"
+          name: "window-tools_properties_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_properties_on-surface--hover"
+          name: "window-tools_properties_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_properties_on-surface--active"
+          name: "window-tools_properties_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_properties_on-surface--disabled"
+          name: "window-tools_properties_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_properties_on-primary--enabled"
+          name: "window-tools_properties_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_properties_on-primary--hover"
+          name: "window-tools_properties_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_properties_on-primary--active"
+          name: "window-tools_properties_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_properties_on-primary--disabled"
+          name: "window-tools_properties_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_properties_on-disabled--enabled"
+          name: "window-tools_properties_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_properties_on-message--enabled"
+          name: "window-tools_properties_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_properties_on-elevation--enabled"
+          name: "window-tools_properties_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_properties_primary--enabled"
+          name: "window-tools_properties_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_properties_primary--hover"
+          name: "window-tools_properties_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_properties_primary--active"
+          name: "window-tools_properties_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_properties_primary--disabled"
+          name: "window-tools_properties_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_properties_neutral--enabled"
+          name: "window-tools_properties_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_properties_neutral--hover"
+          name: "window-tools_properties_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_properties_neutral--active"
+          name: "window-tools_properties_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_properties_neutral--disabled"
+          name: "window-tools_properties_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_properties_highlighted--enabled"
+          name: "window-tools_properties_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_properties_bright--enabled"
+          name: "window-tools_properties_bright--enabled"
         })
       })
     }),
     preferences: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_preferences_on-surface--enabled"
+          name: "window-tools_preferences_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_preferences_on-surface--hover"
+          name: "window-tools_preferences_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_preferences_on-surface--active"
+          name: "window-tools_preferences_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_preferences_on-surface--disabled"
+          name: "window-tools_preferences_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_preferences_on-primary--enabled"
+          name: "window-tools_preferences_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_preferences_on-primary--hover"
+          name: "window-tools_preferences_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_preferences_on-primary--active"
+          name: "window-tools_preferences_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_preferences_on-primary--disabled"
+          name: "window-tools_preferences_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_preferences_on-disabled--enabled"
+          name: "window-tools_preferences_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_preferences_on-message--enabled"
+          name: "window-tools_preferences_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_preferences_on-elevation--enabled"
+          name: "window-tools_preferences_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_preferences_primary--enabled"
+          name: "window-tools_preferences_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_preferences_primary--hover"
+          name: "window-tools_preferences_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_preferences_primary--active"
+          name: "window-tools_preferences_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_preferences_primary--disabled"
+          name: "window-tools_preferences_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_preferences_neutral--enabled"
+          name: "window-tools_preferences_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_preferences_neutral--hover"
+          name: "window-tools_preferences_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_preferences_neutral--active"
+          name: "window-tools_preferences_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_preferences_neutral--disabled"
+          name: "window-tools_preferences_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_preferences_highlighted--enabled"
+          name: "window-tools_preferences_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_preferences_bright--enabled"
+          name: "window-tools_preferences_bright--enabled"
         })
       })
     }),
     "performance-test-objects": Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_performance-test-objects_on-surface--enabled"
+          name: "window-tools_performance-test-objects_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_performance-test-objects_on-surface--hover"
+          name: "window-tools_performance-test-objects_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_performance-test-objects_on-surface--active"
+          name: "window-tools_performance-test-objects_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_performance-test-objects_on-surface--disabled"
+          name: "window-tools_performance-test-objects_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_performance-test-objects_on-primary--enabled"
+          name: "window-tools_performance-test-objects_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_performance-test-objects_on-primary--hover"
+          name: "window-tools_performance-test-objects_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_performance-test-objects_on-primary--active"
+          name: "window-tools_performance-test-objects_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_performance-test-objects_on-primary--disabled"
+          name: "window-tools_performance-test-objects_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_performance-test-objects_on-disabled--enabled"
+          name: "window-tools_performance-test-objects_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_performance-test-objects_on-message--enabled"
+          name: "window-tools_performance-test-objects_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_performance-test-objects_on-elevation--enabled"
+          name: "window-tools_performance-test-objects_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_performance-test-objects_primary--enabled"
+          name: "window-tools_performance-test-objects_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_performance-test-objects_primary--hover"
+          name: "window-tools_performance-test-objects_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_performance-test-objects_primary--active"
+          name: "window-tools_performance-test-objects_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_performance-test-objects_primary--disabled"
+          name: "window-tools_performance-test-objects_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_performance-test-objects_neutral--enabled"
+          name: "window-tools_performance-test-objects_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_performance-test-objects_neutral--hover"
+          name: "window-tools_performance-test-objects_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_performance-test-objects_neutral--active"
+          name: "window-tools_performance-test-objects_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_performance-test-objects_neutral--disabled"
+          name: "window-tools_performance-test-objects_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_performance-test-objects_highlighted--enabled"
+          name: "window-tools_performance-test-objects_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_performance-test-objects_bright--enabled"
+          name: "window-tools_performance-test-objects_bright--enabled"
         })
       })
     }),
     output: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_output_on-surface--enabled"
+          name: "window-tools_output_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_output_on-surface--hover"
+          name: "window-tools_output_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_output_on-surface--active"
+          name: "window-tools_output_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_output_on-surface--disabled"
+          name: "window-tools_output_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_output_on-primary--enabled"
+          name: "window-tools_output_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_output_on-primary--hover"
+          name: "window-tools_output_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_output_on-primary--active"
+          name: "window-tools_output_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_output_on-primary--disabled"
+          name: "window-tools_output_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_output_on-disabled--enabled"
+          name: "window-tools_output_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_output_on-message--enabled"
+          name: "window-tools_output_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_output_on-elevation--enabled"
+          name: "window-tools_output_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_output_primary--enabled"
+          name: "window-tools_output_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_output_primary--hover"
+          name: "window-tools_output_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_output_primary--active"
+          name: "window-tools_output_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_output_primary--disabled"
+          name: "window-tools_output_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_output_neutral--enabled"
+          name: "window-tools_output_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_output_neutral--hover"
+          name: "window-tools_output_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_output_neutral--active"
+          name: "window-tools_output_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_output_neutral--disabled"
+          name: "window-tools_output_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_output_highlighted--enabled"
+          name: "window-tools_output_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_output_bright--enabled"
+          name: "window-tools_output_bright--enabled"
         })
       })
     }),
     logout: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_logout_on-surface--enabled"
+          name: "window-tools_logout_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_logout_on-surface--hover"
+          name: "window-tools_logout_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_logout_on-surface--active"
+          name: "window-tools_logout_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_logout_on-surface--disabled"
+          name: "window-tools_logout_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_logout_on-primary--enabled"
+          name: "window-tools_logout_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_logout_on-primary--hover"
+          name: "window-tools_logout_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_logout_on-primary--active"
+          name: "window-tools_logout_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_logout_on-primary--disabled"
+          name: "window-tools_logout_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_logout_on-disabled--enabled"
+          name: "window-tools_logout_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_logout_on-message--enabled"
+          name: "window-tools_logout_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_logout_on-elevation--enabled"
+          name: "window-tools_logout_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_logout_primary--enabled"
+          name: "window-tools_logout_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_logout_primary--hover"
+          name: "window-tools_logout_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_logout_primary--active"
+          name: "window-tools_logout_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_logout_primary--disabled"
+          name: "window-tools_logout_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_logout_neutral--enabled"
+          name: "window-tools_logout_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_logout_neutral--hover"
+          name: "window-tools_logout_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_logout_neutral--active"
+          name: "window-tools_logout_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_logout_neutral--disabled"
+          name: "window-tools_logout_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_logout_highlighted--enabled"
+          name: "window-tools_logout_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_logout_bright--enabled"
+          name: "window-tools_logout_bright--enabled"
         })
       })
     }),
     "last-changes-view": Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_last-changes-view_on-surface--enabled"
+          name: "window-tools_last-changes-view_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_last-changes-view_on-surface--hover"
+          name: "window-tools_last-changes-view_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_last-changes-view_on-surface--active"
+          name: "window-tools_last-changes-view_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_last-changes-view_on-surface--disabled"
+          name: "window-tools_last-changes-view_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_last-changes-view_on-primary--enabled"
+          name: "window-tools_last-changes-view_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_last-changes-view_on-primary--hover"
+          name: "window-tools_last-changes-view_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_last-changes-view_on-primary--active"
+          name: "window-tools_last-changes-view_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_last-changes-view_on-primary--disabled"
+          name: "window-tools_last-changes-view_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_last-changes-view_on-disabled--enabled"
+          name: "window-tools_last-changes-view_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_last-changes-view_on-message--enabled"
+          name: "window-tools_last-changes-view_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_last-changes-view_on-elevation--enabled"
+          name: "window-tools_last-changes-view_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_last-changes-view_primary--enabled"
+          name: "window-tools_last-changes-view_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_last-changes-view_primary--hover"
+          name: "window-tools_last-changes-view_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_last-changes-view_primary--active"
+          name: "window-tools_last-changes-view_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_last-changes-view_primary--disabled"
+          name: "window-tools_last-changes-view_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_last-changes-view_neutral--enabled"
+          name: "window-tools_last-changes-view_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_last-changes-view_neutral--hover"
+          name: "window-tools_last-changes-view_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_last-changes-view_neutral--active"
+          name: "window-tools_last-changes-view_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_last-changes-view_neutral--disabled"
+          name: "window-tools_last-changes-view_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_last-changes-view_highlighted--enabled"
+          name: "window-tools_last-changes-view_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_last-changes-view_bright--enabled"
+          name: "window-tools_last-changes-view_bright--enabled"
         })
       })
     }),
     "kb-explorer": Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_kb-explorer_on-surface--enabled"
+          name: "window-tools_kb-explorer_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_kb-explorer_on-surface--hover"
+          name: "window-tools_kb-explorer_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_kb-explorer_on-surface--active"
+          name: "window-tools_kb-explorer_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_kb-explorer_on-surface--disabled"
+          name: "window-tools_kb-explorer_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_kb-explorer_on-primary--enabled"
+          name: "window-tools_kb-explorer_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_kb-explorer_on-primary--hover"
+          name: "window-tools_kb-explorer_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_kb-explorer_on-primary--active"
+          name: "window-tools_kb-explorer_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_kb-explorer_on-primary--disabled"
+          name: "window-tools_kb-explorer_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_kb-explorer_on-disabled--enabled"
+          name: "window-tools_kb-explorer_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_kb-explorer_on-message--enabled"
+          name: "window-tools_kb-explorer_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_kb-explorer_on-elevation--enabled"
+          name: "window-tools_kb-explorer_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_kb-explorer_primary--enabled"
+          name: "window-tools_kb-explorer_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_kb-explorer_primary--hover"
+          name: "window-tools_kb-explorer_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_kb-explorer_primary--active"
+          name: "window-tools_kb-explorer_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_kb-explorer_primary--disabled"
+          name: "window-tools_kb-explorer_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_kb-explorer_neutral--enabled"
+          name: "window-tools_kb-explorer_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_kb-explorer_neutral--hover"
+          name: "window-tools_kb-explorer_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_kb-explorer_neutral--active"
+          name: "window-tools_kb-explorer_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_kb-explorer_neutral--disabled"
+          name: "window-tools_kb-explorer_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_kb-explorer_highlighted--enabled"
+          name: "window-tools_kb-explorer_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_kb-explorer_bright--enabled"
+          name: "window-tools_kb-explorer_bright--enabled"
         })
       })
     }),
     "indexer-monitor": Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_indexer-monitor_on-surface--enabled"
+          name: "window-tools_indexer-monitor_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_indexer-monitor_on-surface--hover"
+          name: "window-tools_indexer-monitor_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_indexer-monitor_on-surface--active"
+          name: "window-tools_indexer-monitor_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_indexer-monitor_on-surface--disabled"
+          name: "window-tools_indexer-monitor_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_indexer-monitor_on-primary--enabled"
+          name: "window-tools_indexer-monitor_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_indexer-monitor_on-primary--hover"
+          name: "window-tools_indexer-monitor_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_indexer-monitor_on-primary--active"
+          name: "window-tools_indexer-monitor_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_indexer-monitor_on-primary--disabled"
+          name: "window-tools_indexer-monitor_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_indexer-monitor_on-disabled--enabled"
+          name: "window-tools_indexer-monitor_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_indexer-monitor_on-message--enabled"
+          name: "window-tools_indexer-monitor_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_indexer-monitor_on-elevation--enabled"
+          name: "window-tools_indexer-monitor_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_indexer-monitor_primary--enabled"
+          name: "window-tools_indexer-monitor_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_indexer-monitor_primary--hover"
+          name: "window-tools_indexer-monitor_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_indexer-monitor_primary--active"
+          name: "window-tools_indexer-monitor_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_indexer-monitor_primary--disabled"
+          name: "window-tools_indexer-monitor_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_indexer-monitor_neutral--enabled"
+          name: "window-tools_indexer-monitor_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_indexer-monitor_neutral--hover"
+          name: "window-tools_indexer-monitor_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_indexer-monitor_neutral--active"
+          name: "window-tools_indexer-monitor_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_indexer-monitor_neutral--disabled"
+          name: "window-tools_indexer-monitor_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_indexer-monitor_highlighted--enabled"
+          name: "window-tools_indexer-monitor_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_indexer-monitor_bright--enabled"
+          name: "window-tools_indexer-monitor_bright--enabled"
         })
       })
     }),
     history: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_history_on-surface--enabled"
+          name: "window-tools_history_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_history_on-surface--hover"
+          name: "window-tools_history_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_history_on-surface--active"
+          name: "window-tools_history_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_history_on-surface--disabled"
+          name: "window-tools_history_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_history_on-primary--enabled"
+          name: "window-tools_history_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_history_on-primary--hover"
+          name: "window-tools_history_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_history_on-primary--active"
+          name: "window-tools_history_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_history_on-primary--disabled"
+          name: "window-tools_history_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_history_on-disabled--enabled"
+          name: "window-tools_history_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_history_on-message--enabled"
+          name: "window-tools_history_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_history_on-elevation--enabled"
+          name: "window-tools_history_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_history_primary--enabled"
+          name: "window-tools_history_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_history_primary--hover"
+          name: "window-tools_history_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_history_primary--active"
+          name: "window-tools_history_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_history_primary--disabled"
+          name: "window-tools_history_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_history_neutral--enabled"
+          name: "window-tools_history_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_history_neutral--hover"
+          name: "window-tools_history_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_history_neutral--active"
+          name: "window-tools_history_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_history_neutral--disabled"
+          name: "window-tools_history_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_history_highlighted--enabled"
+          name: "window-tools_history_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_history_bright--enabled"
+          name: "window-tools_history_bright--enabled"
         })
       })
     }),
     "genexus-cloud": Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_genexus-cloud_on-surface--enabled"
+          name: "window-tools_genexus-cloud_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_genexus-cloud_on-surface--hover"
+          name: "window-tools_genexus-cloud_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_genexus-cloud_on-surface--active"
+          name: "window-tools_genexus-cloud_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_genexus-cloud_on-surface--disabled"
+          name: "window-tools_genexus-cloud_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_genexus-cloud_on-primary--enabled"
+          name: "window-tools_genexus-cloud_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_genexus-cloud_on-primary--hover"
+          name: "window-tools_genexus-cloud_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_genexus-cloud_on-primary--active"
+          name: "window-tools_genexus-cloud_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_genexus-cloud_on-primary--disabled"
+          name: "window-tools_genexus-cloud_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_genexus-cloud_on-disabled--enabled"
+          name: "window-tools_genexus-cloud_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_genexus-cloud_on-message--enabled"
+          name: "window-tools_genexus-cloud_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_genexus-cloud_on-elevation--enabled"
+          name: "window-tools_genexus-cloud_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_genexus-cloud_primary--enabled"
+          name: "window-tools_genexus-cloud_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_genexus-cloud_primary--hover"
+          name: "window-tools_genexus-cloud_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_genexus-cloud_primary--active"
+          name: "window-tools_genexus-cloud_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_genexus-cloud_primary--disabled"
+          name: "window-tools_genexus-cloud_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_genexus-cloud_neutral--enabled"
+          name: "window-tools_genexus-cloud_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_genexus-cloud_neutral--hover"
+          name: "window-tools_genexus-cloud_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_genexus-cloud_neutral--active"
+          name: "window-tools_genexus-cloud_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_genexus-cloud_neutral--disabled"
+          name: "window-tools_genexus-cloud_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_genexus-cloud_highlighted--enabled"
+          name: "window-tools_genexus-cloud_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_genexus-cloud_bright--enabled"
+          name: "window-tools_genexus-cloud_bright--enabled"
         })
       })
     }),
     frontend: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_frontend_on-surface--enabled"
+          name: "window-tools_frontend_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_frontend_on-surface--hover"
+          name: "window-tools_frontend_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_frontend_on-surface--active"
+          name: "window-tools_frontend_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_frontend_on-surface--disabled"
+          name: "window-tools_frontend_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_frontend_on-primary--enabled"
+          name: "window-tools_frontend_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_frontend_on-primary--hover"
+          name: "window-tools_frontend_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_frontend_on-primary--active"
+          name: "window-tools_frontend_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_frontend_on-primary--disabled"
+          name: "window-tools_frontend_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_frontend_on-disabled--enabled"
+          name: "window-tools_frontend_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_frontend_on-message--enabled"
+          name: "window-tools_frontend_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_frontend_on-elevation--enabled"
+          name: "window-tools_frontend_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_frontend_primary--enabled"
+          name: "window-tools_frontend_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_frontend_primary--hover"
+          name: "window-tools_frontend_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_frontend_primary--active"
+          name: "window-tools_frontend_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_frontend_primary--disabled"
+          name: "window-tools_frontend_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_frontend_neutral--enabled"
+          name: "window-tools_frontend_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_frontend_neutral--hover"
+          name: "window-tools_frontend_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_frontend_neutral--active"
+          name: "window-tools_frontend_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_frontend_neutral--disabled"
+          name: "window-tools_frontend_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_frontend_highlighted--enabled"
+          name: "window-tools_frontend_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_frontend_bright--enabled"
+          name: "window-tools_frontend_bright--enabled"
         })
       })
     }),
     filter: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter_on-surface--enabled"
+          name: "window-tools_filter_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_filter_on-surface--hover"
+          name: "window-tools_filter_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_filter_on-surface--active"
+          name: "window-tools_filter_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_filter_on-surface--disabled"
+          name: "window-tools_filter_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter_on-primary--enabled"
+          name: "window-tools_filter_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_filter_on-primary--hover"
+          name: "window-tools_filter_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_filter_on-primary--active"
+          name: "window-tools_filter_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_filter_on-primary--disabled"
+          name: "window-tools_filter_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter_on-disabled--enabled"
+          name: "window-tools_filter_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter_on-message--enabled"
+          name: "window-tools_filter_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter_on-elevation--enabled"
+          name: "window-tools_filter_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter_primary--enabled"
+          name: "window-tools_filter_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_filter_primary--hover"
+          name: "window-tools_filter_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_filter_primary--active"
+          name: "window-tools_filter_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_filter_primary--disabled"
+          name: "window-tools_filter_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter_neutral--enabled"
+          name: "window-tools_filter_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_filter_neutral--hover"
+          name: "window-tools_filter_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_filter_neutral--active"
+          name: "window-tools_filter_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_filter_neutral--disabled"
+          name: "window-tools_filter_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter_highlighted--enabled"
+          name: "window-tools_filter_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter_bright--enabled"
+          name: "window-tools_filter_bright--enabled"
         })
       })
     }),
     "filter-conditions": Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter-conditions_on-surface--enabled"
+          name: "window-tools_filter-conditions_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_filter-conditions_on-surface--hover"
+          name: "window-tools_filter-conditions_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_filter-conditions_on-surface--active"
+          name: "window-tools_filter-conditions_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_filter-conditions_on-surface--disabled"
+          name: "window-tools_filter-conditions_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter-conditions_on-primary--enabled"
+          name: "window-tools_filter-conditions_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_filter-conditions_on-primary--hover"
+          name: "window-tools_filter-conditions_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_filter-conditions_on-primary--active"
+          name: "window-tools_filter-conditions_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_filter-conditions_on-primary--disabled"
+          name: "window-tools_filter-conditions_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter-conditions_on-disabled--enabled"
+          name: "window-tools_filter-conditions_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter-conditions_on-message--enabled"
+          name: "window-tools_filter-conditions_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter-conditions_on-elevation--enabled"
+          name: "window-tools_filter-conditions_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter-conditions_primary--enabled"
+          name: "window-tools_filter-conditions_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_filter-conditions_primary--hover"
+          name: "window-tools_filter-conditions_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_filter-conditions_primary--active"
+          name: "window-tools_filter-conditions_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_filter-conditions_primary--disabled"
+          name: "window-tools_filter-conditions_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter-conditions_neutral--enabled"
+          name: "window-tools_filter-conditions_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_filter-conditions_neutral--hover"
+          name: "window-tools_filter-conditions_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_filter-conditions_neutral--active"
+          name: "window-tools_filter-conditions_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_filter-conditions_neutral--disabled"
+          name: "window-tools_filter-conditions_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter-conditions_highlighted--enabled"
+          name: "window-tools_filter-conditions_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_filter-conditions_bright--enabled"
+          name: "window-tools_filter-conditions_bright--enabled"
         })
       })
     }),
     "error-list": Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_error-list_on-surface--enabled"
+          name: "window-tools_error-list_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_error-list_on-surface--hover"
+          name: "window-tools_error-list_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_error-list_on-surface--active"
+          name: "window-tools_error-list_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_error-list_on-surface--disabled"
+          name: "window-tools_error-list_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_error-list_on-primary--enabled"
+          name: "window-tools_error-list_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_error-list_on-primary--hover"
+          name: "window-tools_error-list_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_error-list_on-primary--active"
+          name: "window-tools_error-list_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_error-list_on-primary--disabled"
+          name: "window-tools_error-list_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_error-list_on-disabled--enabled"
+          name: "window-tools_error-list_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_error-list_on-message--enabled"
+          name: "window-tools_error-list_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_error-list_on-elevation--enabled"
+          name: "window-tools_error-list_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_error-list_primary--enabled"
+          name: "window-tools_error-list_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_error-list_primary--hover"
+          name: "window-tools_error-list_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_error-list_primary--active"
+          name: "window-tools_error-list_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_error-list_primary--disabled"
+          name: "window-tools_error-list_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_error-list_neutral--enabled"
+          name: "window-tools_error-list_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_error-list_neutral--hover"
+          name: "window-tools_error-list_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_error-list_neutral--active"
+          name: "window-tools_error-list_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_error-list_neutral--disabled"
+          name: "window-tools_error-list_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_error-list_highlighted--enabled"
+          name: "window-tools_error-list_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_error-list_bright--enabled"
+          name: "window-tools_error-list_bright--enabled"
         })
       })
     }),
     debugx: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_debugx_on-surface--enabled"
+          name: "window-tools_debugx_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_debugx_on-surface--hover"
+          name: "window-tools_debugx_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_debugx_on-surface--active"
+          name: "window-tools_debugx_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_debugx_on-surface--disabled"
+          name: "window-tools_debugx_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_debugx_on-primary--enabled"
+          name: "window-tools_debugx_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_debugx_on-primary--hover"
+          name: "window-tools_debugx_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_debugx_on-primary--active"
+          name: "window-tools_debugx_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_debugx_on-primary--disabled"
+          name: "window-tools_debugx_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_debugx_on-disabled--enabled"
+          name: "window-tools_debugx_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_debugx_on-message--enabled"
+          name: "window-tools_debugx_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_debugx_on-elevation--enabled"
+          name: "window-tools_debugx_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_debugx_primary--enabled"
+          name: "window-tools_debugx_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_debugx_primary--hover"
+          name: "window-tools_debugx_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_debugx_primary--active"
+          name: "window-tools_debugx_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_debugx_primary--disabled"
+          name: "window-tools_debugx_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_debugx_neutral--enabled"
+          name: "window-tools_debugx_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_debugx_neutral--hover"
+          name: "window-tools_debugx_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_debugx_neutral--active"
+          name: "window-tools_debugx_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_debugx_neutral--disabled"
+          name: "window-tools_debugx_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_debugx_highlighted--enabled"
+          name: "window-tools_debugx_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_debugx_bright--enabled"
+          name: "window-tools_debugx_bright--enabled"
         })
       })
     }),
     datastores: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_datastores_on-surface--enabled"
+          name: "window-tools_datastores_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_datastores_on-surface--hover"
+          name: "window-tools_datastores_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_datastores_on-surface--active"
+          name: "window-tools_datastores_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_datastores_on-surface--disabled"
+          name: "window-tools_datastores_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_datastores_on-primary--enabled"
+          name: "window-tools_datastores_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_datastores_on-primary--hover"
+          name: "window-tools_datastores_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_datastores_on-primary--active"
+          name: "window-tools_datastores_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_datastores_on-primary--disabled"
+          name: "window-tools_datastores_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_datastores_on-disabled--enabled"
+          name: "window-tools_datastores_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_datastores_on-message--enabled"
+          name: "window-tools_datastores_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_datastores_on-elevation--enabled"
+          name: "window-tools_datastores_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_datastores_primary--enabled"
+          name: "window-tools_datastores_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_datastores_primary--hover"
+          name: "window-tools_datastores_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_datastores_primary--active"
+          name: "window-tools_datastores_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_datastores_primary--disabled"
+          name: "window-tools_datastores_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_datastores_neutral--enabled"
+          name: "window-tools_datastores_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_datastores_neutral--hover"
+          name: "window-tools_datastores_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_datastores_neutral--active"
+          name: "window-tools_datastores_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_datastores_neutral--disabled"
+          name: "window-tools_datastores_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_datastores_highlighted--enabled"
+          name: "window-tools_datastores_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_datastores_bright--enabled"
+          name: "window-tools_datastores_bright--enabled"
         })
       })
     }),
     "category-groups": Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_category-groups_on-surface--enabled"
+          name: "window-tools_category-groups_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_category-groups_on-surface--hover"
+          name: "window-tools_category-groups_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_category-groups_on-surface--active"
+          name: "window-tools_category-groups_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_category-groups_on-surface--disabled"
+          name: "window-tools_category-groups_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_category-groups_on-primary--enabled"
+          name: "window-tools_category-groups_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_category-groups_on-primary--hover"
+          name: "window-tools_category-groups_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_category-groups_on-primary--active"
+          name: "window-tools_category-groups_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_category-groups_on-primary--disabled"
+          name: "window-tools_category-groups_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_category-groups_on-disabled--enabled"
+          name: "window-tools_category-groups_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_category-groups_on-message--enabled"
+          name: "window-tools_category-groups_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_category-groups_on-elevation--enabled"
+          name: "window-tools_category-groups_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_category-groups_primary--enabled"
+          name: "window-tools_category-groups_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_category-groups_primary--hover"
+          name: "window-tools_category-groups_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_category-groups_primary--active"
+          name: "window-tools_category-groups_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_category-groups_primary--disabled"
+          name: "window-tools_category-groups_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_category-groups_neutral--enabled"
+          name: "window-tools_category-groups_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_category-groups_neutral--hover"
+          name: "window-tools_category-groups_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_category-groups_neutral--active"
+          name: "window-tools_category-groups_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_category-groups_neutral--disabled"
+          name: "window-tools_category-groups_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_category-groups_highlighted--enabled"
+          name: "window-tools_category-groups_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_category-groups_bright--enabled"
+          name: "window-tools_category-groups_bright--enabled"
         })
       })
     }),
     breakpoints: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_breakpoints_on-surface--enabled"
+          name: "window-tools_breakpoints_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_breakpoints_on-surface--hover"
+          name: "window-tools_breakpoints_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_breakpoints_on-surface--active"
+          name: "window-tools_breakpoints_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_breakpoints_on-surface--disabled"
+          name: "window-tools_breakpoints_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_breakpoints_on-primary--enabled"
+          name: "window-tools_breakpoints_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_breakpoints_on-primary--hover"
+          name: "window-tools_breakpoints_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_breakpoints_on-primary--active"
+          name: "window-tools_breakpoints_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_breakpoints_on-primary--disabled"
+          name: "window-tools_breakpoints_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_breakpoints_on-disabled--enabled"
+          name: "window-tools_breakpoints_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_breakpoints_on-message--enabled"
+          name: "window-tools_breakpoints_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_breakpoints_on-elevation--enabled"
+          name: "window-tools_breakpoints_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_breakpoints_primary--enabled"
+          name: "window-tools_breakpoints_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_breakpoints_primary--hover"
+          name: "window-tools_breakpoints_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_breakpoints_primary--active"
+          name: "window-tools_breakpoints_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_breakpoints_primary--disabled"
+          name: "window-tools_breakpoints_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_breakpoints_neutral--enabled"
+          name: "window-tools_breakpoints_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_breakpoints_neutral--hover"
+          name: "window-tools_breakpoints_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_breakpoints_neutral--active"
+          name: "window-tools_breakpoints_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_breakpoints_neutral--disabled"
+          name: "window-tools_breakpoints_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_breakpoints_highlighted--enabled"
+          name: "window-tools_breakpoints_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_breakpoints_bright--enabled"
+          name: "window-tools_breakpoints_bright--enabled"
         })
       })
     }),
     backend: Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_backend_on-surface--enabled"
+          name: "window-tools_backend_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_backend_on-surface--hover"
+          name: "window-tools_backend_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_backend_on-surface--active"
+          name: "window-tools_backend_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_backend_on-surface--disabled"
+          name: "window-tools_backend_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_backend_on-primary--enabled"
+          name: "window-tools_backend_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_backend_on-primary--hover"
+          name: "window-tools_backend_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_backend_on-primary--active"
+          name: "window-tools_backend_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_backend_on-primary--disabled"
+          name: "window-tools_backend_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_backend_on-disabled--enabled"
+          name: "window-tools_backend_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_backend_on-message--enabled"
+          name: "window-tools_backend_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_backend_on-elevation--enabled"
+          name: "window-tools_backend_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_backend_primary--enabled"
+          name: "window-tools_backend_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_backend_primary--hover"
+          name: "window-tools_backend_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_backend_primary--active"
+          name: "window-tools_backend_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_backend_primary--disabled"
+          name: "window-tools_backend_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_backend_neutral--enabled"
+          name: "window-tools_backend_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_backend_neutral--hover"
+          name: "window-tools_backend_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_backend_neutral--active"
+          name: "window-tools_backend_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_backend_neutral--disabled"
+          name: "window-tools_backend_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_backend_highlighted--enabled"
+          name: "window-tools_backend_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_backend_bright--enabled"
+          name: "window-tools_backend_bright--enabled"
         })
       })
     }),
     "alphabetical-order": Object.freeze({
       "on-surface": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_alphabetical-order_on-surface--enabled"
+          name: "window-tools_alphabetical-order_on-surface--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_alphabetical-order_on-surface--hover"
+          name: "window-tools_alphabetical-order_on-surface--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_alphabetical-order_on-surface--active"
+          name: "window-tools_alphabetical-order_on-surface--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_alphabetical-order_on-surface--disabled"
+          name: "window-tools_alphabetical-order_on-surface--disabled"
         })
       }),
       "on-primary": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_alphabetical-order_on-primary--enabled"
+          name: "window-tools_alphabetical-order_on-primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_alphabetical-order_on-primary--hover"
+          name: "window-tools_alphabetical-order_on-primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_alphabetical-order_on-primary--active"
+          name: "window-tools_alphabetical-order_on-primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_alphabetical-order_on-primary--disabled"
+          name: "window-tools_alphabetical-order_on-primary--disabled"
         })
       }),
       "on-disabled": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_alphabetical-order_on-disabled--enabled"
+          name: "window-tools_alphabetical-order_on-disabled--enabled"
         })
       }),
       "on-message": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_alphabetical-order_on-message--enabled"
+          name: "window-tools_alphabetical-order_on-message--enabled"
         })
       }),
       "on-elevation": Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_alphabetical-order_on-elevation--enabled"
+          name: "window-tools_alphabetical-order_on-elevation--enabled"
         })
       }),
       primary: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_alphabetical-order_primary--enabled"
+          name: "window-tools_alphabetical-order_primary--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_alphabetical-order_primary--hover"
+          name: "window-tools_alphabetical-order_primary--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_alphabetical-order_primary--active"
+          name: "window-tools_alphabetical-order_primary--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_alphabetical-order_primary--disabled"
+          name: "window-tools_alphabetical-order_primary--disabled"
         })
       }),
       neutral: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_alphabetical-order_neutral--enabled"
+          name: "window-tools_alphabetical-order_neutral--enabled"
         }),
         hover: Object.freeze({
-          name: "windows-tools_alphabetical-order_neutral--hover"
+          name: "window-tools_alphabetical-order_neutral--hover"
         }),
         active: Object.freeze({
-          name: "windows-tools_alphabetical-order_neutral--active"
+          name: "window-tools_alphabetical-order_neutral--active"
         }),
         disabled: Object.freeze({
-          name: "windows-tools_alphabetical-order_neutral--disabled"
+          name: "window-tools_alphabetical-order_neutral--disabled"
         })
       }),
       highlighted: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_alphabetical-order_highlighted--enabled"
+          name: "window-tools_alphabetical-order_highlighted--enabled"
         })
       }),
       bright: Object.freeze({
         enabled: Object.freeze({
-          name: "windows-tools_alphabetical-order_bright--enabled"
+          name: "window-tools_alphabetical-order_bright--enabled"
         })
+      })
+    })
+  }),
+  "patterns-default-associated": Object.freeze({
+    synchronized: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns-default-associated_synchronized--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns-default-associated_synchronized--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns-default-associated_synchronized--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns-default-associated_synchronized--disabled"
+      })
+    }),
+    modified: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns-default-associated_modified--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns-default-associated_modified--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns-default-associated_modified--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns-default-associated_modified--disabled"
+      })
+    }),
+    "default-associated": Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns-default-associated_default-associated--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns-default-associated_default-associated--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns-default-associated_default-associated--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns-default-associated_default-associated--disabled"
+      })
+    })
+  }),
+  patterns: Object.freeze({
+    "workwith-for-sd": Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_workwith-for-sd--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_workwith-for-sd--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_workwith-for-sd--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_workwith-for-sd--disabled"
+      })
+    }),
+    "work-with-web": Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_work-with-web--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_work-with-web--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_work-with-web--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_work-with-web--disabled"
+      })
+    }),
+    tabs: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_tabs--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_tabs--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_tabs--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_tabs--disabled"
+      })
+    }),
+    tab: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_tab--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_tab--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_tab--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_tab--disabled"
+      })
+    }),
+    structure: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_structure--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_structure--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_structure--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_structure--disabled"
+      })
+    }),
+    row: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_row--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_row--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_row--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_row--disabled"
+      })
+    }),
+    "pattern-category": Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_pattern-category--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_pattern-category--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_pattern-category--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_pattern-category--disabled"
+      })
+    }),
+    parameters: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_parameters--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_parameters--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_parameters--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_parameters--disabled"
+      })
+    }),
+    parameter: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_parameter--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_parameter--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_parameter--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_parameter--disabled"
+      })
+    }),
+    orders: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_orders--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_orders--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_orders--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_orders--disabled"
+      })
+    }),
+    list: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_list--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_list--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_list--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_list--disabled"
+      })
+    }),
+    "fixed-data": Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_fixed-data--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_fixed-data--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_fixed-data--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_fixed-data--disabled"
+      })
+    }),
+    filters: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_filters--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_filters--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_filters--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_filters--disabled"
+      })
+    }),
+    events: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_events--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_events--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_events--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_events--disabled"
+      })
+    }),
+    documentation: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_documentation--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_documentation--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_documentation--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_documentation--disabled"
+      })
+    }),
+    detail: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_detail--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_detail--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_detail--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_detail--disabled"
+      })
+    }),
+    cell: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_cell--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_cell--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_cell--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_cell--disabled"
+      })
+    }),
+    attributes: Object.freeze({
+      enabled: Object.freeze({
+        name: "patterns_attributes--enabled"
+      }),
+      hover: Object.freeze({
+        name: "patterns_attributes--hover"
+      }),
+      active: Object.freeze({
+        name: "patterns_attributes--active"
+      }),
+      disabled: Object.freeze({
+        name: "patterns_attributes--disabled"
+      })
+    })
+  }),
+  "objects-parts": Object.freeze({
+    variables: Object.freeze({
+      enabled: Object.freeze({
+        name: "objects-parts_variables--enabled"
+      }),
+      hover: Object.freeze({
+        name: "objects-parts_variables--hover"
+      }),
+      active: Object.freeze({
+        name: "objects-parts_variables--active"
+      }),
+      disabled: Object.freeze({
+        name: "objects-parts_variables--disabled"
+      })
+    }),
+    rules: Object.freeze({
+      enabled: Object.freeze({
+        name: "objects-parts_rules--enabled"
+      }),
+      hover: Object.freeze({
+        name: "objects-parts_rules--hover"
+      }),
+      active: Object.freeze({
+        name: "objects-parts_rules--active"
+      }),
+      disabled: Object.freeze({
+        name: "objects-parts_rules--disabled"
+      })
+    }),
+    events: Object.freeze({
+      enabled: Object.freeze({
+        name: "objects-parts_events--enabled"
+      }),
+      hover: Object.freeze({
+        name: "objects-parts_events--hover"
+      }),
+      active: Object.freeze({
+        name: "objects-parts_events--active"
+      }),
+      disabled: Object.freeze({
+        name: "objects-parts_events--disabled"
+      })
+    }),
+    conditions: Object.freeze({
+      enabled: Object.freeze({
+        name: "objects-parts_conditions--enabled"
+      }),
+      hover: Object.freeze({
+        name: "objects-parts_conditions--hover"
+      }),
+      active: Object.freeze({
+        name: "objects-parts_conditions--active"
+      }),
+      disabled: Object.freeze({
+        name: "objects-parts_conditions--disabled"
+      })
+    }),
+    condition: Object.freeze({
+      enabled: Object.freeze({
+        name: "objects-parts_condition--enabled"
+      }),
+      hover: Object.freeze({
+        name: "objects-parts_condition--hover"
+      }),
+      active: Object.freeze({
+        name: "objects-parts_condition--active"
+      }),
+      disabled: Object.freeze({
+        name: "objects-parts_condition--disabled"
       })
     })
   }),
@@ -2604,18 +2974,18 @@ export const MERCURY_ASSETS = Object.freeze({
         name: "objects_work-panel--disabled"
       })
     }),
-    "web-panel": Object.freeze({
+    webpanel: Object.freeze({
       enabled: Object.freeze({
-        name: "objects_web-panel--enabled"
+        name: "objects_webpanel--enabled"
       }),
       hover: Object.freeze({
-        name: "objects_web-panel--hover"
+        name: "objects_webpanel--hover"
       }),
       active: Object.freeze({
-        name: "objects_web-panel--active"
+        name: "objects_webpanel--active"
       }),
       disabled: Object.freeze({
-        name: "objects_web-panel--disabled"
+        name: "objects_webpanel--disabled"
       })
     }),
     "web-component": Object.freeze({
@@ -6693,6 +7063,528 @@ export const MERCURY_ASSETS = Object.freeze({
       })
     })
   }),
+  "gx-server": Object.freeze({
+    public: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_public--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_public--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_public--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_public--disabled"
+      })
+    }),
+    private: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_private--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_private--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_private--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_private--disabled"
+      })
+    }),
+    new: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_new--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_new--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_new--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_new--disabled"
+      })
+    }),
+    "lock-without-changes": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_lock-without-changes--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_lock-without-changes--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_lock-without-changes--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_lock-without-changes--disabled"
+      })
+    }),
+    "lock-by-user-reserve": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_lock-by-user-reserve--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_lock-by-user-reserve--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_lock-by-user-reserve--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_lock-by-user-reserve--disabled"
+      })
+    }),
+    "lock-by-user-changes": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_lock-by-user-changes--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_lock-by-user-changes--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_lock-by-user-changes--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_lock-by-user-changes--disabled"
+      })
+    }),
+    internal: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_internal--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_internal--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_internal--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_internal--disabled"
+      })
+    }),
+    delete: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_delete--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_delete--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_delete--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_delete--disabled"
+      })
+    }),
+    conflict: Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_conflict--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_conflict--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_conflict--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_conflict--disabled"
+      })
+    }),
+    "changes-commit-pending": Object.freeze({
+      enabled: Object.freeze({
+        name: "gx-server_changes-commit-pending--enabled"
+      }),
+      hover: Object.freeze({
+        name: "gx-server_changes-commit-pending--hover"
+      }),
+      active: Object.freeze({
+        name: "gx-server_changes-commit-pending--active"
+      }),
+      disabled: Object.freeze({
+        name: "gx-server_changes-commit-pending--disabled"
+      })
+    })
+  }),
+  general: Object.freeze({
+    version: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_version--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_version--hover"
+      }),
+      active: Object.freeze({
+        name: "general_version--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_version--disabled"
+      })
+    }),
+    swift: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_swift--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_swift--hover"
+      }),
+      active: Object.freeze({
+        name: "general_swift--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_swift--disabled"
+      })
+    }),
+    "sql-server": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_sql-server--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_sql-server--hover"
+      }),
+      active: Object.freeze({
+        name: "general_sql-server--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_sql-server--disabled"
+      })
+    }),
+    services: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_services--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_services--hover"
+      }),
+      active: Object.freeze({
+        name: "general_services--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_services--disabled"
+      })
+    }),
+    sd: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_sd--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_sd--hover"
+      }),
+      active: Object.freeze({
+        name: "general_sd--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_sd--disabled"
+      })
+    }),
+    "sd-web": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_sd-web--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_sd-web--hover"
+      }),
+      active: Object.freeze({
+        name: "general_sd-web--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_sd-web--disabled"
+      })
+    }),
+    "sap-hana": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_sap-hana--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_sap-hana--hover"
+      }),
+      active: Object.freeze({
+        name: "general_sap-hana--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_sap-hana--disabled"
+      })
+    }),
+    references: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_references--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_references--hover"
+      }),
+      active: Object.freeze({
+        name: "general_references--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_references--disabled"
+      })
+    }),
+    "qr-code": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_qr-code--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_qr-code--hover"
+      }),
+      active: Object.freeze({
+        name: "general_qr-code--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_qr-code--disabled"
+      })
+    }),
+    "postgre-sql": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_postgre-sql--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_postgre-sql--hover"
+      }),
+      active: Object.freeze({
+        name: "general_postgre-sql--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_postgre-sql--disabled"
+      })
+    }),
+    patterns: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_patterns--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_patterns--hover"
+      }),
+      active: Object.freeze({
+        name: "general_patterns--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_patterns--disabled"
+      })
+    }),
+    oracle: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_oracle--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_oracle--hover"
+      }),
+      active: Object.freeze({
+        name: "general_oracle--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_oracle--disabled"
+      })
+    }),
+    mysql: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_mysql--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_mysql--hover"
+      }),
+      active: Object.freeze({
+        name: "general_mysql--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_mysql--disabled"
+      })
+    }),
+    launchpad: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_launchpad--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_launchpad--hover"
+      }),
+      active: Object.freeze({
+        name: "general_launchpad--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_launchpad--disabled"
+      })
+    }),
+    "knowledge-base": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_knowledge-base--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_knowledge-base--hover"
+      }),
+      active: Object.freeze({
+        name: "general_knowledge-base--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_knowledge-base--disabled"
+      })
+    }),
+    java: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_java--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_java--hover"
+      }),
+      active: Object.freeze({
+        name: "general_java--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_java--disabled"
+      })
+    }),
+    informix: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_informix--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_informix--hover"
+      }),
+      active: Object.freeze({
+        name: "general_informix--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_informix--disabled"
+      })
+    }),
+    generator: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_generator--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_generator--hover"
+      }),
+      active: Object.freeze({
+        name: "general_generator--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_generator--disabled"
+      })
+    }),
+    "environment-select": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_environment-select--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_environment-select--hover"
+      }),
+      active: Object.freeze({
+        name: "general_environment-select--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_environment-select--disabled"
+      })
+    }),
+    "environment-no-select": Object.freeze({
+      enabled: Object.freeze({
+        name: "general_environment-no-select--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_environment-no-select--hover"
+      }),
+      active: Object.freeze({
+        name: "general_environment-no-select--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_environment-no-select--disabled"
+      })
+    }),
+    db2: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_db2--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_db2--hover"
+      }),
+      active: Object.freeze({
+        name: "general_db2--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_db2--disabled"
+      })
+    }),
+    datastore: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_datastore--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_datastore--hover"
+      }),
+      active: Object.freeze({
+        name: "general_datastore--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_datastore--disabled"
+      })
+    }),
+    customization: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_customization--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_customization--hover"
+      }),
+      active: Object.freeze({
+        name: "general_customization--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_customization--disabled"
+      })
+    }),
+    csharp: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_csharp--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_csharp--hover"
+      }),
+      active: Object.freeze({
+        name: "general_csharp--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_csharp--disabled"
+      })
+    }),
+    apple: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_apple--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_apple--hover"
+      }),
+      active: Object.freeze({
+        name: "general_apple--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_apple--disabled"
+      })
+    }),
+    angular: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_angular--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_angular--hover"
+      }),
+      active: Object.freeze({
+        name: "general_angular--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_angular--disabled"
+      })
+    }),
+    android: Object.freeze({
+      enabled: Object.freeze({
+        name: "general_android--enabled"
+      }),
+      hover: Object.freeze({
+        name: "general_android--hover"
+      }),
+      active: Object.freeze({
+        name: "general_android--active"
+      }),
+      disabled: Object.freeze({
+        name: "general_android--disabled"
+      })
+    })
+  }),
   "gemini-tools": Object.freeze({
     warning: Object.freeze({
       "on-surface": Object.freeze({
@@ -9739,6 +10631,1492 @@ export const MERCURY_ASSETS = Object.freeze({
       }),
       disabled: Object.freeze({
         name: "editing-structures_attribute-description--disabled"
+      })
+    })
+  }),
+  controls: Object.freeze({
+    variable: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_variable--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_variable--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_variable--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_variable--disabled"
+      })
+    }),
+    treeview: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_treeview--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_treeview--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_treeview--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_treeview--disabled"
+      })
+    }),
+    "text-block": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_text-block--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_text-block--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_text-block--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_text-block--disabled"
+      })
+    }),
+    "tag-html": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_tag-html--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_tag-html--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_tag-html--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_tag-html--disabled"
+      })
+    }),
+    table: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_table--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_table--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_table--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_table--disabled"
+      })
+    }),
+    "table-row": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_table-row--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_table-row--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_table-row--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_table-row--disabled"
+      })
+    }),
+    "table-column": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_table-column--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_table-column--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_table-column--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_table-column--disabled"
+      })
+    }),
+    "table-cell": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_table-cell--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_table-cell--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_table-cell--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_table-cell--disabled"
+      })
+    }),
+    tab: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_tab--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_tab--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_tab--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_tab--disabled"
+      })
+    }),
+    "tab-page": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_tab-page--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_tab-page--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_tab-page--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_tab-page--disabled"
+      })
+    }),
+    snippet: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_snippet--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_snippet--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_snippet--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_snippet--disabled"
+      })
+    }),
+    "smart-table": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_smart-table--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_smart-table--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_smart-table--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_smart-table--disabled"
+      })
+    }),
+    section: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_section--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_section--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_section--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_section--disabled"
+      })
+    }),
+    "pop-up": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_pop-up--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_pop-up--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_pop-up--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_pop-up--disabled"
+      })
+    }),
+    messages: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_messages--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_messages--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_messages--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_messages--disabled"
+      })
+    }),
+    "media-player": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_media-player--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_media-player--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_media-player--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_media-player--disabled"
+      })
+    }),
+    "id-html": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_id-html--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_id-html--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_id-html--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_id-html--disabled"
+      })
+    }),
+    hyperlink: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_hyperlink--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_hyperlink--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_hyperlink--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_hyperlink--disabled"
+      })
+    }),
+    html: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_html--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_html--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_html--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_html--disabled"
+      })
+    }),
+    "horizontal-line": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_horizontal-line--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_horizontal-line--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_horizontal-line--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_horizontal-line--disabled"
+      })
+    }),
+    "history-manager": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_history-manager--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_history-manager--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_history-manager--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_history-manager--disabled"
+      })
+    }),
+    "gx-scheduler": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_gx-scheduler--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_gx-scheduler--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_gx-scheduler--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_gx-scheduler--disabled"
+      })
+    }),
+    group: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_group--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_group--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_group--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_group--disabled"
+      })
+    }),
+    grid: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_grid--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_grid--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_grid--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_grid--disabled"
+      })
+    }),
+    "google-geomap": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_google-geomap--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_google-geomap--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_google-geomap--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_google-geomap--disabled"
+      })
+    }),
+    "google-charts": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_google-charts--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_google-charts--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_google-charts--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_google-charts--disabled"
+      })
+    }),
+    "google-annotated-tmeline": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_google-annotated-tmeline--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_google-annotated-tmeline--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_google-annotated-tmeline--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_google-annotated-tmeline--disabled"
+      })
+    }),
+    "google-analytics": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_google-analytics--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_google-analytics--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_google-analytics--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_google-analytics--disabled"
+      })
+    }),
+    "free-style-grid": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_free-style-grid--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_free-style-grid--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_free-style-grid--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_free-style-grid--disabled"
+      })
+    }),
+    font: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_font--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_font--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_font--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_font--disabled"
+      })
+    }),
+    flex: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_flex--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_flex--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_flex--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_flex--disabled"
+      })
+    }),
+    "file-upload": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_file-upload--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_file-upload--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_file-upload--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_file-upload--disabled"
+      })
+    }),
+    "error-viewer": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_error-viewer--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_error-viewer--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_error-viewer--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_error-viewer--disabled"
+      })
+    }),
+    "embedded-page": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_embedded-page--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_embedded-page--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_embedded-page--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_embedded-page--disabled"
+      })
+    }),
+    default: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_default--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_default--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_default--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_default--disabled"
+      })
+    }),
+    component: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_component--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_component--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_component--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_component--disabled"
+      })
+    }),
+    "class-html": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_class-html--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_class-html--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_class-html--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_class-html--disabled"
+      })
+    }),
+    canva: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_canva--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_canva--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_canva--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_canva--disabled"
+      })
+    }),
+    "call-target": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_call-target--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_call-target--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_call-target--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_call-target--disabled"
+      })
+    }),
+    button: Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_button--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_button--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_button--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_button--disabled"
+      })
+    }),
+    "button-group": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_button-group--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_button-group--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_button-group--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_button-group--disabled"
+      })
+    }),
+    "action-group": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_action-group--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_action-group--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_action-group--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_action-group--disabled"
+      })
+    }),
+    "action-group-item": Object.freeze({
+      enabled: Object.freeze({
+        name: "controls_action-group-item--enabled"
+      }),
+      hover: Object.freeze({
+        name: "controls_action-group-item--hover"
+      }),
+      active: Object.freeze({
+        name: "controls_action-group-item--active"
+      }),
+      disabled: Object.freeze({
+        name: "controls_action-group-item--disabled"
+      })
+    })
+  }),
+  bpm: Object.freeze({
+    "timer-6": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_timer-6_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_timer-6_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_timer-6_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_timer-6_neutral--disabled"
+        })
+      })
+    }),
+    "timer-5": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_timer-5_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_timer-5_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_timer-5_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_timer-5_neutral--disabled"
+        })
+      })
+    }),
+    "timer-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_timer-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_timer-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_timer-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_timer-2_neutral--disabled"
+        })
+      })
+    }),
+    "timer-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_timer-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_timer-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_timer-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_timer-1_neutral--disabled"
+        })
+      })
+    }),
+    "terminale-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_terminale-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_terminale-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_terminale-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_terminale-4_neutral--disabled"
+        })
+      })
+    }),
+    tasks: Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_tasks_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_tasks_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_tasks_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_tasks_neutral--disabled"
+        })
+      })
+    }),
+    subprocess: Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_subprocess_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_subprocess_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_subprocess_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_subprocess_neutral--disabled"
+        })
+      })
+    }),
+    "signal-6": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_signal-6_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_signal-6_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_signal-6_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_signal-6_neutral--disabled"
+        })
+      })
+    }),
+    "signal-5": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_signal-5_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_signal-5_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_signal-5_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_signal-5_neutral--disabled"
+        })
+      })
+    }),
+    "signal-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_signal-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_signal-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_signal-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_signal-4_neutral--disabled"
+        })
+      })
+    }),
+    "signal-3": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_signal-3_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_signal-3_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_signal-3_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_signal-3_neutral--disabled"
+        })
+      })
+    }),
+    "signal-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_signal-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_signal-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_signal-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_signal-2_neutral--disabled"
+        })
+      })
+    }),
+    "signal-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_signal-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_signal-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_signal-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_signal-1_neutral--disabled"
+        })
+      })
+    }),
+    person: Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_person_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_person_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_person_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_person_neutral--disabled"
+        })
+      })
+    }),
+    "paralell-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_paralell-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_paralell-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_paralell-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_paralell-4_neutral--disabled"
+        })
+      })
+    }),
+    "paralell-3": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_paralell-3_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_paralell-3_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_paralell-3_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_paralell-3_neutral--disabled"
+        })
+      })
+    }),
+    "paralell-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_paralell-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_paralell-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_paralell-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_paralell-2_neutral--disabled"
+        })
+      })
+    }),
+    "paralell-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_paralell-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_paralell-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_paralell-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_paralell-1_neutral--disabled"
+        })
+      })
+    }),
+    oval: Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_oval_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_oval_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_oval_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_oval_neutral--disabled"
+        })
+      })
+    }),
+    "oval-doble": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_oval-doble_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_oval-doble_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_oval-doble_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_oval-doble_neutral--disabled"
+        })
+      })
+    }),
+    "multiple-6": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_multiple-6_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_multiple-6_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_multiple-6_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_multiple-6_neutral--disabled"
+        })
+      })
+    }),
+    "multiple-5": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_multiple-5_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_multiple-5_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_multiple-5_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_multiple-5_neutral--disabled"
+        })
+      })
+    }),
+    "multiple-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_multiple-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_multiple-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_multiple-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_multiple-4_neutral--disabled"
+        })
+      })
+    }),
+    "multiple-3": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_multiple-3_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_multiple-3_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_multiple-3_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_multiple-3_neutral--disabled"
+        })
+      })
+    }),
+    "multiple-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_multiple-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_multiple-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_multiple-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_multiple-2_neutral--disabled"
+        })
+      })
+    }),
+    "multiple-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_multiple-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_multiple-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_multiple-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_multiple-1_neutral--disabled"
+        })
+      })
+    }),
+    "message-6": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_message-6_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_message-6_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_message-6_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_message-6_neutral--disabled"
+        })
+      })
+    }),
+    "message-5": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_message-5_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_message-5_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_message-5_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_message-5_neutral--disabled"
+        })
+      })
+    }),
+    "message-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_message-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_message-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_message-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_message-4_neutral--disabled"
+        })
+      })
+    }),
+    "message-3": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_message-3_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_message-3_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_message-3_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_message-3_neutral--disabled"
+        })
+      })
+    }),
+    "message-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_message-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_message-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_message-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_message-2_neutral--disabled"
+        })
+      })
+    }),
+    "message-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_message-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_message-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_message-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_message-1_neutral--disabled"
+        })
+      })
+    }),
+    "link-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_link-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_link-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_link-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_link-4_neutral--disabled"
+        })
+      })
+    }),
+    "link-3": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_link-3_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_link-3_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_link-3_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_link-3_neutral--disabled"
+        })
+      })
+    }),
+    "escalation-6": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_escalation-6_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_escalation-6_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_escalation-6_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_escalation-6_neutral--disabled"
+        })
+      })
+    }),
+    "escalation-5": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_escalation-5_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_escalation-5_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_escalation-5_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_escalation-5_neutral--disabled"
+        })
+      })
+    }),
+    "escalation-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_escalation-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_escalation-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_escalation-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_escalation-4_neutral--disabled"
+        })
+      })
+    }),
+    "escalation-3": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_escalation-3_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_escalation-3_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_escalation-3_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_escalation-3_neutral--disabled"
+        })
+      })
+    }),
+    "escalation-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_escalation-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_escalation-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_escalation-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_escalation-2_neutral--disabled"
+        })
+      })
+    }),
+    "escalation-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_escalation-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_escalation-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_escalation-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_escalation-1_neutral--disabled"
+        })
+      })
+    }),
+    "error-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_error-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_error-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_error-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_error-2_neutral--disabled"
+        })
+      })
+    }),
+    "error-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_error-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_error-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_error-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_error-1_neutral--disabled"
+        })
+      })
+    }),
+    delete: Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_delete_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_delete_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_delete_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_delete_neutral--disabled"
+        })
+      })
+    }),
+    conditional: Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_conditional_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_conditional_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_conditional_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_conditional_neutral--disabled"
+        })
+      })
+    }),
+    "conditional-6": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_conditional-6_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_conditional-6_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_conditional-6_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_conditional-6_neutral--disabled"
+        })
+      })
+    }),
+    "conditional-5": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_conditional-5_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_conditional-5_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_conditional-5_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_conditional-5_neutral--disabled"
+        })
+      })
+    }),
+    "conditional-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_conditional-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_conditional-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_conditional-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_conditional-2_neutral--disabled"
+        })
+      })
+    }),
+    "conditional-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_conditional-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_conditional-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_conditional-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_conditional-1_neutral--disabled"
+        })
+      })
+    }),
+    "compensation-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_compensation-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_compensation-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_compensation-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_compensation-4_neutral--disabled"
+        })
+      })
+    }),
+    "compensation-3": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_compensation-3_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_compensation-3_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_compensation-3_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_compensation-3_neutral--disabled"
+        })
+      })
+    }),
+    "compensation-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_compensation-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_compensation-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_compensation-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_compensation-2_neutral--disabled"
+        })
+      })
+    }),
+    "compensation-1": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_compensation-1_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_compensation-1_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_compensation-1_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_compensation-1_neutral--disabled"
+        })
+      })
+    }),
+    "cancel-4": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_cancel-4_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_cancel-4_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_cancel-4_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_cancel-4_neutral--disabled"
+        })
+      })
+    }),
+    "cancel-2": Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_cancel-2_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_cancel-2_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_cancel-2_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_cancel-2_neutral--disabled"
+        })
+      })
+    }),
+    arrows: Object.freeze({
+      neutral: Object.freeze({
+        enabled: Object.freeze({
+          name: "bpm_arrows_neutral--enabled"
+        }),
+        hover: Object.freeze({
+          name: "bpm_arrows_neutral--hover"
+        }),
+        active: Object.freeze({
+          name: "bpm_arrows_neutral--active"
+        }),
+        disabled: Object.freeze({
+          name: "bpm_arrows_neutral--disabled"
+        })
       })
     })
   })

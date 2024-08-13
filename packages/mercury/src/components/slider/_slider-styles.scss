@@ -1,0 +1,109 @@
+%slider__slider {
+  // - - - - - - - - - - - - - - - - - - - -
+  //   Chameleon (do not change the name)
+  // - - - - - - - - - - - - - - - - - - - -
+  --ch-slider-track-block-size: var(--slider-track__block-size);
+
+  --ch-slider-track__selected-background-color: var(
+    --slider-track__bg-color--selected
+  );
+
+  --ch-slider-track__unselected-background-color: var(
+    --slider-track__bg-color--unselected
+  );
+
+  --ch-slider-thumb-background-color: var(--slider-thumb__bg-color);
+
+  --ch-slider-thumb-size: var(--slider-thumb__size);
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //            Custom Properties
+  // - - - - - - - - - - - - - - - - - - - -
+  // track
+  --slider-track__block-size: var(--mer-spacing--2xs);
+  --slider-track__bg-color--selected: var(--mer-color__primary-blue--200);
+  --slider-track__bg-color--unselected: var(--mer-color__neutral-gray--650);
+  --slider-track__bg-color--selected-disabled: var(
+    --mer-accent__primary--disabled
+  );
+  --slider-track__bg-color--unselected-disabled: var(
+    --mer-color__neutral-gray--450
+  );
+  // thumb
+  --slider-thumb__bg-color: var(--mer-color__neutral-gray--200);
+  --slider-thumb__size: var(--mer-spacing--sm);
+
+  &--disabled {
+    --ch-slider-track__selected-background-color: var(
+      --slider-track__bg-color--selected-disabled
+    );
+    --ch-slider-track__unselected-background-color: var(
+      --slider-track__bg-color--unselected-disabled
+    );
+  }
+}
+
+%slider__track {
+  border-radius: calc(var(--ch-slider-track-block-size) / 2);
+}
+
+%slider__thumb {
+}
+
+/// @group Slider
+/// @param {String} $slider-selector [".slider"] -
+/// @param {String} $track-selector [".slider::part(track)"] -
+/// @param {String} $thumb-selector [".slider::part(thumb)"] -
+/// @param {String} $thumb-focus-selector [".slider:focus-visible::part(thumb focus)"] -
+/// @example scss - Default case: Using the `.slider` class.
+/// SCSS:
+///   @include slider();
+///
+/// @example markup
+/// HTML/render:
+///   <ch-slider class="slider"></ch-slider>
+///
+/// @example scss - Advanced case: Style a `ch-slider` control inside a Shadow Root.
+/// SCSS:
+///   my-component-with-shadow {
+///     @include slider(
+///       $slider-selector: "&::part(slider)",
+///       $track-selector: "&::part(slider__track)",
+///       $thumb-selector: "&::part(slider__thumb)",
+///       $thumb-focus-selector: "&::part(slider__thumb focus)"
+///     );
+///   }
+///
+/// @example markup
+/// HTML/render:
+///   <my-component-with-shadow>
+///     #shadow root (open)
+///     |  <ch-slider part="slider" exportparts="track:slider__track,thumb:slider__thumb,focus">
+///     |  </ch-slider>
+///   </my-component-with-shadow>
+///
+@mixin slider(
+  $slider-selector: ".slider",
+  $track-selector: ".slider::part(track)",
+  $thumb-selector: ".slider::part(thumb)",
+  $thumb-focus-selector: ".slider:focus-visible::part(thumb focus)"
+) {
+  #{$slider-selector} {
+    @extend %slider__slider;
+  }
+  #{$slider-selector}:disabled {
+    @extend %slider__slider--disabled;
+  }
+
+  #{$track-selector} {
+    @extend %slider__track;
+  }
+
+  #{$thumb-selector} {
+    @extend %slider__thumb;
+  }
+
+  #{$thumb-focus-selector} {
+    @include focus-outline();
+  }
+}

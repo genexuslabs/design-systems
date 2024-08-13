@@ -10,13 +10,14 @@
   --item__color: var(--item__color--enabled);
 
   // enabled
-  --item__bg-color--enabled: var(--mer-color__elevation--01);
+  --item__bg-color--enabled: transparent;
   --item__border-color--enabled: transparent;
   --item__color--enabled: var(--mer-text__on-elevation);
 
   // hover
   --item__bg-color--hover: var(--mer-color__tinted-blue--5);
-  --item__border-color--hover: var(--mer-color__tinted-blue--20);
+  // --item__border-color--hover: var(--mer-color__tinted-blue--20); // to be defined later with design team
+  --item__border-color--hover: transparent;
   --item__color--hover: var(--mer-color__neutral-gray--100);
 
   // selected
@@ -45,7 +46,7 @@
 
   // - - - - - - - Padding - - - - - - -
 
-  --item__padding-block: var(--mer-spacing--xs);
+  --item__padding-block: var(--mer-spacing--2xs);
   --item__padding-inline: var(--mer-spacing--xs);
 
   // - - - - - - - Height - - - - - - -
@@ -55,18 +56,29 @@
 
   // - - - - - - - Font Face - - - - - - -
 
-  --item__font-family: var(--mer-font-family--body);
-  --item__font-weight: var(--mer-font__weight--regular);
-  --mer-item-header__font-weight: var(--mer-font__weight--semi-bold);
-
-  // - - - - - - - Font Size - - - - - - -
-
+  // item
+  --item__font-size: var(--item__font-size--regular);
   --item__font-size--small: var(--mer-font__size--3xs);
   --item__font-size--regular: var(--mer-font__size--xs);
+  --item__font-weight: var(--mer-font__weight--regular);
+  // item header
+  --item-header__font-weight: var(--mer-font__weight--semi-bold);
+
+  // - - - - - - - Item Gap - - - - - - -
+  // For example, the gap between the icon and the caption
+  --item__gap--regular: var(--mer-spacing--xs);
+
+  // - - - - - - - Line Height - - - - - - -
+  --item__line-height: var(--mer-line-height--tight);
 
   // - - - - - - - - - - - - - - - - - - - -
   //           Items Container
   // - - - - - - - - - - - - - - - - - - - -
+
+  // - - - - - - - Border - - - - - - -
+
+  --items-container__border-width: var(--mer-border__width--sm);
+  --items-container__border-style: solid;
 
   // - - - - - - - Colors - - - - - - -
 
@@ -86,16 +98,75 @@
   // - - - - - - - Gap - - - - - - -
 
   --items-container__gap: var(--mer-spacing--2xs);
+  --items-container__gap--small: var(--mer-spacing--2xs);
 
   // - - - - - - - Height - - - - - - -
 
   --items-container__max-block-size: 300px;
 
+  // - - - - - - - Separator - - - - - - -
+  // The separator is an element that separates
+  // two groups inside the container.
+
+  --items-container-separator__block-size: var(--mer-border__width--sm);
+  --items-container-separator__inline-size: 100%;
+  --items-container-separator__bg-color: var(--items-container__border-color);
+
   // - - - - - - - - - - - - - - - - - - - -
   //               Grid Cell
   // - - - - - - - - - - - - - - - - - - - -
+
   --grid-cell__border-color: var(--mer-color__elevation--04);
   --grid-cell__border: var(--mer-border__width--sm) solid
     var(--grid-cell__border-color);
   --grid-cell__box-shadow-inline-block: 0 0 0 1px var(--grid-cell__border-color);
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //          Tab Caption (Button)
+  // - - - - - - - - - - - - - - - - - - - -
+
+  // - - - - - - - Color Generic - - - - - - -
+  --tab-caption__bg-color: var(--tab-caption__bg-color--enabled);
+  --tab-caption__color: var(--tab-caption__color--enabled);
+  --tab-caption__border-color: transparent;
+
+  // - - - - - - - Border - - - - - - -
+  --tab-caption__border-style: solid;
+  --tab-caption__border-width: var(--mer-border__width--sm);
+
+  // - - - - - - - Colors - - - - - - -
+  // enabled
+  --tab-caption__bg-color--enabled: transparent;
+  --tab-caption__border-color--enabled: transparent;
+  --tab-caption__color--enabled: var(--mer-text__neutral);
+
+  // hover
+  --tab-caption__bg-color--hover: var(--mer-color__tinted-blue--10);
+
+  // selected
+  --tab-caption__bg-color--selected-inline: transparent;
+  --tab-caption__bg-color--selected-stack: var(--mer-color__tinted-blue--10);
+  --tab-caption__border-color--selected-inline: var(--mer-accent__primary);
+  --tab-caption__border-color--selected-stack: var(
+    --mer-color__tinted-blue--20
+  );
+  --tab-caption__color--selected: var(--mer-text__highlighted);
+
+  // disabled
+  --tab-caption__bg-color--disabled: transparent;
+  --tab-caption__border-color--disabled: var(
+    --mer-border-color__on-elevation--01
+  );
+  --tab-caption__color--disabled: var(--mer-text__primary--disabled);
+
+  // - - - - - - - Font - - - - - - -
+  --tab-caption__font-size: var(--mer-font__size--3xs);
+  --tab-caption__font-weight: var(--mer-font__weight--semi-bold);
+
+  // - - - - - - - Padding - - - - - - -
+  --tab-caption__padding-block: var(--mer-spacing--xs);
+  --tab-caption__padding-inline: var(--mer-spacing--sm) var(--mer-spacing--xs);
+
+  // - - - - - - - Gap - - - - - - -
+  --tab-caption__gap: var(--mer-spacing--xs); // 6px does not exist on the ds.
 }
