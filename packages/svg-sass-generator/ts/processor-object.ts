@@ -30,7 +30,8 @@ export const generateIconsObject = (
   iconsObjectFilePath: string,
   iconsColorsSchema: IconsColorsSchema,
   monochromeColorsMap: MonochromeColorsMap,
-  monochromeCategoriesMap: MonochromeCategoriesMap
+  monochromeCategoriesMap: MonochromeCategoriesMap,
+  defaultColorType: string
 ): boolean => {
   if (!sourceIconsArray || !iconsObjectFilePath) {
     return false;
@@ -93,14 +94,23 @@ export const generateIconsObject = (
     }
   });
 
+  const generateConfig = (defaultColorType: string): Config => {
+    return { defaultColorType: defaultColorType };
+  };
+
   const normalizedIconsObjectFilePath = normalizeFilePath(iconsObjectFilePath);
   const objectName = getFileNameFromPath(normalizedIconsObjectFilePath);
   const prettyIconsObject = stringifyObject(iconsObject, {
     indent: "  ",
     singleQuotes: false,
   });
+  const config = stringifyObject(generateConfig(defaultColorType), {
+    indent: "  ",
+    singleQuotes: false,
+  });
 
   const output = `export const ${objectName} = {
+  config: ${config},
   icons: ${prettyIconsObject}
 };`;
 
@@ -208,3 +218,7 @@ interface IconsObject {
 type Icon = {
   name: string;
 };
+
+interface Config {
+  defaultColorType?: string;
+}
