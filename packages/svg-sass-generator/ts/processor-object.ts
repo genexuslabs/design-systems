@@ -114,7 +114,7 @@ export const generateIconsObject = (
   icons: ${prettyIconsObject}
 };`;
 
-  // Freeze all objects
+  // Freeze all objects.
   const freezedObjectsOutput =
     FREEZE_FUNCTION + output.replace(/{/g, "freeze({").replace(/}/g, "})");
 
