@@ -142,6 +142,7 @@
       color-scheme: light;
       @include foundation-colors--light();
       @include semantic-colors--light();
+      @include code-tokens--light();
     }
   }
   @if $colors and $tokens and $prefers-color-scheme-light {
@@ -152,6 +153,7 @@
         color-scheme: light;
         @include foundation-colors--light();
         @include semantic-colors--light();
+        @include code-tokens--light();
       }
     }
   }
@@ -164,6 +166,7 @@
       color-scheme: dark;
       @include foundation-colors--dark();
       @include semantic-colors--dark();
+      @include code-tokens--dark();
     }
   }
   @if $colors and $tokens and $prefers-color-scheme-dark {
@@ -174,6 +177,7 @@
         color-scheme: dark;
         @include foundation-colors--dark();
         @include semantic-colors--dark();
+        @include code-tokens--dark();
       }
     }
   }
