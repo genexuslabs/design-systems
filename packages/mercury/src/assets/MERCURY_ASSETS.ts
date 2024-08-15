@@ -2581,6 +2581,1520 @@ export const MERCURY_ASSETS = freeze({
       })
     })
   }),
+  system: freeze({
+    warning: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_warning_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_warning_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_warning_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_warning_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_warning_on-elevation--enabled"
+        })
+      })
+    }),
+    "warning-circle": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_warning-circle_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_warning-circle_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_warning-circle_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_warning-circle_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_warning-circle_on-elevation--enabled"
+        })
+      })
+    }),
+    version: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_version_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_version_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_version_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_version_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_version_on-elevation--enabled"
+        })
+      })
+    }),
+    user: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_user_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_user_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_user_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_user_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_user_on-elevation--enabled"
+        })
+      })
+    }),
+    undo: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_undo_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_undo_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_undo_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_undo_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_undo_on-elevation--enabled"
+        })
+      })
+    }),
+    tools: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_tools_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_tools_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_tools_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_tools_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_tools_on-elevation--enabled"
+        })
+      })
+    }),
+    time: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_time_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_time_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_time_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_time_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_time_on-elevation--enabled"
+        })
+      })
+    }),
+    thunder: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_thunder_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_thunder_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_thunder_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_thunder_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_thunder_on-elevation--enabled"
+        })
+      })
+    }),
+    success: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_success_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_success_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_success_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_success_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_success_on-elevation--enabled"
+        })
+      })
+    }),
+    show: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_show_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_show_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_show_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_show_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_show_on-elevation--enabled"
+        })
+      })
+    }),
+    share: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_share_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_share_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_share_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_share_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_share_on-elevation--enabled"
+        })
+      })
+    }),
+    settings: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_settings_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_settings_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_settings_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_settings_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_settings_on-elevation--enabled"
+        })
+      })
+    }),
+    send: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_send_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_send_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_send_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_send_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_send_on-elevation--enabled"
+        })
+      })
+    }),
+    search: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_search_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_search_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_search_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_search_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_search_on-elevation--enabled"
+        })
+      })
+    }),
+    save: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_save_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_save_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_save_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_save_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_save_on-elevation--enabled"
+        })
+      })
+    }),
+    run: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_run_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_run_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_run_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_run_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_run_on-elevation--enabled"
+        })
+      })
+    }),
+    retry: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_retry_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_retry_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_retry_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_retry_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_retry_on-elevation--enabled"
+        })
+      })
+    }),
+    refresh: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_refresh_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_refresh_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_refresh_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_refresh_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_refresh_on-elevation--enabled"
+        })
+      })
+    }),
+    query: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_query_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_query_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_query_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_query_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_query_on-elevation--enabled"
+        })
+      })
+    }),
+    "qr-code": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_qr-code_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_qr-code_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_qr-code_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_qr-code_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_qr-code_on-elevation--enabled"
+        })
+      })
+    }),
+    publish: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_publish_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_publish_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_publish_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_publish_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_publish_on-elevation--enabled"
+        })
+      })
+    }),
+    property: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_property_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_property_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_property_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_property_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_property_on-elevation--enabled"
+        })
+      })
+    }),
+    notification: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_notification_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_notification_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_notification_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_notification_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_notification_on-elevation--enabled"
+        })
+      })
+    }),
+    news: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_news_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_news_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_news_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_news_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_news_on-elevation--enabled"
+        })
+      })
+    }),
+    "more-options": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_more-options_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_more-options_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_more-options_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_more-options_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_more-options_on-elevation--enabled"
+        })
+      })
+    }),
+    mobile: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_mobile_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_mobile_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_mobile_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_mobile_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_mobile_on-elevation--enabled"
+        })
+      })
+    }),
+    "mobile-v2": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_mobile-v2_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_mobile-v2_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_mobile-v2_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_mobile-v2_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_mobile-v2_on-elevation--enabled"
+        })
+      })
+    }),
+    message: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_message_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_message_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_message_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_message_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_message_on-elevation--enabled"
+        })
+      })
+    }),
+    menu: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_menu_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_menu_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_menu_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_menu_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_menu_on-elevation--enabled"
+        })
+      })
+    }),
+    mail: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_mail_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_mail_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_mail_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_mail_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_mail_on-elevation--enabled"
+        })
+      })
+    }),
+    logout: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_logout_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_logout_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_logout_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_logout_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_logout_on-elevation--enabled"
+        })
+      })
+    }),
+    "log-out": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_log-out_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_log-out_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_log-out_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_log-out_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_log-out_on-elevation--enabled"
+        })
+      })
+    }),
+    lock: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_lock_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_lock_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_lock_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_lock_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_lock_on-elevation--enabled"
+        })
+      })
+    }),
+    loading: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_loading_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_loading_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_loading_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_loading_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_loading_on-elevation--enabled"
+        })
+      })
+    }),
+    link: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_link_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_link_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_link_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_link_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_link_on-elevation--enabled"
+        })
+      })
+    }),
+    "link-variant": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_link-variant_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_link-variant_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_link-variant_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_link-variant_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_link-variant_on-elevation--enabled"
+        })
+      })
+    }),
+    launch: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_launch_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_launch_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_launch_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_launch_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_launch_on-elevation--enabled"
+        })
+      })
+    }),
+    language: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_language_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_language_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_language_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_language_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_language_on-elevation--enabled"
+        })
+      })
+    }),
+    home: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_home_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_home_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_home_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_home_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_home_on-elevation--enabled"
+        })
+      })
+    }),
+    hide: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_hide_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_hide_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_hide_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_hide_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_hide_on-elevation--enabled"
+        })
+      })
+    }),
+    help: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_help_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_help_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_help_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_help_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_help_on-elevation--enabled"
+        })
+      })
+    }),
+    "help-variant": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_help-variant_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_help-variant_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_help-variant_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_help-variant_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_help-variant_on-elevation--enabled"
+        })
+      })
+    }),
+    folder: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_folder_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_folder_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_folder_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_folder_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_folder_on-elevation--enabled"
+        })
+      })
+    }),
+    filters: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_filters_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_filters_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_filters_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_filters_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_filters_on-elevation--enabled"
+        })
+      })
+    }),
+    expand: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_expand_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_expand_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_expand_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_expand_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_expand_on-elevation--enabled"
+        })
+      })
+    }),
+    edit: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_edit_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_edit_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_edit_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_edit_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_edit_on-elevation--enabled"
+        })
+      })
+    }),
+    "edit-filled": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_edit-filled_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_edit-filled_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_edit-filled_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_edit-filled_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_edit-filled_on-elevation--enabled"
+        })
+      })
+    }),
+    draft: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_draft_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_draft_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_draft_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_draft_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_draft_on-elevation--enabled"
+        })
+      })
+    }),
+    download: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_download_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_download_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_download_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_download_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_download_on-elevation--enabled"
+        })
+      })
+    }),
+    detail: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_detail_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_detail_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_detail_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_detail_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_detail_on-elevation--enabled"
+        })
+      })
+    }),
+    "delete-outlined": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_delete-outlined_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_delete-outlined_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_delete-outlined_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_delete-outlined_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_delete-outlined_on-elevation--enabled"
+        })
+      })
+    }),
+    "delete-filled": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_delete-filled_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_delete-filled_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_delete-filled_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_delete-filled_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_delete-filled_on-elevation--enabled"
+        })
+      })
+    }),
+    database: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_database_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_database_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_database_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_database_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_database_on-elevation--enabled"
+        })
+      })
+    }),
+    "data-modeling": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_data-modeling_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_data-modeling_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_data-modeling_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_data-modeling_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_data-modeling_on-elevation--enabled"
+        })
+      })
+    }),
+    dashboard: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_dashboard_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_dashboard_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_dashboard_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_dashboard_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_dashboard_on-elevation--enabled"
+        })
+      })
+    }),
+    "dark-mode": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_dark-mode_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_dark-mode_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_dark-mode_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_dark-mode_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_dark-mode_on-elevation--enabled"
+        })
+      })
+    }),
+    copy: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_copy_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_copy_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_copy_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_copy_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_copy_on-elevation--enabled"
+        })
+      })
+    }),
+    contact: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_contact_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_contact_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_contact_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_contact_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_contact_on-elevation--enabled"
+        })
+      })
+    }),
+    close: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_close_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_close_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_close_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_close_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_close_on-elevation--enabled"
+        })
+      })
+    }),
+    check: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_check_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_check_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_check_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_check_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_check_on-elevation--enabled"
+        })
+      })
+    }),
+    "card-variant": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_card-variant_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_card-variant_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_card-variant_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_card-variant_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_card-variant_on-elevation--enabled"
+        })
+      })
+    }),
+    "arrow-up": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_arrow-up_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_arrow-up_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_arrow-up_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_arrow-up_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_arrow-up_on-elevation--enabled"
+        })
+      })
+    }),
+    "arrow-right": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_arrow-right_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_arrow-right_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_arrow-right_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_arrow-right_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_arrow-right_on-elevation--enabled"
+        })
+      })
+    }),
+    "arrow-left": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_arrow-left_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_arrow-left_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_arrow-left_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_arrow-left_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_arrow-left_on-elevation--enabled"
+        })
+      })
+    }),
+    "arrow-down": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_arrow-down_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_arrow-down_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_arrow-down_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_arrow-down_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_arrow-down_on-elevation--enabled"
+        })
+      })
+    }),
+    applications: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_applications_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_applications_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_applications_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_applications_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_applications_on-elevation--enabled"
+        })
+      })
+    }),
+    ai: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_ai_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_ai_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_ai_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_ai_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_ai_on-elevation--enabled"
+        })
+      })
+    }),
+    add: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_add_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_add_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_add_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_add_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_add_on-elevation--enabled"
+        })
+      })
+    }),
+    "add-circle": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_add-circle_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_add-circle_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_add-circle_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_add-circle_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_add-circle_on-elevation--enabled"
+        })
+      })
+    }),
+    Cut: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_Cut_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_Cut_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_Cut_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_Cut_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_Cut_on-elevation--enabled"
+        })
+      })
+    }),
+    Card: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_Card_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_Card_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_Card_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_Card_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_Card_on-elevation--enabled"
+        })
+      })
+    }),
+    Assistant: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_Assistant_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_Assistant_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_Assistant_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_Assistant_on-surface--disabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_Assistant_on-elevation--enabled"
+        })
+      })
+    })
+  }),
   "patterns-default-associated": freeze({
     synchronized: freeze({
       enabled: freeze({
