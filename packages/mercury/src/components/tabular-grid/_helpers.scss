@@ -1,0 +1,15 @@
+/// @group Grid
+/// @param {String} $column-nth ["1"] -
+/// @param {String} $tabular-grid-row-selector [".tabular-grid-row"] -
+/// @param {String} $tabular-grid-cell-selector [".tabular-grid-cell"] -
+@mixin tabular-grid-cell-editable(
+  $column-nth: "1",
+  $tabular-grid-row-selector: ".tabular-grid-row",
+  $tabular-grid-cell-selector: ".tabular-grid-cell"
+) {
+  #{$tabular-grid-row-selector} {
+    #{$tabular-grid-cell-selector}:nth-child(#{$column-nth}) {
+      // Add your styles here
+    }
+  }
+}
