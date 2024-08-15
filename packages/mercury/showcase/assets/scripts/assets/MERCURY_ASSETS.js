@@ -2599,6 +2599,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_warning_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_warning_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_warning_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_warning_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_warning_primary--disabled"
+                    })
                 })
             }),
             "warning-circle": freeze({
@@ -2619,6 +2633,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_warning-circle_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_warning-circle_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_warning-circle_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_warning-circle_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_warning-circle_primary--disabled"
                     })
                 })
             }),
@@ -2641,6 +2669,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_version_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_version_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_version_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_version_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_version_primary--disabled"
+                    })
                 })
             }),
             user: freeze({
@@ -2661,6 +2703,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_user_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_user_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_user_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_user_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_user_primary--disabled"
                     })
                 })
             }),
@@ -2683,6 +2739,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_undo_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_undo_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_undo_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_undo_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_undo_primary--disabled"
+                    })
                 })
             }),
             tools: freeze({
@@ -2703,6 +2773,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_tools_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_tools_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_tools_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_tools_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_tools_primary--disabled"
                     })
                 })
             }),
@@ -2725,6 +2809,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_time_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_time_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_time_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_time_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_time_primary--disabled"
+                    })
                 })
             }),
             thunder: freeze({
@@ -2745,6 +2843,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_thunder_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_thunder_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_thunder_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_thunder_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_thunder_primary--disabled"
                     })
                 })
             }),
@@ -2767,6 +2879,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_success_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_success_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_success_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_success_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_success_primary--disabled"
+                    })
                 })
             }),
             show: freeze({
@@ -2787,6 +2913,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_show_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_show_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_show_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_show_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_show_primary--disabled"
                     })
                 })
             }),
@@ -2809,6 +2949,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_share_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_share_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_share_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_share_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_share_primary--disabled"
+                    })
                 })
             }),
             settings: freeze({
@@ -2829,6 +2983,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_settings_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_settings_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_settings_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_settings_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_settings_primary--disabled"
                     })
                 })
             }),
@@ -2851,6 +3019,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_send_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_send_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_send_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_send_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_send_primary--disabled"
+                    })
                 })
             }),
             search: freeze({
@@ -2871,6 +3053,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_search_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_search_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_search_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_search_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_search_primary--disabled"
                     })
                 })
             }),
@@ -2893,6 +3089,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_save_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_save_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_save_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_save_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_save_primary--disabled"
+                    })
                 })
             }),
             run: freeze({
@@ -2913,6 +3123,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_run_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_run_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_run_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_run_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_run_primary--disabled"
                     })
                 })
             }),
@@ -2935,6 +3159,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_retry_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_retry_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_retry_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_retry_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_retry_primary--disabled"
+                    })
                 })
             }),
             refresh: freeze({
@@ -2955,6 +3193,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_refresh_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_refresh_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_refresh_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_refresh_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_refresh_primary--disabled"
                     })
                 })
             }),
@@ -2977,6 +3229,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_query_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_query_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_query_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_query_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_query_primary--disabled"
+                    })
                 })
             }),
             "qr-code": freeze({
@@ -2997,6 +3263,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_qr-code_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_qr-code_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_qr-code_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_qr-code_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_qr-code_primary--disabled"
                     })
                 })
             }),
@@ -3019,6 +3299,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_publish_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_publish_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_publish_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_publish_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_publish_primary--disabled"
+                    })
                 })
             }),
             property: freeze({
@@ -3039,6 +3333,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_property_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_property_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_property_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_property_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_property_primary--disabled"
                     })
                 })
             }),
@@ -3061,6 +3369,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_notification_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_notification_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_notification_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_notification_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_notification_primary--disabled"
+                    })
                 })
             }),
             news: freeze({
@@ -3081,6 +3403,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_news_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_news_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_news_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_news_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_news_primary--disabled"
                     })
                 })
             }),
@@ -3103,6 +3439,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_more-options_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_more-options_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_more-options_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_more-options_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_more-options_primary--disabled"
+                    })
                 })
             }),
             mobile: freeze({
@@ -3123,6 +3473,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_mobile_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_mobile_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_mobile_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_mobile_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_mobile_primary--disabled"
                     })
                 })
             }),
@@ -3145,6 +3509,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_mobile-v2_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_mobile-v2_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_mobile-v2_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_mobile-v2_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_mobile-v2_primary--disabled"
+                    })
                 })
             }),
             message: freeze({
@@ -3165,6 +3543,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_message_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_message_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_message_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_message_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_message_primary--disabled"
                     })
                 })
             }),
@@ -3187,6 +3579,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_menu_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_menu_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_menu_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_menu_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_menu_primary--disabled"
+                    })
                 })
             }),
             mail: freeze({
@@ -3207,6 +3613,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_mail_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_mail_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_mail_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_mail_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_mail_primary--disabled"
                     })
                 })
             }),
@@ -3229,6 +3649,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_logout_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_logout_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_logout_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_logout_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_logout_primary--disabled"
+                    })
                 })
             }),
             "log-out": freeze({
@@ -3249,6 +3683,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_log-out_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_log-out_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_log-out_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_log-out_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_log-out_primary--disabled"
                     })
                 })
             }),
@@ -3271,6 +3719,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_lock_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_lock_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_lock_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_lock_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_lock_primary--disabled"
+                    })
                 })
             }),
             loading: freeze({
@@ -3291,6 +3753,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_loading_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_loading_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_loading_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_loading_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_loading_primary--disabled"
                     })
                 })
             }),
@@ -3313,6 +3789,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_link_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_link_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_link_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_link_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_link_primary--disabled"
+                    })
                 })
             }),
             "link-variant": freeze({
@@ -3333,6 +3823,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_link-variant_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_link-variant_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_link-variant_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_link-variant_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_link-variant_primary--disabled"
                     })
                 })
             }),
@@ -3355,6 +3859,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_launch_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_launch_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_launch_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_launch_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_launch_primary--disabled"
+                    })
                 })
             }),
             language: freeze({
@@ -3375,6 +3893,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_language_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_language_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_language_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_language_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_language_primary--disabled"
                     })
                 })
             }),
@@ -3397,6 +3929,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_home_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_home_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_home_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_home_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_home_primary--disabled"
+                    })
                 })
             }),
             hide: freeze({
@@ -3417,6 +3963,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_hide_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_hide_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_hide_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_hide_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_hide_primary--disabled"
                     })
                 })
             }),
@@ -3439,6 +3999,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_help_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_help_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_help_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_help_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_help_primary--disabled"
+                    })
                 })
             }),
             "help-variant": freeze({
@@ -3459,6 +4033,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_help-variant_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_help-variant_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_help-variant_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_help-variant_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_help-variant_primary--disabled"
                     })
                 })
             }),
@@ -3481,6 +4069,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_folder_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_folder_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_folder_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_folder_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_folder_primary--disabled"
+                    })
                 })
             }),
             filters: freeze({
@@ -3501,6 +4103,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_filters_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_filters_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_filters_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_filters_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_filters_primary--disabled"
                     })
                 })
             }),
@@ -3523,6 +4139,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_expand_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_expand_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_expand_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_expand_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_expand_primary--disabled"
+                    })
                 })
             }),
             edit: freeze({
@@ -3543,6 +4173,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_edit_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_edit_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_edit_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_edit_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_edit_primary--disabled"
                     })
                 })
             }),
@@ -3565,6 +4209,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_edit-filled_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_edit-filled_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_edit-filled_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_edit-filled_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_edit-filled_primary--disabled"
+                    })
                 })
             }),
             draft: freeze({
@@ -3585,6 +4243,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_draft_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_draft_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_draft_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_draft_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_draft_primary--disabled"
                     })
                 })
             }),
@@ -3607,6 +4279,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_download_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_download_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_download_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_download_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_download_primary--disabled"
+                    })
                 })
             }),
             detail: freeze({
@@ -3627,6 +4313,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_detail_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_detail_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_detail_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_detail_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_detail_primary--disabled"
                     })
                 })
             }),
@@ -3649,6 +4349,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_delete-outlined_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_delete-outlined_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_delete-outlined_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_delete-outlined_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_delete-outlined_primary--disabled"
+                    })
                 })
             }),
             "delete-filled": freeze({
@@ -3669,6 +4383,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_delete-filled_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_delete-filled_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_delete-filled_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_delete-filled_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_delete-filled_primary--disabled"
                     })
                 })
             }),
@@ -3691,6 +4419,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_database_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_database_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_database_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_database_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_database_primary--disabled"
+                    })
                 })
             }),
             "data-modeling": freeze({
@@ -3711,6 +4453,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_data-modeling_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_data-modeling_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_data-modeling_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_data-modeling_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_data-modeling_primary--disabled"
                     })
                 })
             }),
@@ -3733,6 +4489,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_dashboard_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_dashboard_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_dashboard_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_dashboard_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_dashboard_primary--disabled"
+                    })
                 })
             }),
             "dark-mode": freeze({
@@ -3753,6 +4523,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_dark-mode_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_dark-mode_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_dark-mode_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_dark-mode_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_dark-mode_primary--disabled"
                     })
                 })
             }),
@@ -3775,6 +4559,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_copy_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_copy_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_copy_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_copy_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_copy_primary--disabled"
+                    })
                 })
             }),
             contact: freeze({
@@ -3795,6 +4593,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_contact_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_contact_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_contact_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_contact_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_contact_primary--disabled"
                     })
                 })
             }),
@@ -3817,6 +4629,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_close_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_close_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_close_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_close_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_close_primary--disabled"
+                    })
                 })
             }),
             check: freeze({
@@ -3837,6 +4663,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_check_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_check_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_check_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_check_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_check_primary--disabled"
                     })
                 })
             }),
@@ -3859,6 +4699,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_card-variant_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_card-variant_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_card-variant_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_card-variant_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_card-variant_primary--disabled"
+                    })
                 })
             }),
             "arrow-up": freeze({
@@ -3879,6 +4733,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_arrow-up_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_arrow-up_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_arrow-up_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_arrow-up_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_arrow-up_primary--disabled"
                     })
                 })
             }),
@@ -3901,6 +4769,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_arrow-right_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_arrow-right_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_arrow-right_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_arrow-right_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_arrow-right_primary--disabled"
+                    })
                 })
             }),
             "arrow-left": freeze({
@@ -3921,6 +4803,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_arrow-left_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_arrow-left_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_arrow-left_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_arrow-left_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_arrow-left_primary--disabled"
                     })
                 })
             }),
@@ -3943,6 +4839,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_arrow-down_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_arrow-down_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_arrow-down_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_arrow-down_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_arrow-down_primary--disabled"
+                    })
                 })
             }),
             applications: freeze({
@@ -3963,6 +4873,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_applications_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_applications_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_applications_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_applications_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_applications_primary--disabled"
                     })
                 })
             }),
@@ -3985,6 +4909,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_ai_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_ai_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_ai_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_ai_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_ai_primary--disabled"
+                    })
                 })
             }),
             add: freeze({
@@ -4005,6 +4943,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_add_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_add_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_add_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_add_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_add_primary--disabled"
                     })
                 })
             }),
@@ -4027,6 +4979,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_add-circle_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_add-circle_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_add-circle_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_add-circle_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_add-circle_primary--disabled"
+                    })
                 })
             }),
             Cut: freeze({
@@ -4047,6 +5013,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_Cut_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_Cut_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_Cut_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_Cut_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_Cut_primary--disabled"
                     })
                 })
             }),
@@ -4069,6 +5049,20 @@ export const MERCURY_ASSETS = freeze({
                     enabled: freeze({
                         name: "system_Card_on-elevation--enabled"
                     })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_Card_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_Card_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_Card_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_Card_primary--disabled"
+                    })
                 })
             }),
             Assistant: freeze({
@@ -4089,6 +5083,20 @@ export const MERCURY_ASSETS = freeze({
                 "on-elevation": freeze({
                     enabled: freeze({
                         name: "system_Assistant_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_Assistant_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_Assistant_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_Assistant_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_Assistant_primary--disabled"
                     })
                 })
             })
