@@ -34,20 +34,66 @@ const MULTI_COLOR_CATEGORIES = [
 ];
 
 /* - - - - - - - - - - - - - - - - - - - -
+Icons descriptions mapping
+- - - - - - - - - - - - - - - - - - - - */
+const ICONS_DESCRIPTIONS = {
+  "window-tools":
+    "This category includes icons related to various tools and utilities used within the GeneXus development environment. These tools assist developers in managing and configuring different aspects of their projects, enhancing productivity and streamlining workflow within the GeneXus platform.",
+
+  "patterns-default-associated":
+    "Icons in this category represent default patterns that are automatically associated with certain functionalities within GeneXus. These patterns simplify the development process by providing pre-defined structures and behaviors that can be easily implemented across various parts of an application.",
+
+  patterns:
+    "The patterns category encompasses a range of design patterns that can be applied to GeneXus projects. These patterns help standardize development practices, ensuring consistency and efficiency when creating applications. They cover common scenarios and workflows, offering reusable solutions to common problems.",
+
+  "object-parts":
+    "This category includes icons representing various parts of objects within GeneXus. Objects in GeneXus are the building blocks of applications, and this category helps identify different components or sections of these objects, aiding developers in organizing and structuring their applications.",
+
+  objects:
+    "Icons under the objects category represent the core elements that make up GeneXus applications. Objects are essential units of functionality, including data structures, user interfaces, and business logic, which together define the behavior and appearance of an application.",
+
+  navigation:
+    "The navigation category features icons related to the navigation of applications and the GeneXus development environment. These icons help developers design and implement user-friendly navigation flows, ensuring that users can move seamlessly through different sections of an application.",
+
+  menus:
+    "This category is dedicated to icons representing menus within applications. Menus are crucial for organizing and presenting options to users, and these icons help in designing intuitive and accessible menus that enhance the overall user experience.",
+
+  "gx-test":
+    "Icons in the gx-test category are related to testing tools and features within GeneXus. Testing is a critical phase in the development process, and these icons represent the various tools and functionalities that help ensure the quality and reliability of applications developed with GeneXus.",
+
+  "gx-server":
+    "The gx-server category includes icons associated with GeneXus Server, a tool that facilitates collaboration and version control in GeneXus projects. These icons help represent different server-related actions, such as committing changes, updating versions, and managing project repositories.",
+
+  general:
+    "This category covers a broad range of icons that don't fit into specific categories but are essential for various general tasks and functionalities within GeneXus. These icons provide visual cues for a wide array of operations and actions in the development environment.",
+
+  "gemini-tools":
+    "Icons in the gemini-tools category are linked to tools that are part of the Gemini framework within GeneXus. These tools provide specialized functionalities for specific tasks, aiding developers in extending the capabilities of their applications and enhancing their workflows.",
+
+  "editing-structures":
+    "The editing-structures category includes icons related to the creation and modification of data structures within GeneXus. These icons assist developers in defining and managing the underlying data models that power their applications, ensuring that data is organized and accessible.",
+
+  controls:
+    "Icons under the controls category represent various UI controls that can be implemented in GeneXus applications. These controls include buttons, input fields, dropdowns, and other interactive elements that are essential for building user interfaces.",
+
+  bpm: "The bpm category features icons related to Business Process Management (BPM) within GeneXus. BPM tools help in designing, automating, and optimizing business processes, and these icons represent the various elements and actions involved in managing and executing workflows."
+};
+
+/* - - - - - - - - - - - - - - - - - - - -
 Helper Render Functions (Elements)
 - - - - - - - - - - - - - - - - - - - - */
 
-const createSection = name => {
-  const sectionElement = document.createElement("section");
-  sectionElement.className = "section";
+const createSection = iconCategory => {
+  const sectionEl = document.createElement("section");
+  sectionEl.className = "section";
+  const sectionDescriptionEl = document.createElement("p");
+  sectionDescriptionEl.classList.add("section__description");
+  sectionDescriptionEl.textContent = ICONS_DESCRIPTIONS[iconCategory];
   const headerElement = document.createElement("header");
   headerElement.className = "section__header";
-  const h1Element = document.createElement("h1");
-  h1Element.className = "section__title";
-  h1Element.textContent = name;
-  headerElement.appendChild(h1Element);
-  sectionElement.appendChild(headerElement);
-  return sectionElement;
+  headerElement.appendChild(sectionDescriptionEl);
+  sectionEl.appendChild(headerElement);
+  return sectionEl;
 };
 const createSectionArticlesContainer = () => {
   const sectionArticlesContainer = document.createElement("div");
@@ -168,7 +214,7 @@ const renderMulticolorArticle = (iconName, iconColorsObject) => {
   }
   articleContent.appendChild(iconsGridEl);
   articleMailEl.appendChild(articleContent);
-  articleEl.appendChild(articleHeaderEl);
+  // articleEl.appendChild(articleHeaderEl);
   articleEl.appendChild(articleMailEl);
   return articleEl;
 };
@@ -213,6 +259,8 @@ const generateIconsForShowcase = () => {
 
     // createSection = .section + .section__header + .section__title
     let sectionEl = createSection(category);
+    sectionEl.setAttribute("data-title", category);
+    sectionEl.setAttribute("data-nav", true);
     let sectionArticlesContainerEl = createSectionArticlesContainer();
 
     // For each icon of the current category...
