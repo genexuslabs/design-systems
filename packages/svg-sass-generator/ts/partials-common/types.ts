@@ -11,7 +11,7 @@ export interface MulticolorSchema {
 
 export interface MulticolorFiguresResult {
   processed: boolean;
-  cheerioSvgFigures: cheerio.Cheerio;
+  svg: cheerio.Cheerio;
   usedColors: string[];
   size: {
     width: string;

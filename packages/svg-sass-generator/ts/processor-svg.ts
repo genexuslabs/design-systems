@@ -120,19 +120,21 @@ function processIcons(
     const iconType = getIconType(svgSourceCheerio, statesJson);
 
     if (iconType === "multicolor") {
-      const svgFiguresResult = processMulticolorFigures(
+      const svgResult = processMulticolorFigures(
         svgSourceCheerio,
         statesJson,
         iconPath,
         LOG_PATH
       );
-      if (svgFiguresResult.processed) {
+
+      if (svgResult.processed) {
         /* ==================
         MULTICOLOR LIGHT
         ================== */
         // Create and get svg
+
         const svgIconLight = createMulticolorSvg(
-          svgFiguresResult,
+          svgResult,
           statesJson,
           "light"
         );
@@ -169,11 +171,7 @@ function processIcons(
         MULTICOLOR DARK
         ================== */
         // Create and get svg
-        const svgIconDark = createMulticolorSvg(
-          svgFiguresResult,
-          statesJson,
-          "dark"
-        );
+        const svgIconDark = createMulticolorSvg(svgResult, statesJson, "dark");
         // Save svg on disk
         let darkMultiColorSvgSavedOnDisk: SavedOnDisk;
         if (svgIconDark) {

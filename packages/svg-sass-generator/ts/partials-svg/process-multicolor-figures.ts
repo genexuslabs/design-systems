@@ -1,6 +1,5 @@
 import { SVG_FIGURES } from "./utils.js";
 import {
-  FigureType,
   IconsColorsSchema,
   MulticolorFiguresResult,
 } from "../partials-common/types.js";
@@ -18,6 +17,7 @@ export const processMulticolorFigures = (
   LOG_PATH: string
 ): MulticolorFiguresResult => {
   const svg = svgCheerio("svg");
+  const svgOriginalString = svg.toString(); // used later to compare the final svg, to check it it was modified.
   const svgWidth = svg.attr("width");
   const svgHeight = svg.attr("height");
   const svgFigures = svgCheerio(SVG_FIGURES.join(","));
@@ -32,7 +32,7 @@ export const processMulticolorFigures = (
     log(msg, LOG_PATH);
     return {
       processed: false,
-      cheerioSvgFigures: null,
+      svg: null,
       usedColors: null,
       size: {
         width: svgWidth,
@@ -41,12 +41,9 @@ export const processMulticolorFigures = (
     };
   }
 
-  // get a state of the svg before processing, to compare later.
-  const originalFiguresString = cheerio.html(svgFigures);
-
-  svgFigures.each((i, figure) => {
-    const cheerioObj = cheerio(figure);
-    processFigure(i, cheerioObj, statesJson);
+  const svgFiguresJoin = SVG_FIGURES.join(", ");
+  svg.find(svgFiguresJoin).each((i, element) => {
+    processFigureEl(i, element, statesJson);
   });
 
   // write messages on the log if any
@@ -70,15 +67,11 @@ export const processMulticolorFigures = (
 
   // If the original icon string differs from the updated, then it is
   // considered as processed
-  const processedFiguresString = cheerio.html(svgFigures);
-
-  const originalAndUpdatedDiffer =
-    removeSpacesAndLineBreaks(originalFiguresString) !==
-    removeSpacesAndLineBreaks(processedFiguresString);
+  const originalAndUpdatedDiffer = svgOriginalString !== svg.toString();
 
   return {
     processed: originalAndUpdatedDiffer,
-    cheerioSvgFigures: svgFigures,
+    svg: svg,
     usedColors: usedColors,
     size: {
       width: svgWidth,
@@ -87,29 +80,25 @@ export const processMulticolorFigures = (
   };
 };
 
-const processFigure = (
+const processFigureEl = (
   index: number,
-  svgFigure: cheerio.Cheerio,
+  element: cheerio.Element,
   statesJson: IconsColorsSchema
-): cheerio.Cheerio => {
-  const cssClasses = svgFigure.attr("class");
-  const colorName = getColorName(index, svgFigure, cssClasses, statesJson);
+): void => {
+  const $element = cheerio(element as cheerio.Element);
+  const cssClasses = $element.attr("class");
+  const colorName = getColorName(index, $element, cssClasses, statesJson);
 
-  if (!colorName) {
-    // copy as is
-    return svgFigure;
-  } else {
-    const updatedFigure = updateFigureFillOrStroke(svgFigure, colorName);
+  if (colorName) {
+    updateFigureFillOrStroke($element, colorName);
     usedColors.push(colorName);
-    //remove classes and return
-    return updatedFigure.removeClass(cssClasses);
   }
 };
 
 const updateFigureFillOrStroke = (
   svgFigure: cheerio.Cheerio,
   colorName: string
-): cheerio.Cheerio => {
+): void => {
   const figureType = getFigureType(svgFigure);
   const cssVar = `var(--${colorName})`;
   if (figureType == "path") {
@@ -122,8 +111,6 @@ const updateFigureFillOrStroke = (
   } else if (!figureType) {
     //it is not fill or stroke
   }
-
-  return svgFigure;
 };
 
 const getColorName = (
@@ -133,6 +120,17 @@ const getColorName = (
   statesJson: IconsColorsSchema
 ): string => {
   const figureTagName = svgFigure.get(0).name; /*revisar*/
+
+  // first check is cssClasses is not undefined. If it is, it means the figure does not has the class attribute.
+  if (!cssClasses) {
+    warnings.push({
+      info: `svg figure not processed, because a figure did not have the class attribute. Multo-color icons figures require a valid css class for the color to be processed. This figure will remain unchanged, but it does not break the icon processing.`,
+      figure: figureTagName,
+      index: index,
+    });
+    return undefined;
+  }
+
   const cssPrefix: string = statesJson.multicolor.cssPrefix;
   const cssClassesArray = cssClasses.split(" ");
   const colorClass = cssClassesArray.find((cssClass) =>
@@ -151,9 +149,11 @@ const getColorName = (
 
   // class-name css prefix is valid.
   // check if class exists
+
   const cssClassNameFound = statesJson.multicolor.colors.find((color) => {
     return `${cssPrefix}${color.cssClass}` === colorClass;
   });
+
   if (!cssClassNameFound) {
     warnings.push({
       info: `svg figure not processed, because a valid css class was found, but it was not found on the color states json. note: This figure will remain unchanged, but it does not break the icon processing.`,
