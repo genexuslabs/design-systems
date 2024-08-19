@@ -1,4 +1,4 @@
-import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS-test.js";
+import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS.js";
 const CONTAINER_EL = document.querySelector(".container");
 const NOT_AVAILABLE_ICON = `url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgMzAgMzAiIHdpZHRoPSIzMHB4IiBoZWlnaHQ9IjMwcHgiPjxwYXRoIGQ9Ik0gMTUgMyBDIDExLjc4MzA1OSAzIDguODY0MTk4MiA0LjI4MDc5MjYgNi43MDcwMzEyIDYuMzQ5NjA5NCBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgNi4zNDc2NTYyIDYuNzA3MDMxMiBDIDQuMjc5Mzc2NiA4Ljg2NDEwNzEgMyAxMS43ODM1MzEgMyAxNSBDIDMgMjEuNjE1NTcyIDguMzg0NDI3NiAyNyAxNSAyNyBDIDE4LjIxMDAwNyAyNyAyMS4xMjM0NzUgMjUuNzI0OTk1IDIzLjI3OTI5NyAyMy42NjQwNjIgQSAxLjAwMDEgMS4wMDAxIDAgMCAwIDIzLjY2MjEwOSAyMy4yODEyNSBDIDI1LjcyNDE2OCAyMS4xMjUyMzUgMjcgMTguMjEwOTk4IDI3IDE1IEMgMjcgOC4zODQ0Mjc2IDIxLjYxNTU3MiAzIDE1IDMgeiBNIDE1IDUgQyAyMC41MzQ2OTIgNSAyNSA5LjQ2NTMwNzkgMjUgMTUgQyAyNSAxNy40MDYzNyAyNC4xNTUxNzMgMTkuNjA5MDYyIDIyLjc0NjA5NCAyMS4zMzIwMzEgTCA4LjY2Nzk2ODggNy4yNTM5MDYyIEMgMTAuMzkwOTM4IDUuODQ0ODI3NCAxMi41OTM2MyA1IDE1IDUgeiBNIDcuMjUzOTA2MiA4LjY2Nzk2ODggTCAyMS4zMzIwMzEgMjIuNzQ2MDk0IEMgMTkuNjA5MDYyIDI0LjE1NTE3MyAxNy40MDYzNyAyNSAxNSAyNSBDIDkuNDY1MzA3OSAyNSA1IDIwLjUzNDY5MiA1IDE1IEMgNSAxMi41OTM2MyA1Ljg0NDgyNzQgMTAuMzkwOTM4IDcuMjUzOTA2MiA4LjY2Nzk2ODggeiIvPjwvc3ZnPg==)`;
 
@@ -14,6 +14,24 @@ const ON_COLORS = {
   "on-elevation": "--mer-color__elevation--01",
   "on-disabled": "--mer-accent__primary--disabled"
 };
+
+/* - - - - - - - - - - - - - - - - - - - -
+Multicolors Array
+- - - - - - - - - - - - - - - - - - - - */
+// This array contains the multicolor categories names
+// Is used to render the icon as multicolor, since it has
+// some differences with the monochrome icon.
+const MULTI_COLOR_CATEGORIES = [
+  "objects",
+  "controls",
+  "editing-structures",
+  "general",
+  "gx-server",
+  "gx-test",
+  "objects-parts",
+  "patterns",
+  "patterns-default-associated"
+];
 
 /* - - - - - - - - - - - - - - - - - - - -
 Helper Render Functions (Elements)
@@ -135,7 +153,7 @@ const createIconsGridItem = (itemName, itemSatesObject, isMonochrome) => {
 Render Multicolor or Monochrome
 - - - - - - - - - - - - - - - - - - - - */
 
-const renderMulticolorArticle = (categoryIcons, categoryIcon) => {
+const renderMulticolorArticle = (iconName, iconColorsObject) => {
   const articleEl = createArticle(iconName);
   const articleMailEl = createArticleMain();
   const articleContent = createArticleContent();
@@ -204,10 +222,7 @@ const generateIconsForShowcase = () => {
       }
 
       // is this monochrome or multicolor?
-      // if it is multicolor, the first icon property should have a property called "name"
-      // else it is a monochrome
-      const iconFirstPropertyName = Object.keys(icon)[0];
-      const isMultiColor = icon[iconFirstPropertyName].hasOwnProperty("name");
+      const isMultiColor = MULTI_COLOR_CATEGORIES.includes(category);
 
       if (isMultiColor) {
         const multicolorArticle = renderMulticolorArticle(
