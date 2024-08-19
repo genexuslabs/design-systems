@@ -1,15 +1,68 @@
+%cell-node-type {
+  &-text {
+    @include control-padding-inline-block();
+  }
+  &-element {
+    @include control-remove-border();
+    padding: 0;
+    display: grid; //to stretch the control
+  }
+}
+%cell-alignment {
+  &-block {
+    &-start {
+      align-items: start;
+    }
+    &-center {
+      align-items: center;
+    }
+    &-end {
+      align-items: end;
+    }
+  }
+  &-inline {
+    &-start {
+      justify-content: start;
+    }
+    &-center {
+      justify-content: center;
+    }
+    &-end {
+      justify-content: end;
+    }
+  }
+}
+
 /// @group Grid
 /// @param {String} $column-nth ["1"] -
+/// @param {String} $tabular-grid-cell-layout [".tabular-grid-cell-layout"] -
 /// @param {String} $tabular-grid-row-selector [".tabular-grid-row"] -
 /// @param {String} $tabular-grid-cell-selector [".tabular-grid-cell"] -
-@mixin tabular-grid-cell-editable(
-  $column-nth: "1",
+/// @param {("start" | "center" | "end")} $tabular-grid-cell-block-alignment ["start"] -
+/// @param {("start" | "center" | "end")} $tabular-grid-cell-inline-alignment ["start"] -
+/// @param {("text" | "element")} $tabular-grid-cell-node-type ["text"] -
+@mixin tabular-grid-cell-layout(
+  $editable-columns-nth: (
+    1,
+    3,
+    4
+  ),
+  $tabular-grid-cell-layout: ".tabular-grid-cell-layout",
   $tabular-grid-row-selector: ".tabular-grid-row",
-  $tabular-grid-cell-selector: ".tabular-grid-cell"
+  $tabular-grid-cell-selector: ".tabular-grid-cell",
+  $tabular-grid-cell-block-alignment: "center",
+  $tabular-grid-cell-inline-alignment: "center",
+  $tabular-grid-cell-node-type: "text"
 ) {
-  #{$tabular-grid-row-selector} {
-    #{$tabular-grid-cell-selector}:nth-child(#{$column-nth}) {
-      // Add your styles here
+  @if $editable-columns-nth != null {
+    #{$tabular-grid-cell-layout} #{$tabular-grid-row-selector} {
+      @each $column-nth in $editable-columns-nth {
+        #{$tabular-grid-cell-selector}:nth-child(#{$column-nth}) {
+          @extend %cell-node-type-#{$tabular-grid-cell-node-type};
+          @extend %cell-alignment-block-#{$tabular-grid-cell-block-alignment};
+          @extend %cell-alignment-inline-#{$tabular-grid-cell-inline-alignment};
+        }
+      }
     }
   }
 }
