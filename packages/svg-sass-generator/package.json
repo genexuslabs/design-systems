@@ -1,6 +1,6 @@
 {
   "name": "@genexus/svg-sass-generator",
-  "version": "1.1.20",
+  "version": "1.1.24",
   "description": "SVG Icon Generator: A Node.js tool for creating customizable SVG icons with color states like hover and active effects. It generates SVG icons and Sass placeholder selectors, simplifying integration into projects with generated CSS class names for scalable and dynamic iconography.",
   "main": "index.js",
   "type": "module",
@@ -19,7 +19,7 @@
     "copy-schema-multicolor": "fse copy ./ts/partials-svg/schema-multicolor.json ./js/partials-svg/schema-multicolor.json",
     "copy-to-bin": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet ./js ./bin",
     "watch": "tsc --watch",
-    "svg": "node ./js/processor-svg.js --srcDir=source-sample/ --outDir=_generated/ --configFilePath=source-sample/my-color-states.json --showcaseDir=showcase/ --showcaseBaseHref=../_generated/ --logDir=log/ --objectFilePath=object/ICONS_ASSETS.ts",
+    "svg": "node ./js/processor-svg.js --srcDir=source-sample/ --outDir=_generated/ --configFilePath=source-sample/my-color-states.json --showcaseDir=showcase/ --showcaseBaseHref=../_generated/ --logDir=log/ --objectFilePath=object/ICONS_ASSETS.ts --defaultColorType=on-surface",
     "sass": "node ./js/processor-sass.js --srcDir=_generated/ --outDir=sass/_generated/ --configFilePath=source-sample/my-color-states.json --vendorAlias=ibm",
     "validate.ci": "npm run build",
     "test-mixin": "sass ./tests/tests.scss ./tests/tests.css"

@@ -83,7 +83,6 @@
   // Icons
   $icons-path: "./assets/icons/",
   $icons-variables: true,
-  $icons-placeholders: true,
 
   // Font face
   $font-face: true,
@@ -117,10 +116,7 @@
   //                  Icons
   // - - - - - - - - - - - - - - - - - - - -
   @if $icons-variables {
-    @import "./icons/_generated/categories-variables-imports";
-  }
-  @if $icons-placeholders {
-    @import "./icons/_generated/categories-placeholders-imports";
+    @import "./icons/_generated/categories";
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -485,7 +481,6 @@
   // Icons
   $icons-path: "./assets/icons/",
   $icons-variables: false,
-  $icons-placeholders: false,
 
   // Font face
   $font-face: false,
@@ -545,7 +540,6 @@
     // Icons
     $icons-path: $icons-path,
     $icons-variables: $icons-variables,
-    $icons-placeholders: $icons-placeholders,
 
     // Font face
     $font-face: $font-face,

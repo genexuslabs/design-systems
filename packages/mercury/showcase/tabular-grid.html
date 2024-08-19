@@ -16,6 +16,72 @@
     <link rel="stylesheet" href="./assets/styles/sidebar.css" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <link rel="stylesheet" href="./assets/styles/reset.css" />
+    <style>
+      /*
+      The following are styles specific for the "tabular grid: helper classes" cases.
+      These styles simply will make understanding the alignment more easily.
+      */
+      :root {
+        --tabular-grid-line-position-inline-offset: var(
+          --control__padding-inline
+        );
+        --tabular-grid-line-position-block-offset: var(
+          --control__padding-block
+        );
+        --tabular-grid-line-style: dashed;
+        --tabular-grid-line-width: 2px;
+      }
+      /* block cell alignment */
+      .grid-align-cell-block-start {
+        inline-size: calc(100% - var(--control__padding-inline) * 2);
+        block-size: 1px;
+        border-block-end: var(--tabular-grid-line-width)
+          var(--tabular-grid-line-style) var(--mer-color__message-green--200);
+        top: var(--tabular-grid-line-position-block-offset);
+        position: absolute;
+      }
+      .grid-align-cell-block-center {
+        inline-size: calc(100% - var(--control__padding-inline) * 2);
+        block-size: 1px;
+        border-block-end: var(--tabular-grid-line-width)
+          var(--tabular-grid-line-style) var(--mer-color__message-green--200);
+        top: 50%;
+        position: absolute;
+      }
+      .grid-align-cell-block-end {
+        inline-size: calc(100% - var(--control__padding-inline) * 2);
+        block-size: 1px;
+        border-block-end: var(--tabular-grid-line-width)
+          var(--tabular-grid-line-style) var(--mer-color__message-green--200);
+        bottom: var(--tabular-grid-line-position-block-offset);
+        position: absolute;
+      }
+      /* inline cell alignment */
+      .grid-align-cell-inline-start {
+        block-size: calc(100% - var(--control__padding-inline) * 2);
+        inline-size: 1px;
+        border-inline-start: var(--tabular-grid-line-width)
+          var(--tabular-grid-line-style) var(--mer-color__message-green--200);
+        left: var(--tabular-grid-line-position-inline-offset);
+        position: absolute;
+      }
+      .grid-align-cell-inline-center {
+        block-size: calc(100% - var(--control__padding-inline) * 2);
+        inline-size: 1px;
+        border-inline-start: var(--tabular-grid-line-width)
+          var(--tabular-grid-line-style) var(--mer-color__message-green--200);
+        left: 50%;
+        position: absolute;
+      }
+      .grid-align-cell-inline-end {
+        block-size: calc(100% - var(--control__padding-inline) * 2);
+        inline-size: 1px;
+        border-inline-start: var(--tabular-grid-line-width)
+          var(--tabular-grid-line-style) var(--mer-color__message-green--200);
+        right: var(--tabular-grid-line-position-inline-offset);
+        position: absolute;
+      }
+    </style>
   </head>
   <body class="showcase" data-sidebar>
     <script src="./assets/scripts/scripts.js"></script>
@@ -2915,9 +2981,25 @@
               </div>
               <!-- /.article__main -->
             </article>
+          </div>
+        </section>
 
+        <!-- tabular grid: helper classes -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">tabular grid: helper classes</h1>
+            <p class="section__description">
+              Helper classes in a tabular grid component are crucial for
+              ensuring flexibility and consistency in layout and styling across
+              complex tables. They allow developers to easily apply specific
+              alignments, spacing, and formatting to various table elements
+              without needing to write custom CSS for each instance.
+            </p>
+          </header>
+          <div class="section__articles-container">
             <!-- ========================== 
-          scroll
+          align cells: block start
           =========================== -->
             <article class="article" data-nav data-title="with scroll">
               <!-- header -->
@@ -2925,14 +3007,16 @@
               <!-- main -->
               <div class="article__main">
                 <p class="article__description">
-                  The scrollbar when the grid height overflows its container
-                  height.
+                  In some cases, you may wish to align the cell content to the
+                  top in a vertical direction. To do this, simply add the class
+                  <code class="c-green"
+                    >.tabular-grid-align-cells-block-start</code
+                  >
+                  on the <code>ch-tabular-grid</code> element.
                 </p>
-                <div class="article__content" style="height: 200px">
+                <div class="article__content">
                   <ch-tabular-grid
-                    class="tabular-grid"
-                    row-selection-mode="none"
-                    keyboard-navigation-mode="focus"
+                    class="tabular-grid tabular-grid-align-cells-block-start"
                   >
                     <ch-tabular-grid-columnset class="tabular-grid-column-set">
                       <ch-tabular-grid-column
@@ -2967,135 +3051,754 @@
 
                     <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
                       <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >AR</ch-tabular-grid-cell
-                      >
+                        >AR<span class="grid-align-cell-block-start"></span
+                      ></ch-tabular-grid-cell>
                       <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit. Sed do eiusmod tempor
-                        incididunt</ch-tabular-grid-cell
-                      >
+                        >Argentina is a large country in South America, known
+                        for its diverse landscapes, rich culture, and vibrant
+                        history. It stretches from the tropical north to the
+                        southern tip of the continent, encompassing a variety of
+                        climates and terrains, from the Andes mountains to the
+                        Pampas plains and the Patagonia region.
+                      </ch-tabular-grid-cell>
                       <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >45.400.000</ch-tabular-grid-cell
-                      >
+                        >45.400.000<span
+                          class="grid-align-cell-block-start"
+                        ></span
+                      ></ch-tabular-grid-cell>
                       <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Español</ch-tabular-grid-cell
-                      >
+                        >Español<span class="grid-align-cell-block-start"></span
+                      ></ch-tabular-grid-cell>
                     </ch-tabular-grid-row>
                     <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
                       <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >BO</ch-tabular-grid-cell
+                        >BO<span class="grid-align-cell-block-start"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Bolivia is a landlocked country in central South
+                        America, known for its diverse cultures, rich history,
+                        and stunning natural landscapes. It is one of the most
+                        culturally diverse countries in the region, with a large
+                        indigenous population that influences its traditions and
+                        daily life.</ch-tabular-grid-cell
                       >
                       <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Bolivia</ch-tabular-grid-cell
-                      >
+                        >11.800.000<span
+                          class="grid-align-cell-block-start"
+                        ></span
+                      ></ch-tabular-grid-cell>
                       <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >11.800.000</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Español</ch-tabular-grid-cell
-                      >
+                        >Español<span class="grid-align-cell-block-start"></span
+                      ></ch-tabular-grid-cell>
                     </ch-tabular-grid-row>
                     <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
                       <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >BR</ch-tabular-grid-cell
+                        >BR<span class="grid-align-cell-block-start"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Brazil is the largest country in South America and the
+                        fifth largest in the world, known for its vibrant
+                        culture, diverse ecosystems, and iconic landmarks. It is
+                        a vast country with a mix of modern cities, colonial
+                        architecture, and natural wonders.</ch-tabular-grid-cell
                       >
                       <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Brasil</ch-tabular-grid-cell
-                      >
+                        >212.600.000<span
+                          class="grid-align-cell-block-start"
+                        ></span
+                      ></ch-tabular-grid-cell>
                       <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >212.600.000</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Português</ch-tabular-grid-cell
-                      >
-                    </ch-tabular-grid-row>
-                    <ch-tabular-grid-row class="tabular-grid-row" rowid="cl">
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >CL</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Chile</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >19.500.000</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Español</ch-tabular-grid-cell
-                      >
-                    </ch-tabular-grid-row>
-                    <ch-tabular-grid-row class="tabular-grid-row" rowid="ec">
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >EC</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Ecuador</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >17.600.000</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Español</ch-tabular-grid-cell
-                      >
-                    </ch-tabular-grid-row>
-                    <ch-tabular-grid-row class="tabular-grid-row" rowid="py">
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >PY</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Paraguay</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >7.500.000</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Español</ch-tabular-grid-cell
-                      >
-                    </ch-tabular-grid-row>
-                    <ch-tabular-grid-row class="tabular-grid-row" rowid="pe">
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >PE</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Perú</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >32.800.000</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Español</ch-tabular-grid-cell
-                      >
-                    </ch-tabular-grid-row>
-                    <ch-tabular-grid-row class="tabular-grid-row" rowid="uy">
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >UY</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Uruguay</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >3.500.000</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Español</ch-tabular-grid-cell
-                      >
-                    </ch-tabular-grid-row>
-                    <ch-tabular-grid-row class="tabular-grid-row" rowid="ve">
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >VE</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Venezuela</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >28.500.000</ch-tabular-grid-cell
-                      >
-                      <ch-tabular-grid-cell class="tabular-grid-cell"
-                        >Español</ch-tabular-grid-cell
-                      >
+                        >Português<span
+                          class="grid-align-cell-block-start"
+                        ></span
+                      ></ch-tabular-grid-cell>
                     </ch-tabular-grid-row>
                   </ch-tabular-grid>
                 </div>
                 <!-- /.article__content -->
+                <div class="article__code">
+                  <ch-code id="chCode13" language="xml" class="code"></ch-code>
+                  <script>
+                    const chCode13 = `<ch-tabular-grid class="tabular-grid tabular-grid-align-cells-block-start">
+  <!-- Your grid content here-->
+</ch-tabular-grid>`;
+                    document.getElementById("chCode13").value = chCode13;
+                  </script>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+        align cells: block center
+        =========================== -->
+            <article class="article" nav data-title="align cells: block center">
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  In some cases, you may wish to align the cell content to the
+                  center in a vertical direction. To do this, simply add the
+                  class
+                  <code class="c-green"
+                    >.tabular-grid-align-cells-block-center</code
+                  >
+                  on the <code>ch-tabular-grid</code> element.
+                </p>
+                <div class="article__content">
+                  <ch-tabular-grid
+                    class="tabular-grid tabular-grid-align-cells-block-center"
+                  >
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="code"
+                        column-name="Country Code"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="name"
+                        column-name="Country Name"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="population"
+                        column-name="Country Population"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="language"
+                        column-name="Country Language"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                    </ch-tabular-grid-columnset>
+
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >AR<span class="grid-align-cell-block-center"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Argentina is a large country in South America, known
+                        for its diverse landscapes, rich culture, and vibrant
+                        history. It stretches from the tropical north to the
+                        southern tip of the continent, encompassing a variety of
+                        climates and terrains, from the Andes mountains to the
+                        Pampas plains and the Patagonia region.
+                      </ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >45.400.000<span
+                          class="grid-align-cell-block-center"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Español<span
+                          class="grid-align-cell-block-center"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >BO<span class="grid-align-cell-block-center"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Bolivia is a landlocked country in central South
+                        America, known for its diverse cultures, rich history,
+                        and stunning natural landscapes. It is one of the most
+                        culturally diverse countries in the region, with a large
+                        indigenous population that influences its traditions and
+                        daily life.</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >11.800.000<span
+                          class="grid-align-cell-block-center"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Español<span
+                          class="grid-align-cell-block-center"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >BR<span class="grid-align-cell-block-center"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Brazil is the largest country in South America and the
+                        fifth largest in the world, known for its vibrant
+                        culture, diverse ecosystems, and iconic landmarks. It is
+                        a vast country with a mix of modern cities, colonial
+                        architecture, and natural wonders.</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >212.600.000<span
+                          class="grid-align-cell-block-center"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Português<span
+                          class="grid-align-cell-block-center"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                  </ch-tabular-grid>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__code">
+                  <ch-code id="chCode14" language="xml" class="code"></ch-code>
+                  <script>
+                    const chCode14 = `<ch-tabular-grid class="tabular-grid tabular-grid-align-cells-block-center">
+  <!-- Your grid content here-->
+</ch-tabular-grid>`;
+                    document.getElementById("chCode14").value = chCode14;
+                  </script>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+        align cells: block end
+        =========================== -->
+            <article class="article" nav data-title="align cells: block end">
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  In some cases, you may wish to align the cell content to the
+                  bottom in a vertical direction. To do this, simply add the
+                  class
+                  <code class="c-green"
+                    >.tabular-grid-align-cells-block-end</code
+                  >
+                  on the <code>ch-tabular-grid</code> element.
+                </p>
+                <div class="article__content">
+                  <ch-tabular-grid
+                    class="tabular-grid tabular-grid-align-cells-block-end"
+                  >
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="code"
+                        column-name="Country Code"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="name"
+                        column-name="Country Name"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="population"
+                        column-name="Country Population"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="language"
+                        column-name="Country Language"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                    </ch-tabular-grid-columnset>
+
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >AR<span class="grid-align-cell-block-end"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Argentina is a large country in South America, known
+                        for its diverse landscapes, rich culture, and vibrant
+                        history. It stretches from the tropical north to the
+                        southern tip of the continent, encompassing a variety of
+                        climates and terrains, from the Andes mountains to the
+                        Pampas plains and the Patagonia region.
+                      </ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >45.400.000<span
+                          class="grid-align-cell-block-end"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Español<span class="grid-align-cell-block-end"></span
+                      ></ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >BO<span class="grid-align-cell-block-end"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Bolivia is a landlocked country in central South
+                        America, known for its diverse cultures, rich history,
+                        and stunning natural landscapes. It is one of the most
+                        culturally diverse countries in the region, with a large
+                        indigenous population that influences its traditions and
+                        daily life.</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >11.800.000<span
+                          class="grid-align-cell-block-end"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Español<span class="grid-align-cell-block-end"></span
+                      ></ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >BR<span class="grid-align-cell-block-end"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Brazil is the largest country in South America and the
+                        fifth largest in the world, known for its vibrant
+                        culture, diverse ecosystems, and iconic landmarks. It is
+                        a vast country with a mix of modern cities, colonial
+                        architecture, and natural wonders.</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >212.600.000<span
+                          class="grid-align-cell-block-end"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Português<span class="grid-align-cell-block-end"></span
+                      ></ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                  </ch-tabular-grid>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__code">
+                  <ch-code id="chCode15" language="xml" class="code"></ch-code>
+                  <script>
+                    const chCode15 = `<ch-tabular-grid class="tabular-grid tabular-grid-align-cells-block-end">
+  <!-- Your grid content here-->
+</ch-tabular-grid>`;
+                    document.getElementById("chCode15").value = chCode15;
+                  </script>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+        align cells: inline start
+        =========================== -->
+            <article class="article" nav data-title="align cells: inline start">
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  In some cases, you may wish to align the cell content to the
+                  start in an horizontal direction. To do this, simply add the
+                  class
+                  <code class="c-green"
+                    >.tabular-grid-align-cells-inline-start</code
+                  >
+                  on the <code>ch-tabular-grid</code> element.
+                </p>
+                <div class="article__content">
+                  <ch-tabular-grid
+                    class="tabular-grid tabular-grid-align-cells-inlinse-start"
+                  >
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="code"
+                        column-name="Country Code"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="name"
+                        column-name="Country Name"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="population"
+                        column-name="Country Population"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="language"
+                        column-name="Country Language"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                    </ch-tabular-grid-columnset>
+
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >AR<span class="grid-align-cell-inline-start"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Argentina is a large country in South America, known
+                        for its diverse landscapes, rich culture, and vibrant
+                        history. It stretches from the tropical north to the
+                        southern tip of the continent, encompassing a variety of
+                        climates and terrains, from the Andes mountains to the
+                        Pampas plains and the Patagonia region.
+                      </ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >45.400.000<span
+                          class="grid-align-cell-inline-start"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Español<span
+                          class="grid-align-cell-inline-start"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >BO<span class="grid-align-cell-inline-start"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Bolivia is a landlocked country in central South
+                        America, known for its diverse cultures, rich history,
+                        and stunning natural landscapes. It is one of the most
+                        culturally diverse countries in the region, with a large
+                        indigenous population that influences its traditions and
+                        daily life.</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >11.800.000<span
+                          class="grid-align-cell-inline-start"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Español<span
+                          class="grid-align-cell-inline-start"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >BR<span class="grid-align-cell-inline-start"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Brazil is the largest country in South America and the
+                        fifth largest in the world, known for its vibrant
+                        culture, diverse ecosystems, and iconic landmarks. It is
+                        a vast country with a mix of modern cities, colonial
+                        architecture, and natural wonders.</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >212.600.000<span
+                          class="grid-align-cell-inline-start"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Português<span
+                          class="grid-align-cell-inline-start"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                  </ch-tabular-grid>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__code">
+                  <ch-code id="chCode16" language="xml" class="code"></ch-code>
+                  <script>
+                    const chCode16 = `<ch-tabular-grid class="tabular-grid tabular-grid-align-cells-inline-start">
+  <!-- Your grid content here-->
+</ch-tabular-grid>`;
+                    document.getElementById("chCode16").value = chCode16;
+                  </script>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+        align cells: inline center
+        =========================== -->
+            <article
+              class="article"
+              nav
+              data-title="align cells: inline center"
+            >
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  In some cases, you may wish to align the cell content to the
+                  center in an horizontal direction. To do this, simply add the
+                  class
+                  <code class="c-green"
+                    >.tabular-grid-align-cells-inline-center</code
+                  >
+                  on the <code>ch-tabular-grid</code> element.
+                </p>
+                <div class="article__content">
+                  <ch-tabular-grid
+                    class="tabular-grid tabular-grid-align-cells-inline-center"
+                  >
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="code"
+                        column-name="Country Code"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="name"
+                        column-name="Country Name"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="population"
+                        column-name="Country Population"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="language"
+                        column-name="Country Language"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                    </ch-tabular-grid-columnset>
+
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >AR<span class="grid-align-cell-inline-center"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Argentina is a large country in South America, known
+                        for its diverse landscapes, rich culture, and vibrant
+                        history. It stretches from the tropical north to the
+                        southern tip of the continent, encompassing a variety of
+                        climates and terrains, from the Andes mountains to the
+                        Pampas plains and the Patagonia region.
+                      </ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >45.400.000<span
+                          class="grid-align-cell-inline-center"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Español<span
+                          class="grid-align-cell-inline-center"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >BO<span class="grid-align-cell-inline-center"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Bolivia is a landlocked country in central South
+                        America, known for its diverse cultures, rich history,
+                        and stunning natural landscapes. It is one of the most
+                        culturally diverse countries in the region, with a large
+                        indigenous population that influences its traditions and
+                        daily life.</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >11.800.000<span
+                          class="grid-align-cell-inline-center"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Español<span
+                          class="grid-align-cell-inline-center"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >BR<span class="grid-align-cell-inline-center"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Brazil is the largest country in South America and the
+                        fifth largest in the world, known for its vibrant
+                        culture, diverse ecosystems, and iconic landmarks. It is
+                        a vast country with a mix of modern cities, colonial
+                        architecture, and natural wonders.</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >212.600.000<span
+                          class="grid-align-cell-inline-center"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Português<span
+                          class="grid-align-cell-inline-center"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                  </ch-tabular-grid>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__code">
+                  <ch-code id="chCode17" language="xml" class="code"></ch-code>
+                  <script>
+                    const chCode17 = `<ch-tabular-grid class="tabular-grid tabular-grid-align-cells-inline-center">
+  <!-- Your grid content here-->
+</ch-tabular-grid>`;
+                    document.getElementById("chCode17").value = chCode17;
+                  </script>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+        align cells: inline end
+        =========================== -->
+            <article class="article" nav data-title="align cells: inline end">
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  In some cases, you may wish to align the cell content to the
+                  end in an horizontal direction. To do this, simply add the
+                  class
+                  <code class="c-green"
+                    >.tabular-grid-align-cells-inline-end</code
+                  >
+                  on the <code>ch-tabular-grid</code> element.
+                </p>
+                <div class="article__content">
+                  <ch-tabular-grid
+                    class="tabular-grid tabular-grid-align-cells-inline-end"
+                  >
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="code"
+                        column-name="Country Code"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="name"
+                        column-name="Country Name"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="population"
+                        column-name="Country Population"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        class="tabular-grid-column"
+                        column-id="language"
+                        column-name="Country Language"
+                        settingable="false"
+                        sortable="true"
+                      ></ch-tabular-grid-column>
+                    </ch-tabular-grid-columnset>
+
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >AR<span class="grid-align-cell-inline-end"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Argentina is a large country in South America, known
+                        for its diverse landscapes, rich culture, and vibrant
+                        history. It stretches from the tropical north to the
+                        southern tip of the continent, encompassing a variety of
+                        climates and terrains, from the Andes mountains to the
+                        Pampas plains and the Patagonia region.
+                      </ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >45.400.000<span
+                          class="grid-align-cell-inline-end"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Español<span class="grid-align-cell-inline-end"></span
+                      ></ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >BO<span class="grid-align-cell-inline-end"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Bolivia is a landlocked country in central South
+                        America, known for its diverse cultures, rich history,
+                        and stunning natural landscapes. It is one of the most
+                        culturally diverse countries in the region, with a large
+                        indigenous population that influences its traditions and
+                        daily life.</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >11.800.000<span
+                          class="grid-align-cell-inline-end"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Español<span class="grid-align-cell-inline-end"></span
+                      ></ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >BR<span class="grid-align-cell-inline-end"></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Brazil is the largest country in South America and the
+                        fifth largest in the world, known for its vibrant
+                        culture, diverse ecosystems, and iconic landmarks. It is
+                        a vast country with a mix of modern cities, colonial
+                        architecture, and natural wonders.</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >212.600.000<span
+                          class="grid-align-cell-inline-end"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Português<span
+                          class="grid-align-cell-inline-end"
+                        ></span
+                      ></ch-tabular-grid-cell>
+                    </ch-tabular-grid-row>
+                  </ch-tabular-grid>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__code">
+                  <ch-code id="chCode18" language="xml" class="code"></ch-code>
+                  <script>
+                    const chCode18 = `<ch-tabular-grid class="tabular-grid tabular-grid-align-cells-inline-end">
+  <!-- Your grid content here-->
+</ch-tabular-grid>`;
+                    document.getElementById("chCode18").value = chCode18;
+                  </script>
+                </div>
               </div>
               <!-- /.article__main -->
             </article>

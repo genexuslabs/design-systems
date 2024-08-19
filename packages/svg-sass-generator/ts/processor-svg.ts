@@ -37,6 +37,7 @@ const SHOWCASE_PATH = await args.showcaseDir;
 const SHOWCASE_BASE_HREF = await args.showcaseBaseHref;
 const LOG_PATH = await args.logDir;
 const ICONS_OBJECT_NAME = await args.objectFilePath;
+const DEFAULT_COLOR_TYPE = await args.defaultColorType; // optional default color for monochrome icons
 
 // Optional Base URL for the showcase
 const showcaseBaseUrl = path.relative(SHOWCASE_PATH, OUTPUT_PATH) + path.sep;
@@ -83,6 +84,7 @@ if (readyObj.ready) {
         monochromeCategoriesMap,
         SHOWCASE_BASE_HREF || showcaseBaseUrl
       );
+
       // 4. Generate icons object
       if (ICONS_OBJECT_NAME) {
         generateIconsObject(
@@ -90,7 +92,8 @@ if (readyObj.ready) {
           ICONS_OBJECT_NAME,
           readyObj.statesJson,
           monochromeColorsMap,
-          monochromeCategoriesMap
+          monochromeCategoriesMap,
+          DEFAULT_COLOR_TYPE
         );
       }
     })
