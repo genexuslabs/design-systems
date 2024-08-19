@@ -187,6 +187,7 @@ List
 .sidebar__list li.current-page > a {
   pointer-events: none;
   color: var(--mer-accent__primary);
+  font-weight: 600;
 }
 .sidebar__list li.current-page > a::before {
   background-color: var(--mer-accent__primary);
@@ -214,4 +215,10 @@ List
   left: calc(var(--sc-sidebar-list-child__margin-inline-start) * -1);
   top: 3%;
   border-left: 1px dashed var(--sc-sidebar__border-color);
+}
+/*List Child Section Divider */
+.current-page__section-title {
+  padding: 4px 0 4px 0;
+  text-transform: capitalize;
+  color: var(--mer-text__bright);
 }
