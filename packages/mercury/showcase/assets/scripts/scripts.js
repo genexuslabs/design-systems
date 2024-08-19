@@ -2,6 +2,13 @@
 // constants
 const _URL = new URL(window.location.href);
 const PAGE_URL = `${_URL.origin}${_URL.pathname}`;
+// sections as articles, is for rendering sections on the sidebar nav, as if
+// they were articles. This feature was created for the /icons showcase page,
+// where we just want to include navigation for the sections, but it makes sense
+// to display the list items as articles, because these are the only items.
+const NAV_SECTIONS_AS_ARTICLES = document.body.hasAttribute(
+  "data-sections-as-articles"
+);
 const ARTICLE_HEADER_CLASS = ".article__header";
 const SECTION_SELECTOR = ".section";
 const SECTION_TITLE_SELECTOR = "section__title";
@@ -101,11 +108,11 @@ const includeSidebarPageInternalNav = () => {
 
     SIDEBAR_SECTIONS = document.querySelectorAll(SECTION_SIDEBAR_SELECTOR);
     SIDEBAR_ARTICLES = document.querySelectorAll(ARTICLE_SIDEBAR_SELECTOR);
-    if (SIDEBAR_ARTICLES.length) {
+    if (SIDEBAR_ARTICLES.length || SIDEBAR_SECTIONS.length) {
       //If there is more than one section to be added to the navigation..
       const navigationIncludesSections = SIDEBAR_SECTIONS.length > 1;
       const navigationSectionsArray = [];
-      if (navigationIncludesSections) {
+      if (navigationIncludesSections && !NAV_SECTIONS_AS_ARTICLES) {
         // Create the navigation for the sections
         // Consider all sections, even the ones that are not intender to be added to the nav.
         // If The section has no data-nav attribute, it will be included in the nav without title.
@@ -119,6 +126,7 @@ const includeSidebarPageInternalNav = () => {
           section.classList.add("current-page__section");
           // title
           const dataTitle = section.getAttribute(DATA_TITLE_SELECTOR);
+
           if (dataTitle) {
             const navSectionTitleEl = document.createElement("h3");
             navSectionTitleEl.classList.add("current-page__section-title");
@@ -132,8 +140,12 @@ const includeSidebarPageInternalNav = () => {
 
           navigationSectionsArray.push(navSection);
         });
+      } else if (navigationIncludesSections && NAV_SECTIONS_AS_ARTICLES) {
+        SIDEBAR_ARTICLES = SIDEBAR_SECTIONS;
       }
 
+      const pageUlEl = document.createElement("ul");
+      pageUlEl.classList.add(SIDEBAR_CHILD_LIST_CLASS);
       SIDEBAR_ARTICLES.forEach(article => {
         let li;
         const hasId = article.hasAttribute("id");
@@ -149,7 +161,7 @@ const includeSidebarPageInternalNav = () => {
           li.appendChild(a);
         }
 
-        if (navigationIncludesSections) {
+        if (navigationIncludesSections && !NAV_SECTIONS_AS_ARTICLES) {
           const articleSection = article.closest(SECTION_SELECTOR);
           const articleSectionIndexString = articleSection.dataset.index;
           const articleSectionIndex = parseInt(articleSectionIndexString);
@@ -158,12 +170,10 @@ const includeSidebarPageInternalNav = () => {
           ].querySelector(`.${SIDEBAR_CHILD_LIST_CLASS}`);
           childList.appendChild(li);
         } else {
-          const pageUlEl = document.createElement("ul");
-          pageUlEl.classList.add(SIDEBAR_CHILD_LIST_CLASS);
           pageUlEl.appendChild(li);
         }
       });
-      if (navigationIncludesSections) {
+      if (navigationIncludesSections && !NAV_SECTIONS_AS_ARTICLES) {
         navigationSectionsArray.forEach((navigationSection, i) => {
           CURRENT_PAGE_NAV_ITEM.appendChild(navigationSection);
         });
@@ -190,6 +200,7 @@ const addSectionTitles = () => {
   if (PAGE_SECTIONS.length) {
     PAGE_SECTIONS.forEach((section, i) => {
       const title = section.getAttribute(DATA_TITLE_SELECTOR);
+      section.setAttribute("id", title.toLowerCase().replace(/ /g, "-"));
       const sectionHeader = section.querySelector(".section__header");
       if (title && sectionHeader) {
         const sectionTitle = document.createElement("h1");
