@@ -134,7 +134,7 @@ const createItemTitle = listTitle => {
   iconsGridItemTitle.textContent = listTitle;
   return iconsGridItemTitle;
 };
-const createIconsStatesList = (statesObject, isMonochrome, itemName) => {
+const createMonochromeIconsStatesList = (statesObject, itemName) => {
   // list
   const ulElement = document.createElement("ul");
   ulElement.className = "icons-grid__list";
@@ -148,7 +148,7 @@ const createIconsStatesList = (statesObject, isMonochrome, itemName) => {
     iEl.className = "icon icon-sm";
     iEl.style.setProperty("--icon-path", customVar);
 
-    if (isMonochrome && itemName.includes("on-")) {
+    if (itemName.includes("on-")) {
       // some monochrome icons are expected to be applied on specific background colors.
       // these icons color begin with "on". ie.: "on-surface".
       const suffix = state !== "enabled" ? `--${state}` : "";
@@ -165,6 +165,7 @@ const createIconsStatesList = (statesObject, isMonochrome, itemName) => {
       notImplementedStates.splice(implementedStateIndex, 1);
     }
   }
+
   notImplementedStates.forEach(notImplementedState => {
     const liEl = document.createElement("li");
     liEl.classList.add("icon-not-implemented");
@@ -177,19 +178,52 @@ const createIconsStatesList = (statesObject, isMonochrome, itemName) => {
     liEl.appendChild(stateTextNode);
     ulElement.appendChild(liEl);
   });
+
   return ulElement;
 };
-const createIconsGridItem = (itemName, itemSatesObject, isMonochrome) => {
+const createMulticolorIconsStatesList = (statesObject, itemName) => {
+  // list
+  const ulElement = document.createElement("ul");
+  ulElement.className = "icons-grid__list";
+  // list items
+  let states = ["enabled", "hover", "active", "disabled"];
+  for (let state in statesObject) {
+    const customVar = `var(--icon__${statesObject[state].name})`;
+    const liEl = document.createElement("li");
+    const iEl = document.createElement("i");
+    const stateTextNode = document.createTextNode(state);
+    iEl.className = "icon icon-sm";
+    iEl.style.setProperty("--icon-path", customVar);
+
+    if (itemName.includes("on-")) {
+      // some monochrome icons are expected to be applied on specific background colors.
+      // these icons color begin with "on". ie.: "on-surface".
+      const suffix = state !== "enabled" ? `--${state}` : "";
+      const color = `${ON_COLORS[itemName]}${suffix}`;
+      iEl.style.backgroundColor = `var(${color})`;
+    }
+
+    liEl.appendChild(iEl);
+    liEl.appendChild(stateTextNode);
+    ulElement.appendChild(liEl);
+  }
+
+  return ulElement;
+};
+
+const createIconsGridItem = (itemName, itemStatesObject, isMonochrome) => {
   const iconsGridItem = document.createElement("div");
   iconsGridItem.className = "icons-grid__item";
   // item title
   const title = createItemTitle(itemName);
   // list
-  const statesList = createIconsStatesList(
-    itemSatesObject,
-    isMonochrome,
-    itemName
-  );
+  let statesList;
+  if (isMonochrome) {
+    statesList = createMonochromeIconsStatesList(itemStatesObject, itemName);
+  } else {
+    statesList = createMulticolorIconsStatesList(itemStatesObject, itemName);
+  }
+
   iconsGridItem.appendChild(title);
   iconsGridItem.appendChild(statesList);
   return iconsGridItem;
@@ -199,22 +233,20 @@ const createIconsGridItem = (itemName, itemSatesObject, isMonochrome) => {
 Render Multicolor or Monochrome
 - - - - - - - - - - - - - - - - - - - - */
 
-const renderMulticolorArticle = (iconName, iconColorsObject) => {
-  const articleEl = createArticle(iconName);
+const renderMulticolorArticle = categoryIcons => {
+  const articleEl = createArticle();
   const articleMailEl = createArticleMain();
   const articleContent = createArticleContent();
   const iconsGridEl = createIconsGrid();
-  for (let color in iconColorsObject) {
-    const gridItemEl = createIconsGridItem(
-      color,
-      iconColorsObject[color],
-      false
-    );
+  for (let icon in categoryIcons) {
+    const iconStates = categoryIcons[icon];
+    const gridItemEl = createIconsGridItem(icon, iconStates, false);
+    iconsGridEl.appendChild(gridItemEl);
     iconsGridEl.appendChild(gridItemEl);
   }
+
   articleContent.appendChild(iconsGridEl);
   articleMailEl.appendChild(articleContent);
-  // articleEl.appendChild(articleHeaderEl);
   articleEl.appendChild(articleMailEl);
   return articleEl;
 };
@@ -263,23 +295,19 @@ const generateIconsForShowcase = () => {
     sectionEl.setAttribute("data-nav", true);
     let sectionArticlesContainerEl = createSectionArticlesContainer();
 
-    // For each icon of the current category...
-    for (let icon in categoryIcons) {
-      if (Object.keys(icon).length === 0) {
-        continue;
-      }
+    // is this monochrome or multicolor?
+    const isMultiColor = MULTI_COLOR_CATEGORIES.includes(category);
+    if (isMultiColor) {
+      // One article for each category
+      const multicolorArticle = renderMulticolorArticle(categoryIcons);
+      sectionArticlesContainerEl.appendChild(multicolorArticle);
+    } else {
+      // One article for each icon
+      for (let icon in categoryIcons) {
+        if (Object.keys(icon).length === 0) {
+          continue;
+        }
 
-      // is this monochrome or multicolor?
-      const isMultiColor = MULTI_COLOR_CATEGORIES.includes(category);
-
-      if (isMultiColor) {
-        const multicolorArticle = renderMulticolorArticle(
-          icon,
-          categoryIcons[icon]
-        );
-        sectionArticlesContainerEl.appendChild(multicolorArticle);
-      } else {
-        // is monochrome
         const monochromeArticle = renderMonochromeArticle(
           icon,
           categoryIcons[icon]
@@ -287,6 +315,7 @@ const generateIconsForShowcase = () => {
         sectionArticlesContainerEl.appendChild(monochromeArticle);
       }
     }
+
     sectionEl.appendChild(sectionArticlesContainerEl);
     CONTAINER_EL.appendChild(sectionEl);
   }
