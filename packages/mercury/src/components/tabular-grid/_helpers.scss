@@ -1,36 +1,31 @@
-%cell-node-type {
-  &-text {
-    @include control-padding-inline-block();
-  }
-  &-element {
-    @include control-remove-border();
-    padding: 0;
-    display: grid; //to stretch the control
-  }
+//node type
+@mixin cell-node-type-text() {
+  @include control-padding-inline-block();
 }
-%cell-alignment {
-  &-block {
-    &-start {
-      align-items: start;
-    }
-    &-center {
-      align-items: center;
-    }
-    &-end {
-      align-items: end;
-    }
-  }
-  &-inline {
-    &-start {
-      justify-content: start;
-    }
-    &-center {
-      justify-content: center;
-    }
-    &-end {
-      justify-content: end;
-    }
-  }
+@mixin cell-node-type-element() {
+  @include control-remove-border();
+  padding: 0;
+  display: grid; //to stretch the control
+}
+//cell alignment block
+@mixin cell-alignment-block-start() {
+  align-items: start;
+}
+@mixin cell-alignment-block-center() {
+  align-items: center;
+}
+@mixin cell-alignment-block-end() {
+  align-items: end;
+}
+//cell alignment inline
+@mixin cell-alignment-inline-start() {
+  justify-content: start;
+}
+@mixin cell-alignment-inline-center() {
+  justify-content: center;
+}
+@mixin cell-alignment-inline-end() {
+  justify-content: center;
 }
 
 /// @group Grid
@@ -50,17 +45,41 @@
   $tabular-grid-cell-layout: ".tabular-grid-cell-layout",
   $tabular-grid-row-selector: ".tabular-grid-row",
   $tabular-grid-cell-selector: ".tabular-grid-cell",
+  $tabular-grid-cell-node-type: "text",
   $tabular-grid-cell-block-alignment: "center",
-  $tabular-grid-cell-inline-alignment: "center",
-  $tabular-grid-cell-node-type: "text"
+  $tabular-grid-cell-inline-alignment: "center"
 ) {
   @if $editable-columns-nth != null {
     #{$tabular-grid-cell-layout} #{$tabular-grid-row-selector} {
       @each $column-nth in $editable-columns-nth {
-        #{$tabular-grid-cell-selector}:nth-child(#{$column-nth}) {
-          @extend %cell-node-type-#{$tabular-grid-cell-node-type};
-          @extend %cell-alignment-block-#{$tabular-grid-cell-block-alignment};
-          @extend %cell-alignment-inline-#{$tabular-grid-cell-inline-alignment};
+        #{$tabular-grid-cell-selector}:where(:nth-child(#{$column-nth})) {
+          // node type
+          @if $tabular-grid-cell-node-type == "text" {
+            @include cell-node-type-text();
+          }
+          @if $tabular-grid-cell-node-type == "element" {
+            @include cell-node-type-element();
+          }
+          // block alignment
+          @if $tabular-grid-cell-block-alignment == "start" {
+            @include cell-alignment-block-start();
+          }
+          @if $tabular-grid-cell-block-alignment == "center" {
+            @include cell-alignment-block-center();
+          }
+          @if $tabular-grid-cell-block-alignment == "end" {
+            @include cell-alignment-block-end();
+          }
+          // inline alignment
+          @if $tabular-grid-cell-inline-alignment == "start" {
+            @include cell-alignment-inline-start();
+          }
+          @if $tabular-grid-cell-inline-alignment == "center" {
+            @include cell-alignment-inline-center();
+          }
+          @if $tabular-grid-cell-inline-alignment == "end" {
+            @include cell-alignment-inline-end();
+          }
         }
       }
     }
