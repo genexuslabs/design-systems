@@ -4,7 +4,7 @@ const _URL = new URL(window.location.href);
 const PAGE_URL = `${_URL.origin}${_URL.pathname}`;
 const ARTICLE_HEADER_CLASS = ".article__header";
 const ARTICLE_SELECTOR = ".article";
-const ARTICLE_SIDEBAR_SELECTOR = ".article[nav]";
+const ARTICLE_SIDEBAR_SELECTOR = ".article[data-nav]";
 let SIDEBAR_NAV; // A reference to the sidebar nav.
 let CONTAINER_REF;
 let topBarRef = null;
