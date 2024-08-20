@@ -193,25 +193,6 @@ const includeTopBar = () => {
   }
 };
 
-const addSectionTitles = () => {
-  if (!PAGE_SECTIONS) {
-    PAGE_SECTIONS = document.querySelectorAll(SECTION_SELECTOR);
-  }
-  if (PAGE_SECTIONS.length) {
-    PAGE_SECTIONS.forEach((section, i) => {
-      const title = section.getAttribute(DATA_TITLE_SELECTOR);
-      section.setAttribute("id", title.toLowerCase().replace(/ /g, "-"));
-      const sectionHeader = section.querySelector(".section__header");
-      if (title && sectionHeader) {
-        const sectionTitle = document.createElement("h1");
-        sectionTitle.classList.add(SECTION_TITLE_SELECTOR);
-        sectionTitle.textContent = title;
-        sectionHeader.insertBefore(sectionTitle, sectionHeader.firstChild);
-      }
-    });
-  }
-};
-
 const addArticleTitles = () => {
   if (!PAGE_ARTICLES) {
     PAGE_ARTICLES = document.querySelectorAll(ARTICLE_SELECTOR);
@@ -490,7 +471,6 @@ document.addEventListener("DOMContentLoaded", function () {
   CONTAINER_REF = document.querySelector(".container");
   includeFavicon();
   addGoogleFonts();
-  addSectionTitles();
   addArticleTitles();
   addTitleAnchors();
   setScheme();
