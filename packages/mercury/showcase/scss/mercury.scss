@@ -6503,6 +6503,13 @@ Body Spacing
 @mixin cell-alignment-inline-end() {
   justify-content: center;
 }
+// cell with ellipsis
+@mixin cell-ellipsis() {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /// @group Grid
 /// @param {String} $column-nth ["1"] -
@@ -6512,75 +6519,91 @@ Body Spacing
 /// @param {("start" | "center" | "end")} $tabular-grid-cell-block-alignment ["start"] -
 /// @param {("start" | "center" | "end")} $tabular-grid-cell-inline-alignment ["start"] -
 /// @param {("text" | "element")} $tabular-grid-cell-node-type ["text"] -
+/// @param {Boolean} $tabular-grid-cell-apply-ellipsis [false] -
 @mixin tabular-grid-cell-layout(
-  $editable-columns-nth: 2,
+  $editable-columns-nth: null,
   $tabular-grid-cell-layout: ".tabular-grid-cell-layout",
   $tabular-grid-row-selector: ".tabular-grid-row",
   $tabular-grid-cell-selector: ".tabular-grid-cell",
-  $tabular-grid-cell-node-type: "element",
+  $tabular-grid-cell-node-type: "text",
   $tabular-grid-cell-block-alignment: "start",
-  $tabular-grid-cell-inline-alignment: "start"
+  $tabular-grid-cell-inline-alignment: "start",
+  $tabular-grid-cell-apply-ellipsis: true
 ) {
+  $selector: null;
   @if $editable-columns-nth != null {
-    #{$tabular-grid-cell-layout} #{$tabular-grid-row-selector} {
-      @each $column-nth in $editable-columns-nth {
-        #{$tabular-grid-cell-selector}:where(:nth-child(#{$column-nth})) {
-          // node type
-          @if $tabular-grid-cell-node-type == "text" {
-            @include cell-node-type-text();
-          }
+    $selector: "#{$tabular-grid-cell-selector}:where(:nth-child(#{$editable-columns-nth}))";
+  } @else {
+    // if no $editable-columns-nth was provided, apply to all cells
+    $selector: "#{$tabular-grid-cell-selector}";
+  }
+
+  #{$tabular-grid-cell-layout} #{$tabular-grid-row-selector} {
+    @each $column-nth in $editable-columns-nth {
+      #{$selector} {
+        // node type
+        @if $tabular-grid-cell-node-type == "text" {
+          @include cell-node-type-text();
+        }
+        @if $tabular-grid-cell-node-type == "element" {
+          @include cell-node-type-element();
+        }
+        &:hover {
           @if $tabular-grid-cell-node-type == "element" {
-            @include cell-node-type-element();
+            @include cell-node-type-element--hover();
           }
-          &:hover {
-            @if $tabular-grid-cell-node-type == "element" {
-              @include cell-node-type-element--hover();
-            }
-          }
-          // block alignment
-          @if $tabular-grid-cell-node-type ==
-            "text" and
-            $tabular-grid-cell-block-alignment ==
-            "start"
-          {
-            @include cell-alignment-block-start();
-          }
-          @if $tabular-grid-cell-node-type ==
-            "text" and
-            $tabular-grid-cell-block-alignment ==
-            "center"
-          {
-            @include cell-alignment-block-center();
-          }
-          @if $tabular-grid-cell-node-type ==
-            "text" and
-            $tabular-grid-cell-block-alignment ==
-            "end"
-          {
-            @include cell-alignment-block-end();
-          }
-          // inline alignment
-          @if $tabular-grid-cell-node-type ==
-            "text" and
-            $tabular-grid-cell-inline-alignment ==
-            "start"
-          {
-            @include cell-alignment-inline-start();
-          }
-          @if $tabular-grid-cell-node-type ==
-            "text" and
-            $tabular-grid-cell-inline-alignment ==
-            "center"
-          {
-            @include cell-alignment-inline-center();
-          }
-          @if $tabular-grid-cell-node-type ==
-            "text" and
-            $tabular-grid-cell-inline-alignment ==
-            "end"
-          {
-            @include cell-alignment-inline-end();
-          }
+        }
+        // block alignment (only should apply if $tabular-grid-cell-node-type == "text"
+        @if $tabular-grid-cell-node-type ==
+          "text" and
+          $tabular-grid-cell-block-alignment ==
+          "start"
+        {
+          @include cell-alignment-block-start();
+        }
+        @if $tabular-grid-cell-node-type ==
+          "text" and
+          $tabular-grid-cell-block-alignment ==
+          "center"
+        {
+          @include cell-alignment-block-center();
+        }
+        @if $tabular-grid-cell-node-type ==
+          "text" and
+          $tabular-grid-cell-block-alignment ==
+          "end"
+        {
+          @include cell-alignment-block-end();
+        }
+        // inline alignment
+        @if $tabular-grid-cell-node-type ==
+          "text" and
+          $tabular-grid-cell-inline-alignment ==
+          "start"
+        {
+          @include cell-alignment-inline-start();
+        }
+        @if $tabular-grid-cell-node-type ==
+          "text" and
+          $tabular-grid-cell-inline-alignment ==
+          "center"
+        {
+          @include cell-alignment-inline-center();
+        }
+        @if $tabular-grid-cell-node-type ==
+          "text" and
+          $tabular-grid-cell-inline-alignment ==
+          "end"
+        {
+          @include cell-alignment-inline-end();
+        }
+        // ellipsis (only should apply if $tabular-grid-cell-node-type == "text"
+        @if $tabular-grid-cell-node-type ==
+          "text" and
+          $tabular-grid-cell-apply-ellipsis ==
+          true
+        {
+          @include cell-ellipsis();
         }
       }
     }
