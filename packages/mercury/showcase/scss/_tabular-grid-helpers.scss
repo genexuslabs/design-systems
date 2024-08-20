@@ -1,9 +1,11 @@
 @import "mercury.scss";
 
 @include tabular-grid-cell-layout(
-  $editable-columns-nth: 2,
-  $tabular-grid-cell-layout: ".tabular-grid-cell-layout-element-col-2",
+  $tabular-grid-cell-layout-selector: ".tabular-grid-cell-layout-element-col-2",
   $tabular-grid-row-selector: ".tabular-grid-row",
   $tabular-grid-cell-selector: ".tabular-grid-cell",
-  $tabular-grid-cell-node-type: "element"
+  $tabular-grid-cell-node-type: "element",
+  $tabular-grid-affected-columns-nth-list: (
+    2
+  )
 );
