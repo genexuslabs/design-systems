@@ -96,6 +96,7 @@
   $dropdown-primary: true,
   $dropdown-secondary: true,
   $dropdown-conversational: true,
+  $edit: true,
   $flexible-layout: true,
   $header: true,
   $markdown: true,
@@ -264,7 +265,6 @@
       @include other-reset();
     }
 
-    // Typography reset
     @if $typography-reset {
       @include typography-reset();
     }
@@ -274,38 +274,26 @@
   //              Base classes
   // - - - - - - - - - - - - - - - - - - - -
   @if $base-classes {
-    // Button classes
     @if $button-classes {
-      // Button primary
       @include button-primary();
-
-      // Button secondary
       @include button-secondary();
-
-      // Button tertiary
       @include button-tertiary();
     }
 
-    // Form control classes
     @if $form-controls-classes {
-      @include form-input();
-      @include form-textarea();
       @include form-input__label();
       @include form-input__helper();
     }
 
-    // Hyperlink
     @if $hyperlink-classes {
       @include hyperlink();
     }
 
-    // Icon classes
     @if $icon-classes {
       @include icon-mask();
       @include icon-background();
     }
 
-    // Typography classes
     @if $typography-classes {
       @include typography-classes();
     }
@@ -330,120 +318,98 @@
   //               Components
   // - - - - - - - - - - - - - - - - - - - -
   @if $components {
-    // card
     @if $card {
       @include card();
     }
 
-    // checkbox
     @if $checkbox {
       @include checkbox();
     }
 
-    // code
     @if $code {
       @include code();
     }
 
-    // combo-box
     @if $combo-box {
       @include combo-box();
     }
 
-    // dialog-primary
     @if $dialog-primary {
       @include dialog-primary($icons-path: $icons-path);
     }
 
-    // dialog-secondary
     @if $dialog-secondary {
       @include dialog-secondary($icons-path: $icons-path);
     }
 
-    // dropdown primary
     @if $dropdown-primary {
       @include dropdown-primary();
     }
 
-    // dropdown secondary
     @if $dropdown-secondary {
       @include dropdown-secondary();
     }
 
-    // dropdown conversational
     @if $dropdown-conversational {
       @include dropdown-conversational();
     }
 
-    // flexible layout
+    @if $edit {
+      @include form-input();
+      @include form-textarea();
+    }
+
     @if $flexible-layout {
       @include flexible-layout();
     }
 
-    // header
     @if $header {
       @include header();
     }
 
-    // markdown
     @if $markdown {
       @include markdown();
     }
 
-    // list-box-secondary
     @if $list-box-secondary {
       @include list-box-secondary();
     }
 
-    // query-viewer-pivot-table
     @if $query-viewer-pivot-table {
       @include query-viewer-pivot-table($icons-path);
     }
 
-    // radio-group
     @if $radio-group {
       @include radio-group();
     }
 
-    // segmented-control
     @if $segmented-control {
       @include segmented-control();
     }
 
-    // slider primary
     @if $slider-primary {
       @include slider-primary();
     }
 
-    // slider secondary
     @if $slider-secondary {
       @include slider-secondary();
     }
 
-    // switch
     @if $switch {
       @include switch();
     }
 
-    // tab
     @if $tab {
       @include tab();
     }
 
-    // tree-view-primary
     @if $tree-view-primary {
       @include tree-view-primary();
     }
 
-    // tree-view-secondary
     @if $tree-view-secondary {
       @include tree-view-secondary();
     }
-
-    // tree-view-secondary
-    //  @if $tree-view-secondary {
-    //   @include tree-view-secondary();
-    // }
   }
 }
 
@@ -502,6 +468,7 @@
   $dropdown-primary: false,
   $dropdown-secondary: false,
   $dropdown-conversational: false,
+  $edit: false,
   $flexible-layout: false,
   $header: false,
   $markdown: false,
@@ -540,11 +507,11 @@
     $spacing: $spacing,
 
     // Icons path
-    $icons-path: "",
+    $icons-path: $icons-path,
 
     // Font face
     $font-face: $font-face,
-    $font-face-path: "./assets/fonts/",
+    $font-face-path: $font-face-path,
 
     $body: $body,
 
@@ -571,6 +538,7 @@
     $dropdown-primary: $dropdown-primary,
     $dropdown-secondary: $dropdown-secondary,
     $dropdown-conversational: $dropdown-conversational,
+    $edit: $edit,
     $flexible-layout: $flexible-layout,
     $header: $header,
     $markdown: $markdown,
