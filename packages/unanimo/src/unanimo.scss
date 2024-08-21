@@ -446,3 +446,143 @@
     // }
   }
 }
+
+@mixin unanimo-only(
+  // Resets
+  $resets: false,
+  $box-sizing-reset: false,
+  $button-reset: false,
+  $input-reset: false,
+  $other-reset: false,
+  $typography-reset: false,
+
+  // Theme
+  $light-theme: false,
+  $dark-theme: false,
+  $prefers-color-scheme-light: false,
+  $prefers-color-scheme-dark: false,
+
+  // Tokens
+  $tokens: false,
+  $border-radius: false,
+  $box-shadow: false,
+  $colors: false,
+  $font-size: false,
+  $spacing: false,
+
+  // Icons path
+  $icons-path: "",
+
+  // Font face
+  $font-face: false,
+  $font-face-path: "./assets/fonts/",
+
+  $body: false,
+
+  // Base
+  $base-classes: false,
+  $button-classes: false,
+  $form-controls-classes: false,
+  $hyperlink-classes: false,
+  $icon-classes: false,
+  $typography-classes: false,
+
+  // Icons
+  $icons-button: false,
+
+  // Components
+  $components: false,
+  $action-group: false,
+  $card: false,
+  $checkbox: false,
+  $code: false,
+  $combo-box: false,
+  $dialog-primary: false,
+  $dialog-secondary: false,
+  $dropdown-primary: false,
+  $dropdown-secondary: false,
+  $dropdown-conversational: false,
+  $flexible-layout: false,
+  $header: false,
+  $markdown: false,
+  $list-box-secondary: false,
+  $query-viewer-pivot-table: false,
+  $radio-group: false,
+  $segmented-control: false,
+  $slider-primary: false,
+  $slider-secondary: false,
+  $switch: false,
+  $tab: false,
+  $tree-view-primary: false,
+  $tree-view-secondary: false
+) {
+  @include unanimo(
+    // Resets
+    $resets: $resets,
+    $box-sizing-reset: $box-sizing-reset,
+    $button-reset: $button-reset,
+    $input-reset: $input-reset,
+    $other-reset: $other-reset,
+    $typography-reset: $typography-reset,
+
+    // Theme
+    $light-theme: $light-theme,
+    $dark-theme: $dark-theme,
+    $prefers-color-scheme-light: $prefers-color-scheme-light,
+    $prefers-color-scheme-dark: $prefers-color-scheme-dark,
+
+    // Tokens
+    $tokens: $tokens,
+    $border-radius: $border-radius,
+    $box-shadow: $box-shadow,
+    $colors: $colors,
+    $font-size: $font-size,
+    $spacing: $spacing,
+
+    // Icons path
+    $icons-path: "",
+
+    // Font face
+    $font-face: $font-face,
+    $font-face-path: "./assets/fonts/",
+
+    $body: $body,
+
+    // Base
+    $base-classes: $base-classes,
+    $button-classes: $button-classes,
+    $form-controls-classes: $form-controls-classes,
+    $hyperlink-classes: $hyperlink-classes,
+    $icon-classes: $icon-classes,
+    $typography-classes: $typography-classes,
+
+    // Icons
+    $icons-button: $icons-button,
+
+    // Components
+    $components: $components,
+    $action-group: $action-group,
+    $card: $card,
+    $checkbox: $checkbox,
+    $code: $code,
+    $combo-box: $combo-box,
+    $dialog-primary: $dialog-primary,
+    $dialog-secondary: $dialog-secondary,
+    $dropdown-primary: $dropdown-primary,
+    $dropdown-secondary: $dropdown-secondary,
+    $dropdown-conversational: $dropdown-conversational,
+    $flexible-layout: $flexible-layout,
+    $header: $header,
+    $markdown: $markdown,
+    $list-box-secondary: $list-box-secondary,
+    $query-viewer-pivot-table: $query-viewer-pivot-table,
+    $radio-group: $radio-group,
+    $segmented-control: $segmented-control,
+    $slider-primary: $slider-primary,
+    $slider-secondary: $slider-secondary,
+    $switch: $switch,
+    $tab: $tab,
+    $tree-view-primary: $tree-view-primary,
+    $tree-view-secondary: $tree-view-secondary
+  );
+}
