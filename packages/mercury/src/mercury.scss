@@ -51,6 +51,7 @@
 @import "./components/slider/slider-styles";
 @import "./components/tab/tab-styles";
 @import "./components/tabular-grid/tabular-grid-styles";
+@import "./components/tabular-grid/helpers";
 @import "./components/tree-view/tree-view-styles";
 
 @mixin mercury(
@@ -442,6 +443,7 @@
   // tabular grid
   @if $tabular-grid {
     @include tabular-grid();
+    @include tabular-grid-cell-layout();
     @include property-grid(); // property-grid extends tabular-grid
   }
 

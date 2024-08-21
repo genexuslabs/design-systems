@@ -97,7 +97,7 @@
 %tabular-grid-column__bar {
   --grid-label__gap: 0;
   @include grid-row-colors-enabled();
-  @include control-padding-inline-block();
+  @include grid-cell-padding-inline-block();
   @include control-font-weight-semi-bold();
   gap: var(--grid-common__gap);
   width: 100%;
@@ -190,7 +190,7 @@
 
 %tabular-grid-cell {
   @include grid-cell-border-inline-block();
-  @include control-padding-inline-block();
+  @include grid-cell-padding-inline-block();
   @include grid-row-colors-enabled();
   --item__bg-color: var(--items-container__bg-color);
   border: 0; //WA

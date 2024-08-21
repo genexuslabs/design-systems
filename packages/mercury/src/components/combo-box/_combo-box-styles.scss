@@ -11,11 +11,11 @@
   --ch-combo-box-group__expandable-button-image-size: var(--mer-spacing--sm);
   --ch-combo-box-item__background-image-size: 100%;
 
+  @include control-border();
   @include control-colors-enabled();
   @include control-font-weight-regular();
-  @include control-height-regular();
-  @include control-border();
-  @include control-padding-inline();
+  @include control-font-size-small();
+  @include control-padding-inline-block();
 
   &:hover {
     @include control-colors-hover();
