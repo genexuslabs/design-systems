@@ -6512,40 +6512,40 @@ Body Spacing
 }
 
 /// @group Grid
-/// @param {String} $tabular-grid-cell-layout-selector [".tabular-grid-cell-layout"] -
-/// @param {String} $tabular-grid-row-selector [".tabular-grid-row"] -
-/// @param {String} $tabular-grid-cell-selector [".tabular-grid-cell"] -
+/// @param {String} $tabular-grid-selector [".tabular-grid"] -
 /// @param {("text" | "element")} $tabular-grid-cell-node-type ["text"] -
 /// @param {("start" | "center" | "end")} $tabular-grid-cell-block-alignment ["start"] -
 /// @param {("start" | "center" | "end")} $tabular-grid-cell-inline-alignment ["start"] -
 /// @param {Boolean} $tabular-grid-cell-apply-ellipsis [false] -
-/// @param {String} $tabular-grid-affected-columns-nth-list [null] -
+/// @param {List} $tabular-grid-affected-columns-nth-list [null] -
+
 @mixin tabular-grid-cell-layout(
-  $tabular-grid-cell-layout-selector: ".tabular-grid-cell-layout",
-  $tabular-grid-row-selector: ".tabular-grid-row",
-  $tabular-grid-cell-selector: ".tabular-grid-cell",
+  $tabular-grid-selector: ".tabular-grid",
   $tabular-grid-cell-node-type: "text",
   $tabular-grid-cell-block-alignment: "start",
   $tabular-grid-cell-inline-alignment: "start",
   $tabular-grid-cell-apply-ellipsis: false,
-  $tabular-grid-affected-columns-nth-list: null
+  $tabular-grid-affected-columns-nth-list: (
+    2,
+    4
+  )
 ) {
-  $tabular-grid-cell-selector: null;
+  $selector: null;
+  $cell-tag-name: "ch-tabular-grid-cell";
   $where-pseudo-class: ":where";
   $where-selector: ();
   @if $tabular-grid-affected-columns-nth-list != null {
     @each $nth in $tabular-grid-affected-columns-nth-list {
       $where-selector: append($where-selector, ":nth-child(#{$nth})", comma);
     }
-    $tabular-grid-cell-selector: #{$tabular-grid-cell-selector}#{$where-pseudo-class
+    $selector: #{$tabular-grid-selector}
+      #{$cell-tag-name}#{$where-pseudo-class
       }(#{$where-selector});
   } @else {
     // if no $editable-columns-nth was provided, apply to all cells
-    $tabular-grid-cell-selector: #{$tabular-grid-cell-selector};
+    $selector: #{$tabular-grid-selector} #{$cell-tag-name};
   }
-  #{$tabular-grid-cell-layout-selector}
-    #{$tabular-grid-row-selector}
-    #{$tabular-grid-cell-selector} {
+  #{$selector} {
     // node type
     @if $tabular-grid-cell-node-type == "text" {
       @include cell-node-type-text();
