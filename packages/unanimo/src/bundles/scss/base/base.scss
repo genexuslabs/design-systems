@@ -1,0 +1,23 @@
+@import "config";
+@import "../../../unanimo.scss";
+
+@include unanimo-only(
+  $body: true,
+
+  $light-theme: true,
+  $dark-theme: true,
+
+  $font-face: true,
+  $font-face-path: $font-face-path,
+
+  $tokens: true,
+  $border-radius: true,
+  $box-shadow: true,
+  $colors: true,
+  $font-size: true,
+  $spacing: true,
+
+  $resets: true,
+  // TODO: By the time we remove TheiaJS, this reset will likely no longer be necessary
+  $input-reset: true
+);

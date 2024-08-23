@@ -98,6 +98,7 @@
   $dropdown-primary: true,
   $dropdown-secondary: true,
   $dropdown-conversational: true,
+  $edit: true,
   $flexible-layout: true,
   $header: true,
   $markdown: true,
@@ -144,6 +145,7 @@
       color-scheme: light;
       @include foundation-colors--light();
       @include semantic-colors--light();
+      @include code-tokens--light();
     }
   }
   @if $colors and $tokens and $prefers-color-scheme-light {
@@ -154,6 +156,7 @@
         color-scheme: light;
         @include foundation-colors--light();
         @include semantic-colors--light();
+        @include code-tokens--light();
       }
     }
   }
@@ -166,6 +169,7 @@
       color-scheme: dark;
       @include foundation-colors--dark();
       @include semantic-colors--dark();
+      @include code-tokens--dark();
     }
   }
   @if $colors and $tokens and $prefers-color-scheme-dark {
@@ -176,6 +180,7 @@
         color-scheme: dark;
         @include foundation-colors--dark();
         @include semantic-colors--dark();
+        @include code-tokens--dark();
       }
     }
   }
@@ -262,7 +267,6 @@
       @include other-reset();
     }
 
-    // Typography reset
     @if $typography-reset {
       @include typography-reset();
     }
@@ -272,38 +276,26 @@
   //              Base classes
   // - - - - - - - - - - - - - - - - - - - -
   @if $base-classes {
-    // Button classes
     @if $button-classes {
-      // Button primary
       @include button-primary();
-
-      // Button secondary
       @include button-secondary();
-
-      // Button tertiary
       @include button-tertiary();
     }
 
-    // Form control classes
     @if $form-controls-classes {
-      @include form-input();
-      @include form-textarea();
       @include form-input__label();
       @include form-input__helper();
     }
 
-    // Hyperlink
     @if $hyperlink-classes {
       @include hyperlink();
     }
 
-    // Icon classes
     @if $icon-classes {
       @include icon-mask();
       @include icon-background();
     }
 
-    // Typography classes
     @if $typography-classes {
       @include typography-classes();
     }
@@ -333,119 +325,241 @@
       @include accordion-outlined();
     }
 
-    // card
     @if $card {
       @include card();
     }
 
-    // checkbox
     @if $checkbox {
       @include checkbox();
     }
 
-    // code
     @if $code {
       @include code();
     }
 
-    // combo-box
     @if $combo-box {
       @include combo-box();
     }
 
-    // dialog-primary
     @if $dialog-primary {
       @include dialog-primary($icons-path: $icons-path);
     }
 
-    // dialog-secondary
     @if $dialog-secondary {
       @include dialog-secondary($icons-path: $icons-path);
     }
 
-    // dropdown primary
     @if $dropdown-primary {
       @include dropdown-primary();
     }
 
-    // dropdown secondary
     @if $dropdown-secondary {
       @include dropdown-secondary();
     }
 
-    // dropdown conversational
     @if $dropdown-conversational {
       @include dropdown-conversational();
     }
 
-    // flexible layout
+    @if $edit {
+      @include form-input();
+      @include form-textarea();
+    }
+
     @if $flexible-layout {
       @include flexible-layout();
     }
 
-    // header
     @if $header {
       @include header();
     }
 
-    // markdown
     @if $markdown {
       @include markdown();
     }
 
-    // list-box-secondary
     @if $list-box-secondary {
       @include list-box-secondary();
     }
 
-    // query-viewer-pivot-table
     @if $query-viewer-pivot-table {
       @include query-viewer-pivot-table($icons-path);
     }
 
-    // radio-group
     @if $radio-group {
       @include radio-group();
     }
 
-    // segmented-control
     @if $segmented-control {
       @include segmented-control();
     }
 
-    // slider primary
     @if $slider-primary {
       @include slider-primary();
     }
 
-    // slider secondary
     @if $slider-secondary {
       @include slider-secondary();
     }
 
-    // switch
     @if $switch {
       @include switch();
     }
 
-    // tab
     @if $tab {
       @include tab();
     }
 
-    // tree-view-primary
     @if $tree-view-primary {
       @include tree-view-primary();
     }
 
-    // tree-view-secondary
     @if $tree-view-secondary {
       @include tree-view-secondary();
     }
-
-    // tree-view-secondary
-    //  @if $tree-view-secondary {
-    //   @include tree-view-secondary();
-    // }
   }
+}
+
+@mixin unanimo-only(
+  // Resets
+  $resets: false,
+  $box-sizing-reset: false,
+  $button-reset: false,
+  $input-reset: false,
+  $other-reset: false,
+  $typography-reset: false,
+
+  // Theme
+  $light-theme: false,
+  $dark-theme: false,
+  $prefers-color-scheme-light: false,
+  $prefers-color-scheme-dark: false,
+
+  // Tokens
+  $tokens: false,
+  $border-radius: false,
+  $box-shadow: false,
+  $colors: false,
+  $font-size: false,
+  $spacing: false,
+
+  // Icons path
+  $icons-path: "",
+
+  // Font face
+  $font-face: false,
+  $font-face-path: "./assets/fonts/",
+
+  $body: false,
+
+  // Base
+  $base-classes: false,
+  $button-classes: false,
+  $form-controls-classes: false,
+  $hyperlink-classes: false,
+  $icon-classes: false,
+  $typography-classes: false,
+
+  // Icons
+  $icons-button: false,
+
+  // Components
+  $components: false,
+  $accordion: false,
+  $action-group: false,
+  $card: false,
+  $checkbox: false,
+  $code: false,
+  $combo-box: false,
+  $dialog-primary: false,
+  $dialog-secondary: false,
+  $dropdown-primary: false,
+  $dropdown-secondary: false,
+  $dropdown-conversational: false,
+  $edit: false,
+  $flexible-layout: false,
+  $header: false,
+  $markdown: false,
+  $list-box-secondary: false,
+  $query-viewer-pivot-table: false,
+  $radio-group: false,
+  $segmented-control: false,
+  $slider-primary: false,
+  $slider-secondary: false,
+  $switch: false,
+  $tab: false,
+  $tree-view-primary: false,
+  $tree-view-secondary: false
+) {
+  @include unanimo(
+    // Resets
+    $resets: $resets,
+    $box-sizing-reset: $box-sizing-reset,
+    $button-reset: $button-reset,
+    $input-reset: $input-reset,
+    $other-reset: $other-reset,
+    $typography-reset: $typography-reset,
+
+    // Theme
+    $light-theme: $light-theme,
+    $dark-theme: $dark-theme,
+    $prefers-color-scheme-light: $prefers-color-scheme-light,
+    $prefers-color-scheme-dark: $prefers-color-scheme-dark,
+
+    // Tokens
+    $tokens: $tokens,
+    $border-radius: $border-radius,
+    $box-shadow: $box-shadow,
+    $colors: $colors,
+    $font-size: $font-size,
+    $spacing: $spacing,
+
+    // Icons path
+    $icons-path: $icons-path,
+
+    // Font face
+    $font-face: $font-face,
+    $font-face-path: $font-face-path,
+
+    $body: $body,
+
+    // Base
+    $base-classes: $base-classes,
+    $button-classes: $button-classes,
+    $form-controls-classes: $form-controls-classes,
+    $hyperlink-classes: $hyperlink-classes,
+    $icon-classes: $icon-classes,
+    $typography-classes: $typography-classes,
+
+    // Icons
+    $icons-button: $icons-button,
+
+    // Components
+    $components: $components,
+    $accordion: $accordion,
+    $action-group: $action-group,
+    $card: $card,
+    $checkbox: $checkbox,
+    $code: $code,
+    $combo-box: $combo-box,
+    $dialog-primary: $dialog-primary,
+    $dialog-secondary: $dialog-secondary,
+    $dropdown-primary: $dropdown-primary,
+    $dropdown-secondary: $dropdown-secondary,
+    $dropdown-conversational: $dropdown-conversational,
+    $edit: $edit,
+    $flexible-layout: $flexible-layout,
+    $header: $header,
+    $markdown: $markdown,
+    $list-box-secondary: $list-box-secondary,
+    $query-viewer-pivot-table: $query-viewer-pivot-table,
+    $radio-group: $radio-group,
+    $segmented-control: $segmented-control,
+    $slider-primary: $slider-primary,
+    $slider-secondary: $slider-secondary,
+    $switch: $switch,
+    $tab: $tab,
+    $tree-view-primary: $tree-view-primary,
+    $tree-view-secondary: $tree-view-secondary
+  );
 }

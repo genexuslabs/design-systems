@@ -1,299 +1,185 @@
 @mixin markdown() {
-  .markdown {
+  :host {
     @extend %text-body-2;
+  }
 
-    // - - - - - - - - - - - - - - - - - - - -
-    //                 Heading
-    // - - - - - - - - - - - - - - - - - - - -
-    h1 {
-      @extend %heading-1;
-      margin-block: var(--spacing--l) var(--spacing--m);
-      padding-block-end: var(--spacing--m);
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Heading
+  // - - - - - - - - - - - - - - - - - - - -
+  h1 {
+    @extend %heading-1;
+    margin-block: var(--spacing--l) var(--spacing--m);
+    padding-block-end: var(--spacing--m);
+  }
+
+  h2 {
+    @extend %heading-2;
+    margin-block: 12px 6px; // It does not exists the --spacing--xm value
+    padding-block-end: 6px; // It does not exists the --spacing--xm value
+  }
+
+  h3 {
+    @extend %heading-3;
+    margin-block: var(--spacing--m) var(--spacing--s);
+    padding-block-end: var(--spacing--s);
+  }
+
+  h4 {
+    @extend %heading-4;
+    margin-block: var(--spacing--s) var(--spacing--xs);
+    padding-block-end: var(--spacing--xs);
+  }
+
+  h5 {
+    @extend %heading-4; // WA to improve visualization
+    margin-block: var(--spacing--s) var(--spacing--xs);
+    padding-block-end: var(--spacing--xs);
+  }
+
+  h6 {
+    @extend %heading-4; // WA to improve visualization
+    margin-block: var(--spacing--s) var(--spacing--xs);
+    padding-block-end: var(--spacing--xs);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    border-block-end: 1px solid var(--body-m__font-color--gray);
+  }
+
+  p,
+  ul,
+  ol,
+  table,
+  ch-code {
+    margin-block: var(--spacing--m);
+  }
+
+  ul,
+  ol {
+    padding-inline-start: var(--spacing--xxl);
+  }
+
+  a {
+    @extend %text-link;
+  }
+
+  blockquote {
+    margin-block: var(--spacing--m);
+    padding-block: var(--spacing--m);
+    padding-inline: calc(var(--spacing--xxl) - 4px) var(--spacing--xxl);
+    border-inline-start: 4px solid var(--colors-foundation__gray--400);
+
+    // First <p> don't add margin-block-start, because the <blockquote> adds it
+    & > p:first-of-type {
+      margin-block-start: 0;
     }
 
-    h2 {
-      @extend %heading-2;
-      margin-block: 12px 6px; // It does not exists the --spacing--xm value
-      padding-block-end: 6px; // It does not exists the --spacing--xm value
+    // Last <p> don't add margin-block-end, because the <blockquote> adds it
+    & > p:last-of-type {
+      margin-block-end: 0;
     }
+  }
 
-    h3 {
-      @extend %heading-3;
-      margin-block: var(--spacing--m) var(--spacing--s);
-      padding-block-end: var(--spacing--s);
-    }
+  strong {
+    font-weight: 700;
+  }
 
-    h4 {
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Table
+  // - - - - - - - - - - - - - - - - - - - -
+  // Table
+  table {
+    display: block;
+    inline-size: max-content;
+    border: 1px solid var(--border-color__mild);
+    border-spacing: 0;
+
+    & > thead > tr {
       @extend %heading-4;
-      margin-block: var(--spacing--s) var(--spacing--xs);
-      padding-block-end: var(--spacing--xs);
-    }
-
-    h5 {
-      @extend %heading-4; // WA to improve visualization
-      margin-block: var(--spacing--s) var(--spacing--xs);
-      padding-block-end: var(--spacing--xs);
-    }
-
-    h6 {
-      @extend %heading-4; // WA to improve visualization
-      margin-block: var(--spacing--s) var(--spacing--xs);
-      padding-block-end: var(--spacing--xs);
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      border-block-end: 1px solid var(--body-m__font-color--gray);
-    }
-
-    p,
-    ul,
-    ol,
-    table,
-    pre {
-      margin-block: var(--spacing--m);
-    }
-
-    ul,
-    ol {
-      padding-inline-start: var(--spacing--xxl);
-    }
-
-    a {
-      @extend %text-link;
-    }
-
-    blockquote {
-      margin-block: var(--spacing--m);
-      margin-inline: 0;
-      padding-block: var(--spacing--m);
-      padding-inline: calc(var(--spacing--xxl) - 4px) var(--spacing--xxl);
-      border-inline-start: 4px solid var(--colors-foundation__gray--400);
-
-      // First <p> don't add margin-block-start, because the <blockquote> adds it
-      & > p:first-of-type {
-        margin-block-start: 0;
-      }
-
-      // Last <p> don't add margin-block-end, because the <blockquote> adds it
-      & > p:last-of-type {
-        margin-block-end: 0;
-      }
-    }
-
-    strong {
       font-weight: unset;
-      font-weight: 700;
     }
+  }
 
-    // - - - - - - - - - - - - - - - - - - - -
-    //                  Table
-    // - - - - - - - - - - - - - - - - - - - -
-    // Table
-    table {
-      display: block;
-      inline-size: max-content;
-      border: 1px solid var(--border-color__mild);
-      border-spacing: 0;
+  // Cells
+  td {
+    border-block-start: 1px solid var(--border-color__mild);
+  }
 
-      & > thead > tr {
-        @extend %heading-4;
-        font-weight: unset;
-      }
-    }
+  // Header and body cells
+  th,
+  td {
+    padding: var(--spacing--m);
+    border-inline-start: 1px solid var(--border-color__mild);
+  }
 
-    // Cells
-    td {
-      border-block-start: 1px solid var(--border-color__mild);
-    }
+  // Remove left border in the first cell of each row
+  tr > td:first-child,
+  tr > th:first-child {
+    border-inline-start: unset;
+  }
 
-    // Header and body cells
-    th,
-    td {
-      padding: var(--spacing--m);
-      border-inline-start: 1px solid var(--border-color__mild);
-    }
+  thead > tr,
+  tbody > tr:nth-child(2n) {
+    background-color: var(--colors-foundation__gray--100);
+  }
 
-    // Remove left border in the first cell of each row
-    tr > td:first-child,
-    tr > th:first-child {
-      border-inline-start: unset;
-    }
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Code
+  // - - - - - - - - - - - - - - - - - - - -
+  // Multiline code
+  ch-code {
+    // Override inline border-radius
+    border: 1px solid var(--border-color__mild);
+    border-radius: var(--border-radius--m);
+    padding: var(--spacing--l);
 
-    thead > tr,
-    tbody > tr:nth-child(2n) {
-      background-color: var(--colors-foundation__gray--100);
-    }
+    // & > .code-block__header {
+    //   display: grid;
+    //   grid-template-columns: 1fr max-content;
+    //   align-items: center;
+    //   padding-inline: var(--spacing--l);
+    //   padding-block: var(--spacing--m);
+    //   background-color: var(--surface--alternative);
+    // }
 
-    // - - - - - - - - - - - - - - - - - - - -
-    //                  Code
-    // - - - - - - - - - - - - - - - - - - - -
-    // Multiline code
-    pre > code {
-      display: block;
-      overflow: auto;
+    // & > .code-block__content {
+    //   // Override inline padding
+    //   padding: var(--spacing--l);
+    // }
+  }
 
-      padding: 0;
+  @include code($selector: "ch-code");
 
-      // Override inline border-radius
-      border: 1px solid var(--border-color__mild);
-      border-radius: var(--border-radius--m);
+  // Inline code
+  code {
+    padding-block: var(--spacing--xs);
+    padding-inline: var(--spacing--s);
 
-      & > .code-block__header {
-        display: grid;
-        grid-template-columns: 1fr max-content;
-        align-items: center;
-        padding-inline: var(--spacing--l);
-        padding-block: var(--spacing--m);
-        background-color: var(--surface--alternative);
-      }
+    background-color: var(
+      --surface--positive
+    ); // color-mix(in srgb, var(--surface--alternative) 70%, var(--colors-foundation__gray--100))
+    border-radius: var(--border-radius--s);
+    font-size: calc(1em - 2px);
+  }
 
-      & > .code-block__content {
-        // Override inline padding
-        padding: var(--spacing--l);
-      }
-    }
+  img {
+    display: inline-block;
+    max-inline-size: 25%;
+  }
 
-    // Inline code
-    code {
-      padding-block: var(--spacing--xs);
-      padding-inline: var(--spacing--s);
+  // Don't add margin-block-start in the first element of the markdown
+  :host > :first-child,
+  ch-theme + * {
+    margin-block-start: 0px;
+  }
 
-      background-color: var(
-        --surface--positive
-      ); // color-mix(in srgb, var(--surface--alternative) 70%, var(--colors-foundation__gray--100))
-      border-radius: var(--border-radius--s);
-      font-size: calc(1em - 2px);
-    }
-
-    img {
-      display: inline-block;
-      max-inline-size: 25%;
-    }
-
-    // Don't add margin-block-start in the first element of the markdown
-    & > :first-child {
-      margin-block-start: 0px;
-    }
-
-    // Don't add margin-block-end in the last element of the markdown
-    & > :last-child {
-      margin-block-end: 0px;
-    }
-
-    .hljs-doctag,
-    .hljs-keyword,
-    .hljs-meta .hljs-keyword,
-    .hljs-template-tag,
-    .hljs-template-variable,
-    .hljs-type,
-    .hljs-variable.language_ {
-      /* prettylights-syntax-keyword */
-      color: var(
-        --colors-foundation__purple--400
-      ); /* Light var(--colors-foundation__purple--100); */
-    }
-
-    .hljs-title,
-    .hljs-title.class_,
-    .hljs-title.class_.inherited__,
-    .hljs-title.function_ {
-      color: var(--text__on-surface--alternative);
-    }
-
-    .hljs-attr,
-    .hljs-attribute,
-    .hljs-literal,
-    .hljs-meta,
-    .hljs-number,
-    .hljs-operator,
-    .hljs-variable,
-    .hljs-selector-attr,
-    .hljs-selector-class,
-    .hljs-selector-id {
-      color: var(
-        --colors-foundation__purple--200
-      ); /* Previously: --text__primary */
-    }
-
-    .hljs-regexp,
-    .hljs-string,
-    .hljs-meta .hljs-string {
-      color: var(
-        --colors-foundation__orange--200
-      ); /* DARK: color-mix(in srgb, var(--colors-foundation__red--300) 60%, #000) */
-    }
-
-    .hljs-built_in,
-    .hljs-symbol {
-      /* prettylights-syntax-variable */
-      color: #e36209;
-    }
-
-    .hljs-comment,
-    .hljs-code,
-    .hljs-formula {
-      color: var(--colors-foundation__green--200);
-    }
-
-    .hljs-name,
-    .hljs-quote,
-    .hljs-selector-tag,
-    .hljs-selector-pseudo {
-      color: var(--colors-foundation__green--200);
-    }
-
-    .hljs-subst {
-      /* prettylights-syntax-storage-modifier-import */
-      color: #24292e;
-    }
-
-    .hljs-section {
-      /* prettylights-syntax-markup-heading */
-      color: #005cc5;
-      font-weight: bold;
-    }
-
-    .hljs-bullet {
-      /* prettylights-syntax-markup-list */
-      color: #735c0f;
-    }
-
-    .hljs-emphasis {
-      /* prettylights-syntax-markup-italic */
-      color: #24292e;
-      font-style: italic;
-    }
-
-    .hljs-strong {
-      /* prettylights-syntax-markup-bold */
-      color: #24292e;
-      font-weight: bold;
-    }
-
-    .hljs-addition {
-      /* prettylights-syntax-markup-inserted */
-      color: #22863a;
-      background-color: #f0fff4;
-    }
-
-    .hljs-deletion {
-      /* prettylights-syntax-markup-deleted */
-      color: #b31d28;
-      background-color: #ffeef0;
-    }
-
-    .hljs-char.escape_,
-    .hljs-link,
-    .hljs-params,
-    .hljs-property,
-    .hljs-punctuation,
-    .hljs-tag {
-      /* purposely ignored */
-    }
+  // Don't add margin-block-end in the last element of the markdown
+  :host > :last-child {
+    margin-block-end: 0px;
   }
 }
