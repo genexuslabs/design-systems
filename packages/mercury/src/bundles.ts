@@ -1,18 +1,16 @@
 import { ThemeModel } from "@genexus/chameleon-controls-library";
 
-export type MercuryBundles = MercuryBundleOptimized[] | MercuryBundleFull[];
+export type MercuryBundles =
+  | [MercuryBundleReset, ...MercuryBundleOptimized[]]
+  | [MercuryBundleReset, ...MercuryBundleFull[]];
 
 export type MercuryBundleOptimized =
-  | MercuryBundleBase
   | MercuryBundleComponent
   | MercuryBundleComponentForm
-  | MercuryBundleReset
   | MercuryBundleUtil;
 
 export type MercuryBundleFull =
-  | MercuryBundleBase
   | MercuryBundleComponent
-  | MercuryBundleReset
   | MercuryBundleUtil
   | MercuryBundleUtilFormFull;
 
@@ -22,6 +20,7 @@ export type MercuryBundleComponent =
   | "components/accordion"
   | "components/code"
   | "components/dialog"
+  | "components/markdown-viewer"
   | "components/tab"
   | "components/tabular-grid"
   | "components/tree-view";
@@ -84,6 +83,7 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/combo-box"),
     getThemeModelItem(basePath, "components/dialog"),
     getThemeModelItem(basePath, "components/edit"),
+    getThemeModelItem(basePath, "components/markdown-viewer"),
     getThemeModelItem(basePath, "components/radio-group"),
     getThemeModelItem(basePath, "components/tab"),
     getThemeModelItem(basePath, "components/tabular-grid"),

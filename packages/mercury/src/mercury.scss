@@ -46,6 +46,7 @@
 @import "./components/icon/icon-styles";
 @import "./components/form-input/form-input-styles";
 @import "./components/list-box/list-box-styles";
+@import "./components/markdown-viewer/markdown-viewer-styles";
 @import "./components/property-grid/property-grid-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
@@ -109,6 +110,7 @@
   $edit: true,
   $icon: true,
   $list-box: true,
+  $markdown-viewer: true,
   $radio-group: true,
   $slider: true,
   $tab: true,
@@ -405,6 +407,10 @@
     @include list-box();
   }
 
+  @if $markdown-viewer {
+    @include markdown-viewer();
+  }
+
   @if $radio-group {
     @include radio-group();
   }
@@ -482,6 +488,7 @@
   $edit: false,
   $icon: false,
   $list-box: false,
+  $markdown-viewer: false,
   $radio-group: false,
   $slider: false,
   $tab: false,
@@ -542,6 +549,7 @@
     $edit: $edit,
     $icon: $icon,
     $list-box: $list-box,
+    $markdown-viewer: $markdown-viewer,
     $radio-group: $radio-group,
     $slider: $slider,
     $tab: $tab,
