@@ -349,11 +349,14 @@ const addCopyCodeFunctionality = () => {
       const chCodeHeader = document.createElement("div");
       chCodeHeader.classList.add("code__header");
 
+      // data-attributes
+      const dataTitle = chCode.dataset.title;
+      const dataDocumentation = chCode.dataset.documentation;
+
       // copy code button
       const copyCodeButton = document.createElement("button");
-      copyCodeButton.classList.add("code__copy-button");
       copyCodeButton.classList.add("code__button");
-      copyCodeButton.innerText = "copy markup";
+      copyCodeButton.innerText = dataTitle || "copy markup";
 
       // append button inside header
       chCodeHeader.appendChild(copyCodeButton);
@@ -362,18 +365,26 @@ const addCopyCodeFunctionality = () => {
       const codeParent = chCode.parentElement;
       codeParent.insertBefore(chCodeHeader, chCode);
 
-      copyCodeButton.addEventListener("click", event => {
-        // assuming the copy code button is being inserted before ch-code
-        // inside .code__header.
-        const chCode = chCodeHeader.nextElementSibling;
-        if (chCode) {
-          copyToClipBoard(chCode.value);
-          chCode.classList.add("code--highlight");
-          setTimeout(() => {
-            chCode.classList.remove("code--highlight");
-          }, 200);
-        }
-      });
+      console.log("dataDocumentation", dataDocumentation);
+
+      if (dataDocumentation === undefined) {
+        copyCodeButton.classList.add("code__copy-button");
+        // only add copy feature if it is not "documentation".
+        copyCodeButton.addEventListener("click", event => {
+          // assuming the copy code button is being inserted before ch-code
+          // inside .code__header.
+          const chCode = chCodeHeader.nextElementSibling;
+          if (chCode) {
+            copyToClipBoard(chCode.value);
+            chCode.classList.add("code--highlight");
+            setTimeout(() => {
+              chCode.classList.remove("code--highlight");
+            }, 200);
+          }
+        });
+      } else {
+        copyCodeButton.classList.add("code__button--documentation");
+      }
     });
   }
 };
