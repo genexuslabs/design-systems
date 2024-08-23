@@ -38,6 +38,7 @@
 @import "./icons/button";
 
 // Components
+@import "./components/accordion/accordion-styles";
 @import "./components/checkbox/checkbox-styles";
 @import "./components/code/code-styles";
 @import "./components/combo-box/combo-box-styles";
@@ -100,6 +101,7 @@
 
   // Components
   $components: true,
+  $accordion: true,
   $checkbox: true,
   $code: true,
   $combo-box: true,
@@ -212,7 +214,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   //        Other Tokens than Colors
   // - - - - - - - - - - - - - - - - - - - -
-  // Primitive
   @if $tokens and
     ($border or $colors or $elevation or $font or $spacing or $timing)
   {
@@ -258,17 +259,14 @@
         }
       }
 
-      // Font
       @if $font {
         @include font();
       }
 
-      // Spacing
       @if $spacing {
         @include spacing();
       }
 
-      // Timing
       @if $timing {
         @include timing();
       }
@@ -306,7 +304,6 @@
   //                 Resets
   // - - - - - - - - - - - - - - - - - - - -
   @if $resets {
-    // box-sizing
     @if $box-sizing-reset {
       @include box-sizing();
     }
@@ -325,7 +322,6 @@
       @include other-reset();
     }
 
-    // Typography reset
     @if $typography-reset {
       @include typography-reset();
     }
@@ -338,49 +334,36 @@
   @if $base-classes {
     // Button classes
     @if $button-classes {
-      // Button primary
       @include button-primary();
-
-      // Button secondary
       @include button-secondary();
-
-      // Button tertiary
       @include button-tertiary();
 
       @if $icon-classes {
-        // Button icon only
         @include button-icon-only();
-
-        // Button icon and text
         @include button-icon-and-text();
       }
     }
 
-    // Form control classes
     @if $form-controls-classes {
       @include field();
       @include label();
     }
 
-    // Icon classes
     @if $icon-classes {
       @include icon-size-sm();
       @include icon-size-md();
       @include icon-and-text();
     }
 
-    // Layout classes
     @if $layout-classes {
       @include layout();
       @include control-footer();
     }
 
-    // Spacing classes
     @if $spacing-classes {
       @include spacing-body();
     }
 
-    // Typography classes
     @if $typography-classes {
       @include typography-classes();
     }
@@ -389,65 +372,57 @@
   // - - - - - - - - - - - - - - - -  - - -
   //               Components
   // - - - - - - - - - - - - - - - - - - -
+  @if $accordion {
+    @include accordion-filled();
+    @include accordion-outlined();
+  }
 
-  // checkbox
   @if $checkbox {
     @include checkbox();
   }
 
-  // code
   @if $code {
     @include code();
   }
 
-  // combo box
   @if $combo-box {
     @include combo-box();
   }
 
-  // dialog
   @if $dialog {
     @include dialog();
   }
 
-  // edit
   @if $edit {
     @include form-input();
   }
 
-  // icon
   @if $icon {
     @include icon();
   }
 
-  // list-box
   @if $list-box {
     @include list-box();
   }
 
-  // radio-group
   @if $radio-group {
     @include radio-group();
   }
 
-  // slider
   @if $slider {
     @include slider();
   }
 
-  // tab
   @if $tab {
     @include tab();
   }
 
-  // tabular grid
   @if $tabular-grid {
     @include tabular-grid();
     @include tabular-grid-cell-layout();
     @include property-grid(); // property-grid extends tabular-grid
   }
 
-  // tree view
   @if $tree-view {
     @include tree-view();
   }
@@ -499,6 +474,7 @@
 
   // Components
   $components: false,
+  $accordion: false,
   $checkbox: false,
   $code: false,
   $combo-box: false,
@@ -558,11 +534,13 @@
 
     // Components
     $components: $components,
+    $accordion: $accordion,
     $checkbox: $checkbox,
     $code: $code,
     $combo-box: $combo-box,
     $dialog: $dialog,
     $edit: $edit,
+    $icon: $icon,
     $list-box: $list-box,
     $radio-group: $radio-group,
     $slider: $slider,

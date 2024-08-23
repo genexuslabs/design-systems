@@ -23,6 +23,7 @@
 @import "./icons/button";
 
 // Components
+@import "./components/accordion";
 @import "./components/card";
 @import "./components/checkbox";
 @import "./components/code";
@@ -86,6 +87,7 @@
 
   // Components
   $components: true,
+  $accordion: true,
   $action-group: true,
   $card: true,
   $checkbox: true,
@@ -326,6 +328,11 @@
   //               Components
   // - - - - - - - - - - - - - - - - - - - -
   @if $components {
+    @if $accordion {
+      @include accordion-filled();
+      @include accordion-outlined();
+    }
+
     // card
     @if $card {
       @include card();
