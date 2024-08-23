@@ -8,8 +8,8 @@
   --control__padding-inline: var(--grid-cell__padding-inline);
   // to stretch the control
   display: grid;
-  align-items: stretch;
-  justify-content: stretch;
+  align-items: stretch !important; // WA to win over other rule that is more specific
+  justify-content: stretch !important; // WA to win over other rule that is more specific
 }
 @mixin cell-node-type-element--hover() {
   outline: var(--focus__outline-width) var(--focus__outline-style)
