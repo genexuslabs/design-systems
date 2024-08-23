@@ -83,12 +83,12 @@
         "name": "primary",
         "states": {
           "enabled": {
-            "dark": "#5BA7FF",
-            "light": "#2070CE"
+            "dark": "#5ba7ff",
+            "light": "#2070ce"
           },
           "hover": {
-            "dark": "#437DC0",
-            "light": "#437DC0"
+            "dark": "#437dc0",
+            "light": "#437dc0"
           },
           "active": {
             "dark": "#335884",
@@ -249,6 +249,23 @@
           "neutral": true,
           "highlighted": true,
           "bright": true
+        }
+      },
+      {
+        "folder": "system",
+        "colors": {
+          "on-surface": true,
+          "on-primary": false,
+          "on-disabled": false,
+          "on-message": false,
+          "on-elevation": true,
+          "primary": true,
+          "error": false,
+          "warning": false,
+          "success": false,
+          "neutral": false,
+          "highlighted": false,
+          "bright": false
         }
       },
       {

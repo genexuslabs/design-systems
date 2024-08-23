@@ -3,7 +3,6 @@
 /*----------------------
 Focus
 ----------------------*/
-
 @mixin focus-outline($outline: false) {
   outline: var(--focus__outline-width) var(--focus__outline-style)
     var(--focus__outline-color);
@@ -16,8 +15,11 @@ Focus
 /*----------------------
 Scrollbar
 ----------------------*/
-
 @mixin scrollbar-styles() {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb__bg-color)
+    var(--scrollbar-track__bg-color);
+
   //scrollbar
   &::-webkit-scrollbar {
     width: var(--scrollbar__size);
@@ -94,20 +96,27 @@ Control
 // Font Size
 @mixin control-font-size-small() {
   font-size: var(--control__font-size--small);
+  line-height: var(--control__line-height);
 }
 @mixin control-font-size-regular() {
   font-size: var(--control__font-size--regular);
+  line-height: var(--control__line-height);
 }
 // Height
 @mixin control-height-regular() {
   block-size: var(--control__height);
+  // to be removed (TODO)
+  // fixed block-size comes with some issues.
 }
 // Padding
-@mixin control-padding-inline-block() {
-  padding-block: var(--control__padding-block);
+@mixin control-padding-inline() {
   padding-inline: var(--control__padding-inline);
 }
-@mixin control-padding-inline() {
+@mixin control-padding-block() {
+  padding-block: var(--control__padding-block);
+}
+@mixin control-padding-inline-block() {
+  padding-block: var(--control__padding-block);
   padding-inline: var(--control__padding-inline);
 }
 // Placeholder
@@ -275,6 +284,23 @@ Grid Item
   // this mixin uses the box-shadow property, but it looks
   // as a border to the user.
   box-shadow: var(--grid-cell__box-shadow-inline-block);
+}
+@mixin grid-cell-padding-inline() {
+  padding-inline: var(--grid-cell__padding-block);
+}
+@mixin grid-cell-padding-block() {
+  padding-block: var(--grid-cell__padding-block);
+}
+@mixin grid-cell-padding-inline-block() {
+  padding-block: var(--grid-cell__padding-block);
+  padding-inline: var(--grid-cell__padding-inline);
+}
+@mixin grid-cell-remove-padding() {
+  // we should redefine '--grid-cell__padding-inline' here because when a control
+  // is inside a a tabular-grid-cell the cell padding-inline value is required to
+  // be applied on the control padding-inline.
+  padding-block: 0 !important; //WA to force padding 0
+  padding-inline: 0 !important; //WA to force padding 0
 }
 @mixin grid-rowset-legend-padding-block() {
   padding-block-start: var(--mer-spacing--2xs);
