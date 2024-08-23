@@ -38,6 +38,7 @@
 @import "./icons/button";
 
 // Components
+@import "./components/accordion/accordion-styles";
 @import "./components/checkbox/checkbox-styles";
 @import "./components/code/code-styles";
 @import "./components/combo-box/combo-box-styles";
@@ -100,6 +101,7 @@
 
   // Components
   $components: true,
+  $accordion: true,
   $checkbox: true,
   $code: true,
   $combo-box: true,
@@ -389,6 +391,9 @@
   // - - - - - - - - - - - - - - - -  - - -
   //               Components
   // - - - - - - - - - - - - - - - - - - -
+  @if $accordion {
+    @include accordion();
+  }
 
   // checkbox
   @if $checkbox {
@@ -499,6 +504,7 @@
 
   // Components
   $components: false,
+  $accordion: false,
   $checkbox: false,
   $code: false,
   $combo-box: false,
@@ -558,6 +564,7 @@
 
     // Components
     $components: $components,
+    $accordion: $accordion,
     $checkbox: $checkbox,
     $code: $code,
     $combo-box: $combo-box,
