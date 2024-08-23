@@ -1,18 +1,18 @@
 import { ThemeModel } from "@genexus/chameleon-controls-library";
 
-export type MercuryBundles = MercuryBundleOptimized[] | MercuryBundleFull[];
+export type MercuryBundles =
+  | [MercuryBundleReset, ...MercuryBundleOptimized[]]
+  | [MercuryBundleReset, ...MercuryBundleFull[]];
 
 export type MercuryBundleOptimized =
   | MercuryBundleBase
   | MercuryBundleComponent
   | MercuryBundleComponentForm
-  | MercuryBundleReset
   | MercuryBundleUtil;
 
 export type MercuryBundleFull =
   | MercuryBundleBase
   | MercuryBundleComponent
-  | MercuryBundleReset
   | MercuryBundleUtil
   | MercuryBundleUtilFormFull;
 
