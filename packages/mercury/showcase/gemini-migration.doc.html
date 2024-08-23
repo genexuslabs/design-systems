@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini Migration</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+  </head>
+  <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">Gemini Migration</h1>
+            <p class="section__description">
+              When migrating from the "Gemini" design system to "Mercury,"
+              you'll be transitioning your project's styles, components, and
+              design principles to align with the new system. This process
+              involves updating your codebase to replace Gemini-specific
+              components and styles with their Mercury equivalents, ensuring
+              consistency with Mercury's guidelines. The migration guide will
+              provide you with step-by-step instructions to help make this
+              transition as smooth as possible.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          button
+          =========================== -->
+            <article class="article" nav data-title="gxg-button: text only">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a button that is "only text":
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-button</code> tag with a
+                    <code>button</code> tag.
+                  </li>
+                  <li>Remove the <code>type</code> attribute and value</li>
+                  <li>
+                    Add any of the mercury classes that apply for "text only"
+                    button types
+                  </li>
+                </ol>
+                <p class="article__description">
+                  <a href="./button.html"
+                    >See the mercury button documentation for information about
+                    the classes that apply.</a
+                  >
+                </p>
+                <div class="article__code">
+                  <!-- button gemini -->
+                  <ch-code
+                    id="ch-code-1"
+                    language="xml"
+                    class="code"
+                    data-title="gemini markup"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    const markup1 = `<!-- Before -->                                        
+<gxg-button type="primary-icon-only">
+  Caption
+</gxg-button>`;
+                    document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <div class="article__code">
+                  <!-- button mercury -->
+                  <ch-code
+                    id="ch-code-2"
+                    language="xml"
+                    class="code"
+                    data-title="mercury markup"
+                  >
+                  </ch-code>
+                  <script>
+                    const markup2 = `<!-- Before -->                                        
+<button class="button-primary">Caption</button>`;
+                    document.getElementById("ch-code-2").value = markup2;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <button class="button-primary">Caption</button>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
