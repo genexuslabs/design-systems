@@ -20,7 +20,7 @@ export type MercuryBundleComponent =
   | "components/accordion"
   | "components/code"
   | "components/dialog"
-  | "components/markdown"
+  | "components/markdown-viewer"
   | "components/tab"
   | "components/tabular-grid"
   | "components/tree-view";
@@ -83,7 +83,7 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/combo-box"),
     getThemeModelItem(basePath, "components/dialog"),
     getThemeModelItem(basePath, "components/edit"),
-    getThemeModelItem(basePath, "components/markdown"),
+    getThemeModelItem(basePath, "components/markdown-viewer"),
     getThemeModelItem(basePath, "components/radio-group"),
     getThemeModelItem(basePath, "components/tab"),
     getThemeModelItem(basePath, "components/tabular-grid"),
