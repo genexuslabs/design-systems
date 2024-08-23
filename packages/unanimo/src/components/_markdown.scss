@@ -55,7 +55,7 @@
   ul,
   ol,
   table,
-  pre {
+  ch-code {
     margin-block: var(--spacing--m);
   }
 
@@ -70,7 +70,6 @@
 
   blockquote {
     margin-block: var(--spacing--m);
-    margin-inline: 0;
     padding-block: var(--spacing--m);
     padding-inline: calc(var(--spacing--xxl) - 4px) var(--spacing--xxl);
     border-inline-start: 4px solid var(--colors-foundation__gray--400);
@@ -87,7 +86,6 @@
   }
 
   strong {
-    font-weight: unset;
     font-weight: 700;
   }
 
@@ -134,30 +132,28 @@
   //                  Code
   // - - - - - - - - - - - - - - - - - - - -
   // Multiline code
-  pre > code {
-    display: block;
-    overflow: auto; // TODO: Add this property in the ch-code
-
-    padding: 0;
-
+  ch-code {
     // Override inline border-radius
     border: 1px solid var(--border-color__mild);
     border-radius: var(--border-radius--m);
+    padding: var(--spacing--l);
 
-    & > .code-block__header {
-      display: grid;
-      grid-template-columns: 1fr max-content;
-      align-items: center;
-      padding-inline: var(--spacing--l);
-      padding-block: var(--spacing--m);
-      background-color: var(--surface--alternative);
-    }
+    // & > .code-block__header {
+    //   display: grid;
+    //   grid-template-columns: 1fr max-content;
+    //   align-items: center;
+    //   padding-inline: var(--spacing--l);
+    //   padding-block: var(--spacing--m);
+    //   background-color: var(--surface--alternative);
+    // }
 
-    & > .code-block__content {
-      // Override inline padding
-      padding: var(--spacing--l);
-    }
+    // & > .code-block__content {
+    //   // Override inline padding
+    //   padding: var(--spacing--l);
+    // }
   }
+
+  @include code($selector: "ch-code");
 
   // Inline code
   code {
@@ -177,12 +173,13 @@
   }
 
   // Don't add margin-block-start in the first element of the markdown
-  & > :first-child {
+  :host > :first-child,
+  ch-theme + * {
     margin-block-start: 0px;
   }
 
   // Don't add margin-block-end in the last element of the markdown
-  & > :last-child {
+  :host > :last-child {
     margin-block-end: 0px;
   }
 }
