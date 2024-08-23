@@ -61,6 +61,10 @@ Heading
   }
 }
 
+%text-link {
+  text-decoration: underline;
+}
+
 // body
 %text-body {
   @include body-tokens();
