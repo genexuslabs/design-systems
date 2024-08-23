@@ -32,7 +32,7 @@
 @import "./components/dropdown";
 @import "./components/flexible-layout";
 @import "./components/header";
-@import "./components/markdown";
+@import "./components/markdown-viewer";
 @import "./components/list-box";
 @import "./components/query-viewer-pivot-table";
 @import "./components/radio-group";
@@ -101,7 +101,7 @@
   $edit: true,
   $flexible-layout: true,
   $header: true,
-  $markdown: true,
+  $markdown-viewer: true,
   $list-box-secondary: true,
   $query-viewer-pivot-table: true,
   $radio-group: true,
@@ -374,7 +374,7 @@
       @include header();
     }
 
-    @if $markdown {
+    @if $markdown-viewer {
       @include markdown();
     }
 
@@ -479,7 +479,7 @@
   $edit: false,
   $flexible-layout: false,
   $header: false,
-  $markdown: false,
+  $markdown-viewer: false,
   $list-box-secondary: false,
   $query-viewer-pivot-table: false,
   $radio-group: false,
@@ -550,7 +550,7 @@
     $edit: $edit,
     $flexible-layout: $flexible-layout,
     $header: $header,
-    $markdown: $markdown,
+    $markdown-viewer: $markdown-viewer,
     $list-box-secondary: $list-box-secondary,
     $query-viewer-pivot-table: $query-viewer-pivot-table,
     $radio-group: $radio-group,
