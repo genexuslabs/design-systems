@@ -542,8 +542,8 @@ Grid Item
   // we should redefine '--grid-cell__padding-inline' here because when a control
   // is inside a a tabular-grid-cell the cell padding-inline value is required to
   // be applied on the control padding-inline.
-  padding-block: 0;
-  padding-inline: 0;
+  padding-block: 0 !important; //WA to force padding 0
+  padding-inline: 0 !important; //WA to force padding 0
 }
 @mixin grid-rowset-legend-padding-block() {
   padding-block-start: var(--mer-spacing--2xs);
@@ -1175,7 +1175,7 @@ Body Spacing
 
   // - - - - - - - Padding - - - - - - -
 
-  --control__padding-block: var(--mer-spacing--3xs);
+  --control__padding-block: var(--mer-spacing--2xs);
   --control__padding-inline: var(--mer-spacing--xs);
 
   // - - - - - - - Gap - - - - - - -
@@ -1320,7 +1320,7 @@ Body Spacing
 
   // - - - - - - - Padding - - - - - - -
 
-  --item__padding-block: var(--mer-spacing--3xs);
+  --item__padding-block: var(--mer-spacing--2xs);
   --item__padding-inline: var(--mer-spacing--xs);
 
   // - - - - - - - Height - - - - - - -
@@ -1331,7 +1331,7 @@ Body Spacing
   // - - - - - - - Font Face - - - - - - -
 
   // item
-  --item__font-size: var(--item__font-size--small);
+  --item__font-size: var(--item__font-size--regular);
   --item__font-size--small: var(--mer-font__size--3xs);
   --item__font-size--regular: var(--mer-font__size--xs);
   --item__font-weight: var(--mer-font__weight--regular);
@@ -1947,8 +1947,8 @@ Grid Item
   // we should redefine '--grid-cell__padding-inline' here because when a control
   // is inside a a tabular-grid-cell the cell padding-inline value is required to
   // be applied on the control padding-inline.
-  padding-block: 0;
-  padding-inline: 0;
+  padding-block: 0 !important; //WA to force padding 0
+  padding-inline: 0 !important; //WA to force padding 0
 }
 @mixin grid-rowset-legend-padding-block() {
   padding-block-start: var(--mer-spacing--2xs);
@@ -2675,7 +2675,7 @@ Body Spacing
 @mixin heading-tokens() {
   // heading base
   --heading-base__font-family: var(--mer-font-family--title);
-  --heading__color: transparent;
+  --heading__color: inherit;
 
   //h1
   --heading-h1__font-size: var(--mer-font__size--xl);
@@ -3777,8 +3777,8 @@ Grid Item
   // we should redefine '--grid-cell__padding-inline' here because when a control
   // is inside a a tabular-grid-cell the cell padding-inline value is required to
   // be applied on the control padding-inline.
-  padding-block: 0;
-  padding-inline: 0;
+  padding-block: 0 !important; //WA to force padding 0
+  padding-inline: 0 !important; //WA to force padding 0
 }
 @mixin grid-rowset-legend-padding-block() {
   padding-block-start: var(--mer-spacing--2xs);
@@ -4038,7 +4038,6 @@ Body Spacing
 /// @param {String} $combo-box--disabled-selector [".combo-box[disabled]"] -
 /// @param {String} $combo-box__placeholder-selector [".combo-box::part(placeholder)"] -
 /// @param {String} $window-selector [".combo-box::part(window)"] -
-/// @param {String} $window__content-selector [".combo-box::part(window__content)"] -
 /// @param {String} $group-selector [".combo-box::part(group)"] -
 /// @param {String} $group__content-selector [".combo-box::part(group__content)"] -
 /// @param {String} $group__header-selector [".combo-box::part(group__header)"] -
@@ -4057,7 +4056,6 @@ Body Spacing
   $combo-box--disabled-selector: ".combo-box[disabled]",
   $combo-box__placeholder-selector: ".combo-box::part(placeholder)",
   $window-selector: ".combo-box::part(window)",
-  $window__content-selector: ".combo-box::part(window__content)",
   $group-selector: ".combo-box::part(group)",
   $group__content-selector: ".combo-box::part(group__content)",
   $group__header-selector: ".combo-box::part(group__header)",
@@ -4073,8 +4071,6 @@ Body Spacing
   $add--placeholder-var: true,
   $add--error: true
 ) {
-  // TODO: IMPROVE STYLE. Unanimo's implementation does not work well in Sidebar Menus
-
   #{$combo-box-selector} {
     @extend %combo-box;
 
@@ -4109,11 +4105,7 @@ Body Spacing
   // - - - - - - - - - - - - - - - - - - - -
   //                 Window
   // - - - - - - - - - - - - - - - - - - - -
-
   #{$window-selector} {
-  }
-
-  #{$window__content-selector} {
     @include items-container-colors();
     @include items-container-padding();
     @include items-container-dropdown();
@@ -4124,7 +4116,6 @@ Body Spacing
   // - - - - - - - - - - - - - - - - - - - -
   //                  Group
   // - - - - - - - - - - - - - - - - - - - -
-
   #{$group__header-selector} {
     @include item-colors-enabled();
     @include item-font-header();
@@ -6477,6 +6468,7 @@ Body Spacing
   // to stretch the control
   display: grid;
   align-items: stretch;
+  justify-content: stretch;
 }
 @mixin cell-node-type-element--hover() {
   outline: var(--focus__outline-width) var(--focus__outline-style)
@@ -6525,15 +6517,14 @@ Body Spacing
   $tabular-grid-cell-block-alignment: "start",
   $tabular-grid-cell-inline-alignment: "start",
   $tabular-grid-cell-apply-ellipsis: false,
-  $tabular-grid-affected-columns-nth-list: (
-    2,
-    4
-  )
+  $tabular-grid-affected-columns-nth-list: null
 ) {
   $selector: null;
   $cell-tag-name: "ch-tabular-grid-cell";
   $where-pseudo-class: ":where";
   $where-selector: ();
+  // the selector varies depending on wether $tabular-grid-affected-columns-nth-list is null or not.
+  // if it is null, all cells should be affected.
   @if $tabular-grid-affected-columns-nth-list != null {
     @each $nth in $tabular-grid-affected-columns-nth-list {
       $where-selector: append($where-selector, ":nth-child(#{$nth})", comma);

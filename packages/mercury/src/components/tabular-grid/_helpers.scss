@@ -9,6 +9,7 @@
   // to stretch the control
   display: grid;
   align-items: stretch;
+  justify-content: stretch;
 }
 @mixin cell-node-type-element--hover() {
   outline: var(--focus__outline-width) var(--focus__outline-style)
