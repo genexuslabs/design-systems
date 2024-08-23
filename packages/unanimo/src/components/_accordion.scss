@@ -1,9 +1,9 @@
 %accordion {
-  --ch-accordion-header__image-size: var(--spacing--xl);
-  --ch-accordion-header__background-image-size: var(--spacing--l);
+  --ch-accordion__header-image-size: var(--spacing--xl);
+  --ch-accordion__header-background-image-size: var(--spacing--l);
 
-  --ch-accordion__expandable-button-size: var(--spacing--xl);
-  --ch-accordion__expandable-button-image-size: 13px;
+  --ch-accordion__chevron-size: var(--spacing--xl);
+  --ch-accordion__chevron-image-size: 13px;
 
   --ch-accordion-expand-collapse-duration: 200ms;
   --ch-accordion-expand-collapse-timing-function: ease-in-out;
