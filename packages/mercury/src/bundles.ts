@@ -5,13 +5,11 @@ export type MercuryBundles =
   | [MercuryBundleReset, ...MercuryBundleFull[]];
 
 export type MercuryBundleOptimized =
-  | MercuryBundleBase
   | MercuryBundleComponent
   | MercuryBundleComponentForm
   | MercuryBundleUtil;
 
 export type MercuryBundleFull =
-  | MercuryBundleBase
   | MercuryBundleComponent
   | MercuryBundleUtil
   | MercuryBundleUtilFormFull;
