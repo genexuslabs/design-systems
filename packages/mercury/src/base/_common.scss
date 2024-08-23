@@ -3,7 +3,6 @@
 /*----------------------
 Focus
 ----------------------*/
-
 @mixin focus-outline($outline: false) {
   outline: var(--focus__outline-width) var(--focus__outline-style)
     var(--focus__outline-color);
@@ -16,8 +15,11 @@ Focus
 /*----------------------
 Scrollbar
 ----------------------*/
-
 @mixin scrollbar-styles() {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb__bg-color)
+    var(--scrollbar-track__bg-color);
+
   //scrollbar
   &::-webkit-scrollbar {
     width: var(--scrollbar__size);
