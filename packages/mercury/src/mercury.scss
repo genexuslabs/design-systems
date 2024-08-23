@@ -373,7 +373,8 @@
   //               Components
   // - - - - - - - - - - - - - - - - - - -
   @if $accordion {
-    @include accordion();
+    @include accordion-filled();
+    @include accordion-outlined();
   }
 
   @if $checkbox {
@@ -539,6 +540,7 @@
     $combo-box: $combo-box,
     $dialog: $dialog,
     $edit: $edit,
+    $icon: $icon,
     $list-box: $list-box,
     $radio-group: $radio-group,
     $slider: $slider,
