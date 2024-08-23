@@ -375,7 +375,7 @@
     }
 
     @if $markdown-viewer {
-      @include markdown();
+      @include markdown-viewer();
     }
 
     @if $list-box-secondary {
