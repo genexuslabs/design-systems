@@ -305,8 +305,8 @@
   // we should redefine '--grid-cell__padding-inline' here because when a control
   // is inside a a tabular-grid-cell the cell padding-inline value is required to
   // be applied on the control padding-inline.
-  padding-block: 0 !important; //WA to force padding 0
-  padding-inline: 0 !important; //WA to force padding 0
+  padding-block: 0;
+  padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
   padding-block-start: var(--mer-spacing--2xs);

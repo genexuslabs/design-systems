@@ -550,8 +550,8 @@
   // we should redefine '--grid-cell__padding-inline' here because when a control
   // is inside a a tabular-grid-cell the cell padding-inline value is required to
   // be applied on the control padding-inline.
-  padding-block: 0 !important; //WA to force padding 0
-  padding-inline: 0 !important; //WA to force padding 0
+  padding-block: 0;
+  padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
   padding-block-start: var(--mer-spacing--2xs);
@@ -1575,6 +1575,7 @@
 
 @mixin semantic-heading() {
   --mer-heading__gray--light: var(--mer-color__neutral-gray--200);
+  --mer-header__background-color: var(--mer-color__neutral-gray--700);
 }
 
 
@@ -1963,8 +1964,8 @@
   // we should redefine '--grid-cell__padding-inline' here because when a control
   // is inside a a tabular-grid-cell the cell padding-inline value is required to
   // be applied on the control padding-inline.
-  padding-block: 0 !important; //WA to force padding 0
-  padding-inline: 0 !important; //WA to force padding 0
+  padding-block: 0;
+  padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
   padding-block-start: var(--mer-spacing--2xs);
@@ -3820,8 +3821,8 @@
   // we should redefine '--grid-cell__padding-inline' here because when a control
   // is inside a a tabular-grid-cell the cell padding-inline value is required to
   // be applied on the control padding-inline.
-  padding-block: 0 !important; //WA to force padding 0
-  padding-inline: 0 !important; //WA to force padding 0
+  padding-block: 0;
+  padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
   padding-block-start: var(--mer-spacing--2xs);
@@ -4903,6 +4904,154 @@
   }
 }
 
+// node type
+@mixin cell-node-type-text() {
+  @include grid-cell-padding-inline-block();
+}
+@mixin cell-node-type-element() {
+  @include control-remove-border();
+  @include grid-cell-remove-padding();
+  --control__padding-inline: var(--grid-cell__padding-inline);
+  // to stretch the control
+  display: grid;
+  align-items: stretch;
+  justify-content: stretch;
+}
+@mixin cell-node-type-element--hover() {
+  outline: var(--focus__outline-width) var(--focus__outline-style)
+    var(--control__border-color--hover);
+  outline-offset: var(--focus__outline-offset);
+}
+// cell alignment block
+@mixin cell-alignment-block-start() {
+  align-items: start;
+}
+@mixin cell-alignment-block-center() {
+  align-items: center;
+}
+@mixin cell-alignment-block-end() {
+  align-items: end;
+}
+// cell alignment inline
+@mixin cell-alignment-inline-start() {
+  justify-content: start;
+}
+@mixin cell-alignment-inline-center() {
+  justify-content: center;
+}
+@mixin cell-alignment-inline-end() {
+  justify-content: center;
+}
+// cell with ellipsis
+@mixin cell-ellipsis() {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/// @group Grid
+/// @param {String} $tabular-grid-selector [".tabular-grid"] -
+/// @param {("text" | "element")} $tabular-grid-cell-node-type ["text"] -
+/// @param {("start" | "center" | "end")} $tabular-grid-cell-block-alignment ["start"] -
+/// @param {("start" | "center" | "end")} $tabular-grid-cell-inline-alignment ["start"] -
+/// @param {Boolean} $tabular-grid-cell-apply-ellipsis [false] -
+/// @param {List} $tabular-grid-affected-columns-nth-list [null] -
+
+@mixin tabular-grid-cell-layout(
+  $tabular-grid-selector: ".tabular-grid",
+  $tabular-grid-cell-node-type: "text",
+  $tabular-grid-cell-block-alignment: "start",
+  $tabular-grid-cell-inline-alignment: "start",
+  $tabular-grid-cell-apply-ellipsis: false,
+  $tabular-grid-affected-columns-nth-list: null
+) {
+  $selector: null;
+  $cell-tag-name: "ch-tabular-grid-cell";
+  $where-pseudo-class: ":where";
+  $where-selector: ();
+  // the selector varies depending on wether $tabular-grid-affected-columns-nth-list is null or not.
+  // if it is null, all cells should be affected.
+  @if $tabular-grid-affected-columns-nth-list != null {
+    @each $nth in $tabular-grid-affected-columns-nth-list {
+      $where-selector: append($where-selector, ":nth-child(#{$nth})", comma);
+    }
+    $selector: #{$tabular-grid-selector}
+      #{$cell-tag-name}#{$where-pseudo-class
+      }(#{$where-selector});
+  } @else {
+    // if no $editable-columns-nth was provided, apply to all cells
+    $selector: #{$tabular-grid-selector} #{$cell-tag-name};
+  }
+  #{$selector} {
+    // node type
+    @if $tabular-grid-cell-node-type == "text" {
+      @include cell-node-type-text();
+    }
+    @if $tabular-grid-cell-node-type == "element" {
+      @include cell-node-type-element();
+    }
+    &:hover {
+      @if $tabular-grid-cell-node-type == "element" {
+        @include cell-node-type-element--hover();
+      }
+    }
+    // block alignment (only should apply if $tabular-grid-cell-node-type == "text"
+    @if $tabular-grid-cell-node-type ==
+      "text" and
+      $tabular-grid-cell-block-alignment ==
+      "start"
+    {
+      @include cell-alignment-block-start();
+    }
+    @if $tabular-grid-cell-node-type ==
+      "text" and
+      $tabular-grid-cell-block-alignment ==
+      "center"
+    {
+      @include cell-alignment-block-center();
+    }
+    @if $tabular-grid-cell-node-type ==
+      "text" and
+      $tabular-grid-cell-block-alignment ==
+      "end"
+    {
+      @include cell-alignment-block-end();
+    }
+    // inline alignment
+    @if $tabular-grid-cell-node-type ==
+      "text" and
+      $tabular-grid-cell-inline-alignment ==
+      "start"
+    {
+      @include cell-alignment-inline-start();
+    }
+    @if $tabular-grid-cell-node-type ==
+      "text" and
+      $tabular-grid-cell-inline-alignment ==
+      "center"
+    {
+      @include cell-alignment-inline-center();
+    }
+    @if $tabular-grid-cell-node-type ==
+      "text" and
+      $tabular-grid-cell-inline-alignment ==
+      "end"
+    {
+      @include cell-alignment-inline-end();
+    }
+    // ellipsis (only should apply if $tabular-grid-cell-node-type == "text"
+    @if $tabular-grid-cell-node-type ==
+      "text" and
+      $tabular-grid-cell-apply-ellipsis ==
+      true
+    {
+      @include cell-ellipsis();
+    }
+  }
+}
+
+
 // - - - - - - - - - - - - - - - - - - - -
 //            ch-property-grid
 // - - - - - - - - - - - - - - - - - - - -
@@ -4911,7 +5060,7 @@
   // shared properties
   &__property,
   &__value {
-    align-items: center;
+    @include cell-ellipsis();
   }
 
   &__property {
@@ -4920,9 +5069,6 @@
     }
   }
   &__value {
-    @include control-remove-border();
-    @extend %ellipsis;
-
     &--readonly {
       @extend %text-readonly;
     }
@@ -4930,8 +5076,10 @@
       @extend %text-edited;
     }
     &--editing {
-      display: grid;
-      padding: 0;
+      @include cell-node-type-element();
+      &-hover {
+        @include cell-node-type-element--hover();
+      }
     }
   }
 
@@ -5229,6 +5377,9 @@
   }
   #{$property-grid__value--editing-selector} {
     @extend %property-grid__value--editing;
+  }
+  #{$property-grid__value--editing-selector}:hover {
+    @extend %property-grid__value--editing-hover;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -6694,8 +6845,8 @@
   --control__padding-inline: var(--grid-cell__padding-inline);
   // to stretch the control
   display: grid;
-  align-items: stretch !important; // WA to win over other rule that is more specific
-  justify-content: stretch !important; // WA to win over other rule that is more specific
+  align-items: stretch;
+  justify-content: stretch;
 }
 @mixin cell-node-type-element--hover() {
   outline: var(--focus__outline-width) var(--focus__outline-style)
