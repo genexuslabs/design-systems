@@ -245,9 +245,9 @@
 }
 
 
-/*----------------------
-Focus
-----------------------*/
+// ----------------------
+// Focus
+// ----------------------
 @mixin focus-outline($outline: false) {
   outline: var(--focus__outline-width) var(--focus__outline-style)
     var(--focus__outline-color);
@@ -257,9 +257,9 @@ Focus
   border-color: var(--borders-un-border-color__focused);
 }
 
-/*----------------------
-Scrollbar
-----------------------*/
+// ----------------------
+// Scrollbar Styles
+// ----------------------
 @mixin scrollbar-styles() {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb__bg-color)
@@ -289,9 +289,9 @@ Scrollbar
   }
 }
 
-/*----------------------
-Scrollbar Components
-----------------------*/
+// ----------------------
+// Scrollbar Components
+// ----------------------
 @mixin scrollbar-components() {
   :host(.ch-scrollable),
   .ch-scrollable,
@@ -300,9 +300,9 @@ Scrollbar Components
   }
 }
 
-/*----------------------
-Control
-----------------------*/
+// ----------------------
+// Control
+// ----------------------
 
 // Colors
 @mixin control-colors-enabled() {
@@ -376,9 +376,9 @@ Control
   font-style: var(--control-placeholder__font-style);
 }
 
-/*----------------------
-Control Tiny
-----------------------*/
+// ----------------------
+// Control Tiny
+// ----------------------
 
 @mixin control-tiny-size() {
   block-size: var(--control-tiny__size);
@@ -400,9 +400,9 @@ Control Tiny
   --control__border-color: var(--control__border-color--error);
 }
 
-/*----------------------
-Items Container
-----------------------*/
+// ----------------------
+// Items Container
+// ----------------------
 
 @mixin items-container-border() {
   border-style: var(--items-container__border-style);
@@ -435,9 +435,9 @@ Items Container
   background-color: var(--items-container-separator__bg-color);
 }
 
-/*---------------------------------
-Single Item (Every item except grid)
-----------------------------------*/
+// ------------------------------------
+// Single Item (Every item except grid)
+// ------------------------------------
 
 @mixin item-colors-enabled() {
   background-color: var(--item__bg-color);
@@ -511,9 +511,9 @@ Single Item (Every item except grid)
   font-weight: var(--item-header__font-weight);
 }
 
-/*---------------------------------
-Grid Item
-----------------------------------*/
+// ---------------------------------
+// Grid Item
+// ---------------------------------
 
 // Row
 @mixin grid-row-colors-enabled() {
@@ -568,9 +568,9 @@ Grid Item
   --grid-rowset-legend__bg-color: var(--mer-color__elevation--02);
 }
 
-/*----------------------
-Tab Caption (Button)
-----------------------*/
+// ----------------------
+// Tab Caption (Button)
+// ----------------------
 @mixin tab-button-border-block() {
   border-block: var(--tab-caption__border-width)
     var(--tab-caption__border-style) var(--tab-caption__border-color);
@@ -629,9 +629,9 @@ Tab Caption (Button)
   padding-inline: var(--tab-caption__padding-inline);
 }
 
-/*----------------------
-Label
-----------------------*/
+// ----------------------
+// Label
+// ----------------------
 
 @mixin label-font() {
   color: var(--label__color);
@@ -652,9 +652,9 @@ Label
   --label__color: var(--label__color--disabled);
 }
 
-/*----------------------
-Window
-----------------------*/
+// ----------------------
+// Window
+// ----------------------
 
 // TODO: This styles should better be applied on the ch-window ?
 %window-styles {
@@ -665,18 +665,18 @@ Window
   box-shadow: var(--mer-box-shadow--01);
 }
 
-/*----------------------
-Dropdown
-----------------------*/
+// ----------------------
+// Dropdown
+// ----------------------
 
 @mixin dropdown-styles() {
   box-shadow: var(--mer-box-shadow--01);
   border-radius: var(--mer-border__radius--sm);
 }
 
-/*----------------------
-Dialog Footer
-----------------------*/
+// ----------------------
+// Dialog Footer
+// ----------------------
 
 // Defined here to be used on /components/dialog as well as to replicate
 // dialog footer styles on genexus-ide-ui components
@@ -706,9 +706,9 @@ Dialog Footer
   }
 }
 
-/*----------------------
-Body Spacing
-----------------------*/
+// ----------------------
+// Body Spacing
+// ----------------------
 
 // This custom properties define the block and inline spacing of containers.
 // i.e.: dialog, layout, etc..
@@ -1133,9 +1133,9 @@ Body Spacing
 }
 
 @mixin semantic-control() {
-  /*-------------------------------------------------------------
-  Inline Controls should have the same height to look good inline
-  --------------------------------------------------------------*/
+  // ---------------------------------------------------------------
+  // Inline Controls should have the same height to look good inline
+  // ---------------------------------------------------------------
 
   // - - - - - - - Colors - - - - - - -
 
@@ -1198,9 +1198,9 @@ Body Spacing
   );
   --control-placeholder__font-style: italic;
 
-  /*-------------------------------------------------------------
-  Tiny controls (ie.: checkbox, radio-button)
-  --------------------------------------------------------------*/
+  // -------------------------------------------------------------
+  // Tiny controls (ie.: checkbox, radio-button)
+  // -------------------------------------------------------------
 
   // border colors are the same from "--control__***" tokens
 
@@ -1211,9 +1211,9 @@ Body Spacing
   --control-tiny__border-radius-rounded: 50%;
   --control-tiny-option__color: var(--control__border-color);
 
-  /*-------------------------------------------------------------
-  Controls Label
-  --------------------------------------------------------------*/
+  // -------------------------------------------------------------
+  // Controls Label
+  // -------------------------------------------------------------
 
   // fixed values
   --label__font-size: var(--mer-font__size--3xs);
@@ -1240,9 +1240,9 @@ Body Spacing
   // error
   --label__color--error: var(--mer-text__neutral);
 
-  /*-------------------------------------------------------------
-  Controls Container
-  --------------------------------------------------------------*/
+  // -------------------------------------------------------------
+  // Controls Container
+  // -------------------------------------------------------------
 
   --controls__container-row-gap: var(--mer-spacing--md);
   --controls__group-gap--block: var(--mer-spacing--sm);
@@ -1455,9 +1455,9 @@ Body Spacing
 }
 
 @mixin semantic-general() {
-  /*----------------------
-  Body
-  ----------------------*/
+  // ----------------------
+  // Body
+  // ----------------------
   --mer-body__bg-color: var(--mer-color__surface);
   --mer-body__color: var(--mer-text__on-surface);
   --mer-body__font-size: var(--mer-font__size--3xs);
@@ -1466,22 +1466,22 @@ Body Spacing
   --mer-body__line-height: var(--mer-line-height--spaced);
   --mer-body__margin-block: var(--mer-spacing--sm);
 
-  /*----------------------
-  System
-  ----------------------*/
+  // ----------------------
+  // System
+  // ----------------------
   // System tokens are the most basic kind, used when there is not a more specific categorization.
   --mer-system__border-width: var(--mer-border__width--sm);
   --mer-system__border-style: solid;
   --mer-system__border-color: var(--mer-color__neutral-gray--500);
 
-  /*----------------------
-  Heading
-  ----------------------*/
+  // ----------------------
+  // Heading
+  // ----------------------
   --mer-heading__color: var(--mer-color__neutral-gray--100);
 
-  /*----------------------
-  Scrollbar
-  ----------------------*/
+  // ----------------------
+  // Scrollbar
+  // ----------------------
   // scrollbar
   --scrollbar__size: var(--mer-spacing--2xs);
   // scrollbar-track
@@ -1494,9 +1494,9 @@ Body Spacing
   // scrollbar-thumb
   --scrollbar-corner__bg: transparent;
 
-  /*----------------------
-  Icon Size
-  ----------------------*/
+  // ----------------------
+  // Icon Size
+  // ----------------------
   // box (shell)
   --mer-icon__box--sm: var(--mer-spacing--sm);
   --mer-icon__box--md: 14px; // no spacing token exists for 14px.
@@ -1504,9 +1504,9 @@ Body Spacing
   --mer-icon__size--sm: 100%;
   --mer-icon__size--md: 100%;
 
-  /*----------------------------------------------------------
-  Form Input (form-input-*** background-position-x RTL support)
-  -----------------------------------------------------------*/
+  // ------------------------------------------------------------
+  // Form Input (form-input-*** background-position-x RTL support)
+  // ------------------------------------------------------------
   --mer-form-input__padding-inline: var(--mer-spacing--xs);
   --mer-form-input__bg-position--x-value: var(--mer-form-input__padding-inline);
   --mer-form-input__bg-position--x: var(--mer-form-input__bg-position--x-value);
@@ -1529,9 +1529,9 @@ Body Spacing
   );
   --mer-checkbox__option-checked-image: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='currentColor' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/></svg>");
 
-  /*----------------------
-  Window
-  ----------------------*/
+  // ----------------------
+  // Window
+  // ----------------------
   // TODO: This styles should better be applied on the ch-window.
   --window__border: var(--mer-border__width--sm) solid
     var(--mer-color__elevation--04);
@@ -1541,9 +1541,9 @@ Body Spacing
   --window__gap: var(--mer-spacing--xs);
   --window__box-shadow: var(--mer-box-shadow--01);
 
-  /*----------------------
-  Focus
-  ----------------------*/
+  // ----------------------
+  // Focus
+  // ----------------------
   --focus__outline-width: var(--mer-border__width--sm);
   --focus__outline-style: solid;
   --focus__outline-color: var(--mer-color__primary-blue--200);
@@ -1658,9 +1658,9 @@ Body Spacing
 }
 
 
-/*----------------------
-Focus
-----------------------*/
+// ----------------------
+// Focus
+// ----------------------
 @mixin focus-outline($outline: false) {
   outline: var(--focus__outline-width) var(--focus__outline-style)
     var(--focus__outline-color);
@@ -1670,9 +1670,9 @@ Focus
   border-color: var(--borders-un-border-color__focused);
 }
 
-/*----------------------
-Scrollbar
-----------------------*/
+// ----------------------
+// Scrollbar Styles
+// ----------------------
 @mixin scrollbar-styles() {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb__bg-color)
@@ -1702,9 +1702,9 @@ Scrollbar
   }
 }
 
-/*----------------------
-Scrollbar Components
-----------------------*/
+// ----------------------
+// Scrollbar Components
+// ----------------------
 @mixin scrollbar-components() {
   :host(.ch-scrollable),
   .ch-scrollable,
@@ -1713,9 +1713,9 @@ Scrollbar Components
   }
 }
 
-/*----------------------
-Control
-----------------------*/
+// ----------------------
+// Control
+// ----------------------
 
 // Colors
 @mixin control-colors-enabled() {
@@ -1789,9 +1789,9 @@ Control
   font-style: var(--control-placeholder__font-style);
 }
 
-/*----------------------
-Control Tiny
-----------------------*/
+// ----------------------
+// Control Tiny
+// ----------------------
 
 @mixin control-tiny-size() {
   block-size: var(--control-tiny__size);
@@ -1813,9 +1813,9 @@ Control Tiny
   --control__border-color: var(--control__border-color--error);
 }
 
-/*----------------------
-Items Container
-----------------------*/
+// ----------------------
+// Items Container
+// ----------------------
 
 @mixin items-container-border() {
   border-style: var(--items-container__border-style);
@@ -1848,9 +1848,9 @@ Items Container
   background-color: var(--items-container-separator__bg-color);
 }
 
-/*---------------------------------
-Single Item (Every item except grid)
-----------------------------------*/
+// ------------------------------------
+// Single Item (Every item except grid)
+// ------------------------------------
 
 @mixin item-colors-enabled() {
   background-color: var(--item__bg-color);
@@ -1924,9 +1924,9 @@ Single Item (Every item except grid)
   font-weight: var(--item-header__font-weight);
 }
 
-/*---------------------------------
-Grid Item
-----------------------------------*/
+// ---------------------------------
+// Grid Item
+// ---------------------------------
 
 // Row
 @mixin grid-row-colors-enabled() {
@@ -1981,9 +1981,9 @@ Grid Item
   --grid-rowset-legend__bg-color: var(--mer-color__elevation--02);
 }
 
-/*----------------------
-Tab Caption (Button)
-----------------------*/
+// ----------------------
+// Tab Caption (Button)
+// ----------------------
 @mixin tab-button-border-block() {
   border-block: var(--tab-caption__border-width)
     var(--tab-caption__border-style) var(--tab-caption__border-color);
@@ -2042,9 +2042,9 @@ Tab Caption (Button)
   padding-inline: var(--tab-caption__padding-inline);
 }
 
-/*----------------------
-Label
-----------------------*/
+// ----------------------
+// Label
+// ----------------------
 
 @mixin label-font() {
   color: var(--label__color);
@@ -2065,9 +2065,9 @@ Label
   --label__color: var(--label__color--disabled);
 }
 
-/*----------------------
-Window
-----------------------*/
+// ----------------------
+// Window
+// ----------------------
 
 // TODO: This styles should better be applied on the ch-window ?
 %window-styles {
@@ -2078,18 +2078,18 @@ Window
   box-shadow: var(--mer-box-shadow--01);
 }
 
-/*----------------------
-Dropdown
-----------------------*/
+// ----------------------
+// Dropdown
+// ----------------------
 
 @mixin dropdown-styles() {
   box-shadow: var(--mer-box-shadow--01);
   border-radius: var(--mer-border__radius--sm);
 }
 
-/*----------------------
-Dialog Footer
-----------------------*/
+// ----------------------
+// Dialog Footer
+// ----------------------
 
 // Defined here to be used on /components/dialog as well as to replicate
 // dialog footer styles on genexus-ide-ui components
@@ -2119,9 +2119,9 @@ Dialog Footer
   }
 }
 
-/*----------------------
-Body Spacing
-----------------------*/
+// ----------------------
+// Body Spacing
+// ----------------------
 
 // This custom properties define the block and inline spacing of containers.
 // i.e.: dialog, layout, etc..
@@ -2747,9 +2747,9 @@ Body Spacing
 }
 
 
-/*----------------------
-Heading
-----------------------*/
+// ----------------------
+// Heading
+// ----------------------
 
 %heading {
   &-base {
@@ -2905,9 +2905,9 @@ Heading
   }
 }
 
-/*-------------------------------------
-Text States e.g.: for the property-grid
--------------------------------------*/
+// ---------------------------------------
+// Text States e.g.: for the property-grid
+// ---------------------------------------
 
 %text-edited {
   font-weight: var(--mer-font__weight--semi-bold);
@@ -3515,9 +3515,9 @@ Text States e.g.: for the property-grid
 }
 
 
-/*----------------------
-Focus
-----------------------*/
+// ----------------------
+// Focus
+// ----------------------
 @mixin focus-outline($outline: false) {
   outline: var(--focus__outline-width) var(--focus__outline-style)
     var(--focus__outline-color);
@@ -3527,9 +3527,9 @@ Focus
   border-color: var(--borders-un-border-color__focused);
 }
 
-/*----------------------
-Scrollbar
-----------------------*/
+// ----------------------
+// Scrollbar Styles
+// ----------------------
 @mixin scrollbar-styles() {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb__bg-color)
@@ -3559,9 +3559,9 @@ Scrollbar
   }
 }
 
-/*----------------------
-Scrollbar Components
-----------------------*/
+// ----------------------
+// Scrollbar Components
+// ----------------------
 @mixin scrollbar-components() {
   :host(.ch-scrollable),
   .ch-scrollable,
@@ -3570,9 +3570,9 @@ Scrollbar Components
   }
 }
 
-/*----------------------
-Control
-----------------------*/
+// ----------------------
+// Control
+// ----------------------
 
 // Colors
 @mixin control-colors-enabled() {
@@ -3646,9 +3646,9 @@ Control
   font-style: var(--control-placeholder__font-style);
 }
 
-/*----------------------
-Control Tiny
-----------------------*/
+// ----------------------
+// Control Tiny
+// ----------------------
 
 @mixin control-tiny-size() {
   block-size: var(--control-tiny__size);
@@ -3670,9 +3670,9 @@ Control Tiny
   --control__border-color: var(--control__border-color--error);
 }
 
-/*----------------------
-Items Container
-----------------------*/
+// ----------------------
+// Items Container
+// ----------------------
 
 @mixin items-container-border() {
   border-style: var(--items-container__border-style);
@@ -3705,9 +3705,9 @@ Items Container
   background-color: var(--items-container-separator__bg-color);
 }
 
-/*---------------------------------
-Single Item (Every item except grid)
-----------------------------------*/
+// ------------------------------------
+// Single Item (Every item except grid)
+// ------------------------------------
 
 @mixin item-colors-enabled() {
   background-color: var(--item__bg-color);
@@ -3781,9 +3781,9 @@ Single Item (Every item except grid)
   font-weight: var(--item-header__font-weight);
 }
 
-/*---------------------------------
-Grid Item
-----------------------------------*/
+// ---------------------------------
+// Grid Item
+// ---------------------------------
 
 // Row
 @mixin grid-row-colors-enabled() {
@@ -3838,9 +3838,9 @@ Grid Item
   --grid-rowset-legend__bg-color: var(--mer-color__elevation--02);
 }
 
-/*----------------------
-Tab Caption (Button)
-----------------------*/
+// ----------------------
+// Tab Caption (Button)
+// ----------------------
 @mixin tab-button-border-block() {
   border-block: var(--tab-caption__border-width)
     var(--tab-caption__border-style) var(--tab-caption__border-color);
@@ -3899,9 +3899,9 @@ Tab Caption (Button)
   padding-inline: var(--tab-caption__padding-inline);
 }
 
-/*----------------------
-Label
-----------------------*/
+// ----------------------
+// Label
+// ----------------------
 
 @mixin label-font() {
   color: var(--label__color);
@@ -3922,9 +3922,9 @@ Label
   --label__color: var(--label__color--disabled);
 }
 
-/*----------------------
-Window
-----------------------*/
+// ----------------------
+// Window
+// ----------------------
 
 // TODO: This styles should better be applied on the ch-window ?
 %window-styles {
@@ -3935,18 +3935,18 @@ Window
   box-shadow: var(--mer-box-shadow--01);
 }
 
-/*----------------------
-Dropdown
-----------------------*/
+// ----------------------
+// Dropdown
+// ----------------------
 
 @mixin dropdown-styles() {
   box-shadow: var(--mer-box-shadow--01);
   border-radius: var(--mer-border__radius--sm);
 }
 
-/*----------------------
-Dialog Footer
-----------------------*/
+// ----------------------
+// Dialog Footer
+// ----------------------
 
 // Defined here to be used on /components/dialog as well as to replicate
 // dialog footer styles on genexus-ide-ui components
@@ -3976,9 +3976,9 @@ Dialog Footer
   }
 }
 
-/*----------------------
-Body Spacing
-----------------------*/
+// ----------------------
+// Body Spacing
+// ----------------------
 
 // This custom properties define the block and inline spacing of containers.
 // i.e.: dialog, layout, etc..
@@ -4245,9 +4245,9 @@ Body Spacing
     @extend %control-footer--with-border;
   }
 
-  /*------------------------------
-  Edges (For dragging)
-  -------------------------------*/
+  // ------------------------------
+  // Edges (For dragging)
+  // ------------------------------
   &__edge {
     $edge-border-width: var(--mer-border__width--lg);
     $edge-border-style: solid;
@@ -4352,9 +4352,9 @@ Body Spacing
     @extend %dialog__footer;
   }
 
-  /*------------------------------
-  Edges (For dragging)
-  -------------------------------*/
+  // ------------------------------
+  // Edges (For dragging)
+  // ------------------------------
   #{$edge-selector} {
     @extend %dialog__edge;
     &:hover {
