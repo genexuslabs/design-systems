@@ -290,6 +290,17 @@ Scrollbar
 }
 
 /*----------------------
+Scrollbar Components
+----------------------*/
+@mixin scrollbar-components() {
+  :host(.ch-scrollable),
+  .ch-scrollable,
+  .scrollable {
+    @include scrollbar-styles();
+  }
+}
+
+/*----------------------
 Control
 ----------------------*/
 
@@ -1688,6 +1699,17 @@ Scrollbar
   // corner
   &::-webkit-scrollbar-corner {
     background: var(--scrollbar-corner__bg);
+  }
+}
+
+/*----------------------
+Scrollbar Components
+----------------------*/
+@mixin scrollbar-components() {
+  :host(.ch-scrollable),
+  .ch-scrollable,
+  .scrollable {
+    @include scrollbar-styles();
   }
 }
 
@@ -3534,6 +3556,17 @@ Scrollbar
   // corner
   &::-webkit-scrollbar-corner {
     background: var(--scrollbar-corner__bg);
+  }
+}
+
+/*----------------------
+Scrollbar Components
+----------------------*/
+@mixin scrollbar-components() {
+  :host(.ch-scrollable),
+  .ch-scrollable,
+  .scrollable {
+    @include scrollbar-styles();
   }
 }
 
@@ -15302,8 +15335,9 @@ Body Spacing
 
     @if $scrollbar-components {
       :host(.ch-scrollable),
-      .ch-scrollable {
-        @include scrollbar-styles();
+      .ch-scrollable,
+      .scrollable {
+        @include scrollbar-components();
       }
     }
   }
@@ -15414,7 +15448,7 @@ Body Spacing
   $layout-classes: false,
   $spacing-classes: false,
   $typography-classes: false,
-  $scrollbar-components: true,
+  $scrollbar-components: false,
 
   // Components
   $components: false,

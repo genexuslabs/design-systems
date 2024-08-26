@@ -13,7 +13,7 @@ Focus
 }
 
 /*----------------------
-Scrollbar
+Scrollbar Styles
 ----------------------*/
 @mixin scrollbar-styles() {
   scrollbar-width: thin;
@@ -41,6 +41,18 @@ Scrollbar
   // corner
   &::-webkit-scrollbar-corner {
     background: var(--scrollbar-corner__bg);
+  }
+}
+
+/*----------------------
+Scrollbar Components
+----------------------*/
+// For Chameleon components
+@mixin scrollbar-components() {
+  :host(.ch-scrollable),
+  .ch-scrollable,
+  .scrollable {
+    @include scrollbar-styles();
   }
 }
 

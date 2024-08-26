@@ -17,6 +17,7 @@ export type MercuryBundleFull =
 export type MercuryBundleBase =
   | "base/base"
   | "base/icons"
+  // TODO: Use "base/scrollbar" when the ch-theme supports aliases
   | "chameleon/scrollbar";
 
 export type MercuryBundleComponent =

@@ -375,7 +375,7 @@
       :host(.ch-scrollable),
       .ch-scrollable,
       .scrollable {
-        @include scrollbar-styles();
+        @include scrollbar-components();
       }
     }
   }
@@ -486,7 +486,7 @@
   $layout-classes: false,
   $spacing-classes: false,
   $typography-classes: false,
-  $scrollbar-components: true,
+  $scrollbar-components: false,
 
   // Components
   $components: false,
