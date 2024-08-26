@@ -544,8 +544,8 @@ Grid Item
   // we should redefine '--grid-cell__padding-inline' here because when a control
   // is inside a a tabular-grid-cell the cell padding-inline value is required to
   // be applied on the control padding-inline.
-  padding-block: 0 !important; //WA to force padding 0
-  padding-inline: 0 !important; //WA to force padding 0
+  padding-block: 0;
+  padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
   padding-block-start: var(--mer-spacing--2xs);
@@ -1477,13 +1477,13 @@ Body Spacing
   Scrollbar
   ----------------------*/
   // scrollbar
-  --scrollbar__size: var(--mer-spacing--xs);
+  --scrollbar__size: var(--mer-spacing--2xs);
   // scrollbar-track
-  --scrollbar-track__bg-color: var(--mer-color__elevation--03);
+  --scrollbar-track__bg-color: var(--mer-color__neutral-gray--650);
+
   --scrollbar-track__border-radius: var(--mer-spacing--xs);
   // scrollbar-thumb
-  --scrollbar-thumb__bg-color: var(--mer-color__elevation--04);
-  --scrollbar-thumb__bg-color--hover: #42474c;
+  --scrollbar-thumb__bg-color: var(--mer-color__neutral-gray--550);
   --scrollbar-thumb__border-radius: var(--mer-spacing--xs);
   // scrollbar-thumb
   --scrollbar-corner__bg: transparent;
@@ -1569,6 +1569,7 @@ Body Spacing
 
 @mixin semantic-heading() {
   --mer-heading__gray--light: var(--mer-color__neutral-gray--200);
+  --mer-header__background-color: var(--mer-color__neutral-gray--700);
 }
 
 
@@ -1951,8 +1952,8 @@ Grid Item
   // we should redefine '--grid-cell__padding-inline' here because when a control
   // is inside a a tabular-grid-cell the cell padding-inline value is required to
   // be applied on the control padding-inline.
-  padding-block: 0 !important; //WA to force padding 0
-  padding-inline: 0 !important; //WA to force padding 0
+  padding-block: 0;
+  padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
   padding-block-start: var(--mer-spacing--2xs);
@@ -3802,8 +3803,8 @@ Grid Item
   // we should redefine '--grid-cell__padding-inline' here because when a control
   // is inside a a tabular-grid-cell the cell padding-inline value is required to
   // be applied on the control padding-inline.
-  padding-block: 0 !important; //WA to force padding 0
-  padding-inline: 0 !important; //WA to force padding 0
+  padding-block: 0;
+  padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
   padding-block-start: var(--mer-spacing--2xs);
@@ -5041,7 +5042,7 @@ Body Spacing
   // shared properties
   &__property,
   &__value {
-    align-items: center;
+    @include cell-ellipsis();
   }
 
   &__property {
@@ -5050,8 +5051,6 @@ Body Spacing
     }
   }
   &__value {
-    @include cell-ellipsis();
-
     &--readonly {
       @extend %text-readonly;
     }
@@ -7323,6 +7322,7 @@ Body Spacing
   $layout-classes: true,
   $spacing-classes: true,
   $typography-classes: true,
+  $scrollbar-components: true,
 
   // Components
   $components: true,
@@ -15465,9 +15465,16 @@ Body Spacing
     @if $typography-classes {
       @include typography-classes();
     }
+
+    @if $scrollbar-components {
+      :host(.ch-scrollable),
+      .ch-scrollable {
+        @include scrollbar-styles();
+      }
+    }
   }
 
-  // - - - - - - - - - - - - - - - -  - - -
+  // - - - - - - - - - - - - - - - - - - -
   //               Components
   // - - - - - - - - - - - - - - - - - - -
   @if $accordion {
@@ -15573,6 +15580,7 @@ Body Spacing
   $layout-classes: false,
   $spacing-classes: false,
   $typography-classes: false,
+  $scrollbar-components: true,
 
   // Components
   $components: false,
@@ -15634,6 +15642,7 @@ Body Spacing
     $layout-classes: $layout-classes,
     $spacing-classes: $spacing-classes,
     $typography-classes: $typography-classes,
+    $scrollbar-components: $scrollbar-components,
 
     // Components
     $components: $components,
