@@ -372,11 +372,7 @@
     }
 
     @if $scrollbar-components {
-      :host(.ch-scrollable),
-      .ch-scrollable,
-      .scrollable {
-        @include scrollbar-components();
-      }
+      @include scrollbar-components();
     }
   }
 
