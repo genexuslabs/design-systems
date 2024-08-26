@@ -27,13 +27,13 @@
   Scrollbar
   ----------------------*/
   // scrollbar
-  --scrollbar__size: var(--mer-spacing--xs);
+  --scrollbar__size: var(--mer-spacing--2xs);
   // scrollbar-track
-  --scrollbar-track__bg-color: var(--mer-color__elevation--03);
+  --scrollbar-track__bg-color: var(--mer-color__neutral-gray--650);
+
   --scrollbar-track__border-radius: var(--mer-spacing--xs);
   // scrollbar-thumb
-  --scrollbar-thumb__bg-color: var(--mer-color__elevation--04);
-  --scrollbar-thumb__bg-color--hover: #42474c;
+  --scrollbar-thumb__bg-color: var(--mer-color__neutral-gray--550);
   --scrollbar-thumb__border-radius: var(--mer-spacing--xs);
   // scrollbar-thumb
   --scrollbar-corner__bg: transparent;
