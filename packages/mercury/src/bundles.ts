@@ -14,7 +14,10 @@ export type MercuryBundleFull =
   | MercuryBundleUtil
   | MercuryBundleUtilFormFull;
 
-export type MercuryBundleBase = "base/base" | "base/icons";
+export type MercuryBundleBase =
+  | "base/base"
+  | "base/icons"
+  | "chameleon/scrollbar";
 
 export type MercuryBundleComponent =
   | "components/accordion"

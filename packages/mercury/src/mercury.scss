@@ -99,6 +99,7 @@
   $layout-classes: true,
   $spacing-classes: true,
   $typography-classes: true,
+  $scrollbar-components: true,
 
   // Components
   $components: true,
@@ -369,9 +370,16 @@
     @if $typography-classes {
       @include typography-classes();
     }
+
+    @if $scrollbar-components {
+      :host(.ch-scrollable),
+      .ch-scrollable {
+        @include scrollbar-styles();
+      }
+    }
   }
 
-  // - - - - - - - - - - - - - - - -  - - -
+  // - - - - - - - - - - - - - - - - - - -
   //               Components
   // - - - - - - - - - - - - - - - - - - -
   @if $accordion {
@@ -477,6 +485,7 @@
   $layout-classes: false,
   $spacing-classes: false,
   $typography-classes: false,
+  $scrollbar-components: true,
 
   // Components
   $components: false,
@@ -538,6 +547,7 @@
     $layout-classes: $layout-classes,
     $spacing-classes: $spacing-classes,
     $typography-classes: $typography-classes,
+    $scrollbar-components: $scrollbar-components,
 
     // Components
     $components: $components,
