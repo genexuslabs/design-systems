@@ -373,7 +373,8 @@
 
     @if $scrollbar-components {
       :host(.ch-scrollable),
-      .ch-scrollable {
+      .ch-scrollable,
+      .scrollable {
         @include scrollbar-styles();
       }
     }
