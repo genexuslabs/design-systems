@@ -38,11 +38,6 @@ Scrollbar
     border-radius: var(--scrollbar-thumb__border-radius);
   }
 
-  // thumb:hover
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: var(--scrollbar-thumb__bg-color--hover);
-  }
-
   // corner
   &::-webkit-scrollbar-corner {
     background: var(--scrollbar-corner__bg);
