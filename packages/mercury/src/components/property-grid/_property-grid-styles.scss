@@ -1,3 +1,5 @@
+@import "../tabular-grid/helpers";
+
 // - - - - - - - - - - - - - - - - - - - -
 //            ch-property-grid
 // - - - - - - - - - - - - - - - - - - - -
@@ -15,8 +17,7 @@
     }
   }
   &__value {
-    @include control-remove-border();
-    @extend %ellipsis;
+    @include cell-ellipsis();
 
     &--readonly {
       @extend %text-readonly;
@@ -25,8 +26,10 @@
       @extend %text-edited;
     }
     &--editing {
-      display: grid;
-      padding: 0;
+      @include cell-node-type-element();
+      &-hover {
+        @include cell-node-type-element--hover();
+      }
     }
   }
 
@@ -324,6 +327,9 @@
   }
   #{$property-grid__value--editing-selector} {
     @extend %property-grid__value--editing;
+  }
+  #{$property-grid__value--editing-selector}:hover {
+    @extend %property-grid__value--editing-hover;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
