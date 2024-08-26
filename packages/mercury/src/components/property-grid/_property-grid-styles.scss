@@ -8,7 +8,7 @@
   // shared properties
   &__property,
   &__value {
-    align-items: center;
+    @include cell-ellipsis();
   }
 
   &__property {
@@ -17,8 +17,6 @@
     }
   }
   &__value {
-    @include cell-ellipsis();
-
     &--readonly {
       @extend %text-readonly;
     }
