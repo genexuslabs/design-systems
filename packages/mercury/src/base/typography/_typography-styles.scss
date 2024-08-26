@@ -1,8 +1,8 @@
 @import "tokens";
 
-/*----------------------
-Heading
-----------------------*/
+// ----------------------
+// Heading
+// ----------------------
 
 %heading {
   &-base {
@@ -158,9 +158,9 @@ Heading
   }
 }
 
-/*-------------------------------------
-Text States e.g.: for the property-grid
--------------------------------------*/
+// ---------------------------------------
+// Text States e.g.: for the property-grid
+// ---------------------------------------
 
 %text-edited {
   font-weight: var(--mer-font__weight--semi-bold);
