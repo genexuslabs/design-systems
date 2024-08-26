@@ -150,6 +150,7 @@ export const getTreeViewImagePathCallback = (item, iconDirection) => {
  * ```
  */
 export const getImagePathCallbackDefinitions = {
+    "ch-accordion-render": getImagePathCallback,
     "ch-edit": getImagePathCallback,
     "ch-image": getImagePathCallback,
     "ch-tree-view-render": getTreeViewImagePathCallback

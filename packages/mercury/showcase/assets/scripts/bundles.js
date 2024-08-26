@@ -20,12 +20,14 @@ const getThemeModelItem = (basePath, bundleName) => ({
  */
 export const getThemeBundles = (basePath) => [
     // Components
+    getThemeModelItem(basePath, "components/accordion"),
     getThemeModelItem(basePath, "components/button"),
     getThemeModelItem(basePath, "components/checkbox"),
     getThemeModelItem(basePath, "components/code"),
     getThemeModelItem(basePath, "components/combo-box"),
     getThemeModelItem(basePath, "components/dialog"),
     getThemeModelItem(basePath, "components/edit"),
+    getThemeModelItem(basePath, "components/markdown-viewer"),
     getThemeModelItem(basePath, "components/radio-group"),
     getThemeModelItem(basePath, "components/tab"),
     getThemeModelItem(basePath, "components/tabular-grid"),
