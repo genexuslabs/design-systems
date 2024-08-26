@@ -365,8 +365,6 @@ const addCopyCodeFunctionality = () => {
       const codeParent = chCode.parentElement;
       codeParent.insertBefore(chCodeHeader, chCode);
 
-      console.log("dataDocumentation", dataDocumentation);
-
       if (dataDocumentation === undefined) {
         copyCodeButton.classList.add("code__copy-button");
         // only add copy feature if it is not "documentation".
