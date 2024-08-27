@@ -1,4 +1,5 @@
 import { ThemeModel } from "@genexus/chameleon-controls-library";
+import { ThemeItemModel } from "@genexus/chameleon-controls-library/dist/types/components/theme/theme-types";
 
 export type MercuryBundles =
   | [MercuryBundleReset, ...MercuryBundleOptimized[]]
@@ -53,12 +54,19 @@ type BundleNames =
 
 const getThemeModelItem = <T extends BundleNames>(
   basePath: string,
-  bundleName: T
+  bundleName: T,
+  attachStyleSheet: boolean | undefined = undefined
 ) =>
-  ({
-    name: bundleName,
-    url: `${basePath}${bundleName}.css`
-  } as const);
+  attachStyleSheet === undefined
+    ? ({
+        name: bundleName,
+        url: `${basePath}${bundleName}.css`
+      } as const satisfies ThemeItemModel)
+    : ({
+        name: bundleName,
+        url: `${basePath}${bundleName}.css`,
+        attachStyleSheet
+      } as const satisfies ThemeItemModel);
 
 /**
  * Given the basePath, returns all bundles (except base and icons) in the
@@ -86,7 +94,7 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/combo-box"),
     getThemeModelItem(basePath, "components/dialog"),
     getThemeModelItem(basePath, "components/edit"),
-    getThemeModelItem(basePath, "components/markdown-viewer"),
+    getThemeModelItem(basePath, "components/markdown-viewer", false),
     getThemeModelItem(basePath, "components/radio-group"),
     getThemeModelItem(basePath, "components/tab"),
     getThemeModelItem(basePath, "components/tabular-grid"),
