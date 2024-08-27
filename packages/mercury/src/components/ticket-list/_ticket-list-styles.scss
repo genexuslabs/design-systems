@@ -1,0 +1,197 @@
+// TODO: Use the right typography classes
+%ticket-list {
+  font-size: 12px;
+  line-height: 14.52px;
+
+  &-action {
+    position: relative;
+    padding-inline: var(--mer-spacing--xs);
+    padding-block: var(--mer-spacing--md);
+
+    &--hover {
+      background-color: var(--item__bg-color--hover);
+    }
+
+    &--focus-visible {
+      outline: 1px solid var(--focus__outline-color);
+      outline-offset: -1px;
+    }
+
+    &--selected {
+      background-color: var(--item__bg-color--selected-hover);
+
+      &-before {
+        content: "";
+        display: block;
+        position: absolute;
+        inset-block: -1px;
+        inset-inline-start: 0px;
+        inline-size: 1px;
+        background-color: var(--mer-accent__primary);
+      }
+    }
+  }
+
+  &-separator {
+    background-color: var(--mer-border-color__on-elevation--01);
+  }
+
+  &-caption {
+    font-weight: 600;
+  }
+
+  &-description {
+    margin-block-start: 6px;
+  }
+
+  &-status {
+    font-weight: 600;
+    margin-block-end: var(--mer-spacing--xs);
+    gap: var(--mer-spacing--2xs);
+
+    &-open,
+    &-pending {
+      color: var(--mer-text__on-surface);
+    }
+
+    &-processing {
+      color: var(--mer-accent__primary);
+      margin-inline-start: var(--mer-spacing--2xs);
+    }
+
+    &-error {
+      color: var(--mer-color__message-red--300);
+    }
+
+    &-closed {
+      color: var(--mer-color__message-green--200);
+    }
+
+    &-dot {
+      content: "";
+      display: block;
+      border-radius: 50%;
+      inline-size: 4px;
+      block-size: 4px;
+      background-color: currentColor;
+    }
+  }
+
+  &-priority {
+    padding-block: calc(var(--mer-spacing--2xs) + var(--mer-spacing--3xs));
+    padding-inline: var(--mer-spacing--sm);
+    gap: var(--mer-spacing--xs);
+    border: 1px solid var(--mer-color__neutral-gray--500);
+    border-radius: 30px;
+    font-weight: 600;
+
+    &--selected {
+      border-color: var(--mer-border-color__primary--focused);
+    }
+  }
+}
+
+@mixin ticket-list(
+  $ticket-list-selector: ".ticket-list",
+  $action-selector: ".ticket-list::part(item__action)",
+  $action-selected-selector: ".ticket-list::part(item__action selected)",
+  $separator-selector: ".ticket-list::part(separator)",
+  $caption-selector: ".ticket-list::part(item__caption)",
+  $description-selector: ".ticket-list::part(description)",
+
+  $status-selector: ".ticket-list::part(status)",
+  $status-dot-selector: ".ticket-list::part(status dot)",
+  $status-open-selector: ".ticket-list::part(status open)",
+  $status-pending-selector: ".ticket-list::part(status pending)",
+  $status-processing-selector: ".ticket-list::part(status processing)",
+  $status-error-selector: ".ticket-list::part(status error)",
+  $status-closed-selector: ".ticket-list::part(status closed)",
+
+  $priority-selector: ".ticket-list::part(priority)",
+  $priority-selected-selector: ".ticket-list::part(priority selected)"
+) {
+  #{$ticket-list-selector} {
+    @extend %ticket-list;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Action
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$action-selector} {
+    @extend %ticket-list-action;
+
+    &:hover {
+      @extend %ticket-list-action--hover;
+    }
+
+    &:focus-visible {
+      @extend %ticket-list-action--focus-visible;
+    }
+  }
+
+  #{$action-selected-selector} {
+    @extend %ticket-list-action--selected;
+
+    &::before {
+      @extend %ticket-list-action--selected-before;
+    }
+  }
+
+  #{$separator-selector} {
+    @extend %ticket-list-separator;
+  }
+
+  #{$caption-selector} {
+    @extend %ticket-list-caption;
+  }
+
+  #{$description-selector} {
+    @extend %ticket-list-description;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Status
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$status-selector} {
+    @extend %ticket-list-status;
+  }
+
+  #{$status-dot-selector} {
+    &::before {
+      @extend %ticket-list-status-dot;
+    }
+  }
+
+  #{$status-open-selector} {
+    @extend %ticket-list-status-open;
+  }
+
+  #{$status-pending-selector} {
+    @extend %ticket-list-status-pending;
+  }
+
+  #{$status-processing-selector} {
+    @extend %ticket-list-status-processing;
+  }
+
+  #{$status-error-selector} {
+    @extend %ticket-list-status-error;
+  }
+
+  #{$status-closed-selector} {
+    @extend %ticket-list-status-closed;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                Priority
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$priority-selector} {
+    @extend %ticket-list-priority;
+  }
+
+  #{$priority-selected-selector} {
+    @extend %ticket-list-priority--selected;
+  }
+}
+
+@include ticket-list();

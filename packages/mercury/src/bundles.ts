@@ -23,6 +23,7 @@ export type MercuryBundleComponent =
   | "components/markdown-viewer"
   | "components/tab"
   | "components/tabular-grid"
+  | "components/ticket-list"
   | "components/tree-view";
 
 export type MercuryBundleComponentForm =
@@ -89,6 +90,7 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/radio-group"),
     getThemeModelItem(basePath, "components/tab"),
     getThemeModelItem(basePath, "components/tabular-grid"),
+    getThemeModelItem(basePath, "components/ticket-list"),
     getThemeModelItem(basePath, "components/tree-view"),
 
     // Resets
