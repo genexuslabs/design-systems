@@ -1,0 +1,91 @@
+%accordion {
+  --ch-accordion__header-image-size: var(--mer-icon__box--sm);
+  --ch-accordion__chevron-size: var(--mer-icon__box--sm);
+
+  --ch-accordion-expand-collapse-duration: var(--mer-timing--fast);
+  --ch-accordion-expand-collapse-timing-function: ease-in-out;
+
+  gap: var(--mer-spacing--2xs);
+}
+
+%accordion-header {
+  @extend %text-body;
+  padding: var(--mer-spacing--sm);
+  gap: var(--mer-spacing--sm);
+
+  &--focus-visible {
+    outline: 1px solid;
+  }
+}
+
+%accordion-panel {
+  border-radius: var(--mer-border__radius--sm);
+  background-color: var(--mer-color__elevation--01);
+
+  &-outlined {
+    border: 1px solid var(--mer-border-color__on-surface);
+    border-radius: var(--mer-border__radius--sm);
+  }
+}
+
+%accordion-section {
+  // "1px" is used to improve the display of the outline when :focus-visible
+  margin-block: 1px var(--mer-spacing--sm);
+  margin-inline: var(--mer-spacing--sm);
+  border: 1px solid var(--mer-border-color__on-elevation--01);
+  border-radius: var(--mer-border__radius--sm);
+}
+
+@mixin accordion-filled(
+  $accordion-selector: ".accordion-filled",
+  $panel-selector: ".accordion-filled::part(panel)",
+  $header-selector: ".accordion-filled::part(header)",
+  $section-selector: ".accordion-filled::part(section)"
+) {
+  #{$accordion-selector} {
+    @extend %accordion;
+  }
+
+  #{$panel-selector} {
+    @extend %accordion-panel;
+  }
+
+  #{$header-selector} {
+    @extend %accordion-header;
+
+    &:focus-visible {
+      @extend %accordion-header--focus-visible;
+    }
+  }
+
+  #{$section-selector} {
+    @extend %accordion-section;
+  }
+}
+
+@mixin accordion-outlined(
+  $accordion-selector: ".accordion-outlined",
+  $panel-selector: ".accordion-outlined::part(panel)",
+  $header-selector: ".accordion-outlined::part(header)",
+  $section-selector: ".accordion-outlined::part(section)"
+) {
+  #{$accordion-selector} {
+    @extend %accordion;
+  }
+
+  #{$panel-selector} {
+    @extend %accordion-panel-outlined;
+  }
+
+  #{$header-selector} {
+    @extend %accordion-header;
+
+    &:focus-visible {
+      @extend %accordion-header--focus-visible;
+    }
+  }
+
+  #{$section-selector} {
+    @extend %accordion-section;
+  }
+}

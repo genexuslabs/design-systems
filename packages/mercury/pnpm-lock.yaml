@@ -9,8 +9,8 @@ devDependencies:
     specifier: ^0.1.9
     version: 0.1.9
   '@genexus/chameleon-controls-library':
-    specifier: '>=6.0.0-next.19'
-    version: 6.0.0-next.19(@genexus/web-standard-functions@0.65.0)(@stencil/core@4.19.2)
+    specifier: '>=6.0.0-next.26'
+    version: 6.0.0-next.27(@genexus/web-standard-functions@0.65.0)(@stencil/core@4.19.2)
   '@genexus/svg-sass-generator':
     specifier: 1.1.24
     version: 1.1.24(@types/node@20.12.12)
@@ -274,8 +274,8 @@ packages:
     dev: true
     optional: true
 
-  /@genexus/chameleon-controls-library@6.0.0-next.19(@genexus/web-standard-functions@0.65.0)(@stencil/core@4.19.2):
-    resolution: {integrity: sha512-tWzLRmS+/w1L2F853v33XnARpl0Pp1siNtt8fwYMm+BuFfpCu6qKNxJigtT6YTxJPRyVXuqxUzdZdnYLtZZb8Q==}
+  /@genexus/chameleon-controls-library@6.0.0-next.27(@genexus/web-standard-functions@0.65.0)(@stencil/core@4.19.2):
+    resolution: {integrity: sha512-e/CYS9k/PMcALCq55NQWYgLiCTFAdsi6TiUgMnEXOsW2xe6SL9XeWHhq71UP3EvSQNIlG+cGxd7DJpFdlxhZ7A==}
     peerDependencies:
       '@genexus/web-standard-functions': '>= 0.65.0'
     dependencies:
@@ -285,7 +285,6 @@ packages:
       monaco-editor: 0.48.0
       monaco-yaml: 5.2.1(monaco-editor@0.48.0)
       qr-creator: 1.0.0
-      resize-observer-polyfill: 1.5.1
       stencil-click-outside: 1.8.0(@stencil/core@4.19.2)
     transitivePeerDependencies:
       - '@stencil/core'
@@ -2711,10 +2710,6 @@ packages:
 
   /require-main-filename@2.0.0:
     resolution: {integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==}
-    dev: true
-
-  /resize-observer-polyfill@1.5.1:
-    resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
     dev: true
 
   /resolve@1.22.8:

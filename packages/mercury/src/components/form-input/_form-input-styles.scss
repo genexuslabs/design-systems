@@ -4,11 +4,11 @@
   --ch-edit-gap: var(--control__icon-gap);
   --ch-edit__image-size: var(--mer-icon__box--md);
 
-  @include control-colors-enabled();
   @include control-border();
+  @include control-colors-enabled();
   @include control-font-weight-regular();
-  @include control-height-regular();
-  @include control-padding-inline();
+  @include control-font-size-small();
+  @include control-padding-inline-block();
 
   &--focus {
     @include focus-border();

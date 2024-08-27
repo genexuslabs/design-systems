@@ -1,8 +1,8 @@
 @import "tokens";
 
-/*----------------------
-Heading
-----------------------*/
+// ----------------------
+// Heading
+// ----------------------
 
 %heading {
   &-base {
@@ -61,6 +61,10 @@ Heading
   }
 }
 
+%text-link {
+  text-decoration: underline;
+}
+
 // body
 %text-body {
   @include body-tokens();
@@ -68,7 +72,6 @@ Heading
   font-family: var(--text-body__font-family);
   font-weight: var(--text-body__font-weight);
   line-height: var(--text-body__line-height);
-  margin-block: var(--text-body__margin-block);
 }
 
 // tab
@@ -155,9 +158,9 @@ Heading
   }
 }
 
-/*-------------------------------------
-Text States e.g.: for the property-grid
--------------------------------------*/
+// ---------------------------------------
+// Text States e.g.: for the property-grid
+// ---------------------------------------
 
 %text-edited {
   font-weight: var(--mer-font__weight--semi-bold);

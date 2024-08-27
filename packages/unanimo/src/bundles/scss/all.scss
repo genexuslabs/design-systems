@@ -1,0 +1,8 @@
+@import "config";
+@import "../../unanimo.scss";
+
+@include unanimo(
+  $font-face-path: $font-face-path,
+  $icons-path: $icons-path,
+  $markdown-viewer: false
+);

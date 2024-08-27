@@ -20,6 +20,12 @@
     <link rel="stylesheet" href="./assets/styles/sidebar.css" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <link rel="stylesheet" href="./assets/styles/reset.css" />
+
+    <style>
+      .tall-cell {
+        block-size: 100px;
+      }
+    </style>
   </head>
   <body class="showcase" data-sidebar>
     <script src="./assets/scripts/scripts.js"></script>
@@ -83,10 +89,14 @@
                       class="property-grid-row property-grid-property-readonly"
                     >
                       <ch-tabular-grid-cell class="property-grid-cell"
-                        >Property Name: Read Only</ch-tabular-grid-cell
-                      >
+                        >Property Name: Read Only Property Name: Read Only
+                        Property Name: Read Only Property Name: Read Only
+                        Property Name: Read Only
+                      </ch-tabular-grid-cell>
                       <ch-tabular-grid-cell class="property-grid-cell"
-                        >Property Value: No State
+                        >Property Value: Enabled Property Value: Enabled
+                        Property Value: Enabled Property Value: Enabled Property
+                        Value: Enabled
                       </ch-tabular-grid-cell>
                     </ch-tabular-grid-row>
 
@@ -95,7 +105,7 @@
                       class="property-grid-row property-grid-value-readonly"
                     >
                       <ch-tabular-grid-cell class="property-grid-cell"
-                        >Property Name: No State</ch-tabular-grid-cell
+                        >Property Name: Enabled</ch-tabular-grid-cell
                       >
                       <ch-tabular-grid-cell class="property-grid-cell"
                         >Property Value: Read Only
@@ -107,7 +117,7 @@
                       class="property-grid-row property-grid-value-edited"
                     >
                       <ch-tabular-grid-cell class="property-grid-cell"
-                        >Property Name: No State</ch-tabular-grid-cell
+                        >Property Name: Enabled</ch-tabular-grid-cell
                       >
                       <ch-tabular-grid-cell class="property-grid-cell"
                         >Property Value: Edited
@@ -180,7 +190,7 @@
             </article>
 
             <!-- ================================== 
-          property grid
+          test controls appearance
           =================================== -->
             <article
               class="article"

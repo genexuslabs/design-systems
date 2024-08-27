@@ -115,7 +115,7 @@
               <div class="article__main">
                 <div class="article__content">
                   <ch-tabular-grid
-                    class="tabular-grid"
+                    class="tabular-grid tabular-grid-cell-layout"
                     row-selection-mode="none"
                     keyboard-navigation-mode="focus"
                   >
@@ -286,23 +286,23 @@
                   <script>
                     const chCode1 = `<ch-tabular-grid class="tabular-grid" row-selection-mode="none" keyboard-navigation-mode="focus">
 
-  <ch-tabular-grid-columnset class="tabular-grid-column-set">
-    <ch-tabular-grid-column
-      class="tabular-grid-column"
-      column-id="code"
-      column-name="Country Code"
-      settingable="false"
-      sortable="true">
-    </ch-tabular-grid-column>
-    <!-- Add more ch-tabular-grid-column's as needed -->
-  </ch-tabular-grid-columnset>
+<ch-tabular-grid-columnset class="tabular-grid-column-set">
+<ch-tabular-grid-column
+  class="tabular-grid-column"
+  column-id="code"
+  column-name="Country Code"
+  settingable="false"
+  sortable="true">
+</ch-tabular-grid-column>
+<!-- Add more ch-tabular-grid-column's as needed -->
+</ch-tabular-grid-columnset>
 
-  <ch-tabular-grid-row class="tabular-grid-row">
-    <ch-tabular-grid-cell class="tabular-grid-cell">
-      <!--  Your cell content -->
-    </ch-tabular-grid-cell>
-    <!-- Add more ch-tabular-grid-cell's as needed... -->
-  </ch-tabular-grid-row>
+<ch-tabular-grid-row class="tabular-grid-row">
+<ch-tabular-grid-cell class="tabular-grid-cell">
+  <!--  Your cell content -->
+</ch-tabular-grid-cell>
+<!-- Add more ch-tabular-grid-cell's as needed... -->
+</ch-tabular-grid-row>
 
 </ch-tabular-grid>`;
                     document.getElementById("chCode1").value = chCode1;
@@ -2989,7 +2989,7 @@
         <section class="section">
           <!-- header -->
           <header class="section__header">
-            <h1 class="section__title">tabular grid: helper classes</h1>
+            <h1 class="section__title">tabular grid: helpers</h1>
             <p class="section__description">
               Helper classes in a tabular grid component are crucial for
               ensuring flexibility and consistency in layout and styling across

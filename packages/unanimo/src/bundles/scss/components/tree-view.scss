@@ -1,0 +1,7 @@
+@import "../../../unanimo.scss";
+
+@include unanimo-only(
+  $components: true,
+  $tree-view-primary: true,
+  $tree-view-secondary: true
+);

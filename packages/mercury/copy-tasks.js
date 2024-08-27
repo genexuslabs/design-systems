@@ -24,6 +24,7 @@ Step 5: Copy 'dist/assets/fonts/'
 Step 6: Copy 'dist/assets-manager.js' 
 Step 7: Copy 'dist/bundles.js' 
 Step 8: Copy 'dist/assets/MERCURY_ASSETS.js' 
+Step 9: Copy 'dist/mercury.scss' 
 */
 
 const ASSETS_MANAGER_JS = "assets-manager.js";
@@ -37,6 +38,7 @@ const GENERATED_ICONS_DIR = path.join(
   `icons/${SVG_SASS_GENERATOR_GENERATED_FOLDER}`
 );
 
+const DIST_PATH = "./dist/";
 const DIST_ASSETS_DIR = "./dist/assets/";
 const DIST_BUNDLES_CSS_DIR = "./dist/bundles/css/";
 const DIST_FONTS_DIR = "./dist/assets/fonts/";
@@ -127,6 +129,12 @@ copyFileToFolder(path.join("dist/", BUNDLES_JS), SHOWCASE_SCRIPTS_DIR);
 copyFileToFolder(
   path.join(DIST_ASSETS_DIR, MERCURY_ASSETS_JS),
   path.join(SHOWCASE_SCRIPTS_DIR, "assets")
+);
+
+// Step 9
+copyFileToFolder(
+  path.join(DIST_PATH, "mercury.scss"),
+  path.join(SHOWCASE_PATH, "scss")
 );
 
 console.log("copy-tasks.js copied successfully");

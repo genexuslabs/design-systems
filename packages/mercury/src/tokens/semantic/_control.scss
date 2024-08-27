@@ -1,7 +1,7 @@
 @mixin semantic-control() {
-  /*-------------------------------------------------------------
-  Inline Controls should have the same height to look good inline
-  --------------------------------------------------------------*/
+  // ---------------------------------------------------------------
+  // Inline Controls should have the same height to look good inline
+  // ---------------------------------------------------------------
 
   // - - - - - - - Colors - - - - - - -
 
@@ -41,6 +41,7 @@
 
   --control__font-size--small: var(--mer-font__size--3xs);
   --control__font-size--regular: var(--mer-font__size--xs);
+  --control__line-height: var(--mer-line-height--spaced);
 
   // - - - - - - - Height - - - - - - -
 
@@ -48,7 +49,7 @@
 
   // - - - - - - - Padding - - - - - - -
 
-  --control__padding-block: var(--mer-spacing--xs);
+  --control__padding-block: var(--mer-spacing--2xs);
   --control__padding-inline: var(--mer-spacing--xs);
 
   // - - - - - - - Gap - - - - - - -
@@ -63,9 +64,9 @@
   );
   --control-placeholder__font-style: italic;
 
-  /*-------------------------------------------------------------
-  Tiny controls (ie.: checkbox, radio-button)
-  --------------------------------------------------------------*/
+  // -------------------------------------------------------------
+  // Tiny controls (ie.: checkbox, radio-button)
+  // -------------------------------------------------------------
 
   // border colors are the same from "--control__***" tokens
 
@@ -76,9 +77,9 @@
   --control-tiny__border-radius-rounded: 50%;
   --control-tiny-option__color: var(--control__border-color);
 
-  /*-------------------------------------------------------------
-  Controls Label
-  --------------------------------------------------------------*/
+  // -------------------------------------------------------------
+  // Controls Label
+  // -------------------------------------------------------------
 
   // fixed values
   --label__font-size: var(--mer-font__size--3xs);
@@ -105,9 +106,9 @@
   // error
   --label__color--error: var(--mer-text__neutral);
 
-  /*-------------------------------------------------------------
-  Controls Container
-  --------------------------------------------------------------*/
+  // -------------------------------------------------------------
+  // Controls Container
+  // -------------------------------------------------------------
 
   --controls__container-row-gap: var(--mer-spacing--md);
   --controls__group-gap--block: var(--mer-spacing--sm);

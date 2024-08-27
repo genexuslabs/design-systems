@@ -41,9 +41,9 @@
     @extend %control-footer--with-border;
   }
 
-  /*------------------------------
-  Edges (For dragging)
-  -------------------------------*/
+  // ------------------------------
+  // Edges (For dragging)
+  // ------------------------------
   &__edge {
     $edge-border-width: var(--mer-border__width--lg);
     $edge-border-style: solid;
@@ -148,9 +148,9 @@
     @extend %dialog__footer;
   }
 
-  /*------------------------------
-  Edges (For dragging)
-  -------------------------------*/
+  // ------------------------------
+  // Edges (For dragging)
+  // ------------------------------
   #{$edge-selector} {
     @extend %dialog__edge;
     &:hover {

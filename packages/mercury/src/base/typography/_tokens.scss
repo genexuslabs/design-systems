@@ -1,7 +1,7 @@
 @mixin heading-tokens() {
   // heading base
   --heading-base__font-family: var(--mer-font-family--title);
-  --heading__color: transparent;
+  --heading__color: inherit;
 
   //h1
   --heading-h1__font-size: var(--mer-font__size--xl);

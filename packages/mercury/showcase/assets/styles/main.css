@@ -279,6 +279,10 @@ Container
   padding-inline: var(--container__padding-inline);
   margin: 0 auto;
 }
+.container.reverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
 
 /*====================
 Section
@@ -362,7 +366,7 @@ Articles
   border-image: linear-gradient(
       to right,
       transparent,
-      var(--mer-color__neutral-gray--700),
+      var(--mer-color__neutral-gray--600),
       transparent
     )
     1;
