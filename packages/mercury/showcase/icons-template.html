@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Icons Template</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+      .icon {
+        display: block;
+        background-image: var(--icon-path);
+        block-size: 32px;
+        inline-size: 32px;
+      }
+      .icons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        row-gap: 48px;
+      }
+      .icons-grid__item {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .icons-grid__item-title {
+        font-size: 16px;
+      }
+      .icons-grid__list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .icons-grid__list li {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        color: var(--mer-color__neutral-gray--450);
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+    <script type="module" src="./assets/scripts/generate-icons.js"></script>
+  </head>
+  <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section" hidden data-title="objects">
+          <!-- header -->
+          <header class="section__header"></header>
+          <div class="section__articles-container">
+            <article class="article">
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="icons-grid">
+                    <!-- item -->
+                    <div class="icons-grid__item">
+                      <h2 class="icons-grid__item-title">workflow</h2>
+                      <ul class="icons-grid__list">
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--enabled
+                              );
+                            "
+                          ></i>
+                          enabled
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--hover
+                              );
+                            "
+                          ></i>
+                          hover
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--active
+                              );
+                            "
+                          ></i>
+                          active
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--disabled
+                              );
+                            "
+                          ></i>
+                          disabled
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- item -->
+                    <div class="icons-grid__item">
+                      <h2 class="icons-grid__item-title">work-panel</h2>
+                      <ul class="icons-grid__list">
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--enabled
+                              );
+                            "
+                          ></i>
+                          enabled
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--hover
+                              );
+                            "
+                          ></i>
+                          hover
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--active
+                              );
+                            "
+                          ></i>
+                          active
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--disabled
+                              );
+                            "
+                          ></i>
+                          disabled
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- item -->
+                    <div class="icons-grid__item">
+                      <h2 class="icons-grid__item-title">web-panel</h2>
+                      <ul class="icons-grid__list">
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--enabled
+                              );
+                            "
+                          ></i>
+                          enabled
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--hover
+                              );
+                            "
+                          ></i>
+                          hover
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--active
+                              );
+                            "
+                          ></i>
+                          active
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--disabled
+                              );
+                            "
+                          ></i>
+                          disabled
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- item -->
+                    <div class="icons-grid__item">
+                      <h2 class="icons-grid__item-title">web-component</h2>
+                      <ul class="icons-grid__list">
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--enabled
+                              );
+                            "
+                          ></i>
+                          enabled
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--hover
+                              );
+                            "
+                          ></i>
+                          hover
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--active
+                              );
+                            "
+                          ></i>
+                          active
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--disabled
+                              );
+                            "
+                          ></i>
+                          disabled
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+
+        <section class="section" hidden data-title="navigation">
+          <!-- header -->
+          <header class="section__header"></header>
+          <div class="section__articles-container">
+            <article class="article" data-nav data-title="pill-outlined">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="icons-grid">
+                    <!-- item -->
+                    <div class="icons-grid__item">
+                      <h2 class="icons-grid__item-title">on-surface</h2>
+                      <ul class="icons-grid__list">
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--enabled
+                              );
+                            "
+                          ></i>
+                          enabled
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--hover
+                              );
+                            "
+                          ></i>
+                          hover
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--active
+                              );
+                            "
+                          ></i>
+                          active
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--disabled
+                              );
+                            "
+                          ></i>
+                          disabled
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- item -->
+                    <div class="icons-grid__item">
+                      <h2 class="icons-grid__item-title">on-surface</h2>
+                      <ul class="icons-grid__list">
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--enabled
+                              );
+                            "
+                          ></i>
+                          enabled
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--hover
+                              );
+                            "
+                          ></i>
+                          hover
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--active
+                              );
+                            "
+                          ></i>
+                          active
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--disabled
+                              );
+                            "
+                          ></i>
+                          disabled
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- item -->
+                    <div class="icons-grid__item">
+                      <h2 class="icons-grid__item-title">on-surface</h2>
+                      <ul class="icons-grid__list">
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--enabled
+                              );
+                            "
+                          ></i>
+                          enabled
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--hover
+                              );
+                            "
+                          ></i>
+                          hover
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--active
+                              );
+                            "
+                          ></i>
+                          active
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--disabled
+                              );
+                            "
+                          ></i>
+                          disabled
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- item -->
+                    <div class="icons-grid__item">
+                      <h2 class="icons-grid__item-title">on-surface</h2>
+                      <ul class="icons-grid__list">
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--enabled
+                              );
+                            "
+                          ></i>
+                          enabled
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--hover
+                              );
+                            "
+                          ></i>
+                          hover
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--active
+                              );
+                            "
+                          ></i>
+                          active
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--disabled
+                              );
+                            "
+                          ></i>
+                          disabled
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <article class="article" data-nav data-title="pill-outlined">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="icons-grid">
+                    <!-- item -->
+                    <div class="icons-grid__item">
+                      <h2 class="icons-grid__item-title">on-surface</h2>
+                      <ul class="icons-grid__list">
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--enabled
+                              );
+                            "
+                          ></i>
+                          enabled
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--hover
+                              );
+                            "
+                          ></i>
+                          hover
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--active
+                              );
+                            "
+                          ></i>
+                          active
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--disabled
+                              );
+                            "
+                          ></i>
+                          disabled
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- item -->
+                    <div class="icons-grid__item">
+                      <h2 class="icons-grid__item-title">on-surface</h2>
+                      <ul class="icons-grid__list">
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--enabled
+                              );
+                            "
+                          ></i>
+                          enabled
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--hover
+                              );
+                            "
+                          ></i>
+                          hover
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--active
+                              );
+                            "
+                          ></i>
+                          active
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--disabled
+                              );
+                            "
+                          ></i>
+                          disabled
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- item -->
+                    <div class="icons-grid__item">
+                      <h2 class="icons-grid__item-title">on-surface</h2>
+                      <ul class="icons-grid__list">
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--enabled
+                              );
+                            "
+                          ></i>
+                          enabled
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--hover
+                              );
+                            "
+                          ></i>
+                          hover
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--active
+                              );
+                            "
+                          ></i>
+                          active
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--disabled
+                              );
+                            "
+                          ></i>
+                          disabled
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- item -->
+                    <div class="icons-grid__item">
+                      <h2 class="icons-grid__item-title">on-surface</h2>
+                      <ul class="icons-grid__list">
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--enabled
+                              );
+                            "
+                          ></i>
+                          enabled
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--hover
+                              );
+                            "
+                          ></i>
+                          hover
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--active
+                              );
+                            "
+                          ></i>
+                          active
+                        </li>
+                        <li>
+                          <i
+                            class="icon icon-sm"
+                            style="
+                              --icon-path: var(
+                                --icon__objects_attribute--disabled
+                              );
+                            "
+                          ></i>
+                          disabled
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

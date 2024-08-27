@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Icons</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+
+      /*Specific styles only for this page*/
+      :root {
+        --icon-showcase-box-size: var(--mer-spacing--xl);
+        --icon-showcase-icon-size: 60%;
+      }
+      .icon {
+        display: block;
+        background-image: var(--icon-path);
+        block-size: var(--icon-showcase-box-size);
+        inline-size: var(--icon-showcase-box-size);
+        background-size: var(--icon-showcase-icon-size);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        border-radius: var(--mer-border__width--md);
+      }
+      .icons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        row-gap: 48px;
+      }
+      .icons-grid__item {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .icons-grid__item-title {
+        font-size: 16px;
+      }
+      .icons-grid__list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .icons-grid__list li {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        color: var(--mer-color__neutral-gray--350);
+      }
+      .not-applicable {
+        text-decoration: line-through;
+        color: var(--mer-text__primary--disabled) !important;
+      }
+      .not-applicable .icon {
+        background-color: var(--mer-icon__primary--disabled);
+        mask-size: 100%;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+    <script type="module" src="./assets/scripts/generate-icons.js"></script>
+  </head>
+  <body class="showcase" data-sidebar data-sections-as-articles>
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- content created dynamically at showcase/assets/scripts/generate-icons.js -->
+      </div>
+    </main>
+  </body>
+</html>
