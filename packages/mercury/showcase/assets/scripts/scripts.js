@@ -114,7 +114,7 @@ const includeSidebarPageInternalNav = () => {
       const navigationSectionsArray = [];
       if (navigationIncludesSections && !NAV_SECTIONS_AS_ARTICLES) {
         // Create the navigation for the sections
-        // Consider all sections, even the ones that are not intender to be added to the nav.
+        // Consider all sections, even the ones that are not intended to be added to the nav.
         // If The section has no data-nav attribute, it will be included in the nav without title.
         const allSections = document.querySelectorAll(SECTION_SELECTOR);
         allSections.forEach((section, i) => {
@@ -125,12 +125,13 @@ const includeSidebarPageInternalNav = () => {
           const navSection = document.createElement("div");
           section.classList.add("current-page__section");
           // title
-          const dataTitle = section.getAttribute(DATA_TITLE_SELECTOR);
+          const sectionTitle =
+            section.querySelector(".section__title").textContent;
 
-          if (dataTitle) {
+          if (sectionTitle) {
             const navSectionTitleEl = document.createElement("h3");
             navSectionTitleEl.classList.add("current-page__section-title");
-            navSectionTitleEl.textContent = dataTitle;
+            navSectionTitleEl.textContent = sectionTitle;
             navSection.appendChild(navSectionTitleEl);
           }
           // list
@@ -151,6 +152,7 @@ const includeSidebarPageInternalNav = () => {
         const hasId = article.hasAttribute("id");
         const hasTitle = article.hasAttribute(DATA_TITLE_SELECTOR);
         const isHidden = article.hasAttribute("hidden");
+
         if (hasId && hasTitle && !isHidden) {
           const articleId = article.getAttribute("id");
           const articleTitle = article.getAttribute(DATA_TITLE_SELECTOR);
@@ -173,6 +175,7 @@ const includeSidebarPageInternalNav = () => {
           pageUlEl.appendChild(li);
         }
       });
+
       if (navigationIncludesSections && !NAV_SECTIONS_AS_ARTICLES) {
         navigationSectionsArray.forEach((navigationSection, i) => {
           CURRENT_PAGE_NAV_ITEM.appendChild(navigationSection);
@@ -209,7 +212,7 @@ const addArticleTitles = () => {
 
         // Add a number to each item to make it easier to refer to.
         // Make it a separate element, to allow different style.
-        // This only makes sense if there is more than one .article[nav]
+        // This only makes sense if there is more than one .article[data-nav]
         if (moreThanOne) {
           const numberTag = document.createElement("span");
           numberTag.classList.add("article__number-id");
