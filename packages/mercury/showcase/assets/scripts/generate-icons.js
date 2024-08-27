@@ -85,6 +85,7 @@ Helper Render Functions (Elements)
 
 const createSection = iconCategory => {
   const sectionEl = document.createElement("section");
+  sectionEl.setAttribute("id", iconCategory);
   sectionEl.className = "section";
   // description
   const sectionDescriptionEl = document.createElement("p");
