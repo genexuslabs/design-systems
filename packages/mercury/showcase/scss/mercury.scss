@@ -15351,6 +15351,7 @@
         @include semantic-icon();
         @include semantic-item();
         @include semantic-text();
+        @include semantic-heading();
       }
 
       // Elevation Light
@@ -15485,11 +15486,7 @@
     }
 
     @if $scrollbar-components {
-      :host(.ch-scrollable),
-      .ch-scrollable,
-      .scrollable {
-        @include scrollbar-components();
-      }
+      @include scrollbar-components();
     }
   }
 
