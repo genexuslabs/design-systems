@@ -85,12 +85,21 @@ Helper Render Functions (Elements)
 
 const createSection = iconCategory => {
   const sectionEl = document.createElement("section");
+  sectionEl.setAttribute("id", iconCategory);
   sectionEl.className = "section";
+  // description
   const sectionDescriptionEl = document.createElement("p");
   sectionDescriptionEl.classList.add("section__description");
   sectionDescriptionEl.textContent = ICONS_DESCRIPTIONS[iconCategory];
+  // header
   const headerElement = document.createElement("header");
   headerElement.className = "section__header";
+  // title
+  const titleElement = document.createElement("h1");
+  titleElement.className = "section__title";
+  titleElement.textContent = iconCategory;
+  // appends
+  headerElement.appendChild(titleElement);
   headerElement.appendChild(sectionDescriptionEl);
   sectionEl.appendChild(headerElement);
   return sectionEl;
@@ -197,7 +206,7 @@ const createMulticolorIconsStatesList = (statesObject, itemName) => {
 
     if (itemName.includes("on-")) {
       // some monochrome icons are expected to be applied on specific background colors.
-      // these icons color begin with "on". ie.: "on-surface".
+      // these icons colors begin with "on". ie.: "on-surface".
       const suffix = state !== "enabled" ? `--${state}` : "";
       const color = `${ON_COLORS[itemName]}${suffix}`;
       iEl.style.backgroundColor = `var(${color})`;
