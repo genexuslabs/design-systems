@@ -218,9 +218,9 @@ private buttonIcon = getIconPath({
                     <a
                       href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/combo-box#ch-combo-box-render"
                       target="_blank"
-                      >Specify the control items following the model property
-                      type</a
-                    >
+                      >Specify the ch-combo-box items following the model
+                      property
+                    </a>
                   </li>
                 </ol>
                 <div class="article__code">
@@ -418,8 +418,8 @@ private favoriteColorsModel: ComboBoxItemModel[] = [
                     <a
                       href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/radio-group#ch-radio-group-render"
                       target="_blank"
-                      >Specify the control properties following the Chameleon
-                      documentation</a
+                      >Specify the ch-radio-group-render radio item's following
+                      the model property.</a
                     >
                   </li>
                 </ol>
@@ -1014,7 +1014,7 @@ private myIcon = getIconPath({
                   <li>
                     <a href="" target="_blank"
                       >Specify other control properties if required, following
-                      chameleon documentation</a
+                      chameleon documentation.</a
                     >
                   </li>
                 </ol>
@@ -1158,6 +1158,214 @@ private myIcon = getIconPath({
                       >
                     </li>
                   </ul>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-tabs
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-tabs">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-tabs</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-tabs</code> tag with a
+                    <code>ch-tab-render</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values.</li>
+                  <li>Add the <code>.tab</code> class.</li>
+                  <li>
+                    Clear everything inside the <code>ch-tab-render</code> tag,
+                    and then include as many <code>div's</code> as tab's you
+                    would like, and define for every div, a
+                    <code>slot</code> attribute with a unique identifier.
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/tab#ch-tab-render"
+                      target="_blank"
+                      >Specify the tab buttons following the tab
+                      <code>model</code> property</a
+                    >
+                    Note that the model item's id's should match the
+                    corresponding slot value for the div's that you inserted
+                    before.
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-tabs id="gxgTabs" position="top">
+  <gxg-tab-bar slot="tab-bar-container" id="tab-bar">
+    <gxg-tab-button
+      slot="tab-bar"
+      tab-label="apples"
+      tab="apples"
+      key="apples"
+      is-selected
+    ></gxg-tab-button>
+    <gxg-tab-button
+      slot="tab-bar"
+      tab-label="bananas"
+      tab="bananas"
+      key="bananas"
+      icon="gemini-tools/settings"
+    ></gxg-tab-button>
+    <gxg-tab-button
+      slot="tab-bar"
+      tab="cherries"
+      key="cherries"
+      icon="gemini-tools/settings"
+      hidden
+    ></gxg-tab-button>
+  </gxg-tab-bar>
+  <gxg-tab tab="apples" key="apples" isSelected="true">
+    <p>
+      An apple is a sweet, edible fruit produced by an apple tree. Apple
+      trees are cultivated worldwide and are the most widely grown species
+      in the genus Malus. The tree originated in Central Asia, where its
+      wild ancestor, Malus sieversii, is still found today. An apple is a
+      sweet, edible fruit produced by an apple tree. 
+    </p>
+  </gxg-tab>
+  <gxg-tab tab="bananas" key="bananas" isSelected="false">
+    <p>
+      A banana is an elongated, edible fruit – botanically a berry –
+      produced by several kinds of large herbaceous flowering plants in the
+      genus Musa. In some countries, bananas used for cooking may be called
+      "plantains", distinguishing them from dessert bananas.
+     </p>
+  </gxg-tab>
+  <gxg-tab tab="cherries" key="cherries" isSelected="false">
+    <p>
+      A cherry is the fruit of many plants of the genus Prunus, and is a
+      fleshy drupe. Commercial cherries are obtained from cultivars of
+      several species, such as the sweet Prunus avium and the sour Prunus
+      cerasus.
+    </p>
+  </gxg-tab>
+</gxg-tabs>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// model
+private fruitsModel: TabItemModel[] = [
+  { id: "apples", name: "Apples" },
+  { id: "bananas", name: "Bananas" },
+  { id: "cherries", name: "Cherries" }
+]; 
+          
+// use inside <Host>                    
+<ch-tab-render
+  class="tab tab-indicator-start"
+  direction="block"
+  selected-id="apples"
+  model={this.fruitsModel}
+>
+  <div slot="apples" class="slot spacing-body">
+    <p class="text-body">
+      An apple is a sweet, edible fruit produced by an apple
+      tree. Apple trees are cultivated worldwide and are the
+      most widely grown species in the genus Malus. The tree
+      originated in Central Asia, where its wild ancestor,
+      Malus sieversii, is still found today. An apple is a
+      sweet, edible fruit produced by an apple tree.
+    </p>
+  </div>
+  <div slot="bananas" class="slot spacing-body">
+    <p class="text-body">
+      A banana is an elongated, edible fruit – botanically a
+      berry – produced by several kinds of large herbaceous
+      flowering plants in the genus Musa. In some countries,
+      bananas used for cooking may be called "plantains",
+      distinguishing them from dessert bananas.
+    </p>
+  </div>
+  <div slot="cherries" class="slot spacing-body">
+    <p class="text-body">
+      A cherry is the fruit of many plants of the genus
+      Prunus, and is a fleshy drupe. Commercial cherries are
+      obtained from cultivars of several species, such as the
+      sweet Prunus avium and the sour Prunus cerasus.
+    </p>
+  </div>
+</ch-tab-render>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <ch-tab-render
+                    class="tab tab-indicator-start"
+                    id="fruits-tab"
+                    direction="block"
+                    selected-id="apples"
+                  >
+                    <div slot="apples" class="slot spacing-body">
+                      <p class="text-body">
+                        An apple is a sweet, edible fruit produced by an apple
+                        tree. Apple trees are cultivated worldwide and are the
+                        most widely grown species in the genus Malus. The tree
+                        originated in Central Asia, where its wild ancestor,
+                        Malus sieversii, is still found today. An apple is a
+                        sweet, edible fruit produced by an apple tree.
+                      </p>
+                    </div>
+                    <div slot="bananas" class="slot spacing-body">
+                      <p class="text-body">
+                        A banana is an elongated, edible fruit – botanically a
+                        berry – produced by several kinds of large herbaceous
+                        flowering plants in the genus Musa. In some countries,
+                        bananas used for cooking may be called "plantains",
+                        distinguishing them from dessert bananas.
+                      </p>
+                    </div>
+                    <div slot="cherries" class="slot spacing-body">
+                      <p class="text-body">
+                        A cherry is the fruit of many plants of the genus
+                        Prunus, and is a fleshy drupe. Commercial cherries are
+                        obtained from cultivars of several species, such as the
+                        sweet Prunus avium and the sour Prunus cerasus.
+                      </p>
+                    </div>
+                  </ch-tab-render>
+                  <script>
+                    const tab1 = document.getElementById("fruits-tab");
+                    tab1.model = [
+                      { id: "apples", name: "Apples" },
+                      { id: "bananas", name: "Bananas" },
+                      { id: "cherries", name: "Cherries" }
+                    ];
+                  </script>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a href="./tabs.html" class="dummy-grid-container__item"
+                      >tab classes</a
+                    >
+                  </div>
                 </div>
               </div>
               <!-- /.article__main -->
