@@ -229,13 +229,12 @@ body.all-hidden .section__header {
 }
 .article__list li::before {
   position: absolute;
-  top: 50%;
+  top: 0.8em;
   left: 0;
   content: "";
   display: block;
   width: 3px;
   height: 3px;
-  transform: translateY(-50%);
   background-color: var(--sc-base__border-color);
 }
 
