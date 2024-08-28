@@ -2217,6 +2217,15 @@ Body Spacing
     --mer-border-color__primary--disabled
   );
   --button-primary__color--disabled: var(--mer-text__on-disabled);
+
+  //destructive
+  --button-primary__background-color--destructive: var(
+    --mer-accent__primary--destructive
+  );
+  --button-primary__border-color--destructive: var(
+    --button-primary__background-color--destructive
+  );
+  --button-primary__color--destructive: var(--mer-text__on-primary);
 }
 
 @mixin button-tokens-secondary() {
@@ -2301,6 +2310,14 @@ Body Spacing
     --control__border-color: var(--button-primary__background-color--disabled);
     color: var(--button-primary__color--disabled);
   }
+
+  &--destructive {
+    --control__border-color: var(--button-primary__border-color--destructive);
+    --button-tertiary__background-color: var(
+      --button-primary__background-color--destructive
+    );
+    --button-primary__color: var(--button-primary__color--destructive);
+  }
 }
 
 %button-secondary {
@@ -2364,7 +2381,12 @@ Body Spacing
 
 /// @group Button
 /// @param {String} $selector [".button-primary"] -
-@mixin button-primary($selector: ".button-primary", $add--disabled: true) {
+@mixin button-primary(
+  $selector: ".button-primary",
+  $destructive-selector: ".button-primary--destructive",
+  $add--disabled: true,
+  $add--destructive: true
+) {
   #{$selector} {
     @extend %button-primary;
 
@@ -2380,6 +2402,11 @@ Body Spacing
       &:disabled {
         @extend %button-primary--disabled;
       }
+    }
+  }
+  @if $add--destructive {
+    #{$destructive-selector} {
+      @extend %button-primary--destructive;
     }
   }
 }
@@ -2928,6 +2955,15 @@ Text States e.g.: for the property-grid
     --mer-border-color__primary--disabled
   );
   --button-primary__color--disabled: var(--mer-text__on-disabled);
+
+  //destructive
+  --button-primary__background-color--destructive: var(
+    --mer-accent__primary--destructive
+  );
+  --button-primary__border-color--destructive: var(
+    --button-primary__background-color--destructive
+  );
+  --button-primary__color--destructive: var(--mer-text__on-primary);
 }
 
 @mixin button-tokens-secondary() {
@@ -6467,8 +6503,8 @@ Body Spacing
   --control__padding-inline: var(--grid-cell__padding-inline);
   // to stretch the control
   display: grid;
-  align-items: stretch;
-  justify-content: stretch;
+  align-items: stretch !important; // WA to win over other rule that is more specific
+  justify-content: stretch !important; // WA to win over other rule that is more specific
 }
 @mixin cell-node-type-element--hover() {
   outline: var(--focus__outline-width) var(--focus__outline-style)
