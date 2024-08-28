@@ -9,6 +9,9 @@
       html:not(.hydrated) {
         visibility: hidden;
       }
+      .combo-box {
+        width: 200px;
+      }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
     <link rel="stylesheet" href="./all.css" />
@@ -37,9 +40,9 @@
               transition as smooth as possible.
             </p>
           </header>
-          <div class="section__articles-container reverse">
+          <div class="section__articles-container">
             <!-- ========================== 
-          button: text only
+          gxg-button: text only
           =========================== -->
             <article
               class="article"
@@ -50,7 +53,8 @@
               <!-- main -->
               <div class="article__main">
                 <p class="article__description">
-                  When transitioning from a button that is "only text":
+                  When transitioning from a <code>gxg-button</code> that is
+                  "only text":
                 </p>
                 <ol class="article__list article__description">
                   <li>
@@ -63,15 +67,9 @@
                     button types
                   </li>
                 </ol>
-                <p class="article__description">
-                  <a href="./button.html"
-                    >See the Mercury button showcase for full documentation.</a
-                  >
-                </p>
                 <div class="article__code">
                   <!-- button gemini -->
                   <ch-code
-                    id="ch-code-1"
                     language="tsx"
                     class="code"
                     data-title="before: gemini"
@@ -79,47 +77,50 @@
                   >
                   </ch-code>
                   <script>
-                    const markup1 = `<gxg-button type="primary-icon-only">
+                    code = `<gxg-button type="primary-icon-only">
   Caption
 </gxg-button>`;
-                    document.getElementById("ch-code-1").value = markup1;
                   </script>
                 </div>
                 <div class="article__code">
                   <!-- button mercury -->
                   <ch-code
-                    id="ch-code-2"
                     language="tsx"
                     class="code"
                     data-title="after: mercury"
                   >
                   </ch-code>
                   <script>
-                    const markup2 = `<button class="button-primary">Caption</button>`;
-                    document.getElementById("ch-code-2").value = markup2;
+                    code = `<button class="button-primary">Caption</button>`;
                   </script>
                 </div>
                 <div class="article__content">
                   <button class="button-primary">Caption</button>
                 </div>
                 <!-- /.article__content -->
+                <p class="article__description">
+                  <a href="./button.html"
+                    >See the button showcase for full documentation.</a
+                  >
+                </p>
               </div>
               <!-- /.article__main -->
             </article>
 
             <!-- ========================== 
-          button: text with icon
+          gxg-button: text with icon
           =========================== -->
             <article
               class="article"
-              nav
+              data-nav
               data-title="gxg-button: text with icon"
             >
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <p class="article__description">
-                  When transitioning from a button that is "text with icon":
+                  When transitioning from a <code>gxg-button</code> that is
+                  "text with icon":
                 </p>
                 <ol class="article__list article__description">
                   <li>
@@ -136,15 +137,9 @@
                     >
                   </li>
                 </ol>
-                <p class="article__description">
-                  <a href="./button.html"
-                    >See the Mercury button showcase for full documentation.</a
-                  >
-                </p>
                 <div class="article__code">
                   <!-- button gemini -->
                   <ch-code
-                    id="ch-code-3"
                     language="tsx"
                     class="code"
                     data-title="before: gemini"
@@ -152,35 +147,34 @@
                   >
                   </ch-code>
                   <script>
-                    const markup3 = `<gxg-button type="primary-text-icon" icon="navigation/arrow-down">Caption</gxg-button>`;
-                    document.getElementById("ch-code-3").value = markup3;
+                    code = `<gxg-button type="primary-text-icon" icon="navigation/arrow-down">Caption</gxg-button>`;
                   </script>
                 </div>
 
                 <div class="article__code">
                   <!-- button mercury -->
                   <ch-code
-                    id="ch-code-4"
                     language="tsx"
                     class="code"
                     data-title="after: mercury"
                   >
                   </ch-code>
                   <script>
-                    const markup4 = `// Outside @Component 
+                    code = `// import before @Component 
 import { getIconPath } from "@genexus/mercury";
-const BUTTON_ICON = getIconPath({
+
+// declare inside @Component
+private buttonIcon = getIconPath({
   category: "gemini-tools",
   name: "add-circle",
   colorType: "on-primary"
 });
 
-// Inside @Component 
+// use inside <Host>
 <button class="button-primary button-icon-and-text">
-  <ch-image src={BUTTON_ICON} class="icon-sm"></ch-image>
+  <ch-image src={buttonIcon} class="icon-sm"></ch-image>
   Caption
 </button>`;
-                    document.getElementById("ch-code-4").value = markup4;
                   </script>
                 </div>
                 <div class="article__content">
@@ -190,6 +184,131 @@ const BUTTON_ICON = getIconPath({
                   </button>
                 </div>
                 <!-- /.article__content -->
+                <p class="article__description">
+                  <a href="./button.html"
+                    >See the button showcase for full documentation.</a
+                  >
+                </p>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-combo-box
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-combo-box">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-combo-box</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-combo-box</code> tag with a
+                    <code>ch-combo-box-render</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>Add the <code>.combo-box</code> class.</li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/combo-box#ch-combo-box-render"
+                      target="_blank"
+                      >Specify the control items following the model property
+                      type</a
+                    >
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-combo-box
+  placeholder="Select item"
+  label="Test disabled"
+  value="common-elements"
+>
+  <gxg-combo-box-item value="common-elements">Common Elements</gxg-combo-box-item>
+  // More combo-box-item's ...
+</gxg-combo-box>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// reference
+private comboBoxRef!: HTMLChComboBoxRenderElement;
+
+// model
+private favoriteColorsModel: ComboBoxItemModel[] = [
+  { value: "red", caption: "Red"},
+  { value: "blue", caption: "Blue"},
+  { value: "green", caption: "Green"},
+  { value: "yellow", caption: "Yellow"},
+  { value: "purple", caption: "Purple"}
+];
+
+// use inside <Host>                    
+<ch-combo-box-render
+  accessible-name="My Favorite Colors"
+  class="combo-box"
+  ref={(el: HTMLChComboBoxRenderElement) => (this.comboBoxRef = el as HTMLChComboBoxRenderElement)}>
+</ch-combo-box-render>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <ch-combo-box-render
+                    accessible-name="My Favorite Colors"
+                    id="combo-box"
+                    class="combo-box"
+                  ></ch-combo-box-render>
+                  <script type="module">
+                    const comboBoxColorsModel = [
+                      {
+                        value: "red",
+                        caption: "Red"
+                      },
+                      {
+                        value: "blue",
+                        caption: "Blue"
+                      },
+                      {
+                        value: "green",
+                        caption: "Green"
+                      },
+                      {
+                        value: "yellow",
+                        caption: "Yellow"
+                      },
+                      {
+                        value: "purple",
+                        caption: "Purple"
+                      }
+                    ];
+                    const comboBox = document.getElementById("combo-box");
+                    comboBox.model = comboBoxColorsModel;
+                    comboBox.placeholder = "Option";
+                  </script>
+                </div>
+                <!-- /.article__content -->
+                <p class="article__description">
+                  <a href="./combo-box.html"
+                    >See the combo-box showcase for full documentation.</a
+                  >
+                </p>
               </div>
               <!-- /.article__main -->
             </article>
@@ -199,6 +318,10 @@ const BUTTON_ICON = getIconPath({
     </main>
     <script type="module">
       import { getIconPath } from "./assets/scripts/assets-manager.js";
+
+      // - - - - - - - - - - - - - - -
+      // Button
+      // - - - - - - - - - - - - - - -
       const BUTTON_ICON = getIconPath({
         category: "gemini-tools",
         name: "add-circle",
