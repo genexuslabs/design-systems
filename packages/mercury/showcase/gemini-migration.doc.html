@@ -515,6 +515,10 @@ private favoriteColorsModel: RadioGroupItemModel[] = [
                   <li>Remove all the attributes and values</li>
                   <li>Add the <code>.form-input</code> class.</li>
                   <li>
+                    If the <code>gxg-form-text</code> was displaying an icon,
+                    use the <code>startImgSrc</code> property
+                  </li>
+                  <li>
                     <a
                       href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/edit#ch-edit"
                       target="_blank"
@@ -546,11 +550,22 @@ private favoriteColorsModel: RadioGroupItemModel[] = [
                   >
                   </ch-code>
                   <script>
-                    code = `// use inside <Host>                    
+                    code = `// import before @Component 
+import { getIconPath } from "@genexus/mercury";
+
+// declare inside @Component
+private chEditIcon = getIconPath({
+  category: "gemini-tools",
+  name: "add-circle",
+  colorType: "on-surface"
+});
+
+// use inside <Host>                    
 <ch-edit
   value="Adam Smith"
   class="form-input"
   placeholder="John Smith"
+  startImgSrc={this.chEditIcon}
 ></ch-edit>`;
                   </script>
                 </div>
@@ -559,6 +574,7 @@ private favoriteColorsModel: RadioGroupItemModel[] = [
                     value="Adam Smith"
                     class="form-input"
                     placeholder="John Smith"
+                    id="ch-edit"
                   ></ch-edit>
                 </div>
                 <!-- /.article__content -->
@@ -582,7 +598,7 @@ private favoriteColorsModel: RadioGroupItemModel[] = [
       import { getIconPath } from "./assets/scripts/assets-manager.js";
 
       // - - - - - - - - - - - - - - -
-      // Button
+      // button
       // - - - - - - - - - - - - - - -
       const BUTTON_ICON = getIconPath({
         category: "gemini-tools",
@@ -596,6 +612,17 @@ private favoriteColorsModel: RadioGroupItemModel[] = [
       chImagesOnPrimary.forEach(chImage => {
         chImage.src = BUTTON_ICON;
       });
+
+      // - - - - - - - - - - - - - - -
+      // ch-edit
+      // - - - - - - - - - - - - - - -
+      const CH_EDIT_ICON = getIconPath({
+        category: "gemini-tools",
+        name: "add-circle",
+        colorType: "on-surface"
+      });
+      const chEdit = document.getElementById("ch-edit");
+      chEdit.startImgSrc = CH_EDIT_ICON;
     </script>
   </body>
 </html>
