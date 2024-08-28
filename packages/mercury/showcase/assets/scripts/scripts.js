@@ -7,6 +7,9 @@ const ARTICLE_SELECTOR = ".article[nav]";
 let SIDEBAR_NAV; // A reference to the sidebar nav.
 let CONTAINER_REF;
 let topBarRef = null;
+// code and ch-code
+const ARTICLE_CODE_SELECTOR = ".article__code";
+const CH_CODE_VALUE_LET_NAME = "chCodeValue";
 
 // references
 const HTML = document.querySelector("html");
@@ -410,6 +413,28 @@ const copyToClipBoard = text => {
     });
 };
 
+/**
+ * @description this function sets for every ch-code the value, by getting the
+ */
+
+const extractCodeContent = str => {
+  const match = str.match(/`([^`]*)`/);
+  return match ? match[1] : null;
+};
+const getChCodeValues = () => {
+  document.querySelectorAll(ARTICLE_CODE_SELECTOR).forEach(articleCode => {
+    // Find the script tag inside each articleCode
+    const script = articleCode.querySelector("script");
+    const chCodeElement = articleCode.querySelector("ch-code");
+    const chCodeElementHasId = chCodeElement.getAttribute("id");
+    if (script && chCodeElement && !chCodeElementHasId) {
+      // If chCodeElement has no id, assume that the chCode value is a string inside the script tag.
+      const scriptChCode = extractCodeContent(script.textContent);
+      chCodeElement.value = scriptChCode;
+    }
+  });
+};
+
 document.addEventListener("DOMContentLoaded", function () {
   CONTAINER_REF = document.querySelector(".container");
   includeFavicon();
@@ -423,4 +448,5 @@ document.addEventListener("DOMContentLoaded", function () {
   includeSidebar();
   includeTopBar();
   includeChameleonURL();
+  getChCodeValues();
 });
