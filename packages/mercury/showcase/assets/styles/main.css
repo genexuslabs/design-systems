@@ -368,6 +368,10 @@ Articles
     )
     1;
 }
+.article.no-separator {
+  border-block-end: none;
+  padding-block-end: 0;
+}
 .article:first-of-type {
   padding-block-start: 0;
 }
@@ -468,6 +472,10 @@ Articles
   gap: var(--mer-spacing--lg);
 }
 .article__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 /*====================
@@ -544,7 +552,7 @@ body.ctrl-cmd-pressed .article__pill {
 }
 .code__button--documentation {
   pointer-events: none;
-  padding-inline: 8px;
+  padding-inline: 12px;
 }
 .code__copy-button::before {
   content: "";
