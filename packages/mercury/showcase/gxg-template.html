@@ -16,8 +16,7 @@
       <li>Add the <code>.</code> class.</li>
       <li>
         <a href="" target="_blank"
-          >Specify the control items following the <code>model</code> property
-          type</a
+          >Specify the control properties following chameleon documentation</a
         >
       </li>
     </ol>
@@ -40,8 +39,14 @@
       <ch-code language="tsx" class="code" data-title="after: mercury">
       </ch-code>
       <script>
-        code = `// use inside <Host>
-<gxg-template></gxg-template>`;
+        code = `// model
+private model: = null; 
+
+// use inside <Host>                    
+<ch-
+  class="combo-box"
+  model={this.model}>
+</ch->`;
       </script>
     </div>
     <div class="article__content">
