@@ -130,7 +130,6 @@ const createArticleMain = () => {
 const createArticleContent = () => {
   const articleContent = document.createElement("div");
   articleContent.className = "article__content";
-  articleContent.className = "icons";
   return articleContent;
 };
 const createIconsGrid = () => {
