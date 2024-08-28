@@ -38,6 +38,7 @@
 @import "./icons/button";
 
 // Components
+@import "./components/accordion/accordion-styles";
 @import "./components/checkbox/checkbox-styles";
 @import "./components/code/code-styles";
 @import "./components/combo-box/combo-box-styles";
@@ -45,6 +46,7 @@
 @import "./components/icon/icon-styles";
 @import "./components/form-input/form-input-styles";
 @import "./components/list-box/list-box-styles";
+@import "./components/markdown-viewer/markdown-viewer-styles";
 @import "./components/property-grid/property-grid-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
@@ -52,6 +54,7 @@
 @import "./components/tab/tab-styles";
 @import "./components/tabular-grid/tabular-grid-styles";
 @import "./components/tabular-grid/helpers";
+@import "./components/ticket-list/ticket-list-styles";
 @import "./components/tree-view/tree-view-styles";
 
 @mixin mercury(
@@ -97,9 +100,11 @@
   $layout-classes: true,
   $spacing-classes: true,
   $typography-classes: true,
+  $scrollbar-components: true,
 
   // Components
   $components: true,
+  $accordion: true,
   $checkbox: true,
   $code: true,
   $combo-box: true,
@@ -107,10 +112,12 @@
   $edit: true,
   $icon: true,
   $list-box: true,
+  $markdown-viewer: true,
   $radio-group: true,
   $slider: true,
   $tab: true,
   $tabular-grid: true,
+  $ticket-list: true,
   $tree-view: true
 ) {
   // - - - - - - - - - - - - - - - - - - - -
@@ -212,7 +219,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   //        Other Tokens than Colors
   // - - - - - - - - - - - - - - - - - - - -
-  // Primitive
   @if $tokens and
     ($border or $colors or $elevation or $font or $spacing or $timing)
   {
@@ -234,6 +240,7 @@
         @include semantic-icon();
         @include semantic-item();
         @include semantic-text();
+        @include semantic-heading();
       }
 
       // Elevation Light
@@ -258,17 +265,14 @@
         }
       }
 
-      // Font
       @if $font {
         @include font();
       }
 
-      // Spacing
       @if $spacing {
         @include spacing();
       }
 
-      // Timing
       @if $timing {
         @include timing();
       }
@@ -306,7 +310,6 @@
   //                 Resets
   // - - - - - - - - - - - - - - - - - - - -
   @if $resets {
-    // box-sizing
     @if $box-sizing-reset {
       @include box-sizing();
     }
@@ -325,7 +328,6 @@
       @include other-reset();
     }
 
-    // Typography reset
     @if $typography-reset {
       @include typography-reset();
     }
@@ -338,116 +340,107 @@
   @if $base-classes {
     // Button classes
     @if $button-classes {
-      // Button primary
       @include button-primary();
-
-      // Button secondary
       @include button-secondary();
-
-      // Button tertiary
       @include button-tertiary();
 
       @if $icon-classes {
-        // Button icon only
         @include button-icon-only();
-
-        // Button icon and text
         @include button-icon-and-text();
       }
     }
 
-    // Form control classes
     @if $form-controls-classes {
       @include field();
       @include label();
     }
 
-    // Icon classes
     @if $icon-classes {
       @include icon-size-sm();
       @include icon-size-md();
       @include icon-and-text();
     }
 
-    // Layout classes
     @if $layout-classes {
       @include layout();
       @include control-footer();
     }
 
-    // Spacing classes
     @if $spacing-classes {
       @include spacing-body();
     }
 
-    // Typography classes
     @if $typography-classes {
       @include typography-classes();
     }
+
+    @if $scrollbar-components {
+      @include scrollbar-components();
+    }
   }
 
-  // - - - - - - - - - - - - - - - -  - - -
+  // - - - - - - - - - - - - - - - - - - -
   //               Components
   // - - - - - - - - - - - - - - - - - - -
+  @if $accordion {
+    @include accordion-filled();
+    @include accordion-outlined();
+  }
 
-  // checkbox
   @if $checkbox {
     @include checkbox();
   }
 
-  // code
   @if $code {
     @include code();
   }
 
-  // combo box
   @if $combo-box {
     @include combo-box();
   }
 
-  // dialog
   @if $dialog {
     @include dialog();
   }
 
-  // edit
   @if $edit {
     @include form-input();
   }
 
-  // icon
   @if $icon {
     @include icon();
   }
 
-  // list-box
   @if $list-box {
     @include list-box();
   }
 
-  // radio-group
+  @if $markdown-viewer {
+    @include markdown-viewer();
+  }
+
   @if $radio-group {
     @include radio-group();
   }
 
-  // slider
   @if $slider {
     @include slider();
   }
 
-  // tab
   @if $tab {
     @include tab();
   }
 
-  // tabular grid
   @if $tabular-grid {
     @include tabular-grid();
     @include tabular-grid-cell-layout();
     @include property-grid(); // property-grid extends tabular-grid
   }
 
-  // tree view
+  @if $ticket-list {
+    @include ticket-list();
+  }
+
   @if $tree-view {
     @include tree-view();
   }
@@ -496,9 +489,11 @@
   $layout-classes: false,
   $spacing-classes: false,
   $typography-classes: false,
+  $scrollbar-components: false,
 
   // Components
   $components: false,
+  $accordion: false,
   $checkbox: false,
   $code: false,
   $combo-box: false,
@@ -506,10 +501,12 @@
   $edit: false,
   $icon: false,
   $list-box: false,
+  $markdown-viewer: false,
   $radio-group: false,
   $slider: false,
   $tab: false,
   $tabular-grid: false,
+  $ticket-list: false,
   $tree-view: false
 ) {
   @include mercury(
@@ -555,19 +552,24 @@
     $layout-classes: $layout-classes,
     $spacing-classes: $spacing-classes,
     $typography-classes: $typography-classes,
+    $scrollbar-components: $scrollbar-components,
 
     // Components
     $components: $components,
+    $accordion: $accordion,
     $checkbox: $checkbox,
     $code: $code,
     $combo-box: $combo-box,
     $dialog: $dialog,
     $edit: $edit,
+    $icon: $icon,
     $list-box: $list-box,
+    $markdown-viewer: $markdown-viewer,
     $radio-group: $radio-group,
     $slider: $slider,
     $tab: $tab,
     $tabular-grid: $tabular-grid,
+    $ticket-list: $ticket-list,
     $tree-view: $tree-view
   );
 }

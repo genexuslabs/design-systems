@@ -1,0 +1,185 @@
+@mixin markdown-viewer() {
+  :host {
+    @extend %text-body-2;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Heading
+  // - - - - - - - - - - - - - - - - - - - -
+  h1 {
+    @extend %heading-1;
+    margin-block: var(--spacing--l) var(--spacing--m);
+    padding-block-end: var(--spacing--m);
+  }
+
+  h2 {
+    @extend %heading-2;
+    margin-block: 12px 6px; // It does not exists the --spacing--xm value
+    padding-block-end: 6px; // It does not exists the --spacing--xm value
+  }
+
+  h3 {
+    @extend %heading-3;
+    margin-block: var(--spacing--m) var(--spacing--s);
+    padding-block-end: var(--spacing--s);
+  }
+
+  h4 {
+    @extend %heading-4;
+    margin-block: var(--spacing--s) var(--spacing--xs);
+    padding-block-end: var(--spacing--xs);
+  }
+
+  h5 {
+    @extend %heading-4; // WA to improve visualization
+    margin-block: var(--spacing--s) var(--spacing--xs);
+    padding-block-end: var(--spacing--xs);
+  }
+
+  h6 {
+    @extend %heading-4; // WA to improve visualization
+    margin-block: var(--spacing--s) var(--spacing--xs);
+    padding-block-end: var(--spacing--xs);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    border-block-end: 1px solid var(--body-m__font-color--gray);
+  }
+
+  p,
+  ul,
+  ol,
+  table,
+  ch-code {
+    margin-block: var(--spacing--m);
+  }
+
+  ul,
+  ol {
+    padding-inline-start: var(--spacing--xxl);
+  }
+
+  a {
+    @extend %text-link;
+  }
+
+  blockquote {
+    margin-block: var(--spacing--m);
+    padding-block: var(--spacing--m);
+    padding-inline: calc(var(--spacing--xxl) - 4px) var(--spacing--xxl);
+    border-inline-start: 4px solid var(--colors-foundation__gray--400);
+
+    // First <p> don't add margin-block-start, because the <blockquote> adds it
+    & > p:first-of-type {
+      margin-block-start: 0;
+    }
+
+    // Last <p> don't add margin-block-end, because the <blockquote> adds it
+    & > p:last-of-type {
+      margin-block-end: 0;
+    }
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Table
+  // - - - - - - - - - - - - - - - - - - - -
+  // Table
+  table {
+    display: block;
+    inline-size: max-content;
+    border: 1px solid var(--border-color__mild);
+    border-spacing: 0;
+
+    & > thead > tr {
+      @extend %heading-4;
+      font-weight: unset;
+    }
+  }
+
+  // Cells
+  td {
+    border-block-start: 1px solid var(--border-color__mild);
+  }
+
+  // Header and body cells
+  th,
+  td {
+    padding: var(--spacing--m);
+    border-inline-start: 1px solid var(--border-color__mild);
+  }
+
+  // Remove left border in the first cell of each row
+  tr > td:first-child,
+  tr > th:first-child {
+    border-inline-start: unset;
+  }
+
+  thead > tr,
+  tbody > tr:nth-child(2n) {
+    background-color: var(--colors-foundation__gray--100);
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Code
+  // - - - - - - - - - - - - - - - - - - - -
+  // Multiline code
+  ch-code {
+    // Override inline border-radius
+    border: 1px solid var(--border-color__mild);
+    border-radius: var(--border-radius--m);
+    padding: var(--spacing--l);
+
+    // & > .code-block__header {
+    //   display: grid;
+    //   grid-template-columns: 1fr max-content;
+    //   align-items: center;
+    //   padding-inline: var(--spacing--l);
+    //   padding-block: var(--spacing--m);
+    //   background-color: var(--surface--alternative);
+    // }
+
+    // & > .code-block__content {
+    //   // Override inline padding
+    //   padding: var(--spacing--l);
+    // }
+  }
+
+  @include code($selector: "ch-code");
+
+  // Inline code
+  code {
+    padding-block: var(--spacing--xs);
+    padding-inline: var(--spacing--s);
+
+    background-color: var(
+      --surface--positive
+    ); // color-mix(in srgb, var(--surface--alternative) 70%, var(--colors-foundation__gray--100))
+    border-radius: var(--border-radius--s);
+    font-size: calc(1em - 2px);
+  }
+
+  img {
+    display: inline-block;
+    max-inline-size: 25%;
+  }
+
+  // Don't add margin-block-start in the first element of the markdown
+  :host > :first-child,
+  ch-theme + * {
+    margin-block-start: 0px;
+  }
+
+  // Don't add margin-block-end in the last element of the markdown
+  :host > :last-child {
+    margin-block-end: 0px;
+  }
+}

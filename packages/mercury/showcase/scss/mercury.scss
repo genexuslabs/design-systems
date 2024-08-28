@@ -245,10 +245,9 @@
 }
 
 
-/*----------------------
-Focus
-----------------------*/
-
+// ----------------------
+// Focus
+// ----------------------
 @mixin focus-outline($outline: false) {
   outline: var(--focus__outline-width) var(--focus__outline-style)
     var(--focus__outline-color);
@@ -258,11 +257,14 @@ Focus
   border-color: var(--borders-un-border-color__focused);
 }
 
-/*----------------------
-Scrollbar
-----------------------*/
-
+// ----------------------
+// Scrollbar Styles
+// ----------------------
 @mixin scrollbar-styles() {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb__bg-color)
+    var(--scrollbar-track__bg-color);
+
   //scrollbar
   &::-webkit-scrollbar {
     width: var(--scrollbar__size);
@@ -281,20 +283,26 @@ Scrollbar
     border-radius: var(--scrollbar-thumb__border-radius);
   }
 
-  // thumb:hover
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: var(--scrollbar-thumb__bg-color--hover);
-  }
-
   // corner
   &::-webkit-scrollbar-corner {
     background: var(--scrollbar-corner__bg);
   }
 }
 
-/*----------------------
-Control
-----------------------*/
+// ----------------------
+// Scrollbar Components
+// ----------------------
+@mixin scrollbar-components() {
+  :host(.ch-scrollable),
+  .ch-scrollable,
+  .scrollable {
+    @include scrollbar-styles();
+  }
+}
+
+// ----------------------
+// Control
+// ----------------------
 
 // Colors
 @mixin control-colors-enabled() {
@@ -368,9 +376,9 @@ Control
   font-style: var(--control-placeholder__font-style);
 }
 
-/*----------------------
-Control Tiny
-----------------------*/
+// ----------------------
+// Control Tiny
+// ----------------------
 
 @mixin control-tiny-size() {
   block-size: var(--control-tiny__size);
@@ -392,9 +400,9 @@ Control Tiny
   --control__border-color: var(--control__border-color--error);
 }
 
-/*----------------------
-Items Container
-----------------------*/
+// ----------------------
+// Items Container
+// ----------------------
 
 @mixin items-container-border() {
   border-style: var(--items-container__border-style);
@@ -427,9 +435,9 @@ Items Container
   background-color: var(--items-container-separator__bg-color);
 }
 
-/*---------------------------------
-Single Item (Every item except grid)
-----------------------------------*/
+// ------------------------------------
+// Single Item (Every item except grid)
+// ------------------------------------
 
 @mixin item-colors-enabled() {
   background-color: var(--item__bg-color);
@@ -503,9 +511,9 @@ Single Item (Every item except grid)
   font-weight: var(--item-header__font-weight);
 }
 
-/*---------------------------------
-Grid Item
-----------------------------------*/
+// ---------------------------------
+// Grid Item
+// ---------------------------------
 
 // Row
 @mixin grid-row-colors-enabled() {
@@ -542,8 +550,8 @@ Grid Item
   // we should redefine '--grid-cell__padding-inline' here because when a control
   // is inside a a tabular-grid-cell the cell padding-inline value is required to
   // be applied on the control padding-inline.
-  padding-block: 0 !important; //WA to force padding 0
-  padding-inline: 0 !important; //WA to force padding 0
+  padding-block: 0;
+  padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
   padding-block-start: var(--mer-spacing--2xs);
@@ -560,9 +568,9 @@ Grid Item
   --grid-rowset-legend__bg-color: var(--mer-color__elevation--02);
 }
 
-/*----------------------
-Tab Caption (Button)
-----------------------*/
+// ----------------------
+// Tab Caption (Button)
+// ----------------------
 @mixin tab-button-border-block() {
   border-block: var(--tab-caption__border-width)
     var(--tab-caption__border-style) var(--tab-caption__border-color);
@@ -621,9 +629,9 @@ Tab Caption (Button)
   padding-inline: var(--tab-caption__padding-inline);
 }
 
-/*----------------------
-Label
-----------------------*/
+// ----------------------
+// Label
+// ----------------------
 
 @mixin label-font() {
   color: var(--label__color);
@@ -644,9 +652,9 @@ Label
   --label__color: var(--label__color--disabled);
 }
 
-/*----------------------
-Window
-----------------------*/
+// ----------------------
+// Window
+// ----------------------
 
 // TODO: This styles should better be applied on the ch-window ?
 %window-styles {
@@ -657,18 +665,18 @@ Window
   box-shadow: var(--mer-box-shadow--01);
 }
 
-/*----------------------
-Dropdown
-----------------------*/
+// ----------------------
+// Dropdown
+// ----------------------
 
 @mixin dropdown-styles() {
   box-shadow: var(--mer-box-shadow--01);
   border-radius: var(--mer-border__radius--sm);
 }
 
-/*----------------------
-Dialog Footer
-----------------------*/
+// ----------------------
+// Dialog Footer
+// ----------------------
 
 // Defined here to be used on /components/dialog as well as to replicate
 // dialog footer styles on genexus-ide-ui components
@@ -698,9 +706,9 @@ Dialog Footer
   }
 }
 
-/*----------------------
-Body Spacing
-----------------------*/
+// ----------------------
+// Body Spacing
+// ----------------------
 
 // This custom properties define the block and inline spacing of containers.
 // i.e.: dialog, layout, etc..
@@ -1125,9 +1133,9 @@ Body Spacing
 }
 
 @mixin semantic-control() {
-  /*-------------------------------------------------------------
-  Inline Controls should have the same height to look good inline
-  --------------------------------------------------------------*/
+  // ---------------------------------------------------------------
+  // Inline Controls should have the same height to look good inline
+  // ---------------------------------------------------------------
 
   // - - - - - - - Colors - - - - - - -
 
@@ -1190,9 +1198,9 @@ Body Spacing
   );
   --control-placeholder__font-style: italic;
 
-  /*-------------------------------------------------------------
-  Tiny controls (ie.: checkbox, radio-button)
-  --------------------------------------------------------------*/
+  // -------------------------------------------------------------
+  // Tiny controls (ie.: checkbox, radio-button)
+  // -------------------------------------------------------------
 
   // border colors are the same from "--control__***" tokens
 
@@ -1203,9 +1211,9 @@ Body Spacing
   --control-tiny__border-radius-rounded: 50%;
   --control-tiny-option__color: var(--control__border-color);
 
-  /*-------------------------------------------------------------
-  Controls Label
-  --------------------------------------------------------------*/
+  // -------------------------------------------------------------
+  // Controls Label
+  // -------------------------------------------------------------
 
   // fixed values
   --label__font-size: var(--mer-font__size--3xs);
@@ -1232,9 +1240,9 @@ Body Spacing
   // error
   --label__color--error: var(--mer-text__neutral);
 
-  /*-------------------------------------------------------------
-  Controls Container
-  --------------------------------------------------------------*/
+  // -------------------------------------------------------------
+  // Controls Container
+  // -------------------------------------------------------------
 
   --controls__container-row-gap: var(--mer-spacing--md);
   --controls__group-gap--block: var(--mer-spacing--sm);
@@ -1447,9 +1455,9 @@ Body Spacing
 }
 
 @mixin semantic-general() {
-  /*----------------------
-  Body
-  ----------------------*/
+  // ----------------------
+  // Body
+  // ----------------------
   --mer-body__bg-color: var(--mer-color__surface);
   --mer-body__color: var(--mer-text__on-surface);
   --mer-body__font-size: var(--mer-font__size--3xs);
@@ -1458,37 +1466,37 @@ Body Spacing
   --mer-body__line-height: var(--mer-line-height--spaced);
   --mer-body__margin-block: var(--mer-spacing--sm);
 
-  /*----------------------
-  System
-  ----------------------*/
+  // ----------------------
+  // System
+  // ----------------------
   // System tokens are the most basic kind, used when there is not a more specific categorization.
   --mer-system__border-width: var(--mer-border__width--sm);
   --mer-system__border-style: solid;
   --mer-system__border-color: var(--mer-color__neutral-gray--500);
 
-  /*----------------------
-  Heading
-  ----------------------*/
+  // ----------------------
+  // Heading
+  // ----------------------
   --mer-heading__color: var(--mer-color__neutral-gray--100);
 
-  /*----------------------
-  Scrollbar
-  ----------------------*/
+  // ----------------------
+  // Scrollbar
+  // ----------------------
   // scrollbar
-  --scrollbar__size: var(--mer-spacing--xs);
+  --scrollbar__size: var(--mer-spacing--2xs);
   // scrollbar-track
-  --scrollbar-track__bg-color: var(--mer-color__elevation--03);
+  --scrollbar-track__bg-color: var(--mer-color__neutral-gray--650);
+
   --scrollbar-track__border-radius: var(--mer-spacing--xs);
   // scrollbar-thumb
-  --scrollbar-thumb__bg-color: var(--mer-color__elevation--04);
-  --scrollbar-thumb__bg-color--hover: #42474c;
+  --scrollbar-thumb__bg-color: var(--mer-color__neutral-gray--550);
   --scrollbar-thumb__border-radius: var(--mer-spacing--xs);
   // scrollbar-thumb
   --scrollbar-corner__bg: transparent;
 
-  /*----------------------
-  Icon Size
-  ----------------------*/
+  // ----------------------
+  // Icon Size
+  // ----------------------
   // box (shell)
   --mer-icon__box--sm: var(--mer-spacing--sm);
   --mer-icon__box--md: 14px; // no spacing token exists for 14px.
@@ -1496,9 +1504,9 @@ Body Spacing
   --mer-icon__size--sm: 100%;
   --mer-icon__size--md: 100%;
 
-  /*----------------------------------------------------------
-  Form Input (form-input-*** background-position-x RTL support)
-  -----------------------------------------------------------*/
+  // ------------------------------------------------------------
+  // Form Input (form-input-*** background-position-x RTL support)
+  // ------------------------------------------------------------
   --mer-form-input__padding-inline: var(--mer-spacing--xs);
   --mer-form-input__bg-position--x-value: var(--mer-form-input__padding-inline);
   --mer-form-input__bg-position--x: var(--mer-form-input__bg-position--x-value);
@@ -1521,9 +1529,9 @@ Body Spacing
   );
   --mer-checkbox__option-checked-image: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='currentColor' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/></svg>");
 
-  /*----------------------
-  Window
-  ----------------------*/
+  // ----------------------
+  // Window
+  // ----------------------
   // TODO: This styles should better be applied on the ch-window.
   --window__border: var(--mer-border__width--sm) solid
     var(--mer-color__elevation--04);
@@ -1533,9 +1541,9 @@ Body Spacing
   --window__gap: var(--mer-spacing--xs);
   --window__box-shadow: var(--mer-box-shadow--01);
 
-  /*----------------------
-  Focus
-  ----------------------*/
+  // ----------------------
+  // Focus
+  // ----------------------
   --focus__outline-width: var(--mer-border__width--sm);
   --focus__outline-style: solid;
   --focus__outline-color: var(--mer-color__primary-blue--200);
@@ -1567,6 +1575,7 @@ Body Spacing
 
 @mixin semantic-heading() {
   --mer-heading__gray--light: var(--mer-color__neutral-gray--200);
+  --mer-header__background-color: var(--mer-color__neutral-gray--700);
 }
 
 
@@ -1650,10 +1659,9 @@ Body Spacing
 }
 
 
-/*----------------------
-Focus
-----------------------*/
-
+// ----------------------
+// Focus
+// ----------------------
 @mixin focus-outline($outline: false) {
   outline: var(--focus__outline-width) var(--focus__outline-style)
     var(--focus__outline-color);
@@ -1663,11 +1671,14 @@ Focus
   border-color: var(--borders-un-border-color__focused);
 }
 
-/*----------------------
-Scrollbar
-----------------------*/
-
+// ----------------------
+// Scrollbar Styles
+// ----------------------
 @mixin scrollbar-styles() {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb__bg-color)
+    var(--scrollbar-track__bg-color);
+
   //scrollbar
   &::-webkit-scrollbar {
     width: var(--scrollbar__size);
@@ -1686,20 +1697,26 @@ Scrollbar
     border-radius: var(--scrollbar-thumb__border-radius);
   }
 
-  // thumb:hover
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: var(--scrollbar-thumb__bg-color--hover);
-  }
-
   // corner
   &::-webkit-scrollbar-corner {
     background: var(--scrollbar-corner__bg);
   }
 }
 
-/*----------------------
-Control
-----------------------*/
+// ----------------------
+// Scrollbar Components
+// ----------------------
+@mixin scrollbar-components() {
+  :host(.ch-scrollable),
+  .ch-scrollable,
+  .scrollable {
+    @include scrollbar-styles();
+  }
+}
+
+// ----------------------
+// Control
+// ----------------------
 
 // Colors
 @mixin control-colors-enabled() {
@@ -1773,9 +1790,9 @@ Control
   font-style: var(--control-placeholder__font-style);
 }
 
-/*----------------------
-Control Tiny
-----------------------*/
+// ----------------------
+// Control Tiny
+// ----------------------
 
 @mixin control-tiny-size() {
   block-size: var(--control-tiny__size);
@@ -1797,9 +1814,9 @@ Control Tiny
   --control__border-color: var(--control__border-color--error);
 }
 
-/*----------------------
-Items Container
-----------------------*/
+// ----------------------
+// Items Container
+// ----------------------
 
 @mixin items-container-border() {
   border-style: var(--items-container__border-style);
@@ -1832,9 +1849,9 @@ Items Container
   background-color: var(--items-container-separator__bg-color);
 }
 
-/*---------------------------------
-Single Item (Every item except grid)
-----------------------------------*/
+// ------------------------------------
+// Single Item (Every item except grid)
+// ------------------------------------
 
 @mixin item-colors-enabled() {
   background-color: var(--item__bg-color);
@@ -1908,9 +1925,9 @@ Single Item (Every item except grid)
   font-weight: var(--item-header__font-weight);
 }
 
-/*---------------------------------
-Grid Item
-----------------------------------*/
+// ---------------------------------
+// Grid Item
+// ---------------------------------
 
 // Row
 @mixin grid-row-colors-enabled() {
@@ -1947,8 +1964,8 @@ Grid Item
   // we should redefine '--grid-cell__padding-inline' here because when a control
   // is inside a a tabular-grid-cell the cell padding-inline value is required to
   // be applied on the control padding-inline.
-  padding-block: 0 !important; //WA to force padding 0
-  padding-inline: 0 !important; //WA to force padding 0
+  padding-block: 0;
+  padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
   padding-block-start: var(--mer-spacing--2xs);
@@ -1965,9 +1982,9 @@ Grid Item
   --grid-rowset-legend__bg-color: var(--mer-color__elevation--02);
 }
 
-/*----------------------
-Tab Caption (Button)
-----------------------*/
+// ----------------------
+// Tab Caption (Button)
+// ----------------------
 @mixin tab-button-border-block() {
   border-block: var(--tab-caption__border-width)
     var(--tab-caption__border-style) var(--tab-caption__border-color);
@@ -2026,9 +2043,9 @@ Tab Caption (Button)
   padding-inline: var(--tab-caption__padding-inline);
 }
 
-/*----------------------
-Label
-----------------------*/
+// ----------------------
+// Label
+// ----------------------
 
 @mixin label-font() {
   color: var(--label__color);
@@ -2049,9 +2066,9 @@ Label
   --label__color: var(--label__color--disabled);
 }
 
-/*----------------------
-Window
-----------------------*/
+// ----------------------
+// Window
+// ----------------------
 
 // TODO: This styles should better be applied on the ch-window ?
 %window-styles {
@@ -2062,18 +2079,18 @@ Window
   box-shadow: var(--mer-box-shadow--01);
 }
 
-/*----------------------
-Dropdown
-----------------------*/
+// ----------------------
+// Dropdown
+// ----------------------
 
 @mixin dropdown-styles() {
   box-shadow: var(--mer-box-shadow--01);
   border-radius: var(--mer-border__radius--sm);
 }
 
-/*----------------------
-Dialog Footer
-----------------------*/
+// ----------------------
+// Dialog Footer
+// ----------------------
 
 // Defined here to be used on /components/dialog as well as to replicate
 // dialog footer styles on genexus-ide-ui components
@@ -2103,9 +2120,9 @@ Dialog Footer
   }
 }
 
-/*----------------------
-Body Spacing
-----------------------*/
+// ----------------------
+// Body Spacing
+// ----------------------
 
 // This custom properties define the block and inline spacing of containers.
 // i.e.: dialog, layout, etc..
@@ -2758,9 +2775,9 @@ Body Spacing
 }
 
 
-/*----------------------
-Heading
-----------------------*/
+// ----------------------
+// Heading
+// ----------------------
 
 %heading {
   &-base {
@@ -2819,6 +2836,10 @@ Heading
   }
 }
 
+%text-link {
+  text-decoration: underline;
+}
+
 // body
 %text-body {
   @include body-tokens();
@@ -2826,7 +2847,6 @@ Heading
   font-family: var(--text-body__font-family);
   font-weight: var(--text-body__font-weight);
   line-height: var(--text-body__line-height);
-  margin-block: var(--text-body__margin-block);
 }
 
 // tab
@@ -2913,9 +2933,9 @@ Heading
   }
 }
 
-/*-------------------------------------
-Text States e.g.: for the property-grid
--------------------------------------*/
+// ---------------------------------------
+// Text States e.g.: for the property-grid
+// ---------------------------------------
 
 %text-edited {
   font-weight: var(--mer-font__weight--semi-bold);
@@ -3031,6 +3051,98 @@ Text States e.g.: for the property-grid
 
 
 // Components
+%accordion {
+  --ch-accordion__header-image-size: var(--mer-icon__box--sm);
+  --ch-accordion__chevron-size: var(--mer-icon__box--sm);
+
+  --ch-accordion-expand-collapse-duration: var(--mer-timing--fast);
+  --ch-accordion-expand-collapse-timing-function: ease-in-out;
+
+  gap: var(--mer-spacing--2xs);
+}
+
+%accordion-header {
+  @extend %text-body;
+  padding: var(--mer-spacing--sm);
+  gap: var(--mer-spacing--sm);
+
+  &--focus-visible {
+    outline: 1px solid;
+  }
+}
+
+%accordion-panel {
+  border-radius: var(--mer-border__radius--sm);
+  background-color: var(--mer-color__elevation--01);
+
+  &-outlined {
+    border: 1px solid var(--mer-border-color__on-surface);
+    border-radius: var(--mer-border__radius--sm);
+  }
+}
+
+%accordion-section {
+  // "1px" is used to improve the display of the outline when :focus-visible
+  margin-block: 1px var(--mer-spacing--sm);
+  margin-inline: var(--mer-spacing--sm);
+  border: 1px solid var(--mer-border-color__on-elevation--01);
+  border-radius: var(--mer-border__radius--sm);
+}
+
+@mixin accordion-filled(
+  $accordion-selector: ".accordion-filled",
+  $panel-selector: ".accordion-filled::part(panel)",
+  $header-selector: ".accordion-filled::part(header)",
+  $section-selector: ".accordion-filled::part(section)"
+) {
+  #{$accordion-selector} {
+    @extend %accordion;
+  }
+
+  #{$panel-selector} {
+    @extend %accordion-panel;
+  }
+
+  #{$header-selector} {
+    @extend %accordion-header;
+
+    &:focus-visible {
+      @extend %accordion-header--focus-visible;
+    }
+  }
+
+  #{$section-selector} {
+    @extend %accordion-section;
+  }
+}
+
+@mixin accordion-outlined(
+  $accordion-selector: ".accordion-outlined",
+  $panel-selector: ".accordion-outlined::part(panel)",
+  $header-selector: ".accordion-outlined::part(header)",
+  $section-selector: ".accordion-outlined::part(section)"
+) {
+  #{$accordion-selector} {
+    @extend %accordion;
+  }
+
+  #{$panel-selector} {
+    @extend %accordion-panel-outlined;
+  }
+
+  #{$header-selector} {
+    @extend %accordion-header;
+
+    &:focus-visible {
+      @extend %accordion-header--focus-visible;
+    }
+  }
+
+  #{$section-selector} {
+    @extend %accordion-section;
+  }
+}
+
 %checkbox {
   --ch-checkbox__container-size: var(--control-tiny__size);
   --ch-checkbox__option-size: calc(var(--control-tiny__size) / 2);
@@ -3219,141 +3331,65 @@ Text States e.g.: for the property-grid
   --code__color-green: var(--mer-color__message-green--200);
   --code__bg-color: var(--mer-color__neutral-gray--800);
   --code__border: var(--mer-border__width--sm) solid
-    var(--mer-color__elevation--01);
+    var(--mer-color__elevation--03);
   --code__border-radius: var(--mer-border__radius--sm);
   --code__padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
+
+  --ch-code__doctag: var(--code__color-blue);
+  --ch-code__keyword: var(--code__color-blue);
+  --ch-code__meta__keyword: var(--code__color-blue);
+  --ch-code__template-tag: var(--code__color-blue);
+  --ch-code__template-variable: var(--code__color-blue);
+  --ch-code__type: var(--code__color-blue);
+  --ch-code__variable-language: var(--code__color-blue);
+
+  --ch-code__title: var(--code__color-base);
+  --ch-code__title-class: var(--code__color-base);
+  --ch-code__title-class-inherited: var(--code__color-base);
+  --ch-code__title-function: var(--code__color-base);
+
+  --ch-code__attr: var(--code__color-blue);
+  --ch-code__attribute: var(--code__color-blue);
+  --ch-code__literal: var(--code__color-blue);
+  --ch-code__meta: var(--code__color-blue);
+  --ch-code__number: var(--code__color-blue);
+  --ch-code__operator: var(--code__color-blue);
+  --ch-code__variable: var(--code__color-blue);
+  --ch-code__selector-attr: var(--code__color-blue);
+  --ch-code__selector-class: var(--code__color-blue);
+  --ch-code__selector-id: var(--code__color-blue);
+
+  --ch-code__regexp: var(--code__color-green);
+  --ch-code__string: var(--code__color-green);
+  --ch-code__meta__string: var(--code__color-green);
+
+  --ch-code__built-in: var(--code__color-green);
+  --ch-code__symbol: #e36209;
+
+  --ch-code__comment: var(--code__color-green);
+  --ch-code__code: var(--code__color-green);
+  --ch-code__formula: var(--code__color-green);
+
+  --ch-code__name: var(--code__color-light-blue);
+  --ch-code__quote: var(--code__color-light-blue);
+  --ch-code__selector-tag: var(--code__color-light-blue);
+  --ch-code__selector-pseudo: var(--code__color-light-blue);
+
+  --ch-code__subst: #24292e;
 }
 
 
 @mixin code($selector: ".code") {
   #{$selector} {
-    // reset
-    pre {
-      margin: 0;
-      font-size: 13px;
-      line-height: 1.55em;
-    }
-    /* begin of WA */
-    overflow: auto;
-    pre {
-      overflow: auto;
-      padding: var(--code__padding);
-      @include scrollbar-styles();
-    }
-    // prevent text wrap
-    /* end of WA */
-
+    @include code-tokens();
+    @include scrollbar-styles();
+    padding: var(--code__padding);
     background-color: var(--code__bg-color);
     border: var(--code__border);
     border-radius: var(--code__border-radius);
-
-    @include code-tokens();
-    .hljs-doctag,
-    .hljs-keyword,
-    .hljs-meta .hljs-keyword,
-    .hljs-template-tag,
-    .hljs-template-variable,
-    .hljs-type,
-    .hljs-variable.language_ {
-      /* prettylights-syntax-keyword */
-      color: var(--code__color-blue);
-    }
-
-    .hljs-title,
-    .hljs-title.class_,
-    .hljs-title.class_.inherited__,
-    .hljs-title.function_ {
-      color: var(--code__color-base);
-    }
-
-    .hljs-attr,
-    .hljs-attribute,
-    .hljs-literal,
-    .hljs-meta,
-    .hljs-number,
-    .hljs-operator,
-    .hljs-variable,
-    .hljs-selector-attr,
-    .hljs-selector-class,
-    .hljs-selector-id {
-      color: var(--code__color-blue);
-    }
-
-    .hljs-regexp,
-    .hljs-string,
-    .hljs-meta .hljs-string {
-      color: var(
-        --code__color-green
-      ); /* DARK: color-mix(in srgb, var(--colors-foundation-un-color__red--300) 60%, #000) */
-    }
-
-    .hljs-built_in,
-    .hljs-symbol {
-      /* prettylights-syntax-variable */
-      color: #e36209;
-    }
-
-    .hljs-comment,
-    .hljs-code,
-    .hljs-formula {
-      color: var(--code__color-green);
-    }
-
-    .hljs-name,
-    .hljs-quote,
-    .hljs-selector-tag,
-    .hljs-selector-pseudo {
-      color: var(--code__color-light-blue);
-    }
-
-    .hljs-subst {
-      /* prettylights-syntax-storage-modifier-import */
-      color: #24292e;
-    }
-
-    .hljs-section {
-      /* prettylights-syntax-markup-heading */
-      color: #005cc5;
-      font-weight: bold;
-    }
-
-    .hljs-bullet {
-      /* prettylights-syntax-markup-list */
-      color: #735c0f;
-    }
-
-    .hljs-emphasis {
-      /* prettylights-syntax-markup-italic */
-      color: #24292e;
-      font-style: italic;
-    }
-
-    .hljs-strong {
-      /* prettylights-syntax-markup-bold */
-      color: #24292e;
-      font-weight: bold;
-    }
-
-    .hljs-addition {
-      /* prettylights-syntax-markup-inserted */
-      color: #22863a;
-      background-color: #f0fff4;
-    }
-
-    .hljs-deletion {
-      /* prettylights-syntax-markup-deleted */
-      color: #b31d28;
-      background-color: #ffeef0;
-    }
-
-    .hljs-char.escape_,
-    .hljs-link,
-    .hljs-params,
-    .hljs-property,
-    .hljs-punctuation,
-    .hljs-tag {
-      /* purposely ignored */
-    }
+    font-size: 13px;
+    line-height: 1.55em;
+    overflow: auto;
   }
 }
 
@@ -3516,10 +3552,9 @@ Text States e.g.: for the property-grid
 }
 
 
-/*----------------------
-Focus
-----------------------*/
-
+// ----------------------
+// Focus
+// ----------------------
 @mixin focus-outline($outline: false) {
   outline: var(--focus__outline-width) var(--focus__outline-style)
     var(--focus__outline-color);
@@ -3529,11 +3564,14 @@ Focus
   border-color: var(--borders-un-border-color__focused);
 }
 
-/*----------------------
-Scrollbar
-----------------------*/
-
+// ----------------------
+// Scrollbar Styles
+// ----------------------
 @mixin scrollbar-styles() {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb__bg-color)
+    var(--scrollbar-track__bg-color);
+
   //scrollbar
   &::-webkit-scrollbar {
     width: var(--scrollbar__size);
@@ -3552,20 +3590,26 @@ Scrollbar
     border-radius: var(--scrollbar-thumb__border-radius);
   }
 
-  // thumb:hover
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: var(--scrollbar-thumb__bg-color--hover);
-  }
-
   // corner
   &::-webkit-scrollbar-corner {
     background: var(--scrollbar-corner__bg);
   }
 }
 
-/*----------------------
-Control
-----------------------*/
+// ----------------------
+// Scrollbar Components
+// ----------------------
+@mixin scrollbar-components() {
+  :host(.ch-scrollable),
+  .ch-scrollable,
+  .scrollable {
+    @include scrollbar-styles();
+  }
+}
+
+// ----------------------
+// Control
+// ----------------------
 
 // Colors
 @mixin control-colors-enabled() {
@@ -3639,9 +3683,9 @@ Control
   font-style: var(--control-placeholder__font-style);
 }
 
-/*----------------------
-Control Tiny
-----------------------*/
+// ----------------------
+// Control Tiny
+// ----------------------
 
 @mixin control-tiny-size() {
   block-size: var(--control-tiny__size);
@@ -3663,9 +3707,9 @@ Control Tiny
   --control__border-color: var(--control__border-color--error);
 }
 
-/*----------------------
-Items Container
-----------------------*/
+// ----------------------
+// Items Container
+// ----------------------
 
 @mixin items-container-border() {
   border-style: var(--items-container__border-style);
@@ -3698,9 +3742,9 @@ Items Container
   background-color: var(--items-container-separator__bg-color);
 }
 
-/*---------------------------------
-Single Item (Every item except grid)
-----------------------------------*/
+// ------------------------------------
+// Single Item (Every item except grid)
+// ------------------------------------
 
 @mixin item-colors-enabled() {
   background-color: var(--item__bg-color);
@@ -3774,9 +3818,9 @@ Single Item (Every item except grid)
   font-weight: var(--item-header__font-weight);
 }
 
-/*---------------------------------
-Grid Item
-----------------------------------*/
+// ---------------------------------
+// Grid Item
+// ---------------------------------
 
 // Row
 @mixin grid-row-colors-enabled() {
@@ -3813,8 +3857,8 @@ Grid Item
   // we should redefine '--grid-cell__padding-inline' here because when a control
   // is inside a a tabular-grid-cell the cell padding-inline value is required to
   // be applied on the control padding-inline.
-  padding-block: 0 !important; //WA to force padding 0
-  padding-inline: 0 !important; //WA to force padding 0
+  padding-block: 0;
+  padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
   padding-block-start: var(--mer-spacing--2xs);
@@ -3831,9 +3875,9 @@ Grid Item
   --grid-rowset-legend__bg-color: var(--mer-color__elevation--02);
 }
 
-/*----------------------
-Tab Caption (Button)
-----------------------*/
+// ----------------------
+// Tab Caption (Button)
+// ----------------------
 @mixin tab-button-border-block() {
   border-block: var(--tab-caption__border-width)
     var(--tab-caption__border-style) var(--tab-caption__border-color);
@@ -3892,9 +3936,9 @@ Tab Caption (Button)
   padding-inline: var(--tab-caption__padding-inline);
 }
 
-/*----------------------
-Label
-----------------------*/
+// ----------------------
+// Label
+// ----------------------
 
 @mixin label-font() {
   color: var(--label__color);
@@ -3915,9 +3959,9 @@ Label
   --label__color: var(--label__color--disabled);
 }
 
-/*----------------------
-Window
-----------------------*/
+// ----------------------
+// Window
+// ----------------------
 
 // TODO: This styles should better be applied on the ch-window ?
 %window-styles {
@@ -3928,18 +3972,18 @@ Window
   box-shadow: var(--mer-box-shadow--01);
 }
 
-/*----------------------
-Dropdown
-----------------------*/
+// ----------------------
+// Dropdown
+// ----------------------
 
 @mixin dropdown-styles() {
   box-shadow: var(--mer-box-shadow--01);
   border-radius: var(--mer-border__radius--sm);
 }
 
-/*----------------------
-Dialog Footer
-----------------------*/
+// ----------------------
+// Dialog Footer
+// ----------------------
 
 // Defined here to be used on /components/dialog as well as to replicate
 // dialog footer styles on genexus-ide-ui components
@@ -3969,9 +4013,9 @@ Dialog Footer
   }
 }
 
-/*----------------------
-Body Spacing
-----------------------*/
+// ----------------------
+// Body Spacing
+// ----------------------
 
 // This custom properties define the block and inline spacing of containers.
 // i.e.: dialog, layout, etc..
@@ -4238,9 +4282,9 @@ Body Spacing
     @extend %control-footer--with-border;
   }
 
-  /*------------------------------
-  Edges (For dragging)
-  -------------------------------*/
+  // ------------------------------
+  // Edges (For dragging)
+  // ------------------------------
   &__edge {
     $edge-border-width: var(--mer-border__width--lg);
     $edge-border-style: solid;
@@ -4345,9 +4389,9 @@ Body Spacing
     @extend %dialog__footer;
   }
 
-  /*------------------------------
-  Edges (For dragging)
-  -------------------------------*/
+  // ------------------------------
+  // Edges (For dragging)
+  // ------------------------------
   #{$edge-selector} {
     @extend %dialog__edge;
     &:hover {
@@ -4712,6 +4756,338 @@ Body Spacing
   }
 }
 
+@mixin markdown-viewer() {
+  :host {
+    @extend %text-body;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Heading
+  // - - - - - - - - - - - - - - - - - - - -
+  h1 {
+    @extend %heading-1;
+    margin-block: var(--mer-spacing--md) var(--mer-spacing--xs);
+    padding-block-end: var(--mer-spacing--xs);
+  }
+
+  h2 {
+    @extend %heading-2;
+    margin-block: var(--mer-spacing--sm) 6px; // It does not exists the --spacing--xm value
+    padding-block-end: 6px; // It does not exists the --spacing--xm value
+  }
+
+  h3 {
+    @extend %heading-3;
+    margin-block: var(--mer-spacing--xs) var(--mer-spacing--2xs);
+    padding-block-end: var(--mer-spacing--2xs);
+  }
+
+  h4 {
+    @extend %heading-4;
+    margin-block: var(--mer-spacing--2xs) var(--mer-spacing--3xs);
+    padding-block-end: var(--mer-spacing--3xs);
+  }
+
+  h5 {
+    @extend %heading-5;
+    margin-block: var(--mer-spacing--2xs) var(--mer-spacing--3xs);
+    padding-block-end: var(--mer-spacing--3xs);
+  }
+
+  h6 {
+    @extend %heading-6;
+    margin-block: var(--mer-spacing--2xs) var(--mer-spacing--3xs);
+    padding-block-end: var(--mer-spacing--3xs);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    border-block-end: 1px solid var(--mer-border-color__on-surface);
+  }
+
+  p,
+  ul,
+  ol,
+  table,
+  ch-code {
+    margin-block: var(--mer-spacing--xs);
+  }
+
+  ul,
+  ol {
+    padding-inline-start: var(--mer-spacing--xl);
+  }
+
+  // TODO: Add hyperlink styles
+  a {
+    @extend %text-link;
+  }
+
+  blockquote {
+    margin-block: var(--mer-spacing--xs);
+    padding-block: var(--mer-spacing--xs);
+    padding-inline: calc(var(--mer-spacing--xl) - 4px) var(--mer-spacing--xl);
+    border-inline-start: 4px solid var(--mer-color__primary-blue--400);
+
+    // First <p> don't add margin-block-start, because the <blockquote> adds it
+    & > p:first-of-type {
+      margin-block-start: 0;
+    }
+
+    // Last <p> don't add margin-block-end, because the <blockquote> adds it
+    & > p:last-of-type {
+      margin-block-end: 0;
+    }
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Table
+  // - - - - - - - - - - - - - - - - - - - -
+  // Table
+  table {
+    display: block;
+    inline-size: max-content;
+    border: 1px solid var(--mer-border-color__on-surface);
+    border-spacing: 0;
+
+    & > thead > tr {
+      @extend %heading-4;
+      font-weight: unset;
+    }
+  }
+
+  // Cells
+  td {
+    border-block-start: 1px solid var(--mer-border-color__on-surface);
+  }
+
+  // Header and body cells
+  th,
+  td {
+    padding: var(--mer-spacing--xs);
+    border-inline-start: 1px solid var(--mer-border-color__on-surface);
+  }
+
+  // Remove left border in the first cell of each row
+  tr > td:first-child,
+  tr > th:first-child {
+    border-inline-start: unset;
+  }
+
+  thead > tr,
+  tbody > tr:nth-child(2n) {
+    background-color: var(--mer-color__neutral-gray--700);
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Code
+  // - - - - - - - - - - - - - - - - - - - -
+  // Multiline code
+  ch-code {
+    // Override inline border-radius
+    border: 1px solid var(--mer-border-color__on-surface);
+    border-radius: 4px;
+    padding: var(--mer-spacing--md);
+
+    // & > .code-block__header {
+    //   display: grid;
+    //   grid-template-columns: 1fr max-content;
+    //   align-items: center;
+    //   padding-inline: var(--mer-spacing--md);
+    //   padding-block: var(--mer-spacing--xs);
+    //   background-color: var(--surface--alternative);
+    // }
+
+    // & > .code-block__content {
+    //   // Override inline padding
+    //
+    // }
+  }
+
+  @include code($selector: "ch-code");
+
+  // Inline code
+  code {
+    padding-block: var(--mer-spacing--3xs);
+    padding-inline: var(--mer-spacing--2xs);
+    background-color: var(--mer-elevation__bg-color--01);
+    border-radius: 2px;
+    font-size: calc(1em - 2px);
+  }
+
+  img {
+    display: inline-block;
+    max-inline-size: 25%;
+  }
+
+  // Don't add margin-block-start in the first element of the markdown
+  :host > :first-child,
+  ch-theme + * {
+    margin-block-start: 0px;
+  }
+
+  // Don't add margin-block-end in the last element of the markdown
+  :host > :last-child {
+    margin-block-end: 0px;
+  }
+}
+
+// node type
+@mixin cell-node-type-text() {
+  @include grid-cell-padding-inline-block();
+}
+@mixin cell-node-type-element() {
+  @include control-remove-border();
+  @include grid-cell-remove-padding();
+  --control__padding-inline: var(--grid-cell__padding-inline);
+  // to stretch the control
+  display: grid;
+  align-items: stretch;
+  justify-content: stretch;
+}
+@mixin cell-node-type-element--hover() {
+  outline: var(--focus__outline-width) var(--focus__outline-style)
+    var(--control__border-color--hover);
+  outline-offset: var(--focus__outline-offset);
+}
+// cell alignment block
+@mixin cell-alignment-block-start() {
+  align-items: start;
+}
+@mixin cell-alignment-block-center() {
+  align-items: center;
+}
+@mixin cell-alignment-block-end() {
+  align-items: end;
+}
+// cell alignment inline
+@mixin cell-alignment-inline-start() {
+  justify-content: start;
+}
+@mixin cell-alignment-inline-center() {
+  justify-content: center;
+}
+@mixin cell-alignment-inline-end() {
+  justify-content: center;
+}
+// cell with ellipsis
+@mixin cell-ellipsis() {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/// @group Grid
+/// @param {String} $tabular-grid-selector [".tabular-grid"] -
+/// @param {("text" | "element")} $tabular-grid-cell-node-type ["text"] -
+/// @param {("start" | "center" | "end")} $tabular-grid-cell-block-alignment ["start"] -
+/// @param {("start" | "center" | "end")} $tabular-grid-cell-inline-alignment ["start"] -
+/// @param {Boolean} $tabular-grid-cell-apply-ellipsis [false] -
+/// @param {List} $tabular-grid-affected-columns-nth-list [null] -
+
+@mixin tabular-grid-cell-layout(
+  $tabular-grid-selector: ".tabular-grid",
+  $tabular-grid-cell-node-type: "text",
+  $tabular-grid-cell-block-alignment: "start",
+  $tabular-grid-cell-inline-alignment: "start",
+  $tabular-grid-cell-apply-ellipsis: false,
+  $tabular-grid-affected-columns-nth-list: null
+) {
+  $selector: null;
+  $cell-tag-name: "ch-tabular-grid-cell";
+  $where-pseudo-class: ":where";
+  $where-selector: ();
+  // the selector varies depending on wether $tabular-grid-affected-columns-nth-list is null or not.
+  // if it is null, all cells should be affected.
+  @if $tabular-grid-affected-columns-nth-list != null {
+    @each $nth in $tabular-grid-affected-columns-nth-list {
+      $where-selector: append($where-selector, ":nth-child(#{$nth})", comma);
+    }
+    $selector: #{$tabular-grid-selector}
+      #{$cell-tag-name}#{$where-pseudo-class
+      }(#{$where-selector});
+  } @else {
+    // if no $editable-columns-nth was provided, apply to all cells
+    $selector: #{$tabular-grid-selector} #{$cell-tag-name};
+  }
+  #{$selector} {
+    // node type
+    @if $tabular-grid-cell-node-type == "text" {
+      @include cell-node-type-text();
+    }
+    @if $tabular-grid-cell-node-type == "element" {
+      @include cell-node-type-element();
+    }
+    &:hover {
+      @if $tabular-grid-cell-node-type == "element" {
+        @include cell-node-type-element--hover();
+      }
+    }
+    // block alignment (only should apply if $tabular-grid-cell-node-type == "text"
+    @if $tabular-grid-cell-node-type ==
+      "text" and
+      $tabular-grid-cell-block-alignment ==
+      "start"
+    {
+      @include cell-alignment-block-start();
+    }
+    @if $tabular-grid-cell-node-type ==
+      "text" and
+      $tabular-grid-cell-block-alignment ==
+      "center"
+    {
+      @include cell-alignment-block-center();
+    }
+    @if $tabular-grid-cell-node-type ==
+      "text" and
+      $tabular-grid-cell-block-alignment ==
+      "end"
+    {
+      @include cell-alignment-block-end();
+    }
+    // inline alignment
+    @if $tabular-grid-cell-node-type ==
+      "text" and
+      $tabular-grid-cell-inline-alignment ==
+      "start"
+    {
+      @include cell-alignment-inline-start();
+    }
+    @if $tabular-grid-cell-node-type ==
+      "text" and
+      $tabular-grid-cell-inline-alignment ==
+      "center"
+    {
+      @include cell-alignment-inline-center();
+    }
+    @if $tabular-grid-cell-node-type ==
+      "text" and
+      $tabular-grid-cell-inline-alignment ==
+      "end"
+    {
+      @include cell-alignment-inline-end();
+    }
+    // ellipsis (only should apply if $tabular-grid-cell-node-type == "text"
+    @if $tabular-grid-cell-node-type ==
+      "text" and
+      $tabular-grid-cell-apply-ellipsis ==
+      true
+    {
+      @include cell-ellipsis();
+    }
+  }
+}
+
+
 // - - - - - - - - - - - - - - - - - - - -
 //            ch-property-grid
 // - - - - - - - - - - - - - - - - - - - -
@@ -4720,7 +5096,7 @@ Body Spacing
   // shared properties
   &__property,
   &__value {
-    align-items: center;
+    @include cell-ellipsis();
   }
 
   &__property {
@@ -4729,9 +5105,6 @@ Body Spacing
     }
   }
   &__value {
-    @include control-remove-border();
-    @extend %ellipsis;
-
     &--readonly {
       @extend %text-readonly;
     }
@@ -4739,8 +5112,10 @@ Body Spacing
       @extend %text-edited;
     }
     &--editing {
-      display: grid;
-      padding: 0;
+      @include cell-node-type-element();
+      &-hover {
+        @include cell-node-type-element--hover();
+      }
     }
   }
 
@@ -5038,6 +5413,9 @@ Body Spacing
   }
   #{$property-grid__value--editing-selector} {
     @extend %property-grid__value--editing;
+  }
+  #{$property-grid__value--editing-selector}:hover {
+    @extend %property-grid__value--editing-hover;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -6998,9 +7376,11 @@ Body Spacing
   $layout-classes: true,
   $spacing-classes: true,
   $typography-classes: true,
+  $scrollbar-components: true,
 
   // Components
   $components: true,
+  $accordion: true,
   $checkbox: true,
   $code: true,
   $combo-box: true,
@@ -7008,6 +7388,7 @@ Body Spacing
   $edit: true,
   $icon: true,
   $list-box: true,
+  $markdown-viewer: true,
   $radio-group: true,
   $slider: true,
   $tab: true,
@@ -14985,7 +15366,6 @@ Body Spacing
   // - - - - - - - - - - - - - - - - - - - -
   //        Other Tokens than Colors
   // - - - - - - - - - - - - - - - - - - - -
-  // Primitive
   @if $tokens and
     ($border or $colors or $elevation or $font or $spacing or $timing)
   {
@@ -15007,6 +15387,7 @@ Body Spacing
         @include semantic-icon();
         @include semantic-item();
         @include semantic-text();
+        @include semantic-heading();
       }
 
       // Elevation Light
@@ -15031,17 +15412,14 @@ Body Spacing
         }
       }
 
-      // Font
       @if $font {
         @include font();
       }
 
-      // Spacing
       @if $spacing {
         @include spacing();
       }
 
-      // Timing
       @if $timing {
         @include timing();
       }
@@ -15079,7 +15457,6 @@ Body Spacing
   //                 Resets
   // - - - - - - - - - - - - - - - - - - - -
   @if $resets {
-    // box-sizing
     @if $box-sizing-reset {
       @include box-sizing();
     }
@@ -15098,7 +15475,6 @@ Body Spacing
       @include other-reset();
     }
 
-    // Typography reset
     @if $typography-reset {
       @include typography-reset();
     }
@@ -15111,116 +15487,103 @@ Body Spacing
   @if $base-classes {
     // Button classes
     @if $button-classes {
-      // Button primary
       @include button-primary();
-
-      // Button secondary
       @include button-secondary();
-
-      // Button tertiary
       @include button-tertiary();
 
       @if $icon-classes {
-        // Button icon only
         @include button-icon-only();
-
-        // Button icon and text
         @include button-icon-and-text();
       }
     }
 
-    // Form control classes
     @if $form-controls-classes {
       @include field();
       @include label();
     }
 
-    // Icon classes
     @if $icon-classes {
       @include icon-size-sm();
       @include icon-size-md();
       @include icon-and-text();
     }
 
-    // Layout classes
     @if $layout-classes {
       @include layout();
       @include control-footer();
     }
 
-    // Spacing classes
     @if $spacing-classes {
       @include spacing-body();
     }
 
-    // Typography classes
     @if $typography-classes {
       @include typography-classes();
     }
+
+    @if $scrollbar-components {
+      @include scrollbar-components();
+    }
   }
 
-  // - - - - - - - - - - - - - - - -  - - -
+  // - - - - - - - - - - - - - - - - - - -
   //               Components
   // - - - - - - - - - - - - - - - - - - -
+  @if $accordion {
+    @include accordion-filled();
+    @include accordion-outlined();
+  }
 
-  // checkbox
   @if $checkbox {
     @include checkbox();
   }
 
-  // code
   @if $code {
     @include code();
   }
 
-  // combo box
   @if $combo-box {
     @include combo-box();
   }
 
-  // dialog
   @if $dialog {
     @include dialog();
   }
 
-  // edit
   @if $edit {
     @include form-input();
   }
 
-  // icon
   @if $icon {
     @include icon();
   }
 
-  // list-box
   @if $list-box {
     @include list-box();
   }
 
-  // radio-group
+  @if $markdown-viewer {
+    @include markdown-viewer();
+  }
+
   @if $radio-group {
     @include radio-group();
   }
 
-  // slider
   @if $slider {
     @include slider();
   }
 
-  // tab
   @if $tab {
     @include tab();
   }
 
-  // tabular grid
   @if $tabular-grid {
     @include tabular-grid();
     @include tabular-grid-cell-layout();
     @include property-grid(); // property-grid extends tabular-grid
   }
 
-  // tree view
   @if $tree-view {
     @include tree-view();
   }
@@ -15269,9 +15632,11 @@ Body Spacing
   $layout-classes: false,
   $spacing-classes: false,
   $typography-classes: false,
+  $scrollbar-components: false,
 
   // Components
   $components: false,
+  $accordion: false,
   $checkbox: false,
   $code: false,
   $combo-box: false,
@@ -15279,6 +15644,7 @@ Body Spacing
   $edit: false,
   $icon: false,
   $list-box: false,
+  $markdown-viewer: false,
   $radio-group: false,
   $slider: false,
   $tab: false,
@@ -15328,15 +15694,19 @@ Body Spacing
     $layout-classes: $layout-classes,
     $spacing-classes: $spacing-classes,
     $typography-classes: $typography-classes,
+    $scrollbar-components: $scrollbar-components,
 
     // Components
     $components: $components,
+    $accordion: $accordion,
     $checkbox: $checkbox,
     $code: $code,
     $combo-box: $combo-box,
     $dialog: $dialog,
     $edit: $edit,
+    $icon: $icon,
     $list-box: $list-box,
+    $markdown-viewer: $markdown-viewer,
     $radio-group: $radio-group,
     $slider: $slider,
     $tab: $tab,

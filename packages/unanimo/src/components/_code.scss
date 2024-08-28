@@ -1,118 +1,126 @@
-@mixin code() {
-  .code {
-    > pre {
-      margin: 0;
-    }
+@mixin code($selector: ".code") {
+  #{$selector} {
+    --ch-code__doctag: var(--code__color-doctag);
+    --ch-code__keyword: var(--code__color-keyword);
+    --ch-code__meta__keyword: var(--code__color-meta__keyword);
+    --ch-code__template-tag: var(--code__color-template-tag);
+    --ch-code__template-variable: var(--code__color-template-variable);
+    --ch-code__type: var(--code__color-type);
+    --ch-code__variable-language: var(--code__color-variable-language);
 
-    .hljs-doctag,
-    .hljs-keyword,
-    .hljs-meta .hljs-keyword,
-    .hljs-template-tag,
-    .hljs-template-variable,
-    .hljs-type,
-    .hljs-variable.language_ {
-      /* prettylights-syntax-keyword */
-      color: var(
-        --colors-foundation__purple--400
-      ); /* Light var(--colors-foundation__purple--100); */
-    }
+    --ch-code__title: var(--text__on-surface--alternative);
+    --ch-code__title-class: var(--text__on-surface--alternative);
+    --ch-code__title-class-inherited: var(--text__on-surface--alternative);
+    --ch-code__title-function: var(--text__on-surface--alternative);
 
-    .hljs-title,
-    .hljs-title.class_,
-    .hljs-title.class_.inherited__,
-    .hljs-title.function_ {
-      color: var(--text__on-surface--alternative);
-    }
+    --ch-code__attr: var(--colors-foundation__purple--200);
+    --ch-code__attribute: var(--colors-foundation__purple--200);
+    --ch-code__meta: var(--colors-foundation__purple--200);
+    --ch-code__number: var(--colors-foundation__purple--200);
+    --ch-code__operator: var(--colors-foundation__purple--200);
+    --ch-code__variable: var(--colors-foundation__purple--200);
+    --ch-code__selector-attr: var(--colors-foundation__purple--200);
+    --ch-code__selector-class: var(--colors-foundation__purple--200);
+    --ch-code__selector-id: var(--colors-foundation__purple--200);
 
-    .hljs-attr,
-    .hljs-attribute,
-    .hljs-literal,
-    .hljs-meta,
-    .hljs-number,
-    .hljs-operator,
-    .hljs-variable,
-    .hljs-selector-attr,
-    .hljs-selector-class,
-    .hljs-selector-id {
-      color: var(
-        --colors-foundation__purple--200
-      ); /* Previously: --text__primary */
-    }
+    --ch-code__literal: color-mix(
+      in srgb,
+      var(--colors-foundation__green--200) 50%,
+      var(--colors-foundation__purple--200)
+    );
 
-    .hljs-regexp,
-    .hljs-string,
-    .hljs-meta .hljs-string {
-      color: var(
-        --colors-foundation__orange--200
-      ); /* DARK: color-mix(in srgb, var(--colors-foundation__red--300) 60%, #000) */
-    }
+    --ch-code__regexp: var(--colors-foundation__orange--200);
+    --ch-code__string: var(--colors-foundation__orange--200);
+    --ch-code__meta__string: var(--colors-foundation__orange--200);
 
-    .hljs-built_in,
-    .hljs-symbol {
-      /* prettylights-syntax-variable */
-      color: #e36209;
-    }
+    --ch-code__comment: var(--colors-foundation__green--200);
+    --ch-code__code: var(--colors-foundation__green--200);
+    --ch-code__formula: var(--colors-foundation__green--200);
 
-    .hljs-comment,
-    .hljs-code,
-    .hljs-formula {
-      color: var(--colors-foundation__green--200);
-    }
+    --ch-code__name: var(--colors-foundation__green--200);
+    --ch-code__quote: var(--colors-foundation__green--200);
+    --ch-code__selector-pseudo: var(--colors-foundation__green--200);
+    --ch-code__selector-tag: var(--colors-foundation__green--200);
 
-    .hljs-name,
-    .hljs-quote,
-    .hljs-selector-tag,
-    .hljs-selector-pseudo {
-      color: var(--colors-foundation__green--200);
-    }
+    --ch-code__subst: var(--text__on-surface--positive);
 
-    .hljs-subst {
-      /* prettylights-syntax-storage-modifier-import */
-      color: #24292e;
-    }
+    --ch-code__built-in: color-mix(
+      in srgb,
+      var(--colors-foundation__green--200) 70%,
+      var(--colors-foundation__purple--100)
+    );
+    --ch-code__symbol: color-mix(
+      in srgb,
+      var(--colors-foundation__green--200) 70%,
+      var(--colors-foundation__purple--100)
+    );
 
-    .hljs-section {
-      /* prettylights-syntax-markup-heading */
-      color: #005cc5;
-      font-weight: bold;
-    }
+    // .hljs-section {
+    //   /* prettylights-syntax-markup-heading */
+    //   color: #005cc5;
+    //   font-weight: bold;
+    // }
 
-    .hljs-bullet {
-      /* prettylights-syntax-markup-list */
-      color: #735c0f;
-    }
+    // .hljs-bullet {
+    //   /* prettylights-syntax-markup-list */
+    //   color: #735c0f;
+    // }
 
-    .hljs-emphasis {
-      /* prettylights-syntax-markup-italic */
-      color: #24292e;
-      font-style: italic;
-    }
+    // .hljs-emphasis {
+    //   /* prettylights-syntax-markup-italic */
+    //   color: #24292e;
+    //   font-style: italic;
+    // }
 
-    .hljs-strong {
-      /* prettylights-syntax-markup-bold */
-      color: #24292e;
-      font-weight: bold;
-    }
+    // .hljs-strong {
+    //   /* prettylights-syntax-markup-bold */
+    //   color: #24292e;
+    //   font-weight: bold;
+    // }
 
-    .hljs-addition {
-      /* prettylights-syntax-markup-inserted */
-      color: #22863a;
-      background-color: #f0fff4;
-    }
+    // .hljs-addition {
+    //   /* prettylights-syntax-markup-inserted */
+    //   color: #22863a;
+    //   background-color: #f0fff4;
+    // }
 
-    .hljs-deletion {
-      /* prettylights-syntax-markup-deleted */
-      color: #b31d28;
-      background-color: #ffeef0;
-    }
+    // .hljs-deletion {
+    //   /* prettylights-syntax-markup-deleted */
+    //   color: #b31d28;
+    //   background-color: #ffeef0;
+    // }
 
-    .hljs-char.escape_,
-    .hljs-link,
-    .hljs-params,
-    .hljs-property,
-    .hljs-punctuation,
-    .hljs-tag {
-      /* purposely ignored */
-    }
+    // .hljs-char.escape_,
+    // .hljs-link,
+    // .hljs-params,
+    // .hljs-property,
+    // .hljs-punctuation,
+    // .hljs-tag {
+    //   /* purposely ignored */
+    // }
   }
+}
+
+@mixin code-tokens--light() {
+  --code__color-doctag: var(--colors-foundation__purple--400);
+  --code__color-keyword: color-mix(
+    in srgb,
+    var(--colors-foundation__purple--400),
+    var(--colors-foundation__orange--200)
+  );
+  --code__color-meta__keyword: var(--colors-foundation__purple--400);
+  --code__color-template-tag: var(--colors-foundation__purple--400);
+  --code__color-template-variable: var(--colors-foundation__purple--400);
+  --code__color-type: var(--colors-foundation__purple--400);
+  --code__color-variable-language: var(--colors-foundation__purple--400);
+}
+
+@mixin code-tokens--dark() {
+  --code__color-doctag: var(--colors-foundation__purple--100);
+  --code__color-keyword: var(--colors-foundation__purple--100);
+  --code__color-meta__keyword: var(--colors-foundation__purple--100);
+  --code__color-template-tag: var(--colors-foundation__purple--100);
+  --code__color-template-variable: var(--colors-foundation__purple--100);
+  --code__color-type: var(--colors-foundation__purple--100);
+  --code__color-variable-language: var(--colors-foundation__purple--100);
 }

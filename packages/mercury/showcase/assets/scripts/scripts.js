@@ -2,8 +2,21 @@
 // constants
 const _URL = new URL(window.location.href);
 const PAGE_URL = `${_URL.origin}${_URL.pathname}`;
+// sections as articles, is for rendering sections on the sidebar nav, as if
+// they were articles. This feature was created for the /icons showcase page,
+// where we just want to include navigation for the sections, but it makes sense
+// to display the list items as articles, because these are the only items.
+const NAV_SECTIONS_AS_ARTICLES = document.body.hasAttribute(
+  "data-sections-as-articles"
+);
 const ARTICLE_HEADER_CLASS = ".article__header";
-const ARTICLE_SELECTOR = ".article[nav]";
+const SECTION_SELECTOR = ".section";
+const SECTION_TITLE_SELECTOR = "section__title";
+const ARTICLE_SELECTOR = ".article";
+const SECTION_SIDEBAR_SELECTOR = ".section[data-nav]";
+const ARTICLE_SIDEBAR_SELECTOR = ".article[data-nav]";
+const DATA_TITLE_SELECTOR = "data-title";
+const SIDEBAR_CHILD_LIST_CLASS = "sidebar__list--child";
 let SIDEBAR_NAV; // A reference to the sidebar nav.
 let CONTAINER_REF;
 let topBarRef = null;
@@ -17,7 +30,8 @@ const HEAD = document.head;
 const BODY = document.querySelector("body");
 const SIDEBAR_DATA_ATTR = "data-sidebar";
 let CURRENT_PAGE_NAV_ITEM; // a reference the navigation item for the actual actual page.
-let PAGE_ARTICLES; // a reference to all the page ".article[nav]"
+let PAGE_SECTIONS; // a reference to all the page ".article"
+let PAGE_ARTICLES; // a reference to all the page ".article"
 
 const includeFavicon = () => {
   const linkElement = document.createElement("link");
@@ -94,29 +108,84 @@ const includeSidebarPageInternalNav = () => {
   if (includeSidebar && CURRENT_PAGE_NAV_ITEM) {
     // CURRENT_PAGE_NAV_ITEM is a reference to the item on the sidebar
     // that refers to the actual page.
-    if (!PAGE_ARTICLES) {
-      PAGE_ARTICLES = document.querySelectorAll(ARTICLE_SELECTOR);
-    }
-    if (PAGE_ARTICLES.length) {
+
+    SIDEBAR_SECTIONS = document.querySelectorAll(SECTION_SIDEBAR_SELECTOR);
+    SIDEBAR_ARTICLES = document.querySelectorAll(ARTICLE_SIDEBAR_SELECTOR);
+    if (SIDEBAR_ARTICLES.length || SIDEBAR_SECTIONS.length) {
+      //If there is more than one section to be added to the navigation..
+      const navigationIncludesSections = SIDEBAR_SECTIONS.length > 1;
+      const navigationSectionsArray = [];
+      if (navigationIncludesSections && !NAV_SECTIONS_AS_ARTICLES) {
+        // Create the navigation for the sections
+        // Consider all sections, even the ones that are not intended to be added to the nav.
+        // If The section has no data-nav attribute, it will be included in the nav without title.
+        const allSections = document.querySelectorAll(SECTION_SELECTOR);
+        allSections.forEach((section, i) => {
+          // add a data-index for easier reference later.
+          section.dataset.index = i;
+
+          // section divider
+          const navSection = document.createElement("div");
+          section.classList.add("current-page__section");
+          // title
+          const sectionTitle =
+            section.querySelector(".section__title").textContent;
+
+          if (sectionTitle) {
+            const navSectionTitleEl = document.createElement("h3");
+            navSectionTitleEl.classList.add("current-page__section-title");
+            navSectionTitleEl.textContent = sectionTitle;
+            navSection.appendChild(navSectionTitleEl);
+          }
+          // list
+          const navSectionList = document.createElement("ul");
+          navSectionList.classList.add(SIDEBAR_CHILD_LIST_CLASS);
+          navSection.appendChild(navSectionList);
+
+          navigationSectionsArray.push(navSection);
+        });
+      } else if (navigationIncludesSections && NAV_SECTIONS_AS_ARTICLES) {
+        SIDEBAR_ARTICLES = SIDEBAR_SECTIONS;
+      }
+
       const pageUlEl = document.createElement("ul");
-      pageUlEl.classList.add("sidebar__list--child");
-      PAGE_ARTICLES.forEach(article => {
+      pageUlEl.classList.add(SIDEBAR_CHILD_LIST_CLASS);
+      SIDEBAR_ARTICLES.forEach(article => {
+        let li;
         const hasId = article.hasAttribute("id");
-        const hasTitle = article.hasAttribute("data-title");
+        const hasTitle = article.hasAttribute(DATA_TITLE_SELECTOR);
         const isHidden = article.hasAttribute("hidden");
+
         if (hasId && hasTitle && !isHidden) {
           const articleId = article.getAttribute("id");
-          const articleTitle = article.getAttribute("data-title");
-          const li = document.createElement("li");
+          const articleTitle = article.getAttribute(DATA_TITLE_SELECTOR);
+          li = document.createElement("li");
           const a = document.createElement("a");
           a.href = `#${articleId}`;
           a.textContent = articleTitle;
-
           li.appendChild(a);
+        }
+
+        if (navigationIncludesSections && !NAV_SECTIONS_AS_ARTICLES) {
+          const articleSection = article.closest(SECTION_SELECTOR);
+          const articleSectionIndexString = articleSection.dataset.index;
+          const articleSectionIndex = parseInt(articleSectionIndexString);
+          const childList = navigationSectionsArray[
+            articleSectionIndex
+          ].querySelector(`.${SIDEBAR_CHILD_LIST_CLASS}`);
+          childList.appendChild(li);
+        } else {
           pageUlEl.appendChild(li);
         }
       });
-      CURRENT_PAGE_NAV_ITEM.appendChild(pageUlEl);
+
+      if (navigationIncludesSections && !NAV_SECTIONS_AS_ARTICLES) {
+        navigationSectionsArray.forEach((navigationSection, i) => {
+          CURRENT_PAGE_NAV_ITEM.appendChild(navigationSection);
+        });
+      } else {
+        CURRENT_PAGE_NAV_ITEM.appendChild(pageUlEl);
+      }
     }
   }
 };
@@ -137,7 +206,7 @@ const addArticleTitles = () => {
   if (PAGE_ARTICLES.length) {
     const moreThanOne = PAGE_ARTICLES.length > 1;
     PAGE_ARTICLES.forEach((article, i) => {
-      const title = article.getAttribute("data-title");
+      const title = article.getAttribute(DATA_TITLE_SELECTOR);
       const header = article.querySelector(ARTICLE_HEADER_CLASS);
       if (title && header) {
         const articleTitleEl = document.createElement("h2");
@@ -146,7 +215,7 @@ const addArticleTitles = () => {
 
         // Add a number to each item to make it easier to refer to.
         // Make it a separate element, to allow different style.
-        // This only makes sense if there is more than one .article[nav]
+        // This only makes sense if there is more than one .article[data-nav]
         if (moreThanOne) {
           const numberTag = document.createElement("span");
           numberTag.classList.add("article__number-id");

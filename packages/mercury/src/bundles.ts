@@ -1,28 +1,30 @@
 import { ThemeModel } from "@genexus/chameleon-controls-library";
+import { ThemeItemModel } from "@genexus/chameleon-controls-library/dist/types/components/theme/theme-types";
 
-export type MercuryBundles = MercuryBundleOptimized[] | MercuryBundleFull[];
+export type MercuryBundles =
+  | [MercuryBundleReset, ...MercuryBundleOptimized[]]
+  | [MercuryBundleReset, ...MercuryBundleFull[]];
 
 export type MercuryBundleOptimized =
-  | MercuryBundleBase
   | MercuryBundleComponent
   | MercuryBundleComponentForm
-  | MercuryBundleReset
   | MercuryBundleUtil;
 
 export type MercuryBundleFull =
-  | MercuryBundleBase
   | MercuryBundleComponent
-  | MercuryBundleReset
   | MercuryBundleUtil
   | MercuryBundleUtilFormFull;
 
 export type MercuryBundleBase = "base/base" | "base/icons";
 
 export type MercuryBundleComponent =
+  | "components/accordion"
   | "components/code"
   | "components/dialog"
+  | "components/markdown-viewer"
   | "components/tab"
   | "components/tabular-grid"
+  | "components/ticket-list"
   | "components/tree-view";
 
 export type MercuryBundleComponentForm =
@@ -37,7 +39,9 @@ export type MercuryBundleReset = "resets/box-sizing";
 export type MercuryBundleUtil =
   | "utils/form"
   | "utils/layout"
-  | "utils/typography";
+  | "utils/typography"
+  // TODO: Use "base/scrollbar" when the ch-theme supports aliases
+  | "chameleon/scrollbar";
 
 export type MercuryBundleUtilFormFull = "utils/form--full";
 
@@ -50,12 +54,19 @@ type BundleNames =
 
 const getThemeModelItem = <T extends BundleNames>(
   basePath: string,
-  bundleName: T
+  bundleName: T,
+  attachStyleSheet: boolean | undefined = undefined
 ) =>
-  ({
-    name: bundleName,
-    url: `${basePath}${bundleName}.css`
-  } as const);
+  attachStyleSheet === undefined
+    ? ({
+        name: bundleName,
+        url: `${basePath}${bundleName}.css`
+      } as const satisfies ThemeItemModel)
+    : ({
+        name: bundleName,
+        url: `${basePath}${bundleName}.css`,
+        attachStyleSheet
+      } as const satisfies ThemeItemModel);
 
 /**
  * Given the basePath, returns all bundles (except base and icons) in the
@@ -76,15 +87,18 @@ const getThemeModelItem = <T extends BundleNames>(
 export const getThemeBundles = (basePath: string) =>
   [
     // Components
+    getThemeModelItem(basePath, "components/accordion"),
     getThemeModelItem(basePath, "components/button"),
     getThemeModelItem(basePath, "components/checkbox"),
     getThemeModelItem(basePath, "components/code"),
     getThemeModelItem(basePath, "components/combo-box"),
     getThemeModelItem(basePath, "components/dialog"),
     getThemeModelItem(basePath, "components/edit"),
+    getThemeModelItem(basePath, "components/markdown-viewer", false),
     getThemeModelItem(basePath, "components/radio-group"),
     getThemeModelItem(basePath, "components/tab"),
     getThemeModelItem(basePath, "components/tabular-grid"),
+    getThemeModelItem(basePath, "components/ticket-list"),
     getThemeModelItem(basePath, "components/tree-view"),
 
     // Resets
@@ -94,5 +108,6 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "utils/form"),
     getThemeModelItem(basePath, "utils/form--full"),
     getThemeModelItem(basePath, "utils/layout"),
-    getThemeModelItem(basePath, "utils/typography")
+    getThemeModelItem(basePath, "utils/typography"),
+    getThemeModelItem(basePath, "chameleon/scrollbar")
   ] as const satisfies ThemeModel;

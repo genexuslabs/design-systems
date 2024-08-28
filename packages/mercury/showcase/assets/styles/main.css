@@ -62,8 +62,11 @@ For the showcase some DS styles are better overridden
 }
 
 /*====================
-Helper Showcase Classes
+Helper Classes
 ====================*/
+.line-through {
+  text-decoration: line-through;
+}
 .d-grid {
   display: grid;
 }
@@ -140,7 +143,7 @@ General
 ====================*/
 /* Scroll */
 ::-webkit-scrollbar {
-  width: var(--mer-spacing--sm);
+  width: var(--mer-spacing--xs);
   height: var(--scrollbar__size);
 }
 ::-webkit-scrollbar-track {
@@ -150,9 +153,6 @@ General
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb__bg-color);
   border-radius: var(--scrollbar-thumb__border-radius);
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--scrollbar-thumb__bg-color--hover);
 }
 ::-webkit-scrollbar-corner {
   background: transparent;

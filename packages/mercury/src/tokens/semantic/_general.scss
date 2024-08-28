@@ -1,7 +1,7 @@
 @mixin semantic-general() {
-  /*----------------------
-  Body
-  ----------------------*/
+  // ----------------------
+  // Body
+  // ----------------------
   --mer-body__bg-color: var(--mer-color__surface);
   --mer-body__color: var(--mer-text__on-surface);
   --mer-body__font-size: var(--mer-font__size--3xs);
@@ -10,37 +10,37 @@
   --mer-body__line-height: var(--mer-line-height--spaced);
   --mer-body__margin-block: var(--mer-spacing--sm);
 
-  /*----------------------
-  System
-  ----------------------*/
+  // ----------------------
+  // System
+  // ----------------------
   // System tokens are the most basic kind, used when there is not a more specific categorization.
   --mer-system__border-width: var(--mer-border__width--sm);
   --mer-system__border-style: solid;
   --mer-system__border-color: var(--mer-color__neutral-gray--500);
 
-  /*----------------------
-  Heading
-  ----------------------*/
+  // ----------------------
+  // Heading
+  // ----------------------
   --mer-heading__color: var(--mer-color__neutral-gray--100);
 
-  /*----------------------
-  Scrollbar
-  ----------------------*/
+  // ----------------------
+  // Scrollbar
+  // ----------------------
   // scrollbar
-  --scrollbar__size: var(--mer-spacing--xs);
+  --scrollbar__size: var(--mer-spacing--2xs);
   // scrollbar-track
-  --scrollbar-track__bg-color: var(--mer-color__elevation--03);
+  --scrollbar-track__bg-color: var(--mer-color__neutral-gray--650);
+
   --scrollbar-track__border-radius: var(--mer-spacing--xs);
   // scrollbar-thumb
-  --scrollbar-thumb__bg-color: var(--mer-color__elevation--04);
-  --scrollbar-thumb__bg-color--hover: #42474c;
+  --scrollbar-thumb__bg-color: var(--mer-color__neutral-gray--550);
   --scrollbar-thumb__border-radius: var(--mer-spacing--xs);
   // scrollbar-thumb
   --scrollbar-corner__bg: transparent;
 
-  /*----------------------
-  Icon Size
-  ----------------------*/
+  // ----------------------
+  // Icon Size
+  // ----------------------
   // box (shell)
   --mer-icon__box--sm: var(--mer-spacing--sm);
   --mer-icon__box--md: 14px; // no spacing token exists for 14px.
@@ -48,9 +48,9 @@
   --mer-icon__size--sm: 100%;
   --mer-icon__size--md: 100%;
 
-  /*----------------------------------------------------------
-  Form Input (form-input-*** background-position-x RTL support)
-  -----------------------------------------------------------*/
+  // ------------------------------------------------------------
+  // Form Input (form-input-*** background-position-x RTL support)
+  // ------------------------------------------------------------
   --mer-form-input__padding-inline: var(--mer-spacing--xs);
   --mer-form-input__bg-position--x-value: var(--mer-form-input__padding-inline);
   --mer-form-input__bg-position--x: var(--mer-form-input__bg-position--x-value);
@@ -73,9 +73,9 @@
   );
   --mer-checkbox__option-checked-image: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='currentColor' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/></svg>");
 
-  /*----------------------
-  Window
-  ----------------------*/
+  // ----------------------
+  // Window
+  // ----------------------
   // TODO: This styles should better be applied on the ch-window.
   --window__border: var(--mer-border__width--sm) solid
     var(--mer-color__elevation--04);
@@ -85,9 +85,9 @@
   --window__gap: var(--mer-spacing--xs);
   --window__box-shadow: var(--mer-box-shadow--01);
 
-  /*----------------------
-  Focus
-  ----------------------*/
+  // ----------------------
+  // Focus
+  // ----------------------
   --focus__outline-width: var(--mer-border__width--sm);
   --focus__outline-style: solid;
   --focus__outline-color: var(--mer-color__primary-blue--200);
