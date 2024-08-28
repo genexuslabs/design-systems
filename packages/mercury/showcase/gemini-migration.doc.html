@@ -989,6 +989,141 @@ private myIcon = getIconPath({
               </div>
               <!-- /.article__main -->
             </article>
+
+            <!-- ========================== 
+          gxg-list-box
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-list-box">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-list-box</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-list-box</code> tag with a
+                    <code>ch-action-list-render</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values.</li>
+                  <li>Add the <code>.list-box</code> class.</li>
+                  <li>
+                    Remove all the <code>gxg-list-box-item</code> items, as they
+                    will be set with a model.
+                  </li>
+                  <li>
+                    <a href="" target="_blank"
+                      >Specify other control properties if required, following
+                      chameleon documentation</a
+                    >
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-list-box theTitle="My Listbox Caption">
+  <gxg-list-box-item value="item-1.1">Item 1.1</gxg-list-box-item>
+  <gxg-list-box-item value="item-1.2">Item 1.2</gxg-list-box-item>
+  <gxg-list-box-item value="item-1.3">Item 1.3</gxg-list-box-item>
+  <gxg-list-box-item value="item-1.3">Item 1.3</gxg-list-box-item>
+</gxg-list-box>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `private listBoxItems: ActionListItemModel[] = [
+{
+  id: "item-1.1",
+  type: "actionable",
+  caption: "Item 1.1"
+},
+{
+  id: "item-1.2",
+  type: "actionable",
+  caption: "Item 1.2"
+},
+{
+  id: "item-1.3",
+  type: "actionable",
+  caption: "Item 1.3"
+},
+{
+  id: "item-1.4",
+  type: "actionable",
+  caption: "Item 1.4"
+}];
+
+// use inside <Host>
+<ch-action-list-render
+  selection="multiple"
+  class="list-box"
+  model={this.listBoxItems}
+></ch-action-list-render>`;
+                  </script>
+                </div>
+                <div class="article__content" style="height: 120px">
+                  <ch-action-list-render
+                    selection="none"
+                    class="list-box"
+                    id="action-list"
+                  ></ch-action-list-render>
+                  <script type="module">
+                    const actionListModel = [
+                      {
+                        id: "item-1.1",
+                        type: "actionable",
+                        caption: "Item 1.1"
+                      },
+                      {
+                        id: "item-1.2",
+                        type: "actionable",
+                        caption: "Item 1.2"
+                      },
+                      {
+                        id: "item-1.3",
+                        type: "actionable",
+                        caption: "Item 1.3"
+                      },
+                      {
+                        id: "item-1.4",
+                        type: "actionable",
+                        caption: "Item 1.4"
+                      }
+                    ];
+                    const actionList = document.getElementById("action-list");
+                    actionList.model = actionListModel;
+                    setTimeout(() => {
+                      // WA to avoid "undefined" when initial selection != "none"
+                      actionList.selection = "multiple";
+                    }, 500);
+                  </script>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a href="./list-box.html" class="dummy-grid-container__item"
+                      >see the list-box showcase</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
           </div>
         </section>
       </div>
