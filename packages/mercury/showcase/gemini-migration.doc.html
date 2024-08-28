@@ -339,7 +339,7 @@ private favoriteColorsModel: ComboBoxItemModel[] = [
                     <a
                       href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/checkbox#ch-checkbox"
                       target="_blank"
-                      >Specify the control properties following chameleon
+                      >Specify the control properties following the Chameleon
                       documentation</a
                     >
                   </li>
@@ -354,7 +354,7 @@ private favoriteColorsModel: ComboBoxItemModel[] = [
                   >
                   </ch-code>
                   <script>
-                    code = `<gxg-form-checkbox id="show-inherited-classes" required></gxg-form-checkbox>`;
+                    code = `<gxg-form-checkbox value="the-caption" label="The Caption"></gxg-form-checkbox>`;
                   </script>
                 </div>
 
@@ -419,7 +419,7 @@ private favoriteColorsModel: ComboBoxItemModel[] = [
                     <a
                       href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/radio-group#ch-radio-group-render"
                       target="_blank"
-                      >Specify the control properties following chameleon
+                      >Specify the control properties following the Chameleon
                       documentation</a
                     >
                   </li>
@@ -522,7 +522,7 @@ private favoriteColorsModel: RadioGroupItemModel[] = [
                     <a
                       href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/edit#ch-edit"
                       target="_blank"
-                      >Specify the control properties following chameleon
+                      >Specify the control properties following the Chameleon
                       documentation</a
                     >
                   </li>
@@ -582,6 +582,218 @@ private chEditIcon = getIconPath({
                   <div class="dummy-grid-container">
                     <a
                       href="./form-input.html"
+                      class="dummy-grid-container__item"
+                      >see the control showcase</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-grid
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-grid">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-grid</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>Remove the <code>gxg-grid</code> wrapper tag.</li>
+                  <li>
+                    For every grid tag, update the prefix
+                    <code>ch-grid-...</code> with
+                    <code>ch-tabular-grid-...</code>.
+                  </li>
+                  <li>
+                    For every grid tag, add the appropriate css class. The class
+                    of every tag begins with the prefix
+                    <code>.tabular-grid-...</code>.
+                    <a href="./tabular-grid.html"
+                      >You can refer to this showcase documentation.</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/tabular-grid#ch-grid"
+                      target="_blank"
+                      >Specify the control properties following the Chameleon
+                      documentation</a
+                    >
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-grid>
+  <ch-grid>
+    <ch-grid-columnset>
+      <ch-grid-column
+        column-name="Country Name"
+        column-name-position="text"
+        settingable="false">
+      </ch-grid-column>
+      <ch-grid-column
+        column-name="Country Code"
+        column-name-position="text"
+        settingable="false">
+      </ch-grid-column>
+      <ch-grid-column
+        column-name="Population"
+        column-name-position="text"
+        settingable="false">
+      </ch-grid-column>
+    </ch-grid-columnset>
+    <ch-grid-row>
+      <ch-grid-cell>Uruguay</ch-grid-cell>
+      <ch-grid-cell>UY</ch-grid-cell>
+      <ch-grid-cell>~3.5 million</ch-grid-cell>
+    </ch-grid-row>
+    <ch-grid-row>
+      <ch-grid-cell>Brazil</ch-grid-cell>
+      <ch-grid-cell>BR</ch-grid-cell>
+      <ch-grid-cell>~~214 million</ch-grid-cell>
+    </ch-grid-row>
+    <ch-grid-row>
+      <ch-grid-cell>Argentina</ch-grid-cell>
+      <ch-grid-cell>AR</ch-grid-cell>
+      <ch-grid-cell>~46 million</ch-grid-cell>
+    </ch-grid-row>
+  </ch-grid>
+</gxg-grid>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// use inside <Host>                    
+<ch-tabular-grid class="tabular-grid">
+  <ch-tabular-grid-columnset class="tabular-grid-column-set">
+    <ch-tabular-grid-column 
+      column-name="Country Name"
+      column-name-position="text"
+      class="tabular-grid-column"
+      settingable="false"
+    >
+    </ch-tabular-grid-column>
+    <ch-tabular-grid-column
+      column-name="Country Code"
+      column-name-position="text"
+      class="tabular-grid-column"
+      settingable="false"
+    >
+    </ch-tabular-grid-column>
+    <ch-tabular-grid-column
+      column-name="Population"
+      column-name-position="text"
+      class="tabular-grid-column"
+      settingable="false"
+    >
+  </ch-tabular-grid-column>
+  </ch-tabular-grid-columnset>
+  <ch-tabular-grid-row class="tabular-grid-row">
+    <ch-tabular-grid-cell class="tabular-grid-cell">Uruguay</ch-tabular-grid-cell>
+    <ch-tabular-grid-cell class="tabular-grid-cell">UY</ch-tabular-grid-cell>
+    <ch-tabular-grid-cell class="tabular-grid-cell">~3.5 million</ch-tabular-grid-cell>
+  </ch-tabular-grid-row>
+  <ch-tabular-grid-row class="tabular-grid-row">
+    <ch-tabular-grid-cell class="tabular-grid-cell">Brazil</ch-tabular-grid-cell>
+    <ch-tabular-grid-cell class="tabular-grid-cell">BR</ch-tabular-grid-cell>
+    <ch-tabular-grid-cell class="tabular-grid-cell">~214 million</ch-tabular-grid-cell>
+  </ch-tabular-grid-row>
+  <ch-tabular-grid-row class="tabular-grid-row">
+    <ch-tabular-grid-cell class="tabular-grid-cell">Argentina</ch-tabular-grid-cell>
+    <ch-tabular-grid-cell class="tabular-grid-cell">AR</ch-tabular-grid-cell>
+    <ch-tabular-grid-cell class="tabular-grid-cell">~46 million</ch-tabular-grid-cell>
+  </ch-tabular-grid-row>
+</ch-tabular-grid>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <ch-tabular-grid class="tabular-grid">
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
+                      <ch-tabular-grid-column
+                        column-name="Country Name"
+                        column-name-position="text"
+                        class="tabular-grid-column"
+                        settingable="false"
+                      >
+                      </ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        column-name="Country Code"
+                        column-name-position="text"
+                        class="tabular-grid-column"
+                        settingable="false"
+                      >
+                      </ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        column-name="Population"
+                        column-name-position="text"
+                        class="tabular-grid-column"
+                        settingable="false"
+                      >
+                      </ch-tabular-grid-column>
+                    </ch-tabular-grid-columnset>
+
+                    <ch-tabular-grid-row class="tabular-grid-row">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Uruguay</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >UY</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >~3.5 million</ch-tabular-grid-cell
+                      >
+                    </ch-tabular-grid-row>
+
+                    <ch-tabular-grid-row class="tabular-grid-row">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Brazil</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >BR</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >~214 million</ch-tabular-grid-cell
+                      >
+                    </ch-tabular-grid-row>
+
+                    <ch-tabular-grid-row class="tabular-grid-row">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Argentina</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >AR</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >~46 million</ch-tabular-grid-cell
+                      >
+                    </ch-tabular-grid-row>
+                  </ch-tabular-grid>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./tabular-grid.html"
                       class="dummy-grid-container__item"
                       >see the control showcase</a
                     >
