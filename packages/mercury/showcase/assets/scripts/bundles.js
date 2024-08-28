@@ -1,7 +1,13 @@
-const getThemeModelItem = (basePath, bundleName) => ({
-    name: bundleName,
-    url: `${basePath}${bundleName}.css`
-});
+const getThemeModelItem = (basePath, bundleName, attachStyleSheet = undefined) => attachStyleSheet === undefined
+    ? {
+        name: bundleName,
+        url: `${basePath}${bundleName}.css`
+    }
+    : {
+        name: bundleName,
+        url: `${basePath}${bundleName}.css`,
+        attachStyleSheet
+    };
 /**
  * Given the basePath, returns all bundles (except base and icons) in the
  * format of type `ThemeModel`.
@@ -27,10 +33,11 @@ export const getThemeBundles = (basePath) => [
     getThemeModelItem(basePath, "components/combo-box"),
     getThemeModelItem(basePath, "components/dialog"),
     getThemeModelItem(basePath, "components/edit"),
-    getThemeModelItem(basePath, "components/markdown-viewer"),
+    getThemeModelItem(basePath, "components/markdown-viewer", false),
     getThemeModelItem(basePath, "components/radio-group"),
     getThemeModelItem(basePath, "components/tab"),
     getThemeModelItem(basePath, "components/tabular-grid"),
+    getThemeModelItem(basePath, "components/ticket-list"),
     getThemeModelItem(basePath, "components/tree-view"),
     // Resets
     getThemeModelItem(basePath, "resets/box-sizing"),
