@@ -253,10 +253,7 @@ private buttonIcon = getIconPath({
                   >
                   </ch-code>
                   <script>
-                    code = `// reference
-private comboBoxRef!: HTMLChComboBoxRenderElement;
-
-// model
+                    code = `// model
 private favoriteColorsModel: ComboBoxItemModel[] = [
   { value: "red", caption: "Red"},
   { value: "blue", caption: "Blue"},
@@ -269,7 +266,7 @@ private favoriteColorsModel: ComboBoxItemModel[] = [
 <ch-combo-box-render
   accessible-name="My Favorite Colors"
   class="combo-box"
-  ref={(el: HTMLChComboBoxRenderElement) => (this.comboBoxRef = el as HTMLChComboBoxRenderElement)}>
+  model={this.favoriteColorsModel}>
 </ch-combo-box-render>`;
                   </script>
                 </div>
@@ -394,6 +391,105 @@ private favoriteColorsModel: ComboBoxItemModel[] = [
                   <div class="dummy-grid-container">
                     <a href="./icon.html" class="dummy-grid-container__item"
                       >see the checkbox showcase</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-form-radio-group
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-form-radio-group">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-form-radio-group</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-form-radio-group</code> tag with a
+                    <code>ch-radio-group-render</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>Add the <code>.radio-group</code> class.</li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/radio-group#ch-radio-group-render"
+                      target="_blank"
+                      >Specify the control properties following chameleon
+                      documentation</a
+                    >
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-form-radio-group label="My Favorite Color">
+  <gxg-form-radio label="red" value="red" disabled></gxg-form-radio>
+  <gxg-form-radio label="blue" value="blue" id="radio-blue"></gxg-form-radio>
+  <gxg-form-radio label="green" value="green"></gxg-form-radio>
+  <gxg-form-radio label="yellow" value="yellow"></gxg-form-radio>
+</gxg-form-radio-group>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// model
+private favoriteColorsModel: RadioGroupItemModel[] = [
+  { value: "red", caption: "Red"},
+  { value: "blue", caption: "Blue"},
+  { value: "green", caption: "Green"},
+  { value: "yellow", caption: "Yellow"},
+  { value: "purple", caption: "Purple"}
+];
+
+// use inside <Host>                    
+<ch-radio-group-render
+  class="radio-group"
+  model={this.favoriteColorsModel}>
+</ch-radio-group-render>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <ch-radio-group-render
+                    class="radio-group"
+                    id="radio-group"
+                  ></ch-radio-group-render>
+                  <script>
+                    const radioGroup = document.getElementById("radio-group");
+                    radioGroup.model = [
+                      { value: "red", caption: "Red", disabled: true },
+                      { value: "blue", caption: "Blue" },
+                      { value: "green", caption: "Green" },
+                      { value: "yellow", caption: "Yellow" }
+                    ];
+                  </script>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./radio-group.html"
+                      class="dummy-grid-container__item"
+                      >see the radio group showcase</a
                     >
                   </div>
                 </div>
