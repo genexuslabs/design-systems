@@ -40,7 +40,7 @@
               transition as smooth as possible.
             </p>
           </header>
-          <div class="section__articles-container">
+          <div class="section__articles-container reverse">
             <!-- ========================== 
           gxg-button: text only
           =========================== -->
@@ -314,6 +314,86 @@ private favoriteColorsModel: ComboBoxItemModel[] = [
                       href="./combo-box.html"
                       class="dummy-grid-container__item"
                       >see the combo-box showcase</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-form-checkbox
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-form-checkbox">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-form-checkbox</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-form-checkbox</code> tag with a
+                    <code>ch-checkbox</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>Add the <code>.checkbox</code> class.</li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/checkbox#ch-checkbox"
+                      target="_blank"
+                      >Specify the control properties following chameleon
+                      documentation</a
+                    >
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-form-checkbox id="show-inherited-classes" required></gxg-form-checkbox>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// use inside <Host>
+<ch-checkbox
+  class="checkbox"
+  checked-value="true"
+  un-checked-value="false"
+  value="true"
+  caption="The Caption"
+></ch-checkbox>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox"
+                    checked-value="true"
+                    un-checked-value="false"
+                    value="true"
+                    caption="The Caption"
+                  ></ch-checkbox>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a href="./icon.html" class="dummy-grid-container__item"
+                      >see the checkbox showcase</a
                     >
                   </div>
                 </div>
