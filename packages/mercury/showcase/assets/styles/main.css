@@ -569,3 +569,14 @@ body.ctrl-cmd-pressed .article__pill {
     background-color: var(--mer-color__neutral-gray--700);
   }
 }
+
+/*====================
+code inline tag
+====================*/
+code {
+  background-color: var(--mer-color__neutral-gray--650);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--mer-text__on-elevation);
+}
