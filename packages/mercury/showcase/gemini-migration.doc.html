@@ -262,7 +262,6 @@ private favoriteColorsModel: ComboBoxItemModel[] = [
   { value: "purple", caption: "Purple"}
 ];
 
-// use inside <Host>                    
 <ch-combo-box-render
   accessible-name="My Favorite Colors"
   class="combo-box"
@@ -461,7 +460,6 @@ private favoriteColorsModel: RadioGroupItemModel[] = [
   { value: "purple", caption: "Purple"}
 ];
 
-// use inside <Host>                    
 <ch-radio-group-render
   class="radio-group"
   model={this.favoriteColorsModel}>
@@ -912,6 +910,81 @@ private myIcon = getIconPath({
                       >
                     </li>
                   </ul>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-label
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-label">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-label</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-label</code> tag with a
+                    <code>label</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values.</li>
+                  <li>Add the <code>.label</code> class.</li>
+                  <li>
+                    For positioning the label around a control, you will have to
+                    wrap both with a div with specific classes. Please
+                    <a href="./label" target="_blank"
+                      >refer to the documentation</a
+                    >.
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-label label-position="above">This is the label</gxg-label>
+// Some gemini control here`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<div class="field field-block">
+  <label class="label" htmlFor="control-id-1">The Label Caption</label>
+  // Your mercury "control-id-1" control here
+</div>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <div class="field field-block">
+                    <label class="label" htmlFor="control-id-1"
+                      >The Label Caption</label
+                    >
+                    <div class="dummy-control" id="control-id-1"></div>
+                  </div>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a href="./label.html" class="dummy-grid-container__item"
+                      >see the label showcase</a
+                    >
+                  </div>
                 </div>
               </div>
               <!-- /.article__main -->
