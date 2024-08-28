@@ -802,6 +802,120 @@ private chEditIcon = getIconPath({
               </div>
               <!-- /.article__main -->
             </article>
+
+            <!-- ========================== 
+          gxg-icon
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-icon">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-icon</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-icon</code> tag with a
+                    <code>ch-image</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values.</li>
+                  <li>
+                    Add the <code>.icon-sm</code> or <code>.icon-md</code> class
+                    for setting the sizing.
+                  </li>
+                  <li>
+                    Import and use the utility <code>getIconPath</code> to get
+                    any of the Mercury library icons source.
+                  </li>
+                  <li>
+                    Set the icon source as the <code>ch-image</code>
+                    <code>src</code>value.
+                  </li>
+                  <li>
+                    <a href="" target="_blank"
+                      >Specify any other control properties following chameleon
+                      documentation</a
+                    >
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-icon
+  type="objects/conversational-flows"
+  color="auto"
+  size="small"
+>
+</gxg-icon>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// import before @Component 
+import { getIconPath } from "@genexus/mercury";
+
+// declare inside @Component
+private myIcon = getIconPath({
+  category: "gemini-tools",
+  name: "add-circle",
+  colorType: "on-primary"
+});
+
+// use inside <Host>
+<ch-image src={this.myIcon} class="icon-sm"></ch-image>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <style>
+                    .icon-wrapper {
+                      display: inline-flex;
+                    }
+                  </style>
+                  <span class="icon-wrapper">
+                    <ch-image id="ch-image" class="icon-md"></ch-image>
+                  </span>
+                  <script type="module">
+                    import { getIconPath } from "./assets/scripts/assets-manager.js";
+                    const chImage = document.getElementById("ch-image");
+                    chImage.src = getIconPath({
+                      category: "objects",
+                      name: "attribute"
+                    });
+                  </script>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <ul class="dummy-grid-container dummy-grid-container-2">
+                    <li>
+                      <a href="./icon.html" class="dummy-grid-container__item"
+                        >see the icon documentation</a
+                      >
+                    </li>
+                    <li>
+                      <a href="./icons.html" class="dummy-grid-container__item"
+                        >see all the icons showcase</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
           </div>
         </section>
       </div>
