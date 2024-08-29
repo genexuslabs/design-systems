@@ -62,7 +62,7 @@
 ) {
   $selector: null;
   $cell-tag-name: "ch-tabular-grid-cell";
-  $where-pseudo-class: ":where";
+  $where-pseudo-class: ":is";
   $where-selector: ();
   // the selector varies depending on wether $tabular-grid-affected-columns-nth-list is null or not.
   // if it is null, all cells should be affected.
