@@ -40,7 +40,7 @@
               transition as smooth as possible.
             </p>
           </header>
-          <div class="section__articles-container reverse">
+          <div class="section__articles-container">
             <!-- ========================== 
           gxg-button: text only
           =========================== -->
@@ -101,7 +101,7 @@
                 <div class="article__content">
                   <div class="dummy-grid-container">
                     <a href="./button.html" class="dummy-grid-container__item"
-                      >see the button showcase</a
+                      >button classes</a
                     >
                   </div>
                 </div>
@@ -189,7 +189,7 @@ private buttonIcon = getIconPath({
                 <div class="article__content">
                   <div class="dummy-grid-container">
                     <a href="./button.html" class="dummy-grid-container__item"
-                      >see the button showcase</a
+                      >button classes</a
                     >
                   </div>
                 </div>
@@ -309,7 +309,7 @@ private favoriteColorsModel: ComboBoxItemModel[] = [
                     <a
                       href="./combo-box.html"
                       class="dummy-grid-container__item"
-                      >see the combo-box showcase</a
+                      >combo-box classes</a
                     >
                   </div>
                 </div>
@@ -388,8 +388,10 @@ private favoriteColorsModel: ComboBoxItemModel[] = [
                 <!-- /.article__content -->
                 <div class="article__content">
                   <div class="dummy-grid-container">
-                    <a href="./icon.html" class="dummy-grid-container__item"
-                      >see the checkbox showcase</a
+                    <a
+                      href="./form-checkbox.html"
+                      class="dummy-grid-container__item"
+                      >form checkbox classes</a
                     >
                   </div>
                 </div>
@@ -485,9 +487,9 @@ private favoriteColorsModel: RadioGroupItemModel[] = [
                 <div class="article__content">
                   <div class="dummy-grid-container">
                     <a
-                      href="./radio-group.html"
+                      href="./form-radio-group.html"
                       class="dummy-grid-container__item"
-                      >see the radio group showcase</a
+                      >form radio-group classes</a
                     >
                   </div>
                 </div>
@@ -830,7 +832,9 @@ private chEditIcon = getIconPath({
                     <code>src</code>value.
                   </li>
                   <li>
-                    <a href="" target="_blank"
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/image#ch-image"
+                      target="_blank"
                       >Specify any other control properties following chameleon
                       documentation</a
                     >
@@ -935,8 +939,8 @@ private myIcon = getIconPath({
                   <li>
                     For positioning the label around a control, you will have to
                     wrap both with a div with specific classes. Please
-                    <a href="./label" target="_blank"
-                      >refer to the documentation</a
+                    <a href="./form-label.html" target="_blank"
+                      >form label classes</a
                     >.
                   </li>
                 </ol>
@@ -981,8 +985,10 @@ private myIcon = getIconPath({
                 <!-- /.article__content -->
                 <div class="article__content">
                   <div class="dummy-grid-container">
-                    <a href="./label.html" class="dummy-grid-container__item"
-                      >label classes</a
+                    <a
+                      href="./form-label.html"
+                      class="dummy-grid-container__item"
+                      >form label classes</a
                     >
                   </div>
                 </div>
@@ -1012,7 +1018,9 @@ private myIcon = getIconPath({
                     will be set with a model.
                   </li>
                   <li>
-                    <a href="" target="_blank"
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/action-list#ch-action-list-render"
+                      target="_blank"
                       >Specify other control properties if required, following
                       chameleon documentation.</a
                     >
@@ -1190,8 +1198,8 @@ private myIcon = getIconPath({
                     <a
                       href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/tab#ch-tab-render"
                       target="_blank"
-                      >Specify the tab buttons following the tab
-                      <code>model</code> property</a
+                      >Specify the tab buttons following the tab model
+                      property</a
                     >
                     Note that the model item's id's should match the
                     corresponding slot value for the div's that you inserted
@@ -1519,13 +1527,16 @@ private fruitsModel: TabItemModel[] = [
                   <h1 class="heading-1 heading-gray--light">
                     This is a heading 1
                   </h1>
+                  <br />
                   <p class="section__description">And so on...</p>
                 </div>
                 <!-- /.article__content -->
                 <div class="article__content">
                   <div class="dummy-grid-container">
-                    <a href="./icon.html" class="dummy-grid-container__item"
-                      >see the control showcase</a
+                    <a
+                      href="./typography.html"
+                      class="dummy-grid-container__item"
+                      >heading classes</a
                     >
                   </div>
                 </div>
@@ -1552,8 +1563,274 @@ private fruitsModel: TabItemModel[] = [
                 <!-- /.article__content -->
                 <div class="article__content">
                   <div class="dummy-grid-container">
-                    <p href="./icon.html" class="dummy-grid-container__item">
+                    <p class="dummy-grid-container__item">
                       textarea showcase in progress
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-tree-view
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-tree-view">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-tree-view</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-tree-view</code> tag with a
+                    <code>ch-tree-view-render</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>Add the <code>.tree-view</code> class.</li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/tree-view#ch-tree-view-render"
+                      target="_blank"
+                      >Specify the control properties following chameleon
+                      documentation</a
+                    >
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-tree-view
+  treeModel={this.myTreeModel}
+  dragDisabled={true}
+  dropDisabled={true}
+  toggleCheckboxes={true}
+  checkbox={true}
+  checked={true}
+>
+</gxg-tree-view>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// model
+private myTreeModel: TreeViewItemModel[] = [
+  {
+    id: "root",
+    caption: "GeneXusNext Develop",
+    startImgSrc: "objects/version",
+    expanded: true,
+    leaf: false,
+    items: [
+      {
+        id: "Main_Programs",
+        caption: "Main Programs",
+        startImgSrc: "objects/category",
+        expanded: true,
+        items: [
+          {
+            id: "Main_Programs.Prompt",
+            caption: "Prompt",
+            startImgSrc: "objects/panel-for-sd",
+            leaf: true,
+            metadata: "Panel"
+          },
+          {
+            id: "Main_Programs.ApiHealthCheck",
+            caption: "ApiHealthCheck",
+            startImgSrc: "objects/api",
+            leaf: true
+          },
+          {
+            id: "Main_Programs.BackHome",
+            caption: "BackHome",
+            startImgSrc: "objects/web-panel",
+            leaf: true
+          },
+          {
+            id: "Main_Programs.Login",
+            caption: "Login",
+            startImgSrc: "objects/web-panel",
+            leaf: true
+          },
+          {
+            id: "Main_Programs.ProvisioningServices",
+            caption: "ProvisioningServices",
+            startImgSrc: "objects/api",
+            leaf: true
+          },
+          {
+            id: "Main_Programs.VersionCheck",
+            caption: "VersionCheck",
+            startImgSrc: "objects/procedure",
+            leaf: true
+          }
+        ]
+      },
+      {
+        id: "Root_Module",
+        caption: "Root Module",
+        startImgSrc: "objects/module",
+        expanded: true,
+        items: [
+          {
+            id: "Root_Module.Images",
+            caption: "Images",
+            startImgSrc: "objects/image",
+            leaf: true
+          },
+          {
+            id: "Root_Module.GXNext",
+            caption: "GXNext",
+            startImgSrc: "objects/dso",
+            leaf: true
+          },
+          {
+            id: "Root_Module.GeneXusNext",
+            caption: "GeneXusNext",
+            startImgSrc: "objects/dso",
+            leaf: true
+          },
+          {
+            id: "Root_Module.Files",
+            caption: "Files",
+            startImgSrc: "objects/file",
+            leaf: true
+          },
+          {
+            id: "Root_Module.Domain",
+            caption: "Domain",
+            startImgSrc: "objects/domain",
+            leaf: true
+          }
+        ]
+      },
+      {
+        id: "References",
+        caption: "References",
+        startImgSrc: "objects/references",
+        leaf: true
+      },
+      {
+        id: "Customization",
+        caption: "Customization",
+        startImgSrc: "objects/customization",
+        expanded: true,
+        items: [
+          {
+            id: "Customization.Files",
+            caption: "Files",
+            startImgSrc: "objects/file",
+            leaf: true
+          },
+          {
+            id: "Customization.Images",
+            caption: "Images",
+            startImgSrc: "objects/image",
+            leaf: true
+          }
+        ]
+      },
+      {
+        id: "Documentation",
+        caption: "Documentation",
+        startImgSrc: "objects/document",
+        leaf: true
+      }
+    ]
+  }
+];
+          
+// use inside <Host>                    
+<ch-tree-view-render
+  class="tree-view"
+  model={this.myTreeModel}
+  show-lines="last"
+>
+</ch-tree-view-render>`;
+                  </script>
+                </div>
+                <div class="article__content" style="height: 200px">
+                  <ch-tree-view-render
+                    class="tree-view"
+                    show-lines="all"
+                    id="tree-with-icons"
+                  ></ch-tree-view-render>
+                  <script type="module">
+                    import { iconsModel } from "./assets/models/tree.js";
+                    console.log("iconsModel", iconsModel);
+                    const treeWithIcons =
+                      document.getElementById("tree-with-icons");
+                    treeWithIcons.model = iconsModel;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./tree-view.html"
+                      class="dummy-grid-container__item"
+                      >tree-view classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-pill
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-pill">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  The pill in mercury has not been created yet.
+                </p>
+
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <p class="dummy-grid-container__item">
+                      mercury pill in progress
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-button-group
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-button-group">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  The buttons group in mercury has not been created yet.
+                </p>
+
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <p class="dummy-grid-container__item">
+                      buttons group in progress
                     </p>
                   </div>
                 </div>

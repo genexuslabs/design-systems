@@ -3,11 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Checkbox</title>
+    <title>Form Label</title>
     <style>
       /* Avoid FOUC (Flash Of Unstyled Content) */
       html:not(.hydrated) {
         visibility: hidden;
+      }
+      .box {
+        display: block;
+        inline-size: 150px;
+        block-size: 32px;
+        background-color: var(--mer-color__elevation--02);
+      }
+      .inline-alignment {
+        display: flex;
+        align-items: center;
+      }
+      .block-alignment {
+        display: flex;
+        flex-direction: column;
       }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
@@ -25,97 +39,34 @@
         <section class="section">
           <!-- header -->
           <header class="section__header">
-            <h1 class="section__title">checkbox</h1>
+            <h1 class="section__title">label</h1>
             <p class="section__description">
-              A checkbox input element is a versatile component on a webpage,
-              designed to allow users to make binary choices. It is typically
-              used for selecting multiple options from a list or toggling a
-              setting on and off, making it an essential tool for enhancing user
-              interaction and data collection.
+              A label element is a crucial component on a webpage, designed to
+              provide descriptive text for form controls. It improves
+              accessibility and usability by indicating the purpose of the
+              associated input element, helping users understand what
+              information is required.
             </p>
           </header>
           <div class="section__articles-container">
             <!-- ========================== 
-          checked
+          enabled
           =========================== -->
-            <article class="article" data-nav data-title="checked">
+            <article class="article" data-nav data-title="enabled">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <ch-checkbox
-                    class="checkbox"
-                    checked-value="true"
-                    un-checked-value="false"
-                    value="true"
-                    caption="The Caption"
-                  ></ch-checkbox>
+                  <label class="label" htmlFor="control-id-1"
+                    >The Label Caption</label
+                  >
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-1" language="tsx" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `<ch-checkbox class="checkbox"></ch-checkbox>`;
+                    const markup1 = `<label class="label">The Label Caption</label>`;
                     document.getElementById("ch-code-1").value = markup1;
-                  </script>
-                </div>
-                <!-- /.article__content -->
-              </div>
-              <!-- /.article__main -->
-            </article>
-
-            <!-- ========================== 
-          unchecked
-          =========================== -->
-            <article class="article" data-nav data-title="unchecked">
-              <header class="article__header"></header>
-              <!-- main -->
-              <div class="article__main">
-                <div class="article__content">
-                  <ch-checkbox
-                    class="checkbox"
-                    checked-value="true"
-                    un-checked-value="false"
-                    value="false"
-                    caption="The Caption"
-                  ></ch-checkbox>
-                </div>
-                <div class="article__code">
-                  <ch-code id="ch-code-2" language="tsx" class="code">
-                  </ch-code>
-                  <script>
-                    const markup2 = `<ch-checkbox class="checkbox"></ch-checkbox>`;
-                    document.getElementById("ch-code-2").value = markup2;
-                  </script>
-                </div>
-                <!-- /.article__content -->
-              </div>
-              <!-- /.article__main -->
-            </article>
-
-            <!-- ========================== 
-          indeterminate
-          =========================== -->
-            <article class="article" data-nav data-title="indeterminate">
-              <header class="article__header"></header>
-              <!-- main -->
-              <div class="article__main">
-                <div class="article__content">
-                  <ch-checkbox
-                    class="checkbox"
-                    checked-value="true"
-                    un-checked-value="false"
-                    value="false"
-                    indeterminate
-                    caption="The Caption"
-                  ></ch-checkbox>
-                </div>
-                <div class="article__code">
-                  <ch-code id="ch-code-3" language="tsx" class="code">
-                  </ch-code>
-                  <script>
-                    const markup3 = `<ch-checkbox class="checkbox"></ch-checkbox>`;
-                    document.getElementById("ch-code-3").value = markup3;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -131,20 +82,76 @@
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <ch-checkbox
-                    class="checkbox"
-                    checked-value="true"
-                    un-checked-value="false"
-                    value="false"
-                    caption="The Caption"
-                    disabled
-                  ></ch-checkbox>
+                  <label class="label label--disabled">The Label Caption</label>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-2" language="tsx" class="code"></ch-code>
+                  <script>
+                    const markup2 = `<label class="label label--disabled">The Label Caption</label>`;
+                    document.getElementById("ch-code-2").value = markup2;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          above
+          =========================== -->
+            <article class="article" data-nav data-title="label above">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <form class="field-group">
+                    <div class="field field-block">
+                      <label class="label">The Label Caption</label>
+                      <div class="dummy-control"></div>
+                    </div>
+                  </form>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-3" language="tsx" class="code">
+                  </ch-code>
+                  <script>
+                    const markup3 = `<form class="field-group">
+  <div class="field field-block">
+    <label class="label" htmlFor="control-id-1">The Label Caption</label>
+    <!-- You "control-id-3" control here -->
+  </div>
+</form>`;
+                    document.getElementById("ch-code-3").value = markup3;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          before
+          =========================== -->
+            <article class="article" data-nav data-title="label before">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <form class="field-group">
+                    <div class="field field-inline">
+                      <label class="label">The Label Caption</label>
+                      <div class="dummy-control"></div>
+                    </div>
+                  </form>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-4" language="tsx" class="code">
                   </ch-code>
                   <script>
-                    const markup4 = `<ch-checkbox class="checkbox checkbox--disabled"></ch-checkbox>`;
+                    const markup4 = `<div class="field field-inline">
+  <label class="label" htmlFor="control-id-1">The Label Caption</label>
+  <!-- You "control-id-1" control here -->
+</div>`;
                     document.getElementById("ch-code-4").value = markup4;
                   </script>
                 </div>
@@ -154,50 +161,22 @@
             </article>
 
             <!-- ========================== 
-          grouping checkboxes
+          positioning classes
           =========================== -->
-            <article class="article" data-nav data-title="grouping checkboxes">
+            <article class="article" data-nav data-title="field classes">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
-                <div class="article__content">
-                  <div class="controls__container">
-                    <ch-checkbox
-                      class="checkbox"
-                      checked-value="true"
-                      un-checked-value="false"
-                      value="false"
-                      caption="The Caption 1"
-                    ></ch-checkbox>
-                    <ch-checkbox
-                      class="checkbox"
-                      checked-value="true"
-                      un-checked-value="false"
-                      value="false"
-                      caption="The Caption 2"
-                    ></ch-checkbox>
-                    <ch-checkbox
-                      class="checkbox"
-                      checked-value="true"
-                      un-checked-value="false"
-                      value="false"
-                      caption="The Caption 3"
-                    ></ch-checkbox>
-                  </div>
+                <p class="article__description">
+                  For a more detailed documentation about positioning the label,
+                  please refer to the <em>form</em> page, <br />on the link
+                  provided below.
+                </p>
+                <div class="dummy-grid-container">
+                  <a href="./form.html" class="dummy-grid-container__item"
+                    >field styles</a
+                  >
                 </div>
-                <div class="article__code">
-                  <ch-code id="ch-code-5" language="tsx" class="code">
-                  </ch-code>
-                  <script>
-                    const markup5 = `<div class="controls__container">
-  <ch-checkbox class="checkbox"></ch-checkbox>
-  <ch-checkbox class="checkbox"></ch-checkbox>
-  <ch-checkbox class="checkbox"></ch-checkbox>
-</div>`;
-                    document.getElementById("ch-code-5").value = markup5;
-                  </script>
-                </div>
-                <!-- /.article__content -->
               </div>
               <!-- /.article__main -->
             </article>
