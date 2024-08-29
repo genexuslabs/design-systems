@@ -1369,6 +1369,83 @@ private fruitsModel: TabItemModel[] = [
               </div>
               <!-- /.article__main -->
             </article>
+
+            <!-- ========================== 
+          gxg-text
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-text">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-text</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-text</code> tag with a
+                    <code>p</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>Add the <code>.text-body</code> class.</li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-text type="text-regular">
+  Genexus is a development platform that automates application creation using a  
+  model-driven approach. It allows developers to focus on high-level design,     
+  generating code for web, mobile, and desktop applications, resulting in faster 
+  development cycles and fewer errors.
+</gxg-text>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<p class="text-body">
+  Genexus is a development platform that automates application creation using a  
+  model-driven approach. It allows developers to focus on high-level design,     
+  generating code for web, mobile, and desktop applications, resulting in faster 
+  development cycles and fewer errors.                      
+</p>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <p class="text-body">
+                    Genexus is a development platform that automates application
+                    creation using a model-driven approach. It allows developers
+                    to focus on high-level design, generating code for web,
+                    mobile, and desktop applications, resulting in faster
+                    development cycles and fewer errors.
+                  </p>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./typography.html#text-body-7"
+                      class="dummy-grid-container__item"
+                      >text classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
           </div>
         </section>
       </div>
