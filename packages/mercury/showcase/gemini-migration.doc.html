@@ -1446,6 +1446,92 @@ private fruitsModel: TabItemModel[] = [
               </div>
               <!-- /.article__main -->
             </article>
+
+            <!-- ========================== 
+          gxg-title
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-title">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-title</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-title</code> tag with any of the six
+                    heading html tags:<br /><code>h1</code>, <code>h2</code>,
+                    <code>h3</code>, <code>h4</code>, <code>h5</code> or
+                    <code>h6</code>.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>
+                    Add a <code>.heading-*</code> class, where
+                    <code>*</code> represents your heading level.
+                  </li>
+                  <li>
+                    Add any of the
+                    <a
+                      href="./http://localhost:5200/showcase/typography.html"
+                      target="_blank"
+                      >allowed heading colors classes</a
+                    >. The heading color will be transparent unless you apply a
+                    valid color css class.
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-title type="title-01">This is a heading 1</gxg-title>
+<gxg-title type="title-02">This is a heading 2</gxg-title>
+<gxg-title type="title-03">This is a heading 3</gxg-title>
+<gxg-title type="title-04">This is a heading 4</gxg-title>
+<gxg-title type="title-05">This is a heading 5</gxg-title>
+<gxg-title type="title-06">This is a heading 6</gxg-title>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<h1 class="heading-1 heading-gray--light">This is a heading 1</h1>
+<h2 class="heading-2 heading-gray--light">This is a heading 2</h2>
+<h3 class="heading-3 heading-gray--light">This is a heading 3</h3>
+<h4 class="heading-4 heading-gray--light">This is a heading 4</h4>
+<h5 class="heading-5 heading-gray--light">This is a heading 5</h5>
+<h6 class="heading-6 heading-gray--light">This is a heading 6</h6>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <h1 class="heading-1 heading-gray--light">
+                    This is a heading 1
+                  </h1>
+                  <p class="section__description">And so on...</p>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a href="./icon.html" class="dummy-grid-container__item"
+                      >see the control showcase</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
           </div>
         </section>
       </div>
