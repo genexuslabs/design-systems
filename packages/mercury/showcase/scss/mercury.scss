@@ -2725,7 +2725,7 @@
 @mixin heading-tokens() {
   // heading base
   --heading-base__font-family: var(--mer-font-family--title);
-  --heading__color: inherit;
+  --heading__color: transparent; //this forces the user to apply an allowed heading color.
 
   //h1
   --heading-h1__font-size: var(--mer-font__size--xl);
@@ -5010,7 +5010,7 @@
 ) {
   $selector: null;
   $cell-tag-name: "ch-tabular-grid-cell";
-  $where-pseudo-class: ":where";
+  $where-pseudo-class: ":is";
   $where-selector: ();
   // the selector varies depending on wether $tabular-grid-affected-columns-nth-list is null or not.
   // if it is null, all cells should be affected.
@@ -6941,7 +6941,7 @@
 ) {
   $selector: null;
   $cell-tag-name: "ch-tabular-grid-cell";
-  $where-pseudo-class: ":where";
+  $where-pseudo-class: ":is";
   $where-selector: ();
   // the selector varies depending on wether $tabular-grid-affected-columns-nth-list is null or not.
   // if it is null, all cells should be affected.
