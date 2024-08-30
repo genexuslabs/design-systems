@@ -26,6 +26,15 @@
     --mer-border-color__primary--disabled
   );
   --button-primary__color--disabled: var(--mer-text__on-disabled);
+
+  //destructive
+  --button-primary__background-color--destructive: var(
+    --mer-accent__primary--destructive
+  );
+  --button-primary__border-color--destructive: var(
+    --button-primary__background-color--destructive
+  );
+  --button-primary__color--destructive: var(--mer-text__on-primary);
 }
 
 @mixin button-tokens-secondary() {

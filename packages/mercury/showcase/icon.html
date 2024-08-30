@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Icons</title>
+    <title>Icon</title>
     <style>
       /* Avoid FOUC (Flash Of Unstyled Content) */
       html:not(.hydrated) {
@@ -41,7 +41,7 @@
             <!-- ========================== 
           size small
           =========================== -->
-            <article class="article" data-nav data-title="size small">
+            <article class="article" data-nav data-title="size: small">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
@@ -59,11 +59,9 @@
                   </script>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-1" language="xml" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup1 = `<ch-image class="icon-sm"></ch-image>`;
-                    document.getElementById("ch-code-1").value = markup1;
+                    code = `<ch-image class="icon-sm"></ch-image>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -74,7 +72,7 @@
             <!-- ========================== 
           size medium
           =========================== -->
-            <article class="article" data-nav data-title="size medium">
+            <article class="article" data-nav data-title="size: medium">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
@@ -94,11 +92,69 @@
                   </script>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-2" language="xml" class="code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-image class="icon-md"></ch-image>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          using icon
+          =========================== -->
+            <article class="article" data-nav data-title="icon path">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <p class="article__description">
+                    Mercury provides an utility function to get
+                    <a href="./icons.html" target="_blank"
+                      >any icon from the library</a
+                    >
+                    called <code>getIconPath</code>.<br />To set the icon on the
+                    <code>ch-image:</code>
+                  </p>
+                  <ul class="article__description article__list">
+                    <li>Import <code>getIconPath</code>.</li>
+                    <li>
+                      Use <code>getIconPath</code> to declare the category,
+                      name, and optional color type.
+                    </li>
+                    <li>
+                      Use the return from the preceding step to apply on the
+                      <code>ch-image</code> <code>src</code> property.
+                    </li>
+                  </ul>
+                  <div class="article__content"></div>
+                </div>
+                <div class="article__code">
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="tsx example"
+                    data-documentation
+                  >
                   </ch-code>
                   <script>
-                    const markup2 = `<ch-image class="icon-md"></ch-image>`;
-                    document.getElementById("ch-code-2").value = markup2;
+                    code = `// import before @Component
+import { getIconPath } from "@genexus/mercury";
+
+// declare inside @Component
+private geminiToolsAddCirclePrimary = getIconPath({
+  category: "gemini-tools",
+  name: "add-circle",
+  colorType: "primary"
+});
+
+// use inside <Host>
+<ch-image
+  class="icon-sm"
+  src={this.geminiToolsAddCirclePrimary}>
+</ch-image>`;
                   </script>
                 </div>
                 <!-- /.article__content -->

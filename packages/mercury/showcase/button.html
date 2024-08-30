@@ -16,6 +16,36 @@
     <link rel="stylesheet" href="./assets/styles/sidebar.css" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <link rel="stylesheet" href="./assets/styles/reset.css" />
+    <style>
+      .bundle-container {
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        border-block-end: 1px solid var(--mer-color__elevation--01);
+      }
+      .bundle-container button {
+      }
+      .expander {
+        display: grid;
+        grid-template-rows: 0fr;
+        overflow: hidden;
+        transition: grid-template-rows 0.2s;
+      }
+      .expander-content {
+        min-height: 0;
+        transition: visibility 0.2s;
+        visibility: hidden;
+      }
+      .expander .code__header {
+        margin-block-start: 8px;
+      }
+      .expander.expanded {
+        grid-template-rows: 1fr;
+      }
+      .expander.expanded .expander-content {
+        visibility: visible;
+      }
+    </style>
   </head>
   <body class="showcase" data-sidebar>
     <script src="./assets/scripts/scripts.js"></script>
@@ -26,7 +56,7 @@
     ------------------------------------------------------ -->
         <section class="section" data-nav>
           <header class="section__header">
-            <h1 class="section__title">primary</h1>
+            <h1 class="section__title">button primary</h1>
             <p class="section__description">
               A primary HTML button is a key element on a webpage, designed to
               stand out and encourage user interaction. It typically represents
@@ -43,19 +73,18 @@
                   <button class="button-primary">Caption</button>
                 </div>
                 <div class="article__code">
-                  <ch-code id="chCode1" language="xml" class="code"></ch-code>
+                  <ch-code language="tsx" class="code"></ch-code>
                   <script>
-                    let chCode1 = `<button class="button-primary">
+                    code = `<button class="button-primary">
   Caption
 </button>`;
-                    document.getElementById("chCode1").value = chCode1;
                   </script>
                 </div>
               </div>
             </article>
 
             <!-- button-primary text only : disabled-->
-            <article class="article" data-nav data-title="text only : disabled">
+            <article class="article" data-nav data-title="text only: disabled">
               <!-- header -->
               <header class="article__header"></header>
               <!-- main -->
@@ -64,46 +93,115 @@
                   <button class="button-primary" disabled>Caption</button>
                 </div>
                 <div class="article__code">
-                  <ch-code id="chCode2" language="xml" class="code"></ch-code>
+                  <ch-code language="tsx" class="code"></ch-code>
                   <script>
-                    const chCode2 = `<button class="button-primary" disabled>
+                    code = `<button class="button-primary" disabled>
   Caption
 </button>`;
-                    document.getElementById("chCode2").value = chCode2;
                   </script>
                 </div>
               </div>
             </article>
 
-            <!-- button-primary text with icon-->
-            <article class="article" data-nav data-title="text with icon">
+            <!-- button-primary text only: destructive-->
+            <article
+              class="article"
+              data-nav
+              data-title="text only: destructive"
+            >
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <button class="button-primary button-primary--destructive">
+                    Caption
+                  </button>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"></ch-code>
+                  <script>
+                    code = `<button class="button-primary button-primary--destructive">
+  Caption
+</button>`;
+                  </script>
+                </div>
+              </div>
+            </article>
+
+            <!-- button-primary icon and text-->
+            <article class="article" data-nav data-title="icon and text">
               <!-- header -->
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
                   <button class="button-primary button-icon-and-text">
-                    <ch-image class="ch-image-on-primary icon-sm"></ch-image>
+                    <ch-image
+                      class="icon-sm"
+                      id="primary-text-with-icon-enabled"
+                    ></ch-image>
                     Caption 1
                   </button>
                 </div>
                 <div class="article__code">
-                  <ch-code id="chCode3" language="xml" class="code"> </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const chCode3 = `<button class="button-primary button-icon-and-text">
+                    code = `<button class="button-primary button-icon-and-text">
+  <ch-image class="icon-sm"></ch-image>
   Caption
 </button>`;
-                    document.getElementById("chCode3").value = chCode3;
                   </script>
                 </div>
+                <p class="article__description">
+                  <a href="./icon.html" target="_blank"
+                    >See how to set the icon</a
+                  >
+                </p>
               </div>
             </article>
 
-            <!-- button-primary text with icon : disabled -->
+            <!-- button-primary icon and text: disabled -->
             <article
               class="article"
               data-nav
-              data-title="text with icon : disabled"
+              data-title="icon and text: disabled"
+            >
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <button class="button-primary button-icon-and-text" disabled>
+                    <ch-image
+                      class="icon-sm"
+                      id="primary-text-with-icon-disabled"
+                    ></ch-image>
+                    Caption
+                  </button>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<button class="button-primary button-icon-and-text" disabled>
+  <ch-image class="icon-sm"></ch-image>                      
+  Caption
+</button>`;
+                  </script>
+                </div>
+                <p class="article__description">
+                  <a href="./icon.html" target="_blank"
+                    >See how to set the icon</a
+                  >
+                </p>
+              </div>
+            </article>
+
+            <!-- button-primary icon and text: destructive -->
+            <article
+              class="article no-separator"
+              nav
+              data-title="icon and text: destructive"
             >
               <!-- header -->
               <header class="article__header"></header>
@@ -111,66 +209,29 @@
               <div class="article__main">
                 <div class="article__content">
                   <button
-                    class="button-primary button-primary--disabled button-icon-and-text"
-                    disabled
+                    class="button-primary button-primary--destructive button-icon-and-text"
                   >
-                    <ch-image class="ch-image-on-disabled icon-sm"></ch-image>
+                    <ch-image
+                      class="icon-sm"
+                      id="primary-text-with-icon-destructive"
+                    ></ch-image>
                     Caption
                   </button>
                 </div>
                 <div class="article__code">
-                  <ch-code id="chCode4" language="xml" class="code"> </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const chCode4 = `<button class="button-primary button-primary--disabled button-icon-and-text" disabled>
+                    code = `<button class="button-primary button-primary--destructive button-icon-and-text">
+  <ch-image class="icon-sm"></ch-image>                      
   Caption
 </button>`;
-                    document.getElementById("chCode4").value = chCode4;
                   </script>
                 </div>
-              </div>
-            </article>
-
-            <!-- button-primary icon only -->
-            <article class="article" data-nav data-title="icon only">
-              <!-- header -->
-              <header class="article__header"></header>
-              <!-- main -->
-              <div class="article__main">
-                <div class="article__content">
-                  <button class="button-primary button-icon-only">
-                    <ch-image class="ch-image-on-primary icon-sm"></ch-image>
-                  </button>
-                </div>
-                <div class="article__code">
-                  <ch-code id="chCode5" language="xml" class="code"> </ch-code>
-                  <script>
-                    const chCode5 = `<button class="button-primary button-icon-only">
-  Caption
-</button>`;
-                    document.getElementById("chCode5").value = chCode5;
-                  </script>
-                </div>
-              </div>
-            </article>
-
-            <!-- button-primary icon only : disabled-->
-            <article class="article" data-nav data-title="icon only : disabled">
-              <!-- header -->
-              <header class="article__header"></header>
-              <!-- main -->
-              <div class="article__main">
-                <div class="article__content">
-                  <button class="button-primary button-icon-only" disabled>
-                    <ch-image class="ch-image-on-disabled icon-sm"></ch-image>
-                  </button>
-                </div>
-                <div class="article__code">
-                  <ch-code id="chCode6" language="xml" class="code"> </ch-code>
-                  <script>
-                    const chCode6 = `<button class="button-primary button-icon-only" disabled></button>`;
-                    document.getElementById("chCode6").value = chCode6;
-                  </script>
-                </div>
+                <p class="article__description">
+                  <a href="./icon.html" target="_blank"
+                    >See how to set the icon</a
+                  >
+                </p>
               </div>
             </article>
           </div>
@@ -182,7 +243,7 @@
         <section class="section" data-nav>
           <!-- header -->
           <header class="section__header">
-            <h1 class="section__title">secondary</h1>
+            <h1 class="section__title">button secondary</h1>
             <p class="section__description">
               A secondary HTML button is a supportive element on a webpage,
               designed to complement the primary button without overshadowing
@@ -201,17 +262,18 @@
                   <button class="button-secondary">Caption</button>
                 </div>
                 <div class="article__code">
-                  <ch-code id="chCode7" language="xml" class="code"> </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const chCode7 = `<button class="button-secondary"></button>`;
-                    document.getElementById("chCode7").value = chCode7;
+                    code = `<button class="button-secondary">
+  Caption
+</button>`;
                   </script>
                 </div>
               </div>
             </article>
 
-            <!-- button-secondary text : disabled-->
-            <article class="article" data-nav data-title="text only : disabled">
+            <!-- button-secondary text: disabled-->
+            <article class="article" data-nav data-title="text only: disabled">
               <!-- header -->
               <header class="article__header"></header>
               <!-- main -->
@@ -220,46 +282,53 @@
                   <button class="button-secondary" disabled>Caption</button>
                 </div>
                 <div class="article__code">
-                  <ch-code id="chCode8" language="xml" class="code"></ch-code>
+                  <ch-code language="tsx" class="code"></ch-code>
                   <script>
-                    const chCode8 = `<button class="button-secondary" disabled>
+                    code = `<button class="button-secondary" disabled>
   Caption
 </button>`;
-                    document.getElementById("chCode8").value = chCode8;
                   </script>
                 </div>
               </div>
             </article>
 
-            <!-- button-secondary text with icon-->
-            <article class="article" data-nav data-title="text with icon">
+            <!-- button-secondary icon and text-->
+            <article class="article" data-nav data-title="icon and text">
               <!-- header -->
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
                   <button class="button-secondary button-icon-and-text">
-                    <ch-image class="ch-image-neutral icon-sm"></ch-image>
+                    <ch-image
+                      class="icon-sm"
+                      id="secondary-text-with-icon-enabled"
+                    ></ch-image>
                     Caption
                   </button>
                 </div>
                 <div class="article__code">
-                  <ch-code id="chCode9" language="xml" class="code"></ch-code>
+                  <ch-code language="tsx" class="code"></ch-code>
                   <script>
-                    const chCode9 = `<button class="button-secondary button-icon-and-text">
+                    code = `<button class="button-secondary button-icon-and-text">
+  <ch-image class="icon-sm"></ch-image>                      
   Caption
 </button>`;
-                    document.getElementById("chCode9").value = chCode9;
                   </script>
                 </div>
+                <p class="article__description">
+                  <a href="./icon.html" target="_blank"
+                    >See how to set the icon</a
+                  >
+                </p>
               </div>
             </article>
 
-            <!-- button-secondary text with icon : disabled -->
+            <!-- button-secondary icon and text: disabled -->
             <article
               class="article"
               data-nav
-              data-title="text with icon : disabled"
+              data-title="icon and text: disabled"
             >
               <!-- header -->
               <header class="article__header"></header>
@@ -270,19 +339,27 @@
                     class="button-secondary button-icon-and-text"
                     disabled
                   >
-                    <ch-image class="ch-image-neutral icon-sm"></ch-image>
+                    <ch-image
+                      class="icon-sm"
+                      id="secondary-text-with-icon-disabled"
+                    ></ch-image>
                     Caption
                   </button>
                 </div>
                 <div class="article__code">
-                  <ch-code id="chCode10" language="xml" class="code"></ch-code>
+                  <ch-code language="tsx" class="code"></ch-code>
                   <script>
-                    const chCode10 = `<button class="button-secondary button-icon-and-text" disabled>
+                    code = `<button class="button-secondary button-icon-and-text" disabled>
+  <ch-image class="icon-sm"></ch-image>                      
   Caption
 </button>`;
-                    document.getElementById("chCode10").value = chCode10;
                   </script>
                 </div>
+                <p class="article__description">
+                  <a href="./icon.html" target="_blank"
+                    >See how to set the icon</a
+                  >
+                </p>
               </div>
             </article>
           </div>
@@ -294,7 +371,7 @@
         <section class="section" data-nav>
           <!-- header -->
           <header class="section__header">
-            <h1 class="section__title">tertiary</h1>
+            <h1 class="section__title">button tertiary</h1>
             <p class="section__description">
               A tertiary HTML button is a minimalistic element on a webpage,
               designed to be subtle and unobtrusive. With no border and a
@@ -313,19 +390,18 @@
                   <button class="button-tertiary">Caption</button>
                 </div>
                 <div class="article__code">
-                  <ch-code id="chCode11" language="xml" class="code"></ch-code>
+                  <ch-code language="tsx" class="code"></ch-code>
                   <script>
-                    const chCode11 = `<button class="button-tertiary">
+                    code = `<button class="button-tertiary">
   Caption
 </button>`;
-                    document.getElementById("chCode11").value = chCode11;
                   </script>
                 </div>
               </div>
             </article>
 
-            <!-- button-tertiary text : disabled-->
-            <article class="article" data-nav data-title="text only : disabled">
+            <!-- button-tertiary text: disabled-->
+            <article class="article" data-nav data-title="text only: disabled">
               <!-- header -->
               <header class="article__header"></header>
               <!-- main -->
@@ -334,38 +410,45 @@
                   <button class="button-tertiary" disabled>Caption</button>
                 </div>
                 <div class="article__code">
-                  <ch-code id="chCode12" language="xml" class="code"></ch-code>
+                  <ch-code language="tsx" class="code"></ch-code>
                   <script>
-                    const chCode12 = `<button class="button-tertiary" disabled>
+                    code = `<button class="button-tertiary" disabled>
   Caption
 </button>`;
-                    document.getElementById("chCode12").value = chCode12;
                   </script>
                 </div>
               </div>
             </article>
 
             <!-- button-tertiary text with icon-->
-            <article class="article" data-nav data-title="text with icon">
+            <article class="article" data-nav data-title="icon and text">
               <!-- header -->
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
                   <button class="button-tertiary button-icon-and-text">
-                    <ch-image class="ch-image-primary icon-sm"></ch-image>
+                    <ch-image
+                      class="icon-sm"
+                      id="tertiary-text-with-icon-enabled"
+                    ></ch-image>
                     Caption
                   </button>
                 </div>
                 <div class="article__code">
-                  <ch-code id="chCode13" language="xml" class="code"></ch-code>
+                  <ch-code language="tsx" class="code"></ch-code>
                   <script>
-                    const chCode13 = `<button class="button-tertiary button-icon-and-text">
+                    code = `<button class="button-tertiary button-icon-and-text">
+  <ch-image class="icon-sm"></ch-image>
   Caption
 </button>`;
-                    document.getElementById("chCode13").value = chCode13;
                   </script>
                 </div>
+                <p class="article__description">
+                  <a href="./icon.html" target="_blank"
+                    >See how to set the icon</a
+                  >
+                </p>
               </div>
             </article>
 
@@ -373,7 +456,7 @@
             <article
               class="article"
               data-nav
-              data-title="text with icon : disabled"
+              data-title="icon and text: disabled"
             >
               <!-- header -->
               <header class="article__header"></header>
@@ -381,18 +464,95 @@
               <div class="article__main">
                 <div class="article__content">
                   <button class="button-tertiary button-icon-and-text" disabled>
-                    <ch-image class="ch-image-primary icon-sm"></ch-image>
+                    <ch-image
+                      class="icon-sm"
+                      id="tertiary-text-with-icon-disabled"
+                    ></ch-image>
                     Caption
                   </button>
                 </div>
                 <div class="article__code">
-                  <ch-code id="chCode14" language="xml" class="code"></ch-code>
+                  <ch-code language="tsx" class="code"></ch-code>
                   <script>
-                    const chCode14 = `<button class="button-tertiary button-icon-and-text" disabled>
+                    code = `<button class="button-tertiary button-icon-and-text" disabled>
+  <ch-image class="icon-sm"></ch-image>                      
   Caption
 </button>`;
-                    document.getElementById("chCode14").value = chCode14;
                   </script>
+                </div>
+                <p class="article__description">
+                  <a href="./icon.html" target="_blank"
+                    >See how to set the icon</a
+                  >
+                </p>
+              </div>
+            </article>
+
+            <!-- button-tertiary icon only -->
+            <article class="article" data-nav data-title="icon only">
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <button
+                    class="button-tertiary button-icon-only"
+                    aria-label="caption"
+                  >
+                    <ch-image
+                      class="icon-sm"
+                      id="tertiary-icon-only"
+                    ></ch-image>
+                  </button>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"></ch-code>
+                  <script>
+                    code = `<button class="button-tertiary button-icon-only" aria-label="caption">
+  <ch-image class="icon-sm"></ch-image>                      
+</button>`;
+                  </script>
+                </div>
+                <p class="article__description">
+                  <a href="./icon.html" target="_blank"
+                    >See how to set the icon</a
+                  >
+                </p>
+              </div>
+            </article>
+
+            <!-- button-tertiary icon only: disabled -->
+            <article class="article" data-nav data-title="icon only: disabled">
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <button
+                    class="button-tertiary button-icon-only"
+                    disabled
+                    aria-label="caption"
+                  >
+                    <ch-image
+                      class="icon-sm"
+                      id="tertiary-icon-only-disabled"
+                    ></ch-image>
+                  </button>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"></ch-code>
+                  <script>
+                    code = `<button class="button-tertiary button-icon-only" disabled aria-label="caption">
+  <ch-image class="icon-sm"></ch-image>                      
+</button>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a href="./icon.html" class="dummy-grid-container__item"
+                      >See how to set the icon</a
+                    >
+                  </div>
                 </div>
               </div>
             </article>
@@ -402,30 +562,120 @@
     </main>
 
     <script type="module">
-      // ch-image on primary
-      const chImagesOnPrimary = document.querySelectorAll(
-        ".ch-image-on-primary"
+      import { getIconPath } from "./assets/scripts/assets-manager.js";
+      // - - - - - - - - - - - - - - -
+      // Button Primary
+      // - - - - - - - - - - - - - - -
+      const ICON_ON_PRIMARY = getIconPath({
+        category: "gemini-tools",
+        name: "add-circle",
+        colorType: "on-primary"
+      });
+      const ICON_ON_DISABLED = getIconPath({
+        category: "gemini-tools",
+        name: "add-circle",
+        colorType: "on-disabled"
+      });
+      const ICON_ON_ERROR = getIconPath({
+        category: "gemini-tools",
+        name: "add-circle",
+        colorType: "on-message"
+      });
+
+      // icon and text: enabled
+      const chImagePrimaryTextWithIconEnabled = document.getElementById(
+        "primary-text-with-icon-enabled"
       );
-      chImagesOnPrimary.forEach(chImage => {
-        chImage.src = BUTTON_ICONS.GEMINI_TOOLS_ADD_CIRCLE_ON_PRIMARY;
-      });
-      // ch-image on disabled
-      const chImagesOnDisabled = document.querySelectorAll(
-        ".ch-image-on-disabled"
+      chImagePrimaryTextWithIconEnabled.src = ICON_ON_PRIMARY;
+
+      // icon and text: disabled
+      const chImagePrimaryTextWithIconDisabled = document.getElementById(
+        "primary-text-with-icon-disabled"
       );
-      chImagesOnDisabled.forEach(chImage => {
-        chImage.src = BUTTON_ICONS.GEMINI_TOOLS_ADD_CIRCLE_ON_DISABLED;
+      chImagePrimaryTextWithIconDisabled.src = ICON_ON_DISABLED;
+
+      // icon and text: destructive
+      const chImagePrimaryTextWithIconDestructive = document.getElementById(
+        "primary-text-with-icon-destructive"
+      );
+      chImagePrimaryTextWithIconDestructive.src = ICON_ON_ERROR;
+
+      // icon only: enabled
+      // const chImagePrimaryIconOnlyEnabled = document.getElementById(
+      //   "primary-icon-only-enabled"
+      // );
+      // chImagePrimaryIconOnlyEnabled.src = ICON_ON_PRIMARY;
+
+      // icon only: disabled
+      // const chImagePrimaryIconOnlyDisabled = document.getElementById(
+      //   "primary-icon-only-disabled"
+      // );
+      // chImagePrimaryIconOnlyDisabled.src = ICON_ON_DISABLED;
+
+      // - - - - - - - - - - - - - - -
+      // Button Secondary
+      // - - - - - - - - - - - - - - -
+      const ICON_NEUTRAL = getIconPath({
+        category: "gemini-tools",
+        name: "add-circle",
+        colorType: "neutral"
       });
-      // ch-image neutral
-      const chImagesNeutral = document.querySelectorAll(".ch-image-neutral");
-      chImagesNeutral.forEach(chImage => {
-        chImage.src = BUTTON_ICONS.GEMINI_TOOLS_ADD_CIRCLE_NEUTRAL;
+
+      // icon and text: enabled
+      const chImageSecondaryTextWithIconEnabled = document.getElementById(
+        "secondary-text-with-icon-enabled"
+      );
+      chImageSecondaryTextWithIconEnabled.src = ICON_NEUTRAL;
+
+      // icon and text: disabled
+      const chImageSecondaryTextWithIconDisabled = document.getElementById(
+        "secondary-text-with-icon-disabled"
+      );
+      chImageSecondaryTextWithIconDisabled.src = ICON_NEUTRAL;
+
+      // icon only: enabled
+      // const chImageSecondaryIconOnlyEnabled = document.getElementById(
+      //   "secondary-icon-only-enabled"
+      // );
+      // chImageSecondaryIconOnlyEnabled.src = ICON_NEUTRAL;
+
+      // icon only: disabled
+      // const chImageSecondaryIconOnlyDisabled = document.getElementById(
+      //   "secondary-icon-only-disabled"
+      // );
+      // chImageSecondaryIconOnlyDisabled.src = ICON_NEUTRAL;
+
+      // - - - - - - - - - - - - - - -
+      // Button Tertiary
+      // - - - - - - - - - - - - - - -
+      const ICON_PRIMARY = getIconPath({
+        category: "gemini-tools",
+        name: "add-circle",
+        colorType: "primary"
       });
-      // ch-image primary
-      const chImagesPrimary = document.querySelectorAll(".ch-image-primary");
-      chImagesPrimary.forEach(chImage => {
-        chImage.src = BUTTON_ICONS.GEMINI_TOOLS_ADD_CIRCLE_PRIMARY;
-      });
+
+      // icon and text: enabled
+      const chImageTertiaryTextWithIconEnabled = document.getElementById(
+        "tertiary-text-with-icon-enabled"
+      );
+      chImageTertiaryTextWithIconEnabled.src = ICON_PRIMARY;
+
+      // icon and text: disabled
+      const chImageTertiaryTextWithIconDisabled = document.getElementById(
+        "tertiary-text-with-icon-disabled"
+      );
+      chImageTertiaryTextWithIconDisabled.src = ICON_PRIMARY;
+
+      // icon only
+      const chImageTertiaryIconOnly =
+        document.getElementById("tertiary-icon-only");
+      chImageTertiaryIconOnly.src = ICON_PRIMARY;
+
+      // icon only: disabled
+      const chImageTertiaryIconOnlyDisabled = document.getElementById(
+        "tertiary-icon-only-disabled"
+      );
+      chImageTertiaryIconOnlyDisabled.src = ICON_PRIMARY;
     </script>
   </body>
 </html>

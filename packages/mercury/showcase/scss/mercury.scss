@@ -2234,6 +2234,15 @@
     --mer-border-color__primary--disabled
   );
   --button-primary__color--disabled: var(--mer-text__on-disabled);
+
+  //destructive
+  --button-primary__background-color--destructive: var(
+    --mer-accent__primary--destructive
+  );
+  --button-primary__border-color--destructive: var(
+    --button-primary__background-color--destructive
+  );
+  --button-primary__color--destructive: var(--mer-text__on-primary);
 }
 
 @mixin button-tokens-secondary() {
@@ -2318,6 +2327,12 @@
     --control__border-color: var(--button-primary__background-color--disabled);
     color: var(--button-primary__color--disabled);
   }
+
+  &-destructive {
+    --control__border-color: var(--button-primary__border-color--destructive);
+    background-color: var(--button-primary__background-color--destructive);
+    color: var(--button-primary__color--destructive);
+  }
 }
 
 %button-secondary {
@@ -2381,7 +2396,12 @@
 
 /// @group Button
 /// @param {String} $selector [".button-primary"] -
-@mixin button-primary($selector: ".button-primary", $add--disabled: true) {
+@mixin button-primary(
+  $selector: ".button-primary",
+  $destructive-selector: ".button-primary--destructive",
+  $add--disabled: true,
+  $add--destructive: true
+) {
   #{$selector} {
     @extend %button-primary;
 
@@ -2396,6 +2416,19 @@
     @if $add--disabled {
       &:disabled {
         @extend %button-primary--disabled;
+      }
+    }
+  }
+  @if $add--destructive {
+    #{$destructive-selector} {
+      @extend %button-primary-destructive;
+
+      &:hover {
+        @extend %button-primary-destructive;
+      }
+
+      &:active {
+        @extend %button-primary-destructive;
       }
     }
   }
@@ -2692,7 +2725,9 @@
 @mixin heading-tokens() {
   // heading base
   --heading-base__font-family: var(--mer-font-family--title);
-  --heading__color: inherit;
+  --heading__color: var(
+    --mer-heading__gray--light
+  ); //this forces the user to apply an allowed heading color.
 
   //h1
   --heading-h1__font-size: var(--mer-font__size--xl);
@@ -2948,6 +2983,15 @@
     --mer-border-color__primary--disabled
   );
   --button-primary__color--disabled: var(--mer-text__on-disabled);
+
+  //destructive
+  --button-primary__background-color--destructive: var(
+    --mer-accent__primary--destructive
+  );
+  --button-primary__border-color--destructive: var(
+    --button-primary__background-color--destructive
+  );
+  --button-primary__color--destructive: var(--mer-text__on-primary);
 }
 
 @mixin button-tokens-secondary() {
@@ -4967,7 +5011,7 @@
 ) {
   $selector: null;
   $cell-tag-name: "ch-tabular-grid-cell";
-  $where-pseudo-class: ":where";
+  $where-pseudo-class: ":is";
   $where-selector: ();
   // the selector varies depending on wether $tabular-grid-affected-columns-nth-list is null or not.
   // if it is null, all cells should be affected.
@@ -6898,7 +6942,7 @@
 ) {
   $selector: null;
   $cell-tag-name: "ch-tabular-grid-cell";
-  $where-pseudo-class: ":where";
+  $where-pseudo-class: ":is";
   $where-selector: ();
   // the selector varies depending on wether $tabular-grid-affected-columns-nth-list is null or not.
   // if it is null, all cells should be affected.

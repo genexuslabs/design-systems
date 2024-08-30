@@ -41,6 +41,12 @@
     --control__border-color: var(--button-primary__background-color--disabled);
     color: var(--button-primary__color--disabled);
   }
+
+  &-destructive {
+    --control__border-color: var(--button-primary__border-color--destructive);
+    background-color: var(--button-primary__background-color--destructive);
+    color: var(--button-primary__color--destructive);
+  }
 }
 
 %button-secondary {
@@ -104,7 +110,12 @@
 
 /// @group Button
 /// @param {String} $selector [".button-primary"] -
-@mixin button-primary($selector: ".button-primary", $add--disabled: true) {
+@mixin button-primary(
+  $selector: ".button-primary",
+  $destructive-selector: ".button-primary--destructive",
+  $add--disabled: true,
+  $add--destructive: true
+) {
   #{$selector} {
     @extend %button-primary;
 
@@ -119,6 +130,19 @@
     @if $add--disabled {
       &:disabled {
         @extend %button-primary--disabled;
+      }
+    }
+  }
+  @if $add--destructive {
+    #{$destructive-selector} {
+      @extend %button-primary-destructive;
+
+      &:hover {
+        @extend %button-primary-destructive;
+      }
+
+      &:active {
+        @extend %button-primary-destructive;
       }
     }
   }

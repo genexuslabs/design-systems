@@ -20,6 +20,9 @@ const SIDEBAR_CHILD_LIST_CLASS = "sidebar__list--child";
 let SIDEBAR_NAV; // A reference to the sidebar nav.
 let CONTAINER_REF;
 let topBarRef = null;
+// code and ch-code
+const ARTICLE_CODE_SELECTOR = ".article__code";
+const CH_CODE_VALUE_LET_NAME = "chCodeValue";
 
 // references
 const HTML = document.querySelector("html");
@@ -193,6 +196,9 @@ const includeTopBar = () => {
     topBarEl.className = "container__top-bar";
     CONTAINER_REF.appendChild(topBarEl);
     topBarRef = topBarEl;
+
+    // body
+    BODY.classList.add("has-top-bar");
   }
 };
 
@@ -418,11 +424,14 @@ const addCopyCodeFunctionality = () => {
       const chCodeHeader = document.createElement("div");
       chCodeHeader.classList.add("code__header");
 
+      // data-attributes
+      const dataTitle = chCode.dataset.title;
+      const dataDocumentation = chCode.dataset.documentation;
+
       // copy code button
       const copyCodeButton = document.createElement("button");
-      copyCodeButton.classList.add("code__copy-button");
       copyCodeButton.classList.add("code__button");
-      copyCodeButton.innerText = "copy markup";
+      copyCodeButton.innerText = dataTitle || "copy markup";
 
       // append button inside header
       chCodeHeader.appendChild(copyCodeButton);
@@ -431,18 +440,24 @@ const addCopyCodeFunctionality = () => {
       const codeParent = chCode.parentElement;
       codeParent.insertBefore(chCodeHeader, chCode);
 
-      copyCodeButton.addEventListener("click", event => {
-        // assuming the copy code button is being inserted before ch-code
-        // inside .code__header.
-        const chCode = chCodeHeader.nextElementSibling;
-        if (chCode) {
-          copyToClipBoard(chCode.value);
-          chCode.classList.add("code--highlight");
-          setTimeout(() => {
-            chCode.classList.remove("code--highlight");
-          }, 200);
-        }
-      });
+      if (dataDocumentation === undefined) {
+        copyCodeButton.classList.add("code__copy-button");
+        // only add copy feature if it is not "documentation".
+        copyCodeButton.addEventListener("click", event => {
+          // assuming the copy code button is being inserted before ch-code
+          // inside .code__header.
+          const chCode = chCodeHeader.nextElementSibling;
+          if (chCode) {
+            copyToClipBoard(chCode.value);
+            chCode.classList.add("code--highlight");
+            setTimeout(() => {
+              chCode.classList.remove("code--highlight");
+            }, 200);
+          }
+        });
+      } else {
+        copyCodeButton.classList.add("code__button--documentation");
+      }
     });
   }
 };
@@ -470,6 +485,27 @@ const copyToClipBoard = text => {
     });
 };
 
+/**
+ * @description this function sets for every ch-code the value, by getting the
+ */
+const extractCodeContent = str => {
+  const match = str.match(/`([^`]*)`/);
+  return match ? match[1] : null;
+};
+const getChCodeValues = () => {
+  document.querySelectorAll(ARTICLE_CODE_SELECTOR).forEach(articleCode => {
+    // Find the script tag inside each articleCode
+    const script = articleCode.querySelector("script");
+    const chCodeElement = articleCode.querySelector("ch-code");
+    const chCodeElementHasId = chCodeElement.getAttribute("id");
+    if (script && chCodeElement && !chCodeElementHasId) {
+      // If chCodeElement has no id, assume that the chCode value is a string inside the script tag.
+      const scriptChCode = extractCodeContent(script.textContent);
+      chCodeElement.value = scriptChCode;
+    }
+  });
+};
+
 document.addEventListener("DOMContentLoaded", function () {
   CONTAINER_REF = document.querySelector(".container");
   includeFavicon();
@@ -483,4 +519,5 @@ document.addEventListener("DOMContentLoaded", function () {
   includeSidebar();
   includeTopBar();
   includeChameleonURL();
+  getChCodeValues();
 });

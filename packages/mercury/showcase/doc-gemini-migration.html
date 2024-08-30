@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini Migration</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+      .combo-box {
+        width: 200px;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+  </head>
+  <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">gemini migration</h1>
+            <p class="section__description">
+              When migrating from the "Gemini" design system to "Mercury,"
+              you'll be transitioning your project's styles, components, and
+              design principles to align with the new system. This process
+              involves updating your codebase to replace Gemini-specific
+              components and styles with their Mercury equivalents, ensuring
+              consistency with Mercury's guidelines. The migration guide will
+              provide you with step-by-step instructions to help make this
+              transition as smooth as possible.
+            </p>
+          </header>
+
+          <div class="section__articles-container">
+            <!-- ========================== 
+          gxg-button: text only
+          =========================== -->
+            <article
+              class="article"
+              data-nav
+              data-title="gxg-button: text only"
+            >
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-button</code> that is
+                  "only text":
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-button</code> tag with a
+                    <code>button</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>
+                    Add any of the mercury classes that apply for "text only"
+                    button types
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- button gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-button type="primary-icon-only">
+  Caption
+</gxg-button>`;
+                  </script>
+                </div>
+                <div class="article__code">
+                  <!-- button mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<button class="button-primary">Caption</button>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <button class="button-primary">Caption</button>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a href="./button.html" class="dummy-grid-container__item"
+                      >button classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-button: text with icon
+          =========================== -->
+            <article
+              class="article"
+              data-nav
+              data-title="gxg-button: text with icon"
+            >
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-button</code> that is
+                  "text with icon":
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-button</code> tag with a
+                    <code>button</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>Add the <code>.button-icon-and-text</code> class.</li>
+                  <li>
+                    Insert a
+                    <code>ch-image</code> inside the button and
+                    <a href="./icon.html"
+                      >follow the documentation for using an icon</a
+                    >
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- button gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-button type="primary-text-icon" icon="navigation/arrow-down">Caption</gxg-button>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- button mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// import before @Component 
+import { getIconPath } from "@genexus/mercury";
+
+// declare inside @Component
+#buttonIcon = getIconPath({
+  category: "gemini-tools",
+  name: "add-circle",
+  colorType: "on-primary"
+});
+
+// use inside <Host> or any TSX
+<button class="button-primary button-icon-and-text">
+  <ch-image src={buttonIcon} class="icon-sm"></ch-image>
+  Caption
+</button>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <button class="button-primary button-icon-and-text">
+                    <ch-image class="ch-image-on-primary icon-sm"></ch-image>
+                    Caption 1
+                  </button>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a href="./button.html" class="dummy-grid-container__item"
+                      >button classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-combo-box
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-combo-box">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-combo-box</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-combo-box</code> tag with a
+                    <code>ch-combo-box-render</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>Add the <code>.combo-box</code> class.</li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/combo-box#ch-combo-box-render"
+                      target="_blank"
+                      >Specify the ch-combo-box-render items following the model
+                      property
+                    </a>
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-combo-box
+  placeholder="Select item"
+  label="Test disabled"
+  value="common-elements"
+>
+  <gxg-combo-box-item value="common-elements">Common Elements</gxg-combo-box-item>
+  // More combo-box-item's ...
+</gxg-combo-box>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// model
+#favoriteColorsModel: ComboBoxItemModel[] = [
+  { value: "red", caption: "Red"},
+  { value: "blue", caption: "Blue"},
+  { value: "green", caption: "Green"},
+  { value: "yellow", caption: "Yellow"},
+  { value: "purple", caption: "Purple"}
+];
+
+<ch-combo-box-render
+  accessibleName="My Favorite Colors"
+  class="combo-box"
+  model={this.favoriteColorsModel}>
+</ch-combo-box-render>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <ch-combo-box-render
+                    accessible-name="My Favorite Colors"
+                    id="combo-box"
+                    class="combo-box"
+                  ></ch-combo-box-render>
+                  <script type="module">
+                    const comboBoxColorsModel = [
+                      {
+                        value: "red",
+                        caption: "Red"
+                      },
+                      {
+                        value: "blue",
+                        caption: "Blue"
+                      },
+                      {
+                        value: "green",
+                        caption: "Green"
+                      },
+                      {
+                        value: "yellow",
+                        caption: "Yellow"
+                      },
+                      {
+                        value: "purple",
+                        caption: "Purple"
+                      }
+                    ];
+                    const comboBox = document.getElementById("combo-box");
+                    comboBox.model = comboBoxColorsModel;
+                    console.log("comboBox", comboBox);
+                    comboBox.placeholder = "Option";
+                  </script>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./combo-box.html"
+                      class="dummy-grid-container__item"
+                      >combo-box classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-form-checkbox
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-form-checkbox">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-form-checkbox</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-form-checkbox</code> tag with a
+                    <code>ch-checkbox</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>Add the <code>.checkbox</code> class.</li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/checkbox#ch-checkbox"
+                      target="_blank"
+                      >Specify the control properties following the Chameleon
+                      documentation</a
+                    >
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-form-checkbox value="the-caption" label="The Caption"></gxg-form-checkbox>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// use inside <Host> or any TSX
+<ch-checkbox
+class="checkbox"
+  caption="The Caption"
+  checkedValue="true"
+  value="true"
+></ch-checkbox>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox"
+                    checked-value="true"
+                    un-checked-value="false"
+                    value="true"
+                    caption="The Caption"
+                  ></ch-checkbox>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./form-checkbox.html"
+                      class="dummy-grid-container__item"
+                      >form checkbox classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-form-radio-group
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-form-radio-group">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-form-radio-group</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-form-radio-group</code> tag with a
+                    <code>ch-radio-group-render</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>Add the <code>.radio-group</code> class.</li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/radio-group#ch-radio-group-render"
+                      target="_blank"
+                      >Specify the ch-radio-group-render radio item's following
+                      the model property.</a
+                    >
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-form-radio-group label="My Favorite Color">
+  <gxg-form-radio label="red" value="red" disabled></gxg-form-radio>
+  <gxg-form-radio label="blue" value="blue" id="radio-blue"></gxg-form-radio>
+  <gxg-form-radio label="green" value="green"></gxg-form-radio>
+  <gxg-form-radio label="yellow" value="yellow"></gxg-form-radio>
+</gxg-form-radio-group>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// model
+#favoriteColorsModel: RadioGroupItemModel[] = [
+  { value: "red", caption: "Red"},
+  { value: "blue", caption: "Blue"},
+  { value: "green", caption: "Green"},
+  { value: "yellow", caption: "Yellow"},
+  { value: "purple", caption: "Purple"}
+];
+
+<ch-radio-group-render
+  class="radio-group"
+  model={this.favoriteColorsModel}>
+</ch-radio-group-render>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <ch-radio-group-render
+                    class="radio-group"
+                    id="radio-group"
+                  ></ch-radio-group-render>
+                  <script>
+                    const radioGroup = document.getElementById("radio-group");
+                    radioGroup.model = [
+                      { value: "red", caption: "Red", disabled: true },
+                      { value: "blue", caption: "Blue" },
+                      { value: "green", caption: "Green" },
+                      { value: "yellow", caption: "Yellow" }
+                    ];
+                  </script>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./form-radio-group.html"
+                      class="dummy-grid-container__item"
+                      >form radio-group classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-form-text
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-form-text">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-form-text</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-form-text</code> tag with a
+                    <code>ch-edit</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>Add the <code>.form-input</code> class.</li>
+                  <li>
+                    If the <code>gxg-form-text</code> was displaying an icon,
+                    use the <code>startImgSrc</code> property
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/edit#ch-edit"
+                      target="_blank"
+                      >Specify the control properties following the Chameleon
+                      documentation</a
+                    >
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-form-text placeholder="John Smith" value="Adam Smith"></gxg-form-text>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// import before @Component 
+import { getIconPath } from "@genexus/mercury";
+
+// declare inside @Component
+#chEditIcon = getIconPath({
+  category: "gemini-tools",
+  name: "add-circle",
+  colorType: "on-surface"
+});
+
+// use inside <Host> or any TSX                    
+<ch-edit
+  value="Adam Smith"
+  class="form-input"
+  placeholder="John Smith"
+  startImgSrc={this.chEditIcon}
+></ch-edit>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <ch-edit
+                    value="Adam Smith"
+                    class="form-input"
+                    placeholder="John Smith"
+                    id="ch-edit"
+                  ></ch-edit>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./form-input.html"
+                      class="dummy-grid-container__item"
+                      >form-input classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-form-textarea
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-form-textarea">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  The transition steps from the
+                  <code>gxg-form-textarea</code> are the same as the
+                  <a href="#gxg-form-text-5">gxg-form-text</a>, since the
+                  <code>ch-edit</code> can be behave as a textarea as well ✨.
+                  To make the ch-edit behave like a textarea set the
+                  <code>multiline</code> property to true.
+                </p>
+
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-form-textarea
+placeholder="I have experience as a.."
+height="100px"
+></gxg-form-textarea>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// use inside <Host> or any TSX                 
+<ch-edit
+class="form-input"
+placeholder="Describe your experience as a backend developer"
+multiline={true}
+></ch-edit>`;
+                  </script>
+                </div>
+                <div class="article__content" style="height: 100px">
+                  <ch-edit
+                    class="form-input"
+                    placeholder="Describe your experience as a backend developer"
+                    multiline
+                    auto-grow
+                    style="block-size: 100%"
+                  ></ch-edit>
+                </div>
+
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <p class="dummy-grid-container__item">
+                      textarea showcase in progress
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-grid
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-grid">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-grid</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>Remove the <code>gxg-grid</code> wrapper tag.</li>
+                  <li>
+                    For every grid tag, update the prefix
+                    <code>ch-grid-...</code> with
+                    <code>ch-tabular-grid-...</code>.
+                  </li>
+                  <li>
+                    For every grid tag, add the appropriate css class. The class
+                    of every tag begins with the prefix
+                    <code>.tabular-grid-...</code>.
+                    <a href="./tabular-grid.html"
+                      >You can refer to this showcase documentation.</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/tabular-grid#ch-grid"
+                      target="_blank"
+                      >Specify the control properties following the Chameleon
+                      documentation</a
+                    >
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-grid>
+  <ch-grid>
+    <ch-grid-columnset>
+      <ch-grid-column
+        column-name="Country Name"
+        column-name-position="text"
+        settingable="false">
+      </ch-grid-column>
+      <ch-grid-column
+        column-name="Country Code"
+        column-name-position="text"
+        settingable="false">
+      </ch-grid-column>
+      <ch-grid-column
+        column-name="Population"
+        column-name-position="text"
+        settingable="false">
+      </ch-grid-column>
+    </ch-grid-columnset>
+    <ch-grid-row>
+      <ch-grid-cell>Uruguay</ch-grid-cell>
+      <ch-grid-cell>UY</ch-grid-cell>
+      <ch-grid-cell>~3.5 million</ch-grid-cell>
+    </ch-grid-row>
+    <ch-grid-row>
+      <ch-grid-cell>Brazil</ch-grid-cell>
+      <ch-grid-cell>BR</ch-grid-cell>
+      <ch-grid-cell>~~214 million</ch-grid-cell>
+    </ch-grid-row>
+    <ch-grid-row>
+      <ch-grid-cell>Argentina</ch-grid-cell>
+      <ch-grid-cell>AR</ch-grid-cell>
+      <ch-grid-cell>~46 million</ch-grid-cell>
+    </ch-grid-row>
+  </ch-grid>
+</gxg-grid>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// use inside <Host> or any TSX                    
+<ch-tabular-grid class="tabular-grid">
+  <ch-tabular-grid-columnset class="tabular-grid-column-set">
+    <ch-tabular-grid-column 
+      column-name="Country Name"
+      column-name-position="text"
+      class="tabular-grid-column"
+      settingable="false"
+    >
+    </ch-tabular-grid-column>
+    <ch-tabular-grid-column
+      column-name="Country Code"
+      column-name-position="text"
+      class="tabular-grid-column"
+      settingable="false"
+    >
+    </ch-tabular-grid-column>
+    <ch-tabular-grid-column
+      column-name="Population"
+      column-name-position="text"
+      class="tabular-grid-column"
+      settingable="false"
+    >
+  </ch-tabular-grid-column>
+  </ch-tabular-grid-columnset>
+  <ch-tabular-grid-row class="tabular-grid-row">
+    <ch-tabular-grid-cell class="tabular-grid-cell">Uruguay</ch-tabular-grid-cell>
+    <ch-tabular-grid-cell class="tabular-grid-cell">UY</ch-tabular-grid-cell>
+    <ch-tabular-grid-cell class="tabular-grid-cell">~3.5 million</ch-tabular-grid-cell>
+  </ch-tabular-grid-row>
+  <ch-tabular-grid-row class="tabular-grid-row">
+    <ch-tabular-grid-cell class="tabular-grid-cell">Brazil</ch-tabular-grid-cell>
+    <ch-tabular-grid-cell class="tabular-grid-cell">BR</ch-tabular-grid-cell>
+    <ch-tabular-grid-cell class="tabular-grid-cell">~214 million</ch-tabular-grid-cell>
+  </ch-tabular-grid-row>
+  <ch-tabular-grid-row class="tabular-grid-row">
+    <ch-tabular-grid-cell class="tabular-grid-cell">Argentina</ch-tabular-grid-cell>
+    <ch-tabular-grid-cell class="tabular-grid-cell">AR</ch-tabular-grid-cell>
+    <ch-tabular-grid-cell class="tabular-grid-cell">~46 million</ch-tabular-grid-cell>
+  </ch-tabular-grid-row>
+</ch-tabular-grid>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <ch-tabular-grid class="tabular-grid">
+                    <ch-tabular-grid-columnset class="tabular-grid-column-set">
+                      <ch-tabular-grid-column
+                        column-name="Country Name"
+                        column-name-position="text"
+                        class="tabular-grid-column"
+                        settingable="false"
+                      >
+                      </ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        column-name="Country Code"
+                        column-name-position="text"
+                        class="tabular-grid-column"
+                        settingable="false"
+                      >
+                      </ch-tabular-grid-column>
+                      <ch-tabular-grid-column
+                        column-name="Population"
+                        column-name-position="text"
+                        class="tabular-grid-column"
+                        settingable="false"
+                      >
+                      </ch-tabular-grid-column>
+                    </ch-tabular-grid-columnset>
+
+                    <ch-tabular-grid-row class="tabular-grid-row">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Uruguay</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >UY</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >~3.5 million</ch-tabular-grid-cell
+                      >
+                    </ch-tabular-grid-row>
+
+                    <ch-tabular-grid-row class="tabular-grid-row">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Brazil</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >BR</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >~214 million</ch-tabular-grid-cell
+                      >
+                    </ch-tabular-grid-row>
+
+                    <ch-tabular-grid-row class="tabular-grid-row">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Argentina</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >AR</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >~46 million</ch-tabular-grid-cell
+                      >
+                    </ch-tabular-grid-row>
+                  </ch-tabular-grid>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./tabular-grid.html"
+                      class="dummy-grid-container__item"
+                      >tabular grid classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-icon
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-icon">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-icon</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-icon</code> tag with a
+                    <code>ch-image</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values.</li>
+                  <li>
+                    Add the <code>.icon-sm</code> or <code>.icon-md</code> class
+                    for setting the sizing.
+                  </li>
+                  <li>
+                    Import and use the utility <code>getIconPath</code> to get
+                    any of the Mercury library icons source.
+                  </li>
+                  <li>
+                    Set the icon source as the <code>ch-image</code>
+                    <code>src</code>value.
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/image#ch-image"
+                      target="_blank"
+                      >Specify any other control properties following chameleon
+                      documentation</a
+                    >
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-icon
+  type="objects/conversational-flows"
+  color="auto"
+  size="small"
+>
+</gxg-icon>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// import before @Component 
+import { getIconPath } from "@genexus/mercury";
+
+// declare inside @Component
+#myIcon = getIconPath({
+  category: "gemini-tools",
+  name: "add-circle",
+  colorType: "on-primary"
+});
+
+// use inside <Host> or any TSX
+<ch-image src={this.myIcon} class="icon-sm"></ch-image>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <style>
+                    .icon-wrapper {
+                      display: inline-flex;
+                    }
+                  </style>
+                  <span class="icon-wrapper">
+                    <ch-image id="ch-image" class="icon-md"></ch-image>
+                  </span>
+                  <script type="module">
+                    import { getIconPath } from "./assets/scripts/assets-manager.js";
+                    const chImage = document.getElementById("ch-image");
+                    chImage.src = getIconPath({
+                      category: "objects",
+                      name: "attribute"
+                    });
+                  </script>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <ul class="dummy-grid-container dummy-grid-container-2">
+                    <li>
+                      <a href="./icon.html" class="dummy-grid-container__item"
+                        >icon classes</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="./doc-icons.html"
+                        class="dummy-grid-container__item"
+                        >see all the icons showcase</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-label
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-label">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-label</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-label</code> tag with a
+                    <code>label</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values.</li>
+                  <li>Add the <code>.label</code> class.</li>
+                  <li>
+                    For positioning the label around a control, you will have to
+                    wrap both with a div with specific classes. Please
+                    <a href="./form-label.html" target="_blank"
+                      >form label classes</a
+                    >.
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-label label-position="above">This is the label</gxg-label>
+// Some gemini control here`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<div class="field field-block">
+  <label class="label" htmlFor="control-id-1">The Label Caption</label>
+  // Your mercury "control-id-1" control here
+</div>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <div class="field field-block">
+                    <label class="label" htmlFor="control-id-1"
+                      >The Label Caption</label
+                    >
+                    <div class="dummy-control" id="control-id-1"></div>
+                  </div>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./form-label.html"
+                      class="dummy-grid-container__item"
+                      >form label classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-list-box
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-list-box">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-list-box</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-list-box</code> tag with a
+                    <code>ch-action-list-render</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values.</li>
+                  <li>Add the <code>.list-box</code> class.</li>
+                  <li>
+                    Remove all the <code>gxg-list-box-item</code> items, as they
+                    will be set with a model.
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/action-list#ch-action-list-render"
+                      target="_blank"
+                      >Specify other control properties if required, following
+                      chameleon documentation.</a
+                    >
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-list-box theTitle="My Listbox Caption">
+  <gxg-list-box-item value="item-1.1">Item 1.1</gxg-list-box-item>
+  <gxg-list-box-item value="item-1.2">Item 1.2</gxg-list-box-item>
+  <gxg-list-box-item value="item-1.3">Item 1.3</gxg-list-box-item>
+  <gxg-list-box-item value="item-1.3">Item 1.3</gxg-list-box-item>
+</gxg-list-box>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `#listBoxItems: ActionListItemModel[] = [
+{
+  id: "item-1.1",
+  type: "actionable",
+  caption: "Item 1.1"
+},
+{
+  id: "item-1.2",
+  type: "actionable",
+  caption: "Item 1.2"
+},
+{
+  id: "item-1.3",
+  type: "actionable",
+  caption: "Item 1.3"
+},
+{
+  id: "item-1.4",
+  type: "actionable",
+  caption: "Item 1.4"
+}];
+
+// use inside <Host> or any TSX
+<ch-action-list-render
+  selection="multiple"
+  class="list-box"
+  model={this.listBoxItems}
+></ch-action-list-render>`;
+                  </script>
+                </div>
+                <div class="article__content" style="height: 120px">
+                  <ch-action-list-render
+                    selection="none"
+                    class="list-box"
+                    id="action-list"
+                  ></ch-action-list-render>
+                  <script type="module">
+                    const actionListModel = [
+                      {
+                        id: "item-1.1",
+                        type: "actionable",
+                        caption: "Item 1.1"
+                      },
+                      {
+                        id: "item-1.2",
+                        type: "actionable",
+                        caption: "Item 1.2"
+                      },
+                      {
+                        id: "item-1.3",
+                        type: "actionable",
+                        caption: "Item 1.3"
+                      },
+                      {
+                        id: "item-1.4",
+                        type: "actionable",
+                        caption: "Item 1.4"
+                      }
+                    ];
+                    const actionList = document.getElementById("action-list");
+                    actionList.model = actionListModel;
+                    setTimeout(() => {
+                      // WA to avoid "undefined" when initial selection != "none"
+                      actionList.selection = "multiple";
+                    }, 500);
+                  </script>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a href="./list-box.html" class="dummy-grid-container__item"
+                      >list-box classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+            gxg-suggest
+            =========================== -->
+            <article class="article" data-nav data-title="gxg-suggest">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-suggest</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-suggest</code> tag with a
+                    <code>ch-combo-box-render</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>Add the <code>.combo-box</code> class.</li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/combo-box#ch-combo-box-render"
+                      target="_blank"
+                      >Specify the ch-combo-box-render items following the model
+                      property
+                    </a>
+                  </li>
+                  <li>
+                    Set the <code>suggest</code> property to
+                    <code>true</code> to turn the suggest feature on.
+                  </li>
+                  <li>
+                    Subscribe to the <code>filterChange</code> event listener,
+                    and use the <code>event.detail</code> to filter the items
+                    accordingly, by defining the <code>filter</code> value.
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/combo-box#ch-combo-box-render"
+                      target="_blank"
+                      >Specify the options by following the
+                      <code>suggestOptions</code>
+                      property
+                    </a>
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-suggest>
+    <ch-suggest
+      value={this.selectedColor.name}
+      onValueChanged={this.colorChangedGHandler}
+    >
+      {this.renderSuggestLists(this.colorSuggestions)}
+    </ch-suggest>
+  </gxg-suggest>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// model
+  #favoriteColorsModel: ComboBoxItemModel[] = [
+    { value: "red", caption: "Red"},
+    { value: "blue", caption: "Blue"},
+    { value: "green", caption: "Green"},
+    { value: "yellow", caption: "Yellow"},
+    { value: "purple", caption: "Purple"}
+  ];
+  
+  <ch-combo-box-render
+    accessibleName="My Favorite Colors"
+    class="combo-box"
+    model={this.favoriteColorsModel}
+    placeholder="Select your favorite color";
+    suggest={true}
+    onFilterChange={this.colorsFilterChangedHandlers}
+    suggestOptions={
+      alreadyProcessed: false,
+      autoExpand: true,
+      hideMatchesAndShowNonMatches: false,
+      highlightMatchedItems: false,
+      matchCase: false,
+      regularExpression: false,
+      strict: false
+    };
+  >
+  </ch-combo-box-render>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <ch-combo-box-render
+                    accessible-name="My Favorite Colors"
+                    id="suggest"
+                    class="combo-box"
+                  ></ch-combo-box-render>
+                  <script type="module">
+                    const suggestColorsModel = [
+                      {
+                        value: "red",
+                        caption: "Red"
+                      },
+                      {
+                        value: "blue",
+                        caption: "Blue"
+                      },
+                      {
+                        value: "green",
+                        caption: "Green"
+                      },
+                      {
+                        value: "yellow",
+                        caption: "Yellow"
+                      },
+                      {
+                        value: "purple",
+                        caption: "Purple"
+                      }
+                    ];
+
+                    const suggestRef = document.getElementById("suggest");
+                    suggestRef.model = suggestColorsModel;
+                    suggestRef.placeholder = "Select your favorite color";
+                    suggestRef.suggest = true;
+                    suggestRef.suggestDebounce = 250;
+                    suggestRef.suggestOptions = {
+                      alreadyProcessed: false,
+                      autoExpand: true,
+                      hideMatchesAndShowNonMatches: false,
+                      highlightMatchedItems: false,
+                      matchCase: false,
+                      regularExpression: false,
+                      strict: false
+                    };
+                    suggestRef.addEventListener("filterChange", e => {
+                      suggestRef.filter = e.detail;
+                    });
+                  </script>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./combo-box.html"
+                      class="dummy-grid-container__item"
+                      >suggest classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-tabs
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-tabs">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-tabs</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-tabs</code> tag with a
+                    <code>ch-tab-render</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values.</li>
+                  <li>Add the <code>.tab</code> class.</li>
+                  <li>
+                    Clear everything inside the <code>ch-tab-render</code> tag,
+                    and then include as many <code>div's</code> as tab's you
+                    would like, and define for every div, a
+                    <code>slot</code> attribute with a unique identifier.
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/tab#ch-tab-render"
+                      target="_blank"
+                      >Specify the tab buttons following the tab model
+                      property</a
+                    >
+                    Note that the model item's id's should match the
+                    corresponding slot value for the div's that you inserted
+                    before.
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-tabs id="gxgTabs" position="top">
+  <gxg-tab-bar slot="tab-bar-container" id="tab-bar">
+    <gxg-tab-button
+      slot="tab-bar"
+      tab-label="apples"
+      tab="apples"
+      key="apples"
+      is-selected
+    ></gxg-tab-button>
+    <gxg-tab-button
+      slot="tab-bar"
+      tab-label="bananas"
+      tab="bananas"
+      key="bananas"
+      icon="gemini-tools/settings"
+    ></gxg-tab-button>
+    <gxg-tab-button
+      slot="tab-bar"
+      tab="cherries"
+      key="cherries"
+      icon="gemini-tools/settings"
+      hidden
+    ></gxg-tab-button>
+  </gxg-tab-bar>
+  <gxg-tab tab="apples" key="apples" isSelected="true">
+    <p>
+      An apple is a sweet, edible fruit produced by an apple tree. Apple
+      trees are cultivated worldwide and are the most widely grown species
+      in the genus Malus. The tree originated in Central Asia, where its
+      wild ancestor, Malus sieversii, is still found today. An apple is a
+      sweet, edible fruit produced by an apple tree. 
+    </p>
+  </gxg-tab>
+  <gxg-tab tab="bananas" key="bananas" isSelected="false">
+    <p>
+      A banana is an elongated, edible fruit – botanically a berry –
+      produced by several kinds of large herbaceous flowering plants in the
+      genus Musa. In some countries, bananas used for cooking may be called
+      "plantains", distinguishing them from dessert bananas.
+     </p>
+  </gxg-tab>
+  <gxg-tab tab="cherries" key="cherries" isSelected="false">
+    <p>
+      A cherry is the fruit of many plants of the genus Prunus, and is a
+      fleshy drupe. Commercial cherries are obtained from cultivars of
+      several species, such as the sweet Prunus avium and the sour Prunus
+      cerasus.
+    </p>
+  </gxg-tab>
+</gxg-tabs>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// model
+#fruitsModel: TabModel = [
+  { id: "apples", name: "Apples" },
+  { id: "bananas", name: "Bananas" },
+  { id: "cherries", name: "Cherries" }
+]; 
+          
+// use inside <Host> or any TSX                    
+<ch-tab-render
+  class="tab tab-indicator-start"
+  direction="block"
+  selectedId="apples"
+  model={this.fruitsModel}
+>
+  <div slot="apples" class="slot spacing-body">
+    <p class="text-body">
+      An apple is a sweet, edible fruit produced by an apple
+      tree. Apple trees are cultivated worldwide and are the
+      most widely grown species in the genus Malus. The tree
+      originated in Central Asia, where its wild ancestor,
+      Malus sieversii, is still found today. An apple is a
+      sweet, edible fruit produced by an apple tree.
+    </p>
+  </div>
+  <div slot="bananas" class="slot spacing-body">
+    <p class="text-body">
+      A banana is an elongated, edible fruit – botanically a
+      berry – produced by several kinds of large herbaceous
+      flowering plants in the genus Musa. In some countries,
+      bananas used for cooking may be called "plantains",
+      distinguishing them from dessert bananas.
+    </p>
+  </div>
+  <div slot="cherries" class="slot spacing-body">
+    <p class="text-body">
+      A cherry is the fruit of many plants of the genus
+      Prunus, and is a fleshy drupe. Commercial cherries are
+      obtained from cultivars of several species, such as the
+      sweet Prunus avium and the sour Prunus cerasus.
+    </p>
+  </div>
+</ch-tab-render>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <ch-tab-render
+                    class="tab tab-indicator-start"
+                    id="fruits-tab"
+                    direction="block"
+                    selected-id="apples"
+                  >
+                    <div slot="apples" class="slot spacing-body">
+                      <p class="text-body">
+                        An apple is a sweet, edible fruit produced by an apple
+                        tree. Apple trees are cultivated worldwide and are the
+                        most widely grown species in the genus Malus. The tree
+                        originated in Central Asia, where its wild ancestor,
+                        Malus sieversii, is still found today. An apple is a
+                        sweet, edible fruit produced by an apple tree.
+                      </p>
+                    </div>
+                    <div slot="bananas" class="slot spacing-body">
+                      <p class="text-body">
+                        A banana is an elongated, edible fruit – botanically a
+                        berry – produced by several kinds of large herbaceous
+                        flowering plants in the genus Musa. In some countries,
+                        bananas used for cooking may be called "plantains",
+                        distinguishing them from dessert bananas.
+                      </p>
+                    </div>
+                    <div slot="cherries" class="slot spacing-body">
+                      <p class="text-body">
+                        A cherry is the fruit of many plants of the genus
+                        Prunus, and is a fleshy drupe. Commercial cherries are
+                        obtained from cultivars of several species, such as the
+                        sweet Prunus avium and the sour Prunus cerasus.
+                      </p>
+                    </div>
+                  </ch-tab-render>
+                  <script>
+                    const tab1 = document.getElementById("fruits-tab");
+                    tab1.model = [
+                      { id: "apples", name: "Apples" },
+                      { id: "bananas", name: "Bananas" },
+                      { id: "cherries", name: "Cherries" }
+                    ];
+                  </script>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a href="./tabs.html" class="dummy-grid-container__item"
+                      >tab classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-text
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-text">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-text</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-text</code> tag with a
+                    <code>p</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>Add the <code>.text-body</code> class.</li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-text type="text-regular">
+  Genexus is a development platform that automates application creation using a  
+  model-driven approach. It allows developers to focus on high-level design,     
+  generating code for web, mobile, and desktop applications, resulting in faster 
+  development cycles and fewer errors.
+</gxg-text>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<p class="text-body">
+  Genexus is a development platform that automates application creation using a  
+  model-driven approach. It allows developers to focus on high-level design,     
+  generating code for web, mobile, and desktop applications, resulting in faster 
+  development cycles and fewer errors.                      
+</p>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <p class="text-body">
+                    Genexus is a development platform that automates application
+                    creation using a model-driven approach. It allows developers
+                    to focus on high-level design, generating code for web,
+                    mobile, and desktop applications, resulting in faster
+                    development cycles and fewer errors.
+                  </p>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./typography.html#text-body-7"
+                      class="dummy-grid-container__item"
+                      >text classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-title
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-title">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-title</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-title</code> tag with any of the six
+                    heading html tags:<br /><code>h1</code>, <code>h2</code>,
+                    <code>h3</code>, <code>h4</code>, <code>h5</code> or
+                    <code>h6</code>.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>
+                    Add a <code>.heading-*</code> class, where
+                    <code>*</code> represents your heading level.
+                  </li>
+                  <li>
+                    Add any of the
+                    <a
+                      href="./http://localhost:5200/showcase/typography.html"
+                      target="_blank"
+                      >allowed heading colors classes</a
+                    >. The heading color will be transparent unless you apply a
+                    valid color css class.
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-title type="title-01">This is a heading 1</gxg-title>
+<gxg-title type="title-02">This is a heading 2</gxg-title>
+<gxg-title type="title-03">This is a heading 3</gxg-title>
+<gxg-title type="title-04">This is a heading 4</gxg-title>
+<gxg-title type="title-05">This is a heading 5</gxg-title>
+<gxg-title type="title-06">This is a heading 6</gxg-title>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<h1 class="heading-1">This is a heading 1</h1>
+<h2 class="heading-2">This is a heading 2</h2>
+<h3 class="heading-3">This is a heading 3</h3>
+<h4 class="heading-4">This is a heading 4</h4>
+<h5 class="heading-5">This is a heading 5</h5>
+<h6 class="heading-6">This is a heading 6</h6>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <h1 class="heading-1">This is a heading 1</h1>
+                  <br />
+                  <p class="section__description">And so on...</p>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./typography.html"
+                      class="dummy-grid-container__item"
+                      >heading classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-tree-view
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-tree-view">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  When transitioning from a <code>gxg-tree-view</code>:
+                </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-tree-view</code> tag with a
+                    <code>ch-tree-view-render</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>Add the <code>.tree-view</code> class.</li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/tree-view#ch-tree-view-render"
+                      target="_blank"
+                      >Specify the control properties following chameleon
+                      documentation</a
+                    >
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-tree-view
+  treeModel={this.myTreeModel}
+  dragDisabled={true}
+  dropDisabled={true}
+  toggleCheckboxes={true}
+  checkbox={true}
+  checked={true}
+>
+</gxg-tree-view>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// model
+#myTreeModel: TreeViewModel = [
+  {
+    id: "root",
+    caption: "GeneXusNext Develop",
+    startImgSrc: "objects/version",
+    expanded: true,
+    leaf: false,
+    items: [
+      {
+        id: "Main_Programs",
+        caption: "Main Programs",
+        startImgSrc: "objects/category",
+        expanded: true,
+        items: [
+          {
+            id: "Main_Programs.Prompt",
+            caption: "Prompt",
+            startImgSrc: "objects/panel-for-sd",
+            leaf: true,
+            metadata: "Panel"
+          },
+          {
+            id: "Main_Programs.ApiHealthCheck",
+            caption: "ApiHealthCheck",
+            startImgSrc: "objects/api",
+            leaf: true
+          },
+          {
+            id: "Main_Programs.BackHome",
+            caption: "BackHome",
+            startImgSrc: "objects/web-panel",
+            leaf: true
+          },
+          {
+            id: "Main_Programs.Login",
+            caption: "Login",
+            startImgSrc: "objects/web-panel",
+            leaf: true
+          },
+          {
+            id: "Main_Programs.ProvisioningServices",
+            caption: "ProvisioningServices",
+            startImgSrc: "objects/api",
+            leaf: true
+          },
+          {
+            id: "Main_Programs.VersionCheck",
+            caption: "VersionCheck",
+            startImgSrc: "objects/procedure",
+            leaf: true
+          }
+        ]
+      },
+      {
+        id: "Root_Module",
+        caption: "Root Module",
+        startImgSrc: "objects/module",
+        expanded: true,
+        items: [
+          {
+            id: "Root_Module.Images",
+            caption: "Images",
+            startImgSrc: "objects/image",
+            leaf: true
+          },
+          {
+            id: "Root_Module.GXNext",
+            caption: "GXNext",
+            startImgSrc: "objects/dso",
+            leaf: true
+          },
+          {
+            id: "Root_Module.GeneXusNext",
+            caption: "GeneXusNext",
+            startImgSrc: "objects/dso",
+            leaf: true
+          },
+          {
+            id: "Root_Module.Files",
+            caption: "Files",
+            startImgSrc: "objects/file",
+            leaf: true
+          },
+          {
+            id: "Root_Module.Domain",
+            caption: "Domain",
+            startImgSrc: "objects/domain",
+            leaf: true
+          }
+        ]
+      },
+      {
+        id: "References",
+        caption: "References",
+        startImgSrc: "objects/references",
+        leaf: true
+      },
+      {
+        id: "Customization",
+        caption: "Customization",
+        startImgSrc: "objects/customization",
+        expanded: true,
+        items: [
+          {
+            id: "Customization.Files",
+            caption: "Files",
+            startImgSrc: "objects/file",
+            leaf: true
+          },
+          {
+            id: "Customization.Images",
+            caption: "Images",
+            startImgSrc: "objects/image",
+            leaf: true
+          }
+        ]
+      },
+      {
+        id: "Documentation",
+        caption: "Documentation",
+        startImgSrc: "objects/document",
+        leaf: true
+      }
+    ]
+  }
+];
+          
+// use inside <Host> or any TSX                    
+<ch-tree-view-render
+  class="tree-view"
+  model={this.myTreeModel}
+  show-lines="last"
+>
+</ch-tree-view-render>`;
+                  </script>
+                </div>
+                <div class="article__content" style="height: 200px">
+                  <ch-tree-view-render
+                    class="tree-view"
+                    show-lines="all"
+                    id="tree-with-icons"
+                  ></ch-tree-view-render>
+                  <script type="module">
+                    import { iconsModel } from "./assets/models/tree.js";
+                    const treeWithIcons =
+                      document.getElementById("tree-with-icons");
+                    treeWithIcons.model = iconsModel;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./tree-view.html"
+                      class="dummy-grid-container__item"
+                      >tree-view classes</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-pill
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-pill">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  The pill in mercury has not been created yet.
+                </p>
+
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <p class="dummy-grid-container__item">
+                      mercury pill in progress
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-button-group
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-button-group">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  The buttons group in mercury has not been created yet.
+                </p>
+
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <p class="dummy-grid-container__item">
+                      buttons group in progress
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script type="module">
+      import { getIconPath } from "./assets/scripts/assets-manager.js";
+
+      // - - - - - - - - - - - - - - -
+      // button
+      // - - - - - - - - - - - - - - -
+      const BUTTON_ICON = getIconPath({
+        category: "gemini-tools",
+        name: "add-circle",
+        colorType: "on-primary"
+      });
+      // ch-image on primary
+      const chImagesOnPrimary = document.querySelectorAll(
+        ".ch-image-on-primary"
+      );
+      chImagesOnPrimary.forEach(chImage => {
+        chImage.src = BUTTON_ICON;
+      });
+
+      // - - - - - - - - - - - - - - -
+      // ch-edit
+      // - - - - - - - - - - - - - - -
+      const CH_EDIT_ICON = getIconPath({
+        category: "gemini-tools",
+        name: "add-circle",
+        colorType: "on-surface"
+      });
+      const chEdit = document.getElementById("ch-edit");
+      chEdit.startImgSrc = CH_EDIT_ICON;
+    </script>
+  </body>
+</html>

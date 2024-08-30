@@ -89,7 +89,7 @@ Grid items
   grid-template-columns: repeat(3, 1fr);
 }
 .dummy-grid-container__item {
-  padding: 16px;
+  padding: 12px 16px;
   font-size: 16px;
   border-radius: 4px;
   display: flex;
@@ -100,6 +100,7 @@ Grid items
   color: var(--item__color);
   background-color: var(--item__bg-color);
   border-color: var(--item__border-color);
+  --item__bg-color: var(--mer-color__elevation--01);
 }
 a.dummy-grid-container__item {
   color: inherit !important;
@@ -161,6 +162,9 @@ General
 /* Other */
 * {
   scroll-behavior: smooth;
+}
+body.has-top-bar .main {
+  padding-block-start: var(--sc-top-bar__height);
 }
 .main a {
   text-decoration: underline;
@@ -229,13 +233,12 @@ body.all-hidden .section__header {
 }
 .article__list li::before {
   position: absolute;
-  top: 50%;
+  top: 0.8em;
   left: 0;
   content: "";
   display: block;
   width: 3px;
   height: 3px;
-  transform: translateY(-50%);
   background-color: var(--sc-base__border-color);
 }
 
@@ -368,6 +371,10 @@ Articles
     )
     1;
 }
+.article.no-separator {
+  border-block-end: none;
+  padding-block-end: 0;
+}
 .article:first-of-type {
   padding-block-start: 0;
 }
@@ -467,8 +474,6 @@ Articles
   flex-direction: column;
   gap: var(--mer-spacing--lg);
 }
-.article__content {
-}
 
 /*====================
 ch-code
@@ -476,7 +481,8 @@ ch-code
 .code {
   position: relative;
   transition: background-color 50ms;
-  max-height: 480px;
+  max-height: 360px;
+  border-block-start: none;
 }
 .code .article__pill {
   opacity: 0;
@@ -521,6 +527,9 @@ body.ctrl-cmd-pressed .article__pill {
 }
 .code__button {
   color: var(--code-header__color);
+  block-size: 30px;
+  padding-block: 0;
+  font-size: 11px;
 }
 .code__button:hover {
   cursor: pointer;
@@ -536,10 +545,12 @@ body.ctrl-cmd-pressed .article__pill {
 }
 .code__copy-button {
   display: flex;
-  gap: var(--mer-spacing--2xs);
   width: 100%;
-  font-size: 11px;
   flex-direction: row-reverse;
+}
+.code__button--documentation {
+  pointer-events: none;
+  padding-inline: 12px;
 }
 .code__copy-button::before {
   content: "";
@@ -560,4 +571,15 @@ body.ctrl-cmd-pressed .article__pill {
   to {
     background-color: var(--mer-color__neutral-gray--700);
   }
+}
+
+/*====================
+code inline tag
+====================*/
+code {
+  background-color: var(--mer-color__neutral-gray--650);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--mer-text__on-elevation);
 }

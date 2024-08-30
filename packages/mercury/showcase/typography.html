@@ -35,7 +35,7 @@
         <!-- ----------------------------------------------------- 
     HEADINGS HIERARCHY
     ------------------------------------------------------ -->
-        <section class="section">
+        <section class="section" data-nav>
           <!-- header -->
           <header class="section__header">
             <h1 class="section__title">headings: hierarchy</h1>
@@ -62,16 +62,16 @@
               <!-- heading -->
               <div class="article__main">
                 <div class="article__content">
-                  <h1 class="heading-1 heading-gray--light">
+                  <h1 class="heading-1">
                     Genexus: Shaping Tomorrow's Technology Landscape with
                     Innovative Solutions
                   </h1>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-1" language="xml" class="code">
+                  <ch-code id="ch-code-1" language="tsx" class="code">
                   </ch-code>
                   <script>
-                    const markup1 = `<h1 class="heading-1 heading-gray--light"><-- Your content here --></h1>`;
+                    const markup1 = `<h1 class="heading-1"><-- Your content here --></h1>`;
                     document.getElementById("ch-code-1").value = markup1;
                   </script>
                 </div>
@@ -88,16 +88,16 @@
               <!-- heading -->
               <div class="article__main">
                 <div class="article__content">
-                  <h2 class="heading-2 heading-gray--light">
+                  <h2 class="heading-2">
                     Genexus: Shaping Tomorrow's Technology Landscape with
                     Innovative Solutions
                   </h2>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-2" language="xml" class="code">
+                  <ch-code id="ch-code-2" language="tsx" class="code">
                   </ch-code>
                   <script>
-                    const markup2 = `<h2 class="heading-2 heading-gray--light"><-- Your content here --></h2>`;
+                    const markup2 = `<h2 class="heading-2"><-- Your content here --></h2>`;
                     document.getElementById("ch-code-2").value = markup2;
                   </script>
                 </div>
@@ -114,16 +114,16 @@
               <!-- heading -->
               <div class="article__main">
                 <div class="article__content">
-                  <h3 class="heading-3 heading-gray--light">
+                  <h3 class="heading-3">
                     Genexus: Shaping Tomorrow's Technology Landscape with
                     Innovative Solutions
                   </h3>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-3" language="xml" class="code">
+                  <ch-code id="ch-code-3" language="tsx" class="code">
                   </ch-code>
                   <script>
-                    const markup3 = `<h3 class="heading-3 heading-gray--light"><-- Your content here --></h3>`;
+                    const markup3 = `<h3 class="heading-3"><-- Your content here --></h3>`;
                     document.getElementById("ch-code-3").value = markup3;
                   </script>
                 </div>
@@ -140,16 +140,16 @@
               <!-- heading -->
               <div class="article__main">
                 <div class="article__content">
-                  <h4 class="heading-4 heading-gray--light">
+                  <h4 class="heading-4">
                     Genexus: Shaping Tomorrow's Technology Landscape with
                     Innovative Solutions
                   </h4>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-4" language="xml" class="code">
+                  <ch-code id="ch-code-4" language="tsx" class="code">
                   </ch-code>
                   <script>
-                    const markup4 = `<h4 class="heading-4 heading-gray--light"><-- Your content here --></h4>`;
+                    const markup4 = `<h4 class="heading-4"><-- Your content here --></h4>`;
                     document.getElementById("ch-code-4").value = markup4;
                   </script>
                 </div>
@@ -166,16 +166,16 @@
               <!-- heading -->
               <div class="article__main">
                 <div class="article__content">
-                  <h5 class="heading-5 heading-gray--light">
+                  <h5 class="heading-5">
                     Genexus: Shaping Tomorrow's Technology Landscape with
                     Innovative Solutions
                   </h5>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-5" language="xml" class="code">
+                  <ch-code id="ch-code-5" language="tsx" class="code">
                   </ch-code>
                   <script>
-                    const markup5 = `<h5 class="heading-5 heading-gray--light"><-- Your content here --></h5>`;
+                    const markup5 = `<h5 class="heading-5"><-- Your content here --></h5>`;
                     document.getElementById("ch-code-5").value = markup5;
                   </script>
                 </div>
@@ -192,16 +192,16 @@
               <!-- heading -->
               <div class="article__main">
                 <div class="article__content">
-                  <h6 class="heading-6 heading-gray--light">
+                  <h6 class="heading-6">
                     Genexus: Shaping Tomorrow's Technology Landscape with
                     Innovative Solutions
                   </h6>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-6" language="xml" class="code">
+                  <ch-code id="ch-code-6" language="tsx" class="code">
                   </ch-code>
                   <script>
-                    const markup6 = `<h6 class="heading-6 heading-gray--light"><-- Your content here --></h6>`;
+                    const markup6 = `<h6 class="heading-6"><-- Your content here --></h6>`;
                     document.getElementById("ch-code-6").value = markup6;
                   </script>
                 </div>
@@ -215,13 +215,14 @@
         <!-- ----------------------------------------------------- 
     HEADINGS COLORS
     ------------------------------------------------------ -->
-        <section class="section">
+        <section class="section" data-nav>
           <!-- header -->
           <header class="section__header">
             <h1 class="section__title">headings: colors</h1>
             <p class="section__description">
-              By default headings do not implement a color. To assign a color
-              you have to add any of the allowed heading colors classes.
+              By default headings implement <em>light gray</em> color. To assign
+              any another color you have to add any of the allowed heading
+              colors classes.
             </p>
             <p class="section__description section__description--note">
               The followings colors are displayed on a
@@ -236,21 +237,19 @@
             <article
               class="article"
               data-nav
-              data-title="heading color: light gray"
+              data-title="heading color: light gray (default)"
             >
               <header class="article__header"></header>
               <!-- heading -->
               <div class="article__main">
                 <div class="article__content">
-                  <h1 class="heading-3 heading-gray--light">
-                    Light Gray Heading Color
-                  </h1>
+                  <h1 class="heading-3">Light Gray Heading Color</h1>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-7" language="xml" class="code">
+                  <ch-code id="ch-code-7" language="tsx" class="code">
                   </ch-code>
                   <script>
-                    const markup7 = `<h3 class="heading-3 heading-gray--light"><-- Your content here --></h3>`;
+                    const markup7 = `<h3 class="heading-3"><-- Your content here --></h3>`;
                     document.getElementById("ch-code-7").value = markup7;
                   </script>
                 </div>
@@ -264,7 +263,7 @@
         <!-- ----------------------------------------------------- 
     TEXT
     ------------------------------------------------------ -->
-        <section class="section">
+        <section class="section" data-nav>
           <!-- header -->
           <header class="section__header">
             <h1 class="section__title">text</h1>
@@ -294,16 +293,9 @@
                     mobile, and desktop applications, resulting in faster
                     development cycles and fewer errors.
                   </p>
-                  <p class="text-body">
-                    Genexus seamlessly integrates with existing systems and
-                    databases, enabling businesses to modernize while using
-                    their current infrastructure. Supporting various programming
-                    languages and technologies, it fosters collaboration and
-                    enhances efficiency and innovation in software development.
-                  </p>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-8" language="xml" class="code">
+                  <ch-code id="ch-code-8" language="tsx" class="code">
                   </ch-code>
                   <script>
                     const markup8 = `<p class="text-body"><-- Your content here --></p>`;
