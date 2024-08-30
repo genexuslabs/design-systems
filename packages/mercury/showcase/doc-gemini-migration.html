@@ -166,7 +166,7 @@
 import { getIconPath } from "@genexus/mercury";
 
 // declare inside @Component
-private buttonIcon = getIconPath({
+#buttonIcon = getIconPath({
   category: "gemini-tools",
   name: "add-circle",
   colorType: "on-primary"
@@ -254,7 +254,7 @@ private buttonIcon = getIconPath({
                   </ch-code>
                   <script>
                     code = `// model
-private favoriteColorsModel: ComboBoxItemModel[] = [
+#favoriteColorsModel: ComboBoxItemModel[] = [
   { value: "red", caption: "Red"},
   { value: "blue", caption: "Blue"},
   { value: "green", caption: "Green"},
@@ -454,7 +454,7 @@ private favoriteColorsModel: ComboBoxItemModel[] = [
                   </ch-code>
                   <script>
                     code = `// model
-private favoriteColorsModel: RadioGroupItemModel[] = [
+#favoriteColorsModel: RadioGroupItemModel[] = [
   { value: "red", caption: "Red"},
   { value: "blue", caption: "Blue"},
   { value: "green", caption: "Green"},
@@ -554,7 +554,7 @@ private favoriteColorsModel: RadioGroupItemModel[] = [
 import { getIconPath } from "@genexus/mercury";
 
 // declare inside @Component
-private chEditIcon = getIconPath({
+#chEditIcon = getIconPath({
   category: "gemini-tools",
   name: "add-circle",
   colorType: "on-surface"
@@ -872,7 +872,7 @@ private chEditIcon = getIconPath({
 import { getIconPath } from "@genexus/mercury";
 
 // declare inside @Component
-private myIcon = getIconPath({
+#myIcon = getIconPath({
   category: "gemini-tools",
   name: "add-circle",
   colorType: "on-primary"
@@ -1056,7 +1056,7 @@ private myIcon = getIconPath({
                   >
                   </ch-code>
                   <script>
-                    code = `private listBoxItems: ActionListItemModel[] = [
+                    code = `#listBoxItems: ActionListItemModel[] = [
 {
   id: "item-1.1",
   type: "actionable",
@@ -1281,7 +1281,7 @@ private myIcon = getIconPath({
                   </ch-code>
                   <script>
                     code = `// model
-private fruitsModel: TabItemModel[] = [
+#fruitsModel: TabItemModel[] = [
   { id: "apples", name: "Apples" },
   { id: "bananas", name: "Bananas" },
   { id: "cherries", name: "Cherries" }
@@ -1632,7 +1632,7 @@ private fruitsModel: TabItemModel[] = [
                   </ch-code>
                   <script>
                     code = `// model
-private myTreeModel: TreeViewItemModel[] = [
+#myTreeModel: TreeViewItemModel[] = [
   {
     id: "root",
     caption: "GeneXusNext Develop",
