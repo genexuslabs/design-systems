@@ -40,6 +40,7 @@
               transition as smooth as possible.
             </p>
           </header>
+
           <div class="section__articles-container">
             <!-- ========================== 
           gxg-button: text only
@@ -172,7 +173,7 @@ import { getIconPath } from "@genexus/mercury";
   colorType: "on-primary"
 });
 
-// use inside <Host>
+// use inside <Host> or any TSX
 <button class="button-primary button-icon-and-text">
   <ch-image src={buttonIcon} class="icon-sm"></ch-image>
   Caption
@@ -218,7 +219,7 @@ import { getIconPath } from "@genexus/mercury";
                     <a
                       href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/combo-box#ch-combo-box-render"
                       target="_blank"
-                      >Specify the ch-combo-box items following the model
+                      >Specify the ch-combo-box-render items following the model
                       property
                     </a>
                   </li>
@@ -263,7 +264,7 @@ import { getIconPath } from "@genexus/mercury";
 ];
 
 <ch-combo-box-render
-  accessible-name="My Favorite Colors"
+  accessibleName="My Favorite Colors"
   class="combo-box"
   model={this.favoriteColorsModel}>
 </ch-combo-box-render>`;
@@ -300,6 +301,7 @@ import { getIconPath } from "@genexus/mercury";
                     ];
                     const comboBox = document.getElementById("combo-box");
                     comboBox.model = comboBoxColorsModel;
+                    console.log("comboBox", comboBox);
                     comboBox.placeholder = "Option";
                   </script>
                 </div>
@@ -366,13 +368,12 @@ import { getIconPath } from "@genexus/mercury";
                   >
                   </ch-code>
                   <script>
-                    code = `// use inside <Host>
+                    code = `// use inside <Host> or any TSX
 <ch-checkbox
-  class="checkbox"
-  checked-value="true"
-  un-checked-value="false"
-  value="true"
+class="checkbox"
   caption="The Caption"
+  checkedValue="true"
+  value="true"
 ></ch-checkbox>`;
                   </script>
                 </div>
@@ -560,7 +561,7 @@ import { getIconPath } from "@genexus/mercury";
   colorType: "on-surface"
 });
 
-// use inside <Host>                    
+// use inside <Host> or any TSX                    
 <ch-edit
   value="Adam Smith"
   class="form-input"
@@ -585,6 +586,78 @@ import { getIconPath } from "@genexus/mercury";
                       class="dummy-grid-container__item"
                       >form-input classes</a
                     >
+                  </div>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          gxg-form-textarea
+          =========================== -->
+            <article class="article" data-nav data-title="gxg-form-textarea">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  The transition steps from the
+                  <code>gxg-form-textarea</code> are the same as the
+                  <a href="#gxg-form-text-5">gxg-form-text</a>, since the
+                  <code>ch-edit</code> can be behave as a textarea as well ✨.
+                  To make the ch-edit behave like a textarea set the
+                  <code>multiline</code> property to true.
+                </p>
+
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-form-textarea
+placeholder="I have experience as a.."
+height="100px"
+></gxg-form-textarea>`;
+                  </script>
+                </div>
+
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// use inside <Host> or any TSX                 
+<ch-edit
+class="form-input"
+placeholder="Describe your experience as a backend developer"
+multiline={true}
+></ch-edit>`;
+                  </script>
+                </div>
+                <div class="article__content" style="height: 100px">
+                  <ch-edit
+                    class="form-input"
+                    placeholder="Describe your experience as a backend developer"
+                    multiline
+                    auto-grow
+                    style="block-size: 100%"
+                  ></ch-edit>
+                </div>
+
+                <!-- /.article__content -->
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <p class="dummy-grid-container__item">
+                      textarea showcase in progress
+                    </p>
                   </div>
                 </div>
               </div>
@@ -683,7 +756,7 @@ import { getIconPath } from "@genexus/mercury";
                   >
                   </ch-code>
                   <script>
-                    code = `// use inside <Host>                    
+                    code = `// use inside <Host> or any TSX                    
 <ch-tabular-grid class="tabular-grid">
   <ch-tabular-grid-columnset class="tabular-grid-column-set">
     <ch-tabular-grid-column 
@@ -878,7 +951,7 @@ import { getIconPath } from "@genexus/mercury";
   colorType: "on-primary"
 });
 
-// use inside <Host>
+// use inside <Host> or any TSX
 <ch-image src={this.myIcon} class="icon-sm"></ch-image>`;
                   </script>
                 </div>
@@ -1078,7 +1151,7 @@ import { getIconPath } from "@genexus/mercury";
   caption: "Item 1.4"
 }];
 
-// use inside <Host>
+// use inside <Host> or any TSX
 <ch-action-list-render
   selection="multiple"
   class="list-box"
@@ -1136,37 +1209,166 @@ import { getIconPath } from "@genexus/mercury";
             </article>
 
             <!-- ========================== 
-          gxg-suggest
-          =========================== -->
+            gxg-suggest
+            =========================== -->
             <article class="article" data-nav data-title="gxg-suggest">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <p class="article__description">
-                  The transition steps from the <code>gxg-suggest</code> are the
-                  same as the <a href="#gxg-combo-box-2">gxg-combo-box</a>,
-                  since the <code>ch-combo-box</code> can be a suggest as well
-                  ✨.
+                  When transitioning from a <code>gxg-suggest</code>:
                 </p>
+                <ol class="article__list article__description">
+                  <li>
+                    Replace the <code>gxg-suggest</code> tag with a
+                    <code>ch-combo-box-render</code> tag.
+                  </li>
+                  <li>Remove all the attributes and values</li>
+                  <li>Add the <code>.combo-box</code> class.</li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/combo-box#ch-combo-box-render"
+                      target="_blank"
+                      >Specify the ch-combo-box-render items following the model
+                      property
+                    </a>
+                  </li>
+                  <li>
+                    Set the <code>suggest</code> property to
+                    <code>true</code> to turn the suggest feature on.
+                  </li>
+                  <li>
+                    Subscribe to the <code>filterChange</code> event listener,
+                    and use the <code>event.detail</code> to filter the items
+                    accordingly, by defining the <code>filter</code> value.
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/combo-box#ch-combo-box-render"
+                      target="_blank"
+                      >Specify the options by following the
+                      <code>suggestOptions</code>
+                      property
+                    </a>
+                  </li>
+                </ol>
+                <div class="article__code">
+                  <!-- before: gemini -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="before: gemini"
+                    data-documentation
+                  >
+                  </ch-code>
+                  <script>
+                    code = `<gxg-suggest>
+    <ch-suggest
+      value={this.selectedColor.name}
+      onValueChanged={this.colorChangedGHandler}
+    >
+      {this.renderSuggestLists(this.colorSuggestions)}
+    </ch-suggest>
+  </gxg-suggest>`;
+                  </script>
+                </div>
 
+                <div class="article__code">
+                  <!-- after: mercury -->
+                  <ch-code
+                    language="tsx"
+                    class="code"
+                    data-title="after: mercury"
+                  >
+                  </ch-code>
+                  <script>
+                    code = `// model
+  #favoriteColorsModel: ComboBoxItemModel[] = [
+    { value: "red", caption: "Red"},
+    { value: "blue", caption: "Blue"},
+    { value: "green", caption: "Green"},
+    { value: "yellow", caption: "Yellow"},
+    { value: "purple", caption: "Purple"}
+  ];
+  
+  <ch-combo-box-render
+    accessibleName="My Favorite Colors"
+    class="combo-box"
+    model={this.favoriteColorsModel}
+    placeholder="Select your favorite color";
+    suggest={true}
+    onFilterChange={this.colorsFilterChangedHandlers}
+    suggestOptions={
+      alreadyProcessed: false,
+      autoExpand: true,
+      hideMatchesAndShowNonMatches: false,
+      highlightMatchedItems: false,
+      matchCase: false,
+      regularExpression: false,
+      strict: false
+    };
+  >
+  </ch-combo-box-render>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <ch-combo-box-render
+                    accessible-name="My Favorite Colors"
+                    id="suggest"
+                    class="combo-box"
+                  ></ch-combo-box-render>
+                  <script type="module">
+                    const suggestColorsModel = [
+                      {
+                        value: "red",
+                        caption: "Red"
+                      },
+                      {
+                        value: "blue",
+                        caption: "Blue"
+                      },
+                      {
+                        value: "green",
+                        caption: "Green"
+                      },
+                      {
+                        value: "yellow",
+                        caption: "Yellow"
+                      },
+                      {
+                        value: "purple",
+                        caption: "Purple"
+                      }
+                    ];
+
+                    const suggestRef = document.getElementById("suggest");
+                    suggestRef.model = suggestColorsModel;
+                    suggestRef.placeholder = "Select your favorite color";
+                    suggestRef.suggest = true;
+                    suggestRef.suggestDebounce = 250;
+                    suggestRef.suggestOptions = {
+                      alreadyProcessed: false,
+                      autoExpand: true,
+                      hideMatchesAndShowNonMatches: false,
+                      highlightMatchedItems: false,
+                      matchCase: false,
+                      regularExpression: false,
+                      strict: false
+                    };
+                    suggestRef.addEventListener("filterChange", e => {
+                      suggestRef.filter = e.detail;
+                    });
+                  </script>
+                </div>
                 <!-- /.article__content -->
                 <div class="article__content">
-                  <ul class="dummy-grid-container dummy-grid-container-2">
-                    <li>
-                      <a
-                        href="#gxg-combo-box-2"
-                        class="dummy-grid-container__item"
-                        >combo-box gemini transition</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="./combo-box.html"
-                        class="dummy-grid-container__item"
-                        >combo-box classes</a
-                      >
-                    </li>
-                  </ul>
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./combo-box.html"
+                      class="dummy-grid-container__item"
+                      >suggest classes</a
+                    >
+                  </div>
                 </div>
               </div>
               <!-- /.article__main -->
@@ -1281,17 +1483,17 @@ import { getIconPath } from "@genexus/mercury";
                   </ch-code>
                   <script>
                     code = `// model
-#fruitsModel: TabItemModel[] = [
+#fruitsModel: TabModel = [
   { id: "apples", name: "Apples" },
   { id: "bananas", name: "Bananas" },
   { id: "cherries", name: "Cherries" }
 ]; 
           
-// use inside <Host>                    
+// use inside <Host> or any TSX                    
 <ch-tab-render
   class="tab tab-indicator-start"
   direction="block"
-  selected-id="apples"
+  selectedId="apples"
   model={this.fruitsModel}
 >
   <div slot="apples" class="slot spacing-body">
@@ -1517,18 +1719,16 @@ import { getIconPath } from "@genexus/mercury";
                   >
                   </ch-code>
                   <script>
-                    code = `<h1 class="heading-1 heading-gray--light">This is a heading 1</h1>
-<h2 class="heading-2 heading-gray--light">This is a heading 2</h2>
-<h3 class="heading-3 heading-gray--light">This is a heading 3</h3>
-<h4 class="heading-4 heading-gray--light">This is a heading 4</h4>
-<h5 class="heading-5 heading-gray--light">This is a heading 5</h5>
-<h6 class="heading-6 heading-gray--light">This is a heading 6</h6>`;
+                    code = `<h1 class="heading-1">This is a heading 1</h1>
+<h2 class="heading-2">This is a heading 2</h2>
+<h3 class="heading-3">This is a heading 3</h3>
+<h4 class="heading-4">This is a heading 4</h4>
+<h5 class="heading-5">This is a heading 5</h5>
+<h6 class="heading-6">This is a heading 6</h6>`;
                   </script>
                 </div>
                 <div class="article__content">
-                  <h1 class="heading-1 heading-gray--light">
-                    This is a heading 1
-                  </h1>
+                  <h1 class="heading-1">This is a heading 1</h1>
                   <br />
                   <p class="section__description">And so on...</p>
                 </div>
@@ -1540,34 +1740,6 @@ import { getIconPath } from "@genexus/mercury";
                       class="dummy-grid-container__item"
                       >heading classes</a
                     >
-                  </div>
-                </div>
-              </div>
-              <!-- /.article__main -->
-            </article>
-
-            <!-- ========================== 
-          gxg-form-textarea
-          =========================== -->
-            <article class="article" data-nav data-title="gxg-form-textarea">
-              <header class="article__header"></header>
-              <!-- main -->
-              <div class="article__main">
-                <p class="article__description">
-                  The transition steps from the
-                  <code>gxg-form-textarea</code> are the same as the
-                  <a href="#gxg-form-text-5">gxg-form-text</a>, since the
-                  <code>ch-edit</code> can be behave as a textarea as well ✨.
-                  To make the ch-edit behave like a textarea set the
-                  <code>multiline</code> property to true.
-                </p>
-
-                <!-- /.article__content -->
-                <div class="article__content">
-                  <div class="dummy-grid-container">
-                    <p class="dummy-grid-container__item">
-                      textarea showcase in progress
-                    </p>
                   </div>
                 </div>
               </div>
@@ -1632,7 +1804,7 @@ import { getIconPath } from "@genexus/mercury";
                   </ch-code>
                   <script>
                     code = `// model
-#myTreeModel: TreeViewItemModel[] = [
+#myTreeModel: TreeViewModel = [
   {
     id: "root",
     caption: "GeneXusNext Develop",
@@ -1759,7 +1931,7 @@ import { getIconPath } from "@genexus/mercury";
   }
 ];
           
-// use inside <Host>                    
+// use inside <Host> or any TSX                    
 <ch-tree-view-render
   class="tree-view"
   model={this.myTreeModel}
@@ -1776,7 +1948,6 @@ import { getIconPath } from "@genexus/mercury";
                   ></ch-tree-view-render>
                   <script type="module">
                     import { iconsModel } from "./assets/models/tree.js";
-                    console.log("iconsModel", iconsModel);
                     const treeWithIcons =
                       document.getElementById("tree-with-icons");
                     treeWithIcons.model = iconsModel;
