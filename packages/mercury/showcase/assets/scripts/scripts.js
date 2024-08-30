@@ -196,6 +196,9 @@ const includeTopBar = () => {
     topBarEl.className = "container__top-bar";
     CONTAINER_REF.appendChild(topBarEl);
     topBarRef = topBarEl;
+
+    // body
+    BODY.classList.add("has-top-bar");
   }
 };
 
@@ -485,7 +488,6 @@ const copyToClipBoard = text => {
 /**
  * @description this function sets for every ch-code the value, by getting the
  */
-
 const extractCodeContent = str => {
   const match = str.match(/`([^`]*)`/);
   return match ? match[1] : null;
@@ -504,6 +506,22 @@ const getChCodeValues = () => {
   });
 };
 
+/**
+ * @description this function toggles the class of the ".bundle-container", in order to display the bundle that needs to be included for the control.
+ */
+const toggleBundleCode = () => {
+  const bundleContainer = document.querySelector(".bundle-container");
+  const bundleContainerExpander = bundleContainer.querySelector(".expander");
+  const bundleContainerToggleButton = document.getElementById(
+    "toggle-bundle-code-btn"
+  );
+  if (bundleContainerExpander && bundleContainerToggleButton) {
+    bundleContainerToggleButton.addEventListener("click", () => {
+      bundleContainerExpander.classList.toggle("expanded");
+    });
+  }
+};
+
 document.addEventListener("DOMContentLoaded", function () {
   CONTAINER_REF = document.querySelector(".container");
   includeFavicon();
@@ -518,4 +536,5 @@ document.addEventListener("DOMContentLoaded", function () {
   includeTopBar();
   includeChameleonURL();
   getChCodeValues();
+  toggleBundleCode();
 });
