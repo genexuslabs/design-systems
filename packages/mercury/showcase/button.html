@@ -50,23 +50,6 @@
   <body class="showcase" data-sidebar>
     <script src="./assets/scripts/scripts.js"></script>
     <main class="main">
-      <div class="bundle-container">
-        <button class="button-tertiary" id="toggle-bundle-code-btn">
-          Include the bundle for this control
-        </button>
-        <div class="expander">
-          <div class="expander-content">
-            <ch-code language="tsx" class="code" id="bundle-code"></ch-code>
-          </div>
-        </div>
-        <script>
-          code = `const CSS_BUNDLES: MercuryBundles = ["components/button"];
-// Inside the </Host>
-<ch-theme model={CSS_BUNDLES}></ch-theme>`;
-          const bundleCode = document.getElementById("bundle-code");
-          bundleCode.value = code;
-        </script>
-      </div>
       <div class="container">
         <!-- ----------------------------------------------------- 
     BUTTON PRIMARY
