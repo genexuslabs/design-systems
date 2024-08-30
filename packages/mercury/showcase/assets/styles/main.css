@@ -163,6 +163,9 @@ General
 * {
   scroll-behavior: smooth;
 }
+body.has-top-bar .main {
+  padding-block-start: var(--sc-top-bar__height);
+}
 .main a {
   text-decoration: underline;
   /* color: var(--mer-accent__primary); */
