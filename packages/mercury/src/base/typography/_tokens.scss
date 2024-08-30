@@ -1,7 +1,9 @@
 @mixin heading-tokens() {
   // heading base
   --heading-base__font-family: var(--mer-font-family--title);
-  --heading__color: transparent; //this forces the user to apply an allowed heading color.
+  --heading__color: var(
+    --mer-heading__gray--light
+  ); //this forces the user to apply an allowed heading color.
 
   //h1
   --heading-h1__font-size: var(--mer-font__size--xl);
