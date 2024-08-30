@@ -506,22 +506,6 @@ const getChCodeValues = () => {
   });
 };
 
-/**
- * @description this function toggles the class of the ".bundle-container", in order to display the bundle that needs to be included for the control.
- */
-const toggleBundleCode = () => {
-  const bundleContainer = document.querySelector(".bundle-container");
-  const bundleContainerExpander = bundleContainer.querySelector(".expander");
-  const bundleContainerToggleButton = document.getElementById(
-    "toggle-bundle-code-btn"
-  );
-  if (bundleContainerExpander && bundleContainerToggleButton) {
-    bundleContainerToggleButton.addEventListener("click", () => {
-      bundleContainerExpander.classList.toggle("expanded");
-    });
-  }
-};
-
 document.addEventListener("DOMContentLoaded", function () {
   CONTAINER_REF = document.querySelector(".container");
   includeFavicon();
@@ -536,5 +520,4 @@ document.addEventListener("DOMContentLoaded", function () {
   includeTopBar();
   includeChameleonURL();
   getChCodeValues();
-  toggleBundleCode();
 });
