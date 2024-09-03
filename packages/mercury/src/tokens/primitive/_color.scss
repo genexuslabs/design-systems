@@ -135,4 +135,89 @@
   --mer-color__elevation--02: var(--mer-color__neutral-gray--700);
   --mer-color__elevation--03: var(--mer-color__neutral-gray--650);
   --mer-color__elevation--04: var(--mer-color__neutral-gray--600);
+
+  // gradients
+  --mer-color__gradient-angle: 225deg;
+  --mer-color__gradient-opacity--low: 0.7;
+  --mer-color__gradient-opacity--medium: 0.9;
+  --mer-color__gradient-opacity--high: 1;
+
+  // gradient 01
+  --mer-color__gradient--01: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(0, 204, 255, var(--mer-color__gradient-opacity--medium)) 0%,
+    rgba(163, 0, 255, var(--mer-color__gradient-opacity--medium)) 100%
+  );
+  // gradient 02
+  --mer-color__gradient--02: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(57, 255, 20, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(255, 0, 114, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 03
+  --mer-color__gradient--03: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(0, 245, 255, var(--mer-color__gradient-opacity--low)) 0%,
+    rgba(255, 234, 0, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 04
+  --mer-color__gradient--04: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(16, 196, 195, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(236, 30, 91, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 05
+  --mer-color__gradient--05: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 0, 162, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(139, 0, 255, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 06
+  --mer-color__gradient--06: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(204, 255, 0, var(--mer-color__gradient-opacity--medium)) 0%,
+    rgba(0, 255, 204, var(--mer-color__gradient-opacity--medium)) 100%
+  );
+  // gradient 07
+  --mer-color__gradient--07: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(91, 118, 255, var(--mer-color__gradient-opacity--medium)) 0%,
+    rgba(0, 255, 203, var(--mer-color__gradient-opacity--medium)) 100%
+  );
+  // gradient 08
+  --mer-color__gradient--08: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 0, 255, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(0, 149, 255, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 09
+  --mer-color__gradient--09: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 69, 0, var(--mer-color__gradient-opacity--medium)) 0%,
+    rgba(142, 84, 200, var(--mer-color__gradient-opacity--medium)) 100%
+  );
+  // gradient 10
+  --mer-color__gradient--10: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 0, 127, var(--mer-color__gradient-opacity--low)) 0%,
+    rgba(0, 255, 0, var(--mer-color__gradient-opacity--low)) 100%
+  );
+  // gradient 11
+  --mer-color__gradient--11: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 199, 0, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(138, 43, 226, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 12
+  --mer-color__gradient--12: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 0, 51, var(--mer-color__gradient-opacity--medium)) 0%,
+    rgba(255, 204, 0, var(--mer-color__gradient-opacity--medium)) 100%
+  );
+  // gradient 13
+  --mer-color__gradient--13: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(0, 255, 60, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(255, 102, 0, var(--mer-color__gradient-opacity--high)) 100%
+  );
 }
