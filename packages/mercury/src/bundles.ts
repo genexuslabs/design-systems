@@ -32,6 +32,7 @@ export type MercuryBundleComponentForm =
   | "components/checkbox"
   | "components/combo-box"
   | "components/edit"
+  | "components/list-box"
   | "components/radio-group";
 
 export type MercuryBundleReset = "resets/box-sizing";
@@ -94,6 +95,7 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/combo-box"),
     getThemeModelItem(basePath, "components/dialog"),
     getThemeModelItem(basePath, "components/edit"),
+    getThemeModelItem(basePath, "components/list-box"),
     getThemeModelItem(basePath, "components/markdown-viewer", false),
     getThemeModelItem(basePath, "components/radio-group"),
     getThemeModelItem(basePath, "components/tab"),
