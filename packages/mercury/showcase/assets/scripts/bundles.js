@@ -32,6 +32,7 @@ export const getThemeBundles = (basePath) => [
     getThemeModelItem(basePath, "components/code"),
     getThemeModelItem(basePath, "components/combo-box"),
     getThemeModelItem(basePath, "components/dialog"),
+    getThemeModelItem(basePath, "components/icon"),
     getThemeModelItem(basePath, "components/edit"),
     getThemeModelItem(basePath, "components/markdown-viewer", false),
     getThemeModelItem(basePath, "components/radio-group"),
