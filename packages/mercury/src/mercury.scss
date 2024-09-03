@@ -344,10 +344,8 @@
       @include button-secondary();
       @include button-tertiary();
 
-      @if $icon-classes {
-        @include button-icon-only();
-        @include button-icon-and-text();
-      }
+      @include button-icon-only();
+      @include button-icon-and-text();
     }
 
     @if $icon-classes {
