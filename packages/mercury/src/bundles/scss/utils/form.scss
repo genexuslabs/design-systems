@@ -1,8 +1,0 @@
-@import "config";
-@import "../../../mercury.scss";
-
-@include mercury-only(
-  $base-classes: true,
-  $layout-classes: true,
-  $form-controls-classes: true
-);
