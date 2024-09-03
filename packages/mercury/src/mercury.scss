@@ -95,7 +95,7 @@
   // Base
   $base-classes: true,
   $button-classes: true,
-  $form-controls-classes: true,
+  $label: true,
   $icon-classes: true,
   $layout-classes: true,
   $spacing-classes: true,
@@ -350,11 +350,6 @@
       }
     }
 
-    @if $form-controls-classes {
-      @include field();
-      @include label();
-    }
-
     @if $icon-classes {
       @include icon-size-sm();
       @include icon-size-md();
@@ -362,6 +357,7 @@
     }
 
     @if $layout-classes {
+      @include field();
       @include layout();
       @include control-footer();
     }
@@ -409,6 +405,10 @@
 
   @if $icon {
     @include icon();
+  }
+
+  @if $label {
+    @include label();
   }
 
   @if $list-box {
@@ -484,7 +484,7 @@
   // Base
   $base-classes: false,
   $button-classes: false,
-  $form-controls-classes: false,
+  $label: false,
   $icon-classes: false,
   $layout-classes: false,
   $spacing-classes: false,
@@ -547,7 +547,7 @@
     // Base
     $base-classes: $base-classes,
     $button-classes: $button-classes,
-    $form-controls-classes: $form-controls-classes,
+    $label: $label,
     $icon-classes: $icon-classes,
     $layout-classes: $layout-classes,
     $spacing-classes: $spacing-classes,
