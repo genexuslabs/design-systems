@@ -22,7 +22,6 @@ export type MercuryBundleComponent =
   | "components/code"
   | "components/dialog"
   | "components/markdown-viewer"
-  | "components/slider"
   | "components/tab"
   | "components/tabular-grid"
   | "components/ticket-list"
@@ -33,7 +32,8 @@ export type MercuryBundleComponentForm =
   | "components/checkbox"
   | "components/combo-box"
   | "components/edit"
-  | "components/radio-group";
+  | "components/radio-group"
+  | "components/slider";
 
 export type MercuryBundleReset = "resets/box-sizing";
 
