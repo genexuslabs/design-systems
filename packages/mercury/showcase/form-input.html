@@ -22,8 +22,8 @@
     <script src="./assets/scripts/scripts.js"></script>
     <main class="main">
       <div class="container">
-        <!-- button primary -->
-        <section class="section">
+        <!-- form-input -->
+        <section class="section" data-nav>
           <!-- header -->
           <header class="section__header">
             <h1 class="section__title">form input</h1>
@@ -50,11 +50,9 @@
                   ></ch-edit>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-1" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup1 = `<ch-edit class="form-input" placeholder="e.g. Mike Shinoda"></ch-edit>`;
-                    document.getElementById("ch-code-1").value = markup1;
+                    code = `<ch-edit class="form-input" placeholder="e.g. Mike Shinoda"></ch-edit>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -81,11 +79,9 @@
                   ></ch-edit>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-2" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup2 = `<ch-edit class="form-input" placeholder="e.g. Mike Shinoda" disabled></ch-edit>`;
-                    document.getElementById("ch-code-2").value = markup2;
+                    code = `<ch-edit class="form-input" placeholder="e.g. Mike Shinoda" disabled></ch-edit>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -104,11 +100,9 @@
                   <ch-edit class="form-input" value="Pat Taylor"></ch-edit>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-3" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup3 = `<ch-edit class="form-input" value="Pat Taylor"></ch-edit>`;
-                    document.getElementById("ch-code-3").value = markup3;
+                    code = `<ch-edit class="form-input" value="Pat Taylor"></ch-edit>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -131,11 +125,9 @@
                   ></ch-edit>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-4" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup4 = `<ch-edit class="form-input" value="Pat Taylor" disabled></ch-edit>`;
-                    document.getElementById("ch-code-4").value = markup4;
+                    code = `<ch-edit class="form-input" value="Pat Taylor" disabled></ch-edit>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -150,43 +142,45 @@
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
-                <p class="article__description">(to be completed)</p>
                 <div class="article__content">
                   <ch-edit
                     class="form-input"
                     value="Pat Taylor"
-                    id="edit-with-icon"
-                    start-img-src="https://icons.veryicon.com/png/o/file-type/file-type-1/jpg-icon.png"
-                    picture="https://icons.veryicon.com/png/o/file-type/file-type-1/jpg-icon.png"
-                    start-img-type="background"
-                    type="text"
+                    id="ch-edit-with-icon"
                   ></ch-edit>
-                </div>
-                <div class="article__code">
-                  <ch-code id="ch-code-5" language="tsx" class="code">
-                  </ch-code>
                   <script type="module">
-                    // picture
                     import { getIconPath } from "./assets/scripts/assets-manager.js";
-                    const chEdit5 = document.getElementById("edit-with-icon");
-                    // chEdit5.startImgSrc = "https://icons.veryicon.com/png/o/file-type/file-type-1/jpg-icon.png";
-                    // markup
-                    // chEdit5.getImagePathCallbackImage = imgSrc => {
-                    //   return {
-                    //     base: "https://icons.veryicon.com/png/o/file-type/file-type-1/jpg-icon.png",
-                    //     active:
-                    //       "https://icons.veryicon.com/png/o/file-type/file-type-1/jpg-icon.png",
-                    //     hover:
-                    //       "https://icons.veryicon.com/png/o/file-type/file-type-1/jpg-icon.png",
-                    //     disabled:
-                    //       "https://icons.veryicon.com/png/o/file-type/file-type-1/jpg-icon.png"
-                    //   };
-                    // };
-                    const markup5 = `<ch-edit class="form-input" value="Pat Taylor" disabled></ch-edit>`;
-                    document.getElementById("ch-code-5").value = markup5;
+                    const ICON_USER = getIconPath({
+                      category: "system",
+                      name: "user",
+                      colorType: "on-surface"
+                    });
+                    const chEditWithIcon =
+                      document.getElementById("ch-edit-with-icon");
+                    chEditWithIcon.startImgSrc = ICON_USER;
                   </script>
                 </div>
-                <!-- /.article__content -->
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"></ch-code>
+                  <script>
+                    code = `// import before @Component 
+import { getIconPath } from "@genexus/mercury";
+
+// declare inside @Component
+#userIcon = getIconPath({
+  category: "system",
+  name: "user",
+  colorType: "on-surface"
+});
+
+<ch-edit
+  class="form-input"
+  value="Pat Taylor"
+  startImgSrc={this.#userIcon}
+>
+</ch-edit>`;
+                  </script>
+                </div>
               </div>
               <!-- /.article__main -->
             </article>
@@ -205,11 +199,9 @@
                   ></ch-edit>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-6" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup6 = `<ch-edit class="form-input form-input-error" value="Pat Taylor"></ch-edit>`;
-                    document.getElementById("ch-code-6").value = markup6;
+                    code = `<ch-edit class="form-input form-input-error" value="Pat Taylor"></ch-edit>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -241,14 +233,12 @@
                   </div>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-7" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup7 = `<div class="field field-block">
+                    code = `<div class="field field-block">
   <label class="label">Beneficiary Name</label>
   <ch-edit class="form-input" value="Pat Taylor"></ch-edit>
 </div>`;
-                    document.getElementById("ch-code-7").value = markup7;
                   </script>
                 </div>
                 <div class="article__content">
@@ -264,6 +254,77 @@
                       >
                     </li>
                   </ul>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+
+        <!-- form-input search -->
+        <section class="section" data-nav>
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">form input: search</h1>
+            <p class="section__description">
+              A form-input of type "search" is a specialized HTML input element
+              designed for search functionality within a webpage. It allows
+              users to enter search queries, providing a streamlined and
+              intuitive interface for finding content.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+enabled
+=========================== -->
+            <article class="article" data-nav data-title="enabled">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  Note: The styles for the form-input type="search" are not yet
+                  completed.
+                </p>
+                <div class="article__content">
+                  <ch-edit
+                    class="form-input"
+                    value="Pat Taylor"
+                    id="ch-edit-search"
+                    type="search"
+                  ></ch-edit>
+                  <script type="module">
+                    import { getIconPath } from "./assets/scripts/assets-manager.js";
+                    const SEARCH_ICON = getIconPath({
+                      category: "system",
+                      name: "search",
+                      colorType: "on-surface"
+                    });
+                    console.log("SEARCH_ICON", SEARCH_ICON);
+                    const chEditSearch =
+                      document.getElementById("ch-edit-search");
+                    chEditSearch.startImgSrc = SEARCH_ICON;
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"></ch-code>
+                  <script>
+                    code = `// import before @Component 
+import { getIconPath } from "@genexus/mercury";
+
+// declare inside @Component
+#searchIcon = getIconPath({
+  category: "system",
+  name: "search",
+  colorType: "on-surface"
+});
+
+<ch-edit
+  class="form-input"
+  value="Pat Taylor"
+  startImgSrc={this.#searchIcon}
+>
+</ch-edit>`;
+                  </script>
                 </div>
               </div>
               <!-- /.article__main -->
