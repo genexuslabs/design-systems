@@ -32,15 +32,15 @@ export type MercuryBundleComponentForm =
   | "components/checkbox"
   | "components/combo-box"
   | "components/edit"
+  | "components/label"
   | "components/radio-group";
 
 export type MercuryBundleReset = "resets/box-sizing";
 
 export type MercuryBundleUtil =
-  | "utils/form"
   | "utils/layout"
   | "utils/typography"
-  // TODO: Use "base/scrollbar" when the ch-theme supports aliases
+  // TODO: Use "utils/scrollbar" when the ch-theme supports aliases
   | "chameleon/scrollbar";
 
 export type MercuryBundleUtilFormFull = "utils/form--full";
@@ -94,6 +94,7 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/combo-box"),
     getThemeModelItem(basePath, "components/dialog"),
     getThemeModelItem(basePath, "components/edit"),
+    getThemeModelItem(basePath, "components/label"),
     getThemeModelItem(basePath, "components/markdown-viewer", false),
     getThemeModelItem(basePath, "components/radio-group"),
     getThemeModelItem(basePath, "components/tab"),
@@ -105,7 +106,6 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "resets/box-sizing"),
 
     // Utils
-    getThemeModelItem(basePath, "utils/form"),
     getThemeModelItem(basePath, "utils/form--full"),
     getThemeModelItem(basePath, "utils/layout"),
     getThemeModelItem(basePath, "utils/typography"),
