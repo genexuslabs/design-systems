@@ -35,6 +35,7 @@ export const getThemeBundles = (basePath) => [
     getThemeModelItem(basePath, "components/edit"),
     getThemeModelItem(basePath, "components/markdown-viewer", false),
     getThemeModelItem(basePath, "components/radio-group"),
+    getThemeModelItem(basePath, "components/slider"),
     getThemeModelItem(basePath, "components/tab"),
     getThemeModelItem(basePath, "components/tabular-grid"),
     getThemeModelItem(basePath, "components/ticket-list"),

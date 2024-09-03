@@ -22,6 +22,7 @@ export type MercuryBundleComponent =
   | "components/code"
   | "components/dialog"
   | "components/markdown-viewer"
+  | "components/slider"
   | "components/tab"
   | "components/tabular-grid"
   | "components/ticket-list"
@@ -96,6 +97,7 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/edit"),
     getThemeModelItem(basePath, "components/markdown-viewer", false),
     getThemeModelItem(basePath, "components/radio-group"),
+    getThemeModelItem(basePath, "components/slider"),
     getThemeModelItem(basePath, "components/tab"),
     getThemeModelItem(basePath, "components/tabular-grid"),
     getThemeModelItem(basePath, "components/ticket-list"),
