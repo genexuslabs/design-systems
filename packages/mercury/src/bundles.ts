@@ -21,6 +21,7 @@ export type MercuryBundleComponent =
   | "components/accordion"
   | "components/code"
   | "components/dialog"
+  | "components/list-box"
   | "components/markdown-viewer"
   | "components/tab"
   | "components/tabular-grid"
@@ -32,7 +33,6 @@ export type MercuryBundleComponentForm =
   | "components/checkbox"
   | "components/combo-box"
   | "components/edit"
-  | "components/list-box"
   | "components/radio-group";
 
 export type MercuryBundleReset = "resets/box-sizing";
