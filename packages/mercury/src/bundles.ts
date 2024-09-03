@@ -40,7 +40,7 @@ export type MercuryBundleUtil =
   | "utils/form"
   | "utils/layout"
   | "utils/typography"
-  // TODO: Use "base/scrollbar" when the ch-theme supports aliases
+  // TODO: Use "utils/scrollbar" when the ch-theme supports aliases
   | "chameleon/scrollbar";
 
 export type MercuryBundleUtilFormFull = "utils/form--full";
