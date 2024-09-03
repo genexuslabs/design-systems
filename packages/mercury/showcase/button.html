@@ -16,38 +16,8 @@
     <link rel="stylesheet" href="./assets/styles/sidebar.css" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <link rel="stylesheet" href="./assets/styles/reset.css" />
-    <style>
-      .bundle-container {
-        padding: 8px;
-        display: flex;
-        flex-direction: column;
-        border-block-end: 1px solid var(--mer-color__elevation--01);
-      }
-      .bundle-container button {
-      }
-      .expander {
-        display: grid;
-        grid-template-rows: 0fr;
-        overflow: hidden;
-        transition: grid-template-rows 0.2s;
-      }
-      .expander-content {
-        min-height: 0;
-        transition: visibility 0.2s;
-        visibility: hidden;
-      }
-      .expander .code__header {
-        margin-block-start: 8px;
-      }
-      .expander.expanded {
-        grid-template-rows: 1fr;
-      }
-      .expander.expanded .expander-content {
-        visibility: visible;
-      }
-    </style>
   </head>
-  <body class="showcase" data-sidebar>
+  <body class="showcase" data-sidebar data-bundle="components/button">
     <script src="./assets/scripts/scripts.js"></script>
     <main class="main">
       <div class="container">
@@ -562,7 +532,6 @@
     </main>
 
     <script type="module">
-      import { getIconPath } from "./assets/scripts/assets-manager.js";
       // - - - - - - - - - - - - - - -
       // Button Primary
       // - - - - - - - - - - - - - - -
