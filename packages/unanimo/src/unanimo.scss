@@ -33,10 +33,12 @@
 @import "./components/flexible-layout";
 @import "./components/header";
 @import "./components/markdown-viewer";
+@import "./components/navigation-list";
 @import "./components/list-box";
 @import "./components/query-viewer-pivot-table";
 @import "./components/radio-group";
 @import "./components/segmented-control";
+@import "./components/sidebar";
 @import "./components/slider";
 @import "./components/switch";
 @import "./components/tab";
@@ -102,10 +104,12 @@
   $flexible-layout: true,
   $header: true,
   $markdown-viewer: true,
+  $navigation-list: true,
   $list-box-secondary: true,
   $query-viewer-pivot-table: true,
   $radio-group: true,
   $segmented-control: true,
+  $sidebar: true,
   $slider-primary: true,
   $slider-secondary: true,
   $switch: true,
@@ -378,6 +382,11 @@
       @include markdown-viewer();
     }
 
+    @if $navigation-list {
+      @include navigation-list-primary();
+      @include navigation-list-secondary();
+    }
+
     @if $list-box-secondary {
       @include list-box-secondary();
     }
@@ -392,6 +401,10 @@
 
     @if $segmented-control {
       @include segmented-control();
+    }
+
+    @if $sidebar {
+      @include sidebar();
     }
 
     @if $slider-primary {
@@ -480,10 +493,12 @@
   $flexible-layout: false,
   $header: false,
   $markdown-viewer: false,
+  $navigation-list: false,
   $list-box-secondary: false,
   $query-viewer-pivot-table: false,
   $radio-group: false,
   $segmented-control: false,
+  $sidebar: false,
   $slider-primary: false,
   $slider-secondary: false,
   $switch: false,
@@ -551,10 +566,12 @@
     $flexible-layout: $flexible-layout,
     $header: $header,
     $markdown-viewer: $markdown-viewer,
+    $navigation-list: $navigation-list,
     $list-box-secondary: $list-box-secondary,
     $query-viewer-pivot-table: $query-viewer-pivot-table,
     $radio-group: $radio-group,
     $segmented-control: $segmented-control,
+    $sidebar: $sidebar,
     $slider-primary: $slider-primary,
     $slider-secondary: $slider-secondary,
     $switch: $switch,
