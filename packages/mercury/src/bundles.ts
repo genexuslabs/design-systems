@@ -21,6 +21,7 @@ export type MercuryBundleComponent =
   | "components/accordion"
   | "components/code"
   | "components/dialog"
+  | "components/list-box"
   | "components/markdown-viewer"
   | "components/tab"
   | "components/tabular-grid"
@@ -33,7 +34,8 @@ export type MercuryBundleComponentForm =
   | "components/combo-box"
   | "components/edit"
   | "components/icon"
-  | "components/radio-group";
+  | "components/radio-group"
+  | "components/slider";
 
 export type MercuryBundleReset = "resets/box-sizing";
 
@@ -41,7 +43,7 @@ export type MercuryBundleUtil =
   | "utils/form"
   | "utils/layout"
   | "utils/typography"
-  // TODO: Use "base/scrollbar" when the ch-theme supports aliases
+  // TODO: Use "utils/scrollbar" when the ch-theme supports aliases
   | "chameleon/scrollbar";
 
 export type MercuryBundleUtilFormFull = "utils/form--full";
@@ -96,8 +98,10 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/dialog"),
     getThemeModelItem(basePath, "components/icon"),
     getThemeModelItem(basePath, "components/edit"),
+    getThemeModelItem(basePath, "components/list-box"),
     getThemeModelItem(basePath, "components/markdown-viewer", false),
     getThemeModelItem(basePath, "components/radio-group"),
+    getThemeModelItem(basePath, "components/slider"),
     getThemeModelItem(basePath, "components/tab"),
     getThemeModelItem(basePath, "components/tabular-grid"),
     getThemeModelItem(basePath, "components/ticket-list"),

@@ -1,0 +1,160 @@
+%navigation-list {
+  @extend %text-body-2;
+
+  --ch-navigation-list-item__tooltip-separation-x: var(--spacing--s);
+
+  --ch-navigation-list-item-custom-padding-inline-start: calc(
+    var(--spacing--m) + var(--spacing--xs)
+  );
+  --ch-navigation-list-item-gap: var(--spacing--m);
+  --ch-navigation-list-item-expand-collapse-duration: 200ms;
+
+  --ch-navigation-list-item__image-size: 24px;
+  --ch-navigation-list-item__expandable-button-size: 24px;
+  --ch-navigation-list-item__expandable-button-image-size: calc(
+    var(--spacing--l) - var(--spacing--xs)
+  );
+
+  &-item-action {
+    padding-block: var(--spacing--m);
+    padding-inline-end: var(--spacing--m);
+  }
+
+  &-item-tooltip {
+    padding-block: var(--spacing--s);
+    padding-inline: var(--spacing--m);
+    background-color: var(--colors-foundation__gray--600);
+    border-radius: var(--border-radius--m);
+    color: var(--text__on-surface--negative);
+  }
+}
+
+%navigation-list-primary {
+  &-item-action {
+    &--focus-visible {
+      outline: 1px solid;
+      outline-offset: -1px;
+    }
+  }
+
+  &-item-button {
+    &--hover {
+      color: color-mix(
+        in srgb,
+        var(--text__on-secondary),
+        var(--text__primary--hover) 60%
+      );
+    }
+  }
+
+  &-item-link {
+    &--selected {
+      background-color: var(--sidebar__background-color--active);
+    }
+
+    &--hover-not-selected {
+      background-color: color-mix(
+        in srgb,
+        var(--accents__secondary--active) 30%,
+        color-mix(
+          in srgb,
+          var(--sidebar__background-color--hover) 20%,
+          transparent
+        )
+      );
+    }
+  }
+}
+
+%navigation-list-secondary {
+  &-item-action {
+    &--focus-visible {
+      color: var(--text__primary--hover);
+      outline: 1px solid;
+      outline-offset: -1px;
+    }
+
+    &--hover {
+      color: var(--text__primary--hover);
+    }
+  }
+
+  &-item-link {
+    &--selected {
+      color: var(--text__primary--hover);
+    }
+  }
+}
+
+@mixin navigation-list-primary(
+  $navigation-list-selector: ".navigation-list-primary",
+  $item-action-selector: ".navigation-list-primary::part(item__action)",
+  $item-button-selector: ".navigation-list-primary::part(item__button)",
+  $item-link-not-selected-selector:
+    ".navigation-list-primary::part(item__link not-selected)",
+  $item-link-selected-selector:
+    ".navigation-list-primary::part(item__link selected)",
+  $item-tooltip-selector:
+    ".navigation-list-primary::part(item__caption tooltip)"
+) {
+  #{$navigation-list-selector} {
+    @extend %navigation-list;
+  }
+
+  #{$item-action-selector} {
+    @extend %navigation-list-item-action;
+
+    &:focus-visible {
+      @extend %navigation-list-primary-item-action--focus-visible;
+    }
+  }
+
+  #{$item-button-selector}:hover {
+    @extend %navigation-list-primary-item-button--hover;
+  }
+
+  #{$item-link-selected-selector} {
+    @extend %navigation-list-primary-item-link--selected;
+  }
+
+  #{$item-link-not-selected-selector}:hover {
+    @extend %navigation-list-primary-item-link--hover-not-selected;
+  }
+
+  #{$item-tooltip-selector} {
+    @extend %navigation-list-item-tooltip;
+  }
+}
+
+@mixin navigation-list-secondary(
+  $navigation-list-selector: ".navigation-list-secondary",
+  $item-action-selector: ".navigation-list-secondary::part(item__action)",
+  $item-link-selected-selector:
+    ".navigation-list-secondary::part(item__link selected)",
+  $item-tooltip-selector:
+    ".navigation-list-primary::part(item__caption tooltip)"
+) {
+  #{$navigation-list-selector} {
+    @extend %navigation-list;
+  }
+
+  #{$item-action-selector} {
+    @extend %navigation-list-item-action;
+
+    &:focus-visible {
+      @extend %navigation-list-secondary-item-action--focus-visible;
+    }
+
+    &:hover {
+      @extend %navigation-list-secondary-item-action--hover;
+    }
+  }
+
+  #{$item-link-selected-selector} {
+    @extend %navigation-list-secondary-item-link--selected;
+  }
+
+  #{$item-tooltip-selector} {
+    @extend %navigation-list-item-tooltip;
+  }
+}

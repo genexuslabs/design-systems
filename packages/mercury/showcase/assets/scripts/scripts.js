@@ -23,12 +23,14 @@ let topBarRef = null;
 // code and ch-code
 const ARTICLE_CODE_SELECTOR = ".article__code";
 const CH_CODE_VALUE_LET_NAME = "chCodeValue";
+const BUNDLE_SELECTOR = "data-bundle";
 
 // references
 const HTML = document.querySelector("html");
 const HEAD = document.head;
 const BODY = document.querySelector("body");
 const SIDEBAR_DATA_ATTR = "data-sidebar";
+const MAIN_SELECTOR = ".main";
 let CURRENT_PAGE_NAV_ITEM; // a reference the navigation item for the actual actual page.
 let PAGE_SECTIONS; // a reference to all the page ".article"
 let PAGE_ARTICLES; // a reference to all the page ".article"
@@ -506,6 +508,97 @@ const getChCodeValues = () => {
   });
 };
 
+/**
+ * @description this function includes a "Copy Bundle" that will be rendered at the top of the page.
+ */
+const includeBundleButton = () => {
+  const bundleValue = document.body.getAttribute("data-bundle");
+  const MAIN_REF = document.querySelector(MAIN_SELECTOR);
+
+  if (bundleValue !== null && MAIN_REF) {
+    // if bundleValue.length is 0, it means this component does not requires a bundle.
+    // loading the icons is not required if the component does not requires a bundle.
+    const PAGE_TITLE = document.title;
+    let COPY_ICON;
+    let CHECK_ICON;
+    let WARNING_ICON;
+    let chImage;
+    let buttonCaption;
+
+    if (bundleValue.length !== 0) {
+      // Icons references
+      COPY_ICON = getIconPath({
+        category: "system",
+        name: "copy",
+        colorType: "primary"
+      });
+      CHECK_ICON = getIconPath({
+        category: "system",
+        name: "check",
+        colorType: "primary"
+      });
+      WARNING_ICON = getIconPath({
+        category: "system",
+        name: "warning",
+        colorType: "primary"
+      });
+    }
+
+    // Create the .bundle-container
+    const bundleContainer = document.createElement("header");
+    bundleContainer.className = "bundle-container";
+
+    // Create and add the ch-image element
+    if (bundleValue.length !== 0) {
+      chImage = document.createElement("ch-image");
+      chImage.className = "icon-md";
+      chImage.src = COPY_ICON;
+    }
+
+    // Create the "copy bundle" button
+    const copyBundleButton = document.createElement("button");
+    copyBundleButton.className = "button-tertiary button-icon-and-text";
+    if (bundleValue.length !== 0) {
+      buttonCaption = `Copy ${PAGE_TITLE} Bundle`;
+    } else {
+      buttonCaption = `No Bundle Required For ${PAGE_TITLE}`;
+    }
+    const buttonCaptionTextNode = document.createTextNode(buttonCaption);
+
+    if (bundleValue.length !== 0) {
+      copyBundleButton.addEventListener("click", e => {
+        navigator.clipboard
+          .writeText(`"${bundleValue}"`)
+          .then(() => {
+            chImage.nextSibling.textContent = "Bundle Copied!";
+            chImage.src = CHECK_ICON;
+            e.target.style.pointerEvents = "none";
+          })
+          .catch(err => {
+            chImage.nextSibling.textContent = "Failed to Copy";
+            chImage.src = WARNING_ICON;
+            e.target.style.pointerEvents = "none";
+          });
+        setTimeout(() => {
+          chImage.nextSibling.textContent = buttonCaption;
+          chImage.src = COPY_ICON;
+          e.target.style.pointerEvents = "auto";
+        }, 1500);
+      });
+    }
+
+    // Appends
+    if (bundleValue.length !== 0) {
+      copyBundleButton.appendChild(chImage);
+      chImage.after(buttonCaptionTextNode);
+    } else {
+      copyBundleButton.innerText = buttonCaption;
+      copyBundleButton.disabled = true;
+    }
+    bundleContainer.appendChild(copyBundleButton);
+    MAIN_REF.insertBefore(bundleContainer, MAIN_REF.firstChild);
+  }
+};
 document.addEventListener("DOMContentLoaded", function () {
   CONTAINER_REF = document.querySelector(".container");
   includeFavicon();
@@ -520,4 +613,5 @@ document.addEventListener("DOMContentLoaded", function () {
   includeTopBar();
   includeChameleonURL();
   getChCodeValues();
+  includeBundleButton();
 });
