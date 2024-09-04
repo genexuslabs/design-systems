@@ -132,44 +132,130 @@
   // - - - - - - - - - - - - - - - - - - - -
   // font-face
   @if $font-face {
+    // Thin
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-Thin.woff2");
+      font-weight: 100;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-ThinItalic.woff2");
+      font-weight: 100;
+      font-style: italic;
+    }
+
+    // ExtraLight
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-ExtraLight.woff2");
+      font-weight: 200;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-ExtraLightItalic.woff2");
+      font-weight: 200;
+      font-style: italic;
+    }
+
     // Light
     @font-face {
       font-family: "Inter";
-      src: url("#{$font-face-path}Inter_Light.woff2");
+      src: url("#{$font-face-path}Inter-Light.woff2");
       font-weight: 300;
       font-style: normal;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-LightItalic.woff2");
+      font-weight: 300;
+      font-style: italic;
     }
 
     // Regular
     @font-face {
       font-family: "Inter";
-      src: url("#{$font-face-path}Inter_Regular.woff2");
+      src: url("#{$font-face-path}Inter-Regular.woff2");
       font-weight: 400;
       font-style: normal;
     }
-
-    // Semi Bold
     @font-face {
       font-family: "Inter";
-      src: url("#{$font-face-path}Inter_SemiBold.woff2");
+      src: url("#{$font-face-path}Inter-Italic.woff2");
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    // Medium
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-Medium.woff2");
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-MediumItalic.woff2");
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    // SemiBold
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-SemiBold.woff2");
       font-weight: 600;
       font-style: normal;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-SemiBoldItalic.woff2");
+      font-weight: 600;
+      font-style: italic;
     }
 
     // Bold
     @font-face {
       font-family: "Inter";
-      src: url("#{$font-face-path}Inter_Bold.woff2");
+      src: url("#{$font-face-path}Inter-Bold.woff2");
       font-weight: 700;
       font-style: normal;
     }
-
-    // Extra Bold
     @font-face {
       font-family: "Inter";
-      src: url("#{$font-face-path}Inter_ExtraBold.woff2");
+      src: url("#{$font-face-path}Inter-BoldItalic.woff2");
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    // ExtraBold
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-ExtraBold.woff2");
       font-weight: 800;
       font-style: normal;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-ExtraBoldItalic.woff2");
+      font-weight: 800;
+      font-style: italic;
+    }
+
+    // Black
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-Black.woff2");
+      font-weight: 900;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-BlackItalic.woff2");
+      font-weight: 900;
+      font-style: italic;
     }
   }
 
