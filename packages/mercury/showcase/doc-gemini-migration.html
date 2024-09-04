@@ -175,7 +175,7 @@ import { getIconPath } from "@genexus/mercury";
 
 // use inside <Host> or any TSX
 <button class="button-primary button-icon-and-text">
-  <ch-image src={buttonIcon} class="icon-sm"></ch-image>
+  <ch-image src={this.#buttonIcon} class="icon-sm"></ch-image>
   Caption
 </button>`;
                   </script>
@@ -266,7 +266,7 @@ import { getIconPath } from "@genexus/mercury";
 <ch-combo-box-render
   accessibleName="My Favorite Colors"
   class="combo-box"
-  model={this.favoriteColorsModel}>
+  model={this.#favoriteColorsModel}>
 </ch-combo-box-render>`;
                   </script>
                 </div>
@@ -465,7 +465,7 @@ class="checkbox"
 
 <ch-radio-group-render
   class="radio-group"
-  model={this.favoriteColorsModel}>
+  model={this.#favoriteColorsModel}>
 </ch-radio-group-render>`;
                   </script>
                 </div>
@@ -566,7 +566,7 @@ import { getIconPath } from "@genexus/mercury";
   value="Adam Smith"
   class="form-input"
   placeholder="John Smith"
-  startImgSrc={this.chEditIcon}
+  startImgSrc={this.#chEditIcon}
 ></ch-edit>`;
                   </script>
                 </div>
@@ -952,7 +952,7 @@ import { getIconPath } from "@genexus/mercury";
 });
 
 // use inside <Host> or any TSX
-<ch-image src={this.myIcon} class="icon-sm"></ch-image>`;
+<ch-image src={this.#myIcon} class="icon-sm"></ch-image>`;
                   </script>
                 </div>
                 <div class="article__content">
@@ -1154,7 +1154,7 @@ import { getIconPath } from "@genexus/mercury";
 <ch-action-list-render
   selection="multiple"
   class="list-box"
-  model={this.listBoxItems}
+  model={this.#listBoxItems}
 ></ch-action-list-render>`;
                   </script>
                 </div>
@@ -1264,7 +1264,7 @@ import { getIconPath } from "@genexus/mercury";
                     code = `<gxg-suggest>
     <ch-suggest
       value={this.selectedColor.name}
-      onValueChanged={this.colorChangedGHandler}
+      onValueChanged={this.colorChangedHandler}
     >
       {this.renderSuggestLists(this.colorSuggestions)}
     </ch-suggest>
@@ -1293,7 +1293,7 @@ import { getIconPath } from "@genexus/mercury";
   <ch-combo-box-render
     accessibleName="My Favorite Colors"
     class="combo-box"
-    model={this.favoriteColorsModel}
+    model={this.#favoriteColorsModel}
     placeholder="Select your favorite color";
     suggest={true}
     onFilterChange={this.colorsFilterChangedHandlers}
@@ -1493,7 +1493,7 @@ import { getIconPath } from "@genexus/mercury";
   class="tab tab-indicator-start"
   direction="block"
   selectedId="apples"
-  model={this.fruitsModel}
+  model={this.#fruitsModel}
 >
   <div slot="apples" class="slot spacing-body">
     <p class="text-body">
