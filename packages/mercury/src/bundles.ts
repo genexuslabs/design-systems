@@ -33,6 +33,7 @@ export type MercuryBundleComponentForm =
   | "components/checkbox"
   | "components/combo-box"
   | "components/edit"
+  | "components/icon"
   | "components/radio-group"
   | "components/slider";
 
@@ -95,6 +96,7 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/code"),
     getThemeModelItem(basePath, "components/combo-box"),
     getThemeModelItem(basePath, "components/dialog"),
+    getThemeModelItem(basePath, "components/icon"),
     getThemeModelItem(basePath, "components/edit"),
     getThemeModelItem(basePath, "components/list-box"),
     getThemeModelItem(basePath, "components/markdown-viewer", false),

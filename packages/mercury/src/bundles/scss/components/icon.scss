@@ -1,0 +1,8 @@
+@import "../../../mercury.scss";
+
+@include mercury-only(
+  $base-classes: true,
+  $icon-classes: true,
+  $components: true,
+  $icon: true
+);
