@@ -12,13 +12,20 @@
     </style>
 
     <style>
+      /* Set a max width for headings, in order to get the titles on three lines.
+      This helps visualize the line-height, and it also looks nicer :)*/
       .heading-1,
       .heading-2,
       .heading-3,
       .heading-4,
       .heading-5,
       .heading-6 {
-        width: 16em;
+        max-inline-size: 16em;
+      }
+      /*Set a max width for body text, since the recommended amount of words
+      per line is between 9 and 12*/
+      .section.body-text .article__content p {
+        max-inline-size: 40em;
       }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
@@ -53,10 +60,9 @@
               content, improving user experience.
             </p>
           </header>
+
           <div class="section__articles-container">
-            <!-- ========================== 
-          heading 1
-          =========================== -->
+            <!-- heading 2 -->
             <article class="article" data-nav data-title="heading 1">
               <header class="article__header"></header>
               <!-- heading -->
@@ -68,11 +74,9 @@
                   </h1>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-1" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup1 = `<h1 class="heading-1"><-- Your content here --></h1>`;
-                    document.getElementById("ch-code-1").value = markup1;
+                    code = `<h1 class="heading-1"><-- Your content here --></h1>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -80,9 +84,7 @@
               <!-- /.article__main -->
             </article>
 
-            <!-- ========================== 
-          heading 2
-          =========================== -->
+            <!-- heading 2 -->
             <article class="article" data-nav data-title="heading 2">
               <header class="article__header"></header>
               <!-- heading -->
@@ -94,11 +96,9 @@
                   </h2>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-2" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup2 = `<h2 class="heading-2"><-- Your content here --></h2>`;
-                    document.getElementById("ch-code-2").value = markup2;
+                    code = `<h2 class="heading-2"><-- Your content here --></h2>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -106,9 +106,7 @@
               <!-- /.article__main -->
             </article>
 
-            <!-- ========================== 
-          heading 3
-          =========================== -->
+            <!-- heading 3 -->
             <article class="article" data-nav data-title="heading 3">
               <header class="article__header"></header>
               <!-- heading -->
@@ -120,11 +118,9 @@
                   </h3>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-3" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup3 = `<h3 class="heading-3"><-- Your content here --></h3>`;
-                    document.getElementById("ch-code-3").value = markup3;
+                    code = `<h3 class="heading-3"><-- Your content here --></h3>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -132,9 +128,7 @@
               <!-- /.article__main -->
             </article>
 
-            <!-- ========================== 
-          heading 4
-          =========================== -->
+            <!-- heading 4 -->
             <article class="article" data-nav data-title="heading 4">
               <header class="article__header"></header>
               <!-- heading -->
@@ -146,11 +140,9 @@
                   </h4>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-4" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup4 = `<h4 class="heading-4"><-- Your content here --></h4>`;
-                    document.getElementById("ch-code-4").value = markup4;
+                    code = `<h4 class="heading-4"><-- Your content here --></h4>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -158,9 +150,7 @@
               <!-- /.article__main -->
             </article>
 
-            <!-- ========================== 
-          heading 5
-          =========================== -->
+            <!-- heading 5 -->
             <article class="article" data-nav data-title="heading 5">
               <header class="article__header"></header>
               <!-- heading -->
@@ -172,11 +162,9 @@
                   </h5>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-5" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup5 = `<h5 class="heading-5"><-- Your content here --></h5>`;
-                    document.getElementById("ch-code-5").value = markup5;
+                    code = `<h5 class="heading-5"><-- Your content here --></h5>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -184,9 +172,7 @@
               <!-- /.article__main -->
             </article>
 
-            <!-- ========================== 
-          heading 6
-          =========================== -->
+            <!-- heading 6 -->
             <article class="article" data-nav data-title="heading 6">
               <header class="article__header"></header>
               <!-- heading -->
@@ -198,11 +184,9 @@
                   </h6>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-6" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup6 = `<h6 class="heading-6"><-- Your content here --></h6>`;
-                    document.getElementById("ch-code-6").value = markup6;
+                    code = `<h6 class="heading-6"><-- Your content here --></h6>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -231,9 +215,7 @@
             </p>
           </header>
           <div class="section__articles-container">
-            <!-- ========================== 
-      gray light
-      =========================== -->
+            <!-- light gray -->
             <article
               class="article"
               data-nav
@@ -246,11 +228,9 @@
                   <h1 class="heading-3">Light Gray Heading Color</h1>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-7" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup7 = `<h3 class="heading-3"><-- Your content here --></h3>`;
-                    document.getElementById("ch-code-7").value = markup7;
+                    code = `<h3 class="heading-3"><-- Your content here --></h3>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -261,12 +241,12 @@
         </section>
 
         <!-- ----------------------------------------------------- 
-    TEXT
+    BODY TEXT
     ------------------------------------------------------ -->
-        <section class="section" data-nav>
-          <!-- header -->
+        <section class="section body-text" data-nav>
+          <!-- body text -->
           <header class="section__header">
-            <h1 class="section__title">text</h1>
+            <h1 class="section__title">body text</h1>
             <p class="section__description">
               In web development, body text is essential for delivering content
               to users. Properly structured and organized text ensures
@@ -278,15 +258,17 @@
             </p>
           </header>
           <div class="section__articles-container">
-            <!-- ========================== 
-  heading 1
-  =========================== -->
-            <article class="article" data-nav data-title="text body">
+            <!-- - - - - - - - - - - - - - - - - 
+             Regular
+            - - - - - - - - - - - - - - - -  -->
+
+            <!-- regular: l -->
+            <article class="article" data-nav data-title="regular: large">
               <header class="article__header"></header>
               <!-- heading -->
               <div class="article__main">
                 <div class="article__content">
-                  <p class="text-body">
+                  <p class="text-body-regular-l">
                     Genexus is a development platform that automates application
                     creation using a model-driven approach. It allows developers
                     to focus on high-level design, generating code for web,
@@ -295,11 +277,296 @@
                   </p>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-8" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup8 = `<p class="text-body"><-- Your content here --></p>`;
-                    document.getElementById("ch-code-8").value = markup8;
+                    code = `<p class="text-body-regular-l"><-- Your content here --></p>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- regular: m -->
+            <article class="article" data-nav data-title="regular: medium">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <p class="text-body-regular-m">
+                    Genexus is a development platform that automates application
+                    creation using a model-driven approach. It allows developers
+                    to focus on high-level design, generating code for web,
+                    mobile, and desktop applications, resulting in faster
+                    development cycles and fewer errors.
+                  </p>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<p class="text-body-regular-m"><-- Your content here --></p>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- regular: s -->
+            <article class="article" data-nav data-title="regular: small">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <p class="text-body-regular-s">
+                    Genexus is a development platform that automates application
+                    creation using a model-driven approach. It allows developers
+                    to focus on high-level design, generating code for web,
+                    mobile, and desktop applications, resulting in faster
+                    development cycles and fewer errors.
+                  </p>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<p class="text-body-regular-s"><-- Your content here --></p>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- regular: xs -->
+            <article class="article" data-nav data-title="regular: extra-small">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <p class="text-body-regular-xs">
+                    Genexus is a development platform that automates application
+                    creation using a model-driven approach. It allows developers
+                    to focus on high-level design, generating code for web,
+                    mobile, and desktop applications, resulting in faster
+                    development cycles and fewer errors.
+                  </p>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<p class="text-body-regular-xs"><-- Your content here --></p>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- - - - - - - - - - - - - - - - - 
+             Highlighted
+            - - - - - - - - - - - - - - - -  -->
+
+            <!-- highlighted: l -->
+            <article class="article" data-nav data-title="highlighted: large">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <p class="text-body-highlighted-l">
+                    Genexus is a development platform that automates application
+                    creation using a model-driven approach. It allows developers
+                    to focus on high-level design, generating code for web,
+                    mobile, and desktop applications, resulting in faster
+                    development cycles and fewer errors.
+                  </p>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<p class="text-body-highlighted-l"><-- Your content here --></p>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- highlighted: m -->
+            <article class="article" data-nav data-title="highlighted: medium">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <p class="text-body-highlighted-m">
+                    Genexus is a development platform that automates application
+                    creation using a model-driven approach. It allows developers
+                    to focus on high-level design, generating code for web,
+                    mobile, and desktop applications, resulting in faster
+                    development cycles and fewer errors.
+                  </p>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<p class="text-body-highlighted-m"><-- Your content here --></p>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- highlighted: s -->
+            <article class="article" data-nav data-title="highlighted: small">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <p class="text-body-highlighted-s">
+                    Genexus is a development platform that automates application
+                    creation using a model-driven approach. It allows developers
+                    to focus on high-level design, generating code for web,
+                    mobile, and desktop applications, resulting in faster
+                    development cycles and fewer errors.
+                  </p>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<p class="text-body-highlighted-s"><-- Your content here --></p>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- highlighted: xs -->
+            <article
+              class="article"
+              data-nav
+              data-title="highlighted: extra-small"
+            >
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <p class="text-body-highlighted-xs">
+                    Genexus is a development platform that automates application
+                    creation using a model-driven approach. It allows developers
+                    to focus on high-level design, generating code for web,
+                    mobile, and desktop applications, resulting in faster
+                    development cycles and fewer errors.
+                  </p>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<p class="text-body-highlighted-xs"><-- Your content here --></p>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- - - - - - - - - - - - - - - - - 
+             Italic
+            - - - - - - - - - - - - - - - -  -->
+
+            <!-- italic: l -->
+            <article class="article" data-nav data-title="italic: large">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <p class="text-body-italic-l">
+                    Genexus is a development platform that automates application
+                    creation using a model-driven approach. It allows developers
+                    to focus on high-level design, generating code for web,
+                    mobile, and desktop applications, resulting in faster
+                    development cycles and fewer errors.
+                  </p>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<p class="text-body-italic-l"><-- Your content here --></p>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- italic: m -->
+            <article class="article" data-nav data-title="italic: medium">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <p class="text-body-italic-m">
+                    Genexus is a development platform that automates application
+                    creation using a model-driven approach. It allows developers
+                    to focus on high-level design, generating code for web,
+                    mobile, and desktop applications, resulting in faster
+                    development cycles and fewer errors.
+                  </p>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<p class="text-body-italic-m"><-- Your content here --></p>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- italic: s -->
+            <article class="article" data-nav data-title="italic: small">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <p class="text-body-italic-s">
+                    Genexus is a development platform that automates application
+                    creation using a model-driven approach. It allows developers
+                    to focus on high-level design, generating code for web,
+                    mobile, and desktop applications, resulting in faster
+                    development cycles and fewer errors.
+                  </p>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<p class="text-body-italic-s"><-- Your content here --></p>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- italic: xs -->
+            <article class="article" data-nav data-title="italic: extra-small">
+              <header class="article__header"></header>
+              <!-- heading -->
+              <div class="article__main">
+                <div class="article__content">
+                  <p class="text-body-italic-xs">
+                    Genexus is a development platform that automates application
+                    creation using a model-driven approach. It allows developers
+                    to focus on high-level design, generating code for web,
+                    mobile, and desktop applications, resulting in faster
+                    development cycles and fewer errors.
+                  </p>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<p class="text-body-italic-xs"><-- Your content here --></p>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
