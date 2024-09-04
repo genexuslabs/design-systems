@@ -33,6 +33,7 @@ export const getThemeBundles = (basePath) => [
     getThemeModelItem(basePath, "components/combo-box"),
     getThemeModelItem(basePath, "components/dialog"),
     getThemeModelItem(basePath, "components/edit"),
+    getThemeModelItem(basePath, "components/list-box"),
     getThemeModelItem(basePath, "components/markdown-viewer", false),
     getThemeModelItem(basePath, "components/radio-group"),
     getThemeModelItem(basePath, "components/slider"),
