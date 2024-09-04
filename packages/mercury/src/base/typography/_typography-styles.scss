@@ -6,7 +6,7 @@
 
 %heading {
   &-base {
-    @include heading-tokens();
+    @include heading-font-tokens();
     font-family: var(--mer-font-family--title);
     line-height: var(--mer-line-height--tight);
     color: var(--heading__color);
@@ -67,16 +67,96 @@
 
 // body
 %text-body {
-  @include body-tokens();
-  font-size: var(--text-body__font-size);
-  font-family: var(--text-body__font-family);
-  font-weight: var(--text-body__font-weight);
-  line-height: var(--text-body__line-height);
+  &-base {
+    @include body-font-tokens();
+  }
+  &-regular {
+    &-l {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--l);
+      font-weight: var(--text-body-regular__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-m {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--m);
+      font-weight: var(--text-body-regular__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-s {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--s);
+      font-weight: var(--text-body-regular__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-xs {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--xs);
+      font-weight: var(--text-body-regular__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+  }
+  &-highlighted {
+    &-l {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--l);
+      font-weight: var(--text-body-highlighted__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-m {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--m);
+      font-weight: var(--text-body-highlighted__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-s {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--s);
+      font-weight: var(--text-body-highlighted__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-xs {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--xs);
+      font-weight: var(--text-body-highlighted__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+  }
+  &-italic {
+    &-l {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--l);
+      font-style: italic;
+      font-weight: var(--text-body-italic__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-m {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--m);
+      font-style: italic;
+      font-weight: var(--text-body-italic__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-s {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--s);
+      font-style: italic;
+      font-weight: var(--text-body-italic__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-xs {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--xs);
+      font-style: italic;
+      font-weight: var(--text-body-italic__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+  }
 }
 
 // tab
 %tab-text {
-  @include tab-tokens();
+  @include tab-font-tokens();
   font-family: var(--text-tab__font-family);
   font-size: var(--text-tab__font-size);
   line-height: var(--text-tab__line-height);
@@ -84,7 +164,7 @@
 
 // button
 %button-text {
-  @include button-tokens();
+  @include button-font-tokens();
   font-family: var(--text-button__font-family);
   font-size: var(--text-button__font-size);
   line-height: var(--text-button__line-height);
@@ -101,7 +181,7 @@
 
 // tooltip
 %tooltip-text {
-  @include tooltip-tokens();
+  @include tooltip-font-tokens();
   font-family: var(--mer-text-tooltip__font-family);
   font-size: var(--mer-text-tooltip__font-size);
 }
@@ -114,7 +194,19 @@
 /// @param {String} $heading-5-selector [".heading-5"] -
 /// @param {String} $heading-6-selector [".heading-6"] -
 /// @param {String} $heading-color__gray-light-selector [".heading-gray--light"] -
-/// @param {String} $text-body-selector [".text--body"] -
+/// @param {String} $text-body-regular-l-selector [".text-body-regular-l"] -
+/// @param {String} $text-body-regular-m-selector [".text-body-regular-m"] -
+/// @param {String} $text-body-regular-s-selector [".text-body-regular-s"] -
+/// @param {String} $text-body-regular-xs-selector [".text-body-regular-xs"] -
+/// @param {String} $text-body-highlighted-l-selector [".text-body-highlighted-l"] -
+/// @param {String} $text-body-highlighted-m-selector [".text-body-highlighted-m"] -
+/// @param {String} $text-body-highlighted-s-selector [".text-body-highlighted-s"] -
+/// @param {String} $text-body-highlighted-xs-selector [".text-body-highlighted-xs"] -
+/// @param {String} $text-body-italic-l-selector [".text-body-italic-l"] -
+/// @param {String} $text-body-italic-m-selector [".text-body-italic-m"] -
+/// @param {String} $text-body-italic-s-selector [".text-body-italic-s"] -
+/// @param {String} $text-body-italic-xs-selector [".text-body-italic-xs"] -
+
 @mixin typography-classes(
   $heading-1-selector: ".heading-1",
   $heading-2-selector: ".heading-2",
@@ -123,8 +215,21 @@
   $heading-5-selector: ".heading-5",
   $heading-6-selector: ".heading-6",
   $heading-color__gray-light-selector: ".heading-gray--light",
-  $text-body-selector: ".text-body"
+  $text-body-regular-l-selector: ".text-body-regular-l",
+  $text-body-regular-m-selector: ".text-body-regular-m",
+  $text-body-regular-s-selector: ".text-body-regular-s",
+  $text-body-regular-xs-selector: ".text-body-regular-xs",
+  $text-body-highlighted-l-selector: ".text-body-highlighted-l",
+  $text-body-highlighted-m-selector: ".text-body-highlighted-m",
+  $text-body-highlighted-s-selector: ".text-body-highlighted-s",
+  $text-body-highlighted-xs-selector: ".text-body-highlighted-xs",
+  $text-body-italic-l-selector: ".text-body-italic-l",
+  $text-body-italic-m-selector: ".text-body-italic-m",
+  $text-body-italic-s-selector: ".text-body-italic-s",
+  $text-body-italic-xs-selector: ".text-body-italic-xs"
 ) {
+  // headings
+
   #{$heading-1-selector} {
     @extend %heading-1;
   }
@@ -153,8 +258,54 @@
     @extend %heading-color__gray--light;
   }
 
-  #{$text-body-selector} {
-    @extend %text-body;
+  // body
+
+  #{$text-body-regular-l-selector} {
+    @extend %text-body-regular-l;
+  }
+
+  #{$text-body-regular-m-selector} {
+    @extend %text-body-regular-m;
+  }
+
+  #{$text-body-regular-s-selector} {
+    @extend %text-body-regular-s;
+  }
+
+  #{$text-body-regular-xs-selector} {
+    @extend %text-body-regular-xs;
+  }
+
+  #{$text-body-highlighted-l-selector} {
+    @extend %text-body-highlighted-l;
+  }
+
+  #{$text-body-highlighted-m-selector} {
+    @extend %text-body-highlighted-m;
+  }
+
+  #{$text-body-highlighted-s-selector} {
+    @extend %text-body-highlighted-s;
+  }
+
+  #{$text-body-highlighted-xs-selector} {
+    @extend %text-body-highlighted-xs;
+  }
+
+  #{$text-body-italic-l-selector} {
+    @extend %text-body-italic-l;
+  }
+
+  #{$text-body-italic-m-selector} {
+    @extend %text-body-italic-m;
+  }
+
+  #{$text-body-italic-s-selector} {
+    @extend %text-body-italic-s;
+  }
+
+  #{$text-body-italic-xs-selector} {
+    @extend %text-body-italic-xs;
   }
 }
 
