@@ -932,6 +932,91 @@
   --mer-color__elevation--02: #e4e4e4;
   --mer-color__elevation--03: #dedede;
   --mer-color__elevation--04: #ffffff;
+
+  // gradients
+  --mer-color__gradient-angle: 225deg;
+  --mer-color__gradient-opacity--low: 0.7;
+  --mer-color__gradient-opacity--medium: 0.9;
+  --mer-color__gradient-opacity--high: 1;
+
+  // gradient 01
+  --mer-color__gradient--01: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(0, 204, 255, var(--mer-color__gradient-opacity--medium)) 0%,
+    rgba(163, 0, 255, var(--mer-color__gradient-opacity--medium)) 100%
+  );
+  // gradient 02
+  --mer-color__gradient--02: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(57, 255, 20, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(255, 0, 114, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 03
+  --mer-color__gradient--03: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(0, 245, 255, var(--mer-color__gradient-opacity--low)) 0%,
+    rgba(255, 234, 0, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 04
+  --mer-color__gradient--04: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(16, 196, 195, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(236, 30, 91, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 05
+  --mer-color__gradient--05: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 0, 162, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(139, 0, 255, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 06
+  --mer-color__gradient--06: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(204, 255, 0, var(--mer-color__gradient-opacity--medium)) 0%,
+    rgba(0, 255, 204, var(--mer-color__gradient-opacity--medium)) 100%
+  );
+  // gradient 07
+  --mer-color__gradient--07: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(91, 118, 255, var(--mer-color__gradient-opacity--medium)) 0%,
+    rgba(0, 255, 203, var(--mer-color__gradient-opacity--medium)) 100%
+  );
+  // gradient 08
+  --mer-color__gradient--08: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 0, 255, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(0, 149, 255, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 09
+  --mer-color__gradient--09: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 69, 0, var(--mer-color__gradient-opacity--medium)) 0%,
+    rgba(142, 84, 200, var(--mer-color__gradient-opacity--medium)) 100%
+  );
+  // gradient 10
+  --mer-color__gradient--10: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 0, 127, var(--mer-color__gradient-opacity--low)) 0%,
+    rgba(0, 255, 0, var(--mer-color__gradient-opacity--low)) 100%
+  );
+  // gradient 11
+  --mer-color__gradient--11: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 199, 0, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(138, 43, 226, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 12
+  --mer-color__gradient--12: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 0, 51, var(--mer-color__gradient-opacity--medium)) 0%,
+    rgba(255, 204, 0, var(--mer-color__gradient-opacity--medium)) 100%
+  );
+  // gradient 13
+  --mer-color__gradient--13: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(0, 255, 60, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(255, 102, 0, var(--mer-color__gradient-opacity--high)) 100%
+  );
 }
 
 @mixin foundation-colors--dark() {
@@ -1150,6 +1235,7 @@
   --mer-font__weight--extra-bold: 800;
 
   // sizes
+  --mer-font__size--4xs: 11px;
   --mer-font__size--3xs: 12px;
   --mer-font__size--2xs: 13px;
   --mer-font__size--xs: 14px;
@@ -2807,54 +2893,61 @@
   }
 }
 
-@mixin heading-tokens() {
+@mixin heading-font-tokens() {
   // heading base
   --heading-base__font-family: var(--mer-font-family--title);
   --heading__color: var(
     --mer-heading__gray--light
-  ); //this forces the user to apply an allowed heading color.
+  ); // this forces the user to apply an allowed heading color.
 
-  //h1
+  // h1
   --heading-h1__font-size: var(--mer-font__size--xl);
   --heading-h1__font-weight: var(--mer-font__weight--bold);
   --heading-h1__line-height: var(--mer-line-height--tight);
-  //h2
+  // h2
   --heading-h2__font-size: var(--mer-font__size--lg);
   --heading-h2__font-weight: var(--mer-font__weight--bold);
   --heading-h2__line-height: var(--mer-line-height--tight);
-  //h3
+  // h3
   --heading-h3__font-size: var(--mer-font__size--sm);
   --heading-h3__font-weight: var(--mer-font__weight--bold);
   --heading-h3__line-height: var(--mer-line-height--regular);
-  //h4
+  // h4
   --heading-h4__font-size: var(--mer-font__size--xs);
   --heading-h4__font-weight: var(--mer-font__weight--bold);
   --heading-h4__line-height: var(--mer-line-height--spaced);
-  //h5
+  // h5
   --heading-h5__font-size: var(--mer-font__size--2xs);
   --heading-h5__font-weight: var(--mer-font__weight--bold);
   --heading-h5__line-height: var(--mer-line-height--spaced);
-  //h6
+  // h6
   --heading-h6__font-size: var(--mer-font__size--3xs);
   --heading-h6__font-weight: var(--mer-font__weight--semi-bold);
   --heading-h6__line-height: var(--mer-line-height--spaced);
 }
 
-@mixin body-tokens() {
-  --text-body__font-size: var(--mer-font__size--xs);
-  --text-body__font-family: var(--mer-body__font-family);
-  --text-body__font-weight: var(--mer-body__font-weight);
-  --text-body__line-height: var(--mer-body__line-height);
-  --text-body__margin-block: var(--mer-body__margin-block);
+@mixin body-font-tokens() {
+  // Generic
+  --text-body__font-size--l: var(--mer-font__size--sm);
+  --text-body__font-size--m: var(--mer-font__size--xs);
+  --text-body__font-size--s: var(--mer-font__size--3xs);
+  --text-body__font-size--xs: var(--mer-font__size--4xs);
+  --text-body__line-height: var(--mer-line-height--spaced);
+  // Regular
+  --text-body-regular__font-weight: var(--mer-font__weight--regular);
+  // Highlighted
+  --text-body-highlighted__font-weight: var(--mer-font__weight--semi-bold);
+  // Italic
+  --text-body-italic__font-weight: var(--mer-font__weight--regular);
 }
 
-@mixin tab-tokens() {
+@mixin tab-font-tokens() {
   --text-tab__font-family: var(--mer-font-family--inter-regular);
   --text-tab__font-size: var(--mer-font__size--3xs);
   --text-tab__line-height: var(--mer-line-height--regular);
 }
 
-@mixin button-tokens() {
+@mixin button-font-tokens() {
   --text-button__font-family: var(--mer-font-family--inter-regular);
   --text-button__font-size: var(--mer-font__size--3xs);
   --text-button__line-height: var(--mer-line-height--regular);
@@ -2862,7 +2955,7 @@
   --text-button__font-weight--regular: var(--mer-font__weight--regular);
 }
 
-@mixin tooltip-tokens() {
+@mixin tooltip-font-tokens() {
   --mer-text-tooltip__font-family: var(--mer-font-family--body);
   --mer-text-tooltip__font-size: var(--mer-font-size--2xs);
 }
@@ -2874,7 +2967,7 @@
 
 %heading {
   &-base {
-    @include heading-tokens();
+    @include heading-font-tokens();
     font-family: var(--mer-font-family--title);
     line-height: var(--mer-line-height--tight);
     color: var(--heading__color);
@@ -2935,16 +3028,96 @@
 
 // body
 %text-body {
-  @include body-tokens();
-  font-size: var(--text-body__font-size);
-  font-family: var(--text-body__font-family);
-  font-weight: var(--text-body__font-weight);
-  line-height: var(--text-body__line-height);
+  &-base {
+    @include body-font-tokens();
+  }
+  &-regular {
+    &-l {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--l);
+      font-weight: var(--text-body-regular__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-m {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--m);
+      font-weight: var(--text-body-regular__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-s {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--s);
+      font-weight: var(--text-body-regular__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-xs {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--xs);
+      font-weight: var(--text-body-regular__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+  }
+  &-highlighted {
+    &-l {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--l);
+      font-weight: var(--text-body-highlighted__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-m {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--m);
+      font-weight: var(--text-body-highlighted__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-s {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--s);
+      font-weight: var(--text-body-highlighted__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-xs {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--xs);
+      font-weight: var(--text-body-highlighted__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+  }
+  &-italic {
+    &-l {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--l);
+      font-style: italic;
+      font-weight: var(--text-body-italic__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-m {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--m);
+      font-style: italic;
+      font-weight: var(--text-body-italic__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-s {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--s);
+      font-style: italic;
+      font-weight: var(--text-body-italic__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+    &-xs {
+      @extend %text-body-base;
+      font-size: var(--text-body__font-size--xs);
+      font-style: italic;
+      font-weight: var(--text-body-italic__font-weight);
+      line-height: var(--text-body__line-height);
+    }
+  }
 }
 
 // tab
 %tab-text {
-  @include tab-tokens();
+  @include tab-font-tokens();
   font-family: var(--text-tab__font-family);
   font-size: var(--text-tab__font-size);
   line-height: var(--text-tab__line-height);
@@ -2952,7 +3125,7 @@
 
 // button
 %button-text {
-  @include button-tokens();
+  @include button-font-tokens();
   font-family: var(--text-button__font-family);
   font-size: var(--text-button__font-size);
   line-height: var(--text-button__line-height);
@@ -2969,7 +3142,7 @@
 
 // tooltip
 %tooltip-text {
-  @include tooltip-tokens();
+  @include tooltip-font-tokens();
   font-family: var(--mer-text-tooltip__font-family);
   font-size: var(--mer-text-tooltip__font-size);
 }
@@ -2982,7 +3155,19 @@
 /// @param {String} $heading-5-selector [".heading-5"] -
 /// @param {String} $heading-6-selector [".heading-6"] -
 /// @param {String} $heading-color__gray-light-selector [".heading-gray--light"] -
-/// @param {String} $text-body-selector [".text--body"] -
+/// @param {String} $text-body-regular-l-selector [".text-body-regular-l"] -
+/// @param {String} $text-body-regular-m-selector [".text-body-regular-m"] -
+/// @param {String} $text-body-regular-s-selector [".text-body-regular-s"] -
+/// @param {String} $text-body-regular-xs-selector [".text-body-regular-xs"] -
+/// @param {String} $text-body-highlighted-l-selector [".text-body-highlighted-l"] -
+/// @param {String} $text-body-highlighted-m-selector [".text-body-highlighted-m"] -
+/// @param {String} $text-body-highlighted-s-selector [".text-body-highlighted-s"] -
+/// @param {String} $text-body-highlighted-xs-selector [".text-body-highlighted-xs"] -
+/// @param {String} $text-body-italic-l-selector [".text-body-italic-l"] -
+/// @param {String} $text-body-italic-m-selector [".text-body-italic-m"] -
+/// @param {String} $text-body-italic-s-selector [".text-body-italic-s"] -
+/// @param {String} $text-body-italic-xs-selector [".text-body-italic-xs"] -
+
 @mixin typography-classes(
   $heading-1-selector: ".heading-1",
   $heading-2-selector: ".heading-2",
@@ -2991,8 +3176,21 @@
   $heading-5-selector: ".heading-5",
   $heading-6-selector: ".heading-6",
   $heading-color__gray-light-selector: ".heading-gray--light",
-  $text-body-selector: ".text-body"
+  $text-body-regular-l-selector: ".text-body-regular-l",
+  $text-body-regular-m-selector: ".text-body-regular-m",
+  $text-body-regular-s-selector: ".text-body-regular-s",
+  $text-body-regular-xs-selector: ".text-body-regular-xs",
+  $text-body-highlighted-l-selector: ".text-body-highlighted-l",
+  $text-body-highlighted-m-selector: ".text-body-highlighted-m",
+  $text-body-highlighted-s-selector: ".text-body-highlighted-s",
+  $text-body-highlighted-xs-selector: ".text-body-highlighted-xs",
+  $text-body-italic-l-selector: ".text-body-italic-l",
+  $text-body-italic-m-selector: ".text-body-italic-m",
+  $text-body-italic-s-selector: ".text-body-italic-s",
+  $text-body-italic-xs-selector: ".text-body-italic-xs"
 ) {
+  // headings
+
   #{$heading-1-selector} {
     @extend %heading-1;
   }
@@ -3021,8 +3219,54 @@
     @extend %heading-color__gray--light;
   }
 
-  #{$text-body-selector} {
-    @extend %text-body;
+  // body
+
+  #{$text-body-regular-l-selector} {
+    @extend %text-body-regular-l;
+  }
+
+  #{$text-body-regular-m-selector} {
+    @extend %text-body-regular-m;
+  }
+
+  #{$text-body-regular-s-selector} {
+    @extend %text-body-regular-s;
+  }
+
+  #{$text-body-regular-xs-selector} {
+    @extend %text-body-regular-xs;
+  }
+
+  #{$text-body-highlighted-l-selector} {
+    @extend %text-body-highlighted-l;
+  }
+
+  #{$text-body-highlighted-m-selector} {
+    @extend %text-body-highlighted-m;
+  }
+
+  #{$text-body-highlighted-s-selector} {
+    @extend %text-body-highlighted-s;
+  }
+
+  #{$text-body-highlighted-xs-selector} {
+    @extend %text-body-highlighted-xs;
+  }
+
+  #{$text-body-italic-l-selector} {
+    @extend %text-body-italic-l;
+  }
+
+  #{$text-body-italic-m-selector} {
+    @extend %text-body-italic-m;
+  }
+
+  #{$text-body-italic-s-selector} {
+    @extend %text-body-italic-s;
+  }
+
+  #{$text-body-italic-xs-selector} {
+    @extend %text-body-italic-xs;
   }
 }
 
@@ -15568,44 +15812,130 @@
   // - - - - - - - - - - - - - - - - - - - -
   // font-face
   @if $font-face {
+    // Thin
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-Thin.woff2");
+      font-weight: 100;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-ThinItalic.woff2");
+      font-weight: 100;
+      font-style: italic;
+    }
+
+    // ExtraLight
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-ExtraLight.woff2");
+      font-weight: 200;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-ExtraLightItalic.woff2");
+      font-weight: 200;
+      font-style: italic;
+    }
+
     // Light
     @font-face {
       font-family: "Inter";
-      src: url("#{$font-face-path}Inter_Light.woff2");
+      src: url("#{$font-face-path}Inter-Light.woff2");
       font-weight: 300;
       font-style: normal;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-LightItalic.woff2");
+      font-weight: 300;
+      font-style: italic;
     }
 
     // Regular
     @font-face {
       font-family: "Inter";
-      src: url("#{$font-face-path}Inter_Regular.woff2");
+      src: url("#{$font-face-path}Inter-Regular.woff2");
       font-weight: 400;
       font-style: normal;
     }
-
-    // Semi Bold
     @font-face {
       font-family: "Inter";
-      src: url("#{$font-face-path}Inter_SemiBold.woff2");
+      src: url("#{$font-face-path}Inter-Italic.woff2");
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    // Medium
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-Medium.woff2");
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-MediumItalic.woff2");
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    // SemiBold
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-SemiBold.woff2");
       font-weight: 600;
       font-style: normal;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-SemiBoldItalic.woff2");
+      font-weight: 600;
+      font-style: italic;
     }
 
     // Bold
     @font-face {
       font-family: "Inter";
-      src: url("#{$font-face-path}Inter_Bold.woff2");
+      src: url("#{$font-face-path}Inter-Bold.woff2");
       font-weight: 700;
       font-style: normal;
     }
-
-    // Extra Bold
     @font-face {
       font-family: "Inter";
-      src: url("#{$font-face-path}Inter_ExtraBold.woff2");
+      src: url("#{$font-face-path}Inter-BoldItalic.woff2");
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    // ExtraBold
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-ExtraBold.woff2");
       font-weight: 800;
       font-style: normal;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-ExtraBoldItalic.woff2");
+      font-weight: 800;
+      font-style: italic;
+    }
+
+    // Black
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-Black.woff2");
+      font-weight: 900;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("#{$font-face-path}Inter-BlackItalic.woff2");
+      font-weight: 900;
+      font-style: italic;
     }
   }
 
@@ -15780,10 +16110,8 @@
       @include button-secondary();
       @include button-tertiary();
 
-      @if $icon-classes {
-        @include button-icon-only();
-        @include button-icon-and-text();
-      }
+      @include button-icon-only();
+      @include button-icon-and-text();
     }
 
     @if $form-controls-classes {
