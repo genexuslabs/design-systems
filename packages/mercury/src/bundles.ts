@@ -21,6 +21,7 @@ export type MercuryBundleComponent =
   | "components/accordion"
   | "components/code"
   | "components/dialog"
+  | "components/list-box"
   | "components/markdown-viewer"
   | "components/tab"
   | "components/tabular-grid"
@@ -32,7 +33,9 @@ export type MercuryBundleComponentForm =
   | "components/checkbox"
   | "components/combo-box"
   | "components/edit"
-  | "components/radio-group";
+  | "components/icon"
+  | "components/radio-group"
+  | "components/slider";
 
 export type MercuryBundleReset = "resets/box-sizing";
 
@@ -93,9 +96,12 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/code"),
     getThemeModelItem(basePath, "components/combo-box"),
     getThemeModelItem(basePath, "components/dialog"),
+    getThemeModelItem(basePath, "components/icon"),
     getThemeModelItem(basePath, "components/edit"),
+    getThemeModelItem(basePath, "components/list-box"),
     getThemeModelItem(basePath, "components/markdown-viewer", false),
     getThemeModelItem(basePath, "components/radio-group"),
+    getThemeModelItem(basePath, "components/slider"),
     getThemeModelItem(basePath, "components/tab"),
     getThemeModelItem(basePath, "components/tabular-grid"),
     getThemeModelItem(basePath, "components/ticket-list"),
