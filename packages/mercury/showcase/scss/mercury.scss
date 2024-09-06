@@ -675,23 +675,18 @@
 }
 
 // ----------------------
-// Dialog Footer
+// Pseudo Dialog Footer
 // ----------------------
 
-// Base styles for the footer
 @mixin control-footer-base() {
   padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
   gap: var(--mer-spacing--sm);
   align-items: center;
 }
-
-// Border styles for the footer with a border
 @mixin control-footer-border() {
   border-block-start: var(--mer-border__width--sm) solid
     var(--mer-color__elevation--04);
 }
-
-// Generate styles for .control-footer and .control-footer-with-border
 @mixin control-footer(
   $selector: ".control-footer",
   $with-border-selector: ".control-footer-with-border",
@@ -2265,23 +2260,18 @@
 }
 
 // ----------------------
-// Dialog Footer
+// Pseudo Dialog Footer
 // ----------------------
 
-// Base styles for the footer
 @mixin control-footer-base() {
   padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
   gap: var(--mer-spacing--sm);
   align-items: center;
 }
-
-// Border styles for the footer with a border
 @mixin control-footer-border() {
   border-block-start: var(--mer-border__width--sm) solid
     var(--mer-color__elevation--04);
 }
-
-// Generate styles for .control-footer and .control-footer-with-border
 @mixin control-footer(
   $selector: ".control-footer",
   $with-border-selector: ".control-footer-with-border",
@@ -2676,8 +2666,8 @@
   display: grid;
 
   &-group {
-    --spacing-body-block-start: var(--mer-spacing--lg);
-    --spacing-body-block-end: var(--mer-spacing--lg);
+    --spacing-body-block-start: var(--mer-spacing--md);
+    --spacing-body-block-end: var(--mer-spacing--md);
     --spacing-body-inline-start: var(--mer-spacing--md);
     --spacing-body-inline-end: var(--mer-spacing--md);
     display: grid;
@@ -4329,23 +4319,18 @@
 }
 
 // ----------------------
-// Dialog Footer
+// Pseudo Dialog Footer
 // ----------------------
 
-// Base styles for the footer
 @mixin control-footer-base() {
   padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
   gap: var(--mer-spacing--sm);
   align-items: center;
 }
-
-// Border styles for the footer with a border
 @mixin control-footer-border() {
   border-block-start: var(--mer-border__width--sm) solid
     var(--mer-color__elevation--04);
 }
-
-// Generate styles for .control-footer and .control-footer-with-border
 @mixin control-footer(
   $selector: ".control-footer",
   $with-border-selector: ".control-footer-with-border",
