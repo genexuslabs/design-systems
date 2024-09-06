@@ -8,60 +8,125 @@
   background-color: var(--chat-message-icon-color);
 }
 
-.chat {
-  &::part(content) {
-    gap: 6px;
-  }
-
-  &::part(message) {
-    display: grid;
-    grid-template-columns: 1fr max-content;
-    grid-auto-rows: max-content;
-    padding: var(--mer-spacing--sm);
-    gap: var(--mer-spacing--sm);
-    border-radius: var(--mer-border__radius--sm);
-    overflow: hidden;
-  }
-
-  &::part(message user) {
-    background-color: rgba(91, 167, 255, 0.08);
-    border-inline-start: 2px solid var(--mer-border-color__primary);
-  }
-
-  &::part(message assistant complete) {
-    background-color: var(--mer-color__elevation--01);
-  }
-
-  &::part(message assistant warning) {
-    background-color: rgba(255, 201, 107, 0.05);
-    border-inline-start: 2px solid var(--mer-border-color__warning);
-
-    &::after {
-      @extend %chat-message-icon;
-      --chat-message-icon: var(--icon__system_warning_primary--enabled);
-      --chat-message-icon-color: var(--mer-icon__warning);
+@mixin chat($chat-selector: ".chat") {
+  #{$chat-selector} {
+    &::part(content) {
+      gap: 6px;
     }
-  }
 
-  &::part(message error) {
-    background-color: rgba(251, 124, 132, 0.05);
-    border-inline-start: 2px solid var(--mer-border-color__error);
-
-    &::after {
-      @extend %chat-message-icon;
-      --chat-message-icon: var(--icon__system_error_primary--enabled);
-      --chat-message-icon-color: var(--mer-icon__error);
+    &::part(message) {
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      grid-auto-rows: max-content;
+      padding: var(--mer-spacing--sm);
+      gap: var(--mer-spacing--sm);
+      border-radius: var(--mer-border__radius--sm);
+      overflow: hidden;
     }
-  }
 
-  &::part(message assistant success) {
-    background-color: rgba(63, 168, 155, 0.05);
-    border-inline-start: 2px solid var(--mer-border-color__success);
+    &::part(message__role) {
+      @extend %text-body-highlighted-m;
+      display: inline-grid;
+      grid-template-columns: max-content max-content;
+      gap: 6px;
 
-    &::after {
-      @extend %chat-message-icon;
-      --chat-message-icon: var(--icon__system_success_primary--enabled);
-      --chat-message-icon-color: var(--mer-icon__success);
+      &::before {
+        content: "";
+        display: grid;
+        justify-self: flex-end;
+        inline-size: 4px;
+        block-size: 4px;
+        border-radius: 50%;
+        align-self: center;
+        background-color: currentColor;
+      }
+    }
+
+    &::part(message__role user) {
+      color: var(--mer-accent__primary);
+    }
+
+    &::part(message__time) {
+      @extend %text-body-italic-m;
+      color: #828b96;
+    }
+
+    &::part(message__content) {
+      @extend %text-body-regular-m;
+      color: #e1ecf9;
+    }
+
+    &::part(message__content user),
+    &::part(message__content no-error) {
+      grid-area: 2 / 1 / 2 / 3;
+    }
+
+    &::part(message user) {
+      background-color: rgba(91, 167, 255, 0.08);
+      border-inline-start: 2px solid var(--mer-border-color__primary);
+    }
+
+    &::part(message assistant waiting) {
+      @extend %text-body-italic-s;
+      background-color: #11151c;
+      border-radius: unset;
+      color: #666;
+    }
+
+    &::part(message assistant complete) {
+      background-color: var(--mer-color__elevation--01);
+    }
+
+    &::part(message assistant warning) {
+      background-color: rgba(255, 201, 107, 0.05);
+      border-inline-start: 2px solid var(--mer-border-color__warning);
+
+      &::after {
+        @extend %chat-message-icon;
+        --chat-message-icon: var(--icon__system_warning_primary--enabled);
+        --chat-message-icon-color: var(--mer-icon__warning);
+      }
+    }
+
+    &::part(message error) {
+      background-color: rgba(251, 124, 132, 0.05);
+      border-inline-start: 2px solid var(--mer-border-color__error);
+
+      &::after {
+        @extend %chat-message-icon;
+        --chat-message-icon: var(
+          --icon__system_warning_primary--enabled
+        ); // TODO: Add error icon
+        --chat-message-icon-color: var(--mer-icon__error);
+      }
+    }
+
+    &::part(message assistant success) {
+      background-color: rgba(63, 168, 155, 0.05);
+      border-inline-start: 2px solid var(--mer-border-color__success);
+
+      &::after {
+        @extend %chat-message-icon;
+        --chat-message-icon: var(--icon__system_success_primary--enabled);
+        --chat-message-icon-color: var(--mer-icon__success);
+      }
+    }
+
+    @include form-input(
+      $selector: "&::part(send-input)",
+      $add--disabled: false,
+      $add--placeholder: false,
+      $add--error: false
+    );
+
+    &::part(send-input) {
+      background-color: #11151c;
+      border-color: #11151c;
+      --control__padding-block: 10px;
+    }
+
+    &::part(send-input-wrapper) {
+      margin-block-start: 14px;
     }
   }
 }
