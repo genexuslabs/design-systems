@@ -3,6 +3,7 @@
   // --ch-edit-auto-fill-background-color: var(); not defined by design yet
   --ch-edit-gap: var(--control__icon-gap);
   --ch-edit__image-size: var(--mer-icon__box--md);
+  --ch-placeholder-color: var(--mer-color__neutral-gray--400);
 
   @include control-border();
   @include control-colors-enabled();
