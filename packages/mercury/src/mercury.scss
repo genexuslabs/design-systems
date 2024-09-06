@@ -39,6 +39,7 @@
 
 // Components
 @import "./components/accordion/accordion-styles";
+@import "./components/chat/chat-styles";
 @import "./components/checkbox/checkbox-styles";
 @import "./components/code/code-styles";
 @import "./components/combo-box/combo-box-styles";
@@ -105,6 +106,7 @@
   // Components
   $components: true,
   $accordion: true,
+  $chat: true,
   $checkbox: true,
   $code: true,
   $combo-box: true,
@@ -471,6 +473,10 @@
     @include accordion-outlined();
   }
 
+  @if $chat {
+    @include chat();
+  }
+
   @if $checkbox {
     @include checkbox();
   }
@@ -578,6 +584,7 @@
   // Components
   $components: false,
   $accordion: false,
+  $chat: false,
   $checkbox: false,
   $code: false,
   $combo-box: false,
@@ -641,6 +648,7 @@
     // Components
     $components: $components,
     $accordion: $accordion,
+    $chat: $chat,
     $checkbox: $checkbox,
     $code: $code,
     $combo-box: $combo-box,

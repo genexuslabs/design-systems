@@ -132,6 +132,42 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                  Code
   // - - - - - - - - - - - - - - - - - - - -
+  .code-block-container {
+    position: relative;
+  }
+
+  .code-block-header {
+    display: grid;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    justify-content: flex-end;
+    position: absolute;
+    inset-block-start: var(--mer-spacing--md);
+    inset-inline-end: var(--mer-spacing--xs);
+    padding: 6px;
+    background-color: var(--mer-color__elevation--01);
+    border-radius: var(--mer-border__radius--xs);
+  }
+
+  .button-copy-code {
+    inline-size: 18px;
+    block-size: 18px;
+
+    &::before {
+      content: "";
+      display: grid;
+      inline-size: 100%;
+      block-size: 100%;
+      -webkit-mask: no-repeat center / 100%
+        var(--icon__system_copy_primary--enabled);
+      background-color: currentColor;
+    }
+
+    &:focus-visible {
+      outline: 1px solid currentColor;
+    }
+  }
+
   // Multiline code
   ch-code {
     // Override inline border-radius

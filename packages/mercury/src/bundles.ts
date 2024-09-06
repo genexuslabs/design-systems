@@ -19,6 +19,7 @@ export type MercuryBundleBase = "base/base" | "base/icons";
 
 export type MercuryBundleComponent =
   | "components/accordion"
+  | "components/chat"
   | "components/code"
   | "components/dialog"
   | "components/list-box"
@@ -92,6 +93,7 @@ export const getThemeBundles = (basePath: string) =>
     // Components
     getThemeModelItem(basePath, "components/accordion"),
     getThemeModelItem(basePath, "components/button"),
+    getThemeModelItem(basePath, "components/chat"),
     getThemeModelItem(basePath, "components/checkbox"),
     getThemeModelItem(basePath, "components/code"),
     getThemeModelItem(basePath, "components/combo-box"),
