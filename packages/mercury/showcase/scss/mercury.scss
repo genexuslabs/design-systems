@@ -675,33 +675,33 @@
 }
 
 // ----------------------
-// Dialog Footer
+// Pseudo Dialog Footer
 // ----------------------
 
-// Defined here to be used on /components/dialog as well as to replicate
-// dialog footer styles on genexus-ide-ui components
-%control-footer {
+@mixin control-footer-base() {
   padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
   gap: var(--mer-spacing--sm);
   align-items: center;
-
-  &--with-border {
-    border-block-start: var(--mer-border__width--sm) solid
-      var(--mer-color__elevation--04);
-  }
+}
+@mixin control-footer-border() {
+  border-block-start: var(--mer-border__width--sm) solid
+    var(--mer-color__elevation--04);
 }
 @mixin control-footer(
   $selector: ".control-footer",
-  $with-border-selector: ".control-footer--border",
+  $with-border-selector: ".control-footer-with-border",
   $with-border: true
 ) {
-  #{$selector} {
-    @extend %control-footer;
+  #{$selector},
+  #{$with-border-selector} {
+    @include control-footer-base();
+    display: flex; // part of ch-dialog footer implementation
+    justify-content: flex-end; // part of ch-dialog footer implementation
   }
 
   @if $with-border {
     #{$with-border-selector} {
-      @extend %control-footer--with-border;
+      @include control-footer-border();
     }
   }
 }
@@ -2260,33 +2260,33 @@
 }
 
 // ----------------------
-// Dialog Footer
+// Pseudo Dialog Footer
 // ----------------------
 
-// Defined here to be used on /components/dialog as well as to replicate
-// dialog footer styles on genexus-ide-ui components
-%control-footer {
+@mixin control-footer-base() {
   padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
   gap: var(--mer-spacing--sm);
   align-items: center;
-
-  &--with-border {
-    border-block-start: var(--mer-border__width--sm) solid
-      var(--mer-color__elevation--04);
-  }
+}
+@mixin control-footer-border() {
+  border-block-start: var(--mer-border__width--sm) solid
+    var(--mer-color__elevation--04);
 }
 @mixin control-footer(
   $selector: ".control-footer",
-  $with-border-selector: ".control-footer--border",
+  $with-border-selector: ".control-footer-with-border",
   $with-border: true
 ) {
-  #{$selector} {
-    @extend %control-footer;
+  #{$selector},
+  #{$with-border-selector} {
+    @include control-footer-base();
+    display: flex; // part of ch-dialog footer implementation
+    justify-content: flex-end; // part of ch-dialog footer implementation
   }
 
   @if $with-border {
     #{$with-border-selector} {
-      @extend %control-footer--with-border;
+      @include control-footer-border();
     }
   }
 }
@@ -2666,8 +2666,8 @@
   display: grid;
 
   &-group {
-    --spacing-body-block-start: var(--mer-spacing--lg);
-    --spacing-body-block-end: var(--mer-spacing--lg);
+    --spacing-body-block-start: var(--mer-spacing--md);
+    --spacing-body-block-end: var(--mer-spacing--md);
     --spacing-body-inline-start: var(--mer-spacing--md);
     --spacing-body-inline-end: var(--mer-spacing--md);
     display: grid;
@@ -4319,33 +4319,33 @@
 }
 
 // ----------------------
-// Dialog Footer
+// Pseudo Dialog Footer
 // ----------------------
 
-// Defined here to be used on /components/dialog as well as to replicate
-// dialog footer styles on genexus-ide-ui components
-%control-footer {
+@mixin control-footer-base() {
   padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
   gap: var(--mer-spacing--sm);
   align-items: center;
-
-  &--with-border {
-    border-block-start: var(--mer-border__width--sm) solid
-      var(--mer-color__elevation--04);
-  }
+}
+@mixin control-footer-border() {
+  border-block-start: var(--mer-border__width--sm) solid
+    var(--mer-color__elevation--04);
 }
 @mixin control-footer(
   $selector: ".control-footer",
-  $with-border-selector: ".control-footer--border",
+  $with-border-selector: ".control-footer-with-border",
   $with-border: true
 ) {
-  #{$selector} {
-    @extend %control-footer;
+  #{$selector},
+  #{$with-border-selector} {
+    @include control-footer-base();
+    display: flex; // part of ch-dialog footer implementation
+    justify-content: flex-end; // part of ch-dialog footer implementation
   }
 
   @if $with-border {
     #{$with-border-selector} {
-      @extend %control-footer--with-border;
+      @include control-footer-border();
     }
   }
 }
@@ -4621,8 +4621,8 @@
   }
 
   &__footer {
-    @extend %control-footer;
-    @extend %control-footer--with-border;
+    @include control-footer-base();
+    @include control-footer-border();
   }
 
   // ------------------------------

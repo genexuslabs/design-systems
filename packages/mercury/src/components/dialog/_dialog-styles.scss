@@ -43,8 +43,8 @@
   }
 
   &__footer {
-    @extend %control-footer;
-    @extend %control-footer--with-border;
+    @include control-footer-base();
+    @include control-footer-border();
   }
 
   // ------------------------------
