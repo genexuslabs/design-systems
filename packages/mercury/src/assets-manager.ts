@@ -310,6 +310,7 @@ export const getImagePathCallbackDefinitions: RegistryGetImagePathCallback = {
   "ch-accordion-render": getImagePathCallback,
   "ch-edit": getImagePathCallback,
   "ch-image": getImagePathCallback,
+  "ch-navigation-list-render": getImagePathCallback,
   "ch-tree-view-render": getTreeViewImagePathCallback
 };
 
