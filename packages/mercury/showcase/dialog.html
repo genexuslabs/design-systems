@@ -21,7 +21,7 @@
     <script src="./assets/scripts/scripts.js"></script>
     <main class="main">
       <div class="container">
-        <!-- button primary -->
+        <!-- dialog -->
         <section class="section">
           <!-- header -->
           <header class="section__header">
@@ -35,7 +35,7 @@
           </header>
           <div class="section__articles-container">
             <!-- ========================== 
-          button-primary text only
+          dialog
           =========================== -->
             <article class="article" data-nav data-title="header and footer">
               <header class="article__header"></header>
@@ -96,14 +96,12 @@
                   </script>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-1" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup1 = `<ch-dialog class="dialog" caption="About GeneXus" show-header>
+                    code = `<ch-dialog class="dialog" caption="About GeneXus" show-header>
   <div class="spacing-body"><!-- Your dialog content here --></div>
 </ch-dialog>
 `;
-                    document.getElementById("ch-code-1").value = markup1;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -135,6 +133,98 @@
                       >this component adheres to the spacing body classes</a
                     >
                   </div>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">.control-footer</h1>
+            <p class="section__description">
+              The <code>.control-footer</code> class is a helper utility
+              designed to mimic the styles of the native dialog footer,
+              including padding and a border-block-start, ensuring a consistent
+              appearance across dialogs. It is particularly useful when certain
+              action buttons need to be embedded within the content area rather
+              than placed in the slotted dialog footer. By applying the
+              <code>.control-footer</code> class, developers can ensure these
+              buttons maintain the same visual treatment as standard footer
+              actions, while seamlessly integrating with the dialog's main
+              content logic.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          control-footer
+          =========================== -->
+            <article class="article" data-nav data-title="control-footer">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  In this example the dashed line all around is not part of the
+                  <code>.control-footer</code> design. It has been added to
+                  allow you to see the control boundaries.
+                </p>
+                <div class="article__content">
+                  <div class="control-footer dummy-border">
+                    <button class="button-primary">Save</button>
+                    <button class="button-tertiary">Caption</button>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<div class="control-footer">
+  <button class="button-primary">Save</button>
+  <button class="button-tertiary">Caption</button>
+</div>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          control-footer: with border
+          =========================== -->
+            <article
+              class="article"
+              data-nav
+              data-title="control-footer: with border"
+            >
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  Add the <code>.control-footer-with-border</code> to apply a
+                  border-block-start border line. In this example dashed line
+                  present in the other sides are not part of the
+                  <code>.control-footer</code> design. They has been added to
+                  allow you to see the control boundaries.
+                </p>
+                <div class="article__content">
+                  <div
+                    class="control-footer-with-border dummy-border-inline-end dummy-border-block-end dummy-border-inline-start"
+                  >
+                    <button class="button-primary">Save</button>
+                    <button class="button-tertiary">Caption</button>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<div class="control-footer-with-border">
+  <button class="button-primary">Save</button>
+  <button class="button-tertiary">Caption</button>
+</div>`;
+                  </script>
                 </div>
                 <!-- /.article__content -->
               </div>
