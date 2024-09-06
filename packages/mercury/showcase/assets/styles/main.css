@@ -122,6 +122,18 @@ Dashed dummy border
 .dummy-border {
   border: 1px dashed var(--mer-border-color__primary);
 }
+.dummy-border-block-start {
+  border-block-start: 1px dashed var(--mer-border-color__primary);
+}
+.dummy-border-block-end {
+  border-block-end: 1px dashed var(--mer-border-color__primary);
+}
+.dummy-border-inline-start {
+  border-inline-start: 1px dashed var(--mer-border-color__primary);
+}
+.dummy-border-inline-end {
+  border-inline-end: 1px dashed var(--mer-border-color__primary);
+}
 
 /*====================
 Dummy Layout
