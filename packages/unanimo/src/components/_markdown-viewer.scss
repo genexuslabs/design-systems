@@ -55,7 +55,7 @@
   ul,
   ol,
   table,
-  ch-code {
+  .code-block-container {
     margin-block: var(--spacing--m);
   }
 
@@ -131,26 +131,74 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                  Code
   // - - - - - - - - - - - - - - - - - - - -
-  // Multiline code
-  ch-code {
-    // Override inline border-radius
+  .code-block-container {
     border: 1px solid var(--border-color__mild);
     border-radius: var(--border-radius--m);
+    font-size: calc(1em - 2px);
+
+    // Necessary to display the ch-code's scrollbar
+    overflow: hidden;
+  }
+
+  .code-block-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    align-items: center;
+    gap: var(--spacing--m);
+    padding-inline-start: var(--spacing--l);
+    background-color: var(--surface--alternative);
+
+    &.mobile {
+      padding-inline-start: calc(var(--spacing--l) - var(--spacing--s));
+    }
+
+    &__language {
+      font-family: monospace;
+    }
+
+    &__copy-code-button {
+      // TODO: This path must be customizable. Probably using a custom var.
+      @include button-icon-and-text(
+        $selector: "&",
+        $icon-path: url("./assets/icons/copy.svg")
+      );
+
+      @include button-tertiary(
+        $selector: "&",
+        $add--disabled: false,
+        $add--error: false
+      );
+
+      &.mobile {
+        padding-inline: var(--spacing--s);
+      }
+    }
+
+    &__download-code-button {
+      // TODO: This path must be customizable. Probably using a custom var.
+      @include button-icon-only(
+        $selector: "&",
+        $icon-path: url("./assets/icons/download.svg")
+      );
+
+      @include button-tertiary(
+        $selector: "&",
+        $add--disabled: false,
+        $add--error: false
+      );
+    }
+  }
+
+  // Multiline code
+  ch-code {
+    background-color: var(--surface--positive);
     padding: var(--spacing--l);
 
-    // & > .code-block__header {
-    //   display: grid;
-    //   grid-template-columns: 1fr max-content;
-    //   align-items: center;
-    //   padding-inline: var(--spacing--l);
-    //   padding-block: var(--spacing--m);
-    //   background-color: var(--surface--alternative);
-    // }
-
-    // & > .code-block__content {
-    //   // Override inline padding
-    //   padding: var(--spacing--l);
-    // }
+    &.mobile {
+      padding: calc(var(--spacing--l) - var(--spacing--s));
+    }
   }
 
   @include code($selector: "ch-code");
