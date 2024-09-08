@@ -1,6 +1,7 @@
 @mixin markdown-viewer() {
   :host {
     @extend %text-body-2;
+    --ch-markdown-viewer-indicator-color: var(--accents__primary--active);
   }
 
   // - - - - - - - - - - - - - - - - - - - -
