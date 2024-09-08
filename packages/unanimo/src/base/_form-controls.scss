@@ -25,6 +25,9 @@
 
 %form-input {
   @extend %form-input__text;
+  --ch-placeholder-color: var(--body-m__font-color--gray);
+  --ch-edit-gap: var(--spacing--s);
+  --ch-edit__image-size: var(--spacing--xl);
 
   position: relative;
   block-size: 32px;
@@ -47,6 +50,9 @@
 
 %form-textarea {
   @extend %form-input__text;
+  --ch-placeholder-color: var(--body-m__font-color--gray);
+  --ch-edit-gap: var(--spacing--s);
+  --ch-edit__image-size: var(--spacing--xl);
 
   position: relative;
   min-block-size: 32px;
@@ -62,10 +68,6 @@
   color: var(--body-m__font-color--gray);
 }
 
-@mixin form-input-placeholder-var() {
-  --ch-placeholder-color: var(--body-m__font-color--gray);
-}
-
 /// @group Form
 /// @param {String} $selector [".form-input"] -
 /// @param {Boolean} $add--disabled [true] -
@@ -75,24 +77,12 @@
 @mixin form-input(
   $selector: ".form-input",
   $add--disabled: true,
-  $add--placeholder: true,
-  $add--placeholder-var: true,
   $add--error: true
 ) {
   // TODO: IMPROVE STYLE. Unanimo's implementation does not work well in Sidebar Menus
 
   #{$selector} {
     @extend %form-input;
-
-    @if $add--placeholder-var {
-      @include form-input-placeholder-var();
-    }
-
-    @if $add--placeholder {
-      &::placeholder {
-        @extend %form-input__placeholder;
-      }
-    }
 
     &:focus {
       @extend %form-input--focus;
@@ -135,30 +125,16 @@
 /// @group Form
 /// @param {String} $selector [".form-textarea"] -
 /// @param {Boolean} $add--disabled [true] -
-/// @param {Boolean} $add--placeholder [true] -
-/// @param {Boolean} $add--placeholder-var [true] -
 /// @param {Boolean} $add--error [true] -
 @mixin form-textarea(
   $selector: ".form-textarea",
   $add--disabled: true,
-  $add--placeholder: true,
-  $add--placeholder-var: true,
   $add--error: true
 ) {
   // TODO: IMPROVE STYLE. Unanimo's implementation does not work well in Sidebar Menus
 
   #{$selector} {
     @extend %form-textarea;
-
-    @if $add--placeholder-var {
-      @include form-input-placeholder-var();
-    }
-
-    @if $add--placeholder {
-      &::placeholder {
-        @extend %form-input__placeholder;
-      }
-    }
 
     &:focus {
       @extend %form-input--focus;

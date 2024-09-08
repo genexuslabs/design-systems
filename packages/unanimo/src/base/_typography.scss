@@ -40,6 +40,14 @@
   letter-spacing: 0.2px;
 }
 
+@mixin text-body-quote() {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: 0.2px;
+}
+
 @mixin tab-text() {
   font-weight: 600;
   font-size: 14px;
@@ -79,6 +87,10 @@
   @include text-body-2();
 }
 
+%text-body-quote {
+  @include text-body-quote();
+}
+
 %tab-text {
   @include tab-text();
 }
@@ -106,6 +118,10 @@
 
   .text-body-2 {
     @extend %text-body-2;
+  }
+
+  .text-body-quote {
+    @extend %text-body-quote;
   }
 
   .tab-text {

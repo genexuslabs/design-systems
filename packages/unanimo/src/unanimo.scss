@@ -127,6 +127,14 @@
     }
 
     @font-face {
+      font-family: SourceSansPro; // 400 Italic
+      src: url("#{$font-face-path}SourceSansPro_RegularItalic.woff2");
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    @font-face {
       font-family: SourceSansPro; // 600
       src: url("#{$font-face-path}SourceSansPro_SemiBold.woff2");
       font-weight: 600;
