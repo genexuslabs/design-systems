@@ -7,6 +7,8 @@
 
   --ch-combo-box-group__expandable-button-image-size: 12px;
   --ch-combo-box-item__background-image-size: 12px;
+
+  --ch-placeholder-color: var(--body-m__font-color--gray);
 }
 
 %combo-box__window {
@@ -77,8 +79,6 @@
   $item--nested-selector: ".combo-box::part(item nested)",
   $item--selected-selector: ".combo-box::part(item selected)",
   $add--disabled: true,
-  $add--placeholder: true,
-  $add--placeholder-var: true,
   $add--error: true
 ) {
   // TODO: IMPROVE STYLE. Unanimo's implementation does not work well in Sidebar Menus
@@ -89,16 +89,6 @@
 
     &:focus {
       @extend %form-input--focus;
-    }
-
-    @if $add--placeholder-var {
-      @include form-input-placeholder-var();
-    }
-  }
-
-  @if $add--placeholder {
-    #{$combo-box__placeholder-selector} {
-      @extend %form-input__placeholder;
     }
   }
 
