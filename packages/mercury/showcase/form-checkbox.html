@@ -52,11 +52,9 @@
                   ></ch-checkbox>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-1" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup1 = `<ch-checkbox class="checkbox"></ch-checkbox>`;
-                    document.getElementById("ch-code-1").value = markup1;
+                    code = `<ch-checkbox class="checkbox"></ch-checkbox>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -81,11 +79,9 @@
                   ></ch-checkbox>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-2" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup2 = `<ch-checkbox class="checkbox"></ch-checkbox>`;
-                    document.getElementById("ch-code-2").value = markup2;
+                    code = `<ch-checkbox class="checkbox"></ch-checkbox>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -111,11 +107,9 @@
                   ></ch-checkbox>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-3" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup3 = `<ch-checkbox class="checkbox"></ch-checkbox>`;
-                    document.getElementById("ch-code-3").value = markup3;
+                    code = `<ch-checkbox class="checkbox"></ch-checkbox>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -141,11 +135,9 @@
                   ></ch-checkbox>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-4" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup4 = `<ch-checkbox class="checkbox checkbox--disabled"></ch-checkbox>`;
-                    document.getElementById("ch-code-4").value = markup4;
+                    code = `<ch-checkbox class="checkbox checkbox--disabled"></ch-checkbox>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -161,7 +153,7 @@
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <div class="controls__container">
+                  <div class="field-group">
                     <ch-checkbox
                       class="checkbox"
                       checked-value="true"
@@ -186,15 +178,64 @@
                   </div>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-5" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup5 = `<div class="controls__container">
+                    code = `<div class="field-group">
   <ch-checkbox class="checkbox"></ch-checkbox>
   <ch-checkbox class="checkbox"></ch-checkbox>
   <ch-checkbox class="checkbox"></ch-checkbox>
 </div>`;
-                    document.getElementById("ch-code-5").value = markup5;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          grouping checkboxes: inline
+          =========================== -->
+            <article
+              class="article"
+              data-nav
+              data-title="grouping checkboxes: inline"
+            >
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="field-group-inline">
+                    <ch-checkbox
+                      class="checkbox"
+                      checked-value="true"
+                      un-checked-value="false"
+                      value="false"
+                      caption="The Caption 1"
+                    ></ch-checkbox>
+                    <ch-checkbox
+                      class="checkbox"
+                      checked-value="true"
+                      un-checked-value="false"
+                      value="false"
+                      caption="The Caption 2"
+                    ></ch-checkbox>
+                    <ch-checkbox
+                      class="checkbox"
+                      checked-value="true"
+                      un-checked-value="false"
+                      value="false"
+                      caption="The Caption 3"
+                    ></ch-checkbox>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<div class="field-group-inline">
+  <ch-checkbox class="checkbox"></ch-checkbox>
+  <ch-checkbox class="checkbox"></ch-checkbox>
+  <ch-checkbox class="checkbox"></ch-checkbox>
+</div>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
