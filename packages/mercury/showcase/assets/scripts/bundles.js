@@ -28,6 +28,7 @@ export const getThemeBundles = (basePath) => [
     // Components
     getThemeModelItem(basePath, "components/accordion"),
     getThemeModelItem(basePath, "components/button"),
+    getThemeModelItem(basePath, "components/chat"),
     getThemeModelItem(basePath, "components/checkbox"),
     getThemeModelItem(basePath, "components/code"),
     getThemeModelItem(basePath, "components/combo-box"),
