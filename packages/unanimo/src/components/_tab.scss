@@ -19,12 +19,16 @@
 }
 
 %tab-caption--focus-visible {
-  outline: 1px solid var(--border-color__focused);
+  outline: 1px solid currentColor;
   outline-offset: -1px;
 }
 
 %tab-caption-close-button {
   margin-inline-start: 4px;
+
+  &--focus-visible {
+    outline: 1px solid currentColor;
+  }
 }
 
 %tab-caption--selected {
@@ -75,6 +79,10 @@
 
   #{$tab-caption-close-button-selector} {
     @extend %tab-caption-close-button;
+
+    &:focus-visible {
+      @extend %tab-caption-close-button--focus-visible;
+    }
   }
 
   #{$tab-caption--selected-selector} {
