@@ -79,10 +79,14 @@
   $tab-list-selector: ".tab::part(tab-list)",
   $tab-list--block-selector: ".tab::part(tab-list block)",
   $tab-list--inline-selector: ".tab::part(tab-list inline)",
+  $add--tab: true,
+  $add--tab-list: true,
   $add--disabled: true
 ) {
-  #{$tab-selector} {
-    @extend %tab;
+  @if $add--tab {
+    #{$tab-selector} {
+      @extend %tab;
+    }
   }
 
   #{$tab-caption-selector} {
@@ -124,8 +128,10 @@
     }
   }
 
-  #{$tab-list-selector} {
-    @extend %tab-list;
+  @if $add--tab-list {
+    #{$tab-list-selector} {
+      @extend %tab-list;
+    }
   }
 
   #{$tab-list--block-selector} {

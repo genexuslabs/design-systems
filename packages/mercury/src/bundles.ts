@@ -22,8 +22,12 @@ export type MercuryBundleComponent =
   | "components/chat"
   | "components/code"
   | "components/dialog"
+  | "components/flexible-layout"
   | "components/list-box"
   | "components/markdown-viewer"
+  | "components/navigation-list"
+  | "components/segmented-control"
+  | "components/sidebar"
   | "components/tab"
   | "components/tabular-grid"
   | "components/ticket-list"
@@ -97,12 +101,16 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/checkbox"),
     getThemeModelItem(basePath, "components/code"),
     getThemeModelItem(basePath, "components/combo-box"),
+    getThemeModelItem(basePath, "components/flexible-layout"),
     getThemeModelItem(basePath, "components/dialog"),
     getThemeModelItem(basePath, "components/icon"),
     getThemeModelItem(basePath, "components/edit"),
     getThemeModelItem(basePath, "components/list-box"),
     getThemeModelItem(basePath, "components/markdown-viewer", false),
+    getThemeModelItem(basePath, "components/navigation-list"),
     getThemeModelItem(basePath, "components/radio-group"),
+    getThemeModelItem(basePath, "components/segmented-control"),
+    getThemeModelItem(basePath, "components/sidebar"),
     getThemeModelItem(basePath, "components/slider"),
     getThemeModelItem(basePath, "components/tab"),
     getThemeModelItem(basePath, "components/tabular-grid"),
