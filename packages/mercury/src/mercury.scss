@@ -44,13 +44,17 @@
 @import "./components/code/code-styles";
 @import "./components/combo-box/combo-box-styles";
 @import "./components/dialog/dialog-styles";
+@import "./components/flexible-layout/flexible-layout-styles";
 @import "./components/icon/icon-styles";
 @import "./components/form-input/form-input-styles";
 @import "./components/list-box/list-box-styles";
 @import "./components/markdown-viewer/markdown-viewer-styles";
+@import "./components/navigation-list/navigation-list-styles";
 @import "./components/property-grid/property-grid-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
+@import "./components/segmented-control/segmented-control-styles";
+@import "./components/sidebar/sidebar-styles";
 @import "./components/slider/slider-styles";
 @import "./components/tab/tab-styles";
 @import "./components/tabular-grid/tabular-grid-styles";
@@ -112,10 +116,14 @@
   $combo-box: true,
   $dialog: true,
   $edit: true,
+  $flexible-layout: true,
   $icon: true,
   $list-box: true,
   $markdown-viewer: true,
+  $navigation-list: true,
   $radio-group: true,
+  $segmented-control: true,
+  $sidebar: true,
   $slider: true,
   $tab: true,
   $tabular-grid: true,
@@ -497,6 +505,10 @@
     @include form-input();
   }
 
+  @if $flexible-layout {
+    @include flexible-layout();
+  }
+
   @if $icon {
     @include icon();
   }
@@ -509,8 +521,20 @@
     @include markdown-viewer();
   }
 
+  @if $navigation-list {
+    @include navigation-list();
+  }
+
   @if $radio-group {
     @include radio-group();
+  }
+
+  @if $segmented-control {
+    @include segmented-control();
+  }
+
+  @if $sidebar {
+    @include sidebar();
   }
 
   @if $slider {
@@ -590,10 +614,14 @@
   $combo-box: false,
   $dialog: false,
   $edit: false,
+  $flexible-layout: false,
   $icon: false,
   $list-box: false,
   $markdown-viewer: false,
+  $navigation-list: false,
   $radio-group: false,
+  $segmented-control: false,
+  $sidebar: false,
   $slider: false,
   $tab: false,
   $tabular-grid: false,
@@ -654,10 +682,14 @@
     $combo-box: $combo-box,
     $dialog: $dialog,
     $edit: $edit,
+    $flexible-layout: $flexible-layout,
     $icon: $icon,
     $list-box: $list-box,
     $markdown-viewer: $markdown-viewer,
+    $navigation-list: $navigation-list,
     $radio-group: $radio-group,
+    $segmented-control: $segmented-control,
+    $sidebar: $sidebar,
     $slider: $slider,
     $tab: $tab,
     $tabular-grid: $tabular-grid,
