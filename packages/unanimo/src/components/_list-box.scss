@@ -4,6 +4,7 @@
   --ch-action-list-group__expandable-button-size: var(--spacing--l);
   --ch-action-list-group__expandable-button-image-size: calc(100% - 4px);
   --ch-action-list-item__image-size: var(--spacing--xl);
+  --ch-action-list-item__action-color: var(--text__on-secondary);
   padding: var(--spacing--xs);
 
   &-item-action {
@@ -13,6 +14,7 @@
 
     &--disabled {
       color: var(--text__disabled);
+      --ch-action-list-item__action-color: var(--text__disabled);
     }
 
     &--focus-visible {
@@ -39,10 +41,8 @@
   }
 
   &-additional-item--action {
-    color: var(--text__on-secondary);
-
     &--hover {
-      color: var(--text__primary--hover);
+      --ch-action-list-item__action-color: var(--text__primary--hover);
     }
 
     &--focus-visible {
@@ -86,6 +86,9 @@
 
   $additional-item--action-selector:
     ".list-box-secondary::part(item__additional-item action)",
+
+  $additional-item--confirm-action-selector:
+    ".list-box-secondary::part(item__additional-item-confirm)",
 
   $separator-selector: ".list-box-secondary::part(separator)",
 
@@ -156,9 +159,8 @@
   }
 
   @if $add--additional-item {
-    #{$additional-item--action-selector} {
-      @extend %list-box-secondary-additional-item--action;
-
+    #{$additional-item--action-selector},
+    #{$additional-item--confirm-action-selector} {
       &:hover {
         @extend %list-box-secondary-additional-item--action--hover;
       }
