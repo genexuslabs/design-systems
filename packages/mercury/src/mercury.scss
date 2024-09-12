@@ -60,6 +60,7 @@
 @import "./components/tabular-grid/tabular-grid-styles";
 @import "./components/tabular-grid/helpers";
 @import "./components/ticket-list/ticket-list-styles";
+@import "./components/tooltip/tooltip-styles";
 @import "./components/tree-view/tree-view-styles";
 
 @mixin mercury(
@@ -128,6 +129,7 @@
   $tab: true,
   $tabular-grid: true,
   $ticket-list: true,
+  $tooltip: true,
   $tree-view: true
 ) {
   // - - - - - - - - - - - - - - - - - - - -
@@ -555,6 +557,10 @@
     @include ticket-list();
   }
 
+  @if $tooltip {
+    @include tooltip();
+  }
+
   @if $tree-view {
     @include tree-view();
   }
@@ -626,6 +632,7 @@
   $tab: false,
   $tabular-grid: false,
   $ticket-list: false,
+  $tooltip: false,
   $tree-view: false
 ) {
   @include mercury(
@@ -694,6 +701,7 @@
     $tab: $tab,
     $tabular-grid: $tabular-grid,
     $ticket-list: $ticket-list,
+    $tooltip: $tooltip,
     $tree-view: $tree-view
   );
 }

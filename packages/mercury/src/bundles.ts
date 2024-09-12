@@ -31,6 +31,7 @@ export type MercuryBundleComponent =
   | "components/tab"
   | "components/tabular-grid"
   | "components/ticket-list"
+  | "components/tooltip"
   | "components/tree-view";
 
 export type MercuryBundleComponentForm =
