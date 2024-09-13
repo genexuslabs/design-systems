@@ -12,8 +12,8 @@ importers:
         specifier: ^0.1.9
         version: 0.1.9
       '@genexus/chameleon-controls-library':
-        specifier: 6.0.0-next.28
-        version: 6.0.0-next.28(@genexus/web-standard-functions@0.65.0(@opentelemetry/api@1.9.0)(tslib@2.6.2)(zone.js@0.14.7))(@stencil/core@4.19.2)
+        specifier: 6.0.0-next.37
+        version: 6.0.0-next.37(@genexus/web-standard-functions@0.65.0(@opentelemetry/api@1.9.0)(tslib@2.6.2)(zone.js@0.14.7))(@stencil/core@4.19.2)
       '@genexus/svg-sass-generator':
         specifier: 1.1.24
         version: 1.1.24(@types/node@20.12.12)
@@ -189,8 +189,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@genexus/chameleon-controls-library@6.0.0-next.28':
-    resolution: {integrity: sha512-GXiKLjyZWwDtem3noPhiaQpjXne/ZAgU21QsY8FQDHkv8gko06Yhn/XgdzGqByJDmjDnHj7DajiPQgJaA7WqsA==}
+  '@genexus/chameleon-controls-library@6.0.0-next.37':
+    resolution: {integrity: sha512-syRskIBWZ3zqCMaEdJZbTnPAvzQPjVY1C/6E0AsRB9gSfErV1dVOb8MWKnTtOjFjSlRj3jSuXxrcGxTU48u8lA==}
     peerDependencies:
       '@genexus/web-standard-functions': '>= 0.65.0'
 
@@ -1849,7 +1849,7 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@genexus/chameleon-controls-library@6.0.0-next.28(@genexus/web-standard-functions@0.65.0(@opentelemetry/api@1.9.0)(tslib@2.6.2)(zone.js@0.14.7))(@stencil/core@4.19.2)':
+  '@genexus/chameleon-controls-library@6.0.0-next.37(@genexus/web-standard-functions@0.65.0(@opentelemetry/api@1.9.0)(tslib@2.6.2)(zone.js@0.14.7))(@stencil/core@4.19.2)':
     dependencies:
       '@genexus/markdown-parser': 0.1.1
       '@genexus/web-standard-functions': 0.65.0(@opentelemetry/api@1.9.0)(tslib@2.6.2)(zone.js@0.14.7)
