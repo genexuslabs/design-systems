@@ -4901,6 +4901,120 @@
   }
 }
 
+%flexible-layout {
+  --ch-tab-close-button__background-image-size: var(--mer-icon__size--md);
+  --ch-tab-close-button__image-size: var(--mer-icon__box--md);
+
+  --spacing-body-block-start: var(--mer-spacing--md);
+  --spacing-body-block-end: var(--mer-spacing--md);
+  --spacing-body-inline-start: var(--mer-spacing--md);
+  --spacing-body-inline-end: var(--mer-spacing--md);
+
+  &-tab-caption {
+    background-color: color-mix(
+      in srgb,
+      var(--colors-foundation__gray--300) 20%,
+      transparent
+    );
+
+    &--selected {
+      background-color: color-mix(
+        in srgb,
+        var(--colors-foundation__gray--300) 50%,
+        transparent
+      );
+    }
+  }
+
+  &-tab-list--inline {
+    background-color: var(--mer-color__neutral-gray--600);
+    inline-size: 48px;
+    gap: 4px;
+  }
+
+  &-tab-list--block {
+    background-color: var(--mer-color__neutral-gray--700);
+    overflow: auto;
+  }
+
+  &-droppable-area {
+    background-color: color-mix(
+      in srgb,
+      var(--accents__secondary--hover) 25%,
+      transparent
+    );
+  }
+
+  &-bar {
+    color: var(--mer-border-color__on-surface);
+  }
+}
+
+@mixin flexible-layout(
+  $flexible-layout-selector: ".flexible-layout",
+  $flexible-layout__bar-selector: ".flexible-layout::part(bar)",
+  $tab-selector: ".flexible-layout::part(leaf)",
+  $tab-caption-selector: ".flexible-layout::part(button)",
+  $tab-caption--block-selector: ".flexible-layout::part(button block)",
+  $tab-caption--inline-selector: ".flexible-layout::part(button inline)",
+  $tab-caption--selected-selector: ".flexible-layout::part(button selected)",
+  $tab-caption--disabled-selector: ".flexible-layout::part(button disabled)",
+  $tab-caption__close-button-selector: ".flexible-layout::part(close-button)",
+  $tab-list--inline-selector: ".flexible-layout::part(tab-list inline)",
+  $tab-list--block-selector: ".flexible-layout::part(tab-list block)",
+  $droppable-area-selector: ".flexible-layout::part(droppable-area)",
+  $add--disabled: true
+) {
+  @include tab(
+    $tab-selector: #{$tab-selector},
+    $tab-caption-selector: #{$tab-caption-selector},
+    $tab-caption--block-selector: #{$tab-caption--block-selector},
+    $tab-caption--inline-selector: #{$tab-caption--inline-selector},
+    $tab-caption--selected-selector: #{$tab-caption--selected-selector},
+    $tab-caption__close-button-selector: #{$tab-caption__close-button-selector},
+    $add--tab: false,
+    $add--tab-list: false,
+    $add--disabled: $add--disabled
+  );
+
+  #{$flexible-layout-selector} {
+    @extend %flexible-layout;
+  }
+
+  #{$flexible-layout__bar-selector} {
+    @extend %flexible-layout-bar;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //               Tab Caption
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$tab-caption-selector} {
+    @extend %flexible-layout-tab-caption;
+  }
+
+  #{$tab-caption--selected-selector} {
+    @extend %flexible-layout-tab-caption--selected;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                Tab List
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$tab-list--inline-selector} {
+    @extend %flexible-layout-tab-list--inline;
+  }
+
+  #{$tab-list--block-selector} {
+    @extend %flexible-layout-tab-list--block;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //             Droppable area
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$droppable-area-selector} {
+    @extend %flexible-layout-droppable-area;
+  }
+}
+
 %icon {
   &--small {
     --ch-image-size: var(--mer-icon__box--sm);
@@ -5459,6 +5573,99 @@
   // Don't add margin-block-end in the last element of the markdown
   :host > :last-child {
     margin-block-end: 0px;
+  }
+}
+
+%navigation-list {
+  --ch-navigation-list-item__tooltip-separation-x: var(--mer-spacing--2xs);
+
+  --ch-navigation-list-item-custom-padding-inline-start: calc(
+    var(--mer-spacing--xs) + var(--mer-spacing--3xs)
+  );
+  --ch-navigation-list-item-gap: var(--mer-spacing--xs);
+  --ch-navigation-list-item-expand-collapse-duration: 200ms;
+
+  --ch-navigation-list-item__image-size: 20px;
+  --ch-navigation-list-item__expandable-button-size: 20px;
+  --ch-navigation-list-item__expandable-button-image-size: calc(
+    var(--mer-spacing--md) - var(--mer-spacing--3xs)
+  );
+
+  color: var(--item__color);
+
+  &-item-action {
+    padding-block: var(--mer-spacing--xs);
+    padding-inline-end: var(--mer-spacing--xs);
+  }
+
+  &-item-tooltip {
+    padding-block: var(--mer-spacing--2xs);
+    padding-inline: var(--mer-spacing--xs);
+    background-color: var(--mer-color__neutral-gray--800);
+    border-radius: var(--mer-border__radius--sm);
+    color: var(--mer-color__neutral-gray--300);
+    font-size: var(--mer-font__size--xs);
+  }
+
+  &-item-action {
+    &--focus-visible {
+      outline: 1px solid;
+      outline-offset: -1px;
+    }
+  }
+
+  &-item-button {
+    &--hover {
+      color: var(--item__color--hover);
+    }
+  }
+
+  &-item-link {
+    &--selected {
+      background-color: var(--item__bg-color--selected-hover);
+    }
+
+    &--hover-not-selected {
+      background-color: var(--item__bg-color--hover);
+    }
+  }
+}
+
+@mixin navigation-list(
+  $navigation-list-selector: ".navigation-list",
+  $item-action-selector: ".navigation-list::part(item__action)",
+  $item-button-selector: ".navigation-list::part(item__button)",
+  $item-link-not-selected-selector:
+    ".navigation-list::part(item__link not-selected)",
+  $item-link-selected-selector: ".navigation-list::part(item__link selected)",
+  $item-tooltip-selector: ".navigation-list::part(item__caption tooltip)"
+) {
+  #{$navigation-list-selector} {
+    @extend %navigation-list;
+  }
+
+  #{$item-action-selector} {
+    @extend %navigation-list-item-action;
+
+    &:focus-visible {
+      @extend %navigation-list-item-action--focus-visible;
+    }
+  }
+
+  #{$item-button-selector}:hover {
+    @extend %navigation-list-item-button--hover;
+  }
+
+  #{$item-link-selected-selector} {
+    @extend %navigation-list-item-link--selected;
+  }
+
+  #{$item-link-not-selected-selector}:hover {
+    @extend %navigation-list-item-link--hover-not-selected;
+  }
+
+  #{$item-tooltip-selector} {
+    @extend %navigation-list-item-tooltip;
   }
 }
 
@@ -6075,7 +6282,13 @@
 
 %radio-group {
   @include radio-group-tokens();
-  gap: var(--controls__container-row-gap);
+  row-gap: var(--field-group__row-gap);
+
+  &-inline {
+    column-gap: var(--field-group__column-gap);
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 %radio-item {
@@ -6115,6 +6328,7 @@
 
 /// @group Radio Group
 /// @param {String} $radio-group-selector [".radio-group"] -
+/// @param {String} $radio-group-inline-selector [".radio-group-inline"] -
 /// @param {String} $radio-item-selector [".radio-group::part(radio-item)"] -
 /// @param {String} $radio-item__container-selector [".radio-group::part(radio__container)"] -
 /// @param {String} $radio-item__container--focus-selector [".radio-group::part(radio__container):focus-within"] -
@@ -6127,34 +6341,30 @@
 /// @param {Boolean} $add--error [true] -
 @mixin radio-group(
   $radio-group-selector: ".radio-group",
-
+  $radio-group-inline-selector: ".radio-group-inline",
   $radio-item-selector: ".radio-group::part(radio-item)",
-
   $radio-item__container-selector: ".radio-group::part(radio__container)",
-
   $radio-item__container--focus-selector:
     ".radio-group::part(radio__container):focus-within",
-
   $radio-item__container--disabled-selector:
     ".radio-group::part(radio__container disabled)",
-
   $radio-item__container--checked-selector:
     ".radio-group::part(radio__container checked)",
-
   $radio-item__container--error-selector:
     ".radio-group::part(radio__container error)",
-
   $radio-item__label: ".radio-group::part(radio__label)",
-
   $radio-item__label--disabled-selector:
     ".radio-group::part(radio__label disabled)",
-
   $add--disabled: true,
-
   $add--error: true
 ) {
   #{$radio-group-selector} {
     @extend %radio-group;
+  }
+
+  #{$radio-group-inline-selector} {
+    @extend %radio-group;
+    @extend %radio-group-inline;
   }
 
   #{$radio-item-selector} {
@@ -6249,6 +6459,129 @@
       outline: var(--shortcuts-element__outline);
       outline-offset: var(--shortcuts-element__outline-offset);
     }
+  }
+}
+
+@include button-primary(
+  $selector: "%segmented-control-item--selected",
+  $add--disabled: false
+);
+
+%segmented-control-item-base {
+  padding-inline: var(--mer-spacing--md);
+  border-radius: unset;
+}
+
+@include button-secondary(
+  $selector: "%segmented-control-item--unselected",
+  $add--disabled: false
+);
+
+%segmented-control-item--first {
+  border-start-start-radius: var(--mer-border__radius--xs);
+  border-end-start-radius: var(--mer-border__radius--xs);
+  border-inline-end-width: 0;
+}
+
+%segmented-control-item--between {
+  border-inline-end-width: 0;
+}
+
+%segmented-control-item--last {
+  border-start-end-radius: var(--mer-border__radius--xs);
+  border-end-end-radius: var(--mer-border__radius--xs);
+  border-inline-end-width: 1px;
+}
+
+/// @group Segmented Control
+/// @param {String} $selected-item-selector [".segmented-control-item::part(selected)"] -
+/// @param {String} $selected-disabled-item-selector [".segmented-control-item::part(selected disabled)"] -
+/// @param {String} $unselected-item-selector [".segmented-control-item::part(unselected)"] -
+/// @param {String} $unselected-disabled-item-selector [".segmented-control-item::part(unselected disabled)"] -
+/// @param {String} $first-item-selector [".segmented-control-item::part(first)"] -
+/// @param {String} $between-item-selector [".segmented-control-item::part(between)"] -
+/// @param {String} $last-item-selector [".segmented-control-item::part(last)"] -
+/// @param {Boolean} $add--disabled [true] -
+@mixin segmented-control(
+  $selected-item-selector: ".segmented-control-item::part(selected)",
+
+  $selected-disabled-item-selector:
+    ".segmented-control-item::part(selected disabled)",
+
+  $unselected-item-selector: ".segmented-control-item::part(unselected)",
+
+  $unselected-disabled-item-selector:
+    ".segmented-control-item::part(unselected disabled)",
+
+  $first-item-selector: ".segmented-control-item::part(first)",
+
+  $between-item-selector: ".segmented-control-item::part(between)",
+
+  $last-item-selector: ".segmented-control-item::part(last)",
+
+  $add--disabled: true
+) {
+  #{$selected-item-selector},
+  #{$unselected-item-selector} {
+    @extend %segmented-control-item-base;
+  }
+
+  @include button-primary(
+    $selector: #{$selected-item-selector},
+    $add--disabled: false
+  );
+
+  @include button-secondary(
+    $selector: #{$unselected-item-selector},
+    $add--disabled: false
+  );
+
+  @if $add--disabled {
+    #{$selected-disabled-item-selector} {
+      @extend %button-primary--disabled;
+    }
+
+    #{$unselected-disabled-item-selector} {
+      @extend %button-secondary--disabled;
+    }
+  }
+
+  #{$first-item-selector} {
+    @extend %segmented-control-item--first;
+  }
+
+  #{$between-item-selector} {
+    @extend %segmented-control-item--between;
+  }
+
+  #{$last-item-selector} {
+    @extend %segmented-control-item--last;
+  }
+}
+
+%sidebar {
+  --ch-sidebar-inline-size--collapsed: 42px;
+  --ch-sidebar__chevron-size: 24px;
+  --ch-sidebar__chevron-image-size: 16px;
+
+  background-color: var(--mer-color__neutral-gray--800);
+  color: var(--mer-color__neutral-gray--300);
+
+  &-expand-button {
+    padding: var(--mer-spacing--xs);
+  }
+}
+
+@mixin sidebar(
+  $sidebar-selector: ".sidebar",
+  $expand-button-selector: ".sidebar::part(expand-button)"
+) {
+  #{$sidebar-selector} {
+    @extend %sidebar;
+  }
+
+  #{$expand-button-selector} {
+    @extend %sidebar-expand-button;
   }
 }
 
@@ -6443,10 +6776,14 @@
   $tab-list-selector: ".tab::part(tab-list)",
   $tab-list--block-selector: ".tab::part(tab-list block)",
   $tab-list--inline-selector: ".tab::part(tab-list inline)",
+  $add--tab: true,
+  $add--tab-list: true,
   $add--disabled: true
 ) {
-  #{$tab-selector} {
-    @extend %tab;
+  @if $add--tab {
+    #{$tab-selector} {
+      @extend %tab;
+    }
   }
 
   #{$tab-caption-selector} {
@@ -6488,8 +6825,10 @@
     }
   }
 
-  #{$tab-list-selector} {
-    @extend %tab-list;
+  @if $add--tab-list {
+    #{$tab-list-selector} {
+      @extend %tab-list;
+    }
   }
 
   #{$tab-list--block-selector} {
@@ -8105,10 +8444,14 @@
   $combo-box: true,
   $dialog: true,
   $edit: true,
+  $flexible-layout: true,
   $icon: true,
   $list-box: true,
   $markdown-viewer: true,
+  $navigation-list: true,
   $radio-group: true,
+  $segmented-control: true,
+  $sidebar: true,
   $slider: true,
   $tab: true,
   $tabular-grid: true,
@@ -16362,6 +16705,10 @@
     @include form-input();
   }
 
+  @if $flexible-layout {
+    @include flexible-layout();
+  }
+
   @if $icon {
     @include icon();
   }
@@ -16374,8 +16721,20 @@
     @include markdown-viewer();
   }
 
+  @if $navigation-list {
+    @include navigation-list();
+  }
+
   @if $radio-group {
     @include radio-group();
+  }
+
+  @if $segmented-control {
+    @include segmented-control();
+  }
+
+  @if $sidebar {
+    @include sidebar();
   }
 
   @if $slider {
@@ -16455,10 +16814,14 @@
   $combo-box: false,
   $dialog: false,
   $edit: false,
+  $flexible-layout: false,
   $icon: false,
   $list-box: false,
   $markdown-viewer: false,
+  $navigation-list: false,
   $radio-group: false,
+  $segmented-control: false,
+  $sidebar: false,
   $slider: false,
   $tab: false,
   $tabular-grid: false,
@@ -16519,10 +16882,14 @@
     $combo-box: $combo-box,
     $dialog: $dialog,
     $edit: $edit,
+    $flexible-layout: $flexible-layout,
     $icon: $icon,
     $list-box: $list-box,
     $markdown-viewer: $markdown-viewer,
+    $navigation-list: $navigation-list,
     $radio-group: $radio-group,
+    $segmented-control: $segmented-control,
+    $sidebar: $sidebar,
     $slider: $slider,
     $tab: $tab,
     $tabular-grid: $tabular-grid,
