@@ -14,7 +14,7 @@
   @include control-border();
   @include control-colors-enabled();
   @include control-font-weight-regular();
-  @include control-font-size-small();
+  @include control-font-size-regular();
   @include control-padding-inline-block();
 
   &:hover {
@@ -53,6 +53,7 @@
 @mixin combo-box(
   $combo-box-selector: ".combo-box",
   $combo-box--disabled-selector: ".combo-box[disabled]",
+  $combo-box--error-selector: ".combo-box-error",
   $combo-box__placeholder-selector: ".combo-box::part(placeholder)",
   $window-selector: ".combo-box::part(window)",
   $group-selector: ".combo-box::part(group)",

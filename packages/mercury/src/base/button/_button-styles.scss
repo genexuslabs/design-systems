@@ -2,10 +2,9 @@
 
 %button-base {
   @include button-common-styles();
-  @include control-height-regular();
   @include control-border();
   @include control-font-size-regular();
-  @include control-padding-inline();
+  @include control-padding-inline-block();
   padding-inline: var(--control__padding-inline);
 
   &--focus-visible {
@@ -119,6 +118,10 @@
   #{$selector} {
     @extend %button-primary;
 
+    &:focus-visible {
+      @extend %button-base--focus-visible;
+    }
+
     &:hover {
       @extend %button-primary--hover;
     }
@@ -154,6 +157,10 @@
   #{$selector} {
     @extend %button-secondary;
 
+    &:focus-visible {
+      @extend %button-base--focus-visible;
+    }
+
     &:hover {
       @extend %button-secondary--hover;
     }
@@ -176,6 +183,10 @@
 @mixin button-tertiary($selector: ".button-tertiary", $add--disabled: true) {
   #{$selector} {
     @extend %button-tertiary;
+
+    &:focus-visible {
+      @extend %button-base--focus-visible;
+    }
 
     &:hover {
       @extend %button-tertiary--hover;

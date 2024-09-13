@@ -8,11 +8,11 @@
   @include control-border();
   @include control-colors-enabled();
   @include control-font-weight-regular();
-  @include control-font-size-small();
+  @include control-font-size-regular();
   @include control-padding-inline-block();
 
   &--focus {
-    @include focus-border();
+    @include focus-outline();
   }
 
   &--hover {
@@ -39,17 +39,24 @@
   #{$selector} {
     @extend %form-input;
 
-    &:hover {
-      @extend %form-input--hover;
-    }
-
     &:focus {
       @extend %form-input--focus;
+    }
+
+    &:hover {
+      @extend %form-input--hover;
     }
 
     @if $add--disabled {
       &:disabled {
         @extend %form-input--disabled;
+      }
+    }
+
+    @if $add--placeholder {
+      &::placeholder {
+        font-style: italic;
+        color: red;
       }
     }
   }
