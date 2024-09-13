@@ -31,7 +31,8 @@ export type MercuryBundleComponent =
   | "components/tab"
   | "components/tabular-grid"
   | "components/ticket-list"
-  | "components/tree-view";
+  | "components/tree-view"
+  | "components/tooltip";
 
 export type MercuryBundleComponentForm =
   | "components/button"
@@ -40,8 +41,7 @@ export type MercuryBundleComponentForm =
   | "components/edit"
   | "components/icon"
   | "components/radio-group"
-  | "components/slider"
-  | "components/tooltip";
+  | "components/slider";
 
 export type MercuryBundleReset = "resets/box-sizing";
 
