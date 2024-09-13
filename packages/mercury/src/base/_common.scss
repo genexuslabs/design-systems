@@ -3,12 +3,12 @@
 // ----------------------
 // Focus
 // ----------------------
-@mixin focus-outline($outline: false) {
+@mixin focus-outline() {
   outline: var(--focus__outline-width) var(--focus__outline-style)
     var(--focus__outline-color);
   outline-offset: var(--focus__outline-offset);
 }
-@mixin focus-border($outline: false) {
+@mixin focus-border() {
   border-color: var(--borders-un-border-color__focused);
 }
 
