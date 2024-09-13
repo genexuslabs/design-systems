@@ -1,0 +1,25 @@
+%sidebar {
+  --ch-sidebar-inline-size--collapsed: 42px;
+  --ch-sidebar__chevron-size: 24px;
+  --ch-sidebar__chevron-image-size: 16px;
+
+  background-color: var(--mer-color__neutral-gray--800);
+  color: var(--mer-color__neutral-gray--300);
+
+  &-expand-button {
+    padding: var(--mer-spacing--xs);
+  }
+}
+
+@mixin sidebar(
+  $sidebar-selector: ".sidebar",
+  $expand-button-selector: ".sidebar::part(expand-button)"
+) {
+  #{$sidebar-selector} {
+    @extend %sidebar;
+  }
+
+  #{$expand-button-selector} {
+    @extend %sidebar-expand-button;
+  }
+}

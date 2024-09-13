@@ -1,0 +1,113 @@
+%flexible-layout {
+  --ch-tab-close-button__background-image-size: var(--mer-icon__size--md);
+  --ch-tab-close-button__image-size: var(--mer-icon__box--md);
+
+  --spacing-body-block-start: var(--mer-spacing--md);
+  --spacing-body-block-end: var(--mer-spacing--md);
+  --spacing-body-inline-start: var(--mer-spacing--md);
+  --spacing-body-inline-end: var(--mer-spacing--md);
+
+  &-tab-caption {
+    background-color: color-mix(
+      in srgb,
+      var(--colors-foundation__gray--300) 20%,
+      transparent
+    );
+
+    &--selected {
+      background-color: color-mix(
+        in srgb,
+        var(--colors-foundation__gray--300) 50%,
+        transparent
+      );
+    }
+  }
+
+  &-tab-list--inline {
+    background-color: var(--mer-color__neutral-gray--600);
+    inline-size: 48px;
+    gap: 4px;
+  }
+
+  &-tab-list--block {
+    background-color: var(--mer-color__neutral-gray--700);
+    overflow: auto;
+  }
+
+  &-droppable-area {
+    background-color: color-mix(
+      in srgb,
+      var(--accents__secondary--hover) 25%,
+      transparent
+    );
+  }
+
+  &-bar {
+    color: var(--mer-border-color__on-surface);
+  }
+}
+
+@mixin flexible-layout(
+  $flexible-layout-selector: ".flexible-layout",
+  $flexible-layout__bar-selector: ".flexible-layout::part(bar)",
+  $tab-selector: ".flexible-layout::part(leaf)",
+  $tab-caption-selector: ".flexible-layout::part(button)",
+  $tab-caption--block-selector: ".flexible-layout::part(button block)",
+  $tab-caption--inline-selector: ".flexible-layout::part(button inline)",
+  $tab-caption--selected-selector: ".flexible-layout::part(button selected)",
+  $tab-caption--disabled-selector: ".flexible-layout::part(button disabled)",
+  $tab-caption__close-button-selector: ".flexible-layout::part(close-button)",
+  $tab-list--inline-selector: ".flexible-layout::part(tab-list inline)",
+  $tab-list--block-selector: ".flexible-layout::part(tab-list block)",
+  $droppable-area-selector: ".flexible-layout::part(droppable-area)",
+  $add--disabled: true
+) {
+  @include tab(
+    $tab-selector: #{$tab-selector},
+    $tab-caption-selector: #{$tab-caption-selector},
+    $tab-caption--block-selector: #{$tab-caption--block-selector},
+    $tab-caption--inline-selector: #{$tab-caption--inline-selector},
+    $tab-caption--selected-selector: #{$tab-caption--selected-selector},
+    $tab-caption__close-button-selector: #{$tab-caption__close-button-selector},
+    $add--tab: false,
+    $add--tab-list: false,
+    $add--disabled: $add--disabled
+  );
+
+  #{$flexible-layout-selector} {
+    @extend %flexible-layout;
+  }
+
+  #{$flexible-layout__bar-selector} {
+    @extend %flexible-layout-bar;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //               Tab Caption
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$tab-caption-selector} {
+    @extend %flexible-layout-tab-caption;
+  }
+
+  #{$tab-caption--selected-selector} {
+    @extend %flexible-layout-tab-caption--selected;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                Tab List
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$tab-list--inline-selector} {
+    @extend %flexible-layout-tab-list--inline;
+  }
+
+  #{$tab-list--block-selector} {
+    @extend %flexible-layout-tab-list--block;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //             Droppable area
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$droppable-area-selector} {
+    @extend %flexible-layout-droppable-area;
+  }
+}

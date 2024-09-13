@@ -1,0 +1,92 @@
+%navigation-list {
+  --ch-navigation-list-item__tooltip-separation-x: var(--mer-spacing--2xs);
+
+  --ch-navigation-list-item-custom-padding-inline-start: calc(
+    var(--mer-spacing--xs) + var(--mer-spacing--3xs)
+  );
+  --ch-navigation-list-item-gap: var(--mer-spacing--xs);
+  --ch-navigation-list-item-expand-collapse-duration: 200ms;
+
+  --ch-navigation-list-item__image-size: 20px;
+  --ch-navigation-list-item__expandable-button-size: 20px;
+  --ch-navigation-list-item__expandable-button-image-size: calc(
+    var(--mer-spacing--md) - var(--mer-spacing--3xs)
+  );
+
+  color: var(--item__color);
+
+  &-item-action {
+    padding-block: var(--mer-spacing--xs);
+    padding-inline-end: var(--mer-spacing--xs);
+  }
+
+  &-item-tooltip {
+    padding-block: var(--mer-spacing--2xs);
+    padding-inline: var(--mer-spacing--xs);
+    background-color: var(--mer-color__neutral-gray--800);
+    border-radius: var(--mer-border__radius--sm);
+    color: var(--mer-color__neutral-gray--300);
+    font-size: var(--mer-font__size--xs);
+  }
+
+  &-item-action {
+    &--focus-visible {
+      outline: 1px solid;
+      outline-offset: -1px;
+    }
+  }
+
+  &-item-button {
+    &--hover {
+      color: var(--item__color--hover);
+    }
+  }
+
+  &-item-link {
+    &--selected {
+      background-color: var(--item__bg-color--selected-hover);
+    }
+
+    &--hover-not-selected {
+      background-color: var(--item__bg-color--hover);
+    }
+  }
+}
+
+@mixin navigation-list(
+  $navigation-list-selector: ".navigation-list",
+  $item-action-selector: ".navigation-list::part(item__action)",
+  $item-button-selector: ".navigation-list::part(item__button)",
+  $item-link-not-selected-selector:
+    ".navigation-list::part(item__link not-selected)",
+  $item-link-selected-selector: ".navigation-list::part(item__link selected)",
+  $item-tooltip-selector: ".navigation-list::part(item__caption tooltip)"
+) {
+  #{$navigation-list-selector} {
+    @extend %navigation-list;
+  }
+
+  #{$item-action-selector} {
+    @extend %navigation-list-item-action;
+
+    &:focus-visible {
+      @extend %navigation-list-item-action--focus-visible;
+    }
+  }
+
+  #{$item-button-selector}:hover {
+    @extend %navigation-list-item-button--hover;
+  }
+
+  #{$item-link-selected-selector} {
+    @extend %navigation-list-item-link--selected;
+  }
+
+  #{$item-link-not-selected-selector}:hover {
+    @extend %navigation-list-item-link--hover-not-selected;
+  }
+
+  #{$item-tooltip-selector} {
+    @extend %navigation-list-item-tooltip;
+  }
+}

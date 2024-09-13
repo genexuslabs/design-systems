@@ -1,0 +1,96 @@
+@include button-primary(
+  $selector: "%segmented-control-item--selected",
+  $add--disabled: false
+);
+
+%segmented-control-item-base {
+  padding-inline: var(--mer-spacing--md);
+  border-radius: unset;
+}
+
+@include button-secondary(
+  $selector: "%segmented-control-item--unselected",
+  $add--disabled: false
+);
+
+%segmented-control-item--first {
+  border-start-start-radius: var(--mer-border__radius--xs);
+  border-end-start-radius: var(--mer-border__radius--xs);
+  border-inline-end-width: 0;
+}
+
+%segmented-control-item--between {
+  border-inline-end-width: 0;
+}
+
+%segmented-control-item--last {
+  border-start-end-radius: var(--mer-border__radius--xs);
+  border-end-end-radius: var(--mer-border__radius--xs);
+  border-inline-end-width: 1px;
+}
+
+/// @group Segmented Control
+/// @param {String} $selected-item-selector [".segmented-control-item::part(selected)"] -
+/// @param {String} $selected-disabled-item-selector [".segmented-control-item::part(selected disabled)"] -
+/// @param {String} $unselected-item-selector [".segmented-control-item::part(unselected)"] -
+/// @param {String} $unselected-disabled-item-selector [".segmented-control-item::part(unselected disabled)"] -
+/// @param {String} $first-item-selector [".segmented-control-item::part(first)"] -
+/// @param {String} $between-item-selector [".segmented-control-item::part(between)"] -
+/// @param {String} $last-item-selector [".segmented-control-item::part(last)"] -
+/// @param {Boolean} $add--disabled [true] -
+@mixin segmented-control(
+  $selected-item-selector: ".segmented-control-item::part(selected)",
+
+  $selected-disabled-item-selector:
+    ".segmented-control-item::part(selected disabled)",
+
+  $unselected-item-selector: ".segmented-control-item::part(unselected)",
+
+  $unselected-disabled-item-selector:
+    ".segmented-control-item::part(unselected disabled)",
+
+  $first-item-selector: ".segmented-control-item::part(first)",
+
+  $between-item-selector: ".segmented-control-item::part(between)",
+
+  $last-item-selector: ".segmented-control-item::part(last)",
+
+  $add--disabled: true
+) {
+  #{$selected-item-selector},
+  #{$unselected-item-selector} {
+    @extend %segmented-control-item-base;
+  }
+
+  @include button-primary(
+    $selector: #{$selected-item-selector},
+    $add--disabled: false
+  );
+
+  @include button-secondary(
+    $selector: #{$unselected-item-selector},
+    $add--disabled: false
+  );
+
+  @if $add--disabled {
+    #{$selected-disabled-item-selector} {
+      @extend %button-primary--disabled;
+    }
+
+    #{$unselected-disabled-item-selector} {
+      @extend %button-secondary--disabled;
+    }
+  }
+
+  #{$first-item-selector} {
+    @extend %segmented-control-item--first;
+  }
+
+  #{$between-item-selector} {
+    @extend %segmented-control-item--between;
+  }
+
+  #{$last-item-selector} {
+    @extend %segmented-control-item--last;
+  }
+}
