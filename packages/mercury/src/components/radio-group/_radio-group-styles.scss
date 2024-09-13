@@ -2,9 +2,12 @@
 
 %radio-group {
   @include radio-group-tokens();
-  gap: var(--controls__container-row-gap);
+  row-gap: var(--field-group__row-gap);
 
   &-inline {
+    column-gap: var(--field-group__column-gap);
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -80,6 +83,7 @@
   }
 
   #{$radio-group-inline-selector} {
+    @extend %radio-group;
     @extend %radio-group-inline;
   }
 
