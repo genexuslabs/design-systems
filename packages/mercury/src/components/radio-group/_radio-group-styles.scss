@@ -3,6 +3,9 @@
 %radio-group {
   @include radio-group-tokens();
   gap: var(--controls__container-row-gap);
+
+  &-inline {
+  }
 }
 
 %radio-item {
@@ -42,6 +45,7 @@
 
 /// @group Radio Group
 /// @param {String} $radio-group-selector [".radio-group"] -
+/// @param {String} $radio-group-inline-selector [".radio-group-inline"] -
 /// @param {String} $radio-item-selector [".radio-group::part(radio-item)"] -
 /// @param {String} $radio-item__container-selector [".radio-group::part(radio__container)"] -
 /// @param {String} $radio-item__container--focus-selector [".radio-group::part(radio__container):focus-within"] -
@@ -54,34 +58,29 @@
 /// @param {Boolean} $add--error [true] -
 @mixin radio-group(
   $radio-group-selector: ".radio-group",
-
+  $radio-group-inline-selector: ".radio-group-inline",
   $radio-item-selector: ".radio-group::part(radio-item)",
-
   $radio-item__container-selector: ".radio-group::part(radio__container)",
-
   $radio-item__container--focus-selector:
     ".radio-group::part(radio__container):focus-within",
-
   $radio-item__container--disabled-selector:
     ".radio-group::part(radio__container disabled)",
-
   $radio-item__container--checked-selector:
     ".radio-group::part(radio__container checked)",
-
   $radio-item__container--error-selector:
     ".radio-group::part(radio__container error)",
-
   $radio-item__label: ".radio-group::part(radio__label)",
-
   $radio-item__label--disabled-selector:
     ".radio-group::part(radio__label disabled)",
-
   $add--disabled: true,
-
   $add--error: true
 ) {
   #{$radio-group-selector} {
     @extend %radio-group;
+  }
+
+  #{$radio-group-inline-selector} {
+    @extend %radio-group-inline;
   }
 
   #{$radio-item-selector} {
