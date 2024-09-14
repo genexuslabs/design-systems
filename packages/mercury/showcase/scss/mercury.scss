@@ -875,31 +875,25 @@
 
 @mixin foundation-colors--light() {
   // primary
-  --mer-color__primary-blue--200: #2070ce;
+  --mer-color__primary-blue--200: #005ac1;
   --mer-color__primary-blue--300: #5498e8;
   --mer-color__primary-blue--400: #437dc0;
   --mer-color__primary-blue--600: #335884;
 
   // neutral
-  --mer-color__neutral-gray--100: #11151c;
-  --mer-color__neutral-gray--200: #181f2a;
-  --mer-color__neutral-gray--300: #242d3c;
-  --mer-color__neutral-gray--400: #2d3a48;
-  --mer-color__neutral-gray--450: #394552;
-  --mer-color__neutral-gray--500: #485665;
-  --mer-color__neutral-gray--550: #56677a;
-  --mer-color__neutral-gray--600: #9da9b6;
-  --mer-color__neutral-gray--650: #c0ccd9;
-  --mer-color__neutral-gray--700: #c0ccd9;
-  --mer-color__neutral-gray--800: #d2ddeb;
-  --mer-color__neutral-gray--900: #e1ecf9;
-  // 1000 to 1400 do not exist anymore in figma but can not be removed yet
-  // because gemini is dependent on this tokens (check with designer)
-  --mer-color__neutral-gray--1000: #f8f8f8;
-  --mer-color__neutral-gray--1100: #f1f1f1;
-  --mer-color__neutral-gray--1200: #e4e4e4;
-  --mer-color__neutral-gray--1300: #dedede;
-  --mer-color__neutral-gray--1400: #ffffff;
+  --mer-color__neutral-gray--100: #4a5870;
+  --mer-color__neutral-gray--200: #49566d;
+  --mer-color__neutral-gray--300: #56677a;
+  --mer-color__neutral-gray--400: #56677a;
+  --mer-color__neutral-gray--450: #56677a;
+  --mer-color__neutral-gray--500: #828b96;
+  --mer-color__neutral-gray--550: #9da9b6;
+  --mer-color__neutral-gray--600: #aeb9c6;
+  --mer-color__neutral-gray--650: #c6d1dd;
+  --mer-color__neutral-gray--700: #e1ecf9;
+  --mer-color__neutral-gray--800: #fafbfd;
+  --mer-color__neutral-gray--900: #f0f4fa;
+  --mer-color__neutral-gray--1000: #ffffff;
 
   // tinted
   --mer-color__tinted-yellow--5: #ffc96b0d;
@@ -916,13 +910,14 @@
   --mer-color__tinted-blue--50: #2070ce80;
 
   // message
-  --mer-color__message-green--100: #3fa89b;
-  --mer-color__message-green--200: #3fa89b; // not anymore in figma (check with designer)
-  --mer-color__message-yellow--100: #ffc96b;
-  --mer-color__message-yellow--200: #ffc96b; // not anymore in figma (check with designer)
-  --mer-color__message-red--100: #fb7c84;
-  --mer-color__message-red--200: #fb7c84; // not anymore in figma (check with designer)
-  --mer-color__message-red--300: #dd8f94; // not anymore in figma (check with designer)
+  --mer-color__message-green--100: #208e80;
+  --mer-color__message-green--200: #208e80;
+  --mer-color__message-yellow--100: #dfa135;
+  --mer-color__message-yellow--200: #dfa135;
+  --mer-color__message-red--100: #da1a27;
+  --mer-color__message-red--200: #da1a27;
+  --mer-color__message-red--300: #4d0000;
+  --mer-color__message-red--400: #800000;
 
   // surface
   --mer-color__surface: var(--mer-color__neutral-gray--100);
@@ -1080,12 +1075,13 @@
 
   // message
   --mer-color__message-green--100: #3fa89b;
-  --mer-color__message-green--200: #3fa89b; // not anymore in figma (check with designer)
+  --mer-color__message-green--200: #3fa89b;
   --mer-color__message-yellow--100: #f9bd56;
-  --mer-color__message-yellow--200: #f9bd56; // not anymore in figma (check with designer)
+  --mer-color__message-yellow--200: #f9bd56;
   --mer-color__message-red--100: #e35861;
-  --mer-color__message-red--200: #e35861; // not anymore in figma (check with designer)
-  --mer-color__message-red--300: #dd8f94; // not anymore in figma (check with designer)
+  --mer-color__message-red--200: #e35861;
+  --mer-color__message-red--300: #dd8f94;
+  --mer-color__message-red--400: #ff9999;
 
   // surface
   --mer-color__surface: var(--mer-color__neutral-gray--900);
@@ -1230,6 +1226,7 @@
   // weights
   --mer-font__weight--light: 300;
   --mer-font__weight--regular: 400;
+  --mer-font__weight--medium: 500;
   --mer-font__weight--semi-bold: 600;
   --mer-font__weight--bold: 700;
   --mer-font__weight--extra-bold: 800;
@@ -8072,6 +8069,46 @@
   }
 }
 
+@mixin tooltip-tokens() {
+  --tooltip__background-color: var(--mer-color__neutral-gray--1000);
+  --tooltip__border-radius: var(--mer-border__radius--sm);
+  --tooltip__color: var(--mer-text__on-surface);
+  --tooltip__font-family: var(--mer-font-family--body);
+  --tooltip__font-size: var(--mer-font__size--3xs);
+  --tooltip__font-weight: var(--mer-font__weight--medium);
+  --tooltip__line-height: var(--mer-line-height--tight);
+  --tooltip__padding-block: var(--mer-spacing--xs);
+  --tooltip__padding-inline: var(--mer-spacing--xs);
+
+  // chameleon tokens
+  --ch-tooltip-separation: var(--mer-spacing--2xs);
+  --ch-tooltip-separation-x: var(--mer-spacing--2xs);
+  --ch-tooltip-separation-y: var(--mer-spacing--2xs);
+}
+
+
+%tooltip {
+  @include tooltip-tokens();
+
+  background-color: var(--tooltip__background-color);
+  border-radius: var(--tooltip__border-radius);
+  color: var(--tooltip__color);
+  font-family: var(--tooltip__font-family);
+  font-size: var(--tooltip__font-size);
+  font-weight: var(--tooltip__font-weight);
+  line-height: var(--tooltip__line-height);
+  padding-block: var(--tooltip__padding-block);
+  padding-inline: var(--tooltip__padding-inline);
+}
+
+/// @group Tooltip
+/// @param {String} $selector [".tooltip"] -
+@mixin tooltip($selector: ".tooltip::part(window)") {
+  #{$selector} {
+    @extend %tooltip;
+  }
+}
+
 @mixin tree-view-tokens() {
   // - - - - - - - - - - - - - - - - - - - -
   //               Tree View
@@ -8453,6 +8490,7 @@
   $tab: true,
   $tabular-grid: true,
   $ticket-list: true,
+  $tooltip: true,
   $tree-view: true
 ) {
   // - - - - - - - - - - - - - - - - - - - -
@@ -16752,6 +16790,10 @@
     @include ticket-list();
   }
 
+  @if $tooltip {
+    @include tooltip();
+  }
+
   @if $tree-view {
     @include tree-view();
   }
@@ -16823,6 +16865,7 @@
   $tab: false,
   $tabular-grid: false,
   $ticket-list: false,
+  $tooltip: false,
   $tree-view: false
 ) {
   @include mercury(
@@ -16891,6 +16934,7 @@
     $tab: $tab,
     $tabular-grid: $tabular-grid,
     $ticket-list: $ticket-list,
+    $tooltip: $tooltip,
     $tree-view: $tree-view
   );
 }

@@ -1,5 +1,6 @@
 import {
   GxImageMultiState,
+  NavigationListItemModel,
   TreeViewImagePathCallback,
   TreeViewItemModel
 } from "@genexus/chameleon-controls-library";
@@ -265,6 +266,13 @@ export const getImagePathCallback = (
   return result;
 };
 
+export const getNavigationListImagePathCallback = (
+  itemModel: NavigationListItemModel
+) =>
+  itemModel.startImgSrc
+    ? getImagePathCallback(itemModel.startImgSrc)
+    : undefined;
+
 export const getTreeViewImagePathCallback: TreeViewImagePathCallback = (
   item: TreeViewItemModel,
   iconDirection: "start" | "end"
@@ -308,6 +316,7 @@ export const getTreeViewImagePathCallback: TreeViewImagePathCallback = (
  */
 export const getImagePathCallbackDefinitions: RegistryGetImagePathCallback = {
   "ch-accordion-render": getImagePathCallback,
+  "ch-navigation-list-render": getNavigationListImagePathCallback,
   "ch-edit": getImagePathCallback,
   "ch-image": getImagePathCallback,
   "ch-tree-view-render": getTreeViewImagePathCallback

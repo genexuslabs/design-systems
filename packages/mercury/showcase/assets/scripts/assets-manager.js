@@ -120,6 +120,9 @@ export const getImagePathCallback = (iconPath) => {
     }
     return result;
 };
+export const getNavigationListImagePathCallback = (itemModel) => itemModel.startImgSrc
+    ? getImagePathCallback(itemModel.startImgSrc)
+    : undefined;
 export const getTreeViewImagePathCallback = (item, iconDirection) => {
     if ((!item.startImgSrc && iconDirection === "start") ||
         (!item.endImgSrc && iconDirection === "end")) {
@@ -151,6 +154,7 @@ export const getTreeViewImagePathCallback = (item, iconDirection) => {
  */
 export const getImagePathCallbackDefinitions = {
     "ch-accordion-render": getImagePathCallback,
+    "ch-navigation-list-render": getNavigationListImagePathCallback,
     "ch-edit": getImagePathCallback,
     "ch-image": getImagePathCallback,
     "ch-tree-view-render": getTreeViewImagePathCallback
