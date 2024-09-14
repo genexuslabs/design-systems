@@ -1,30 +1,24 @@
 @mixin foundation-colors--light() {
   // primary
-  --mer-color__primary-blue--200: #2070ce;
+  --mer-color__primary-blue--200: #005ac1;
   --mer-color__primary-blue--300: #5498e8;
   --mer-color__primary-blue--400: #437dc0;
   --mer-color__primary-blue--600: #335884;
 
   // neutral
-  --mer-color__neutral-gray--100: #11151c;
-  --mer-color__neutral-gray--200: #181f2a;
-  --mer-color__neutral-gray--300: #242d3c;
-  --mer-color__neutral-gray--400: #2d3a48;
-  --mer-color__neutral-gray--450: #394552;
-  --mer-color__neutral-gray--500: #485665;
-  --mer-color__neutral-gray--550: #56677a;
-  --mer-color__neutral-gray--600: #9da9b6;
-  --mer-color__neutral-gray--650: #c0ccd9;
-  --mer-color__neutral-gray--700: #c0ccd9;
-  --mer-color__neutral-gray--800: #d2ddeb;
-  --mer-color__neutral-gray--900: #e1ecf9;
-  // 1000 to 1400 do not exist anymore in figma but can not be removed yet
-  // because gemini is dependent on this tokens (check with designer)
-  --mer-color__neutral-gray--1000: #f8f8f8;
-  --mer-color__neutral-gray--1100: #f1f1f1;
-  --mer-color__neutral-gray--1200: #e4e4e4;
-  --mer-color__neutral-gray--1300: #dedede;
-  --mer-color__neutral-gray--1400: #ffffff;
+  --mer-color__neutral-gray--100: #4a5870;
+  --mer-color__neutral-gray--200: #49566d;
+  --mer-color__neutral-gray--300: #56677a;
+  --mer-color__neutral-gray--400: #56677a;
+  --mer-color__neutral-gray--450: #56677a;
+  --mer-color__neutral-gray--500: #828b96;
+  --mer-color__neutral-gray--550: #9da9b6;
+  --mer-color__neutral-gray--600: #aeb9c6;
+  --mer-color__neutral-gray--650: #c6d1dd;
+  --mer-color__neutral-gray--700: #e1ecf9;
+  --mer-color__neutral-gray--800: #fafbfd;
+  --mer-color__neutral-gray--900: #f0f4fa;
+  --mer-color__neutral-gray--1000: #ffffff;
 
   // tinted
   --mer-color__tinted-yellow--5: #ffc96b0d;
@@ -41,13 +35,14 @@
   --mer-color__tinted-blue--50: #2070ce80;
 
   // message
-  --mer-color__message-green--100: #3fa89b;
-  --mer-color__message-green--200: #3fa89b; // not anymore in figma (check with designer)
-  --mer-color__message-yellow--100: #ffc96b;
-  --mer-color__message-yellow--200: #ffc96b; // not anymore in figma (check with designer)
-  --mer-color__message-red--100: #fb7c84;
-  --mer-color__message-red--200: #fb7c84; // not anymore in figma (check with designer)
-  --mer-color__message-red--300: #dd8f94; // not anymore in figma (check with designer)
+  --mer-color__message-green--100: #208e80;
+  --mer-color__message-green--200: #208e80;
+  --mer-color__message-yellow--100: #dfa135;
+  --mer-color__message-yellow--200: #dfa135;
+  --mer-color__message-red--100: #da1a27;
+  --mer-color__message-red--200: #da1a27;
+  --mer-color__message-red--300: #4d0000;
+  --mer-color__message-red--400: #800000;
 
   // surface
   --mer-color__surface: var(--mer-color__neutral-gray--100);
@@ -205,12 +200,13 @@
 
   // message
   --mer-color__message-green--100: #3fa89b;
-  --mer-color__message-green--200: #3fa89b; // not anymore in figma (check with designer)
+  --mer-color__message-green--200: #3fa89b;
   --mer-color__message-yellow--100: #f9bd56;
-  --mer-color__message-yellow--200: #f9bd56; // not anymore in figma (check with designer)
+  --mer-color__message-yellow--200: #f9bd56;
   --mer-color__message-red--100: #e35861;
-  --mer-color__message-red--200: #e35861; // not anymore in figma (check with designer)
-  --mer-color__message-red--300: #dd8f94; // not anymore in figma (check with designer)
+  --mer-color__message-red--200: #e35861;
+  --mer-color__message-red--300: #dd8f94;
+  --mer-color__message-red--400: #ff9999;
 
   // surface
   --mer-color__surface: var(--mer-color__neutral-gray--900);
