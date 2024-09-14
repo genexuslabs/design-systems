@@ -35,6 +35,7 @@
 /// @group ComboBox
 /// @param {String} $combo-box-selector [".combo-box"] -
 /// @param {String} $combo-box--disabled-selector [".combo-box[disabled]"] -
+/// @param {String} $combo-box--error-selector [".combo-box-error"] -
 /// @param {String} $combo-box__placeholder-selector [".combo-box::part(placeholder)"] -
 /// @param {String} $window-selector [".combo-box::part(window)"] -
 /// @param {String} $group-selector [".combo-box::part(group)"] -
@@ -99,6 +100,12 @@
 
     #{$item--disabled-selector} {
       @include item-colors-disabled();
+    }
+  }
+
+  @if $add--error {
+    #{$combo-box--error-selector} {
+      @include control-colors-error();
     }
   }
 
