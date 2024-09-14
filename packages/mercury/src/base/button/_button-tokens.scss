@@ -1,38 +1,38 @@
 @mixin button-tokens-primary() {
-  --button-primary__background-color: var(--mer-accent__primary);
-  --button-primary__border-color: var(--button-primary__background-color);
+  --button-primary__bg-color: var(--mer-accent__primary);
+  --button-primary__border-color: var(--button-primary__bg-color);
   --button-primary__color: var(--mer-text__on-primary);
   //hover
-  --button-primary__background-color--hover: var(--mer-accent__primary--hover);
-  --button-primary__border-color--hover: var(
-    --button-primary__background-color--hover
-  );
+  --button-primary__bg-color--hover: var(--mer-accent__primary--hover);
+  --button-primary__border-color--hover: var(--button-primary__bg-color--hover);
   --button-primary__color--hover: var(--mer-text__on-primary);
 
   //active
-  --button-primary__background-color--active: var(
-    --mer-accent__primary--active
-  );
+  --button-primary__bg-color--active: var(--mer-accent__primary--active);
   --button-primary__border-color--active: var(
-    --button-primary__background-color--active
+    --button-primary__bg-color--active
   );
   --button-primary__color--active: var(--mer-text__on-primary--active);
 
   //disabled
-  --button-primary__background-color--disabled: var(
-    --mer-accent__primary--disabled
-  );
+  --button-primary__bg-color--disabled: var(--mer-accent__primary--disabled);
   --button-primary__border-color--disabled: var(
     --mer-border-color__primary--disabled
   );
   --button-primary__color--disabled: var(--mer-text__on-disabled);
 
   //destructive
-  --button-primary__background-color--destructive: var(
+  --button-primary__bg-color--destructive: var(
     --mer-accent__primary--destructive
   );
+  --button-primary__bg-color--destructive-hover: var(
+    --mer-accent__primary--destructive-hover
+  );
+  --button-primary__bg-color--destructive-active: var(
+    --mer-accent__primary--destructive-active
+  );
   --button-primary__border-color--destructive: var(
-    --button-primary__background-color--destructive
+    --button-primary__bg-color--destructive
   );
   --button-primary__color--destructive: var(--mer-text__on-primary);
 }
@@ -57,6 +57,19 @@
   --button-secondary__background-color--disabled: transparent;
   --button-secondary__border-color--disabled: var(--mer-text__on-disabled);
   --button-secondary__color--disabled: var(--mer-text__on-disabled);
+
+  //destructive
+  --button-secondary__bg-color--destructive: transparent;
+  --button-secondary__bg-color--destructive-hover: var(
+    --mer-accent__primary--destructive-hover
+  );
+  --button-secondary__bg-color--destructive-active: var(
+    --mer-accent__primary--destructive-active
+  );
+  --button-secondary__border-color--destructive: var(
+    --button-primary__bg-color--destructive
+  );
+  --button-secondary__color--destructive: var(--mer-text__on-primary);
 }
 
 @mixin button-tokens-tertiary() {
