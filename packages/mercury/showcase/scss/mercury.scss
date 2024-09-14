@@ -687,7 +687,7 @@
 }
 @mixin control-footer-border() {
   border-block-start: var(--mer-border__width--sm) solid
-    var(--mer-surface__elevation--01);
+    var(--mer-border-color__on-elevation--01);
 }
 @mixin control-footer(
   $selector: ".control-footer",
@@ -2123,7 +2123,7 @@
 }
 @mixin control-footer-border() {
   border-block-start: var(--mer-border__width--sm) solid
-    var(--mer-surface__elevation--01);
+    var(--mer-border-color__on-elevation--01);
 }
 @mixin control-footer(
   $selector: ".control-footer",
@@ -4375,7 +4375,7 @@
 }
 @mixin control-footer-border() {
   border-block-start: var(--mer-border__width--sm) solid
-    var(--mer-surface__elevation--01);
+    var(--mer-border-color__on-elevation--01);
 }
 @mixin control-footer(
   $selector: ".control-footer",
@@ -4650,7 +4650,7 @@
     padding-block: var(--mer-spacing--md);
     padding-inline: var(--mer-spacing--sm);
     border-block-end: var(--mer-border__width--sm) solid
-      var(--mer-surface__elevation--01);
+      var(--mer-border-color__on-elevation--01);
   }
 
   &__caption {
