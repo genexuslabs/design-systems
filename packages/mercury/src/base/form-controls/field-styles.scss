@@ -6,9 +6,17 @@
     --spacing-body-block-end: var(--mer-spacing--md);
     --spacing-body-inline-start: var(--mer-spacing--md);
     --spacing-body-inline-end: var(--mer-spacing--md);
-    display: grid;
     row-gap: var(--field-group__row-gap);
     column-gap: var(--field-group__column-gap);
+
+    &-default {
+      display: grid;
+    }
+
+    &-inline {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
     &-cols-2 {
       display: grid;
@@ -35,6 +43,7 @@
 
 /// @group Field
 /// @param {String} $field-group-selector [".field-group"] -
+/// @param {String} $field-group-inline-selector [".field-group-inline"] -
 /// @param {String} $field-selector [".field"] -
 /// @param {String} $field-block-selector [".field-block"] -
 /// @param {String} $field-inline-selector [".field-inline"] -
@@ -43,6 +52,7 @@
 /// @param {String} $field-group-cols-2__label-selector [".field-group-cols-2 .label"] -
 @mixin field(
   $field-group-selector: ".field-group",
+  $field-group-inline-selector: ".field-group-inline",
   $field-selector: ".field",
   $field-block-selector: ".field-block",
   $field-inline-selector: ".field-inline",
@@ -52,6 +62,12 @@
 ) {
   #{$field-group-selector} {
     @extend %field-group;
+    @extend %field-group-default;
+  }
+
+  #{$field-group-inline-selector} {
+    @extend %field-group;
+    @extend %field-group-inline;
   }
 
   #{$field-selector} {

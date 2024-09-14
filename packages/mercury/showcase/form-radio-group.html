@@ -37,9 +37,9 @@
           </header>
           <div class="section__articles-container">
             <!-- ========================== 
-          no label
+          block
           =========================== -->
-            <article class="article" data-nav data-title="no label">
+            <article class="article" data-nav data-title="block (default)">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
@@ -76,11 +76,60 @@
                   </script>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-1" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup1 = `<ch-radio-group-render class="radio-group"></ch-radio-group-render>`;
+                    code = `<ch-radio-group-render class="radio-group"></ch-radio-group-render>`;
                     document.getElementById("ch-code-1").value = markup1;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          inline
+          =========================== -->
+            <article class="article" data-nav data-title="inline" hidden>
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-radio-group-render
+                    class="radio-group radio-group-inline"
+                    id="radio-group-2"
+                  ></ch-radio-group-render>
+                  <script>
+                    const radioGroup2 =
+                      document.getElementById("radio-group-2");
+                    radioGroup2.model = [
+                      { value: "value 1", caption: "Label for the value 1" },
+                      {
+                        value: "value 2",
+                        caption: "Label for the value 2"
+                      },
+                      {
+                        value: "value 3",
+                        caption: "Label for the value 3",
+                        disabled: true
+                      },
+                      { value: "value 4", caption: "Label for the value 4" },
+                      {
+                        value: "value 5",
+                        caption: "Label for the value 5",
+                        disabled: true
+                      },
+                      {
+                        value: "value 6",
+                        caption: "Label for the value 6"
+                      }
+                    ];
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-radio-group-render class="radio-group radio-group-inline"></ch-radio-group-render>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
