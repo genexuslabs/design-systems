@@ -1226,6 +1226,7 @@
   // weights
   --mer-font__weight--light: 300;
   --mer-font__weight--regular: 400;
+  --mer-font__weight--medium: 500;
   --mer-font__weight--semi-bold: 600;
   --mer-font__weight--bold: 700;
   --mer-font__weight--extra-bold: 800;
@@ -2677,9 +2678,17 @@
     --spacing-body-block-end: var(--mer-spacing--md);
     --spacing-body-inline-start: var(--mer-spacing--md);
     --spacing-body-inline-end: var(--mer-spacing--md);
-    display: grid;
     row-gap: var(--field-group__row-gap);
     column-gap: var(--field-group__column-gap);
+
+    &-default {
+      display: grid;
+    }
+
+    &-inline {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
     &-cols-2 {
       display: grid;
@@ -2706,6 +2715,7 @@
 
 /// @group Field
 /// @param {String} $field-group-selector [".field-group"] -
+/// @param {String} $field-group-inline-selector [".field-group-inline"] -
 /// @param {String} $field-selector [".field"] -
 /// @param {String} $field-block-selector [".field-block"] -
 /// @param {String} $field-inline-selector [".field-inline"] -
@@ -2714,6 +2724,7 @@
 /// @param {String} $field-group-cols-2__label-selector [".field-group-cols-2 .label"] -
 @mixin field(
   $field-group-selector: ".field-group",
+  $field-group-inline-selector: ".field-group-inline",
   $field-selector: ".field",
   $field-block-selector: ".field-block",
   $field-inline-selector: ".field-inline",
@@ -2723,6 +2734,12 @@
 ) {
   #{$field-group-selector} {
     @extend %field-group;
+    @extend %field-group-default;
+  }
+
+  #{$field-group-inline-selector} {
+    @extend %field-group;
+    @extend %field-group-inline;
   }
 
   #{$field-selector} {
@@ -8071,6 +8088,46 @@
   }
 }
 
+@mixin tooltip-tokens() {
+  --tooltip__background-color: var(--mer-color__neutral-gray--1000);
+  --tooltip__border-radius: var(--mer-border__radius--sm);
+  --tooltip__color: var(--mer-text__on-surface);
+  --tooltip__font-family: var(--mer-font-family--body);
+  --tooltip__font-size: var(--mer-font__size--3xs);
+  --tooltip__font-weight: var(--mer-font__weight--medium);
+  --tooltip__line-height: var(--mer-line-height--tight);
+  --tooltip__padding-block: var(--mer-spacing--xs);
+  --tooltip__padding-inline: var(--mer-spacing--xs);
+
+  // chameleon tokens
+  --ch-tooltip-separation: var(--mer-spacing--2xs);
+  --ch-tooltip-separation-x: var(--mer-spacing--2xs);
+  --ch-tooltip-separation-y: var(--mer-spacing--2xs);
+}
+
+
+%tooltip {
+  @include tooltip-tokens();
+
+  background-color: var(--tooltip__background-color);
+  border-radius: var(--tooltip__border-radius);
+  color: var(--tooltip__color);
+  font-family: var(--tooltip__font-family);
+  font-size: var(--tooltip__font-size);
+  font-weight: var(--tooltip__font-weight);
+  line-height: var(--tooltip__line-height);
+  padding-block: var(--tooltip__padding-block);
+  padding-inline: var(--tooltip__padding-inline);
+}
+
+/// @group Tooltip
+/// @param {String} $selector [".tooltip"] -
+@mixin tooltip($selector: ".tooltip::part(window)") {
+  #{$selector} {
+    @extend %tooltip;
+  }
+}
+
 @mixin tree-view-tokens() {
   // - - - - - - - - - - - - - - - - - - - -
   //               Tree View
@@ -8452,6 +8509,7 @@
   $tab: true,
   $tabular-grid: true,
   $ticket-list: true,
+  $tooltip: true,
   $tree-view: true
 ) {
   // - - - - - - - - - - - - - - - - - - - -
@@ -16751,6 +16809,10 @@
     @include ticket-list();
   }
 
+  @if $tooltip {
+    @include tooltip();
+  }
+
   @if $tree-view {
     @include tree-view();
   }
@@ -16822,6 +16884,7 @@
   $tab: false,
   $tabular-grid: false,
   $ticket-list: false,
+  $tooltip: false,
   $tree-view: false
 ) {
   @include mercury(
@@ -16890,6 +16953,7 @@
     $tab: $tab,
     $tabular-grid: $tabular-grid,
     $ticket-list: $ticket-list,
+    $tooltip: $tooltip,
     $tree-view: $tree-view
   );
 }
