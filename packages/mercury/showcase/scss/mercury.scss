@@ -2455,7 +2455,6 @@
 
 %button-base {
   @include button-common-styles();
-  // @include control-height-regular();
   @include control-border();
   @include control-font-size-regular();
   @include control-padding-inline-block();
@@ -4612,6 +4611,7 @@
 @mixin combo-box(
   $combo-box-selector: ".combo-box",
   $combo-box--disabled-selector: ".combo-box[disabled]",
+  $combo-box--error-selector: ".combo-box-error",
   $combo-box__placeholder-selector: ".combo-box::part(placeholder)",
   $window-selector: ".combo-box::part(window)",
   $group-selector: ".combo-box::part(group)",
@@ -5074,8 +5074,7 @@
   #{$selector} {
     @extend %form-input;
 
-    &:focus-visible {
-      opacity: 0.2;
+    &:focus {
       @extend %form-input--focus;
     }
 
@@ -5086,6 +5085,13 @@
     @if $add--disabled {
       &:disabled {
         @extend %form-input--disabled;
+      }
+    }
+
+    @if $add--placeholder {
+      &::placeholder {
+        font-style: italic;
+        color: red;
       }
     }
   }
