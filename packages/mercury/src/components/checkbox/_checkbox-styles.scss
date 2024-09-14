@@ -59,6 +59,7 @@
 
 /// @group Checkbox
 /// @param {String} $checkbox-selector [".checkbox"] -
+/// @param {String} $checkbox--error-selector [".checkbox-error::part(input)"] -
 /// @param {String} $checkbox__input-selector [".checkbox::part(input)"] -
 /// @param {String} $checkbox__input--disabled-selector [".checkbox::part(input disabled)"] -
 /// @param {String} $checkbox__input--checked-selector [".checkbox::part(input checked)"] -
@@ -75,29 +76,21 @@
 /// @param {Boolean} $add--label [true] -
 @mixin checkbox(
   $checkbox-selector: ".checkbox",
-
+  $checkbox--error-selector: ".checkbox-error::part(input)",
   $checkbox__input-selector: ".checkbox::part(input)",
-
   $checkbox__input--disabled-selector: ".checkbox::part(input disabled)",
-
   $checkbox__input--checked-selector: ".checkbox::part(input checked)",
-
   $checkbox__input--indeterminate-selector:
     ".checkbox::part(input indeterminate)",
-
   $checkbox__input--error-selector: ".checkbox::part(input error)",
 
   $checkbox__option--disabled-selector: ".checkbox::part(option disabled)",
-
   $checkbox__option--checked-selector: ".checkbox::part(option checked)",
-
   $checkbox__option--indeterminate-selector:
     ".checkbox::part(option indeterminate)",
-
   $checkbox__option--error-selector: ".checkbox::part(option error)",
 
   $checkbox__label-selector: ".checkbox::part(label)",
-
   $checkbox__label--disabled-selector: ".checkbox::part(label disabled)",
 
   $add--disabled: true,
@@ -165,14 +158,10 @@
   }
 
   // Error
-  // Not implemented yet in the control
   @if $add--error {
-    // Input
-    #{$checkbox__input--error-selector} {
-    }
-
     // Option
-    #{$checkbox__option--error-selector} {
+    #{$checkbox--error-selector} {
+      @include control-colors-error();
     }
   }
 }
