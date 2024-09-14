@@ -82,7 +82,7 @@
 
   // - - - - - - - Colors - - - - - - -
 
-  --items-container__bg-color: var(--mer-color__elevation--01);
+  --items-container__bg-color: var(--mer-surface__elevation--01);
   --items-container__border-color: var(--mer-border-color__on-surface);
 
   // - - - - - - - Padding - - - - - - -
@@ -116,7 +116,7 @@
   //               Grid Cell
   // - - - - - - - - - - - - - - - - - - - -
 
-  --grid-cell__border-color: var(--mer-color__elevation--04);
+  --grid-cell__border-color: var(--mer-border-color__on-elevation--01);
   --grid-cell__border: var(--mer-border__width--sm) solid
     var(--grid-cell__border-color);
   --grid-cell__box-shadow-inline-block: 0 0 0 1px var(--grid-cell__border-color);

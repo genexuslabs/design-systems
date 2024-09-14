@@ -68,7 +68,7 @@
   --indent: 16px;
   @include items-container-colors();
 
-  --item__border-color--enabled: var(--mer-color__elevation--04);
+  --item__border-color--enabled: var(--mer-surface__elevation--01);
   // @include tabular-grid-tokens();
   @include tabular-grid-row-tokens();
   @include tabular-grid-column-tokens();
@@ -104,7 +104,7 @@
 }
 
 %tabular-grid-column__bar-resize-split {
-  background-color: var(--mer-color__elevation--04);
+  background-color: var(--mer-surface__elevation--01);
   inline-size: var(--grid-bar-resize-split__inline-size);
   &--hover {
     background-color: var(--mer-accent__primary--hover);

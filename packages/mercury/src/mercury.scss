@@ -10,8 +10,8 @@
 // Tokens Primitive
 @import "./tokens/primitive/border";
 @import "./tokens/primitive/color";
-@import "./tokens/primitive/elevation";
 @import "./tokens/primitive/font";
+@import "./tokens/primitive/gradients";
 @import "./tokens/primitive/spacing";
 @import "./tokens/primitive/timing";
 
@@ -20,11 +20,12 @@
 @import "./tokens/semantic/border";
 @import "./tokens/semantic/control";
 @import "./tokens/semantic/field";
+@import "./tokens/semantic/general";
+@import "./tokens/semantic/heading";
 @import "./tokens/semantic/icon";
 @import "./tokens/semantic/item";
-@import "./tokens/semantic/general";
+@import "./tokens/semantic/surface";
 @import "./tokens/semantic/text";
-@import "./tokens/semantic/heading";
 
 // Base classes
 @import "./base/label/label-styles"; // should be at the top, since other elements use it.
@@ -85,7 +86,6 @@
   $tokens: true,
   $border: true,
   $colors: true,
-  $elevation: true,
   $font: true,
   $spacing: true,
   $timing: true,
@@ -314,12 +314,17 @@
     }
   }
 
+  // Gradients (independent of color scheme at the time of writing)
+  @if $colors and $tokens {
+    :root {
+      @include foundation-colors--gradients();
+    }
+  }
+
   // - - - - - - - - - - - - - - - - - - - -
   //        Other Tokens than Colors
   // - - - - - - - - - - - - - - - - - - - -
-  @if $tokens and
-    ($border or $colors or $elevation or $font or $spacing or $timing)
-  {
+  @if $tokens and ($border or $colors or $font or $spacing or $timing) {
     :root {
       // Border
       @if $border {
@@ -335,32 +340,11 @@
       @if $colors {
         @include semantic-accent();
         @include semantic-border();
+        @include semantic-heading();
         @include semantic-icon();
         @include semantic-item();
+        @include semantic-surface();
         @include semantic-text();
-        @include semantic-heading();
-      }
-
-      // Elevation Light
-      @if $elevation and $light-theme {
-        // TODO: This appears to be placed in the wrong selector
-        @include elevation--light();
-      }
-      @if $elevation and $prefers-color-scheme-light {
-        @media (prefers-color-scheme: light) {
-          @include elevation--light();
-        }
-      }
-
-      // Elevation Dark
-      @if $elevation and $dark-theme {
-        // TODO: This appears to be placed in the wrong selector
-        @include elevation--dark();
-      }
-      @if $elevation and $prefers-color-scheme-dark {
-        @media (prefers-color-scheme: dark) {
-          @include elevation--dark();
-        }
       }
 
       @if $font {
@@ -387,7 +371,7 @@
       @if $tokens {
         // Default background-color and color
         @if $colors {
-          background-color: var(--mer-color__surface);
+          background-color: var(--mer-surface);
           color: var(--mer-text__on-surface);
         }
 
@@ -588,7 +572,6 @@
   $tokens: false,
   $border: false,
   $colors: false,
-  $elevation: false,
   $font: false,
   $spacing: false,
   $timing: false,
@@ -657,7 +640,6 @@
     $tokens: $tokens,
     $border: $border,
     $colors: $colors,
-    $elevation: $elevation,
     $font: $font,
     $spacing: $spacing,
     $timing: $timing,

@@ -4,7 +4,7 @@
   --spacing-body-inline-start: var(--mer-spacing--md);
   --spacing-body-inline-end: var(--mer-spacing--md);
   --ch-dialog-max-inline-size: 800px;
-  background-color: var(--mer-color__elevation--01);
+  background-color: var(--mer-surface__elevation--01);
   box-shadow: var(--mer-box-shadow--01);
 
   &__backdrop {
@@ -18,7 +18,7 @@
     padding-block: var(--mer-spacing--md);
     padding-inline: var(--mer-spacing--sm);
     border-block-end: var(--mer-border__width--sm) solid
-      var(--mer-color__elevation--04);
+      var(--mer-border-color__on-elevation--01);
   }
 
   &__caption {

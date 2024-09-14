@@ -2,7 +2,7 @@
   // ----------------------
   // Body
   // ----------------------
-  --mer-body__bg-color: var(--mer-color__surface);
+  --mer-body__bg-color: var(--mer-surface);
   --mer-body__color: var(--mer-text__on-surface);
   --mer-body__font-size: var(--mer-font__size--3xs);
   --mer-body__font-family: var(--mer-font-family--body);
@@ -78,10 +78,10 @@
   // ----------------------
   // TODO: This styles should better be applied on the ch-window.
   --window__border: var(--mer-border__width--sm) solid
-    var(--mer-color__elevation--04);
+    var(--mer-surface__elevation--01);
   --window__border-radius: var(--mer-border__radius--sm);
   --window__padding: var(--mer-spacing--xs);
-  --window__bg-color: var(--mer-color__elevation--01);
+  --window__bg-color: var(--mer-surface__elevation--01);
   --window__gap: var(--mer-spacing--xs);
   --window__box-shadow: var(--mer-box-shadow--01);
 
