@@ -248,12 +248,12 @@
 // ----------------------
 // Focus
 // ----------------------
-@mixin focus-outline($outline: false) {
+@mixin focus-outline() {
   outline: var(--focus__outline-width) var(--focus__outline-style)
     var(--focus__outline-color);
   outline-offset: var(--focus__outline-offset);
 }
-@mixin focus-border($outline: false) {
+@mixin focus-border() {
   border-color: var(--borders-un-border-color__focused);
 }
 
@@ -558,14 +558,14 @@
   padding-block-end: var(--mer-spacing--2xs);
 }
 @mixin grid-rowset-legend-colors-enabled() {
-  --grid-rowset-legend__bg-color: var(--mer-color__elevation--02);
+  --grid-rowset-legend__bg-color: var(--mer-surface__elevation--02);
   background-color: var(--grid-rowset-legend__bg-color);
 }
 @mixin grid-rowset-legend-colors-hover() {
-  --grid-rowset-legend__bg-color: var(--mer-color__elevation--03);
+  --grid-rowset-legend__bg-color: var(--mer-surface__elevation--03);
 }
 @mixin grid-rowset-legend-colors-active() {
-  --grid-rowset-legend__bg-color: var(--mer-color__elevation--02);
+  --grid-rowset-legend__bg-color: var(--mer-surface__elevation--02);
 }
 
 // ----------------------
@@ -606,7 +606,9 @@
   --tab-caption__border-color--selected-inline: var(
     --mer-border-color__primary--disabled
   );
-  --tab-caption__border-color--selected-stack: var(--mer-color__elevation--02);
+  --tab-caption__border-color--selected-stack: var(
+    --mer-surface__elevation--02
+  );
 }
 @mixin tab-button-colors-selected-inline() {
   --tab-caption__bg-color: var(--tab-caption__bg-color--selected-inline);
@@ -685,7 +687,7 @@
 }
 @mixin control-footer-border() {
   border-block-start: var(--mer-border__width--sm) solid
-    var(--mer-color__elevation--04);
+    var(--mer-border-color__on-elevation--01);
 }
 @mixin control-footer(
   $selector: ".control-footer",
@@ -896,18 +898,18 @@
   --mer-color__neutral-gray--1000: #ffffff;
 
   // tinted
-  --mer-color__tinted-yellow--5: #ffc96b0d;
-  --mer-color__tinted-yellow--60: #ffc96b99;
-  --mer-color__tinted-red--5: #fb7c840d;
-  --mer-color__tinted-red--60: #fb7c8499;
-  --mer-color__tinted-green--5: #3fa89b0d;
-  --mer-color__tinted-green--60: #3fa89b99;
-  --mer-color__tinted-blue--5: #2070ce0d;
-  --mer-color__tinted-blue--8: #2070ce14;
-  --mer-color__tinted-blue--10: #2070ce1a;
-  --mer-color__tinted-blue--20: #2070ce33;
-  --mer-color__tinted-blue--30: #2070ce4d;
-  --mer-color__tinted-blue--50: #2070ce80;
+  --mer-color__tinted-yellow--5: #faf9f6;
+  --mer-color__tinted-yellow--60: #fafbfd;
+  --mer-color__tinted-red--5: #faf5f7;
+  --mer-color__tinted-red--60: #fbb2b7;
+  --mer-color__tinted-green--5: #f2f7f8;
+  --mer-color__tinted-green--60: #94cac4;
+  --mer-color__tinted-blue--5: #f3f6fd;
+  --mer-color__tinted-blue--8: #eff5fd;
+  --mer-color__tinted-blue--10: #ecf3fd;
+  --mer-color__tinted-blue--20: #deebfe;
+  --mer-color__tinted-blue--30: #cfe3fe;
+  --mer-color__tinted-blue--50: #b1d2fe;
 
   // message
   --mer-color__message-green--100: #208e80;
@@ -918,100 +920,6 @@
   --mer-color__message-red--200: #da1a27;
   --mer-color__message-red--300: #4d0000;
   --mer-color__message-red--400: #800000;
-
-  // surface
-  --mer-color__surface: var(--mer-color__neutral-gray--100);
-
-  // elevation
-  --mer-color__elevation--01: var(--mer-color__neutral-gray--200);
-  --mer-color__elevation--02: #e4e4e4;
-  --mer-color__elevation--03: #dedede;
-  --mer-color__elevation--04: #ffffff;
-
-  // gradients
-  --mer-color__gradient-angle: 225deg;
-  --mer-color__gradient-opacity--low: 0.7;
-  --mer-color__gradient-opacity--medium: 0.9;
-  --mer-color__gradient-opacity--high: 1;
-
-  // gradient 01
-  --mer-color__gradient--01: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(0, 204, 255, var(--mer-color__gradient-opacity--medium)) 0%,
-    rgba(163, 0, 255, var(--mer-color__gradient-opacity--medium)) 100%
-  );
-  // gradient 02
-  --mer-color__gradient--02: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(57, 255, 20, var(--mer-color__gradient-opacity--high)) 0%,
-    rgba(255, 0, 114, var(--mer-color__gradient-opacity--high)) 100%
-  );
-  // gradient 03
-  --mer-color__gradient--03: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(0, 245, 255, var(--mer-color__gradient-opacity--low)) 0%,
-    rgba(255, 234, 0, var(--mer-color__gradient-opacity--high)) 100%
-  );
-  // gradient 04
-  --mer-color__gradient--04: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(16, 196, 195, var(--mer-color__gradient-opacity--high)) 0%,
-    rgba(236, 30, 91, var(--mer-color__gradient-opacity--high)) 100%
-  );
-  // gradient 05
-  --mer-color__gradient--05: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(255, 0, 162, var(--mer-color__gradient-opacity--high)) 0%,
-    rgba(139, 0, 255, var(--mer-color__gradient-opacity--high)) 100%
-  );
-  // gradient 06
-  --mer-color__gradient--06: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(204, 255, 0, var(--mer-color__gradient-opacity--medium)) 0%,
-    rgba(0, 255, 204, var(--mer-color__gradient-opacity--medium)) 100%
-  );
-  // gradient 07
-  --mer-color__gradient--07: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(91, 118, 255, var(--mer-color__gradient-opacity--medium)) 0%,
-    rgba(0, 255, 203, var(--mer-color__gradient-opacity--medium)) 100%
-  );
-  // gradient 08
-  --mer-color__gradient--08: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(255, 0, 255, var(--mer-color__gradient-opacity--high)) 0%,
-    rgba(0, 149, 255, var(--mer-color__gradient-opacity--high)) 100%
-  );
-  // gradient 09
-  --mer-color__gradient--09: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(255, 69, 0, var(--mer-color__gradient-opacity--medium)) 0%,
-    rgba(142, 84, 200, var(--mer-color__gradient-opacity--medium)) 100%
-  );
-  // gradient 10
-  --mer-color__gradient--10: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(255, 0, 127, var(--mer-color__gradient-opacity--low)) 0%,
-    rgba(0, 255, 0, var(--mer-color__gradient-opacity--low)) 100%
-  );
-  // gradient 11
-  --mer-color__gradient--11: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(255, 199, 0, var(--mer-color__gradient-opacity--high)) 0%,
-    rgba(138, 43, 226, var(--mer-color__gradient-opacity--high)) 100%
-  );
-  // gradient 12
-  --mer-color__gradient--12: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(255, 0, 51, var(--mer-color__gradient-opacity--medium)) 0%,
-    rgba(255, 204, 0, var(--mer-color__gradient-opacity--medium)) 100%
-  );
-  // gradient 13
-  --mer-color__gradient--13: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(0, 255, 60, var(--mer-color__gradient-opacity--high)) 0%,
-    rgba(255, 102, 0, var(--mer-color__gradient-opacity--high)) 100%
-  );
 }
 
 @mixin foundation-colors--dark() {
@@ -1034,32 +942,9 @@
   --mer-color__neutral-gray--700: #242d3c;
   --mer-color__neutral-gray--800: #181f2a;
   --mer-color__neutral-gray--900: #11151c;
-  // 1000 to 1400 do not exist anymore in figma but can not be removed yet
-  // because gemini is dependent on this tokens (check with designer)
   --mer-color__neutral-gray--1000: #1f2225;
-  --mer-color__neutral-gray--1100: #24272a;
-  --mer-color__neutral-gray--1200: #2d3032;
-  --mer-color__neutral-gray--1300: #3b3e40;
-  --mer-color__neutral-gray--1400: #2d3134;
 
-  // tinted (with opacity) this values had to be updated to the no opacity
-  // version (see below), because colors with opacity caused some issues when
-  // overlapping. Until this is not a definitive edition
-
-  // --mer-color__tinted-yellow--5: #ffc96b0d;
-  // --mer-color__tinted-yellow--60: #ffc96b99;
-  // --mer-color__tinted-red--5: #fb7c840d;
-  // --mer-color__tinted-red--60: #fb7c8499;
-  // --mer-color__tinted-green--5: #3fa89b0d;
-  // --mer-color__tinted-green--60: #3fa89b99;
-  // --mer-color__tinted-blue--5: #5ba7ff0d;
-  // --mer-color__tinted-blue--8: #5ba7ff14;
-  // --mer-color__tinted-blue--10: #5ba7ff1a;
-  // --mer-color__tinted-blue--20: #5ba7ff33;
-  // --mer-color__tinted-blue--30: #5ba7ff4d;
-  // --mer-color__tinted-blue--50: #5ba7ff80;
-
-  // tinted (no opacity) // tints with opacity were giving some issues
+  // tinted
   --mer-color__tinted-yellow--5: #282a2d;
   --mer-color__tinted-yellow--60: #ad8a53;
   --mer-color__tinted-red--5: #29252f;
@@ -1079,142 +964,9 @@
   --mer-color__message-yellow--100: #f9bd56;
   --mer-color__message-yellow--200: #f9bd56;
   --mer-color__message-red--100: #e35861;
-  --mer-color__message-red--200: #e35861;
-  --mer-color__message-red--300: #dd8f94;
+  --mer-color__message-red--200: #d54b54;
+  --mer-color__message-red--300: #ff6161;
   --mer-color__message-red--400: #ff9999;
-
-  // surface
-  --mer-color__surface: var(--mer-color__neutral-gray--900);
-
-  // elevation
-  --mer-color__elevation--01: var(--mer-color__neutral-gray--800);
-  --mer-color__elevation--02: var(--mer-color__neutral-gray--700);
-  --mer-color__elevation--03: var(--mer-color__neutral-gray--650);
-  --mer-color__elevation--04: var(--mer-color__neutral-gray--600);
-
-  // gradients
-  --mer-color__gradient-angle: 225deg;
-  --mer-color__gradient-opacity--low: 0.7;
-  --mer-color__gradient-opacity--medium: 0.9;
-  --mer-color__gradient-opacity--high: 1;
-
-  // gradient 01
-  --mer-color__gradient--01: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(0, 204, 255, var(--mer-color__gradient-opacity--medium)) 0%,
-    rgba(163, 0, 255, var(--mer-color__gradient-opacity--medium)) 100%
-  );
-  // gradient 02
-  --mer-color__gradient--02: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(57, 255, 20, var(--mer-color__gradient-opacity--high)) 0%,
-    rgba(255, 0, 114, var(--mer-color__gradient-opacity--high)) 100%
-  );
-  // gradient 03
-  --mer-color__gradient--03: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(0, 245, 255, var(--mer-color__gradient-opacity--low)) 0%,
-    rgba(255, 234, 0, var(--mer-color__gradient-opacity--high)) 100%
-  );
-  // gradient 04
-  --mer-color__gradient--04: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(16, 196, 195, var(--mer-color__gradient-opacity--high)) 0%,
-    rgba(236, 30, 91, var(--mer-color__gradient-opacity--high)) 100%
-  );
-  // gradient 05
-  --mer-color__gradient--05: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(255, 0, 162, var(--mer-color__gradient-opacity--high)) 0%,
-    rgba(139, 0, 255, var(--mer-color__gradient-opacity--high)) 100%
-  );
-  // gradient 06
-  --mer-color__gradient--06: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(204, 255, 0, var(--mer-color__gradient-opacity--medium)) 0%,
-    rgba(0, 255, 204, var(--mer-color__gradient-opacity--medium)) 100%
-  );
-  // gradient 07
-  --mer-color__gradient--07: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(91, 118, 255, var(--mer-color__gradient-opacity--medium)) 0%,
-    rgba(0, 255, 203, var(--mer-color__gradient-opacity--medium)) 100%
-  );
-  // gradient 08
-  --mer-color__gradient--08: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(255, 0, 255, var(--mer-color__gradient-opacity--high)) 0%,
-    rgba(0, 149, 255, var(--mer-color__gradient-opacity--high)) 100%
-  );
-  // gradient 09
-  --mer-color__gradient--09: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(255, 69, 0, var(--mer-color__gradient-opacity--medium)) 0%,
-    rgba(142, 84, 200, var(--mer-color__gradient-opacity--medium)) 100%
-  );
-  // gradient 10
-  --mer-color__gradient--10: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(255, 0, 127, var(--mer-color__gradient-opacity--low)) 0%,
-    rgba(0, 255, 0, var(--mer-color__gradient-opacity--low)) 100%
-  );
-  // gradient 11
-  --mer-color__gradient--11: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(255, 199, 0, var(--mer-color__gradient-opacity--high)) 0%,
-    rgba(138, 43, 226, var(--mer-color__gradient-opacity--high)) 100%
-  );
-  // gradient 12
-  --mer-color__gradient--12: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(255, 0, 51, var(--mer-color__gradient-opacity--medium)) 0%,
-    rgba(255, 204, 0, var(--mer-color__gradient-opacity--medium)) 100%
-  );
-  // gradient 13
-  --mer-color__gradient--13: linear-gradient(
-    var(--mer-color__gradient-angle),
-    rgba(0, 255, 60, var(--mer-color__gradient-opacity--high)) 0%,
-    rgba(255, 102, 0, var(--mer-color__gradient-opacity--high)) 100%
-  );
-}
-
-@mixin elevation--light() {
-  // background color
-  --mer-elevation__bg-color--01: var(--mer-color__neutral-gray--900);
-  --mer-elevation__bg-color--02: var(--mer-color__neutral-gray--900);
-  --mer-elevation__bg-color--03: var(--mer-color__neutral-gray--900);
-  --mer-elevation__bg-color--04: var(--mer-color__neutral-gray--900);
-
-  // border
-  --mer-elevation__border-01: transparent;
-  --mer-elevation__border-02: transparent;
-  --mer-elevation__border-03: transparent;
-  --mer-elevation__border-04: transparent;
-
-  // box shadow
-  --mer-box-shadow--01: 0px 4px 20px 0px #00000040;
-}
-
-@mixin elevation--dark() {
-  // background color
-  --mer-elevation__bg-color--01: var(--mer-color__elevation--01);
-  --mer-elevation__bg-color--02: var(--mer-color__elevation--02);
-  --mer-elevation__bg-color--03: var(--mer-color__elevation--03);
-  --mer-elevation__bg-color--04: var(--mer-color__elevation--04);
-
-  // border
-  --mer-elevation__border-01: 1px solid var(--mer-color__elevation--03);
-  --mer-elevation__border-03: transparent;
-  --mer-elevation__border-04: transparent;
-
-  // box shadow
-  --mer-elevation__box-shadow--01: none;
-  --mer-elevation__box-shadow--02: none;
-  --mer-elevation__box-shadow--03: none;
-  --mer-elevation__box-shadow--04: none;
-
-  // box shadow
-  --mer-box-shadow--01: 0px 4px 20px 0px #00000040;
 }
 
 @mixin font() {
@@ -1252,6 +1004,93 @@
   // --mer-letter-spacing--comfortable: ;
 }
 
+@mixin foundation-colors--gradients() {
+  // gradients
+  --mer-color__gradient-angle: 225deg;
+  --mer-color__gradient-opacity--low: 0.7;
+  --mer-color__gradient-opacity--medium: 0.9;
+  --mer-color__gradient-opacity--high: 1;
+
+  // gradient 01
+  --mer-color__gradient--01: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(0, 204, 255, var(--mer-color__gradient-opacity--medium)) 0%,
+    rgba(163, 0, 255, var(--mer-color__gradient-opacity--medium)) 100%
+  );
+  // gradient 02
+  --mer-color__gradient--02: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(57, 255, 20, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(255, 0, 114, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 03
+  --mer-color__gradient--03: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(0, 245, 255, var(--mer-color__gradient-opacity--low)) 0%,
+    rgba(255, 234, 0, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 04
+  --mer-color__gradient--04: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(16, 196, 195, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(236, 30, 91, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 05
+  --mer-color__gradient--05: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 0, 162, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(139, 0, 255, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 06
+  --mer-color__gradient--06: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(204, 255, 0, var(--mer-color__gradient-opacity--medium)) 0%,
+    rgba(0, 255, 204, var(--mer-color__gradient-opacity--medium)) 100%
+  );
+  // gradient 07
+  --mer-color__gradient--07: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(91, 118, 255, var(--mer-color__gradient-opacity--medium)) 0%,
+    rgba(0, 255, 203, var(--mer-color__gradient-opacity--medium)) 100%
+  );
+  // gradient 08
+  --mer-color__gradient--08: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 0, 255, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(0, 149, 255, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 09
+  --mer-color__gradient--09: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 69, 0, var(--mer-color__gradient-opacity--medium)) 0%,
+    rgba(142, 84, 200, var(--mer-color__gradient-opacity--medium)) 100%
+  );
+  // gradient 10
+  --mer-color__gradient--10: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 0, 127, var(--mer-color__gradient-opacity--low)) 0%,
+    rgba(0, 255, 0, var(--mer-color__gradient-opacity--low)) 100%
+  );
+  // gradient 11
+  --mer-color__gradient--11: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 199, 0, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(138, 43, 226, var(--mer-color__gradient-opacity--high)) 100%
+  );
+  // gradient 12
+  --mer-color__gradient--12: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(255, 0, 51, var(--mer-color__gradient-opacity--medium)) 0%,
+    rgba(255, 204, 0, var(--mer-color__gradient-opacity--medium)) 100%
+  );
+  // gradient 13
+  --mer-color__gradient--13: linear-gradient(
+    var(--mer-color__gradient-angle),
+    rgba(0, 255, 60, var(--mer-color__gradient-opacity--high)) 0%,
+    rgba(255, 102, 0, var(--mer-color__gradient-opacity--high)) 100%
+  );
+}
+
 @mixin spacing() {
   --mer-spacing--3xs: 2px;
   --mer-spacing--2xs: 4px;
@@ -1280,6 +1119,8 @@
   --mer-accent__primary--active: var(--mer-color__primary-blue--600);
   --mer-accent__primary--disabled: var(--mer-color__neutral-gray--500);
   --mer-accent__primary--destructive: var(--mer-color__message-red--100);
+  --mer-accent__primary--destructive-hover: var(--mer-color__message-red--300);
+  --mer-accent__primary--destructive-active: var(--mer-color__message-red--400);
 }
 
 @mixin semantic-border() {
@@ -1428,6 +1269,108 @@
   --field-inline-label__margin-block-start: 6px; // 6px is the proper value, but it does not exists on the mercury ds.
 }
 
+@mixin semantic-general() {
+  // ----------------------
+  // Body
+  // ----------------------
+  --mer-body__bg-color: var(--mer-surface);
+  --mer-body__color: var(--mer-text__on-surface);
+  --mer-body__font-size: var(--mer-font__size--3xs);
+  --mer-body__font-family: var(--mer-font-family--body);
+  --mer-body__font-weight: var(--mer-font__weight--regular);
+  --mer-body__line-height: var(--mer-line-height--spaced);
+  --mer-body__margin-block: var(--mer-spacing--sm);
+
+  // ----------------------
+  // System
+  // ----------------------
+  // System tokens are the most basic kind, used when there is not a more specific categorization.
+  --mer-system__border-width: var(--mer-border__width--sm);
+  --mer-system__border-style: solid;
+  --mer-system__border-color: var(--mer-color__neutral-gray--500);
+
+  // ----------------------
+  // Heading
+  // ----------------------
+  --mer-heading__color: var(--mer-color__neutral-gray--100);
+
+  // ----------------------
+  // Scrollbar
+  // ----------------------
+  // scrollbar
+  --scrollbar__size: var(--mer-spacing--2xs);
+  // scrollbar-track
+  --scrollbar-track__bg-color: var(--mer-color__neutral-gray--650);
+
+  --scrollbar-track__border-radius: var(--mer-spacing--xs);
+  // scrollbar-thumb
+  --scrollbar-thumb__bg-color: var(--mer-color__neutral-gray--550);
+  --scrollbar-thumb__border-radius: var(--mer-spacing--xs);
+  // scrollbar-thumb
+  --scrollbar-corner__bg: transparent;
+
+  // ----------------------
+  // Icon Size
+  // ----------------------
+  // box (shell)
+  --mer-icon__box--sm: var(--mer-spacing--sm);
+  --mer-icon__box--md: 14px; // no spacing token exists for 14px.
+  // icon (background-size)
+  --mer-icon__size--sm: 100%;
+  --mer-icon__size--md: 100%;
+
+  // ------------------------------------------------------------
+  // Form Input (form-input-*** background-position-x RTL support)
+  // ------------------------------------------------------------
+  --mer-form-input__padding-inline: var(--mer-spacing--xs);
+  --mer-form-input__bg-position--x-value: var(--mer-form-input__padding-inline);
+  --mer-form-input__bg-position--x: var(--mer-form-input__bg-position--x-value);
+  // The following css variables are at the time of writing, global, because some components, besides
+  // the ch-checkbox, implement their own checkboxes. For example, the tabular-grid cell parts "selector-label"
+  // and "selector".
+  --mer-form-input__border-color: var(--mer-color__neutral-gray--500);
+  --mer-form-input__border-style: solid;
+  --mer-form-input__border-width: var(--mer-border__width--sm);
+  --mer-form-input__border: var(--mer-form-input__border-width)
+    var(--mer-form-input__border-style) var(--mer-form-input__border-color);
+  --mer-form-input__border-radius: var(--mer-border__radius--sm);
+  // the input checkbox checked styles, or radio button inner circle
+  --mer-form-input-check__border-width: var(--mer-border__radius--xs);
+  --mer-form-input-check__border-color: var(
+    --mer-border-color__neutral--active
+  );
+  --mer-form-input-check__border-color--disabled: var(
+    --mer-accent__primary--disabled
+  );
+  --mer-checkbox__option-checked-image: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='currentColor' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/></svg>");
+
+  // ----------------------
+  // Window
+  // ----------------------
+  // TODO: This styles should better be applied on the ch-window.
+  --window__border: var(--mer-border__width--sm) solid
+    var(--mer-surface__elevation--01);
+  --window__border-radius: var(--mer-border__radius--sm);
+  --window__padding: var(--mer-spacing--xs);
+  --window__bg-color: var(--mer-surface__elevation--01);
+  --window__gap: var(--mer-spacing--xs);
+  --window__box-shadow: var(--mer-box-shadow--01);
+
+  // ----------------------
+  // Focus
+  // ----------------------
+  --focus__outline-width: var(--mer-border__width--sm);
+  --focus__outline-style: solid;
+  --focus__outline-color: var(--mer-border-color__primary--focused);
+  --focus__outline-offset: calc(var(--mer-system__border-width) * -1);
+  --borders-un-border-color__focused: var(--focus__outline-color);
+}
+
+@mixin semantic-heading() {
+  --mer-heading__gray--light: var(--mer-color__neutral-gray--200);
+  --mer-header__background-color: var(--mer-color__neutral-gray--700);
+}
+
 @mixin semantic-icon() {
   --mer-icon__on-surface: var(--mer-color__neutral-gray--200);
   --mer-icon__on-primary: var(--mer-color__neutral-gray--900);
@@ -1532,7 +1475,7 @@
 
   // - - - - - - - Colors - - - - - - -
 
-  --items-container__bg-color: var(--mer-color__elevation--01);
+  --items-container__bg-color: var(--mer-surface__elevation--01);
   --items-container__border-color: var(--mer-border-color__on-surface);
 
   // - - - - - - - Padding - - - - - - -
@@ -1566,7 +1509,7 @@
   //               Grid Cell
   // - - - - - - - - - - - - - - - - - - - -
 
-  --grid-cell__border-color: var(--mer-color__elevation--04);
+  --grid-cell__border-color: var(--mer-border-color__on-elevation--01);
   --grid-cell__border: var(--mer-border__width--sm) solid
     var(--grid-cell__border-color);
   --grid-cell__box-shadow-inline-block: 0 0 0 1px var(--grid-cell__border-color);
@@ -1622,101 +1565,17 @@
   --tab-caption__gap: var(--mer-spacing--xs); // 6px does not exist on the ds.
 }
 
-@mixin semantic-general() {
-  // ----------------------
-  // Body
-  // ----------------------
-  --mer-body__bg-color: var(--mer-color__surface);
-  --mer-body__color: var(--mer-text__on-surface);
-  --mer-body__font-size: var(--mer-font__size--3xs);
-  --mer-body__font-family: var(--mer-font-family--body);
-  --mer-body__font-weight: var(--mer-font__weight--regular);
-  --mer-body__line-height: var(--mer-line-height--spaced);
-  --mer-body__margin-block: var(--mer-spacing--sm);
+@mixin semantic-surface() {
+  --mer-surface: var(--mer-color__neutral-gray--900);
+  --mer-color__surface: var(
+    --mer-surface
+  ); // '--mer-color__surface' TO be removed later (deprecated)
+  --mer-surface__elevation--01: var(--mer-color__neutral-gray--800);
+  --mer-surface__elevation--02: var(--mer-color__neutral-gray--700);
+  --mer-surface__elevation--03: var(--mer-color__neutral-gray--650);
 
-  // ----------------------
-  // System
-  // ----------------------
-  // System tokens are the most basic kind, used when there is not a more specific categorization.
-  --mer-system__border-width: var(--mer-border__width--sm);
-  --mer-system__border-style: solid;
-  --mer-system__border-color: var(--mer-color__neutral-gray--500);
-
-  // ----------------------
-  // Heading
-  // ----------------------
-  --mer-heading__color: var(--mer-color__neutral-gray--100);
-
-  // ----------------------
-  // Scrollbar
-  // ----------------------
-  // scrollbar
-  --scrollbar__size: var(--mer-spacing--2xs);
-  // scrollbar-track
-  --scrollbar-track__bg-color: var(--mer-color__neutral-gray--650);
-
-  --scrollbar-track__border-radius: var(--mer-spacing--xs);
-  // scrollbar-thumb
-  --scrollbar-thumb__bg-color: var(--mer-color__neutral-gray--550);
-  --scrollbar-thumb__border-radius: var(--mer-spacing--xs);
-  // scrollbar-thumb
-  --scrollbar-corner__bg: transparent;
-
-  // ----------------------
-  // Icon Size
-  // ----------------------
-  // box (shell)
-  --mer-icon__box--sm: var(--mer-spacing--sm);
-  --mer-icon__box--md: 14px; // no spacing token exists for 14px.
-  // icon (background-size)
-  --mer-icon__size--sm: 100%;
-  --mer-icon__size--md: 100%;
-
-  // ------------------------------------------------------------
-  // Form Input (form-input-*** background-position-x RTL support)
-  // ------------------------------------------------------------
-  --mer-form-input__padding-inline: var(--mer-spacing--xs);
-  --mer-form-input__bg-position--x-value: var(--mer-form-input__padding-inline);
-  --mer-form-input__bg-position--x: var(--mer-form-input__bg-position--x-value);
-  // The following css variables are at the time of writing, global, because some components, besides
-  // the ch-checkbox, implement their own checkboxes. For example, the tabular-grid cell parts "selector-label"
-  // and "selector".
-  --mer-form-input__border-color: var(--mer-color__neutral-gray--500);
-  --mer-form-input__border-style: solid;
-  --mer-form-input__border-width: var(--mer-border__width--sm);
-  --mer-form-input__border: var(--mer-form-input__border-width)
-    var(--mer-form-input__border-style) var(--mer-form-input__border-color);
-  --mer-form-input__border-radius: var(--mer-border__radius--sm);
-  // the input checkbox checked styles, or radio button inner circle
-  --mer-form-input-check__border-width: var(--mer-border__radius--xs);
-  --mer-form-input-check__border-color: var(
-    --mer-border-color__neutral--active
-  );
-  --mer-form-input-check__border-color--disabled: var(
-    --mer-accent__primary--disabled
-  );
-  --mer-checkbox__option-checked-image: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='currentColor' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/></svg>");
-
-  // ----------------------
-  // Window
-  // ----------------------
-  // TODO: This styles should better be applied on the ch-window.
-  --window__border: var(--mer-border__width--sm) solid
-    var(--mer-color__elevation--04);
-  --window__border-radius: var(--mer-border__radius--sm);
-  --window__padding: var(--mer-spacing--xs);
-  --window__bg-color: var(--mer-color__elevation--01);
-  --window__gap: var(--mer-spacing--xs);
-  --window__box-shadow: var(--mer-box-shadow--01);
-
-  // ----------------------
-  // Focus
-  // ----------------------
-  --focus__outline-width: var(--mer-border__width--sm);
-  --focus__outline-style: solid;
-  --focus__outline-color: var(--mer-color__primary-blue--200);
-  --focus__outline-offset: calc(var(--mer-system__border-width) * -1);
-  --borders-un-border-color__focused: var(--focus__outline-color);
+  // box shadow
+  --mer-box-shadow--01: 0px 4px 20px 0px #00000040;
 }
 
 @mixin semantic-text() {
@@ -1739,11 +1598,6 @@
   --mer-text__bright: var(
     --mer-color__neutral-gray--100
   ); // "--mer-text__bright" does not exists anymore in figma, but the colors are being updated. Ask the designer.
-}
-
-@mixin semantic-heading() {
-  --mer-heading__gray--light: var(--mer-color__neutral-gray--200);
-  --mer-header__background-color: var(--mer-color__neutral-gray--700);
 }
 
 
@@ -1830,12 +1684,12 @@
 // ----------------------
 // Focus
 // ----------------------
-@mixin focus-outline($outline: false) {
+@mixin focus-outline() {
   outline: var(--focus__outline-width) var(--focus__outline-style)
     var(--focus__outline-color);
   outline-offset: var(--focus__outline-offset);
 }
-@mixin focus-border($outline: false) {
+@mixin focus-border() {
   border-color: var(--borders-un-border-color__focused);
 }
 
@@ -2140,14 +1994,14 @@
   padding-block-end: var(--mer-spacing--2xs);
 }
 @mixin grid-rowset-legend-colors-enabled() {
-  --grid-rowset-legend__bg-color: var(--mer-color__elevation--02);
+  --grid-rowset-legend__bg-color: var(--mer-surface__elevation--02);
   background-color: var(--grid-rowset-legend__bg-color);
 }
 @mixin grid-rowset-legend-colors-hover() {
-  --grid-rowset-legend__bg-color: var(--mer-color__elevation--03);
+  --grid-rowset-legend__bg-color: var(--mer-surface__elevation--03);
 }
 @mixin grid-rowset-legend-colors-active() {
-  --grid-rowset-legend__bg-color: var(--mer-color__elevation--02);
+  --grid-rowset-legend__bg-color: var(--mer-surface__elevation--02);
 }
 
 // ----------------------
@@ -2188,7 +2042,9 @@
   --tab-caption__border-color--selected-inline: var(
     --mer-border-color__primary--disabled
   );
-  --tab-caption__border-color--selected-stack: var(--mer-color__elevation--02);
+  --tab-caption__border-color--selected-stack: var(
+    --mer-surface__elevation--02
+  );
 }
 @mixin tab-button-colors-selected-inline() {
   --tab-caption__bg-color: var(--tab-caption__bg-color--selected-inline);
@@ -2267,7 +2123,7 @@
 }
 @mixin control-footer-border() {
   border-block-start: var(--mer-border__width--sm) solid
-    var(--mer-color__elevation--04);
+    var(--mer-border-color__on-elevation--01);
 }
 @mixin control-footer(
   $selector: ".control-footer",
@@ -2375,40 +2231,40 @@
 }
  // should be at the top, since other elements use it.
 @mixin button-tokens-primary() {
-  --button-primary__background-color: var(--mer-accent__primary);
-  --button-primary__border-color: var(--button-primary__background-color);
+  --button-primary__bg-color: var(--mer-accent__primary);
+  --button-primary__border-color: var(--button-primary__bg-color);
   --button-primary__color: var(--mer-text__on-primary);
   //hover
-  --button-primary__background-color--hover: var(--mer-accent__primary--hover);
-  --button-primary__border-color--hover: var(
-    --button-primary__background-color--hover
-  );
+  --button-primary__bg-color--hover: var(--mer-accent__primary--hover);
+  --button-primary__border-color--hover: var(--button-primary__bg-color--hover);
   --button-primary__color--hover: var(--mer-text__on-primary);
 
   //active
-  --button-primary__background-color--active: var(
-    --mer-accent__primary--active
-  );
+  --button-primary__bg-color--active: var(--mer-accent__primary--active);
   --button-primary__border-color--active: var(
-    --button-primary__background-color--active
+    --button-primary__bg-color--active
   );
   --button-primary__color--active: var(--mer-text__on-primary--active);
 
   //disabled
-  --button-primary__background-color--disabled: var(
-    --mer-accent__primary--disabled
-  );
+  --button-primary__bg-color--disabled: var(--mer-accent__primary--disabled);
   --button-primary__border-color--disabled: var(
     --mer-border-color__primary--disabled
   );
   --button-primary__color--disabled: var(--mer-text__on-disabled);
 
   //destructive
-  --button-primary__background-color--destructive: var(
+  --button-primary__bg-color--destructive: var(
     --mer-accent__primary--destructive
   );
+  --button-primary__bg-color--destructive-hover: var(
+    --mer-accent__primary--destructive-hover
+  );
+  --button-primary__bg-color--destructive-active: var(
+    --mer-accent__primary--destructive-active
+  );
   --button-primary__border-color--destructive: var(
-    --button-primary__background-color--destructive
+    --button-primary__bg-color--destructive
   );
   --button-primary__color--destructive: var(--mer-text__on-primary);
 }
@@ -2433,6 +2289,19 @@
   --button-secondary__background-color--disabled: transparent;
   --button-secondary__border-color--disabled: var(--mer-text__on-disabled);
   --button-secondary__color--disabled: var(--mer-text__on-disabled);
+
+  //destructive
+  --button-secondary__bg-color--destructive: transparent;
+  --button-secondary__bg-color--destructive-hover: var(
+    --mer-accent__primary--destructive-hover
+  );
+  --button-secondary__bg-color--destructive-active: var(
+    --mer-accent__primary--destructive-active
+  );
+  --button-secondary__border-color--destructive: var(
+    --button-primary__bg-color--destructive
+  );
+  --button-secondary__color--destructive: var(--mer-text__on-primary);
 }
 
 @mixin button-tokens-tertiary() {
@@ -2456,10 +2325,9 @@
 
 %button-base {
   @include button-common-styles();
-  @include control-height-regular();
   @include control-border();
   @include control-font-size-regular();
-  @include control-padding-inline();
+  @include control-padding-inline-block();
   padding-inline: var(--control__padding-inline);
 
   &--focus-visible {
@@ -2475,31 +2343,47 @@
   //overwrite some control default styles
   --control__border-color: var(--button-primary__border-color);
 
-  background-color: var(--button-primary__background-color);
+  background-color: var(--button-primary__bg-color);
   color: var(--button-primary__color);
 
   &--hover {
-    background-color: var(--button-primary__background-color--hover);
+    background-color: var(--button-primary__bg-color--hover);
     --control__border-color: var(--button-primary__border-color--hover);
     color: var(--button-primary__color--hover);
   }
 
   &--active {
-    background-color: var(--button-primary__background-color--active);
+    background-color: var(--button-primary__bg-color--active);
     --control__border-color: var(--button-primary__border-color--active);
     color: var(--button-primary__color--active);
   }
 
   &--disabled {
-    background-color: var(--button-primary__background-color--disabled);
-    --control__border-color: var(--button-primary__background-color--disabled);
+    background-color: var(--button-primary__bg-color--disabled);
+    --control__border-color: var(--button-primary__bg-color--disabled);
     color: var(--button-primary__color--disabled);
   }
 
-  &-destructive {
+  &--destructive {
     --control__border-color: var(--button-primary__border-color--destructive);
-    background-color: var(--button-primary__background-color--destructive);
+    background-color: var(--button-primary__bg-color--destructive);
     color: var(--button-primary__color--destructive);
+
+    &-hover {
+      --control__border-color: var(
+        --button-primary__bg-color--destructive-hover
+      );
+      background-color: var(--button-primary__bg-color--destructive-hover);
+      color: var(--button-primary__color--destructive);
+    }
+
+    &-active {
+      --control__border-color: var(
+        --button-primary__bg-color--destructive-active
+      );
+      background-color: var(--button-primary__bg-color--destructive-active);
+      color: var(--button-primary__color--destructive);
+    }
   }
 }
 
@@ -2566,12 +2450,16 @@
 /// @param {String} $selector [".button-primary"] -
 @mixin button-primary(
   $selector: ".button-primary",
-  $destructive-selector: ".button-primary--destructive",
+  $destructive-selector: ".button-primary-destructive",
   $add--disabled: true,
   $add--destructive: true
 ) {
   #{$selector} {
     @extend %button-primary;
+
+    &:focus-visible {
+      @extend %button-base--focus-visible;
+    }
 
     &:hover {
       @extend %button-primary--hover;
@@ -2589,14 +2477,14 @@
   }
   @if $add--destructive {
     #{$destructive-selector} {
-      @extend %button-primary-destructive;
+      @extend %button-primary--destructive;
 
       &:hover {
-        @extend %button-primary-destructive;
+        @extend %button-primary--destructive-hover;
       }
 
       &:active {
-        @extend %button-primary-destructive;
+        @extend %button-primary--destructive-active;
       }
     }
   }
@@ -2607,6 +2495,10 @@
 @mixin button-secondary($selector: ".button-secondary", $add--disabled: true) {
   #{$selector} {
     @extend %button-secondary;
+
+    &:focus-visible {
+      @extend %button-base--focus-visible;
+    }
 
     &:hover {
       @extend %button-secondary--hover;
@@ -2630,6 +2522,10 @@
 @mixin button-tertiary($selector: ".button-tertiary", $add--disabled: true) {
   #{$selector} {
     @extend %button-tertiary;
+
+    &:focus-visible {
+      @extend %button-base--focus-visible;
+    }
 
     &:hover {
       @extend %button-tertiary--hover;
@@ -3298,40 +3194,40 @@
 
 // Icons
 @mixin button-tokens-primary() {
-  --button-primary__background-color: var(--mer-accent__primary);
-  --button-primary__border-color: var(--button-primary__background-color);
+  --button-primary__bg-color: var(--mer-accent__primary);
+  --button-primary__border-color: var(--button-primary__bg-color);
   --button-primary__color: var(--mer-text__on-primary);
   //hover
-  --button-primary__background-color--hover: var(--mer-accent__primary--hover);
-  --button-primary__border-color--hover: var(
-    --button-primary__background-color--hover
-  );
+  --button-primary__bg-color--hover: var(--mer-accent__primary--hover);
+  --button-primary__border-color--hover: var(--button-primary__bg-color--hover);
   --button-primary__color--hover: var(--mer-text__on-primary);
 
   //active
-  --button-primary__background-color--active: var(
-    --mer-accent__primary--active
-  );
+  --button-primary__bg-color--active: var(--mer-accent__primary--active);
   --button-primary__border-color--active: var(
-    --button-primary__background-color--active
+    --button-primary__bg-color--active
   );
   --button-primary__color--active: var(--mer-text__on-primary--active);
 
   //disabled
-  --button-primary__background-color--disabled: var(
-    --mer-accent__primary--disabled
-  );
+  --button-primary__bg-color--disabled: var(--mer-accent__primary--disabled);
   --button-primary__border-color--disabled: var(
     --mer-border-color__primary--disabled
   );
   --button-primary__color--disabled: var(--mer-text__on-disabled);
 
   //destructive
-  --button-primary__background-color--destructive: var(
+  --button-primary__bg-color--destructive: var(
     --mer-accent__primary--destructive
   );
+  --button-primary__bg-color--destructive-hover: var(
+    --mer-accent__primary--destructive-hover
+  );
+  --button-primary__bg-color--destructive-active: var(
+    --mer-accent__primary--destructive-active
+  );
   --button-primary__border-color--destructive: var(
-    --button-primary__background-color--destructive
+    --button-primary__bg-color--destructive
   );
   --button-primary__color--destructive: var(--mer-text__on-primary);
 }
@@ -3356,6 +3252,19 @@
   --button-secondary__background-color--disabled: transparent;
   --button-secondary__border-color--disabled: var(--mer-text__on-disabled);
   --button-secondary__color--disabled: var(--mer-text__on-disabled);
+
+  //destructive
+  --button-secondary__bg-color--destructive: transparent;
+  --button-secondary__bg-color--destructive-hover: var(
+    --mer-accent__primary--destructive-hover
+  );
+  --button-secondary__bg-color--destructive-active: var(
+    --mer-accent__primary--destructive-active
+  );
+  --button-secondary__border-color--destructive: var(
+    --button-primary__bg-color--destructive
+  );
+  --button-secondary__color--destructive: var(--mer-text__on-primary);
 }
 
 @mixin button-tokens-tertiary() {
@@ -3423,7 +3332,7 @@
 
 %accordion-panel {
   border-radius: var(--mer-border__radius--sm);
-  background-color: var(--mer-color__elevation--01);
+  background-color: var(--mer-surface__elevation--01);
 
   &-outlined {
     border: 1px solid var(--mer-border-color__on-surface);
@@ -3569,7 +3478,7 @@
     }
 
     &::part(message assistant complete) {
-      background-color: var(--mer-color__elevation--01);
+      background-color: var(--mer-surface__elevation--01);
     }
 
     &::part(message assistant warning) {
@@ -3687,6 +3596,7 @@
 
 /// @group Checkbox
 /// @param {String} $checkbox-selector [".checkbox"] -
+/// @param {String} $checkbox--error-selector [".checkbox-error::part(input)"] -
 /// @param {String} $checkbox__input-selector [".checkbox::part(input)"] -
 /// @param {String} $checkbox__input--disabled-selector [".checkbox::part(input disabled)"] -
 /// @param {String} $checkbox__input--checked-selector [".checkbox::part(input checked)"] -
@@ -3703,29 +3613,21 @@
 /// @param {Boolean} $add--label [true] -
 @mixin checkbox(
   $checkbox-selector: ".checkbox",
-
+  $checkbox--error-selector: ".checkbox-error::part(input)",
   $checkbox__input-selector: ".checkbox::part(input)",
-
   $checkbox__input--disabled-selector: ".checkbox::part(input disabled)",
-
   $checkbox__input--checked-selector: ".checkbox::part(input checked)",
-
   $checkbox__input--indeterminate-selector:
     ".checkbox::part(input indeterminate)",
-
   $checkbox__input--error-selector: ".checkbox::part(input error)",
 
   $checkbox__option--disabled-selector: ".checkbox::part(option disabled)",
-
   $checkbox__option--checked-selector: ".checkbox::part(option checked)",
-
   $checkbox__option--indeterminate-selector:
     ".checkbox::part(option indeterminate)",
-
   $checkbox__option--error-selector: ".checkbox::part(option error)",
 
   $checkbox__label-selector: ".checkbox::part(label)",
-
   $checkbox__label--disabled-selector: ".checkbox::part(label disabled)",
 
   $add--disabled: true,
@@ -3793,14 +3695,10 @@
   }
 
   // Error
-  // Not implemented yet in the control
   @if $add--error {
-    // Input
-    #{$checkbox__input--error-selector} {
-    }
-
     // Option
-    #{$checkbox__option--error-selector} {
+    #{$checkbox--error-selector} {
+      @include control-colors-error();
     }
   }
 }
@@ -3812,9 +3710,9 @@
   --code__color-light-blue: var(--mer-color__primary-blue--200);
   --code__color-red: var(--mer-color__message-red--200);
   --code__color-green: var(--mer-color__message-green--200);
-  --code__bg-color: var(--mer-color__surface);
+  --code__bg-color: var(--mer-surface__elevation--01);
   --code__border: var(--mer-border__width--sm) solid
-    var(--mer-color__elevation--03);
+    var(--mer-surface__elevation--03);
   --code__border-radius: var(--mer-border__radius--sm);
   --code__padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
 
@@ -4038,12 +3936,12 @@
 // ----------------------
 // Focus
 // ----------------------
-@mixin focus-outline($outline: false) {
+@mixin focus-outline() {
   outline: var(--focus__outline-width) var(--focus__outline-style)
     var(--focus__outline-color);
   outline-offset: var(--focus__outline-offset);
 }
-@mixin focus-border($outline: false) {
+@mixin focus-border() {
   border-color: var(--borders-un-border-color__focused);
 }
 
@@ -4348,14 +4246,14 @@
   padding-block-end: var(--mer-spacing--2xs);
 }
 @mixin grid-rowset-legend-colors-enabled() {
-  --grid-rowset-legend__bg-color: var(--mer-color__elevation--02);
+  --grid-rowset-legend__bg-color: var(--mer-surface__elevation--02);
   background-color: var(--grid-rowset-legend__bg-color);
 }
 @mixin grid-rowset-legend-colors-hover() {
-  --grid-rowset-legend__bg-color: var(--mer-color__elevation--03);
+  --grid-rowset-legend__bg-color: var(--mer-surface__elevation--03);
 }
 @mixin grid-rowset-legend-colors-active() {
-  --grid-rowset-legend__bg-color: var(--mer-color__elevation--02);
+  --grid-rowset-legend__bg-color: var(--mer-surface__elevation--02);
 }
 
 // ----------------------
@@ -4396,7 +4294,9 @@
   --tab-caption__border-color--selected-inline: var(
     --mer-border-color__primary--disabled
   );
-  --tab-caption__border-color--selected-stack: var(--mer-color__elevation--02);
+  --tab-caption__border-color--selected-stack: var(
+    --mer-surface__elevation--02
+  );
 }
 @mixin tab-button-colors-selected-inline() {
   --tab-caption__bg-color: var(--tab-caption__bg-color--selected-inline);
@@ -4475,7 +4375,7 @@
 }
 @mixin control-footer-border() {
   border-block-start: var(--mer-border__width--sm) solid
-    var(--mer-color__elevation--04);
+    var(--mer-border-color__on-elevation--01);
 }
 @mixin control-footer(
   $selector: ".control-footer",
@@ -4578,7 +4478,7 @@
   @include control-border();
   @include control-colors-enabled();
   @include control-font-weight-regular();
-  @include control-font-size-small();
+  @include control-font-size-regular();
   @include control-padding-inline-block();
 
   &:hover {
@@ -4599,6 +4499,7 @@
 /// @group ComboBox
 /// @param {String} $combo-box-selector [".combo-box"] -
 /// @param {String} $combo-box--disabled-selector [".combo-box[disabled]"] -
+/// @param {String} $combo-box--error-selector [".combo-box-error"] -
 /// @param {String} $combo-box__placeholder-selector [".combo-box::part(placeholder)"] -
 /// @param {String} $window-selector [".combo-box::part(window)"] -
 /// @param {String} $group-selector [".combo-box::part(group)"] -
@@ -4617,6 +4518,7 @@
 @mixin combo-box(
   $combo-box-selector: ".combo-box",
   $combo-box--disabled-selector: ".combo-box[disabled]",
+  $combo-box--error-selector: ".combo-box-error",
   $combo-box__placeholder-selector: ".combo-box::part(placeholder)",
   $window-selector: ".combo-box::part(window)",
   $group-selector: ".combo-box::part(group)",
@@ -4662,6 +4564,12 @@
 
     #{$item--disabled-selector} {
       @include item-colors-disabled();
+    }
+  }
+
+  @if $add--error {
+    #{$combo-box--error-selector} {
+      @include control-colors-error();
     }
   }
 
@@ -4728,7 +4636,7 @@
   --spacing-body-inline-start: var(--mer-spacing--md);
   --spacing-body-inline-end: var(--mer-spacing--md);
   --ch-dialog-max-inline-size: 800px;
-  background-color: var(--mer-color__elevation--01);
+  background-color: var(--mer-surface__elevation--01);
   box-shadow: var(--mer-box-shadow--01);
 
   &__backdrop {
@@ -4742,7 +4650,7 @@
     padding-block: var(--mer-spacing--md);
     padding-inline: var(--mer-spacing--sm);
     border-block-end: var(--mer-border__width--sm) solid
-      var(--mer-color__elevation--04);
+      var(--mer-border-color__on-elevation--01);
   }
 
   &__caption {
@@ -5048,11 +4956,11 @@
   @include control-border();
   @include control-colors-enabled();
   @include control-font-weight-regular();
-  @include control-font-size-small();
+  @include control-font-size-regular();
   @include control-padding-inline-block();
 
   &--focus {
-    @include focus-border();
+    @include focus-outline();
   }
 
   &--hover {
@@ -5079,17 +4987,23 @@
   #{$selector} {
     @extend %form-input;
 
-    &:hover {
-      @extend %form-input--hover;
-    }
-
     &:focus {
       @extend %form-input--focus;
+    }
+
+    &:hover {
+      @extend %form-input--hover;
     }
 
     @if $add--disabled {
       &:disabled {
         @extend %form-input--disabled;
+      }
+    }
+
+    @if $add--placeholder {
+      &::placeholder {
+        font-style: italic;
       }
     }
   }
@@ -5500,7 +5414,7 @@
     inset-block-start: var(--mer-spacing--md);
     inset-inline-end: var(--mer-spacing--xs);
     padding: 6px;
-    background-color: var(--mer-color__elevation--01);
+    background-color: var(--mer-surface__elevation--01);
     border-radius: var(--mer-border__radius--xs);
   }
 
@@ -7060,7 +6974,7 @@
   --indent: 16px;
   @include items-container-colors();
 
-  --item__border-color--enabled: var(--mer-color__elevation--04);
+  --item__border-color--enabled: var(--mer-surface__elevation--01);
   // @include tabular-grid-tokens();
   @include tabular-grid-row-tokens();
   @include tabular-grid-column-tokens();
@@ -7096,7 +7010,7 @@
 }
 
 %tabular-grid-column__bar-resize-split {
-  background-color: var(--mer-color__elevation--04);
+  background-color: var(--mer-surface__elevation--01);
   inline-size: var(--grid-bar-resize-split__inline-size);
   &--hover {
     background-color: var(--mer-accent__primary--hover);
@@ -8179,7 +8093,7 @@
 // TODO: Improve this
 %tree-view--drag-preview {
   padding-inline: 8px;
-  background-color: var(--mer-color__elevation--04);
+  background-color: var(--mer-surface__elevation--01);
   border-radius: 10px;
   box-shadow: var(--mer-elevation__box-shadow--03);
   font-size: 8px;
@@ -8446,7 +8360,6 @@
   $tokens: true,
   $border: true,
   $colors: true,
-  $elevation: true,
   $font: true,
   $spacing: true,
   $timing: true,
@@ -16547,12 +16460,17 @@
     }
   }
 
+  // Gradients (independent of color scheme at the time of writing)
+  @if $colors and $tokens {
+    :root {
+      @include foundation-colors--gradients();
+    }
+  }
+
   // - - - - - - - - - - - - - - - - - - - -
   //        Other Tokens than Colors
   // - - - - - - - - - - - - - - - - - - - -
-  @if $tokens and
-    ($border or $colors or $elevation or $font or $spacing or $timing)
-  {
+  @if $tokens and ($border or $colors or $font or $spacing or $timing) {
     :root {
       // Border
       @if $border {
@@ -16568,32 +16486,11 @@
       @if $colors {
         @include semantic-accent();
         @include semantic-border();
+        @include semantic-heading();
         @include semantic-icon();
         @include semantic-item();
+        @include semantic-surface();
         @include semantic-text();
-        @include semantic-heading();
-      }
-
-      // Elevation Light
-      @if $elevation and $light-theme {
-        // TODO: This appears to be placed in the wrong selector
-        @include elevation--light();
-      }
-      @if $elevation and $prefers-color-scheme-light {
-        @media (prefers-color-scheme: light) {
-          @include elevation--light();
-        }
-      }
-
-      // Elevation Dark
-      @if $elevation and $dark-theme {
-        // TODO: This appears to be placed in the wrong selector
-        @include elevation--dark();
-      }
-      @if $elevation and $prefers-color-scheme-dark {
-        @media (prefers-color-scheme: dark) {
-          @include elevation--dark();
-        }
       }
 
       @if $font {
@@ -16620,7 +16517,7 @@
       @if $tokens {
         // Default background-color and color
         @if $colors {
-          background-color: var(--mer-color__surface);
+          background-color: var(--mer-surface);
           color: var(--mer-text__on-surface);
         }
 
@@ -16821,7 +16718,6 @@
   $tokens: false,
   $border: false,
   $colors: false,
-  $elevation: false,
   $font: false,
   $spacing: false,
   $timing: false,
@@ -16890,7 +16786,6 @@
     $tokens: $tokens,
     $border: $border,
     $colors: $colors,
-    $elevation: $elevation,
     $font: $font,
     $spacing: $spacing,
     $timing: $timing,

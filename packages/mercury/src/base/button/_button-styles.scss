@@ -2,10 +2,9 @@
 
 %button-base {
   @include button-common-styles();
-  @include control-height-regular();
   @include control-border();
   @include control-font-size-regular();
-  @include control-padding-inline();
+  @include control-padding-inline-block();
   padding-inline: var(--control__padding-inline);
 
   &--focus-visible {
@@ -21,31 +20,47 @@
   //overwrite some control default styles
   --control__border-color: var(--button-primary__border-color);
 
-  background-color: var(--button-primary__background-color);
+  background-color: var(--button-primary__bg-color);
   color: var(--button-primary__color);
 
   &--hover {
-    background-color: var(--button-primary__background-color--hover);
+    background-color: var(--button-primary__bg-color--hover);
     --control__border-color: var(--button-primary__border-color--hover);
     color: var(--button-primary__color--hover);
   }
 
   &--active {
-    background-color: var(--button-primary__background-color--active);
+    background-color: var(--button-primary__bg-color--active);
     --control__border-color: var(--button-primary__border-color--active);
     color: var(--button-primary__color--active);
   }
 
   &--disabled {
-    background-color: var(--button-primary__background-color--disabled);
-    --control__border-color: var(--button-primary__background-color--disabled);
+    background-color: var(--button-primary__bg-color--disabled);
+    --control__border-color: var(--button-primary__bg-color--disabled);
     color: var(--button-primary__color--disabled);
   }
 
-  &-destructive {
+  &--destructive {
     --control__border-color: var(--button-primary__border-color--destructive);
-    background-color: var(--button-primary__background-color--destructive);
+    background-color: var(--button-primary__bg-color--destructive);
     color: var(--button-primary__color--destructive);
+
+    &-hover {
+      --control__border-color: var(
+        --button-primary__bg-color--destructive-hover
+      );
+      background-color: var(--button-primary__bg-color--destructive-hover);
+      color: var(--button-primary__color--destructive);
+    }
+
+    &-active {
+      --control__border-color: var(
+        --button-primary__bg-color--destructive-active
+      );
+      background-color: var(--button-primary__bg-color--destructive-active);
+      color: var(--button-primary__color--destructive);
+    }
   }
 }
 
@@ -112,12 +127,16 @@
 /// @param {String} $selector [".button-primary"] -
 @mixin button-primary(
   $selector: ".button-primary",
-  $destructive-selector: ".button-primary--destructive",
+  $destructive-selector: ".button-primary-destructive",
   $add--disabled: true,
   $add--destructive: true
 ) {
   #{$selector} {
     @extend %button-primary;
+
+    &:focus-visible {
+      @extend %button-base--focus-visible;
+    }
 
     &:hover {
       @extend %button-primary--hover;
@@ -135,14 +154,14 @@
   }
   @if $add--destructive {
     #{$destructive-selector} {
-      @extend %button-primary-destructive;
+      @extend %button-primary--destructive;
 
       &:hover {
-        @extend %button-primary-destructive;
+        @extend %button-primary--destructive-hover;
       }
 
       &:active {
-        @extend %button-primary-destructive;
+        @extend %button-primary--destructive-active;
       }
     }
   }
@@ -153,6 +172,10 @@
 @mixin button-secondary($selector: ".button-secondary", $add--disabled: true) {
   #{$selector} {
     @extend %button-secondary;
+
+    &:focus-visible {
+      @extend %button-base--focus-visible;
+    }
 
     &:hover {
       @extend %button-secondary--hover;
@@ -176,6 +199,10 @@
 @mixin button-tertiary($selector: ".button-tertiary", $add--disabled: true) {
   #{$selector} {
     @extend %button-tertiary;
+
+    &:focus-visible {
+      @extend %button-base--focus-visible;
+    }
 
     &:hover {
       @extend %button-tertiary--hover;

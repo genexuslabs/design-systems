@@ -16,6 +16,14 @@
     <link rel="stylesheet" href="./assets/styles/sidebar.css" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <link rel="stylesheet" href="./assets/styles/reset.css" />
+
+    <style>
+      .custom-gap {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+    </style>
   </head>
   <body class="showcase" data-sidebar data-bundle="components/dialog">
     <script src="./assets/scripts/scripts.js"></script>
@@ -52,21 +60,27 @@
                     resizable
                     allow-drag="box"
                   >
-                    <div class="spacing-body">
-                      <p class="text-body" style="margin-block-start: 0">
+                    <div class="spacing-body custom-gap">
+                      <p
+                        class="text-body-regular-m"
+                        style="margin-block-start: 0"
+                      >
                         GeneXus is a low-code development platform that
                         streamlines the creation of enterprise applications by
                         automatically generating code for various environments
                         from a single specification.
                       </p>
-                      <p class="text-body">
+                      <p class="text-body-regular-m">
                         It's ideal for developers who want to quickly prototype,
                         develop, and deploy applications across web, mobile, and
                         desktop platforms. With its model-driven approach,
                         GeneXus minimizes the need for manual coding, allowing
                         developers to focus on design and user experience.
                       </p>
-                      <p class="text-body" style="margin-block-end: 0">
+                      <p
+                        class="text-body-regular-m"
+                        style="margin-block-end: 0"
+                      >
                         The platform also excels in its robust integration
                         capabilities, enabling seamless connectivity with
                         various databases and third-party services. This

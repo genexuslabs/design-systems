@@ -146,6 +146,33 @@
             </article>
 
             <!-- ========================== 
+          with error
+          =========================== -->
+            <article class="article" data-nav data-title="with error">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox checkbox-error"
+                    checked-value="true"
+                    un-checked-value="false"
+                    value="false"
+                    caption="The Caption"
+                  ></ch-checkbox>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-checkbox class="checkbox checkbox--disabled"></ch-checkbox>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
           grouping checkboxes
           =========================== -->
             <article class="article" data-nav data-title="grouping checkboxes">

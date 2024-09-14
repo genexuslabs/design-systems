@@ -63,11 +63,9 @@
                   </script>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-1" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup1 = `<ch-combo-box-render class="combo-box"></ch-combo-box-render>`;
-                    document.getElementById("ch-code-1").value = markup1;
+                    code = `<ch-combo-box-render class="combo-box"></ch-combo-box-render>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -91,18 +89,48 @@
                   ></ch-combo-box-render>
                   <script type="module">
                     import { comboBox1Model } from "./assets/models/combo-box.js";
-                    const comboBox1 = document.getElementById("combo-box-2");
-                    comboBox1.model = comboBox1Model;
-                    comboBox1.placeholder = "Option";
+                    const comboBox2 = document.getElementById("combo-box-2");
+                    comboBox2.model = comboBox1Model;
+                    comboBox2.placeholder = "Option";
                     // comboBox1.filterType = "caption";
                   </script>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-2" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup2 = `<ch-combo-box-render class="combo-box" disabled></ch-combo-box-render>`;
-                    document.getElementById("ch-code-2").value = markup2;
+                    code = `<ch-combo-box-render class="combo-box" disabled></ch-combo-box-render>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          with error
+          =========================== -->
+            <article class="article" data-nav data-title="with error">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-combo-box-render
+                    accessible-name="Colors"
+                    id="combo-box-3"
+                    class="combo-box combo-box-error"
+                  ></ch-combo-box-render>
+                  <script type="module">
+                    import { comboBox1Model } from "./assets/models/combo-box.js";
+                    const comboBox3 = document.getElementById("combo-box-3");
+                    comboBox3.model = comboBox1Model;
+                    comboBox3.placeholder = "Option";
+                    // comboBox1.filterType = "caption";
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-combo-box-render class="combo-box combo-box-error" disabled></ch-combo-box-render>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
