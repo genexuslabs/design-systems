@@ -53,7 +53,7 @@
 
     &::part(message__content) {
       @extend %text-body-regular-m;
-      color: #e1ecf9;
+      color: var(--mer-color__neutral-gray--100);
     }
 
     &::part(message__content user),
@@ -66,9 +66,13 @@
       border-inline-start: 2px solid var(--mer-border-color__primary);
     }
 
+    &::part(message assistant) {
+      background-color: var(--mer-color__neutral-gray--900);
+    }
+
     &::part(message assistant waiting) {
       @extend %text-body-italic-s;
-      background-color: #11151c;
+      background-color: var(--mer-color__neutral-gray--900);
       border-radius: unset;
       color: #666;
     }
@@ -120,8 +124,8 @@
     );
 
     &::part(send-input) {
-      background-color: #11151c;
-      border-color: #11151c;
+      background-color: var(--mer-color__neutral-gray--900);
+      border-color: var(--mer-color__neutral-gray--900);
       --control__padding-block: 10px;
     }
 
