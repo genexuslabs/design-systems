@@ -232,9 +232,12 @@ body.all-hidden .section__header {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px dashed var(--mer-border-color__on-surface);
+  outline: 2px dashed var(--mer-border-color__on-surface);
   color: var(--mer-color__neutral-gray--500);
-  block-size: calc(var(--control__height) + 8px);
+  block-size: calc(
+    var(--control__font-size--regular) * var(--control__line-height) +
+      var(--control__padding-block) * 2 + var(--control__border-width) * 2
+  );
 }
 
 /* List */
