@@ -116,6 +116,7 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/tab"),
     getThemeModelItem(basePath, "components/tabular-grid"),
     getThemeModelItem(basePath, "components/ticket-list"),
+    getThemeModelItem(basePath, "components/tooltip"),
     getThemeModelItem(basePath, "components/tree-view"),
 
     // Resets
