@@ -163,6 +163,9 @@
   border-style: var(--items-container__border-style);
   border-width: var(--items-container__border-width);
 }
+@mixin items-container-border-radius() {
+  border-radius: var(--items-container__border-radius);
+}
 @mixin items-container-colors() {
   background-color: var(--items-container__bg-color);
   border-color: var(--items-container__border-color);
@@ -172,7 +175,6 @@
   padding-inline: var(--items-container__padding-inline);
 }
 @mixin items-container-dropdown() {
-  border-radius: var(--items-container__border-radius);
   box-shadow: var(--items-container__box-shadow);
 }
 @mixin items-container-gap() {

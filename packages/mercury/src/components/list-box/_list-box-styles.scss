@@ -7,8 +7,8 @@
   --ch-action-list-item__image-size: var(--mer-icon__box--md);
 
   @include items-container-border();
+  @include items-container-border-radius();
   @include items-container-colors();
-  @include items-container-dropdown();
   @include items-container-gap();
   @include items-container-padding();
 
