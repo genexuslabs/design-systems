@@ -1,9 +1,15 @@
 @import "../base/button/button-tokens";
 
 %button-icon-only {
-  --control__padding-inline: 0;
-  inline-size: var(--control__height);
-  block-size: var(--control__height);
+  padding: 0;
+  box-sizing: border-box;
+  // A control block-size is the sum of its font-size + line-height + padding-block + border.
+  $buttonIconOnlySize: calc(
+    var(--control__font-size--regular) * var(--control__line-height) +
+      var(--control__padding-block) * 2 + var(--control__border-width) * 2
+  );
+  inline-size: $buttonIconOnlySize;
+  block-size: $buttonIconOnlySize;
 }
 
 %button-icon-and-text {
