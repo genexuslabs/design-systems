@@ -5783,11 +5783,6 @@
     }
   }
   &__value {
-    // Control font-size show "inherit" the tabular grid font-size.
-    --control__font-size--regular: var(--grid-font-size);
-    --control__font-size--small: var(--grid-font-size);
-    --item__font-size: var(--grid-font-size);
-
     &--readonly {
       @extend %text-readonly;
     }
@@ -7142,6 +7137,10 @@
   @include grid-cell-padding-inline-block();
   @include grid-row-colors-enabled();
   --item__bg-color: var(--items-container__bg-color);
+  // Control font-size show "inherit" the tabular grid font-size.
+  --control__font-size--regular: var(--grid-font-size);
+  --control__font-size--small: var(--grid-font-size);
+  --item__font-size: var(--grid-font-size);
 
   border: 0; //WA
 
