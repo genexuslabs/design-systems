@@ -193,6 +193,7 @@
   @include grid-cell-padding-inline-block();
   @include grid-row-colors-enabled();
   --item__bg-color: var(--items-container__bg-color);
+
   border: 0; //WA
 
   &--focused {
