@@ -43,6 +43,57 @@
   --mer-color__message-red--200: #da1a27;
   --mer-color__message-red--300: #4d0000;
   --mer-color__message-red--400: #800000;
+
+  /* - - - - - - - - - - - - - 
+  Deprecated variables
+  - - - - - - - - - - - - - */
+  // surface
+  // Use --mer-surface instead
+  --mer-color__surface: var(--mer-surface, --mer-color__neutral-gray--900);
+
+  // gray
+  // The following gray values were removed. There are no new values for these tokens.
+  --mer-color__neutral-gray--1100: #f1f1f1;
+  --mer-color__neutral-gray--1200: #e4e4e4;
+  --mer-color__neutral-gray--1300: #dedede;
+  --mer-color__neutral-gray--1400: #ffffff;
+
+  // elevation
+  // Use --mer-surface__elevation--01 instead
+  --mer-color__elevation--01: var(
+    --mer-surface__elevation--01,
+    --mer-color__neutral-gray--800
+  );
+  // Use --mer-surface__elevation--02 instead
+  --mer-color__elevation--02: var(
+    --mer-surface__elevation--02,
+    --mer-color__neutral-gray--700
+  );
+  // Use --mer-surface__elevation--03 instead
+  --mer-color__elevation--03: var(
+    --mer-surface__elevation--03,
+    --mer-color__neutral-gray--650
+  );
+  // --mer-color__elevation--04 was removed.
+  --mer-color__elevation--04: var(--mer-color__neutral-gray--600);
+
+  // Use --mer-surface__elevation--01 instead
+  --mer-elevation__bg-color--01: var(
+    --mer-surface__elevation--01,
+    --mer-color__neutral-gray--800
+  );
+  // Use --mer-surface__elevation--02 instead
+  --mer-elevation__bg-color--02: var(
+    --mer-surface__elevation--02,
+    --mer-color__neutral-gray--700
+  );
+  // Use --mer-surface__elevation--03 instead
+  --mer-elevation__bg-color--03: var(
+    --mer-surface__elevation--03,
+    --mer-color__neutral-gray--650
+  );
+  // --mer-color__elevation--04 was removed.
+  --mer-elevation__bg-color--04: var(--mer-color__neutral-gray--600);
 }
 
 @mixin foundation-colors--dark() {
@@ -90,4 +141,55 @@
   --mer-color__message-red--200: #d54b54;
   --mer-color__message-red--300: #ff6161;
   --mer-color__message-red--400: #ff9999;
+
+  /* - - - - - - - - - - - - - 
+  Deprecated variables
+  - - - - - - - - - - - - - */
+  // surface
+  // Use --mer-surface instead
+  --mer-color__surface: var(--mer-surface, --mer-color__neutral-gray--900);
+
+  // gray
+  // The following gray values were removed. There are no new values for these tokens.
+  --mer-color__neutral-gray--1100: #24272a;
+  --mer-color__neutral-gray--1200: #2d3032;
+  --mer-color__neutral-gray--1300: #3b3e40;
+  --mer-color__neutral-gray--1400: #2d3134;
+
+  // elevation
+  // Use --mer-surface__elevation--01 instead
+  --mer-color__elevation--01: var(
+    --mer-surface__elevation--01,
+    --mer-color__neutral-gray--800
+  );
+  // Use --mer-surface__elevation--02 instead
+  --mer-color__elevation--02: var(
+    --mer-surface__elevation--02,
+    --mer-color__neutral-gray--700
+  );
+  // Use --mer-surface__elevation--03 instead
+  --mer-color__elevation--03: var(
+    --mer-surface__elevation--03,
+    --mer-color__neutral-gray--650
+  );
+  // --mer-color__elevation--04 was removed.
+  --mer-color__elevation--04: var(--mer-color__neutral-gray--600);
+
+  // Use --mer-surface__elevation--01 instead
+  --mer-elevation__bg-color--01: var(
+    --mer-surface__elevation--01,
+    --mer-color__neutral-gray--800
+  );
+  // Use --mer-surface__elevation--02 instead
+  --mer-elevation__bg-color--02: var(
+    --mer-surface__elevation--02,
+    --mer-color__neutral-gray--700
+  );
+  // Use --mer-surface__elevation--03 instead
+  --mer-elevation__bg-color--03: var(
+    --mer-surface__elevation--03,
+    --mer-color__neutral-gray--650
+  );
+  // --mer-color__elevation--04 was removed.
+  --mer-elevation__bg-color--04: var(--mer-color__neutral-gray--600);
 }
