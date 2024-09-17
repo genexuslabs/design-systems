@@ -3,6 +3,7 @@
 @import "../../common/utilities";
 @import "../../common/icons/tree-view";
 @import "./base/common";
+@import "./base/utilities";
 
 // Resets
 @import "../../common/resets";
@@ -107,6 +108,7 @@
   $spacing-classes: true,
   $typography-classes: true,
   $scrollbar-components: true,
+  $utility-classes: true,
 
   // Components
   $components: true,
@@ -439,6 +441,10 @@
       @include icon-size-sm();
       @include icon-size-md();
       @include icon-and-text();
+    }
+
+    @if $utility-classes {
+      @include utilities-background();
     }
 
     @if $layout-classes {
