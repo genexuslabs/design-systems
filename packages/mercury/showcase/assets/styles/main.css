@@ -119,20 +119,27 @@ a.dummy-grid-container__item:active {
 /*====================
 Dashed dummy border
 ====================*/
+
+.dummy-border-highlighted {
+  --dummy-border-color: var(--mer-border-color__primary);
+}
+.dummy-border-dim {
+  --dummy-border-color: var(--mer-border-color__on-surface);
+}
 .dummy-border {
-  border: 1px dashed var(--mer-border-color__primary);
+  border: 1px dashed var(--dummy-border-color);
 }
 .dummy-border-block-start {
-  border-block-start: 1px dashed var(--mer-border-color__primary);
+  border-block-start: 1px dashed var(--dummy-border-color);
 }
 .dummy-border-block-end {
-  border-block-end: 1px dashed var(--mer-border-color__primary);
+  border-block-end: 1px dashed var(--dummy-border-color);
 }
 .dummy-border-inline-start {
-  border-inline-start: 1px dashed var(--mer-border-color__primary);
+  border-inline-start: 1px dashed var(--dummy-border-color);
 }
 .dummy-border-inline-end {
-  border-inline-end: 1px dashed var(--mer-border-color__primary);
+  border-inline-end: 1px dashed var(--dummy-border-color);
 }
 
 /*====================

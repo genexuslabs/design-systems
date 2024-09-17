@@ -11,7 +11,7 @@ const ON_COLORS = {
   "on-primary": "--mer-accent__primary",
   "on-surface": "--mer-color__surface",
   "on-message": "--mer-color__message-yellow--100",
-  "on-elevation": "--mer-color__elevation--01",
+  "on-elevation": "--mer-surface__elevation--01",
   "on-disabled": "--mer-accent__primary--disabled"
 };
 
