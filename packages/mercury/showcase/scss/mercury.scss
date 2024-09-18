@@ -3316,23 +3316,69 @@
 
 
 // Components
-%accordion {
+@mixin accordion-tokens() {
+  // chameleon tokens
   --ch-accordion__header-image-size: var(--mer-icon__box--sm);
   --ch-accordion__chevron-size: var(--mer-icon__box--sm);
-
   --ch-accordion-expand-collapse-duration: var(--mer-timing--fast);
   --ch-accordion-expand-collapse-timing-function: ease-in-out;
 
-  gap: var(--mer-spacing--2xs);
+  // spacing
+  --spacing-body-block-start: var(--mer-spacing--xs);
+  --spacing-body-block-end: var(--mer-spacing--xs);
+  --spacing-body-inline-start: var(--mer-spacing--sm);
+  --spacing-body-inline-end: var(--mer-spacing--sm);
+
+  // accordion
+  --accordion__gap: var(--mer-spacing--2xs);
+
+  // header
+  --accordion-header__padding: var(--mer-spacing--sm);
+  --accordion-header__gap: var(--mer-spacing--sm);
+  --accordion-header__color: var(--mer-text__highlighted);
+  --accordion-header__color--disabled: var(--mer-accent__primary--disabled);
+
+  // panel
+  --accordion-panel__border-radius: var(--mer-border__radius--sm);
+  --accordion-panel__bg-color: var(--mer-surface__elevation--01);
+
+  // panel outlined
+  --accordion-panel-outlined__border: var(--mer-border__width--sm) solid
+    var(--mer-border-color__on-surface);
+  --accordion-panel-outlined__border-radius: var(--mer-border__radius--sm);
+
+  // section
+  --accordion-section__margin-block: 1px var(--mer-spacing--sm);
+  --accordion-section__margin-inline: var(--mer-spacing--sm);
+  --accordion-section__border: var(--mer-border__width--sm) solid
+    var(--mer-border-color__on-elevation--01);
+  --accordion-section__border-radius: var(--mer-border__radius--sm);
+}
+
+
+%accordion {
+  @include accordion-tokens();
+  gap: var(--accordion__gap);
 }
 
 %accordion-header {
-  @extend %text-body;
-  padding: var(--mer-spacing--sm);
-  gap: var(--mer-spacing--sm);
+  @extend %text-body-highlighted-m;
+  padding: var(--accordion-header__padding);
+  gap: var(--accordion-header__gap);
+  color: var(--accordion-header__color);
 
   &--focus-visible {
-    outline: 1px solid;
+    @include focus-outline();
+  }
+
+  &--disabled {
+    color: var(--mer-accent__primary--disabled);
+  }
+
+  &-outlined {
+    &--disabled {
+      color: var(--mer-accent__primary--disabled);
+    }
   }
 }
 
@@ -3341,23 +3387,26 @@
   background-color: var(--mer-surface__elevation--01);
 
   &-outlined {
-    border: 1px solid var(--mer-border-color__on-surface);
-    border-radius: var(--mer-border__radius--sm);
+    border: var(--accordion-panel-outlined__border);
+    border-radius: var(--accordion-panel-outlined__border-radius);
   }
 }
 
 %accordion-section {
   // "1px" is used to improve the display of the outline when :focus-visible
-  margin-block: 1px var(--mer-spacing--sm);
-  margin-inline: var(--mer-spacing--sm);
-  border: 1px solid var(--mer-border-color__on-elevation--01);
-  border-radius: var(--mer-border__radius--sm);
+  margin-block: var(--accordion-section__margin-block);
+  margin-inline: var(--accordion-section__margin-inline);
+  padding-block: var(--accordion-section__padding-block);
+  padding-inline: var(--accordion-section__padding-inline);
+  border: var(--accordion-section__border);
+  border-radius: var(--accordion-section__border-radius);
 }
 
 @mixin accordion-filled(
   $accordion-selector: ".accordion-filled",
   $panel-selector: ".accordion-filled::part(panel)",
   $header-selector: ".accordion-filled::part(header)",
+  $header-disabled-selector: ".accordion-filled::part(header disabled)",
   $section-selector: ".accordion-filled::part(section)"
 ) {
   #{$accordion-selector} {
@@ -3376,8 +3425,8 @@
     }
   }
 
-  #{$section-selector} {
-    @extend %accordion-section;
+  #{$header-disabled-selector} {
+    @extend %accordion-header--disabled;
   }
 }
 
@@ -3385,6 +3434,7 @@
   $accordion-selector: ".accordion-outlined",
   $panel-selector: ".accordion-outlined::part(panel)",
   $header-selector: ".accordion-outlined::part(header)",
+  $header-disabled-selector: ".accordion-outlined::part(header disabled)",
   $section-selector: ".accordion-outlined::part(section)"
 ) {
   #{$accordion-selector} {
@@ -3405,6 +3455,10 @@
 
   #{$section-selector} {
     @extend %accordion-section;
+  }
+
+  #{$header-disabled-selector} {
+    @extend %accordion-header-outlined--disabled;
   }
 }
 
@@ -3463,7 +3517,7 @@
 
     &::part(message__content) {
       @extend %text-body-regular-m;
-      color: #e1ecf9;
+      color: var(--mer-color__neutral-gray--100);
     }
 
     &::part(message__content user),
@@ -3476,9 +3530,13 @@
       border-inline-start: 2px solid var(--mer-border-color__primary);
     }
 
+    &::part(message assistant) {
+      background-color: var(--mer-color__neutral-gray--900);
+    }
+
     &::part(message assistant waiting) {
       @extend %text-body-italic-s;
-      background-color: #11151c;
+      background-color: var(--mer-color__neutral-gray--900);
       border-radius: unset;
       color: #666;
     }
@@ -3530,8 +3588,8 @@
     );
 
     &::part(send-input) {
-      background-color: #11151c;
-      border-color: #11151c;
+      background-color: var(--mer-color__neutral-gray--900);
+      border-color: var(--mer-color__neutral-gray--900);
       --control__padding-block: 10px;
     }
 
@@ -4846,7 +4904,7 @@
   }
 
   &-tab-list--block {
-    background-color: var(--mer-color__neutral-gray--700);
+    background-color: var(--mer-color__neutral-gray--650);
     overflow: auto;
   }
 
