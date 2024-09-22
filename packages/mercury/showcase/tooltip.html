@@ -27,6 +27,10 @@
       .tooltip-paragraph {
         border-block-end: 1px dashed var(--mer-text__on-surface);
       }
+      .article__content {
+        padding: 64px;
+        text-align: center;
+      }
     </style>
   </head>
   <body class="showcase" data-sidebar data-bundle="components/tooltip">
@@ -37,7 +41,7 @@
         <section class="section" data-nav>
           <!-- header -->
           <header class="section__header">
-            <h1 class="section__title">tooltip</h1>
+            <h1 class="section__title">tooltip (work in progress)</h1>
             <p class="section__description">
               A tooltip in web development is a small, interactive pop-up that
               appears when a user hovers over or focuses on an element. It
@@ -45,6 +49,16 @@
               interface, offering users quick insights about features or
               actions. Tooltips are commonly used to enhance usability by
               clarifying unclear elements or providing guidance.
+            </p>
+            <p class="section__description section__description--note">
+              <code>ch-tooltip</code> allows a variety of positions from the
+              control that is applied on. Depending on the position a small
+              triangle will appear attached to the tooltip, with direction
+              towards the control. At the time of writing it is not possible for
+              Mercury to know the position of the tooltip. This is why there is
+              only one case in this page. Once the chameleon provides the
+              position to Mercury, all the tooltip possible positions will be
+              documented on this page.
             </p>
           </header>
           <div class="section__articles-container">
@@ -56,7 +70,7 @@
               <!-- main -->
               <div class="article__main">
                 <!-- <p class="article__description"></p> -->
-                <div class="article__content">
+                <div class="article__content dummy-border dummy-border-dim">
                   <p
                     class="text-body-regular-l tooltip-paragraph"
                     id="paragraph-id"

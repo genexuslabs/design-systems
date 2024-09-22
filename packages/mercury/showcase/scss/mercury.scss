@@ -778,6 +778,31 @@
   }
 }
 
+/// @group UtilityClasses
+/// @param {String} $elevation-01-selector [".elevation-01"] -
+/// @param {String} $elevation-02-selector [".elevation-02"] -
+/// @param {String} $elevation-03-selector [".elevation-03"] -
+@mixin utilities-background(
+  $elevation-01-selector: ".elevation-01",
+  $elevation-02-selector: ".elevation-02",
+  $elevation-03-selector: ".elevation-03"
+) {
+  #{$elevation-01-selector},
+  #{$elevation-02-selector},
+  #{$elevation-03-selector} {
+    color: var(--mer-text__on-elevation);
+  }
+  #{$elevation-01-selector} {
+    background-color: var(--mer-surface__elevation--01);
+  }
+  #{$elevation-02-selector} {
+    background-color: var(--mer-surface__elevation--02);
+  }
+  #{$elevation-03-selector} {
+    background-color: var(--mer-surface__elevation--03);
+  }
+}
+
 
 // Resets
 @mixin typography-reset() {
@@ -922,6 +947,8 @@
   --mer-color__message-red--200: #da1a27;
   --mer-color__message-red--300: #4d0000;
   --mer-color__message-red--400: #800000;
+  --mer-color__message-red--500: #ff9999;
+  --mer-color__message-red--600: #ff9999;
 }
 
 @mixin foundation-colors--dark() {
@@ -969,6 +996,8 @@
   --mer-color__message-red--200: #d54b54;
   --mer-color__message-red--300: #ff6161;
   --mer-color__message-red--400: #ff9999;
+  --mer-color__message-red--500: #800000;
+  --mer-color__message-red--600: #4d0000;
 }
 
 @mixin font() {
@@ -1156,7 +1185,7 @@
 
   // enabled
   --control__bg-color--enabled: transparent;
-  --control__border-color--enabled: var(--mer-border-color__neutral);
+  --control__border-color--enabled: var(--mer-color__neutral-gray--500);
   --control__color--enabled: var(--mer-text__neutral);
 
   // hover
@@ -1259,7 +1288,7 @@
 @mixin semantic-field() {
   // field group
   --field-group__row-gap: var(--mer-spacing--md);
-  --field-group__column-gap: var(--mer-spacing--md);
+  --field-group__column-gap: var(--mer-spacing--lg);
 
   // field
   --field__row-gap: var(--mer-spacing--xs);
@@ -1359,7 +1388,7 @@
   // ----------------------
   --focus__outline-width: var(--mer-border__width--sm);
   --focus__outline-style: solid;
-  --focus__outline-color: var(--mer-border-color__primary--focused);
+  --focus__outline-color: var(--mer-border-color__primary);
   --focus__outline-offset: calc(var(--mer-system__border-width) * -1);
   --borders-un-border-color__focused: var(--focus__outline-color);
 }
@@ -1557,7 +1586,8 @@
 
   // - - - - - - - Padding - - - - - - -
   --tab-caption__padding-block: var(--mer-spacing--xs);
-  --tab-caption__padding-inline: var(--mer-spacing--sm) var(--mer-spacing--xs);
+
+  --tab-caption__padding-inline: var(--mer-spacing--sm);
 
   // - - - - - - - Gap - - - - - - -
   --tab-caption__gap: var(--mer-spacing--xs); // 6px does not exist on the ds.
@@ -1568,6 +1598,7 @@
   --mer-color__surface: var(
     --mer-surface
   ); // '--mer-color__surface' TO be removed later (deprecated)
+
   --mer-surface__elevation--01: var(--mer-color__neutral-gray--800);
   --mer-surface__elevation--02: var(--mer-color__neutral-gray--700);
   --mer-surface__elevation--03: var(--mer-color__neutral-gray--650);
@@ -2302,6 +2333,21 @@
     --button-primary__bg-color--destructive
   );
   --button-secondary__color--destructive: var(--mer-text__on-primary);
+
+  //destructive
+  --button-secondary__bg-color--destructive: var(transparent);
+  --button-secondary__bg-color--destructive-hover: var(
+    --mer-color__message-red--600
+  );
+  --button-secondary__bg-color--destructive-active: var(
+    --mer-color__message-red--500
+  );
+  --button-secondary__border-color--destructive: var(
+    --mer-accent__primary--destructive
+  );
+  --button-secondary__color--destructive: var(
+    --mer-accent__primary--destructive
+  );
 }
 
 @mixin button-tokens-tertiary() {
@@ -2414,6 +2460,28 @@
     --control__border-color: var(--button-secondary__border-color--disabled);
     color: var(--button-secondary__color--disabled);
   }
+
+  &--destructive {
+    --control__border-color: var(--button-secondary__border-color--destructive);
+    background-color: var(--button-secondary__bg-color--destructive);
+    color: var(--button-secondary__color--destructive);
+
+    &-hover {
+      --control__border-color: var(
+        --button-secondary__bg-color--destructive-hover
+      );
+      background-color: var(--button-secondary__bg-color--destructive-hover);
+      color: var(--button-secondary__color--destructive);
+    }
+
+    &-active {
+      --control__border-color: var(
+        --button-secondary__bg-color--destructive-active
+      );
+      background-color: var(--button-secondary__bg-color--destructive-active);
+      color: var(--button-secondary__color--destructive);
+    }
+  }
 }
 
 %button-tertiary {
@@ -2475,6 +2543,7 @@
       }
     }
   }
+
   @if $add--destructive {
     #{$destructive-selector} {
       @extend %button-primary--destructive;
@@ -2492,7 +2561,12 @@
 
 /// @group Button
 /// @param {String} $selector [".button-secondary"] -
-@mixin button-secondary($selector: ".button-secondary", $add--disabled: true) {
+@mixin button-secondary(
+  $selector: ".button-secondary",
+  $destructive-selector: ".button-secondary-destructive",
+  $add--disabled: true,
+  $add--destructive: true
+) {
   #{$selector} {
     @extend %button-secondary;
 
@@ -2512,6 +2586,20 @@
       &:disabled,
       &--disabled {
         @extend %button-secondary--disabled;
+      }
+    }
+  }
+
+  @if $add--destructive {
+    #{$destructive-selector} {
+      @extend %button-secondary--destructive;
+
+      &:hover {
+        @extend %button-secondary--destructive-hover;
+      }
+
+      &:active {
+        @extend %button-secondary--destructive-active;
       }
     }
   }
@@ -3265,6 +3353,21 @@
     --button-primary__bg-color--destructive
   );
   --button-secondary__color--destructive: var(--mer-text__on-primary);
+
+  //destructive
+  --button-secondary__bg-color--destructive: var(transparent);
+  --button-secondary__bg-color--destructive-hover: var(
+    --mer-color__message-red--600
+  );
+  --button-secondary__bg-color--destructive-active: var(
+    --mer-color__message-red--500
+  );
+  --button-secondary__border-color--destructive: var(
+    --mer-accent__primary--destructive
+  );
+  --button-secondary__color--destructive: var(
+    --mer-accent__primary--destructive
+  );
 }
 
 @mixin button-tokens-tertiary() {
@@ -6716,6 +6819,7 @@
 
   &--disabled {
     @include tab-button-colors-disabled();
+    --tab-caption__border-width: 0;
   }
 
   &__close-button {
@@ -7165,6 +7269,11 @@
   @include grid-cell-padding-inline-block();
   @include grid-row-colors-enabled();
   --item__bg-color: var(--items-container__bg-color);
+  // Control font-size show "inherit" the tabular grid font-size.
+  --control__font-size--regular: var(--grid-font-size);
+  --control__font-size--small: var(--grid-font-size);
+  --item__font-size: var(--grid-font-size);
+
   border: 0; //WA
 
   &--focused {
@@ -8447,6 +8556,7 @@
   $spacing-classes: true,
   $typography-classes: true,
   $scrollbar-components: true,
+  $utility-classes: true,
 
   // Components
   $components: true,
@@ -16651,6 +16761,10 @@
       @include icon-size-sm();
       @include icon-size-md();
       @include icon-and-text();
+    }
+
+    @if $utility-classes {
+      @include utilities-background();
     }
 
     @if $layout-classes {

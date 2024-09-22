@@ -70,6 +70,21 @@
     --button-primary__bg-color--destructive
   );
   --button-secondary__color--destructive: var(--mer-text__on-primary);
+
+  //destructive
+  --button-secondary__bg-color--destructive: var(transparent);
+  --button-secondary__bg-color--destructive-hover: var(
+    --mer-color__message-red--600
+  );
+  --button-secondary__bg-color--destructive-active: var(
+    --mer-color__message-red--500
+  );
+  --button-secondary__border-color--destructive: var(
+    --mer-accent__primary--destructive
+  );
+  --button-secondary__color--destructive: var(
+    --mer-accent__primary--destructive
+  );
 }
 
 @mixin button-tokens-tertiary() {

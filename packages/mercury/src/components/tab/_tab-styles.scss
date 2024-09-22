@@ -45,6 +45,7 @@
 
   &--disabled {
     @include tab-button-colors-disabled();
+    --tab-caption__border-width: 0;
   }
 
   &__close-button {

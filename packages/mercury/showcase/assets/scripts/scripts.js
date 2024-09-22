@@ -11,7 +11,7 @@ const NAV_SECTIONS_AS_ARTICLES = document.body.hasAttribute(
 );
 const ARTICLE_HEADER_CLASS = ".article__header";
 const SECTION_SELECTOR = ".section";
-const SECTION_TITLE_SELECTOR = "section__title";
+const SECTION_TITLE_SELECTOR = ".section__title";
 const ARTICLE_SELECTOR = ".article";
 const SECTION_SIDEBAR_SELECTOR = ".section[data-nav]";
 const ARTICLE_SIDEBAR_SELECTOR = ".article[data-nav]";
@@ -599,6 +599,25 @@ const includeBundleButton = () => {
     MAIN_REF.insertBefore(bundleContainer, MAIN_REF.firstChild);
   }
 };
+
+/**
+ * @description: this function includes for every section a caption at the end that indicates the end.
+ */
+const includeEndOfSectionCaption = () => {
+  const pageSections = document.querySelectorAll(SECTION_SELECTOR);
+  pageSections.forEach(section => {
+    console.log("section", section);
+    const sectionTitleEl = section.querySelector(SECTION_TITLE_SELECTOR);
+    if (sectionTitleEl && sectionTitleEl.textContent.trim().length > 0) {
+      const endOfSectionEl = document.createElement("p");
+      endOfSectionEl.classList.add("section__end-caption");
+      endOfSectionEl.textContent = `end of ${sectionTitleEl.textContent.trim()} section`;
+      console.log(endOfSectionEl);
+      section.appendChild(endOfSectionEl);
+    }
+  });
+};
+
 document.addEventListener("DOMContentLoaded", function () {
   CONTAINER_REF = document.querySelector(".container");
   includeFavicon();
@@ -614,4 +633,5 @@ document.addEventListener("DOMContentLoaded", function () {
   includeChameleonURL();
   getChCodeValues();
   includeBundleButton();
+  includeEndOfSectionCaption();
 });

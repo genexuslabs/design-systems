@@ -166,7 +166,8 @@
 
   // - - - - - - - Padding - - - - - - -
   --tab-caption__padding-block: var(--mer-spacing--xs);
-  --tab-caption__padding-inline: var(--mer-spacing--sm) var(--mer-spacing--xs);
+
+  --tab-caption__padding-inline: var(--mer-spacing--sm);
 
   // - - - - - - - Gap - - - - - - -
   --tab-caption__gap: var(--mer-spacing--xs); // 6px does not exist on the ds.
