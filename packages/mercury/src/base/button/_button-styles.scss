@@ -91,6 +91,28 @@
     --control__border-color: var(--button-secondary__border-color--disabled);
     color: var(--button-secondary__color--disabled);
   }
+
+  &--destructive {
+    --control__border-color: var(--button-secondary__border-color--destructive);
+    background-color: var(--button-secondary__bg-color--destructive);
+    color: var(--button-secondary__color--destructive);
+
+    &-hover {
+      --control__border-color: var(
+        --button-secondary__bg-color--destructive-hover
+      );
+      background-color: var(--button-secondary__bg-color--destructive-hover);
+      color: var(--button-secondary__color--destructive);
+    }
+
+    &-active {
+      --control__border-color: var(
+        --button-secondary__bg-color--destructive-active
+      );
+      background-color: var(--button-secondary__bg-color--destructive-active);
+      color: var(--button-secondary__color--destructive);
+    }
+  }
 }
 
 %button-tertiary {
@@ -152,6 +174,7 @@
       }
     }
   }
+
   @if $add--destructive {
     #{$destructive-selector} {
       @extend %button-primary--destructive;
@@ -169,7 +192,12 @@
 
 /// @group Button
 /// @param {String} $selector [".button-secondary"] -
-@mixin button-secondary($selector: ".button-secondary", $add--disabled: true) {
+@mixin button-secondary(
+  $selector: ".button-secondary",
+  $destructive-selector: ".button-secondary-destructive",
+  $add--disabled: true,
+  $add--destructive: true
+) {
   #{$selector} {
     @extend %button-secondary;
 
@@ -189,6 +217,20 @@
       &:disabled,
       &--disabled {
         @extend %button-secondary--disabled;
+      }
+    }
+  }
+
+  @if $add--destructive {
+    #{$destructive-selector} {
+      @extend %button-secondary--destructive;
+
+      &:hover {
+        @extend %button-secondary--destructive-hover;
+      }
+
+      &:active {
+        @extend %button-secondary--destructive-active;
       }
     }
   }

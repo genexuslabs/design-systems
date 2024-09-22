@@ -179,7 +179,7 @@
               <div class="article__main">
                 <div class="article__content">
                   <button
-                    class="button-primary button-primary--destructive button-icon-and-text"
+                    class="button-primary button-primary-destructive button-icon-and-text"
                   >
                     <ch-image
                       class="icon-sm"
@@ -191,7 +191,7 @@
                 <div class="article__code">
                   <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    code = `<button class="button-primary button-primary--destructive button-icon-and-text">
+                    code = `<button class="button-primary button-primary-destructive button-icon-and-text">
   <ch-image class="icon-sm"></ch-image>                      
   Caption
 </button>`;
@@ -262,6 +262,32 @@
               </div>
             </article>
 
+            <!-- button-secondary text: error-->
+            <article
+              class="article"
+              data-nav
+              data-title="text only: destructive"
+            >
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <button class="button-secondary button-secondary-destructive">
+                    Caption
+                  </button>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"></ch-code>
+                  <script>
+                    code = `<button class="button-secondary button-secondary-destructive">
+  Caption
+</button>`;
+                  </script>
+                </div>
+              </div>
+            </article>
+
             <!-- button-secondary icon and text-->
             <article class="article" data-nav data-title="icon and text">
               <!-- header -->
@@ -308,6 +334,41 @@
                   <button
                     class="button-secondary button-icon-and-text"
                     disabled
+                  >
+                    <ch-image
+                      class="icon-sm"
+                      id="secondary-text-with-icon-disabled"
+                    ></ch-image>
+                    Caption
+                  </button>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"></ch-code>
+                  <script>
+                    code = `<button class="button-secondary button-icon-and-text" disabled>
+  <ch-image class="icon-sm"></ch-image>                      
+  Caption
+</button>`;
+                  </script>
+                </div>
+                <p class="article__description">
+                  <a href="./icon.html" target="_blank"
+                    >See how to set the icon</a
+                  >
+                </p>
+              </div>
+            </article>
+
+            <!-- button-secondary icon and text: error -->
+            <article class="article" data-nav data-title="icon and text: error">
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <button
+                    class="button-secondary button-secondary-destructive button-icon-and-text"
+                    id="secondary-text-with-icon-destructive"
                   >
                     <ch-image
                       class="icon-sm"
@@ -551,35 +612,23 @@
         colorType: "on-message"
       });
 
-      // icon and text: enabled
+      // primary icon and text: enabled
       const chImagePrimaryTextWithIconEnabled = document.getElementById(
         "primary-text-with-icon-enabled"
       );
       chImagePrimaryTextWithIconEnabled.src = ICON_ON_PRIMARY;
 
-      // icon and text: disabled
+      // primary icon and text: disabled
       const chImagePrimaryTextWithIconDisabled = document.getElementById(
         "primary-text-with-icon-disabled"
       );
       chImagePrimaryTextWithIconDisabled.src = ICON_ON_DISABLED;
 
-      // icon and text: destructive
+      // primary icon and text: destructive
       const chImagePrimaryTextWithIconDestructive = document.getElementById(
         "primary-text-with-icon-destructive"
       );
       chImagePrimaryTextWithIconDestructive.src = ICON_ON_ERROR;
-
-      // icon only: enabled
-      // const chImagePrimaryIconOnlyEnabled = document.getElementById(
-      //   "primary-icon-only-enabled"
-      // );
-      // chImagePrimaryIconOnlyEnabled.src = ICON_ON_PRIMARY;
-
-      // icon only: disabled
-      // const chImagePrimaryIconOnlyDisabled = document.getElementById(
-      //   "primary-icon-only-disabled"
-      // );
-      // chImagePrimaryIconOnlyDisabled.src = ICON_ON_DISABLED;
 
       // - - - - - - - - - - - - - - -
       // Button Secondary
@@ -590,17 +639,24 @@
         colorType: "neutral"
       });
 
-      // icon and text: enabled
+      // secondary icon and text: enabled
       const chImageSecondaryTextWithIconEnabled = document.getElementById(
         "secondary-text-with-icon-enabled"
       );
       chImageSecondaryTextWithIconEnabled.src = ICON_NEUTRAL;
 
-      // icon and text: disabled
+      // secondary icon and text: disabled
       const chImageSecondaryTextWithIconDisabled = document.getElementById(
         "secondary-text-with-icon-disabled"
       );
       chImageSecondaryTextWithIconDisabled.src = ICON_NEUTRAL;
+
+      // secondary icon and text: destructive
+      // ("error" icon color is missing at the time of writing)
+      // const chImageSecondaryTextWithIconDestructive = document.getElementById(
+      //   "secondary-text-with-icon-destructive"
+      // );
+      // chImageSecondaryTextWithIconDestructive.src = ICON_ON_ERROR;
 
       // icon only: enabled
       // const chImageSecondaryIconOnlyEnabled = document.getElementById(
