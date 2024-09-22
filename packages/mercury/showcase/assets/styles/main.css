@@ -325,6 +325,7 @@ Section
   flex-direction: column;
   padding-block: var(--section__padding-block);
   gap: var(--section__gap);
+  position: relative;
 }
 
 .section__articles-container {
@@ -376,6 +377,21 @@ Section
   border-inline-start: 2px solid var(--mer-border-color__on-surface);
   background-color: var(--mer-surface__elevation--01);
   border-radius: var(--mer-border__radius--sm);
+}
+.section__end-caption {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateY(50%) translateX(-50%);
+  padding: 4px 12px;
+  background-color: var(--mer-surface);
+  border-radius: 2px;
+  font-style: italic;
+  font-size: var(--mer-font__size--xs);
+  color: var(--mer-color__neutral-gray--500);
+}
+.section:last-of-type .section__end-caption {
+  bottom: calc(var(--section__padding-block) / 2);
 }
 /*====================
 Articles
