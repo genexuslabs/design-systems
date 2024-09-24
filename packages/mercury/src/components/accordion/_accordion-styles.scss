@@ -3,6 +3,13 @@
 %accordion {
   @include accordion-tokens();
   gap: var(--accordion__gap);
+
+  &-outlined {
+    --accordion-section__border-color: var(
+      --accordion-section-outlined__border-color
+    );
+    --accordion-section__bg-color: transparent;
+  }
 }
 
 %accordion-header {
@@ -10,6 +17,15 @@
   padding: var(--accordion-header__padding);
   gap: var(--accordion-header__gap);
   color: var(--accordion-header__color);
+  outline: var(--accordion-header__border);
+  border-radius: var(--accordion-header__border-radius);
+
+  &--hover {
+    --accordion-header__border: var(--accordion-header__border--hover);
+  }
+  &--active {
+    --accordion-header__border: var(--accordion-header__border--active);
+  }
 
   &--focus-visible {
     @include focus-outline();
@@ -28,11 +44,19 @@
 
 %accordion-panel {
   border-radius: var(--mer-border__radius--sm);
-  background-color: var(--mer-surface__elevation--01);
+  background-color: var(--accordion-panel__bg-color);
+
+  &--disabled {
+    --accordion-panel__bg-color: var(--accordion-panel__bg-color--disabled);
+  }
 
   &-outlined {
     border: var(--accordion-panel-outlined__border);
     border-radius: var(--accordion-panel-outlined__border-radius);
+
+    &--disabled {
+      border-color: var(--accordion-panel-outlined__border-color--disabled);
+    }
   }
 }
 
@@ -42,13 +66,21 @@
   margin-inline: var(--accordion-section__margin-inline);
   padding-block: var(--accordion-section__padding-block);
   padding-inline: var(--accordion-section__padding-inline);
+  background-color: var(--accordion-section__bg-color);
   border: var(--accordion-section__border);
   border-radius: var(--accordion-section__border-radius);
+
+  &-outlined {
+    &--disabled {
+      border-color: var(--accordion-section-outlined__border-color--disabled);
+    }
+  }
 }
 
 @mixin accordion-filled(
   $accordion-selector: ".accordion-filled",
   $panel-selector: ".accordion-filled::part(panel)",
+  $panel-disabled-selector: ".accordion-filled::part(panel disabled)",
   $header-selector: ".accordion-filled::part(header)",
   $header-disabled-selector: ".accordion-filled::part(header disabled)",
   $section-selector: ".accordion-filled::part(section)"
@@ -60,13 +92,27 @@
   #{$panel-selector} {
     @extend %accordion-panel;
   }
+  #{$panel-disabled-selector} {
+    @extend %accordion-panel--disabled;
+  }
 
   #{$header-selector} {
     @extend %accordion-header;
 
+    &:hover {
+      @extend %accordion-header--hover;
+    }
+    &:active {
+      @extend %accordion-header--active;
+    }
+
     &:focus-visible {
       @extend %accordion-header--focus-visible;
     }
+  }
+
+  #{$section-selector} {
+    @extend %accordion-section;
   }
 
   #{$header-disabled-selector} {
@@ -77,20 +123,33 @@
 @mixin accordion-outlined(
   $accordion-selector: ".accordion-outlined",
   $panel-selector: ".accordion-outlined::part(panel)",
+  $panel-disabled-selector: ".accordion-outlined::part(panel disabled)",
   $header-selector: ".accordion-outlined::part(header)",
   $header-disabled-selector: ".accordion-outlined::part(header disabled)",
-  $section-selector: ".accordion-outlined::part(section)"
+  $section-selector: ".accordion-outlined::part(section)",
+  $section-disabled-selector: ".accordion-outlined::part(section disabled)"
 ) {
   #{$accordion-selector} {
     @extend %accordion;
+    @extend %accordion-outlined;
   }
 
   #{$panel-selector} {
     @extend %accordion-panel-outlined;
   }
+  #{$panel-disabled-selector} {
+    @extend %accordion-panel-outlined--disabled;
+  }
 
   #{$header-selector} {
     @extend %accordion-header;
+
+    &:hover {
+      @extend %accordion-header--hover;
+    }
+    &:active {
+      @extend %accordion-header--active;
+    }
 
     &:focus-visible {
       @extend %accordion-header--focus-visible;
@@ -99,6 +158,9 @@
 
   #{$section-selector} {
     @extend %accordion-section;
+  }
+  #{$section-disabled-selector} {
+    @extend %accordion-section-outlined--disabled;
   }
 
   #{$header-disabled-selector} {
