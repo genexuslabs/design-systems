@@ -3420,7 +3420,7 @@
 
 // Components
 @mixin accordion-tokens() {
-  // chameleon tokens
+  // chameleon tokens (do not modify names)
   --ch-accordion__header-image-size: var(--mer-icon__box--sm);
   --ch-accordion__chevron-size: var(--mer-icon__box--sm);
   --ch-accordion-expand-collapse-duration: var(--mer-timing--fast);
@@ -3435,33 +3435,74 @@
   // accordion
   --accordion__gap: var(--mer-spacing--2xs);
 
+  // panel
+  --accordion-panel__border-radius: var(--mer-border__radius--sm);
+  --accordion-panel__bg-color: var(--mer-surface__elevation--01);
+  --accordion-panel__bg-color--disabled: var(--mer-surface__elevation--02);
+  // panel (outlined)
+  --accordion-panel-outlined__border-color: var(--mer-border-color__on-surface);
+  --accordion-panel-outlined__border-color--disabled: var(
+    --mer-border-color__primary--disabled
+  );
+  --accordion-panel-outlined__border-color--disabled: var(
+    --mer-border-color__primary--disabled
+  );
+  --accordion-panel-outlined__border: var(--mer-border__width--sm) solid
+    var(--accordion-panel-outlined__border-color);
+  --accordion-panel-outlined__border-radius: var(--mer-border__radius--sm);
+
   // header
   --accordion-header__padding: var(--mer-spacing--sm);
   --accordion-header__gap: var(--mer-spacing--sm);
   --accordion-header__color: var(--mer-text__highlighted);
   --accordion-header__color--disabled: var(--mer-accent__primary--disabled);
-
-  // panel
-  --accordion-panel__border-radius: var(--mer-border__radius--sm);
-  --accordion-panel__bg-color: var(--mer-surface__elevation--01);
-
-  // panel outlined
-  --accordion-panel-outlined__border: var(--mer-border__width--sm) solid
-    var(--mer-border-color__on-surface);
-  --accordion-panel-outlined__border-radius: var(--mer-border__radius--sm);
+  --accordion-header__border-width: var(--mer-border__width--sm);
+  --accordion-header__border-color: transparent;
+  --accordion-header__border-radius: var(--accordion-panel__border-radius);
+  --accordion-header__border: var(--accordion-header__border-width) solid
+    var(--accordion-header__border-color);
+  // note: just overriding "--accordion-header__border-color" doesn't seem to work.
+  // header:hover
+  --accordion-header__border-color--hover: var(
+    --mer-border-color__primary--hover
+  );
+  --accordion-header__border--hover: var(--accordion-header__border-width) solid
+    var(--accordion-header__border-color--hover);
+  // header:active
+  --accordion-header__border-color--active: var(
+    --mer-border-color__primary--active
+  );
+  --accordion-header__border--active: var(--accordion-header__border-width)
+    solid var(--accordion-header__border-color--active);
 
   // section
+  --accordion-section__border-color: var(--mer-border-color__on-elevation--01);
   --accordion-section__margin-block: 1px var(--mer-spacing--sm);
   --accordion-section__margin-inline: var(--mer-spacing--sm);
+  --accordion-section__bg-color: var(--mer-surface__elevation--01);
   --accordion-section__border: var(--mer-border__width--sm) solid
-    var(--mer-border-color__on-elevation--01);
+    var(--accordion-section__border-color);
   --accordion-section__border-radius: var(--mer-border__radius--sm);
+  // section (outlined)
+  --accordion-section-outlined__border-color: var(
+    --mer-border-color__on-surface
+  );
+  --accordion-section-outlined__border-color--disabled: var(
+    --mer-border-color__primary--disabled
+  );
 }
 
 
 %accordion {
   @include accordion-tokens();
   gap: var(--accordion__gap);
+
+  &-outlined {
+    --accordion-section__border-color: var(
+      --accordion-section-outlined__border-color
+    );
+    --accordion-section__bg-color: transparent;
+  }
 }
 
 %accordion-header {
@@ -3469,6 +3510,15 @@
   padding: var(--accordion-header__padding);
   gap: var(--accordion-header__gap);
   color: var(--accordion-header__color);
+  outline: var(--accordion-header__border);
+  border-radius: var(--accordion-header__border-radius);
+
+  &--hover {
+    --accordion-header__border: var(--accordion-header__border--hover);
+  }
+  &--active {
+    --accordion-header__border: var(--accordion-header__border--active);
+  }
 
   &--focus-visible {
     @include focus-outline();
@@ -3487,11 +3537,19 @@
 
 %accordion-panel {
   border-radius: var(--mer-border__radius--sm);
-  background-color: var(--mer-surface__elevation--01);
+  background-color: var(--accordion-panel__bg-color);
+
+  &--disabled {
+    --accordion-panel__bg-color: var(--accordion-panel__bg-color--disabled);
+  }
 
   &-outlined {
     border: var(--accordion-panel-outlined__border);
     border-radius: var(--accordion-panel-outlined__border-radius);
+
+    &--disabled {
+      border-color: var(--accordion-panel-outlined__border-color--disabled);
+    }
   }
 }
 
@@ -3501,13 +3559,21 @@
   margin-inline: var(--accordion-section__margin-inline);
   padding-block: var(--accordion-section__padding-block);
   padding-inline: var(--accordion-section__padding-inline);
+  background-color: var(--accordion-section__bg-color);
   border: var(--accordion-section__border);
   border-radius: var(--accordion-section__border-radius);
+
+  &-outlined {
+    &--disabled {
+      border-color: var(--accordion-section-outlined__border-color--disabled);
+    }
+  }
 }
 
 @mixin accordion-filled(
   $accordion-selector: ".accordion-filled",
   $panel-selector: ".accordion-filled::part(panel)",
+  $panel-disabled-selector: ".accordion-filled::part(panel disabled)",
   $header-selector: ".accordion-filled::part(header)",
   $header-disabled-selector: ".accordion-filled::part(header disabled)",
   $section-selector: ".accordion-filled::part(section)"
@@ -3519,13 +3585,27 @@
   #{$panel-selector} {
     @extend %accordion-panel;
   }
+  #{$panel-disabled-selector} {
+    @extend %accordion-panel--disabled;
+  }
 
   #{$header-selector} {
     @extend %accordion-header;
 
+    &:hover {
+      @extend %accordion-header--hover;
+    }
+    &:active {
+      @extend %accordion-header--active;
+    }
+
     &:focus-visible {
       @extend %accordion-header--focus-visible;
     }
+  }
+
+  #{$section-selector} {
+    @extend %accordion-section;
   }
 
   #{$header-disabled-selector} {
@@ -3536,20 +3616,33 @@
 @mixin accordion-outlined(
   $accordion-selector: ".accordion-outlined",
   $panel-selector: ".accordion-outlined::part(panel)",
+  $panel-disabled-selector: ".accordion-outlined::part(panel disabled)",
   $header-selector: ".accordion-outlined::part(header)",
   $header-disabled-selector: ".accordion-outlined::part(header disabled)",
-  $section-selector: ".accordion-outlined::part(section)"
+  $section-selector: ".accordion-outlined::part(section)",
+  $section-disabled-selector: ".accordion-outlined::part(section disabled)"
 ) {
   #{$accordion-selector} {
     @extend %accordion;
+    @extend %accordion-outlined;
   }
 
   #{$panel-selector} {
     @extend %accordion-panel-outlined;
   }
+  #{$panel-disabled-selector} {
+    @extend %accordion-panel-outlined--disabled;
+  }
 
   #{$header-selector} {
     @extend %accordion-header;
+
+    &:hover {
+      @extend %accordion-header--hover;
+    }
+    &:active {
+      @extend %accordion-header--active;
+    }
 
     &:focus-visible {
       @extend %accordion-header--focus-visible;
@@ -3558,6 +3651,9 @@
 
   #{$section-selector} {
     @extend %accordion-section;
+  }
+  #{$section-disabled-selector} {
+    @extend %accordion-section-outlined--disabled;
   }
 
   #{$header-disabled-selector} {
