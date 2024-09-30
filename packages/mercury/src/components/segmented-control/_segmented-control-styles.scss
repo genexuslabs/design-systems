@@ -1,6 +1,7 @@
 @include button-primary(
   $selector: "%segmented-control-item--selected",
-  $add--disabled: false
+  $add--disabled: false,
+  $add--destructive: false
 );
 
 %segmented-control-item-base {
@@ -10,7 +11,8 @@
 
 @include button-secondary(
   $selector: "%segmented-control-item--unselected",
-  $add--disabled: false
+  $add--disabled: false,
+  $add--destructive: false
 );
 
 %segmented-control-item--first {
