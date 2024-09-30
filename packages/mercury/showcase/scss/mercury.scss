@@ -1327,7 +1327,7 @@
   // scrollbar
   --scrollbar__size: var(--mer-spacing--2xs);
   // scrollbar-track
-  --scrollbar-track__bg-color: var(--mer-color__neutral-gray--650);
+  --scrollbar-track__bg-color: transparent;
 
   --scrollbar-track__border-radius: var(--mer-spacing--xs);
   // scrollbar-thumb
@@ -2516,6 +2516,9 @@
 
 /// @group Button
 /// @param {String} $selector [".button-primary"] -
+/// @param {String} $destructive-selector [".button-primary-destructive"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @param {Boolean} $add--destructive [true] -
 @mixin button-primary(
   $selector: ".button-primary",
   $destructive-selector: ".button-primary-destructive",
@@ -6637,7 +6640,8 @@
 
 @include button-primary(
   $selector: "%segmented-control-item--selected",
-  $add--disabled: false
+  $add--disabled: false,
+  $add--destructive: false
 );
 
 %segmented-control-item-base {
@@ -6647,7 +6651,8 @@
 
 @include button-secondary(
   $selector: "%segmented-control-item--unselected",
-  $add--disabled: false
+  $add--disabled: false,
+  $add--destructive: false
 );
 
 %segmented-control-item--first {
@@ -9861,6 +9866,10 @@
   --icon__general_references--hover: url('#{$icons-path}general/light/references.svg#hover'); 
   --icon__general_references--active: url('#{$icons-path}general/light/references.svg#active'); 
   --icon__general_references--disabled: url('#{$icons-path}general/light/references.svg#disabled'); 
+  --icon__general_qr-code--enabled: url('#{$icons-path}general/light/qr-code.svg#enabled'); 
+  --icon__general_qr-code--hover: url('#{$icons-path}general/light/qr-code.svg#hover'); 
+  --icon__general_qr-code--active: url('#{$icons-path}general/light/qr-code.svg#active'); 
+  --icon__general_qr-code--disabled: url('#{$icons-path}general/light/qr-code.svg#disabled'); 
   --icon__general_postgre-sql--enabled: url('#{$icons-path}general/light/postgre-sql.svg#enabled'); 
   --icon__general_postgre-sql--hover: url('#{$icons-path}general/light/postgre-sql.svg#hover'); 
   --icon__general_postgre-sql--active: url('#{$icons-path}general/light/postgre-sql.svg#active'); 
@@ -9873,6 +9882,10 @@
   --icon__general_oracle--hover: url('#{$icons-path}general/light/oracle.svg#hover'); 
   --icon__general_oracle--active: url('#{$icons-path}general/light/oracle.svg#active'); 
   --icon__general_oracle--disabled: url('#{$icons-path}general/light/oracle.svg#disabled'); 
+  --icon__general_mysql--enabled: url('#{$icons-path}general/light/mysql.svg#enabled'); 
+  --icon__general_mysql--hover: url('#{$icons-path}general/light/mysql.svg#hover'); 
+  --icon__general_mysql--active: url('#{$icons-path}general/light/mysql.svg#active'); 
+  --icon__general_mysql--disabled: url('#{$icons-path}general/light/mysql.svg#disabled'); 
   --icon__general_launchpad--enabled: url('#{$icons-path}general/light/launchpad.svg#enabled'); 
   --icon__general_launchpad--hover: url('#{$icons-path}general/light/launchpad.svg#hover'); 
   --icon__general_launchpad--active: url('#{$icons-path}general/light/launchpad.svg#active'); 
@@ -9970,6 +9983,10 @@
   --icon__general_references--hover: url('#{$icons-path}general/dark/references.svg#hover'); 
   --icon__general_references--active: url('#{$icons-path}general/dark/references.svg#active'); 
   --icon__general_references--disabled: url('#{$icons-path}general/dark/references.svg#disabled'); 
+  --icon__general_qr-code--enabled: url('#{$icons-path}general/dark/qr-code.svg#enabled'); 
+  --icon__general_qr-code--hover: url('#{$icons-path}general/dark/qr-code.svg#hover'); 
+  --icon__general_qr-code--active: url('#{$icons-path}general/dark/qr-code.svg#active'); 
+  --icon__general_qr-code--disabled: url('#{$icons-path}general/dark/qr-code.svg#disabled'); 
   --icon__general_postgre-sql--enabled: url('#{$icons-path}general/dark/postgre-sql.svg#enabled'); 
   --icon__general_postgre-sql--hover: url('#{$icons-path}general/dark/postgre-sql.svg#hover'); 
   --icon__general_postgre-sql--active: url('#{$icons-path}general/dark/postgre-sql.svg#active'); 
@@ -9982,6 +9999,10 @@
   --icon__general_oracle--hover: url('#{$icons-path}general/dark/oracle.svg#hover'); 
   --icon__general_oracle--active: url('#{$icons-path}general/dark/oracle.svg#active'); 
   --icon__general_oracle--disabled: url('#{$icons-path}general/dark/oracle.svg#disabled'); 
+  --icon__general_mysql--enabled: url('#{$icons-path}general/dark/mysql.svg#enabled'); 
+  --icon__general_mysql--hover: url('#{$icons-path}general/dark/mysql.svg#hover'); 
+  --icon__general_mysql--active: url('#{$icons-path}general/dark/mysql.svg#active'); 
+  --icon__general_mysql--disabled: url('#{$icons-path}general/dark/mysql.svg#disabled'); 
   --icon__general_launchpad--enabled: url('#{$icons-path}general/dark/launchpad.svg#enabled'); 
   --icon__general_launchpad--hover: url('#{$icons-path}general/dark/launchpad.svg#hover'); 
   --icon__general_launchpad--active: url('#{$icons-path}general/dark/launchpad.svg#active'); 
@@ -17015,6 +17036,7 @@
   $spacing-classes: false,
   $typography-classes: false,
   $scrollbar-components: false,
+  $utility-classes: false,
 
   // Components
   $components: false,
@@ -17083,6 +17105,7 @@
     $spacing-classes: $spacing-classes,
     $typography-classes: $typography-classes,
     $scrollbar-components: $scrollbar-components,
+    $utility-classes: $utility-classes,
 
     // Components
     $components: $components,
