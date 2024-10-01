@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="./assets/styles/sidebar.css" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <link rel="stylesheet" href="./assets/styles/reset.css" />
+    <style>
+      .widget__content {
+        background-color: var(--mer-surface__elevation--02);
+        padding: var(--mer-spacing--lg);
+        text-align: center;
+        font-size: var(--mer-font__size--xs);
+      }
+    </style>
   </head>
   <body class="showcase" data-sidebar>
     <script src="./assets/scripts/scripts.js"></script>
@@ -56,6 +64,11 @@
                   >.
                 </p>
                 <div class="article__content">
+                  <div class="widget spacing-body padding-bg-color">
+                    <div class="widget__content">Your widget content</div>
+                  </div>
+                </div>
+                <div class="article__content">
                   <div class="dummy-grid-container">
                     <a
                       href="./doc-spacing.html"
@@ -63,6 +76,16 @@
                       >this component adheres to the spacing body classes</a
                     >
                   </div>
+                </div>
+                <div class="article__code">
+                  <ch-code id="ch-code-2" language="tsx" class="code">
+                  </ch-code>
+                  <script>
+                    const markup2 = `<div class="widget spacing-body">
+  <!-- Your widget content here -->
+</div>`;
+                    document.getElementById("ch-code-2").value = markup2;
+                  </script>
                 </div>
                 <!-- /.article__content -->
               </div>
