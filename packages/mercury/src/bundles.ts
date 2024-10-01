@@ -31,8 +31,9 @@ export type MercuryBundleComponent =
   | "components/tab"
   | "components/tabular-grid"
   | "components/ticket-list"
+  | "components/tooltip"
   | "components/tree-view"
-  | "components/tooltip";
+  | "components/widget";
 
 export type MercuryBundleComponentForm =
   | "components/button"
@@ -118,6 +119,7 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/ticket-list"),
     getThemeModelItem(basePath, "components/tooltip"),
     getThemeModelItem(basePath, "components/tree-view"),
+    getThemeModelItem(basePath, "components/widget"),
 
     // Resets
     getThemeModelItem(basePath, "resets/box-sizing"),

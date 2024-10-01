@@ -64,6 +64,7 @@
 @import "./components/ticket-list/ticket-list-styles";
 @import "./components/tooltip/tooltip-styles";
 @import "./components/tree-view/tree-view-styles";
+@import "./components/widget/widget-styles";
 
 @mixin mercury(
   // Resets
@@ -132,7 +133,8 @@
   $tabular-grid: true,
   $ticket-list: true,
   $tooltip: true,
-  $tree-view: true
+  $tree-view: true,
+  $widget: true
 ) {
   // - - - - - - - - - - - - - - - - - - - -
   //                  Icons
@@ -554,6 +556,10 @@
   @if $tree-view {
     @include tree-view();
   }
+
+  @if $widget {
+    @include widget();
+  }
 }
 
 @mixin mercury-only(
@@ -623,7 +629,8 @@
   $tabular-grid: false,
   $ticket-list: false,
   $tooltip: false,
-  $tree-view: false
+  $tree-view: false,
+  $widget: false
 ) {
   @include mercury(
     // Resets
@@ -692,6 +699,7 @@
     $tabular-grid: $tabular-grid,
     $ticket-list: $ticket-list,
     $tooltip: $tooltip,
-    $tree-view: $tree-view
+    $tree-view: $tree-view,
+    $widget: $widget
   );
 }

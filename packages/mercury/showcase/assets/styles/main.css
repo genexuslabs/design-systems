@@ -264,6 +264,11 @@ body.all-hidden .section__header {
   background-color: var(--sc-base__border-color);
 }
 
+.padding-bg-color {
+  --green-for-padding: var(--mer-color__tinted-green--60);
+  background-color: var(--green-for-padding) !important;
+}
+
 /*====================
 Top Bar
 ====================*/

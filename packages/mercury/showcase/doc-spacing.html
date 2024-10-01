@@ -6,14 +6,8 @@
     <title>Spacing</title>
     <style>
       /* Avoid FOUC (Flash Of Unstyled Content) */
-      :root {
-        --green-for-padding: var(--mer-color__tinted-green--60);
-      }
       html:not(.hydrated) {
         visibility: hidden;
-      }
-      .layout {
-        background-color: var(--green-for-padding) !important;
       }
       .layout__panel {
         border-radius: 0 !important;
@@ -71,7 +65,9 @@
                   Provides padding all around the box.
                 </p>
                 <div class="article__content">
-                  <div class="layout layout--cols-1 spacing-body">
+                  <div
+                    class="layout layout--cols-1 spacing-body padding-bg-color"
+                  >
                     <div class="layout__panel">Your content</div>
                   </div>
                 </div>
@@ -102,7 +98,9 @@
                   (usually above and below the box).
                 </p>
                 <div class="article__content">
-                  <div class="layout layout--cols-1 spacing-body-block">
+                  <div
+                    class="layout layout--cols-1 spacing-body-block padding-bg-color"
+                  >
                     <div class="layout__panel">Your content</div>
                   </div>
                 </div>
@@ -138,7 +136,9 @@
                   box).
                 </p>
                 <div class="article__content">
-                  <div class="layout layout--cols-1 spacing-body-block-start">
+                  <div
+                    class="layout layout--cols-1 spacing-body-block-start padding-bg-color"
+                  >
                     <div class="layout__panel">Your content</div>
                   </div>
                 </div>
@@ -174,7 +174,9 @@
                   box).
                 </p>
                 <div class="article__content">
-                  <div class="layout layout--cols-1 spacing-body-block-end">
+                  <div
+                    class="layout layout--cols-1 spacing-body-block-end padding-bg-color"
+                  >
                     <div class="layout__panel">Your content</div>
                   </div>
                 </div>
@@ -205,7 +207,9 @@
                   (usually the left and right sides of the box).
                 </p>
                 <div class="article__content">
-                  <div class="layout layout--cols-1 spacing-body-inline">
+                  <div
+                    class="layout layout--cols-1 spacing-body-inline padding-bg-color"
+                  >
                     <div class="layout__panel">Your content</div>
                   </div>
                 </div>
@@ -241,7 +245,9 @@
                   side of the box).
                 </p>
                 <div class="article__content">
-                  <div class="layout layout--cols-1 spacing-body-inline-start">
+                  <div
+                    class="layout layout--cols-1 spacing-body-inline-start padding-bg-color"
+                  >
                     <div class="layout__panel">Your content</div>
                   </div>
                 </div>
@@ -277,7 +283,9 @@
                   side of the box).
                 </p>
                 <div class="article__content">
-                  <div class="layout layout--cols-1 spacing-body-inline-end">
+                  <div
+                    class="layout layout--cols-1 spacing-body-inline-end padding-bg-color"
+                  >
                     <div class="layout__panel">Your content</div>
                   </div>
                 </div>
@@ -337,6 +345,11 @@
                   <li>
                     <a href="./tab.html" class="dummy-grid-container__item"
                       >tab</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./widget.html" class="dummy-grid-container__item"
+                      >widget</a
                     >
                   </li>
                 </ul>
