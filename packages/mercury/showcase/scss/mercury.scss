@@ -8613,6 +8613,21 @@
   );
 }
 
+%widget {
+  --spacing-body-block-start: var(--mer-spacing--md);
+  --spacing-body-block-end: var(--mer-spacing--md);
+  --spacing-body-inline-start: var(--mer-spacing--md);
+  --spacing-body-inline-end: var(--mer-spacing--md);
+}
+
+/// @group Widget
+/// @param {String} $selector [".widget"] -
+@mixin widget($selector: ".widget") {
+  #{$selector} {
+    @extend %widget;
+  }
+}
+
 
 @mixin mercury(
   // Resets
@@ -8681,7 +8696,8 @@
   $tabular-grid: true,
   $ticket-list: true,
   $tooltip: true,
-  $tree-view: true
+  $tree-view: true,
+  $widget: true
 ) {
   // - - - - - - - - - - - - - - - - - - - -
   //                  Icons
@@ -16991,6 +17007,10 @@
   @if $tree-view {
     @include tree-view();
   }
+
+  @if $widget {
+    @include widget();
+  }
 }
 
 @mixin mercury-only(
@@ -17060,7 +17080,8 @@
   $tabular-grid: false,
   $ticket-list: false,
   $tooltip: false,
-  $tree-view: false
+  $tree-view: false,
+  $widget: false
 ) {
   @include mercury(
     // Resets
@@ -17129,6 +17150,7 @@
     $tabular-grid: $tabular-grid,
     $ticket-list: $ticket-list,
     $tooltip: $tooltip,
-    $tree-view: $tree-view
+    $tree-view: $tree-view,
+    $widget: $widget
   );
 }

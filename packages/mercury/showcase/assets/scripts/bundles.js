@@ -48,6 +48,7 @@ export const getThemeBundles = (basePath) => [
     getThemeModelItem(basePath, "components/ticket-list"),
     getThemeModelItem(basePath, "components/tooltip"),
     getThemeModelItem(basePath, "components/tree-view"),
+    getThemeModelItem(basePath, "components/widget"),
     // Resets
     getThemeModelItem(basePath, "resets/box-sizing"),
     // Utils
