@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Widget</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+  </head>
+  <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- control section -->
+        <section class="section" data-nav>
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">widget</h1>
+            <p class="section__description">
+              A widget component is a versatile interface element used to
+              display dynamic content or provide interactive functionality
+              within a defined space. It can present anything from media, forms,
+              or data to tools, allowing users to engage with the content
+              directly without navigating away from the main context.
+            </p>
+            <p class="section__description section__description--note">
+              At the time of writing (October 2024) the widget only purpose is
+              to provide the spacing classes.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          spacing classes
+          =========================== -->
+            <article class="article" data-nav data-title="spacing classes">
+              <header class="article__header"></header>
+
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  By default the widget does not provide any padding. To apply
+                  padding you have to include
+                  <a href="./doc-spacing.html"
+                    >any of the global body padding classes</a
+                  >.
+                </p>
+                <div class="article__content">
+                  <div class="dummy-grid-container">
+                    <a
+                      href="./doc-spacing.html"
+                      class="dummy-grid-container__item"
+                      >this component adheres to the spacing body classes</a
+                    >
+                  </div>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

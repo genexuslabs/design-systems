@@ -1,0 +1,14 @@
+%widget {
+  --spacing-body-block-start: var(--mer-spacing--md);
+  --spacing-body-block-end: var(--mer-spacing--md);
+  --spacing-body-inline-start: var(--mer-spacing--md);
+  --spacing-body-inline-end: var(--mer-spacing--md);
+}
+
+/// @group Widget
+/// @param {String} $selector [".widget"] -
+@mixin widget($selector: ".widget") {
+  #{$selector} {
+    @extend %widget;
+  }
+}
