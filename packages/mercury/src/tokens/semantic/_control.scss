@@ -25,6 +25,11 @@
   // error
   --control__border-color--error: var(--mer-border-color__error);
 
+  // - - - - - - - Size - - - - - - -
+
+  --control__block-size: var(--mer-spacing--xl);
+  --control__min-block-size: var(--control__block-size);
+
   // - - - - - - - Border - - - - - - -
 
   --control__border-width: var(--mer-border__width--sm);
@@ -45,7 +50,8 @@
 
   // - - - - - - - Padding - - - - - - -
 
-  --control__padding-block: var(--mer-spacing--2xs);
+  // --control__padding-block is deprecated, control block-size should be a fixed value
+  --control__padding-block: var(--mer-spacing--2xs); // Deprecated
   --control__padding-inline: var(--mer-spacing--xs);
 
   // - - - - - - - Gap - - - - - - -

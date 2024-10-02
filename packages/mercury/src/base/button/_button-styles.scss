@@ -4,7 +4,8 @@
   @include button-common-styles();
   @include control-border();
   @include control-font-size-regular();
-  @include control-padding-inline-block();
+  @include control-block-size();
+
   padding-inline: var(--control__padding-inline);
 
   &--focus-visible {

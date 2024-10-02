@@ -108,21 +108,26 @@
   font-size: var(--control__font-size--regular);
   line-height: var(--control__line-height);
 }
-// Height
-@mixin control-height-regular() {
-  block-size: var(--control__height);
-  // to be removed (TODO)
-  // fixed block-size comes with some issues.
+// Block Size
+@mixin control-block-size() {
+  block-size: var(--control__block-size);
+  box-sizing: border-box;
+}
+@mixin control-min-block-size() {
+  min-block-size: var(--control__min-block-size);
+  box-sizing: border-box;
 }
 // Padding
 @mixin control-padding-inline() {
   padding-inline: var(--control__padding-inline);
 }
 @mixin control-padding-block() {
-  padding-block: var(--control__padding-block);
+  @warn "`control-padding-block()` is deprecated. control block-size should be a fixed value.";
+  padding-block: var(--control__padding-block); // Deprecated
 }
 @mixin control-padding-inline-block() {
-  padding-block: var(--control__padding-block);
+  @warn "`control-padding-block()` is deprecated. control block-size should be a fixed value.";
+  padding-block: var(--control__padding-block); // Deprecated
   padding-inline: var(--control__padding-inline);
 }
 // Placeholder
@@ -294,14 +299,19 @@
   box-shadow: var(--grid-cell__box-shadow-inline-block);
 }
 @mixin grid-cell-padding-inline() {
-  padding-inline: var(--grid-cell__padding-block);
+  @warn "`grid-cell-padding-inline()` is deprecated. use `control-padding-inline()`";
+  padding-inline: var(--grid-cell__padding-block); // Deprecated
 }
 @mixin grid-cell-padding-block() {
-  padding-block: var(--grid-cell__padding-block);
+  @warn "`grid-cell-padding-block()` is deprecated. grid block-size should be a fixed value.";
+  padding-block: var(--grid-cell__padding-block); // Deprecated
 }
 @mixin grid-cell-padding-inline-block() {
-  padding-block: var(--grid-cell__padding-block);
-  padding-inline: var(--grid-cell__padding-inline);
+  @warn "`grid-cell-padding-inline-block()` is deprecated. grid block-size should be a fixed value.";
+  padding-block: var(--grid-cell__padding-block); // Deprecated
+  padding-inline: var(
+    --grid-cell__padding-inline
+  ); // Deprecated. Use `--control__padding-inline` instead.
 }
 @mixin grid-cell-remove-padding() {
   // we should redefine '--grid-cell__padding-inline' here because when a control

@@ -15,7 +15,8 @@
   @include control-colors-enabled();
   @include control-font-weight-regular();
   @include control-font-size-regular();
-  @include control-padding-inline-block();
+  @include control-padding-inline();
+  @include control-block-size();
 
   &:hover {
     @include control-colors-hover();

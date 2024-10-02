@@ -1,6 +1,6 @@
 // node type
 @mixin cell-node-type-text() {
-  @include grid-cell-padding-inline-block();
+  // @include grid-cell-padding-inline-block(); // UPDATE
 }
 @mixin cell-node-type-element() {
   @include control-remove-border();
