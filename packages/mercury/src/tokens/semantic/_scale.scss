@@ -1,0 +1,67 @@
+/// @group Scale
+/// @param {String} $scale-small-selector [".scale-small"] -
+/// @param {String} $scale-medium-selector [".scale-medium"]
+/// @param {String} $scale-large-selector [".scale-large"]
+/// @param {Boolean} $border [true] -
+/// @param {Boolean} $block-size [true] -
+@mixin semantic-scale(
+  $scale-small-selector: ".scale-small",
+  $scale-medium-selector: ".scale-medium",
+  $scale-large-selector: ".scale-large",
+  $border: true,
+  $block-size: true
+) {
+  #{$scale-small-selector} {
+    @if $border {
+      --mer-border-radius__none: var(--mer-scale__none);
+      --mer-border-radius__xs: var(--mer-scale__01);
+      --mer-border-radius__sm: var(--mer-scale__02);
+      --mer-border-radius__md: var(--mer-scale__04);
+      --mer-border-radius__lg: var(--mer-scale__06);
+      --mer-border-radius__xl: var(--mer-scale__08);
+    }
+    @if $block-size {
+      --mer-block-size__xs: var(--mer-scale__13);
+      --mer-block-size__sm: var(--mer-scale__12);
+      --mer-block-size__md: var(--mer-scale__13);
+      --mer-block-size__lg: var(--mer-scale__14);
+      --mer-block-size__xl: var(--mer-scale__14);
+    }
+  }
+
+  #{$scale-medium-selector} {
+    @if $border {
+      --mer-border-radius__none: var(--mer-scale__none);
+      --mer-border-radius__xs: var(--mer-scale__01);
+      --mer-border-radius__sm: var(--mer-scale__02);
+      --mer-border-radius__md: var(--mer-scale__04);
+      --mer-border-radius__lg: var(--mer-scale__06);
+      --mer-border-radius__xl: var(--mer-scale__08);
+    }
+    @if $block-size {
+      --mer-block-size__xs: var(--mer-scale__10);
+      --mer-block-size__sm: var(--mer-scale__11);
+      --mer-block-size__md: var(--mer-scale__12);
+      --mer-block-size__lg: var(--mer-scale__13);
+      --mer-block-size__xl: var(--mer-scale__14);
+    }
+  }
+
+  #{$scale-large-selector} {
+    @if $border {
+      --mer-border-radius__none: var(--mer-scale__none);
+      --mer-border-radius__xs: var(--mer-scale__01);
+      --mer-border-radius__sm: var(--mer-scale__02);
+      --mer-border-radius__md: var(--mer-scale__04);
+      --mer-border-radius__lg: var(--mer-scale__06);
+      --mer-border-radius__xl: var(--mer-scale__08);
+    }
+    @if $block-size {
+      --mer-block-size__xs: var(--mer-scale__11);
+      --mer-block-size__sm: var(--mer-scale__12);
+      --mer-block-size__md: var(--mer-scale__13);
+      --mer-block-size__lg: var(--mer-scale__14);
+      --mer-block-size__xl: var(--mer-scale__14);
+    }
+  }
+}

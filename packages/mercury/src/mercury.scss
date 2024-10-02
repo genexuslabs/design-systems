@@ -26,6 +26,7 @@
 @import "./tokens/semantic/heading";
 @import "./tokens/semantic/icon";
 @import "./tokens/semantic/item";
+@import "./tokens/semantic/scale";
 @import "./tokens/semantic/surface";
 @import "./tokens/semantic/text";
 
@@ -85,7 +86,7 @@
   $prefers-color-scheme-dark: false,
   $prefers-color-scheme-light: false,
 
-  // Tokens
+  // Tokens Primitive
   $tokens: true,
   $border: true,
   $colors: true,
@@ -93,6 +94,13 @@
   $scale: true,
   $spacing: true,
   $timing: true,
+
+  // Tokens Semantic
+  $scale-small-selector: ".scale-small",
+  $scale-medium-selector: ".scale-medium",
+  $scale-large-selector: ".scale-large",
+  $scale-border: true,
+  $scale-block-size: true,
 
   // Icons
   $icons-path: "./assets/icons/",
@@ -338,13 +346,8 @@
         @include border();
       }
 
-      // Semantic (Other than colors)
-      @include semantic-general();
-      @include semantic-control();
-      @include semantic-field();
-
-      // Semantic Colors (Are independent of color scheme)
       @if $colors {
+        // Semantic Colors (Are independent of color scheme)
         @include semantic-accent();
         @include semantic-border();
         @include semantic-heading();
@@ -361,6 +364,15 @@
       @if $scale {
         @include scale();
       }
+      @if $scale and ($scale-border or $scale-block-size) {
+        @include semantic-scale(
+          $scale-small-selector: $scale-small-selector,
+          $scale-medium-selector: $scale-medium-selector,
+          $scale-large-selector: $scale-large-selector,
+          $border: $scale-border,
+          $block-size: $scale-block-size
+        );
+      }
 
       @if $spacing {
         @include spacing();
@@ -369,6 +381,11 @@
       @if $timing {
         @include timing();
       }
+
+      // Semantic (Other than colors)
+      @include semantic-control();
+      @include semantic-field();
+      @include semantic-general();
     }
   }
 
@@ -591,7 +608,7 @@
   $prefers-color-scheme-dark: false,
   $prefers-color-scheme-light: false,
 
-  // Tokens
+  // Tokens Primitive
   $tokens: false,
   $border: false,
   $colors: false,
@@ -599,6 +616,10 @@
   $scale: false,
   $spacing: false,
   $timing: false,
+
+  // Tokens Semantic
+  $scale-border: false,
+  $scale-block-size: false,
 
   // Icons
   $icons-path: "./assets/icons/",
@@ -662,7 +683,7 @@
     $prefers-color-scheme-dark: $prefers-color-scheme-dark,
     $prefers-color-scheme-light: $prefers-color-scheme-light,
 
-    // Tokens
+    // Tokens Primitive
     $tokens: $tokens,
     $border: $border,
     $colors: $colors,
@@ -670,6 +691,10 @@
     $scale: $scale,
     $spacing: $spacing,
     $timing: $timing,
+
+    // Tokens Semantic
+    $scale-border: $scale-border,
+    $scale-block-size: $scale-border,
 
     // Icons
     $icons-path: $icons-path,
