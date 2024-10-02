@@ -364,15 +364,6 @@
       @if $scale {
         @include scale();
       }
-      @if $scale and ($scale-border or $scale-block-size) {
-        @include semantic-scale(
-          $scale-small-selector: $scale-small-selector,
-          $scale-medium-selector: $scale-medium-selector,
-          $scale-large-selector: $scale-large-selector,
-          $border: $scale-border,
-          $block-size: $scale-block-size
-        );
-      }
 
       @if $spacing {
         @include spacing();
@@ -386,6 +377,15 @@
       @include semantic-control();
       @include semantic-field();
       @include semantic-general();
+    }
+    @if $scale and ($scale-border or $scale-block-size) {
+      @include semantic-scale(
+        $scale-small-selector: $scale-small-selector,
+        $scale-medium-selector: $scale-medium-selector,
+        $scale-large-selector: $scale-large-selector,
+        $border: $scale-border,
+        $block-size: $scale-block-size
+      );
     }
   }
 
@@ -618,6 +618,9 @@
   $timing: false,
 
   // Tokens Semantic
+  $scale-small-selector: ".scale-small",
+  $scale-medium-selector: ".scale-medium",
+  $scale-large-selector: ".scale-large",
   $scale-border: false,
   $scale-block-size: false,
 
@@ -693,6 +696,9 @@
     $timing: $timing,
 
     // Tokens Semantic
+    $scale-small-selector: $scale-small-selector,
+    $scale-medium-selector: $scale-medium-selector,
+    $scale-large-selector: $scale-large-selector,
     $scale-border: $scale-border,
     $scale-block-size: $scale-border,
 
