@@ -13,6 +13,7 @@
 @import "./tokens/primitive/color";
 @import "./tokens/primitive/font";
 @import "./tokens/primitive/gradients";
+@import "./tokens/primitive/scale";
 @import "./tokens/primitive/spacing";
 @import "./tokens/primitive/timing";
 
@@ -89,6 +90,7 @@
   $border: true,
   $colors: true,
   $font: true,
+  $scale: true,
   $spacing: true,
   $timing: true,
 
@@ -276,7 +278,7 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //              Color Schemes
+  //           Foundation Colors
   // - - - - - - - - - - - - - - - - - - - -
   // Light
   @if $colors and $light-theme and $tokens {
@@ -326,9 +328,10 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //        Other Tokens than Colors
+  //   Other Tokens than Foundation Colors
   // - - - - - - - - - - - - - - - - - - - -
-  @if $tokens and ($border or $colors or $font or $spacing or $timing) {
+  @if $tokens and ($border or $colors or $font or $scale or $spacing or $timing)
+  {
     :root {
       // Border
       @if $border {
@@ -355,6 +358,10 @@
         @include font();
       }
 
+      @if $scale {
+        @include scale();
+      }
+
       @if $spacing {
         @include spacing();
       }
@@ -368,6 +375,10 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                General
   // - - - - - - - - - - - - - - - - - - - -
+
+  :root {
+    font-size: 16px; // !important: scale tokens are based on this value
+  }
   @if $body {
     body {
       @include document-common-styles();
@@ -585,6 +596,7 @@
   $border: false,
   $colors: false,
   $font: false,
+  $scale: false,
   $spacing: false,
   $timing: false,
 
@@ -655,6 +667,7 @@
     $border: $border,
     $colors: $colors,
     $font: $font,
+    $scale: $scale,
     $spacing: $spacing,
     $timing: $timing,
 
