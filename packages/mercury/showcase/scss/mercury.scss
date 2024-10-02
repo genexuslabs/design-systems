@@ -353,21 +353,26 @@
   font-size: var(--control__font-size--regular);
   line-height: var(--control__line-height);
 }
-// Height
-@mixin control-height-regular() {
-  block-size: var(--control__height);
-  // to be removed (TODO)
-  // fixed block-size comes with some issues.
+// Block Size
+@mixin control-block-size() {
+  block-size: var(--control__block-size);
+  box-sizing: border-box;
+}
+@mixin control-min-block-size() {
+  min-block-size: var(--control__min-block-size);
+  box-sizing: border-box;
 }
 // Padding
 @mixin control-padding-inline() {
   padding-inline: var(--control__padding-inline);
 }
 @mixin control-padding-block() {
-  padding-block: var(--control__padding-block);
+  @warn "`control-padding-block()` is deprecated. control block-size should be a fixed value.";
+  padding-block: var(--control__padding-block); // Deprecated
 }
 @mixin control-padding-inline-block() {
-  padding-block: var(--control__padding-block);
+  @warn "`control-padding-block()` is deprecated. control block-size should be a fixed value.";
+  padding-block: var(--control__padding-block); // Deprecated
   padding-inline: var(--control__padding-inline);
 }
 // Placeholder
@@ -539,14 +544,19 @@
   box-shadow: var(--grid-cell__box-shadow-inline-block);
 }
 @mixin grid-cell-padding-inline() {
-  padding-inline: var(--grid-cell__padding-block);
+  @warn "`grid-cell-padding-inline()` is deprecated. use `control-padding-inline()`";
+  padding-inline: var(--grid-cell__padding-block); // Deprecated
 }
 @mixin grid-cell-padding-block() {
-  padding-block: var(--grid-cell__padding-block);
+  @warn "`grid-cell-padding-block()` is deprecated. grid block-size should be a fixed value.";
+  padding-block: var(--grid-cell__padding-block); // Deprecated
 }
 @mixin grid-cell-padding-inline-block() {
-  padding-block: var(--grid-cell__padding-block);
-  padding-inline: var(--grid-cell__padding-inline);
+  @warn "`grid-cell-padding-inline-block()` is deprecated. grid block-size should be a fixed value.";
+  padding-block: var(--grid-cell__padding-block); // Deprecated
+  padding-inline: var(
+    --grid-cell__padding-inline
+  ); // Deprecated. Use `--control__padding-inline` instead.
 }
 @mixin grid-cell-remove-padding() {
   // we should redefine '--grid-cell__padding-inline' here because when a control
@@ -1122,6 +1132,24 @@
   );
 }
 
+@mixin scale() {
+  --mer-scale__none: 0rem; // 0
+  --mer-scale__01: 0.125rem; // 2px
+  --mer-scale__02: 0.25rem; // 4px
+  --mer-scale__03: 0.375rem; // 6px
+  --mer-scale__04: 0.5rem; // 8px
+  --mer-scale__05: 0.625rem; // 10px
+  --mer-scale__06: 0.75rem; // 12px
+  --mer-scale__07: 0.875rem; // 14px
+  --mer-scale__08: 1rem; // 16px
+  --mer-scale__09: 1.25rem; // 20px
+  --mer-scale__10: 1.625rem; // 26px
+  --mer-scale__11: 2rem; // 32px
+  --mer-scale__12: 2.25rem; // 36px
+  --mer-scale__13: 2.5rem; // 40px
+  --mer-scale__14: 3rem; // 48px
+}
+
 @mixin spacing() {
   --mer-spacing--3xs: 2px;
   --mer-spacing--2xs: 4px;
@@ -1199,6 +1227,11 @@
   // error
   --control__border-color--error: var(--mer-border-color__error);
 
+  // - - - - - - - Size - - - - - - -
+
+  --control__block-size: var(--mer-block-size__xs);
+  --control__min-block-size: var(--mer-block-size__xs);
+
   // - - - - - - - Border - - - - - - -
 
   --control__border-width: var(--mer-border__width--sm);
@@ -1219,7 +1252,8 @@
 
   // - - - - - - - Padding - - - - - - -
 
-  --control__padding-block: var(--mer-spacing--2xs);
+  // --control__padding-block is deprecated, control block-size should be a fixed value
+  --control__padding-block: var(--mer-spacing--2xs); // Deprecated
   --control__padding-inline: var(--mer-spacing--xs);
 
   // - - - - - - - Gap - - - - - - -
@@ -1593,6 +1627,74 @@
   --tab-caption__gap: var(--mer-spacing--xs); // 6px does not exist on the ds.
 }
 
+/// @group Scale
+/// @param {String} $scale-small-selector [".scale-small"] -
+/// @param {String} $scale-medium-selector [".scale-medium"]
+/// @param {String} $scale-large-selector [".scale-large"]
+/// @param {Boolean} $border [true] -
+/// @param {Boolean} $block-size [true] -
+@mixin semantic-scale(
+  $scale-small-selector: ".scale-small",
+  $scale-medium-selector: ".scale-medium",
+  $scale-large-selector: ".scale-large",
+  $border: true,
+  $block-size: true
+) {
+  #{$scale-small-selector} {
+    @if $border {
+      --mer-border-radius__none: var(--mer-scale__none);
+      --mer-border-radius__xs: var(--mer-scale__01);
+      --mer-border-radius__sm: var(--mer-scale__02);
+      --mer-border-radius__md: var(--mer-scale__04);
+      --mer-border-radius__lg: var(--mer-scale__06);
+      --mer-border-radius__xl: var(--mer-scale__08);
+    }
+    @if $block-size {
+      --mer-block-size__xs: var(--mer-scale__13);
+      --mer-block-size__sm: var(--mer-scale__12);
+      --mer-block-size__md: var(--mer-scale__13);
+      --mer-block-size__lg: var(--mer-scale__14);
+      --mer-block-size__xl: var(--mer-scale__14);
+    }
+  }
+
+  #{$scale-medium-selector} {
+    @if $border {
+      --mer-border-radius__none: var(--mer-scale__none);
+      --mer-border-radius__xs: var(--mer-scale__01);
+      --mer-border-radius__sm: var(--mer-scale__02);
+      --mer-border-radius__md: var(--mer-scale__04);
+      --mer-border-radius__lg: var(--mer-scale__06);
+      --mer-border-radius__xl: var(--mer-scale__08);
+    }
+    @if $block-size {
+      --mer-block-size__xs: var(--mer-scale__10);
+      --mer-block-size__sm: var(--mer-scale__11);
+      --mer-block-size__md: var(--mer-scale__12);
+      --mer-block-size__lg: var(--mer-scale__13);
+      --mer-block-size__xl: var(--mer-scale__14);
+    }
+  }
+
+  #{$scale-large-selector} {
+    @if $border {
+      --mer-border-radius__none: var(--mer-scale__none);
+      --mer-border-radius__xs: var(--mer-scale__01);
+      --mer-border-radius__sm: var(--mer-scale__02);
+      --mer-border-radius__md: var(--mer-scale__04);
+      --mer-border-radius__lg: var(--mer-scale__06);
+      --mer-border-radius__xl: var(--mer-scale__08);
+    }
+    @if $block-size {
+      --mer-block-size__xs: var(--mer-scale__11);
+      --mer-block-size__sm: var(--mer-scale__12);
+      --mer-block-size__md: var(--mer-scale__13);
+      --mer-block-size__lg: var(--mer-scale__14);
+      --mer-block-size__xl: var(--mer-scale__14);
+    }
+  }
+}
+
 @mixin semantic-surface() {
   --mer-surface: var(--mer-color__neutral-gray--900);
   --mer-color__surface: var(
@@ -1818,21 +1920,26 @@
   font-size: var(--control__font-size--regular);
   line-height: var(--control__line-height);
 }
-// Height
-@mixin control-height-regular() {
-  block-size: var(--control__height);
-  // to be removed (TODO)
-  // fixed block-size comes with some issues.
+// Block Size
+@mixin control-block-size() {
+  block-size: var(--control__block-size);
+  box-sizing: border-box;
+}
+@mixin control-min-block-size() {
+  min-block-size: var(--control__min-block-size);
+  box-sizing: border-box;
 }
 // Padding
 @mixin control-padding-inline() {
   padding-inline: var(--control__padding-inline);
 }
 @mixin control-padding-block() {
-  padding-block: var(--control__padding-block);
+  @warn "`control-padding-block()` is deprecated. control block-size should be a fixed value.";
+  padding-block: var(--control__padding-block); // Deprecated
 }
 @mixin control-padding-inline-block() {
-  padding-block: var(--control__padding-block);
+  @warn "`control-padding-block()` is deprecated. control block-size should be a fixed value.";
+  padding-block: var(--control__padding-block); // Deprecated
   padding-inline: var(--control__padding-inline);
 }
 // Placeholder
@@ -2004,14 +2111,19 @@
   box-shadow: var(--grid-cell__box-shadow-inline-block);
 }
 @mixin grid-cell-padding-inline() {
-  padding-inline: var(--grid-cell__padding-block);
+  @warn "`grid-cell-padding-inline()` is deprecated. use `control-padding-inline()`";
+  padding-inline: var(--grid-cell__padding-block); // Deprecated
 }
 @mixin grid-cell-padding-block() {
-  padding-block: var(--grid-cell__padding-block);
+  @warn "`grid-cell-padding-block()` is deprecated. grid block-size should be a fixed value.";
+  padding-block: var(--grid-cell__padding-block); // Deprecated
 }
 @mixin grid-cell-padding-inline-block() {
-  padding-block: var(--grid-cell__padding-block);
-  padding-inline: var(--grid-cell__padding-inline);
+  @warn "`grid-cell-padding-inline-block()` is deprecated. grid block-size should be a fixed value.";
+  padding-block: var(--grid-cell__padding-block); // Deprecated
+  padding-inline: var(
+    --grid-cell__padding-inline
+  ); // Deprecated. Use `--control__padding-inline` instead.
 }
 @mixin grid-cell-remove-padding() {
   // we should redefine '--grid-cell__padding-inline' here because when a control
@@ -2373,7 +2485,8 @@
   @include button-common-styles();
   @include control-border();
   @include control-font-size-regular();
-  @include control-padding-inline-block();
+  @include control-block-size();
+
   padding-inline: var(--control__padding-inline);
 
   &--focus-visible {
@@ -4307,21 +4420,26 @@
   font-size: var(--control__font-size--regular);
   line-height: var(--control__line-height);
 }
-// Height
-@mixin control-height-regular() {
-  block-size: var(--control__height);
-  // to be removed (TODO)
-  // fixed block-size comes with some issues.
+// Block Size
+@mixin control-block-size() {
+  block-size: var(--control__block-size);
+  box-sizing: border-box;
+}
+@mixin control-min-block-size() {
+  min-block-size: var(--control__min-block-size);
+  box-sizing: border-box;
 }
 // Padding
 @mixin control-padding-inline() {
   padding-inline: var(--control__padding-inline);
 }
 @mixin control-padding-block() {
-  padding-block: var(--control__padding-block);
+  @warn "`control-padding-block()` is deprecated. control block-size should be a fixed value.";
+  padding-block: var(--control__padding-block); // Deprecated
 }
 @mixin control-padding-inline-block() {
-  padding-block: var(--control__padding-block);
+  @warn "`control-padding-block()` is deprecated. control block-size should be a fixed value.";
+  padding-block: var(--control__padding-block); // Deprecated
   padding-inline: var(--control__padding-inline);
 }
 // Placeholder
@@ -4493,14 +4611,19 @@
   box-shadow: var(--grid-cell__box-shadow-inline-block);
 }
 @mixin grid-cell-padding-inline() {
-  padding-inline: var(--grid-cell__padding-block);
+  @warn "`grid-cell-padding-inline()` is deprecated. use `control-padding-inline()`";
+  padding-inline: var(--grid-cell__padding-block); // Deprecated
 }
 @mixin grid-cell-padding-block() {
-  padding-block: var(--grid-cell__padding-block);
+  @warn "`grid-cell-padding-block()` is deprecated. grid block-size should be a fixed value.";
+  padding-block: var(--grid-cell__padding-block); // Deprecated
 }
 @mixin grid-cell-padding-inline-block() {
-  padding-block: var(--grid-cell__padding-block);
-  padding-inline: var(--grid-cell__padding-inline);
+  @warn "`grid-cell-padding-inline-block()` is deprecated. grid block-size should be a fixed value.";
+  padding-block: var(--grid-cell__padding-block); // Deprecated
+  padding-inline: var(
+    --grid-cell__padding-inline
+  ); // Deprecated. Use `--control__padding-inline` instead.
 }
 @mixin grid-cell-remove-padding() {
   // we should redefine '--grid-cell__padding-inline' here because when a control
@@ -4747,7 +4870,8 @@
   @include control-colors-enabled();
   @include control-font-weight-regular();
   @include control-font-size-regular();
-  @include control-padding-inline-block();
+  @include control-padding-inline();
+  @include control-block-size();
 
   &:hover {
     @include control-colors-hover();
@@ -5225,7 +5349,8 @@
   @include control-colors-enabled();
   @include control-font-weight-regular();
   @include control-font-size-regular();
-  @include control-padding-inline-block();
+  @include control-padding-inline();
+  @include control-block-size();
 
   &--focus {
     @include focus-outline();
@@ -5850,7 +5975,7 @@
 
 // node type
 @mixin cell-node-type-text() {
-  @include grid-cell-padding-inline-block();
+  // @include grid-cell-padding-inline-block(); // UPDATE
 }
 @mixin cell-node-type-element() {
   @include control-remove-border();
@@ -7274,7 +7399,9 @@
 %tabular-grid-column__bar {
   --grid-label__gap: 0;
   @include grid-row-colors-enabled();
-  @include grid-cell-padding-inline-block();
+  @include control-min-block-size();
+  @include grid-cell-padding-inline();
+  // @include grid-cell-padding-inline-block(); // UPDATE
   @include control-font-weight-semi-bold();
   gap: var(--grid-common__gap);
   width: 100%;
@@ -7367,7 +7494,9 @@
 
 %tabular-grid-cell {
   @include grid-cell-border-inline-block();
-  @include grid-cell-padding-inline-block();
+  // @include grid-cell-padding-inline(); // UPDATE
+  @include control-padding-inline();
+  @include control-min-block-size();
   @include grid-row-colors-enabled();
   --item__bg-color: var(--items-container__bg-color);
   // Control font-size show "inherit" the tabular grid font-size.
@@ -7918,7 +8047,7 @@
 
 // node type
 @mixin cell-node-type-text() {
-  @include grid-cell-padding-inline-block();
+  // @include grid-cell-padding-inline-block(); // UPDATE
 }
 @mixin cell-node-type-element() {
   @include control-remove-border();
@@ -8647,13 +8776,21 @@
   $prefers-color-scheme-dark: false,
   $prefers-color-scheme-light: false,
 
-  // Tokens
+  // Tokens Primitive
   $tokens: true,
   $border: true,
   $colors: true,
   $font: true,
+  $scale: true,
   $spacing: true,
   $timing: true,
+
+  // Tokens Semantic
+  $scale-small-selector: ".scale-small",
+  $scale-medium-selector: ".scale-medium",
+  $scale-large-selector: ".scale-large",
+  $scale-border: true,
+  $scale-block-size: true,
 
   // Icons
   $icons-path: "./assets/icons/",
@@ -16727,7 +16864,7 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //              Color Schemes
+  //           Foundation Colors
   // - - - - - - - - - - - - - - - - - - - -
   // Light
   @if $colors and $light-theme and $tokens {
@@ -16777,22 +16914,18 @@
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //        Other Tokens than Colors
+  //   Other Tokens than Foundation Colors
   // - - - - - - - - - - - - - - - - - - - -
-  @if $tokens and ($border or $colors or $font or $spacing or $timing) {
+  @if $tokens and ($border or $colors or $font or $scale or $spacing or $timing)
+  {
     :root {
       // Border
       @if $border {
         @include border();
       }
 
-      // Semantic (Other than colors)
-      @include semantic-general();
-      @include semantic-control();
-      @include semantic-field();
-
-      // Semantic Colors (Are independent of color scheme)
       @if $colors {
+        // Semantic Colors (Are independent of color scheme)
         @include semantic-accent();
         @include semantic-border();
         @include semantic-heading();
@@ -16806,6 +16939,10 @@
         @include font();
       }
 
+      @if $scale {
+        @include scale();
+      }
+
       @if $spacing {
         @include spacing();
       }
@@ -16813,12 +16950,30 @@
       @if $timing {
         @include timing();
       }
+
+      // Semantic (Other than colors)
+      @include semantic-control();
+      @include semantic-field();
+      @include semantic-general();
+    }
+    @if $scale and ($scale-border or $scale-block-size) {
+      @include semantic-scale(
+        $scale-small-selector: $scale-small-selector,
+        $scale-medium-selector: $scale-medium-selector,
+        $scale-large-selector: $scale-large-selector,
+        $border: $scale-border,
+        $block-size: $scale-block-size
+      );
     }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
   //                General
   // - - - - - - - - - - - - - - - - - - - -
+
+  :root {
+    font-size: 16px; // !important: scale tokens are based on this value
+  }
   @if $body {
     body {
       @include document-common-styles();
@@ -17031,13 +17186,21 @@
   $prefers-color-scheme-dark: false,
   $prefers-color-scheme-light: false,
 
-  // Tokens
+  // Tokens Primitive
   $tokens: false,
   $border: false,
   $colors: false,
   $font: false,
+  $scale: false,
   $spacing: false,
   $timing: false,
+
+  // Tokens Semantic
+  $scale-small-selector: ".scale-small",
+  $scale-medium-selector: ".scale-medium",
+  $scale-large-selector: ".scale-large",
+  $scale-border: false,
+  $scale-block-size: false,
 
   // Icons
   $icons-path: "./assets/icons/",
@@ -17101,13 +17264,21 @@
     $prefers-color-scheme-dark: $prefers-color-scheme-dark,
     $prefers-color-scheme-light: $prefers-color-scheme-light,
 
-    // Tokens
+    // Tokens Primitive
     $tokens: $tokens,
     $border: $border,
     $colors: $colors,
     $font: $font,
+    $scale: $scale,
     $spacing: $spacing,
     $timing: $timing,
+
+    // Tokens Semantic
+    $scale-small-selector: $scale-small-selector,
+    $scale-medium-selector: $scale-medium-selector,
+    $scale-large-selector: $scale-large-selector,
+    $scale-border: $scale-border,
+    $scale-block-size: $scale-border,
 
     // Icons
     $icons-path: $icons-path,
