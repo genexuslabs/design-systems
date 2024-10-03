@@ -96,9 +96,9 @@
   $timing: true,
 
   // Tokens Semantic
-  $scale-small-selector: ".scale-small",
-  $scale-medium-selector: ".scale-medium",
-  $scale-large-selector: ".scale-large",
+  $mobile-selector: ".mobile",
+  $desktop-compact-selector: ".desktop-compact",
+  $desktop-regular-selector: ".desktop-regular",
   $scale-border: true,
   $scale-block-size: true,
 
@@ -380,9 +380,9 @@
     }
     @if $scale and ($scale-border or $scale-block-size) {
       @include semantic-scale(
-        $scale-small-selector: $scale-small-selector,
-        $scale-medium-selector: $scale-medium-selector,
-        $scale-large-selector: $scale-large-selector,
+        $mobile-selector: $mobile-selector,
+        $desktop-compact-selector: $desktop-compact-selector,
+        $desktop-regular-selector: $desktop-regular-selector,
         $border: $scale-border,
         $block-size: $scale-block-size
       );
@@ -618,9 +618,9 @@
   $timing: false,
 
   // Tokens Semantic
-  $scale-small-selector: ".scale-small",
-  $scale-medium-selector: ".scale-medium",
-  $scale-large-selector: ".scale-large",
+  $mobile-selector: ".mobile",
+  $desktop-compact-selector: ".desktop-compact",
+  $desktop-regular-selector: ".desktop-regular",
   $scale-border: false,
   $scale-block-size: false,
 
@@ -696,9 +696,9 @@
     $timing: $timing,
 
     // Tokens Semantic
-    $scale-small-selector: $scale-small-selector,
-    $scale-medium-selector: $scale-medium-selector,
-    $scale-large-selector: $scale-large-selector,
+    $mobile-selector: $mobile-selector,
+    $desktop-compact-selector: $desktop-compact-selector,
+    $desktop-regular-selector: $desktop-regular-selector,
     $scale-border: $scale-border,
     $scale-block-size: $scale-border,
 
