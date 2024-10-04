@@ -19,7 +19,7 @@ const DATA_TITLE_SELECTOR = "data-title";
 const SIDEBAR_CHILD_LIST_CLASS = "sidebar__list--child";
 let SIDEBAR_NAV; // A reference to the sidebar nav.
 let CONTAINER_REF;
-let topBarRef = null;
+let TOP_BAR_REF;
 // code and ch-code
 const ARTICLE_CODE_SELECTOR = ".article__code";
 const CH_CODE_VALUE_LET_NAME = "chCodeValue";
@@ -189,18 +189,6 @@ const includeSidebarPageInternalNav = () => {
         CURRENT_PAGE_NAV_ITEM.appendChild(pageUlEl);
       }
     }
-  }
-};
-
-const includeTopBar = () => {
-  if (CONTAINER_REF) {
-    const topBarEl = document.createElement("div");
-    topBarEl.className = "container__top-bar";
-    CONTAINER_REF.appendChild(topBarEl);
-    topBarRef = topBarEl;
-
-    // body
-    BODY.classList.add("has-top-bar");
   }
 };
 
@@ -465,14 +453,14 @@ const addCopyCodeFunctionality = () => {
 };
 
 const includeChameleonURL = chameleonURL => {
-  if (chameleonURL && topBarRef) {
+  if (chameleonURL && TOP_BAR) {
     const anchor = document.createElement("a");
     anchor.className = "button-tertiary";
     anchor.textContent = "Chameleon Reference";
     anchor.textContent = "Chameleon Reference";
     anchor.setAttribute("href", chameleonURL);
     anchor.setAttribute("target", "_blank");
-    topBarRef.appendChild(anchor);
+    TOP_BAR.appendChild(anchor);
   }
 };
 
@@ -616,8 +604,14 @@ const includeEndOfSectionCaption = () => {
   });
 };
 
+/**
+ * @description: this function includes a segmented control that allows picking a scale (mobile, desktop-compact, or desktop-regular at the time of writing).
+ */
+const includeScaleSelector = () => {};
+
 document.addEventListener("DOMContentLoaded", function () {
   CONTAINER_REF = document.querySelector(".container");
+  TOP_BAR = document.querySelector(".container__top-bar");
   includeFavicon();
   addGoogleFonts();
   addArticleTitles();
@@ -627,9 +621,8 @@ document.addEventListener("DOMContentLoaded", function () {
   addCopyCodeFunctionality();
   listenToCtrlCmd();
   includeSidebar();
-  includeTopBar();
-  includeChameleonURL();
   getChCodeValues();
   includeBundleButton();
   includeEndOfSectionCaption();
+  includeScaleSelector();
 });
