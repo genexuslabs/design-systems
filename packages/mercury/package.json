@@ -22,7 +22,8 @@
     "watch.scss.mac": "chokidar 'src/**/*.scss' '../common/**/*.scss' -c \"npm run build.scss\"",
     "copy-all.css": "fse copy dist/bundles/css/all.css showcase/all.css",
     "copy-tasks": "node copy-tasks.js",
-    "showcase.scss": "sass showcase/scss/showcase-sass.scss showcase/css/showcase-sass.css"
+    "showcase.scss": "sass showcase/scss/showcase-sass.scss showcase/css/showcase-sass.css",
+    "tokenizer": "node src/tokens/scss-tokenizer.js"
   },
   "license": "MIT",
   "devDependencies": {
