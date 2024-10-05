@@ -481,11 +481,7 @@
 // ----------------------
 
 @mixin control-header-base() {
-  --control-header-justify-content: end;
   padding-block-end: var(--mer-spacing--md);
-  display: flex;
-  justify-content: var(--control-header-justify-content);
-  align-items: center;
 }
 @mixin control-header-border() {
   border-block-end: var(--mer-border__width--sm) solid
@@ -494,23 +490,11 @@
 @mixin control-header(
   $selector: ".control-header",
   $with-border-selector: ".control-header-with-border",
-  $justify-start-selector: ".control-header-start",
-  $justify-center-selector: ".control-header-center",
-  $justify-space-between-selector: ".control-header-space-between",
   $with-border: true
 ) {
   #{$selector},
   #{$with-border-selector} {
     @include control-header-base();
-  }
-  #{$justify-start-selector} {
-    --control-header-justify-content: start;
-  }
-  #{$justify-center-selector} {
-    --control-header-justify-content: center;
-  }
-  #{$justify-space-between-selector} {
-    --control-header-justify-content: space-between;
   }
   @if $with-border {
     #{$with-border-selector} {
