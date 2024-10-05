@@ -429,6 +429,7 @@
       @include button-primary();
       @include button-secondary();
       @include button-tertiary();
+      @include buttons-spacer();
 
       @include button-icon-only();
       @include button-icon-and-text();
@@ -452,6 +453,7 @@
     @if $layout-classes {
       @include layout();
       @include control-footer();
+      @include control-header();
     }
 
     @if $spacing-classes {
