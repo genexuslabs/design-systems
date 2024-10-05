@@ -317,6 +317,7 @@ export const getTreeViewImagePathCallback: TreeViewImagePathCallback = (
 export const getImagePathCallbackDefinitions: RegistryGetImagePathCallback = {
   "ch-accordion-render": getImagePathCallback,
   "ch-navigation-list-render": getNavigationListImagePathCallback,
+  "ch-checkbox": getImagePathCallback,
   "ch-edit": getImagePathCallback,
   "ch-image": getImagePathCallback,
   "ch-tree-view-render": getTreeViewImagePathCallback
