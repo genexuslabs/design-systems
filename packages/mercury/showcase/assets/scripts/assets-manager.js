@@ -1,5 +1,5 @@
 import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS.js";
-export { getThemeBundles } from "./bundles.js";
+export { getThemeBundles, getBundles } from "./bundles.js";
 const ASSETS_BY_VENDOR = {};
 const ALIAS_TO_VENDOR_NAME = {};
 const SEPARATOR = "/";
@@ -155,6 +155,7 @@ export const getTreeViewImagePathCallback = (item, iconDirection) => {
 export const getImagePathCallbackDefinitions = {
     "ch-accordion-render": getImagePathCallback,
     "ch-navigation-list-render": getNavigationListImagePathCallback,
+    "ch-checkbox": getImagePathCallback,
     "ch-edit": getImagePathCallback,
     "ch-image": getImagePathCallback,
     "ch-tree-view-render": getTreeViewImagePathCallback
