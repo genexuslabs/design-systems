@@ -438,8 +438,10 @@
 // ----------------------
 
 @mixin control-footer-base() {
-  padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
-  gap: var(--mer-spacing--sm);
+  --control-footer-justify-content: end;
+  padding-block-start: var(--mer-spacing--xs);
+  display: flex;
+  justify-content: var(--control-footer-justify-content);
   align-items: center;
 }
 @mixin control-footer-border() {
@@ -449,18 +451,70 @@
 @mixin control-footer(
   $selector: ".control-footer",
   $with-border-selector: ".control-footer-with-border",
+  $justify-start-selector: ".control-footer-start",
+  $justify-center-selector: ".control-footer-center",
+  $justify-space-between-selector: ".control-footer-space-between",
   $with-border: true
 ) {
   #{$selector},
   #{$with-border-selector} {
     @include control-footer-base();
-    display: flex; // part of ch-dialog footer implementation
-    justify-content: flex-end; // part of ch-dialog footer implementation
   }
-
+  #{$justify-start-selector} {
+    --control-footer-justify-content: start;
+  }
+  #{$justify-center-selector} {
+    --control-footer-justify-content: center;
+  }
+  #{$justify-space-between-selector} {
+    --control-footer-justify-content: space-between;
+  }
   @if $with-border {
     #{$with-border-selector} {
       @include control-footer-border();
+    }
+  }
+}
+
+// ----------------------
+// Pseudo Dialog Header
+// ----------------------
+
+@mixin control-header-base() {
+  --control-header-justify-content: end;
+  padding-block-end: var(--mer-spacing--md);
+  display: flex;
+  justify-content: var(--control-header-justify-content);
+  align-items: center;
+}
+@mixin control-header-border() {
+  border-block-end: var(--mer-border__width--sm) solid
+    var(--mer-border-color__on-elevation--01);
+}
+@mixin control-header(
+  $selector: ".control-header",
+  $with-border-selector: ".control-header-with-border",
+  $justify-start-selector: ".control-header-start",
+  $justify-center-selector: ".control-header-center",
+  $justify-space-between-selector: ".control-header-space-between",
+  $with-border: true
+) {
+  #{$selector},
+  #{$with-border-selector} {
+    @include control-header-base();
+  }
+  #{$justify-start-selector} {
+    --control-header-justify-content: start;
+  }
+  #{$justify-center-selector} {
+    --control-header-justify-content: center;
+  }
+  #{$justify-space-between-selector} {
+    --control-header-justify-content: space-between;
+  }
+  @if $with-border {
+    #{$with-border-selector} {
+      @include control-header-border();
     }
   }
 }
