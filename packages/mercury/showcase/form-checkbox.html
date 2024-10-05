@@ -146,6 +146,51 @@
             </article>
 
             <!-- ========================== 
+          with icon
+          =========================== -->
+            <article class="article" data-nav data-title="with icon">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    id="checkbox-with-icon-enabled"
+                    class="checkbox"
+                    checked-value="true"
+                    un-checked-value="false"
+                    value="true"
+                    caption="The Caption"
+                  ></ch-checkbox>
+                  <script type="module">
+                    const ADD_CIRCLE_ICON = getIconPath({
+                      category: "gemini-tools",
+                      name: "add-circle",
+                      colorType: "on-elevation"
+                    });
+                    console.log(ADD_CIRCLE_ICON);
+                    const checkboxWithIconEnabled = document.getElementById(
+                      "checkbox-with-icon-enabled"
+                    );
+                    checkboxWithIconEnabled.startImgSrc = ADD_CIRCLE_ICON;
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `const ADD_CIRCLE_ICON = getIconPath({
+  category: "gemini-tools",
+  name: "add-circle",
+  colorType: "on-elevation"
+});
+<ch-checkbox class="checkbox" startImgSrc={ADD_CIRCLE_ICON}></ch-checkbox>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
           with error
           =========================== -->
             <article class="article" data-nav data-title="with error">
