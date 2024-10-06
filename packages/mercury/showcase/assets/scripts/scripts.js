@@ -44,10 +44,6 @@ const includeFavicon = () => {
   document.head.appendChild(linkElement);
 };
 
-const setScheme = () => {
-  HTML.classList.add("dark");
-};
-
 const addGoogleFonts = () => {
   // Create the first link element for preconnecting to "https://fonts.googleapis.com"
   const googleApis = document.createElement("link");
@@ -664,7 +660,6 @@ document.addEventListener("DOMContentLoaded", function () {
   addGoogleFonts();
   addArticleTitles();
   addTitleAnchors();
-  setScheme();
   toggleRTLBtn();
   addCopyCodeFunctionality();
   listenToCtrlCmd();
