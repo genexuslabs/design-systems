@@ -11,63 +11,75 @@
   $border: true,
   $block-size: true
 ) {
+  :host(#{$mobile-selector}),
   #{$mobile-selector} {
     @if $border {
-      --mer-border-radius__none: var(--mer-scale__none);
-      --mer-border-radius__xs: var(--mer-scale__01);
-      --mer-border-radius__sm: var(--mer-scale__02);
-      --mer-border-radius__md: var(--mer-scale__04);
-      --mer-border-radius__lg: var(--mer-scale__06);
-      --mer-border-radius__xl: var(--mer-scale__08);
+      --mer-border__radius--none: var(--mer-scale--none);
+      --mer-border__radius--xs: var(--mer-scale--01);
+      --mer-border__radius--sm: var(--mer-scale--02);
+      --mer-border__radius--md: var(--mer-scale--04);
+      --mer-border__radius--lg: var(--mer-scale--06);
+      --mer-border__radius--xl: var(--mer-scale--08);
       // End of scale tokens
     }
     @if $block-size {
-      --mer-block-size__xs: var(--mer-scale__13);
-      --mer-block-size__sm: var(--mer-scale__12);
-      --mer-block-size__md: var(--mer-scale__13);
-      --mer-block-size__lg: var(--mer-scale__14);
-      --mer-block-size__xl: var(--mer-scale__14);
+      --mer-block__size--xs: var(--mer-scale--13);
+      --mer-block__size--sm: var(--mer-scale--12);
+      --mer-block__size--md: var(--mer-scale--13);
+      --mer-block__size--lg: var(--mer-scale--14);
+      --mer-block__size--xl: var(--mer-scale--14);
       // End of scale tokens
+
+      // --control tokens
+      --control__block-size: var(--mer-block__size--xs);
     }
   }
 
+  :host(#{$desktop-compact-selector}),
   #{$desktop-compact-selector} {
     @if $border {
-      --mer-border-radius__none: var(--mer-scale__none);
-      --mer-border-radius__xs: var(--mer-scale__01);
-      --mer-border-radius__sm: var(--mer-scale__02);
-      --mer-border-radius__md: var(--mer-scale__04);
-      --mer-border-radius__lg: var(--mer-scale__06);
-      --mer-border-radius__xl: var(--mer-scale__08);
+      --mer-border__radius--none: var(--mer-scale__none);
+      --mer-border__radius--xs: var(--mer-scale--01);
+      --mer-border__radius--sm: var(--mer-scale--02);
+      --mer-border__radius--md: var(--mer-scale--04);
+      --mer-border__radius--lg: var(--mer-scale--06);
+      --mer-border__radius--xl: var(--mer-scale--08);
       // End of scale tokens
     }
     @if $block-size {
-      --mer-block-size__xs: var(--mer-scale__10);
-      --mer-block-size__sm: var(--mer-scale__11);
-      --mer-block-size__md: var(--mer-scale__12);
-      --mer-block-size__lg: var(--mer-scale__13);
-      --mer-block-size__xl: var(--mer-scale__14);
+      --mer-block__size--xs: var(--mer-scale--10);
+      --mer-block__size--sm: var(--mer-scale--11);
+      --mer-block__size--md: var(--mer-scale--12);
+      --mer-block__size--lg: var(--mer-scale--13);
+      --mer-block__size--xl: var(--mer-scale--14);
       // End of scale tokens
+
+      // --control tokens
+      --control__block-size: var(--mer-block__size--xs);
     }
   }
 
+  :host(#{$desktop-regular-selector}),
   #{$desktop-regular-selector} {
     @if $border {
-      --mer-border-radius__none: var(--mer-scale__none);
-      --mer-border-radius__xs: var(--mer-scale__01);
-      --mer-border-radius__sm: var(--mer-scale__02);
-      --mer-border-radius__md: var(--mer-scale__04);
-      --mer-border-radius__lg: var(--mer-scale__06);
-      --mer-border-radius__xl: var(--mer-scale__08);
+      --mer-border__radius--none: var(--mer-scale__none);
+      --mer-border__radius--xs: var(--mer-scale--01);
+      --mer-border__radius--sm: var(--mer-scale--02);
+      --mer-border__radius--md: var(--mer-scale--04);
+      --mer-border__radius--lg: var(--mer-scale--06);
+      --mer-border__radius--xl: var(--mer-scale--08);
       // End of scale tokens
     }
     @if $block-size {
-      --mer-block-size__xs: var(--mer-scale__11);
-      --mer-block-size__sm: var(--mer-scale__12);
-      --mer-block-size__md: var(--mer-scale__13);
-      --mer-block-size__lg: var(--mer-scale__14);
-      --mer-block-size__xl: var(--mer-scale__14);
+      --mer-block__size--xs: var(--mer-scale--11);
+      --mer-block__size--sm: var(--mer-scale--12);
+      --mer-block__size--md: var(--mer-scale--13);
+      --mer-block__size--lg: var(--mer-scale--14);
+      --mer-block__size--xl: var(--mer-scale--14);
       // End of scale tokens
+
+      // --control tokens
+      --control__block-size: var(--mer-block__size--xs);
     }
   }
 }
