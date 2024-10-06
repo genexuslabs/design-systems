@@ -4,82 +4,253 @@
 /// @param {String} $desktop-regular-selector [".desktop-regular"]
 /// @param {Boolean} $border [true] -
 /// @param {Boolean} $block-size [true] -
-@mixin semantic-scale(
+@mixin semantic-scales(
+  // Scale Selectors
   $mobile-selector: ".mobile",
   $desktop-compact-selector: ".desktop-compact",
   $desktop-regular-selector: ".desktop-regular",
-  $border: true,
-  $block-size: true
+  // Semantic General
+  $border-radius: true,
+  $block-size: true,
+  $icon-size: true,
+  $spacing: true,
+  // Semantic Specific (Controls)
+  $control: true,
+  $control-container: true,
+  $control-item: true,
+  $form: true,
+  $layout: true,
+  $spacing-body: true,
+  $cell: true,
+  $buttons: true
 ) {
+  /* - - - - - - - - - - - - - - - 
+  Semantic General
+  - - - - - - - - - - - - - - - */
+
   :host(#{$mobile-selector}),
   #{$mobile-selector} {
-    @if $border {
-      --mer-border__radius--none: var(--mer-scale--none);
-      --mer-border__radius--xs: var(--mer-scale--01);
-      --mer-border__radius--sm: var(--mer-scale--02);
-      --mer-border__radius--md: var(--mer-scale--04);
-      --mer-border__radius--lg: var(--mer-scale--06);
-      --mer-border__radius--xl: var(--mer-scale--08);
-      // End of scale tokens
+    @if $border-radius {
+      --scale-border__radius--none: var(--mer-scale--none);
+      --scale-border__radius--xs: var(--mer-scale--01);
+      --scale-border__radius--sm: var(--mer-scale--02);
+      --scale-border__radius--md: var(--mer-scale--04);
+      --scale-border__radius--lg: var(--mer-scale--06);
+      --scale-border__radius--xl: var(--mer-scale--08);
     }
     @if $block-size {
-      --mer-block__size--xs: var(--mer-scale--13);
-      --mer-block__size--sm: var(--mer-scale--12);
-      --mer-block__size--md: var(--mer-scale--13);
-      --mer-block__size--lg: var(--mer-scale--14);
-      --mer-block__size--xl: var(--mer-scale--14);
-      // End of scale tokens
-
-      // --control tokens
-      --control__block-size: var(--mer-block__size--xs);
+      --scale-block__size--xs: var(--mer-scale--13);
+      --scale-block__size--sm: var(--mer-scale--12);
+      --scale-block__size--md: var(--mer-scale--13);
+      --scale-block__size--lg: var(--mer-scale--14);
+      --scale-block__size--xl: var(--mer-scale--14);
+    }
+    @if $icon-size {
+      --scale-icon__size--xs: var(--mer-scale--06);
+      --scale-icon__size--sm: var(--mer-scale--07);
+      --scale-icon__size--md: var(--mer-scale--08);
+      --scale-icon__size--lg: var(--mer-scale--09);
+      --scale-icon__size--xl: var(--mer-scale--10);
+    }
+    @if $spacing {
+      --scale-spacing--none: var(--mer-scale--none);
+      --scale-spacing--2xs: var(--mer-scale--02);
+      --scale-spacing--xs: var(--mer-scale--03);
+      --scale-spacing--sm: var(--mer-scale--04);
+      --scale-spacing--md: var(--mer-scale--05);
+      --scale-spacing--lg: var(--mer-scale--07);
+      --scale-spacing--xl: var(--mer-scale--09);
+      --scale-spacing--2xl: var(--mer-scale--11);
+      --scale-spacing--3xl: var(--mer-scale--12);
     }
   }
 
   :host(#{$desktop-compact-selector}),
   #{$desktop-compact-selector} {
-    @if $border {
-      --mer-border__radius--none: var(--mer-scale__none);
-      --mer-border__radius--xs: var(--mer-scale--01);
-      --mer-border__radius--sm: var(--mer-scale--02);
-      --mer-border__radius--md: var(--mer-scale--04);
-      --mer-border__radius--lg: var(--mer-scale--06);
-      --mer-border__radius--xl: var(--mer-scale--08);
-      // End of scale tokens
+    @if $border-radius {
+      --scale-border__radius--none: var(--mer-scale__none);
+      --scale-border__radius--xs: var(--mer-scale--01);
+      --scale-border__radius--sm: var(--mer-scale--02);
+      --scale-border__radius--md: var(--mer-scale--04);
+      --scale-border__radius--lg: var(--mer-scale--06);
+      --scale-border__radius--xl: var(--mer-scale--08);
     }
     @if $block-size {
-      --mer-block__size--xs: var(--mer-scale--10);
-      --mer-block__size--sm: var(--mer-scale--11);
-      --mer-block__size--md: var(--mer-scale--12);
-      --mer-block__size--lg: var(--mer-scale--13);
-      --mer-block__size--xl: var(--mer-scale--14);
-      // End of scale tokens
-
-      // --control tokens
-      --control__block-size: var(--mer-block__size--xs);
+      --scale-block__size--xs: var(--mer-block__size--xs);
+      --scale-block__size--sm: var(--mer-scale--11);
+      --scale-block__size--md: var(--mer-scale--12);
+      --scale-block__size--lg: var(--mer-scale--13);
+      --scale-block__size--xl: var(--mer-scale--14);
+    }
+    @if $icon-size {
+      --scale-icon__size--xs: var(--mer-scale--04);
+      --scale-icon__size--sm: var(--mer-scale--06);
+      --scale-icon__size--md: var(--mer-scale--07);
+      --scale-icon__size--lg: var(--mer-scale--08);
+      --scale-icon__size--xl: var(--mer-scale--09);
+    }
+    @if $spacing {
+      --scale-spacing--none: var(--mer-scale--none);
+      --scale-spacing--2xs: var(--mer-scale--01);
+      --scale-spacing--xs: var(--mer-scale--02);
+      --scale-spacing--sm: var(--mer-scale--03);
+      --scale-spacing--md: var(--mer-scale--04);
+      --scale-spacing--lg: var(--mer-scale--06);
+      --scale-spacing--xl: var(--mer-scale--08);
+      --scale-spacing--2xl: var(--mer-scale--10);
+      --scale-spacing--3xl: var(--mer-scale--11);
     }
   }
 
   :host(#{$desktop-regular-selector}),
   #{$desktop-regular-selector} {
-    @if $border {
-      --mer-border__radius--none: var(--mer-scale__none);
-      --mer-border__radius--xs: var(--mer-scale--01);
-      --mer-border__radius--sm: var(--mer-scale--02);
-      --mer-border__radius--md: var(--mer-scale--04);
-      --mer-border__radius--lg: var(--mer-scale--06);
-      --mer-border__radius--xl: var(--mer-scale--08);
-      // End of scale tokens
+    @if $border-radius {
+      --scale-border__radius--none: var(--mer-scale__none);
+      --scale-border__radius--xs: var(--mer-scale--01);
+      --scale-border__radius--sm: var(--mer-scale--02);
+      --scale-border__radius--md: var(--mer-scale--04);
+      --scale-border__radius--lg: var(--mer-scale--06);
+      --scale-border__radius--xl: var(--mer-scale--08);
     }
     @if $block-size {
-      --mer-block__size--xs: var(--mer-scale--11);
-      --mer-block__size--sm: var(--mer-scale--12);
-      --mer-block__size--md: var(--mer-scale--13);
-      --mer-block__size--lg: var(--mer-scale--14);
-      --mer-block__size--xl: var(--mer-scale--14);
-      // End of scale tokens
+      --scale-block__size--xs: var(--mer-scale--11);
+      --scale-block__size--sm: var(--mer-scale--12);
+      --scale-block__size--md: var(--mer-scale--13);
+      --scale-block__size--lg: var(--mer-scale--14);
+      --scale-block__size--xl: var(--mer-scale--14);
+    }
+    @if $icon-size {
+      --scale-icon__size--xs: var(--mer-scale--06);
+      --scale-icon__size--sm: var(--mer-scale--07);
+      --scale-icon__size--md: var(--mer-scale--08);
+      --scale-icon__size--lg: var(--mer-scale--09);
+      --scale-icon__size--xl: var(--mer-scale--10);
+    }
+    @if $spacing {
+      --scale-spacing--none: var(--mer-scale--none);
+      --scale-spacing--2xs: var(--mer-scale--02);
+      --scale-spacing--xs: var(--mer-scale--03);
+      --scale-spacing--sm: var(--mer-scale--04);
+      --scale-spacing--md: var(--mer-scale--05);
+      --scale-spacing--lg: var(--mer-scale--07);
+      --scale-spacing--xl: var(--mer-scale--09);
+      --scale-spacing--2xl: var(--mer-scale--11);
+      --scale-spacing--3xl: var(--mer-scale--12);
+    }
+  }
 
-      // --control tokens
-      --control__block-size: var(--mer-block__size--xs);
+  /* - - - - - - - - - - - - - - - 
+  Semantic Specific (Controls)
+  - - - - - - - - - - - - - - - */
+  @if $control {
+    :host(#{$mobile-selector}),
+    #{$mobile-selector},
+    :host(#{$desktop-compact-selector}),
+    #{$desktop-compact-selector},
+    :host(#{$desktop-regular-selector}),
+    #{$desktop-regular-selector} {
+      --scale-control__block-size: var(--mer-block__size--xs);
+      --scale-control-tiny__size: var(--mer-spacing--xl); //checkbox & radio
+      // --scale-control__font-size: var(); // TODO (Not defined in Figma yet)
+      --scale-control__icon-size--sm: var(--mer-icon__size--sm);
+      --scale-control__icon-size--md: var(--mer-icon__size--md);
+      --scale-control__border-radius: var(--mer-border__radius--sm);
+      --scale-control-label__block-spacing: var(--mer-spacing--xs);
+      --scale-control-label__inline-spacing: var(--mer-spacing--sm);
+      --scale-control-helper__spacing: var(--mer-spacing--md);
+      --scale-control__block-padding: var(--mer-spacing--sm);
+      --scale-control__inline-padding: var(--mer-spacing--sm);
+    }
+  }
+
+  @if $control-container {
+    :host(#{$mobile-selector}),
+    #{$mobile-selector},
+    :host(#{$desktop-compact-selector}),
+    #{$desktop-compact-selector},
+    :host(#{$desktop-regular-selector}),
+    #{$desktop-regular-selector} {
+      --scale-control-container__block-padding: var(--mer-block__size--sm);
+      --scale-control-container__inline-padding: var(--mer-block__size--sm);
+      --scale-control-container__border-radius: var(--mer-border__radius--sm);
+    }
+  }
+
+  @if $control-item {
+    :host(#{$mobile-selector}),
+    #{$mobile-selector},
+    :host(#{$desktop-compact-selector}),
+    #{$desktop-compact-selector},
+    :host(#{$desktop-regular-selector}),
+    #{$desktop-regular-selector} {
+      --scale-control-item__block-padding: var(--mer-block__size--sm);
+      --scale-control-item__inline-padding: var(--mer-block__size--sm);
+      --scale-control-item__gap: var(--mer-block__size--sm);
+      // --scale-control-item__font-size: var(); // TODO (Not defined in Figma yet)
+      // --scale-control-item__border-radius: var(); // TODO (Not defined in Figma yet)
+    }
+  }
+
+  @if $form {
+    :host(#{$mobile-selector}),
+    #{$mobile-selector},
+    :host(#{$desktop-compact-selector}),
+    #{$desktop-compact-selector},
+    :host(#{$desktop-regular-selector}),
+    #{$desktop-regular-selector} {
+      --scale-field-group_row-gap: var();
+      --scale-field-group__column-gap: var();
+    }
+  }
+
+  @if $layout {
+    :host(#{$mobile-selector}),
+    #{$mobile-selector},
+    :host(#{$desktop-compact-selector}),
+    #{$desktop-compact-selector},
+    :host(#{$desktop-regular-selector}),
+    #{$desktop-regular-selector} {
+      --scale-layout-container_row-gap: var(--mer-spacing--xl);
+      --scale-layout-container_column-gap: var(--mer-spacing--xl);
+      --scale-layout-container_padding-block: var(--mer-spacing--lg);
+      --scale-layout-header_padding-block-end: var(--mer-spacing--lg);
+      --scale-layout-footer_padding-block-start: var(--mer-spacing--sm);
+    }
+  }
+
+  @if $spacing-body {
+    :host(#{$mobile-selector}),
+    #{$mobile-selector},
+    :host(#{$desktop-compact-selector}),
+    #{$desktop-compact-selector},
+    :host(#{$desktop-regular-selector}),
+    #{$desktop-regular-selector} {
+      // TODO (Not defined in Figma yet)
+    }
+  }
+
+  @if $cell {
+    :host(#{$mobile-selector}),
+    #{$mobile-selector},
+    :host(#{$desktop-compact-selector}),
+    #{$desktop-compact-selector},
+    :host(#{$desktop-regular-selector}),
+    #{$desktop-regular-selector} {
+      // NOTE:  --scale-cell__block-size is not used. Cell Layout is determined by the
+      // font-size, line-height, padding, and border.
+      --scale-cell__block-size: var(--mer-scale--12);
+      --scale-cell__inline-padding: var(--mer-scale--12);
+    }
+  }
+
+  @if $buttons {
+    :host(#{$mobile-selector}),
+    #{$mobile-selector},
+    :host(#{$desktop-compact-selector}),
+    #{$desktop-compact-selector},
+    :host(#{$desktop-regular-selector}),
+    #{$desktop-regular-selector} {
+      --scale-buttons-spacer__block-gap: var(--mer-spacing--sm);
     }
   }
 }
