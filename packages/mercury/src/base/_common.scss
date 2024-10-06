@@ -110,11 +110,11 @@
 }
 // Block Size
 @mixin control-block-size() {
-  block-size: var(--control__block-size);
+  block-size: var(--mer-sc-control__block-size);
   box-sizing: border-box;
 }
 @mixin control-min-block-size() {
-  min-block-size: var(--control__min-block-size);
+  min-block-size: var(--mer-sc-control__block-size);
   box-sizing: border-box;
 }
 // Padding
