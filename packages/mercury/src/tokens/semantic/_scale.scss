@@ -31,111 +31,111 @@
   :host(#{$mobile-selector}),
   #{$mobile-selector} {
     @if $border-radius {
-      --scale-border__radius--none: var(--mer-scale--none);
-      --scale-border__radius--xs: var(--mer-scale--01);
-      --scale-border__radius--sm: var(--mer-scale--02);
-      --scale-border__radius--md: var(--mer-scale--04);
-      --scale-border__radius--lg: var(--mer-scale--06);
-      --scale-border__radius--xl: var(--mer-scale--08);
+      --mer-sc-border__radius--none: var(--mer-scale--none);
+      --mer-sc-border__radius--xs: var(--mer-scale--01);
+      --mer-sc-border__radius--sm: var(--mer-scale--02);
+      --mer-sc-border__radius--md: var(--mer-scale--04);
+      --mer-sc-border__radius--lg: var(--mer-scale--06);
+      --mer-sc-border__radius--xl: var(--mer-scale--08);
     }
     @if $block-size {
-      --scale-block__size--xs: var(--mer-scale--13);
-      --scale-block__size--sm: var(--mer-scale--12);
-      --scale-block__size--md: var(--mer-scale--13);
-      --scale-block__size--lg: var(--mer-scale--14);
-      --scale-block__size--xl: var(--mer-scale--14);
+      --mer-sc-block__size--xs: var(--mer-scale--13);
+      --mer-sc-block__size--sm: var(--mer-scale--12);
+      --mer-sc-block__size--md: var(--mer-scale--13);
+      --mer-sc-block__size--lg: var(--mer-scale--14);
+      --mer-sc-block__size--xl: var(--mer-scale--14);
     }
     @if $icon-size {
-      --scale-icon__size--xs: var(--mer-scale--06);
-      --scale-icon__size--sm: var(--mer-scale--07);
-      --scale-icon__size--md: var(--mer-scale--08);
-      --scale-icon__size--lg: var(--mer-scale--09);
-      --scale-icon__size--xl: var(--mer-scale--10);
+      --mer-sc-icon__size--xs: var(--mer-scale--06);
+      --mer-sc-icon__size--sm: var(--mer-scale--07);
+      --mer-sc-icon__size--md: var(--mer-scale--08);
+      --mer-sc-icon__size--lg: var(--mer-scale--09);
+      --mer-sc-icon__size--xl: var(--mer-scale--10);
     }
     @if $spacing {
-      --scale-spacing--none: var(--mer-scale--none);
-      --scale-spacing--2xs: var(--mer-scale--02);
-      --scale-spacing--xs: var(--mer-scale--03);
-      --scale-spacing--sm: var(--mer-scale--04);
-      --scale-spacing--md: var(--mer-scale--05);
-      --scale-spacing--lg: var(--mer-scale--07);
-      --scale-spacing--xl: var(--mer-scale--09);
-      --scale-spacing--2xl: var(--mer-scale--11);
-      --scale-spacing--3xl: var(--mer-scale--12);
+      --mer-sc-spacing--none: var(--mer-scale--none);
+      --mer-sc-spacing--2xs: var(--mer-scale--02);
+      --mer-sc-spacing--xs: var(--mer-scale--03);
+      --mer-sc-spacing--sm: var(--mer-scale--04);
+      --mer-sc-spacing--md: var(--mer-scale--05);
+      --mer-sc-spacing--lg: var(--mer-scale--07);
+      --mer-sc-spacing--xl: var(--mer-scale--09);
+      --mer-sc-spacing--2xl: var(--mer-scale--11);
+      --mer-sc-spacing--3xl: var(--mer-scale--12);
     }
   }
 
   :host(#{$desktop-compact-selector}),
   #{$desktop-compact-selector} {
     @if $border-radius {
-      --scale-border__radius--none: var(--mer-scale__none);
-      --scale-border__radius--xs: var(--mer-scale--01);
-      --scale-border__radius--sm: var(--mer-scale--02);
-      --scale-border__radius--md: var(--mer-scale--04);
-      --scale-border__radius--lg: var(--mer-scale--06);
-      --scale-border__radius--xl: var(--mer-scale--08);
+      --mer-sc-border__radius--none: var(--mer-scale__none);
+      --mer-sc-border__radius--xs: var(--mer-scale--01);
+      --mer-sc-border__radius--sm: var(--mer-scale--02);
+      --mer-sc-border__radius--md: var(--mer-scale--04);
+      --mer-sc-border__radius--lg: var(--mer-scale--06);
+      --mer-sc-border__radius--xl: var(--mer-scale--08);
     }
     @if $block-size {
-      --scale-block__size--xs: var(--mer-block__size--xs);
-      --scale-block__size--sm: var(--mer-scale--11);
-      --scale-block__size--md: var(--mer-scale--12);
-      --scale-block__size--lg: var(--mer-scale--13);
-      --scale-block__size--xl: var(--mer-scale--14);
+      --mer-sc-block__size--xs: var(--mer-block__size--xs);
+      --mer-sc-block__size--sm: var(--mer-scale--11);
+      --mer-sc-block__size--md: var(--mer-scale--12);
+      --mer-sc-block__size--lg: var(--mer-scale--13);
+      --mer-sc-block__size--xl: var(--mer-scale--14);
     }
     @if $icon-size {
-      --scale-icon__size--xs: var(--mer-scale--04);
-      --scale-icon__size--sm: var(--mer-scale--06);
-      --scale-icon__size--md: var(--mer-scale--07);
-      --scale-icon__size--lg: var(--mer-scale--08);
-      --scale-icon__size--xl: var(--mer-scale--09);
+      --mer-sc-icon__size--xs: var(--mer-scale--04);
+      --mer-sc-icon__size--sm: var(--mer-scale--06);
+      --mer-sc-icon__size--md: var(--mer-scale--07);
+      --mer-sc-icon__size--lg: var(--mer-scale--08);
+      --mer-sc-icon__size--xl: var(--mer-scale--09);
     }
     @if $spacing {
-      --scale-spacing--none: var(--mer-scale--none);
-      --scale-spacing--2xs: var(--mer-scale--01);
-      --scale-spacing--xs: var(--mer-scale--02);
-      --scale-spacing--sm: var(--mer-scale--03);
-      --scale-spacing--md: var(--mer-scale--04);
-      --scale-spacing--lg: var(--mer-scale--06);
-      --scale-spacing--xl: var(--mer-scale--08);
-      --scale-spacing--2xl: var(--mer-scale--10);
-      --scale-spacing--3xl: var(--mer-scale--11);
+      --mer-sc-spacing--none: var(--mer-scale--none);
+      --mer-sc-spacing--2xs: var(--mer-scale--01);
+      --mer-sc-spacing--xs: var(--mer-scale--02);
+      --mer-sc-spacing--sm: var(--mer-scale--03);
+      --mer-sc-spacing--md: var(--mer-scale--04);
+      --mer-sc-spacing--lg: var(--mer-scale--06);
+      --mer-sc-spacing--xl: var(--mer-scale--08);
+      --mer-sc-spacing--2xl: var(--mer-scale--10);
+      --mer-sc-spacing--3xl: var(--mer-scale--11);
     }
   }
 
   :host(#{$desktop-regular-selector}),
   #{$desktop-regular-selector} {
     @if $border-radius {
-      --scale-border__radius--none: var(--mer-scale__none);
-      --scale-border__radius--xs: var(--mer-scale--01);
-      --scale-border__radius--sm: var(--mer-scale--02);
-      --scale-border__radius--md: var(--mer-scale--04);
-      --scale-border__radius--lg: var(--mer-scale--06);
-      --scale-border__radius--xl: var(--mer-scale--08);
+      --mer-sc-border__radius--none: var(--mer-scale__none);
+      --mer-sc-border__radius--xs: var(--mer-scale--01);
+      --mer-sc-border__radius--sm: var(--mer-scale--02);
+      --mer-sc-border__radius--md: var(--mer-scale--04);
+      --mer-sc-border__radius--lg: var(--mer-scale--06);
+      --mer-sc-border__radius--xl: var(--mer-scale--08);
     }
     @if $block-size {
-      --scale-block__size--xs: var(--mer-scale--11);
-      --scale-block__size--sm: var(--mer-scale--12);
-      --scale-block__size--md: var(--mer-scale--13);
-      --scale-block__size--lg: var(--mer-scale--14);
-      --scale-block__size--xl: var(--mer-scale--14);
+      --mer-sc-block__size--xs: var(--mer-scale--11);
+      --mer-sc-block__size--sm: var(--mer-scale--12);
+      --mer-sc-block__size--md: var(--mer-scale--13);
+      --mer-sc-block__size--lg: var(--mer-scale--14);
+      --mer-sc-block__size--xl: var(--mer-scale--14);
     }
     @if $icon-size {
-      --scale-icon__size--xs: var(--mer-scale--06);
-      --scale-icon__size--sm: var(--mer-scale--07);
-      --scale-icon__size--md: var(--mer-scale--08);
-      --scale-icon__size--lg: var(--mer-scale--09);
-      --scale-icon__size--xl: var(--mer-scale--10);
+      --mer-sc-icon__size--xs: var(--mer-scale--06);
+      --mer-sc-icon__size--sm: var(--mer-scale--07);
+      --mer-sc-icon__size--md: var(--mer-scale--08);
+      --mer-sc-icon__size--lg: var(--mer-scale--09);
+      --mer-sc-icon__size--xl: var(--mer-scale--10);
     }
     @if $spacing {
-      --scale-spacing--none: var(--mer-scale--none);
-      --scale-spacing--2xs: var(--mer-scale--02);
-      --scale-spacing--xs: var(--mer-scale--03);
-      --scale-spacing--sm: var(--mer-scale--04);
-      --scale-spacing--md: var(--mer-scale--05);
-      --scale-spacing--lg: var(--mer-scale--07);
-      --scale-spacing--xl: var(--mer-scale--09);
-      --scale-spacing--2xl: var(--mer-scale--11);
-      --scale-spacing--3xl: var(--mer-scale--12);
+      --mer-sc-spacing--none: var(--mer-scale--none);
+      --mer-sc-spacing--2xs: var(--mer-scale--02);
+      --mer-sc-spacing--xs: var(--mer-scale--03);
+      --mer-sc-spacing--sm: var(--mer-scale--04);
+      --mer-sc-spacing--md: var(--mer-scale--05);
+      --mer-sc-spacing--lg: var(--mer-scale--07);
+      --mer-sc-spacing--xl: var(--mer-scale--09);
+      --mer-sc-spacing--2xl: var(--mer-scale--11);
+      --mer-sc-spacing--3xl: var(--mer-scale--12);
     }
   }
 
@@ -149,17 +149,17 @@
     #{$desktop-compact-selector},
     :host(#{$desktop-regular-selector}),
     #{$desktop-regular-selector} {
-      --scale-control__block-size: var(--mer-block__size--xs);
-      --scale-control-tiny__size: var(--mer-spacing--xl); //checkbox & radio
-      // --scale-control__font-size: var(); // TODO (Not defined in Figma yet)
-      --scale-control__icon-size--sm: var(--mer-icon__size--sm);
-      --scale-control__icon-size--md: var(--mer-icon__size--md);
-      --scale-control__border-radius: var(--mer-border__radius--sm);
-      --scale-control-label__block-spacing: var(--mer-spacing--xs);
-      --scale-control-label__inline-spacing: var(--mer-spacing--sm);
-      --scale-control-helper__spacing: var(--mer-spacing--md);
-      --scale-control__block-padding: var(--mer-spacing--sm);
-      --scale-control__inline-padding: var(--mer-spacing--sm);
+      --mer-sc-control__block-size: var(--mer-block__size--xs);
+      --mer-sc-control-tiny__size: var(--mer-spacing--xl); //checkbox & radio
+      // --mer-sc-control__font-size: var(); // TODO (Not defined in Figma yet)
+      --mer-sc-control__icon-size--sm: var(--mer-icon__size--sm);
+      --mer-sc-control__icon-size--md: var(--mer-icon__size--md);
+      --mer-sc-control__border-radius: var(--mer-border__radius--sm);
+      --mer-sc-control-label__block-spacing: var(--mer-spacing--xs);
+      --mer-sc-control-label__inline-spacing: var(--mer-spacing--sm);
+      --mer-sc-control-helper__spacing: var(--mer-spacing--md);
+      --mer-sc-control__block-padding: var(--mer-spacing--sm);
+      --mer-sc-control__inline-padding: var(--mer-spacing--sm);
     }
   }
 
@@ -170,9 +170,9 @@
     #{$desktop-compact-selector},
     :host(#{$desktop-regular-selector}),
     #{$desktop-regular-selector} {
-      --scale-control-container__block-padding: var(--mer-block__size--sm);
-      --scale-control-container__inline-padding: var(--mer-block__size--sm);
-      --scale-control-container__border-radius: var(--mer-border__radius--sm);
+      --mer-sc-control-container__block-padding: var(--mer-block__size--sm);
+      --mer-sc-control-container__inline-padding: var(--mer-block__size--sm);
+      --mer-sc-control-container__border-radius: var(--mer-border__radius--sm);
     }
   }
 
@@ -183,11 +183,11 @@
     #{$desktop-compact-selector},
     :host(#{$desktop-regular-selector}),
     #{$desktop-regular-selector} {
-      --scale-control-item__block-padding: var(--mer-block__size--sm);
-      --scale-control-item__inline-padding: var(--mer-block__size--sm);
-      --scale-control-item__gap: var(--mer-block__size--sm);
-      // --scale-control-item__font-size: var(); // TODO (Not defined in Figma yet)
-      // --scale-control-item__border-radius: var(); // TODO (Not defined in Figma yet)
+      --mer-sc-control-item__block-padding: var(--mer-block__size--sm);
+      --mer-sc-control-item__inline-padding: var(--mer-block__size--sm);
+      --mer-sc-control-item__gap: var(--mer-block__size--sm);
+      // --mer-sc-control-item__font-size: var(); // TODO (Not defined in Figma yet)
+      // --mer-sc-control-item__border-radius: var(); // TODO (Not defined in Figma yet)
     }
   }
 
@@ -198,8 +198,8 @@
     #{$desktop-compact-selector},
     :host(#{$desktop-regular-selector}),
     #{$desktop-regular-selector} {
-      --scale-field-group_row-gap: var();
-      --scale-field-group__column-gap: var();
+      --mer-sc-field-group_row-gap: var();
+      --mer-sc-field-group__column-gap: var();
     }
   }
 
@@ -210,11 +210,11 @@
     #{$desktop-compact-selector},
     :host(#{$desktop-regular-selector}),
     #{$desktop-regular-selector} {
-      --scale-layout-container_row-gap: var(--mer-spacing--xl);
-      --scale-layout-container_column-gap: var(--mer-spacing--xl);
-      --scale-layout-container_padding-block: var(--mer-spacing--lg);
-      --scale-layout-header_padding-block-end: var(--mer-spacing--lg);
-      --scale-layout-footer_padding-block-start: var(--mer-spacing--sm);
+      --mer-sc-layout-container_row-gap: var(--mer-spacing--xl);
+      --mer-sc-layout-container_column-gap: var(--mer-spacing--xl);
+      --mer-sc-layout-container_padding-block: var(--mer-spacing--lg);
+      --mer-sc-layout-header_padding-block-end: var(--mer-spacing--lg);
+      --mer-sc-layout-footer_padding-block-start: var(--mer-spacing--sm);
     }
   }
 
@@ -236,10 +236,10 @@
     #{$desktop-compact-selector},
     :host(#{$desktop-regular-selector}),
     #{$desktop-regular-selector} {
-      // NOTE:  --scale-cell__block-size is not used. Cell Layout is determined by the
+      // NOTE:  --mer-sc-cell__block-size is not used. Cell Layout is determined by the
       // font-size, line-height, padding, and border.
-      --scale-cell__block-size: var(--mer-scale--12);
-      --scale-cell__inline-padding: var(--mer-scale--12);
+      --mer-sc-cell__block-size: var(--mer-scale--12);
+      --mer-sc-cell__inline-padding: var(--mer-scale--12);
     }
   }
 
@@ -250,7 +250,7 @@
     #{$desktop-compact-selector},
     :host(#{$desktop-regular-selector}),
     #{$desktop-regular-selector} {
-      --scale-buttons-spacer__block-gap: var(--mer-spacing--sm);
+      --mer-sc-buttons-spacer__block-gap: var(--mer-spacing--sm);
     }
   }
 }
