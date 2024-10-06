@@ -95,12 +95,24 @@
   $spacing: true,
   $timing: true,
 
-  // Tokens Semantic
+  // Scale Selectors
   $mobile-selector: ".mobile",
   $desktop-compact-selector: ".desktop-compact",
   $desktop-regular-selector: ".desktop-regular",
-  $scale-border: true,
+  // Semantic General
+  $scale-border-radius: true,
   $scale-block-size: true,
+  $scale-icon-size: true,
+  $scale-spacing: true,
+  // Semantic Specific (Controls)
+  $scale-control: true,
+  $scale-control-container: true,
+  $scale-control-item: true,
+  $scale-form: true,
+  $scale-layout: true,
+  $scale-spacing-body: true,
+  $scale-cell: true,
+  $scale-buttons: true,
 
   // Icons
   $icons-path: "./assets/icons/",
@@ -378,13 +390,26 @@
       @include semantic-field();
       @include semantic-general();
     }
-    @if $scale and ($scale-border or $scale-block-size) {
-      @include semantic-scale(
+    @if $scale and ($scale-border-radius or $scale-block-size) {
+      @include semantic-scales(
+        // Scale Selectors
         $mobile-selector: $mobile-selector,
         $desktop-compact-selector: $desktop-compact-selector,
         $desktop-regular-selector: $desktop-regular-selector,
-        $border: $scale-border,
-        $block-size: $scale-block-size
+        // Semantic General
+        $border-radius: $scale-border-radius,
+        $block-size: $scale-block-size,
+        $icon-size: $scale-icon-size,
+        $spacing: $scale-spacing,
+        // Semantic Specific (Controls)
+        $control: $scale-control,
+        $control-container: $scale-control-container,
+        $control-item: $scale-control-item,
+        $form: $scale-form,
+        $layout: $scale-layout,
+        $spacing-body: $scale-spacing-body,
+        $cell: $scale-cell,
+        $buttons: $scale-buttons
       );
     }
   }
@@ -617,12 +642,24 @@
   $spacing: false,
   $timing: false,
 
-  // Tokens Semantic
+  // Scale Selectors
   $mobile-selector: ".mobile",
   $desktop-compact-selector: ".desktop-compact",
   $desktop-regular-selector: ".desktop-regular",
-  $scale-border: false,
+  // Semantic General
+  $scale-border-radius: false,
   $scale-block-size: false,
+  $scale-icon-size: false,
+  $scale-spacing: false,
+  // Semantic Specific (Controls)
+  $scale-control: false,
+  $scale-control-container: false,
+  $scale-control-item: false,
+  $scale-form: false,
+  $scale-layout: false,
+  $scale-spacing-body: false,
+  $scale-cell: false,
+  $scale-buttons: false,
 
   // Icons
   $icons-path: "./assets/icons/",
@@ -695,12 +732,24 @@
     $spacing: $spacing,
     $timing: $timing,
 
-    // Tokens Semantic
+    // Scale Selectors
     $mobile-selector: $mobile-selector,
     $desktop-compact-selector: $desktop-compact-selector,
     $desktop-regular-selector: $desktop-regular-selector,
-    $scale-border: $scale-border,
-    $scale-block-size: $scale-border,
+    // Semantic General
+    $scale-border-radius: $scale-border-radius,
+    $scale-block-size: $scale-block-size,
+    $scale-icon-size: $scale-icon-size,
+    $scale-spacing: $scale-spacing,
+    // Semantic Specific (Controls)
+    $scale-control: $scale-control,
+    $scale-control-container: $scale-control-container,
+    $scale-control-item: $scale-control-item,
+    $scale-form: $scale-form,
+    $scale-layout: $scale-layout,
+    $scale-spacing-body: $scale-spacing-body,
+    $scale-cell: $scale-cell,
+    $scale-buttons: $scale-buttons,
 
     // Icons
     $icons-path: $icons-path,
