@@ -6,7 +6,8 @@
   // A control block-size is the sum of its font-size + line-height + padding-block + border.
   $buttonIconOnlySize: calc(
     var(--control__font-size--regular) * var(--control__line-height) +
-      var(--control__padding-block) * 2 + var(--control__border-width) * 2
+      var(--mer-sc-control__block-padding) * 2 + var(--control__border-width) *
+      2
   );
   inline-size: $buttonIconOnlySize;
   block-size: $buttonIconOnlySize;

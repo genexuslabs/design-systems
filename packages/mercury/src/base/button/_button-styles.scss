@@ -5,8 +5,7 @@
   @include control-border();
   @include control-font-size-regular();
   @include control-block-size();
-
-  padding-inline: var(--control__padding-inline);
+  @include control-padding-inline();
 
   &--focus-visible {
     @include focus-outline();

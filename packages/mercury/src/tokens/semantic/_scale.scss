@@ -76,7 +76,7 @@
       --mer-sc-border__radius--xl: var(--mer-scale--08);
     }
     @if $block-size {
-      --mer-sc-block__size--xs: var(--mer-block__size--xs);
+      --mer-sc-block__size--xs: var(--mer-scale--10);
       --mer-sc-block__size--sm: var(--mer-scale--11);
       --mer-sc-block__size--md: var(--mer-scale--12);
       --mer-sc-block__size--lg: var(--mer-scale--13);
@@ -149,8 +149,10 @@
     #{$desktop-compact-selector},
     :host(#{$desktop-regular-selector}),
     #{$desktop-regular-selector} {
-      --mer-sc-control__block-size: var(--mer-sc-spacing--xs);
-      --mer-sc-control-tiny__size: var(--mer-sc-spacing--xl); //checkbox & radio
+      --mer-sc-control__block-size: var(--mer-sc-block__size--xs);
+      --mer-sc-control-tiny__size: var(
+        --mer-sc-block__size--2xs
+      ); //checkbox & radio
       // --mer-sc-control__font-size: var(); // TODO (Not defined in Figma yet)
       --mer-sc-control__icon-size--sm: var(--mer-sc-icon__size--sm);
       --mer-sc-control__icon-size--md: var(--mer-sc-icon__size--md);
@@ -200,7 +202,7 @@
     #{$desktop-compact-selector},
     :host(#{$desktop-regular-selector}),
     #{$desktop-regular-selector} {
-      --mer-sc-field-group_row-gap: var();
+      --mer-sc-field-group__row-gap: var();
       --mer-sc-field-group__column-gap: var();
     }
   }
@@ -212,11 +214,11 @@
     #{$desktop-compact-selector},
     :host(#{$desktop-regular-selector}),
     #{$desktop-regular-selector} {
-      --mer-sc-layout-container_row-gap: var(--mer-sc-spacing--xl);
-      --mer-sc-layout-container_column-gap: var(--mer-sc-spacing--xl);
-      --mer-sc-layout-container_padding-block: var(--mer-sc-spacing--lg);
-      --mer-sc-layout-header_padding-block-end: var(--mer-sc-spacing--lg);
-      --mer-sc-layout-footer_padding-block-start: var(--mer-sc-spacing--sm);
+      --mer-sc-layout-container__row-gap: var(--mer-sc-spacing--xl);
+      --mer-sc-layout-container__column-gap: var(--mer-sc-spacing--xl);
+      --mer-sc-layout-container__padding-block: var(--mer-sc-spacing--lg);
+      --mer-sc-layout-header__padding-block-end: var(--mer-sc-spacing--lg);
+      --mer-sc-layout-footer__padding-block-start: var(--mer-sc-spacing--sm);
     }
   }
 
@@ -241,6 +243,7 @@
       // NOTE:  --mer-sc-cell__block-size is not used. Cell Layout is determined by the
       // font-size, line-height, padding, and border.
       --mer-sc-cell__block-size: var(--mer-scale--12);
+      --mer-sc-cell__block-padding: var(--mer-scale--04);
       --mer-sc-cell__inline-padding: var(--mer-scale--12);
     }
   }

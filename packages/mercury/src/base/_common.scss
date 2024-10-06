@@ -119,16 +119,16 @@
 }
 // Padding
 @mixin control-padding-inline() {
-  padding-inline: var(--control__padding-inline);
+  padding-inline: var(--mer-sc-control__inline-padding);
 }
 @mixin control-padding-block() {
   @warn "`control-padding-block()` is deprecated. control block-size should be a fixed value.";
-  padding-block: var(--control__padding-block); // Deprecated
+  padding-block: var(--mer-sc-control__block-padding); // Deprecated
 }
 @mixin control-padding-inline-block() {
   @warn "`control-padding-block()` is deprecated. control block-size should be a fixed value.";
-  padding-block: var(--control__padding-block); // Deprecated
-  padding-inline: var(--control__padding-inline);
+  padding-block: var(--mer-sc-control__block-padding); // Deprecated
+  padding-inline: var(--mer-sc-control__inline-padding);
 }
 // Placeholder
 @mixin control-placeholder() {
@@ -311,7 +311,7 @@
   padding-block: var(--grid-cell__padding-block); // Deprecated
   padding-inline: var(
     --grid-cell__padding-inline
-  ); // Deprecated. Use `--control__padding-inline` instead.
+  ); // Deprecated. Use `--mer-sc-control__inline-padding` instead.
 }
 @mixin grid-cell-remove-padding() {
   // we should redefine '--grid-cell__padding-inline' here because when a control

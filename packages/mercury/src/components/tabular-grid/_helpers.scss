@@ -5,7 +5,7 @@
 @mixin cell-node-type-element() {
   @include control-remove-border();
   @include grid-cell-remove-padding();
-  --control__padding-inline: var(--grid-cell__padding-inline);
+  --mer-sc-control__inline-padding: var(--grid-cell__padding-inline);
   // to stretch the control
   display: grid;
   align-items: stretch;
