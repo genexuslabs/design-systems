@@ -628,8 +628,7 @@ const includeScaleSelector = () => {
       },
       {
         id: DESKTOP_REGULAR_CLASS_SELECTOR,
-        caption: "desktop regular",
-        disabled: true
+        caption: "desktop regular"
       }
     ];
     segmentedControl.model = scalesModel;
