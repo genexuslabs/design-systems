@@ -1,0 +1,23 @@
+@import "config";
+@import "../../../mercury.scss";
+
+@include mercury-only(
+  $scale: true,
+  $mobile-selector: ".mobile",
+  $desktop-compact-selector: ".desktop-compact",
+  $desktop-regular-selector: ".desktop-regular",
+  // Semantic General
+  $scale-border-radius: true,
+  $scale-block-size: true,
+  $scale-icon-size: true,
+  $scale-spacing: true,
+  // Semantic Specific (Controls)
+  $scale-control: true,
+  $scale-control-container: true,
+  $scale-control-item: true,
+  $scale-form: true,
+  $scale-layout: true,
+  $scale-spacing-body: true,
+  $scale-cell: true,
+  $scale-buttons: true
+);
