@@ -19,7 +19,6 @@ const DATA_TITLE_SELECTOR = "data-title";
 const SIDEBAR_CHILD_LIST_CLASS = "sidebar__list--child";
 let SIDEBAR_NAV; // A reference to the sidebar nav.
 let CONTAINER_REF;
-let TOP_BAR_REF;
 // code and ch-code
 const ARTICLE_CODE_SELECTOR = ".article__code";
 const CH_CODE_VALUE_LET_NAME = "chCodeValue";
@@ -30,6 +29,7 @@ const HTML = document.querySelector("html");
 const HEAD = document.head;
 const BODY = document.querySelector("body");
 const SIDEBAR_DATA_ATTR = "data-sidebar";
+const DATA_SCALES_ATTR = "data-sidebar";
 const MAIN_SELECTOR = ".main";
 let CURRENT_PAGE_NAV_ITEM; // a reference the navigation item for the actual actual page.
 let PAGE_SECTIONS; // a reference to all the page ".article"
@@ -455,7 +455,7 @@ const addCopyCodeFunctionality = () => {
 const includeChameleonURL = chameleonURL => {
   if (chameleonURL && TOP_BAR) {
     const anchor = document.createElement("a");
-    anchor.className = "button-tertiary";
+    anchor.className = "button-tertiary chameleon-url";
     anchor.textContent = "Chameleon Reference";
     anchor.textContent = "Chameleon Reference";
     anchor.setAttribute("href", chameleonURL);
@@ -605,9 +605,50 @@ const includeEndOfSectionCaption = () => {
 };
 
 /**
- * @description: this function includes a segmented control that allows picking a scale (mobile, desktop-compact, or desktop-regular at the time of writing).
+ * @description: this function includes a segmented control that allows picking a scale (mobile, desktop-compact, or desktop-regular).
  */
-const includeScaleSelector = () => {};
+const includeScaleSelector = () => {
+  const includeScales = BODY.hasAttribute("data-scales");
+  const MOBILE_CLASS_SELECTOR = "mobile";
+  const DESKTOP_COMPACT_CLASS_SELECTOR = "desktop-compact";
+  const DESKTOP_REGULAR_CLASS_SELECTOR = "desktop-regular";
+  if (TOP_BAR && includeScales) {
+    const segmentedControl = document.createElement(
+      "ch-segmented-control-render"
+    );
+    segmentedControl.classList.add("segmented-control");
+    const scalesModel = [
+      {
+        id: MOBILE_CLASS_SELECTOR,
+        caption: "mobile"
+      },
+      {
+        id: DESKTOP_COMPACT_CLASS_SELECTOR,
+        caption: "desktop compact"
+      },
+      {
+        id: DESKTOP_REGULAR_CLASS_SELECTOR,
+        caption: "desktop regular",
+        disabled: true
+      }
+    ];
+    segmentedControl.model = scalesModel;
+    segmentedControl.addEventListener("selectedItemChange", e => {
+      const newScaleSelector = e.detail;
+      // remove previous scale
+      BODY.classList.remove(
+        MOBILE_CLASS_SELECTOR,
+        DESKTOP_COMPACT_CLASS_SELECTOR,
+        DESKTOP_REGULAR_CLASS_SELECTOR
+      );
+      // set new scale
+      BODY.classList.add(newScaleSelector);
+    });
+    TOP_BAR.appendChild(segmentedControl);
+
+    TOP_BAR.classList.add(DESKTOP_COMPACT_CLASS_SELECTOR); // set compact scale for the top-bar
+  }
+};
 
 document.addEventListener("DOMContentLoaded", function () {
   CONTAINER_REF = document.querySelector(".container");

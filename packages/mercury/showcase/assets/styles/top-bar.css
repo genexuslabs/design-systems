@@ -15,8 +15,12 @@
 
   display: flex;
   align-items: center;
-  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 .container__top-bar a {
   text-decoration: none !important;
+}
+
+.chameleon-url {
+  margin-left: auto;
 }
