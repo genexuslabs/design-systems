@@ -1629,7 +1629,7 @@
 /// @param {String} $scale-large-selector [".scale-large"]
 /// @param {Boolean} $border [true] -
 /// @param {Boolean} $block-size [true] -
-@mixin semantic-scale(
+@mixin semantic-scales(
   $mobile-selector: ".scale-small",
   $desktop-compact-selector: ".scale-medium",
   $scale-large-selector: ".scale-large",
@@ -16888,7 +16888,7 @@
       @include semantic-general();
     }
     @if $scale and ($scale-border or $scale-block-size) {
-      @include semantic-scale(
+      @include semantic-scales(
         $mobile-selector: $mobile-selector,
         $desktop-compact-selector: $desktop-compact-selector,
         $scale-large-selector: $scale-large-selector,

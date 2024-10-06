@@ -503,6 +503,8 @@ const includeBundleButton = () => {
   const bundleValue = document.body.getAttribute("data-bundle");
   const MAIN_REF = document.querySelector(MAIN_SELECTOR);
 
+  console.log("bundleValue", bundleValue);
+
   if (bundleValue !== null && MAIN_REF) {
     // if bundleValue.length is 0, it means this component does not requires a bundle.
     // loading the icons is not required if the component does not requires a bundle.
@@ -583,6 +585,8 @@ const includeBundleButton = () => {
       copyBundleButton.innerText = buttonCaption;
       copyBundleButton.disabled = true;
     }
+    console.log("bundleContainer", bundleContainer);
+    console.log("MAIN_REF", MAIN_REF);
     bundleContainer.appendChild(copyBundleButton);
     MAIN_REF.insertBefore(bundleContainer, MAIN_REF.firstChild);
   }
@@ -653,6 +657,9 @@ const includeScaleSelector = () => {
 document.addEventListener("DOMContentLoaded", function () {
   CONTAINER_REF = document.querySelector(".container");
   TOP_BAR = document.querySelector(".container__top-bar");
+  if (TOP_BAR) {
+    BODY.classList.add("has-top-bar");
+  }
   includeFavicon();
   addGoogleFonts();
   addArticleTitles();
