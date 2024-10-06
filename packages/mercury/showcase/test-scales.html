@@ -9,6 +9,9 @@
       html:not(.hydrated) {
         visibility: hidden;
       }
+      .scales-radio {
+        padding: 32px 0 0 0;
+      }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
 
@@ -22,33 +25,49 @@
     <script src="./assets/scripts/scripts.js"></script>
     <main class="main">
       <div class="container">
-        <!-- control section -->
+        <div class="scales-radio">
+          <ch-radio-group-render
+            class="radio-group"
+            id="radio-group-1"
+          ></ch-radio-group-render>
+          <script>
+            const radioGroup1 = document.getElementById("radio-group-1");
+            radioGroup1.model = [
+              { value: "mobile", caption: "Mobile" },
+              {
+                value: "desktop-compact",
+                caption: "Desktop Compact"
+              },
+              {
+                value: "desktop-regular",
+                caption: "Desktop Regular"
+              }
+            ];
+          </script>
+        </div>
+
+        <!-- = = = = = = = = = = = = = 
+          border radius
+          = = = = = = = = = = = = =  -->
         <section class="section" data-nav>
           <!-- header -->
           <header class="section__header">
-            <h1 class="section__title">test scales</h1>
+            <h1 class="section__title">border radius</h1>
             <!-- <p class="section__description">section description</p> -->
           </header>
           <div class="section__articles-container">
-            <!-- ========================== 
-          control name
-          =========================== -->
-            <article class="article" data-nav data-title="scale-small">
+            <!-- - - - - - - - - - - - - - 
+          tokens
+          - - - - - - - - - - - - - -->
+            <article class="article" data-nav data-title="scale tokens">
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <!-- <p class="article__description">Article Description</p> -->
-                <div class="article__content scale-small">
-                  <button class="button-primary">Caption</button>
+                <div class="article__content">
+                  <div class="scales-grid"></div>
                 </div>
-                <div class="article__code">
-                  <ch-code language="tsx" class="code"> </ch-code>
-                  <script>
-                    code = `<button class="button-primary">
-Caption
-</button>`;
-                  </script>
-                </div>
+
                 <!-- /.article__content -->
               </div>
               <!-- /.article__main -->
