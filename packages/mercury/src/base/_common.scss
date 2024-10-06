@@ -141,8 +141,8 @@
 // ----------------------
 
 @mixin control-tiny-size() {
-  block-size: var(--control-tiny__size);
-  inline-size: var(--control-tiny__size);
+  block-size: var(--mer-sc-control-tiny__size);
+  inline-size: var(--mer-sc-control-tiny__size);
 }
 @mixin control-tiny-border() {
   border-width: var(--control__border-width);

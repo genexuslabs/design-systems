@@ -231,8 +231,8 @@
 
 %tabular-grid-cell__selector-label {
   margin-inline-end: var(--grid-label__gap);
-  block-size: var(--control-tiny__size);
-  inline-size: var(--control-tiny__size);
+  block-size: var(--mer-sc-control-tiny__size);
+  inline-size: var(--mer-sc-control-tiny__size);
 }
 
 %tabular-grid-cell__selector {
@@ -247,8 +247,8 @@
 %tabular-grid-cell__selector--before {
   content: "";
   display: inline-block;
-  width: var(--control-tiny__size);
-  height: var(--control-tiny__size);
+  width: var(--mer-sc-control-tiny__size);
+  height: var(--mer-sc-control-tiny__size);
   border: var(--mer-form-input__border);
   border-radius: var(--control-tiny__border-radius);
   box-sizing: border-box;
@@ -259,13 +259,13 @@
   content: "";
   display: inline-block;
   border-color: var(--mer-form-input-check__border-color);
-  top: calc(var(--control-tiny__size) / 4);
-  left: calc(var(--control-tiny__size) / 4);
+  top: calc(var(--mer-sc-control-tiny__size) / 4);
+  left: calc(var(--mer-sc-control-tiny__size) / 4);
 }
 
 %tabular-grid-cell__selector--after-checked {
-  inline-size: calc(var(--control-tiny__size) / 2);
-  block-size: calc(var(--control-tiny__size) / 2);
+  inline-size: calc(var(--mer-sc-control-tiny__size) / 2);
+  block-size: calc(var(--mer-sc-control-tiny__size) / 2);
   background-color: currentColor;
   pointer-events: none;
   -webkit-mask: no-repeat center / 100%
@@ -279,8 +279,8 @@
   border-radius: 2px;
   background-color: var(--mer-form-input-check__border-color);
   top: calc(
-    var(--control-tiny__size) / 2 - var(--mer-form-input-check__border-width) /
-      2
+    var(--mer-sc-control-tiny__size) / 2 -
+      var(--mer-form-input-check__border-width) / 2
   );
 }
 

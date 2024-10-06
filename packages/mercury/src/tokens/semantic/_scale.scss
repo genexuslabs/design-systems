@@ -150,9 +150,7 @@
     :host(#{$desktop-regular-selector}),
     #{$desktop-regular-selector} {
       --mer-sc-control__block-size: var(--mer-sc-block__size--xs);
-      --mer-sc-control-tiny__size: var(
-        --mer-sc-block__size--2xs
-      ); //checkbox & radio
+      --mer-sc-control-tiny__size: var(--mer-sc-spacing--xl); //checkbox & radio
       // --mer-sc-control__font-size: var(); // TODO (Not defined in Figma yet)
       --mer-sc-control__icon-size--sm: var(--mer-sc-icon__size--sm);
       --mer-sc-control__icon-size--md: var(--mer-sc-icon__size--md);
