@@ -27,12 +27,12 @@
   }
 
   &-block {
-    row-gap: var(--field__row-gap);
+    row-gap: var(--mer-sc-control-label__block-gap);
     grid-template-rows: max-content 1fr;
   }
 
   &-inline {
-    column-gap: var(--field__column-gap);
+    column-gap: var(--mer-sc-control-label__inline-gap);
     grid-template-columns: max-content 1fr;
 
     &__label {
