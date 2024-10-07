@@ -55,6 +55,7 @@ export const getThemeBundles = (basePath) => [
     getThemeModelItem(basePath, "utils/form"),
     getThemeModelItem(basePath, "utils/form--full"),
     getThemeModelItem(basePath, "utils/layout"),
+    getThemeModelItem(basePath, "utils/scales"),
     getThemeModelItem(basePath, "utils/typography"),
     getThemeModelItem(basePath, "chameleon/scrollbar")
 ];

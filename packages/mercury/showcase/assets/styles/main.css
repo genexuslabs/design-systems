@@ -235,17 +235,6 @@ body.all-hidden .section__header {
 .dummy-box--lg {
   inline-size: 400px;
 }
-.dummy-control {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  outline: 2px dashed var(--mer-border-color__on-surface);
-  color: var(--mer-color__neutral-gray--500);
-  block-size: calc(
-    var(--control__font-size--regular) * var(--control__line-height) +
-      var(--control__padding-block) * 2 + var(--control__border-width) * 2
-  );
-}
 
 /* List */
 .article__list li {
