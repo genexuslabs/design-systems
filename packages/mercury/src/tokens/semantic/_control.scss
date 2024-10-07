@@ -68,7 +68,6 @@
 
   // border colors are the same from "--control__***" tokens
 
-  --control-tiny__size: var(--mer-spacing--md);
   --control-tiny__border-width: 1.2px;
   --control-tiny__border-style: solid;
   --control-tiny__border-radius-sm: 1px;
@@ -86,8 +85,8 @@
   --label__border-width: 1.2px;
   --label__border-style: solid;
   --label__border-radius: var(--mer-border__radius--2xs);
-  --label__gap--inline: var(--mer-spacing--xs);
-  --label__gap--block: var(--mer-spacing--xs);
+  --mer-sc-control-label__inline-gap: var(--mer-spacing--xs);
+  --mer-sc-control-label__block-gap: var(--mer-spacing--xs);
 
   // depend on state
   --label__color: var(--label__color--enabled);
