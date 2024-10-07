@@ -59,3 +59,34 @@ export const getThemeBundles = (basePath) => [
     getThemeModelItem(basePath, "utils/typography"),
     getThemeModelItem(basePath, "chameleon/scrollbar")
 ];
+/**
+ * Given the bundles array and the basePath (optional), returns the given
+ * bundles in the format of type `ThemeModel`.
+ *
+ * This is useful for defining the following in a dialog:
+ *
+ * ```tsx
+ * const CSS_BUNDLES: ThemeModel = getBundles(
+ *   [
+ *     "components/accordion",
+ *     "components/button",
+ *     "components/checkbox",
+ *     "components/combo-box",
+ *     "components/edit",
+ *     "components/tree-view",
+ *     "utils/form",
+ *     "utils/layout",
+ *   ],
+ *   "./assets/css/"
+ * );
+ *
+ * HTML/render/template:
+ *   <Host>
+ *     <ch-theme model={CSS_BUNDLES}></ch-theme>
+ *     ...
+ *   </Host>
+ * ```
+ */
+export const getBundles = (bundles, basePath) => basePath
+    ? bundles.map(bundle => getThemeModelItem(basePath, bundle))
+    : bundles;

@@ -145,6 +145,11 @@
   }
 }
 
+%buttons-spacer {
+  display: flex;
+  gap: var(--mer-spacing--xs);
+}
+
 /// @group Button
 /// @param {String} $selector [".button-primary"] -
 /// @param {String} $destructive-selector [".button-primary-destructive"] -
@@ -266,6 +271,14 @@
   }
 }
 
+/// @group Button
+/// @param {String} $selector [".buttons-spacer"] -
+@mixin buttons-spacer($selector: ".buttons-spacer") {
+  #{$selector} {
+    @extend %buttons-spacer;
+  }
+}
+
 @mixin button-classes() {
   // Button primary
   @include button-primary();
@@ -275,4 +288,7 @@
 
   // Button tertiary
   @include button-tertiary();
+
+  // Buttons spacer
+  @include buttons-spacer();
 }

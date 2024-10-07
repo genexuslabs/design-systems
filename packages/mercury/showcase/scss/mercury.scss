@@ -687,8 +687,39 @@
 // ----------------------
 
 @mixin control-footer-base() {
-  padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
-  gap: var(--mer-spacing--sm);
+  padding-block-start: var(--mer-spacing--xs);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin control-footer-border() {
+  border-block-start: var(--mer-border__width--sm) solid
+    var(--mer-border-color__on-elevation--01);
+}
+@mixin control-footer(
+  $selector: ".control-footer",
+  $with-border-selector: ".control-footer-with-border",
+  $with-border: true
+) {
+  #{$selector},
+  #{$with-border-selector} {
+    @include control-footer-base();
+  }
+  @if $with-border {
+    #{$with-border-selector} {
+      @include control-footer-border();
+    }
+  }
+}
+
+// ----------------------
+// Pseudo Dialog Header
+// ----------------------
+
+@mixin control-header-base() {
+  padding-block-end: var(--mer-spacing--sm);
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 @mixin control-footer-border() {
@@ -2432,8 +2463,39 @@
 // ----------------------
 
 @mixin control-footer-base() {
-  padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
-  gap: var(--mer-spacing--sm);
+  padding-block-start: var(--mer-spacing--xs);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin control-footer-border() {
+  border-block-start: var(--mer-border__width--sm) solid
+    var(--mer-border-color__on-elevation--01);
+}
+@mixin control-footer(
+  $selector: ".control-footer",
+  $with-border-selector: ".control-footer-with-border",
+  $with-border: true
+) {
+  #{$selector},
+  #{$with-border-selector} {
+    @include control-footer-base();
+  }
+  @if $with-border {
+    #{$with-border-selector} {
+      @include control-footer-border();
+    }
+  }
+}
+
+// ----------------------
+// Pseudo Dialog Header
+// ----------------------
+
+@mixin control-header-base() {
+  padding-block-end: var(--mer-spacing--sm);
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 @mixin control-footer-border() {
@@ -2798,6 +2860,11 @@
   }
 }
 
+%buttons-spacer {
+  display: flex;
+  gap: var(--mer-spacing--xs);
+}
+
 /// @group Button
 /// @param {String} $selector [".button-primary"] -
 /// @param {String} $destructive-selector [".button-primary-destructive"] -
@@ -2919,6 +2986,14 @@
   }
 }
 
+/// @group Button
+/// @param {String} $selector [".buttons-spacer"] -
+@mixin buttons-spacer($selector: ".buttons-spacer") {
+  #{$selector} {
+    @extend %buttons-spacer;
+  }
+}
+
 @mixin button-classes() {
   // Button primary
   @include button-primary();
@@ -2928,6 +3003,9 @@
 
   // Button tertiary
   @include button-tertiary();
+
+  // Buttons spacer
+  @include buttons-spacer();
 }
 
 %field {
@@ -4926,8 +5004,39 @@
 // ----------------------
 
 @mixin control-footer-base() {
-  padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
-  gap: var(--mer-spacing--sm);
+  padding-block-start: var(--mer-spacing--xs);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin control-footer-border() {
+  border-block-start: var(--mer-border__width--sm) solid
+    var(--mer-border-color__on-elevation--01);
+}
+@mixin control-footer(
+  $selector: ".control-footer",
+  $with-border-selector: ".control-footer-with-border",
+  $with-border: true
+) {
+  #{$selector},
+  #{$with-border-selector} {
+    @include control-footer-base();
+  }
+  @if $with-border {
+    #{$with-border-selector} {
+      @include control-footer-border();
+    }
+  }
+}
+
+// ----------------------
+// Pseudo Dialog Header
+// ----------------------
+
+@mixin control-header-base() {
+  padding-block-end: var(--mer-spacing--sm);
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 @mixin control-footer-border() {
@@ -8906,10 +9015,10 @@
 }
 
 %widget {
-  --spacing-body-block-start: var(--mer-spacing--md);
-  --spacing-body-block-end: var(--mer-spacing--md);
-  --spacing-body-inline-start: var(--mer-spacing--md);
-  --spacing-body-inline-end: var(--mer-spacing--md);
+  --spacing-body-block-start: var(--mer-spacing--sm);
+  --spacing-body-block-end: var(--mer-spacing--sm);
+  --spacing-body-inline-start: var(--mer-spacing--sm);
+  --spacing-body-inline-end: var(--mer-spacing--sm);
 }
 
 /// @group Widget
@@ -17223,6 +17332,7 @@
       @include button-primary();
       @include button-secondary();
       @include button-tertiary();
+      @include buttons-spacer();
 
       @include button-icon-only();
       @include button-icon-and-text();

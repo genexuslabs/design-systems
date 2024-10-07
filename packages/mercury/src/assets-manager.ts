@@ -21,7 +21,7 @@ export {
   MercuryBundles
 } from "./bundles.js";
 
-export { getThemeBundles } from "./bundles.js";
+export { getThemeBundles, getBundles } from "./bundles.js";
 
 const ASSETS_BY_VENDOR: { [key in string]: Assets } = {};
 const ALIAS_TO_VENDOR_NAME: { [key in string]: string } = {};
@@ -317,6 +317,7 @@ export const getTreeViewImagePathCallback: TreeViewImagePathCallback = (
 export const getImagePathCallbackDefinitions: RegistryGetImagePathCallback = {
   "ch-accordion-render": getImagePathCallback,
   "ch-navigation-list-render": getNavigationListImagePathCallback,
+  "ch-checkbox": getImagePathCallback,
   "ch-edit": getImagePathCallback,
   "ch-image": getImagePathCallback,
   "ch-tree-view-render": getTreeViewImagePathCallback
