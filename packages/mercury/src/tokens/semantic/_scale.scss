@@ -155,8 +155,8 @@
       --mer-sc-control__icon-size--sm: var(--mer-sc-icon__size--sm);
       --mer-sc-control__icon-size--md: var(--mer-sc-icon__size--md);
       --mer-sc-control__border-radius: var(--mer-sc-border__radius--sm);
-      --mer-sc-control-label__block-spacing: var(--mer-sc-spacing--xs);
-      --mer-sc-control-label__inline-spacing: var(--mer-sc-spacing--sm);
+      --mer-sc-control-label__block-gap: var(--mer-sc-spacing--xs);
+      --mer-sc-control-label__inline-gap: var(--mer-sc-spacing--sm);
       --mer-sc-control-helper__spacing: var(--mer-sc-spacing--md);
       --mer-sc-control__block-padding: var(--mer-sc-spacing--sm);
       --mer-sc-control__inline-padding: var(--mer-sc-spacing--sm);
@@ -170,11 +170,12 @@
     #{$desktop-compact-selector},
     :host(#{$desktop-regular-selector}),
     #{$desktop-regular-selector} {
-      --mer-sc-control-container__block-padding: var(--mer-sc-block__size--sm);
-      --mer-sc-control-container__inline-padding: var(--mer-sc-block__size--sm);
+      --mer-sc-control-container__block-padding: var(--mer-sc-spacing--sm);
+      --mer-sc-control-container__inline-padding: var(--mer-sc-spacing--sm);
       --mer-sc-control-container__border-radius: var(
         --mer-sc-border__radius--sm
       );
+      --mer-sc-control-container__gap: var(--mer-sc-spacing--2xs);
     }
   }
 
@@ -185,11 +186,13 @@
     #{$desktop-compact-selector},
     :host(#{$desktop-regular-selector}),
     #{$desktop-regular-selector} {
-      --mer-sc-control-item__block-padding: var(--mer-sc-block__size--sm);
-      --mer-sc-control-item__inline-padding: var(--mer-sc-block__size--sm);
+      --mer-sc-control-item__block-padding: var(--mer-sc-spacing--2xs);
+      --mer-sc-control-item__inline-padding: var(--mer-sc-spacing--sm);
       --mer-sc-control-item__gap: var(--mer-sc-block__size--sm);
       // --mer-sc-control-item__font-size: var(); // TODO (Not defined in Figma yet)
-      // --mer-sc-control-item__border-radius: var(); // TODO (Not defined in Figma yet)
+      --mer-sc-control-item__border-radius: var(
+        --mer-sc-border__radius--xs
+      ); // TODO (Not defined in Figma yet)
     }
   }
 
