@@ -49,11 +49,6 @@
   --item__padding-block: var(--mer-spacing--2xs);
   --item__padding-inline: var(--mer-spacing--xs);
 
-  // - - - - - - - Height - - - - - - -
-
-  --item__height--regular: var(--mer-spacing--xl); // ie.: Combo box
-  --item__height--large: 36px; // ie.: Grid
-
   // - - - - - - - Font Face - - - - - - -
 
   // item
@@ -87,22 +82,22 @@
 
   // - - - - - - - Padding - - - - - - -
 
-  --items-container__padding-block: var(--mer-spacing--xs);
-  --items-container__padding-inline: var(--mer-spacing--xs);
+  --mer-sc-control-container__block-padding: var(--mer-spacing--xs);
+  --mer-sc-control-container__inline-padding: var(--mer-spacing--xs);
 
   // - - - - - - - Type Dropdown - - - - - - -
 
-  --items-container__border-radius: var(--mer-border__radius--sm);
+  --mer-sc-control-container__border-radius: var(--mer-border__radius--sm);
   --items-container__box-shadow: var(--mer-box-shadow--01);
 
   // - - - - - - - Gap - - - - - - -
 
-  --items-container__gap: var(--mer-spacing--2xs);
-  --items-container__gap--small: var(--mer-spacing--2xs);
+  --mer-sc-control-container__gap: var(--mer-spacing--2xs);
+  --mer-sc-control-container__gap--small: var(--mer-spacing--2xs);
 
   // - - - - - - - Height - - - - - - -
 
-  --items-container__max-block-size: 300px;
+  --items-container__max-block-size: 256px;
 
   // - - - - - - - Separator - - - - - - -
   // The separator is an element that separates
@@ -120,8 +115,7 @@
   --grid-cell__border: var(--mer-border__width--sm) solid
     var(--grid-cell__border-color);
   --grid-cell__box-shadow-inline-block: 0 0 0 1px var(--grid-cell__border-color);
-  --grid-cell__padding-block: var(--mer-spacing--xs);
-  --grid-cell__padding-inline: var(--mer-spacing--sm);
+
   // - - - - - - - - - - - - - - - - - - - -
   //          Tab Caption (Button)
   // - - - - - - - - - - - - - - - - - - - -
