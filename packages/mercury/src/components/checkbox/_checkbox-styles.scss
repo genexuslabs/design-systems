@@ -1,6 +1,8 @@
 %checkbox {
   --ch-checkbox__container-size: var(--control-tiny__size);
   --ch-checkbox__option-size: calc(var(--control-tiny__size) / 2);
+  --ch-checkbox__image-size: var(--mer-icon__box--md);
+
   @include label-gap-inline();
 
   &--hover {

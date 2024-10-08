@@ -683,9 +683,10 @@
 // ----------------------
 
 @mixin control-footer-base() {
+  --control-footer-justify-content: end;
   padding-block-start: var(--mer-spacing--xs);
   display: flex;
-  justify-content: space-between;
+  justify-content: var(--control-footer-justify-content);
   align-items: center;
 }
 @mixin control-footer-border() {
@@ -695,11 +696,23 @@
 @mixin control-footer(
   $selector: ".control-footer",
   $with-border-selector: ".control-footer-with-border",
+  $justify-start-selector: ".control-footer-start",
+  $justify-center-selector: ".control-footer-center",
+  $justify-space-between-selector: ".control-footer-space-between",
   $with-border: true
 ) {
   #{$selector},
   #{$with-border-selector} {
     @include control-footer-base();
+  }
+  #{$justify-start-selector} {
+    --control-footer-justify-content: start;
+  }
+  #{$justify-center-selector} {
+    --control-footer-justify-content: center;
+  }
+  #{$justify-space-between-selector} {
+    --control-footer-justify-content: space-between;
   }
   @if $with-border {
     #{$with-border-selector} {
@@ -713,30 +726,24 @@
 // ----------------------
 
 @mixin control-header-base() {
-  padding-block-end: var(--mer-spacing--sm);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding-block-end: var(--mer-spacing--md);
 }
-@mixin control-footer-border() {
-  border-block-start: var(--mer-border__width--sm) solid
+@mixin control-header-border() {
+  border-block-end: var(--mer-border__width--sm) solid
     var(--mer-border-color__on-elevation--01);
 }
-@mixin control-footer(
-  $selector: ".control-footer",
-  $with-border-selector: ".control-footer-with-border",
+@mixin control-header(
+  $selector: ".control-header",
+  $with-border-selector: ".control-header-with-border",
   $with-border: true
 ) {
   #{$selector},
   #{$with-border-selector} {
-    @include control-footer-base();
-    display: flex; // part of ch-dialog footer implementation
-    justify-content: flex-end; // part of ch-dialog footer implementation
+    @include control-header-base();
   }
-
   @if $with-border {
     #{$with-border-selector} {
-      @include control-footer-border();
+      @include control-header-border();
     }
   }
 }
@@ -2179,9 +2186,10 @@
 // ----------------------
 
 @mixin control-footer-base() {
+  --control-footer-justify-content: end;
   padding-block-start: var(--mer-spacing--xs);
   display: flex;
-  justify-content: space-between;
+  justify-content: var(--control-footer-justify-content);
   align-items: center;
 }
 @mixin control-footer-border() {
@@ -2191,11 +2199,23 @@
 @mixin control-footer(
   $selector: ".control-footer",
   $with-border-selector: ".control-footer-with-border",
+  $justify-start-selector: ".control-footer-start",
+  $justify-center-selector: ".control-footer-center",
+  $justify-space-between-selector: ".control-footer-space-between",
   $with-border: true
 ) {
   #{$selector},
   #{$with-border-selector} {
     @include control-footer-base();
+  }
+  #{$justify-start-selector} {
+    --control-footer-justify-content: start;
+  }
+  #{$justify-center-selector} {
+    --control-footer-justify-content: center;
+  }
+  #{$justify-space-between-selector} {
+    --control-footer-justify-content: space-between;
   }
   @if $with-border {
     #{$with-border-selector} {
@@ -2209,30 +2229,24 @@
 // ----------------------
 
 @mixin control-header-base() {
-  padding-block-end: var(--mer-spacing--sm);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding-block-end: var(--mer-spacing--md);
 }
-@mixin control-footer-border() {
-  border-block-start: var(--mer-border__width--sm) solid
+@mixin control-header-border() {
+  border-block-end: var(--mer-border__width--sm) solid
     var(--mer-border-color__on-elevation--01);
 }
-@mixin control-footer(
-  $selector: ".control-footer",
-  $with-border-selector: ".control-footer-with-border",
+@mixin control-header(
+  $selector: ".control-header",
+  $with-border-selector: ".control-header-with-border",
   $with-border: true
 ) {
   #{$selector},
   #{$with-border-selector} {
-    @include control-footer-base();
-    display: flex; // part of ch-dialog footer implementation
-    justify-content: flex-end; // part of ch-dialog footer implementation
+    @include control-header-base();
   }
-
   @if $with-border {
     #{$with-border-selector} {
-      @include control-footer-border();
+      @include control-header-border();
     }
   }
 }
@@ -3882,6 +3896,8 @@
 %checkbox {
   --ch-checkbox__container-size: var(--control-tiny__size);
   --ch-checkbox__option-size: calc(var(--control-tiny__size) / 2);
+  --ch-checkbox__image-size: var(--mer-icon__box--md);
+
   @include label-gap-inline();
 
   &--hover {
@@ -4715,9 +4731,10 @@
 // ----------------------
 
 @mixin control-footer-base() {
+  --control-footer-justify-content: end;
   padding-block-start: var(--mer-spacing--xs);
   display: flex;
-  justify-content: space-between;
+  justify-content: var(--control-footer-justify-content);
   align-items: center;
 }
 @mixin control-footer-border() {
@@ -4727,11 +4744,23 @@
 @mixin control-footer(
   $selector: ".control-footer",
   $with-border-selector: ".control-footer-with-border",
+  $justify-start-selector: ".control-footer-start",
+  $justify-center-selector: ".control-footer-center",
+  $justify-space-between-selector: ".control-footer-space-between",
   $with-border: true
 ) {
   #{$selector},
   #{$with-border-selector} {
     @include control-footer-base();
+  }
+  #{$justify-start-selector} {
+    --control-footer-justify-content: start;
+  }
+  #{$justify-center-selector} {
+    --control-footer-justify-content: center;
+  }
+  #{$justify-space-between-selector} {
+    --control-footer-justify-content: space-between;
   }
   @if $with-border {
     #{$with-border-selector} {
@@ -4745,30 +4774,24 @@
 // ----------------------
 
 @mixin control-header-base() {
-  padding-block-end: var(--mer-spacing--sm);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding-block-end: var(--mer-spacing--md);
 }
-@mixin control-footer-border() {
-  border-block-start: var(--mer-border__width--sm) solid
+@mixin control-header-border() {
+  border-block-end: var(--mer-border__width--sm) solid
     var(--mer-border-color__on-elevation--01);
 }
-@mixin control-footer(
-  $selector: ".control-footer",
-  $with-border-selector: ".control-footer-with-border",
+@mixin control-header(
+  $selector: ".control-header",
+  $with-border-selector: ".control-header-with-border",
   $with-border: true
 ) {
   #{$selector},
   #{$with-border-selector} {
-    @include control-footer-base();
-    display: flex; // part of ch-dialog footer implementation
-    justify-content: flex-end; // part of ch-dialog footer implementation
+    @include control-header-base();
   }
-
   @if $with-border {
     #{$with-border-selector} {
-      @include control-footer-border();
+      @include control-header-border();
     }
   }
 }
@@ -17013,6 +17036,7 @@
     @if $layout-classes {
       @include layout();
       @include control-footer();
+      @include control-header();
     }
 
     @if $spacing-classes {
