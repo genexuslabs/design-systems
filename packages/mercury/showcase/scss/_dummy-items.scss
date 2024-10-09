@@ -46,3 +46,16 @@
   box-sizing: border-box;
   gap: var(--mer-spacing--2xs);
 }
+
+.dummy-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mer-color__neutral-gray--500);
+  @include control-border();
+  @include control-colors-enabled();
+  @include control-font-weight-regular();
+  @include control-font-size-regular();
+  @include control-padding-inline-block();
+  border-style: dashed;
+}
