@@ -16,7 +16,7 @@ Step 2: Copy 'src/assets/icons/_generated/*'
 Copy to /showcase 
 - - - - - - - - - - - - - 
 (all required files should be copied to /showcase, so that the showcase can be
-distributed with absolute independence of /dist).
+distributed with independence of /dist).
 
 Step 3: Copy generated icons
 Step 4: Copy 'dist/bundles/css/all.css'
