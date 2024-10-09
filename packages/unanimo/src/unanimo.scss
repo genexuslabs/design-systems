@@ -54,8 +54,11 @@
   $typography-reset: true,
 
   // Theme
+  $root-selector: ":root",
   $light-theme: true,
+  $light-theme-selector: ":root.light",
   $dark-theme: true,
+  $dark-theme-selector: ":root.dark",
   $prefers-color-scheme-light: false,
   $prefers-color-scheme-dark: false,
 
@@ -151,7 +154,7 @@
 
   // Light
   @if $colors and $light-theme and $tokens {
-    :root.light {
+    #{$light-theme-selector} {
       // Fixes issues in elements that force its color based on this property.
       // For example, the font color of the input with autocomplete (:-webkit-autofill)
       color-scheme: light;
@@ -162,7 +165,7 @@
   }
   @if $colors and $tokens and $prefers-color-scheme-light {
     @media (prefers-color-scheme: light) {
-      :root {
+      #{$root-selector} {
         // Fixes issues in elements that force its color based on this property.
         // For example, the font color of the input with autocomplete (:-webkit-autofill)
         color-scheme: light;
@@ -175,7 +178,7 @@
 
   // Dark
   @if $colors and $dark-theme and $tokens {
-    :root.dark {
+    #{$dark-theme-selector} {
       // Fixes issues in elements that force its color based on this property.
       // For example, the font color of the input with autocomplete (:-webkit-autofill)
       color-scheme: dark;
@@ -186,7 +189,7 @@
   }
   @if $colors and $tokens and $prefers-color-scheme-dark {
     @media (prefers-color-scheme: dark) {
-      :root {
+      #{$root-selector} {
         // Fixes issues in elements that force its color based on this property.
         // For example, the font color of the input with autocomplete (:-webkit-autofill)
         color-scheme: dark;
@@ -200,7 +203,7 @@
   @if $tokens and
     ($border-radius or $box-shadow or $colors or $font-size or $spacing)
   {
-    :root {
+    #{$root-selector} {
       // border-radius
       @if $border-radius {
         @include border-radius();
@@ -451,8 +454,11 @@
   $typography-reset: false,
 
   // Theme
+  $root-selector: ":root",
   $light-theme: false,
+  $light-theme-selector: ":root.light",
   $dark-theme: false,
+  $dark-theme-selector: ":root.dark",
   $prefers-color-scheme-light: false,
   $prefers-color-scheme-dark: false,
 
@@ -524,8 +530,11 @@
     $typography-reset: $typography-reset,
 
     // Theme
+    $root-selector: $root-selector,
     $light-theme: $light-theme,
+    $light-theme-selector: $light-theme-selector,
     $dark-theme: $dark-theme,
+    $dark-theme-selector: $dark-theme-selector,
     $prefers-color-scheme-light: $prefers-color-scheme-light,
     $prefers-color-scheme-dark: $prefers-color-scheme-dark,
 
