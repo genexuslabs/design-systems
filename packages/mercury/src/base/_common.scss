@@ -570,3 +570,25 @@
     @extend %spacing-body-inline-end;
   }
 }
+
+// ----------------------
+// Spinner
+// ----------------------
+
+@mixin spinner($size) {
+  width: $size;
+  height: $size;
+  border: calc($size / 5) solid var(--mer-color__tinted-blue--50);
+  border-top: calc($size / 5) solid var(--mer-color__primary-blue--300);
+  border-radius: 50%;
+  animation: spin var(--mer-timing--regular) linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
