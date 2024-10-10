@@ -52,6 +52,7 @@
 @import "./components/list-box/list-box-styles";
 @import "./components/markdown-viewer/markdown-viewer-styles";
 @import "./components/navigation-list/navigation-list-styles";
+@import "./components/pills/pills-styles";
 @import "./components/property-grid/property-grid-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
@@ -125,6 +126,7 @@
   $list-box: true,
   $markdown-viewer: true,
   $navigation-list: true,
+  $pills: true,
   $radio-group: true,
   $segmented-control: true,
   $sidebar: true,
@@ -521,6 +523,10 @@
     @include navigation-list();
   }
 
+  @if $pills {
+    @include pills();
+  }
+
   @if $radio-group {
     @include radio-group();
   }
@@ -623,6 +629,7 @@
   $list-box: false,
   $markdown-viewer: false,
   $navigation-list: false,
+  $pills: false,
   $radio-group: false,
   $segmented-control: false,
   $sidebar: false,
@@ -693,6 +700,7 @@
     $list-box: $list-box,
     $markdown-viewer: $markdown-viewer,
     $navigation-list: $navigation-list,
+    $pills: $pills,
     $radio-group: $radio-group,
     $segmented-control: $segmented-control,
     $sidebar: $sidebar,
