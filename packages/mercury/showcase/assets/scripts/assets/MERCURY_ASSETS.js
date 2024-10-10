@@ -4540,6 +4540,41 @@ export const MERCURY_ASSETS = freeze({
                     })
                 })
             }),
+            cut: freeze({
+                "on-surface": freeze({
+                    enabled: freeze({
+                        name: "system_cut_on-surface--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_cut_on-surface--hover"
+                    }),
+                    active: freeze({
+                        name: "system_cut_on-surface--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_cut_on-surface--disabled"
+                    })
+                }),
+                "on-elevation": freeze({
+                    enabled: freeze({
+                        name: "system_cut_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_cut_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_cut_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_cut_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_cut_primary--disabled"
+                    })
+                })
+            }),
             copy: freeze({
                 "on-surface": freeze({
                     enabled: freeze({
@@ -4680,6 +4715,41 @@ export const MERCURY_ASSETS = freeze({
                     })
                 })
             }),
+            card: freeze({
+                "on-surface": freeze({
+                    enabled: freeze({
+                        name: "system_card_on-surface--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_card_on-surface--hover"
+                    }),
+                    active: freeze({
+                        name: "system_card_on-surface--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_card_on-surface--disabled"
+                    })
+                }),
+                "on-elevation": freeze({
+                    enabled: freeze({
+                        name: "system_card_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_card_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_card_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_card_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_card_primary--disabled"
+                    })
+                })
+            }),
             "card-variant": freeze({
                 "on-surface": freeze({
                     enabled: freeze({
@@ -4712,6 +4782,41 @@ export const MERCURY_ASSETS = freeze({
                     }),
                     disabled: freeze({
                         name: "system_card-variant_primary--disabled"
+                    })
+                })
+            }),
+            Assistant: freeze({
+                "on-surface": freeze({
+                    enabled: freeze({
+                        name: "system_Assistant_on-surface--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_Assistant_on-surface--hover"
+                    }),
+                    active: freeze({
+                        name: "system_Assistant_on-surface--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_Assistant_on-surface--disabled"
+                    })
+                }),
+                "on-elevation": freeze({
+                    enabled: freeze({
+                        name: "system_Assistant_on-elevation--enabled"
+                    })
+                }),
+                primary: freeze({
+                    enabled: freeze({
+                        name: "system_Assistant_primary--enabled"
+                    }),
+                    hover: freeze({
+                        name: "system_Assistant_primary--hover"
+                    }),
+                    active: freeze({
+                        name: "system_Assistant_primary--active"
+                    }),
+                    disabled: freeze({
+                        name: "system_Assistant_primary--disabled"
                     })
                 })
             }),
@@ -4992,111 +5097,6 @@ export const MERCURY_ASSETS = freeze({
                     }),
                     disabled: freeze({
                         name: "system_add-circle_primary--disabled"
-                    })
-                })
-            }),
-            Cut: freeze({
-                "on-surface": freeze({
-                    enabled: freeze({
-                        name: "system_Cut_on-surface--enabled"
-                    }),
-                    hover: freeze({
-                        name: "system_Cut_on-surface--hover"
-                    }),
-                    active: freeze({
-                        name: "system_Cut_on-surface--active"
-                    }),
-                    disabled: freeze({
-                        name: "system_Cut_on-surface--disabled"
-                    })
-                }),
-                "on-elevation": freeze({
-                    enabled: freeze({
-                        name: "system_Cut_on-elevation--enabled"
-                    })
-                }),
-                primary: freeze({
-                    enabled: freeze({
-                        name: "system_Cut_primary--enabled"
-                    }),
-                    hover: freeze({
-                        name: "system_Cut_primary--hover"
-                    }),
-                    active: freeze({
-                        name: "system_Cut_primary--active"
-                    }),
-                    disabled: freeze({
-                        name: "system_Cut_primary--disabled"
-                    })
-                })
-            }),
-            Card: freeze({
-                "on-surface": freeze({
-                    enabled: freeze({
-                        name: "system_Card_on-surface--enabled"
-                    }),
-                    hover: freeze({
-                        name: "system_Card_on-surface--hover"
-                    }),
-                    active: freeze({
-                        name: "system_Card_on-surface--active"
-                    }),
-                    disabled: freeze({
-                        name: "system_Card_on-surface--disabled"
-                    })
-                }),
-                "on-elevation": freeze({
-                    enabled: freeze({
-                        name: "system_Card_on-elevation--enabled"
-                    })
-                }),
-                primary: freeze({
-                    enabled: freeze({
-                        name: "system_Card_primary--enabled"
-                    }),
-                    hover: freeze({
-                        name: "system_Card_primary--hover"
-                    }),
-                    active: freeze({
-                        name: "system_Card_primary--active"
-                    }),
-                    disabled: freeze({
-                        name: "system_Card_primary--disabled"
-                    })
-                })
-            }),
-            Assistant: freeze({
-                "on-surface": freeze({
-                    enabled: freeze({
-                        name: "system_Assistant_on-surface--enabled"
-                    }),
-                    hover: freeze({
-                        name: "system_Assistant_on-surface--hover"
-                    }),
-                    active: freeze({
-                        name: "system_Assistant_on-surface--active"
-                    }),
-                    disabled: freeze({
-                        name: "system_Assistant_on-surface--disabled"
-                    })
-                }),
-                "on-elevation": freeze({
-                    enabled: freeze({
-                        name: "system_Assistant_on-elevation--enabled"
-                    })
-                }),
-                primary: freeze({
-                    enabled: freeze({
-                        name: "system_Assistant_primary--enabled"
-                    }),
-                    hover: freeze({
-                        name: "system_Assistant_primary--hover"
-                    }),
-                    active: freeze({
-                        name: "system_Assistant_primary--active"
-                    }),
-                    disabled: freeze({
-                        name: "system_Assistant_primary--disabled"
                     })
                 })
             })
