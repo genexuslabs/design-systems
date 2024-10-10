@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pills</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+  </head>
+  <body class="showcase" data-sidebar data-bundle="components/pills">
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- control section -->
+        <section class="section" data-nav>
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">pills</h1>
+            <p class="section__description">
+              A pill in web development is a compact, rounded UI element used to
+              display labels, categories, or selections. It visually stands out
+              with a subtle, often colorful background, and is commonly used to
+              represent tags, filters, or options. Pills can be interactive,
+              allowing users to select or remove them, enhancing usability and
+              clarity in filtering or selection tasks.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- placeholder -->
+            <article class="article" data-nav data-title="placeholder">
+              <header class="article__header"></header>
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="pills-container">
+                    <ch-combo-box-render
+                      accessible-name="status"
+                      id="pill-placeholder"
+                      class="pill scrollable"
+                    ></ch-combo-box-render>
+                  </div>
+
+                  <script type="module">
+                    import { pillStatusModel } from "./assets/models/pills.js";
+                    const comboBoxPillPlaceholder =
+                      document.getElementById("pill-placeholder");
+                    comboBoxPillPlaceholder.model = pillStatusModel;
+                    comboBoxPillPlaceholder.placeholder = "Select a status";
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-combo-box-render
+  accessible-name="status"
+  class="pill"
+  model={this.#pillsStatusModel}
+></ch-combo-box-render>`;
+                  </script>
+                </div>
+              </div>
+            </article>
+
+            <!-- enabled -->
+            <article class="article" data-nav data-title="enabled">
+              <header class="article__header"></header>
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="pills-container">
+                    <ch-combo-box-render
+                      accessible-name="status"
+                      id="pill-enabled"
+                      class="pill scrollable"
+                    ></ch-combo-box-render>
+                  </div>
+
+                  <script type="module">
+                    import { pillStatusModel } from "./assets/models/pills.js";
+                    const comboBoxPillEnabled =
+                      document.getElementById("pill-enabled");
+                    console.log(comboBoxPillEnabled);
+                    comboBoxPillEnabled.model = pillStatusModel;
+                    comboBoxPillEnabled.placeholder = "Select a status";
+                    comboBoxPillEnabled.value = "enabled";
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-combo-box-render
+  accessible-name="status"
+  class="pill"
+  model={this.#pillsStatusModel}
+></ch-combo-box-render>`;
+                  </script>
+                </div>
+              </div>
+            </article>
+
+            <!-- processing -->
+            <article class="article" data-nav data-title="processing">
+              <header class="article__header"></header>
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="pills-container">
+                    <ch-combo-box-render
+                      accessible-name="status"
+                      id="pill-processing"
+                      class="pill scrollable"
+                    ></ch-combo-box-render>
+                  </div>
+
+                  <script type="module">
+                    import { pillStatusModel } from "./assets/models/pills.js";
+                    const comboBoxPillProcessing =
+                      document.getElementById("pill-processing");
+                    comboBoxPillProcessing.model = pillStatusModel;
+                    comboBoxPillProcessing.placeholder = "Status";
+                    comboBoxPillProcessing.value = "processing";
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-combo-box-render
+  accessible-name="status"
+  class="pill"
+  model={this.#pillsStatusModel}
+></ch-combo-box-render>`;
+                  </script>
+                </div>
+              </div>
+            </article>
+
+            <!-- success -->
+            <article class="article" data-nav data-title="success">
+              <header class="article__header"></header>
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="pills-container">
+                    <ch-combo-box-render
+                      accessible-name="status"
+                      id="pill-success"
+                      class="pill scrollable"
+                    ></ch-combo-box-render>
+                  </div>
+
+                  <script type="module">
+                    import { pillStatusModel } from "./assets/models/pills.js";
+                    const comboBoxPillSuccess =
+                      document.getElementById("pill-success");
+                    comboBoxPillSuccess.model = pillStatusModel;
+                    comboBoxPillSuccess.placeholder = "Status";
+                    comboBoxPillSuccess.value = "success";
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-combo-box-render
+  accessible-name="status"
+  class="pill"
+  model={this.#pillsStatusModel}
+></ch-combo-box-render>`;
+                  </script>
+                </div>
+              </div>
+            </article>
+
+            <!-- warning -->
+            <article class="article" data-nav data-title="warning">
+              <header class="article__header"></header>
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="pills-container">
+                    <ch-combo-box-render
+                      accessible-name="status"
+                      id="pill-warning"
+                      class="pill scrollable"
+                    ></ch-combo-box-render>
+                  </div>
+
+                  <script type="module">
+                    import { pillStatusModel } from "./assets/models/pills.js";
+                    const comboBoxPillSuccess =
+                      document.getElementById("pill-warning");
+                    comboBoxPillSuccess.model = pillStatusModel;
+                    comboBoxPillSuccess.placeholder = "Status";
+                    comboBoxPillSuccess.value = "warning";
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-combo-box-render
+  accessible-name="status"
+  class="pill"
+  model={this.#pillsStatusModel}
+></ch-combo-box-render>`;
+                  </script>
+                </div>
+              </div>
+            </article>
+
+            <!-- error -->
+            <article class="article" data-nav data-title="error">
+              <header class="article__header"></header>
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="pills-container">
+                    <ch-combo-box-render
+                      accessible-name="status"
+                      id="pill-error"
+                      class="pill scrollable"
+                    ></ch-combo-box-render>
+                  </div>
+
+                  <script type="module">
+                    import { pillStatusModel } from "./assets/models/pills.js";
+                    const comboBoxPillSuccess =
+                      document.getElementById("pill-error");
+                    comboBoxPillSuccess.model = pillStatusModel;
+                    comboBoxPillSuccess.placeholder = "Status";
+                    comboBoxPillSuccess.value = "error";
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-combo-box-render
+  accessible-name="status"
+  class="pill"
+  model={this.#pillsStatusModel}
+></ch-combo-box-render>`;
+                  </script>
+                </div>
+              </div>
+            </article>
+
+            <!-- disabled -->
+            <article class="article" data-nav data-title="disabled">
+              <header class="article__header"></header>
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="pills-container">
+                    <ch-combo-box-render
+                      accessible-name="status"
+                      id="pill-disabled"
+                      class="pill scrollable"
+                      disabled
+                    ></ch-combo-box-render>
+                  </div>
+
+                  <script type="module">
+                    import {
+                      devStatusModel,
+                      projectPhasesModel,
+                      moduleTypesModel,
+                      userRolesModel,
+                      issueTypesModel,
+                      priorityLevelsModel,
+                      environmentTypesModel,
+                      taskStatusModel,
+                      componentCategoriesModel
+                    } from "./assets/models/pills.js";
+
+                    // Development Status Pills
+                    const comboBoxDevStatus =
+                      document.getElementById("dev-status-pills");
+                    comboBoxDevStatus.model = devStatusModel;
+                    comboBoxDevStatus.value = "draft"; // Set value directly
+
+                    // Project Phases Pills
+                    const comboBoxProjectPhases =
+                      document.getElementById("phases-pills");
+                    comboBoxProjectPhases.model = projectPhasesModel;
+                    comboBoxProjectPhases.value = "analysis"; // Set value directly
+
+                    // Module Types Pills
+                    const comboBoxModuleTypes =
+                      document.getElementById("module-types-pills");
+                    comboBoxModuleTypes.model = moduleTypesModel;
+                    comboBoxModuleTypes.value = "backend"; // Set value directly
+
+                    // User Roles Pills
+                    const comboBoxUserRoles =
+                      document.getElementById("roles-pills");
+                    comboBoxUserRoles.model = userRolesModel;
+                    comboBoxUserRoles.value = "admin"; // Set value directly
+
+                    // Issue Types Pills
+                    const comboBoxIssueTypes =
+                      document.getElementById("issue-types-pills");
+                    comboBoxIssueTypes.model = issueTypesModel;
+                    comboBoxIssueTypes.value = "bug"; // Set value directly
+
+                    // Priority Levels Pills
+                    const comboBoxPriorityLevels =
+                      document.getElementById("priority-pills");
+                    comboBoxPriorityLevels.model = priorityLevelsModel;
+                    comboBoxPriorityLevels.value = "low"; // Set value directly
+
+                    // Environment Types Pills
+                    const comboBoxEnvironmentTypes =
+                      document.getElementById("environment-pills");
+                    comboBoxEnvironmentTypes.model = environmentTypesModel;
+                    comboBoxEnvironmentTypes.value = "development"; // Set value directly
+
+                    // Task Status Pills
+                    const comboBoxTaskStatus =
+                      document.getElementById("task-status-pills");
+                    comboBoxTaskStatus.model = taskStatusModel;
+                    comboBoxTaskStatus.value = "todo"; // Set value directly
+
+                    // Component Categories Pills
+                    const comboBoxComponentCategories =
+                      document.getElementById("categories-pills");
+                    comboBoxComponentCategories.model =
+                      componentCategoriesModel;
+                    comboBoxComponentCategories.value = "ui_component"; // Set value directly
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-combo-box-render
+  accessible-name="status"
+  class="pill"
+  model={this.#pillsStatusModel}
+></ch-combo-box-render>`;
+                  </script>
+                </div>
+              </div>
+            </article>
+
+            <!-- grouped -->
+            <article class="article" data-nav data-title="grouped pills">
+              <header class="article__header"></header>
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="pills-container">
+                    <!-- Development Status Pills -->
+                    <ch-combo-box-render
+                      accessible-name="development status"
+                      id="dev-status-pills"
+                      class="pill scrollable"
+                    ></ch-combo-box-render>
+
+                    <!-- Project Phases Pills -->
+                    <ch-combo-box-render
+                      accessible-name="project phases"
+                      id="phases-pills"
+                      class="pill scrollable"
+                    ></ch-combo-box-render>
+
+                    <!-- Module Types Pills -->
+                    <ch-combo-box-render
+                      accessible-name="module types"
+                      id="module-types-pills"
+                      class="pill scrollable"
+                    ></ch-combo-box-render>
+
+                    <!-- User Roles Pills -->
+                    <ch-combo-box-render
+                      accessible-name="user roles"
+                      id="roles-pills"
+                      class="pill scrollable"
+                    ></ch-combo-box-render>
+
+                    <!-- Issue Types Pills -->
+                    <ch-combo-box-render
+                      accessible-name="issue types"
+                      id="issue-types-pills"
+                      class="pill scrollable"
+                    ></ch-combo-box-render>
+
+                    <!-- Priority Levels Pills -->
+                    <ch-combo-box-render
+                      accessible-name="priority levels"
+                      id="priority-pills"
+                      class="pill scrollable"
+                    ></ch-combo-box-render>
+
+                    <!-- Environment Types Pills -->
+                    <ch-combo-box-render
+                      accessible-name="environment types"
+                      id="environment-pills"
+                      class="pill scrollable"
+                    ></ch-combo-box-render>
+
+                    <!-- Task Status Pills -->
+                    <ch-combo-box-render
+                      accessible-name="task status"
+                      id="task-status-pills"
+                      class="pill scrollable"
+                    ></ch-combo-box-render>
+
+                    <!-- Component Categories Pills -->
+                    <ch-combo-box-render
+                      accessible-name="component categories"
+                      id="categories-pills"
+                      class="pill scrollable"
+                    ></ch-combo-box-render>
+                  </div>
+
+                  <script type="module">
+                    import { pillStatusModel } from "./assets/models/pills.js";
+                    const comboBoxPillDisabled =
+                      document.getElementById("pill-disabled");
+                    comboBoxPillDisabled.model = pillStatusModel;
+                    comboBoxPillDisabled.placeholder = "Status";
+                    comboBoxPillDisabled.value = "success";
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-combo-box-render
+  accessible-name="status"
+  class="pill"
+  model={this.#pillsStatusModel}
+></ch-combo-box-render>`;
+                  </script>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

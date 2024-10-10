@@ -816,6 +816,23 @@
   }
 }
 
+// ----------------------
+// Spinner
+// ----------------------
+
+@mixin spinner($scale) {
+  scale: $scale;
+  border: var(--mer-spacing--2xs) var(--mer-color__neutral-gray--800) solid;
+  border-block-start: var(--mer-border__width--lg)
+    var(--mer-color__primary-blue--300) solid;
+  border-radius: 50%;
+  animation: spinner 0.6s infinite linear;
+  inline-size: var(--mer-spacing--xl);
+  block-size: var(--mer-spacing--xl);
+  flex-shrink: 0;
+  opacity: 1;
+}
+
 /// @group UtilityClasses
 /// @param {String} $elevation-01-selector [".elevation-01"] -
 /// @param {String} $elevation-02-selector [".elevation-02"] -
@@ -1198,6 +1215,7 @@
   --mer-border-color__primary--active: var(--mer-accent__primary--active);
   --mer-border-color__primary--disabled: var(--mer-accent__primary--disabled);
   --mer-border-color__primary--focused: var(--mer-color__neutral-gray--200);
+  --mer-border-color__dim: var(--mer-color__neutral-gray--550);
   --mer-border-color__error: var(--mer-color__message-red--100);
   --mer-border-color__warning: var(--mer-color__message-yellow--100);
   --mer-border-color__success: var(--mer-color__message-green--100);
@@ -1659,7 +1677,7 @@
   --mer-text__neutral: var(--mer-color__neutral-gray--300);
   --mer-text__highlighted: var(--mer-color__neutral-gray--100);
   --mer-text__success: var(--mer-color__message-green--100);
-  --mer-text__error: var(--mer-color__message-green--100);
+  --mer-text__error: var(--mer-color__message-red--100);
   --mer-text__warning: var(--mer-color__message-yellow--100);
   --mer-text__complementary: var(--mer-color__neutral-gray--450);
   --mer-text__bright: var(
@@ -2317,6 +2335,23 @@
   #{$body-inline-end-selector} {
     @extend %spacing-body-inline-end;
   }
+}
+
+// ----------------------
+// Spinner
+// ----------------------
+
+@mixin spinner($scale) {
+  scale: $scale;
+  border: var(--mer-spacing--2xs) var(--mer-color__neutral-gray--800) solid;
+  border-block-start: var(--mer-border__width--lg)
+    var(--mer-color__primary-blue--300) solid;
+  border-radius: 50%;
+  animation: spinner 0.6s infinite linear;
+  inline-size: var(--mer-spacing--xl);
+  block-size: var(--mer-spacing--xl);
+  flex-shrink: 0;
+  opacity: 1;
 }
 
 
@@ -4864,6 +4899,23 @@
   }
 }
 
+// ----------------------
+// Spinner
+// ----------------------
+
+@mixin spinner($scale) {
+  scale: $scale;
+  border: var(--mer-spacing--2xs) var(--mer-color__neutral-gray--800) solid;
+  border-block-start: var(--mer-border__width--lg)
+    var(--mer-color__primary-blue--300) solid;
+  border-radius: 50%;
+  animation: spinner 0.6s infinite linear;
+  inline-size: var(--mer-spacing--xl);
+  block-size: var(--mer-spacing--xl);
+  flex-shrink: 0;
+  opacity: 1;
+}
+
 
 %combo-box {
   --ch-combo-box-separation-y: var(--mer-spacing--3xs);
@@ -5977,6 +6029,997 @@
 
   #{$item-tooltip-selector} {
     @extend %navigation-list-item-tooltip;
+  }
+}
+
+@mixin typography-reset() {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    font: unset;
+    margin: 0;
+    padding: 0;
+    color: unset;
+  }
+}
+
+@mixin button-reset() {
+  :where(button, a) {
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+
+    // Disallow selecting the text
+    user-select: none;
+
+    // Avoid zooming on double tap on iOS devices
+    touch-action: manipulation;
+
+    // Allow user drag
+    // -webkit-user-drag: element;
+
+    cursor: pointer;
+  }
+
+  button:disabled {
+    pointer-events: none;
+  }
+}
+
+@mixin input-reset() {
+  input,
+  select,
+  textarea {
+    padding: 0;
+    margin: 0;
+    background-color: unset;
+    border: unset;
+    color: unset;
+    font: unset;
+    outline: unset;
+  }
+}
+
+@mixin other-reset() {
+  hr {
+    block-size: 1px;
+    margin: unset;
+    padding: unset;
+    border: unset;
+    background-color: currentColor;
+  }
+
+  fieldset,
+  legend {
+    padding: 0;
+    margin: 0;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+@mixin box-sizing() {
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+  }
+}
+
+@mixin button-common-styles() {
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  justify-content: center;
+}
+
+@mixin label-common-styles() {
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  grid-template-rows: auto; // Necessary to avoid creating additional rows and then adding additional gap at the bottom of the label
+  align-items: center;
+}
+
+@mixin document-common-styles() {
+  display: grid;
+  grid-template-rows: 1fr;
+  min-block-size: 100dvh;
+  margin: 0;
+}
+
+// - - - - - - - - - - - - - - - - - - - -
+//    Icons | Mask & Background
+// - - - - - - - - - - - - - - - - - - - -
+
+// Icon mask styles
+@mixin icon-mask-common-styles(
+  $inline-size: var(--icon-size),
+  $block-size: var(--icon-size),
+  $mask-size: var(--icon-mask-size)
+) {
+  content: "";
+  display: block;
+  inline-size: $inline-size;
+  block-size: $block-size;
+  -webkit-mask: no-repeat center / $mask-size var(--icon-path);
+  background-color: currentColor;
+}
+
+// Icon background styles
+@mixin icon-background-common-styles(
+  $inline-size: var(--icon-size),
+  $block-size: var(--icon-size),
+  $background-size: var(--icon-background-size)
+) {
+  content: "";
+  display: block;
+  inline-size: $inline-size;
+  block-size: $block-size;
+  background: no-repeat center / $background-size var(--icon-path);
+}
+
+// - - - - - - - - - - - - - - - - - - - -
+//    Icons | Gap
+// - - - - - - - - - - - - - - - - - - - -
+
+@mixin icon-and-text-styles($gap) {
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: $gap;
+}
+
+// - - - - - - - - - - - - - - - - - - - -
+//    Ellipsis
+// - - - - - - - - - - - - - - - - - - - -
+
+@mixin ellipsis() {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+%ellipsis {
+  @include ellipsis();
+}
+
+
+// ----------------------
+// Focus
+// ----------------------
+@mixin focus-outline() {
+  outline: var(--focus__outline-width) var(--focus__outline-style)
+    var(--focus__outline-color);
+  outline-offset: var(--focus__outline-offset);
+}
+@mixin focus-border() {
+  border-color: var(--borders-un-border-color__focused);
+}
+
+// ----------------------
+// Scrollbar Styles
+// ----------------------
+@mixin scrollbar-styles() {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb__bg-color)
+    var(--scrollbar-track__bg-color);
+
+  //scrollbar
+  &::-webkit-scrollbar {
+    width: var(--scrollbar__size);
+    height: var(--scrollbar__size);
+  }
+
+  // track
+  &::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track__bg-color);
+    border-radius: var(--scrollbar-track__border-radius);
+  }
+
+  // thumb
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb__bg-color);
+    border-radius: var(--scrollbar-thumb__border-radius);
+  }
+
+  // corner
+  &::-webkit-scrollbar-corner {
+    background: var(--scrollbar-corner__bg);
+  }
+}
+
+// ----------------------
+// Scrollbar Components
+// ----------------------
+@mixin scrollbar-components() {
+  :host(.ch-scrollable),
+  .ch-scrollable,
+  .scrollable {
+    @include scrollbar-styles();
+  }
+}
+
+// ----------------------
+// Control
+// ----------------------
+
+// Colors
+@mixin control-colors-enabled() {
+  background-color: var(--control__bg-color);
+  color: var(--control__color);
+  --ch-placeholder-color: var(--control-placeholder__color);
+  // enabled border color is defined in control-border()
+}
+@mixin control-colors-hover() {
+  --control__border-color: var(--control__border-color--hover);
+}
+@mixin control-colors-disabled() {
+  --control__bg-color: var(--control__background-color--disabled);
+  --control__border-color: var(--control__border-color--disabled);
+  --control__color: var(--control__color--disabled);
+  --ch-placeholder-color: var(--control-placeholder__color--disabled);
+}
+@mixin control-colors-error() {
+  --control__border-color: var(--control__border-color--error);
+}
+// Border
+@mixin control-border() {
+  border-width: var(--control__border-width);
+  border-style: var(--control__border-style);
+  border-color: var(--control__border-color);
+  border-radius: var(--control__border-radius);
+}
+@mixin control-remove-border() {
+  // This resets the border applied
+  // (for controls inside the property grid)
+  --control__border-width: 0;
+  --control__border-color: transparent;
+  --control__border-radius: 0;
+}
+// Font
+@mixin control-font-weight-regular() {
+  font-weight: var(--control__font-weight--regular);
+}
+@mixin control-font-weight-semi-bold() {
+  font-weight: var(--control__font-weight--semi-bold);
+}
+// Font Size
+@mixin control-font-size-small() {
+  font-size: var(--control__font-size--small);
+  line-height: var(--control__line-height);
+}
+@mixin control-font-size-regular() {
+  font-size: var(--control__font-size--regular);
+  line-height: var(--control__line-height);
+}
+// Height
+@mixin control-height-regular() {
+  block-size: var(--control__height);
+  // to be removed (TODO)
+  // fixed block-size comes with some issues.
+}
+// Padding
+@mixin control-padding-inline() {
+  padding-inline: var(--control__padding-inline);
+}
+@mixin control-padding-block() {
+  padding-block: var(--control__padding-block);
+}
+@mixin control-padding-inline-block() {
+  padding-block: var(--control__padding-block);
+  padding-inline: var(--control__padding-inline);
+}
+// Placeholder
+@mixin control-placeholder() {
+  color: var(--control-placeholder__color);
+  font-style: var(--control-placeholder__font-style);
+}
+
+// ----------------------
+// Control Tiny
+// ----------------------
+
+@mixin control-tiny-size() {
+  block-size: var(--control-tiny__size);
+  inline-size: var(--control-tiny__size);
+}
+@mixin control-tiny-border() {
+  border-width: var(--control__border-width);
+  border-style: var(--control__border-style);
+  border-color: var(--control__border-color);
+  border-radius: var(--control__border-radius);
+}
+@mixin control-tiny-border-hover() {
+  --control__border-color: var(--control__border-color--hover);
+}
+@mixin control-tiny-border-disabled() {
+  --control__border-color: var(--control__border-color--disabled);
+}
+@mixin control-tiny-border-error() {
+  --control__border-color: var(--control__border-color--error);
+}
+
+// ----------------------
+// Items Container
+// ----------------------
+
+@mixin items-container-border() {
+  border-style: var(--items-container__border-style);
+  border-width: var(--items-container__border-width);
+}
+@mixin items-container-border-radius() {
+  border-radius: var(--items-container__border-radius);
+}
+@mixin items-container-colors() {
+  background-color: var(--items-container__bg-color);
+  border-color: var(--items-container__border-color);
+}
+@mixin items-container-padding() {
+  padding-block: var(--items-container__padding-block);
+  padding-inline: var(--items-container__padding-inline);
+}
+@mixin items-container-dropdown() {
+  box-shadow: var(--items-container__box-shadow);
+}
+@mixin items-container-gap() {
+  gap: var(--items-container__gap);
+}
+@mixin items-container-gap-small() {
+  gap: var(--items-container__gap--small);
+}
+@mixin items-container-max-height() {
+  max-block-size: var(--items-container__max-block-size);
+}
+@mixin items-container-separator() {
+  block-size: var(--items-container-separator__block-size);
+  inline-size: var(--items-container-separator__inline-size);
+  background-color: var(--items-container-separator__bg-color);
+}
+
+// ------------------------------------
+// Single Item (Every item except grid)
+// ------------------------------------
+
+@mixin item-colors-enabled() {
+  background-color: var(--item__bg-color);
+  border-color: var(--item__border-color);
+  color: var(--item__color);
+}
+@mixin item-colors-hover() {
+  --item__bg-color: var(--item__bg-color--hover);
+  --item__border-color: var(--item__border-color--hover);
+  --item__color: var(--item__color--hover);
+}
+@mixin item-colors-selected() {
+  --item__bg-color: var(--item__bg-color--selected);
+  --item__border-color: var(--item__border-color--selected);
+  --item__color: var(--item__color--selected);
+}
+@mixin item-colors-selected-hover() {
+  --item__bg-color: var(--item__bg-color--selected-hover);
+  --item__border-color: var(--item__border-color--selected-hover);
+  --item__color: var(--item__color--selected-hover);
+}
+@mixin item-colors-disabled() {
+  --item__bg-color: var(--item__bg-color--disabled);
+  --item__border-color: var(--item__border-color--disabled);
+  --item__color: var(--item__color--disabled);
+}
+@mixin item-border() {
+  border: var(--item__border-width) var(--item__border-style)
+    var(--item__border-color);
+}
+@mixin item-border-block-end() {
+  border-block-end: var(--item__border-width) var(--item__border-style)
+    var(--item__border-color);
+}
+@mixin item-border-radius() {
+  border-radius: var(--item__border-radius);
+}
+@mixin item-gap() {
+  gap: var(--item__gap--regular);
+}
+@mixin item-padding() {
+  padding-block: var(--item__padding-block);
+  padding-inline: var(--item__padding-inline);
+}
+@mixin item-padding-block() {
+  padding-block: var(--item__padding-inline);
+}
+@mixin item-padding-inline() {
+  padding-inline: var(--item__padding-inline);
+}
+@mixin item-height-regular() {
+  block-size: var(--item__height--regular);
+}
+@mixin item-height-large() {
+  block-size: var(--item__height--large);
+}
+@mixin item-font() {
+  line-height: var(--item__line-height);
+  font-size: var(--item__font-size);
+  font-weight: var(--item__font-weight);
+}
+@mixin item-font-size-small() {
+  --item__font-size: var(--item__font-size--small);
+}
+@mixin item-font-header() {
+  // item header font-size and line-height has to be the same as
+  // item font-size and line-height in order for the computed height
+  // to be the same.
+  line-height: var(--item__line-height);
+  font-size: var(--item__font-size);
+  font-weight: var(--item-header__font-weight);
+}
+
+// ---------------------------------
+// Grid Item
+// ---------------------------------
+
+// Row
+@mixin grid-row-colors-enabled() {
+  background-color: var(--item__bg-color);
+  color: var(--item__color);
+}
+@mixin grid-row-colors-highlighted() {
+  --item__bg-color: var(--item__bg-color--hover);
+  --item__color: var(--item__color--hover);
+}
+@mixin grid-row-colors-selected() {
+  --item__bg-color: var(--item__bg-color--selected);
+  --item__color: var(--item__color--selected);
+}
+@mixin grid-row-dragging() {
+  box-shadow: var(--mer-box-shadow--01);
+}
+@mixin grid-cell-border-inline-block() {
+  // this mixin uses the box-shadow property, but it looks
+  // as a border to the user.
+  box-shadow: var(--grid-cell__box-shadow-inline-block);
+}
+@mixin grid-cell-padding-inline() {
+  padding-inline: var(--grid-cell__padding-block);
+}
+@mixin grid-cell-padding-block() {
+  padding-block: var(--grid-cell__padding-block);
+}
+@mixin grid-cell-padding-inline-block() {
+  padding-block: var(--grid-cell__padding-block);
+  padding-inline: var(--grid-cell__padding-inline);
+}
+@mixin grid-cell-remove-padding() {
+  // we should redefine '--grid-cell__padding-inline' here because when a control
+  // is inside a a tabular-grid-cell the cell padding-inline value is required to
+  // be applied on the control padding-inline.
+  padding-block: 0;
+  padding-inline: 0;
+}
+@mixin grid-rowset-legend-padding-block() {
+  padding-block-start: var(--mer-spacing--2xs);
+  padding-block-end: var(--mer-spacing--2xs);
+}
+@mixin grid-rowset-legend-colors-enabled() {
+  --grid-rowset-legend__bg-color: var(--mer-surface__elevation--02);
+  background-color: var(--grid-rowset-legend__bg-color);
+}
+@mixin grid-rowset-legend-colors-hover() {
+  --grid-rowset-legend__bg-color: var(--mer-surface__elevation--03);
+}
+@mixin grid-rowset-legend-colors-active() {
+  --grid-rowset-legend__bg-color: var(--mer-surface__elevation--02);
+}
+
+// ----------------------
+// Tab Caption (Button)
+// ----------------------
+@mixin tab-button-border-block() {
+  border-block: var(--tab-caption__border-width)
+    var(--tab-caption__border-style) var(--tab-caption__border-color);
+}
+@mixin tab-button-border-block-end() {
+  border-block-end: var(--tab-caption__border-width)
+    var(--tab-caption__border-style) var(--tab-caption__border-color);
+}
+@mixin tab-button-border-block-start() {
+  border-block-start: var(--tab-caption__border-width)
+    var(--tab-caption__border-style) var(--tab-caption__border-color);
+}
+@mixin tab-button-font() {
+  font-size: var(--tab-caption__font-size);
+  font-weight: var(--tab-caption__font-weight);
+}
+@mixin tab-button-gap() {
+  gap: var(--tab-caption__gap);
+}
+@mixin tab-button-colors-enabled() {
+  background-color: var(--tab-caption__bg-color);
+  color: var(--tab-caption__color);
+  border-color: var(--tab-caption__border-color);
+}
+@mixin tab-button-colors-hover() {
+  --tab-caption__bg-color: var(--tab-caption__bg-color--hover);
+  // color remains the same
+  // border-color remains the same
+}
+@mixin tab-button-colors-disabled() {
+  --tab-caption__bg-color: var(--tab-caption__bg-color--disabled);
+  --tab-caption__color: var(--mer-text__primary--disabled);
+  --tab-caption__border-color--selected-inline: var(
+    --mer-border-color__primary--disabled
+  );
+  --tab-caption__border-color--selected-stack: var(
+    --mer-surface__elevation--02
+  );
+}
+@mixin tab-button-colors-selected-inline() {
+  --tab-caption__bg-color: var(--tab-caption__bg-color--selected-inline);
+  --tab-caption__color: var(--tab-caption__color--selected);
+  --tab-caption__border-color: var(
+    --tab-caption__border-color--selected-inline
+  );
+}
+@mixin tab-button-colors-selected-stack() {
+  --tab-caption__bg-color: var(--tab-caption__bg-color--selected-stack);
+  --tab-caption__color: var(--tab-caption__color--selected);
+  --tab-caption__border-color: var(--tab-caption__border-color--selected-stack);
+}
+@mixin tab-button-padding-inline() {
+  padding-block: var(--tab-caption__padding-block);
+  padding-inline: var(--tab-caption__padding-inline);
+}
+@mixin tab-button-padding-stack() {
+  padding-block: var(--tab-caption__padding-block);
+  padding-inline: var(--tab-caption__padding-inline);
+}
+
+// ----------------------
+// Label
+// ----------------------
+
+@mixin label-font() {
+  color: var(--label__color);
+  font-weight: var(--label__font-weight);
+  font-size: var(--label__font-size);
+  line-height: var(--label__line-height);
+}
+@mixin label-gap-block() {
+  gap: var(--label__gap--block);
+}
+@mixin label-gap-inline() {
+  gap: var(--label__gap--inline);
+}
+@mixin label-color-hover() {
+  --label__color: var(--label__color--hover);
+}
+@mixin label-color-disabled() {
+  --label__color: var(--label__color--disabled);
+}
+
+// ----------------------
+// Window
+// ----------------------
+
+// TODO: This styles should better be applied on the ch-window ?
+%window-styles {
+  border: var(--window__border);
+  border-radius: var(--window__border-radius);
+  padding: var(---window__padding);
+  background-color: var(--window__bg-color);
+  box-shadow: var(--mer-box-shadow--01);
+}
+
+// ----------------------
+// Dropdown
+// ----------------------
+
+@mixin dropdown-styles() {
+  box-shadow: var(--mer-box-shadow--01);
+  border-radius: var(--mer-border__radius--sm);
+}
+
+// ----------------------
+// Pseudo Dialog Footer
+// ----------------------
+
+@mixin control-footer-base() {
+  --control-footer-justify-content: end;
+  padding-block-start: var(--mer-spacing--xs);
+  display: flex;
+  justify-content: var(--control-footer-justify-content);
+  align-items: center;
+}
+@mixin control-footer-border() {
+  border-block-start: var(--mer-border__width--sm) solid
+    var(--mer-border-color__on-elevation--01);
+}
+@mixin control-footer(
+  $selector: ".control-footer",
+  $with-border-selector: ".control-footer-with-border",
+  $justify-start-selector: ".control-footer-start",
+  $justify-center-selector: ".control-footer-center",
+  $justify-space-between-selector: ".control-footer-space-between",
+  $with-border: true
+) {
+  #{$selector},
+  #{$with-border-selector} {
+    @include control-footer-base();
+  }
+  #{$justify-start-selector} {
+    --control-footer-justify-content: start;
+  }
+  #{$justify-center-selector} {
+    --control-footer-justify-content: center;
+  }
+  #{$justify-space-between-selector} {
+    --control-footer-justify-content: space-between;
+  }
+  @if $with-border {
+    #{$with-border-selector} {
+      @include control-footer-border();
+    }
+  }
+}
+
+// ----------------------
+// Pseudo Dialog Header
+// ----------------------
+
+@mixin control-header-base() {
+  padding-block-end: var(--mer-spacing--md);
+}
+@mixin control-header-border() {
+  border-block-end: var(--mer-border__width--sm) solid
+    var(--mer-border-color__on-elevation--01);
+}
+@mixin control-header(
+  $selector: ".control-header",
+  $with-border-selector: ".control-header-with-border",
+  $with-border: true
+) {
+  #{$selector},
+  #{$with-border-selector} {
+    @include control-header-base();
+  }
+  @if $with-border {
+    #{$with-border-selector} {
+      @include control-header-border();
+    }
+  }
+}
+
+// ----------------------
+// Body Spacing
+// ----------------------
+
+// This custom properties define the block and inline spacing of containers.
+// i.e.: dialog, layout, etc..
+
+%spacing-body {
+  padding-block: var(--spacing-body-block-start) var(--spacing-body-block-end);
+  padding-inline: var(--spacing-body-inline-start)
+    var(--spacing-body-inline-end);
+}
+
+%spacing-body-block {
+  padding-block: var(--spacing-body-block-start) var(--spacing-body-block-end);
+}
+%spacing-body-block-start {
+  padding-block-start: var(--spacing-body-block-start);
+}
+%spacing-body-block-end {
+  padding-block-end: var(--spacing-body-block-end);
+}
+
+%spacing-body-inline {
+  padding-inline: var(--spacing-body-inline-start)
+    var(--spacing-body-inline-end);
+}
+%spacing-body-inline-start {
+  padding-inline-start: var(--spacing-body-inline-start);
+}
+%spacing-body-inline-end {
+  padding-inline-end: var(--spacing-body-inline-end);
+}
+
+@mixin spacing-body(
+  $body-selector: ".spacing-body",
+  $body-block-selector: ".spacing-body-block",
+  $body-block-start-selector: ".spacing-body-block-start",
+  $body-block-end-selector: ".spacing-body-block-end",
+  $body-inline-selector: ".spacing-body-inline",
+  $body-inline-start-selector: ".spacing-body-inline-start",
+  $body-inline-end-selector: ".spacing-body-inline-end"
+) {
+  #{$body-selector} {
+    @extend %spacing-body;
+  }
+  // block
+  #{$body-block-selector} {
+    @extend %spacing-body-block;
+  }
+  #{$body-block-start-selector} {
+    @extend %spacing-body-block-start;
+  }
+  #{$body-block-end-selector} {
+    @extend %spacing-body-block-end;
+  }
+  // inline
+  #{$body-inline-selector} {
+    @extend %spacing-body-inline;
+  }
+  #{$body-inline-start-selector} {
+    @extend %spacing-body-inline-start;
+  }
+  #{$body-inline-end-selector} {
+    @extend %spacing-body-inline-end;
+  }
+}
+
+// ----------------------
+// Spinner
+// ----------------------
+
+@mixin spinner($scale) {
+  scale: $scale;
+  border: var(--mer-spacing--2xs) var(--mer-color__neutral-gray--800) solid;
+  border-block-start: var(--mer-border__width--lg)
+    var(--mer-color__primary-blue--300) solid;
+  border-radius: 50%;
+  animation: spinner 0.6s infinite linear;
+  inline-size: var(--mer-spacing--xl);
+  block-size: var(--mer-spacing--xl);
+  flex-shrink: 0;
+  opacity: 1;
+}
+
+
+%icon-styles {
+  // custom icon styles
+  --status-circle-color: var(--control__color);
+  --status-circle-size: 6px;
+
+  position: relative;
+  padding-inline-start: 36px;
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: var(--status-circle-color);
+    left: 17px;
+    block-size: var(--status-circle-size);
+    inline-size: var(--status-circle-size);
+    display: inline-block;
+    border-radius: 50%;
+  }
+}
+
+%pills__container {
+  --pills-container__display: flex;
+  display: var(--pills-container__display);
+  gap: var(--mer-spacing--md);
+}
+
+%pill {
+  // chameleon custom vars (do not edit the --ch-* vars names)
+  --ch-pills-separation-y: var(--mer-spacing--3xs);
+  --ch-pills-item-gap: var(--mer-spacing--xs);
+  --ch-pills-item__image-size: var(--mer-spacing--md);
+  --ch-pills-item__background-image-size: 100%;
+  --ch-pills-group__expandable-button-size: var(--mer-spacing--md);
+  --ch-pills-group__expandable-button-image-size: var(--mer-spacing--sm);
+
+  // "control" tokens overrides
+  --control__border-radius: var(--mer-spacing--md);
+  --control__padding-inline: var(--mer-spacing--sm);
+
+  @include control-border();
+  @include control-colors-enabled();
+  @include control-font-weight-semi-bold();
+  @include control-font-size-regular();
+  @include control-padding-inline-block();
+
+  // states
+  &--enabled {
+    --control__border-color: var(--mer-border-color__dim);
+    --control__bg-color: transparent;
+    --control__color: var(--mer-text__neutral);
+  }
+  &--processing {
+    --control__border-color: var(--mer-color__tinted-blue--50);
+    --control__bg-color: var(--mer-color__tinted-blue--8);
+    --control__color: var(--mer-accent__primary);
+  }
+  &--success {
+    --control__border-color: var(--mer-color__tinted-green--60);
+    --control__bg-color: var(--mer-color__tinted-green--5);
+    --control__color: var(--mer-text__success);
+  }
+  &--warning {
+    --control__border-color: var(--mer-color__tinted-yellow--60);
+    --control__bg-color: var(--mer-color__tinted-yellow--5);
+    --control__color: var(--mer-text__warning);
+  }
+  &--error {
+    --control__border-color: var(--mer-color__tinted-red--60);
+    --control__bg-color: var(--mer-color__tinted-red--5);
+    --control__color: var(--mer-text__error);
+  }
+
+  &:focus {
+    @include focus-outline();
+  }
+
+  &:hover {
+    @include control-colors-hover();
+  }
+
+  // items
+  &__item {
+    @include item-colors-enabled();
+    @include item-border();
+    @include item-border-radius();
+    @include item-font();
+    @include item-padding();
+
+    // override item border radius for this specific case.
+    // TODO: add a "pill border radius token".
+    --item__border-radius: 16px;
+
+    &--enabled {
+      --item__border-color: var(--mer-border-color__dim);
+      --item__bg-color: transparent;
+      --item__color: var(--mer-text__neutral);
+    }
+    &--processing {
+      --item__border-color: var(--mer-color__tinted-blue--50);
+      --item__bg-color: var(--mer-color__tinted-blue--8);
+      --item__color: var(--mer-accent__primary);
+    }
+    &--success {
+      --item__border-color: var(--mer-color__tinted-green--60);
+      --item__bg-color: var(--mer-color__tinted-green--5);
+      --item__color: var(--mer-text__success);
+    }
+    &--warning {
+      --item__border-color: var(--mer-color__tinted-yellow--60);
+      --item__bg-color: var(--mer-color__tinted-yellow--5);
+      --item__color: var(--mer-text__warning);
+    }
+    &--error {
+      --item__border-color: var(--mer-color__tinted-red--60);
+      --item__bg-color: var(--mer-color__tinted-red--5);
+      --item__color: var(--mer-text__error);
+    }
+
+    &--hover {
+      filter: brightness(1.15);
+    }
+
+    &--selected {
+      @include item-colors-selected();
+    }
+  }
+}
+
+/// @group ComboBox
+/// @param {String} $pills-container-selector [".pills-container"] -
+/// @param {String} $pills-selector [".pills"] -
+/// @param {String} $pills--disabled-selector [".pills[disabled]"] -
+/// @param {String} $pills--error-selector [".pills-error"] -
+/// @param {String} $pills__placeholder-selector [".pills::part(placeholder)"] -
+/// @param {String} $window-selector [".pills::part(window)"] -
+/// @param {String} $item-selector [".pills::part(item)"] -
+/// @param {String} $item--disabled-selector [".pills::part(item disabled)"] -
+/// @param {String} $item--selected-selector [".pills::part(item selected)"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @param {Boolean} $add--placeholder [true] -
+/// @param {Boolean} $add--placeholder-var [true] -
+@mixin pills(
+  $pills-container-selector: ".pills-container",
+  $pill-selector: ".pill",
+  $pill--enabled-selector: ".pill[part='enabled']",
+  $pill--processing-selector: ".pill[part='processing']",
+  $pill--success-selector: ".pill[part='success']",
+  $pill--error-selector: ".pill[part='error']",
+  $pill--warning-selector: ".pill[part='warning']",
+  $pills__placeholder-selector: ".pills::part(placeholder)",
+  $window-selector: ".pill::part(window)",
+  $item-selector: ".pill::part(item)",
+  $item--enabled-selector: ".pill::part(item enabled)",
+  $item--processing-selector: ".pill::part(item processing)",
+  $item--success-selector: ".pill::part(item success)",
+  $item--error-selector: ".pill::part(item error)",
+  $item--warning-selector: ".pill::part(item warning)",
+  $item--disabled-selector: ".pill::part(item disabled)",
+  $item--selected-selector: ".pill::part(item selected)",
+  $add--disabled: true,
+  $add--placeholder: true,
+  $add--placeholder-var: true,
+  $add--error: true
+) {
+  #{$pills-container-selector} {
+    @extend %pills__container;
+  }
+
+  #{$pill-selector} {
+    @extend %pill;
+    @extend %icon-styles;
+  }
+
+  #{$pill--enabled-selector} {
+    @extend %pill--enabled;
+  }
+  #{$pill--processing-selector} {
+    @extend %pill--processing;
+  }
+  #{$pill--success-selector} {
+    @extend %pill--success;
+  }
+  #{$pill--error-selector} {
+    @extend %pill--error;
+  }
+  #{$pill--warning-selector} {
+    @extend %pill--warning;
+  }
+
+  @if $add--placeholder {
+    #{$pills__placeholder-selector} {
+      @include control-placeholder();
+    }
+  }
+
+  @if $add--disabled {
+    #{$item--disabled-selector} {
+      @include item-colors-disabled();
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Window
+  // - - - - - - - - - - - - - - - - - - - -
+  #{$window-selector} {
+    @include items-container-colors();
+    @include items-container-padding();
+    @include items-container-dropdown();
+    @include items-container-gap();
+    @include items-container-max-height();
+    @include items-container-border-radius();
+    --items-container__border-radius: var(--mer-border__radius--lg);
+    // TODO: define a items-container-border-radius-sm() and a
+    // items-container-border-radius-md(); since there are two
+    // different container border-radius values
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Item
+  // - - - - - - - - - - - - - - - - - - - -
+
+  #{$item-selector} {
+    @extend %pill__item;
+  }
+  #{$item-selector}:hover {
+    @extend %pill__item--hover;
+  }
+  #{$item--enabled-selector} {
+    @extend %pill__item--enabled;
+  }
+  #{$item--processing-selector} {
+    @extend %pill__item--processing;
+  }
+  #{$item--success-selector} {
+    @extend %pill__item--success;
+  }
+  #{$item--warning-selector} {
+    @extend %pill__item--warning;
+  }
+  #{$item--error-selector} {
+    @extend %pill__item--error;
   }
 }
 
@@ -8820,6 +9863,7 @@
   $list-box: true,
   $markdown-viewer: true,
   $navigation-list: true,
+  $pills: true,
   $radio-group: true,
   $segmented-control: true,
   $sidebar: true,
@@ -17104,6 +18148,9 @@
     @include navigation-list();
   }
 
+  @if $pills {
+  }
+
   @if $radio-group {
     @include radio-group();
   }
@@ -17206,6 +18253,7 @@
   $list-box: false,
   $markdown-viewer: false,
   $navigation-list: false,
+  $pills: false,
   $radio-group: false,
   $segmented-control: false,
   $sidebar: false,
@@ -17276,6 +18324,7 @@
     $list-box: $list-box,
     $markdown-viewer: $markdown-viewer,
     $navigation-list: $navigation-list,
+    $pills: $pills,
     $radio-group: $radio-group,
     $segmented-control: $segmented-control,
     $sidebar: $sidebar,
