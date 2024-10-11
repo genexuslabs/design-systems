@@ -524,7 +524,7 @@
   }
 
   @if $pills {
-    @include pills();
+    @include pills($add--icon: $icons-variables);
   }
 
   @if $radio-group {

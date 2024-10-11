@@ -37,13 +37,16 @@
     --control__border-color: var(--mer-color__tinted-blue--50);
     --control__bg-color: var(--mer-color__tinted-blue--8);
     --control__color: var(--mer-accent__primary);
-    // override icon styles
+
+    // custom processing icon
     $size: 12px;
     --status-circle-color: transparent;
     --status-circle-size: $size;
+    --status-circle-inset-inline-start: 14px;
+
     &::before {
       // override left
-      left: 14px;
+      inset-inline-start: 14px;
       @include spinner($size);
     }
   }
@@ -83,45 +86,31 @@
     @include item-font();
     @include item-padding();
 
-    // override item border radius for this specific case.
-    // TODO: add a "pill border radius token".
-    --item__border-radius: 16px;
-    --item__padding-inline: var(--mer-spacing--sm);
-
-    // pill without special state
-    // TODO: define with design team how should it look.
-    --item__border-color: var(--mer-border-color__dim);
-    --item__bg-color: transparent;
-    --item__color: var(--mer-text__neutral);
+    &--with-icon {
+      padding-inline-start: var(--mer-spacing--xl);
+      background-repeat: no-repeat;
+      background-size: var(--mer-icon__box--md);
+      background-position: 8px center;
+    }
 
     &--enabled {
-      --item__border-color: var(--mer-border-color__dim);
-      --item__bg-color: transparent;
-      --item__color: var(--mer-text__neutral);
+      background-image: var(--icon__states_pill-filled_highlighted--enabled);
     }
     &--processing {
-      --item__border-color: var(--mer-color__tinted-blue--50);
-      --item__bg-color: var(--mer-color__tinted-blue--8);
-      --item__color: var(--mer-accent__primary);
+      background-image: var(--icon__states_pill-filled_primary--enabled);
     }
     &--success {
-      --item__border-color: var(--mer-color__tinted-green--60);
-      --item__bg-color: var(--mer-color__tinted-green--5);
-      --item__color: var(--mer-text__success);
+      background-image: var(--icon__states_pill-filled_success--enabled);
     }
     &--warning {
-      --item__border-color: var(--mer-color__tinted-yellow--60);
-      --item__bg-color: var(--mer-color__tinted-yellow--5);
-      --item__color: var(--mer-text__warning);
+      background-image: var(--icon__states_pill-filled_warning--enabled);
     }
     &--error {
-      --item__border-color: var(--mer-color__tinted-red--60);
-      --item__bg-color: var(--mer-color__tinted-red--5);
-      --item__color: var(--mer-text__error);
+      background-image: var(--icon__states_pill-filled_error--enabled);
     }
 
-    &--hover {
-      filter: brightness(1.2);
+    &--selected {
+      @include item-colors-selected();
     }
   }
 }
@@ -130,6 +119,7 @@
   // custom icon styles
   --status-circle-color: var(--control__color);
   --status-circle-size: 6px;
+  --status-circle-inset-inline-start: 17px;
 
   position: relative;
   padding-inline-start: 36px;
@@ -137,7 +127,7 @@
     content: "";
     position: absolute;
     background-color: var(--status-circle-color);
-    left: 17px;
+    inset-inline-start: var(--status-circle-inset-inline-start);
     block-size: var(--status-circle-size);
     inline-size: var(--status-circle-size);
     display: inline-block;
@@ -186,6 +176,7 @@
   $item--warning-selector: ".pill::part(item warning)",
   $item--disabled-selector: ".pill::part(item disabled)",
   $item--selected-selector: ".pill::part(item selected)",
+  $add--icon: true,
   $add--disabled: true,
   $add--placeholder: true,
   $add--placeholder-var: true
@@ -196,7 +187,11 @@
 
   #{$pill-selector} {
     @extend %pill;
-    @extend %icon-styles;
+  }
+  @if $add--icon {
+    #{$pill-selector} {
+      @extend %icon-styles;
+    }
   }
 
   #{$pill--enabled-selector} {
@@ -243,8 +238,9 @@
     @include items-container-border-radius();
     --items-container__border-radius: var(--mer-border__radius--lg);
     // TODO: define a items-container-border-radius-sm() and a
-    // items-container-border-radius-md(); since there are two
-    // different container border-radius values
+    // items-container-border-radius-md(); since container radius
+    // of the pills is greater than the other containers:
+    // combo-box, list-box, etc...
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -254,22 +250,31 @@
   #{$item-selector} {
     @extend %pill__item;
   }
-  #{$item-selector}:hover {
-    @extend %pill__item--hover;
+  #{$item--selected-selector} {
+    @extend %pill__item--selected;
   }
-  #{$item--enabled-selector} {
-    @extend %pill__item--enabled;
-  }
-  #{$item--processing-selector} {
-    @extend %pill__item--processing;
-  }
-  #{$item--success-selector} {
-    @extend %pill__item--success;
-  }
-  #{$item--warning-selector} {
-    @extend %pill__item--warning;
-  }
-  #{$item--error-selector} {
-    @extend %pill__item--error;
+
+  @if $add--icon {
+    // custom states
+    #{$item--enabled-selector} {
+      @extend %pill__item--enabled;
+      @extend %pill__item--with-icon;
+    }
+    #{$item--processing-selector} {
+      @extend %pill__item--processing;
+      @extend %pill__item--with-icon;
+    }
+    #{$item--success-selector} {
+      @extend %pill__item--success;
+      @extend %pill__item--with-icon;
+    }
+    #{$item--warning-selector} {
+      @extend %pill__item--warning;
+      @extend %pill__item--with-icon;
+    }
+    #{$item--error-selector} {
+      @extend %pill__item--error;
+      @extend %pill__item--with-icon;
+    }
   }
 }
