@@ -39,6 +39,7 @@ export const getThemeBundles = (basePath) => [
     getThemeModelItem(basePath, "components/list-box"),
     getThemeModelItem(basePath, "components/markdown-viewer", false),
     getThemeModelItem(basePath, "components/navigation-list"),
+    getThemeModelItem(basePath, "components/pills"),
     getThemeModelItem(basePath, "components/radio-group"),
     getThemeModelItem(basePath, "components/segmented-control"),
     getThemeModelItem(basePath, "components/sidebar"),

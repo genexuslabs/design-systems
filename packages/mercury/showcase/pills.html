@@ -35,6 +35,15 @@
               allowing users to select or remove them, enhancing usability and
               clarity in filtering or selection tasks.
             </p>
+            <p class="section__description section__description--note">
+              The Pills component is built on top of the Chameleon
+              <code>ch-combo-box-render</code>. Since the Pills component uses a
+              predefined set of icons, the image-related properties provided by
+              <code>ch-combo-box-render</code> should not be used. However, if
+              you need to use custom icons, you should turn off the default
+              icons, by setting to <code>false</code> the Pills mixin property
+              <code>$add--icon</code>.
+            </p>
           </header>
           <div class="section__articles-container">
             <!-- placeholder -->

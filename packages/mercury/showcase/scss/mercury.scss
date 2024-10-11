@@ -820,17 +820,22 @@
 // Spinner
 // ----------------------
 
-@mixin spinner($scale) {
-  scale: $scale;
-  border: var(--mer-spacing--2xs) var(--mer-color__neutral-gray--800) solid;
-  border-block-start: var(--mer-border__width--lg)
-    var(--mer-color__primary-blue--300) solid;
+@mixin spinner($size) {
+  width: $size;
+  height: $size;
+  border: calc($size / 5) solid var(--mer-color__tinted-blue--50);
+  border-top: calc($size / 5) solid var(--mer-color__primary-blue--300);
   border-radius: 50%;
-  animation: spinner 0.6s infinite linear;
-  inline-size: var(--mer-spacing--xl);
-  block-size: var(--mer-spacing--xl);
-  flex-shrink: 0;
-  opacity: 1;
+  animation: spin var(--mer-timing--regular) linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 /// @group UtilityClasses
@@ -2341,17 +2346,22 @@
 // Spinner
 // ----------------------
 
-@mixin spinner($scale) {
-  scale: $scale;
-  border: var(--mer-spacing--2xs) var(--mer-color__neutral-gray--800) solid;
-  border-block-start: var(--mer-border__width--lg)
-    var(--mer-color__primary-blue--300) solid;
+@mixin spinner($size) {
+  width: $size;
+  height: $size;
+  border: calc($size / 5) solid var(--mer-color__tinted-blue--50);
+  border-top: calc($size / 5) solid var(--mer-color__primary-blue--300);
   border-radius: 50%;
-  animation: spinner 0.6s infinite linear;
-  inline-size: var(--mer-spacing--xl);
-  block-size: var(--mer-spacing--xl);
-  flex-shrink: 0;
-  opacity: 1;
+  animation: spin var(--mer-timing--regular) linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 
@@ -4903,17 +4913,22 @@
 // Spinner
 // ----------------------
 
-@mixin spinner($scale) {
-  scale: $scale;
-  border: var(--mer-spacing--2xs) var(--mer-color__neutral-gray--800) solid;
-  border-block-start: var(--mer-border__width--lg)
-    var(--mer-color__primary-blue--300) solid;
+@mixin spinner($size) {
+  width: $size;
+  height: $size;
+  border: calc($size / 5) solid var(--mer-color__tinted-blue--50);
+  border-top: calc($size / 5) solid var(--mer-color__primary-blue--300);
   border-radius: 50%;
-  animation: spinner 0.6s infinite linear;
-  inline-size: var(--mer-spacing--xl);
-  block-size: var(--mer-spacing--xl);
-  flex-shrink: 0;
-  opacity: 1;
+  animation: spin var(--mer-timing--regular) linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 
@@ -6766,41 +6781,28 @@
 // Spinner
 // ----------------------
 
-@mixin spinner($scale) {
-  scale: $scale;
-  border: var(--mer-spacing--2xs) var(--mer-color__neutral-gray--800) solid;
-  border-block-start: var(--mer-border__width--lg)
-    var(--mer-color__primary-blue--300) solid;
+@mixin spinner($size) {
+  width: $size;
+  height: $size;
+  border: calc($size / 5) solid var(--mer-color__tinted-blue--50);
+  border-top: calc($size / 5) solid var(--mer-color__primary-blue--300);
   border-radius: 50%;
-  animation: spinner 0.6s infinite linear;
-  inline-size: var(--mer-spacing--xl);
-  block-size: var(--mer-spacing--xl);
-  flex-shrink: 0;
-  opacity: 1;
-}
+  animation: spin var(--mer-timing--regular) linear infinite;
 
-
-%icon-styles {
-  // custom icon styles
-  --status-circle-color: var(--control__color);
-  --status-circle-size: 6px;
-
-  position: relative;
-  padding-inline-start: 36px;
-  &::before {
-    content: "";
-    position: absolute;
-    background-color: var(--status-circle-color);
-    left: 17px;
-    block-size: var(--status-circle-size);
-    inline-size: var(--status-circle-size);
-    display: inline-block;
-    border-radius: 50%;
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
 
+
 %pills__container {
   --pills-container__display: flex;
+  flex-wrap: wrap;
   display: var(--pills-container__display);
   gap: var(--mer-spacing--md);
 }
@@ -6834,6 +6836,18 @@
     --control__border-color: var(--mer-color__tinted-blue--50);
     --control__bg-color: var(--mer-color__tinted-blue--8);
     --control__color: var(--mer-accent__primary);
+
+    // custom processing icon
+    $size: 12px;
+    --status-circle-color: transparent;
+    --status-circle-size: $size;
+    --status-circle-inset-inline-start: 14px;
+
+    &::before {
+      // override left
+      inset-inline-start: 14px;
+      @include spinner($size);
+    }
   }
   &--success {
     --control__border-color: var(--mer-color__tinted-green--60);
@@ -6849,6 +6863,10 @@
     --control__border-color: var(--mer-color__tinted-red--60);
     --control__bg-color: var(--mer-color__tinted-red--5);
     --control__color: var(--mer-text__error);
+  }
+
+  &--disabled {
+    @include control-colors-disabled();
   }
 
   &:focus {
@@ -6867,38 +6885,27 @@
     @include item-font();
     @include item-padding();
 
-    // override item border radius for this specific case.
-    // TODO: add a "pill border radius token".
-    --item__border-radius: 16px;
+    &--with-icon {
+      padding-inline-start: var(--mer-spacing--xl);
+      background-repeat: no-repeat;
+      background-size: var(--mer-icon__box--md);
+      background-position: 8px center;
+    }
 
     &--enabled {
-      --item__border-color: var(--mer-border-color__dim);
-      --item__bg-color: transparent;
-      --item__color: var(--mer-text__neutral);
+      background-image: var(--icon__states_pill-filled_highlighted--enabled);
     }
     &--processing {
-      --item__border-color: var(--mer-color__tinted-blue--50);
-      --item__bg-color: var(--mer-color__tinted-blue--8);
-      --item__color: var(--mer-accent__primary);
+      background-image: var(--icon__states_pill-filled_primary--enabled);
     }
     &--success {
-      --item__border-color: var(--mer-color__tinted-green--60);
-      --item__bg-color: var(--mer-color__tinted-green--5);
-      --item__color: var(--mer-text__success);
+      background-image: var(--icon__states_pill-filled_success--enabled);
     }
     &--warning {
-      --item__border-color: var(--mer-color__tinted-yellow--60);
-      --item__bg-color: var(--mer-color__tinted-yellow--5);
-      --item__color: var(--mer-text__warning);
+      background-image: var(--icon__states_pill-filled_warning--enabled);
     }
     &--error {
-      --item__border-color: var(--mer-color__tinted-red--60);
-      --item__bg-color: var(--mer-color__tinted-red--5);
-      --item__color: var(--mer-text__error);
-    }
-
-    &--hover {
-      filter: brightness(1.15);
+      background-image: var(--icon__states_pill-filled_error--enabled);
     }
 
     &--selected {
@@ -6907,23 +6914,53 @@
   }
 }
 
-/// @group ComboBox
-/// @param {String} $pills-container-selector [".pills-container"] -
-/// @param {String} $pills-selector [".pills"] -
-/// @param {String} $pills--disabled-selector [".pills[disabled]"] -
-/// @param {String} $pills--error-selector [".pills-error"] -
-/// @param {String} $pills__placeholder-selector [".pills::part(placeholder)"] -
-/// @param {String} $window-selector [".pills::part(window)"] -
-/// @param {String} $item-selector [".pills::part(item)"] -
-/// @param {String} $item--disabled-selector [".pills::part(item disabled)"] -
-/// @param {String} $item--selected-selector [".pills::part(item selected)"] -
-/// @param {Boolean} $add--disabled [true] -
-/// @param {Boolean} $add--placeholder [true] -
-/// @param {Boolean} $add--placeholder-var [true] -
+%icon-styles {
+  // custom icon styles
+  --status-circle-color: var(--control__color);
+  --status-circle-size: 6px;
+  --status-circle-inset-inline-start: 17px;
+
+  position: relative;
+  padding-inline-start: 36px;
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: var(--status-circle-color);
+    inset-inline-start: var(--status-circle-inset-inline-start);
+    block-size: var(--status-circle-size);
+    inline-size: var(--status-circle-size);
+    display: inline-block;
+    border-radius: 50%;
+  }
+}
+
+/// @group Pills
+/// @param {String} $pills-container-selector [".pills-container"]
+/// @param {String} $pill-selector [".pill"]
+/// @param {String} $pill--enabled-selector [".pill[part='enabled']"]
+/// @param {String} $pill--processing-selector [".pill[part='processing']"]
+/// @param {String} $pill--success-selector [".pill[part='success']"]
+/// @param {String} $pill--error-selector [".pill[part='error']"]
+/// @param {String} $pill--warning-selector [".pill[part='warning']"]
+/// @param {String} $pills__placeholder-selector [".pills::part(placeholder)"]
+/// @param {String} $window-selector [".pill::part(window)"]
+/// @param {String} $item-selector [".pill::part(item)"]
+/// @param {String} $item--enabled-selector [".pill::part(item enabled)"]
+/// @param {String} $item--processing-selector [".pill::part(item processing)"]
+/// @param {String} $item--success-selector [".pill::part(item success)"]
+/// @param {String} $item--error-selector [".pill::part(item error)"]
+/// @param {String} $item--warning-selector [".pill::part(item warning)"]
+/// @param {String} $item--disabled-selector [".pill::part(item disabled)"]
+/// @param {String} $item--selected-selector [".pill::part(item selected)"]
+/// @param {Boolean} $add--disabled [true]
+/// @param {Boolean} $add--placeholder [true]
+/// @param {Boolean} $add--placeholder-var [true]
+/// @param {Boolean} $add--error [true]
 @mixin pills(
   $pills-container-selector: ".pills-container",
   $pill-selector: ".pill",
   $pill--enabled-selector: ".pill[part='enabled']",
+  $pill--disabled-selector: ".pill[disabled]",
   $pill--processing-selector: ".pill[part='processing']",
   $pill--success-selector: ".pill[part='success']",
   $pill--error-selector: ".pill[part='error']",
@@ -6938,10 +6975,10 @@
   $item--warning-selector: ".pill::part(item warning)",
   $item--disabled-selector: ".pill::part(item disabled)",
   $item--selected-selector: ".pill::part(item selected)",
+  $add--icon: true,
   $add--disabled: true,
   $add--placeholder: true,
-  $add--placeholder-var: true,
-  $add--error: true
+  $add--placeholder-var: true
 ) {
   #{$pills-container-selector} {
     @extend %pills__container;
@@ -6949,11 +6986,18 @@
 
   #{$pill-selector} {
     @extend %pill;
-    @extend %icon-styles;
+  }
+  @if $add--icon {
+    #{$pill-selector} {
+      @extend %icon-styles;
+    }
   }
 
   #{$pill--enabled-selector} {
     @extend %pill--enabled;
+  }
+  #{$pill--disabled-selector} {
+    @extend %pill--disabled;
   }
   #{$pill--processing-selector} {
     @extend %pill--processing;
@@ -6983,6 +7027,7 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                 Window
   // - - - - - - - - - - - - - - - - - - - -
+
   #{$window-selector} {
     @include items-container-colors();
     @include items-container-padding();
@@ -6992,8 +7037,9 @@
     @include items-container-border-radius();
     --items-container__border-radius: var(--mer-border__radius--lg);
     // TODO: define a items-container-border-radius-sm() and a
-    // items-container-border-radius-md(); since there are two
-    // different container border-radius values
+    // items-container-border-radius-md(); since container radius
+    // of the pills is greater than the other containers:
+    // combo-box, list-box, etc...
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -7003,23 +7049,32 @@
   #{$item-selector} {
     @extend %pill__item;
   }
-  #{$item-selector}:hover {
-    @extend %pill__item--hover;
+  #{$item--selected-selector} {
+    @extend %pill__item--selected;
   }
-  #{$item--enabled-selector} {
-    @extend %pill__item--enabled;
-  }
-  #{$item--processing-selector} {
-    @extend %pill__item--processing;
-  }
-  #{$item--success-selector} {
-    @extend %pill__item--success;
-  }
-  #{$item--warning-selector} {
-    @extend %pill__item--warning;
-  }
-  #{$item--error-selector} {
-    @extend %pill__item--error;
+
+  @if $add--icon {
+    // custom states
+    #{$item--enabled-selector} {
+      @extend %pill__item--enabled;
+      @extend %pill__item--with-icon;
+    }
+    #{$item--processing-selector} {
+      @extend %pill__item--processing;
+      @extend %pill__item--with-icon;
+    }
+    #{$item--success-selector} {
+      @extend %pill__item--success;
+      @extend %pill__item--with-icon;
+    }
+    #{$item--warning-selector} {
+      @extend %pill__item--warning;
+      @extend %pill__item--with-icon;
+    }
+    #{$item--error-selector} {
+      @extend %pill__item--error;
+      @extend %pill__item--with-icon;
+    }
   }
 }
 
@@ -13550,15 +13605,15 @@
   --icon__system_dark-mode_primary--hover: url('#{$icons-path}system/light/dark-mode.svg#primary--hover'); 
   --icon__system_dark-mode_primary--active: url('#{$icons-path}system/light/dark-mode.svg#primary--active'); 
   --icon__system_dark-mode_primary--disabled: url('#{$icons-path}system/light/dark-mode.svg#primary--disabled'); 
-  --icon__system_cut_on-surface--enabled: url('#{$icons-path}system/light/cut.svg#on-surface--enabled'); 
-  --icon__system_cut_on-surface--hover: url('#{$icons-path}system/light/cut.svg#on-surface--hover'); 
-  --icon__system_cut_on-surface--active: url('#{$icons-path}system/light/cut.svg#on-surface--active'); 
-  --icon__system_cut_on-surface--disabled: url('#{$icons-path}system/light/cut.svg#on-surface--disabled'); 
-  --icon__system_cut_on-elevation--enabled: url('#{$icons-path}system/light/cut.svg#on-elevation--enabled'); 
-  --icon__system_cut_primary--enabled: url('#{$icons-path}system/light/cut.svg#primary--enabled'); 
-  --icon__system_cut_primary--hover: url('#{$icons-path}system/light/cut.svg#primary--hover'); 
-  --icon__system_cut_primary--active: url('#{$icons-path}system/light/cut.svg#primary--active'); 
-  --icon__system_cut_primary--disabled: url('#{$icons-path}system/light/cut.svg#primary--disabled'); 
+  --icon__system_Cut_on-surface--enabled: url('#{$icons-path}system/light/Cut.svg#on-surface--enabled'); 
+  --icon__system_Cut_on-surface--hover: url('#{$icons-path}system/light/Cut.svg#on-surface--hover'); 
+  --icon__system_Cut_on-surface--active: url('#{$icons-path}system/light/Cut.svg#on-surface--active'); 
+  --icon__system_Cut_on-surface--disabled: url('#{$icons-path}system/light/Cut.svg#on-surface--disabled'); 
+  --icon__system_Cut_on-elevation--enabled: url('#{$icons-path}system/light/Cut.svg#on-elevation--enabled'); 
+  --icon__system_Cut_primary--enabled: url('#{$icons-path}system/light/Cut.svg#primary--enabled'); 
+  --icon__system_Cut_primary--hover: url('#{$icons-path}system/light/Cut.svg#primary--hover'); 
+  --icon__system_Cut_primary--active: url('#{$icons-path}system/light/Cut.svg#primary--active'); 
+  --icon__system_Cut_primary--disabled: url('#{$icons-path}system/light/Cut.svg#primary--disabled'); 
   --icon__system_copy_on-surface--enabled: url('#{$icons-path}system/light/copy.svg#on-surface--enabled'); 
   --icon__system_copy_on-surface--hover: url('#{$icons-path}system/light/copy.svg#on-surface--hover'); 
   --icon__system_copy_on-surface--active: url('#{$icons-path}system/light/copy.svg#on-surface--active'); 
@@ -13595,15 +13650,15 @@
   --icon__system_check_primary--hover: url('#{$icons-path}system/light/check.svg#primary--hover'); 
   --icon__system_check_primary--active: url('#{$icons-path}system/light/check.svg#primary--active'); 
   --icon__system_check_primary--disabled: url('#{$icons-path}system/light/check.svg#primary--disabled'); 
-  --icon__system_card_on-surface--enabled: url('#{$icons-path}system/light/card.svg#on-surface--enabled'); 
-  --icon__system_card_on-surface--hover: url('#{$icons-path}system/light/card.svg#on-surface--hover'); 
-  --icon__system_card_on-surface--active: url('#{$icons-path}system/light/card.svg#on-surface--active'); 
-  --icon__system_card_on-surface--disabled: url('#{$icons-path}system/light/card.svg#on-surface--disabled'); 
-  --icon__system_card_on-elevation--enabled: url('#{$icons-path}system/light/card.svg#on-elevation--enabled'); 
-  --icon__system_card_primary--enabled: url('#{$icons-path}system/light/card.svg#primary--enabled'); 
-  --icon__system_card_primary--hover: url('#{$icons-path}system/light/card.svg#primary--hover'); 
-  --icon__system_card_primary--active: url('#{$icons-path}system/light/card.svg#primary--active'); 
-  --icon__system_card_primary--disabled: url('#{$icons-path}system/light/card.svg#primary--disabled'); 
+  --icon__system_Card_on-surface--enabled: url('#{$icons-path}system/light/Card.svg#on-surface--enabled'); 
+  --icon__system_Card_on-surface--hover: url('#{$icons-path}system/light/Card.svg#on-surface--hover'); 
+  --icon__system_Card_on-surface--active: url('#{$icons-path}system/light/Card.svg#on-surface--active'); 
+  --icon__system_Card_on-surface--disabled: url('#{$icons-path}system/light/Card.svg#on-surface--disabled'); 
+  --icon__system_Card_on-elevation--enabled: url('#{$icons-path}system/light/Card.svg#on-elevation--enabled'); 
+  --icon__system_Card_primary--enabled: url('#{$icons-path}system/light/Card.svg#primary--enabled'); 
+  --icon__system_Card_primary--hover: url('#{$icons-path}system/light/Card.svg#primary--hover'); 
+  --icon__system_Card_primary--active: url('#{$icons-path}system/light/Card.svg#primary--active'); 
+  --icon__system_Card_primary--disabled: url('#{$icons-path}system/light/Card.svg#primary--disabled'); 
   --icon__system_card-variant_on-surface--enabled: url('#{$icons-path}system/light/card-variant.svg#on-surface--enabled'); 
   --icon__system_card-variant_on-surface--hover: url('#{$icons-path}system/light/card-variant.svg#on-surface--hover'); 
   --icon__system_card-variant_on-surface--active: url('#{$icons-path}system/light/card-variant.svg#on-surface--active'); 
@@ -14207,15 +14262,15 @@
   --icon__system_dark-mode_primary--hover: url('#{$icons-path}system/dark/dark-mode.svg#primary--hover'); 
   --icon__system_dark-mode_primary--active: url('#{$icons-path}system/dark/dark-mode.svg#primary--active'); 
   --icon__system_dark-mode_primary--disabled: url('#{$icons-path}system/dark/dark-mode.svg#primary--disabled'); 
-  --icon__system_cut_on-surface--enabled: url('#{$icons-path}system/dark/cut.svg#on-surface--enabled'); 
-  --icon__system_cut_on-surface--hover: url('#{$icons-path}system/dark/cut.svg#on-surface--hover'); 
-  --icon__system_cut_on-surface--active: url('#{$icons-path}system/dark/cut.svg#on-surface--active'); 
-  --icon__system_cut_on-surface--disabled: url('#{$icons-path}system/dark/cut.svg#on-surface--disabled'); 
-  --icon__system_cut_on-elevation--enabled: url('#{$icons-path}system/dark/cut.svg#on-elevation--enabled'); 
-  --icon__system_cut_primary--enabled: url('#{$icons-path}system/dark/cut.svg#primary--enabled'); 
-  --icon__system_cut_primary--hover: url('#{$icons-path}system/dark/cut.svg#primary--hover'); 
-  --icon__system_cut_primary--active: url('#{$icons-path}system/dark/cut.svg#primary--active'); 
-  --icon__system_cut_primary--disabled: url('#{$icons-path}system/dark/cut.svg#primary--disabled'); 
+  --icon__system_Cut_on-surface--enabled: url('#{$icons-path}system/dark/Cut.svg#on-surface--enabled'); 
+  --icon__system_Cut_on-surface--hover: url('#{$icons-path}system/dark/Cut.svg#on-surface--hover'); 
+  --icon__system_Cut_on-surface--active: url('#{$icons-path}system/dark/Cut.svg#on-surface--active'); 
+  --icon__system_Cut_on-surface--disabled: url('#{$icons-path}system/dark/Cut.svg#on-surface--disabled'); 
+  --icon__system_Cut_on-elevation--enabled: url('#{$icons-path}system/dark/Cut.svg#on-elevation--enabled'); 
+  --icon__system_Cut_primary--enabled: url('#{$icons-path}system/dark/Cut.svg#primary--enabled'); 
+  --icon__system_Cut_primary--hover: url('#{$icons-path}system/dark/Cut.svg#primary--hover'); 
+  --icon__system_Cut_primary--active: url('#{$icons-path}system/dark/Cut.svg#primary--active'); 
+  --icon__system_Cut_primary--disabled: url('#{$icons-path}system/dark/Cut.svg#primary--disabled'); 
   --icon__system_copy_on-surface--enabled: url('#{$icons-path}system/dark/copy.svg#on-surface--enabled'); 
   --icon__system_copy_on-surface--hover: url('#{$icons-path}system/dark/copy.svg#on-surface--hover'); 
   --icon__system_copy_on-surface--active: url('#{$icons-path}system/dark/copy.svg#on-surface--active'); 
@@ -14252,15 +14307,15 @@
   --icon__system_check_primary--hover: url('#{$icons-path}system/dark/check.svg#primary--hover'); 
   --icon__system_check_primary--active: url('#{$icons-path}system/dark/check.svg#primary--active'); 
   --icon__system_check_primary--disabled: url('#{$icons-path}system/dark/check.svg#primary--disabled'); 
-  --icon__system_card_on-surface--enabled: url('#{$icons-path}system/dark/card.svg#on-surface--enabled'); 
-  --icon__system_card_on-surface--hover: url('#{$icons-path}system/dark/card.svg#on-surface--hover'); 
-  --icon__system_card_on-surface--active: url('#{$icons-path}system/dark/card.svg#on-surface--active'); 
-  --icon__system_card_on-surface--disabled: url('#{$icons-path}system/dark/card.svg#on-surface--disabled'); 
-  --icon__system_card_on-elevation--enabled: url('#{$icons-path}system/dark/card.svg#on-elevation--enabled'); 
-  --icon__system_card_primary--enabled: url('#{$icons-path}system/dark/card.svg#primary--enabled'); 
-  --icon__system_card_primary--hover: url('#{$icons-path}system/dark/card.svg#primary--hover'); 
-  --icon__system_card_primary--active: url('#{$icons-path}system/dark/card.svg#primary--active'); 
-  --icon__system_card_primary--disabled: url('#{$icons-path}system/dark/card.svg#primary--disabled'); 
+  --icon__system_Card_on-surface--enabled: url('#{$icons-path}system/dark/Card.svg#on-surface--enabled'); 
+  --icon__system_Card_on-surface--hover: url('#{$icons-path}system/dark/Card.svg#on-surface--hover'); 
+  --icon__system_Card_on-surface--active: url('#{$icons-path}system/dark/Card.svg#on-surface--active'); 
+  --icon__system_Card_on-surface--disabled: url('#{$icons-path}system/dark/Card.svg#on-surface--disabled'); 
+  --icon__system_Card_on-elevation--enabled: url('#{$icons-path}system/dark/Card.svg#on-elevation--enabled'); 
+  --icon__system_Card_primary--enabled: url('#{$icons-path}system/dark/Card.svg#primary--enabled'); 
+  --icon__system_Card_primary--hover: url('#{$icons-path}system/dark/Card.svg#primary--hover'); 
+  --icon__system_Card_primary--active: url('#{$icons-path}system/dark/Card.svg#primary--active'); 
+  --icon__system_Card_primary--disabled: url('#{$icons-path}system/dark/Card.svg#primary--disabled'); 
   --icon__system_card-variant_on-surface--enabled: url('#{$icons-path}system/dark/card-variant.svg#on-surface--enabled'); 
   --icon__system_card-variant_on-surface--hover: url('#{$icons-path}system/dark/card-variant.svg#on-surface--hover'); 
   --icon__system_card-variant_on-surface--active: url('#{$icons-path}system/dark/card-variant.svg#on-surface--active'); 
@@ -14351,6 +14406,57 @@
   --icon__system_add-circle_primary--hover: url('#{$icons-path}system/dark/add-circle.svg#primary--hover'); 
   --icon__system_add-circle_primary--active: url('#{$icons-path}system/dark/add-circle.svg#primary--active'); 
   --icon__system_add-circle_primary--disabled: url('#{$icons-path}system/dark/add-circle.svg#primary--disabled'); 
+
+  }
+  
+
+  /* =================================
+  LIGHT CUSTOM PROPERTIES
+  ================================= */
+
+  :root.light {
+  /*states*/
+  --icon__states_pill-outlined_primary--enabled: url('#{$icons-path}states/light/pill-outlined.svg#primary--enabled'); 
+  --icon__states_pill-outlined_primary--hover: url('#{$icons-path}states/light/pill-outlined.svg#primary--hover'); 
+  --icon__states_pill-outlined_primary--active: url('#{$icons-path}states/light/pill-outlined.svg#primary--active'); 
+  --icon__states_pill-outlined_primary--disabled: url('#{$icons-path}states/light/pill-outlined.svg#primary--disabled'); 
+  --icon__states_pill-outlined_error--enabled: url('#{$icons-path}states/light/pill-outlined.svg#error--enabled'); 
+  --icon__states_pill-outlined_warning--enabled: url('#{$icons-path}states/light/pill-outlined.svg#warning--enabled'); 
+  --icon__states_pill-outlined_success--enabled: url('#{$icons-path}states/light/pill-outlined.svg#success--enabled'); 
+  --icon__states_pill-outlined_highlighted--enabled: url('#{$icons-path}states/light/pill-outlined.svg#highlighted--enabled'); 
+  --icon__states_pill-filled_primary--enabled: url('#{$icons-path}states/light/pill-filled.svg#primary--enabled'); 
+  --icon__states_pill-filled_primary--hover: url('#{$icons-path}states/light/pill-filled.svg#primary--hover'); 
+  --icon__states_pill-filled_primary--active: url('#{$icons-path}states/light/pill-filled.svg#primary--active'); 
+  --icon__states_pill-filled_primary--disabled: url('#{$icons-path}states/light/pill-filled.svg#primary--disabled'); 
+  --icon__states_pill-filled_error--enabled: url('#{$icons-path}states/light/pill-filled.svg#error--enabled'); 
+  --icon__states_pill-filled_warning--enabled: url('#{$icons-path}states/light/pill-filled.svg#warning--enabled'); 
+  --icon__states_pill-filled_success--enabled: url('#{$icons-path}states/light/pill-filled.svg#success--enabled'); 
+  --icon__states_pill-filled_highlighted--enabled: url('#{$icons-path}states/light/pill-filled.svg#highlighted--enabled'); 
+
+  }
+
+  /* =================================
+  DARK CUSTOM PROPERTIES
+  ================================= */
+
+  :root.dark {
+  /*states*/
+  --icon__states_pill-outlined_primary--enabled: url('#{$icons-path}states/dark/pill-outlined.svg#primary--enabled'); 
+  --icon__states_pill-outlined_primary--hover: url('#{$icons-path}states/dark/pill-outlined.svg#primary--hover'); 
+  --icon__states_pill-outlined_primary--active: url('#{$icons-path}states/dark/pill-outlined.svg#primary--active'); 
+  --icon__states_pill-outlined_primary--disabled: url('#{$icons-path}states/dark/pill-outlined.svg#primary--disabled'); 
+  --icon__states_pill-outlined_error--enabled: url('#{$icons-path}states/dark/pill-outlined.svg#error--enabled'); 
+  --icon__states_pill-outlined_warning--enabled: url('#{$icons-path}states/dark/pill-outlined.svg#warning--enabled'); 
+  --icon__states_pill-outlined_success--enabled: url('#{$icons-path}states/dark/pill-outlined.svg#success--enabled'); 
+  --icon__states_pill-outlined_highlighted--enabled: url('#{$icons-path}states/dark/pill-outlined.svg#highlighted--enabled'); 
+  --icon__states_pill-filled_primary--enabled: url('#{$icons-path}states/dark/pill-filled.svg#primary--enabled'); 
+  --icon__states_pill-filled_primary--hover: url('#{$icons-path}states/dark/pill-filled.svg#primary--hover'); 
+  --icon__states_pill-filled_primary--active: url('#{$icons-path}states/dark/pill-filled.svg#primary--active'); 
+  --icon__states_pill-filled_primary--disabled: url('#{$icons-path}states/dark/pill-filled.svg#primary--disabled'); 
+  --icon__states_pill-filled_error--enabled: url('#{$icons-path}states/dark/pill-filled.svg#error--enabled'); 
+  --icon__states_pill-filled_warning--enabled: url('#{$icons-path}states/dark/pill-filled.svg#warning--enabled'); 
+  --icon__states_pill-filled_success--enabled: url('#{$icons-path}states/dark/pill-filled.svg#success--enabled'); 
+  --icon__states_pill-filled_highlighted--enabled: url('#{$icons-path}states/dark/pill-filled.svg#highlighted--enabled'); 
 
   }
   
@@ -18149,6 +18255,7 @@
   }
 
   @if $pills {
+    @include pills($add--icon: $icons-variables);
   }
 
   @if $radio-group {
