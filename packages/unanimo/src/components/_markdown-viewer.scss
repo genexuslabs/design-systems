@@ -95,10 +95,10 @@
   // - - - - - - - - - - - - - - - - - - - -
   // Table
   table {
-    display: block;
     inline-size: max-content;
     border: 1px solid var(--border-color__mild);
     border-spacing: 0;
+    border-collapse: collapse;
 
     & > thead > tr {
       @extend %heading-4;
@@ -106,9 +106,9 @@
     }
   }
 
-  // Cells
-  td {
-    border-block-start: 1px solid var(--border-color__mild);
+  // Rows
+  tr {
+    border-block: 1px solid var(--border-color__mild);
   }
 
   // Header and body cells
@@ -116,12 +116,6 @@
   td {
     padding: var(--spacing--m);
     border-inline-start: 1px solid var(--border-color__mild);
-  }
-
-  // Remove left border in the first cell of each row
-  tr > td:first-child,
-  tr > th:first-child {
-    border-inline-start: unset;
   }
 
   thead > tr,
