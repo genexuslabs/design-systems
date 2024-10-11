@@ -1,0 +1,51 @@
+
+  /* =================================
+  LIGHT CUSTOM PROPERTIES
+  ================================= */
+
+  :root.light {
+  /*states*/
+  --icon__states_pill-outlined_primary--enabled: url('#{$icons-path}states/light/pill-outlined.svg#primary--enabled'); 
+  --icon__states_pill-outlined_primary--hover: url('#{$icons-path}states/light/pill-outlined.svg#primary--hover'); 
+  --icon__states_pill-outlined_primary--active: url('#{$icons-path}states/light/pill-outlined.svg#primary--active'); 
+  --icon__states_pill-outlined_primary--disabled: url('#{$icons-path}states/light/pill-outlined.svg#primary--disabled'); 
+  --icon__states_pill-outlined_error--enabled: url('#{$icons-path}states/light/pill-outlined.svg#error--enabled'); 
+  --icon__states_pill-outlined_warning--enabled: url('#{$icons-path}states/light/pill-outlined.svg#warning--enabled'); 
+  --icon__states_pill-outlined_success--enabled: url('#{$icons-path}states/light/pill-outlined.svg#success--enabled'); 
+  --icon__states_pill-outlined_highlighted--enabled: url('#{$icons-path}states/light/pill-outlined.svg#highlighted--enabled'); 
+  --icon__states_pill-filled_primary--enabled: url('#{$icons-path}states/light/pill-filled.svg#primary--enabled'); 
+  --icon__states_pill-filled_primary--hover: url('#{$icons-path}states/light/pill-filled.svg#primary--hover'); 
+  --icon__states_pill-filled_primary--active: url('#{$icons-path}states/light/pill-filled.svg#primary--active'); 
+  --icon__states_pill-filled_primary--disabled: url('#{$icons-path}states/light/pill-filled.svg#primary--disabled'); 
+  --icon__states_pill-filled_error--enabled: url('#{$icons-path}states/light/pill-filled.svg#error--enabled'); 
+  --icon__states_pill-filled_warning--enabled: url('#{$icons-path}states/light/pill-filled.svg#warning--enabled'); 
+  --icon__states_pill-filled_success--enabled: url('#{$icons-path}states/light/pill-filled.svg#success--enabled'); 
+  --icon__states_pill-filled_highlighted--enabled: url('#{$icons-path}states/light/pill-filled.svg#highlighted--enabled'); 
+
+  }
+
+  /* =================================
+  DARK CUSTOM PROPERTIES
+  ================================= */
+
+  :root.dark {
+  /*states*/
+  --icon__states_pill-outlined_primary--enabled: url('#{$icons-path}states/dark/pill-outlined.svg#primary--enabled'); 
+  --icon__states_pill-outlined_primary--hover: url('#{$icons-path}states/dark/pill-outlined.svg#primary--hover'); 
+  --icon__states_pill-outlined_primary--active: url('#{$icons-path}states/dark/pill-outlined.svg#primary--active'); 
+  --icon__states_pill-outlined_primary--disabled: url('#{$icons-path}states/dark/pill-outlined.svg#primary--disabled'); 
+  --icon__states_pill-outlined_error--enabled: url('#{$icons-path}states/dark/pill-outlined.svg#error--enabled'); 
+  --icon__states_pill-outlined_warning--enabled: url('#{$icons-path}states/dark/pill-outlined.svg#warning--enabled'); 
+  --icon__states_pill-outlined_success--enabled: url('#{$icons-path}states/dark/pill-outlined.svg#success--enabled'); 
+  --icon__states_pill-outlined_highlighted--enabled: url('#{$icons-path}states/dark/pill-outlined.svg#highlighted--enabled'); 
+  --icon__states_pill-filled_primary--enabled: url('#{$icons-path}states/dark/pill-filled.svg#primary--enabled'); 
+  --icon__states_pill-filled_primary--hover: url('#{$icons-path}states/dark/pill-filled.svg#primary--hover'); 
+  --icon__states_pill-filled_primary--active: url('#{$icons-path}states/dark/pill-filled.svg#primary--active'); 
+  --icon__states_pill-filled_primary--disabled: url('#{$icons-path}states/dark/pill-filled.svg#primary--disabled'); 
+  --icon__states_pill-filled_error--enabled: url('#{$icons-path}states/dark/pill-filled.svg#error--enabled'); 
+  --icon__states_pill-filled_warning--enabled: url('#{$icons-path}states/dark/pill-filled.svg#warning--enabled'); 
+  --icon__states_pill-filled_success--enabled: url('#{$icons-path}states/dark/pill-filled.svg#success--enabled'); 
+  --icon__states_pill-filled_highlighted--enabled: url('#{$icons-path}states/dark/pill-filled.svg#highlighted--enabled'); 
+
+  }
+  
