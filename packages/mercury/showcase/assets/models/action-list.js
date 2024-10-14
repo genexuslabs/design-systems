@@ -98,7 +98,8 @@ export const keyboardNavigation = [
       {
         id: "item 1.1",
         type: "actionable",
-        caption: "item 1.1"
+        caption: "item 1.1",
+        selected: true
       },
       {
         id: "item 1.2",

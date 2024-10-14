@@ -1,0 +1,280 @@
+@import "../../../../common/resets";
+@import "../../base/common";
+
+%pills__container {
+  --pills-container__display: flex;
+  flex-wrap: wrap;
+  display: var(--pills-container__display);
+  gap: var(--mer-spacing--md);
+}
+
+%pill {
+  // chameleon custom vars (do not edit the --ch-* vars names)
+  --ch-pills-separation-y: var(--mer-spacing--3xs);
+  --ch-pills-item-gap: var(--mer-spacing--xs);
+  --ch-pills-item__image-size: var(--mer-spacing--md);
+  --ch-pills-item__background-image-size: 100%;
+  --ch-pills-group__expandable-button-size: var(--mer-spacing--md);
+  --ch-pills-group__expandable-button-image-size: var(--mer-spacing--sm);
+
+  // "control" tokens overrides
+  --control__border-radius: var(--mer-spacing--md);
+  --control__padding-inline: var(--mer-spacing--sm);
+
+  @include control-border();
+  @include control-colors-enabled();
+  @include control-font-weight-semi-bold();
+  @include control-font-size-regular();
+  @include control-padding-inline-block();
+
+  // states
+  &--enabled {
+    --control__border-color: var(--mer-border-color__dim);
+    --control__bg-color: transparent;
+    --control__color: var(--mer-text__neutral);
+  }
+  &--processing {
+    --control__border-color: var(--mer-color__tinted-blue--50);
+    --control__bg-color: var(--mer-color__tinted-blue--8);
+    --control__color: var(--mer-accent__primary);
+
+    // custom processing icon
+    $size: 12px;
+    --status-circle-color: transparent;
+    --status-circle-size: $size;
+    --status-circle-inset-inline-start: 14px;
+
+    &::before {
+      // override left
+      inset-inline-start: 14px;
+      @include spinner($size);
+    }
+  }
+  &--success {
+    --control__border-color: var(--mer-color__tinted-green--60);
+    --control__bg-color: var(--mer-color__tinted-green--5);
+    --control__color: var(--mer-text__success);
+  }
+  &--warning {
+    --control__border-color: var(--mer-color__tinted-yellow--60);
+    --control__bg-color: var(--mer-color__tinted-yellow--5);
+    --control__color: var(--mer-text__warning);
+  }
+  &--error {
+    --control__border-color: var(--mer-color__tinted-red--60);
+    --control__bg-color: var(--mer-color__tinted-red--5);
+    --control__color: var(--mer-text__error);
+  }
+
+  &--disabled {
+    @include control-colors-disabled();
+  }
+
+  &:focus {
+    @include focus-outline();
+  }
+
+  &:hover {
+    @include control-colors-hover();
+  }
+
+  // items
+  &__item {
+    @include item-colors-enabled();
+    @include item-border();
+    @include item-border-radius();
+    @include item-font();
+    @include item-padding();
+
+    &--with-icon {
+      padding-inline-start: var(--mer-spacing--xl);
+      background-repeat: no-repeat;
+      background-size: var(--mer-icon__box--md);
+      background-position: 8px center;
+    }
+
+    &--enabled {
+      background-image: var(--icon__states_pill-filled_highlighted--enabled);
+    }
+    &--processing {
+      background-image: var(--icon__states_pill-filled_primary--enabled);
+    }
+    &--success {
+      background-image: var(--icon__states_pill-filled_success--enabled);
+    }
+    &--warning {
+      background-image: var(--icon__states_pill-filled_warning--enabled);
+    }
+    &--error {
+      background-image: var(--icon__states_pill-filled_error--enabled);
+    }
+
+    &--selected {
+      @include item-colors-selected();
+    }
+  }
+}
+
+%icon-styles {
+  // custom icon styles
+  --status-circle-color: var(--control__color);
+  --status-circle-size: 6px;
+  --status-circle-inset-inline-start: 17px;
+
+  position: relative;
+  padding-inline-start: 36px;
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: var(--status-circle-color);
+    inset-inline-start: var(--status-circle-inset-inline-start);
+    block-size: var(--status-circle-size);
+    inline-size: var(--status-circle-size);
+    display: inline-block;
+    border-radius: 50%;
+  }
+}
+
+/// @group Pills
+/// @param {String} $pills-container-selector [".pills-container"]
+/// @param {String} $pill-selector [".pill"]
+/// @param {String} $pill--enabled-selector [".pill[part='enabled']"]
+/// @param {String} $pill--processing-selector [".pill[part='processing']"]
+/// @param {String} $pill--success-selector [".pill[part='success']"]
+/// @param {String} $pill--error-selector [".pill[part='error']"]
+/// @param {String} $pill--warning-selector [".pill[part='warning']"]
+/// @param {String} $pills__placeholder-selector [".pills::part(placeholder)"]
+/// @param {String} $window-selector [".pill::part(window)"]
+/// @param {String} $item-selector [".pill::part(item)"]
+/// @param {String} $item--enabled-selector [".pill::part(item enabled)"]
+/// @param {String} $item--processing-selector [".pill::part(item processing)"]
+/// @param {String} $item--success-selector [".pill::part(item success)"]
+/// @param {String} $item--error-selector [".pill::part(item error)"]
+/// @param {String} $item--warning-selector [".pill::part(item warning)"]
+/// @param {String} $item--disabled-selector [".pill::part(item disabled)"]
+/// @param {String} $item--selected-selector [".pill::part(item selected)"]
+/// @param {Boolean} $add--disabled [true]
+/// @param {Boolean} $add--placeholder [true]
+/// @param {Boolean} $add--placeholder-var [true]
+/// @param {Boolean} $add--error [true]
+@mixin pills(
+  $pills-container-selector: ".pills-container",
+  $pill-selector: ".pill",
+  $pill--enabled-selector: ".pill[part='enabled']",
+  $pill--disabled-selector: ".pill[disabled]",
+  $pill--processing-selector: ".pill[part='processing']",
+  $pill--success-selector: ".pill[part='success']",
+  $pill--error-selector: ".pill[part='error']",
+  $pill--warning-selector: ".pill[part='warning']",
+  $pills__placeholder-selector: ".pills::part(placeholder)",
+  $window-selector: ".pill::part(window)",
+  $item-selector: ".pill::part(item)",
+  $item--enabled-selector: ".pill::part(item enabled)",
+  $item--processing-selector: ".pill::part(item processing)",
+  $item--success-selector: ".pill::part(item success)",
+  $item--error-selector: ".pill::part(item error)",
+  $item--warning-selector: ".pill::part(item warning)",
+  $item--disabled-selector: ".pill::part(item disabled)",
+  $item--selected-selector: ".pill::part(item selected)",
+  $add--icon: true,
+  $add--disabled: true,
+  $add--placeholder: true,
+  $add--placeholder-var: true
+) {
+  #{$pills-container-selector} {
+    @extend %pills__container;
+  }
+
+  #{$pill-selector} {
+    @extend %pill;
+  }
+  @if $add--icon {
+    #{$pill-selector} {
+      @extend %icon-styles;
+    }
+  }
+
+  #{$pill--enabled-selector} {
+    @extend %pill--enabled;
+  }
+  #{$pill--disabled-selector} {
+    @extend %pill--disabled;
+  }
+  #{$pill--processing-selector} {
+    @extend %pill--processing;
+  }
+  #{$pill--success-selector} {
+    @extend %pill--success;
+  }
+  #{$pill--error-selector} {
+    @extend %pill--error;
+  }
+  #{$pill--warning-selector} {
+    @extend %pill--warning;
+  }
+
+  @if $add--placeholder {
+    #{$pills__placeholder-selector} {
+      @include control-placeholder();
+    }
+  }
+
+  @if $add--disabled {
+    #{$item--disabled-selector} {
+      @include item-colors-disabled();
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                 Window
+  // - - - - - - - - - - - - - - - - - - - -
+
+  #{$window-selector} {
+    @include items-container-colors();
+    @include items-container-padding();
+    @include items-container-dropdown();
+    @include items-container-gap();
+    @include items-container-max-height();
+    @include items-container-border-radius();
+    --items-container__border-radius: var(--mer-border__radius--lg);
+    // TODO: define a items-container-border-radius-sm() and a
+    // items-container-border-radius-md(); since container radius
+    // of the pills is greater than the other containers:
+    // combo-box, list-box, etc...
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                  Item
+  // - - - - - - - - - - - - - - - - - - - -
+
+  #{$item-selector} {
+    @extend %pill__item;
+  }
+  #{$item--selected-selector} {
+    @extend %pill__item--selected;
+  }
+
+  @if $add--icon {
+    // custom states
+    #{$item--enabled-selector} {
+      @extend %pill__item--enabled;
+      @extend %pill__item--with-icon;
+    }
+    #{$item--processing-selector} {
+      @extend %pill__item--processing;
+      @extend %pill__item--with-icon;
+    }
+    #{$item--success-selector} {
+      @extend %pill__item--success;
+      @extend %pill__item--with-icon;
+    }
+    #{$item--warning-selector} {
+      @extend %pill__item--warning;
+      @extend %pill__item--with-icon;
+    }
+    #{$item--error-selector} {
+      @extend %pill__item--error;
+      @extend %pill__item--with-icon;
+    }
+  }
+}
