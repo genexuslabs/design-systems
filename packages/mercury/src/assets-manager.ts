@@ -8,6 +8,7 @@ import { RegistryGetImagePathCallback } from "@genexus/chameleon-controls-librar
 import { TreeViewItemImageMultiState } from "@genexus/chameleon-controls-library/dist/types/components/tree-view/types";
 
 import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS.js";
+import { ActionListItemAdditionalBase } from "@genexus/chameleon-controls-library/dist/types/components/action-list/types.js";
 
 export {
   MercuryBundleBase,
@@ -266,6 +267,13 @@ export const getImagePathCallback = (
   return result;
 };
 
+export const getActionListImagePathCallback = (
+  additionalItem: ActionListItemAdditionalBase
+): GxImageMultiState | undefined => {
+  const iconPath = additionalItem as string;
+  return getImagePathCallback(iconPath);
+};
+
 export const getNavigationListImagePathCallback = (
   itemModel: NavigationListItemModel
 ) =>
@@ -316,6 +324,7 @@ export const getTreeViewImagePathCallback: TreeViewImagePathCallback = (
  */
 export const getImagePathCallbackDefinitions: RegistryGetImagePathCallback = {
   "ch-accordion-render": getImagePathCallback,
+  "ch-action-list-render": getActionListImagePathCallback,
   "ch-navigation-list-render": getNavigationListImagePathCallback,
   "ch-checkbox": getImagePathCallback,
   "ch-edit": getImagePathCallback,
