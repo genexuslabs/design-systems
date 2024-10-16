@@ -606,13 +606,11 @@ const includeBundleButton = () => {
 const includeEndOfSectionCaption = () => {
   const pageSections = document.querySelectorAll(SECTION_SELECTOR);
   pageSections.forEach(section => {
-    console.log("section", section);
     const sectionTitleEl = section.querySelector(SECTION_TITLE_SELECTOR);
     if (sectionTitleEl && sectionTitleEl.textContent.trim().length > 0) {
       const endOfSectionEl = document.createElement("p");
       endOfSectionEl.classList.add("section__end-caption");
       endOfSectionEl.textContent = `end of ${sectionTitleEl.textContent.trim()} section`;
-      console.log(endOfSectionEl);
       section.appendChild(endOfSectionEl);
     }
   });

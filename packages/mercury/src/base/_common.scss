@@ -235,6 +235,9 @@
 @mixin item-gap() {
   gap: var(--item__gap--regular);
 }
+@mixin item-column-gap() {
+  column-gap: var(--item__gap--regular);
+}
 @mixin item-padding() {
   padding-block: var(--item__padding-block);
   padding-inline: var(--item__padding-inline);

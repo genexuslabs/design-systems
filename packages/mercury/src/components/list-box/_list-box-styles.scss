@@ -18,6 +18,7 @@
     @include item-border-radius();
     @include item-font();
     @include item-padding();
+    @include item-column-gap();
 
     &--disabled {
       @include item-colors-disabled();

@@ -12,8 +12,8 @@ importers:
         specifier: ^0.1.9
         version: 0.1.9
       '@genexus/chameleon-controls-library':
-        specifier: 6.0.0-next.41
-        version: 6.0.0-next.41(@stencil/core@4.19.2)
+        specifier: 6.0.0-next.45
+        version: 6.0.0-next.45(@stencil/core@4.19.2)
       '@genexus/svg-sass-generator':
         specifier: 1.1.24
         version: 1.1.24(@types/node@20.12.12)
@@ -189,8 +189,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@genexus/chameleon-controls-library@6.0.0-next.41':
-    resolution: {integrity: sha512-NWD+4/wLYz1Q+SOUxCId8eoUzwTgYNoN72J3RFxy8GjjpcCZxDt8KQOoaUONXygVbEsFKpgkF/Rz5lGDg91kqQ==}
+  '@genexus/chameleon-controls-library@6.0.0-next.45':
+    resolution: {integrity: sha512-6DqUO0m2hf91QHcKCjvlo/9WEfbjgvh1X21324ornqbOLnd542t9hmVqIkNQOIIV6XuOWnSrEkdVMpcp+lg2jQ==}
 
   '@genexus/markdown-parser@0.1.1':
     resolution: {integrity: sha512-mPWHAOekmjQ3C2V5N3GyUADW6gHuTRRj1ul5G2nxY+h09RwlNxVfYLUWCC4S20l0c6wQzHabgGf+nroyuZJjxw==}
@@ -1552,7 +1552,7 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@genexus/chameleon-controls-library@6.0.0-next.41(@stencil/core@4.19.2)':
+  '@genexus/chameleon-controls-library@6.0.0-next.45(@stencil/core@4.19.2)':
     dependencies:
       '@genexus/markdown-parser': 0.1.1
       html5-qrcode: 2.3.8

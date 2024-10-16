@@ -480,6 +480,9 @@
 @mixin item-gap() {
   gap: var(--item__gap--regular);
 }
+@mixin item-column-gap() {
+  column-gap: var(--item__gap--regular);
+}
 @mixin item-padding() {
   padding-block: var(--item__padding-block);
   padding-inline: var(--item__padding-inline);
@@ -2005,6 +2008,9 @@
 }
 @mixin item-gap() {
   gap: var(--item__gap--regular);
+}
+@mixin item-column-gap() {
+  column-gap: var(--item__gap--regular);
 }
 @mixin item-padding() {
   padding-block: var(--item__padding-block);
@@ -4573,6 +4579,9 @@
 @mixin item-gap() {
   gap: var(--item__gap--regular);
 }
+@mixin item-column-gap() {
+  column-gap: var(--item__gap--regular);
+}
 @mixin item-padding() {
   padding-block: var(--item__padding-block);
   padding-inline: var(--item__padding-inline);
@@ -5502,6 +5511,7 @@
     @include item-border-radius();
     @include item-font();
     @include item-padding();
+    @include item-column-gap();
 
     &--disabled {
       @include item-colors-disabled();
@@ -6440,6 +6450,9 @@
 }
 @mixin item-gap() {
   gap: var(--item__gap--regular);
+}
+@mixin item-column-gap() {
+  column-gap: var(--item__gap--regular);
 }
 @mixin item-padding() {
   padding-block: var(--item__padding-block);
