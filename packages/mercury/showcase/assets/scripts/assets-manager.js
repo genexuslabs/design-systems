@@ -120,6 +120,10 @@ export const getImagePathCallback = (iconPath) => {
     }
     return result;
 };
+export const getActionListImagePathCallback = (additionalItem) => {
+    const iconPath = additionalItem;
+    return getImagePathCallback(iconPath);
+};
 export const getNavigationListImagePathCallback = (itemModel) => itemModel.startImgSrc
     ? getImagePathCallback(itemModel.startImgSrc)
     : undefined;
@@ -154,6 +158,7 @@ export const getTreeViewImagePathCallback = (item, iconDirection) => {
  */
 export const getImagePathCallbackDefinitions = {
     "ch-accordion-render": getImagePathCallback,
+    "ch-action-list-render": getActionListImagePathCallback,
     "ch-navigation-list-render": getNavigationListImagePathCallback,
     "ch-checkbox": getImagePathCallback,
     "ch-edit": getImagePathCallback,
