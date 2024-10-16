@@ -9,7 +9,7 @@ import { TreeViewItemImageMultiState } from "@genexus/chameleon-controls-library
 
 import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS.js";
 import { ActionListItemAdditionalBase } from "@genexus/chameleon-controls-library/dist/types/components/action-list/types.js";
-import { ComboBoxItemModel } from "@genexus/chameleon-controls-library/dist/types/components/combo-box/types.js";
+// import { ComboBoxItemModel } from "@genexus/chameleon-controls-library/dist/types/components/combo-box/types.js";
 
 export {
   MercuryBundleBase,
