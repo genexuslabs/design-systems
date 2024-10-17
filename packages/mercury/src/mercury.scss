@@ -449,7 +449,7 @@
     }
 
     @if $utility-classes {
-      @include utilities-background();
+      @include utilities-elevation();
     }
 
     @if $layout-classes {
