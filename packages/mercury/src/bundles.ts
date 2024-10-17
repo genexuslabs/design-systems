@@ -49,6 +49,7 @@ export type MercuryBundleReset = "resets/box-sizing";
 
 export type MercuryBundleUtil =
   | "utils/form"
+  | "utils/elevation"
   | "utils/layout"
   | "utils/typography"
   // TODO: Use "utils/scrollbar" when the ch-theme supports aliases
@@ -128,6 +129,7 @@ export const getThemeBundles = (basePath: string) =>
 
     // Utils
     getThemeModelItem(basePath, "utils/form"),
+    getThemeModelItem(basePath, "utils/elevation"),
     getThemeModelItem(basePath, "utils/form--full"),
     getThemeModelItem(basePath, "utils/layout"),
     getThemeModelItem(basePath, "utils/typography"),
