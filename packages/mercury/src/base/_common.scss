@@ -538,13 +538,17 @@
 }
 
 @mixin spacing-body(
-  $body-selector: ".spacing-body",
-  $body-block-selector: ".spacing-body-block",
-  $body-block-start-selector: ".spacing-body-block-start",
-  $body-block-end-selector: ".spacing-body-block-end",
-  $body-inline-selector: ".spacing-body-inline",
-  $body-inline-start-selector: ".spacing-body-inline-start",
-  $body-inline-end-selector: ".spacing-body-inline-end"
+  $body-selector: ".spacing-body,:host(.spacing-body)",
+  $body-block-selector: ".spacing-body-block,:host(.spacing-body-block)",
+  $body-block-start-selector:
+    ".spacing-body-block-start,:host(.spacing-body-block-start)",
+  $body-block-end-selector:
+    ".spacing-body-block-end,:host(.spacing-body-block-end)",
+  $body-inline-selector: ".spacing-body-inline,:host(.spacing-body-inline)",
+  $body-inline-start-selector:
+    ".spacing-body-inline-start,:host(.spacing-body-inline-start)",
+  $body-inline-end-selector:
+    ".spacing-body-inline-end,:host(.spacing-body-inline-end)"
 ) {
   #{$body-selector} {
     @extend %spacing-body;
