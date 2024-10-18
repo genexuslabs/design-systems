@@ -600,6 +600,88 @@ const includeBundleButton = () => {
   }
 };
 
+const includeBundleButtonV2 = () => {
+  const bundleValue = document.body.getAttribute("data-bundle");
+
+  if (bundleValue !== null && topBarRef) {
+    // if bundleValue.length is 0, it means this component does not requires a bundle.
+    const PAGE_TITLE = document.title;
+    let COPY_ICON;
+    let CHECK_ICON;
+    let WARNING_ICON;
+    let chImage;
+    let buttonCaption;
+
+    if (bundleValue.length !== 0) {
+      // Icons references
+      COPY_ICON = getIconPath({
+        category: "system",
+        name: "copy",
+        colorType: "primary"
+      });
+      CHECK_ICON = getIconPath({
+        category: "system",
+        name: "check",
+        colorType: "primary"
+      });
+      WARNING_ICON = getIconPath({
+        category: "system",
+        name: "warning",
+        colorType: "primary"
+      });
+    }
+
+    // Create and add the ch-image element
+    if (bundleValue.length !== 0) {
+      chImage = document.createElement("ch-image");
+      chImage.className = "icon-md";
+      chImage.src = COPY_ICON;
+    }
+
+    // Create the "copy bundle" button
+    const copyBundleButton = document.createElement("button");
+    copyBundleButton.className = "button-tertiary button-icon-and-text";
+    if (bundleValue.length !== 0) {
+      buttonCaption = `Copy ${PAGE_TITLE} Bundle`;
+    } else {
+      buttonCaption = `No Bundle Required For ${PAGE_TITLE}`;
+    }
+    const buttonCaptionTextNode = document.createTextNode(buttonCaption);
+
+    if (bundleValue.length !== 0) {
+      copyBundleButton.addEventListener("click", e => {
+        navigator.clipboard
+          .writeText(`"${bundleValue}"`)
+          .then(() => {
+            chImage.nextSibling.textContent = "Bundle Copied!";
+            chImage.src = CHECK_ICON;
+            e.target.style.pointerEvents = "none";
+          })
+          .catch(err => {
+            chImage.nextSibling.textContent = "Failed to Copy";
+            chImage.src = WARNING_ICON;
+            e.target.style.pointerEvents = "none";
+          });
+        setTimeout(() => {
+          chImage.nextSibling.textContent = buttonCaption;
+          chImage.src = COPY_ICON;
+          e.target.style.pointerEvents = "auto";
+        }, 1500);
+      });
+    }
+
+    // Appends
+    if (bundleValue.length !== 0) {
+      copyBundleButton.appendChild(chImage);
+      chImage.after(buttonCaptionTextNode);
+    } else {
+      copyBundleButton.innerText = buttonCaption;
+      copyBundleButton.disabled = true;
+    }
+    topBarRef.appendChild(copyBundleButton);
+  }
+};
+
 /**
  * @description: this function includes for every section a caption at the end that indicates the end.
  */
@@ -628,8 +710,9 @@ document.addEventListener("DOMContentLoaded", function () {
   listenToCtrlCmd();
   includeSidebar();
   includeTopBar();
-  includeChameleonURL();
   getChCodeValues();
-  includeBundleButton();
+  // includeBundleButton(); // This version adds the button below the top-bar
+  includeBundleButtonV2(); // This version adds the button inside the top-bar
+  includeChameleonURL();
   includeEndOfSectionCaption();
 });
