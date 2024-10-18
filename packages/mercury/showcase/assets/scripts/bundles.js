@@ -54,6 +54,7 @@ export const getThemeBundles = (basePath) => [
     getThemeModelItem(basePath, "resets/box-sizing"),
     // Utils
     getThemeModelItem(basePath, "utils/form"),
+    getThemeModelItem(basePath, "utils/elevation"),
     getThemeModelItem(basePath, "utils/form--full"),
     getThemeModelItem(basePath, "utils/layout"),
     getThemeModelItem(basePath, "utils/typography"),

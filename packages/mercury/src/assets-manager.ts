@@ -9,6 +9,10 @@ import { TreeViewItemImageMultiState } from "@genexus/chameleon-controls-library
 
 import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS.js";
 import { ActionListItemAdditionalBase } from "@genexus/chameleon-controls-library/dist/types/components/action-list/types.js";
+import {
+  ComboBoxImagePathCallback,
+  ComboBoxItemModel
+} from "@genexus/chameleon-controls-library/dist/types/components/combo-box/types.js";
 
 export {
   MercuryBundleBase,
@@ -269,10 +273,10 @@ export const getImagePathCallback = (
 
 export const getActionListImagePathCallback = (
   additionalItem: ActionListItemAdditionalBase
-): GxImageMultiState | undefined => {
-  const iconPath = additionalItem as string;
-  return getImagePathCallback(iconPath);
-};
+) =>
+  additionalItem.imgSrc
+    ? getImagePathCallback(additionalItem.imgSrc)
+    : undefined;
 
 export const getNavigationListImagePathCallback = (
   itemModel: NavigationListItemModel
@@ -313,6 +317,21 @@ export const getTreeViewImagePathCallback: TreeViewImagePathCallback = (
     : { default: defaultPath };
 };
 
+export const getComboBoxImagePathCallback: ComboBoxImagePathCallback = (
+  item: ComboBoxItemModel,
+  iconDirection: "start" | "end"
+): GxImageMultiState | undefined => {
+  if (
+    (!item.startImgSrc && iconDirection === "start") ||
+    (!item.endImgSrc && iconDirection === "end")
+  ) {
+    return undefined;
+  }
+  const imgSrc =
+    iconDirection === "start" ? item.startImgSrc! : item.endImgSrc!;
+  return getImagePathCallback(imgSrc);
+};
+
 /**
  * This object is used to register the getImagePathCallback definitions for all
  * controls in Chameleon.
@@ -325,6 +344,7 @@ export const getTreeViewImagePathCallback: TreeViewImagePathCallback = (
 export const getImagePathCallbackDefinitions: RegistryGetImagePathCallback = {
   "ch-accordion-render": getImagePathCallback,
   "ch-action-list-render": getActionListImagePathCallback,
+  "ch-combo-box-render": getComboBoxImagePathCallback,
   "ch-navigation-list-render": getNavigationListImagePathCallback,
   "ch-checkbox": getImagePathCallback,
   "ch-edit": getImagePathCallback,
