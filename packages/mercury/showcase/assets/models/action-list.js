@@ -5,15 +5,238 @@ const editIconPath =
 const deleteIconPath =
   "https://unpkg.com/@genexus/unanimo@0.10.0/dist/assets/icons/delete.svg";
 
+export const withIconsModel = [
+  {
+    id: "workflow",
+    type: "actionable",
+    caption: "Workflow",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/workflow" }]
+      }
+    }
+  },
+  {
+    id: "work-panel",
+    type: "actionable",
+    caption: "Work Panel",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/work-panel" }]
+      }
+    }
+  },
+  {
+    id: "webpanel",
+    type: "actionable",
+    caption: "Webpanel",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/webpanel" }]
+      }
+    }
+  },
+  {
+    id: "web-component",
+    type: "actionable",
+    caption: "Web Component",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/web-component" }]
+      }
+    }
+  },
+  {
+    id: "version",
+    type: "actionable",
+    caption: "Version",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/version" }]
+      }
+    }
+  },
+  {
+    id: "url-rewrite",
+    type: "actionable",
+    caption: "Url Rewrite",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/url-rewrite" }]
+      }
+    }
+  },
+  {
+    id: "transaction",
+    type: "actionable",
+    caption: "Transaction",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/transaction" }]
+      }
+    }
+  },
+  {
+    id: "to-be-defined",
+    type: "actionable",
+    caption: "To Be Defined",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/to-be-defined" }]
+      }
+    }
+  },
+  {
+    id: "theme",
+    type: "actionable",
+    caption: "Theme",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/theme" }]
+      }
+    }
+  },
+  {
+    id: "theme-web",
+    type: "actionable",
+    caption: "Theme Web",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/theme-web" }]
+      }
+    }
+  },
+  {
+    id: "theme-for-sd",
+    type: "actionable",
+    caption: "Theme For Sd",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/theme-for-sd" }]
+      }
+    }
+  },
+  {
+    id: "table",
+    type: "actionable",
+    caption: "Table",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/table" }]
+      }
+    }
+  },
+  {
+    id: "super-app",
+    type: "actionable",
+    caption: "Super App",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/super-app" }]
+      }
+    }
+  },
+  {
+    id: "subtype-group",
+    type: "actionable",
+    caption: "Subtype Group",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/subtype-group" }]
+      }
+    }
+  },
+  {
+    id: "structured-data-type",
+    type: "actionable",
+    caption: "Structured Data Type",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/structured-data-type" }]
+      }
+    }
+  },
+  {
+    id: "stencil",
+    type: "actionable",
+    caption: "Stencil",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/stencil" }]
+      }
+    }
+  },
+  {
+    id: "roles",
+    type: "actionable",
+    caption: "Roles",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/roles" }]
+      }
+    }
+  },
+  {
+    id: "report",
+    type: "actionable",
+    caption: "Report",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/report" }]
+      }
+    }
+  },
+  {
+    id: "references",
+    type: "actionable",
+    caption: "References",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/references" }]
+      }
+    }
+  },
+  {
+    id: "query",
+    type: "actionable",
+    caption: "Query",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/query" }]
+      }
+    }
+  },
+  {
+    id: "procedure",
+    type: "actionable",
+    caption: "Procedure",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/procedure" }]
+      }
+    }
+  },
+  {
+    id: "patterns",
+    type: "actionable",
+    caption: "Patterns",
+    additionalInformation: {
+      "stretch-start": {
+        center: [{ imgSrc: "objects/patterns" }]
+      }
+    }
+  }
+];
+
 const GxEAIRecentChatsAdditionalInfo = {
   "stretch-start": {
-    center: [{ imageSrc: chatIconPath, imageType: "mask" }]
+    center: [{ imgSrc: chatIconPath, imageType: "mask" }]
   },
   "stretch-end": {
     center: [
       {
         accessibleName: "Edit caption",
-        imageSrc: editIconPath,
+        imgSrc: editIconPath,
         imageType: "mask",
         action: {
           type: "modify",
@@ -22,7 +245,7 @@ const GxEAIRecentChatsAdditionalInfo = {
       },
       {
         accessibleName: "Delete item",
-        imageSrc: deleteIconPath,
+        imgSrc: deleteIconPath,
         imageType: "mask",
         action: {
           type: "remove",
@@ -98,7 +321,13 @@ export const keyboardNavigation = [
       {
         id: "item 1.1",
         type: "actionable",
-        caption: "item 1.1"
+        caption: "item 1.1",
+        selected: true,
+        additionalInformation: {
+          "stretch-end": {
+            center: [{ caption: "6.0.0-next.5" }]
+          }
+        }
       },
       {
         id: "item 1.2",

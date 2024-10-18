@@ -4,12 +4,10 @@
 %combo-box {
   --ch-combo-box-separation-y: var(--mer-spacing--3xs);
   --ch-combo-box-item-gap: var(--mer-spacing--xs);
-
-  --ch-combo-box-item__image-size: var(--mer-spacing--md);
-  --ch-combo-box-group__expandable-button-size: var(--mer-spacing--md);
-
-  --ch-combo-box-group__expandable-button-image-size: var(--mer-spacing--sm);
+  --ch-combo-box-item__image-size: var(--mer-icon__box--md);
   --ch-combo-box-item__background-image-size: 100%;
+  --ch-combo-box-group__expandable-button-size: var(--mer-spacing--md);
+  --ch-combo-box-group__expandable-button-image-size: var(--mer-spacing--sm);
 
   @include control-border();
   @include control-colors-enabled();
@@ -113,11 +111,13 @@
   //                 Window
   // - - - - - - - - - - - - - - - - - - - -
   #{$window-selector} {
+    @include items-container-border();
+    @include items-container-border-radius();
     @include items-container-colors();
     @include items-container-padding();
-    @include items-container-dropdown();
     @include items-container-gap();
     @include items-container-max-height();
+    @include items-container-dropdown();
   }
 
   // - - - - - - - - - - - - - - - - - - - -

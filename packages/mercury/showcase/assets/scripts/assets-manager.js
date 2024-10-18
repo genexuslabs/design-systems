@@ -120,6 +120,9 @@ export const getImagePathCallback = (iconPath) => {
     }
     return result;
 };
+export const getActionListImagePathCallback = (additionalItem) => additionalItem.imgSrc
+    ? getImagePathCallback(additionalItem.imgSrc)
+    : undefined;
 export const getNavigationListImagePathCallback = (itemModel) => itemModel.startImgSrc
     ? getImagePathCallback(itemModel.startImgSrc)
     : undefined;
@@ -143,6 +146,14 @@ export const getTreeViewImagePathCallback = (item, iconDirection) => {
         }
         : { default: defaultPath };
 };
+export const getComboBoxImagePathCallback = (item, iconDirection) => {
+    if ((!item.startImgSrc && iconDirection === "start") ||
+        (!item.endImgSrc && iconDirection === "end")) {
+        return undefined;
+    }
+    const imgSrc = iconDirection === "start" ? item.startImgSrc : item.endImgSrc;
+    return getImagePathCallback(imgSrc);
+};
 /**
  * This object is used to register the getImagePathCallback definitions for all
  * controls in Chameleon.
@@ -154,6 +165,8 @@ export const getTreeViewImagePathCallback = (item, iconDirection) => {
  */
 export const getImagePathCallbackDefinitions = {
     "ch-accordion-render": getImagePathCallback,
+    "ch-action-list-render": getActionListImagePathCallback,
+    "ch-combo-box-render": getComboBoxImagePathCallback,
     "ch-navigation-list-render": getNavigationListImagePathCallback,
     "ch-checkbox": getImagePathCallback,
     "ch-edit": getImagePathCallback,

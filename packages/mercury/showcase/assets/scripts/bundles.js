@@ -39,6 +39,7 @@ export const getThemeBundles = (basePath) => [
     getThemeModelItem(basePath, "components/list-box"),
     getThemeModelItem(basePath, "components/markdown-viewer", false),
     getThemeModelItem(basePath, "components/navigation-list"),
+    getThemeModelItem(basePath, "components/pills"),
     getThemeModelItem(basePath, "components/radio-group"),
     getThemeModelItem(basePath, "components/segmented-control"),
     getThemeModelItem(basePath, "components/sidebar"),
@@ -53,6 +54,7 @@ export const getThemeBundles = (basePath) => [
     getThemeModelItem(basePath, "resets/box-sizing"),
     // Utils
     getThemeModelItem(basePath, "utils/form"),
+    getThemeModelItem(basePath, "utils/elevation"),
     getThemeModelItem(basePath, "utils/form--full"),
     getThemeModelItem(basePath, "utils/layout"),
     getThemeModelItem(basePath, "utils/typography"),
