@@ -1,5 +1,5 @@
-@mixin foundation-colors--light($globant-colors: false) {
-  @if $globant-colors {
+@mixin foundation-colors--light($globant-ds: false) {
+  @if $globant-ds {
     // Globant Colors
 
     // TODO: update with Globant colors when available
@@ -101,8 +101,8 @@
   }
 }
 
-@mixin foundation-colors--dark($globant-colors: false) {
-  @if $globant-colors {
+@mixin foundation-colors--dark($globant-ds: false) {
+  @if $globant-ds {
     // Globant Colors
 
     // primary

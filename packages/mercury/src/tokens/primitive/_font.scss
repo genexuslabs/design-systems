@@ -1,8 +1,16 @@
-@mixin font() {
-  // families
-  --mer-font-family--title: Inter, Helvetica, Arial, sans-serif;
-  --mer-font-family--body: Inter, Helvetica, Arial, sans-serif;
-  --mer-font-family--code: monospace;
+@mixin font($globant-ds: false) {
+  @if $globant-ds {
+    // families
+    --mer-font-family--title: Heebo, Helvetica, Arial, sans-serif;
+    --mer-font-family--body: Heebo, Helvetica, Arial, sans-serif;
+    --mer-font-family--code: monospace;
+  }
+  else {
+    // families
+    --mer-font-family--title: Inter, Helvetica, Arial, sans-serif;
+    --mer-font-family--body: Inter, Helvetica, Arial, sans-serif;
+    --mer-font-family--code: monospace;
+  }
 
   // weights
   --mer-font__weight--light: 300;
