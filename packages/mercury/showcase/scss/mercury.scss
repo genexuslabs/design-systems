@@ -969,102 +969,210 @@
   --mer-border__radius--xl: 30px;
 }
 
-@mixin foundation-colors--light() {
-  // primary
-  --mer-color__primary-blue--200: #005ac1;
-  --mer-color__primary-blue--300: #5498e8;
-  --mer-color__primary-blue--400: #437dc0;
-  --mer-color__primary-blue--600: #335884;
+@mixin foundation-colors--light($globant-colors: false) {
+  @if $globant-colors {
+    // Globant Colors
 
-  // neutral
-  --mer-color__neutral-gray--100: #4a5870;
-  --mer-color__neutral-gray--200: #49566d;
-  --mer-color__neutral-gray--300: #56677a;
-  --mer-color__neutral-gray--400: #56677a;
-  --mer-color__neutral-gray--450: #56677a;
-  --mer-color__neutral-gray--500: #828b96;
-  --mer-color__neutral-gray--550: #9da9b6;
-  --mer-color__neutral-gray--600: #aeb9c6;
-  --mer-color__neutral-gray--650: #c6d1dd;
-  --mer-color__neutral-gray--700: #e1ecf9;
-  --mer-color__neutral-gray--800: #fafbfd;
-  --mer-color__neutral-gray--900: #f0f4fa;
-  --mer-color__neutral-gray--1000: #ffffff;
+    // TODO: update with Globant colors when available
+    // primary
+    --mer-color__primary-blue--200: #005ac1;
+    --mer-color__primary-blue--300: #5498e8;
+    --mer-color__primary-blue--400: #437dc0;
+    --mer-color__primary-blue--600: #335884;
 
-  // tinted
-  --mer-color__tinted-yellow--5: #faf9f6;
-  --mer-color__tinted-yellow--60: #fafbfd;
-  --mer-color__tinted-red--5: #faf5f7;
-  --mer-color__tinted-red--60: #fbb2b7;
-  --mer-color__tinted-green--5: #f2f7f8;
-  --mer-color__tinted-green--60: #94cac4;
-  --mer-color__tinted-blue--5: #f3f6fd;
-  --mer-color__tinted-blue--8: #eff5fd;
-  --mer-color__tinted-blue--10: #ecf3fd;
-  --mer-color__tinted-blue--20: #deebfe;
-  --mer-color__tinted-blue--30: #cfe3fe;
-  --mer-color__tinted-blue--50: #b1d2fe;
+    // neutral
+    --mer-color__neutral-gray--100: #4a5870;
+    --mer-color__neutral-gray--200: #49566d;
+    --mer-color__neutral-gray--300: #56677a;
+    --mer-color__neutral-gray--400: #56677a;
+    --mer-color__neutral-gray--450: #56677a;
+    --mer-color__neutral-gray--500: #828b96;
+    --mer-color__neutral-gray--550: #9da9b6;
+    --mer-color__neutral-gray--600: #aeb9c6;
+    --mer-color__neutral-gray--650: #c6d1dd;
+    --mer-color__neutral-gray--700: #e1ecf9;
+    --mer-color__neutral-gray--800: #fafbfd;
+    --mer-color__neutral-gray--900: #f0f4fa;
+    --mer-color__neutral-gray--1000: #ffffff;
 
-  // message
-  --mer-color__message-green--100: #208e80;
-  --mer-color__message-green--200: #208e80;
-  --mer-color__message-yellow--100: #dfa135;
-  --mer-color__message-yellow--200: #dfa135;
-  --mer-color__message-red--100: #da1a27;
-  --mer-color__message-red--200: #da1a27;
-  --mer-color__message-red--300: #4d0000;
-  --mer-color__message-red--400: #800000;
-  --mer-color__message-red--500: #ff9999;
-  --mer-color__message-red--600: #ff9999;
+    // tinted
+    --mer-color__tinted-yellow--5: #faf9f6;
+    --mer-color__tinted-yellow--60: #fafbfd;
+    --mer-color__tinted-red--5: #faf5f7;
+    --mer-color__tinted-red--60: #fbb2b7;
+    --mer-color__tinted-green--5: #f2f7f8;
+    --mer-color__tinted-green--60: #94cac4;
+    --mer-color__tinted-blue--5: #f3f6fd;
+    --mer-color__tinted-blue--8: #eff5fd;
+    --mer-color__tinted-blue--10: #ecf3fd;
+    --mer-color__tinted-blue--20: #deebfe;
+    --mer-color__tinted-blue--30: #cfe3fe;
+    --mer-color__tinted-blue--50: #b1d2fe;
+
+    // message
+    --mer-color__message-green--100: #208e80;
+    --mer-color__message-green--200: #208e80;
+    --mer-color__message-yellow--100: #dfa135;
+    --mer-color__message-yellow--200: #dfa135;
+    --mer-color__message-red--100: #da1a27;
+    --mer-color__message-red--200: #da1a27;
+    --mer-color__message-red--300: #4d0000;
+    --mer-color__message-red--400: #800000;
+    --mer-color__message-red--500: #ff9999;
+    --mer-color__message-red--600: #ff9999;
+  } @else {
+    // Mercury Colors
+
+    // primary
+    --mer-color__primary-blue--200: #005ac1;
+    --mer-color__primary-blue--300: #5498e8;
+    --mer-color__primary-blue--400: #437dc0;
+    --mer-color__primary-blue--600: #335884;
+
+    // neutral
+    --mer-color__neutral-gray--100: #4a5870;
+    --mer-color__neutral-gray--200: #49566d;
+    --mer-color__neutral-gray--300: #56677a;
+    --mer-color__neutral-gray--400: #56677a;
+    --mer-color__neutral-gray--450: #56677a;
+    --mer-color__neutral-gray--500: #828b96;
+    --mer-color__neutral-gray--550: #9da9b6;
+    --mer-color__neutral-gray--600: #aeb9c6;
+    --mer-color__neutral-gray--650: #c6d1dd;
+    --mer-color__neutral-gray--700: #e1ecf9;
+    --mer-color__neutral-gray--800: #fafbfd;
+    --mer-color__neutral-gray--900: #f0f4fa;
+    --mer-color__neutral-gray--1000: #ffffff;
+
+    // tinted
+    --mer-color__tinted-yellow--5: #faf9f6;
+    --mer-color__tinted-yellow--60: #fafbfd;
+    --mer-color__tinted-red--5: #faf5f7;
+    --mer-color__tinted-red--60: #fbb2b7;
+    --mer-color__tinted-green--5: #f2f7f8;
+    --mer-color__tinted-green--60: #94cac4;
+    --mer-color__tinted-blue--5: #f3f6fd;
+    --mer-color__tinted-blue--8: #eff5fd;
+    --mer-color__tinted-blue--10: #ecf3fd;
+    --mer-color__tinted-blue--20: #deebfe;
+    --mer-color__tinted-blue--30: #cfe3fe;
+    --mer-color__tinted-blue--50: #b1d2fe;
+
+    // message
+    --mer-color__message-green--100: #208e80;
+    --mer-color__message-green--200: #208e80;
+    --mer-color__message-yellow--100: #dfa135;
+    --mer-color__message-yellow--200: #dfa135;
+    --mer-color__message-red--100: #da1a27;
+    --mer-color__message-red--200: #da1a27;
+    --mer-color__message-red--300: #4d0000;
+    --mer-color__message-red--400: #800000;
+    --mer-color__message-red--500: #ff9999;
+    --mer-color__message-red--600: #ff9999;
+  }
 }
 
-@mixin foundation-colors--dark() {
-  // primary
-  --mer-color__primary-blue--200: #5ba7ff;
-  --mer-color__primary-blue--300: #5498e8;
-  --mer-color__primary-blue--400: #437dc0;
-  --mer-color__primary-blue--600: #335884;
+@mixin foundation-colors--dark($globant-colors: false) {
+  @if $globant-colors {
+    // Globant Colors
 
-  // neutral
-  --mer-color__neutral-gray--100: #e1ecf9;
-  --mer-color__neutral-gray--200: #d2ddeb;
-  --mer-color__neutral-gray--300: #c0ccd9;
-  --mer-color__neutral-gray--400: #9da9b6;
-  --mer-color__neutral-gray--450: #828b96;
-  --mer-color__neutral-gray--500: #56677a;
-  --mer-color__neutral-gray--550: #485665;
-  --mer-color__neutral-gray--600: #394552;
-  --mer-color__neutral-gray--650: #2d3a48;
-  --mer-color__neutral-gray--700: #242d3c;
-  --mer-color__neutral-gray--800: #181f2a;
-  --mer-color__neutral-gray--900: #11151c;
-  --mer-color__neutral-gray--1000: #1f2225;
+    // primary
+    --mer-color__primary-blue--200: #bfd732;
+    --mer-color__primary-blue--300: #b4cc28;
+    --mer-color__primary-blue--400: #96aa22;
+    --mer-color__primary-blue--600: #697718;
 
-  // tinted
-  --mer-color__tinted-yellow--5: #282a2d;
-  --mer-color__tinted-yellow--60: #ad8a53;
-  --mer-color__tinted-red--5: #29252f;
-  --mer-color__tinted-red--60: #aa5962;
-  --mer-color__tinted-green--5: #1c2830;
-  --mer-color__tinted-green--60: #317571;
-  --mer-color__tinted-blue--5: #1d2838;
-  --mer-color__tinted-blue--8: #1f2c3f;
-  --mer-color__tinted-blue--10: #1f2e43;
-  --mer-color__tinted-blue--20: #293d5c;
-  --mer-color__tinted-blue--30: #2e4e72;
-  --mer-color__tinted-blue--50: #3c689c;
+    // neutral
+    --mer-color__neutral-gray--100: #ededed;
+    --mer-color__neutral-gray--200: #dfdfdf;
+    --mer-color__neutral-gray--300: #cdcdcd;
+    --mer-color__neutral-gray--400: #a9a9a9;
+    --mer-color__neutral-gray--450: #8c8c8c;
+    --mer-color__neutral-gray--500: #686868;
+    --mer-color__neutral-gray--550: #575757;
+    --mer-color__neutral-gray--600: #464646;
+    --mer-color__neutral-gray--650: #3b3b3b;
+    --mer-color__neutral-gray--700: #303030;
+    --mer-color__neutral-gray--800: #212121;
+    --mer-color__neutral-gray--900: #171717;
+    --mer-color__neutral-gray--1000: #000000;
 
-  // message
-  --mer-color__message-green--100: #3fa89b;
-  --mer-color__message-green--200: #3fa89b;
-  --mer-color__message-yellow--100: #f9bd56;
-  --mer-color__message-yellow--200: #f9bd56;
-  --mer-color__message-red--100: #e35861;
-  --mer-color__message-red--200: #d54b54;
-  --mer-color__message-red--300: #ff6161;
-  --mer-color__message-red--400: #ff9999;
-  --mer-color__message-red--500: #800000;
-  --mer-color__message-red--600: #4d0000;
+    // tinted
+    //TODO: update 'tinted-blue' with tinted-primary' in globant and mercury.
+    --mer-color__tinted-yellow--5: #282a2d;
+    --mer-color__tinted-yellow--60: #ad8a53;
+    --mer-color__tinted-red--5: #29252f;
+    --mer-color__tinted-red--60: #aa5962;
+    --mer-color__tinted-green--5: #1c2830;
+    --mer-color__tinted-green--60: #317571;
+    --mer-color__tinted-blue--5: #202118;
+    --mer-color__tinted-blue--8: #242619;
+    --mer-color__tinted-blue--10: #282a1a;
+    --mer-color__tinted-blue--20: #383d1c;
+    --mer-color__tinted-blue--30: #49501f;
+    --mer-color__tinted-blue--50: #6a7624;
+
+    // message
+    --mer-color__message-green--100: #208e80;
+    --mer-color__message-green--200: #208e80;
+    --mer-color__message-yellow--100: #dfa135;
+    --mer-color__message-yellow--200: #dfa135;
+    --mer-color__message-red--100: #da1a27;
+    --mer-color__message-red--200: #da1a27;
+    --mer-color__message-red--300: #4d0000;
+    --mer-color__message-red--400: #800000;
+    --mer-color__message-red--500: #ff9999;
+    --mer-color__message-red--600: #ff9999;
+  } @else {
+    // Mercury Colors
+
+    // primary
+    --mer-color__primary-blue--200: #5ba7ff;
+    --mer-color__primary-blue--300: #5498e8;
+    --mer-color__primary-blue--400: #437dc0;
+    --mer-color__primary-blue--600: #335884;
+
+    // neutral
+    --mer-color__neutral-gray--100: #e1ecf9;
+    --mer-color__neutral-gray--200: #d2ddeb;
+    --mer-color__neutral-gray--300: #c0ccd9;
+    --mer-color__neutral-gray--400: #9da9b6;
+    --mer-color__neutral-gray--450: #828b96;
+    --mer-color__neutral-gray--500: #56677a;
+    --mer-color__neutral-gray--550: #485665;
+    --mer-color__neutral-gray--600: #394552;
+    --mer-color__neutral-gray--650: #2d3a48;
+    --mer-color__neutral-gray--700: #242d3c;
+    --mer-color__neutral-gray--800: #181f2a;
+    --mer-color__neutral-gray--900: #11151c;
+    --mer-color__neutral-gray--1000: #1f2225;
+
+    // tinted
+    --mer-color__tinted-yellow--5: #282a2d;
+    --mer-color__tinted-yellow--60: #ad8a53;
+    --mer-color__tinted-red--5: #29252f;
+    --mer-color__tinted-red--60: #aa5962;
+    --mer-color__tinted-green--5: #1c2830;
+    --mer-color__tinted-green--60: #317571;
+    --mer-color__tinted-blue--5: #1d2838;
+    --mer-color__tinted-blue--8: #1f2c3f;
+    --mer-color__tinted-blue--10: #1f2e43;
+    --mer-color__tinted-blue--20: #293d5c;
+    --mer-color__tinted-blue--30: #2e4e72;
+    --mer-color__tinted-blue--50: #3c689c;
+
+    // message
+    --mer-color__message-green--100: #3fa89b;
+    --mer-color__message-green--200: #3fa89b;
+    --mer-color__message-yellow--100: #f9bd56;
+    --mer-color__message-yellow--200: #f9bd56;
+    --mer-color__message-red--100: #e35861;
+    --mer-color__message-red--200: #d54b54;
+    --mer-color__message-red--300: #ff6161;
+    --mer-color__message-red--400: #ff9999;
+    --mer-color__message-red--500: #800000;
+    --mer-color__message-red--600: #4d0000;
+  }
 }
 
 @mixin font() {
@@ -3613,21 +3721,9 @@
   --accordion-header__border-width: var(--mer-border__width--sm);
   --accordion-header__border-color: transparent;
   --accordion-header__border-radius: var(--accordion-panel__border-radius);
-  --accordion-header__border: var(--accordion-header__border-width) solid
-    var(--accordion-header__border-color);
-  // note: just overriding "--accordion-header__border-color" doesn't seem to work.
-  // header:hover
-  --accordion-header__border-color--hover: var(
-    --mer-border-color__primary--hover
-  );
-  --accordion-header__border--hover: var(--accordion-header__border-width) solid
-    var(--accordion-header__border-color--hover);
-  // header:active
-  --accordion-header__border-color--active: var(
-    --mer-border-color__primary--active
-  );
-  --accordion-header__border--active: var(--accordion-header__border-width)
-    solid var(--accordion-header__border-color--active);
+  --accordion-header__border-block-end-color: var(
+    --mer-border-color__on-surface
+  ); // for expanded
 
   // section
   --accordion-section__border-color: var(--mer-border-color__on-elevation--01);
@@ -3664,15 +3760,21 @@
   padding: var(--accordion-header__padding);
   gap: var(--accordion-header__gap);
   color: var(--accordion-header__color);
-  outline: var(--accordion-header__border);
-  // border-radius: var(--accordion-header__border-radius);
-  border-bottom: 1px solid red;
+  border: var(--accordion-header__border-width) solid
+    var(--accordion-header__border-color);
 
   &--hover {
-    --accordion-header__border: var(--accordion-header__border--hover);
+    --accordion-header__border-color: var(--mer-border-color__primary--hover);
   }
   &--active {
-    --accordion-header__border: var(--accordion-header__border--active);
+    --accordion-header__border-color: var(--mer-border-color__primary--active);
+  }
+
+  &--hover,
+  &--active {
+    --accordion-header__border-block-end-color: var(
+      --accordion-header__border-color
+    );
   }
 
   &--focus-visible {
@@ -3686,6 +3788,14 @@
   &-outlined {
     &--disabled {
       color: var(--mer-accent__primary--disabled);
+    }
+  }
+
+  // expanded
+  &--expanded {
+    border-block-end-color: var(--accordion-header__border-block-end-color);
+
+    &-disabled {
     }
   }
 }
@@ -3726,6 +3836,9 @@
   $panel-disabled-selector: ".accordion-filled::part(panel disabled)",
   $header-selector: ".accordion-filled::part(header)",
   $header-disabled-selector: ".accordion-filled::part(header disabled)",
+  $header-expanded-selector: ".accordion-filled::part(header expanded)",
+  $header-expanded-disabled-selector:
+    ".accordion-filled::part(header expanded disabled)",
   $section-selector: ".accordion-filled::part(section)"
 ) {
   #{$accordion-selector} {
@@ -3754,6 +3867,14 @@
     }
   }
 
+  #{$header-expanded-selector} {
+    @extend %accordion-header--expanded;
+  }
+
+  #{$header-expanded-disabled-selector} {
+    @extend %accordion-header--expanded-disabled;
+  }
+
   #{$section-selector} {
     @extend %accordion-section;
   }
@@ -3769,6 +3890,9 @@
   $panel-disabled-selector: ".accordion-outlined::part(panel disabled)",
   $header-selector: ".accordion-outlined::part(header)",
   $header-disabled-selector: ".accordion-outlined::part(header disabled)",
+  $header-expanded-selector: ".accordion-outlined::part(header expanded)",
+  $header-expanded-disabled-selector:
+    ".accordion-outlined::part(header expanded disabled)",
   $section-selector: ".accordion-outlined::part(section)",
   $section-disabled-selector: ".accordion-outlined::part(section disabled)"
 ) {
@@ -3797,6 +3921,14 @@
     &:focus-visible {
       @extend %accordion-header--focus-visible;
     }
+  }
+
+  #{$header-expanded-selector} {
+    @extend %accordion-header--expanded;
+  }
+
+  #{$header-expanded-disabled-selector} {
+    @extend %accordion-header--expanded-disabled;
   }
 
   #{$section-selector} {
@@ -9901,6 +10033,7 @@
   $light-theme: true,
   $prefers-color-scheme-dark: false,
   $prefers-color-scheme-light: false,
+  $globant-colors: false,
 
   // Tokens
   $tokens: true,
@@ -18042,7 +18175,7 @@
       // Fixes issues in elements that force its color based on this property.
       // For example, the font color of the input with autocomplete (:-webkit-autofill)
       color-scheme: light;
-      @include foundation-colors--light();
+      @include foundation-colors--light($globant-colors: $globant-colors);
     }
   }
   @if $colors and $tokens and $prefers-color-scheme-light {
@@ -18051,7 +18184,7 @@
         // Fixes issues in elements that force its color based on this property.
         // For example, the font color of the input with autocomplete (:-webkit-autofill)
         color-scheme: light;
-        @include foundation-colors--light();
+        @include foundation-colors--light($globant-colors: $globant-colors);
       }
     }
   }
@@ -18062,7 +18195,7 @@
       // Fixes issues in elements that force its color based on this property.
       // For example, the font color of the input with autocomplete (:-webkit-autofill)
       color-scheme: dark;
-      @include foundation-colors--dark();
+      @include foundation-colors--dark($globant-colors: $globant-colors);
     }
   }
   @if $colors and $tokens and $prefers-color-scheme-dark {
@@ -18071,7 +18204,7 @@
         // Fixes issues in elements that force its color based on this property.
         // For example, the font color of the input with autocomplete (:-webkit-autofill)
         color-scheme: dark;
-        @include foundation-colors--dark();
+        @include foundation-colors--dark($globant-colors: $globant-colors);
       }
     }
   }
@@ -18343,6 +18476,7 @@
   $light-theme: false,
   $prefers-color-scheme-dark: false,
   $prefers-color-scheme-light: false,
+  $globant-colors: false,
 
   // Tokens
   $tokens: false,
@@ -18414,6 +18548,7 @@
     $light-theme: $light-theme,
     $prefers-color-scheme-dark: $prefers-color-scheme-dark,
     $prefers-color-scheme-light: $prefers-color-scheme-light,
+    $globant-colors: $globant-colors,
 
     // Tokens
     $tokens: $tokens,

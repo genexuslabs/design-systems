@@ -1,97 +1,205 @@
-@mixin foundation-colors--light() {
-  // primary
-  --mer-color__primary-blue--200: #005ac1;
-  --mer-color__primary-blue--300: #5498e8;
-  --mer-color__primary-blue--400: #437dc0;
-  --mer-color__primary-blue--600: #335884;
+@mixin foundation-colors--light($globant-colors: false) {
+  @if $globant-colors {
+    // Globant Colors
 
-  // neutral
-  --mer-color__neutral-gray--100: #4a5870;
-  --mer-color__neutral-gray--200: #49566d;
-  --mer-color__neutral-gray--300: #56677a;
-  --mer-color__neutral-gray--400: #56677a;
-  --mer-color__neutral-gray--450: #56677a;
-  --mer-color__neutral-gray--500: #828b96;
-  --mer-color__neutral-gray--550: #9da9b6;
-  --mer-color__neutral-gray--600: #aeb9c6;
-  --mer-color__neutral-gray--650: #c6d1dd;
-  --mer-color__neutral-gray--700: #e1ecf9;
-  --mer-color__neutral-gray--800: #fafbfd;
-  --mer-color__neutral-gray--900: #f0f4fa;
-  --mer-color__neutral-gray--1000: #ffffff;
+    // TODO: update with Globant colors when available
+    // primary
+    --mer-color__primary-blue--200: #005ac1;
+    --mer-color__primary-blue--300: #5498e8;
+    --mer-color__primary-blue--400: #437dc0;
+    --mer-color__primary-blue--600: #335884;
 
-  // tinted
-  --mer-color__tinted-yellow--5: #faf9f6;
-  --mer-color__tinted-yellow--60: #fafbfd;
-  --mer-color__tinted-red--5: #faf5f7;
-  --mer-color__tinted-red--60: #fbb2b7;
-  --mer-color__tinted-green--5: #f2f7f8;
-  --mer-color__tinted-green--60: #94cac4;
-  --mer-color__tinted-blue--5: #f3f6fd;
-  --mer-color__tinted-blue--8: #eff5fd;
-  --mer-color__tinted-blue--10: #ecf3fd;
-  --mer-color__tinted-blue--20: #deebfe;
-  --mer-color__tinted-blue--30: #cfe3fe;
-  --mer-color__tinted-blue--50: #b1d2fe;
+    // neutral
+    --mer-color__neutral-gray--100: #4a5870;
+    --mer-color__neutral-gray--200: #49566d;
+    --mer-color__neutral-gray--300: #56677a;
+    --mer-color__neutral-gray--400: #56677a;
+    --mer-color__neutral-gray--450: #56677a;
+    --mer-color__neutral-gray--500: #828b96;
+    --mer-color__neutral-gray--550: #9da9b6;
+    --mer-color__neutral-gray--600: #aeb9c6;
+    --mer-color__neutral-gray--650: #c6d1dd;
+    --mer-color__neutral-gray--700: #e1ecf9;
+    --mer-color__neutral-gray--800: #fafbfd;
+    --mer-color__neutral-gray--900: #f0f4fa;
+    --mer-color__neutral-gray--1000: #ffffff;
 
-  // message
-  --mer-color__message-green--100: #208e80;
-  --mer-color__message-green--200: #208e80;
-  --mer-color__message-yellow--100: #dfa135;
-  --mer-color__message-yellow--200: #dfa135;
-  --mer-color__message-red--100: #da1a27;
-  --mer-color__message-red--200: #da1a27;
-  --mer-color__message-red--300: #4d0000;
-  --mer-color__message-red--400: #800000;
-  --mer-color__message-red--500: #ff9999;
-  --mer-color__message-red--600: #ff9999;
+    // tinted
+    --mer-color__tinted-yellow--5: #faf9f6;
+    --mer-color__tinted-yellow--60: #fafbfd;
+    --mer-color__tinted-red--5: #faf5f7;
+    --mer-color__tinted-red--60: #fbb2b7;
+    --mer-color__tinted-green--5: #f2f7f8;
+    --mer-color__tinted-green--60: #94cac4;
+    --mer-color__tinted-blue--5: #f3f6fd;
+    --mer-color__tinted-blue--8: #eff5fd;
+    --mer-color__tinted-blue--10: #ecf3fd;
+    --mer-color__tinted-blue--20: #deebfe;
+    --mer-color__tinted-blue--30: #cfe3fe;
+    --mer-color__tinted-blue--50: #b1d2fe;
+
+    // message
+    --mer-color__message-green--100: #208e80;
+    --mer-color__message-green--200: #208e80;
+    --mer-color__message-yellow--100: #dfa135;
+    --mer-color__message-yellow--200: #dfa135;
+    --mer-color__message-red--100: #da1a27;
+    --mer-color__message-red--200: #da1a27;
+    --mer-color__message-red--300: #4d0000;
+    --mer-color__message-red--400: #800000;
+    --mer-color__message-red--500: #ff9999;
+    --mer-color__message-red--600: #ff9999;
+  } @else {
+    // Mercury Colors
+
+    // primary
+    --mer-color__primary-blue--200: #005ac1;
+    --mer-color__primary-blue--300: #5498e8;
+    --mer-color__primary-blue--400: #437dc0;
+    --mer-color__primary-blue--600: #335884;
+
+    // neutral
+    --mer-color__neutral-gray--100: #4a5870;
+    --mer-color__neutral-gray--200: #49566d;
+    --mer-color__neutral-gray--300: #56677a;
+    --mer-color__neutral-gray--400: #56677a;
+    --mer-color__neutral-gray--450: #56677a;
+    --mer-color__neutral-gray--500: #828b96;
+    --mer-color__neutral-gray--550: #9da9b6;
+    --mer-color__neutral-gray--600: #aeb9c6;
+    --mer-color__neutral-gray--650: #c6d1dd;
+    --mer-color__neutral-gray--700: #e1ecf9;
+    --mer-color__neutral-gray--800: #fafbfd;
+    --mer-color__neutral-gray--900: #f0f4fa;
+    --mer-color__neutral-gray--1000: #ffffff;
+
+    // tinted
+    --mer-color__tinted-yellow--5: #faf9f6;
+    --mer-color__tinted-yellow--60: #fafbfd;
+    --mer-color__tinted-red--5: #faf5f7;
+    --mer-color__tinted-red--60: #fbb2b7;
+    --mer-color__tinted-green--5: #f2f7f8;
+    --mer-color__tinted-green--60: #94cac4;
+    --mer-color__tinted-blue--5: #f3f6fd;
+    --mer-color__tinted-blue--8: #eff5fd;
+    --mer-color__tinted-blue--10: #ecf3fd;
+    --mer-color__tinted-blue--20: #deebfe;
+    --mer-color__tinted-blue--30: #cfe3fe;
+    --mer-color__tinted-blue--50: #b1d2fe;
+
+    // message
+    --mer-color__message-green--100: #208e80;
+    --mer-color__message-green--200: #208e80;
+    --mer-color__message-yellow--100: #dfa135;
+    --mer-color__message-yellow--200: #dfa135;
+    --mer-color__message-red--100: #da1a27;
+    --mer-color__message-red--200: #da1a27;
+    --mer-color__message-red--300: #4d0000;
+    --mer-color__message-red--400: #800000;
+    --mer-color__message-red--500: #ff9999;
+    --mer-color__message-red--600: #ff9999;
+  }
 }
 
-@mixin foundation-colors--dark() {
-  // primary
-  --mer-color__primary-blue--200: #5ba7ff;
-  --mer-color__primary-blue--300: #5498e8;
-  --mer-color__primary-blue--400: #437dc0;
-  --mer-color__primary-blue--600: #335884;
+@mixin foundation-colors--dark($globant-colors: false) {
+  @if $globant-colors {
+    // Globant Colors
 
-  // neutral
-  --mer-color__neutral-gray--100: #e1ecf9;
-  --mer-color__neutral-gray--200: #d2ddeb;
-  --mer-color__neutral-gray--300: #c0ccd9;
-  --mer-color__neutral-gray--400: #9da9b6;
-  --mer-color__neutral-gray--450: #828b96;
-  --mer-color__neutral-gray--500: #56677a;
-  --mer-color__neutral-gray--550: #485665;
-  --mer-color__neutral-gray--600: #394552;
-  --mer-color__neutral-gray--650: #2d3a48;
-  --mer-color__neutral-gray--700: #242d3c;
-  --mer-color__neutral-gray--800: #181f2a;
-  --mer-color__neutral-gray--900: #11151c;
-  --mer-color__neutral-gray--1000: #1f2225;
+    // primary
+    --mer-color__primary-blue--200: #bfd732;
+    --mer-color__primary-blue--300: #b4cc28;
+    --mer-color__primary-blue--400: #96aa22;
+    --mer-color__primary-blue--600: #697718;
 
-  // tinted
-  --mer-color__tinted-yellow--5: #282a2d;
-  --mer-color__tinted-yellow--60: #ad8a53;
-  --mer-color__tinted-red--5: #29252f;
-  --mer-color__tinted-red--60: #aa5962;
-  --mer-color__tinted-green--5: #1c2830;
-  --mer-color__tinted-green--60: #317571;
-  --mer-color__tinted-blue--5: #1d2838;
-  --mer-color__tinted-blue--8: #1f2c3f;
-  --mer-color__tinted-blue--10: #1f2e43;
-  --mer-color__tinted-blue--20: #293d5c;
-  --mer-color__tinted-blue--30: #2e4e72;
-  --mer-color__tinted-blue--50: #3c689c;
+    // neutral
+    --mer-color__neutral-gray--100: #ededed;
+    --mer-color__neutral-gray--200: #dfdfdf;
+    --mer-color__neutral-gray--300: #cdcdcd;
+    --mer-color__neutral-gray--400: #a9a9a9;
+    --mer-color__neutral-gray--450: #8c8c8c;
+    --mer-color__neutral-gray--500: #686868;
+    --mer-color__neutral-gray--550: #575757;
+    --mer-color__neutral-gray--600: #464646;
+    --mer-color__neutral-gray--650: #3b3b3b;
+    --mer-color__neutral-gray--700: #303030;
+    --mer-color__neutral-gray--800: #212121;
+    --mer-color__neutral-gray--900: #171717;
+    --mer-color__neutral-gray--1000: #000000;
 
-  // message
-  --mer-color__message-green--100: #3fa89b;
-  --mer-color__message-green--200: #3fa89b;
-  --mer-color__message-yellow--100: #f9bd56;
-  --mer-color__message-yellow--200: #f9bd56;
-  --mer-color__message-red--100: #e35861;
-  --mer-color__message-red--200: #d54b54;
-  --mer-color__message-red--300: #ff6161;
-  --mer-color__message-red--400: #ff9999;
-  --mer-color__message-red--500: #800000;
-  --mer-color__message-red--600: #4d0000;
+    // tinted
+    //TODO: update 'tinted-blue' with tinted-primary' in globant and mercury.
+    --mer-color__tinted-yellow--5: #282a2d;
+    --mer-color__tinted-yellow--60: #ad8a53;
+    --mer-color__tinted-red--5: #29252f;
+    --mer-color__tinted-red--60: #aa5962;
+    --mer-color__tinted-green--5: #1c2830;
+    --mer-color__tinted-green--60: #317571;
+    --mer-color__tinted-blue--5: #202118;
+    --mer-color__tinted-blue--8: #242619;
+    --mer-color__tinted-blue--10: #282a1a;
+    --mer-color__tinted-blue--20: #383d1c;
+    --mer-color__tinted-blue--30: #49501f;
+    --mer-color__tinted-blue--50: #6a7624;
+
+    // message
+    --mer-color__message-green--100: #208e80;
+    --mer-color__message-green--200: #208e80;
+    --mer-color__message-yellow--100: #dfa135;
+    --mer-color__message-yellow--200: #dfa135;
+    --mer-color__message-red--100: #da1a27;
+    --mer-color__message-red--200: #da1a27;
+    --mer-color__message-red--300: #4d0000;
+    --mer-color__message-red--400: #800000;
+    --mer-color__message-red--500: #ff9999;
+    --mer-color__message-red--600: #ff9999;
+  } @else {
+    // Mercury Colors
+
+    // primary
+    --mer-color__primary-blue--200: #5ba7ff;
+    --mer-color__primary-blue--300: #5498e8;
+    --mer-color__primary-blue--400: #437dc0;
+    --mer-color__primary-blue--600: #335884;
+
+    // neutral
+    --mer-color__neutral-gray--100: #e1ecf9;
+    --mer-color__neutral-gray--200: #d2ddeb;
+    --mer-color__neutral-gray--300: #c0ccd9;
+    --mer-color__neutral-gray--400: #9da9b6;
+    --mer-color__neutral-gray--450: #828b96;
+    --mer-color__neutral-gray--500: #56677a;
+    --mer-color__neutral-gray--550: #485665;
+    --mer-color__neutral-gray--600: #394552;
+    --mer-color__neutral-gray--650: #2d3a48;
+    --mer-color__neutral-gray--700: #242d3c;
+    --mer-color__neutral-gray--800: #181f2a;
+    --mer-color__neutral-gray--900: #11151c;
+    --mer-color__neutral-gray--1000: #1f2225;
+
+    // tinted
+    --mer-color__tinted-yellow--5: #282a2d;
+    --mer-color__tinted-yellow--60: #ad8a53;
+    --mer-color__tinted-red--5: #29252f;
+    --mer-color__tinted-red--60: #aa5962;
+    --mer-color__tinted-green--5: #1c2830;
+    --mer-color__tinted-green--60: #317571;
+    --mer-color__tinted-blue--5: #1d2838;
+    --mer-color__tinted-blue--8: #1f2c3f;
+    --mer-color__tinted-blue--10: #1f2e43;
+    --mer-color__tinted-blue--20: #293d5c;
+    --mer-color__tinted-blue--30: #2e4e72;
+    --mer-color__tinted-blue--50: #3c689c;
+
+    // message
+    --mer-color__message-green--100: #3fa89b;
+    --mer-color__message-green--200: #3fa89b;
+    --mer-color__message-yellow--100: #f9bd56;
+    --mer-color__message-yellow--200: #f9bd56;
+    --mer-color__message-red--100: #e35861;
+    --mer-color__message-red--200: #d54b54;
+    --mer-color__message-red--300: #ff6161;
+    --mer-color__message-red--400: #ff9999;
+    --mer-color__message-red--500: #800000;
+    --mer-color__message-red--600: #4d0000;
+  }
 }
