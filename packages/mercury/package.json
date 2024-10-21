@@ -11,6 +11,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc && npm run icons-svg && npm run icons-sass && npm run build.scss && npm run copy-tasks && npm run showcase.scss",
+    "build-globant": "tsc && npm run icons-svg-globant && npm run icons-sass-globant && npm run build.scss && npm run copy-tasks && npm run showcase.scss",
     "build-no-svg": "tsc && npm run build.scss && npm run copy-tasks",
     "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && npm run build.bundles && npm run copy-all.css",
     "build.bundles": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/bundles/scss dist/bundles/scss && sass --load-path=src --no-source-map --style compressed dist/bundles/scss:dist/bundles/css",
@@ -18,6 +19,8 @@
     "validate.ci": "npm run build-no-svg",
     "icons-svg": "ssg-svg --srcDir=src/icons/svg-source --outDir=src/assets/icons/_generated/ --configFilePath=src/icons/svg-source/.config/color-states.json --showcaseDir=showcase/icons/ --showcaseBaseHref=../assets/icons/ --logDir=./log --objectFilePath=src/assets/MERCURY_ASSETS.ts --defaultColorType=on-surface",
     "icons-sass": "ssg-sass --srcDir=src/assets/icons/ --outDir=src/icons/_generated/ --configFilePath=src/icons/svg-source/.config/color-states.json --vendorPrefix=",
+    "icons-svg-globant": "ssg-svg --srcDir=src/globant-icons/svg-source --outDir=src/assets/globant-icons/_generated/ --configFilePath=src/globant-icons/svg-source/.config/color-states.json --showcaseDir=showcase/globant-icons/ --showcaseBaseHref=../assets/globant-icons/ --logDir=./log --objectFilePath=src/assets/MERCURY_ASSETS.ts --defaultColorType=on-surface",
+    "icons-sass-globant": "ssg-sass --srcDir=src/assets/globant-icons/ --outDir=src/globant-icons/_generated/ --configFilePath=src/globant-icons/svg-source/.config/color-states.json --vendorPrefix=",
     "watch.scss": "chokidar src/**/*.scss ../common/**/*.scss -c \"npm run build.scss\"",
     "watch.scss.mac": "chokidar 'src/**/*.scss' '../common/**/*.scss' -c \"npm run build.scss\"",
     "copy-all.css": "fse copy dist/bundles/css/all.css showcase/all.css",
