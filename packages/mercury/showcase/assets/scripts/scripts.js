@@ -612,73 +612,74 @@ const includeBundleButtonV2 = () => {
     let chImage;
     let buttonCaption;
 
-    if (bundleValue.length !== 0) {
-      // Icons references
-      COPY_ICON = getIconPath({
-        category: "system",
-        name: "copy",
-        colorType: "primary"
-      });
-      CHECK_ICON = getIconPath({
-        category: "system",
-        name: "check",
-        colorType: "primary"
-      });
-      WARNING_ICON = getIconPath({
-        category: "system",
-        name: "warning",
-        colorType: "primary"
-      });
-    }
+    // Icons references
+    COPY_ICON = getIconPath({
+      category: "system",
+      name: "copy",
+      colorType: "primary"
+    });
+    CHECK_ICON = getIconPath({
+      category: "system",
+      name: "check",
+      colorType: "primary"
+    });
+    WARNING_ICON = getIconPath({
+      category: "system",
+      name: "warning",
+      colorType: "primary"
+    });
 
     // Create and add the ch-image element
-    if (bundleValue.length !== 0) {
-      chImage = document.createElement("ch-image");
-      chImage.className = "icon-md";
-      chImage.src = COPY_ICON;
-    }
+    chImage = document.createElement("ch-image");
+    chImage.className = "icon-md";
+    chImage.src = COPY_ICON;
+
+    // "copy bundle" container (for Label + Button)
+    const copyBundleContainer = document.createElement("div");
+    copyBundleContainer.classList.add("copy-bundle__container");
+
+    // "copy bundle" label
+    const copyBundleLabel = document.createElement("label");
+    copyBundleLabel.classList.add("copy-bundle__label");
+    copyBundleLabel.textContent = "Bundle:";
 
     // Create the "copy bundle" button
     const copyBundleButton = document.createElement("button");
     copyBundleButton.className = "button-tertiary button-icon-and-text";
-    if (bundleValue.length !== 0) {
-      buttonCaption = `Copy ${PAGE_TITLE} Bundle`;
-    } else {
-      buttonCaption = `No Bundle Required For ${PAGE_TITLE}`;
-    }
+    buttonCaption = `${bundleValue}`;
+
+    console.log(buttonCaption);
+
     const buttonCaptionTextNode = document.createTextNode(buttonCaption);
 
-    if (bundleValue.length !== 0) {
-      copyBundleButton.addEventListener("click", e => {
-        navigator.clipboard
-          .writeText(`"${bundleValue}"`)
-          .then(() => {
-            chImage.nextSibling.textContent = "Bundle Copied!";
-            chImage.src = CHECK_ICON;
-            e.target.style.pointerEvents = "none";
-          })
-          .catch(err => {
-            chImage.nextSibling.textContent = "Failed to Copy";
-            chImage.src = WARNING_ICON;
-            e.target.style.pointerEvents = "none";
-          });
-        setTimeout(() => {
-          chImage.nextSibling.textContent = buttonCaption;
-          chImage.src = COPY_ICON;
-          e.target.style.pointerEvents = "auto";
-        }, 1500);
-      });
-    }
+    copyBundleButton.addEventListener("click", e => {
+      navigator.clipboard
+        .writeText(`"${bundleValue}"`)
+        .then(() => {
+          chImage.previousSibling.textContent = "Copied!";
+          chImage.src = CHECK_ICON;
+          e.target.style.pointerEvents = "none";
+        })
+        .catch(err => {
+          chImage.previousSibling.textContent = "Failed to Copy";
+          chImage.src = WARNING_ICON;
+          e.target.style.pointerEvents = "none";
+        });
+      setTimeout(() => {
+        chImage.previousSibling.textContent = buttonCaption;
+        chImage.src = COPY_ICON;
+        e.target.style.pointerEvents = "auto";
+      }, 1500);
+    });
 
     // Appends
-    if (bundleValue.length !== 0) {
-      copyBundleButton.appendChild(chImage);
-      chImage.after(buttonCaptionTextNode);
-    } else {
-      copyBundleButton.innerText = buttonCaption;
-      copyBundleButton.disabled = true;
-    }
-    topBarRef.appendChild(copyBundleButton);
+    copyBundleButton.appendChild(buttonCaptionTextNode);
+    copyBundleButton.appendChild(chImage);
+    // chImage.after(buttonCaptionTextNode);
+    copyBundleContainer.appendChild(copyBundleLabel);
+    copyBundleContainer.appendChild(copyBundleButton);
+
+    topBarRef.appendChild(copyBundleContainer);
   }
 };
 
