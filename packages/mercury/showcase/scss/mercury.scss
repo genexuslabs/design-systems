@@ -969,8 +969,8 @@
   --mer-border__radius--xl: 30px;
 }
 
-@mixin foundation-colors--light($globant-colors: false) {
-  @if $globant-colors {
+@mixin foundation-colors--light($globant-ds: false) {
+  @if $globant-ds {
     // Globant Colors
 
     // TODO: update with Globant colors when available
@@ -1072,8 +1072,8 @@
   }
 }
 
-@mixin foundation-colors--dark($globant-colors: false) {
-  @if $globant-colors {
+@mixin foundation-colors--dark($globant-ds: false) {
+  @if $globant-ds {
     // Globant Colors
 
     // primary
@@ -1175,11 +1175,19 @@
   }
 }
 
-@mixin font() {
-  // families
-  --mer-font-family--title: Inter, Helvetica, Arial, sans-serif;
-  --mer-font-family--body: Inter, Helvetica, Arial, sans-serif;
-  --mer-font-family--code: monospace;
+@mixin font($globant-ds: false) {
+  @if $globant-ds {
+    // families
+    --mer-font-family--title: Heebo, Helvetica, Arial, sans-serif;
+    --mer-font-family--body: Heebo, Helvetica, Arial, sans-serif;
+    --mer-font-family--code: monospace;
+  }
+  else {
+    // families
+    --mer-font-family--title: Inter, Helvetica, Arial, sans-serif;
+    --mer-font-family--body: Inter, Helvetica, Arial, sans-serif;
+    --mer-font-family--code: monospace;
+  }
 
   // weights
   --mer-font__weight--light: 300;
@@ -10033,7 +10041,7 @@
   $light-theme: true,
   $prefers-color-scheme-dark: false,
   $prefers-color-scheme-light: false,
-  $globant-colors: false,
+  $globant-ds: true,
 
   // Tokens
   $tokens: true,
@@ -18038,7 +18046,82 @@
   //              Typography
   // - - - - - - - - - - - - - - - - - - - -
   // font-face
-  @if $font-face {
+  @if $font-face and $globant-ds {
+    // Globant fonts
+
+    // Thin
+    @font-face {
+      font-family: "Heebo";
+      src: url("#{$font-face-path}Heebo-Thin.woff2");
+      font-weight: 100;
+      font-style: normal;
+    }
+
+    // ExtraLight
+    @font-face {
+      font-family: "Heebo";
+      src: url("#{$font-face-path}Heebo-ExtraLight.woff2");
+      font-weight: 200;
+      font-style: normal;
+    }
+
+    // Light
+    @font-face {
+      font-family: "Heebo";
+      src: url("#{$font-face-path}Heebo-Light.woff2");
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    // Regular
+    @font-face {
+      font-family: "Heebo";
+      src: url("#{$font-face-path}Heebo-Regular.woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    // Medium
+    @font-face {
+      font-family: "Heebo";
+      src: url("#{$font-face-path}Heebo-Medium.woff2");
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    // SemiBold
+    @font-face {
+      font-family: "Heebo";
+      src: url("#{$font-face-path}Heebo-SemiBold.woff2");
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    // Bold
+    @font-face {
+      font-family: "Heebo";
+      src: url("#{$font-face-path}Heebo-Bold.woff2");
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    // ExtraBold
+    @font-face {
+      font-family: "Heebo";
+      src: url("#{$font-face-path}Heebo-ExtraBold.woff2");
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    // Black
+    @font-face {
+      font-family: "Heebo";
+      src: url("#{$font-face-path}Heebo-Black.woff2");
+      font-weight: 900;
+      font-style: normal;
+    }
+  } @else if $font-face {
+    // Mercury fonts
     // Thin
     @font-face {
       font-family: "Inter";
@@ -18175,7 +18258,7 @@
       // Fixes issues in elements that force its color based on this property.
       // For example, the font color of the input with autocomplete (:-webkit-autofill)
       color-scheme: light;
-      @include foundation-colors--light($globant-colors: $globant-colors);
+      @include foundation-colors--light($globant-ds: $globant-ds);
     }
   }
   @if $colors and $tokens and $prefers-color-scheme-light {
@@ -18184,7 +18267,7 @@
         // Fixes issues in elements that force its color based on this property.
         // For example, the font color of the input with autocomplete (:-webkit-autofill)
         color-scheme: light;
-        @include foundation-colors--light($globant-colors: $globant-colors);
+        @include foundation-colors--light($globant-ds: $globant-ds);
       }
     }
   }
@@ -18195,7 +18278,7 @@
       // Fixes issues in elements that force its color based on this property.
       // For example, the font color of the input with autocomplete (:-webkit-autofill)
       color-scheme: dark;
-      @include foundation-colors--dark($globant-colors: $globant-colors);
+      @include foundation-colors--dark($globant-ds: $globant-ds);
     }
   }
   @if $colors and $tokens and $prefers-color-scheme-dark {
@@ -18204,7 +18287,7 @@
         // Fixes issues in elements that force its color based on this property.
         // For example, the font color of the input with autocomplete (:-webkit-autofill)
         color-scheme: dark;
-        @include foundation-colors--dark($globant-colors: $globant-colors);
+        @include foundation-colors--dark($globant-ds: $globant-ds);
       }
     }
   }
@@ -18243,7 +18326,7 @@
       }
 
       @if $font {
-        @include font();
+        @include font($globant-ds: $globant-ds);
       }
 
       @if $spacing {
@@ -18476,7 +18559,7 @@
   $light-theme: false,
   $prefers-color-scheme-dark: false,
   $prefers-color-scheme-light: false,
-  $globant-colors: false,
+  $globant-ds: false,
 
   // Tokens
   $tokens: false,
@@ -18548,7 +18631,7 @@
     $light-theme: $light-theme,
     $prefers-color-scheme-dark: $prefers-color-scheme-dark,
     $prefers-color-scheme-light: $prefers-color-scheme-light,
-    $globant-colors: $globant-colors,
+    $globant-ds: $globant-ds,
 
     // Tokens
     $tokens: $tokens,
