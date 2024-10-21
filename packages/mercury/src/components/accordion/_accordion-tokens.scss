@@ -38,25 +38,13 @@
   --accordion-header__border-width: var(--mer-border__width--sm);
   --accordion-header__border-color: transparent;
   --accordion-header__border-radius: var(--accordion-panel__border-radius);
-  --accordion-header__border: var(--accordion-header__border-width) solid
-    var(--accordion-header__border-color);
-  // note: just overriding "--accordion-header__border-color" doesn't seem to work.
-  // header:hover
-  --accordion-header__border-color--hover: var(
-    --mer-border-color__primary--hover
-  );
-  --accordion-header__border--hover: var(--accordion-header__border-width) solid
-    var(--accordion-header__border-color--hover);
-  // header:active
-  --accordion-header__border-color--active: var(
-    --mer-border-color__primary--active
-  );
-  --accordion-header__border--active: var(--accordion-header__border-width)
-    solid var(--accordion-header__border-color--active);
+  --accordion-header__border-block-end-color: var(
+    --mer-border-color__on-surface
+  ); // for expanded
 
   // section
   --accordion-section__border-color: var(--mer-border-color__on-elevation--01);
-  --accordion-section__margin-block: 1px var(--mer-spacing--sm);
+  --accordion-section__margin-block: var(--mer-spacing--sm);
   --accordion-section__margin-inline: var(--mer-spacing--sm);
   --accordion-section__bg-color: var(--mer-surface__elevation--01);
   --accordion-section__border: var(--mer-border__width--sm) solid

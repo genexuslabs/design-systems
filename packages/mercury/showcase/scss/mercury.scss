@@ -786,13 +786,17 @@
 }
 
 @mixin spacing-body(
-  $body-selector: ".spacing-body",
-  $body-block-selector: ".spacing-body-block",
-  $body-block-start-selector: ".spacing-body-block-start",
-  $body-block-end-selector: ".spacing-body-block-end",
-  $body-inline-selector: ".spacing-body-inline",
-  $body-inline-start-selector: ".spacing-body-inline-start",
-  $body-inline-end-selector: ".spacing-body-inline-end"
+  $body-selector: ".spacing-body,:host(.spacing-body)",
+  $body-block-selector: ".spacing-body-block,:host(.spacing-body-block)",
+  $body-block-start-selector:
+    ".spacing-body-block-start,:host(.spacing-body-block-start)",
+  $body-block-end-selector:
+    ".spacing-body-block-end,:host(.spacing-body-block-end)",
+  $body-inline-selector: ".spacing-body-inline,:host(.spacing-body-inline)",
+  $body-inline-start-selector:
+    ".spacing-body-inline-start,:host(.spacing-body-inline-start)",
+  $body-inline-end-selector:
+    ".spacing-body-inline-end,:host(.spacing-body-inline-end)"
 ) {
   #{$body-selector} {
     @extend %spacing-body;
@@ -2315,13 +2319,17 @@
 }
 
 @mixin spacing-body(
-  $body-selector: ".spacing-body",
-  $body-block-selector: ".spacing-body-block",
-  $body-block-start-selector: ".spacing-body-block-start",
-  $body-block-end-selector: ".spacing-body-block-end",
-  $body-inline-selector: ".spacing-body-inline",
-  $body-inline-start-selector: ".spacing-body-inline-start",
-  $body-inline-end-selector: ".spacing-body-inline-end"
+  $body-selector: ".spacing-body,:host(.spacing-body)",
+  $body-block-selector: ".spacing-body-block,:host(.spacing-body-block)",
+  $body-block-start-selector:
+    ".spacing-body-block-start,:host(.spacing-body-block-start)",
+  $body-block-end-selector:
+    ".spacing-body-block-end,:host(.spacing-body-block-end)",
+  $body-inline-selector: ".spacing-body-inline,:host(.spacing-body-inline)",
+  $body-inline-start-selector:
+    ".spacing-body-inline-start,:host(.spacing-body-inline-start)",
+  $body-inline-end-selector:
+    ".spacing-body-inline-end,:host(.spacing-body-inline-end)"
 ) {
   #{$body-selector} {
     @extend %spacing-body;
@@ -3623,7 +3631,7 @@
 
   // section
   --accordion-section__border-color: var(--mer-border-color__on-elevation--01);
-  --accordion-section__margin-block: 1px var(--mer-spacing--sm);
+  --accordion-section__margin-block: var(--mer-spacing--sm);
   --accordion-section__margin-inline: var(--mer-spacing--sm);
   --accordion-section__bg-color: var(--mer-surface__elevation--01);
   --accordion-section__border: var(--mer-border__width--sm) solid
@@ -3657,7 +3665,8 @@
   gap: var(--accordion-header__gap);
   color: var(--accordion-header__color);
   outline: var(--accordion-header__border);
-  border-radius: var(--accordion-header__border-radius);
+  // border-radius: var(--accordion-header__border-radius);
+  border-bottom: 1px solid red;
 
   &--hover {
     --accordion-header__border: var(--accordion-header__border--hover);
@@ -3703,15 +3712,10 @@
   // "1px" is used to improve the display of the outline when :focus-visible
   margin-block: var(--accordion-section__margin-block);
   margin-inline: var(--accordion-section__margin-inline);
-  padding-block: var(--accordion-section__padding-block);
-  padding-inline: var(--accordion-section__padding-inline);
-  background-color: var(--accordion-section__bg-color);
-  border: var(--accordion-section__border);
-  border-radius: var(--accordion-section__border-radius);
+  // background-color: var(--accordion-section__bg-color);
 
   &-outlined {
     &--disabled {
-      border-color: var(--accordion-section-outlined__border-color--disabled);
     }
   }
 }
@@ -4885,13 +4889,17 @@
 }
 
 @mixin spacing-body(
-  $body-selector: ".spacing-body",
-  $body-block-selector: ".spacing-body-block",
-  $body-block-start-selector: ".spacing-body-block-start",
-  $body-block-end-selector: ".spacing-body-block-end",
-  $body-inline-selector: ".spacing-body-inline",
-  $body-inline-start-selector: ".spacing-body-inline-start",
-  $body-inline-end-selector: ".spacing-body-inline-end"
+  $body-selector: ".spacing-body,:host(.spacing-body)",
+  $body-block-selector: ".spacing-body-block,:host(.spacing-body-block)",
+  $body-block-start-selector:
+    ".spacing-body-block-start,:host(.spacing-body-block-start)",
+  $body-block-end-selector:
+    ".spacing-body-block-end,:host(.spacing-body-block-end)",
+  $body-inline-selector: ".spacing-body-inline,:host(.spacing-body-inline)",
+  $body-inline-start-selector:
+    ".spacing-body-inline-start,:host(.spacing-body-inline-start)",
+  $body-inline-end-selector:
+    ".spacing-body-inline-end,:host(.spacing-body-inline-end)"
 ) {
   #{$body-selector} {
     @extend %spacing-body;
@@ -4944,12 +4952,10 @@
 %combo-box {
   --ch-combo-box-separation-y: var(--mer-spacing--3xs);
   --ch-combo-box-item-gap: var(--mer-spacing--xs);
-
-  --ch-combo-box-item__image-size: var(--mer-spacing--md);
-  --ch-combo-box-group__expandable-button-size: var(--mer-spacing--md);
-
-  --ch-combo-box-group__expandable-button-image-size: var(--mer-spacing--sm);
+  --ch-combo-box-item__image-size: var(--mer-icon__box--md);
   --ch-combo-box-item__background-image-size: 100%;
+  --ch-combo-box-group__expandable-button-size: var(--mer-spacing--md);
+  --ch-combo-box-group__expandable-button-image-size: var(--mer-spacing--sm);
 
   @include control-border();
   @include control-colors-enabled();
@@ -6759,13 +6765,17 @@
 }
 
 @mixin spacing-body(
-  $body-selector: ".spacing-body",
-  $body-block-selector: ".spacing-body-block",
-  $body-block-start-selector: ".spacing-body-block-start",
-  $body-block-end-selector: ".spacing-body-block-end",
-  $body-inline-selector: ".spacing-body-inline",
-  $body-inline-start-selector: ".spacing-body-inline-start",
-  $body-inline-end-selector: ".spacing-body-inline-end"
+  $body-selector: ".spacing-body,:host(.spacing-body)",
+  $body-block-selector: ".spacing-body-block,:host(.spacing-body-block)",
+  $body-block-start-selector:
+    ".spacing-body-block-start,:host(.spacing-body-block-start)",
+  $body-block-end-selector:
+    ".spacing-body-block-end,:host(.spacing-body-block-end)",
+  $body-inline-selector: ".spacing-body-inline,:host(.spacing-body-inline)",
+  $body-inline-start-selector:
+    ".spacing-body-inline-start,:host(.spacing-body-inline-start)",
+  $body-inline-end-selector:
+    ".spacing-body-inline-end,:host(.spacing-body-inline-end)"
 ) {
   #{$body-selector} {
     @extend %spacing-body;

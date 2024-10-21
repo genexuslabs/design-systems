@@ -277,22 +277,6 @@ Top Bar
 }
 
 /*====================
-Main Header
-====================*/
-.bundle-container {
-  border-block-end: 1px solid var(--mer-surface__elevation--01);
-  block-size: var(--sc-top-bar__height);
-  background-color: var(--mer-color__surface);
-  z-index: 99;
-  display: grid;
-  align-items: center;
-  text-transform: capitalize;
-  position: fixed;
-  top: var(--sc-top-bar__height);
-  inline-size: calc(100vw - var(--sc-sidebar__width));
-}
-
-/*====================
 Container
 ====================*/
 .main {
