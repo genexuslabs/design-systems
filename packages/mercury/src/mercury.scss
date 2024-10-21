@@ -84,6 +84,7 @@
   $light-theme: true,
   $prefers-color-scheme-dark: false,
   $prefers-color-scheme-light: false,
+  $globant-colors: false,
 
   // Tokens
   $tokens: true,
@@ -286,7 +287,7 @@
       // Fixes issues in elements that force its color based on this property.
       // For example, the font color of the input with autocomplete (:-webkit-autofill)
       color-scheme: light;
-      @include foundation-colors--light();
+      @include foundation-colors--light($globant-colors: $globant-colors);
     }
   }
   @if $colors and $tokens and $prefers-color-scheme-light {
@@ -295,7 +296,7 @@
         // Fixes issues in elements that force its color based on this property.
         // For example, the font color of the input with autocomplete (:-webkit-autofill)
         color-scheme: light;
-        @include foundation-colors--light();
+        @include foundation-colors--light($globant-colors: $globant-colors);
       }
     }
   }
@@ -306,7 +307,7 @@
       // Fixes issues in elements that force its color based on this property.
       // For example, the font color of the input with autocomplete (:-webkit-autofill)
       color-scheme: dark;
-      @include foundation-colors--dark();
+      @include foundation-colors--dark($globant-colors: $globant-colors);
     }
   }
   @if $colors and $tokens and $prefers-color-scheme-dark {
@@ -315,7 +316,7 @@
         // Fixes issues in elements that force its color based on this property.
         // For example, the font color of the input with autocomplete (:-webkit-autofill)
         color-scheme: dark;
-        @include foundation-colors--dark();
+        @include foundation-colors--dark($globant-colors: $globant-colors);
       }
     }
   }
@@ -587,6 +588,7 @@
   $light-theme: false,
   $prefers-color-scheme-dark: false,
   $prefers-color-scheme-light: false,
+  $globant-colors: false,
 
   // Tokens
   $tokens: false,
@@ -658,6 +660,7 @@
     $light-theme: $light-theme,
     $prefers-color-scheme-dark: $prefers-color-scheme-dark,
     $prefers-color-scheme-light: $prefers-color-scheme-light,
+    $globant-colors: $globant-colors,
 
     // Tokens
     $tokens: $tokens,
