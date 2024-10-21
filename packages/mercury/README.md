@@ -87,6 +87,7 @@ npm i @genexus/mercury
         ```scss
         $icons-path: "assets/custom/path/icons/";
         $font-face-path: "assets/custom/path/fonts/";
+        $globant-colors: false;
         ```
 
     3.  Run the following command to transpile the bundles with the new path for the assets:
