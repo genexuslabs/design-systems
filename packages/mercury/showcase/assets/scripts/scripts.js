@@ -39,7 +39,7 @@ const includeFavicon = () => {
   const linkElement = document.createElement("link");
   linkElement.rel = "icon";
   linkElement.type = "image/png";
-  linkElement.href = "./assets/images/favicon.png";
+  linkElement.href = "./assets/images/globant.png";
   linkElement.sizes = "32x32";
   document.head.appendChild(linkElement);
 };
