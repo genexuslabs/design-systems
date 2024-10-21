@@ -1,0 +1,59 @@
+
+  /* =================================
+  LIGHT CUSTOM PROPERTIES
+  ================================= */
+
+  :root.light {
+  /*objects-parts*/
+  --icon__objects-parts_variables--enabled: url('#{$icons-path}objects-parts/light/variables.svg#enabled'); 
+  --icon__objects-parts_variables--hover: url('#{$icons-path}objects-parts/light/variables.svg#hover'); 
+  --icon__objects-parts_variables--active: url('#{$icons-path}objects-parts/light/variables.svg#active'); 
+  --icon__objects-parts_variables--disabled: url('#{$icons-path}objects-parts/light/variables.svg#disabled'); 
+  --icon__objects-parts_rules--enabled: url('#{$icons-path}objects-parts/light/rules.svg#enabled'); 
+  --icon__objects-parts_rules--hover: url('#{$icons-path}objects-parts/light/rules.svg#hover'); 
+  --icon__objects-parts_rules--active: url('#{$icons-path}objects-parts/light/rules.svg#active'); 
+  --icon__objects-parts_rules--disabled: url('#{$icons-path}objects-parts/light/rules.svg#disabled'); 
+  --icon__objects-parts_events--enabled: url('#{$icons-path}objects-parts/light/events.svg#enabled'); 
+  --icon__objects-parts_events--hover: url('#{$icons-path}objects-parts/light/events.svg#hover'); 
+  --icon__objects-parts_events--active: url('#{$icons-path}objects-parts/light/events.svg#active'); 
+  --icon__objects-parts_events--disabled: url('#{$icons-path}objects-parts/light/events.svg#disabled'); 
+  --icon__objects-parts_conditions--enabled: url('#{$icons-path}objects-parts/light/conditions.svg#enabled'); 
+  --icon__objects-parts_conditions--hover: url('#{$icons-path}objects-parts/light/conditions.svg#hover'); 
+  --icon__objects-parts_conditions--active: url('#{$icons-path}objects-parts/light/conditions.svg#active'); 
+  --icon__objects-parts_conditions--disabled: url('#{$icons-path}objects-parts/light/conditions.svg#disabled'); 
+  --icon__objects-parts_condition--enabled: url('#{$icons-path}objects-parts/light/condition.svg#enabled'); 
+  --icon__objects-parts_condition--hover: url('#{$icons-path}objects-parts/light/condition.svg#hover'); 
+  --icon__objects-parts_condition--active: url('#{$icons-path}objects-parts/light/condition.svg#active'); 
+  --icon__objects-parts_condition--disabled: url('#{$icons-path}objects-parts/light/condition.svg#disabled'); 
+
+  }
+
+  /* =================================
+  DARK CUSTOM PROPERTIES
+  ================================= */
+
+  :root.dark {
+  /*objects-parts*/
+  --icon__objects-parts_variables--enabled: url('#{$icons-path}objects-parts/dark/variables.svg#enabled'); 
+  --icon__objects-parts_variables--hover: url('#{$icons-path}objects-parts/dark/variables.svg#hover'); 
+  --icon__objects-parts_variables--active: url('#{$icons-path}objects-parts/dark/variables.svg#active'); 
+  --icon__objects-parts_variables--disabled: url('#{$icons-path}objects-parts/dark/variables.svg#disabled'); 
+  --icon__objects-parts_rules--enabled: url('#{$icons-path}objects-parts/dark/rules.svg#enabled'); 
+  --icon__objects-parts_rules--hover: url('#{$icons-path}objects-parts/dark/rules.svg#hover'); 
+  --icon__objects-parts_rules--active: url('#{$icons-path}objects-parts/dark/rules.svg#active'); 
+  --icon__objects-parts_rules--disabled: url('#{$icons-path}objects-parts/dark/rules.svg#disabled'); 
+  --icon__objects-parts_events--enabled: url('#{$icons-path}objects-parts/dark/events.svg#enabled'); 
+  --icon__objects-parts_events--hover: url('#{$icons-path}objects-parts/dark/events.svg#hover'); 
+  --icon__objects-parts_events--active: url('#{$icons-path}objects-parts/dark/events.svg#active'); 
+  --icon__objects-parts_events--disabled: url('#{$icons-path}objects-parts/dark/events.svg#disabled'); 
+  --icon__objects-parts_conditions--enabled: url('#{$icons-path}objects-parts/dark/conditions.svg#enabled'); 
+  --icon__objects-parts_conditions--hover: url('#{$icons-path}objects-parts/dark/conditions.svg#hover'); 
+  --icon__objects-parts_conditions--active: url('#{$icons-path}objects-parts/dark/conditions.svg#active'); 
+  --icon__objects-parts_conditions--disabled: url('#{$icons-path}objects-parts/dark/conditions.svg#disabled'); 
+  --icon__objects-parts_condition--enabled: url('#{$icons-path}objects-parts/dark/condition.svg#enabled'); 
+  --icon__objects-parts_condition--hover: url('#{$icons-path}objects-parts/dark/condition.svg#hover'); 
+  --icon__objects-parts_condition--active: url('#{$icons-path}objects-parts/dark/condition.svg#active'); 
+  --icon__objects-parts_condition--disabled: url('#{$icons-path}objects-parts/dark/condition.svg#disabled'); 
+
+  }
+  

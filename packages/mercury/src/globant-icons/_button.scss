@@ -1,0 +1,29 @@
+@import "../base/button/button-tokens";
+
+%button-icon-only {
+  padding: 0;
+  box-sizing: border-box;
+  // A control block-size is the sum of its font-size + line-height + padding-block + border.
+  $buttonIconOnlySize: calc(
+    var(--control__font-size--regular) * var(--control__line-height) +
+      var(--control__padding-block) * 2 + var(--control__border-width) * 2
+  );
+  inline-size: $buttonIconOnlySize;
+  block-size: $buttonIconOnlySize;
+}
+
+%button-icon-and-text {
+  @include icon-and-text-styles(var(--mer-spacing--xs));
+}
+
+@mixin button-icon-only($selector: ".button-icon-only") {
+  #{$selector} {
+    @extend %button-icon-only;
+  }
+}
+
+@mixin button-icon-and-text($selector: ".button-icon-and-text") {
+  #{$selector} {
+    @extend %button-icon-and-text;
+  }
+}
