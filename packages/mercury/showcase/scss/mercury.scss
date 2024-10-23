@@ -830,8 +830,8 @@
 @mixin spinner($size) {
   width: $size;
   height: $size;
-  border: calc($size / 5) solid var(--mer-color__tinted-blue--50);
-  border-top: calc($size / 5) solid var(--mer-color__primary-blue--300);
+  border: calc($size / 5) solid var(--mer-color__tinted-primary--50);
+  border-top: calc($size / 5) solid var(--mer-color__primary--300);
   border-radius: 50%;
   animation: spin var(--mer-timing--regular) linear infinite;
 
@@ -975,10 +975,10 @@
 
     // TODO: update with Globant colors when available
     // primary
-    --mer-color__primary-blue--200: #005ac1;
-    --mer-color__primary-blue--300: #5498e8;
-    --mer-color__primary-blue--400: #437dc0;
-    --mer-color__primary-blue--600: #335884;
+    --mer-color__primary--200: #005ac1;
+    --mer-color__primary--300: #5498e8;
+    --mer-color__primary--400: #437dc0;
+    --mer-color__primary--600: #335884;
 
     // neutral
     --mer-color__neutral-gray--100: #4a5870;
@@ -1002,12 +1002,12 @@
     --mer-color__tinted-red--60: #fbb2b7;
     --mer-color__tinted-green--5: #f2f7f8;
     --mer-color__tinted-green--60: #94cac4;
-    --mer-color__tinted-blue--5: #f3f6fd;
-    --mer-color__tinted-blue--8: #eff5fd;
-    --mer-color__tinted-blue--10: #ecf3fd;
-    --mer-color__tinted-blue--20: #deebfe;
-    --mer-color__tinted-blue--30: #cfe3fe;
-    --mer-color__tinted-blue--50: #b1d2fe;
+    --mer-color__tinted-primary--5: #f3f6fd;
+    --mer-color__tinted-primary--8: #eff5fd;
+    --mer-color__tinted-primary--10: #ecf3fd;
+    --mer-color__tinted-primary--20: #deebfe;
+    --mer-color__tinted-primary--30: #cfe3fe;
+    --mer-color__tinted-primary--50: #b1d2fe;
 
     // message
     --mer-color__message-green--100: #208e80;
@@ -1024,10 +1024,10 @@
     // Mercury Colors
 
     // primary
-    --mer-color__primary-blue--200: #005ac1;
-    --mer-color__primary-blue--300: #5498e8;
-    --mer-color__primary-blue--400: #437dc0;
-    --mer-color__primary-blue--600: #335884;
+    --mer-color__primary--200: #005ac1;
+    --mer-color__primary--300: #5498e8;
+    --mer-color__primary--400: #437dc0;
+    --mer-color__primary--600: #335884;
 
     // neutral
     --mer-color__neutral-gray--100: #4a5870;
@@ -1051,12 +1051,12 @@
     --mer-color__tinted-red--60: #fbb2b7;
     --mer-color__tinted-green--5: #f2f7f8;
     --mer-color__tinted-green--60: #94cac4;
-    --mer-color__tinted-blue--5: #f3f6fd;
-    --mer-color__tinted-blue--8: #eff5fd;
-    --mer-color__tinted-blue--10: #ecf3fd;
-    --mer-color__tinted-blue--20: #deebfe;
-    --mer-color__tinted-blue--30: #cfe3fe;
-    --mer-color__tinted-blue--50: #b1d2fe;
+    --mer-color__tinted-primary--5: #f3f6fd;
+    --mer-color__tinted-primary--8: #eff5fd;
+    --mer-color__tinted-primary--10: #ecf3fd;
+    --mer-color__tinted-primary--20: #deebfe;
+    --mer-color__tinted-primary--30: #cfe3fe;
+    --mer-color__tinted-primary--50: #b1d2fe;
 
     // message
     --mer-color__message-green--100: #208e80;
@@ -1077,10 +1077,10 @@
     // Globant Colors
 
     // primary
-    --mer-color__primary-blue--200: #bfd732;
-    --mer-color__primary-blue--300: #b4cc28;
-    --mer-color__primary-blue--400: #96aa22;
-    --mer-color__primary-blue--600: #697718;
+    --mer-color__primary--200: #bfd732;
+    --mer-color__primary--300: #b4cc28;
+    --mer-color__primary--400: #96aa22;
+    --mer-color__primary--600: #697718;
 
     // neutral
     --mer-color__neutral-gray--100: #ededed;
@@ -1105,16 +1105,16 @@
     --mer-color__tinted-red--60: #aa5962;
     --mer-color__tinted-green--5: #1c2830;
     --mer-color__tinted-green--60: #317571;
-    --mer-color__tinted-blue--5: #202118;
-    --mer-color__tinted-blue--8: #242619;
-    --mer-color__tinted-blue--10: #282a1a;
-    --mer-color__tinted-blue--20: #383d1c;
-    --mer-color__tinted-blue--30: #49501f;
-    --mer-color__tinted-blue--50: #6a7624;
+    --mer-color__tinted-primary--5: #202118;
+    --mer-color__tinted-primary--8: #242619;
+    --mer-color__tinted-primary--10: #282a1a;
+    --mer-color__tinted-primary--20: #383d1c;
+    --mer-color__tinted-primary--30: #49501f;
+    --mer-color__tinted-primary--50: #6a7624;
 
     // message
-    --mer-color__message-green--100: #208e80;
-    --mer-color__message-green--200: #208e80;
+    --mer-color__message-green--100: #b1e1b6;
+    --mer-color__message-green--200: #9ccba1;
     --mer-color__message-yellow--100: #dfa135;
     --mer-color__message-yellow--200: #dfa135;
     --mer-color__message-red--100: #da1a27;
@@ -1127,10 +1127,10 @@
     // Mercury Colors
 
     // primary
-    --mer-color__primary-blue--200: #5ba7ff;
-    --mer-color__primary-blue--300: #5498e8;
-    --mer-color__primary-blue--400: #437dc0;
-    --mer-color__primary-blue--600: #335884;
+    --mer-color__primary--200: #5ba7ff;
+    --mer-color__primary--300: #5498e8;
+    --mer-color__primary--400: #437dc0;
+    --mer-color__primary--600: #335884;
 
     // neutral
     --mer-color__neutral-gray--100: #e1ecf9;
@@ -1154,12 +1154,12 @@
     --mer-color__tinted-red--60: #aa5962;
     --mer-color__tinted-green--5: #1c2830;
     --mer-color__tinted-green--60: #317571;
-    --mer-color__tinted-blue--5: #1d2838;
-    --mer-color__tinted-blue--8: #1f2c3f;
-    --mer-color__tinted-blue--10: #1f2e43;
-    --mer-color__tinted-blue--20: #293d5c;
-    --mer-color__tinted-blue--30: #2e4e72;
-    --mer-color__tinted-blue--50: #3c689c;
+    --mer-color__tinted-primary--5: #1d2838;
+    --mer-color__tinted-primary--8: #1f2c3f;
+    --mer-color__tinted-primary--10: #1f2e43;
+    --mer-color__tinted-primary--20: #293d5c;
+    --mer-color__tinted-primary--30: #2e4e72;
+    --mer-color__tinted-primary--50: #3c689c;
 
     // message
     --mer-color__message-green--100: #3fa89b;
@@ -1320,9 +1320,9 @@
 
 // Tokens Semantic
 @mixin semantic-accent() {
-  --mer-accent__primary: var(--mer-color__primary-blue--200);
-  --mer-accent__primary--hover: var(--mer-color__primary-blue--400);
-  --mer-accent__primary--active: var(--mer-color__primary-blue--600);
+  --mer-accent__primary: var(--mer-color__primary--200);
+  --mer-accent__primary--hover: var(--mer-color__primary--400);
+  --mer-accent__primary--active: var(--mer-color__primary--600);
   --mer-accent__primary--disabled: var(--mer-color__neutral-gray--500);
   --mer-accent__primary--destructive: var(--mer-color__message-red--100);
   --mer-accent__primary--destructive-hover: var(--mer-color__message-red--300);
@@ -1611,19 +1611,19 @@
   --item__color--enabled: var(--mer-text__on-elevation);
 
   // hover
-  --item__bg-color--hover: var(--mer-color__tinted-blue--5);
-  // --item__border-color--hover: var(--mer-color__tinted-blue--20); // to be defined later with design team
+  --item__bg-color--hover: var(--mer-color__tinted-primary--5);
+  // --item__border-color--hover: var(--mer-color__tinted-primary--20); // to be defined later with design team
   --item__border-color--hover: transparent;
   --item__color--hover: var(--mer-color__neutral-gray--100);
 
   // selected
-  --item__bg-color--selected: var(--mer-color__tinted-blue--10);
-  --item__border-color--selected: var(--mer-color__tinted-blue--30);
+  --item__bg-color--selected: var(--mer-color__tinted-primary--10);
+  --item__border-color--selected: var(--mer-color__tinted-primary--30);
   --item__color--selected: var(--mer-color__neutral-gray--100);
 
   // selected + hover
-  --item__bg-color--selected-hover: var(--mer-color__tinted-blue--10);
-  --item__border-color--selected-hover: var(--mer-color__tinted-blue--20);
+  --item__bg-color--selected-hover: var(--mer-color__tinted-primary--10);
+  --item__border-color--selected-hover: var(--mer-color__tinted-primary--20);
   --item__color--selected-hover: var(--mer-color__neutral-gray--100);
 
   // disabled
@@ -1738,14 +1738,14 @@
   --tab-caption__color--enabled: var(--mer-text__neutral);
 
   // hover
-  --tab-caption__bg-color--hover: var(--mer-color__tinted-blue--10);
+  --tab-caption__bg-color--hover: var(--mer-color__tinted-primary--10);
 
   // selected
   --tab-caption__bg-color--selected-inline: transparent;
-  --tab-caption__bg-color--selected-stack: var(--mer-color__tinted-blue--10);
+  --tab-caption__bg-color--selected-stack: var(--mer-color__tinted-primary--10);
   --tab-caption__border-color--selected-inline: var(--mer-accent__primary);
   --tab-caption__border-color--selected-stack: var(
-    --mer-color__tinted-blue--20
+    --mer-color__tinted-primary--20
   );
   --tab-caption__color--selected: var(--mer-text__highlighted);
 
@@ -2471,8 +2471,8 @@
 @mixin spinner($size) {
   width: $size;
   height: $size;
-  border: calc($size / 5) solid var(--mer-color__tinted-blue--50);
-  border-top: calc($size / 5) solid var(--mer-color__primary-blue--300);
+  border: calc($size / 5) solid var(--mer-color__tinted-primary--50);
+  border-top: calc($size / 5) solid var(--mer-color__primary--300);
   border-radius: 50%;
   animation: spin var(--mer-timing--regular) linear infinite;
 
@@ -4253,8 +4253,8 @@
 @mixin code-tokens() {
   // TODO: variable names should be updated to something more descriptive
   --code__color-base: var(--mer-text__on-surface);
-  --code__color-blue: var(--mer-color__primary-blue--400);
-  --code__color-light-blue: var(--mer-color__primary-blue--200);
+  --code__color-blue: var(--mer-color__primary--400);
+  --code__color-light-blue: var(--mer-color__primary--200);
   --code__color-red: var(--mer-color__message-red--200);
   --code__color-green: var(--mer-color__message-green--200);
   --code__bg-color: var(--mer-surface__elevation--01);
@@ -5065,8 +5065,8 @@
 @mixin spinner($size) {
   width: $size;
   height: $size;
-  border: calc($size / 5) solid var(--mer-color__tinted-blue--50);
-  border-top: calc($size / 5) solid var(--mer-color__primary-blue--300);
+  border: calc($size / 5) solid var(--mer-color__tinted-primary--50);
+  border-top: calc($size / 5) solid var(--mer-color__primary--300);
   border-radius: 50%;
   animation: spin var(--mer-timing--regular) linear infinite;
 
@@ -5301,7 +5301,7 @@
   &__edge {
     $edge-border-width: var(--mer-border__width--lg);
     $edge-border-style: solid;
-    $edge-color: var(--mer-color__tinted-blue--20);
+    $edge-color: var(--mer-color__tinted-primary--20);
     border-color: transparent;
     transition: var(--mer-timing--fast) border-color;
 
@@ -5959,7 +5959,7 @@
     margin-block: var(--mer-spacing--xs);
     padding-block: var(--mer-spacing--xs);
     padding-inline: calc(var(--mer-spacing--xl) - 4px) var(--mer-spacing--xl);
-    border-inline-start: 4px solid var(--mer-color__primary-blue--400);
+    border-inline-start: 4px solid var(--mer-color__primary--400);
 
     // First <p> don't add margin-block-start, because the <blockquote> adds it
     & > p:first-of-type {
@@ -6941,8 +6941,8 @@
 @mixin spinner($size) {
   width: $size;
   height: $size;
-  border: calc($size / 5) solid var(--mer-color__tinted-blue--50);
-  border-top: calc($size / 5) solid var(--mer-color__primary-blue--300);
+  border: calc($size / 5) solid var(--mer-color__tinted-primary--50);
+  border-top: calc($size / 5) solid var(--mer-color__primary--300);
   border-radius: 50%;
   animation: spin var(--mer-timing--regular) linear infinite;
 
@@ -6990,8 +6990,8 @@
     --control__color: var(--mer-text__neutral);
   }
   &--processing {
-    --control__border-color: var(--mer-color__tinted-blue--50);
-    --control__bg-color: var(--mer-color__tinted-blue--8);
+    --control__border-color: var(--mer-color__tinted-primary--50);
+    --control__bg-color: var(--mer-color__tinted-primary--8);
     --control__color: var(--mer-accent__primary);
 
     // custom processing icon
@@ -8173,7 +8173,7 @@
   // - - - - - - - - - - - - - - - - - - - -
   // track
   --slider-track__block-size: var(--mer-spacing--2xs);
-  --slider-track__bg-color--selected: var(--mer-color__primary-blue--200);
+  --slider-track__bg-color--selected: var(--mer-color__primary--200);
   --slider-track__bg-color--unselected: var(--mer-color__neutral-gray--650);
   --slider-track__bg-color--selected-disabled: var(
     --mer-accent__primary--disabled
@@ -9768,7 +9768,7 @@
 }
 
 %tree-view-drop--after {
-  background-color: var(--mer-color__primary-blue--200);
+  background-color: var(--mer-color__primary--200);
 }
 
 %tree-view-item__header {
