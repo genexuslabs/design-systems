@@ -585,8 +585,8 @@
 @mixin spinner($size) {
   width: $size;
   height: $size;
-  border: calc($size / 5) solid var(--mer-color__tinted-blue--50);
-  border-top: calc($size / 5) solid var(--mer-color__primary-blue--300);
+  border: calc($size / 5) solid var(--mer-color__tinted-primary--50);
+  border-top: calc($size / 5) solid var(--mer-color__primary--300);
   border-radius: 50%;
   animation: spin var(--mer-timing--regular) linear infinite;
 

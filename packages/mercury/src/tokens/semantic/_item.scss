@@ -15,19 +15,19 @@
   --item__color--enabled: var(--mer-text__on-elevation);
 
   // hover
-  --item__bg-color--hover: var(--mer-color__tinted-blue--5);
-  // --item__border-color--hover: var(--mer-color__tinted-blue--20); // to be defined later with design team
+  --item__bg-color--hover: var(--mer-color__tinted-primary--5);
+  // --item__border-color--hover: var(--mer-color__tinted-primary--20); // to be defined later with design team
   --item__border-color--hover: transparent;
   --item__color--hover: var(--mer-color__neutral-gray--100);
 
   // selected
-  --item__bg-color--selected: var(--mer-color__tinted-blue--10);
-  --item__border-color--selected: var(--mer-color__tinted-blue--30);
+  --item__bg-color--selected: var(--mer-color__tinted-primary--10);
+  --item__border-color--selected: var(--mer-color__tinted-primary--30);
   --item__color--selected: var(--mer-color__neutral-gray--100);
 
   // selected + hover
-  --item__bg-color--selected-hover: var(--mer-color__tinted-blue--10);
-  --item__border-color--selected-hover: var(--mer-color__tinted-blue--20);
+  --item__bg-color--selected-hover: var(--mer-color__tinted-primary--10);
+  --item__border-color--selected-hover: var(--mer-color__tinted-primary--20);
   --item__color--selected-hover: var(--mer-color__neutral-gray--100);
 
   // disabled
@@ -142,14 +142,14 @@
   --tab-caption__color--enabled: var(--mer-text__neutral);
 
   // hover
-  --tab-caption__bg-color--hover: var(--mer-color__tinted-blue--10);
+  --tab-caption__bg-color--hover: var(--mer-color__tinted-primary--10);
 
   // selected
   --tab-caption__bg-color--selected-inline: transparent;
-  --tab-caption__bg-color--selected-stack: var(--mer-color__tinted-blue--10);
+  --tab-caption__bg-color--selected-stack: var(--mer-color__tinted-primary--10);
   --tab-caption__border-color--selected-inline: var(--mer-accent__primary);
   --tab-caption__border-color--selected-stack: var(
-    --mer-color__tinted-blue--20
+    --mer-color__tinted-primary--20
   );
   --tab-caption__color--selected: var(--mer-text__highlighted);
 
