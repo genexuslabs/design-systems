@@ -514,7 +514,7 @@ class="checkbox"
                     <code>ch-edit</code> tag.
                   </li>
                   <li>Remove all the attributes and values</li>
-                  <li>Add the <code>.form-input</code> class.</li>
+                  <li>Add the <code>.input</code> class.</li>
                   <li>
                     If the <code>gxg-form-text</code> was displaying an icon,
                     use the <code>startImgSrc</code> property
@@ -564,7 +564,7 @@ import { getIconPath } from "@genexus/mercury";
 // use inside <Host> or any TSX                    
 <ch-edit
   value="Adam Smith"
-  class="form-input"
+  class="input"
   placeholder="John Smith"
   startImgSrc={this.#chEditIcon}
 ></ch-edit>`;
@@ -573,7 +573,7 @@ import { getIconPath } from "@genexus/mercury";
                 <div class="article__content">
                   <ch-edit
                     value="Adam Smith"
-                    class="form-input"
+                    class="input"
                     placeholder="John Smith"
                     id="ch-edit"
                   ></ch-edit>
@@ -581,10 +581,8 @@ import { getIconPath } from "@genexus/mercury";
                 <!-- /.article__content -->
                 <div class="article__content">
                   <div class="dummy-grid-container">
-                    <a
-                      href="./form-input.html"
-                      class="dummy-grid-container__item"
-                      >form-input classes</a
+                    <a href="./input.html" class="dummy-grid-container__item"
+                      >input classes</a
                     >
                   </div>
                 </div>
@@ -636,7 +634,7 @@ height="100px"
                   <script>
                     code = `// use inside <Host> or any TSX                 
 <ch-edit
-class="form-input"
+class="input"
 placeholder="Describe your experience as a backend developer"
 multiline={true}
 ></ch-edit>`;
@@ -644,7 +642,7 @@ multiline={true}
                 </div>
                 <div class="article__content" style="height: 100px">
                   <ch-edit
-                    class="form-input"
+                    class="input"
                     placeholder="Describe your experience as a backend developer"
                     multiline
                     auto-grow

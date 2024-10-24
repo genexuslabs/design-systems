@@ -846,13 +846,13 @@
 }
 
 /// @group UtilityClasses
-/// @param {String} $elevation-01-selector [".elevation-01"] -
-/// @param {String} $elevation-02-selector [".elevation-02"] -
-/// @param {String} $elevation-03-selector [".elevation-03"] -
+/// @param {String} $elevation-01-selector [".elevation-01,:host(.elevation-01)"] -
+/// @param {String} $elevation-02-selector [".elevation-02,:host(.elevation-02)"] -
+/// @param {String} $elevation-03-selector [".elevation-03,:host(.elevation-03)"] -
 @mixin utilities-elevation(
-  $elevation-01-selector: ".elevation-01",
-  $elevation-02-selector: ".elevation-02",
-  $elevation-03-selector: ".elevation-03"
+  $elevation-01-selector: ".elevation-01,:host(.elevation-01)",
+  $elevation-02-selector: ".elevation-02,:host(.elevation-02)",
+  $elevation-03-selector: ".elevation-03,:host(.elevation-03)"
 ) {
   #{$elevation-01-selector},
   #{$elevation-02-selector},
@@ -2963,7 +2963,7 @@
   $field-selector: ".field",
   $field-block-selector: ".field-block",
   $field-inline-selector: ".field-inline",
-  $field-inline__label-selector: ".field-inline .label",
+  $field-inline__label-selector: ".field-inline > .label",
   $field-group-cols-2-selector: ".field-group-cols-2",
   $field-group-cols-2__label-selector: ".field-group-cols-2 .label"
 ) {
@@ -4061,7 +4061,7 @@
       }
     }
 
-    @include form-input(
+    @include input(
       $selector: "&::part(send-input)",
       $add--disabled: false,
       $add--placeholder: false,
@@ -5562,7 +5562,7 @@
   }
 }
 
-%form-input {
+%input {
   // ch-chameleon custom vars (do not edit their names)
   // --ch-edit-auto-fill-background-color: var(); not defined by design yet
   --ch-edit-gap: var(--control__icon-gap);
@@ -5589,31 +5589,31 @@
 }
 
 /// @group Form
-/// @param {String} $selector [".form-input"] -
-/// @param {String} $error-selector [".form-input-error"] -
+/// @param {String} $selector [".input"] -
+/// @param {String} $error-selector [".input-error"] -
 /// @param {Boolean} $add--disabled [true] -
 /// @param {Boolean} $add--error [true] -
-@mixin form-input(
-  $selector: ".form-input",
-  $error-selector: ".form-input-error",
+@mixin input(
+  $selector: ".input",
+  $error-selector: ".input-error",
   $add--disabled: true,
   $add--error: true,
   $add--placeholder: true
 ) {
   #{$selector} {
-    @extend %form-input;
+    @extend %input;
 
     &:focus {
-      @extend %form-input--focus;
+      @extend %input--focus;
     }
 
     &:hover {
-      @extend %form-input--hover;
+      @extend %input--hover;
     }
 
     @if $add--disabled {
       &:disabled {
-        @extend %form-input--disabled;
+        @extend %input--disabled;
       }
     }
 
@@ -10008,8 +10008,8 @@
 }
 
 /// @group Widget
-/// @param {String} $selector [".widget"] -
-@mixin widget($selector: ".widget") {
+/// @param {String} $selector [".widget,:host(.widget)"] -
+@mixin widget($selector: ".widget,:host(.widget)") {
   #{$selector} {
     @extend %widget;
   }
@@ -18389,7 +18389,7 @@
   }
 
   @if $edit {
-    @include form-input();
+    @include input();
   }
 
   @if $flexible-layout {
