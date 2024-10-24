@@ -1,11 +1,11 @@
 /// @group UtilityClasses
-/// @param {String} $elevation-01-selector [".elevation-01"] -
-/// @param {String} $elevation-02-selector [".elevation-02"] -
-/// @param {String} $elevation-03-selector [".elevation-03"] -
+/// @param {String} $elevation-01-selector [".elevation-01,:host(.elevation-01)"] -
+/// @param {String} $elevation-02-selector [".elevation-02,:host(.elevation-02)"] -
+/// @param {String} $elevation-03-selector [".elevation-03,:host(.elevation-03)"] -
 @mixin utilities-elevation(
-  $elevation-01-selector: ".elevation-01",
-  $elevation-02-selector: ".elevation-02",
-  $elevation-03-selector: ".elevation-03"
+  $elevation-01-selector: ".elevation-01,:host(.elevation-01)",
+  $elevation-02-selector: ".elevation-02,:host(.elevation-02)",
+  $elevation-03-selector: ".elevation-03,:host(.elevation-03)"
 ) {
   #{$elevation-01-selector},
   #{$elevation-02-selector},

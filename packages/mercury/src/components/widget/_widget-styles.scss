@@ -6,8 +6,8 @@
 }
 
 /// @group Widget
-/// @param {String} $selector [".widget"] -
-@mixin widget($selector: ".widget") {
+/// @param {String} $selector [".widget,:host(.widget)"] -
+@mixin widget($selector: ".widget,:host(.widget)") {
   #{$selector} {
     @extend %widget;
   }
