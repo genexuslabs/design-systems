@@ -48,7 +48,7 @@
 @import "./components/dialog/dialog-styles";
 @import "./components/flexible-layout/flexible-layout-styles";
 @import "./components/icon/icon-styles";
-@import "./components/form-input/form-input-styles";
+@import "./components/input/input-styles";
 @import "./components/list-box/list-box-styles";
 @import "./components/markdown-viewer/markdown-viewer-styles";
 @import "./components/navigation-list/navigation-list-styles";
@@ -501,7 +501,7 @@
   }
 
   @if $edit {
-    @include form-input();
+    @include input();
   }
 
   @if $flexible-layout {

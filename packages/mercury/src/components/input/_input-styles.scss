@@ -1,4 +1,4 @@
-%form-input {
+%input {
   // ch-chameleon custom vars (do not edit their names)
   // --ch-edit-auto-fill-background-color: var(); not defined by design yet
   --ch-edit-gap: var(--control__icon-gap);
@@ -25,31 +25,31 @@
 }
 
 /// @group Form
-/// @param {String} $selector [".form-input"] -
-/// @param {String} $error-selector [".form-input-error"] -
+/// @param {String} $selector [".input"] -
+/// @param {String} $error-selector [".input-error"] -
 /// @param {Boolean} $add--disabled [true] -
 /// @param {Boolean} $add--error [true] -
-@mixin form-input(
-  $selector: ".form-input",
-  $error-selector: ".form-input-error",
+@mixin input(
+  $selector: ".input",
+  $error-selector: ".input-error",
   $add--disabled: true,
   $add--error: true,
   $add--placeholder: true
 ) {
   #{$selector} {
-    @extend %form-input;
+    @extend %input;
 
     &:focus {
-      @extend %form-input--focus;
+      @extend %input--focus;
     }
 
     &:hover {
-      @extend %form-input--hover;
+      @extend %input--hover;
     }
 
     @if $add--disabled {
       &:disabled {
-        @extend %form-input--disabled;
+        @extend %input--disabled;
       }
     }
 
