@@ -48,9 +48,10 @@ export type MercuryBundleComponentForm =
 export type MercuryBundleReset = "resets/box-sizing";
 
 export type MercuryBundleUtil =
-  | "utils/form"
   | "utils/elevation"
+  | "utils/form"
   | "utils/layout"
+  | "utils/spacing"
   | "utils/typography"
   // TODO: Use "utils/scrollbar" when the ch-theme supports aliases
   | "chameleon/scrollbar";
