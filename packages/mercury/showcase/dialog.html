@@ -89,13 +89,12 @@
                         effort required for updates and enhancements.
                       </p>
                     </div>
-
-                    <button slot="footer" type="button" class="button-tertiary">
-                      Cancel
-                    </button>
-                    <button slot="footer" type="button" class="button-primary">
-                      Save
-                    </button>
+                    <div slot="footer" class="buttons-spacer">
+                      <button type="button" class="button-secondary">
+                        Cancel
+                      </button>
+                      <button type="button" class="button-primary">Save</button>
+                    </div>
                   </ch-dialog>
                   <button class="button-secondary" id="btn-show-dialog-basic">
                     Show Dialog
@@ -115,6 +114,10 @@
                   <script>
                     code = `<ch-dialog class="dialog" caption="About GeneXus" show-header>
   <div class="spacing-body"><!-- Your dialog content here --></div>
+  <div slot="footer" class="buttons-spacer">
+    <button type="button" class="button-secondary">Cancel</button>
+    <button type="button" class="button-primary">Save</button>
+  </div>
 </ch-dialog>
 `;
                   </script>
@@ -198,8 +201,10 @@
                   <ch-code language="tsx" class="code"> </ch-code>
                   <script>
                     code = `<div class="control-footer">
-  <button class="button-tertiary">Cancel</button>
-  <button class="button-primary">Save</button>
+  <div class="buttons-spacer">
+    <button class="button-secondary">Cancel</button>
+    <button class="button-primary">Save</button>
+  </div>
 </div>`;
                   </script>
                 </div>
@@ -240,8 +245,10 @@
                   <ch-code language="tsx" class="code"> </ch-code>
                   <script>
                     code = `<div class="control-footer-with-border">
-  <button class="button-tertiary">Cancel</button>
-  <button class="button-primary">Save</button>
+  <div class="buttons-spacer">
+    <button class="button-secondary">Cancel</button>
+    <button class="button-primary">Save</button>
+  </div>
 </div>`;
                   </script>
                 </div>
@@ -284,8 +291,10 @@
                   <script>
                     code = `<div class="widget">
   <div class="control-footer-with-border spacing-body">
-    <button class="button-tertiary">Cancel</button>
-    <button class="button-primary">Save</button>
+    <div class="buttons-spacer">
+      <button class="button-secondary">Cancel</button>
+      <button class="button-primary">Save</button>
+    </div>
   </div>
 </div>
 `;
