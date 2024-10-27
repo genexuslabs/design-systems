@@ -22,15 +22,18 @@
       :root {
         --sidebar-inline-size: 300px;
       }
-      .sidebar {
+      .section .sidebar {
         max-inline-size: var(--sidebar-inline-size);
+      }
+      .section .sidebar-with-motion {
+        inline-size: var(--sidebar-inline-size);
       }
       .sidebar-content {
         padding: 16px;
         display: flex;
         justify-content: center;
         align-items: center;
-        block-size: 768px;
+        block-size: 640px;
         font-size: 14px;
         inline-size: var(--sidebar-inline-size);
       }
@@ -61,34 +64,33 @@
               class="article"
               data-nav
               data-title="default: with expand button"
-              hidden
             >
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
-                <!-- <p class="article__description">Article Description</p> -->
+                <p class="article__description">
+                  The default sidebar includes a toggle button that allows users
+                  to collapse or expand the sidebar as needed. When collapsed,
+                  it shrinks to a defined minimum size, making it an ideal
+                  choice when you want to conserve space without fully hiding
+                  the sidebar’s presence, giving users quick access with a
+                  single click.
+                </p>
                 <div class="article__content">
-                  <ch-sidebar
-                    id="sidebar-default-with-expand-button"
-                    class="sidebar"
-                  >
+                  <ch-sidebar id="sidebar-with-expand-button" class="sidebar">
                     <div class="sidebar-content">Your sidebar content here</div>
                   </ch-sidebar>
                   <script>
-                    const sidebarDefaultWithExpandButton =
-                      document.getElementById(
-                        "sidebar-default-with-expand-button"
-                      );
-                    const sidebarDefaultButtonClickHandler = () => {};
+                    const sidebarWithExpandButton = document.getElementById(
+                      "sidebar-with-expand-button"
+                    );
 
                     ("Collapse");
-                    sidebarDefaultWithExpandButton.expandButtonCollapseAccessibleName =
+                    sidebarWithExpandButton.expandButtonCollapseAccessibleName =
                       "Collapse";
-                    sidebarDefaultWithExpandButton.expandButtonExpandAccessibleName =
+                    sidebarWithExpandButton.expandButtonExpandAccessibleName =
                       "Expand";
-                    sidebarDefaultWithExpandButton.showExpandButton = true;
-                    sidebarDefaultWithExpandButton.onButtonClick =
-                      sidebarDefaultButtonClickHandler;
+                    sidebarWithExpandButton.showExpandButton = true;
                   </script>
                 </div>
                 <div class="article__code">
@@ -111,17 +113,25 @@
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
-                <!-- <p class="article__description">Article Description</p> -->
+                <p class="article__description">
+                  In the collapsed hidden configuration, the sidebar is fully
+                  hidden, with no content visible when collapsed. This layout is
+                  optimal for scenarios where maximum screen space is required,
+                  and the sidebar’s content isn't frequently accessed. Since the
+                  expand button won’t be accessible in this case, users should
+                  configure an external control to toggle visibility as needed.
+                </p>
                 <div class="article__content">
                   <ch-sidebar
-                    id="sidebar-default"
+                    id="sidebar-collapsed-hidden"
                     class="sidebar sidebar-collapsed-hidden"
                   >
                     <div class="sidebar-content">Your sidebar content here</div>
                   </ch-sidebar>
                   <script>
-                    const sidebarCollapsedHidden =
-                      document.getElementById("sidebar-default");
+                    const sidebarCollapsedHidden = document.getElementById(
+                      "sidebar-collapsed-hidden"
+                    );
                     sidebarCollapsedHidden.showExpandButton = false;
                     ("Collapse");
                   </script>
@@ -147,9 +157,122 @@
                 <div class="article__code">
                   <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    code = `<ch-sidebar class="sidebar sidebar-collapsed-hidden" showExpandButton>
-    <!-- Your sidebar content here -->
-  </ch-sidebar>`;
+                    code = `<ch-sidebar class="sidebar sidebar-collapsed-hidden">
+  <!-- Your sidebar content here -->
+</ch-sidebar>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          default: with motion
+          =========================== -->
+            <article class="article" data-nav data-title="with motion">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  This variant includes a smooth animation effect when the
+                  sidebar collapses or expands, providing a more polished and
+                  dynamic user experience. The subtle motion helps users easily
+                  follow the state change, making transitions feel more
+                  intuitive and visually appealing.
+                </p>
+                <div class="article__content">
+                  <ch-sidebar
+                    id="sidebar-with-motion"
+                    class="sidebar sidebar-with-motion"
+                  >
+                    <div class="sidebar-content">Your sidebar content here</div>
+                  </ch-sidebar>
+                  <script>
+                    const sidebarWithMotion = document.getElementById(
+                      "sidebar-with-motion"
+                    );
+
+                    ("Collapse");
+                    sidebarWithMotion.expandButtonCollapseAccessibleName =
+                      "Collapse";
+                    sidebarWithMotion.expandButtonExpandAccessibleName =
+                      "Expand";
+                    sidebarWithMotion.showExpandButton = true;
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-sidebar class="sidebar sidebar-with-motion" showExpandButton>
+  <!-- Your sidebar content here -->
+</ch-sidebar>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          collapsed hidden + with motion
+          =========================== -->
+            <article
+              class="article"
+              data-nav
+              data-title="collapsed hidden + with motion"
+            >
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  Combining the collapsed hidden and motion effects offers a
+                  fully hidden sidebar with a smooth animation. This setup is
+                  ideal for minimizing distractions, especially in cases where
+                  the sidebar is accessed infrequently, but you still want an
+                  elegant transition when it appears or disappears.
+                </p>
+                <div class="article__content">
+                  <ch-sidebar
+                    id="sidebar-collapsed-hidden-with-motion"
+                    class="sidebar sidebar-collapsed-hidden sidebar-with-motion"
+                  >
+                    <div class="sidebar-content">Your sidebar content here</div>
+                  </ch-sidebar>
+                  <script>
+                    const sidebarCollapsedHiddenWithMotion =
+                      document.getElementById(
+                        "sidebar-collapsed-hidden-with-motion"
+                      );
+                  </script>
+                </div>
+                <div class="article__content">
+                  <button
+                    class="button button-primary"
+                    id="toggle-sidebar-collapsed-hidden-with-motion-button"
+                  >
+                    Toggle Sidebar
+                  </button>
+                  <script>
+                    const toggleSidebarCollapsedHiddenWithMotionButton =
+                      document.getElementById(
+                        "toggle-sidebar-collapsed-hidden-with-motion-button"
+                      );
+                    toggleSidebarCollapsedHiddenWithMotionButton.addEventListener(
+                      "click",
+                      () => {
+                        sidebarCollapsedHiddenWithMotion.expanded =
+                          !sidebarCollapsedHiddenWithMotion.expanded;
+                      }
+                    );
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-sidebar class="sidebar sidebar-collapsed-hidden-with-motion">
+  <!-- Your sidebar content here -->
+</ch-sidebar>`;
                   </script>
                 </div>
                 <!-- /.article__content -->

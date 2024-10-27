@@ -34,6 +34,20 @@
     --ch-sidebar-inline-size--collapsed: 0;
   }
 
+  // With Motion
+
+  &-with-motion {
+    &.ch-sidebar--collapsed {
+      // WA to win over user "inline-size" property. This allows the transition.
+      inline-size: var(--ch-sidebar-inline-size--collapsed) !important;
+    }
+    transition: var(--mer-timing--super-fast) ease inline-size;
+
+    &--button-before {
+      transition: var(--mer-timing--super-fast) ease transform;
+    }
+  }
+
   // - - - - - - - -
   // Button
   // - - - - - - - -
@@ -78,6 +92,9 @@
 @mixin sidebar(
   $sidebar-selector: ".sidebar",
   $sidebar-collapsed-hidden-selector: ".sidebar-collapsed-hidden",
+  $sidebar-with-motion-selector: ".sidebar-with-motion",
+  $sidebar-with-motion-button-selector:
+    ".sidebar-with-motion::part(expand-button)",
   $expand-button-selector: ".sidebar::part(expand-button)",
   $expand-button-collapsed-selector: ".sidebar::part(expand-button collapsed)"
 ) {
@@ -85,8 +102,17 @@
     @extend %sidebar;
   }
 
+  // Collapsed hidden
   #{$sidebar-collapsed-hidden-selector} {
     @extend %sidebar-collapsed-hidden;
+  }
+
+  // With motion
+  #{$sidebar-with-motion-selector} {
+    @extend %sidebar-with-motion;
+  }
+  #{$sidebar-with-motion-button-selector}::before {
+    @extend %sidebar-with-motion--button-before;
   }
 
   // - - - - - - - -
