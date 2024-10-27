@@ -1,24 +1,24 @@
 /// @group UtilityClasses
-/// @param {String} $elevation-01-selector [".elevation-01,:host(.elevation-01)"] -
-/// @param {String} $elevation-02-selector [".elevation-02,:host(.elevation-02)"] -
-/// @param {String} $elevation-03-selector [".elevation-03,:host(.elevation-03)"] -
+/// @param {String} $elevation-1-selector [".elevation-1,:host(.elevation-1)"] -
+/// @param {String} $elevation-2-selector [".elevation-2,:host(.elevation-2)"] -
+/// @param {String} $elevation-3-selector [".elevation-3,:host(.elevation-3)"] -
 @mixin utilities-elevation(
-  $elevation-01-selector: ".elevation-01,:host(.elevation-01)",
-  $elevation-02-selector: ".elevation-02,:host(.elevation-02)",
-  $elevation-03-selector: ".elevation-03,:host(.elevation-03)"
+  $elevation-1-selector: ".elevation-1,:host(.elevation-1)",
+  $elevation-2-selector: ".elevation-2,:host(.elevation-2)",
+  $elevation-3-selector: ".elevation-3,:host(.elevation-3)"
 ) {
-  #{$elevation-01-selector},
-  #{$elevation-02-selector},
-  #{$elevation-03-selector} {
+  #{$elevation-1-selector},
+  #{$elevation-2-selector},
+  #{$elevation-3-selector} {
     color: var(--mer-text__on-elevation);
   }
-  #{$elevation-01-selector} {
+  #{$elevation-1-selector} {
     background-color: var(--mer-surface__elevation--01);
   }
-  #{$elevation-02-selector} {
+  #{$elevation-2-selector} {
     background-color: var(--mer-surface__elevation--02);
   }
-  #{$elevation-03-selector} {
+  #{$elevation-3-selector} {
     background-color: var(--mer-surface__elevation--03);
   }
 }
