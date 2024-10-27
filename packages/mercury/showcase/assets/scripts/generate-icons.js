@@ -96,7 +96,7 @@ const createSection = iconCategory => {
   headerElement.className = "section__header";
   // title
   const titleElement = document.createElement("h1");
-  titleElement.className = "section__title";
+  titleElement.className = "section__title section__title--sticky";
   titleElement.textContent = iconCategory;
   // appends
   headerElement.appendChild(titleElement);
