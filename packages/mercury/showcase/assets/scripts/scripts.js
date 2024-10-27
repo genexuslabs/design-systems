@@ -648,8 +648,6 @@ const includeBundleButtonV2 = () => {
     copyBundleButton.className = "button-tertiary button-icon-and-text";
     buttonCaption = `${bundleValue}`;
 
-    console.log(buttonCaption);
-
     const buttonCaptionTextNode = document.createTextNode(buttonCaption);
 
     copyBundleButton.addEventListener("click", e => {
