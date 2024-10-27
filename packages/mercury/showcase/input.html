@@ -22,17 +22,18 @@
     <script src="./assets/scripts/scripts.js"></script>
     <main class="main">
       <div class="container">
-        <!-- form-input -->
+        <!-- input -->
         <section class="section" data-nav>
           <!-- header -->
           <header class="section__header">
-            <h1 class="section__title">form input</h1>
+            <h1 class="section__title">input</h1>
             <p class="section__description">
-              A primary HTML input element is a crucial part of a webpage's
-              form, designed to capture user data and facilitate interactions.
-              It serves as the main interface for users to enter information
-              such as text, numbers, or dates, making it essential for data
-              collection and user engagement.
+              A primary HTML input element is a crucial part of a webpage,
+              designed to capture user data and facilitate interactions. It
+              serves as the main interface for users to enter information such
+              as text, numbers, or dates, making it essential for data
+              collection and user engagement, whether within a form or used
+              independently.
             </p>
           </header>
           <div class="section__articles-container">
@@ -45,14 +46,14 @@
               <div class="article__main">
                 <div class="article__content">
                   <ch-edit
-                    class="form-input"
+                    class="input"
                     placeholder="e.g. Mike Shinoda"
                   ></ch-edit>
                 </div>
                 <div class="article__code">
                   <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    code = `<ch-edit class="form-input" placeholder="e.g. Mike Shinoda"></ch-edit>`;
+                    code = `<ch-edit class="input" placeholder="e.g. Mike Shinoda"></ch-edit>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -73,7 +74,7 @@
               <div class="article__main">
                 <div class="article__content">
                   <ch-edit
-                    class="form-input"
+                    class="input"
                     placeholder="e.g. Mike Shinoda"
                     disabled
                   ></ch-edit>
@@ -81,7 +82,7 @@
                 <div class="article__code">
                   <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    code = `<ch-edit class="form-input" placeholder="e.g. Mike Shinoda" disabled></ch-edit>`;
+                    code = `<ch-edit class="input" placeholder="e.g. Mike Shinoda" disabled></ch-edit>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -97,12 +98,12 @@
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <ch-edit class="form-input" value="Pat Taylor"></ch-edit>
+                  <ch-edit class="input" value="Pat Taylor"></ch-edit>
                 </div>
                 <div class="article__code">
                   <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    code = `<ch-edit class="form-input" value="Pat Taylor"></ch-edit>`;
+                    code = `<ch-edit class="input" value="Pat Taylor"></ch-edit>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -118,16 +119,12 @@
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <ch-edit
-                    class="form-input"
-                    value="Pat Taylor"
-                    disabled
-                  ></ch-edit>
+                  <ch-edit class="input" value="Pat Taylor" disabled></ch-edit>
                 </div>
                 <div class="article__code">
                   <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    code = `<ch-edit class="form-input" value="Pat Taylor" disabled></ch-edit>`;
+                    code = `<ch-edit class="input" value="Pat Taylor" disabled></ch-edit>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -144,7 +141,7 @@
               <div class="article__main">
                 <div class="article__content">
                   <ch-edit
-                    class="form-input"
+                    class="input"
                     value="Pat Taylor"
                     id="ch-edit-with-icon"
                   ></ch-edit>
@@ -174,7 +171,7 @@ import { getIconPath } from "@genexus/mercury";
 });
 
 <ch-edit
-  class="form-input"
+  class="input"
   value="Pat Taylor"
   startImgSrc={this.#userIcon}
 >
@@ -194,14 +191,14 @@ import { getIconPath } from "@genexus/mercury";
               <div class="article__main">
                 <div class="article__content">
                   <ch-edit
-                    class="form-input form-input-error"
+                    class="input input-error"
                     value="Pat Taylor"
                   ></ch-edit>
                 </div>
                 <div class="article__code">
                   <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    code = `<ch-edit class="form-input form-input-error" value="Pat Taylor"></ch-edit>`;
+                    code = `<ch-edit class="input input-error" value="Pat Taylor"></ch-edit>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
@@ -217,11 +214,11 @@ import { getIconPath } from "@genexus/mercury";
               <!-- main -->
               <div class="article__main">
                 <p class="article__description">
-                  To display a <code>.form-input</code> input with a label, you
-                  will have to provide a label with the corresponding class, as
-                  well as a div wrapper around the label and the control with
-                  the corresponding classes to get the proper styling and
-                  spacing. These styles are documented on the <em>label</em> and
+                  To display a <code>.input</code> input with a label, you will
+                  have to provide a label with the corresponding class, as well
+                  as a div wrapper around the label and the control with the
+                  corresponding classes to get the proper styling and spacing.
+                  These styles are documented on the <em>label</em> and
                   <em>form</em>
                   sections, correspondingly. The links to those pages are
                   provided below this code example.
@@ -229,7 +226,7 @@ import { getIconPath } from "@genexus/mercury";
                 <div class="article__content">
                   <div class="field field-block">
                     <label class="label">Beneficiary Name</label>
-                    <ch-edit class="form-input" value="Pat Taylor"></ch-edit>
+                    <ch-edit class="input" value="Pat Taylor"></ch-edit>
                   </div>
                 </div>
                 <div class="article__code">
@@ -237,7 +234,7 @@ import { getIconPath } from "@genexus/mercury";
                   <script>
                     code = `<div class="field field-block">
   <label class="label">Beneficiary Name</label>
-  <ch-edit class="form-input" value="Pat Taylor"></ch-edit>
+  <ch-edit class="input" value="Pat Taylor"></ch-edit>
 </div>`;
                   </script>
                 </div>
@@ -261,13 +258,13 @@ import { getIconPath } from "@genexus/mercury";
           </div>
         </section>
 
-        <!-- form-input search -->
+        <!-- input search -->
         <section class="section" data-nav>
           <!-- header -->
           <header class="section__header">
             <h1 class="section__title">form input: search</h1>
             <p class="section__description">
-              A form-input of type "search" is a specialized HTML input element
+              A input of type "search" is a specialized HTML input element
               designed for search functionality within a webpage. It allows
               users to enter search queries, providing a streamlined and
               intuitive interface for finding content.
@@ -282,12 +279,12 @@ enabled
               <!-- main -->
               <div class="article__main">
                 <p class="article__description">
-                  Note: The styles for the form-input type="search" are not yet
+                  Note: The styles for the input type="search" are not yet
                   completed.
                 </p>
                 <div class="article__content">
                   <ch-edit
-                    class="form-input"
+                    class="input"
                     value="Pat Taylor"
                     id="ch-edit-search"
                     type="search"
@@ -319,7 +316,7 @@ import { getIconPath } from "@genexus/mercury";
 });
 
 <ch-edit
-  class="form-input"
+  class="input"
   value="Pat Taylor"
   startImgSrc={this.#searchIcon}
 >

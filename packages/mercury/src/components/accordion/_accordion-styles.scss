@@ -2,6 +2,12 @@
 
 %accordion {
   @include accordion-tokens();
+
+  --spacing-body-block-start: var(--mer-spacing--sm);
+  --spacing-body-block-end: var(--mer-spacing--sm);
+  --spacing-body-inline-start: var(--mer-spacing--sm);
+  --spacing-body-inline-end: var(--mer-spacing--sm);
+
   gap: var(--accordion__gap);
 
   &-outlined {
@@ -77,9 +83,6 @@
 
 %accordion-section {
   // "1px" is used to improve the display of the outline when :focus-visible
-  margin-block: var(--accordion-section__margin-block);
-  margin-inline: var(--accordion-section__margin-inline);
-  // background-color: var(--accordion-section__bg-color);
 
   &-outlined {
     &--disabled {

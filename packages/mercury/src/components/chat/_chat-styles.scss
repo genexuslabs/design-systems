@@ -116,7 +116,7 @@
       }
     }
 
-    @include form-input(
+    @include input(
       $selector: "&::part(send-input)",
       $add--disabled: false,
       $add--placeholder: false,
