@@ -133,6 +133,7 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "utils/elevation"),
     getThemeModelItem(basePath, "utils/form--full"),
     getThemeModelItem(basePath, "utils/layout"),
+    getThemeModelItem(basePath, "utils/spacing"),
     getThemeModelItem(basePath, "utils/typography"),
     getThemeModelItem(basePath, "chameleon/scrollbar")
   ] as const satisfies ThemeModel;
