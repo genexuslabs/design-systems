@@ -28,6 +28,16 @@
   background-color: var(--mer-color__neutral-gray--800);
   overflow: hidden;
 
+  // Collapsed Hidden
+
+  &-collapsed-hidden {
+    --ch-sidebar-inline-size--collapsed: 0;
+  }
+
+  // - - - - - - - -
+  // Button
+  // - - - - - - - -
+
   &-expand-button {
     background-color: var(--mer-surface__elevation--02);
     border: var(--sidebar-button-border-width) solid
@@ -67,12 +77,21 @@
 
 @mixin sidebar(
   $sidebar-selector: ".sidebar",
+  $sidebar-collapsed-hidden-selector: ".sidebar-collapsed-hidden",
   $expand-button-selector: ".sidebar::part(expand-button)",
   $expand-button-collapsed-selector: ".sidebar::part(expand-button collapsed)"
 ) {
   #{$sidebar-selector} {
     @extend %sidebar;
   }
+
+  #{$sidebar-collapsed-hidden-selector} {
+    @extend %sidebar-collapsed-hidden;
+  }
+
+  // - - - - - - - -
+  // Button
+  // - - - - - - - -
 
   // enabled
   #{$expand-button-selector} {

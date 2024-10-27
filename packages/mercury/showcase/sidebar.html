@@ -55,30 +55,40 @@
           </header>
           <div class="section__articles-container">
             <!-- ========================== 
-          control name
+          default: with expand button      
           =========================== -->
-            <article class="article" data-nav data-title="sidebar: enabled">
+            <article
+              class="article"
+              data-nav
+              data-title="default: with expand button"
+              hidden
+            >
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <!-- <p class="article__description">Article Description</p> -->
                 <div class="article__content">
-                  <ch-sidebar id="sidebar-enabled" class="sidebar">
+                  <ch-sidebar
+                    id="sidebar-default-with-expand-button"
+                    class="sidebar"
+                  >
                     <div class="sidebar-content">Your sidebar content here</div>
                   </ch-sidebar>
                   <script>
-                    const sidebarEnabled =
-                      document.getElementById("sidebar-enabled");
-                    const sidebarEnabledButtonClickHandler = () => {};
+                    const sidebarDefaultWithExpandButton =
+                      document.getElementById(
+                        "sidebar-default-with-expand-button"
+                      );
+                    const sidebarDefaultButtonClickHandler = () => {};
 
                     ("Collapse");
-                    sidebarEnabled.expandButtonCollapseAccessibleName =
+                    sidebarDefaultWithExpandButton.expandButtonCollapseAccessibleName =
                       "Collapse";
-                    sidebarEnabled.expandButtonExpandAccessibleName = "Expand";
-                    sidebarEnabled.showExpandButton = true;
-                    sidebarEnabled.onButtonClick =
-                      sidebarEnabledButtonClickHandler;
-                    sidebarEnabled.onHyperlinkClick = "{this.#hyperlinkClick}";
+                    sidebarDefaultWithExpandButton.expandButtonExpandAccessibleName =
+                      "Expand";
+                    sidebarDefaultWithExpandButton.showExpandButton = true;
+                    sidebarDefaultWithExpandButton.onButtonClick =
+                      sidebarDefaultButtonClickHandler;
                   </script>
                 </div>
                 <div class="article__code">
@@ -87,6 +97,59 @@
                     code = `<ch-sidebar class="sidebar" showExpandButton>
   <!-- Your sidebar content here -->
 </ch-sidebar>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+            collapsed hidden      
+            =========================== -->
+            <article class="article" data-nav data-title="collapsed hidden">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <!-- <p class="article__description">Article Description</p> -->
+                <div class="article__content">
+                  <ch-sidebar
+                    id="sidebar-default"
+                    class="sidebar sidebar-collapsed-hidden"
+                  >
+                    <div class="sidebar-content">Your sidebar content here</div>
+                  </ch-sidebar>
+                  <script>
+                    const sidebarCollapsedHidden =
+                      document.getElementById("sidebar-default");
+                    sidebarCollapsedHidden.showExpandButton = false;
+                    ("Collapse");
+                  </script>
+                </div>
+
+                <div class="article__content">
+                  <button
+                    class="button button-primary"
+                    id="toggle-sidebar-button"
+                  >
+                    Toggle Sidebar
+                  </button>
+                  <script>
+                    const toggleSidebarButton = document.getElementById(
+                      "toggle-sidebar-button"
+                    );
+                    toggleSidebarButton.addEventListener("click", () => {
+                      sidebarCollapsedHidden.expanded =
+                        !sidebarCollapsedHidden.expanded;
+                    });
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-sidebar class="sidebar sidebar-collapsed-hidden" showExpandButton>
+    <!-- Your sidebar content here -->
+  </ch-sidebar>`;
                   </script>
                 </div>
                 <!-- /.article__content -->
