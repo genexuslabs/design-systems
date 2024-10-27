@@ -300,24 +300,28 @@ const includeSidebarNav = async () => {
       });
 
       listItemsArr.forEach(item => {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.href = item.url;
-        a.textContent = item.caption;
+        const hidden = item.hidden;
+        if (!hidden) {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
 
-        // ¿Is this the item of the actual page?
-        if (item.url.split(".")[0] === pageName) {
-          CURRENT_PAGE_NAV_ITEM = li;
-          li.classList.add("current-page");
+          a.href = item.url;
+          a.textContent = item.caption;
 
-          // Include chameleon URL
-          if (item.chameleonUrl && item.chameleonUrl !== null) {
-            includeChameleonURL(item.chameleonUrl);
+          // ¿Is this the item of the actual page?
+          if (item.url.split(".")[0] === pageName) {
+            CURRENT_PAGE_NAV_ITEM = li;
+            li.classList.add("current-page");
+
+            // Include chameleon URL
+            if (item.chameleonUrl && item.chameleonUrl !== null) {
+              includeChameleonURL(item.chameleonUrl);
+            }
           }
-        }
 
-        li.appendChild(a);
-        ul.appendChild(li);
+          li.appendChild(a);
+          ul.appendChild(li);
+        }
       });
 
       listSectionEl.appendChild(ul);
