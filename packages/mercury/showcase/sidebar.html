@@ -23,10 +23,10 @@
         --sidebar-inline-size: 300px;
       }
       .section .sidebar {
-        max-inline-size: var(--sidebar-inline-size);
+        overflow: hidden;
+        --ch-sidebar-inline-size--expanded: 300px;
       }
       .section .sidebar-with-motion {
-        inline-size: var(--sidebar-inline-size);
       }
       .sidebar-content {
         padding: 16px;
@@ -64,6 +64,7 @@
               class="article"
               data-nav
               data-title="default: with expand button"
+              hidden
             >
               <header class="article__header"></header>
               <!-- main -->
@@ -77,7 +78,10 @@
                   single click.
                 </p>
                 <div class="article__content">
-                  <ch-sidebar id="sidebar-with-expand-button" class="sidebar">
+                  <ch-sidebar
+                    id="sidebar-with-expand-button"
+                    class="sidebar elevation-2"
+                  >
                     <div class="sidebar-content">Your sidebar content here</div>
                   </ch-sidebar>
                   <script>
@@ -96,7 +100,7 @@
                 <div class="article__code">
                   <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    code = `<ch-sidebar class="sidebar" showExpandButton>
+                    code = `<ch-sidebar class="sidebar " showExpandButton>
   <!-- Your sidebar content here -->
 </ch-sidebar>`;
                   </script>
@@ -109,7 +113,12 @@
             <!-- ========================== 
             collapsed hidden      
             =========================== -->
-            <article class="article" data-nav data-title="collapsed hidden">
+            <article
+              class="article"
+              data-nav
+              data-title="collapsed hidden"
+              hidden
+            >
               <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
@@ -124,7 +133,7 @@
                 <div class="article__content">
                   <ch-sidebar
                     id="sidebar-collapsed-hidden"
-                    class="sidebar sidebar-collapsed-hidden"
+                    class="sidebar sidebar-collapsed-hidden elevation-2"
                   >
                     <div class="sidebar-content">Your sidebar content here</div>
                   </ch-sidebar>
@@ -184,7 +193,7 @@
                 <div class="article__content">
                   <ch-sidebar
                     id="sidebar-with-motion"
-                    class="sidebar sidebar-with-motion"
+                    class="sidebar sidebar-with-motion elevation-2"
                   >
                     <div class="sidebar-content">Your sidebar content here</div>
                   </ch-sidebar>
@@ -235,7 +244,7 @@
                 <div class="article__content">
                   <ch-sidebar
                     id="sidebar-collapsed-hidden-with-motion"
-                    class="sidebar sidebar-collapsed-hidden sidebar-with-motion"
+                    class="sidebar sidebar-collapsed-hidden sidebar-with-motion elevation-2"
                   >
                     <div class="sidebar-content">Your sidebar content here</div>
                   </ch-sidebar>
