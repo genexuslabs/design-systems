@@ -5250,10 +5250,10 @@
 }
 
 %dialog {
-  --spacing-body-block-start: var(--mer-spacing--lg);
-  --spacing-body-block-end: var(--mer-spacing--lg);
-  --spacing-body-inline-start: var(--mer-spacing--md);
-  --spacing-body-inline-end: var(--mer-spacing--md);
+  --spacing-body-block-start: var(--mer-spacing--md);
+  --spacing-body-block-end: var(--mer-spacing--md);
+  --spacing-body-inline-start: var(--mer-spacing--sm);
+  --spacing-body-inline-end: var(--mer-spacing--sm);
   --ch-dialog-max-inline-size: 800px;
   background-color: var(--mer-surface__elevation--01);
   box-shadow: var(--mer-box-shadow--01);
@@ -5294,8 +5294,8 @@
   }
 
   &__footer {
-    @include control-footer-base();
-    @include control-footer-border();
+    padding-block: var(--mer-spacing--xs);
+    padding-inline: var(--mer-spacing--sm);
   }
 
   // ------------------------------
@@ -5397,6 +5397,8 @@
   #{$footer-selector} {
     @extend %dialog__footer;
   }
+  // @include buttons-spacer($footer-selector);
+  @include control-footer($with-border-selector: $footer-selector);
 
   // ------------------------------
   // Edges (For dragging)
