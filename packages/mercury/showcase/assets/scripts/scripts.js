@@ -355,7 +355,7 @@ const includeSidebar = () => {
   if (includeSidebar) {
     // Create aside element
     const aside = document.createElement("aside");
-    aside.classList.add("sidebar");
+    aside.classList.add("sidebar", "elevation-1");
 
     // Create header element
     const header = document.createElement("header");
