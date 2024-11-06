@@ -5250,10 +5250,10 @@
 }
 
 %dialog {
-  --spacing-body-block-start: var(--mer-spacing--lg);
-  --spacing-body-block-end: var(--mer-spacing--lg);
-  --spacing-body-inline-start: var(--mer-spacing--md);
-  --spacing-body-inline-end: var(--mer-spacing--md);
+  --spacing-body-block-start: var(--mer-spacing--md);
+  --spacing-body-block-end: var(--mer-spacing--md);
+  --spacing-body-inline-start: var(--mer-spacing--sm);
+  --spacing-body-inline-end: var(--mer-spacing--sm);
   --ch-dialog-max-inline-size: 800px;
   background-color: var(--mer-surface__elevation--01);
   box-shadow: var(--mer-box-shadow--01);
@@ -5294,8 +5294,8 @@
   }
 
   &__footer {
-    @include control-footer-base();
-    @include control-footer-border();
+    padding-block: var(--mer-spacing--xs);
+    padding-inline: var(--mer-spacing--sm);
   }
 
   // ------------------------------
@@ -5397,6 +5397,8 @@
   #{$footer-selector} {
     @extend %dialog__footer;
   }
+  // @include buttons-spacer($footer-selector);
+  @include control-footer($with-border-selector: $footer-selector);
 
   // ------------------------------
   // Edges (For dragging)
@@ -13953,6 +13955,15 @@
   --icon__system_card-variant_primary--hover: url('#{$icons-path}system/light/card-variant.svg#primary--hover'); 
   --icon__system_card-variant_primary--active: url('#{$icons-path}system/light/card-variant.svg#primary--active'); 
   --icon__system_card-variant_primary--disabled: url('#{$icons-path}system/light/card-variant.svg#primary--disabled'); 
+  --icon__system_assistant_on-surface--enabled: url('#{$icons-path}system/light/assistant.svg#on-surface--enabled'); 
+  --icon__system_assistant_on-surface--hover: url('#{$icons-path}system/light/assistant.svg#on-surface--hover'); 
+  --icon__system_assistant_on-surface--active: url('#{$icons-path}system/light/assistant.svg#on-surface--active'); 
+  --icon__system_assistant_on-surface--disabled: url('#{$icons-path}system/light/assistant.svg#on-surface--disabled'); 
+  --icon__system_assistant_on-elevation--enabled: url('#{$icons-path}system/light/assistant.svg#on-elevation--enabled'); 
+  --icon__system_assistant_primary--enabled: url('#{$icons-path}system/light/assistant.svg#primary--enabled'); 
+  --icon__system_assistant_primary--hover: url('#{$icons-path}system/light/assistant.svg#primary--hover'); 
+  --icon__system_assistant_primary--active: url('#{$icons-path}system/light/assistant.svg#primary--active'); 
+  --icon__system_assistant_primary--disabled: url('#{$icons-path}system/light/assistant.svg#primary--disabled'); 
   --icon__system_arrow-up_on-surface--enabled: url('#{$icons-path}system/light/arrow-up.svg#on-surface--enabled'); 
   --icon__system_arrow-up_on-surface--hover: url('#{$icons-path}system/light/arrow-up.svg#on-surface--hover'); 
   --icon__system_arrow-up_on-surface--active: url('#{$icons-path}system/light/arrow-up.svg#on-surface--active'); 
@@ -14025,15 +14036,6 @@
   --icon__system_add-circle_primary--hover: url('#{$icons-path}system/light/add-circle.svg#primary--hover'); 
   --icon__system_add-circle_primary--active: url('#{$icons-path}system/light/add-circle.svg#primary--active'); 
   --icon__system_add-circle_primary--disabled: url('#{$icons-path}system/light/add-circle.svg#primary--disabled'); 
-  --icon__system_Assistant_on-surface--enabled: url('#{$icons-path}system/light/Assistant.svg#on-surface--enabled'); 
-  --icon__system_Assistant_on-surface--hover: url('#{$icons-path}system/light/Assistant.svg#on-surface--hover'); 
-  --icon__system_Assistant_on-surface--active: url('#{$icons-path}system/light/Assistant.svg#on-surface--active'); 
-  --icon__system_Assistant_on-surface--disabled: url('#{$icons-path}system/light/Assistant.svg#on-surface--disabled'); 
-  --icon__system_Assistant_on-elevation--enabled: url('#{$icons-path}system/light/Assistant.svg#on-elevation--enabled'); 
-  --icon__system_Assistant_primary--enabled: url('#{$icons-path}system/light/Assistant.svg#primary--enabled'); 
-  --icon__system_Assistant_primary--hover: url('#{$icons-path}system/light/Assistant.svg#primary--hover'); 
-  --icon__system_Assistant_primary--active: url('#{$icons-path}system/light/Assistant.svg#primary--active'); 
-  --icon__system_Assistant_primary--disabled: url('#{$icons-path}system/light/Assistant.svg#primary--disabled'); 
 
   }
 
@@ -14610,6 +14612,15 @@
   --icon__system_card-variant_primary--hover: url('#{$icons-path}system/dark/card-variant.svg#primary--hover'); 
   --icon__system_card-variant_primary--active: url('#{$icons-path}system/dark/card-variant.svg#primary--active'); 
   --icon__system_card-variant_primary--disabled: url('#{$icons-path}system/dark/card-variant.svg#primary--disabled'); 
+  --icon__system_assistant_on-surface--enabled: url('#{$icons-path}system/dark/assistant.svg#on-surface--enabled'); 
+  --icon__system_assistant_on-surface--hover: url('#{$icons-path}system/dark/assistant.svg#on-surface--hover'); 
+  --icon__system_assistant_on-surface--active: url('#{$icons-path}system/dark/assistant.svg#on-surface--active'); 
+  --icon__system_assistant_on-surface--disabled: url('#{$icons-path}system/dark/assistant.svg#on-surface--disabled'); 
+  --icon__system_assistant_on-elevation--enabled: url('#{$icons-path}system/dark/assistant.svg#on-elevation--enabled'); 
+  --icon__system_assistant_primary--enabled: url('#{$icons-path}system/dark/assistant.svg#primary--enabled'); 
+  --icon__system_assistant_primary--hover: url('#{$icons-path}system/dark/assistant.svg#primary--hover'); 
+  --icon__system_assistant_primary--active: url('#{$icons-path}system/dark/assistant.svg#primary--active'); 
+  --icon__system_assistant_primary--disabled: url('#{$icons-path}system/dark/assistant.svg#primary--disabled'); 
   --icon__system_arrow-up_on-surface--enabled: url('#{$icons-path}system/dark/arrow-up.svg#on-surface--enabled'); 
   --icon__system_arrow-up_on-surface--hover: url('#{$icons-path}system/dark/arrow-up.svg#on-surface--hover'); 
   --icon__system_arrow-up_on-surface--active: url('#{$icons-path}system/dark/arrow-up.svg#on-surface--active'); 
@@ -14682,15 +14693,6 @@
   --icon__system_add-circle_primary--hover: url('#{$icons-path}system/dark/add-circle.svg#primary--hover'); 
   --icon__system_add-circle_primary--active: url('#{$icons-path}system/dark/add-circle.svg#primary--active'); 
   --icon__system_add-circle_primary--disabled: url('#{$icons-path}system/dark/add-circle.svg#primary--disabled'); 
-  --icon__system_Assistant_on-surface--enabled: url('#{$icons-path}system/dark/Assistant.svg#on-surface--enabled'); 
-  --icon__system_Assistant_on-surface--hover: url('#{$icons-path}system/dark/Assistant.svg#on-surface--hover'); 
-  --icon__system_Assistant_on-surface--active: url('#{$icons-path}system/dark/Assistant.svg#on-surface--active'); 
-  --icon__system_Assistant_on-surface--disabled: url('#{$icons-path}system/dark/Assistant.svg#on-surface--disabled'); 
-  --icon__system_Assistant_on-elevation--enabled: url('#{$icons-path}system/dark/Assistant.svg#on-elevation--enabled'); 
-  --icon__system_Assistant_primary--enabled: url('#{$icons-path}system/dark/Assistant.svg#primary--enabled'); 
-  --icon__system_Assistant_primary--hover: url('#{$icons-path}system/dark/Assistant.svg#primary--hover'); 
-  --icon__system_Assistant_primary--active: url('#{$icons-path}system/dark/Assistant.svg#primary--active'); 
-  --icon__system_Assistant_primary--disabled: url('#{$icons-path}system/dark/Assistant.svg#primary--disabled'); 
 
   }
   
