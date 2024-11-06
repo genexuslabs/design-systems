@@ -4787,41 +4787,6 @@ export const MERCURY_ASSETS = freeze({
         })
       })
     }),
-    assistant: freeze({
-      "on-surface": freeze({
-        enabled: freeze({
-          name: "system_assistant_on-surface--enabled"
-        }),
-        hover: freeze({
-          name: "system_assistant_on-surface--hover"
-        }),
-        active: freeze({
-          name: "system_assistant_on-surface--active"
-        }),
-        disabled: freeze({
-          name: "system_assistant_on-surface--disabled"
-        })
-      }),
-      "on-elevation": freeze({
-        enabled: freeze({
-          name: "system_assistant_on-elevation--enabled"
-        })
-      }),
-      primary: freeze({
-        enabled: freeze({
-          name: "system_assistant_primary--enabled"
-        }),
-        hover: freeze({
-          name: "system_assistant_primary--hover"
-        }),
-        active: freeze({
-          name: "system_assistant_primary--active"
-        }),
-        disabled: freeze({
-          name: "system_assistant_primary--disabled"
-        })
-      })
-    }),
     "arrow-up": freeze({
       "on-surface": freeze({
         enabled: freeze({
