@@ -28,6 +28,13 @@ export const routes: Routes = [
       )
   },
   {
+    path: "radio-group",
+    loadComponent: () =>
+      import("./components/radio-group/radio-group.component").then(
+        m => m.RadioGroupComponent
+      )
+  },
+  {
     path: "tree-view",
     loadComponent: () =>
       import("./components/tree-view/tree-view.component").then(

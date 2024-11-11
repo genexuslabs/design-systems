@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'landing',
+  selector: "landing",
   imports: [],
-  templateUrl: './landing.component.html',
-  host: { class: 'main-content' },
+  templateUrl: "./landing.component.html",
+  host: { class: "main-content" }
 })
 export class LandingComponent {}

@@ -8,9 +8,8 @@ import { TreeViewModel } from "@genexus/chameleon-controls-library";
   selector: "components-tree-view",
   imports: [CommonModule, CodeSnippetComponent],
   templateUrl: "./tree-view.component.html",
-  host: { class: "main-content" },
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  styleUrl: "./tree-view.scss"
+  host: { class: "main-content", ngSkipHydration: "true" },
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TreeViewComponent {
   ADD_CIRCLE_ICON = getIconPath({

@@ -1,0 +1,34 @@
+<header>
+  <h1 class="heading-1">Radio Group</h1>
+</header>
+
+<p class="text-body-regular-l">
+  A radio group is an essential UI component in HTML, designed to allow users to
+  select one option from a set of choices. Each radio button within the group
+  represents a distinct option, ensuring mutual exclusivity. This setup is
+  commonly used in forms to facilitate decisions such as choosing a payment
+  method, selecting a preferred contact time, or specifying a shipping option.
+</p>
+
+<code-snippet
+  [codeSnippet]="default"
+  linkId="Horizontal"
+  sectionTitle="1. Horizontal"
+>
+  <ch-radio-group-render
+    class="radio-group"
+    [model]="radioGroupModel()"
+  ></ch-radio-group-render>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="vertical"
+  linkId="Vertical"
+  sectionTitle="2. Vertical"
+>
+  <ch-radio-group-render
+    class="radio-group"
+    direction="vertical"
+    [model]="radioGroupModel()"
+  ></ch-radio-group-render>
+</code-snippet>
