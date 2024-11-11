@@ -1,7 +1,7 @@
 :host {
   display: grid;
-  grid-auto-rows: max-content;
-  min-block-size: 64px; // Necessary to avoid CLS on the initial load
+  grid-template-rows: max-content 1fr;
+  min-block-size: 65px; // Necessary to avoid CLS on the initial load
 
   & > button {
     justify-content: flex-end;

@@ -1,0 +1,70 @@
+<header>
+  <h1 class="heading-1">Tree View</h1>
+</header>
+
+<p class="text-body-regular-l">
+  A custom tree component is a hierarchical UI element that visually represents
+  a nested data structure, allowing users to expand and collapse branches. It's
+  commonly used for navigating directories, organizing data, and managing
+  complex relationships within a user-friendly interface.
+</p>
+
+<code-snippet
+  [codeSnippet]="noIcons"
+  linkId="no-icons"
+  sectionTitle="1. No icons"
+>
+  <ch-tree-view-render
+    class="tree-view tree-view-snippet"
+    show-lines="all"
+    [model]="noIconsModel"
+  ></ch-tree-view-render>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="noIcons"
+  linkId="with-icons"
+  sectionTitle="2. With icons"
+>
+  <ch-tree-view-render
+    class="tree-view tree-view-snippet"
+    show-lines="all"
+    [model]="withIconsModel"
+  ></ch-tree-view-render>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="withCheckboxes"
+  linkId="checkboxes"
+  sectionTitle="3. Checkboxes"
+>
+  <ch-tree-view-render
+    class="tree-view tree-view-snippet"
+    checkbox
+    [model]="noIconsModel"
+    show-lines="all"
+  ></ch-tree-view-render>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="showLinesLast"
+  linkId="show-last-line"
+  sectionTitle="4. Show Lines: Last"
+>
+  <ch-tree-view-render
+    class="tree-view tree-view-snippet"
+    show-lines="last"
+    [model]="noIconsModel"
+  ></ch-tree-view-render>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="showLinesNone"
+  linkId="show-last-none"
+  sectionTitle="5. Show Lines: None"
+>
+  <ch-tree-view-render
+    class="tree-view tree-view-snippet"
+    [model]="noIconsModel"
+  ></ch-tree-view-render>
+</code-snippet>

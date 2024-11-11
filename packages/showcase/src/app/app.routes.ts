@@ -28,6 +28,13 @@ export const routes: Routes = [
       )
   },
   {
+    path: "tree-view",
+    loadComponent: () =>
+      import("./components/tree-view/tree-view.component").then(
+        m => m.TreeViewComponent
+      )
+  },
+  {
     // 404
     path: "**",
     loadComponent: () =>
