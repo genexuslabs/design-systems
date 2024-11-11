@@ -66,77 +66,150 @@ export class AppComponent {
 
   selectedLink = signal<{ id?: string; link: ItemLink }>({ link: { url: "" } });
   selectedBundle = computed(
-    () =>
-      bundleMapping[this.selectedLink().link.url as keyof typeof bundleMapping]
+    () => bundleMapping[this.selectedLink().id as keyof typeof bundleMapping]
   );
-  navigationListModel = signal<NavigationListModel>([
+  navigationListModel = computed<NavigationListModel>(() => [
     { id: "Home", caption: "Home" },
     {
       caption: "Components",
       expanded: true,
       items: [
-        { id: "/accordion", caption: "Accordion", link: { url: "/accordion" } },
-        { id: "/button", caption: "Button", link: { url: "/button" } },
-        { id: "/checkbox", caption: "Checkbox", link: { url: "/checkbox" } },
-        { id: "/combo-box", caption: "Combo Box", link: { url: "/combo-box" } },
-        { id: "/dialog", caption: "Dialog", link: { url: "/dialog" } },
-        { id: "/input", caption: "Input", link: { url: "/input" } },
-        { id: "/label", caption: "Label", link: { url: "/label" } },
-        { id: "/list-box", caption: "List Box", link: { url: "/list-box" } },
-        { id: "/pills", caption: "Pills", link: { url: "/pills" } },
+        {
+          id: "/accordion",
+          caption: "Accordion",
+          link: { url: `/${this.designSystem()}/accordion` }
+        },
+        {
+          id: "/button",
+          caption: "Button",
+          link: { url: `/${this.designSystem()}/button` }
+        },
+        {
+          id: "/checkbox",
+          caption: "Checkbox",
+          link: { url: `/${this.designSystem()}/checkbox` }
+        },
+        {
+          id: "/combo-box",
+          caption: "Combo Box",
+          link: { url: `/${this.designSystem()}/combo-box` }
+        },
+        {
+          id: "/dialog",
+          caption: "Dialog",
+          link: { url: `/${this.designSystem()}/dialog` }
+        },
+        {
+          id: "/input",
+          caption: "Input",
+          link: { url: `/${this.designSystem()}/input` }
+        },
+        {
+          id: "/label",
+          caption: "Label",
+          link: { url: `/${this.designSystem()}/label` }
+        },
+        {
+          id: "/list-box",
+          caption: "List Box",
+          link: { url: `/${this.designSystem()}/list-box` }
+        },
+        {
+          id: "/pills",
+          caption: "Pills",
+          link: { url: `/${this.designSystem()}/pills` }
+        },
         {
           id: "/property-grid",
           caption: "Property Grid",
-          link: { url: "/property-grid" }
+          link: { url: `/${this.designSystem()}/property-grid` }
         },
         {
           id: "/radio-group",
           caption: "Radio Group",
-          link: { url: "/radio-group" }
+          link: { url: `/${this.designSystem()}/radio-group` }
         },
-        { id: "/slider", caption: "Slider", link: { url: "/slider" } },
-        { id: "/tab", caption: "Tab", link: { url: "/tab" } },
+        {
+          id: "/slider",
+          caption: "Slider",
+          link: { url: `/${this.designSystem()}/slider` }
+        },
+        {
+          id: "/tab",
+          caption: "Tab",
+          link: { url: `/${this.designSystem()}/tab` }
+        },
         {
           id: "/tabular-grid",
           caption: "Tabular Grid",
-          link: { url: "/tabular-grid" }
+          link: { url: `/${this.designSystem()}/tabular-grid` }
         },
-        { id: "/tooltip", caption: "Tooltip", link: { url: "/tooltip" } },
-        { id: "/tree-view", caption: "Tree View", link: { url: "/tree-view" } },
-        { id: "/widget", caption: "Widget", link: { url: "/widget" } }
+        {
+          id: "/tooltip",
+          caption: "Tooltip",
+          link: { url: `/${this.designSystem()}/tooltip` }
+        },
+        {
+          id: "/tree-view",
+          caption: "Tree View",
+          link: { url: `/${this.designSystem()}/tree-view` }
+        },
+        {
+          id: "/widget",
+          caption: "Widget",
+          link: { url: `/${this.designSystem()}/widget` }
+        }
       ]
     },
     {
       caption: "Utility classes",
       items: [
-        { id: "/elevation", caption: "Elevation", link: { url: "/elevation" } },
-        { id: "/form", caption: "Form", link: { url: "/form" } },
-        { id: "/layout", caption: "Layout", link: { url: "/layout" } },
-        { id: "/spacing", caption: "Spacing", link: { url: "/spacing" } },
+        {
+          id: "/elevation",
+          caption: "Elevation",
+          link: { url: `/${this.designSystem()}/elevation` }
+        },
+        {
+          id: "/form",
+          caption: "Form",
+          link: { url: `/${this.designSystem()}/form` }
+        },
+        {
+          id: "/layout",
+          caption: "Layout",
+          link: { url: `/${this.designSystem()}/layout` }
+        },
+        {
+          id: "/spacing",
+          caption: "Spacing",
+          link: { url: `/${this.designSystem()}/spacing` }
+        },
         {
           id: "/typography",
           caption: "Typography",
-          link: { url: "/typography" }
+          link: { url: `/${this.designSystem()}/typography` }
         }
       ]
     },
     {
       id: "Gemini Migration",
       caption: "Gemini Migration",
-      link: { url: "/gemini-migration" }
+      link: { url: `/${this.designSystem()}/gemini-migration` }
     }
   ]);
 
   constructor() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
-        const componentName = event.url
-          .replace(FRAGMENT_URL, "")
-          .replace(MERCURY_UNANIMO_PREFIX_URL_REGEX, "");
+        const urlNoFragment = event.url.replace(FRAGMENT_URL, "");
+        const componentName = urlNoFragment.replace(
+          MERCURY_UNANIMO_PREFIX_URL_REGEX,
+          ""
+        );
 
         this.selectedLink.set({
           id: componentName,
-          link: { url: componentName }
+          link: { url: urlNoFragment }
         });
 
         if (event.url.includes("unanimo")) {
@@ -146,12 +219,7 @@ export class AppComponent {
         }
 
         this.seoService.updateTitle(
-          urlMapping[
-            event.url.replace(
-              MERCURY_UNANIMO_PREFIX_URL_REGEX,
-              ""
-            ) as keyof typeof urlMapping
-          ]
+          urlMapping[componentName as keyof typeof urlMapping]
         );
       }
     });
@@ -218,9 +286,19 @@ export class AppComponent {
   ) => {
     this.designSystem.set(event.detail as "mercury" | "unanimo");
 
-    this.location.replaceState(
-      "/" + this.designSystem() + this.selectedLink().link.url
-    );
+    const previousSelectedLink = this.selectedLink();
+
+    this.selectedLink.set({
+      id: previousSelectedLink.id,
+      link: {
+        url: previousSelectedLink.link.url.replace(
+          MERCURY_UNANIMO_PREFIX_URL_REGEX,
+          this.designSystem() + "/"
+        )
+      }
+    });
+
+    this.location.replaceState(this.selectedLink().link.url);
   };
 
   handleHyperlinkClick = (
@@ -228,6 +306,6 @@ export class AppComponent {
   ) => {
     event.preventDefault();
     const itemInfo = event.detail.item;
-    this.router.navigate([this.designSystem() + "/" + itemInfo.link!.url]);
+    this.router.navigate([itemInfo.link!.url]);
   };
 }
