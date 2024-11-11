@@ -3,12 +3,16 @@ import {
   Component,
   computed,
   CUSTOM_ELEMENTS_SCHEMA,
-  effect,
   inject,
+  PLATFORM_ID,
   signal
 } from "@angular/core";
-import { Title } from "@angular/platform-browser";
-import { Router, RouterOutlet } from "@angular/router";
+import {
+  ActivatedRoute,
+  NavigationStart,
+  Router,
+  RouterOutlet
+} from "@angular/router";
 import {
   ChNavigationListRenderCustomEvent,
   ItemLink,
@@ -16,7 +20,8 @@ import {
   NavigationListModel,
   ThemeModel
 } from "@genexus/chameleon-controls-library";
-import { bundleMapping } from "./bundles-mapping";
+import { bundleMapping, urlMapping } from "./bundles-and-url-mapping";
+import { SEOService } from "../services/seo.service";
 
 @Component({
   selector: "app-root",
@@ -26,8 +31,10 @@ import { bundleMapping } from "./bundles-mapping";
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppComponent {
+  platform = inject(PLATFORM_ID);
   router = inject(Router);
-  title = inject(Title);
+  route = inject(ActivatedRoute);
+  seoService = inject(SEOService);
 
   colorScheme = signal<"dark" | "light">("dark");
   designSystem = signal<"mercury" | "unanimo">("mercury");
@@ -39,7 +46,13 @@ export class AppComponent {
 
   selectedLink = signal<{ id?: string; link: ItemLink }>({ link: { url: "" } });
   selectedBundle = computed(
-    () => bundleMapping[this.selectedLink().id as keyof typeof bundleMapping]
+    () =>
+      bundleMapping[
+        this.selectedLink().link.url.replace(
+          /#.*/,
+          ""
+        ) as keyof typeof bundleMapping
+      ]
   );
   navigationListModel = signal<NavigationListModel>([
     { id: "Home", caption: "Home" },
@@ -100,8 +113,17 @@ export class AppComponent {
   ]);
 
   constructor() {
-    effect(() => {
-      this.title.setTitle(this.selectedLink().id!);
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        this.selectedLink.set({
+          id: event.url,
+          link: { url: event.url }
+        });
+
+        this.seoService.updateTitle(
+          urlMapping[event.url as keyof typeof urlMapping]
+        );
+      }
     });
 
     afterNextRender({
@@ -113,10 +135,6 @@ export class AppComponent {
           document.documentElement.classList.add("light");
           document.documentElement.classList.remove("dark");
         }
-
-        this.selectedLink.set({
-          link: { url: this.router.url }
-        });
       }
     });
   }
@@ -128,6 +146,5 @@ export class AppComponent {
     const itemInfo = event.detail.item;
 
     this.router.navigate([itemInfo.link!.url]);
-    this.selectedLink.set({ id: itemInfo.id, link: itemInfo.link! });
   };
 }
