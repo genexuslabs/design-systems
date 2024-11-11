@@ -1,0 +1,15 @@
+<section [attr.aria-labelledby]="linkId()">
+  @if (headingLevel() === 2) {
+  <h2 [id]="linkId()" class="heading-3">
+    <a routerLink="." [fragment]="linkId()">{{ sectionTitle() }}</a>
+  </h2>
+  } @else {
+  <h3 [id]="linkId()" class="heading-3">
+    <a routerLink="." [fragment]="linkId()">{{ sectionTitle() }}</a>
+  </h3>
+  }
+
+  <ng-content />
+
+  <copy-code [value]="codeSnippet()" [language]="language()"></copy-code>
+</section>

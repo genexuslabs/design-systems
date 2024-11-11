@@ -1,18 +1,36 @@
-import { Routes } from '@angular/router';
+import { Routes } from "@angular/router";
 
 export const routes: Routes = [
   {
-    path: 'accordion',
+    path: "",
     loadComponent: () =>
-      import('./components/accordion/accordion.component').then(
-        (m) => m.AccordionComponent
-      ),
+      import("./landing/landing.component").then(m => m.LandingComponent)
   },
   {
-    path: 'button',
+    path: "accordion",
     loadComponent: () =>
-      import('./components/button/button.component').then(
-        (m) => m.ButtonComponent
-      ),
+      import("./components/accordion/accordion.component").then(
+        m => m.AccordionComponent
+      )
   },
+  {
+    path: "button",
+    loadComponent: () =>
+      import("./components/button/button.component").then(
+        m => m.ButtonComponent
+      )
+  },
+  {
+    path: "checkbox",
+    loadComponent: () =>
+      import("./components/checkbox/checkbox.component").then(
+        m => m.CheckboxComponent
+      )
+  },
+  {
+    // 404
+    path: "**",
+    loadComponent: () =>
+      import("./landing/landing.component").then(m => m.LandingComponent)
+  }
 ];

@@ -1,5 +1,3 @@
-<ch-theme [model]="themeModel()"></ch-theme>
-
 <aside class="elevation-1">
   <ch-navigation-list-render
     class="navigation-list"
@@ -11,18 +9,20 @@
   ></ch-navigation-list-render>
 </aside>
 
+@if (selectedBundle()) {
+<header class="header-bundle">
+  Bundle:
+
+  <button class="button-tertiary">
+    {{ selectedBundle() }}
+
+    <ch-image src="mer/system/copy/primary"></ch-image>
+  </button>
+</header>
+}
+
 <main>
-  @if (selectedBundle()) {
-  <header class="header-bundle">
-    Bundle:
-
-    <button class="button-tertiary">
-      {{ selectedBundle() }}
-
-      <ch-image src="mer/system/copy/primary"></ch-image>
-    </button>
-  </header>
-  }
-
-  <router-outlet />
+  <article>
+    <router-outlet style="display: contents" />
+  </article>
 </main>

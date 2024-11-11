@@ -1,9 +1,13 @@
 :host {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  display: grid;
+  grid-template:
+    "aside header-bundle" max-content
+    "aside main" 1fr / 300px 1fr;
 }
 
 aside {
+  grid-area: aside;
   display: grid;
   position: sticky;
   inset-block-start: 0;
@@ -11,6 +15,7 @@ aside {
 }
 
 .header-bundle {
+  grid-area: header-bundle;
   position: sticky;
   inset-block-start: 0;
   padding-inline: var(--mer-spacing--md);
@@ -20,6 +25,10 @@ aside {
 }
 
 main {
+  grid-area: main;
   display: grid;
-  grid-auto-rows: max-content;
+
+  & > article {
+    display: contents;
+  }
 }

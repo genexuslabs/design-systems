@@ -1,0 +1,87 @@
+<header>
+  <h1 class="heading-1">Checkbox</h1>
+</header>
+
+<p class="text-body-regular-l">
+  A checkbox input element is a versatile component on a webpage, designed to
+  allow users to make binary choices. It is typically used for selecting
+  multiple options from a list or toggling a setting on and off, making it an
+  essential tool for enhancing user interaction and data collection.
+</p>
+
+<code-snippet
+  [codeSnippet]="default"
+  linkId="checked"
+  sectionTitle="1. Checked"
+>
+  <ch-checkbox class="checkbox" caption="The caption"></ch-checkbox>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="default"
+  linkId="unchecked"
+  sectionTitle="2. Unchecked"
+>
+  <ch-checkbox
+    class="checkbox"
+    caption="The caption"
+    checked-value="true"
+  ></ch-checkbox>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="indeterminate"
+  linkId="indeterminate"
+  sectionTitle="3. Indeterminate"
+>
+  <ch-checkbox
+    class="checkbox"
+    caption="The caption"
+    indeterminate
+  ></ch-checkbox>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="disabled"
+  linkId="disabled"
+  sectionTitle="4. Disabled"
+>
+  <ch-checkbox class="checkbox" caption="The caption" disabled></ch-checkbox>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="withIcon"
+  language="ts"
+  linkId="with-icon"
+  sectionTitle="5. With Icon"
+>
+  <ch-checkbox
+    class="checkbox"
+    caption="The caption"
+    [startImgSrc]="ADD_CIRCLE_ICON"
+  ></ch-checkbox>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="groupingCheckboxesBlock"
+  linkId="grouping-checkboxes-block"
+  sectionTitle="6. Grouping checkboxes: Block"
+>
+  <div class="field-group">
+    <ch-checkbox class="checkbox" caption="The caption 1"></ch-checkbox>
+    <ch-checkbox class="checkbox" caption="The caption 2"></ch-checkbox>
+    <ch-checkbox class="checkbox" caption="The caption 3"></ch-checkbox>
+  </div>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="groupingCheckboxesInline"
+  linkId="grouping-checkboxes-inline"
+  sectionTitle="7. Grouping checkboxes: Inline"
+>
+  <div class="field-group-inline">
+    <ch-checkbox class="checkbox" caption="The caption 1"></ch-checkbox>
+    <ch-checkbox class="checkbox" caption="The caption 2"></ch-checkbox>
+    <ch-checkbox class="checkbox" caption="The caption 3"></ch-checkbox>
+  </div>
+</code-snippet>

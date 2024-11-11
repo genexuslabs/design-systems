@@ -1,91 +1,54 @@
-<h1 class="heading-1">Button Primary</h1>
-<p>
+<header>
+  <h1 class="heading-1">Button</h1>
+</header>
+
+<p class="text-body-regular-l">
   A primary HTML button is a key element on a webpage, designed to stand out and
   encourage user interaction. It typically represents the main action a user
   should take, such as submitting a form or saving changes.
 </p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
-<p>
-  A primary HTML button is a key element on a webpage, designed to stand out and
-  encourage user interaction. It typically represents the main action a user
-  should take, such as submitting a form or saving changes.
-</p>
+
+<section aria-labelledby="button-primary">
+  <h2 id="button-primary" class="heading-2">
+    <a routerLink="." fragment="button-primary">1. Button Primary</a>
+  </h2>
+</section>
+
+<code-snippet
+  [codeSnippet]="buttonPrimaryTextOnly"
+  [headingLevel]="3"
+  linkId="button-primary-text-only"
+  sectionTitle="1.1. Text Only"
+>
+  <button class="button-primary">Caption</button>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="buttonPrimaryTextOnlyDisabled"
+  [headingLevel]="3"
+  linkId="button-primary-text-only-disabled"
+  sectionTitle="1.2. Text Only: Disabled"
+>
+  <button class="button-primary" disabled>Caption</button>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="buttonPrimaryTextOnlyDestructive"
+  [headingLevel]="3"
+  linkId="button-primary-text-only-destructive"
+  sectionTitle="1.3. Text Only: Destructive"
+>
+  <button class="button-primary button-primary-destructive">Caption</button>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="buttonPrimaryIconAndText"
+  [headingLevel]="3"
+  linkId="button-primary-icon-and-text"
+  sectionTitle="1.4. Icon and Text"
+>
+  <button class="button-primary button-icon-and-text">
+    <ch-image class="icon-sm"></ch-image>
+    Caption
+  </button>
+</code-snippet>

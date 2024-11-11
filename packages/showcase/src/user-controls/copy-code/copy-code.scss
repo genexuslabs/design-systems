@@ -1,0 +1,20 @@
+:host {
+  display: grid;
+  grid-auto-rows: max-content;
+  min-block-size: 64px; // Necessary to avoid CLS on the initial load
+
+  & > button {
+    justify-content: flex-end;
+    padding: var(--mer-spacing--2xs);
+    border-start-end-radius: var(--mer-border__radius--sm);
+    border-start-start-radius: var(--mer-border__radius--sm);
+    border: var(--mer-border__width--sm) solid var(--mer-surface__elevation--03);
+    border-block-end: unset;
+  }
+
+  & > .code {
+    border-start-end-radius: unset;
+    border-start-start-radius: unset;
+    min-block-size: 36px; // Necessary to avoid CLS on the initial load
+  }
+}
