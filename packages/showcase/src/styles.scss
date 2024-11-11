@@ -28,3 +28,11 @@
 .tree-view-snippet {
   block-size: 300px;
 }
+
+code {
+  padding-block: 2px;
+  padding-inline: 6px;
+  background-color: var(--mer-color__neutral-gray--650);
+  border-radius: 4px;
+  color: var(--mer-text__on-elevation);
+}

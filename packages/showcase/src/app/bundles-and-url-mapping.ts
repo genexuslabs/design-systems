@@ -1,15 +1,19 @@
 export const bundleMapping = {
-  "/accordion": "components/accordion",
-  "/button": "components/button",
-  "/checkbox": "components/checkbox",
-  "/radio-group": "components/radio-group",
-  "/tree-view": "components/tree-view"
+  "/components/accordion": "components/accordion",
+  "/components/button": "components/button",
+  "/components/checkbox": "components/checkbox",
+  "/components/radio-group": "components/radio-group",
+  "/components/tree-view": "components/tree-view",
+
+  "/utility-classes/elevation": "utils/elevation"
 } as const;
 
 export const urlMapping = {
-  "/accordion": "Accordion",
-  "/button": "Button",
-  "/checkbox": "Checkbox",
-  "/radio-group": "Radio Group",
-  "/tree-view": "Tree View"
+  "/components/accordion": "Accordion",
+  "/components/button": "Button",
+  "/components/checkbox": "Checkbox",
+  "/components/radio-group": "Radio Group",
+  "/components/tree-view": "Tree View",
+
+  "/utility-classes/elevation": "Elevation"
 } as const;

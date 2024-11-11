@@ -27,7 +27,7 @@ import { bundleMapping, urlMapping } from "./bundles-and-url-mapping";
 import { SEOService } from "../services/seo.service";
 import { DOCUMENT, isPlatformBrowser, Location } from "@angular/common";
 
-const MERCURY_UNANIMO_PREFIX_URL_REGEX = /(mercury|unanimo)\//;
+const MERCURY_UNANIMO_PREFIX_URL_REGEX = /\/(mercury|unanimo)/;
 const FRAGMENT_URL = /#.*/;
 const COLOR_SCHEME_KEY = "color-scheme";
 
@@ -75,89 +75,89 @@ export class AppComponent {
       expanded: true,
       items: [
         {
-          id: "/accordion",
+          id: "/components/accordion",
           caption: "Accordion",
-          link: { url: `/${this.designSystem()}/accordion` }
+          link: { url: `/${this.designSystem()}/components/accordion` }
         },
         {
-          id: "/button",
+          id: "/components/button",
           caption: "Button",
-          link: { url: `/${this.designSystem()}/button` }
+          link: { url: `/${this.designSystem()}/components/button` }
         },
         {
-          id: "/checkbox",
+          id: "/components/checkbox",
           caption: "Checkbox",
-          link: { url: `/${this.designSystem()}/checkbox` }
+          link: { url: `/${this.designSystem()}/components/checkbox` }
         },
         {
-          id: "/combo-box",
+          id: "/components/combo-box",
           caption: "Combo Box",
-          link: { url: `/${this.designSystem()}/combo-box` }
+          link: { url: `/${this.designSystem()}/components/combo-box` }
         },
         {
-          id: "/dialog",
+          id: "/components/dialog",
           caption: "Dialog",
-          link: { url: `/${this.designSystem()}/dialog` }
+          link: { url: `/${this.designSystem()}/components/dialog` }
         },
         {
-          id: "/input",
+          id: "/components/input",
           caption: "Input",
-          link: { url: `/${this.designSystem()}/input` }
+          link: { url: `/${this.designSystem()}/components/input` }
         },
         {
-          id: "/label",
+          id: "/components/label",
           caption: "Label",
-          link: { url: `/${this.designSystem()}/label` }
+          link: { url: `/${this.designSystem()}/components/label` }
         },
         {
-          id: "/list-box",
+          id: "/components/list-box",
           caption: "List Box",
-          link: { url: `/${this.designSystem()}/list-box` }
+          link: { url: `/${this.designSystem()}/components/list-box` }
         },
         {
-          id: "/pills",
+          id: "/components/pills",
           caption: "Pills",
-          link: { url: `/${this.designSystem()}/pills` }
+          link: { url: `/${this.designSystem()}/components/pills` }
         },
         {
-          id: "/property-grid",
+          id: "/components/property-grid",
           caption: "Property Grid",
-          link: { url: `/${this.designSystem()}/property-grid` }
+          link: { url: `/${this.designSystem()}/components/property-grid` }
         },
         {
-          id: "/radio-group",
+          id: "/components/radio-group",
           caption: "Radio Group",
-          link: { url: `/${this.designSystem()}/radio-group` }
+          link: { url: `/${this.designSystem()}/components/radio-group` }
         },
         {
-          id: "/slider",
+          id: "/components/slider",
           caption: "Slider",
-          link: { url: `/${this.designSystem()}/slider` }
+          link: { url: `/${this.designSystem()}/components/slider` }
         },
         {
-          id: "/tab",
+          id: "/components/tab",
           caption: "Tab",
-          link: { url: `/${this.designSystem()}/tab` }
+          link: { url: `/${this.designSystem()}/components/tab` }
         },
         {
-          id: "/tabular-grid",
+          id: "/components/tabular-grid",
           caption: "Tabular Grid",
-          link: { url: `/${this.designSystem()}/tabular-grid` }
+          link: { url: `/${this.designSystem()}/components/tabular-grid` }
         },
         {
-          id: "/tooltip",
+          id: "/components/tooltip",
           caption: "Tooltip",
-          link: { url: `/${this.designSystem()}/tooltip` }
+          link: { url: `/${this.designSystem()}/components/tooltip` }
         },
         {
-          id: "/tree-view",
+          id: "/components/tree-view",
           caption: "Tree View",
-          link: { url: `/${this.designSystem()}/tree-view` }
+          link: { url: `/${this.designSystem()}/components/tree-view` }
         },
         {
-          id: "/widget",
+          id: "/components/widget",
           caption: "Widget",
-          link: { url: `/${this.designSystem()}/widget` }
+          link: { url: `/${this.designSystem()}/components/widget` }
         }
       ]
     },
@@ -165,37 +165,46 @@ export class AppComponent {
       caption: "Utility classes",
       items: [
         {
-          id: "/elevation",
+          id: "/utility-classes/elevation",
           caption: "Elevation",
-          link: { url: `/${this.designSystem()}/elevation` }
+          link: { url: `/${this.designSystem()}/utility-classes/elevation` }
         },
         {
-          id: "/form",
+          id: "/utility-classes/form",
           caption: "Form",
-          link: { url: `/${this.designSystem()}/form` }
+          link: { url: `/${this.designSystem()}/utility-classes/form` }
         },
         {
-          id: "/layout",
+          id: "/utility-classes/layout",
           caption: "Layout",
-          link: { url: `/${this.designSystem()}/layout` }
+          link: { url: `/${this.designSystem()}/utility-classes/layout` }
         },
         {
-          id: "/spacing",
+          id: "/utility-classes/spacing",
           caption: "Spacing",
-          link: { url: `/${this.designSystem()}/spacing` }
+          link: { url: `/${this.designSystem()}/utility-classes/spacing` }
         },
         {
-          id: "/typography",
+          id: "/utility-classes/typography",
           caption: "Typography",
-          link: { url: `/${this.designSystem()}/typography` }
+          link: { url: `/${this.designSystem()}/utility-classes/typography` }
         }
       ]
     },
     {
-      id: "Gemini Migration",
-      caption: "Gemini Migration",
-      link: { url: `/${this.designSystem()}/gemini-migration` }
-    }
+      id: "/icons",
+      caption: "Icons",
+      link: { url: `/${this.designSystem()}/icons` }
+    },
+    ...(this.designSystem() === "mercury"
+      ? [
+          {
+            id: "/gemini-migration",
+            caption: "Gemini Migration",
+            link: { url: `/mercury/gemini-migration` }
+          }
+        ]
+      : [])
   ]);
 
   constructor() {
@@ -222,6 +231,10 @@ export class AppComponent {
           urlMapping[componentName as keyof typeof urlMapping]
         );
       }
+    });
+
+    effect(() => {
+      console.log(this.selectedLink().id);
     });
 
     // Browser
@@ -293,7 +306,7 @@ export class AppComponent {
       link: {
         url: previousSelectedLink.link.url.replace(
           MERCURY_UNANIMO_PREFIX_URL_REGEX,
-          this.designSystem() + "/"
+          "/" + this.designSystem()!
         )
       }
     });

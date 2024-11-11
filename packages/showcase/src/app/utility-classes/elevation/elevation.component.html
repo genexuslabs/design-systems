@@ -1,0 +1,64 @@
+<header>
+  <h1 class="heading-1">Elevation</h1>
+</header>
+
+<p class="text-body-regular-l">
+  CSS utility classes for background colors offer a fast, consistent way to
+  apply styles, reducing repetitive code. They speed up development and simplify
+  maintenance by centralizing color updates, ensuring uniformity across the
+  project.
+</p>
+
+<code-snippet
+  [codeSnippet]="elevation1"
+  linkId="elevation-1"
+  sectionTitle="1. Elevation 1"
+>
+  <p class="text-body-regular-m">
+    Apply the <code>.elevation-1</code> background color class only when the
+    container has no ancestor with an elevation background. This approach
+    maintains a clear visual hierarchy by enhancing contrast between nested
+    elevation containers.
+  </p>
+
+  <div class="elevation-example-box text-body-regular-m">
+    surface
+    <div class="sub-elevation-example-box elevation-1">elevation 1</div>
+  </div>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="elevation2"
+  linkId="elevation-2"
+  sectionTitle="2. Elevation 2"
+>
+  <p class="text-body-regular-m">
+    Apply the <code>.elevation-2</code> background color class when the parent
+    container's has a <code>.elevation-1</code> background. This maintains a
+    clear visual hierarchy by enhancing contrast between nested elevation
+    containers.
+  </p>
+
+  <div class="elevation-example-box text-body-regular-m elevation-1">
+    elevation 1
+    <div class="sub-elevation-example-box elevation-2">elevation 2</div>
+  </div>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="elevation3"
+  linkId="elevation-3"
+  sectionTitle="3. Elevation 3"
+>
+  <p class="text-body-regular-m">
+    Apply the <code>.elevation-3</code> background color class when the parent
+    container's has a <code>.elevation-2</code> background. This maintains a
+    clear visual hierarchy by enhancing contrast between nested elevation
+    containers.
+  </p>
+
+  <div class="elevation-example-box text-body-regular-m elevation-2">
+    elevation 2
+    <div class="sub-elevation-example-box elevation-3">elevation 3</div>
+  </div>
+</code-snippet>

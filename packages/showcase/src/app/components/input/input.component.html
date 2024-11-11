@@ -1,0 +1,60 @@
+<header>
+  <h1 class="heading-1">Input</h1>
+</header>
+
+<p class="text-body-regular-l">
+  A primary HTML input element is a crucial part of a webpage, designed to
+  capture user data and facilitate interactions. It serves as the main interface
+  for users to enter information such as text, numbers, or dates, making it
+  essential for data collection and user engagement, whether within a form or
+  used independently.
+</p>
+
+<code-snippet
+  [codeSnippet]="default"
+  linkId="default"
+  sectionTitle="1. Default"
+>
+  <ch-edit accessibleName="Name" class="input"></ch-edit>
+</code-snippet>
+
+<code-snippet [codeSnippet]="value" linkId="value" sectionTitle="2. Value">
+  <ch-edit accessibleName="Name" class="input" value="Pat Taylor"></ch-edit>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="placeholder"
+  linkId="placeholder"
+  sectionTitle="3. Placeholder"
+>
+  <ch-edit
+    accessibleName="Name"
+    class="input"
+    placeholder="e.g. Mike Shinoda"
+  ></ch-edit>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="disabled"
+  linkId="disabled"
+  sectionTitle="4. Disabled"
+>
+  <ch-edit
+    accessibleName="Name"
+    class="input"
+    disabled
+    value="Pat Taylor"
+  ></ch-edit>
+</code-snippet>
+
+<code-snippet
+  [codeSnippet]="withIcon"
+  linkId="with-icon"
+  sectionTitle="5. With Icon"
+>
+  <ch-edit
+    accessibleName="Name"
+    class="input"
+    [startImgSrc]="USER_ICON"
+  ></ch-edit>
+</code-snippet>
