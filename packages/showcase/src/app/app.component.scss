@@ -14,14 +14,29 @@ aside {
   max-block-size: 100dvh;
 }
 
-.header-bundle {
+.app-header {
   grid-area: header-bundle;
+  display: grid;
+  grid-template: "bundle config" 1fr / 1fr max-content;
+  align-items: center;
   position: sticky;
   inset-block-start: 0;
-  padding-inline: var(--mer-spacing--md);
-  padding-block: var(--mer-spacing--2xs);
-  background-color: var(--mer-color__surface);
-  border-block-end: 1px solid var(--mer-border-color__on-surface);
+  padding-inline: var(--mer-spacing--md, var(--spacing--l));
+  min-block-size: 44px;
+  background-color: var(--mer-color__surface, var(--surface--alternative));
+  border-block-end: 1px solid
+    var(--mer-border-color__on-surface, var(--border-color__mild));
+  z-index: 1;
+
+  &__bundle {
+    grid-area: bundle;
+  }
+
+  &__config {
+    grid-area: config;
+    display: flex;
+    gap: var(--mer-spacing--md, var(--spacing--l));
+  }
 }
 
 main {

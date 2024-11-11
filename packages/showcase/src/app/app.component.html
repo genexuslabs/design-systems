@@ -1,27 +1,48 @@
 <!-- <ch-theme [model]="themeModel()"></ch-theme> -->
 
 <aside class="elevation-1">
-  <ch-navigation-list-render
-    class="navigation-list"
-    [expandSelectedLink]="true"
-    [model]="navigationListModel()"
-    [selectedLink]="selectedLink()"
-    [selectedLinkIndicator]="true"
-    (hyperlinkClick)="handleHyperlinkClick($event)"
-  ></ch-navigation-list-render>
+  <ch-sidebar class="sidebar">
+    <ch-navigation-list-render
+      class="navigation-list navigation-list-primary"
+      [expandSelectedLink]="true"
+      [model]="navigationListModel()"
+      [selectedLink]="selectedLink()"
+      [selectedLinkIndicator]="true"
+      (hyperlinkClick)="handleHyperlinkClick($event)"
+    ></ch-navigation-list-render>
+  </ch-sidebar>
 </aside>
 
-@if (selectedBundle()) {
-<header class="header-bundle">
-  Bundle:
+<header class="app-header">
+  @if (selectedBundle()) {
 
-  <button class="button-tertiary">
-    {{ selectedBundle() }}
+  <p class="app-header__bundle">
+    Bundle:
 
-    <ch-image src="mer/system/copy/primary"></ch-image>
-  </button>
+    <button class="button-tertiary">
+      {{ selectedBundle() }}
+
+      <ch-image src="mer/system/copy/primary"></ch-image>
+    </button>
+  </p>
+  }
+
+  <div class="app-header__config">
+    <ch-segmented-control-render
+      class="segmented-control"
+      [model]="colorSchemeModel()"
+      [selectedId]="colorScheme()"
+      (selectedItemChange)="handleColorSchemeChange($event)"
+    ></ch-segmented-control-render>
+
+    <ch-segmented-control-render
+      class="segmented-control"
+      [model]="designSystemModel()"
+      [selectedId]="designSystem()"
+      (selectedItemChange)="handleDesignSystemChange($event)"
+    ></ch-segmented-control-render>
+  </div>
 </header>
-}
 
 <main>
   <article>

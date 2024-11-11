@@ -1,11 +1,6 @@
 import { Routes } from "@angular/router";
 
-export const routes: Routes = [
-  {
-    path: "",
-    loadComponent: () =>
-      import("./landing/landing.component").then(m => m.LandingComponent)
-  },
+const childRoutes: Routes = [
   {
     path: "accordion",
     loadComponent: () =>
@@ -40,6 +35,22 @@ export const routes: Routes = [
       import("./components/tree-view/tree-view.component").then(
         m => m.TreeViewComponent
       )
+  }
+];
+
+export const routes: Routes = [
+  {
+    path: "",
+    loadComponent: () =>
+      import("./landing/landing.component").then(m => m.LandingComponent)
+  },
+  {
+    path: "mercury",
+    children: childRoutes
+  },
+  {
+    path: "unanimo",
+    children: childRoutes
   },
   {
     // 404

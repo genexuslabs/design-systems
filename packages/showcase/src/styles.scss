@@ -4,20 +4,23 @@
   display: grid;
   grid-auto-rows: max-content;
   justify-self: center;
-  margin: var(--mer-spacing--3xl);
+  margin: var(
+    --mer-spacing--3xl,
+    calc(var(--spacing--xxl) + var(--spacing--l))
+  );
   max-inline-size: 960px;
 
   & > header {
-    margin-block-end: var(--mer-spacing--md);
+    margin-block-end: var(--mer-spacing--md, var(--spacing--l));
   }
 
   & > section,
   & > code-snippet {
-    margin-block-start: var(--mer-spacing--4xl);
+    margin-block-start: var(--mer-spacing--4xl, calc(var(--spacing--xxl) * 2));
   }
 
   copy-code {
-    margin-block-start: var(--mer-spacing--md);
+    margin-block-start: var(--mer-spacing--md, var(--spacing--l));
   }
 }
 

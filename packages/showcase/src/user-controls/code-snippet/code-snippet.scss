@@ -3,6 +3,6 @@
 
   > section > h2,
   > section > h3 {
-    margin-block-end: var(--mer-spacing--md);
+    margin-block-end: var(--mer-spacing--md, var(--spacing--l));
   }
 }

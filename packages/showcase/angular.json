@@ -39,6 +39,11 @@
               },
               {
                 "glob": "**/*",
+                "input": "../unanimo/dist/assets/",
+                "output": "/assets/css/unanimo/assets/"
+              },
+              {
+                "glob": "**/*",
                 "input": "../unanimo/dist/bundles/css/",
                 "output": "/assets/css/unanimo"
               }
