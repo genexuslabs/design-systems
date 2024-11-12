@@ -9,6 +9,7 @@
     calc(var(--spacing--xxl) + var(--spacing--l))
   );
   max-inline-size: 960px;
+  flex: 1;
 
   & > header {
     margin-block-end: var(--mer-spacing--md, var(--spacing--l));

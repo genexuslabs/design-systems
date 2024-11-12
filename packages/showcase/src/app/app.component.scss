@@ -17,7 +17,7 @@ aside {
 .app-header {
   grid-area: header-bundle;
   display: grid;
-  grid-template: "bundle config" 1fr / 1fr max-content;
+  grid-template: "filters bundle config" 1fr / 300px 1fr max-content;
   align-items: center;
   position: sticky;
   inset-block-start: 0;
@@ -32,6 +32,10 @@ aside {
     grid-area: bundle;
   }
 
+  &__filters {
+    grid-area: filters;
+  }
+
   &__config {
     grid-area: config;
     display: flex;
@@ -41,7 +45,8 @@ aside {
 
 main {
   grid-area: main;
-  display: grid;
+  display: flex;
+  justify-content: center;
 
   & > article {
     display: contents;

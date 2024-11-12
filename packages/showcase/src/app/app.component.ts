@@ -15,6 +15,7 @@ import {
   RouterOutlet
 } from "@angular/router";
 import {
+  ChEditCustomEvent,
   ChNavigationListRenderCustomEvent,
   ChSegmentedControlRenderCustomEvent,
   ItemLink,
@@ -28,7 +29,7 @@ import { SEOService } from "../services/seo.service";
 import { DOCUMENT, isPlatformBrowser, Location } from "@angular/common";
 
 const MERCURY_UNANIMO_PREFIX_URL_REGEX = /\/(mercury|unanimo)/;
-const FRAGMENT_URL = /#.*/;
+const FRAGMENT_QUERY_PARAMS_URL = /(#.*|\?.*)/;
 const COLOR_SCHEME_KEY = "color-scheme";
 
 @Component({
@@ -46,6 +47,9 @@ export class AppComponent {
   router = inject(Router);
   route = inject(ActivatedRoute);
   seoService = inject(SEOService);
+
+  // Used in the "icons" page
+  filter = signal<string>("");
 
   colorSchemeModel = signal<SegmentedControlModel>([
     { id: "dark", caption: "Dark" },
@@ -211,7 +215,7 @@ export class AppComponent {
   constructor() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
-        const urlNoFragment = event.url.replace(FRAGMENT_URL, "");
+        const urlNoFragment = event.url.replace(FRAGMENT_QUERY_PARAMS_URL, "");
         const componentName = urlNoFragment.replace(
           MERCURY_UNANIMO_PREFIX_URL_REGEX,
           ""
@@ -234,10 +238,6 @@ export class AppComponent {
       }
     });
 
-    effect(() => {
-      console.log(this.selectedLink().id);
-    });
-
     // Browser
     if (isPlatformBrowser(this.platform)) {
       const colorSchemeStored =
@@ -250,7 +250,6 @@ export class AppComponent {
       this.colorScheme.set(colorSchemeStored as "dark" | "light");
 
       effect(() => {
-        console.log("SET KEY", this.colorScheme());
         localStorage.setItem(COLOR_SCHEME_KEY, this.colorScheme());
 
         if (this.colorScheme() === "dark") {
@@ -327,5 +326,13 @@ export class AppComponent {
     event.preventDefault();
     const itemInfo = event.detail.item;
     this.router.navigate([itemInfo.link!.url]);
+  };
+
+  handleFilterChange = (event: ChEditCustomEvent<string>) => {
+    this.filter.set(event.detail);
+    this.router.navigate([], {
+      queryParams: { filter: this.filter() },
+      queryParamsHandling: "merge" // Remove to replace all query params by provided
+    });
   };
 }

@@ -1,7 +1,14 @@
-import { Component, signal, ViewEncapsulation } from "@angular/core";
+import {
+  Component,
+  computed,
+  CUSTOM_ELEMENTS_SCHEMA,
+  input,
+  signal,
+  ViewEncapsulation
+} from "@angular/core";
 import { MERCURY_ASSETS } from "../../../dist/showcase/browser/assets/MERCURY_ASSETS";
 import { RouterLink, RouterModule } from "@angular/router";
-import { getIconPath } from "@genexus/mercury";
+import { ChEditCustomEvent } from "@genexus/chameleon-controls-library";
 
 type ColorType = {
   colorType?: ColorTypeWithStates;
@@ -19,8 +26,9 @@ type OnlyStates = { state: string; img: string }[];
   selector: "icons",
   imports: [RouterLink, RouterModule],
   templateUrl: "./icons.component.html",
-  host: { class: "main-content" },
+  host: { class: "main-content", ngSkipHydration: "true" },
   styleUrl: "./icons.scss",
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
   // This reduced the document size by 300KB
   encapsulation: ViewEncapsulation.None
@@ -35,6 +43,49 @@ export class IconsComponent {
       }[];
     }[]
   >([]);
+
+  filter = input<string>("");
+
+  filteredAssets = computed(() => {
+    if (!this.filter()) {
+      return this.assets();
+    }
+
+    const filteredAssets = [];
+    const filter = this.filter();
+
+    for (
+      let categoryIndex = 0;
+      categoryIndex < this.assets().length;
+      categoryIndex++
+    ) {
+      const category = this.assets()[categoryIndex];
+      const filteredCategory: typeof category = {
+        categoryName: category.categoryName,
+        icons: []
+      };
+      let shouldAddCategory = false;
+
+      for (
+        let iconsIndex = 0;
+        iconsIndex < category.icons.length;
+        iconsIndex++
+      ) {
+        const icon = category.icons[iconsIndex];
+
+        if (icon.iconName.includes(filter)) {
+          shouldAddCategory = true;
+          filteredCategory.icons.push(icon);
+        }
+      }
+
+      if (shouldAddCategory) {
+        filteredAssets.push(filteredCategory);
+      }
+    }
+
+    return filteredAssets;
+  });
 
   categoryExplanation = signal({
     bpm: "The bpm category features icons related to Business Process Management (BPM) within GeneXus. BPM tools help in designing, automating, and optimizing business processes, and these icons represent the various elements and actions involved in managing and executing workflows.",

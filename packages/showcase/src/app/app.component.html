@@ -26,6 +26,15 @@
     </p>
   }
 
+  @if (selectedLink().id === "/icons") {
+    <ch-edit
+      class="input app-header__filters"
+      [debounce]="400"
+      type="search"
+      (input)="handleFilterChange($event)"
+    ></ch-edit>
+  }
+
   <div class="app-header__config">
     <ch-segmented-control-render
       class="segmented-control"

@@ -1,7 +1,7 @@
 <h1 class="heading-1">Icons</h1>
 
 @for (
-  category of assets();
+  category of filteredAssets();
   track category.categoryName;
   let categoryIndex = $index
 ) {
@@ -48,10 +48,7 @@
           ) {
             @let type = colorTypeWithStates.type;
 
-            <section
-              [attr.aria-labelledby]="type"
-              class="section-icons section-icons__group"
-            >
+            <section [attr.aria-labelledby]="type" class="section-icons group">
               <h4 [id]="type" class="heading-4">
                 <a
                   routerLink="."
@@ -62,12 +59,9 @@
               </h4>
 
               @for (onlyStates of colorTypeWithStates.states; track $index) {
-                <span
-                  class="section-icons__state"
-                  [style.--icon-path]="onlyStates.img"
-                >
-                  {{ onlyStates.state }}
-                </span>
+                <span class="state" [style.--icon-path]="onlyStates.img">{{
+                  onlyStates.state
+                }}</span>
               }
             </section>
           }
@@ -76,9 +70,7 @@
             onlyStates of iconWithColorType.colorType.states;
             track $index
           ) {
-            <span class="section-icons__state">
-              {{ onlyStates.state }}
-            </span>
+            <span class="state">{{ onlyStates.state }}</span>
           }
         }
       </section>

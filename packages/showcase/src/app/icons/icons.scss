@@ -7,6 +7,32 @@ icons {
   h2 {
     margin-block: var(--mer-spacing--md, var(--spacing--l));
   }
+
+  .group {
+    display: grid;
+    grid-auto-rows: max-content;
+    gap: var(--mer-spacing--xs);
+    inline-size: 25%;
+    padding: var(--mer-spacing--md, var(--spacing--l));
+    margin-block-end: var(--mer-spacing--md, var(--spacing--l));
+    border: 1px dashed var(--mer-border-color__on-surface);
+    border-radius: var(--mer-spacing--2xs);
+  }
+
+  .state {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    gap: var(--mer-spacing--xs);
+
+    &::before {
+      content: "";
+      display: block;
+      inline-size: var(--mer-spacing--xl);
+      block-size: var(--mer-spacing--xl);
+      background: no-repeat center / 100% var(--icon-path);
+    }
+  }
 }
 
 .section-icons {
@@ -20,28 +46,5 @@ icons {
   &__color-type-with-states {
     display: flex;
     flex-wrap: wrap;
-  }
-
-  &__group {
-    display: grid;
-    grid-auto-rows: max-content;
-    gap: var(--mer-spacing--xs);
-    inline-size: 25%;
-    margin-block-end: var(--mer-spacing--md, var(--spacing--l));
-  }
-
-  &__state {
-    display: grid;
-    grid-template-columns: max-content max-content;
-    align-items: center;
-    gap: var(--mer-spacing--xs);
-
-    &::before {
-      content: "";
-      display: block;
-      inline-size: var(--mer-spacing--lg);
-      block-size: var(--mer-spacing--lg);
-      background: no-repeat center / 100% var(--icon-path);
-    }
   }
 }
