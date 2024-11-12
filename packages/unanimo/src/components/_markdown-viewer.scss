@@ -93,22 +93,10 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                  Table
   // - - - - - - - - - - - - - - - - - - - -
-  // Table
-  table {
-    inline-size: max-content;
-    border: 1px solid var(--border-color__mild);
-    border-spacing: 0;
-    border-collapse: collapse;
-
-    & > thead > tr {
-      @extend %heading-4;
-      font-weight: unset;
-    }
-  }
 
   // Rows
   tr {
-    border-block: 1px solid var(--border-color__mild);
+    border: 1px solid var(--border-color__mild);
   }
 
   // Header and body cells

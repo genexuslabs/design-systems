@@ -93,22 +93,10 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                  Table
   // - - - - - - - - - - - - - - - - - - - -
-  // Table
-  table {
-    display: block;
-    inline-size: max-content;
+
+  // Rows
+  tr {
     border: 1px solid var(--mer-border-color__on-surface);
-    border-spacing: 0;
-
-    & > thead > tr {
-      @extend %heading-4;
-      font-weight: unset;
-    }
-  }
-
-  // Cells
-  td {
-    border-block-start: 1px solid var(--mer-border-color__on-surface);
   }
 
   // Header and body cells
