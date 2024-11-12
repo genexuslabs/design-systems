@@ -47,3 +47,8 @@ main {
     display: contents;
   }
 }
+
+// WA to improve visuals
+.navigation-list::part(item__action) {
+  padding-block: var(--mer-spacing--2xs);
+}

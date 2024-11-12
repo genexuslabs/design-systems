@@ -15,5 +15,6 @@ export const urlMapping = {
   "/components/radio-group": "Radio Group",
   "/components/tree-view": "Tree View",
 
-  "/utility-classes/elevation": "Elevation"
+  "/utility-classes/elevation": "Elevation",
+  "/icons": "Icons"
 } as const;

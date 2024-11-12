@@ -1,0 +1,87 @@
+<h1 class="heading-1">Icons</h1>
+
+@for (
+  category of assets();
+  track category.categoryName;
+  let categoryIndex = $index
+) {
+  @let categoryName = category.categoryName;
+  @let categoryTitlePrefix = categoryIndex + 1 + ".";
+
+  <section [attr.aria-labelledby]="categoryName" class="section-icons">
+    <h2 [id]="categoryName" class="heading-2">
+      <a routerLink="." [fragment]="categoryName">
+        {{ categoryTitlePrefix + " " + categoryName }}
+      </a>
+    </h2>
+
+    <p class="text-body-regular-m">
+      {{ categoryExplanation()[categoryName] }}
+    </p>
+
+    @for (
+      iconWithColorType of category.icons;
+      track iconWithColorType.iconName;
+      let iconIndex = $index
+    ) {
+      @let iconName = iconWithColorType.iconName;
+      @let iconTitlePrefix = categoryTitlePrefix + (iconIndex + 1) + ".";
+
+      <section
+        [attr.aria-labelledby]="iconName"
+        [class.section-icons]="true"
+        [class.section-icons__color-type-with-states]="
+          !!iconWithColorType.colorType.colorType
+        "
+      >
+        <h3 [id]="iconName" class="heading-3">
+          <a routerLink="." [fragment]="categoryName + '-' + iconName">
+            {{ iconTitlePrefix + " " + iconName }}
+          </a>
+        </h3>
+
+        @if (iconWithColorType.colorType.colorType) {
+          @for (
+            colorTypeWithStates of iconWithColorType.colorType.colorType;
+            track $index;
+            let typeIndex = $index
+          ) {
+            @let type = colorTypeWithStates.type;
+
+            <section
+              [attr.aria-labelledby]="type"
+              class="section-icons section-icons__group"
+            >
+              <h4 [id]="type" class="heading-4">
+                <a
+                  routerLink="."
+                  [fragment]="categoryName + '-' + iconName + '-' + type"
+                >
+                  {{ type }}
+                </a>
+              </h4>
+
+              @for (onlyStates of colorTypeWithStates.states; track $index) {
+                <span
+                  class="section-icons__state"
+                  [style.--icon-path]="onlyStates.img"
+                >
+                  {{ onlyStates.state }}
+                </span>
+              }
+            </section>
+          }
+        } @else {
+          @for (
+            onlyStates of iconWithColorType.colorType.states;
+            track $index
+          ) {
+            <span class="section-icons__state">
+              {{ onlyStates.state }}
+            </span>
+          }
+        }
+      </section>
+    }
+  </section>
+}

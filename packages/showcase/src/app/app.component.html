@@ -15,16 +15,15 @@
 
 <header class="app-header">
   @if (selectedBundle()) {
+    <p class="app-header__bundle">
+      Bundle:
 
-  <p class="app-header__bundle">
-    Bundle:
+      <button class="button-tertiary">
+        {{ selectedBundle() }}
 
-    <button class="button-tertiary">
-      {{ selectedBundle() }}
-
-      <ch-image src="mer/system/copy/primary"></ch-image>
-    </button>
-  </p>
+        <ch-image src="mer/system/copy/primary"></ch-image>
+      </button>
+    </p>
   }
 
   <div class="app-header__config">

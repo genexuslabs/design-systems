@@ -58,7 +58,14 @@ export const routes: Routes = [
   },
   {
     path: "mercury",
-    children: childRoutes
+    children: [
+      ...childRoutes,
+      {
+        path: "icons",
+        loadComponent: () =>
+          import("./icons/icons.component").then(m => m.IconsComponent)
+      }
+    ]
   },
   {
     path: "unanimo",
