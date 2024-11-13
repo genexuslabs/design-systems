@@ -100,6 +100,11 @@ const getNavigationListItem = <Id extends `/${string}`, Caption extends string>(
 
 export const getNavigationListRoutes = (ds: "mercury" | "unanimo") => [
   { id: "Home", caption: "Home" },
+  getNavigationListItem(
+    "/chameleon-compatibility",
+    "Chameleon Compatibility",
+    ds
+  ),
   {
     caption: "Components",
     expanded: true,
@@ -134,11 +139,6 @@ export const getNavigationListRoutes = (ds: "mercury" | "unanimo") => [
       getNavigationListItem("/utility-classes/typography", "Typography", ds)
     ]
   },
-  getNavigationListItem(
-    "/chameleon-compatibility",
-    "Chameleon Compatibility",
-    ds
-  ),
 
   ...(ds === "mercury"
     ? [

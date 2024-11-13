@@ -14,6 +14,7 @@ import {
   Router,
   RouterOutlet
 } from "@angular/router";
+import { DOCUMENT, isPlatformBrowser, Location } from "@angular/common";
 import {
   ChEditCustomEvent,
   ChNavigationListRenderCustomEvent,
@@ -24,16 +25,16 @@ import {
   SegmentedControlModel,
   ThemeModel
 } from "@genexus/chameleon-controls-library";
-import { bundleMapping, urlMapping } from "./bundles-and-url-mapping";
-import { SEOService } from "../services/seo.service";
-import { DOCUMENT, isPlatformBrowser, Location } from "@angular/common";
 import { getImagePathCallback } from "@genexus/mercury";
 import { getNavigationListRoutes } from "./app.routes";
-import { ThemeService } from "../services/theme.service";
+import { ColorScheme, DesignSystem } from "../common/types";
+import { bundleMapping, urlMapping } from "./bundles-and-url-mapping";
+import { ColorSchemeService } from "../services/color-scheme.service";
+import { DesignSystemService } from "../services/design-system.service";
+import { SEOService } from "../services/seo.service";
 
 const MERCURY_UNANIMO_PREFIX_URL_REGEX = /\/(mercury|unanimo)/;
 const FRAGMENT_QUERY_PARAMS_URL = /(#.*|\?.*)/;
-const COLOR_SCHEME_KEY = "color-scheme";
 
 @Component({
   selector: "app-root",
@@ -51,7 +52,8 @@ export class AppComponent {
   router = inject(Router);
   route = inject(ActivatedRoute);
 
-  themeService = inject(ThemeService);
+  colorSchemeService = inject(ColorSchemeService);
+  designSystemService = inject(DesignSystemService);
   seoService = inject(SEOService);
 
   getImagePathCallback = signal(getImagePathCallback);
@@ -60,8 +62,8 @@ export class AppComponent {
     { id: "dark", caption: "Dark" },
     { id: "light", caption: "Light" }
   ]);
-  colorScheme = signal<"dark" | "light">("dark");
-  designSystem = signal<"mercury" | "unanimo" | undefined>(undefined);
+  colorScheme = signal<ColorScheme>("dark");
+  designSystem = signal<DesignSystem | undefined>(undefined);
   designSystemModel = signal<SegmentedControlModel>([
     { id: "mercury", caption: "Mercury" },
     { id: "unanimo", caption: "Unanimo" }
@@ -109,32 +111,17 @@ export class AppComponent {
 
     // Browser
     if (isPlatformBrowser(this.platform)) {
-      const colorSchemeStored =
-        localStorage.getItem(COLOR_SCHEME_KEY) ??
-        (window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light");
+      // Initialize the color scheme
+      this.colorScheme.set(this.colorSchemeService.getColorScheme());
 
-      this.colorScheme.set(colorSchemeStored as "dark" | "light");
-
-      effect(() => {
-        localStorage.setItem(COLOR_SCHEME_KEY, this.colorScheme());
-
-        if (this.colorScheme() === "dark") {
-          document.documentElement.classList.add("dark");
-          document.documentElement.classList.remove("light");
-        } else {
-          document.documentElement.classList.add("light");
-          document.documentElement.classList.remove("dark");
-        }
-      });
+      // Store the new color scheme each time the signal is updated
+      effect(() => this.colorSchemeService.setColorScheme(this.colorScheme()));
     }
 
     effect(() => {
       if (this.designSystem()) {
         // The "!" is a WA to avoid Angular's issues with signal type narrowing
-        this.themeService.setTheme(this.designSystem()!);
+        this.designSystemService.setDesignSystem(this.designSystem()!);
       }
     });
   }
@@ -142,13 +129,13 @@ export class AppComponent {
   handleColorSchemeChange = (
     event: ChSegmentedControlRenderCustomEvent<string>
   ) => {
-    this.colorScheme.set(event.detail as "dark" | "light");
+    this.colorScheme.set(event.detail as ColorScheme);
   };
 
   handleDesignSystemChange = (
     event: ChSegmentedControlRenderCustomEvent<string>
   ) => {
-    this.designSystem.set(event.detail as "mercury" | "unanimo");
+    this.designSystem.set(event.detail as DesignSystem);
 
     const previousSelectedLink = this.selectedLink();
 

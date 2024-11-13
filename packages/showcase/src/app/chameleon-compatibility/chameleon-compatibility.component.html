@@ -1,0 +1,19 @@
+<h1 class="heading-1">Chameleon Compatibility</h1>
+
+<table class="compatibility-table">
+  <thead>
+    <tr>
+      <th>{{ theme() }} Version</th>
+      <th>Chameleon Version</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (row of compatibilityTable(); track row.version) {
+      <tr>
+        <td>{{ row.version }}</td>
+        <td>{{ row.chameleon }}</td>
+      </tr>
+    }
+  </tbody>
+</table>

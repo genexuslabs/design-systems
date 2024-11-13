@@ -42,16 +42,16 @@
   <div class="app-header__config">
     <ch-segmented-control-render
       class="segmented-control"
-      [model]="colorSchemeModel()"
-      [selectedId]="colorScheme()"
-      (selectedItemChange)="handleColorSchemeChange($event)"
+      [model]="designSystemModel()"
+      [selectedId]="designSystem()"
+      (selectedItemChange)="handleDesignSystemChange($event)"
     ></ch-segmented-control-render>
 
     <ch-segmented-control-render
       class="segmented-control"
-      [model]="designSystemModel()"
-      [selectedId]="designSystem()"
-      (selectedItemChange)="handleDesignSystemChange($event)"
+      [model]="colorSchemeModel()"
+      [selectedId]="colorScheme()"
+      (selectedItemChange)="handleColorSchemeChange($event)"
     ></ch-segmented-control-render>
   </div>
 </header>

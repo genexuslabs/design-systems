@@ -16,5 +16,6 @@ export const urlMapping = {
   "/components/tree-view": "Tree View",
 
   "/utility-classes/elevation": "Elevation",
-  "/icons": "Icons"
+  "/icons": "Icons",
+  "/chameleon-compatibility": "Chameleon Compatibility"
 } as const;
