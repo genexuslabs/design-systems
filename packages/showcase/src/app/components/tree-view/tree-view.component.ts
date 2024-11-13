@@ -18,7 +18,7 @@ export class TreeViewComponent {
     colorType: "on-elevation"
   });
 
-  noIcons = `<ch-tree-view-render class="tree-view" show-lines="all"></ch-tree-view-render>`;
+  noIcons = `<ch-tree-view-render class="tree-view" showLines="all"></ch-tree-view-render>`;
   noIconsModel: TreeViewModel = [
     {
       id: "root",
@@ -257,10 +257,10 @@ export class TreeViewComponent {
   withCheckboxes = `<ch-tree-view-render
   class="tree-view"
   checkbox
-  show-lines="all"
+  showLines="all"
 ></ch-tree-view-render>`;
 
-  showLinesLast = `<ch-tree-view-render class="tree-view" show-lines="last"></ch-tree-view-render>`;
+  showLinesLast = `<ch-tree-view-render class="tree-view" showLines="last"></ch-tree-view-render>`;
 
   showLinesNone = `<ch-tree-view-render class="tree-view"></ch-tree-view-render>`;
 }

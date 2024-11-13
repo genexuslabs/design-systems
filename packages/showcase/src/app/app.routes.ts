@@ -114,7 +114,6 @@ export const getNavigationListRoutes = (ds: "mercury" | "unanimo") => [
       getNavigationListItem("/components/checkbox", "Checkbox", ds),
       getNavigationListItem("/components/combo-box", "Combo Box", ds),
       getNavigationListItem("/components/dialog", "Dialog", ds),
-      getNavigationListItem("/components/dialog", "Dialog", ds),
       getNavigationListItem("/components/input", "Input", ds),
       getNavigationListItem("/components/label", "Label", ds),
       getNavigationListItem("/components/list-box", "List Box", ds),
