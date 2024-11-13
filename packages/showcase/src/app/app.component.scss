@@ -17,7 +17,7 @@ aside {
 .app-header {
   grid-area: header-bundle;
   display: grid;
-  grid-template: "filters bundle config" 1fr / 300px 1fr max-content;
+  grid-template: "filters bundle config" 1fr / max-content 1fr max-content;
   align-items: center;
   position: sticky;
   inset-block-start: 0;
@@ -30,6 +30,8 @@ aside {
 
   &__bundle {
     grid-area: bundle;
+    display: flex;
+    align-items: center;
   }
 
   &__filters {
@@ -55,5 +57,5 @@ main {
 
 // WA to improve visuals
 .navigation-list::part(item__action) {
-  padding-block: var(--mer-spacing--2xs);
+  padding-block: var(--mer-spacing--2xs, var(--spacing--s));
 }

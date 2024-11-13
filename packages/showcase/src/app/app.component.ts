@@ -27,6 +27,9 @@ import {
 import { bundleMapping, urlMapping } from "./bundles-and-url-mapping";
 import { SEOService } from "../services/seo.service";
 import { DOCUMENT, isPlatformBrowser, Location } from "@angular/common";
+import { getImagePathCallback } from "@genexus/mercury";
+import { getNavigationListRoutes } from "./app.routes";
+import { ThemeService } from "../services/theme.service";
 
 const MERCURY_UNANIMO_PREFIX_URL_REGEX = /\/(mercury|unanimo)/;
 const FRAGMENT_QUERY_PARAMS_URL = /(#.*|\?.*)/;
@@ -37,7 +40,8 @@ const COLOR_SCHEME_KEY = "color-scheme";
   imports: [RouterOutlet],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  host: { ngSkipHydration: "true" }
 })
 export class AppComponent {
   _document = inject(DOCUMENT);
@@ -46,10 +50,11 @@ export class AppComponent {
   platform = inject(PLATFORM_ID);
   router = inject(Router);
   route = inject(ActivatedRoute);
+
+  themeService = inject(ThemeService);
   seoService = inject(SEOService);
 
-  // Used in the "icons" page
-  filter = signal<string>("");
+  getImagePathCallback = signal(getImagePathCallback);
 
   colorSchemeModel = signal<SegmentedControlModel>([
     { id: "dark", caption: "Dark" },
@@ -72,145 +77,9 @@ export class AppComponent {
   selectedBundle = computed(
     () => bundleMapping[this.selectedLink().id as keyof typeof bundleMapping]
   );
-  navigationListModel = computed<NavigationListModel>(() => [
-    { id: "Home", caption: "Home" },
-    {
-      caption: "Components",
-      expanded: true,
-      items: [
-        {
-          id: "/components/accordion",
-          caption: "Accordion",
-          link: { url: `/${this.designSystem()}/components/accordion` }
-        },
-        {
-          id: "/components/button",
-          caption: "Button",
-          link: { url: `/${this.designSystem()}/components/button` }
-        },
-        {
-          id: "/components/checkbox",
-          caption: "Checkbox",
-          link: { url: `/${this.designSystem()}/components/checkbox` }
-        },
-        {
-          id: "/components/combo-box",
-          caption: "Combo Box",
-          link: { url: `/${this.designSystem()}/components/combo-box` }
-        },
-        {
-          id: "/components/dialog",
-          caption: "Dialog",
-          link: { url: `/${this.designSystem()}/components/dialog` }
-        },
-        {
-          id: "/components/input",
-          caption: "Input",
-          link: { url: `/${this.designSystem()}/components/input` }
-        },
-        {
-          id: "/components/label",
-          caption: "Label",
-          link: { url: `/${this.designSystem()}/components/label` }
-        },
-        {
-          id: "/components/list-box",
-          caption: "List Box",
-          link: { url: `/${this.designSystem()}/components/list-box` }
-        },
-        {
-          id: "/components/pills",
-          caption: "Pills",
-          link: { url: `/${this.designSystem()}/components/pills` }
-        },
-        {
-          id: "/components/property-grid",
-          caption: "Property Grid",
-          link: { url: `/${this.designSystem()}/components/property-grid` }
-        },
-        {
-          id: "/components/radio-group",
-          caption: "Radio Group",
-          link: { url: `/${this.designSystem()}/components/radio-group` }
-        },
-        {
-          id: "/components/slider",
-          caption: "Slider",
-          link: { url: `/${this.designSystem()}/components/slider` }
-        },
-        {
-          id: "/components/tab",
-          caption: "Tab",
-          link: { url: `/${this.designSystem()}/components/tab` }
-        },
-        {
-          id: "/components/tabular-grid",
-          caption: "Tabular Grid",
-          link: { url: `/${this.designSystem()}/components/tabular-grid` }
-        },
-        {
-          id: "/components/tooltip",
-          caption: "Tooltip",
-          link: { url: `/${this.designSystem()}/components/tooltip` }
-        },
-        {
-          id: "/components/tree-view",
-          caption: "Tree View",
-          link: { url: `/${this.designSystem()}/components/tree-view` }
-        },
-        {
-          id: "/components/widget",
-          caption: "Widget",
-          link: { url: `/${this.designSystem()}/components/widget` }
-        }
-      ]
-    },
-    {
-      caption: "Utility classes",
-      items: [
-        {
-          id: "/utility-classes/elevation",
-          caption: "Elevation",
-          link: { url: `/${this.designSystem()}/utility-classes/elevation` }
-        },
-        {
-          id: "/utility-classes/form",
-          caption: "Form",
-          link: { url: `/${this.designSystem()}/utility-classes/form` }
-        },
-        {
-          id: "/utility-classes/layout",
-          caption: "Layout",
-          link: { url: `/${this.designSystem()}/utility-classes/layout` }
-        },
-        {
-          id: "/utility-classes/spacing",
-          caption: "Spacing",
-          link: { url: `/${this.designSystem()}/utility-classes/spacing` }
-        },
-        {
-          id: "/utility-classes/typography",
-          caption: "Typography",
-          link: { url: `/${this.designSystem()}/utility-classes/typography` }
-        }
-      ]
-    },
-
-    ...(this.designSystem() === "mercury"
-      ? [
-          {
-            id: "/icons",
-            caption: "Icons",
-            link: { url: `/mercury/icons` }
-          },
-          {
-            id: "/gemini-migration",
-            caption: "Gemini Migration",
-            link: { url: `/mercury/gemini-migration` }
-          }
-        ]
-      : [])
-  ]);
+  navigationListModel = computed<NavigationListModel>(() =>
+    getNavigationListRoutes(this.designSystem() ?? "mercury")
+  );
 
   constructor() {
     this.router.events.subscribe(event => {
@@ -260,38 +129,14 @@ export class AppComponent {
           document.documentElement.classList.remove("dark");
         }
       });
-
-      effect(() => {
-        if (!this.designSystem()) {
-          return;
-        }
-
-        const designSystemLink = document.head.querySelector(
-          "[data-design-system]"
-        ) as HTMLLinkElement;
-        designSystemLink.href = `./assets/css/${this.designSystem()}/all.css`;
-      });
     }
-    // Server
-    else {
-      effect(() => {
-        if (!this.designSystem()) {
-          return;
-        }
 
-        this.seoService.updateDescription(
-          this.designSystem() === "mercury"
-            ? "Mercury Design System is a robust and scalable solution designed to improve product development"
-            : "Unanimo Design System is a solution oriented to mission-critical business applications and the back-office generated by GeneXus"
-        );
-
-        const link = this.renderer2.createElement("link");
-        link.rel = "stylesheet";
-        link.href = `./assets/css/${this.designSystem()}/all.css`;
-        this.renderer2.setAttribute(link, "data-design-system", "");
-        this.renderer2.appendChild(this._document.head, link);
-      });
-    }
+    effect(() => {
+      if (this.designSystem()) {
+        // The "!" is a WA to avoid Angular's issues with signal type narrowing
+        this.themeService.setTheme(this.designSystem()!);
+      }
+    });
   }
 
   handleColorSchemeChange = (
@@ -329,9 +174,8 @@ export class AppComponent {
   };
 
   handleFilterChange = (event: ChEditCustomEvent<string>) => {
-    this.filter.set(event.detail);
     this.router.navigate([], {
-      queryParams: { filter: this.filter() },
+      queryParams: { filter: event.detail },
       queryParamsHandling: "merge" // Remove to replace all query params by provided
     });
   };

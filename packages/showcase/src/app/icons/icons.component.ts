@@ -6,9 +6,8 @@ import {
   signal,
   ViewEncapsulation
 } from "@angular/core";
-import { MERCURY_ASSETS } from "../../../dist/showcase/browser/assets/MERCURY_ASSETS";
 import { RouterLink, RouterModule } from "@angular/router";
-import { ChEditCustomEvent } from "@genexus/chameleon-controls-library";
+import { MERCURY_ASSETS } from "@genexus/mercury/dist/assets/MERCURY_ASSETS";
 
 type ColorType = {
   colorType?: ColorTypeWithStates;

@@ -18,10 +18,14 @@
     <p class="app-header__bundle">
       Bundle:
 
-      <button class="button-tertiary">
+      <button class="button-tertiary button-icon-and-text">
         {{ selectedBundle() }}
 
-        <ch-image src="mer/system/copy/primary"></ch-image>
+        <ch-image
+          class="icon-md"
+          src="mer/system/copy/primary"
+          [getImagePathCallback]="getImagePathCallback()"
+        ></ch-image>
       </button>
     </p>
   }
