@@ -1,30 +1,30 @@
-%form-input__text {
+%input__text {
   font-size: 14px;
   line-height: 18px; // 128.571%
   letter-spacing: 0.2px;
 }
 
-@mixin form-input__label-base {
+@mixin label-base {
   font-weight: 600;
   font-size: 14px;
   line-height: 18px; // 128.571%
   letter-spacing: 0.2px;
 }
 
-%form-input__label {
+%label {
   @include label-common-styles();
   gap: var(--spacing--m); // Used for images
-  @include form-input__label-base();
+  @include label-base();
 }
 
-%form-input__helper {
+%input__helper {
   font-size: 11px;
   line-height: 13px; // 118.182%
   letter-spacing: 0.2px;
 }
 
-%form-input {
-  @extend %form-input__text;
+%input {
+  @extend %input__text;
   --ch-placeholder-color: var(--body-m__font-color--gray);
   --ch-edit-gap: var(--spacing--s);
   --ch-edit__image-size: var(--spacing--xl);
@@ -48,8 +48,8 @@
   }
 }
 
-%form-textarea {
-  @extend %form-input__text;
+%textarea {
+  @extend %input__text;
   --ch-placeholder-color: var(--body-m__font-color--gray);
   --ch-edit-gap: var(--spacing--s);
   --ch-edit__image-size: var(--spacing--xl);
@@ -64,34 +64,30 @@
   color: var(--body-m__font-color--positive);
 }
 
-%form-input__placeholder {
+%input__placeholder {
   color: var(--body-m__font-color--gray);
 }
 
 /// @group Form
-/// @param {String} $selector [".form-input"] -
+/// @param {String} $selector [".input"] -
 /// @param {Boolean} $add--disabled [true] -
 /// @param {Boolean} $add--placeholder [true] -
 /// @param {Boolean} $add--placeholder-var [true] -
 /// @param {Boolean} $add--error [true] -
-@mixin form-input(
-  $selector: ".form-input",
-  $add--disabled: true,
-  $add--error: true
-) {
+@mixin input($selector: ".input", $add--disabled: true, $add--error: true) {
   // TODO: IMPROVE STYLE. Unanimo's implementation does not work well in Sidebar Menus
 
   #{$selector} {
-    @extend %form-input;
+    @extend %input;
 
     &:focus {
-      @extend %form-input--focus;
+      @extend %input--focus;
     }
 
     @if $add--disabled {
       &:disabled,
       &--disabled {
-        @extend %form-input--disabled;
+        @extend %input--disabled;
       }
     }
 
@@ -123,27 +119,27 @@
 }
 
 /// @group Form
-/// @param {String} $selector [".form-textarea"] -
+/// @param {String} $selector [".textarea"] -
 /// @param {Boolean} $add--disabled [true] -
 /// @param {Boolean} $add--error [true] -
-@mixin form-textarea(
-  $selector: ".form-textarea",
+@mixin textarea(
+  $selector: ".textarea",
   $add--disabled: true,
   $add--error: true
 ) {
   // TODO: IMPROVE STYLE. Unanimo's implementation does not work well in Sidebar Menus
 
   #{$selector} {
-    @extend %form-textarea;
+    @extend %textarea;
 
     &:focus {
-      @extend %form-input--focus;
+      @extend %input--focus;
     }
 
     @if $add--disabled {
       &:disabled,
       &--disabled {
-        @extend %form-input--disabled;
+        @extend %input--disabled;
       }
     }
 
@@ -175,14 +171,11 @@
 }
 
 /// @group Form
-/// @param {String} $selector [".form-input__label"] -
+/// @param {String} $selector [".label"] -
 /// @param {Boolean} $add--disabled [true] -
-@mixin form-input__label(
-  $selector: ".form-input__label",
-  $add--disabled: true
-) {
+@mixin label($selector: ".label", $add--disabled: true) {
   #{$selector} {
-    @extend %form-input__label;
+    @extend %label;
 
     @if $add--disabled {
       &--disabled {
@@ -193,14 +186,11 @@
 }
 
 /// @group Form
-/// @param {String} $selector [".form-input__helper"] -
+/// @param {String} $selector [".input__helper"] -
 /// @param {Boolean} $add--disabled [true] -
-@mixin form-input__helper(
-  $selector: ".form-input__helper",
-  $add--disabled: true
-) {
+@mixin input__helper($selector: ".input__helper", $add--disabled: true) {
   #{$selector} {
-    @extend %form-input__helper;
+    @extend %input__helper;
 
     @if $add--disabled {
       &--disabled {

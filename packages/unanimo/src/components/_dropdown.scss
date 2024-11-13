@@ -78,7 +78,7 @@
   --ch-dropdown-item__image-size: 24px;
   padding-block: var(--spacing--xs);
   gap: var(--spacing--s);
-  @include form-input__label-base();
+  @include label-base();
 
   &--focus {
     @include focus-style($outline: true);
