@@ -298,8 +298,8 @@
     }
 
     @if $form-controls-classes {
-      @include form-input__label();
-      @include form-input__helper();
+      @include label();
+      @include input__helper();
     }
 
     @if $hyperlink-classes {
@@ -377,8 +377,8 @@
     }
 
     @if $edit {
-      @include form-input();
-      @include form-textarea();
+      @include input();
+      @include textarea();
     }
 
     @if $flexible-layout {

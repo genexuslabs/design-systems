@@ -28,7 +28,7 @@
 
   .inner_filter_div {
     & > select {
-      @extend %form-input;
+      @extend %input;
       padding: 5px;
     }
 
@@ -127,14 +127,14 @@
   }
 
   #tablePagination_perPage > select {
-    @extend %form-input;
+    @extend %input;
     padding-inline: 4px;
     block-size: 24px;
   }
 
   .div_filter_input {
     & > .search_input {
-      @extend %form-input;
+      @extend %input;
       background: no-repeat 4px /
         var(--gx-query-viewer-pivot__icon-mask-size, 20px)
         url("#{$icons-path}search.svg");
@@ -217,7 +217,7 @@
 
   .pivot_pag_div span:nth-child(2),
   #tablePagination_perPage {
-    @extend %form-input__helper;
+    @extend %input__helper;
   }
 
   .check_item_img i,
@@ -277,7 +277,7 @@
     border-end-start-radius: var(--border-radius--m);
     border-end-end-radius: var(--border-radius--m);
     & input {
-      @extend %form-input;
+      @extend %input;
       padding-inline: unset;
       block-size: 24px;
     }
