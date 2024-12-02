@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+    <style>
+      .ch-chat-container {
+        display: grid;
+        block-size: 600px;
+      }
+    </style>
+  </head>
+  <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- control section -->
+        <section class="section" data-nav>
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">ch-chat</h1>
+            <p class="section__description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+              commodi nisi, quisquam placeat veniam eius labore sunt, libero,
+              error voluptatibus ipsa ipsum harum doloremque eveniet. Magnam
+              ipsum perspiciatis alias officiis!
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          chat
+          =========================== -->
+            <article class="article" data-nav data-title="basic example">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <!-- <p class="article__description">Article Description</p> -->
+                <div class="article__content">
+                  <div class="ch-chat-container">
+                    <ch-chat id="basic" class="chat"></ch-chat>
+                  </div>
+
+                  <script type="module">
+                    import { getThemeBundles } from "./assets/scripts/assets-manager.js";
+                    import { mercuryChatMessageRender } from "./assets/components/ch-chat/mercury-code-render.js";
+
+                    const theme2Ref = document.createElement("ch-theme");
+                    theme2Ref.avoidFlashOfUnstyledContent = false;
+                    theme2Ref.model = [
+                      {
+                        name: "mercury/markdown-viewer",
+                        url: "./assets/components/ch-chat/markdown-viewer.css"
+                      }
+                    ];
+                    document.body.appendChild(theme2Ref);
+
+                    const chChat = document.getElementById("basic");
+
+                    chChat.renderItem = mercuryChatMessageRender(
+                      "mercury/markdown-viewer"
+                    );
+
+                    chChat.markdownTheme = "mercury/markdown-viewer";
+
+                    const constMarkDownItems = [
+                      {
+                        id: "index: 0",
+                        role: "user",
+                        content:
+                          "index: 0index: 0\nindex: 0\nindex: 0\nindex: 0\nindex: 0\nindex: 0\n"
+                      },
+                      {
+                        id: "index: 1",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 1\nindex: 1\nindex: 1\nindex: 1\nindex: 1\nindex: 1\nindex: 1\n'
+                      },
+                      {
+                        id: "index: 2",
+                        role: "user",
+                        content:
+                          "index: 2index: 2\nindex: 2\nindex: 2\nindex: 2\nindex: 2\nindex: 2\n"
+                      },
+                      {
+                        id: "index: 3",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 3\nindex: 3\nindex: 3\nindex: 3\nindex: 3\nindex: 3\nindex: 3\n'
+                      },
+                      {
+                        id: "index: 4",
+                        role: "user",
+                        content:
+                          "index: 4index: 4\nindex: 4\nindex: 4\nindex: 4\nindex: 4\nindex: 4\n"
+                      },
+                      {
+                        id: "index: 5",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 5\nindex: 5\nindex: 5\nindex: 5\nindex: 5\nindex: 5\nindex: 5\n'
+                      },
+                      {
+                        id: "index: 6",
+                        role: "user",
+                        content:
+                          "index: 6index: 6\nindex: 6\nindex: 6\nindex: 6\nindex: 6\nindex: 6\n"
+                      },
+                      {
+                        id: "index: 7",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 7\nindex: 7\nindex: 7\nindex: 7\nindex: 7\nindex: 7\nindex: 7\n'
+                      },
+                      {
+                        id: "index: 8",
+                        role: "user",
+                        content:
+                          "index: 8index: 8\nindex: 8\nindex: 8\nindex: 8\nindex: 8\nindex: 8\n"
+                      },
+                      {
+                        id: "index: 9",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 9\nindex: 9\nindex: 9\nindex: 9\nindex: 9\nindex: 9\nindex: 9\n'
+                      },
+                      {
+                        id: "index: 10",
+                        role: "user",
+                        content:
+                          "index: 10index: 10\nindex: 10\nindex: 10\nindex: 10\nindex: 10\nindex: 10\n"
+                      },
+                      {
+                        id: "index: 11",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 11\nindex: 11\nindex: 11\nindex: 11\nindex: 11\nindex: 11\nindex: 11\n'
+                      },
+                      {
+                        id: "index: 12",
+                        role: "user",
+                        content:
+                          "index: 12index: 12\nindex: 12\nindex: 12\nindex: 12\nindex: 12\nindex: 12\n"
+                      },
+                      {
+                        id: "index: 13",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 13\nindex: 13\nindex: 13\nindex: 13\nindex: 13\nindex: 13\nindex: 13\n'
+                      },
+                      {
+                        id: "index: 14",
+                        role: "user",
+                        content:
+                          "index: 14index: 14\nindex: 14\nindex: 14\nindex: 14\nindex: 14\nindex: 14\n"
+                      },
+                      {
+                        id: "index: 15",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 15\nindex: 15\nindex: 15\nindex: 15\nindex: 15\nindex: 15\nindex: 15\n'
+                      },
+                      {
+                        id: "index: 16",
+                        role: "user",
+                        content:
+                          "index: 16index: 16\nindex: 16\nindex: 16\nindex: 16\nindex: 16\nindex: 16\n"
+                      },
+                      {
+                        id: "index: 17",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 17\nindex: 17\nindex: 17\nindex: 17\nindex: 17\nindex: 17\nindex: 17\n'
+                      },
+                      {
+                        id: "index: 18",
+                        role: "user",
+                        content:
+                          "index: 18index: 18\nindex: 18\nindex: 18\nindex: 18\nindex: 18\nindex: 18\n"
+                      },
+                      {
+                        id: "index: 19",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 19\nindex: 19\nindex: 19\nindex: 19\nindex: 19\nindex: 19\nindex: 19\n'
+                      },
+                      {
+                        id: "index: 20",
+                        role: "user",
+                        content:
+                          "index: 20index: 20\nindex: 20\nindex: 20\nindex: 20\nindex: 20\nindex: 20\n"
+                      },
+                      {
+                        id: "index: 21",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 21\nindex: 21\nindex: 21\nindex: 21\nindex: 21\nindex: 21\nindex: 21\n'
+                      },
+                      {
+                        id: "index: 22",
+                        role: "user",
+                        content:
+                          "index: 22index: 22\nindex: 22\nindex: 22\nindex: 22\nindex: 22\nindex: 22\n"
+                      },
+                      {
+                        id: "index: 23",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 23\nindex: 23\nindex: 23\nindex: 23\nindex: 23\nindex: 23\nindex: 23\n'
+                      },
+                      {
+                        id: "index: 24",
+                        role: "user",
+                        content:
+                          "index: 24index: 24\nindex: 24\nindex: 24\nindex: 24\nindex: 24\nindex: 24\n"
+                      },
+                      {
+                        id: "index: 25",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 25\nindex: 25\nindex: 25\nindex: 25\nindex: 25\nindex: 25\nindex: 25\n'
+                      },
+                      {
+                        id: "index: 26",
+                        role: "user",
+                        content:
+                          "index: 26index: 26\nindex: 26\nindex: 26\nindex: 26\nindex: 26\nindex: 26\n"
+                      },
+                      {
+                        id: "index: 27",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 27\nindex: 27\nindex: 27\nindex: 27\nindex: 27\nindex: 27\nindex: 27\n'
+                      },
+                      {
+                        id: "index: 28",
+                        role: "user",
+                        content:
+                          "index: 28index: 28\nindex: 28\nindex: 28\nindex: 28\nindex: 28\nindex: 28\n"
+                      },
+                      {
+                        id: "index: 29",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 29\nindex: 29\nindex: 29\nindex: 29\nindex: 29\nindex: 29\nindex: 29\n'
+                      },
+                      {
+                        id: "index: 30",
+                        role: "user",
+                        content:
+                          "index: 30index: 30\nindex: 30\nindex: 30\nindex: 30\nindex: 30\nindex: 30\n"
+                      },
+                      {
+                        id: "index: 31",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 31\nindex: 31\nindex: 31\nindex: 31\nindex: 31\nindex: 31\nindex: 31\n'
+                      },
+                      {
+                        id: "index: 32",
+                        role: "user",
+                        content:
+                          "index: 32index: 32\nindex: 32\nindex: 32\nindex: 32\nindex: 32\nindex: 32\n"
+                      },
+                      {
+                        id: "index: 33",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 33\nindex: 33\nindex: 33\nindex: 33\nindex: 33\nindex: 33\nindex: 33\n'
+                      },
+                      {
+                        id: "index: 34",
+                        role: "user",
+                        content:
+                          "index: 34index: 34\nindex: 34\nindex: 34\nindex: 34\nindex: 34\nindex: 34\n"
+                      },
+                      {
+                        id: "index: 35",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 35\nindex: 35\nindex: 35\nindex: 35\nindex: 35\nindex: 35\nindex: 35\n'
+                      },
+                      {
+                        id: "index: 36",
+                        role: "user",
+                        content:
+                          "index: 36index: 36\nindex: 36\nindex: 36\nindex: 36\nindex: 36\nindex: 36\n"
+                      },
+                      {
+                        id: "index: 37",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 37\nindex: 37\nindex: 37\nindex: 37\nindex: 37\nindex: 37\nindex: 37\n'
+                      },
+                      {
+                        id: "index: 38",
+                        role: "user",
+                        content:
+                          "index: 38index: 38\nindex: 38\nindex: 38\nindex: 38\nindex: 38\nindex: 38\n"
+                      },
+                      {
+                        id: "index: 39",
+                        role: "assistant",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 39\nindex: 39\nindex: 39\nindex: 39\nindex: 39\nindex: 39\nindex: 39\n'
+                      }
+                    ];
+
+                    const chatItems = [
+                      {
+                        ic: 1,
+                        role: "user",
+                        content:
+                          "index: 0index: 0\nindex: 0\nindex: 0\nindex: 0\nindex: 0\nindex: 0\n"
+                      },
+                      {
+                        id: 2,
+                        role: "user",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 21\nindex: 21\nindex: 21\nindex: 21\nindex: 21\nindex: 21\nindex: 21\n'
+                      },
+                      {
+                        id: 3,
+                        role: "assistant",
+                        status: "complete",
+                        content: "¿What type of database do you want to create?"
+                      },
+                      {
+                        id: 4,
+                        role: "assistant",
+                        status: "complete",
+                        parts: "success",
+                        content: "the database was created successfully"
+                      },
+                      {
+                        id: 5,
+                        role: "error",
+                        status: "complete",
+                        content:
+                          "There has been an error while trying to create the database..."
+                      },
+                      {
+                        ic: 6,
+                        role: "user",
+                        content:
+                          "index: 0index: 0\nindex: 0\nindex: 0\nindex: 0\nindex: 0\nindex: 0\n"
+                      },
+                      {
+                        id: 7,
+                        role: "user",
+                        content:
+                          '\n### Code block {#code-block}\nTo create code blocks, you’ll use three backticks (` ``` `) or three tildes (`~~~`) on the lines before and after the code block.\n\n```json\n{\n  "firstName": "John",\n  "lastName": "Smith",\n  "age": 25\n}\n```\n\nindex: 21\nindex: 21\nindex: 21\nindex: 21\nindex: 21\nindex: 21\nindex: 21\n'
+                      },
+                      {
+                        id: 8,
+                        role: "assistant",
+                        status: "complete",
+                        content: "¿What type of database do you want to create?"
+                      },
+                      {
+                        id: 9,
+                        role: "assistant",
+                        status: "complete",
+                        parts: "success",
+                        content: "the database was created successfully"
+                      },
+                      {
+                        id: 10,
+                        role: "error",
+                        status: "complete",
+                        content:
+                          "There has been an error while trying to create the database..."
+                      },
+                      {
+                        id: 11,
+                        role: "assistant",
+                        status: "waiting",
+                        content: "Processing your query, please wait..."
+                      }
+                    ];
+
+                    chChat.items = chatItems;
+
+                    chChat.loadingState = "all-records-loaded";
+                    chChat.generatingResponse = true;
+
+                    chChat.callbacks = {
+                      clear: () => {
+                        return new Promise(async resolve => {
+                          resolve();
+                        });
+                      },
+                      sendChatToLLM: async messages => {},
+                      uploadImage: () => new Promise(resolve => resolve("")),
+                      stopGeneratingAnswer: () => {
+                        return new Promise(resolve => resolve());
+                      }
+                    };
+
+                    chChat.translations = {
+                      accessibleName: {
+                        clearChat: "Clear",
+                        copyResponseButton: "Copy response",
+                        downloadCodeButton: "Download",
+                        imagePicker: "Images picker",
+                        removeUploadedImage: "Remove uploaded image",
+                        sendButton: "Send",
+                        sendInput: "Send input",
+                        stopGeneratingAnswerButton: "Stop generating answer"
+                      },
+                      placeholder: { sendInput: "Send input" },
+                      text: {
+                        copyCodeButton: "Copy",
+                        processing: "Processing",
+                        sourceFiles: "Source files"
+                      }
+                    };
+                  </script>
+                </div>
+                <!-- <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-chat class="chat"></ch-chat>`;
+                  </script>
+                </div> -->
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
