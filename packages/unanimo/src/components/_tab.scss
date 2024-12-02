@@ -3,40 +3,79 @@
   --ch-tab-mask-image-size: calc(var(--spacing--xl) - var(--spacing--m));
 }
 
-%tab-caption {
+%tab-button-block {
   padding-inline: var(--spacing--m);
-  padding-block: var(--spacing--m) calc(var(--spacing--m) - 2px); // due to border-block-end-width: 2px;
-  border-block-end: 2px solid transparent;
+
+  // Due to border-block-width: 2px;
+  padding-block: calc(var(--spacing--m) - 2px);
+
+  border-block: 2px solid transparent;
   gap: var(--spacing--s);
 }
 
-%tab-caption--hover {
+%tab-button-inline {
+  padding-block: var(--spacing--m);
+
+  // Due to border-inline-width: 2px;
+  padding-inline: calc(var(--spacing--m) - 2px);
+
+  border-inline: 2px solid transparent;
+  gap: var(--spacing--s);
+}
+
+// Block Start
+%tab-button-block-start--hover {
   border-block-end-color: var(--border-color__primary--hover);
 }
 
-%tab-caption--active {
+%tab-button-block-start--active {
   border-block-end-color: var(--border-color__primary--active);
 }
 
-%tab-caption--focus-visible {
+// Block End
+%tab-button-block-end--hover {
+  border-block-start-color: var(--border-color__primary--hover);
+}
+
+%tab-button-block-end--active {
+  border-block-start-color: var(--border-color__primary--active);
+}
+
+// Inline Start
+%tab-button-inline-start--hover {
+  border-inline-end-color: var(--border-color__primary--hover);
+}
+
+%tab-button-inline-start--active {
+  border-inline-end-color: var(--border-color__primary--active);
+}
+
+// Inline End
+%tab-button-inline-end--hover {
+  border-inline-start-color: var(--border-color__primary--hover);
+}
+
+%tab-button-inline-end--active {
+  border-inline-start-color: var(--border-color__primary--active);
+}
+
+// Focus
+%tab-button--focus-visible {
   outline: 1px solid currentColor;
   outline-offset: -1px;
 }
 
-%tab-caption-close-button {
+// Disabled
+%tab-button--disabled {
+  color: var(--text__disabled);
+}
+
+%tab-button-close-button {
   margin-inline-start: 4px;
 
   &--focus-visible {
     outline: 1px solid currentColor;
   }
-}
-
-%tab-caption--selected {
-  @extend %tab-caption--active;
-}
-
-%tab-caption--disabled {
-  color: var(--text__disabled);
 }
 
 %tab-list {
@@ -45,12 +84,31 @@
 
 @mixin tab(
   $tab-selector: ".tab",
-  $tab-caption-selector: ".tab::part(button)",
-  $tab-caption--selected-selector: ".tab::part(button selected)",
-  $tab-caption--disabled-selector: ".tab::part(button disabled)",
-  $tab-caption-close-button-selector: ".tab::part(close-button)",
+  $tab-button-block-start-selector: ".tab::part(tab block-start)",
+  $tab-button-block-start--selected-selector:
+    ".tab::part(tab block-start selected)",
+  $tab-button-block-start--disabled-selector:
+    ".tab::part(tab block-start disabled)",
+  $tab-button-block-end-selector: ".tab::part(tab block-end)",
+  $tab-button-block-end--selected-selector: ".tab::part(tab block-end selected)",
+  $tab-button-block-end--disabled-selector: ".tab::part(tab block-end disabled)",
+  $tab-button-inline-start-selector: ".tab::part(tab inline-start)",
+  $tab-button-inline-start--selected-selector:
+    ".tab::part(tab inline-start selected)",
+  $tab-button-inline-start--disabled-selector:
+    ".tab::part(tab inline-start disabled)",
+  $tab-button-inline-end-selector: ".tab::part(tab inline-end)",
+  $tab-button-inline-end--selected-selector:
+    ".tab::part(tab inline-end selected)",
+  $tab-button-inline-end--disabled-selector:
+    ".tab::part(tab inline-end disabled)",
+  $tab-button-close-button-selector: ".tab::part(close-button)",
   $tab-list-selector: ".tab::part(tab-list)",
   $add--tab: true,
+  $add--tab-button-block-start: true,
+  $add--tab-button-block-end: true,
+  $add--tab-button-inline-start: true,
+  $add--tab-button-inline-end: true,
   $add--tab-list: true,
   $add--disabled: true
 ) {
@@ -60,44 +118,144 @@
     }
   }
 
-  #{$tab-caption-selector} {
-    @extend %tab-text;
-    @extend %tab-caption;
+  // - - - - - - - - - - - - - - - - - - - -
+  //        Tab Button (block-start)
+  // - - - - - - - - - - - - - - - - - - - -
+  @if ($add--tab-button-block-start) {
+    #{$tab-button-block-start-selector} {
+      @extend %tab-button-block;
 
-    &:hover {
-      @extend %tab-caption--hover;
+      &:hover {
+        @extend %tab-button-block-start--hover;
+      }
+
+      &:active {
+        @extend %tab-button-block-start--active;
+      }
+
+      &:focus-visible {
+        @extend %tab-button--focus-visible;
+      }
     }
 
-    &:active {
-      @extend %tab-caption--active;
+    #{$tab-button-block-start--selected-selector} {
+      @extend %tab-button-block-start--active;
     }
+
+    @if $add--disabled {
+      #{$tab-button-block-start--disabled-selector} {
+        @extend %tab-button--disabled;
+      }
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //         Tab Button (block-end)
+  // - - - - - - - - - - - - - - - - - - - -
+  @if ($add--tab-button-block-end) {
+    #{$tab-button-block-end-selector} {
+      @extend %tab-button-block;
+
+      &:hover {
+        @extend %tab-button-block-end--hover;
+      }
+
+      &:active {
+        @extend %tab-button-block-end--active;
+      }
+
+      &:focus-visible {
+        @extend %tab-button--focus-visible;
+      }
+    }
+
+    #{$tab-button-block-end--selected-selector} {
+      @extend %tab-button-block-end--active;
+    }
+
+    @if $add--disabled {
+      #{$tab-button-block-end--disabled-selector} {
+        @extend %tab-button--disabled;
+      }
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //        Tab Button (inline-start)
+  // - - - - - - - - - - - - - - - - - - - -
+  @if ($add--tab-button-inline-start) {
+    #{$tab-button-inline-start-selector} {
+      @extend %tab-button-inline;
+
+      &:hover {
+        @extend %tab-button-inline-start--hover;
+      }
+
+      &:active {
+        @extend %tab-button-inline-start--active;
+      }
+
+      &:focus-visible {
+        @extend %tab-button--focus-visible;
+      }
+    }
+
+    #{$tab-button-inline-start--selected-selector} {
+      @extend %tab-button-inline-start--active;
+    }
+
+    @if $add--disabled {
+      #{$tab-button-inline-start--disabled-selector} {
+        @extend %tab-button--disabled;
+      }
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //         Tab Button (inline-end)
+  // - - - - - - - - - - - - - - - - - - - -
+  @if ($add--tab-button-inline-end) {
+    #{$tab-button-inline-end-selector} {
+      @extend %tab-button-inline;
+
+      &:hover {
+        @extend %tab-button-inline-end--hover;
+      }
+
+      &:active {
+        @extend %tab-button-inline-end--active;
+      }
+
+      &:focus-visible {
+        @extend %tab-button--focus-visible;
+      }
+    }
+
+    #{$tab-button-inline-end--selected-selector} {
+      @extend %tab-button-inline-end--active;
+    }
+
+    @if $add--disabled {
+      #{$tab-button-inline-end--disabled-selector} {
+        @extend %tab-button--disabled;
+      }
+    }
+  }
+
+  #{$tab-button-close-button-selector} {
+    @extend %tab-button-close-button;
 
     &:focus-visible {
-      @extend %tab-caption--focus-visible;
+      @extend %tab-button-close-button--focus-visible;
     }
   }
 
-  #{$tab-caption-close-button-selector} {
-    @extend %tab-caption-close-button;
-
-    &:focus-visible {
-      @extend %tab-caption-close-button--focus-visible;
-    }
-  }
-
-  #{$tab-caption--selected-selector} {
-    @extend %tab-caption--selected;
-  }
-
+  // - - - - - - - - - - - - - - - - - - - -
+  //                Tab List
+  // - - - - - - - - - - - - - - - - - - - -
   @if $add--tab-list {
     #{$tab-list-selector} {
       @extend %tab-list;
-    }
-  }
-
-  @if $add--disabled {
-    #{$tab-caption--disabled-selector} {
-      @extend %tab-caption--disabled;
     }
   }
 }
