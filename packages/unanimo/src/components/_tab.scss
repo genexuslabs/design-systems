@@ -72,6 +72,11 @@
 
 %tab-button-close-button {
   margin-inline-start: 4px;
+  border-radius: 4px;
+
+  &--hover {
+    background-color: var(--colors-foundation__purple--10);
+  }
 
   &--focus-visible {
     outline: 1px solid currentColor;
@@ -244,6 +249,10 @@
 
   #{$tab-button-close-button-selector} {
     @extend %tab-button-close-button;
+
+    &:hover {
+      @extend %tab-button-close-button--hover;
+    }
 
     &:focus-visible {
       @extend %tab-button-close-button--focus-visible;

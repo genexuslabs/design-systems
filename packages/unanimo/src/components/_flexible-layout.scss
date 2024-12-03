@@ -167,26 +167,31 @@
 @mixin flexible-layout(
   $flexible-layout-selector: ".flexible-layout",
   $tab-selector: ".flexible-layout::part(leaf)",
+
   $tab-button-block-start-selector: ".flexible-layout::part(tab block-start)",
   $tab-button-block-start--selected-selector:
     ".flexible-layout::part(tab block-start selected)",
   $tab-button-block-start--disabled-selector:
     ".flexible-layout::part(tab block-start disabled)",
+
   $tab-button-block-end-selector: ".flexible-layout::part(tab block-end)",
   $tab-button-block-end--selected-selector:
     ".flexible-layout::part(tab block-end selected)",
   $tab-button-block-end--disabled-selector:
     ".flexible-layout::part(tab block-end disabled)",
+
   $tab-button-inline-start-selector: ".flexible-layout::part(tab inline-start)",
   $tab-button-inline-start--selected-selector:
     ".flexible-layout::part(tab inline-start selected)",
   $tab-button-inline-start--disabled-selector:
     ".flexible-layout::part(tab inline-start disabled)",
+
   $tab-button-inline-end-selector: ".flexible-layout::part(tab inline-end)",
   $tab-button-inline-end--selected-selector:
     ".flexible-layout::part(tab inline-end selected)",
   $tab-button-inline-end--disabled-selector:
     ".flexible-layout::part(tab inline-end disabled)",
+
   $tab-button-close-button-selector: ".flexible-layout::part(close-button)",
   $tab-list--inline-start-selector:
     ".flexible-layout::part(tab-list inline-start)",
@@ -218,9 +223,6 @@
     $add--disabled: $add--disabled
   );
 
-  // AGREGAR CLASES PARA EL FLEXIBLE LAYOUT CAMBIANDO LA POSICION DEL BORDE y USANDO EL BACKGROUND COLOR COMO LA SUPERFICIE
-  // AGREGAR CUSTOM VAR PARA DETERMINAR EL BACKGROUND COLOR DE SELECCION
-
   // - - - - - - - - - - - - - - - - - - - -
   //        Tab Button (block-start)
   // - - - - - - - - - - - - - - - - - - - -
@@ -241,15 +243,15 @@
         @extend %tab-button--focus-visible;
       }
     }
-  }
 
-  #{$tab-button-block-start--selected-selector} {
-    @extend %flexible-layout-tab-button-block-start--selected;
-  }
+    #{$tab-button-block-start--selected-selector} {
+      @extend %flexible-layout-tab-button-block-start--selected;
+    }
 
-  @if $add--disabled {
-    #{$tab-button-block-start--disabled-selector} {
-      @extend %flexible-layout-tab-button--disabled;
+    @if $add--disabled {
+      #{$tab-button-block-start--disabled-selector} {
+        @extend %flexible-layout-tab-button--disabled;
+      }
     }
   }
 
