@@ -17,7 +17,11 @@
   @include tab-button-gap();
 
   @include tab-button-padding-inline();
-  @include tab-button-border-block-end();
+  border-block: var(--tab-caption__border-width)
+    var(--tab-caption__border-style) transparent;
+
+  // TODO: Remove this mixin
+  // @include tab-button-border-block-end();
 }
 
 %tab-button-inline {
@@ -26,7 +30,11 @@
   @include tab-button-gap();
 
   @include tab-button-padding-stack();
-  @include tab-button-border-block();
+  border-inline: var(--tab-caption__border-width)
+    var(--tab-caption__border-style) transparent;
+
+  // TODO: Remove this mixin
+  // @include tab-button-border-block();
 }
 
 // Block Start
@@ -41,6 +49,7 @@
 
 %tab-button-block-start--selected {
   @include tab-button-colors-selected-inline();
+  border-block-end-color: var(--tab-caption__border-color);
 }
 
 // Block End
@@ -55,6 +64,7 @@
 
 %tab-button-block-end--selected {
   @include tab-button-colors-selected-inline();
+  border-block-start-color: var(--tab-caption__border-color);
 }
 
 // Inline Start
@@ -69,6 +79,7 @@
 
 %tab-button-inline-start--selected {
   @include tab-button-colors-selected-stack();
+  border-inline-end-color: var(--tab-caption__border-color);
 }
 
 // Inline End
@@ -83,6 +94,7 @@
 
 %tab-button-inline-end--selected {
   @include tab-button-colors-selected-stack();
+  border-inline-start-color: var(--tab-caption__border-color);
 }
 
 // Focus
@@ -110,13 +122,23 @@
 }
 
 %tab-list {
-  &--block {
+  &--block-start {
     border-block-end: var(--items-container__border-width)
       var(--items-container__border-style) var(--items-container__border-color);
   }
 
-  &--inline {
+  &--block-end {
+    border-block-start: var(--items-container__border-width)
+      var(--items-container__border-style) var(--items-container__border-color);
+  }
+
+  &--inline-start {
     border-inline-end: var(--items-container__border-width)
+      var(--items-container__border-style) var(--items-container__border-color);
+  }
+
+  &--inline-end {
+    border-inline-start: var(--items-container__border-width)
       var(--items-container__border-style) var(--items-container__border-color);
   }
 }
@@ -149,8 +171,10 @@
   $tab-button--disabled-selector: ".tab::part(tab disabled)",
   $tab-button-close-button-selector: ".tab::part(close-button)",
 
-  $tab-list--block-selector: ".tab::part(tab-list block)",
-  $tab-list--inline-selector: ".tab::part(tab-list inline)",
+  $tab-list--block-start-selector: ".tab::part(tab-list block-start)",
+  $tab-list--block-end-selector: ".tab::part(tab-list block-end)",
+  $tab-list--inline-start-selector: ".tab::part(tab-list inline-start)",
+  $tab-list--inline-end-selector: ".tab::part(tab-list inline-end)",
 
   $add--tab: true,
   $add--tab-button-block-start: true,
@@ -187,7 +211,7 @@
     }
 
     #{$tab-button-block-start--selected-selector} {
-      @extend %tab-button-block-start--active;
+      @extend %tab-button-block-start--selected;
     }
 
     @if $add--disabled {
@@ -218,7 +242,7 @@
     }
 
     #{$tab-button-block-end--selected-selector} {
-      @extend %tab-button-block-end--active;
+      @extend %tab-button-block-end--selected;
     }
 
     @if $add--disabled {
@@ -249,7 +273,7 @@
     }
 
     #{$tab-button-inline-start--selected-selector} {
-      @extend %tab-button-inline-start--active;
+      @extend %tab-button-inline-start--selected;
     }
 
     @if $add--disabled {
@@ -280,7 +304,7 @@
     }
 
     #{$tab-button-inline-end--selected-selector} {
-      @extend %tab-button-inline-end--active;
+      @extend %tab-button-inline-end--selected;
     }
 
     @if $add--disabled {
@@ -311,12 +335,20 @@
   }
 
   @if $add--tab-list {
-    #{$tab-list--block-selector} {
-      @extend %tab-list--block;
+    #{$tab-list--block-start-selector} {
+      @extend %tab-list--block-start;
     }
 
-    #{$tab-list--inline-selector} {
-      @extend %tab-list--inline;
+    #{$tab-list--block-end-selector} {
+      @extend %tab-list--block-end;
+    }
+
+    #{$tab-list--inline-start-selector} {
+      @extend %tab-list--inline-start;
+    }
+
+    #{$tab-list--inline-end-selector} {
+      @extend %tab-list--inline-end;
     }
   }
 }

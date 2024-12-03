@@ -46,10 +46,10 @@
 
     padding-inline: var(--tab-caption__padding-inline);
 
-    // Due to border-block-width: 2px;
-    padding-block: calc(var(--tab-caption__padding-block) - 2px);
+    // Due to border-block-width: 1px;
+    padding-block: calc(var(--tab-caption__padding-block) - 1px);
 
-    border-block: 2px solid transparent;
+    border-block: 1px solid transparent;
   }
 
   &-tab-button-inline {
@@ -59,10 +59,10 @@
 
     padding-block: var(--tab-caption__padding-block);
 
-    // Due to border-inline-width: 2px;
-    padding-inline: calc(var(--tab-caption__padding-inline) - 2px);
+    // Due to border-inline-width: 1px;
+    padding-inline: calc(var(--tab-caption__padding-inline) - 1px);
 
-    border-inline: 2px solid transparent;
+    border-inline: 1px solid transparent;
   }
 
   // Block Start
