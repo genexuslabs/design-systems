@@ -31,7 +31,8 @@
 
   &-tab {
     --ch-tab-close-button__background-image-size: var(--mer-icon__size--md);
-    --ch-tab-close-button__image-size: 16px; // TODO: Use a token
+    --ch-tab-close-button__image-size: var(--mer-spacing--md);
+    --ch-tab-image-size: var(--mer-icon__box--md);
 
     --spacing-body-block-start: var(--mer-spacing--md);
     --spacing-body-block-end: var(--mer-spacing--md);
@@ -63,6 +64,11 @@
     padding-inline: calc(var(--tab-caption__padding-inline) - 1px);
 
     border-inline: 1px solid transparent;
+  }
+
+  // Style for the button of the selected tab
+  &-tab-button--selected-before {
+    color: var(--mer-accent__primary);
   }
 
   // Block Start
@@ -272,6 +278,10 @@
 
     #{$tab-button-block-start--selected-selector} {
       @extend %flexible-layout-tab-button-block-start--selected;
+
+      &::before {
+        @extend %flexible-layout-tab-button--selected-before;
+      }
     }
 
     @if $add--disabled {
@@ -304,6 +314,10 @@
 
     #{$tab-button-block-end--selected-selector} {
       @extend %flexible-layout-tab-button-block-end--selected;
+
+      &::before {
+        @extend %flexible-layout-tab-button--selected-before;
+      }
     }
 
     @if $add--disabled {
