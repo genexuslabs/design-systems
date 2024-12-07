@@ -49,6 +49,7 @@
 @import "./components/flexible-layout/flexible-layout-styles";
 @import "./components/icon/icon-styles";
 @import "./components/input/input-styles";
+@import "./components/layout-splitter/layout-splitter-styles";
 @import "./components/list-box/list-box-styles";
 @import "./components/markdown-viewer/markdown-viewer-styles";
 @import "./components/navigation-list/navigation-list-styles";
@@ -125,6 +126,7 @@
   $edit: true,
   $flexible-layout: true,
   $icon: true,
+  $layout-splitter: true,
   $list-box: true,
   $markdown-viewer: true,
   $navigation-list: true,
@@ -514,6 +516,10 @@
     @include icon();
   }
 
+  @if $layout-splitter {
+    @include layout-splitter();
+  }
+
   @if $list-box {
     @include list-box();
   }
@@ -635,6 +641,7 @@
   $edit: false,
   $flexible-layout: false,
   $icon: false,
+  $layout-splitter: false,
   $list-box: false,
   $markdown-viewer: false,
   $navigation-list: false,
@@ -708,6 +715,7 @@
     $edit: $edit,
     $flexible-layout: $flexible-layout,
     $icon: $icon,
+    $layout-splitter: $layout-splitter,
     $list-box: $list-box,
     $markdown-viewer: $markdown-viewer,
     $navigation-list: $navigation-list,
