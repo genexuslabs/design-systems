@@ -1,6 +1,7 @@
 %tab {
   --ch-tab-close-button__background-image-size: var(--mer-icon__size--md);
-  --ch-tab-close-button__image-size: 16px; // TODO: Use a token
+  --ch-tab-close-button__image-size: var(--mer-spacing--md);
+  --ch-tab-image-size: var(--mer-icon__box--md);
 
   --spacing-body-block-start: var(--mer-spacing--md);
   --spacing-body-block-end: var(--mer-spacing--md);
