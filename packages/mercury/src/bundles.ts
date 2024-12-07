@@ -23,6 +23,7 @@ export type MercuryBundleComponent =
   | "components/code"
   | "components/dialog"
   | "components/flexible-layout"
+  | "components/layout-splitter"
   | "components/list-box"
   | "components/markdown-viewer"
   | "components/navigation-list"
@@ -110,6 +111,7 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/dialog"),
     getThemeModelItem(basePath, "components/icon"),
     getThemeModelItem(basePath, "components/edit"),
+    getThemeModelItem(basePath, "components/layout-splitter"),
     getThemeModelItem(basePath, "components/list-box"),
     getThemeModelItem(basePath, "components/markdown-viewer", false),
     getThemeModelItem(basePath, "components/navigation-list"),
