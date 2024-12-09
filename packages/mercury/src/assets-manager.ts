@@ -6,7 +6,6 @@ import type {
   TreeViewItemModel
 } from "@genexus/chameleon-controls-library";
 
-// @ts-expect-error: TODO: Fix this error
 import type { RegistryGetImagePathCallback } from "@genexus/chameleon-controls-library/dist/types/index.d.ts";
 import type { TreeViewItemImageMultiState } from "@genexus/chameleon-controls-library/dist/types/components/tree-view/types.d.ts";
 import type { ActionListItemAdditionalBase } from "@genexus/chameleon-controls-library/dist/types/components/action-list/types.d.ts";
