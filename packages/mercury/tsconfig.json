@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "allowSyntheticDefaultImports": true,
+    "emitDeclarationOnly": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["ES2022"],
-    "moduleResolution": "node",
-    "module": "esnext",
-    "target": "ES2022",
+    "lib": ["ESNext"],
+    "module": "NodeNext",
+    "target": "ESNext",
 
     "declaration": true,
     "outDir": "dist/",
@@ -23,6 +24,6 @@
     "noUnusedParameters": true,
     "strict": true
   },
-  "include": ["src/assets-manager.ts"],
+  "include": ["src/index.ts"],
   "exclude": ["node_modules"]
 }
