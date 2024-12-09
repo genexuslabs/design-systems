@@ -1,91 +1,24 @@
-import {
+import type {
+  ComboBoxImagePathCallback,
   GxImageMultiState,
   NavigationListItemModel,
   TreeViewImagePathCallback,
   TreeViewItemModel
 } from "@genexus/chameleon-controls-library";
-import { RegistryGetImagePathCallback } from "@genexus/chameleon-controls-library/dist/types/index";
-import { TreeViewItemImageMultiState } from "@genexus/chameleon-controls-library/dist/types/components/tree-view/types";
 
-import { MERCURY_ASSETS } from "./assets/MERCURY_ASSETS.js";
-import { ActionListItemAdditionalBase } from "@genexus/chameleon-controls-library/dist/types/components/action-list/types.js";
-import {
-  ComboBoxImagePathCallback,
-  ComboBoxItemModel
-} from "@genexus/chameleon-controls-library/dist/types/components/combo-box/types.js";
-
-export {
-  MercuryBundleBase,
-  MercuryBundleComponent,
-  MercuryBundleComponentForm,
-  MercuryBundleFull,
-  MercuryBundleOptimized,
-  MercuryBundleReset,
-  MercuryBundleUtil,
-  MercuryBundleUtilFormFull,
-  MercuryBundles
-} from "./bundles.js";
-
-export { getThemeBundles, getBundles } from "./bundles.js";
+// @ts-expect-error: TODO: Fix this error
+import type { RegistryGetImagePathCallback } from "@genexus/chameleon-controls-library/dist/types/index.d.ts";
+import type { TreeViewItemImageMultiState } from "@genexus/chameleon-controls-library/dist/types/components/tree-view/types.d.ts";
+import type { ActionListItemAdditionalBase } from "@genexus/chameleon-controls-library/dist/types/components/action-list/types.d.ts";
+import type { ComboBoxItemModel } from "@genexus/chameleon-controls-library/dist/types/components/combo-box/types.d.ts";
+import type { Assets, AssetsColorType, AssetsMetadata } from "./types.d.ts";
 
 const ASSETS_BY_VENDOR: { [key in string]: Assets } = {};
 const ALIAS_TO_VENDOR_NAME: { [key in string]: string } = {};
 
 const SEPARATOR = "/";
 const EXPANDED_SEPARATOR = ":";
-const MERCURY_ALIAS = "mer";
-
-export type AssetsMetadata = {
-  category: string;
-  name: string;
-  colorType?: string;
-};
-
-/**
- * For example:
- * ```
- * {
- *   icons: {
- *     objects: { // Category
- *       stencil: { // Icon Name
- *         enabled: { // State
- *           name: "objects_stencil--enabled"
- *         }
- *       },
- *     },
- *     windows-tools: { // Category
- *       workflow: { // Icon Name
- *         "on-surface": { // Color Type
- *           enabled: { // State
- *             name: "windows-tools_workflow_on-surface--enabled"
- *           },
- *           hover: {
- *             name: "windows-tools_workflow_on-surface--hover"
- *           }
- *         }
- *       }
- *     }
- *   }
- * }
- * ```
- */
-export type Assets = {
-  icons: { [key in string]: AssetsCategories };
-};
-
-export type AssetsCategories = { [key: string]: AssetsIconName };
-
-export type AssetsIconName =
-  | {
-      [key: string]: AssetsColorType;
-    }
-  | AssetsColorType;
-
-export type AssetsColorType = { [key: string]: AssetsIconMetadata };
-
-export interface AssetsIconMetadata {
-  name: string;
-}
+export const MERCURY_ALIAS = "mer";
 
 /**
  * Given a vendor and its assets, it register the assets of the vendor. After
@@ -351,6 +284,3 @@ export const getImagePathCallbackDefinitions: RegistryGetImagePathCallback = {
   "ch-image": getImagePathCallback,
   "ch-tree-view-render": getTreeViewImagePathCallback
 };
-
-// Initialize Mercury at the start
-registerAssets("Mercury", MERCURY_ALIAS, MERCURY_ASSETS);
