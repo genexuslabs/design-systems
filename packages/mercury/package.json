@@ -2,16 +2,44 @@
   "name": "@genexus/mercury",
   "version": "0.10.0",
   "description": "Mercury is the design system designed for GeneXus IDE Web and GeneXus Next",
-  "main": "dist/mercury.scss",
-  "module": "dist/assets-manager.js",
-  "types": "dist/assets-manager.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist/"
   ],
   "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./assets-manager.js": {
+      "import": {
+        "types": "./dist/assets-manager.d.ts",
+        "default": "./dist/assets-manager.js"
+      }
+    },
+    "./bundles.js": {
+      "import": {
+        "types": "./dist/bundles.d.ts",
+        "default": "./dist/bundles.js"
+      }
+    },
+    "./register-mercury.js": {
+      "import": {
+        "types": "./dist/register-mercury.d.ts",
+        "default": "./dist/register-mercury.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
-    "build": "tsc && npm run icons-svg && npm run icons-sass && npm run build.scss && npm run copy-tasks && npm run showcase.scss",
-    "build-no-svg": "tsc && npm run build.scss && npm run copy-tasks",
+    "build": "npm run build.js && npm run icons-svg && npm run icons-sass && npm run build.scss && npm run copy-tasks && npm run showcase.scss",
+    "build.js": "tsc && esbuild dist/*.js --allow-overwrite --minify --outdir=dist && esbuild dist/assets/*.js --allow-overwrite --minify --outdir=dist/assets",
+    "build-no-svg": "npm run build.js && npm run build.scss && npm run copy-tasks",
     "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && npm run build.bundles && npm run copy-all.css",
     "build.bundles": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/bundles/scss dist/bundles/scss && sass --load-path=src --no-source-map --style compressed dist/bundles/scss:dist/bundles/css",
     "start": "vite --port 5200 --open showcase/button.html",
@@ -31,6 +59,7 @@
     "@genexus/svg-sass-generator": "1.1.24",
     "chokidar": "^3.6.0",
     "chokidar-cli": "^3.0.0",
+    "esbuild": "0.24.0",
     "sass": "~1.72.0",
     "scss-bundle": "~3.1.2",
     "typescript": "~5.5.3",
