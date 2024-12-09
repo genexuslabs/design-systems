@@ -8,6 +8,7 @@
   --ch-switch-thumb__unchecked-background-color: var(--mer-icon__neutral);
   --ch-switch-thumb__checked-background-color: var(--mer-icon__neutral);
   --ch-switch-thumb__state-transition-duration: 150ms;
+  font-weight: 400; // TODO: USE THE RIGHT TOKEN AND LINE-HEIGHT
 
   &__track {
     border-radius: var(--ch-switch-track-block-size);
