@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
-    "allowImportingTsExtensions": true,
     "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": ["ESNext"],
-    "module": "NodeNext",
+    "moduleResolution": "node",
+    "module": "esnext",
     "target": "ESNext",
 
     "declaration": true,
