@@ -53,7 +53,7 @@
       @include item-border-radius();
 
       &-hover {
-        @include item-colors-hover();
+        --item__color: var(--mer-accent__primary);
       }
     }
 
@@ -79,9 +79,11 @@
 
     &--nested {
       padding-inline-start: calc(
-        var(--ch-combo-box-item-gap) +
-          var(--ch-combo-box-group__expandable-button-size) +
-          var(--mer-spacing--2xs)
+        calc(
+          var(--ch-combo-box-item-gap) +
+            var(--ch-combo-box-group__expandable-button-size) +
+            var(--item__padding-inline)
+        )
       );
     }
 
