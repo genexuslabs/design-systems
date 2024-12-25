@@ -281,7 +281,6 @@
   // unwanted styles. For example, when a row is selected, controls like a
   // list-box inherit the selected background color. To prevent this, these
   // properties cannot be directly applied to the tabular grid.
-
   --grid-row__bg-color: var(--item__bg-color);
   --grid-row__color: var(--item__color);
   background-color: var(--grid-row__bg-color);
