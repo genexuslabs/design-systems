@@ -11,7 +11,7 @@
       }
       .list-box {
         inline-size: 100%;
-        block-size: 100%;
+        block-size: 300px;
       }
     </style>
     <script type="module" src="./assets/scripts/scripts-header.js"></script>
@@ -50,8 +50,8 @@
               <div class="article__main">
                 <div class="article__content">
                   <ch-tabular-grid
-                    class="tabular-grid tabular-grid-cell-layout"
-                    row-selection-mode="none"
+                    class="tabular-grid"
+                    row-selection-mode="simple"
                     keyboard-navigation-mode="focus"
                   >
                     <ch-tabular-grid-columnset class="tabular-grid-column-set">
@@ -82,33 +82,87 @@
                       <ch-tabular-grid-cell class="tabular-grid-cell"
                         >AR</ch-tabular-grid-cell
                       >
-                      <ch-tabular-grid-cell class="tabular-grid-cell">
-                        <ch-popover hidden="false">
+                      <ch-tabular-grid-cell
+                        class="tabular-grid-cell"
+                        id="list-box-cell"
+                      >
+                        Select Period
+                        <ch-popover id="list-box-popover">
                           <ch-action-list-render
                             selection="none"
                             class="list-box"
                             id="action-list-1"
                           ></ch-action-list-render>
                         </ch-popover>
-                        <script type="module">
-                          import { keyboardNavigation } from "./assets/models/action-list.js";
-                          const actionList1 =
-                            document.getElementById("action-list-1");
-                          actionList1.model = keyboardNavigation;
-                          setTimeout(() => {
-                            // WA to avoid "undefined" when initial selection != "none"
-                            actionList1.selection = "multiple";
-                          }, 500);
-                        </script>
                       </ch-tabular-grid-cell>
                       <ch-tabular-grid-cell class="tabular-grid-cell"
                         >Spanish</ch-tabular-grid-cell
                       >
                     </ch-tabular-grid-row>
+
+                    <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >BR</ch-tabular-grid-cell
+                      >
+                      <ch-tabular-grid-cell
+                        class="tabular-grid-cell"
+                        id="list-box-cell"
+                      >
+                        1973-1974
+                        <ch-popover id="list-box-popover">
+                          <ch-action-list-render
+                            selection="none"
+                            class="list-box"
+                            id="action-list-1"
+                          ></ch-action-list-render>
+                        </ch-popover>
+                      </ch-tabular-grid-cell>
+                      <ch-tabular-grid-cell class="tabular-grid-cell"
+                        >Portuguese</ch-tabular-grid-cell
+                      >
+                    </ch-tabular-grid-row>
                   </ch-tabular-grid>
                 </div>
+                <div class="article__content">
+                  <button class="button-primary" id="show-popover-btn">
+                    Show List Box
+                  </button>
+                  <script type="module">
+                    // list-box
+                    import { argentinianPresidents } from "./assets/models/action-list.js";
+                    const actionList1 =
+                      document.getElementById("action-list-1");
+                    actionList1.model = argentinianPresidents;
+
+                    // list-box cell
+                    const listBoxCell =
+                      document.getElementById("list-box-cell");
+
+                    // popover
+                    const listBoxPopover =
+                      document.getElementById("list-box-popover");
+
+                    // Show popover btn
+                    const showPopoverBtn =
+                      document.getElementById("show-popover-btn");
+                    listBoxPopover.actionElement = listBoxCell;
+                    listBoxPopover.actionById = true;
+                    listBoxPopover.inlineSizeMatch = "action-element";
+                    listBoxPopover.blockAlign = "inside-start";
+
+                    setTimeout(() => {
+                      // WA to avoid "undefined" when initial selection != "none"
+                      actionList1.selection = "multiple";
+                      console.log(listBoxPopover);
+                    }, 500);
+
+                    showPopoverBtn.addEventListener("click", () => {
+                      listBoxPopover.hidden = false;
+                    });
+                  </script>
+                </div>
                 <!-- /.article__content -->
-                <div class="article__code">
+                <div class="article__code" hidden>
                   <ch-code language="tsx" class="code"></ch-code>
                   <script>
                     code = ``;
