@@ -277,16 +277,23 @@
 
 // Row
 @mixin grid-row-colors-enabled() {
-  background-color: var(--item__bg-color);
-  color: var(--item__color);
+  // Some controls using --item__** variables inside the tabular grid inherit
+  // unwanted styles. For example, when a row is selected, controls like a
+  // list-box inherit the selected background color. To prevent this, these
+  // properties cannot be directly applied to the tabular grid.
+
+  --grid-row__bg-color: var(--item__bg-color);
+  --grid-row__color: var(--item__color);
+  background-color: var(--grid-row__bg-color);
+  color: var(--grid-row__color);
 }
 @mixin grid-row-colors-highlighted() {
-  --item__bg-color: var(--item__bg-color--hover);
-  --item__color: var(--item__color--hover);
+  --grid-row__bg-color: var(--item__bg-color--hover);
+  --grid-row__color: var(--item__color--hover);
 }
 @mixin grid-row-colors-selected() {
-  --item__bg-color: var(--item__bg-color--selected);
-  --item__color: var(--item__color--selected);
+  --grid-row__bg-color: var(--item__bg-color--selected);
+  --grid-row__color: var(--item__color--selected);
 }
 @mixin grid-row-dragging() {
   box-shadow: var(--mer-box-shadow--01);
