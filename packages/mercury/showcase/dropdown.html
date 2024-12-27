@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+      .dropdown::part(expandable-button) {
+        justify-content: flex-start;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+  </head>
+  <body class="showcase" data-sidebar>
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- control section -->
+        <section class="section" data-nav>
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">dropdown</h1>
+            <p class="section__description">
+              A dropdown component is a versatile UI element designed to display
+              a list of options when triggered, allowing users to select one or
+              more items. It typically enhances navigation or input selection by
+              conserving space and presenting choices in an organized,
+              collapsible manner. Commonly used for menus, filters, or settings,
+              a dropdown ensures seamless user interaction while maintaining a
+              clean interface.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          plain and simple
+          =========================== -->
+            <article class="article" data-nav data-title="plain and simple">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  A plain dropdown offers a clean, simple interface for quick,
+                  direct interactions. Without icons or nested items, it ensures
+                  a minimalistic design that's easy to navigate and ideal for
+                  straightforward selections.
+                </p>
+                <div class="article__content">
+                  <ch-dropdown-render class="dropdown" id="plain-simple">
+                    <button class="button-primary" slot="action">
+                      open dropdown
+                    </button>
+                  </ch-dropdown-render>
+                  <script type="module">
+                    import { dropdownPlainSimple } from "./assets/models/dropdown";
+                    const dropDownPlainSimple =
+                      document.getElementById("plain-simple");
+                    dropDownPlainSimple.model = dropdownPlainSimple;
+                    dropDownPlainSimple.buttonAccessibleName = "Show";
+                    dropDownPlainSimple.position = "InsideStart_OutsideEnd";
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-dropdown></ch-dropdown>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          nested
+          =========================== -->
+            <article class="article" data-nav data-title="nested">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  A dropdown with nested items enhances functionality by
+                  organizing options into hierarchical groups. This design is
+                  ideal for complex selections, allowing users to navigate
+                  submenus while keeping the interface organized and efficient.
+                </p>
+                <div class="article__content">
+                  <ch-dropdown-render class="dropdown" id="nested">
+                    <button class="button-primary" slot="action">
+                      open dropdown
+                    </button>
+                    <!-- <p slot="footer">footer!</p> -->
+                  </ch-dropdown-render>
+                  <script type="module">
+                    import { dropdownNested } from "./assets/models/dropdown";
+                    const dropDownNested = document.getElementById("nested");
+                    dropDownNested.model = dropdownNested;
+                    dropDownNested.buttonAccessibleName = "Show";
+                    dropDownNested.position = "InsideStart_OutsideEnd";
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-dropdown></ch-dropdown>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          with separators
+          =========================== -->
+            <article class="article" data-nav data-title="with separators">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  A dropdown with separators improves organization by dividing
+                  items into clear categories. The separators visually group
+                  related options, making navigation more intuitive and
+                  enhancing the overall user experience.
+                </p>
+                <div class="article__content">
+                  <ch-dropdown-render class="dropdown" id="separators">
+                    <button class="button-primary" slot="action">
+                      open dropdown
+                    </button>
+                    <!-- <p slot="footer">footer!</p> -->
+                  </ch-dropdown-render>
+                  <script type="module">
+                    import { dropdownWithSeparators } from "./assets/models/dropdown";
+                    const dropDownSeparators =
+                      document.getElementById("separators");
+                    dropDownSeparators.model = dropdownWithSeparators;
+                    dropDownSeparators.buttonAccessibleName = "Show";
+                    dropDownSeparators.position = "InsideStart_OutsideEnd";
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-dropdown></ch-dropdown>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          with slots
+          =========================== -->
+            <article class="article" data-nav data-title="with slots">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  A dropdown with a header or footer slot enhances usability by
+                  allowing custom content, such as titles, descriptions, or
+                  actions, to be placed above or below the main items. This
+                  provides additional context or functionality, improving
+                  clarity and streamlining user interaction.
+                </p>
+                <div class="article__content">
+                  <ch-dropdown-render class="dropdown" id="slots">
+                    <p slot="header" class="header-slot">
+                      This is the header slot
+                    </p>
+                    <button class="button-primary" slot="action">
+                      open dropdown
+                    </button>
+                    <p slot="footer" class="footer-slot">
+                      This is the footer slot
+                    </p>
+                  </ch-dropdown-render>
+                  <script type="module">
+                    import { dropdownPlainSimple } from "./assets/models/dropdown";
+                    const dropDownSlots = document.getElementById("slots");
+                    dropDownSlots.model = dropdownPlainSimple;
+                    dropDownSlots.buttonAccessibleName = "Show";
+                    dropDownSlots.position = "InsideStart_OutsideEnd";
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-dropdown></ch-dropdown>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
