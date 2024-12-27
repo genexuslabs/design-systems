@@ -60,6 +60,7 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/combo-box"),
     getThemeModelItem(basePath, "components/flexible-layout"),
     getThemeModelItem(basePath, "components/dialog"),
+    getThemeModelItem(basePath, "components/dropdown"),
     getThemeModelItem(basePath, "components/icon"),
     getThemeModelItem(basePath, "components/edit"),
     getThemeModelItem(basePath, "components/layout-splitter"),
