@@ -46,6 +46,7 @@
 @import "./components/code/code-styles";
 @import "./components/combo-box/combo-box-styles";
 @import "./components/dialog/dialog-styles";
+@import "./components/dropdown/dropdown-styles";
 @import "./components/flexible-layout/flexible-layout-styles";
 @import "./components/icon/icon-styles";
 @import "./components/input/input-styles";
@@ -123,6 +124,7 @@
   $code: true,
   $combo-box: true,
   $dialog: true,
+  $dropdown: true,
   $edit: true,
   $flexible-layout: true,
   $icon: true,
@@ -504,6 +506,10 @@
     @include dialog();
   }
 
+  @if $dropdown {
+    @include dropdown();
+  }
+
   @if $edit {
     @include input();
   }
@@ -638,6 +644,7 @@
   $code: false,
   $combo-box: false,
   $dialog: false,
+  $dropdown: false,
   $edit: false,
   $flexible-layout: false,
   $icon: false,
@@ -712,6 +719,7 @@
     $code: $code,
     $combo-box: $combo-box,
     $dialog: $dialog,
+    $dropdown: $dropdown,
     $edit: $edit,
     $flexible-layout: $flexible-layout,
     $icon: $icon,

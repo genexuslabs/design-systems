@@ -19,6 +19,7 @@ export type MercuryBundleComponent =
   | "components/chat"
   | "components/code"
   | "components/dialog"
+  | "components/dropdown"
   | "components/flexible-layout"
   | "components/layout-splitter"
   | "components/list-box"
