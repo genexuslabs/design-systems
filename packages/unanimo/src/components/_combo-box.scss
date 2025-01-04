@@ -84,17 +84,17 @@
   // TODO: IMPROVE STYLE. Unanimo's implementation does not work well in Sidebar Menus
 
   #{$combo-box-selector} {
-    @extend %form-input;
+    @extend %input;
     @extend %combo-box;
 
     &:focus {
-      @extend %form-input--focus;
+      @extend %input--focus;
     }
   }
 
   @if $add--disabled {
     #{$combo-box--disabled-selector} {
-      @extend %form-input--disabled;
+      @extend %input--disabled;
     }
 
     #{$group__header--disabled-selector} {

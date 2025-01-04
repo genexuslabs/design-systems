@@ -8,8 +8,12 @@
   box-shadow: var(--mer-box-shadow--01);
 
   &__backdrop {
-    background-color: rgba(32, 36, 40, 0.9);
-    backdrop-filter: blur(1.5px);
+    background-color: color-mix(
+      in srgb,
+      var(--mer-color__neutral-gray--900) 71%,
+      transparent 30%
+    );
+    backdrop-filter: blur(15px);
     z-index: 108; // TODO: This is a WA to show the backdrop above the button of the dropdown
   }
 

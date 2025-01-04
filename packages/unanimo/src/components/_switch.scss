@@ -39,7 +39,7 @@
 
   // Label
   &__caption {
-    @extend %form-input__text;
+    @extend %input__text;
     margin-inline-start: var(--spacing--m);
 
     &--disabled {

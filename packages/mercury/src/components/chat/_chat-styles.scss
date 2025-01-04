@@ -10,6 +10,9 @@
 
 @mixin chat($chat-selector: ".chat") {
   #{$chat-selector} {
+    --button-block-size: 31px;
+    --button-margin-block: 16px;
+
     &::part(content) {
       gap: 6px;
     }
@@ -116,6 +119,11 @@
       }
     }
 
+    &::part(message__processing) {
+      color: var(--mer-text__on-surface);
+      font-size: var(--mer-font__size--2xs);
+    }
+
     @include input(
       $selector: "&::part(send-input)",
       $add--disabled: false,
@@ -123,14 +131,39 @@
       $add--error: false
     );
 
+    &::part(stop-generating-answer-button) {
+      border-radius: var(--control__border-radius);
+      border: 1px solid var(--mer-border-color__neutral);
+      color: var(--control__border-style);
+      font-size: var(--control__font-size--regular);
+      inline-size: 100%;
+      justify-content: center;
+      line-height: var(--control__line-height);
+      padding-block: var(--control__padding-block);
+      padding-inline: var(--control__padding-inline);
+      transform: translateY(calc(var(--button-margin-block) / 2));
+    }
+    &::part(stop-generating-answer-button):hover {
+      border-color: var(--mer-border-color__primary--hover);
+      color: var(--mer-text__primary--hover);
+    }
+    &::part(stop-generating-answer-button):active {
+      border-color: var(--mer-border-color__primary--active);
+      color: var(--mer-text__on-primary--active);
+    }
+
     &::part(send-input) {
       background-color: var(--mer-color__neutral-gray--900);
       border-color: var(--mer-color__neutral-gray--900);
       --control__padding-block: 10px;
+
+      background-color: var(--mer-surface__elevation--01) !important;
     }
 
     &::part(send-input-wrapper) {
-      margin-block-start: 14px;
+      margin-block-start: calc(
+        var(--button-block-size) + var(--button-margin-block)
+      );
     }
   }
 }

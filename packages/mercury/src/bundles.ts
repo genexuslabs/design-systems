@@ -1,62 +1,14 @@
-import { ThemeModel } from "@genexus/chameleon-controls-library";
-import { ThemeItemModel } from "@genexus/chameleon-controls-library/dist/types/components/theme/theme-types";
-
-export type MercuryBundles =
-  | [MercuryBundleReset, ...MercuryBundleOptimized[]]
-  | [MercuryBundleReset, ...MercuryBundleFull[]];
-
-export type MercuryBundleOptimized =
-  | MercuryBundleComponent
-  | MercuryBundleComponentForm
-  | MercuryBundleUtil;
-
-export type MercuryBundleFull =
-  | MercuryBundleComponent
-  | MercuryBundleUtil
-  | MercuryBundleUtilFormFull;
-
-export type MercuryBundleBase = "base/base" | "base/icons";
-
-export type MercuryBundleComponent =
-  | "components/accordion"
-  | "components/chat"
-  | "components/code"
-  | "components/dialog"
-  | "components/flexible-layout"
-  | "components/list-box"
-  | "components/markdown-viewer"
-  | "components/navigation-list"
-  | "components/pills"
-  | "components/segmented-control"
-  | "components/sidebar"
-  | "components/tab"
-  | "components/tabular-grid"
-  | "components/ticket-list"
-  | "components/tooltip"
-  | "components/tree-view"
-  | "components/widget";
-
-export type MercuryBundleComponentForm =
-  | "components/button"
-  | "components/checkbox"
-  | "components/combo-box"
-  | "components/edit"
-  | "components/icon"
-  | "components/radio-group"
-  | "components/slider";
-
-export type MercuryBundleReset = "resets/box-sizing";
-
-export type MercuryBundleUtil =
-  | "utils/elevation"
-  | "utils/form"
-  | "utils/layout"
-  | "utils/spacing"
-  | "utils/typography"
-  // TODO: Use "utils/scrollbar" when the ch-theme supports aliases
-  | "chameleon/scrollbar";
-
-export type MercuryBundleUtilFormFull = "utils/form--full";
+import type { ThemeModel } from "@genexus/chameleon-controls-library";
+import type { ThemeItemModel } from "@genexus/chameleon-controls-library/dist/types/components/theme/theme-types.d.ts";
+import type {
+  MercuryBundleComponent,
+  MercuryBundleComponentForm,
+  MercuryBundleFull,
+  MercuryBundleOptimized,
+  MercuryBundleReset,
+  MercuryBundleUtil,
+  MercuryBundleUtilFormFull
+} from "./types.ts";
 
 type BundleNames =
   | MercuryBundleComponent
@@ -108,8 +60,10 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/combo-box"),
     getThemeModelItem(basePath, "components/flexible-layout"),
     getThemeModelItem(basePath, "components/dialog"),
+    getThemeModelItem(basePath, "components/dropdown"),
     getThemeModelItem(basePath, "components/icon"),
     getThemeModelItem(basePath, "components/edit"),
+    getThemeModelItem(basePath, "components/layout-splitter"),
     getThemeModelItem(basePath, "components/list-box"),
     getThemeModelItem(basePath, "components/markdown-viewer", false),
     getThemeModelItem(basePath, "components/navigation-list"),
@@ -121,6 +75,7 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/tab"),
     getThemeModelItem(basePath, "components/tabular-grid"),
     getThemeModelItem(basePath, "components/ticket-list"),
+    getThemeModelItem(basePath, "components/toggle"),
     getThemeModelItem(basePath, "components/tooltip"),
     getThemeModelItem(basePath, "components/tree-view"),
     getThemeModelItem(basePath, "components/widget"),

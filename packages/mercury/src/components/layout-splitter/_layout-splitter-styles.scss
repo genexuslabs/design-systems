@@ -1,0 +1,11 @@
+%layout-splitter {
+  &-bar {
+    color: var(--mer-border-color__on-surface);
+  }
+}
+
+@mixin layout-splitter($bar-selector: ".layout-splitter::part(bar)") {
+  #{$bar-selector} {
+    @extend %layout-splitter-bar;
+  }
+}
