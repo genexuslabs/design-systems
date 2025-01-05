@@ -2,7 +2,8 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   input,
-  signal
+  signal,
+  ViewEncapsulation
 } from "@angular/core";
 import { getImagePathCallback } from "@genexus/mercury";
 
@@ -10,7 +11,8 @@ import { getImagePathCallback } from "@genexus/mercury";
   selector: "copy-code",
   templateUrl: "./copy-code.component.html",
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  styleUrl: "./copy-code.scss"
+  styleUrl: "./copy-code.scss",
+  encapsulation: ViewEncapsulation.None
 })
 export class CopyCodeComponent {
   value = input<string>("");

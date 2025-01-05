@@ -1,11 +1,13 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, signal } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RadioGroupModel } from "@genexus/chameleon-controls-library";
+
+import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
+import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
 
 @Component({
   selector: "components-radio-group",
-  imports: [CommonModule, CodeSnippetComponent],
+  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
   templateUrl: "./radio-group.component.html",
   host: { class: "main-content" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

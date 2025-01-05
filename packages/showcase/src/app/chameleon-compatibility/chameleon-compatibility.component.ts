@@ -3,11 +3,9 @@ import {
   computed,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
-  signal,
   ViewEncapsulation
 } from "@angular/core";
 import { DesignSystemService } from "../../services/design-system.service";
-import { DesignSystem } from "../../common/types";
 import { mercuryCompatibilityTable } from "./mercury-compatibility-table";
 import { unanimoCompatibilityTable } from "./unanimo-compatibility-table";
 
@@ -20,22 +18,15 @@ import { unanimoCompatibilityTable } from "./unanimo-compatibility-table";
   encapsulation: ViewEncapsulation.None
 })
 export class ChameleonCompatibilityComponent {
-  designSystem = inject(DesignSystemService);
-  theme = signal<DesignSystem | undefined>(undefined);
+  dsService = inject(DesignSystemService);
 
   compatibilityTable = computed(() => {
-    if (!this.theme()) {
+    if (!this.dsService.designSystem()) {
       return [];
     }
 
-    return this.theme() === "mercury"
+    return this.dsService.designSystem() === "mercury"
       ? mercuryCompatibilityTable
       : unanimoCompatibilityTable;
   });
-
-  constructor() {
-    this.designSystem.theme$.subscribe(newTheme => {
-      this.theme.set(newTheme);
-    });
-  }
 }

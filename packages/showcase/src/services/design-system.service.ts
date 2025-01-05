@@ -4,10 +4,23 @@ import {
   Injectable,
   PLATFORM_ID,
   Renderer2,
-  RendererFactory2
+  RendererFactory2,
+  signal
 } from "@angular/core";
-import { BehaviorSubject } from "rxjs/internal/BehaviorSubject";
+
 import { SEOService } from "./seo.service";
+import { DesignSystem } from "../common/types";
+
+const BASE_CSS_URL = "/assets/css/";
+export const MERCURY_BASE_CSS_URL = `${BASE_CSS_URL}mercury/`;
+export const UNANIMO_BASE_CSS_URL = `${BASE_CSS_URL}unanimo/`;
+const DS_DATA_ATTRIBUTE = "data-design-system";
+
+const getBaseBundle = (designSystem: DesignSystem) =>
+  `${BASE_CSS_URL}${designSystem}/base/base.css` as const;
+
+const getDSLink = () =>
+  document.head.querySelector("[" + DS_DATA_ATTRIBUTE + "]") as HTMLLinkElement;
 
 @Injectable({ providedIn: "root" })
 export class DesignSystemService {
@@ -16,30 +29,26 @@ export class DesignSystemService {
   private renderer2: Renderer2;
   private seoService = inject(SEOService);
 
-  private themeSubject = new BehaviorSubject<"mercury" | "unanimo">("mercury");
-
-  theme$ = this.themeSubject.asObservable();
+  designSystem = signal<DesignSystem>("mercury");
 
   constructor(rendererFactory: RendererFactory2) {
     this.renderer2 = rendererFactory.createRenderer(null, null);
   }
 
-  setDesignSystem(designSystem: "mercury" | "unanimo") {
-    this.themeSubject.next(designSystem);
+  setDesignSystem(designSystem: DesignSystem) {
+    this.designSystem.set(designSystem);
 
-    // Browser
+    // Browser. Update the link href with the new DS base bundle
     if (isPlatformBrowser(this.platform)) {
-      const designSystemLink = document.head.querySelector(
-        "[data-design-system]"
-      ) as HTMLLinkElement;
-      designSystemLink.href = `./assets/css/${designSystem}/all.css`;
+      const designSystemLink = getDSLink();
+      designSystemLink.href = getBaseBundle(designSystem);
     }
-    // Server
+    // Server. Create the link in the HTML with the DS base bundle
     else {
       const link = this.renderer2.createElement("link");
       link.rel = "stylesheet";
-      link.href = `./assets/css/${designSystem}/all.css`;
-      this.renderer2.setAttribute(link, "data-design-system", "");
+      link.href = getBaseBundle(designSystem);
+      this.renderer2.setAttribute(link, DS_DATA_ATTRIBUTE, "");
       this.renderer2.appendChild(this._document.head, link);
     }
 

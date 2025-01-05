@@ -1,0 +1,10 @@
+@if (bundles().length > 0) {
+  <ch-theme
+    [attachStyleSheets]="this.dsService.designSystem() === 'mercury'"
+    [model]="mercuryThemeModel()"
+  ></ch-theme>
+  <ch-theme
+    [attachStyleSheets]="this.dsService.designSystem() === 'unanimo'"
+    [model]="unanimoThemeModel()"
+  ></ch-theme>
+}

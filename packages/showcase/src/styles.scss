@@ -1,4 +1,8 @@
-// @import "../../mercury/dist/bundles/css/base/base.css";
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
 
 .main-content {
   display: grid;
@@ -36,4 +40,13 @@ code {
   background-color: var(--mer-color__neutral-gray--650);
   border-radius: 4px;
   color: var(--mer-text__on-elevation);
+}
+
+copy-code {
+  min-block-size: 65px; // Necessary to avoid CLS on the initial load
+
+  & > .code {
+    min-block-size: 36px; // Necessary to avoid CLS on the initial load
+    background-color: var(--mer-surface__elevation--01, var(--elevation--1));
+  }
 }

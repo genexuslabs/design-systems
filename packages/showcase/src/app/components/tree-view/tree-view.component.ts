@@ -1,12 +1,14 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { getIconPath } from "@genexus/mercury";
 import { TreeViewModel } from "@genexus/chameleon-controls-library";
 
+import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
+import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
+
 @Component({
   selector: "components-tree-view",
-  imports: [CommonModule, CodeSnippetComponent],
+  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
   templateUrl: "./tree-view.component.html",
   host: { class: "main-content", ngSkipHydration: "true" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

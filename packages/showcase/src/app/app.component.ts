@@ -22,13 +22,15 @@ import {
   ItemLink,
   NavigationListHyperlinkClickEvent,
   NavigationListModel,
-  SegmentedControlModel,
-  ThemeModel
+  SegmentedControlModel
 } from "@genexus/chameleon-controls-library";
 import { getImagePathCallback } from "@genexus/mercury";
+
+import { RuntimeBundlesComponent } from "../user-controls/runtime-bundles/runtime-bundles.component";
 import { getNavigationListRoutes } from "./app.routes";
 import { ColorScheme, DesignSystem } from "../common/types";
 import { bundleMapping, urlMapping } from "./bundles-and-url-mapping";
+
 import { ColorSchemeService } from "../services/color-scheme.service";
 import { DesignSystemService } from "../services/design-system.service";
 import { SEOService } from "../services/seo.service";
@@ -38,7 +40,7 @@ const FRAGMENT_QUERY_PARAMS_URL = /(#.*|\?.*)/;
 
 @Component({
   selector: "app-root",
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RuntimeBundlesComponent],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -53,7 +55,7 @@ export class AppComponent {
   route = inject(ActivatedRoute);
 
   colorSchemeService = inject(ColorSchemeService);
-  designSystemService = inject(DesignSystemService);
+  dsService = inject(DesignSystemService);
   seoService = inject(SEOService);
 
   getImagePathCallback = signal(getImagePathCallback);
@@ -68,12 +70,6 @@ export class AppComponent {
     { id: "mercury", caption: "Mercury" },
     { id: "unanimo", caption: "Unanimo" }
   ]);
-
-  themeModel = computed<ThemeModel>(() =>
-    this.designSystem() === "mercury"
-      ? { name: "mercury", url: "./assets/css/mercury/all.css" }
-      : { name: "unanimo", url: "./assets/css/unanimo/all.css" }
-  );
 
   selectedLink = signal<{ id?: string; link: ItemLink }>({ link: { url: "" } });
   selectedBundle = computed(
@@ -121,7 +117,7 @@ export class AppComponent {
     effect(() => {
       if (this.designSystem()) {
         // The "!" is a WA to avoid Angular's issues with signal type narrowing
-        this.designSystemService.setDesignSystem(this.designSystem()!);
+        this.dsService.setDesignSystem(this.designSystem()!);
       }
     });
   }

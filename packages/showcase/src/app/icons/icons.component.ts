@@ -7,7 +7,7 @@ import {
   ViewEncapsulation
 } from "@angular/core";
 import { RouterLink, RouterModule } from "@angular/router";
-import { MERCURY_ASSETS } from "@genexus/mercury/dist/assets/MERCURY_ASSETS";
+import { MERCURY_ASSETS } from "@genexus/mercury/MERCURY_ASSETS.js";
 
 type ColorType = {
   colorType?: ColorTypeWithStates;

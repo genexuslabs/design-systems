@@ -1,7 +1,6 @@
-:host {
+copy-code {
   display: grid;
   grid-template-rows: max-content 1fr;
-  min-block-size: 65px; // Necessary to avoid CLS on the initial load
 
   & > button {
     justify-content: flex-end;
@@ -14,7 +13,6 @@
   }
 
   & > .code {
-    background-color: var(--mer-surface__elevation--01, var(--elevation--1));
     padding-block: 8px;
     padding-inline: 12px;
     border: var(--mer-border__width--sm, 1px) solid
@@ -22,6 +20,5 @@
     border-radius: var(--mer-border__radius--sm, 4px);
     border-start-end-radius: unset;
     border-start-start-radius: unset;
-    min-block-size: 36px; // Necessary to avoid CLS on the initial load
   }
 }

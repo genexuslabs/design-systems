@@ -1,11 +1,13 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { getIconPath } from "@genexus/mercury";
+
+import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
+import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
 
 @Component({
   selector: "components-input",
-  imports: [CommonModule, CodeSnippetComponent],
+  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
   templateUrl: "./input.component.html",
   host: { class: "main-content" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
