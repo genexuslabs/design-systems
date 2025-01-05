@@ -34,18 +34,18 @@
               },
               {
                 "glob": "**/*",
+                "input": "../unanimo/dist/bundles/css/",
+                "output": "/assets/css/unanimo"
+              },
+              {
+                "glob": "**/*",
                 "input": "../mercury/dist/assets/",
                 "output": "/assets/"
               },
               {
                 "glob": "**/*",
                 "input": "../unanimo/dist/assets/",
-                "output": "/assets/css/unanimo/assets/"
-              },
-              {
-                "glob": "**/*",
-                "input": "../unanimo/dist/bundles/css/",
-                "output": "/assets/css/unanimo"
+                "output": "/assets/"
               }
             ],
             "styles": ["src/styles.scss"],
