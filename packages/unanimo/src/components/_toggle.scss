@@ -1,4 +1,4 @@
-%switch {
+%toggle {
   --ch-switch-thumb__unchecked-background-color: var(--elevation--1);
   --ch-switch-thumb__checked-background-color: var(--accents__primary--hover);
 
@@ -48,29 +48,29 @@
   }
 }
 
-@mixin switch(
-  $switch-selector: ".switch",
-  $track--disabled-selector: ".switch::part(track disabled)",
-  $thumb-selector: ".switch::part(thumb)",
-  $thumb--disabled-selector: ".switch::part(thumb disabled)",
-  $caption-selector: ".switch::part(caption)",
-  $caption--disabled-selector: ".switch::part(caption disabled)",
+@mixin toggle(
+  $toggle-selector: ".toggle",
+  $track--disabled-selector: ".toggle::part(track disabled)",
+  $thumb-selector: ".toggle::part(thumb)",
+  $thumb--disabled-selector: ".toggle::part(thumb disabled)",
+  $caption-selector: ".toggle::part(caption)",
+  $caption--disabled-selector: ".toggle::part(caption disabled)",
 
   $add--disabled: true,
   $add--caption: true
 ) {
-  #{$switch-selector} {
-    @extend %switch;
+  #{$toggle-selector} {
+    @extend %toggle;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
   //                  Thumb
   // - - - - - - - - - - - - - - - - - - - -
   #{$thumb-selector} {
-    @extend %switch__thumb;
+    @extend %toggle__thumb;
 
     &:focus {
-      @extend %switch__thumb--focus;
+      @extend %toggle__thumb--focus;
     }
   }
 
@@ -79,7 +79,7 @@
   // - - - - - - - - - - - - - - - - - - - -
   @if $add--caption {
     #{$caption-selector} {
-      @extend %switch__caption;
+      @extend %toggle__caption;
     }
   }
 
@@ -87,18 +87,18 @@
   @if $add--disabled {
     // Track
     #{$track--disabled-selector} {
-      @extend %switch__track--disabled;
+      @extend %toggle__track--disabled;
     }
 
     // Thumb
     #{$thumb--disabled-selector} {
-      @extend %switch__thumb--disabled;
+      @extend %toggle__thumb--disabled;
     }
 
     // Caption
     @if $add--caption {
       #{$caption--disabled-selector} {
-        @extend %switch__caption--disabled;
+        @extend %toggle__caption--disabled;
       }
     }
   }
