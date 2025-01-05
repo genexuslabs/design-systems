@@ -40,8 +40,8 @@
 @import "./components/segmented-control";
 @import "./components/sidebar";
 @import "./components/slider";
-@import "./components/switch";
 @import "./components/tab";
+@import "./components/toggle";
 @import "./components/tree-view";
 
 @mixin unanimo(
@@ -115,7 +115,7 @@
   $sidebar: true,
   $slider-primary: true,
   $slider-secondary: true,
-  $switch: true,
+  $toggle: true,
   $tab: true,
   $tree-view-primary: true,
   $tree-view-secondary: true
@@ -426,8 +426,8 @@
       @include slider-secondary();
     }
 
-    @if $switch {
-      @include switch();
+    @if $toggle {
+      @include toggle();
     }
 
     @if $tab {
@@ -515,7 +515,7 @@
   $sidebar: false,
   $slider-primary: false,
   $slider-secondary: false,
-  $switch: false,
+  $toggle: false,
   $tab: false,
   $tree-view-primary: false,
   $tree-view-secondary: false
@@ -591,7 +591,7 @@
     $sidebar: $sidebar,
     $slider-primary: $slider-primary,
     $slider-secondary: $slider-secondary,
-    $switch: $switch,
+    $toggle: $toggle,
     $tab: $tab,
     $tree-view-primary: $tree-view-primary,
     $tree-view-secondary: $tree-view-secondary
