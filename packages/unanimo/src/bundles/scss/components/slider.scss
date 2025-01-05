@@ -1,0 +1,7 @@
+@import "../../../unanimo.scss";
+
+@include unanimo-only(
+  $components: true,
+  $slider-primary: true,
+  $slider-secondary: true
+);
