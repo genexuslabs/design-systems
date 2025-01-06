@@ -43,7 +43,7 @@
     <ch-edit
       class="input app-header__filters"
       [debounce]="400"
-      type="search"
+      [type]="'search'"
       (input)="handleFilterChange($event)"
     ></ch-edit>
   }

@@ -159,7 +159,7 @@ export class AppComponent {
   handleFilterChange = (event: ChEditCustomEvent<string>) => {
     this.router.navigate([], {
       queryParams: { filter: event.detail },
-      queryParamsHandling: "merge" // Remove to replace all query params by provided
+      queryParamsHandling: "merge" // Conserve other query parameters
     });
   };
 }

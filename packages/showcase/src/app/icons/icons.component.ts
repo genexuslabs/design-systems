@@ -2,12 +2,18 @@ import {
   Component,
   computed,
   CUSTOM_ELEMENTS_SCHEMA,
+  effect,
+  inject,
   input,
   signal,
   ViewEncapsulation
 } from "@angular/core";
-import { RouterLink, RouterModule } from "@angular/router";
+import { Router, RouterLink, RouterModule } from "@angular/router";
 import { MERCURY_ASSETS } from "@genexus/mercury/MERCURY_ASSETS.js";
+
+import { mercuryCategoryExplanation } from "./category-explanation";
+import { RuntimeBundlesComponent } from "../../user-controls/runtime-bundles/runtime-bundles.component";
+import { ChCheckboxCustomEvent } from "@genexus/chameleon-controls-library";
 
 type ColorType = {
   colorType?: ColorTypeWithStates;
@@ -21,11 +27,13 @@ type ColorTypeWithStates = {
 
 type OnlyStates = { state: string; img: string }[];
 
+export type MercuryCategory = keyof (typeof MERCURY_ASSETS)["icons"];
+
 @Component({
   selector: "icons",
-  imports: [RouterLink, RouterModule],
+  imports: [RouterLink, RouterModule, RuntimeBundlesComponent],
   templateUrl: "./icons.component.html",
-  host: { class: "main-content", ngSkipHydration: "true" },
+  host: { class: "main-content" },
   styleUrl: "./icons.scss",
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
@@ -33,9 +41,11 @@ type OnlyStates = { state: string; img: string }[];
   encapsulation: ViewEncapsulation.None
 })
 export class IconsComponent {
+  router = inject(Router);
+
   assets = signal<
     {
-      categoryName: keyof (typeof MERCURY_ASSETS)["icons"];
+      categoryName: MercuryCategory;
       icons: {
         iconName: string;
         colorType: ColorType;
@@ -43,7 +53,15 @@ export class IconsComponent {
     }[]
   >([]);
 
+  /**
+   * This map is useful for rendering checkboxes to determine whether a
+   * category must be rendered.
+   */
+  categoriesToRender = signal(new Map<string, boolean>());
+
+  // Comes from the router
   filter = input<string>("");
+  hiddenCategories = input<string>("");
 
   filteredAssets = computed(() => {
     if (!this.filter()) {
@@ -53,6 +71,7 @@ export class IconsComponent {
     const filteredAssets = [];
     const filter = this.filter();
 
+    // For let i = ... is the fastest loop
     for (
       let categoryIndex = 0;
       categoryIndex < this.assets().length;
@@ -86,38 +105,7 @@ export class IconsComponent {
     return filteredAssets;
   });
 
-  categoryExplanation = signal({
-    bpm: "The bpm category features icons related to Business Process Management (BPM) within GeneXus. BPM tools help in designing, automating, and optimizing business processes, and these icons represent the various elements and actions involved in managing and executing workflows.",
-    controls:
-      "Icons under the controls category represent various UI controls that can be implemented in GeneXus applications. These controls include buttons, input fields, dropdowns, and other interactive elements that are essential for building user interfaces.",
-    "editing-structures":
-      "The editing-structures category includes icons related to the creation and modification of data structures within GeneXus. These icons assist developers in defining and managing the underlying data models that power their applications, ensuring that data is organized and accessible.",
-    "gemini-tools":
-      "Icons in the gemini-tools category are linked to tools that are part of the Gemini framework within GeneXus. These tools provide specialized functionalities for specific tasks, aiding developers in extending the capabilities of their applications and enhancing their workflows.",
-    general:
-      "This category covers a broad range of icons that don't fit into specific categories but are essential for various general tasks and functionalities within GeneXus. These icons provide visual cues for a wide array of operations and actions in the development environment.",
-    "gx-server":
-      "The gx-server category includes icons associated with GeneXus Server, a tool that facilitates collaboration and version control in GeneXus projects. These icons help represent different server-related actions, such as committing changes, updating versions, and managing project repositories.",
-    "gx-test":
-      "Icons in the gx-test category are related to testing tools and features within GeneXus. Testing is a critical phase in the development process, and these icons represent the various tools and functionalities that help ensure the quality and reliability of applications developed with GeneXus.",
-    menus:
-      "This category is dedicated to icons representing menus within applications. Menus are crucial for organizing and presenting options to users, and these icons help in designing intuitive and accessible menus that enhance the overall user experience.",
-    navigation:
-      "The navigation category features icons related to the navigation of applications and the GeneXus development environment. These icons help developers design and implement user-friendly navigation flows, ensuring that users can move seamlessly through different sections of an application.",
-    objects:
-      "Icons under the objects category represent the core elements that make up GeneXus applications. Objects are essential units of functionality, including data structures, user interfaces, and business logic, which together define the behavior and appearance of an application.",
-    "objects-parts": "TODO :P",
-    patterns:
-      "The patterns category encompasses a range of design patterns that can be applied to GeneXus projects. These patterns help standardize development practices, ensuring consistency and efficiency when creating applications. They cover common scenarios and workflows, offering reusable solutions to common problems.",
-    "patterns-default-associated":
-      "Icons in this category represent default patterns that are automatically associated with certain functionalities within GeneXus. These patterns simplify the development process by providing pre-defined structures and behaviors that can be easily implemented across various parts of an application.",
-    states: "TODO :P",
-    system: "TODO :P",
-    "window-tools":
-      "This category includes icons related to various tools and utilities used within the GeneXus development environment. These tools assist developers in managing and configuring different aspects of their projects, enhancing productivity and streamlining workflow within the GeneXus platform."
-  } satisfies {
-    [key in keyof (typeof MERCURY_ASSETS)["icons"]]: string;
-  });
+  categoryExplanation = signal(mercuryCategoryExplanation);
 
   constructor() {
     const newAssets = [];
@@ -131,16 +119,15 @@ export class IconsComponent {
 
     const categories = Object.entries(MERCURY_ASSETS.icons);
 
+    // For let i = ... is the fastest loop
     for (let index = 0; index < categories.length; index++) {
       const category = categories[index];
+      const categoryName = category[0] as MercuryCategory;
       const icons: {
         iconName: string;
         colorType: ColorType;
       }[] = [];
-      const assetEntry = {
-        categoryName: category[0] as keyof (typeof MERCURY_ASSETS)["icons"],
-        icons: icons
-      };
+      const assetEntry = { categoryName, icons };
 
       const iconsWithColorType = Object.entries(category[1]);
 
@@ -191,5 +178,55 @@ export class IconsComponent {
     );
 
     this.assets.set(newAssets);
+
+    // Set all categories after the array is sorted
+    newAssets.forEach(assetEntry =>
+      this.categoriesToRender().set(assetEntry.categoryName, true)
+    );
+
+    // Update the rendered categories by watching changes for the
+    // hiddenCategories query parameter
+    effect(() => {
+      const hiddenCategoriesArray = this.hiddenCategories()
+        ? this.hiddenCategories().split(",")
+        : [];
+
+      // Display all categories
+      this.categoriesToRender().forEach((_, categoryName) =>
+        this.categoriesToRender().set(categoryName, true)
+      );
+
+      // Remove those categories that must be hidden
+      hiddenCategoriesArray.forEach(hiddenCategoryName =>
+        this.categoriesToRender().set(hiddenCategoryName, false)
+      );
+
+      // Notify dependencies that the Map has changed
+      this.categoriesToRender.update(value => value);
+    });
   }
+
+  updateRenderedCategory =
+    (categoryName: string) => (event: ChCheckboxCustomEvent<string>) => {
+      this.categoriesToRender().set(categoryName, event.detail === "true");
+
+      // Notify dependencies that the Map has changed
+      this.categoriesToRender.update(value => value);
+
+      let hiddenCategoriesQueryParm = "";
+
+      this.categoriesToRender().forEach((renderCategory, categoryName) => {
+        if (!renderCategory) {
+          hiddenCategoriesQueryParm +=
+            hiddenCategoriesQueryParm === ""
+              ? categoryName
+              : "," + categoryName;
+        }
+      });
+
+      this.router.navigate([], {
+        queryParams: { hiddenCategories: hiddenCategoriesQueryParm },
+        queryParamsHandling: "merge" // Conserve other query parameters
+      });
+    };
 }
