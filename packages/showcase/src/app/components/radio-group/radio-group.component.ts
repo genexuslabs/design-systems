@@ -4,6 +4,7 @@ import { RadioGroupModel } from "@genexus/chameleon-controls-library";
 
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
+import { createTemplateForAllLanguages } from "../../../services/template-language/create-template";
 
 @Component({
   selector: "components-radio-group",
@@ -13,11 +14,22 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class RadioGroupComponent {
-  default = `<ch-radio-group-render class="radio-group"></ch-radio-group-render>`;
-  vertical = `<ch-radio-group-render
-  class="radio-group"
-  direction="vertical"
-></ch-radio-group-render>`;
+  default = createTemplateForAllLanguages([
+    {
+      tag: "ch-radio-group-render",
+      properties: [{ name: "class", value: "radio-group" }]
+    }
+  ]);
+
+  vertical = createTemplateForAllLanguages([
+    {
+      tag: "ch-radio-group-render",
+      properties: [
+        { name: "class", value: "radio-group" },
+        { name: "direction", value: "vertical" }
+      ]
+    }
+  ]);
 
   radioGroupModel = signal<RadioGroupModel>([
     { value: "Value 1", caption: "Label for the value 1" },

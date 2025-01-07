@@ -5,6 +5,7 @@ import { TreeViewModel } from "@genexus/chameleon-controls-library";
 
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
+import { createTemplateForAllLanguages } from "../../../services/template-language/create-template";
 
 @Component({
   selector: "components-tree-view",
@@ -20,7 +21,6 @@ export class TreeViewComponent {
     colorType: "on-elevation"
   });
 
-  noIcons = `<ch-tree-view-render class="tree-view" showLines="all"></ch-tree-view-render>`;
   noIconsModel: TreeViewModel = [
     {
       id: "root",
@@ -256,13 +256,41 @@ export class TreeViewComponent {
     }
   ];
 
-  withCheckboxes = `<ch-tree-view-render
-  class="tree-view"
-  checkbox
-  showLines="all"
-></ch-tree-view-render>`;
+  noIcons = createTemplateForAllLanguages([
+    {
+      tag: "ch-tree-view-render",
+      properties: [
+        { name: "class", value: "tree-view" },
+        { name: "showLines", value: "last" }
+      ]
+    }
+  ]);
 
-  showLinesLast = `<ch-tree-view-render class="tree-view" showLines="last"></ch-tree-view-render>`;
+  withCheckboxes = createTemplateForAllLanguages([
+    {
+      tag: "ch-tree-view-render",
+      properties: [
+        { name: "class", value: "tree-view" },
+        { name: "checkbox", value: true },
+        { name: "showLines", value: "all" }
+      ]
+    }
+  ]);
 
-  showLinesNone = `<ch-tree-view-render class="tree-view"></ch-tree-view-render>`;
+  showLinesLast = createTemplateForAllLanguages([
+    {
+      tag: "ch-tree-view-render",
+      properties: [
+        { name: "class", value: "tree-view" },
+        { name: "showLines", value: "last" }
+      ]
+    }
+  ]);
+
+  showLinesNone = createTemplateForAllLanguages([
+    {
+      tag: "ch-tree-view-render",
+      properties: [{ name: "class", value: "tree-view" }]
+    }
+  ]);
 }

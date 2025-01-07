@@ -4,6 +4,7 @@ import { getIconPath } from "@genexus/mercury";
 
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
+import { createTemplateForAllLanguages } from "../../../services/template-language/create-template";
 
 @Component({
   selector: "components-input",
@@ -19,22 +20,58 @@ export class InputComponent {
     colorType: "on-surface"
   });
 
-  default = `<ch-edit accessibleName="Name" class="input"></ch-edit>`;
-  value = `<ch-edit accessibleName="Name" class="input" value="Pat Taylor"></ch-edit>`;
-  placeholder = `<ch-edit
-  accessibleName="Name"
-  class="input"
-  placeholder="e.g. Mike Shinoda"
-></ch-edit>`;
-  disabled = `<ch-edit
-  accessibleName="Name"
-  class="input"
-  disabled
-  value="Pat Taylor"
-></ch-edit>`;
-  withIcon = `<ch-edit
-  accessibleName="Name"
-  class="input"
-  startImgSrc="{USER_ICON}"
-></ch-edit>`;
+  default = createTemplateForAllLanguages([
+    {
+      tag: "ch-edit",
+      properties: [
+        { name: "accessibleName", value: "Name" },
+        { name: "class", value: "input" }
+      ]
+    }
+  ]);
+
+  value = createTemplateForAllLanguages([
+    {
+      tag: "ch-edit",
+      properties: [
+        { name: "accessibleName", value: "Name" },
+        { name: "class", value: "input" },
+        { name: "value", value: "Pat Taylor" }
+      ]
+    }
+  ]);
+
+  placeholder = createTemplateForAllLanguages([
+    {
+      tag: "ch-edit",
+      properties: [
+        { name: "accessibleName", value: "Name" },
+        { name: "class", value: "input" },
+        { name: "placeholder", value: "e.g. Mike Shinoda" }
+      ]
+    }
+  ]);
+
+  disabled = createTemplateForAllLanguages([
+    {
+      tag: "ch-edit",
+      properties: [
+        { name: "accessibleName", value: "Name" },
+        { name: "class", value: "input" },
+        { name: "disabled", value: true },
+        { name: "value", value: "Pat Taylor" }
+      ]
+    }
+  ]);
+
+  withIcon = createTemplateForAllLanguages([
+    {
+      tag: "ch-edit",
+      properties: [
+        { name: "accessibleName", value: "Name" },
+        { name: "class", value: "input" },
+        { name: "startImgSrc", value: "USER_ICON", variable: true }
+      ]
+    }
+  ]);
 }

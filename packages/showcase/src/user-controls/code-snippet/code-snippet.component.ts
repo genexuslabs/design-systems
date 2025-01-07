@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { Component, CUSTOM_ELEMENTS_SCHEMA, input } from "@angular/core";
 import { RouterLink, RouterModule } from "@angular/router";
 import { CopyCodeComponent } from "../copy-code/copy-code.component";
+import { CodeTemplatesByLanguage } from "../../services/template-language/types";
 
 @Component({
   selector: "code-snippet",
@@ -12,7 +13,7 @@ import { CopyCodeComponent } from "../copy-code/copy-code.component";
   styleUrl: "./code-snippet.scss"
 })
 export class CodeSnippetComponent {
-  codeSnippet = input.required<string>();
+  codeSnippet = input.required<CodeTemplatesByLanguage>();
 
   headingLevel = input<2 | 3>(2);
 

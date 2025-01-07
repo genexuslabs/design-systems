@@ -1,24 +1,32 @@
 copy-code {
-  display: grid;
-  grid-template-rows: max-content 1fr;
+  display: contents;
 
-  & > button {
-    justify-content: flex-end;
-    padding: var(--mer-spacing--2xs, var(--spacing--s));
-    border-start-end-radius: var(--mer-border__radius--sm, 4px);
-    border-start-start-radius: var(--mer-border__radius--sm, 4px);
+  & > .tab {
     border: var(--mer-border__width--sm, 1px) solid
       var(--mer-surface__elevation--03, var(--border-color__mild));
-    border-block-end: unset;
+    border-radius: var(--mer-border__radius--sm);
+    min-block-size: 65px; // Necessary to avoid CLS on the initial load
+
+    // TODO: There is a bug in the browser with content-visibility: hidden,
+    // where hidden tab panel are displayed above the visible tab-panel
+    &::part(tab-panel not-selected) {
+      display: none;
+    }
   }
+}
+
+.copy-code__container {
+  position: relative;
 
   & > .code {
-    padding-block: 8px;
-    padding-inline: 12px;
-    border: var(--mer-border__width--sm, 1px) solid
-      var(--mer-surface__elevation--03, var(--border-color__mild));
-    border-radius: var(--mer-border__radius--sm, 4px);
-    border-start-end-radius: unset;
-    border-start-start-radius: unset;
+    border: unset;
+    min-block-size: 36px; // Necessary to avoid CLS on the initial load
+  }
+
+  & > button {
+    position: absolute;
+    inset-block-start: 8px;
+    inset-inline-end: 8px;
+    border: 1px solid;
   }
 }

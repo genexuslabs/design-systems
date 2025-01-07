@@ -24,7 +24,7 @@
     margin-block-start: var(--mer-spacing--4xl, calc(var(--spacing--xxl) * 2));
   }
 
-  copy-code {
+  copy-code > .tab {
     margin-block-start: var(--mer-spacing--md, var(--spacing--l));
   }
 }
@@ -42,11 +42,6 @@ code {
   color: var(--mer-text__on-elevation);
 }
 
-copy-code {
-  min-block-size: 65px; // Necessary to avoid CLS on the initial load
-
-  & > .code {
-    min-block-size: 36px; // Necessary to avoid CLS on the initial load
-    background-color: var(--mer-surface__elevation--01, var(--elevation--1));
-  }
+runtime-bundles {
+  display: none;
 }

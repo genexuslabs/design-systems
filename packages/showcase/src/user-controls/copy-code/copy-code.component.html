@@ -1,14 +1,32 @@
-<button
-  #button
-  class="elevation-2 button-icon-and-text"
-  type="button"
-  (click)="handleCopyMarkup()"
+<runtime-bundles [bundles]="['components/tab']" />
+
+<ch-tab-render
+  class="tab"
+  [model]="languagesModel"
+  [selectedId]="templateLanguageService.language()"
+  (selectedItemChange)="selectedNewLanguage($event)"
 >
-  Copy Markup
-  <ch-image
-    class="icon-md"
-    src="mer/system/copy/primary"
-    [getImagePathCallback]="getImagePathCallback()"
-  ></ch-image>
-</button>
-<ch-code class="code" [value]="value()" [language]="language()"></ch-code>
+  <div
+    class="copy-code__container"
+    slot="{{ templateLanguageService.language() }}"
+  >
+    <button
+      aria-label="Copy Markup"
+      class="button-tertiary button-icon-and-text"
+      type="button"
+      (click)="handleCopyMarkup()"
+    >
+      <ch-image
+        class="icon-md"
+        src="mer/system/copy/primary"
+        [getImagePathCallback]="getImagePathCallback()"
+      ></ch-image>
+    </button>
+
+    <ch-code
+      class="code"
+      [value]="value()[templateLanguageService.language()]"
+      [language]="language()"
+    ></ch-code>
+  </div>
+</ch-tab-render>
