@@ -45,3 +45,9 @@ code {
 runtime-bundles {
   display: none;
 }
+
+// This is a WA to add support for RTL and add paddings for Unanimo
+ch-code {
+  padding-inline: var(--mer-spacing--sm, 12px);
+  padding-block: var(--mer-spacing--xs, var(--spacing--m));
+}

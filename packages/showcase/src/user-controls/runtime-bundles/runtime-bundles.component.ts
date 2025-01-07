@@ -4,12 +4,12 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   input,
-  signal,
   ViewEncapsulation
 } from "@angular/core";
 
-import { UnanimoBundleOptimized } from "@genexus/unanimo";
-import { MercuryBundleOptimized } from "@genexus/mercury";
+import type { ThemeModel } from "@genexus/chameleon-controls-library";
+import type { UnanimoBundleOptimized } from "@genexus/unanimo";
+import type { MercuryBundleOptimized } from "@genexus/mercury";
 
 import { getBundles as getBundlesMercury } from "@genexus/mercury/bundles.js";
 import { getBundles as getBundlesUnanimo } from "@genexus/unanimo/bundles.js";
@@ -19,7 +19,6 @@ import {
   MERCURY_BASE_CSS_URL,
   UNANIMO_BASE_CSS_URL
 } from "../../services/design-system.service";
-import { ThemeModel } from "@genexus/chameleon-controls-library";
 
 @Component({
   selector: "runtime-bundles",

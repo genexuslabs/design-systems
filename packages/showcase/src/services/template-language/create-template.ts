@@ -50,7 +50,7 @@ const renderProperty = (
 
   // JSX
   return property.variable
-    ? `${propertyName}="{${propertyValue}}`
+    ? `${propertyName}={${propertyValue}}`
     : `${propertyName}="${propertyValue}"`;
 };
 
