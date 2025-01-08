@@ -1,4 +1,8 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA
+} from "@angular/core";
 import { RouterLink, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 
@@ -7,8 +11,9 @@ import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-s
 
 @Component({
   selector: "components-button",
-  imports: [CommonModule, RouterLink, RouterModule, CodeSnippetComponent],
   templateUrl: "./button.component.html",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, RouterLink, RouterModule, CodeSnippetComponent],
   host: { class: "main-content" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   computed,
   CUSTOM_ELEMENTS_SCHEMA,
@@ -23,9 +24,10 @@ import {
 @Component({
   selector: "copy-code",
   templateUrl: "./copy-code.component.html",
+  styleUrl: "./copy-code.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RuntimeBundlesComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  styleUrl: "./copy-code.scss",
   encapsulation: ViewEncapsulation.None
 })
 export class CopyCodeComponent {

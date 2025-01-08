@@ -1,9 +1,9 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 @Component({
   selector: "installation-angular",
-  imports: [],
   templateUrl: "./angular.component.html",
+  changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: "main-content" }
 })
 export class InstallationAngularComponent {}

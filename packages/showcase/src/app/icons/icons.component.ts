@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   computed,
   CUSTOM_ELEMENTS_SCHEMA,
@@ -31,10 +32,11 @@ export type MercuryCategory = keyof (typeof MERCURY_ASSETS)["icons"];
 
 @Component({
   selector: "icons",
-  imports: [RouterLink, RouterModule, RuntimeBundlesComponent],
   templateUrl: "./icons.component.html",
-  host: { class: "main-content" },
   styleUrl: "./icons.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [RouterLink, RouterModule, RuntimeBundlesComponent],
+  host: { class: "main-content" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
   // This reduced the document size by 300KB

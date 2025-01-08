@@ -1,4 +1,8 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA
+} from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 import { elevationMetadata } from "./metadata";
@@ -7,11 +11,12 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
 
 @Component({
   selector: "components-elevation",
-  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
   templateUrl: "./elevation.component.html",
+  styleUrl: "./elevation.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: "main-content" },
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  styleUrl: "./elevation.scss"
+  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ElevationComponent {
   metadata = elevationMetadata;

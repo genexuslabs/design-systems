@@ -1,4 +1,9 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, signal } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  signal
+} from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RadioGroupModel } from "@genexus/chameleon-controls-library";
 
@@ -8,8 +13,9 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
 
 @Component({
   selector: "components-radio-group",
-  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
   templateUrl: "./radio-group.component.html",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
   host: { class: "main-content" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

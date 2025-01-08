@@ -1,12 +1,18 @@
-import { Component, computed, inject, ViewEncapsulation } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  ViewEncapsulation
+} from "@angular/core";
 import { DesignSystemService } from "../../../services/design-system.service";
 
 @Component({
   selector: "what-is",
-  imports: [],
   templateUrl: "./what-is.component.html",
-  host: { class: "main-content" },
   styleUrl: "./what-is.component.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: "main-content" },
   encapsulation: ViewEncapsulation.None
 })
 export class WhatIsComponent {

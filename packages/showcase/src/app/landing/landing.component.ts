@@ -1,9 +1,10 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 @Component({
   selector: "landing",
-  imports: [],
   templateUrl: "./landing.component.html",
-  host: { class: "main-content" }
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: "main-content" },
+  imports: []
 })
 export class LandingComponent {}

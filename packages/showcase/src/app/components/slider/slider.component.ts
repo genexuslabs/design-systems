@@ -1,6 +1,9 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA
+} from "@angular/core";
 import { CommonModule } from "@angular/common";
-import type { ComboBoxModel } from "@genexus/chameleon-controls-library";
 
 import { sliderMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
@@ -8,8 +11,9 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
 
 @Component({
   selector: "components-slider",
-  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
   templateUrl: "./slider.component.html",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
   host: { class: "main-content" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

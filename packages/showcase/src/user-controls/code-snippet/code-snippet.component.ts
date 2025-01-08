@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import {
+  ChangeDetectionStrategy,
   Component,
   computed,
   CUSTOM_ELEMENTS_SCHEMA,
@@ -14,9 +15,10 @@ import { ComponentMetadataCodeSnippet } from "../../common/types";
 @Component({
   selector: "code-snippet",
   templateUrl: "./code-snippet.component.html",
+  styleUrl: "./code-snippet.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, RouterLink, RouterModule, CopyCodeComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  styleUrl: "./code-snippet.scss",
   // Lighter HTML by not adding any extra attribute to emulate the encapsulation
   encapsulation: ViewEncapsulation.None
 })

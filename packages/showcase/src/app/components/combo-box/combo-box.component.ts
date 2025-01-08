@@ -1,4 +1,8 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA
+} from "@angular/core";
 import { CommonModule } from "@angular/common";
 import type { ComboBoxModel } from "@genexus/chameleon-controls-library";
 
@@ -8,8 +12,9 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
 
 @Component({
   selector: "components-combo-box",
-  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
   templateUrl: "./combo-box.component.html",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
   host: { class: "main-content" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,4 +1,8 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA
+} from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 import { labelMetadata } from "./metadata";
@@ -7,8 +11,9 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
 
 @Component({
   selector: "components-label",
-  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
   templateUrl: "./label.component.html",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
   host: { class: "main-content" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

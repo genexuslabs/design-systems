@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   computed,
   CUSTOM_ELEMENTS_SCHEMA,
@@ -47,9 +48,10 @@ const FRAGMENT_QUERY_PARAMS_URL = /(#.*|\?.*)/;
 
 @Component({
   selector: "app-root",
-  imports: [RouterOutlet, RuntimeBundlesComponent],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [RouterOutlet, RuntimeBundlesComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   host: { ngSkipHydration: "true" }
 })

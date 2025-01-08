@@ -1,4 +1,8 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA
+} from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterLink } from "@angular/router";
 
@@ -8,13 +12,14 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
 
 @Component({
   selector: "components-search",
+  templateUrl: "./search.component.html",
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
     CodeSnippetComponent,
     RouterLink,
     RuntimeBundlesComponent
   ],
-  templateUrl: "./search.component.html",
   host: { class: "main-content" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
