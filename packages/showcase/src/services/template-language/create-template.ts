@@ -28,19 +28,30 @@ const renderProperty = (
   property: ComponentTemplateItemNodeProperty,
   codeLanguage: CodeTemplateLanguages
 ): string => {
+  const propertyValue = property.value;
+
   if (property.name === "class") {
     return codeLanguage === "React"
-      ? `className="${property.value}"`
-      : `class="${property.value}"`;
+      ? `className="${propertyValue}"`
+      : `class="${propertyValue}"`;
   }
 
-  if (property.value === true) {
+  if (property.name === "id") {
+    return `id="${propertyValue}"`;
+  }
+
+  if (property.name === "for") {
+    return codeLanguage === "Angular"
+      ? `for="${propertyValue}"`
+      : `htmlFor="${propertyValue}"`;
+  }
+
+  if (propertyValue === true) {
     return property.name;
   }
 
   const propertyName =
     codeLanguage === "Angular" ? `[${property.name}]` : property.name;
-  const propertyValue = property.value;
 
   if (codeLanguage === "Angular") {
     return property.variable || typeof propertyValue !== "string"

@@ -46,6 +46,13 @@ const childRoutes: Routes = [
       )
   },
   {
+    path: "components/search",
+    loadComponent: () =>
+      import("./components/search/search.component").then(
+        m => m.SearchComponent
+      )
+  },
+  {
     path: "components/slider",
     loadComponent: () =>
       import("./components/slider/slider.component").then(
@@ -189,6 +196,7 @@ export const getNavigationListRoutes = (ds: "mercury" | "unanimo") =>
         getNavigationListItem("/components/pills", "Pills", ds),
         getNavigationListItem("/components/property-grid", "Property Grid", ds),
         getNavigationListItem("/components/radio-group", "Radio Group", ds),
+        getNavigationListItem("/components/search", "Search", ds),
         getNavigationListItem("/components/slider", "Slider", ds),
         getNavigationListItem("/components/tab", "Tab", ds),
         getNavigationListItem("/components/tabular-grid", "Tabular Grid", ds),

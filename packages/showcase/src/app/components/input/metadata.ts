@@ -10,6 +10,30 @@ export const inputMetadata = {
       title: "1. Default",
       template: [
         {
+          tag: "div",
+          class: "field field-block",
+          children: [
+            {
+              tag: "label",
+              class: "label",
+              properties: [{ name: "for", value: "name" }],
+              children: [{ text: "Name", type: "text" }]
+            },
+            {
+              tag: "ch-edit",
+              class: "input",
+              properties: [{ name: "id", value: "name" }]
+            }
+          ]
+        }
+      ]
+    },
+
+    noLabel: {
+      linkId: "no-label",
+      title: "2. No Label",
+      template: [
+        {
           tag: "ch-edit",
           class: "input",
           properties: [{ name: "accessibleName", value: "Name" }]
@@ -19,7 +43,7 @@ export const inputMetadata = {
 
     value: {
       linkId: "value",
-      title: "2. Value",
+      title: "3. Value",
       template: [
         {
           tag: "ch-edit",
@@ -34,7 +58,7 @@ export const inputMetadata = {
 
     placeholder: {
       linkId: "placeholder",
-      title: "3. Placeholder",
+      title: "4. Placeholder",
       template: [
         {
           tag: "ch-edit",
@@ -49,7 +73,7 @@ export const inputMetadata = {
 
     disabled: {
       linkId: "disabled",
-      title: "4. Disabled",
+      title: "5. Disabled",
       template: [
         {
           tag: "ch-edit",
@@ -65,7 +89,7 @@ export const inputMetadata = {
 
     withIcon: {
       linkId: "with-icon",
-      title: "5. With Icon",
+      title: "6. With Icon",
       template: [
         {
           tag: "ch-edit",
@@ -74,6 +98,17 @@ export const inputMetadata = {
             { name: "accessibleName", value: "Name" },
             { name: "startImgSrc", value: "USER_ICON", variable: true }
           ]
+        }
+      ]
+    },
+
+    errors: {
+      linkId: "errors",
+      title: "7. Error",
+      template: [
+        {
+          text: "TODO",
+          type: "text"
         }
       ]
     }

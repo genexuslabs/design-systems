@@ -26,42 +26,39 @@
   <br />
 
   <div class="field field-block">
-    <label class="label" for="name">Name</label>
-    <ch-edit class="input" id="name"></ch-edit>
+    <label class="label" for="name">Search</label>
+    <ch-edit class="input" id="name" [type]="'search'"></ch-edit>
   </div>
 </code-snippet>
 
 <code-snippet [codeSnippet]="codeSnippets.noLabel">
-  <ch-edit accessibleName="Name" class="input"></ch-edit>
+  <ch-edit accessibleName="Search" class="input" [type]="'search'"></ch-edit>
 </code-snippet>
 
 <code-snippet [codeSnippet]="codeSnippets.value">
-  <ch-edit accessibleName="Name" class="input" value="Pat Taylor"></ch-edit>
+  <ch-edit
+    accessibleName="Search"
+    class="input"
+    [type]="'search'"
+    value="Pat Taylor"
+  ></ch-edit>
 </code-snippet>
 
 <code-snippet [codeSnippet]="codeSnippets.placeholder">
   <ch-edit
-    accessibleName="Name"
+    accessibleName="Search"
     class="input"
     placeholder="e.g. Mike Shinoda"
+    [type]="'search'"
   ></ch-edit>
 </code-snippet>
 
 <code-snippet [codeSnippet]="codeSnippets.disabled">
   <ch-edit
-    accessibleName="Name"
+    accessibleName="Search"
     class="input"
     disabled
+    [type]="'search'"
     value="Pat Taylor"
   ></ch-edit>
 </code-snippet>
-
-<code-snippet [codeSnippet]="codeSnippets.withIcon">
-  <ch-edit
-    accessibleName="Name"
-    class="input"
-    [startImgSrc]="USER_ICON"
-  ></ch-edit>
-</code-snippet>
-
-<code-snippet [codeSnippet]="codeSnippets.errors">TODO</code-snippet>

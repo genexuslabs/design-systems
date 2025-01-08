@@ -5,6 +5,7 @@ export const bundleMapping = {
   "/components/combo-box": "components/combo-box",
   "/components/input": "components/edit",
   "/components/radio-group": "components/radio-group",
+  "/components/search": "components/edit",
   "/components/slider": "components/slider",
   "/components/tree-view": "components/tree-view",
 
@@ -18,6 +19,7 @@ export const urlMapping = {
   "/components/combo-box": "Combo Box",
   "/components/input": "Input",
   "/components/radio-group": "Radio Group",
+  "/components/search": "Search",
   "/components/slider": "Slider",
   "/components/tree-view": "Tree View",
 
