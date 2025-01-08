@@ -6,19 +6,11 @@
 
 <p class="text-body-regular-l">{{ metadata.description }}</p>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.default"
-  linkId="checked"
-  sectionTitle="1. Checked"
->
+<code-snippet [codeSnippet]="codeSnippets.checked">
   <ch-checkbox class="checkbox" caption="The caption"></ch-checkbox>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.default"
-  linkId="unchecked"
-  sectionTitle="2. Unchecked"
->
+<code-snippet [codeSnippet]="codeSnippets.unchecked">
   <ch-checkbox
     class="checkbox"
     caption="The caption"
@@ -26,11 +18,7 @@
   ></ch-checkbox>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.indeterminate"
-  linkId="indeterminate"
-  sectionTitle="3. Indeterminate"
->
+<code-snippet [codeSnippet]="codeSnippets.indeterminate">
   <ch-checkbox
     class="checkbox"
     caption="The caption"
@@ -38,20 +26,11 @@
   ></ch-checkbox>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.disabled"
-  linkId="disabled"
-  sectionTitle="4. Disabled"
->
+<code-snippet [codeSnippet]="codeSnippets.disabled">
   <ch-checkbox class="checkbox" caption="The caption" disabled></ch-checkbox>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.withIcon"
-  language="ts"
-  linkId="with-icon"
-  sectionTitle="5. With Icon"
->
+<code-snippet [codeSnippet]="codeSnippets.withIcon" language="ts">
   <ch-checkbox
     class="checkbox"
     caption="The caption"
@@ -59,11 +38,7 @@
   ></ch-checkbox>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.groupingCheckboxesBlock"
-  linkId="grouping-checkboxes-block"
-  sectionTitle="6. Grouping checkboxes: Block"
->
+<code-snippet [codeSnippet]="codeSnippets.groupingCheckboxesBlock">
   <div class="field-group">
     <ch-checkbox class="checkbox" caption="The caption 1"></ch-checkbox>
     <ch-checkbox class="checkbox" caption="The caption 2"></ch-checkbox>
@@ -71,11 +46,7 @@
   </div>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.groupingCheckboxesInline"
-  linkId="grouping-checkboxes-inline"
-  sectionTitle="7. Grouping checkboxes: Inline"
->
+<code-snippet [codeSnippet]="codeSnippets.groupingCheckboxesInline">
   <div class="field-group-inline">
     <ch-checkbox class="checkbox" caption="The caption 1"></ch-checkbox>
     <ch-checkbox class="checkbox" caption="The caption 2"></ch-checkbox>

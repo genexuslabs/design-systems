@@ -8,60 +8,40 @@
   {{ metadata.description }}
 </p>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.noIcons"
-  linkId="no-icons"
-  sectionTitle="1. No icons"
->
+<code-snippet [codeSnippet]="codeSnippets.noIcons">
   <ch-tree-view-render
     class="tree-view tree-view-secondary tree-view-snippet"
-    show-lines="all"
     [model]="noIconsModel"
+    [showLines]="'all'"
   ></ch-tree-view-render>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.noIcons"
-  linkId="with-icons"
-  sectionTitle="2. With icons"
->
+<code-snippet [codeSnippet]="codeSnippets.withIcons">
   <ch-tree-view-render
     class="tree-view tree-view-secondary tree-view-snippet"
-    show-lines="all"
     [model]="withIconsModel"
+    [showLines]="'all'"
   ></ch-tree-view-render>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.withCheckboxes"
-  linkId="checkboxes"
-  sectionTitle="3. Checkboxes"
->
+<code-snippet [codeSnippet]="codeSnippets.withCheckboxes">
   <ch-tree-view-render
     class="tree-view tree-view-secondary tree-view-snippet"
     checkbox
     [model]="noIconsModel"
-    show-lines="all"
+    [showLines]="'all'"
   ></ch-tree-view-render>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.showLinesLast"
-  linkId="show-last-line"
-  sectionTitle="4. Show Lines: Last"
->
+<code-snippet [codeSnippet]="codeSnippets.showLinesLast">
   <ch-tree-view-render
     class="tree-view tree-view-secondary tree-view-snippet"
-    show-lines="last"
     [model]="noIconsModel"
+    [showLines]="'last'"
   ></ch-tree-view-render>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.showLinesNone"
-  linkId="show-last-none"
-  sectionTitle="5. Show Lines: None"
->
+<code-snippet [codeSnippet]="codeSnippets.showLinesNone">
   <ch-tree-view-render
     class="tree-view tree-view-secondary tree-view-snippet"
     [model]="noIconsModel"

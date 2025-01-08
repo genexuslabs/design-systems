@@ -14,4 +14,5 @@ import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-s
 })
 export class ButtonComponent {
   metadata = buttonMetadata;
+  codeSnippets = buttonMetadata.codeSnippets;
 }

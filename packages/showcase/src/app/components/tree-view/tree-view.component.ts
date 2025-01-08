@@ -21,6 +21,9 @@ export class TreeViewComponent {
     colorType: "on-elevation"
   });
 
+  metadata = treeViewMetadata;
+  codeSnippets = treeViewMetadata.codeSnippets;
+
   noIconsModel: TreeViewModel = [
     {
       id: "root",
@@ -255,6 +258,4 @@ export class TreeViewComponent {
       ]
     }
   ];
-
-  metadata = treeViewMetadata;
 }

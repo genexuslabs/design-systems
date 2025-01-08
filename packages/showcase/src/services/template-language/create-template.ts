@@ -72,11 +72,20 @@ const renderTemplate = {
     );
 
     const formattedTag = createTag(item.tag, codeLanguage);
+    const propertiesWithClass: ComponentTemplateItemNodeProperty[] = [];
+
+    if (item.class) {
+      propertiesWithClass.push({ name: "class", value: item.class });
+    }
+    if (item.properties) {
+      propertiesWithClass.push(...item.properties);
+    }
 
     // Example: ['class="input"', 'disabled', 'value="Spider man"']
-    const renderedProperties = item.properties
-      ? renderProperties(item.properties, codeLanguage)
-      : [];
+    const renderedProperties = renderProperties(
+      propertiesWithClass,
+      codeLanguage
+    );
 
     const bindingsFitsInTheSameLine =
       indentation +

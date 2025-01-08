@@ -15,4 +15,5 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
 })
 export class ElevationComponent {
   metadata = elevationMetadata;
+  codeSnippets = elevationMetadata.codeSnippets;
 }

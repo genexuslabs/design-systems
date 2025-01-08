@@ -12,6 +12,7 @@ export type ComponentTemplateType = "component" | "text";
 
 export type ComponentTemplateItemNode = {
   tag: string;
+  class?: string;
   properties?: ComponentTemplateItemNodeProperty[];
   events?: ComponentTemplateItemNodeEvent[];
   type?: "component";

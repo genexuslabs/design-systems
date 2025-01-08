@@ -14,6 +14,9 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class RadioGroupComponent {
+  metadata = radioGroupMetadata;
+  codeSnippets = radioGroupMetadata.codeSnippets;
+
   radioGroupModel = signal<RadioGroupModel>([
     { value: "Value 1", caption: "Label for the value 1" },
     { value: "Value 2", caption: "Label for the value 2" },
@@ -22,6 +25,4 @@ export class RadioGroupComponent {
     { value: "Value 5", caption: "Label for the value 5", disabled: true },
     { value: "Value 6", caption: "Label for the value 6" }
   ]);
-
-  metadata = radioGroupMetadata;
 }

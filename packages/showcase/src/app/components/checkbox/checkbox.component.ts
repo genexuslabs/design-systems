@@ -21,6 +21,7 @@ export class CheckboxComponent {
   });
 
   metadata = checkboxMetadata;
+  codeSnippets = checkboxMetadata.codeSnippets;
 
   // `const ADD_CIRCLE_ICON = getIconPath({
   //   category: "gemini-tools",

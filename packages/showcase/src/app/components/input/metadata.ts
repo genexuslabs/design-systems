@@ -5,59 +5,77 @@ export const inputMetadata = {
   description:
     "A primary HTML input element is a crucial part of a webpage, designed to capture user data and facilitate interactions. It serves as the main interface for users to enter information such as text, numbers, or dates, making it essential for data collection and user engagement, whether within a form or used independently.",
   codeSnippets: {
-    default: [
-      {
-        tag: "ch-edit",
-        properties: [
-          { name: "accessibleName", value: "Name" },
-          { name: "class", value: "input" }
-        ]
-      }
-    ],
+    default: {
+      linkId: "default",
+      title: "1. Default",
+      template: [
+        {
+          tag: "ch-edit",
+          class: "input",
+          properties: [{ name: "accessibleName", value: "Name" }]
+        }
+      ]
+    },
 
-    value: [
-      {
-        tag: "ch-edit",
-        properties: [
-          { name: "accessibleName", value: "Name" },
-          { name: "class", value: "input" },
-          { name: "value", value: "Pat Taylor" }
-        ]
-      }
-    ],
+    value: {
+      linkId: "value",
+      title: "2. Value",
+      template: [
+        {
+          tag: "ch-edit",
+          class: "input",
+          properties: [
+            { name: "accessibleName", value: "Name" },
+            { name: "value", value: "Pat Taylor" }
+          ]
+        }
+      ]
+    },
 
-    placeholder: [
-      {
-        tag: "ch-edit",
-        properties: [
-          { name: "accessibleName", value: "Name" },
-          { name: "class", value: "input" },
-          { name: "placeholder", value: "e.g. Mike Shinoda" }
-        ]
-      }
-    ],
+    placeholder: {
+      linkId: "placeholder",
+      title: "3. Placeholder",
+      template: [
+        {
+          tag: "ch-edit",
+          class: "input",
+          properties: [
+            { name: "accessibleName", value: "Name" },
+            { name: "placeholder", value: "e.g. Mike Shinoda" }
+          ]
+        }
+      ]
+    },
 
-    disabled: [
-      {
-        tag: "ch-edit",
-        properties: [
-          { name: "accessibleName", value: "Name" },
-          { name: "class", value: "input" },
-          { name: "disabled", value: true },
-          { name: "value", value: "Pat Taylor" }
-        ]
-      }
-    ],
+    disabled: {
+      linkId: "disabled",
+      title: "4. Disabled",
+      template: [
+        {
+          tag: "ch-edit",
+          class: "input",
+          properties: [
+            { name: "accessibleName", value: "Name" },
+            { name: "disabled", value: true },
+            { name: "value", value: "Pat Taylor" }
+          ]
+        }
+      ]
+    },
 
-    withIcon: [
-      {
-        tag: "ch-edit",
-        properties: [
-          { name: "accessibleName", value: "Name" },
-          { name: "class", value: "input" },
-          { name: "startImgSrc", value: "USER_ICON", variable: true }
-        ]
-      }
-    ]
+    withIcon: {
+      linkId: "with-icon",
+      title: "5. With Icon",
+      template: [
+        {
+          tag: "ch-edit",
+          class: "input",
+          properties: [
+            { name: "accessibleName", value: "Name" },
+            { name: "startImgSrc", value: "USER_ICON", variable: true }
+          ]
+        }
+      ]
+    }
   }
 } as const satisfies ComponentMetadata;

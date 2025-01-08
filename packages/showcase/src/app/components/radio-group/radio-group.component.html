@@ -6,22 +6,14 @@
 
 <p class="text-body-regular-l">{{ metadata.description }}</p>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.default"
-  linkId="Horizontal"
-  sectionTitle="1. Horizontal"
->
+<code-snippet [codeSnippet]="codeSnippets.default">
   <ch-radio-group-render
     class="radio-group"
     [model]="radioGroupModel()"
   ></ch-radio-group-render>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.vertical"
-  linkId="Vertical"
-  sectionTitle="2. Vertical"
->
+<code-snippet [codeSnippet]="codeSnippets.vertical">
   <ch-radio-group-render
     class="radio-group"
     direction="vertical"

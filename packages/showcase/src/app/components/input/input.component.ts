@@ -21,4 +21,5 @@ export class InputComponent {
   });
 
   metadata = inputMetadata;
+  codeSnippets = inputMetadata.codeSnippets;
 }

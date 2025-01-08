@@ -11,39 +11,31 @@
 </section>
 
 <code-snippet
-  [codeSnippet]="metadata.codeSnippets.buttonPrimaryTextOnly"
+  [codeSnippet]="codeSnippets.buttonPrimaryTextOnly"
   [headingLevel]="3"
-  linkId="button-primary-text-only"
-  sectionTitle="1.1. Text Only"
 >
   <button class="button-primary">Caption</button>
 </code-snippet>
 
 <code-snippet
-  [codeSnippet]="metadata.codeSnippets.buttonPrimaryTextOnlyDisabled"
+  [codeSnippet]="codeSnippets.buttonPrimaryTextOnlyDisabled"
   [headingLevel]="3"
-  linkId="button-primary-text-only-disabled"
-  sectionTitle="1.2. Text Only: Disabled"
 >
   <button class="button-primary" disabled>Caption</button>
 </code-snippet>
 
 <code-snippet
-  [codeSnippet]="metadata.codeSnippets.buttonPrimaryTextOnlyDestructive"
+  [codeSnippet]="codeSnippets.buttonPrimaryTextOnlyDestructive"
   [headingLevel]="3"
-  linkId="button-primary-text-only-destructive"
-  sectionTitle="1.3. Text Only: Destructive"
 >
   <button class="button-primary button-primary-destructive">Caption</button>
 </code-snippet>
 
 <code-snippet
-  [codeSnippet]="metadata.codeSnippets.buttonPrimaryIconAndText"
+  [codeSnippet]="codeSnippets.buttonPrimaryIconAndText"
   [headingLevel]="3"
-  linkId="button-primary-icon-and-text"
-  sectionTitle="1.4. Icon and Text"
 >
-  <button class="button-primary button-icon-and-text">
+  <button [class]="codeSnippets.buttonPrimaryIconAndText.template[0].class">
     <ch-image class="icon-sm"></ch-image>
     Caption
   </button>

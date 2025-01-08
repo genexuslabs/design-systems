@@ -8,27 +8,15 @@
   {{ metadata.description }}
 </p>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.default"
-  linkId="default"
-  sectionTitle="1. Default"
->
+<code-snippet [codeSnippet]="codeSnippets.default">
   <ch-edit accessibleName="Name" class="input"></ch-edit>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.value"
-  linkId="value"
-  sectionTitle="2. Value"
->
+<code-snippet [codeSnippet]="codeSnippets.value">
   <ch-edit accessibleName="Name" class="input" value="Pat Taylor"></ch-edit>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.placeholder"
-  linkId="placeholder"
-  sectionTitle="3. Placeholder"
->
+<code-snippet [codeSnippet]="codeSnippets.placeholder">
   <ch-edit
     accessibleName="Name"
     class="input"
@@ -36,11 +24,7 @@
   ></ch-edit>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.disabled"
-  linkId="disabled"
-  sectionTitle="4. Disabled"
->
+<code-snippet [codeSnippet]="codeSnippets.disabled">
   <ch-edit
     accessibleName="Name"
     class="input"
@@ -49,11 +33,7 @@
   ></ch-edit>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.withIcon"
-  linkId="with-icon"
-  sectionTitle="5. With Icon"
->
+<code-snippet [codeSnippet]="codeSnippets.withIcon">
   <ch-edit
     accessibleName="Name"
     class="input"

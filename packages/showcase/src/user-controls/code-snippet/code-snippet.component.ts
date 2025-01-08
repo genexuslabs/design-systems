@@ -10,6 +10,7 @@ import { RouterLink, RouterModule } from "@angular/router";
 import { CopyCodeComponent } from "../copy-code/copy-code.component";
 import { ComponentTemplateModel } from "../../services/template-language/types";
 import { createTemplateForAllLanguages } from "../../services/template-language/create-template";
+import { ComponentMetadataCodeSnippet } from "../../common/types";
 
 @Component({
   selector: "code-snippet",
@@ -22,16 +23,15 @@ import { createTemplateForAllLanguages } from "../../services/template-language/
   encapsulation: ViewEncapsulation.None
 })
 export class CodeSnippetComponent {
-  codeSnippet = input.required<ComponentTemplateModel>();
+  codeSnippet = input.required<ComponentMetadataCodeSnippet>();
   codeTemplate = computed(() =>
-    createTemplateForAllLanguages(this.codeSnippet())
+    createTemplateForAllLanguages(this.codeSnippet().template)
   );
 
   headingLevel = input<2 | 3>(2);
 
   language = input<string>("html");
 
-  linkId = input.required<string>();
-
-  sectionTitle = input.required<string>();
+  linkId = computed(() => this.codeSnippet().linkId);
+  title = computed(() => this.codeSnippet().title);
 }
