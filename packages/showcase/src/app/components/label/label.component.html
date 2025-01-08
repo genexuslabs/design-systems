@@ -1,0 +1,15 @@
+<runtime-bundles [bundles]="['utils/form']" />
+
+<header>
+  <h1 class="heading-1">{{ metadata.title }}</h1>
+</header>
+
+<p class="text-body-regular-l">{{ metadata.description }}</p>
+
+<code-snippet [codeSnippet]="codeSnippets.default">
+  <label class="label" for="element-1">{{
+    codeSnippets.default.template[0].children[0].text
+  }}</label>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.disabled"> TODO </code-snippet>

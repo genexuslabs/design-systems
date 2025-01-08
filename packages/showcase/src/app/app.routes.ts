@@ -39,6 +39,11 @@ const childRoutes: Routes = [
       import("./components/input/input.component").then(m => m.InputComponent)
   },
   {
+    path: "components/label",
+    loadComponent: () =>
+      import("./components/label/label.component").then(m => m.LabelComponent)
+  },
+  {
     path: "components/radio-group",
     loadComponent: () =>
       import("./components/radio-group/radio-group.component").then(
@@ -145,12 +150,6 @@ const getNavigationListItem = <Id extends `/${string}`, Caption extends string>(
 
 export const getNavigationListRoutes = (ds: "mercury" | "unanimo") =>
   [
-    { id: "Home", caption: ds === "mercury" ? "Mercury" : "Unanimo" },
-    getNavigationListItem(
-      "/chameleon-compatibility",
-      "Chameleon Compatibility",
-      ds
-    ),
     {
       caption: "Introduction",
       items: [
@@ -181,6 +180,11 @@ export const getNavigationListRoutes = (ds: "mercury" | "unanimo") =>
         }
       ]
     },
+    getNavigationListItem(
+      "/chameleon-compatibility",
+      "Chameleon Compatibility",
+      ds
+    ),
     {
       caption: "Components",
       expanded: true,

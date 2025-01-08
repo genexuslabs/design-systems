@@ -12,14 +12,15 @@
   >
     <button
       aria-label="Copy Markup"
-      class="button-tertiary button-icon-and-text"
+      class="button-primary button-icon-only"
       type="button"
       (click)="handleCopyMarkup()"
     >
       <ch-image
         class="icon-md"
-        src="mer/system/copy/primary"
         [getImagePathCallback]="getImagePathCallback()"
+        [src]="'mer/system/copy/primary'"
+        type="mask"
       ></ch-image>
     </button>
 

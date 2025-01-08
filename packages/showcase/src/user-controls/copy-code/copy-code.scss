@@ -5,7 +5,7 @@ copy-code {
     border: var(--mer-border__width--sm, 1px) solid
       var(--mer-surface__elevation--03, var(--border-color__mild));
     border-radius: var(--mer-border__radius--sm);
-    min-block-size: 72px; // Necessary to avoid CLS on the initial load
+    min-block-size: 74px; // Necessary to avoid CLS on the initial load
 
     // TODO: There is a bug in the browser with content-visibility: hidden,
     // where hidden tab panel are displayed above the visible tab-panel
@@ -21,12 +21,13 @@ copy-code {
   & > .code {
     border: unset;
     min-block-size: 36px; // Necessary to avoid CLS on the initial load
+    margin-block: 1px;
   }
 
-  & > button {
+  & > .button-icon-only {
     position: absolute;
-    inset-block-start: 8px;
-    inset-inline-end: 8px;
+    inset-block-start: 4px;
+    inset-inline-end: 4px;
     border: 1px solid;
   }
 }

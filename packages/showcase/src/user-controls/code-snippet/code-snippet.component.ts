@@ -8,7 +8,6 @@ import {
 } from "@angular/core";
 import { RouterLink, RouterModule } from "@angular/router";
 import { CopyCodeComponent } from "../copy-code/copy-code.component";
-import { ComponentTemplateModel } from "../../services/template-language/types";
 import { createTemplateForAllLanguages } from "../../services/template-language/create-template";
 import { ComponentMetadataCodeSnippet } from "../../common/types";
 
@@ -17,7 +16,6 @@ import { ComponentMetadataCodeSnippet } from "../../common/types";
   templateUrl: "./code-snippet.component.html",
   imports: [CommonModule, RouterLink, RouterModule, CopyCodeComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  host: { ngSkipHydration: "true" },
   styleUrl: "./code-snippet.scss",
   // Lighter HTML by not adding any extra attribute to emulate the encapsulation
   encapsulation: ViewEncapsulation.None

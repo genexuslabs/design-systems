@@ -22,9 +22,13 @@ import {
   ItemLink,
   NavigationListHyperlinkClickEvent,
   NavigationListModel,
-  SegmentedControlModel
+  SegmentedControlModel,
+  ThemeModel
 } from "@genexus/chameleon-controls-library";
 import { getImagePathCallback } from "@genexus/mercury";
+
+import { registryProperty } from "@genexus/chameleon-controls-library/dist/collection/index";
+import { getImagePathCallbackDefinitions } from "@genexus/mercury/assets-manager.js";
 
 import { RuntimeBundlesComponent } from "../user-controls/runtime-bundles/runtime-bundles.component";
 import { getNavigationListRoutes } from "./app.routes";
@@ -32,7 +36,10 @@ import { ColorScheme, DesignSystem } from "../common/types";
 import { bundleMapping, urlMapping } from "./bundles-and-url-mapping";
 
 import { ColorSchemeService } from "../services/color-scheme.service";
-import { DesignSystemService } from "../services/design-system.service";
+import {
+  DesignSystemService,
+  MERCURY_BASE_CSS_URL
+} from "../services/design-system.service";
 import { SEOService } from "../services/seo.service";
 
 const MERCURY_UNANIMO_PREFIX_URL_REGEX = /\/(mercury|unanimo)/;
@@ -79,6 +86,10 @@ export class AppComponent {
     getNavigationListRoutes(this.designSystem() ?? "mercury")
   );
 
+  mercuryIconsBundle: ThemeModel = [
+    { name: "mercury/base/icons", url: MERCURY_BASE_CSS_URL + "base/icons.css" }
+  ];
+
   constructor() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
@@ -107,6 +118,8 @@ export class AppComponent {
 
     // Browser
     if (isPlatformBrowser(this.platform)) {
+      registryProperty("getImagePathCallback", getImagePathCallbackDefinitions);
+
       // Initialize the color scheme
       this.colorScheme.set(this.colorSchemeService.getColorScheme());
 
