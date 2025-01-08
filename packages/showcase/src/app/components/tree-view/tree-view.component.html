@@ -1,18 +1,15 @@
 <runtime-bundles [bundles]="['components/tree-view']" />
 
 <header>
-  <h1 class="heading-1">Tree View</h1>
+  <h1 class="heading-1">{{ metadata.title }}</h1>
 </header>
 
 <p class="text-body-regular-l">
-  A custom tree component is a hierarchical UI element that visually represents
-  a nested data structure, allowing users to expand and collapse branches. It's
-  commonly used for navigating directories, organizing data, and managing
-  complex relationships within a user-friendly interface.
+  {{ metadata.description }}
 </p>
 
 <code-snippet
-  [codeSnippet]="noIcons"
+  [codeSnippet]="metadata.codeSnippets.noIcons"
   linkId="no-icons"
   sectionTitle="1. No icons"
 >
@@ -24,7 +21,7 @@
 </code-snippet>
 
 <code-snippet
-  [codeSnippet]="noIcons"
+  [codeSnippet]="metadata.codeSnippets.noIcons"
   linkId="with-icons"
   sectionTitle="2. With icons"
 >
@@ -36,7 +33,7 @@
 </code-snippet>
 
 <code-snippet
-  [codeSnippet]="withCheckboxes"
+  [codeSnippet]="metadata.codeSnippets.withCheckboxes"
   linkId="checkboxes"
   sectionTitle="3. Checkboxes"
 >
@@ -49,7 +46,7 @@
 </code-snippet>
 
 <code-snippet
-  [codeSnippet]="showLinesLast"
+  [codeSnippet]="metadata.codeSnippets.showLinesLast"
   linkId="show-last-line"
   sectionTitle="4. Show Lines: Last"
 >
@@ -61,7 +58,7 @@
 </code-snippet>
 
 <code-snippet
-  [codeSnippet]="showLinesNone"
+  [codeSnippet]="metadata.codeSnippets.showLinesNone"
   linkId="show-last-none"
   sectionTitle="5. Show Lines: None"
 >

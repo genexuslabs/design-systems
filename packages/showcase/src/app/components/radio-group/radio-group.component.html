@@ -1,19 +1,13 @@
 <runtime-bundles [bundles]="['components/radio-group']" />
 
 <header>
-  <h1 class="heading-1">Radio Group</h1>
+  <h1 class="heading-1">{{ metadata.title }}</h1>
 </header>
 
-<p class="text-body-regular-l">
-  A radio group is an essential UI component in HTML, designed to allow users to
-  select one option from a set of choices. Each radio button within the group
-  represents a distinct option, ensuring mutual exclusivity. This setup is
-  commonly used in forms to facilitate decisions such as choosing a payment
-  method, selecting a preferred contact time, or specifying a shipping option.
-</p>
+<p class="text-body-regular-l">{{ metadata.description }}</p>
 
 <code-snippet
-  [codeSnippet]="default"
+  [codeSnippet]="metadata.codeSnippets.default"
   linkId="Horizontal"
   sectionTitle="1. Horizontal"
 >
@@ -24,7 +18,7 @@
 </code-snippet>
 
 <code-snippet
-  [codeSnippet]="vertical"
+  [codeSnippet]="metadata.codeSnippets.vertical"
   linkId="Vertical"
   sectionTitle="2. Vertical"
 >

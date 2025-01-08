@@ -3,9 +3,9 @@ import { CommonModule } from "@angular/common";
 import { getIconPath } from "@genexus/mercury";
 import { TreeViewModel } from "@genexus/chameleon-controls-library";
 
+import { treeViewMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
-import { createTemplateForAllLanguages } from "../../../services/template-language/create-template";
 
 @Component({
   selector: "components-tree-view",
@@ -256,41 +256,5 @@ export class TreeViewComponent {
     }
   ];
 
-  noIcons = createTemplateForAllLanguages([
-    {
-      tag: "ch-tree-view-render",
-      properties: [
-        { name: "class", value: "tree-view" },
-        { name: "showLines", value: "last" }
-      ]
-    }
-  ]);
-
-  withCheckboxes = createTemplateForAllLanguages([
-    {
-      tag: "ch-tree-view-render",
-      properties: [
-        { name: "class", value: "tree-view" },
-        { name: "checkbox", value: true },
-        { name: "showLines", value: "all" }
-      ]
-    }
-  ]);
-
-  showLinesLast = createTemplateForAllLanguages([
-    {
-      tag: "ch-tree-view-render",
-      properties: [
-        { name: "class", value: "tree-view" },
-        { name: "showLines", value: "last" }
-      ]
-    }
-  ]);
-
-  showLinesNone = createTemplateForAllLanguages([
-    {
-      tag: "ch-tree-view-render",
-      properties: [{ name: "class", value: "tree-view" }]
-    }
-  ]);
+  metadata = treeViewMetadata;
 }

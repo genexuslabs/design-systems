@@ -2,9 +2,9 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, signal } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RadioGroupModel } from "@genexus/chameleon-controls-library";
 
+import { radioGroupMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
-import { createTemplateForAllLanguages } from "../../../services/template-language/create-template";
 
 @Component({
   selector: "components-radio-group",
@@ -14,23 +14,6 @@ import { createTemplateForAllLanguages } from "../../../services/template-langua
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class RadioGroupComponent {
-  default = createTemplateForAllLanguages([
-    {
-      tag: "ch-radio-group-render",
-      properties: [{ name: "class", value: "radio-group" }]
-    }
-  ]);
-
-  vertical = createTemplateForAllLanguages([
-    {
-      tag: "ch-radio-group-render",
-      properties: [
-        { name: "class", value: "radio-group" },
-        { name: "direction", value: "vertical" }
-      ]
-    }
-  ]);
-
   radioGroupModel = signal<RadioGroupModel>([
     { value: "Value 1", caption: "Label for the value 1" },
     { value: "Value 2", caption: "Label for the value 2" },
@@ -39,4 +22,6 @@ export class RadioGroupComponent {
     { value: "Value 5", caption: "Label for the value 5", disabled: true },
     { value: "Value 6", caption: "Label for the value 6" }
   ]);
+
+  metadata = radioGroupMetadata;
 }

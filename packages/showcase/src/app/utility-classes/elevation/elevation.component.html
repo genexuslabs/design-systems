@@ -1,18 +1,13 @@
 <runtime-bundles [bundles]="['utils/elevation']" />
 
 <header>
-  <h1 class="heading-1">Elevation</h1>
+  <h1 class="heading-1">{{ metadata.title }}</h1>
 </header>
 
-<p class="text-body-regular-l">
-  CSS utility classes for background colors offer a fast, consistent way to
-  apply styles, reducing repetitive code. They speed up development and simplify
-  maintenance by centralizing color updates, ensuring uniformity across the
-  project.
-</p>
+<p class="text-body-regular-l">{{ metadata.description }}</p>
 
 <code-snippet
-  [codeSnippet]="elevation1"
+  [codeSnippet]="metadata.codeSnippets.elevation1"
   linkId="elevation-1"
   sectionTitle="1. Elevation 1"
 >
@@ -30,7 +25,7 @@
 </code-snippet>
 
 <code-snippet
-  [codeSnippet]="elevation2"
+  [codeSnippet]="metadata.codeSnippets.elevation2"
   linkId="elevation-2"
   sectionTitle="2. Elevation 2"
 >
@@ -48,7 +43,7 @@
 </code-snippet>
 
 <code-snippet
-  [codeSnippet]="elevation3"
+  [codeSnippet]="metadata.codeSnippets.elevation3"
   linkId="elevation-3"
   sectionTitle="3. Elevation 3"
 >
