@@ -46,6 +46,13 @@ const childRoutes: Routes = [
       )
   },
   {
+    path: "components/slider",
+    loadComponent: () =>
+      import("./components/slider/slider.component").then(
+        m => m.SliderComponent
+      )
+  },
+  {
     path: "components/tree-view",
     loadComponent: () =>
       import("./components/tree-view/tree-view.component").then(

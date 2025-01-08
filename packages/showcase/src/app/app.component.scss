@@ -20,12 +20,15 @@ aside {
   grid-template: "filters bundle config" 1fr / max-content 1fr max-content;
   align-items: center;
   position: sticky;
-  inset-block-start: 0;
+  inset-block-start: var(--mer-spacing--xs, var(--spacing--m));
+  margin-inline-end: var(--mer-spacing--xs, var(--spacing--m));
   padding-inline: var(--mer-spacing--md, var(--spacing--l));
   min-block-size: 44px;
-  background-color: var(--mer-color__surface, var(--surface--alternative));
-  border-block-end: 1px solid
-    var(--mer-border-color__on-surface, var(--border-color__mild));
+  background-color: var(
+    --mer-surface__elevation--01,
+    var(--sidebar__background-color)
+  );
+  border-radius: var(--mer-border__radius--sm, var(--border-radius--m));
   z-index: 1;
 
   &__bundle {
@@ -56,6 +59,15 @@ main {
 }
 
 // WA to improve visuals
-.navigation-list::part(item__action) {
-  padding-block: 6px;
+.navigation-list {
+  padding: var(--mer-spacing--2xs, var(--spacing--s));
+
+  &::part(item__action) {
+    padding-block: 6px;
+  }
+}
+
+ch-sidebar {
+  margin: var(--mer-spacing--xs, var(--spacing--m));
+  border-radius: var(--mer-border__radius--sm, var(--border-radius--m));
 }

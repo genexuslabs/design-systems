@@ -51,3 +51,14 @@ ch-code {
   padding-inline: var(--mer-spacing--sm, 12px);
   padding-block: var(--mer-spacing--xs, var(--spacing--m));
 }
+
+.blockquote-info {
+  padding: var(--mer-spacing--md, var(--spacing--l));
+  margin: 0;
+  margin-block-start: var(--mer-spacing--md, var(--spacing--l));
+  border-inline-start: 2px solid var(--mer-border-color__on-surface);
+  background-color: var(--mer-surface__elevation--01);
+  border-radius: var(--mer-border__radius--sm);
+  color: var(--mer-color__neutral-gray--300);
+  font-size: var(--mer-font__size--2xs);
+}

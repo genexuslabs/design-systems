@@ -1,0 +1,31 @@
+<runtime-bundles [bundles]="['components/slider']" />
+
+<header>
+  <h1 class="heading-1">{{ metadata.title }}</h1>
+</header>
+
+<p class="text-body-regular-l">{{ metadata.description }}</p>
+
+<blockquote class="blockquote-info">
+  <b>Tip:</b> Apply <code>display: grid</code> to the slider's container to make
+  the slider stretch to 100% width.
+</blockquote>
+
+<code-snippet [codeSnippet]="codeSnippets.default">
+  <ch-slider class="slider"></ch-slider>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.disabled">
+  <ch-slider class="slider" disabled></ch-slider>
+</code-snippet>
+
+@let rangeTemplateProperties = codeSnippets.range.template[0].properties;
+
+<code-snippet [codeSnippet]="codeSnippets.range">
+  <ch-slider
+    class="slider"
+    [minValue]="rangeTemplateProperties[0].value"
+    [maxValue]="rangeTemplateProperties[1].value"
+    [value]="rangeTemplateProperties[2].value"
+  ></ch-slider>
+</code-snippet>
