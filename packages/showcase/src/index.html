@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.png" />
     <style>
-      :root:not(.hydrated) {
+      :root:not(.hydrated),
+      app-root > .data-bundle-loaded,
+      .main-content:has(> runtime-bundles:not(.data-bundle-loaded)) {
         visibility: hidden;
       }
     </style>
