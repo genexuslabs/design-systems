@@ -1,4 +1,4 @@
-<runtime-bundles [bundles]="['components/combo-box']" />
+<runtime-bundles [bundles]="['components/combo-box', 'utils/form']" />
 
 <header>
   <h1 class="heading-1">{{ metadata.title }}</h1>
@@ -7,6 +7,35 @@
 <p class="text-body-regular-l">{{ metadata.description }}</p>
 
 <code-snippet [codeSnippet]="codeSnippets.default">
+  <p class="text-body-regular-m">
+    To display a combo box with a label, you will have to do the same as working
+    with native HTML, adding a <code>for</code> attribute for the label with the
+    value of the control's <code>id</code>.
+  </p>
+
+  <p class="text-body-regular-m">
+    In addition, a div wrapper must be used around those elements to properly
+    style them. These styles are documented on the
+    <a class="hyperlink" routerLink="components/label">label</a> and
+    <a class="hyperlink" routerLink="utils/form">form</a>
+    sections, correspondingly.
+  </p>
+
+  <br />
+
+  <div class="field field-block">
+    <label class="label" for="name">{{
+      codeSnippets.default.template[0].children[0].children[0].text
+    }}</label>
+    <ch-combo-box-render
+      class="combo-box"
+      id="name"
+      [model]="comboBoxModel"
+    ></ch-combo-box-render>
+  </div>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.noLabel">
   <ch-combo-box-render
     class="combo-box"
     [model]="comboBoxModel"

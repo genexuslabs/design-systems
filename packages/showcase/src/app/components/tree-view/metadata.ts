@@ -1,5 +1,7 @@
 import { ComponentMetadata } from "../../../common/types";
 
+const COMPONENT_CLASS = "tree-view";
+
 export const treeViewMetadata = {
   title: "Tree View",
   description:
@@ -11,7 +13,7 @@ export const treeViewMetadata = {
       template: [
         {
           tag: "ch-tree-view-render",
-          class: "tree-view",
+          class: COMPONENT_CLASS,
           properties: [{ name: "showLines", value: "last" }]
         }
       ]
@@ -23,7 +25,7 @@ export const treeViewMetadata = {
       template: [
         {
           tag: "ch-tree-view-render",
-          class: "tree-view",
+          class: COMPONENT_CLASS,
           properties: [{ name: "showLines", value: "all" }]
         }
       ]
@@ -35,7 +37,7 @@ export const treeViewMetadata = {
       template: [
         {
           tag: "ch-tree-view-render",
-          class: "tree-view",
+          class: COMPONENT_CLASS,
           properties: [
             { name: "checkbox", value: true },
             { name: "showLines", value: "all" }
@@ -50,7 +52,7 @@ export const treeViewMetadata = {
       template: [
         {
           tag: "ch-tree-view-render",
-          class: "tree-view",
+          class: COMPONENT_CLASS,
           properties: [{ name: "showLines", value: "last" }]
         }
       ]
@@ -62,7 +64,7 @@ export const treeViewMetadata = {
       template: [
         {
           tag: "ch-tree-view-render",
-          class: "tree-view"
+          class: COMPONENT_CLASS
         }
       ]
     }

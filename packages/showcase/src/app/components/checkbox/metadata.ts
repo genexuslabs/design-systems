@@ -1,5 +1,7 @@
 import { ComponentMetadata } from "../../../common/types";
 
+const COMPONENT_CLASS = "checkbox";
+
 export const checkboxMetadata = {
   title: "Checkbox",
   description:
@@ -11,7 +13,7 @@ export const checkboxMetadata = {
       template: [
         {
           tag: "ch-checkbox",
-          class: "checkbox",
+          class: COMPONENT_CLASS,
           properties: [
             { name: "caption", value: "The caption" },
             { name: "checkedValue", value: "true" },
@@ -27,7 +29,7 @@ export const checkboxMetadata = {
       template: [
         {
           tag: "ch-checkbox",
-          class: "checkbox",
+          class: COMPONENT_CLASS,
           properties: [
             { name: "caption", value: "The caption" },
             { name: "checkedValue", value: "true" }
@@ -42,7 +44,7 @@ export const checkboxMetadata = {
       template: [
         {
           tag: "ch-checkbox",
-          class: "checkbox",
+          class: COMPONENT_CLASS,
           properties: [
             { name: "caption", value: "The caption" },
             { name: "checkedValue", value: "true" },
@@ -58,7 +60,7 @@ export const checkboxMetadata = {
       template: [
         {
           tag: "ch-checkbox",
-          class: "checkbox",
+          class: COMPONENT_CLASS,
           properties: [
             { name: "caption", value: "The caption" },
             { name: "checkedValue", value: "true" },
@@ -74,7 +76,7 @@ export const checkboxMetadata = {
       template: [
         {
           tag: "ch-checkbox",
-          class: "checkbox",
+          class: COMPONENT_CLASS,
           properties: [
             { name: "caption", value: "The caption" },
             { name: "checkedValue", value: "true" },
@@ -94,7 +96,7 @@ export const checkboxMetadata = {
           children: [
             {
               tag: "ch-checkbox",
-              class: "checkbox",
+              class: COMPONENT_CLASS,
               properties: [
                 { name: "caption", value: "The caption 1" },
                 { name: "checkedValue", value: "true" }
@@ -102,7 +104,7 @@ export const checkboxMetadata = {
             },
             {
               tag: "ch-checkbox",
-              class: "checkbox",
+              class: COMPONENT_CLASS,
               properties: [
                 { name: "caption", value: "The caption 2" },
                 { name: "checkedValue", value: "true" }
@@ -110,7 +112,7 @@ export const checkboxMetadata = {
             },
             {
               tag: "ch-checkbox",
-              class: "checkbox",
+              class: COMPONENT_CLASS,
               properties: [
                 { name: "caption", value: "The caption 3" },
                 { name: "checkedValue", value: "true" }
@@ -131,7 +133,7 @@ export const checkboxMetadata = {
           children: [
             {
               tag: "ch-checkbox",
-              class: "checkbox",
+              class: COMPONENT_CLASS,
               properties: [
                 { name: "caption", value: "The caption 1" },
                 { name: "checkedValue", value: "true" }
@@ -139,7 +141,7 @@ export const checkboxMetadata = {
             },
             {
               tag: "ch-checkbox",
-              class: "checkbox",
+              class: COMPONENT_CLASS,
               properties: [
                 { name: "caption", value: "The caption 2" },
                 { name: "checkedValue", value: "true" }
@@ -147,7 +149,7 @@ export const checkboxMetadata = {
             },
             {
               tag: "ch-checkbox",
-              class: "checkbox",
+              class: COMPONENT_CLASS,
               properties: [
                 { name: "caption", value: "The caption 3" },
                 { name: "checkedValue", value: "true" }

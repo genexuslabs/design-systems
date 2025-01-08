@@ -1,5 +1,7 @@
 import { ComponentMetadata } from "../../../common/types";
 
+const COMPONENT_CLASS = "input";
+
 export const inputMetadata = {
   title: "Input",
   description:
@@ -21,7 +23,7 @@ export const inputMetadata = {
             },
             {
               tag: "ch-edit",
-              class: "input",
+              class: COMPONENT_CLASS,
               properties: [{ name: "id", value: "name" }]
             }
           ]
@@ -35,7 +37,7 @@ export const inputMetadata = {
       template: [
         {
           tag: "ch-edit",
-          class: "input",
+          class: COMPONENT_CLASS,
           properties: [{ name: "accessibleName", value: "Name" }]
         }
       ]
@@ -47,7 +49,7 @@ export const inputMetadata = {
       template: [
         {
           tag: "ch-edit",
-          class: "input",
+          class: COMPONENT_CLASS,
           properties: [
             { name: "accessibleName", value: "Name" },
             { name: "value", value: "Pat Taylor" }
@@ -62,7 +64,7 @@ export const inputMetadata = {
       template: [
         {
           tag: "ch-edit",
-          class: "input",
+          class: COMPONENT_CLASS,
           properties: [
             { name: "accessibleName", value: "Name" },
             { name: "placeholder", value: "e.g. Mike Shinoda" }
@@ -77,7 +79,7 @@ export const inputMetadata = {
       template: [
         {
           tag: "ch-edit",
-          class: "input",
+          class: COMPONENT_CLASS,
           properties: [
             { name: "accessibleName", value: "Name" },
             { name: "disabled", value: true },
@@ -93,7 +95,7 @@ export const inputMetadata = {
       template: [
         {
           tag: "ch-edit",
-          class: "input",
+          class: COMPONENT_CLASS,
           properties: [
             { name: "accessibleName", value: "Name" },
             { name: "startImgSrc", value: "USER_ICON", variable: true }

@@ -1,5 +1,7 @@
 import { ComponentMetadata } from "../../../common/types";
 
+const COMPONENT_CLASS = "input";
+
 export const searchMetadata = {
   title: "Search",
   description:
@@ -21,7 +23,7 @@ export const searchMetadata = {
             },
             {
               tag: "ch-edit",
-              class: "input",
+              class: COMPONENT_CLASS,
               properties: [
                 { name: "id", value: "search" },
                 { name: "type", value: "search" }
@@ -38,7 +40,7 @@ export const searchMetadata = {
       template: [
         {
           tag: "ch-edit",
-          class: "input",
+          class: COMPONENT_CLASS,
           properties: [
             { name: "accessibleName", value: "Search" },
             { name: "type", value: "search" }
@@ -53,7 +55,7 @@ export const searchMetadata = {
       template: [
         {
           tag: "ch-edit",
-          class: "input",
+          class: COMPONENT_CLASS,
           properties: [
             { name: "accessibleName", value: "Search" },
             { name: "value", value: "Pat Taylor" },
@@ -69,7 +71,7 @@ export const searchMetadata = {
       template: [
         {
           tag: "ch-edit",
-          class: "input",
+          class: COMPONENT_CLASS,
           properties: [
             { name: "accessibleName", value: "Search" },
             { name: "placeholder", value: "e.g. Mike Shinoda" },
@@ -85,7 +87,7 @@ export const searchMetadata = {
       template: [
         {
           tag: "ch-edit",
-          class: "input",
+          class: COMPONENT_CLASS,
           properties: [
             { name: "accessibleName", value: "Search" },
             { name: "disabled", value: true },

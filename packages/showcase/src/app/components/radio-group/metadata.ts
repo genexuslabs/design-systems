@@ -1,5 +1,7 @@
 import { ComponentMetadata } from "../../../common/types";
 
+const COMPONENT_CLASS = "radio-group";
+
 export const radioGroupMetadata = {
   title: "Radio Group",
   description:
@@ -11,7 +13,7 @@ export const radioGroupMetadata = {
       template: [
         {
           tag: "ch-radio-group-render",
-          class: "radio-group"
+          class: COMPONENT_CLASS
         }
       ]
     },
@@ -22,7 +24,7 @@ export const radioGroupMetadata = {
       template: [
         {
           tag: "ch-radio-group-render",
-          class: "radio-group",
+          class: COMPONENT_CLASS,
           properties: [{ name: "direction", value: "vertical" }]
         }
       ]
