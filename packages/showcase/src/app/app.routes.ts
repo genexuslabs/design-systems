@@ -27,6 +27,13 @@ const childRoutes: Routes = [
       )
   },
   {
+    path: "components/combo-box",
+    loadComponent: () =>
+      import("./components/combo-box/combo-box.component").then(
+        m => m.ComboBoxComponent
+      )
+  },
+  {
     path: "components/input",
     loadComponent: () =>
       import("./components/input/input.component").then(m => m.InputComponent)
@@ -62,7 +69,7 @@ const childRoutes: Routes = [
   {
     path: "introduction/installation/angular",
     loadComponent: () =>
-      import("./introduction/installation/Angular/angular.component").then(
+      import("./introduction/installation/angular/angular.component").then(
         m => m.InstallationAngularComponent
       )
   },

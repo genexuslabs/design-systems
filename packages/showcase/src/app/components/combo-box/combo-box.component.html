@@ -6,79 +6,35 @@
 
 <p class="text-body-regular-l">{{ metadata.description }}</p>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.default"
-  linkId="checked"
-  sectionTitle="1. Checked"
->
-  <ch-checkbox class="checkbox" caption="The caption"></ch-checkbox>
+<code-snippet [codeSnippet]="codeSnippets.default">
+  <ch-combo-box-render
+    class="combo-box"
+    [model]="comboBoxModel"
+  ></ch-combo-box-render>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.default"
-  linkId="unchecked"
-  sectionTitle="2. Unchecked"
->
-  <ch-checkbox
-    class="checkbox"
-    caption="The caption"
-    checked-value="true"
-  ></ch-checkbox>
+<code-snippet [codeSnippet]="codeSnippets.disabled">
+  <ch-combo-box-render
+    class="combo-box"
+    disabled
+    [model]="comboBoxModel"
+  ></ch-combo-box-render>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.indeterminate"
-  linkId="indeterminate"
-  sectionTitle="3. Indeterminate"
->
-  <ch-checkbox
-    class="checkbox"
-    caption="The caption"
-    indeterminate
-  ></ch-checkbox>
+<code-snippet [codeSnippet]="codeSnippets.placeholder">
+  <ch-combo-box-render
+    class="combo-box"
+    [model]="comboBoxModel"
+    [placeholder]="codeSnippets.placeholder.template[0].properties[0].value"
+  ></ch-combo-box-render>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.disabled"
-  linkId="disabled"
-  sectionTitle="4. Disabled"
->
-  <ch-checkbox class="checkbox" caption="The caption" disabled></ch-checkbox>
+<code-snippet [codeSnippet]="codeSnippets.withIcons">
+  <ch-combo-box-render
+    class="combo-box"
+    [model]="comboBoxIconsModel"
+    [value]="codeSnippets.withIcons.template[0].properties[0].value"
+  ></ch-combo-box-render>
 </code-snippet>
 
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.withIcon"
-  language="ts"
-  linkId="with-icon"
-  sectionTitle="5. With Icon"
->
-  <ch-checkbox
-    class="checkbox"
-    caption="The caption"
-    [startImgSrc]="ADD_CIRCLE_ICON"
-  ></ch-checkbox>
-</code-snippet>
-
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.groupingCheckboxesBlock"
-  linkId="grouping-checkboxes-block"
-  sectionTitle="6. Grouping checkboxes: Block"
->
-  <div class="field-group">
-    <ch-checkbox class="checkbox" caption="The caption 1"></ch-checkbox>
-    <ch-checkbox class="checkbox" caption="The caption 2"></ch-checkbox>
-    <ch-checkbox class="checkbox" caption="The caption 3"></ch-checkbox>
-  </div>
-</code-snippet>
-
-<code-snippet
-  [codeSnippet]="metadata.codeSnippets.groupingCheckboxesInline"
-  linkId="grouping-checkboxes-inline"
-  sectionTitle="7. Grouping checkboxes: Inline"
->
-  <div class="field-group-inline">
-    <ch-checkbox class="checkbox" caption="The caption 1"></ch-checkbox>
-    <ch-checkbox class="checkbox" caption="The caption 2"></ch-checkbox>
-    <ch-checkbox class="checkbox" caption="The caption 3"></ch-checkbox>
-  </div>
-</code-snippet>
+<code-snippet [codeSnippet]="codeSnippets.errors"> TODO </code-snippet>
