@@ -1,10 +1,14 @@
 @if (bundles().length > 0) {
   <ch-theme
     [attachStyleSheets]="this.dsService.designSystem() === 'mercury'"
+    [avoidFlashOfUnstyledContent]="avoidFlashOfUnstyledContent()"
     [model]="mercuryThemeModel()"
+    (themeLoaded)="handleMercuryThemeLoaded()"
   ></ch-theme>
   <ch-theme
     [attachStyleSheets]="this.dsService.designSystem() === 'unanimo'"
+    [avoidFlashOfUnstyledContent]="avoidFlashOfUnstyledContent()"
     [model]="unanimoThemeModel()"
+    (themeLoaded)="handleUnanimoThemeLoaded()"
   ></ch-theme>
 }
