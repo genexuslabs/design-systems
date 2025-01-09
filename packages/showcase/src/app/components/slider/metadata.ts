@@ -30,9 +30,9 @@ export const sliderMetadata = {
       ]
     },
 
-    range: {
-      linkId: "range",
-      title: "3. Range",
+    customRange: {
+      linkId: "custom-range",
+      title: "3. Custom range",
       template: [
         {
           tag: "ch-slider",

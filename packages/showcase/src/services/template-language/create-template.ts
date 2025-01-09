@@ -98,6 +98,31 @@ const renderTemplate = {
       codeLanguage
     );
 
+    let children = "";
+    let childrenLength = 0;
+    let onlyHasATextNode = false;
+
+    // If the children is only a text node, consider its large to check if the
+    // template fits in one line
+    if (item.children && item.children.length > 0) {
+      onlyHasATextNode =
+        item.children.length === 1 && item.children[0].type === "text";
+
+      if (onlyHasATextNode) {
+        children = (item.children[0] as ComponentTemplateItemText).text;
+        childrenLength = children.length;
+      } else {
+        children =
+          nextLevelIndentation +
+          createTemplate(
+            item.children,
+            codeLanguage,
+            indentation + INDENTATION_SIZE
+          ) +
+          currentLevelIndentation;
+      }
+    }
+
     const bindingsFitsInTheSameLine =
       indentation +
         formattedTag.length * 2 +
@@ -105,19 +130,14 @@ const renderTemplate = {
         5 +
         renderedProperties.reduce((acc, prop) => acc + prop.length, 0) +
         // Spaces to separate each property
-        renderedProperties.length <=
+        renderedProperties.length +
+        childrenLength <=
       MAX_LINE_WIDTH_FOR_PRETTIER;
 
-    const children =
-      item.children && item.children.length > 0
-        ? nextLevelIndentation +
-          createTemplate(
-            item.children,
-            codeLanguage,
-            indentation + INDENTATION_SIZE
-          ) +
-          currentLevelIndentation
-        : "";
+    // Check if the indentation must be applied for the text node
+    if (!bindingsFitsInTheSameLine && onlyHasATextNode) {
+      children = nextLevelIndentation + children + currentLevelIndentation;
+    }
 
     return bindingsFitsInTheSameLine
       ? `<${formattedTag} ${renderedProperties.join(" ")}>${children}</${formattedTag}>`

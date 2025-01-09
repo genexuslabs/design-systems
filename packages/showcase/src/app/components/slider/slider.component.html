@@ -19,9 +19,9 @@
   <ch-slider class="slider" disabled></ch-slider>
 </code-snippet>
 
-@let rangeTemplateProperties = codeSnippets.range.template[0].properties;
+@let rangeTemplateProperties = codeSnippets.customRange.template[0].properties;
 
-<code-snippet [codeSnippet]="codeSnippets.range">
+<code-snippet [codeSnippet]="codeSnippets.customRange">
   <ch-slider
     class="slider"
     [minValue]="rangeTemplateProperties[0].value"

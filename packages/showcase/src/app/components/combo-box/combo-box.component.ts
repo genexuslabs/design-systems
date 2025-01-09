@@ -125,7 +125,7 @@ export class ComboBoxComponent {
     {
       value: "patterns",
       caption: "Patterns",
-      startImgSrc: "objects/patterns"
+      startImgSrc: "mer/objects/patterns"
     },
     {
       value: "procedure",

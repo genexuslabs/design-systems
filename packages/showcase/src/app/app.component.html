@@ -27,7 +27,7 @@
 
 <header class="app-header">
   @if (selectedBundle()) {
-    <p class="app-header__bundle">
+    <p class="app-header__bundle text-body-regular-m">
       Bundle:
 
       <button class="button-tertiary button-icon-and-text">
@@ -37,6 +37,7 @@
           class="icon-md"
           src="mer/system/copy/primary"
           [getImagePathCallback]="getImagePathCallback()"
+          type="mask"
         ></ch-image>
       </button>
     </p>

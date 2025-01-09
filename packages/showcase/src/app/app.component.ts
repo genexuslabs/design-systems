@@ -27,7 +27,6 @@ import {
   ThemeModel
 } from "@genexus/chameleon-controls-library";
 import { getImagePathCallback } from "@genexus/mercury";
-
 import { registryProperty } from "@genexus/chameleon-controls-library/dist/collection/index";
 import { getImagePathCallbackDefinitions } from "@genexus/mercury/assets-manager.js";
 

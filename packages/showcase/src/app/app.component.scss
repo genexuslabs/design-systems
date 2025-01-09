@@ -29,6 +29,8 @@ aside {
     --mer-surface__elevation--01,
     var(--sidebar__background-color)
   );
+  border: var(--mer-border__width--sm, 1px) solid
+    var(--mer-surface__elevation--02, var(--border-color__mild));
   border-radius: var(--mer-border__radius--sm, var(--border-radius--m));
   z-index: 1;
 
@@ -69,5 +71,7 @@ main {
 }
 
 ch-sidebar {
+  border: var(--mer-border__width--sm, 1px) solid
+    var(--mer-surface__elevation--02, var(--border-color__mild));
   border-radius: var(--mer-border__radius--sm, var(--border-radius--m));
 }

@@ -21,6 +21,24 @@ import {
   CodeTemplatesByLanguage
 } from "../../services/template-language/types";
 
+const codeLanguagesModel: TabModel = [
+  {
+    id: "Angular" satisfies CodeTemplateLanguages,
+    name: "Angular",
+    startImgSrc: "/angular.svg"
+  },
+  {
+    id: "React" satisfies CodeTemplateLanguages,
+    name: "React",
+    startImgSrc: "/react.svg"
+  },
+  {
+    id: "StencilJS" satisfies CodeTemplateLanguages,
+    name: "StencilJS",
+    startImgSrc: "/stencil-js.svg"
+  }
+];
+
 @Component({
   selector: "copy-code",
   templateUrl: "./copy-code.component.html",
@@ -38,11 +56,8 @@ export class CopyCodeComponent {
 
   getImagePathCallback = signal(getImagePathCallback);
 
-  languagesModel: TabModel = [
-    { id: "Angular" satisfies CodeTemplateLanguages, name: "Angular" },
-    { id: "React" satisfies CodeTemplateLanguages, name: "React" },
-    { id: "StencilJS" satisfies CodeTemplateLanguages, name: "StencilJS" }
-  ];
+  // Share the model reference across al ch-tab-render instances
+  languagesModel = codeLanguagesModel;
 
   handleCopyMarkup = () =>
     navigator.clipboard.writeText(

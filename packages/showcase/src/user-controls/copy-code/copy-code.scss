@@ -5,7 +5,7 @@ copy-code {
     border: var(--mer-border__width--sm, 1px) solid
       var(--mer-surface__elevation--03, var(--border-color__mild));
     border-radius: var(--mer-border__radius--sm);
-    min-block-size: 74px; // Necessary to avoid CLS on the initial load
+    min-block-size: 75px; // Necessary to avoid CLS on the initial load
 
     // TODO: There is a bug in the browser with content-visibility: hidden,
     // where hidden tab panel are displayed above the visible tab-panel
