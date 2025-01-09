@@ -10880,6 +10880,7 @@
 }
 
 %tree-view-item__header {
+  min-inline-size: var(--tree-view__min-inline-size);
   @include item-colors-enabled();
   @include item-border-radius();
   @include item-border();
