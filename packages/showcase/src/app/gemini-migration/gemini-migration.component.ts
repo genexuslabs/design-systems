@@ -9,22 +9,30 @@ import {
   signal
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import type { ChCheckboxCustomEvent } from "@genexus/chameleon-controls-library";
 
 import { geminiMigrationMetadata } from "./metadata";
+import { RouterCommonLinksService } from "../../services/router-links.service";
 import { CodeSnippetComponent } from "../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../user-controls/runtime-bundles/runtime-bundles.component";
 
 @Component({
   selector: "components-gemini-migration",
   templateUrl: "./gemini-migration.component.html",
+  styleUrl: "./gemini-migration.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: "main-content" },
-  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
+  imports: [
+    CommonModule,
+    CodeSnippetComponent,
+    RouterLink,
+    RuntimeBundlesComponent
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GeminiMigrationComponent {
+  commonLinks = inject(RouterCommonLinksService);
   router = inject(Router);
 
   metadata = geminiMigrationMetadata;

@@ -9,5 +9,8 @@ export class RouterCommonLinksService {
   componentsLabel = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.LABEL}`
   );
+  componentsIcon = computed(
+    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.ICON}`
+  );
   utilsForm = computed(() => `/${this.dsService.designSystem()}/utils/form`);
 }

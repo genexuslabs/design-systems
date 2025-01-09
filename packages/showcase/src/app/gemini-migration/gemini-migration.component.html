@@ -32,7 +32,7 @@
       When transitioning from a <code>gxg-button</code> that is "only text":
     </p>
 
-    <ol class="text-body-regular-s">
+    <ol class="text-body-regular-s gemini-migration-list">
       <li>
         Replace the <code>gxg-button</code> tag with a <code>button</code> tag.
       </li>
@@ -52,18 +52,24 @@
     [languageAfter]="'ts'"
   >
     <p class="text-body-regular-s">
-      When transitioning from a <code>gxg-button</code> that is "only text":
+      When transitioning from a <code>gxg-button</code> that is "text with
+      icon":
     </p>
 
-    <ol class="text-body-regular-s">
+    <ol class="text-body-regular-s gemini-migration-list">
       <li>
         Replace the <code>gxg-button</code> tag with a <code>button</code> tag.
       </li>
 
       <li>Remove all the attributes and values</li>
 
+      <li>Add the <code>button-icon-and-text</code> class.</li>
+
       <li>
-        Add any of the mercury classes that apply for "text only" button types
+        Insert a <code>ch-image</code> inside the <code>button</code> and
+        <a class="hyperlink" [routerLink]="commonLinks.componentsIcon()"
+          >follow the documentation for using an icon</a
+        >
       </li>
     </ol>
   </code-snippet>

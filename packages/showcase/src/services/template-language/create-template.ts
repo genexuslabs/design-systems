@@ -172,12 +172,13 @@ const wrapperForImportsAndVariables = {
 ${renderedImports ? renderedImports + "\n" : ""} 
 @Component({
   selector: "my-custom-dialog",
-  styleUrl: "./my-custom-dialog.scss",
+  styleUrl: "./custom-dialog.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   template: \`
     ${renderedTemplate}\`
-}) {${renderedVariables ? "\n  " + renderedVariables + "\n" : ""}}`,
+})
+export class MyCustomDialogComponent {${renderedVariables ? "\n  " + renderedVariables + "\n" : ""}}`,
 
   React: (
     renderedImports: string,

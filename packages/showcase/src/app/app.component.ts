@@ -26,9 +26,11 @@ import {
   SegmentedControlModel,
   ThemeModel
 } from "@genexus/chameleon-controls-library";
-import { getImagePathCallback } from "@genexus/mercury";
 import { registryProperty } from "@genexus/chameleon-controls-library/dist/collection/index";
-import { getImagePathCallbackDefinitions } from "@genexus/mercury/assets-manager.js";
+import {
+  getImagePathCallback,
+  getImagePathCallbackDefinitions
+} from "@genexus/mercury/assets-manager.js";
 
 import { RuntimeBundlesComponent } from "../user-controls/runtime-bundles/runtime-bundles.component";
 import { getNavigationListRoutes } from "./app.routes";
@@ -48,7 +50,7 @@ const FRAGMENT_QUERY_PARAMS_URL = /(#.*|\?.*)/;
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrl: "./app.component.scss",
+  styleUrl: "./app.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterOutlet, RuntimeBundlesComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -66,7 +68,8 @@ export class AppComponent {
   dsService = inject(DesignSystemService);
   seoService = inject(SEOService);
 
-  getImagePathCallback = signal(getImagePathCallback);
+  // TODO: This is a WA, since the Chameleon's register does not for some reason
+  getImagePathCallback = getImagePathCallback;
 
   colorSchemeModel = signal<SegmentedControlModel>([
     { id: "dark", caption: "Dark" },

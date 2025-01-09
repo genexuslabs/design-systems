@@ -39,11 +39,26 @@ export const buttonMetadata = {
     buttonPrimaryIconAndText: {
       linkId: "button-primary-icon-and-text",
       title: "1.4. Icon and Text",
+      imports: ['import { getIconPath } from "@genexus/mercury";'],
+      variables: [
+        {
+          name: "ICON",
+          value:
+            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+        }
+      ],
       template: {
         tag: "button",
         class: "button-primary button-icon-and-text",
         children: [
-          { tag: "ch-image", class: "icon-sm" },
+          {
+            tag: "ch-image",
+            class: "icon-sm",
+            properties: [
+              { name: "src", value: "ICON", variable: true },
+              { name: "type", value: "mask" }
+            ]
+          },
           { type: "text", text: "Caption" }
         ]
       }
