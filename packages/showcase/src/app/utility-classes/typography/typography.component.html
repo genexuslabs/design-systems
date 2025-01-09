@@ -1,64 +1,92 @@
-<runtime-bundles [bundles]="['utils/typography']" />
+<runtime-bundles [bundles]="['utils/typography', 'components/checkbox']" />
 
 <header>
   <h1 class="heading-1">{{ metadata.title }}</h1>
 </header>
 
-<section aria-labelledby="headings">
-  <h2 id="headings" class="heading-2">
-    <a routerLink="." fragment="headings">1. Headings</a>
-  </h2>
+<ol class="filters elevation-1">
+  @for (
+    typographyEntry of this.typographies().entries();
+    track typographyEntry[0]
+  ) {
+    @let typographyName = typographyEntry[0];
 
-  <p class="text-body-regular-l">
-    Using HTML headings provides structure and clarity to your web content,
-    enhancing both accessibility and SEO. The h1 tag should be used only once
-    per page as the main title, representing the primary topic.
-  </p>
+    <li class="filters-checkbox">
+      <ch-checkbox
+        [caption]="typographyName"
+        class="checkbox"
+        [checkedValue]="'true'"
+        [value]="typographyEntry[1].toString()"
+        [unCheckedValue]="'false'"
+        (input)="updateRenderedTypography(typographyName)($event)"
+      ></ch-checkbox>
+    </li>
+  }
+</ol>
 
-  <blockquote class="blockquote-info">
-    <b>Important:</b> Subsequent headings (h2, h3, etc.) should follow a
-    cascading order: h2 under h1, h3 under h2, and so on. Skipping levels, like
-    using h4 before h3, disrupts this flow and can confuse users and search
-    engines. Proper heading use ensures clear, organized content, improving user
-    experience.
-  </blockquote>
+@if (this.typographies().get("Headings")) {
+  <section aria-labelledby="headings">
+    <h2 id="headings" class="heading-2">
+      <a routerLink="." fragment="headings">1. Headings</a>
+    </h2>
 
-  <code-snippet [codeSnippet]="codeSnippets.heading1" [headingLevel]="3">
-    <h4 class="heading-1">
-      GeneXus: Shaping Tomorrow's Technology Landscape with Innovative Solutions
-    </h4>
-  </code-snippet>
+    <p class="text-body-regular-l">
+      Using HTML headings provides structure and clarity to your web content,
+      enhancing both accessibility and SEO. The h1 tag should be used only once
+      per page as the main title, representing the primary topic.
+    </p>
 
-  <code-snippet [codeSnippet]="codeSnippets.heading2" [headingLevel]="3">
-    <h4 class="heading-2">
-      GeneXus: Shaping Tomorrow's Technology Landscape with Innovative Solutions
-    </h4>
-  </code-snippet>
+    <blockquote class="blockquote-info">
+      <b>Important:</b> Subsequent headings (h2, h3, etc.) should follow a
+      cascading order: h2 under h1, h3 under h2, and so on. Skipping levels,
+      like using h4 before h3, disrupts this flow and can confuse users and
+      search engines. Proper heading use ensures clear, organized content,
+      improving user experience.
+    </blockquote>
 
-  <code-snippet [codeSnippet]="codeSnippets.heading3" [headingLevel]="3">
-    <h4 class="heading-3">
-      GeneXus: Shaping Tomorrow's Technology Landscape with Innovative Solutions
-    </h4>
-  </code-snippet>
+    <code-snippet [codeSnippet]="codeSnippets.heading1" [headingLevel]="3">
+      <h4 class="heading-1">
+        GeneXus: Shaping Tomorrow's Technology Landscape with Innovative
+        Solutions
+      </h4>
+    </code-snippet>
 
-  <code-snippet [codeSnippet]="codeSnippets.heading4" [headingLevel]="3">
-    <h4 class="heading-4">
-      GeneXus: Shaping Tomorrow's Technology Landscape with Innovative Solutions
-    </h4>
-  </code-snippet>
+    <code-snippet [codeSnippet]="codeSnippets.heading2" [headingLevel]="3">
+      <h4 class="heading-2">
+        GeneXus: Shaping Tomorrow's Technology Landscape with Innovative
+        Solutions
+      </h4>
+    </code-snippet>
 
-  <code-snippet [codeSnippet]="codeSnippets.heading5" [headingLevel]="3">
-    <h4 class="heading-5">
-      GeneXus: Shaping Tomorrow's Technology Landscape with Innovative Solutions
-    </h4>
-  </code-snippet>
+    <code-snippet [codeSnippet]="codeSnippets.heading3" [headingLevel]="3">
+      <h4 class="heading-3">
+        GeneXus: Shaping Tomorrow's Technology Landscape with Innovative
+        Solutions
+      </h4>
+    </code-snippet>
 
-  <code-snippet [codeSnippet]="codeSnippets.heading6" [headingLevel]="3">
-    <h4 class="heading-6">
-      GeneXus: Shaping Tomorrow's Technology Landscape with Innovative Solutions
-    </h4>
-  </code-snippet>
-</section>
+    <code-snippet [codeSnippet]="codeSnippets.heading4" [headingLevel]="3">
+      <h4 class="heading-4">
+        GeneXus: Shaping Tomorrow's Technology Landscape with Innovative
+        Solutions
+      </h4>
+    </code-snippet>
+
+    <code-snippet [codeSnippet]="codeSnippets.heading5" [headingLevel]="3">
+      <h4 class="heading-5">
+        GeneXus: Shaping Tomorrow's Technology Landscape with Innovative
+        Solutions
+      </h4>
+    </code-snippet>
+
+    <code-snippet [codeSnippet]="codeSnippets.heading6" [headingLevel]="3">
+      <h4 class="heading-6">
+        GeneXus: Shaping Tomorrow's Technology Landscape with Innovative
+        Solutions
+      </h4>
+    </code-snippet>
+  </section>
+}
 
 <section aria-labelledby="heading-colors">
   <h2 id="heading-colors" class="heading-2">
@@ -68,161 +96,169 @@
   TODO
 </section>
 
-<section aria-labelledby="text-body">
-  <h2 id="text-body" class="heading-2">
-    <a routerLink="." fragment="text-body">3. Text body</a>
-  </h2>
+@if (this.showTextBody()) {
+  <section aria-labelledby="text-body">
+    <h2 id="text-body" class="heading-2">
+      <a routerLink="." fragment="text-body">3. Text body</a>
+    </h2>
 
-  <p class="text-body-regular-l">
-    In web development, body text is essential for delivering content to users.
-    Properly structured and organized text ensures readability and
-    accessibility, enhancing the user experience by making information easy to
-    navigate and understand. Clear, well-written text also improves SEO by
-    providing search engines with easily indexable content, helping your website
-    rank higher in search results.
-  </p>
-
-  <code-snippet
-    [codeSnippet]="codeSnippets.textBodyRegularLarge"
-    [headingLevel]="3"
-  >
     <p class="text-body-regular-l">
-      GeneXus is a development platform that automates application creation
-      using a model-driven approach. It allows developers to focus on high-level
-      design, generating code for web, mobile, and desktop applications,
-      resulting in faster development cycles and fewer errors.
+      In web development, body text is essential for delivering content to
+      users. Properly structured and organized text ensures readability and
+      accessibility, enhancing the user experience by making information easy to
+      navigate and understand. Clear, well-written text also improves SEO by
+      providing search engines with easily indexable content, helping your
+      website rank higher in search results.
     </p>
-  </code-snippet>
 
-  <code-snippet
-    [codeSnippet]="codeSnippets.textBodyRegularMedium"
-    [headingLevel]="3"
-  >
-    <p class="text-body-regular-m">
-      GeneXus is a development platform that automates application creation
-      using a model-driven approach. It allows developers to focus on high-level
-      design, generating code for web, mobile, and desktop applications,
-      resulting in faster development cycles and fewer errors.
-    </p>
-  </code-snippet>
+    @if (this.showTextBodyRegular()) {
+      <code-snippet
+        [codeSnippet]="codeSnippets.textBodyRegularLarge"
+        [headingLevel]="3"
+      >
+        <p class="text-body-regular-l">
+          GeneXus is a development platform that automates application creation
+          using a model-driven approach. It allows developers to focus on
+          high-level design, generating code for web, mobile, and desktop
+          applications, resulting in faster development cycles and fewer errors.
+        </p>
+      </code-snippet>
 
-  <code-snippet
-    [codeSnippet]="codeSnippets.textBodyRegularSmall"
-    [headingLevel]="3"
-  >
-    <p class="text-body-regular-s">
-      GeneXus is a development platform that automates application creation
-      using a model-driven approach. It allows developers to focus on high-level
-      design, generating code for web, mobile, and desktop applications,
-      resulting in faster development cycles and fewer errors.
-    </p>
-  </code-snippet>
+      <code-snippet
+        [codeSnippet]="codeSnippets.textBodyRegularMedium"
+        [headingLevel]="3"
+      >
+        <p class="text-body-regular-m">
+          GeneXus is a development platform that automates application creation
+          using a model-driven approach. It allows developers to focus on
+          high-level design, generating code for web, mobile, and desktop
+          applications, resulting in faster development cycles and fewer errors.
+        </p>
+      </code-snippet>
 
-  <code-snippet
-    [codeSnippet]="codeSnippets.textBodyRegularExtraSmall"
-    [headingLevel]="3"
-  >
-    <p class="text-body-regular-xs">
-      GeneXus is a development platform that automates application creation
-      using a model-driven approach. It allows developers to focus on high-level
-      design, generating code for web, mobile, and desktop applications,
-      resulting in faster development cycles and fewer errors.
-    </p>
-  </code-snippet>
+      <code-snippet
+        [codeSnippet]="codeSnippets.textBodyRegularSmall"
+        [headingLevel]="3"
+      >
+        <p class="text-body-regular-s">
+          GeneXus is a development platform that automates application creation
+          using a model-driven approach. It allows developers to focus on
+          high-level design, generating code for web, mobile, and desktop
+          applications, resulting in faster development cycles and fewer errors.
+        </p>
+      </code-snippet>
 
-  <code-snippet
-    [codeSnippet]="codeSnippets.textBodyHighlightedLarge"
-    [headingLevel]="3"
-  >
-    <p class="text-body-highlighted-l">
-      GeneXus is a development platform that automates application creation
-      using a model-driven approach. It allows developers to focus on high-level
-      design, generating code for web, mobile, and desktop applications,
-      resulting in faster development cycles and fewer errors.
-    </p>
-  </code-snippet>
+      <code-snippet
+        [codeSnippet]="codeSnippets.textBodyRegularExtraSmall"
+        [headingLevel]="3"
+      >
+        <p class="text-body-regular-xs">
+          GeneXus is a development platform that automates application creation
+          using a model-driven approach. It allows developers to focus on
+          high-level design, generating code for web, mobile, and desktop
+          applications, resulting in faster development cycles and fewer errors.
+        </p>
+      </code-snippet>
+    }
 
-  <code-snippet
-    [codeSnippet]="codeSnippets.textBodyHighlightedMedium"
-    [headingLevel]="3"
-  >
-    <p class="text-body-highlighted-m">
-      GeneXus is a development platform that automates application creation
-      using a model-driven approach. It allows developers to focus on high-level
-      design, generating code for web, mobile, and desktop applications,
-      resulting in faster development cycles and fewer errors.
-    </p>
-  </code-snippet>
+    @if (this.showTextBodyHighlighted()) {
+      <code-snippet
+        [codeSnippet]="codeSnippets.textBodyHighlightedLarge"
+        [headingLevel]="3"
+      >
+        <p class="text-body-highlighted-l">
+          GeneXus is a development platform that automates application creation
+          using a model-driven approach. It allows developers to focus on
+          high-level design, generating code for web, mobile, and desktop
+          applications, resulting in faster development cycles and fewer errors.
+        </p>
+      </code-snippet>
 
-  <code-snippet
-    [codeSnippet]="codeSnippets.textBodyHighlightedSmall"
-    [headingLevel]="3"
-  >
-    <p class="text-body-highlighted-s">
-      GeneXus is a development platform that automates application creation
-      using a model-driven approach. It allows developers to focus on high-level
-      design, generating code for web, mobile, and desktop applications,
-      resulting in faster development cycles and fewer errors.
-    </p>
-  </code-snippet>
+      <code-snippet
+        [codeSnippet]="codeSnippets.textBodyHighlightedMedium"
+        [headingLevel]="3"
+      >
+        <p class="text-body-highlighted-m">
+          GeneXus is a development platform that automates application creation
+          using a model-driven approach. It allows developers to focus on
+          high-level design, generating code for web, mobile, and desktop
+          applications, resulting in faster development cycles and fewer errors.
+        </p>
+      </code-snippet>
 
-  <code-snippet
-    [codeSnippet]="codeSnippets.textBodyHighlightedExtraSmall"
-    [headingLevel]="3"
-  >
-    <p class="text-body-highlighted-xs">
-      GeneXus is a development platform that automates application creation
-      using a model-driven approach. It allows developers to focus on high-level
-      design, generating code for web, mobile, and desktop applications,
-      resulting in faster development cycles and fewer errors.
-    </p>
-  </code-snippet>
+      <code-snippet
+        [codeSnippet]="codeSnippets.textBodyHighlightedSmall"
+        [headingLevel]="3"
+      >
+        <p class="text-body-highlighted-s">
+          GeneXus is a development platform that automates application creation
+          using a model-driven approach. It allows developers to focus on
+          high-level design, generating code for web, mobile, and desktop
+          applications, resulting in faster development cycles and fewer errors.
+        </p>
+      </code-snippet>
 
-  <code-snippet
-    [codeSnippet]="codeSnippets.textBodyItalicLarge"
-    [headingLevel]="3"
-  >
-    <p class="text-body-italic-l">
-      GeneXus is a development platform that automates application creation
-      using a model-driven approach. It allows developers to focus on high-level
-      design, generating code for web, mobile, and desktop applications,
-      resulting in faster development cycles and fewer errors.
-    </p>
-  </code-snippet>
+      <code-snippet
+        [codeSnippet]="codeSnippets.textBodyHighlightedExtraSmall"
+        [headingLevel]="3"
+      >
+        <p class="text-body-highlighted-xs">
+          GeneXus is a development platform that automates application creation
+          using a model-driven approach. It allows developers to focus on
+          high-level design, generating code for web, mobile, and desktop
+          applications, resulting in faster development cycles and fewer errors.
+        </p>
+      </code-snippet>
+    }
 
-  <code-snippet
-    [codeSnippet]="codeSnippets.textBodyItalicMedium"
-    [headingLevel]="3"
-  >
-    <p class="text-body-italic-m">
-      GeneXus is a development platform that automates application creation
-      using a model-driven approach. It allows developers to focus on high-level
-      design, generating code for web, mobile, and desktop applications,
-      resulting in faster development cycles and fewer errors.
-    </p>
-  </code-snippet>
+    @if (this.showTextBodyItalic()) {
+      <code-snippet
+        [codeSnippet]="codeSnippets.textBodyItalicLarge"
+        [headingLevel]="3"
+      >
+        <p class="text-body-italic-l">
+          GeneXus is a development platform that automates application creation
+          using a model-driven approach. It allows developers to focus on
+          high-level design, generating code for web, mobile, and desktop
+          applications, resulting in faster development cycles and fewer errors.
+        </p>
+      </code-snippet>
 
-  <code-snippet
-    [codeSnippet]="codeSnippets.textBodyItalicSmall"
-    [headingLevel]="3"
-  >
-    <p class="text-body-italic-s">
-      GeneXus is a development platform that automates application creation
-      using a model-driven approach. It allows developers to focus on high-level
-      design, generating code for web, mobile, and desktop applications,
-      resulting in faster development cycles and fewer errors.
-    </p>
-  </code-snippet>
+      <code-snippet
+        [codeSnippet]="codeSnippets.textBodyItalicMedium"
+        [headingLevel]="3"
+      >
+        <p class="text-body-italic-m">
+          GeneXus is a development platform that automates application creation
+          using a model-driven approach. It allows developers to focus on
+          high-level design, generating code for web, mobile, and desktop
+          applications, resulting in faster development cycles and fewer errors.
+        </p>
+      </code-snippet>
 
-  <code-snippet
-    [codeSnippet]="codeSnippets.textBodyItalicExtraSmall"
-    [headingLevel]="3"
-  >
-    <p class="text-body-italic-xs">
-      GeneXus is a development platform that automates application creation
-      using a model-driven approach. It allows developers to focus on high-level
-      design, generating code for web, mobile, and desktop applications,
-      resulting in faster development cycles and fewer errors.
-    </p>
-  </code-snippet>
-</section>
+      <code-snippet
+        [codeSnippet]="codeSnippets.textBodyItalicSmall"
+        [headingLevel]="3"
+      >
+        <p class="text-body-italic-s">
+          GeneXus is a development platform that automates application creation
+          using a model-driven approach. It allows developers to focus on
+          high-level design, generating code for web, mobile, and desktop
+          applications, resulting in faster development cycles and fewer errors.
+        </p>
+      </code-snippet>
+
+      <code-snippet
+        [codeSnippet]="codeSnippets.textBodyItalicExtraSmall"
+        [headingLevel]="3"
+      >
+        <p class="text-body-italic-xs">
+          GeneXus is a development platform that automates application creation
+          using a model-driven approach. It allows developers to focus on
+          high-level design, generating code for web, mobile, and desktop
+          applications, resulting in faster development cycles and fewer errors.
+        </p>
+      </code-snippet>
+    }
+  </section>
+}

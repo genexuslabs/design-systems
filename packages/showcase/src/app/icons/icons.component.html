@@ -1,17 +1,17 @@
-<h1 class="heading-1">Icons</h1>
+<header>
+  <h1 class="heading-1">Icons</h1>
+</header>
 
-<runtime-bundles
-  [bundles]="['components/checkbox', 'components/edit', 'utils/elevation']"
-/>
+<runtime-bundles [bundles]="['components/checkbox', 'components/edit']" />
 
-<ol class="categories-filter elevation-1">
+<ol class="filters elevation-1">
   @for (
     categoryEntry of this.categoriesToRender().entries();
     track categoryEntry[0]
   ) {
     @let categoryName = categoryEntry[0];
 
-    <li class="category-checkbox">
+    <li class="filters-checkbox">
       <ch-checkbox
         [caption]="categoryName"
         class="checkbox"

@@ -30,6 +30,23 @@
   }
 }
 
+.filters {
+  display: grid;
+  gap: var(--mer-spacing--xs, var(--spacing--m));
+  position: fixed;
+  inset-block-start: 60px;
+  inset-inline-end: var(--mer-spacing--md);
+  padding: var(--mer-spacing--md);
+  margin: 0;
+  border: 1px solid var(--mer-border-color__on-elevation--01);
+  border-radius: var(--mer-border__radius--sm);
+  z-index: 1;
+}
+
+.filters-checkbox {
+  display: contents;
+}
+
 // Useful to download the styles before the first paint, avoiding CLS
 .tree-view-snippet {
   block-size: 300px;

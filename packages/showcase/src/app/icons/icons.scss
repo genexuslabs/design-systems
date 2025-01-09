@@ -33,23 +33,6 @@ icons {
       background: no-repeat center / 100% var(--icon-path);
     }
   }
-
-  .categories-filter {
-    display: grid;
-    gap: var(--mer-spacing--xs, var(--spacing--m));
-    position: fixed;
-    inset-block-start: 60px;
-    inset-inline-end: var(--mer-spacing--md);
-    padding: var(--mer-spacing--md);
-    margin: 0;
-    border: 1px solid var(--mer-border-color__on-elevation--01);
-    border-radius: var(--mer-border__radius--sm);
-    z-index: 1;
-  }
-
-  .category-checkbox {
-    display: contents;
-  }
 }
 
 .section-icons {
