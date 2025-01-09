@@ -35,11 +35,12 @@
   gap: var(--mer-spacing--xs, var(--spacing--m));
   position: fixed;
   inset-block-start: 60px;
-  inset-inline-end: var(--mer-spacing--md);
-  padding: var(--mer-spacing--md);
+  inset-inline-end: var(--mer-spacing--xs, var(--spacing--m));
+  padding: var(--mer-spacing--md, var(--spacing--l));
   margin: 0;
-  border: 1px solid var(--mer-border-color__on-elevation--01);
-  border-radius: var(--mer-border__radius--sm);
+  border: 1px solid
+    var(--mer-border-color__on-elevation--01, var(--border-color__mild));
+  border-radius: var(--mer-border__radius--sm, var(--border-radius--m));
   z-index: 1;
 }
 
