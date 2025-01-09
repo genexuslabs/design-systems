@@ -3,69 +3,71 @@ import {
   NavigationListItemModel,
   NavigationListModel
 } from "@genexus/chameleon-controls-library";
+import { COMPONENT_ROUTES, URL_MAPPING } from "./bundles-and-url-mapping";
 
 const childRoutes: Routes = [
   {
-    path: "components/accordion",
+    // substring(1) removes the initial "/"
+    path: COMPONENT_ROUTES.ACCORDION.substring(1),
     loadComponent: () =>
       import("./components/accordion/accordion.component").then(
         m => m.AccordionComponent
       )
   },
   {
-    path: "components/button",
+    path: COMPONENT_ROUTES.BUTTON.substring(1),
     loadComponent: () =>
       import("./components/button/button.component").then(
         m => m.ButtonComponent
       )
   },
   {
-    path: "components/checkbox",
+    path: COMPONENT_ROUTES.CHECKBOX.substring(1),
     loadComponent: () =>
       import("./components/checkbox/checkbox.component").then(
         m => m.CheckboxComponent
       )
   },
   {
-    path: "components/combo-box",
+    path: COMPONENT_ROUTES.COMBO_BOX.substring(1),
     loadComponent: () =>
       import("./components/combo-box/combo-box.component").then(
         m => m.ComboBoxComponent
       )
   },
   {
-    path: "components/input",
+    path: COMPONENT_ROUTES.INPUT.substring(1),
     loadComponent: () =>
       import("./components/input/input.component").then(m => m.InputComponent)
   },
   {
-    path: "components/label",
+    path: COMPONENT_ROUTES.LABEL.substring(1),
     loadComponent: () =>
       import("./components/label/label.component").then(m => m.LabelComponent)
   },
   {
-    path: "components/radio-group",
+    path: COMPONENT_ROUTES.RADIO_GROUP.substring(1),
     loadComponent: () =>
       import("./components/radio-group/radio-group.component").then(
         m => m.RadioGroupComponent
       )
   },
   {
-    path: "components/search",
+    path: COMPONENT_ROUTES.SEARCH.substring(1),
     loadComponent: () =>
       import("./components/search/search.component").then(
         m => m.SearchComponent
       )
   },
   {
-    path: "components/slider",
+    path: COMPONENT_ROUTES.SLIDER.substring(1),
     loadComponent: () =>
       import("./components/slider/slider.component").then(
         m => m.SliderComponent
       )
   },
   {
-    path: "components/tree-view",
+    path: COMPONENT_ROUTES.TREE_VIEW.substring(1),
     loadComponent: () =>
       import("./components/tree-view/tree-view.component").then(
         m => m.TreeViewComponent
@@ -188,26 +190,9 @@ export const getNavigationListRoutes = (ds: "mercury" | "unanimo") =>
     {
       caption: "Components",
       expanded: true,
-      items: [
-        getNavigationListItem("/components/accordion", "Accordion", ds),
-        getNavigationListItem("/components/button", "Button", ds),
-        getNavigationListItem("/components/checkbox", "Checkbox", ds),
-        getNavigationListItem("/components/combo-box", "Combo Box", ds),
-        getNavigationListItem("/components/dialog", "Dialog", ds),
-        getNavigationListItem("/components/input", "Input", ds),
-        getNavigationListItem("/components/label", "Label", ds),
-        getNavigationListItem("/components/list-box", "List Box", ds),
-        getNavigationListItem("/components/pills", "Pills", ds),
-        getNavigationListItem("/components/property-grid", "Property Grid", ds),
-        getNavigationListItem("/components/radio-group", "Radio Group", ds),
-        getNavigationListItem("/components/search", "Search", ds),
-        getNavigationListItem("/components/slider", "Slider", ds),
-        getNavigationListItem("/components/tab", "Tab", ds),
-        getNavigationListItem("/components/tabular-grid", "Tabular Grid", ds),
-        getNavigationListItem("/components/tooltip", "Tooltip", ds),
-        getNavigationListItem("/components/tree-view", "Tree View", ds),
-        getNavigationListItem("/components/widget", "Widget", ds)
-      ]
+      items: Object.values(COMPONENT_ROUTES).map(componentRoute =>
+        getNavigationListItem(componentRoute, URL_MAPPING[componentRoute], ds)
+      )
     },
     {
       caption: "Utility classes",

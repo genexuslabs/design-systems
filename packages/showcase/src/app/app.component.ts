@@ -33,7 +33,7 @@ import { getImagePathCallbackDefinitions } from "@genexus/mercury/assets-manager
 import { RuntimeBundlesComponent } from "../user-controls/runtime-bundles/runtime-bundles.component";
 import { getNavigationListRoutes } from "./app.routes";
 import { ColorScheme, DesignSystem } from "../common/types";
-import { bundleMapping, urlMapping } from "./bundles-and-url-mapping";
+import { bundleMapping, URL_MAPPING } from "./bundles-and-url-mapping";
 
 import { ColorSchemeService } from "../services/color-scheme.service";
 import {
@@ -112,7 +112,7 @@ export class AppComponent {
         }
 
         this.seoService.updateTitle(
-          urlMapping[componentName as keyof typeof urlMapping]
+          URL_MAPPING[componentName as keyof typeof URL_MAPPING]
         );
       }
     });

@@ -62,3 +62,8 @@ ch-code {
   color: var(--mer-color__neutral-gray--300);
   font-size: var(--mer-font__size--2xs);
 }
+
+.hyperlink {
+  color: var(--mer-accent__primary, var(--text__primary));
+  text-decoration: underline;
+}

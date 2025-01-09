@@ -1,24 +1,34 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  CUSTOM_ELEMENTS_SCHEMA
+  CUSTOM_ELEMENTS_SCHEMA,
+  inject
 } from "@angular/core";
+import { RouterLink } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import type { ComboBoxModel } from "@genexus/chameleon-controls-library";
 
 import { comboBoxMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
+import { RouterCommonLinksService } from "../../../services/router-links.service";
 
 @Component({
   selector: "components-combo-box",
   templateUrl: "./combo-box.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
+  imports: [
+    CommonModule,
+    CodeSnippetComponent,
+    RuntimeBundlesComponent,
+    RouterLink
+  ],
   host: { class: "main-content" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ComboBoxComponent {
+  commonLinks = inject(RouterCommonLinksService);
+
   metadata = comboBoxMetadata;
   codeSnippets = comboBoxMetadata.codeSnippets;
 
