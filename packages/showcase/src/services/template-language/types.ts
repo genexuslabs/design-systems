@@ -1,8 +1,12 @@
 export type CodeTemplateLanguages = "Angular" | "React" | "StencilJS";
 
+export type CodeTemplateVariables = { name: string; value: string }[];
+
 export type CodeTemplatesByLanguage = Record<CodeTemplateLanguages, string>;
 
-export type ComponentTemplateModel = ComponentTemplateItem[];
+export type ComponentTemplateModel =
+  | ComponentTemplateItem
+  | ComponentTemplateItem[];
 
 export type ComponentTemplateItem =
   | ComponentTemplateItemNode

@@ -27,6 +27,11 @@ export const UTILITY_CLASSES_ROUTES = {
   TYPOGRAPHY: "/utility-classes/typography"
 } as const;
 
+export const STANDALONE_ROUTES = {
+  ICONS: "/icons",
+  GEMINI_MIGRATION: "/gemini-migration"
+} as const;
+
 export const bundleMapping = {
   [COMPONENTS_ROUTES.ACCORDION]: "components/accordion",
   [COMPONENTS_ROUTES.BUTTON]: "components/button",
@@ -78,6 +83,9 @@ export const URL_MAPPING = {
   [UTILITY_CLASSES_ROUTES.LAYOUT]: "Layout",
   [UTILITY_CLASSES_ROUTES.SPACING]: "Spacing",
   [UTILITY_CLASSES_ROUTES.TYPOGRAPHY]: "Typography",
-  "/icons": "Icons",
+
+  [STANDALONE_ROUTES.ICONS]: "Icons",
+  [STANDALONE_ROUTES.GEMINI_MIGRATION]: "Gemini Migration",
+
   "/chameleon-compatibility": "Chameleon Compatibility"
 } as const;

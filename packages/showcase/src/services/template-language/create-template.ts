@@ -1,6 +1,7 @@
 import {
   CodeTemplateLanguages,
   CodeTemplatesByLanguage,
+  CodeTemplateVariables,
   ComponentTemplateItemNode,
   ComponentTemplateItemNodeProperty,
   ComponentTemplateItemText,
@@ -20,7 +21,8 @@ const camelCaseFromKebab = (inputString: string) =>
     .join("");
 
 const createTag = (tagName: string, codeLanguage: CodeTemplateLanguages) =>
-  codeLanguage === "React" && tagName.startsWith("ch-")
+  codeLanguage === "React" &&
+  (tagName.startsWith("ch-") || tagName.startsWith("gxg-"))
     ? camelCaseFromKebab(tagName)
     : tagName;
 
@@ -104,12 +106,21 @@ const renderTemplate = {
 
     // If the children is only a text node, consider its large to check if the
     // template fits in one line
-    if (item.children && item.children.length > 0) {
+
+    if (
+      item.children &&
+      (!Array.isArray(item.children) || item.children.length > 0)
+    ) {
+      const firstElement = Array.isArray(item.children)
+        ? item.children[0]
+        : item.children;
+
       onlyHasATextNode =
-        item.children.length === 1 && item.children[0].type === "text";
+        (!Array.isArray(item.children) || item.children.length === 1) &&
+        firstElement.type === "text";
 
       if (onlyHasATextNode) {
-        children = (item.children[0] as ComponentTemplateItemText).text;
+        children = (firstElement as ComponentTemplateItemText).text;
         childrenLength = children.length;
       } else {
         children =
@@ -148,25 +159,119 @@ const renderTemplate = {
 
 // satisfies Record<ComponentTemplateType, () => string>
 
+const wrapperForImportsAndVariables = {
+  Angular: (
+    renderedImports: string,
+    renderedVariables: string,
+    renderedTemplate: string
+  ) => `import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA
+} from "@angular/core";
+${renderedImports ? renderedImports + "\n" : ""} 
+@Component({
+  selector: "my-custom-dialog",
+  styleUrl: "./my-custom-dialog.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  template: \`
+    ${renderedTemplate}\`
+}) {${renderedVariables ? "\n  " + renderedVariables + "\n" : ""}}`,
+
+  React: (
+    renderedImports: string,
+    renderedVariables: string,
+    renderedTemplate: string
+  ) => `${renderedImports ? renderedImports + "\n\n" : ""}${renderedVariables ? renderedVariables + "\n\n" : ""}const MyCustomDialog = () => {
+  return (
+    <>
+      ${renderedTemplate}
+    </>
+  );
+}
+
+export default MyCustomDialog;`,
+
+  StencilJS: (
+    renderedImports: string,
+    renderedVariables: string,
+    renderedTemplate: string
+  ) =>
+    `import { Component, Host } from "@stencil/core";${renderedImports ? "\n" + renderedImports : ""}${renderedVariables ? "\n\n" + renderedVariables : ""}
+
+@Component({
+  shadow: true,
+  styleUrl: "my-custom-dialog.scss",
+  tag: "my-custom-dialog"
+})
+export class MyCustomDialog {
+  render() {
+    return (
+      <Host>
+        ${renderedTemplate}
+      </Host>
+    );
+  }
+}`
+};
+
+const initialIndentation = {
+  Angular: 4,
+  React: 6,
+  StencilJS: 8
+};
+
 const createTemplate = (
   template: ComponentTemplateModel,
   codeLanguage: CodeTemplateLanguages,
-  indentation: number
-): string =>
-  template
-    .map(item =>
-      renderTemplate[item.type ?? "component"](
-        item as any,
+  indentation: number,
+  imports?: string[],
+  variables?: CodeTemplateVariables
+): string => {
+  const renderedImports = imports ? imports.join("\n") : "";
+  const renderedVariables = variables
+    ? variables
+        .map(entry => `const ${entry.name} = ${entry.value};`)
+        .join(codeLanguage === "Angular" ? "\n  " : "\n")
+    : "";
+
+  const actualIndentation =
+    renderedImports || renderedVariables
+      ? initialIndentation[codeLanguage]
+      : indentation;
+
+  const renderedTemplate = Array.isArray(template)
+    ? template
+        .map(item =>
+          renderTemplate[item.type ?? "component"](
+            item as any,
+            codeLanguage,
+            actualIndentation
+          )
+        )
+        .join("\n" + " ".repeat(actualIndentation))
+    : renderTemplate[template.type ?? "component"](
+        template as any,
         codeLanguage,
-        indentation
+        actualIndentation
+      );
+
+  return renderedImports || renderedVariables
+    ? wrapperForImportsAndVariables[codeLanguage](
+        renderedImports,
+        renderedVariables,
+        renderedTemplate
       )
-    )
-    .join("\n" + " ".repeat(indentation));
+    : renderedTemplate;
+};
 
 export const createTemplateForAllLanguages = (
-  template: ComponentTemplateModel
+  template: ComponentTemplateModel,
+  imports?: string[],
+  variables?: CodeTemplateVariables
 ): CodeTemplatesByLanguage => ({
-  Angular: createTemplate(template, "Angular", 0),
-  React: createTemplate(template, "React", 0),
-  StencilJS: createTemplate(template, "StencilJS", 0)
+  Angular: createTemplate(template, "Angular", 0, imports, variables),
+  React: createTemplate(template, "React", 0, imports, variables),
+  StencilJS: createTemplate(template, "StencilJS", 0, imports, variables)
 });

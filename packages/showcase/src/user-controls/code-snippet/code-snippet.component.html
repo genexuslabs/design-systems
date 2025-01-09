@@ -11,5 +11,24 @@
 
   <ng-content />
 
-  <copy-code [value]="codeTemplate()" [language]="language()"></copy-code>
+  @if (codeTemplate()) {
+    <copy-code [language]="language()" [value]="codeTemplate()!"></copy-code>
+  }
+
+  @if (codeTemplateBefore() && codeTemplateAfter()) {
+    <div class="code-snippet-before-and-after">
+      <copy-code
+        [copyButton]="false"
+        [label]="'BEFORE'"
+        [language]="languageBefore()"
+        [value]="codeTemplateBefore()!"
+      ></copy-code>
+
+      <copy-code
+        [language]="languageAfter()"
+        [label]="'AFTER'"
+        [value]="codeTemplateAfter()!"
+      ></copy-code>
+    </div>
+  }
 </section>

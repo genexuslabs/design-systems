@@ -10,24 +10,17 @@ export const radioGroupMetadata = {
     default: {
       linkId: "Horizontal",
       title: "1. Horizontal",
-      template: [
-        {
-          tag: "ch-radio-group-render",
-          class: COMPONENT_CLASS
-        }
-      ]
+      template: { tag: "ch-radio-group-render", class: COMPONENT_CLASS }
     },
 
     vertical: {
       linkId: "Vertical",
       title: "2. Vertical",
-      template: [
-        {
-          tag: "ch-radio-group-render",
-          class: COMPONENT_CLASS,
-          properties: [{ name: "direction", value: "vertical" }]
-        }
-      ]
+      template: {
+        tag: "ch-radio-group-render",
+        class: COMPONENT_CLASS,
+        properties: [{ name: "direction", value: "vertical" }]
+      }
     }
   }
 } as const satisfies ComponentMetadata;

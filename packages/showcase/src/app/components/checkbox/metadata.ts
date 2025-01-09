@@ -10,154 +10,140 @@ export const checkboxMetadata = {
     checked: {
       linkId: "checked",
       title: "1. Checked",
-      template: [
-        {
-          tag: "ch-checkbox",
-          class: COMPONENT_CLASS,
-          properties: [
-            { name: "caption", value: "The caption" },
-            { name: "checkedValue", value: "true" },
-            { name: "value", value: "true" }
-          ]
-        }
-      ]
+      template: {
+        tag: "ch-checkbox",
+        class: COMPONENT_CLASS,
+        properties: [
+          { name: "caption", value: "The caption" },
+          { name: "checkedValue", value: "true" },
+          { name: "value", value: "true" }
+        ]
+      }
     },
 
     unchecked: {
       linkId: "unchecked",
       title: "2. Unchecked",
-      template: [
-        {
-          tag: "ch-checkbox",
-          class: COMPONENT_CLASS,
-          properties: [
-            { name: "caption", value: "The caption" },
-            { name: "checkedValue", value: "true" }
-          ]
-        }
-      ]
+      template: {
+        tag: "ch-checkbox",
+        class: COMPONENT_CLASS,
+        properties: [
+          { name: "caption", value: "The caption" },
+          { name: "checkedValue", value: "true" }
+        ]
+      }
     },
 
     indeterminate: {
       linkId: "indeterminate",
       title: "3. Indeterminate",
-      template: [
-        {
-          tag: "ch-checkbox",
-          class: COMPONENT_CLASS,
-          properties: [
-            { name: "caption", value: "The caption" },
-            { name: "checkedValue", value: "true" },
-            { name: "indeterminate", value: true }
-          ]
-        }
-      ]
+      template: {
+        tag: "ch-checkbox",
+        class: COMPONENT_CLASS,
+        properties: [
+          { name: "caption", value: "The caption" },
+          { name: "checkedValue", value: "true" },
+          { name: "indeterminate", value: true }
+        ]
+      }
     },
 
     disabled: {
       linkId: "disabled",
       title: "4. Disabled",
-      template: [
-        {
-          tag: "ch-checkbox",
-          class: COMPONENT_CLASS,
-          properties: [
-            { name: "caption", value: "The caption" },
-            { name: "checkedValue", value: "true" },
-            { name: "disabled", value: true }
-          ]
-        }
-      ]
+      template: {
+        tag: "ch-checkbox",
+        class: COMPONENT_CLASS,
+        properties: [
+          { name: "caption", value: "The caption" },
+          { name: "checkedValue", value: "true" },
+          { name: "disabled", value: true }
+        ]
+      }
     },
 
     withIcon: {
       linkId: "with-icon",
       title: "5. With Icon",
-      template: [
-        {
-          tag: "ch-checkbox",
-          class: COMPONENT_CLASS,
-          properties: [
-            { name: "caption", value: "The caption" },
-            { name: "checkedValue", value: "true" },
-            { name: "startImgSrc", value: "ADD_CIRCLE_ICON", variable: true }
-          ]
-        }
-      ]
+      template: {
+        tag: "ch-checkbox",
+        class: COMPONENT_CLASS,
+        properties: [
+          { name: "caption", value: "The caption" },
+          { name: "checkedValue", value: "true" },
+          { name: "startImgSrc", value: "ADD_CIRCLE_ICON", variable: true }
+        ]
+      }
     },
 
     groupingCheckboxesBlock: {
       linkId: "grouping-checkboxes-block",
       title: "6. Grouping checkboxes: Block",
-      template: [
-        {
-          tag: "div",
-          class: "field-group",
-          children: [
-            {
-              tag: "ch-checkbox",
-              class: COMPONENT_CLASS,
-              properties: [
-                { name: "caption", value: "The caption 1" },
-                { name: "checkedValue", value: "true" }
-              ]
-            },
-            {
-              tag: "ch-checkbox",
-              class: COMPONENT_CLASS,
-              properties: [
-                { name: "caption", value: "The caption 2" },
-                { name: "checkedValue", value: "true" }
-              ]
-            },
-            {
-              tag: "ch-checkbox",
-              class: COMPONENT_CLASS,
-              properties: [
-                { name: "caption", value: "The caption 3" },
-                { name: "checkedValue", value: "true" }
-              ]
-            }
-          ]
-        }
-      ]
+      template: {
+        tag: "div",
+        class: "field-group",
+        children: [
+          {
+            tag: "ch-checkbox",
+            class: COMPONENT_CLASS,
+            properties: [
+              { name: "caption", value: "The caption 1" },
+              { name: "checkedValue", value: "true" }
+            ]
+          },
+          {
+            tag: "ch-checkbox",
+            class: COMPONENT_CLASS,
+            properties: [
+              { name: "caption", value: "The caption 2" },
+              { name: "checkedValue", value: "true" }
+            ]
+          },
+          {
+            tag: "ch-checkbox",
+            class: COMPONENT_CLASS,
+            properties: [
+              { name: "caption", value: "The caption 3" },
+              { name: "checkedValue", value: "true" }
+            ]
+          }
+        ]
+      }
     },
 
     groupingCheckboxesInline: {
       linkId: "grouping-checkboxes-inline",
       title: "7. Grouping checkboxes: Inline",
-      template: [
-        {
-          tag: "div",
-          class: "field-group-inline",
-          children: [
-            {
-              tag: "ch-checkbox",
-              class: COMPONENT_CLASS,
-              properties: [
-                { name: "caption", value: "The caption 1" },
-                { name: "checkedValue", value: "true" }
-              ]
-            },
-            {
-              tag: "ch-checkbox",
-              class: COMPONENT_CLASS,
-              properties: [
-                { name: "caption", value: "The caption 2" },
-                { name: "checkedValue", value: "true" }
-              ]
-            },
-            {
-              tag: "ch-checkbox",
-              class: COMPONENT_CLASS,
-              properties: [
-                { name: "caption", value: "The caption 3" },
-                { name: "checkedValue", value: "true" }
-              ]
-            }
-          ]
-        }
-      ]
+      template: {
+        tag: "div",
+        class: "field-group-inline",
+        children: [
+          {
+            tag: "ch-checkbox",
+            class: COMPONENT_CLASS,
+            properties: [
+              { name: "caption", value: "The caption 1" },
+              { name: "checkedValue", value: "true" }
+            ]
+          },
+          {
+            tag: "ch-checkbox",
+            class: COMPONENT_CLASS,
+            properties: [
+              { name: "caption", value: "The caption 2" },
+              { name: "checkedValue", value: "true" }
+            ]
+          },
+          {
+            tag: "ch-checkbox",
+            class: COMPONENT_CLASS,
+            properties: [
+              { name: "caption", value: "The caption 3" },
+              { name: "checkedValue", value: "true" }
+            ]
+          }
+        ]
+      }
     }
   }
 } as const satisfies ComponentMetadata;

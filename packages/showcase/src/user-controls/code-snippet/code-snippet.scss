@@ -6,3 +6,8 @@ code-snippet {
     margin-block-end: var(--mer-spacing--md, var(--spacing--l));
   }
 }
+
+.code-snippet-before-and-after {
+  display: grid;
+  grid-template-rows: max-content max-content;
+}

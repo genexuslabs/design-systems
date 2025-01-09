@@ -1,4 +1,7 @@
-import { ComponentTemplateModel } from "../services/template-language/types";
+import {
+  CodeTemplateVariables,
+  ComponentTemplateModel
+} from "../services/template-language/types";
 
 export type ColorScheme = "dark" | "light";
 
@@ -10,8 +13,31 @@ export type ComponentMetadata = {
   codeSnippets: Record<string, ComponentMetadataCodeSnippet>;
 };
 
+export type ComponentMetadataBeforeAfter = {
+  title: string;
+  description: string;
+  codeSnippets: Record<string, ComponentMetadataCodeSnippetBeforeAndAfter>;
+};
+
 export type ComponentMetadataCodeSnippet = {
   linkId: string;
   title: string;
+  imports?: string[];
+  variables?: CodeTemplateVariables;
   template: ComponentTemplateModel;
+};
+
+export type ComponentMetadataCodeSnippetBeforeAndAfter = {
+  linkId: string;
+  title: string;
+  before: {
+    imports?: string[];
+    variables?: CodeTemplateVariables;
+    template: ComponentTemplateModel;
+  };
+  after: {
+    imports?: string[];
+    variables?: CodeTemplateVariables;
+    template: ComponentTemplateModel;
+  };
 };

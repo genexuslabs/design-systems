@@ -10,93 +10,78 @@ export const comboBoxMetadata = {
     default: {
       linkId: "default",
       title: "1. Default",
-      template: [
-        {
-          tag: "div",
-          class: "field field-block",
-          children: [
-            {
-              tag: "label",
-              class: "label",
-              properties: [{ name: "for", value: "options" }],
-              children: [{ text: "Options", type: "text" }]
-            },
-            {
-              tag: "ch-combo-box-render",
-              class: COMPONENT_CLASS,
-              properties: [{ name: "id", value: "options" }]
-            }
-          ]
-        }
-      ]
+      template: {
+        tag: "div",
+        class: "field field-block",
+        children: [
+          {
+            tag: "label",
+            class: "label",
+            properties: [{ name: "for", value: "options" }],
+            children: { text: "Options", type: "text" }
+          },
+          {
+            tag: "ch-combo-box-render",
+            class: COMPONENT_CLASS,
+            properties: [{ name: "id", value: "options" }]
+          }
+        ]
+      }
     },
 
     noLabel: {
       linkId: "default",
       title: "2. No Label",
-      template: [
-        {
-          tag: "ch-combo-box-render",
-          class: COMPONENT_CLASS,
-          properties: [{ name: "accessibleName", value: "Options" }]
-        }
-      ]
+      template: {
+        tag: "ch-combo-box-render",
+        class: COMPONENT_CLASS,
+        properties: [{ name: "accessibleName", value: "Options" }]
+      }
     },
 
     disabled: {
       linkId: "disabled",
       title: "3. Disabled",
-      template: [
-        {
-          tag: "ch-combo-box-render",
-          class: COMPONENT_CLASS,
-          properties: [
-            { name: "accessibleName", value: "Options" },
-            { name: "disabled", value: true }
-          ]
-        }
-      ]
+      template: {
+        tag: "ch-combo-box-render",
+        class: COMPONENT_CLASS,
+        properties: [
+          { name: "accessibleName", value: "Options" },
+          { name: "disabled", value: true }
+        ]
+      }
     },
 
     placeholder: {
       linkId: "placeholder",
       title: "4. Placeholder",
-      template: [
-        {
-          tag: "ch-combo-box-render",
-          class: COMPONENT_CLASS,
-          properties: [
-            { name: "accessibleName", value: "Options" },
-            { name: "placeholder", value: "Select a value" }
-          ]
-        }
-      ]
+      template: {
+        tag: "ch-combo-box-render",
+        class: COMPONENT_CLASS,
+        properties: [
+          { name: "accessibleName", value: "Options" },
+          { name: "placeholder", value: "Select a value" }
+        ]
+      }
     },
 
     withIcons: {
       linkId: "with-icons",
       title: "5. With icons",
-      template: [
-        {
-          tag: "ch-combo-box-render",
-          class: COMPONENT_CLASS,
-          properties: [
-            { name: "accessibleName", value: "Objects" },
-            { name: "value", value: "patterns" }
-          ]
-        }
-      ]
+      template: {
+        tag: "ch-combo-box-render",
+        class: COMPONENT_CLASS,
+        properties: [
+          { name: "accessibleName", value: "Objects" },
+          { name: "value", value: "patterns" }
+        ]
+      }
     },
 
     errors: {
       linkId: "errors",
       title: "6. Error",
-      template: [
-        {
-          text: "TODO",
-          type: "text"
-        }
-      ]
+      template: { text: "TODO", type: "text" }
     }
   }
 } as const satisfies ComponentMetadata;

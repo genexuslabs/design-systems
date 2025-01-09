@@ -5,6 +5,7 @@ import {
 } from "@genexus/chameleon-controls-library";
 import {
   COMPONENTS_ROUTES,
+  STANDALONE_ROUTES,
   URL_MAPPING,
   UTILITY_CLASSES_ROUTES
 } from "./bundles-and-url-mapping";
@@ -132,9 +133,16 @@ export const routes: Routes = [
     children: [
       ...childRoutes,
       {
-        path: "icons",
+        path: STANDALONE_ROUTES.ICONS.substring(1),
         loadComponent: () =>
           import("./icons/icons.component").then(m => m.IconsComponent)
+      },
+      {
+        path: STANDALONE_ROUTES.GEMINI_MIGRATION.substring(1),
+        loadComponent: () =>
+          import("./gemini-migration/gemini-migration.component").then(
+            m => m.GeminiMigrationComponent
+          )
       }
     ]
   },
@@ -218,8 +226,16 @@ export const getNavigationListRoutes = (ds: "mercury" | "unanimo") =>
 
     ...(ds === "mercury"
       ? [
-          getNavigationListItem("/icons", "Icons", ds),
-          getNavigationListItem("/gemini-migration", "Gemini Migration", ds)
+          getNavigationListItem(
+            STANDALONE_ROUTES.ICONS,
+            URL_MAPPING[STANDALONE_ROUTES.ICONS],
+            ds
+          ),
+          getNavigationListItem(
+            STANDALONE_ROUTES.GEMINI_MIGRATION,
+            URL_MAPPING[STANDALONE_ROUTES.GEMINI_MIGRATION],
+            ds
+          )
         ]
       : [])
   ] satisfies NavigationListModel;

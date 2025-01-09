@@ -1,0 +1,70 @@
+<runtime-bundles [bundles]="['utils/typography', 'components/checkbox']" />
+
+<header>
+  <h1 class="heading-1">{{ metadata.title }}</h1>
+</header>
+
+<p class="text-body-regular-l">{{ metadata.description }}</p>
+
+<ol class="filters elevation-1">
+  @for (
+    migrationEntry of this.migrations().entries();
+    track migrationEntry[0]
+  ) {
+    @let migrationName = migrationEntry[0];
+
+    <li class="filters-checkbox">
+      <ch-checkbox
+        [caption]="migrationName"
+        class="checkbox"
+        [checkedValue]="'true'"
+        [value]="migrationEntry[1].toString()"
+        [unCheckedValue]="'false'"
+        (input)="updateRenderedMigration(migrationName)($event)"
+      ></ch-checkbox>
+    </li>
+  }
+</ol>
+
+@if (showGxgButtonTextOnly()) {
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgButtonTextOnly">
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-button</code> that is "only text":
+    </p>
+
+    <ol class="text-body-regular-s">
+      <li>
+        Replace the <code>gxg-button</code> tag with a <code>button</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values</li>
+
+      <li>
+        Add any of the mercury classes that apply for "text only" button types
+      </li>
+    </ol>
+  </code-snippet>
+}
+
+@if (showGxgButtonTextWithIcon()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgButtonTextWithIcon"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-button</code> that is "only text":
+    </p>
+
+    <ol class="text-body-regular-s">
+      <li>
+        Replace the <code>gxg-button</code> tag with a <code>button</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values</li>
+
+      <li>
+        Add any of the mercury classes that apply for "text only" button types
+      </li>
+    </ol>
+  </code-snippet>
+}

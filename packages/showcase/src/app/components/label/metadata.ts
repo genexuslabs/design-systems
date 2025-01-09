@@ -10,20 +10,18 @@ export const labelMetadata = {
     default: {
       linkId: "default",
       title: "1. Default",
-      template: [
-        {
-          tag: "label",
-          class: COMPONENT_CLASS,
-          properties: [{ name: "for", value: "element-1" }],
-          children: [{ text: "The label caption", type: "text" }]
-        }
-      ]
+      template: {
+        tag: "label",
+        class: COMPONENT_CLASS,
+        properties: [{ name: "for", value: "element-1" }],
+        children: { text: "The label caption", type: "text" }
+      }
     },
 
     disabled: {
       linkId: "disabled",
       title: "4. Disabled",
-      template: [{ text: "TODO", type: "text" }]
+      template: { text: "TODO", type: "text" }
     }
   }
 } as const satisfies ComponentMetadata;

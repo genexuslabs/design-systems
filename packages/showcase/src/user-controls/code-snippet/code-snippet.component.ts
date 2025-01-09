@@ -10,7 +10,10 @@ import {
 import { RouterLink, RouterModule } from "@angular/router";
 import { CopyCodeComponent } from "../copy-code/copy-code.component";
 import { createTemplateForAllLanguages } from "../../services/template-language/create-template";
-import { ComponentMetadataCodeSnippet } from "../../common/types";
+import {
+  ComponentMetadataCodeSnippet,
+  ComponentMetadataCodeSnippetBeforeAndAfter
+} from "../../common/types";
 
 @Component({
   selector: "code-snippet",
@@ -23,15 +26,55 @@ import { ComponentMetadataCodeSnippet } from "../../common/types";
   encapsulation: ViewEncapsulation.None
 })
 export class CodeSnippetComponent {
-  codeSnippet = input.required<ComponentMetadataCodeSnippet>();
-  codeTemplate = computed(() =>
-    createTemplateForAllLanguages(this.codeSnippet().template)
-  );
+  codeSnippet = input<ComponentMetadataCodeSnippet | undefined>();
+  codeSnippetBeforeAndAfter = input<
+    ComponentMetadataCodeSnippetBeforeAndAfter | undefined
+  >();
+
+  codeTemplate = computed(() => {
+    const codeSnippet = this.codeSnippet();
+
+    return codeSnippet
+      ? createTemplateForAllLanguages(
+          codeSnippet.template,
+          codeSnippet.imports,
+          codeSnippet.variables
+        )
+      : undefined;
+  });
+  codeTemplateBefore = computed(() => {
+    const codeSnippet = this.codeSnippetBeforeAndAfter();
+
+    return codeSnippet
+      ? createTemplateForAllLanguages(
+          codeSnippet.before.template,
+          codeSnippet.before.imports,
+          codeSnippet.before.variables
+        )
+      : undefined;
+  });
+  codeTemplateAfter = computed(() => {
+    const codeSnippet = this.codeSnippetBeforeAndAfter();
+
+    return codeSnippet
+      ? createTemplateForAllLanguages(
+          codeSnippet.after.template,
+          codeSnippet.after.imports,
+          codeSnippet.after.variables
+        )
+      : undefined;
+  });
 
   headingLevel = input<2 | 3>(2);
 
   language = input<string>("html");
+  languageBefore = input<string>("html");
+  languageAfter = input<string>("html");
 
-  linkId = computed(() => this.codeSnippet().linkId);
-  title = computed(() => this.codeSnippet().title);
+  linkId = computed(
+    () => (this.codeSnippet() ?? this.codeSnippetBeforeAndAfter()!).linkId
+  );
+  title = computed(
+    () => (this.codeSnippet() ?? this.codeSnippetBeforeAndAfter()!).title
+  );
 }

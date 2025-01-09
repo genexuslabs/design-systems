@@ -51,8 +51,10 @@ const codeLanguagesModel: TabModel = [
 export class CopyCodeComponent {
   templateLanguageService = inject(TemplateLanguageService);
 
+  copyButton = input(true);
+  label = input<string | undefined>();
   value = input.required<CodeTemplatesByLanguage>();
-  language = input<string>("ts");
+  language = input<string>("html");
 
   getImagePathCallback = signal(getImagePathCallback);
 

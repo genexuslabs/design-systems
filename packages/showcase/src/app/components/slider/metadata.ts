@@ -10,40 +10,31 @@ export const sliderMetadata = {
     default: {
       linkId: "default",
       title: "1. Default",
-      template: [
-        {
-          tag: "ch-slider",
-          class: COMPONENT_CLASS
-        }
-      ]
+      template: { tag: "ch-slider", class: COMPONENT_CLASS }
     },
 
     disabled: {
       linkId: "disabled",
       title: "2. Disabled",
-      template: [
-        {
-          tag: "ch-slider",
-          class: COMPONENT_CLASS,
-          properties: [{ name: "disabled", value: true }]
-        }
-      ]
+      template: {
+        tag: "ch-slider",
+        class: COMPONENT_CLASS,
+        properties: [{ name: "disabled", value: true }]
+      }
     },
 
     customRange: {
       linkId: "custom-range",
       title: "3. Custom range",
-      template: [
-        {
-          tag: "ch-slider",
-          class: COMPONENT_CLASS,
-          properties: [
-            { name: "minValue", value: 1 },
-            { name: "maxValue", value: 100 },
-            { name: "value", value: 20 }
-          ]
-        }
-      ]
+      template: {
+        tag: "ch-slider",
+        class: COMPONENT_CLASS,
+        properties: [
+          { name: "minValue", value: 1 },
+          { name: "maxValue", value: 100 },
+          { name: "value", value: 20 }
+        ]
+      }
     }
   }
 } as const satisfies ComponentMetadata;

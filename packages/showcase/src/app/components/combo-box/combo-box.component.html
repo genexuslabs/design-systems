@@ -25,7 +25,7 @@
 
   <div class="field field-block">
     <label class="label" for="name">{{
-      codeSnippets.default.template[0].children[0].children[0].text
+      codeSnippets.default.template.children[0].children.text
     }}</label>
     <ch-combo-box-render
       class="combo-box"
@@ -54,7 +54,7 @@
   <ch-combo-box-render
     class="combo-box"
     [model]="comboBoxModel"
-    [placeholder]="codeSnippets.placeholder.template[0].properties[0].value"
+    [placeholder]="codeSnippets.placeholder.template.properties[0].value"
   ></ch-combo-box-render>
 </code-snippet>
 
@@ -62,7 +62,7 @@
   <ch-combo-box-render
     class="combo-box"
     [model]="comboBoxIconsModel"
-    [value]="codeSnippets.withIcons.template[0].properties[0].value"
+    [value]="codeSnippets.withIcons.template.properties[0].value"
   ></ch-combo-box-render>
 </code-snippet>
 
