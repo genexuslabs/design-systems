@@ -3,71 +3,75 @@ import {
   NavigationListItemModel,
   NavigationListModel
 } from "@genexus/chameleon-controls-library";
-import { COMPONENT_ROUTES, URL_MAPPING } from "./bundles-and-url-mapping";
+import {
+  COMPONENTS_ROUTES,
+  URL_MAPPING,
+  UTILITY_CLASSES_ROUTES
+} from "./bundles-and-url-mapping";
 
 const childRoutes: Routes = [
   {
     // substring(1) removes the initial "/"
-    path: COMPONENT_ROUTES.ACCORDION.substring(1),
+    path: COMPONENTS_ROUTES.ACCORDION.substring(1),
     loadComponent: () =>
       import("./components/accordion/accordion.component").then(
         m => m.AccordionComponent
       )
   },
   {
-    path: COMPONENT_ROUTES.BUTTON.substring(1),
+    path: COMPONENTS_ROUTES.BUTTON.substring(1),
     loadComponent: () =>
       import("./components/button/button.component").then(
         m => m.ButtonComponent
       )
   },
   {
-    path: COMPONENT_ROUTES.CHECKBOX.substring(1),
+    path: COMPONENTS_ROUTES.CHECKBOX.substring(1),
     loadComponent: () =>
       import("./components/checkbox/checkbox.component").then(
         m => m.CheckboxComponent
       )
   },
   {
-    path: COMPONENT_ROUTES.COMBO_BOX.substring(1),
+    path: COMPONENTS_ROUTES.COMBO_BOX.substring(1),
     loadComponent: () =>
       import("./components/combo-box/combo-box.component").then(
         m => m.ComboBoxComponent
       )
   },
   {
-    path: COMPONENT_ROUTES.INPUT.substring(1),
+    path: COMPONENTS_ROUTES.INPUT.substring(1),
     loadComponent: () =>
       import("./components/input/input.component").then(m => m.InputComponent)
   },
   {
-    path: COMPONENT_ROUTES.LABEL.substring(1),
+    path: COMPONENTS_ROUTES.LABEL.substring(1),
     loadComponent: () =>
       import("./components/label/label.component").then(m => m.LabelComponent)
   },
   {
-    path: COMPONENT_ROUTES.RADIO_GROUP.substring(1),
+    path: COMPONENTS_ROUTES.RADIO_GROUP.substring(1),
     loadComponent: () =>
       import("./components/radio-group/radio-group.component").then(
         m => m.RadioGroupComponent
       )
   },
   {
-    path: COMPONENT_ROUTES.SEARCH.substring(1),
+    path: COMPONENTS_ROUTES.SEARCH.substring(1),
     loadComponent: () =>
       import("./components/search/search.component").then(
         m => m.SearchComponent
       )
   },
   {
-    path: COMPONENT_ROUTES.SLIDER.substring(1),
+    path: COMPONENTS_ROUTES.SLIDER.substring(1),
     loadComponent: () =>
       import("./components/slider/slider.component").then(
         m => m.SliderComponent
       )
   },
   {
-    path: COMPONENT_ROUTES.TREE_VIEW.substring(1),
+    path: COMPONENTS_ROUTES.TREE_VIEW.substring(1),
     loadComponent: () =>
       import("./components/tree-view/tree-view.component").then(
         m => m.TreeViewComponent
@@ -95,10 +99,17 @@ const childRoutes: Routes = [
       )
   },
   {
-    path: "utility-classes/elevation",
+    path: UTILITY_CLASSES_ROUTES.ELEVATION.substring(1),
     loadComponent: () =>
       import("./utility-classes/elevation/elevation.component").then(
         m => m.ElevationComponent
+      )
+  },
+  {
+    path: UTILITY_CLASSES_ROUTES.TYPOGRAPHY.substring(1),
+    loadComponent: () =>
+      import("./utility-classes/typography/typography.component").then(
+        m => m.TypographyComponent
       )
   },
   {
@@ -190,19 +201,19 @@ export const getNavigationListRoutes = (ds: "mercury" | "unanimo") =>
     {
       caption: "Components",
       expanded: true,
-      items: Object.values(COMPONENT_ROUTES).map(componentRoute =>
+      items: Object.values(COMPONENTS_ROUTES).map(componentRoute =>
         getNavigationListItem(componentRoute, URL_MAPPING[componentRoute], ds)
       )
     },
     {
       caption: "Utility classes",
-      items: [
-        getNavigationListItem("/utility-classes/elevation", "Elevation", ds),
-        getNavigationListItem("/utility-classes/form", "Form", ds),
-        getNavigationListItem("/utility-classes/layout", "Layout", ds),
-        getNavigationListItem("/utility-classes/spacing", "Spacing", ds),
-        getNavigationListItem("/utility-classes/typography", "Typography", ds)
-      ]
+      items: Object.values(UTILITY_CLASSES_ROUTES).map(utilityClassRoute =>
+        getNavigationListItem(
+          utilityClassRoute,
+          URL_MAPPING[utilityClassRoute],
+          ds
+        )
+      )
     },
 
     ...(ds === "mercury"

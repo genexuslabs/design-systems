@@ -20,7 +20,8 @@
   }
 
   & > section,
-  & > code-snippet {
+  & > code-snippet,
+  & > section > code-snippet {
     margin-block-start: var(--mer-spacing--4xl, calc(var(--spacing--xxl) * 2));
   }
 

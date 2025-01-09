@@ -8,35 +8,35 @@
   <h2 id="button-primary" class="heading-2">
     <a routerLink="." fragment="button-primary">1. Button Primary</a>
   </h2>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonPrimaryTextOnly"
+    [headingLevel]="3"
+  >
+    <button class="button-primary">Caption</button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonPrimaryTextOnlyDisabled"
+    [headingLevel]="3"
+  >
+    <button class="button-primary" disabled>Caption</button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonPrimaryTextOnlyDestructive"
+    [headingLevel]="3"
+  >
+    <button class="button-primary button-primary-destructive">Caption</button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonPrimaryIconAndText"
+    [headingLevel]="3"
+  >
+    <button [class]="codeSnippets.buttonPrimaryIconAndText.template[0].class">
+      <ch-image class="icon-sm"></ch-image>
+      Caption
+    </button>
+  </code-snippet>
 </section>
-
-<code-snippet
-  [codeSnippet]="codeSnippets.buttonPrimaryTextOnly"
-  [headingLevel]="3"
->
-  <button class="button-primary">Caption</button>
-</code-snippet>
-
-<code-snippet
-  [codeSnippet]="codeSnippets.buttonPrimaryTextOnlyDisabled"
-  [headingLevel]="3"
->
-  <button class="button-primary" disabled>Caption</button>
-</code-snippet>
-
-<code-snippet
-  [codeSnippet]="codeSnippets.buttonPrimaryTextOnlyDestructive"
-  [headingLevel]="3"
->
-  <button class="button-primary button-primary-destructive">Caption</button>
-</code-snippet>
-
-<code-snippet
-  [codeSnippet]="codeSnippets.buttonPrimaryIconAndText"
-  [headingLevel]="3"
->
-  <button [class]="codeSnippets.buttonPrimaryIconAndText.template[0].class">
-    <ch-image class="icon-sm"></ch-image>
-    Caption
-  </button>
-</code-snippet>

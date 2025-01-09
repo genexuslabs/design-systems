@@ -1,4 +1,4 @@
-export const COMPONENT_ROUTES = {
+export const COMPONENTS_ROUTES = {
   ACCORDION: "/components/accordion",
   BUTTON: "/components/button",
   CHECKBOX: "/components/checkbox",
@@ -19,41 +19,53 @@ export const COMPONENT_ROUTES = {
   WIDGET: "/components/widget"
 } as const;
 
-export const bundleMapping = {
-  [COMPONENT_ROUTES.ACCORDION]: "components/accordion",
-  [COMPONENT_ROUTES.BUTTON]: "components/button",
-  [COMPONENT_ROUTES.CHECKBOX]: "components/checkbox",
-  [COMPONENT_ROUTES.COMBO_BOX]: "components/combo-box",
-  [COMPONENT_ROUTES.DIALOG]: "components/dialog",
-  [COMPONENT_ROUTES.INPUT]: "components/edit",
-  [COMPONENT_ROUTES.LABEL]: "utils/form",
-  [COMPONENT_ROUTES.RADIO_GROUP]: "components/radio-group",
-  [COMPONENT_ROUTES.SEARCH]: "components/edit",
-  [COMPONENT_ROUTES.SLIDER]: "components/slider",
-  [COMPONENT_ROUTES.TREE_VIEW]: "components/tree-view",
+export const UTILITY_CLASSES_ROUTES = {
+  ELEVATION: "/utility-classes/elevation",
+  FORM: "/utility-classes/form",
+  LAYOUT: "/utility-classes/layout",
+  SPACING: "/utility-classes/spacing",
+  TYPOGRAPHY: "/utility-classes/typography"
+} as const;
 
-  "/utility-classes/elevation": "utils/elevation"
+export const bundleMapping = {
+  [COMPONENTS_ROUTES.ACCORDION]: "components/accordion",
+  [COMPONENTS_ROUTES.BUTTON]: "components/button",
+  [COMPONENTS_ROUTES.CHECKBOX]: "components/checkbox",
+  [COMPONENTS_ROUTES.COMBO_BOX]: "components/combo-box",
+  [COMPONENTS_ROUTES.DIALOG]: "components/dialog",
+  [COMPONENTS_ROUTES.INPUT]: "components/edit",
+  [COMPONENTS_ROUTES.LABEL]: "utils/form",
+  [COMPONENTS_ROUTES.RADIO_GROUP]: "components/radio-group",
+  [COMPONENTS_ROUTES.SEARCH]: "components/edit",
+  [COMPONENTS_ROUTES.SLIDER]: "components/slider",
+  [COMPONENTS_ROUTES.TREE_VIEW]: "components/tree-view",
+
+  [UTILITY_CLASSES_ROUTES.ELEVATION]: "utils/elevation",
+  [UTILITY_CLASSES_ROUTES.FORM]: "utils/form",
+  [UTILITY_CLASSES_ROUTES.LAYOUT]: "utils/layout",
+  [UTILITY_CLASSES_ROUTES.SPACING]: "utils/spacing",
+  [UTILITY_CLASSES_ROUTES.TYPOGRAPHY]: "utils/typography"
 } as const;
 
 export const URL_MAPPING = {
-  [COMPONENT_ROUTES.ACCORDION]: "Accordion",
-  [COMPONENT_ROUTES.BUTTON]: "Button",
-  [COMPONENT_ROUTES.CHECKBOX]: "Checkbox",
-  [COMPONENT_ROUTES.COMBO_BOX]: "Combo Box",
-  [COMPONENT_ROUTES.DIALOG]: "Dialog",
-  [COMPONENT_ROUTES.INPUT]: "Input",
-  [COMPONENT_ROUTES.LABEL]: "Label",
-  [COMPONENT_ROUTES.LIST_BOX]: "List box",
-  [COMPONENT_ROUTES.PILLS]: "Pills",
-  [COMPONENT_ROUTES.PROPERTY_GRID]: "Property Grid",
-  [COMPONENT_ROUTES.RADIO_GROUP]: "Radio Group",
-  [COMPONENT_ROUTES.SEARCH]: "Search",
-  [COMPONENT_ROUTES.SLIDER]: "Slider",
-  [COMPONENT_ROUTES.TAB]: "Tab",
-  [COMPONENT_ROUTES.TABULAR_GRID]: "Tabular Grid",
-  [COMPONENT_ROUTES.TOOLTIP]: "Tooltip",
-  [COMPONENT_ROUTES.TREE_VIEW]: "Tree View",
-  [COMPONENT_ROUTES.WIDGET]: "Widget",
+  [COMPONENTS_ROUTES.ACCORDION]: "Accordion",
+  [COMPONENTS_ROUTES.BUTTON]: "Button",
+  [COMPONENTS_ROUTES.CHECKBOX]: "Checkbox",
+  [COMPONENTS_ROUTES.COMBO_BOX]: "Combo Box",
+  [COMPONENTS_ROUTES.DIALOG]: "Dialog",
+  [COMPONENTS_ROUTES.INPUT]: "Input",
+  [COMPONENTS_ROUTES.LABEL]: "Label",
+  [COMPONENTS_ROUTES.LIST_BOX]: "List box",
+  [COMPONENTS_ROUTES.PILLS]: "Pills",
+  [COMPONENTS_ROUTES.PROPERTY_GRID]: "Property Grid",
+  [COMPONENTS_ROUTES.RADIO_GROUP]: "Radio Group",
+  [COMPONENTS_ROUTES.SEARCH]: "Search",
+  [COMPONENTS_ROUTES.SLIDER]: "Slider",
+  [COMPONENTS_ROUTES.TAB]: "Tab",
+  [COMPONENTS_ROUTES.TABULAR_GRID]: "Tabular Grid",
+  [COMPONENTS_ROUTES.TOOLTIP]: "Tooltip",
+  [COMPONENTS_ROUTES.TREE_VIEW]: "Tree View",
+  [COMPONENTS_ROUTES.WIDGET]: "Widget",
 
   "/introduction/what-is-mercury": "What is Mercury?",
   "/introduction/what-is-unanimo": "What is Unanimo?",
@@ -61,7 +73,11 @@ export const URL_MAPPING = {
   "/introduction/installation/react": "Installation React",
   "/introduction/installation/stencil-js": "Installation StencilJS",
 
-  "/utility-classes/elevation": "Elevation",
+  [UTILITY_CLASSES_ROUTES.ELEVATION]: "Elevation",
+  [UTILITY_CLASSES_ROUTES.FORM]: "Form",
+  [UTILITY_CLASSES_ROUTES.LAYOUT]: "Layout",
+  [UTILITY_CLASSES_ROUTES.SPACING]: "Spacing",
+  [UTILITY_CLASSES_ROUTES.TYPOGRAPHY]: "Typography",
   "/icons": "Icons",
   "/chameleon-compatibility": "Chameleon Compatibility"
 } as const;
