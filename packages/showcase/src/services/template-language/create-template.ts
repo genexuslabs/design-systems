@@ -65,7 +65,7 @@ const renderProperty = (
       : `htmlFor="${propertyValue}"`;
   }
 
-  if (propertyValue === true) {
+  if (propertyValue === true && codeLanguage !== "Angular") {
     return property.name;
   }
 
@@ -83,7 +83,9 @@ const renderProperty = (
   }
 
   if (codeLanguage === "StencilJS" && property.state) {
-    return `${propertyName}={this.#${propertyValue}}`;
+    return property.stateStencil
+      ? `${propertyName}={this.${propertyValue}}`
+      : `${propertyName}={this.#${propertyValue}}`;
   }
 
   // JSX
@@ -179,7 +181,7 @@ const renderTemplate = (
   }
 
   return bindingsFitsInTheSameLine
-    ? `<${formattedTag} ${renderedProperties.join(" ")}>${children}</${formattedTag}>`
+    ? `<${formattedTag}${renderedProperties.length > 0 ? " " + renderedProperties.join(" ") : ""}>${children}</${formattedTag}>`
     : `<${formattedTag}${nextLevelIndentation}${renderedProperties.join(nextLevelIndentation)}${currentLevelIndentation}>${children}</${formattedTag}>`;
 };
 
@@ -226,9 +228,10 @@ export default CustomDialog;`,
     renderedImports: string,
     renderedVariables: string,
     renderedTemplate: string,
-    renderedStates: string
+    renderedStates: string,
+    existsStencilState: boolean | undefined
   ) =>
-    `import { Component, Host } from "@stencil/core";${renderedImports ? "\n" + renderedImports : ""}${renderedVariables ? "\n\n" + renderedVariables : ""}
+    `import { Component, Host${existsStencilState ? ", State" : ""} } from "@stencil/core";${renderedImports ? "\n" + renderedImports : ""}${renderedVariables ? "\n\n" + renderedVariables : ""}
 
 @Component({
   shadow: true,
@@ -260,7 +263,7 @@ const stateDefinitionByCodeTemplateLanguage = {
     `const [${state.name}] = useState<${state.type}>(${insertSpacesAtTheBeginningExceptForTheFirstLine(JSON.stringify(state.value, undefined, 2))});`,
 
   StencilJS: (state: CodeTemplateState) =>
-    `#${state.name}: ${state.type} = ${insertSpacesAtTheBeginningExceptForTheFirstLine(JSON.stringify(state.value, undefined, 2))};`
+    `${state.stateStencil ? "@State() " : "#"}${state.name}: ${state.type} = ${insertSpacesAtTheBeginningExceptForTheFirstLine(JSON.stringify(state.value, undefined, 2))};`
 };
 
 const createTemplate = (
@@ -293,6 +296,8 @@ const createTemplate = (
         .join("  \n")
     : "";
 
+  const existsStencilState = states?.some(item => item.stateStencil);
+
   const actualIndentation =
     renderedImports || renderedVariables || renderedStates
       ? initialIndentation[codeLanguage]
@@ -309,7 +314,8 @@ const createTemplate = (
         renderedImports,
         renderedVariables,
         renderedTemplate,
-        renderedStates
+        renderedStates,
+        existsStencilState
       )
     : renderedTemplate;
 };

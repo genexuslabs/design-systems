@@ -4,8 +4,9 @@ export type CodeTemplateVariables = { name: string; value: string }[];
 
 export type CodeTemplateState = {
   name: string;
-  value: string | any[] | Record<string, any>;
+  value: string | any[] | Record<string, any> | boolean;
   type: string;
+  stateStencil?: boolean;
 };
 export type CodeTemplateStates = CodeTemplateState[];
 
@@ -34,6 +35,7 @@ export type ComponentTemplateItemNodeProperty = {
   value: string | number | boolean;
   variable?: boolean;
   state?: boolean;
+  stateStencil?: boolean;
 };
 
 export type ComponentTemplateItemNodeEvent = {

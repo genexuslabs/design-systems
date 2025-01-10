@@ -20,7 +20,17 @@ export const radioGroupMetadata = {
         }
       ],
       imports: [chameleonImportType("RadioGroupModel")],
-      template: { tag: "ch-radio-group-render", class: COMPONENT_CLASS }
+      template: {
+        tag: "ch-radio-group-render",
+        class: COMPONENT_CLASS,
+        properties: [
+          {
+            name: "model",
+            value: "radioGroupModel",
+            state: true
+          }
+        ]
+      }
     },
 
     vertical: {
@@ -30,8 +40,8 @@ export const radioGroupMetadata = {
         tag: "ch-radio-group-render",
         class: COMPONENT_CLASS,
         properties: [
-          { name: "model", value: "...", variable: true },
-          { name: "direction", value: "vertical" }
+          { name: "direction", value: "vertical" },
+          { name: "model", value: "...", variable: true }
         ]
       }
     }

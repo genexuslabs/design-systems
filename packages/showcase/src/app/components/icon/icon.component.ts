@@ -17,7 +17,7 @@ import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-s
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
 
 @Component({
-  selector: "components-label",
+  selector: "components-icon",
   templateUrl: "./icon.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [

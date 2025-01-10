@@ -41,6 +41,13 @@ const childRoutes: Routes = [
       )
   },
   {
+    path: COMPONENTS_ROUTES.DIALOG.substring(1),
+    loadComponent: () =>
+      import("./components/dialog/dialog.component").then(
+        m => m.DialogComponent
+      )
+  },
+  {
     path: COMPONENTS_ROUTES.ICON.substring(1),
     loadComponent: () =>
       import("./components/icon/icon.component").then(m => m.IconComponent)
