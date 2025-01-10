@@ -1,8 +1,6 @@
 import type { ComboBoxModel } from "@genexus/chameleon-controls-library";
 import { ComponentMetadataBeforeAfter } from "../../common/types";
-
-const chameleonImportType = (thingToImport: string) =>
-  `import type { ${thingToImport} } from "@genexus/chameleon-controls-library"`;
+import { chameleonImportType } from "../../services/template-language/create-template";
 
 export const geminiMigrationMetadata = {
   title: "Gemini Migration",

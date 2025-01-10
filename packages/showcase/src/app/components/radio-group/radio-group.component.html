@@ -6,10 +6,10 @@
 
 <p class="text-body-regular-l">{{ metadata.description }}</p>
 
-<code-snippet [codeSnippet]="codeSnippets.default">
+<code-snippet [codeSnippet]="codeSnippets.default" [language]="'ts'">
   <ch-radio-group-render
     class="radio-group"
-    [model]="radioGroupModel()"
+    [model]="radioGroupModel"
   ></ch-radio-group-render>
 </code-snippet>
 
@@ -17,6 +17,6 @@
   <ch-radio-group-render
     class="radio-group"
     direction="vertical"
-    [model]="radioGroupModel()"
+    [model]="radioGroupModel"
   ></ch-radio-group-render>
 </code-snippet>

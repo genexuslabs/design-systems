@@ -10,6 +10,9 @@ import {
   ComponentTemplateModel
 } from "./types";
 
+export const chameleonImportType = (thingToImport: string) =>
+  `import type { ${thingToImport} } from "@genexus/chameleon-controls-library"`;
+
 const INDENTATION_SIZE = 2; // 2 spaces
 const MAX_LINE_WIDTH_FOR_PRETTIER = 80; // 80 characters
 

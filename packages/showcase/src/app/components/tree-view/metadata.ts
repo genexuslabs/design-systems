@@ -1,5 +1,6 @@
 import { ComponentMetadata } from "../../../common/types";
-import { iconsModel, iconsModelForMetadata, noIconsModel } from "./models";
+import { chameleonImportType } from "../../../services/template-language/create-template";
+import { iconsModelForMetadata, noIconsModel } from "./models";
 
 const COMPONENT_CLASS = "tree-view";
 
@@ -14,6 +15,7 @@ export const treeViewMetadata = {
       states: [
         { name: "treeViewModel", type: "TreeViewModel", value: noIconsModel }
       ],
+      imports: [chameleonImportType("TreeViewModel")],
       template: {
         tag: "ch-tree-view-render",
         class: COMPONENT_CLASS,
@@ -51,6 +53,7 @@ export const treeViewMetadata = {
       linkId: "with-icons",
       title: "4. With icons",
       imports: [
+        chameleonImportType("TreeViewModel"),
         'import { getIconPath, getIconPathExpanded } from "@genexus/mercury/assets-manager.js";'
       ],
       states: [

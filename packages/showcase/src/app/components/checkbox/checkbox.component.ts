@@ -4,7 +4,10 @@ import {
   CUSTOM_ELEMENTS_SCHEMA
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { getIconPath } from "@genexus/mercury/assets-manager.js";
+import {
+  getIconPath,
+  getImagePathCallback
+} from "@genexus/mercury/assets-manager.js";
 
 import { checkboxMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
@@ -19,19 +22,14 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class CheckboxComponent {
-  ADD_CIRCLE_ICON = getIconPath({
-    category: "gemini-tools",
-    name: "add-circle",
-    colorType: "on-elevation"
+  ICON = getIconPath({
+    category: "objects",
+    name: "stencil"
   });
+
+  // TODO: This is a WA, since the Chameleon's register does not for some reason
+  getImagePathCallback = getImagePathCallback;
 
   metadata = checkboxMetadata;
   codeSnippets = checkboxMetadata.codeSnippets;
-
-  // `const ADD_CIRCLE_ICON = getIconPath({
-  //   category: "gemini-tools",
-  //   name: "add-circle",
-  //   colorType: "on-elevation"
-  // });
-  // `
 }

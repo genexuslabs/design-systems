@@ -34,22 +34,48 @@
   <ch-checkbox
     class="checkbox"
     caption="The caption"
-    [startImgSrc]="ADD_CIRCLE_ICON"
+    [checkedValue]="'true'"
+    [getImagePathCallback]="getImagePathCallback"
+    [startImgSrc]="ICON"
   ></ch-checkbox>
 </code-snippet>
 
 <code-snippet [codeSnippet]="codeSnippets.groupingCheckboxesBlock">
   <div class="field-group">
-    <ch-checkbox class="checkbox" caption="The caption 1"></ch-checkbox>
-    <ch-checkbox class="checkbox" caption="The caption 2"></ch-checkbox>
-    <ch-checkbox class="checkbox" caption="The caption 3"></ch-checkbox>
+    <ch-checkbox
+      class="checkbox"
+      [caption]="'The caption 1'"
+      [checkedValue]="'true'"
+    ></ch-checkbox>
+    <ch-checkbox
+      class="checkbox"
+      [caption]="'The caption 2'"
+      [checkedValue]="'true'"
+    ></ch-checkbox>
+    <ch-checkbox
+      class="checkbox"
+      [caption]="'The caption 3'"
+      [checkedValue]="'true'"
+    ></ch-checkbox>
   </div>
 </code-snippet>
 
 <code-snippet [codeSnippet]="codeSnippets.groupingCheckboxesInline">
   <div class="field-group-inline">
-    <ch-checkbox class="checkbox" caption="The caption 1"></ch-checkbox>
-    <ch-checkbox class="checkbox" caption="The caption 2"></ch-checkbox>
-    <ch-checkbox class="checkbox" caption="The caption 3"></ch-checkbox>
+    <ch-checkbox
+      class="checkbox"
+      [caption]="'The caption 1'"
+      [checkedValue]="'true'"
+    ></ch-checkbox>
+    <ch-checkbox
+      class="checkbox"
+      [caption]="'The caption 2'"
+      [checkedValue]="'true'"
+    ></ch-checkbox>
+    <ch-checkbox
+      class="checkbox"
+      [caption]="'The caption 3'"
+      [checkedValue]="'true'"
+    ></ch-checkbox>
   </div>
 </code-snippet>

@@ -65,13 +65,22 @@ export const checkboxMetadata = {
     withIcon: {
       linkId: "with-icon",
       title: "5. With Icon",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value: 'getIconPath({ category: "objects", name: "stencil" })'
+        }
+      ],
       template: {
         tag: "ch-checkbox",
         class: COMPONENT_CLASS,
         properties: [
           { name: "caption", value: "The caption" },
           { name: "checkedValue", value: "true" },
-          { name: "startImgSrc", value: "ADD_CIRCLE_ICON", variable: true }
+          { name: "startImgSrc", value: "ICON", variable: true }
         ]
       }
     },

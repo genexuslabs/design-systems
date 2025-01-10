@@ -1,4 +1,6 @@
 import { ComponentMetadata } from "../../../common/types";
+import { chameleonImportType } from "../../../services/template-language/create-template";
+import { radioGroupModel } from "./models";
 
 const COMPONENT_CLASS = "radio-group";
 
@@ -10,6 +12,14 @@ export const radioGroupMetadata = {
     default: {
       linkId: "Horizontal",
       title: "1. Horizontal",
+      states: [
+        {
+          name: "radioGroupModel",
+          type: "RadioGroupModel",
+          value: radioGroupModel
+        }
+      ],
+      imports: [chameleonImportType("RadioGroupModel")],
       template: { tag: "ch-radio-group-render", class: COMPONENT_CLASS }
     },
 
@@ -19,7 +29,10 @@ export const radioGroupMetadata = {
       template: {
         tag: "ch-radio-group-render",
         class: COMPONENT_CLASS,
-        properties: [{ name: "direction", value: "vertical" }]
+        properties: [
+          { name: "model", value: "...", variable: true },
+          { name: "direction", value: "vertical" }
+        ]
       }
     }
   }
