@@ -10,7 +10,15 @@ import {
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router, RouterLink } from "@angular/router";
-import type { ChCheckboxCustomEvent } from "@genexus/chameleon-controls-library";
+
+import {
+  getIconPath,
+  getImagePathCallback
+} from "@genexus/mercury/assets-manager.js";
+import type {
+  ChCheckboxCustomEvent,
+  ComboBoxModel
+} from "@genexus/chameleon-controls-library";
 
 import { geminiMigrationMetadata } from "./metadata";
 import { RouterCommonLinksService } from "../../services/router-links.service";
@@ -37,6 +45,38 @@ export class GeminiMigrationComponent {
 
   metadata = geminiMigrationMetadata;
   codeSnippets = geminiMigrationMetadata.codeSnippets;
+
+  ICON = getIconPath({
+    category: "gemini-tools",
+    name: "add-circle",
+    colorType: "on-primary"
+  });
+
+  favoriteColorsModel = signal<ComboBoxModel>([
+    {
+      value: "red",
+      caption: "Red"
+    },
+    {
+      value: "blue",
+      caption: "Blue"
+    },
+    {
+      value: "green",
+      caption: "Green"
+    },
+    {
+      value: "yellow",
+      caption: "Yellow"
+    },
+    {
+      value: "purple",
+      caption: "Purple"
+    }
+  ]);
+
+  // TODO: This is a WA, since the Chameleon's register does not for some reason
+  getImagePathCallback = getImagePathCallback;
 
   /**
    * This map is useful for rendering checkboxes to determine whether a

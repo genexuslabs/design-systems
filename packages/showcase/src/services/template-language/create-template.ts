@@ -189,7 +189,7 @@ const wrapperForImportsAndVariables = {
   ) => `import {
   ChangeDetectionStrategy,
   Component,
-  CUSTOM_ELEMENTS_SCHEMA${renderedStates ? ",\nsignal" : ""}
+  CUSTOM_ELEMENTS_SCHEMA${renderedStates ? ",\n  signal" : ""}
 } from "@angular/core";
 ${renderedImports ? renderedImports + "\n" : ""} 
 @Component({
@@ -278,8 +278,6 @@ const createTemplate = (
         .map(stateDefinitionByCodeTemplateLanguage[codeLanguage])
         .join("  \n")
     : "";
-
-  console.log(states, renderedStates);
 
   const actualIndentation =
     renderedImports || renderedVariables || renderedStates

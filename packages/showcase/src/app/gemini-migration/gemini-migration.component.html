@@ -1,4 +1,11 @@
-<runtime-bundles [bundles]="['utils/typography', 'components/checkbox']" />
+<runtime-bundles
+  [bundles]="[
+    'components/checkbox',
+    'components/combo-box',
+    'utils/form',
+    'utils/typography'
+  ]"
+/>
 
 <header>
   <h1 class="heading-1">{{ metadata.title }}</h1>
@@ -37,13 +44,17 @@
         Replace the <code>gxg-button</code> tag with a <code>button</code> tag.
       </li>
 
-      <li>Remove all the attributes and values</li>
+      <li>Remove all the attributes and values.</li>
 
       <li>
         Add any of the mercury classes that apply for "text only" button types
       </li>
     </ol>
   </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <button class="button-primary">Caption</button>
+  </div>
 }
 
 @if (showGxgButtonTextWithIcon()) {
@@ -61,7 +72,7 @@
         Replace the <code>gxg-button</code> tag with a <code>button</code> tag.
       </li>
 
-      <li>Remove all the attributes and values</li>
+      <li>Remove all the attributes and values.</li>
 
       <li>Add the <code>button-icon-and-text</code> class.</li>
 
@@ -73,6 +84,17 @@
       </li>
     </ol>
   </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <button class="button-primary button-icon-and-text">
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="ICON"
+      ></ch-image>
+      Caption
+    </button>
+  </div>
 }
 
 @if (showGxgComboBox()) {
@@ -81,25 +103,69 @@
     [languageAfter]="'ts'"
   >
     <p class="text-body-regular-s">
-      When transitioning from a <code>gxg-button</code> that is "text with
-      icon":
+      When transitioning from a <code>gxg-combo-box</code>:
     </p>
 
     <ol class="text-body-regular-s gemini-migration-list">
       <li>
-        Replace the <code>gxg-button</code> tag with a <code>button</code> tag.
+        Replace the <code>gxg-combo-box</code> tag with a
+        <code>ch-combo-box-render</code> tag.
       </li>
 
-      <li>Remove all the attributes and values</li>
+      <li>Remove all the attributes and values.</li>
 
-      <li>Add the <code>button-icon-and-text</code> class.</li>
+      <li>Add the <code>combo-box</code> class.</li>
 
       <li>
-        Insert a <code>ch-image</code> inside the <code>button</code> and
-        <a class="hyperlink" [routerLink]="commonLinks.componentsIcon()"
-          >follow the documentation for using an icon</a
-        >
+        <a class="hyperlink" [routerLink]="commonLinks.componentsComboBox()"
+          >Specify the ch-combo-box-render items following the model property
+        </a>
       </li>
     </ol>
   </code-snippet>
+
+  <div class="gemini-migration-preview field field-block">
+    <label class="label" for="favorite-colors">Favorite Colors</label>
+    <ch-combo-box-render
+      class="combo-box"
+      id="favorite-colors"
+      [model]="favoriteColorsModel()"
+      [placeholder]="'Select an item'"
+      [value]="'yellow'"
+    ></ch-combo-box-render>
+  </div>
+}
+
+@if (showGxgFormCheckbox()) {
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgFormCheckbox">
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-form-checkbox</code>:
+    </p>
+
+    <ol class="text-body-regular-s gemini-migration-list">
+      <li>
+        Replace the <code>gxg-form-checkbox</code> tag with a
+        <code>ch-checkbox</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>checkbox</code> class.</li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsCheckbox()"
+          >Specify the control properties following the documentation
+        </a>
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <ch-checkbox
+      class="checkbox"
+      [caption]="'The Caption'"
+      [checkedValue]="'true'"
+      [value]="'true'"
+    ></ch-checkbox>
+  </div>
 }

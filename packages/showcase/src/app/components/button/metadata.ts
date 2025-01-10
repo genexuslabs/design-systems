@@ -14,6 +14,7 @@ export const buttonMetadata = {
       template: {
         tag: "button",
         class: "button-primary",
+        properties: [{ name: "type", value: "button" }],
         children: CAPTION
       }
     },
@@ -24,7 +25,10 @@ export const buttonMetadata = {
       template: {
         tag: "button",
         class: "button-primary",
-        properties: [{ name: "disabled", value: true }],
+        properties: [
+          { name: "disabled", value: true },
+          { name: "type", value: "button" }
+        ],
         children: CAPTION
       }
     },
@@ -35,6 +39,7 @@ export const buttonMetadata = {
       template: {
         tag: "button",
         class: "button-primary button-primary-destructive",
+        properties: [{ name: "type", value: "button" }],
         children: CAPTION
       }
     },
@@ -53,6 +58,7 @@ export const buttonMetadata = {
       template: {
         tag: "button",
         class: "button-primary button-icon-and-text",
+        properties: [{ name: "type", value: "button" }],
         children: [
           {
             tag: "ch-image",

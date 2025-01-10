@@ -13,21 +13,23 @@
     [codeSnippet]="codeSnippets.buttonPrimaryTextOnly"
     [headingLevel]="3"
   >
-    <button class="button-primary">Caption</button>
+    <button class="button-primary" type="button">Caption</button>
   </code-snippet>
 
   <code-snippet
     [codeSnippet]="codeSnippets.buttonPrimaryTextOnlyDisabled"
     [headingLevel]="3"
   >
-    <button class="button-primary" disabled>Caption</button>
+    <button class="button-primary" disabled type="button">Caption</button>
   </code-snippet>
 
   <code-snippet
     [codeSnippet]="codeSnippets.buttonPrimaryTextOnlyDestructive"
     [headingLevel]="3"
   >
-    <button class="button-primary button-primary-destructive">Caption</button>
+    <button class="button-primary button-primary-destructive" type="button">
+      Caption
+    </button>
   </code-snippet>
 
   <code-snippet
@@ -35,7 +37,10 @@
     [headingLevel]="3"
     [language]="'ts'"
   >
-    <button [class]="codeSnippets.buttonPrimaryIconAndText.template.class">
+    <button
+      [class]="codeSnippets.buttonPrimaryIconAndText.template.class"
+      type="button"
+    >
       <ch-image
         class="icon-sm"
         [getImagePathCallback]="getImagePathCallback"

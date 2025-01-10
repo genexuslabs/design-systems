@@ -6,6 +6,12 @@ import { COMPONENTS_ROUTES } from "../app/bundles-and-url-mapping";
 export class RouterCommonLinksService {
   dsService = inject(DesignSystemService);
 
+  componentsCheckbox = computed(
+    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.CHECKBOX}`
+  );
+  componentsComboBox = computed(
+    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.COMBO_BOX}`
+  );
   componentsLabel = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.LABEL}`
   );

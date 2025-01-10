@@ -23,6 +23,7 @@ export const geminiMigrationMetadata = {
         template: {
           tag: "button",
           class: "button-primary",
+          properties: [{ name: "type", value: "button" }],
           children: "Caption"
         }
       }
@@ -55,6 +56,7 @@ export const geminiMigrationMetadata = {
         template: {
           tag: "button",
           class: "button-primary button-icon-and-text",
+          properties: [{ name: "type", value: "button" }],
           children: [
             {
               tag: "ch-image",
@@ -122,24 +124,53 @@ export const geminiMigrationMetadata = {
             ] satisfies ComboBoxModel
           }
         ],
-        template: [
-          {
-            tag: "label",
-            class: "label",
-            properties: [{ name: "for", value: "favorite-colors" }],
-            children: "Favorite Colors"
-          },
-          {
-            tag: "ch-combo-box-render",
-            class: "combo-box",
-            properties: [
-              { name: "id", value: "favorite-colors" },
-              { name: "model", value: "favoriteColorsModel", state: true },
-              { name: "placeholder", value: "Select an item" },
-              { name: "value", value: "yellow" }
-            ]
-          }
-        ]
+        template: {
+          tag: "div",
+          class: "field field-block",
+          children: [
+            {
+              tag: "label",
+              class: "label",
+              properties: [{ name: "for", value: "favorite-colors" }],
+              children: "Favorite Colors"
+            },
+            {
+              tag: "ch-combo-box-render",
+              class: "combo-box",
+              properties: [
+                { name: "id", value: "favorite-colors" },
+                { name: "model", value: "favoriteColorsModel", state: true },
+                { name: "placeholder", value: "Select an item" },
+                { name: "value", value: "yellow" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+
+    gxgFormCheckbox: {
+      linkId: "gxg-form-checkbox",
+      title: "4. gxg-form-checkbox",
+      before: {
+        template: {
+          tag: "gxg-form-checkbox",
+          properties: [
+            { name: "value", value: "true" },
+            { name: "label", value: "The Caption" }
+          ]
+        }
+      },
+      after: {
+        template: {
+          tag: "ch-checkbox",
+          class: "checkbox",
+          properties: [
+            { name: "caption", value: "The Caption" },
+            { name: "checkedValue", value: "true" },
+            { name: "value", value: "true" }
+          ]
+        }
       }
     }
   }
