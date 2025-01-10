@@ -1,6 +1,10 @@
 import { computed, inject, Injectable } from "@angular/core";
 import { DesignSystemService } from "./design-system.service";
-import { COMPONENTS_ROUTES } from "../app/bundles-and-url-mapping";
+import {
+  COMPONENTS_ROUTES,
+  STANDALONE_ROUTES,
+  UTILITY_CLASSES_ROUTES
+} from "../app/bundles-and-url-mapping";
 
 @Injectable({ providedIn: "root" })
 export class RouterCommonLinksService {
@@ -18,5 +22,12 @@ export class RouterCommonLinksService {
   componentsIcon = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.ICON}`
   );
-  utilsForm = computed(() => `/${this.dsService.designSystem()}/utils/form`);
+
+  utilsForm = computed(
+    () => `/${this.dsService.designSystem()}${UTILITY_CLASSES_ROUTES.FORM}`
+  );
+
+  icons = computed(
+    () => `/${this.dsService.designSystem()}${STANDALONE_ROUTES.ICONS}`
+  );
 }

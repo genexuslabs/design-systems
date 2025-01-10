@@ -41,6 +41,11 @@ const childRoutes: Routes = [
       )
   },
   {
+    path: COMPONENTS_ROUTES.ICON.substring(1),
+    loadComponent: () =>
+      import("./components/icon/icon.component").then(m => m.IconComponent)
+  },
+  {
     path: COMPONENTS_ROUTES.INPUT.substring(1),
     loadComponent: () =>
       import("./components/input/input.component").then(m => m.InputComponent)

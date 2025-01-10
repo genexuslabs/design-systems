@@ -145,6 +145,8 @@ export class AppComponent {
     this.colorScheme.set(event.detail as ColorScheme);
   };
 
+  copyBundle = () => navigator.clipboard.writeText(this.selectedBundle());
+
   handleDesignSystemChange = (
     event: ChSegmentedControlRenderCustomEvent<string>
   ) => {

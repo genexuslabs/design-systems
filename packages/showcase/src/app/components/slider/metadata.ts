@@ -10,26 +10,56 @@ export const sliderMetadata = {
     default: {
       linkId: "default",
       title: "1. Default",
-      template: { tag: "ch-slider", class: COMPONENT_CLASS }
+      template: {
+        tag: "div",
+        class: "field field-block",
+        children: [
+          {
+            tag: "label",
+            class: "label",
+            properties: [{ name: "for", value: "temperature" }],
+            children: "Temperature"
+          },
+          {
+            tag: "ch-slider",
+            class: COMPONENT_CLASS,
+            properties: [{ name: "id", value: "temperature" }]
+          }
+        ]
+      }
+    },
+
+    noLabel: {
+      linkId: "no-label",
+      title: "2. No Label",
+      template: {
+        tag: "ch-slider",
+        class: COMPONENT_CLASS,
+        properties: [{ name: "accessibleName", value: "Temperature" }]
+      }
     },
 
     disabled: {
       linkId: "disabled",
-      title: "2. Disabled",
+      title: "3. Disabled",
       template: {
         tag: "ch-slider",
         class: COMPONENT_CLASS,
-        properties: [{ name: "disabled", value: true }]
+        properties: [
+          { name: "accessibleName", value: "Temperature" },
+          { name: "disabled", value: true }
+        ]
       }
     },
 
     customRange: {
       linkId: "custom-range",
-      title: "3. Custom range",
+      title: "4. Custom range",
       template: {
         tag: "ch-slider",
         class: COMPONENT_CLASS,
         properties: [
+          { name: "accessibleName", value: "Temperature" },
           { name: "minValue", value: 1 },
           { name: "maxValue", value: 100 },
           { name: "value", value: 20 }

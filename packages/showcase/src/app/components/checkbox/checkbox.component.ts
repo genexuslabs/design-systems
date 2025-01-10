@@ -4,7 +4,7 @@ import {
   CUSTOM_ELEMENTS_SCHEMA
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { getIconPath } from "@genexus/mercury";
+import { getIconPath } from "@genexus/mercury/assets-manager.js";
 
 import { checkboxMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";

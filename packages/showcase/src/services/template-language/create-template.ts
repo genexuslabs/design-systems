@@ -269,7 +269,11 @@ const createTemplate = (
   const renderedImports = imports ? imports.join("\n") : "";
   const renderedVariables = variables
     ? variables
-        .map(entry => `const ${entry.name} = ${entry.value};`)
+        .map(entry =>
+          codeLanguage === "Angular"
+            ? `${entry.name} = ${entry.value};`
+            : `const ${entry.name} = ${entry.value};`
+        )
         .join(codeLanguage === "Angular" ? "\n  " : "\n")
     : "";
 

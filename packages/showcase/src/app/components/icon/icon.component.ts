@@ -4,18 +4,21 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject
 } from "@angular/core";
-import { RouterLink } from "@angular/router";
 import { CommonModule } from "@angular/common";
-import { getIconPath } from "@genexus/mercury/assets-manager.js";
+import { RouterLink } from "@angular/router";
+import {
+  getIconPath,
+  getImagePathCallback
+} from "@genexus/mercury/assets-manager.js";
 
-import { inputMetadata } from "./metadata";
+import { iconMetadata } from "./metadata";
 import { RouterCommonLinksService } from "../../../services/router-links.service";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
 
 @Component({
-  selector: "components-input",
-  templateUrl: "./input.component.html",
+  selector: "components-label",
+  templateUrl: "./icon.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
@@ -26,15 +29,18 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
   host: { class: "main-content" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class InputComponent {
+export class IconComponent {
   commonLinks = inject(RouterCommonLinksService);
 
-  USER_ICON = getIconPath({
+  ASSISTANT_ICON = getIconPath({
     category: "system",
-    name: "user",
-    colorType: "on-surface"
+    name: "assistant",
+    colorType: "primary"
   });
 
-  metadata = inputMetadata;
-  codeSnippets = inputMetadata.codeSnippets;
+  // TODO: This is a WA, since the Chameleon's register does not for some reason
+  getImagePathCallback = getImagePathCallback;
+
+  metadata = iconMetadata;
+  codeSnippets = iconMetadata.codeSnippets;
 }

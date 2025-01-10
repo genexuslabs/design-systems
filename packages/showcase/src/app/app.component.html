@@ -31,7 +31,10 @@
     <p class="app-header__bundle text-body-regular-m">
       Bundle:
 
-      <button class="button-tertiary button-icon-and-text">
+      <button
+        class="button-tertiary button-icon-and-text"
+        (click)="copyBundle()"
+      >
         {{ selectedBundle() }}
 
         <ch-image
@@ -46,8 +49,10 @@
 
   @if (selectedLink().id === "/icons") {
     <ch-edit
+      [accessibleName]="'Icon'"
       class="input app-header__filters"
       [debounce]="400"
+      [placeholder]="'Search icon...'"
       [type]="'search'"
       (input)="handleFilterChange($event)"
     ></ch-edit>

@@ -48,6 +48,12 @@
   display: contents;
 }
 
+.step-list {
+  > li {
+    margin-block: var(--mer-spacing--2xs);
+  }
+}
+
 // Useful to download the styles before the first paint, avoiding CLS
 .tree-view-snippet {
   block-size: 300px;
