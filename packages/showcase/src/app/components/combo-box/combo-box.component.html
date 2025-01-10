@@ -54,13 +54,14 @@
   <ch-combo-box-render
     class="combo-box"
     [model]="comboBoxModel"
-    [placeholder]="codeSnippets.placeholder.template.properties[0].value"
+    [placeholder]="codeSnippets.placeholder.template.properties[1].value"
   ></ch-combo-box-render>
 </code-snippet>
 
 <code-snippet [codeSnippet]="codeSnippets.withIcons">
   <ch-combo-box-render
     class="combo-box"
+    [getImagePathCallback]="getImagePathCallback"
     [model]="comboBoxIconsModel"
     [value]="codeSnippets.withIcons.template.properties[0].value"
   ></ch-combo-box-render>

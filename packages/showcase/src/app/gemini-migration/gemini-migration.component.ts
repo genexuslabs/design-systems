@@ -97,8 +97,8 @@ export class GeminiMigrationComponent {
       : [];
 
     // Display all typographies
-    newMigrations.forEach((_, typographyName) =>
-      newMigrations.set(typographyName, true)
+    newMigrations.forEach((_, migrationName) =>
+      newMigrations.set(migrationName, true)
     );
 
     // Remove those typographies that must be hidden
@@ -126,12 +126,12 @@ export class GeminiMigrationComponent {
 
       let hiddenMigrationsQueryParm = "";
 
-      this.migrations().forEach((renderTypography, typographyName) => {
-        if (!renderTypography) {
+      this.migrations().forEach((renderMigration, migrationName) => {
+        if (!renderMigration) {
           hiddenMigrationsQueryParm +=
             hiddenMigrationsQueryParm === ""
-              ? typographyName
-              : "," + typographyName;
+              ? migrationName
+              : "," + migrationName;
         }
       });
 

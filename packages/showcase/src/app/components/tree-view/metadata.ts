@@ -1,4 +1,5 @@
 import { ComponentMetadata } from "../../../common/types";
+import { iconsModel, iconsModelForMetadata, noIconsModel } from "./models";
 
 const COMPONENT_CLASS = "tree-view";
 
@@ -10,9 +11,13 @@ export const treeViewMetadata = {
     noIcons: {
       linkId: "default",
       title: "1. Default",
+      states: [
+        { name: "treeViewModel", type: "TreeViewModel", value: noIconsModel }
+      ],
       template: {
         tag: "ch-tree-view-render",
-        class: COMPONENT_CLASS
+        class: COMPONENT_CLASS,
+        properties: [{ name: "model", value: "treeViewModel", state: true }]
       }
     },
 
@@ -22,7 +27,10 @@ export const treeViewMetadata = {
       template: {
         tag: "ch-tree-view-render",
         class: COMPONENT_CLASS,
-        properties: [{ name: "showLines", value: "last" }]
+        properties: [
+          { name: "model", value: "...", variable: true },
+          { name: "showLines", value: "last" }
+        ]
       }
     },
 
@@ -32,17 +40,33 @@ export const treeViewMetadata = {
       template: {
         tag: "ch-tree-view-render",
         class: COMPONENT_CLASS,
-        properties: [{ name: "showLines", value: "all" }]
+        properties: [
+          { name: "model", value: "...", variable: true },
+          { name: "showLines", value: "all" }
+        ]
       }
     },
 
     withIcons: {
       linkId: "with-icons",
       title: "4. With icons",
+      imports: [
+        'import { getIconPath, getIconPathExpanded } from "@genexus/mercury/assets-manager.js";'
+      ],
+      states: [
+        {
+          name: "treeViewModel",
+          type: "TreeViewModel",
+          value: iconsModelForMetadata
+        }
+      ],
       template: {
         tag: "ch-tree-view-render",
         class: COMPONENT_CLASS,
-        properties: [{ name: "showLines", value: "last" }]
+        properties: [
+          { name: "model", value: "treeViewModel", state: true },
+          { name: "showLines", value: "last" }
+        ]
       }
     },
 
@@ -54,6 +78,7 @@ export const treeViewMetadata = {
         class: COMPONENT_CLASS,
         properties: [
           { name: "checkbox", value: true },
+          { name: "model", value: "...", variable: true },
           { name: "showLines", value: "all" },
           { name: "toggleCheckboxes", value: true }
         ]

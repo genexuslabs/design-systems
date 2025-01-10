@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  computed,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   input,

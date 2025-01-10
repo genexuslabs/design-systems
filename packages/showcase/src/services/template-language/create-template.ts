@@ -5,7 +5,6 @@ import {
   CodeTemplateStates,
   CodeTemplateVariables,
   ComponentTemplateItem,
-  ComponentTemplateItemNode,
   ComponentTemplateItemNodeProperty,
   ComponentTemplateItemText,
   ComponentTemplateModel
@@ -13,6 +12,9 @@ import {
 
 const INDENTATION_SIZE = 2; // 2 spaces
 const MAX_LINE_WIDTH_FOR_PRETTIER = 80; // 80 characters
+
+const REMOVE_STRING_IN_GET_ICON_PATH_TO_FUNCTION =
+  /"startImgSrc":\s*"((getIconPath|getIconPathExpanded)\(([^)]*)\))"/g;
 
 const insertSpacesAtTheBeginningExceptForTheFirstLine = (
   text: string,
@@ -279,7 +281,12 @@ const createTemplate = (
 
   const renderedStates = states
     ? states
-        .map(stateDefinitionByCodeTemplateLanguage[codeLanguage])
+        .map(state =>
+          stateDefinitionByCodeTemplateLanguage[codeLanguage](state).replace(
+            REMOVE_STRING_IN_GET_ICON_PATH_TO_FUNCTION,
+            `"startImgSrc": $1`
+          )
+        )
         .join("  \n")
     : "";
 
@@ -294,7 +301,7 @@ const createTemplate = (
         .join("\n" + " ".repeat(actualIndentation))
     : renderTemplate(template, codeLanguage, actualIndentation);
 
-  return renderedImports || renderedVariables
+  return renderedImports || renderedVariables || renderedStates
     ? wrapperForImportsAndVariables[codeLanguage](
         renderedImports,
         renderedVariables,

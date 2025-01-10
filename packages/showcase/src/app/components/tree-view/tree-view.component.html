@@ -1,4 +1,4 @@
-<runtime-bundles [bundles]="['components/tree-view']" />
+<runtime-bundles [bundles]="['components/checkbox', 'components/tree-view']" />
 
 <header>
   <h1 class="heading-1">{{ metadata.title }}</h1>
@@ -8,44 +8,71 @@
   {{ metadata.description }}
 </p>
 
-<code-snippet [codeSnippet]="codeSnippets.noIcons">
-  <ch-tree-view-render
-    class="tree-view tree-view-secondary tree-view-snippet"
-    [model]="noIconsModel"
-  ></ch-tree-view-render>
-</code-snippet>
+<ol class="filters elevation-1">
+  @for (treeViewEntry of this.treeViews().entries(); track treeViewEntry[0]) {
+    @let treeViewName = treeViewEntry[0];
 
-<code-snippet [codeSnippet]="codeSnippets.showLinesLast">
-  <ch-tree-view-render
-    class="tree-view tree-view-secondary tree-view-snippet"
-    [model]="noIconsModel"
-    [showLines]="'last'"
-  ></ch-tree-view-render>
-</code-snippet>
+    <li class="filters-checkbox">
+      <ch-checkbox
+        [caption]="treeViewName"
+        class="checkbox"
+        [checkedValue]="'true'"
+        [value]="treeViewEntry[1].toString()"
+        [unCheckedValue]="'false'"
+        (input)="updateRenderedTreeView(treeViewName)($event)"
+      ></ch-checkbox>
+    </li>
+  }
+</ol>
 
-<code-snippet [codeSnippet]="codeSnippets.showLinesAll">
-  <ch-tree-view-render
-    class="tree-view tree-view-secondary tree-view-snippet"
-    [model]="noIconsModel"
-    [showLines]="'all'"
-  ></ch-tree-view-render>
-</code-snippet>
+@if (showDefault()) {
+  <code-snippet [codeSnippet]="codeSnippets.noIcons" [language]="'ts'">
+    <ch-tree-view-render
+      class="tree-view tree-view-secondary tree-view-snippet"
+      [model]="noIconsModel"
+    ></ch-tree-view-render>
+  </code-snippet>
+}
 
-<code-snippet [codeSnippet]="codeSnippets.withIcons">
-  <ch-tree-view-render
-    class="tree-view tree-view-secondary tree-view-snippet"
-    [model]="withIconsModel"
-    [getImagePathCallback]="getImagePathCallback"
-    [showLines]="'last'"
-  ></ch-tree-view-render>
-</code-snippet>
+@if (showShowLinesLast()) {
+  <code-snippet [codeSnippet]="codeSnippets.showLinesLast">
+    <ch-tree-view-render
+      class="tree-view tree-view-secondary tree-view-snippet"
+      [model]="noIconsModel"
+      [showLines]="'last'"
+    ></ch-tree-view-render>
+  </code-snippet>
+}
 
-<code-snippet [codeSnippet]="codeSnippets.withCheckboxes">
-  <ch-tree-view-render
-    class="tree-view tree-view-secondary tree-view-snippet"
-    checkbox
-    [model]="noIconsModel"
-    [showLines]="'all'"
-    [toggleCheckboxes]="true"
-  ></ch-tree-view-render>
-</code-snippet>
+@if (showShowLinesAll()) {
+  <code-snippet [codeSnippet]="codeSnippets.showLinesAll">
+    <ch-tree-view-render
+      class="tree-view tree-view-secondary tree-view-snippet"
+      [model]="noIconsModel"
+      [showLines]="'all'"
+    ></ch-tree-view-render>
+  </code-snippet>
+}
+
+@if (showWithIcons()) {
+  <code-snippet [codeSnippet]="codeSnippets.withIcons" [language]="'ts'">
+    <ch-tree-view-render
+      class="tree-view tree-view-secondary tree-view-snippet"
+      [model]="withIconsModel"
+      [getImagePathCallback]="getImagePathCallback"
+      [showLines]="'last'"
+    ></ch-tree-view-render>
+  </code-snippet>
+}
+
+@if (showCheckboxes()) {
+  <code-snippet [codeSnippet]="codeSnippets.withCheckboxes">
+    <ch-tree-view-render
+      class="tree-view tree-view-secondary tree-view-snippet"
+      checkbox
+      [model]="noIconsModel"
+      [showLines]="'all'"
+      [toggleCheckboxes]="true"
+    ></ch-tree-view-render>
+  </code-snippet>
+}

@@ -12,6 +12,7 @@ import { comboBoxMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
 import { RouterCommonLinksService } from "../../../services/router-links.service";
+import { getComboBoxImagePathCallback } from "@genexus/mercury/assets-manager.js";
 
 @Component({
   selector: "components-combo-box",
@@ -31,6 +32,9 @@ export class ComboBoxComponent {
 
   metadata = comboBoxMetadata;
   codeSnippets = comboBoxMetadata.codeSnippets;
+
+  // TODO: This is a WA, since the Chameleon's register does not for some reason
+  getImagePathCallback = getComboBoxImagePathCallback;
 
   comboBoxModel: ComboBoxModel = [
     { value: "Value 1", caption: "Label for the value 1" },
