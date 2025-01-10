@@ -3,7 +3,6 @@ import {
   Component,
   computed,
   CUSTOM_ELEMENTS_SCHEMA,
-  effect,
   inject,
   input,
   signal
@@ -77,19 +76,39 @@ export class GeminiMigrationComponent {
 
   // TODO: This is a WA, since the Chameleon's register does not for some reason
   getImagePathCallback = getImagePathCallback;
+  hiddenMigrations = input<string>("");
 
   /**
    * This map is useful for rendering checkboxes to determine whether a
    * migration section must be rendered.
    */
-  migrations = signal(
-    new Map<string, boolean>([
+  migrations = computed(() => {
+    const newMigrations = new Map<string, boolean>([
       ["gxg-button: text only", true],
       ["gxg-button: text with icon", true],
       ["gxg-combo-box", true],
       ["gxg-form-checkbox", true]
-    ])
-  );
+    ]);
+
+    // Update the rendered migrations by watching changes for the
+    // hiddenMigrations query parameter
+    const hiddenMigrationsArray = this.hiddenMigrations()
+      ? this.hiddenMigrations().split(",")
+      : [];
+
+    // Display all typographies
+    newMigrations.forEach((_, typographyName) =>
+      newMigrations.set(typographyName, true)
+    );
+
+    // Remove those typographies that must be hidden
+    hiddenMigrationsArray.forEach(hiddenMigrationName =>
+      newMigrations.set(hiddenMigrationName, false)
+    );
+
+    return newMigrations;
+  });
+
   showGxgButtonTextOnly = computed(() =>
     this.migrations().get("gxg-button: text only")
   );
@@ -97,39 +116,13 @@ export class GeminiMigrationComponent {
     this.migrations().get("gxg-button: text with icon")
   );
   showGxgComboBox = computed(() => this.migrations().get("gxg-combo-box"));
-  showGxgFormCheckbox = computed(() => this.migrations().get("gxg-combo-box"));
-
-  hiddenMigrations = input<string>("");
-
-  constructor() {
-    // Update the rendered migrations by watching changes for the
-    // hiddenMigrations query parameter
-    effect(() => {
-      const hiddenMigrationsArray = this.hiddenMigrations()
-        ? this.hiddenMigrations().split(",")
-        : [];
-
-      // Display all typographies
-      this.migrations().forEach((_, typographyName) =>
-        this.migrations().set(typographyName, true)
-      );
-
-      // Remove those typographies that must be hidden
-      hiddenMigrationsArray.forEach(hiddenMigrationName =>
-        this.migrations().set(hiddenMigrationName, false)
-      );
-
-      // Notify dependencies that the Map has changed
-      this.migrations.update(value => value);
-    });
-  }
+  showGxgFormCheckbox = computed(() =>
+    this.migrations().get("gxg-form-checkbox")
+  );
 
   updateRenderedMigration =
     (typographyName: string) => (event: ChCheckboxCustomEvent<string>) => {
       this.migrations().set(typographyName, event.detail === "true");
-
-      // Notify dependencies that the Map has changed
-      this.migrations.update(value => new Map(value));
 
       let hiddenMigrationsQueryParm = "";
 
