@@ -75,7 +75,7 @@ export const getThemeBundles = (basePath: string) =>
     getThemeModelItem(basePath, "components/tab"),
     getThemeModelItem(basePath, "components/tabular-grid"),
     getThemeModelItem(basePath, "components/ticket-list"),
-    getThemeModelItem(basePath, "components/toggle"),
+    getThemeModelItem(basePath, "components/switch"),
     getThemeModelItem(basePath, "components/tooltip"),
     getThemeModelItem(basePath, "components/tree-view"),
     getThemeModelItem(basePath, "components/widget"),
