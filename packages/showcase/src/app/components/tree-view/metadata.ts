@@ -12,14 +12,23 @@ export const treeViewMetadata = {
       title: "1. Default",
       template: {
         tag: "ch-tree-view-render",
+        class: COMPONENT_CLASS
+      }
+    },
+
+    showLinesLast: {
+      linkId: "show-lines-last",
+      title: "2. Show Lines: Last",
+      template: {
+        tag: "ch-tree-view-render",
         class: COMPONENT_CLASS,
         properties: [{ name: "showLines", value: "last" }]
       }
     },
 
-    withIcons: {
-      linkId: "with-icons",
-      title: "2. With icons",
+    showLinesAll: {
+      linkId: "show-lines-all",
+      title: "3. Show Lines: All",
       template: {
         tag: "ch-tree-view-render",
         class: COMPONENT_CLASS,
@@ -27,22 +36,9 @@ export const treeViewMetadata = {
       }
     },
 
-    withCheckboxes: {
-      linkId: "checkboxes",
-      title: "3. Checkboxes",
-      template: {
-        tag: "ch-tree-view-render",
-        class: COMPONENT_CLASS,
-        properties: [
-          { name: "checkbox", value: true },
-          { name: "showLines", value: "all" }
-        ]
-      }
-    },
-
-    showLinesLast: {
-      linkId: "show-last-line",
-      title: "4. Show Lines: Last",
+    withIcons: {
+      linkId: "with-icons",
+      title: "4. With icons",
       template: {
         tag: "ch-tree-view-render",
         class: COMPONENT_CLASS,
@@ -50,10 +46,18 @@ export const treeViewMetadata = {
       }
     },
 
-    showLinesNone: {
-      linkId: "show-last-none",
-      title: "5. Show Lines: None",
-      template: { tag: "ch-tree-view-render", class: COMPONENT_CLASS }
+    withCheckboxes: {
+      linkId: "checkboxes",
+      title: "5. Checkboxes",
+      template: {
+        tag: "ch-tree-view-render",
+        class: COMPONENT_CLASS,
+        properties: [
+          { name: "checkbox", value: true },
+          { name: "showLines", value: "all" },
+          { name: "toggleCheckboxes", value: true }
+        ]
+      }
     }
   }
 } as const satisfies ComponentMetadata;

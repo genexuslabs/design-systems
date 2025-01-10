@@ -5,8 +5,7 @@ const CAPTION: ComponentTemplateItemText = "Caption";
 
 export const buttonMetadata = {
   title: "Button",
-  description:
-    "A primary HTML button is a key element on a webpage, designed to stand out and encourage user interaction. It typically represents the main action a user should take, such as submitting a form or saving changes.",
+  description: "TODO..................",
   codeSnippets: {
     buttonPrimaryTextOnly: {
       linkId: "button-primary-text-only",

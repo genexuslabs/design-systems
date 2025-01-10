@@ -18,6 +18,42 @@ export const labelMetadata = {
       }
     },
 
+    blockStart: {
+      linkId: "block-start",
+      title: "2. Block Start",
+      template: {
+        tag: "div",
+        class: "field field-block",
+        children: [
+          {
+            tag: "label",
+            class: "label",
+            properties: [{ name: "for", value: "element-2" }],
+            children: "The label caption"
+          },
+          '<!-- You "element-2" component here -->'
+        ]
+      }
+    },
+
+    inlineStart: {
+      linkId: "inline-start",
+      title: "3. Inline Start",
+      template: {
+        tag: "div",
+        class: "field field-inline",
+        children: [
+          {
+            tag: "label",
+            class: "label",
+            properties: [{ name: "for", value: "element-3" }],
+            children: "The label caption"
+          },
+          '<!-- You "element-3" component here -->'
+        ]
+      }
+    },
+
     disabled: {
       linkId: "disabled",
       title: "4. Disabled",

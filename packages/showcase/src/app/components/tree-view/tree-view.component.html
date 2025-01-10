@@ -12,24 +12,6 @@
   <ch-tree-view-render
     class="tree-view tree-view-secondary tree-view-snippet"
     [model]="noIconsModel"
-    [showLines]="'all'"
-  ></ch-tree-view-render>
-</code-snippet>
-
-<code-snippet [codeSnippet]="codeSnippets.withIcons">
-  <ch-tree-view-render
-    class="tree-view tree-view-secondary tree-view-snippet"
-    [model]="withIconsModel"
-    [showLines]="'all'"
-  ></ch-tree-view-render>
-</code-snippet>
-
-<code-snippet [codeSnippet]="codeSnippets.withCheckboxes">
-  <ch-tree-view-render
-    class="tree-view tree-view-secondary tree-view-snippet"
-    checkbox
-    [model]="noIconsModel"
-    [showLines]="'all'"
   ></ch-tree-view-render>
 </code-snippet>
 
@@ -41,9 +23,29 @@
   ></ch-tree-view-render>
 </code-snippet>
 
-<code-snippet [codeSnippet]="codeSnippets.showLinesNone">
+<code-snippet [codeSnippet]="codeSnippets.showLinesAll">
   <ch-tree-view-render
     class="tree-view tree-view-secondary tree-view-snippet"
     [model]="noIconsModel"
+    [showLines]="'all'"
+  ></ch-tree-view-render>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.withIcons">
+  <ch-tree-view-render
+    class="tree-view tree-view-secondary tree-view-snippet"
+    [model]="withIconsModel"
+    [getImagePathCallback]="getImagePathCallback"
+    [showLines]="'last'"
+  ></ch-tree-view-render>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.withCheckboxes">
+  <ch-tree-view-render
+    class="tree-view tree-view-secondary tree-view-snippet"
+    checkbox
+    [model]="noIconsModel"
+    [showLines]="'all'"
+    [toggleCheckboxes]="true"
   ></ch-tree-view-render>
 </code-snippet>

@@ -4,8 +4,11 @@ import {
   CUSTOM_ELEMENTS_SCHEMA
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { getIconPath } from "@genexus/mercury";
 import { TreeViewModel } from "@genexus/chameleon-controls-library";
+import {
+  getIconPath,
+  getTreeViewImagePathCallback
+} from "@genexus/mercury/assets-manager.js";
 
 import { treeViewMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
@@ -25,6 +28,9 @@ export class TreeViewComponent {
     name: "add-circle",
     colorType: "on-elevation"
   });
+
+  // TODO: This is a WA, since the Chameleon's register does not for some reason
+  getImagePathCallback = getTreeViewImagePathCallback;
 
   metadata = treeViewMetadata;
   codeSnippets = treeViewMetadata.codeSnippets;
@@ -186,13 +192,13 @@ export class TreeViewComponent {
             {
               id: "Main_Programs.BackHome",
               caption: "BackHome",
-              startImgSrc: "objects/web-panel",
+              startImgSrc: "objects/webpanel",
               leaf: true
             },
             {
               id: "Main_Programs.Login",
               caption: "Login",
-              startImgSrc: "objects/web-panel",
+              startImgSrc: "objects/webpanel",
               leaf: true
             },
             {
