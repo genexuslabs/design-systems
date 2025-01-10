@@ -65,7 +65,7 @@
 @import "./components/tabular-grid/tabular-grid-styles";
 @import "./components/tabular-grid/helpers";
 @import "./components/ticket-list/ticket-list-styles";
-@import "./components/toggle/toggle-styles";
+@import "./components/switch/switch-styles";
 @import "./components/tooltip/tooltip-styles";
 @import "./components/tree-view/tree-view-styles";
 @import "./components/widget/widget-styles";
@@ -140,7 +140,7 @@
   $tab: true,
   $tabular-grid: true,
   $ticket-list: true,
-  $toggle: true,
+  $switch: true,
   $tooltip: true,
   $tree-view: true,
   $widget: true
@@ -572,9 +572,9 @@
     @include ticket-list();
   }
 
-  @if $toggle {
-    @include toggle-small();
-    @include toggle-large();
+  @if $switch {
+    @include switch-small();
+    @include switch-large();
   }
 
   @if $tooltip {
@@ -660,7 +660,7 @@
   $tab: false,
   $tabular-grid: false,
   $ticket-list: false,
-  $toggle: false,
+  $switch: false,
   $tooltip: false,
   $tree-view: false,
   $widget: false
@@ -735,7 +735,7 @@
     $tab: $tab,
     $tabular-grid: $tabular-grid,
     $ticket-list: $ticket-list,
-    $toggle: $toggle,
+    $switch: $switch,
     $tooltip: $tooltip,
     $tree-view: $tree-view,
     $widget: $widget
