@@ -2,6 +2,13 @@ export type CodeTemplateLanguages = "Angular" | "React" | "StencilJS";
 
 export type CodeTemplateVariables = { name: string; value: string }[];
 
+export type CodeTemplateState = {
+  name: string;
+  value: string | any[] | Record<string, any>;
+  type: string;
+};
+export type CodeTemplateStates = CodeTemplateState[];
+
 export type CodeTemplatesByLanguage = Record<CodeTemplateLanguages, string>;
 
 export type ComponentTemplateModel =
@@ -12,26 +19,21 @@ export type ComponentTemplateItem =
   | ComponentTemplateItemNode
   | ComponentTemplateItemText;
 
-export type ComponentTemplateType = "component" | "text";
-
 export type ComponentTemplateItemNode = {
   tag: string;
   class?: string;
   properties?: ComponentTemplateItemNodeProperty[];
   events?: ComponentTemplateItemNodeEvent[];
-  type?: "component";
   children?: ComponentTemplateModel;
 };
 
-export type ComponentTemplateItemText = {
-  text: string;
-  type: "text";
-};
+export type ComponentTemplateItemText = string;
 
 export type ComponentTemplateItemNodeProperty = {
   name: string;
   value: string | number | boolean;
   variable?: boolean;
+  state?: boolean;
 };
 
 export type ComponentTemplateItemNodeEvent = {

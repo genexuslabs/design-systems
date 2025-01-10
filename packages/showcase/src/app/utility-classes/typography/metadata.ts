@@ -1,9 +1,7 @@
 import { ComponentMetadata } from "../../../common/types";
 import { ComponentTemplateModel } from "../../../services/template-language/types";
 
-const CONTENT_HERE: ComponentTemplateModel = [
-  { text: "<!-- Your content here -->", type: "text" }
-];
+const CONTENT_HERE: ComponentTemplateModel = "<!-- Your content here -->";
 
 export const typographyMetadata = {
   title: "Typography",

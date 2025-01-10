@@ -1,4 +1,8 @@
+import type { ComboBoxModel } from "@genexus/chameleon-controls-library";
 import { ComponentMetadataBeforeAfter } from "../../common/types";
+
+const chameleonImportType = (thingToImport: string) =>
+  `import type { ${thingToImport} } from "@genexus/chameleon-controls-library"`;
 
 export const geminiMigrationMetadata = {
   title: "Gemini Migration",
@@ -12,14 +16,14 @@ export const geminiMigrationMetadata = {
         template: {
           tag: "gxg-button",
           properties: [{ name: "type", value: "primary-icon-only" }],
-          children: { text: "Caption", type: "text" }
+          children: "Caption"
         }
       },
       after: {
         template: {
           tag: "button",
           class: "button-primary",
-          children: { text: "Caption", type: "text" }
+          children: "Caption"
         }
       }
     },
@@ -34,7 +38,7 @@ export const geminiMigrationMetadata = {
             { name: "type", value: "primary-text-icon" },
             { name: "icon", value: "navigation/arrow-down" }
           ],
-          children: { text: "Caption", type: "text" }
+          children: "Caption"
         }
       },
       after: {
@@ -57,9 +61,85 @@ export const geminiMigrationMetadata = {
               class: "icon-sm",
               properties: [{ name: "src", value: "ICON", variable: true }]
             },
-            { type: "text", text: "Caption" }
+            "Caption"
           ]
         }
+      }
+    },
+
+    gxgComboBox: {
+      linkId: "gxg-combo-box",
+      title: "3. gxg-combo-box",
+      before: {
+        template: {
+          tag: "gxg-combo-box",
+          properties: [
+            { name: "label", value: "Favorite Colors" },
+            { name: "placeholder", value: "Select an item" },
+            { name: "value", value: "yellow" }
+          ],
+          children: [
+            {
+              tag: "gxg-combo-box-item",
+              properties: [{ name: "value", value: "red" }],
+              children: "Red"
+            },
+            {
+              tag: "gxg-combo-box-item",
+              properties: [{ name: "value", value: "blue" }],
+              children: "Blue"
+            },
+            {
+              tag: "gxg-combo-box-item",
+              properties: [{ name: "value", value: "green" }],
+              children: "Green"
+            },
+            {
+              tag: "gxg-combo-box-item",
+              properties: [{ name: "value", value: "yellow" }],
+              children: "Yellow"
+            },
+            {
+              tag: "gxg-combo-box-item",
+              properties: [{ name: "value", value: "purple" }],
+              children: "Purple"
+            }
+          ]
+        }
+      },
+      after: {
+        imports: [chameleonImportType("ComboBoxModel")],
+        states: [
+          {
+            name: "favoriteColorsModel",
+            type: "ComboBoxModel",
+            value: [
+              { value: "red", caption: "Red" },
+              { value: "blue", caption: "Blue" },
+              { value: "green", caption: "Green" },
+              { value: "yellow", caption: "Yellow" },
+              { value: "purple", caption: "Purple" }
+            ] satisfies ComboBoxModel
+          }
+        ],
+        template: [
+          {
+            tag: "label",
+            class: "label",
+            properties: [{ name: "for", value: "favorite-colors" }],
+            children: "Favorite Colors"
+          },
+          {
+            tag: "ch-combo-box-render",
+            class: "combo-box",
+            properties: [
+              { name: "id", value: "favorite-colors" },
+              { name: "model", value: "favoriteColorsModel", state: true },
+              { name: "placeholder", value: "Select an item" },
+              { name: "value", value: "yellow" }
+            ]
+          }
+        ]
       }
     }
   }

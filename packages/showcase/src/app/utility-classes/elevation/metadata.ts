@@ -1,4 +1,7 @@
 import { ComponentMetadata } from "../../../common/types";
+import { ComponentTemplateModel } from "../../../services/template-language/types";
+
+const CONTENT_HERE: ComponentTemplateModel = "<!-- Your content here -->";
 
 export const elevationMetadata = {
   title: "Elevation",
@@ -12,7 +15,7 @@ export const elevationMetadata = {
         {
           tag: "div",
           properties: [{ name: "class", value: "elevation-1" }],
-          children: [{ text: "<!-- Your content here -->", type: "text" }]
+          children: CONTENT_HERE
         }
       ]
     },
@@ -24,7 +27,7 @@ export const elevationMetadata = {
         {
           tag: "div",
           properties: [{ name: "class", value: "elevation-2" }],
-          children: [{ text: "<!-- Your content here -->", type: "text" }]
+          children: CONTENT_HERE
         }
       ]
     },
@@ -36,7 +39,7 @@ export const elevationMetadata = {
         {
           tag: "div",
           properties: [{ name: "class", value: "elevation-3" }],
-          children: [{ text: "<!-- Your content here -->", type: "text" }]
+          children: CONTENT_HERE
         }
       ]
     }

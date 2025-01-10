@@ -74,3 +74,32 @@
     </ol>
   </code-snippet>
 }
+
+@if (showGxgComboBox()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgComboBox"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-button</code> that is "text with
+      icon":
+    </p>
+
+    <ol class="text-body-regular-s gemini-migration-list">
+      <li>
+        Replace the <code>gxg-button</code> tag with a <code>button</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values</li>
+
+      <li>Add the <code>button-icon-and-text</code> class.</li>
+
+      <li>
+        Insert a <code>ch-image</code> inside the <code>button</code> and
+        <a class="hyperlink" [routerLink]="commonLinks.componentsIcon()"
+          >follow the documentation for using an icon</a
+        >
+      </li>
+    </ol>
+  </code-snippet>
+}

@@ -14,14 +14,14 @@ export const labelMetadata = {
         tag: "label",
         class: COMPONENT_CLASS,
         properties: [{ name: "for", value: "element-1" }],
-        children: { text: "The label caption", type: "text" }
+        children: "The label caption"
       }
     },
 
     disabled: {
       linkId: "disabled",
       title: "4. Disabled",
-      template: { text: "TODO", type: "text" }
+      template: "TODO"
     }
   }
 } as const satisfies ComponentMetadata;

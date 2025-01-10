@@ -38,7 +38,8 @@ export class CodeSnippetComponent {
       ? createTemplateForAllLanguages(
           codeSnippet.template,
           codeSnippet.imports,
-          codeSnippet.variables
+          codeSnippet.variables,
+          codeSnippet.states
         )
       : undefined;
   });
@@ -49,7 +50,8 @@ export class CodeSnippetComponent {
       ? createTemplateForAllLanguages(
           codeSnippet.before.template,
           codeSnippet.before.imports,
-          codeSnippet.before.variables
+          codeSnippet.before.variables,
+          codeSnippet.before.states
         )
       : undefined;
   });
@@ -60,7 +62,8 @@ export class CodeSnippetComponent {
       ? createTemplateForAllLanguages(
           codeSnippet.after.template,
           codeSnippet.after.imports,
-          codeSnippet.after.variables
+          codeSnippet.after.variables,
+          codeSnippet.after.states
         )
       : undefined;
   });

@@ -1,4 +1,7 @@
 import { ComponentMetadata } from "../../../common/types";
+import { ComponentTemplateItemText } from "../../../services/template-language/types";
+
+const CAPTION: ComponentTemplateItemText = "Caption";
 
 export const buttonMetadata = {
   title: "Button",
@@ -11,7 +14,7 @@ export const buttonMetadata = {
       template: {
         tag: "button",
         class: "button-primary",
-        children: { type: "text", text: "Caption" }
+        children: CAPTION
       }
     },
 
@@ -22,7 +25,7 @@ export const buttonMetadata = {
         tag: "button",
         class: "button-primary",
         properties: [{ name: "disabled", value: true }],
-        children: { type: "text", text: "Caption" }
+        children: CAPTION
       }
     },
 
@@ -32,7 +35,7 @@ export const buttonMetadata = {
       template: {
         tag: "button",
         class: "button-primary button-primary-destructive",
-        children: { type: "text", text: "Caption" }
+        children: CAPTION
       }
     },
 
@@ -59,7 +62,7 @@ export const buttonMetadata = {
               { name: "type", value: "mask" }
             ]
           },
-          { type: "text", text: "Caption" }
+          CAPTION
         ]
       }
     }

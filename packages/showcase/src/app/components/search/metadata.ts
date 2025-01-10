@@ -18,7 +18,7 @@ export const searchMetadata = {
             tag: "label",
             class: "label",
             properties: [{ name: "for", value: "search" }],
-            children: { text: "Search", type: "text" }
+            children: "Search"
           },
           {
             tag: "ch-edit",

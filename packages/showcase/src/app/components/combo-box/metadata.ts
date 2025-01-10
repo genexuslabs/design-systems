@@ -18,7 +18,7 @@ export const comboBoxMetadata = {
             tag: "label",
             class: "label",
             properties: [{ name: "for", value: "options" }],
-            children: { text: "Options", type: "text" }
+            children: "Options"
           },
           {
             tag: "ch-combo-box-render",
@@ -81,7 +81,7 @@ export const comboBoxMetadata = {
     errors: {
       linkId: "errors",
       title: "6. Error",
-      template: { text: "TODO", type: "text" }
+      template: "TODO"
     }
   }
 } as const satisfies ComponentMetadata;

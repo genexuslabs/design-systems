@@ -18,7 +18,7 @@ export const inputMetadata = {
             tag: "label",
             class: "label",
             properties: [{ name: "for", value: "name" }],
-            children: { text: "Name", type: "text" }
+            children: "Name"
           },
           {
             tag: "ch-edit",
@@ -95,7 +95,7 @@ export const inputMetadata = {
     errors: {
       linkId: "errors",
       title: "7. Error",
-      template: { text: "TODO", type: "text" }
+      template: "TODO"
     }
   }
 } as const satisfies ComponentMetadata;
