@@ -9,6 +9,9 @@
     "dist/"
   ],
   "type": "module",
+  "bin": {
+    "mercury": "./dist/cli/build.js"
+  },
   "exports": {
     ".": {
       "import": {
@@ -57,6 +60,7 @@
     "@atao60/fse-cli": "^0.1.9",
     "@genexus/chameleon-controls-library": "6.0.0-next.55",
     "@genexus/svg-sass-generator": "1.1.24",
+    "@types/node": "~22.10.5",
     "chokidar": "^3.6.0",
     "chokidar-cli": "^3.0.0",
     "esbuild": "0.24.0",

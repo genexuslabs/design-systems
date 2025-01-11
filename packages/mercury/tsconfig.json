@@ -23,6 +23,6 @@
     "noUnusedParameters": true,
     "strict": true
   },
-  "include": ["src/index.ts"],
+  "include": ["src/index.ts", "src/cli/build.ts", "src/cli/validate-args.ts"],
   "exclude": ["node_modules"]
 }
