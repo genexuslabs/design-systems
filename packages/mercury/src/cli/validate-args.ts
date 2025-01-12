@@ -1,10 +1,11 @@
 import { styleText } from "node:util";
 
+import { DEFAULT_FONT_FACE_PATH, DEFAULT_ICONS_PATH } from "./constants.js";
+
 const ARGUMENT_VALUE_AND_NAME_SEPARATOR_REGEX = /\s*=\s*/g;
 const ERROR_IN_CHECK = false;
 const SUCCESS_CHECK = true;
-const DEFAULT_FONT_FACE_PATH = "./assets/fonts/";
-const DEFAULT_ICONS_PATH = "./assets/icons/";
+
 const DEFAULT_OUT_DIR_PATH = "./.mercury";
 
 const [, , ...args] = process.argv;
@@ -30,21 +31,21 @@ const isOutDirArgument = (arg: string) =>
 
 const printArgumentDoesNotExists = (arg: string) =>
   console.log(
-    styleText("red", "error ") +
+    styleText("red", "  error ") +
       styleText("gray", "Argument does not exists: ") +
       `'${arg}'`
   );
 
 const printDuplicatedArgument = (arg: string) =>
   console.log(
-    styleText("red", "error ") +
+    styleText("red", "  error ") +
       styleText("gray", "Duplicated argument type: ") +
       `'${arg}'`
   );
 
 const printInvalidArgument = (arg: string) =>
   console.log(
-    styleText("red", "error ") +
+    styleText("red", "  error ") +
       styleText("gray", "Invalid argument: ") +
       `'${arg}'`
   );
@@ -53,7 +54,7 @@ const printMissingFontPathArgument = () =>
   console.log(
     styleText(
       "yellow",
-      "[warning]: Missing --font-face-path argument. The path "
+      "  [warning]: Missing --font-face-path argument. The path "
     ) +
       styleText("cyan", `'${DEFAULT_FONT_FACE_PATH}'`) +
       styleText("yellow", " will be used as default.")
@@ -61,14 +62,17 @@ const printMissingFontPathArgument = () =>
 
 const printMissingIconsPathArgument = () =>
   console.log(
-    styleText("yellow", "[warning]: Missing --icons-path argument. The path ") +
+    styleText(
+      "yellow",
+      "  [warning]: Missing --icons-path argument. The path "
+    ) +
       styleText("cyan", `'${DEFAULT_ICONS_PATH}'`) +
       styleText("yellow", " will be used as default.")
   );
 
 const printMissingOutDirPathArgument = () =>
   console.log(
-    styleText("yellow", "[warning]: Missing --outDir argument. The path ") +
+    styleText("yellow", "  [warning]: Missing --outDir argument. The path ") +
       styleText("cyan", `'${DEFAULT_OUT_DIR_PATH}'`) +
       styleText("yellow", " will be used as default.")
   );
