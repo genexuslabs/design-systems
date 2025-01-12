@@ -17,6 +17,9 @@ import {
 import { measureTime } from "./internal/utils.js";
 
 measureTime(() => {
+  // Improve process visualization
+  console.log("");
+
   // Clear bundle directories
   ensureDirectoryExistsAndItsClear(BASE_BUNDLES_OUT_DIR);
 

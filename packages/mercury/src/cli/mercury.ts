@@ -5,12 +5,15 @@ import { ensureDirectoryExistsAndItsClear } from "./internal/file-management.js"
 import { getArguments } from "./internal/validate-args.js";
 import { measureTime } from "./internal/utils.js";
 
-const args = getArguments();
+measureTime(() => {
+  // Improve process visualization
+  console.log("");
 
-if (args) {
-  measureTime(() => {
+  const args = getArguments();
+
+  if (args) {
     ensureDirectoryExistsAndItsClear(args.outDirPath);
 
     createBundlesWithCustomPaths(args);
-  });
-}
+  }
+});
