@@ -1,12 +1,20 @@
-import { styleText } from "node:util";
-
-import { DEFAULT_FONT_FACE_PATH, DEFAULT_ICONS_PATH } from "./constants.js";
+import {
+  DEFAULT_FONT_FACE_PATH,
+  DEFAULT_ICONS_PATH,
+  DEFAULT_OUT_DIR_PATH
+} from "./constants.js";
+import {
+  printArgumentDoesNotExistsError,
+  printDuplicatedArgumentError,
+  printInvalidArgumentError,
+  printMissingFontPathArgumentWarning,
+  printMissingIconsPathArgumentWarning,
+  printMissingOutDirPathArgumentWarning
+} from "./print-utils.js";
 
 const ARGUMENT_VALUE_AND_NAME_SEPARATOR_REGEX = /\s*=\s*/g;
 const ERROR_IN_CHECK = false;
 const SUCCESS_CHECK = true;
-
-const DEFAULT_OUT_DIR_PATH = "./.mercury";
 
 const [, , ...args] = process.argv;
 
@@ -29,58 +37,12 @@ const isIconsArgument = (arg: string) =>
 const isOutDirArgument = (arg: string) =>
   OUT_DIR_ARGUMENTS.has(arg.toLowerCase());
 
-const printArgumentDoesNotExists = (arg: string) =>
-  console.log(
-    styleText("red", "  error ") +
-      styleText("gray", "Argument does not exists: ") +
-      `'${arg}'`
-  );
-
-const printDuplicatedArgument = (arg: string) =>
-  console.log(
-    styleText("red", "  error ") +
-      styleText("gray", "Duplicated argument type: ") +
-      `'${arg}'`
-  );
-
-const printInvalidArgument = (arg: string) =>
-  console.log(
-    styleText("red", "  error ") +
-      styleText("gray", "Invalid argument: ") +
-      `'${arg}'`
-  );
-
-const printMissingFontPathArgument = () =>
-  console.log(
-    styleText(
-      "yellow",
-      "  [warning]: Missing --font-face-path argument. The path "
-    ) +
-      styleText("cyan", `'${DEFAULT_FONT_FACE_PATH}'`) +
-      styleText("yellow", " will be used as default.")
-  );
-
-const printMissingIconsPathArgument = () =>
-  console.log(
-    styleText(
-      "yellow",
-      "  [warning]: Missing --icons-path argument. The path "
-    ) +
-      styleText("cyan", `'${DEFAULT_ICONS_PATH}'`) +
-      styleText("yellow", " will be used as default.")
-  );
-
-const printMissingOutDirPathArgument = () =>
-  console.log(
-    styleText("yellow", "  [warning]: Missing --outDir argument. The path ") +
-      styleText("cyan", `'${DEFAULT_OUT_DIR_PATH}'`) +
-      styleText("yellow", " will be used as default.")
-  );
-
 let hasGlobant = false;
 let hasFontFacePath = false;
 let hasIconsPath = false;
 let hasOutDirPath = false;
+
+let anyWarning = false;
 
 let fontFacePath = "";
 let iconsPath = "";
@@ -89,7 +51,7 @@ let outDirPath = "";
 const checkArgument = (argument: string): boolean => {
   if (isGlobantArgument(argument)) {
     if (hasGlobant) {
-      printDuplicatedArgument(argument);
+      printDuplicatedArgumentError(argument);
       return ERROR_IN_CHECK;
     }
 
@@ -102,7 +64,7 @@ const checkArgument = (argument: string): boolean => {
   );
 
   if (argNameWithValue.length !== 2) {
-    printInvalidArgument(argument);
+    printInvalidArgumentError(argument);
     return ERROR_IN_CHECK;
   }
   const argName = argNameWithValue[0];
@@ -110,7 +72,7 @@ const checkArgument = (argument: string): boolean => {
 
   if (isFontFaceArgument(argName)) {
     if (hasFontFacePath) {
-      printDuplicatedArgument(argument);
+      printDuplicatedArgumentError(argument);
       return ERROR_IN_CHECK;
     }
 
@@ -121,7 +83,7 @@ const checkArgument = (argument: string): boolean => {
 
   if (isIconsArgument(argName)) {
     if (hasIconsPath) {
-      printDuplicatedArgument(argument);
+      printDuplicatedArgumentError(argument);
       return ERROR_IN_CHECK;
     }
 
@@ -132,7 +94,7 @@ const checkArgument = (argument: string): boolean => {
 
   if (isOutDirArgument(argName)) {
     if (hasOutDirPath) {
-      printDuplicatedArgument(argument);
+      printDuplicatedArgumentError(argument);
       return ERROR_IN_CHECK;
     }
 
@@ -141,7 +103,7 @@ const checkArgument = (argument: string): boolean => {
     return SUCCESS_CHECK;
   }
 
-  printArgumentDoesNotExists(argument);
+  printArgumentDoesNotExistsError(argument);
   return ERROR_IN_CHECK;
 };
 
@@ -160,18 +122,26 @@ export const getArguments = ():
   }
 
   if (!fontFacePath) {
-    printMissingFontPathArgument();
+    printMissingFontPathArgumentWarning();
     fontFacePath = DEFAULT_FONT_FACE_PATH;
+    anyWarning = true;
   }
 
   if (!iconsPath) {
-    printMissingIconsPathArgument();
+    printMissingIconsPathArgumentWarning();
     iconsPath = DEFAULT_ICONS_PATH;
+    anyWarning = true;
   }
 
   if (!outDirPath) {
-    printMissingOutDirPathArgument();
+    printMissingOutDirPathArgumentWarning();
     outDirPath = DEFAULT_OUT_DIR_PATH;
+    anyWarning = true;
+  }
+
+  // Print a line break to better visualize warnings
+  if (anyWarning) {
+    console.log("");
   }
 
   return {
