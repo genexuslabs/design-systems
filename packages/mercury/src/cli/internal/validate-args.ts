@@ -26,7 +26,7 @@ const FONT_FACE_PATH_ARGUMENTS = new Set([
   "-f"
 ]);
 const OUT_DIR_ARGUMENTS = new Set(["--outdir", "--o", "-o"]);
-const GLOBANT_ARGUMENTS = new Set(["--globant", "--gl"]);
+const GLOBANT_ARGUMENTS = new Set(["--globant", "--gl", "-gl"]);
 
 const isFontFaceArgument = (arg: string) =>
   FONT_FACE_PATH_ARGUMENTS.has(arg.toLowerCase());
