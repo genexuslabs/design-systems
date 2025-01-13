@@ -29,8 +29,11 @@ export const getFileSize = (fileContent: string) => {
   return fileLengthInGB.toFixed(3) + "GB";
 };
 
-export const transpileBundle = (filePath: string) =>
-  sass.compile(filePath, { loadPaths: ["src"], style: "compressed" }).css;
+export const transpileBundle = (filePath: string, globant: boolean) =>
+  sass.compile(filePath, {
+    loadPaths: [globant ? "src/config/globant" : "src/config/default"],
+    style: "compressed"
+  }).css;
 
 export const getHash = (fileContent: string) =>
   crypto.createHash("md5").update(fileContent).digest("hex").substring(16);
