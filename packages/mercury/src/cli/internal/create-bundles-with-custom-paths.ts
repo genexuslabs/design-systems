@@ -5,12 +5,16 @@ import type { BundleAssociationMetadata } from "./types";
 
 // @ts-expect-error: This file does exists after the bundle transpilation process
 import { bundleMappings } from "../../bundles/js/bundle-mappings.js";
+import { BUNDLE_MAPPING_TO_HASH_FILE } from "./constants.js";
 import {
   getBundleNameWithHash,
   getHash,
   replacePlaceholdersInBundle
 } from "./utils.js";
-import { printBundleWasCreated } from "./print-utils.js";
+import {
+  printBundleToHashMappingsWasCreated,
+  printBundleWasCreated
+} from "./print-utils.js";
 
 const findLargestPath = (): number => {
   let largestBundleLength = 0;
@@ -36,6 +40,7 @@ export const createBundlesWithCustomPaths = (args: {
   const CREATED_DIRS = new Set();
 
   const largestBundleLength = findLargestPath();
+  let bundleMappingToHashObjectEntries = "";
 
   (bundleMappings as BundleAssociationMetadata[]).forEach(entry => {
     const { bundleName, fileDir, transpiledBundle } = entry;
@@ -52,11 +57,11 @@ export const createBundlesWithCustomPaths = (args: {
       CREATED_DIRS.add(fileDir);
     }
 
+    const bundleNameWithHash = getBundleNameWithHash(bundleName, hash);
     const filePathToCreateBundle = path.join(
       outDir,
-      getBundleNameWithHash(bundleName, hash)
+      `${bundleNameWithHash}.css`
     );
-
     fs.writeFileSync(filePathToCreateBundle, compiledBundleWithoutPlaceholders);
 
     printBundleWasCreated({
@@ -66,5 +71,25 @@ export const createBundlesWithCustomPaths = (args: {
       filePathToCreateBundle,
       largestBundleLength
     });
+
+    // Store the bundle mapping.
+    // For example: "components/button" --> "components/button-9f82641938b85445"
+    const bundleToHashEntry = `  "${bundleName}": "${bundleNameWithHash}"`;
+
+    // Concat entries in the object
+    bundleMappingToHashObjectEntries +=
+      bundleMappingToHashObjectEntries === ""
+        ? bundleToHashEntry
+        : ",\n" + bundleToHashEntry;
+  });
+
+  bundleMappingToHashObjectEntries = `export const bundleToHashMappings = {\n${bundleMappingToHashObjectEntries}\n} as const;\n`;
+
+  const bundleMappingFilePath = path.join(outDir, BUNDLE_MAPPING_TO_HASH_FILE);
+
+  fs.writeFileSync(bundleMappingFilePath, bundleMappingToHashObjectEntries);
+  printBundleToHashMappingsWasCreated({
+    outDir,
+    filePath: bundleMappingFilePath
   });
 };

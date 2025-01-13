@@ -4,6 +4,7 @@ import type {
   MercuryBundleComponent,
   MercuryBundleComponentForm,
   MercuryBundleFull,
+  MercuryBundleMapping,
   MercuryBundleOptimized,
   MercuryBundleReset,
   MercuryBundleUtil,
@@ -17,21 +18,29 @@ type BundleNames =
   | MercuryBundleUtil
   | MercuryBundleUtilFormFull;
 
+let bundleMappings: MercuryBundleMapping | undefined;
+
 const getThemeModelItem = <T extends BundleNames>(
   basePath: string,
   bundleName: T,
   attachStyleSheet: boolean | undefined = undefined
-) =>
-  attachStyleSheet === undefined
+) => {
+  const bundleNameWithHash = bundleMappings
+    ? bundleMappings[bundleName]
+    : bundleName;
+  const url = `${basePath}${bundleNameWithHash}.css` as const;
+
+  return attachStyleSheet === undefined
     ? ({
         name: bundleName,
-        url: `${basePath}${bundleName}.css`
+        url
       } as const satisfies ThemeItemModel)
     : ({
         name: bundleName,
-        url: `${basePath}${bundleName}.css`,
+        url,
         attachStyleSheet
       } as const satisfies ThemeItemModel);
+};
 
 /**
  * Given the basePath, returns all bundles (except base and icons) in the
@@ -128,3 +137,7 @@ export const getBundles = (
   basePath
     ? bundles.map(bundle => getThemeModelItem(basePath, bundle))
     : bundles;
+
+export const setBundleMapping = (mappings: MercuryBundleMapping) => {
+  bundleMappings = mappings;
+};

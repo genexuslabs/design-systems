@@ -38,7 +38,7 @@ export const getHash = (fileContent: string) =>
 export const getBundleNameWithHash = <B extends string, H extends string>(
   bundleName: B,
   hash: H
-) => `${bundleName}-${hash}.css` as const;
+) => `${bundleName}-${hash}` as const;
 
 export const replacePlaceholdersInBundle = (
   transpiledBundle: string,

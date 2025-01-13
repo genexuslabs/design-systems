@@ -29,6 +29,17 @@ export const printBundleWasCreated = (args: {
       )
   );
 
+export const printBundleToHashMappingsWasCreated = (args: {
+  outDir: string;
+  filePath: string;
+}) =>
+  console.log(
+    "\n" +
+      styleText("greenBright", "  Created: ") +
+      styleText("white", args.outDir) +
+      styleText("whiteBright", args.filePath.replace(args.outDir, ""))
+  );
+
 export const printBundleWasTranspiled = (filePath: string) =>
   console.log(
     styleText("greenBright", "  Transpiled: ") +

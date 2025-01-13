@@ -94,7 +94,7 @@ const createBundleEntryInMappingFile = <
 
 export const createBundleMappingsFile = () => {
   let bundleAssociationImports = "";
-  let bundleAssociationObjectEntries = "";
+  let bundleMappingObjectEntries = "";
 
   BUNDLES.forEach(bundleMetadata => {
     const bundleName = bundleMetadata.bundleNameWithBackSlash
@@ -111,15 +111,15 @@ export const createBundleMappingsFile = () => {
     bundleAssociationImports += `import { bundle as ${transpiledBundleRef} } from "./${bundleName}.js";\n`;
 
     // Concat entries in the object
-    bundleAssociationObjectEntries +=
-      bundleAssociationObjectEntries === "" ? bundleEntry : ",\n" + bundleEntry;
+    bundleMappingObjectEntries +=
+      bundleMappingObjectEntries === "" ? bundleEntry : ",\n" + bundleEntry;
   });
 
-  bundleAssociationObjectEntries = `\nexport const bundleMappings = [\n${bundleAssociationObjectEntries}\n];`;
+  bundleMappingObjectEntries = `\nexport const bundleMappings = [\n${bundleMappingObjectEntries}\n];`;
 
   // Create the JS file that contains all mappings for the bundle
   fs.writeFileSync(
     path.join(JS_BUNDLES_OUT_DIR, BUNDLE_MAPPING_FILE),
-    bundleAssociationImports + bundleAssociationObjectEntries
+    bundleAssociationImports + bundleMappingObjectEntries
   );
 };

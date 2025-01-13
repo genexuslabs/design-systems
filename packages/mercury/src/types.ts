@@ -58,6 +58,15 @@ export type MercuryBundleUtil =
 
 export type MercuryBundleUtilFormFull = "utils/form--full";
 
+export type MercuryBundleMapping = {
+  [key in
+    | MercuryBundleComponent
+    | MercuryBundleComponentForm
+    | MercuryBundleReset
+    | MercuryBundleUtil
+    | MercuryBundleUtilFormFull]: `${key}-${string}`;
+};
+
 export type AssetsMetadata = {
   category: string;
   name: string;

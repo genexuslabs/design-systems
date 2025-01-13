@@ -10,6 +10,7 @@ export const SCSS_BUNDLES_OUT_DIR = path.join(BASE_BUNDLES_OUT_DIR, "scss");
 export const CSS_BUNDLES_OUT_DIR = path.join(BASE_BUNDLES_OUT_DIR, "css");
 export const JS_BUNDLES_OUT_DIR = path.join(BASE_BUNDLES_OUT_DIR, "js");
 export const BUNDLE_MAPPING_FILE = "bundle-mappings.js";
+export const BUNDLE_MAPPING_TO_HASH_FILE = "bundle-to-hash-mappings.ts";
 
 export const ICONS_PATH_PLACEHOLDER = "{{ICONS_PATH}}";
 export const FONT_FACE_PATH_PLACEHOLDER = "{{FONT_FACE_PATH}}";
