@@ -10,7 +10,7 @@
   ],
   "type": "module",
   "bin": {
-    "mercury": "./dist/cli/build.js"
+    "mercury": "./dist/cli/mercury.js"
   },
   "exports": {
     ".": {
@@ -43,8 +43,8 @@
     "build": "npm run build.js && npm run icons-svg && npm run icons-sass && npm run build.scss && npm run copy-tasks && npm run showcase.scss",
     "build.js": "tsc && esbuild dist/*.js --allow-overwrite --minify --outdir=dist && esbuild dist/assets/*.js --allow-overwrite --minify --outdir=dist/assets",
     "build-no-svg": "npm run build.js && npm run build.scss && npm run copy-tasks",
-    "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && npm run build.bundles && npm run copy-all.css",
-    "build.bundles": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/bundles/scss dist/bundles/scss && sass --load-path=src --no-source-map --style compressed dist/bundles/scss:dist/bundles/css",
+    "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && npm run build.bundles",
+    "build.bundles": "node dist/cli/bundle.js",
     "start": "vite --port 5200 --open showcase/button.html",
     "validate.ci": "npm run build-no-svg",
     "icons-svg": "ssg-svg --srcDir=src/icons/svg-source --outDir=src/assets/icons/_generated/ --configFilePath=src/icons/svg-source/.config/color-states.json --showcaseDir=showcase/icons/ --showcaseBaseHref=../assets/icons/ --logDir=./log --objectFilePath=src/assets/MERCURY_ASSETS.ts --defaultColorType=on-surface",
