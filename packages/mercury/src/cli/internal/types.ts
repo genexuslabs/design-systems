@@ -14,3 +14,11 @@ export type FileMetadata = {
   fileName: string;
   filePath: string;
 };
+
+export type CLIArguments = {
+  avoidHash: Set<string>;
+  globant: boolean;
+  iconsPath: string;
+  fontFacePath: string;
+  outDirPath: string;
+};

@@ -64,7 +64,7 @@ export type MercuryBundleMapping = {
     | MercuryBundleComponentForm
     | MercuryBundleReset
     | MercuryBundleUtil
-    | MercuryBundleUtilFormFull]: `${key}-${string}`;
+    | MercuryBundleUtilFormFull]: `${key}-${string}` | key;
 };
 
 export type AssetsMetadata = {

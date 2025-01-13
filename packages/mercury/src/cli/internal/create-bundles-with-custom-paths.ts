@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-import type { BundleAssociationMetadata } from "./types";
+import type { BundleAssociationMetadata, CLIArguments } from "./types";
 
 // @ts-expect-error: This file does exists after the bundle transpilation process
 import { bundleMappings } from "../../bundles/js/bundle-mappings.js";
@@ -29,13 +29,8 @@ const findLargestPath = (): number => {
   return largestBundleLength;
 };
 
-export const createBundlesWithCustomPaths = (args: {
-  globant: boolean;
-  iconsPath: string;
-  fontFacePath: string;
-  outDirPath: string;
-}) => {
-  const { fontFacePath, iconsPath } = args;
+export const createBundlesWithCustomPaths = (args: CLIArguments) => {
+  const { avoidHash, fontFacePath, iconsPath } = args;
   const outDir = path.join(args.outDirPath);
   const CREATED_DIRS = new Set();
 
@@ -57,7 +52,9 @@ export const createBundlesWithCustomPaths = (args: {
       CREATED_DIRS.add(fileDir);
     }
 
-    const bundleNameWithHash = getBundleNameWithHash(bundleName, hash);
+    const bundleNameWithHash = avoidHash.has(bundleName)
+      ? bundleName
+      : getBundleNameWithHash(bundleName, hash);
     const filePathToCreateBundle = path.join(
       outDir,
       `${bundleNameWithHash}.css`
@@ -69,7 +66,10 @@ export const createBundlesWithCustomPaths = (args: {
       bundleName,
       compiledBundleWithoutPlaceholders,
       filePathToCreateBundle,
-      largestBundleLength
+
+      // WA to improve style
+      largestBundleLength:
+        largestBundleLength + (avoidHash.has(bundleName) ? 17 : 0)
     });
 
     // Store the bundle mapping.

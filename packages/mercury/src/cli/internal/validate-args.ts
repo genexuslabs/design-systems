@@ -1,7 +1,8 @@
 import {
   DEFAULT_FONT_FACE_PATH,
   DEFAULT_ICONS_PATH,
-  DEFAULT_OUT_DIR_PATH
+  DEFAULT_OUT_DIR_PATH,
+  SEPARATE_BY_COMMA_REGEX
 } from "./constants.js";
 import {
   printArgumentDoesNotExistsError,
@@ -11,6 +12,7 @@ import {
   printMissingIconsPathArgumentWarning,
   printMissingOutDirPathArgumentWarning
 } from "./print-utils.js";
+import type { CLIArguments } from "./types";
 
 const ARGUMENT_VALUE_AND_NAME_SEPARATOR_REGEX = /\s*=\s*/g;
 const ERROR_IN_CHECK = false;
@@ -18,6 +20,7 @@ const SUCCESS_CHECK = true;
 
 const [, , ...args] = process.argv;
 
+const AVOID_HASH_ARGUMENTS = new Set(["--avoid-hash", "--ah", "-ah"]);
 const ICONS_PATH_ARGUMENTS = new Set(["--icons-path", "--icons", "--i", "-i"]);
 const FONT_FACE_PATH_ARGUMENTS = new Set([
   "--font-face-path",
@@ -28,15 +31,22 @@ const FONT_FACE_PATH_ARGUMENTS = new Set([
 const OUT_DIR_ARGUMENTS = new Set(["--outdir", "--o", "-o"]);
 const GLOBANT_ARGUMENTS = new Set(["--globant", "--gl", "-gl"]);
 
+const isAvoidHashArgument = (arg: string) =>
+  AVOID_HASH_ARGUMENTS.has(arg.toLowerCase());
+
 const isFontFaceArgument = (arg: string) =>
   FONT_FACE_PATH_ARGUMENTS.has(arg.toLowerCase());
+
 const isGlobantArgument = (arg: string) =>
   GLOBANT_ARGUMENTS.has(arg.toLowerCase());
+
 const isIconsArgument = (arg: string) =>
   ICONS_PATH_ARGUMENTS.has(arg.toLowerCase());
+
 const isOutDirArgument = (arg: string) =>
   OUT_DIR_ARGUMENTS.has(arg.toLowerCase());
 
+let hasAvoidHash = false;
 let hasGlobant = false;
 let hasFontFacePath = false;
 let hasIconsPath = false;
@@ -44,6 +54,7 @@ let hasOutDirPath = false;
 
 let anyWarning = false;
 
+let avoidHash: string[] = [];
 let fontFacePath = "";
 let iconsPath = "";
 let outDirPath = "";
@@ -69,6 +80,17 @@ const checkArgument = (argument: string): boolean => {
   }
   const argName = argNameWithValue[0];
   const argValue = argNameWithValue[1];
+
+  if (isAvoidHashArgument(argName)) {
+    if (hasAvoidHash) {
+      printDuplicatedArgumentError(argument);
+      return ERROR_IN_CHECK;
+    }
+
+    avoidHash = argValue.split(SEPARATE_BY_COMMA_REGEX);
+    hasAvoidHash = true;
+    return SUCCESS_CHECK;
+  }
 
   if (isFontFaceArgument(argName)) {
     if (hasFontFacePath) {
@@ -107,14 +129,7 @@ const checkArgument = (argument: string): boolean => {
   return ERROR_IN_CHECK;
 };
 
-export const getArguments = ():
-  | {
-      globant: boolean;
-      iconsPath: string;
-      fontFacePath: string;
-      outDirPath: string;
-    }
-  | undefined => {
+export const getArguments = (): CLIArguments | undefined => {
   for (let index = 0; index < args.length; index++) {
     if (checkArgument(args[index]) === ERROR_IN_CHECK) {
       return undefined;
@@ -145,6 +160,7 @@ export const getArguments = ():
   }
 
   return {
+    avoidHash: new Set(avoidHash),
     globant: hasGlobant,
     fontFacePath,
     iconsPath,

@@ -19,6 +19,7 @@ export const DEFAULT_FONT_FACE_PATH = "./assets/fonts/";
 export const DEFAULT_ICONS_PATH = "./assets/icons/";
 export const DEFAULT_OUT_DIR_PATH = "./.mercury";
 
+export const SEPARATE_BY_COMMA_REGEX = /\s*,\s*/g;
 export const SPECIAL_CHARS_IN_BUNDLE_NAME_REGEX = /[\/-]/g;
 
 // Bundle mapping entries
