@@ -1,0 +1,72 @@
+<runtime-bundles [bundles]="['components/combo-box', 'utils/form']" />
+
+<header>
+  <h1 class="heading-1">{{ metadata.title }}</h1>
+</header>
+
+<p class="text-body-regular-l">{{ metadata.description }}</p>
+
+<code-snippet [codeSnippet]="codeSnippets.default">
+  <p class="text-body-regular-m">
+    To display a combo box with a label, you will have to do the same as working
+    with native HTML, adding a <code>for</code> attribute for the label with the
+    value of the control's <code>id</code>.
+  </p>
+
+  <p class="text-body-regular-m">
+    In addition, a div wrapper must be used around those elements to properly
+    style them. These styles are documented on the
+    <a class="hyperlink" [routerLink]="commonLinks.componentsLabel()">label</a>
+    and <a class="hyperlink" [routerLink]="commonLinks.utilsForm()">form</a>
+    sections, correspondingly.
+  </p>
+
+  <br />
+
+  <div class="field field-block">
+    <label class="label" for="name">{{
+      codeSnippets.default.template.children[0].children
+    }}</label>
+    <ch-combo-box-render
+      class="combo-box"
+      id="name"
+      [model]="comboBoxModel"
+    ></ch-combo-box-render>
+  </div>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.noLabel">
+  <ch-combo-box-render
+    class="combo-box"
+    [model]="comboBoxModel"
+  ></ch-combo-box-render>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.disabled">
+  <ch-combo-box-render
+    class="combo-box"
+    disabled
+    [model]="comboBoxModel"
+  ></ch-combo-box-render>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.placeholder">
+  <ch-combo-box-render
+    class="combo-box"
+    [model]="comboBoxModel"
+    [placeholder]="codeSnippets.placeholder.template.properties[1].value"
+  ></ch-combo-box-render>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.withIcons">
+  <ch-combo-box-render
+    class="combo-box"
+    [getImagePathCallback]="getImagePathCallback"
+    [model]="comboBoxIconsModel"
+    [value]="codeSnippets.withIcons.template.properties[0].value"
+  ></ch-combo-box-render>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.errors"
+  >TODO..................</code-snippet
+>

@@ -1,24 +1,21 @@
 import type { ThemeModel } from "@genexus/chameleon-controls-library";
 import type { ThemeItemModel } from "@genexus/chameleon-controls-library/dist/types/components/theme/theme-types.d.ts";
 import type {
-  MercuryBundleComponent,
-  MercuryBundleComponentForm,
-  MercuryBundleFull,
-  MercuryBundleMapping,
-  MercuryBundleOptimized,
-  MercuryBundleReset,
-  MercuryBundleUtil,
-  MercuryBundleUtilFormFull
+  UnanimoBundleComponent,
+  UnanimoBundleComponentForm,
+  UnanimoBundleFull,
+  UnanimoBundleOptimized,
+  UnanimoBundleReset,
+  UnanimoBundleUtil,
+  UnanimoBundleUtilFormFull
 } from "./types.ts";
 
 type BundleNames =
-  | MercuryBundleComponent
-  | MercuryBundleComponentForm
-  | MercuryBundleReset
-  | MercuryBundleUtil
-  | MercuryBundleUtilFormFull;
-
-let bundleMappings: MercuryBundleMapping | undefined;
+  | UnanimoBundleComponent
+  | UnanimoBundleComponentForm
+  | UnanimoBundleReset
+  | UnanimoBundleUtil
+  | UnanimoBundleUtilFormFull;
 
 const getThemeModelItem = <T extends BundleNames, S extends string>(
   basePath: string,
@@ -26,22 +23,18 @@ const getThemeModelItem = <T extends BundleNames, S extends string>(
   bundleNamePrefix: S | undefined,
   attachStyleSheet: boolean | undefined = undefined
 ) => {
-  const themeName = bundleNamePrefix
+  const bundleNameWithPrefix = bundleNamePrefix
     ? bundleNamePrefix + bundleName
     : bundleName;
-
-  const bundleNameWithHash = bundleMappings
-    ? bundleMappings[bundleName]
-    : bundleName;
-  const bundleURL = `${basePath}${bundleNameWithHash}.css`;
+  const bundleURL = `${basePath}${bundleName}.css`;
 
   return attachStyleSheet === undefined
     ? ({
-        name: themeName,
+        name: bundleNameWithPrefix,
         url: bundleURL
       } as const satisfies ThemeItemModel)
     : ({
-        name: themeName,
+        name: bundleNameWithPrefix,
         url: bundleURL,
         attachStyleSheet
       } as const satisfies ThemeItemModel);
@@ -117,7 +110,7 @@ export const getThemeBundles = (basePath: string, bundleNamePrefix?: string) =>
   ] as const satisfies ThemeModel;
 
 const addPrefixToBundleNames = (
-  bundles: MercuryBundleOptimized[] | MercuryBundleFull[],
+  bundles: UnanimoBundleOptimized[] | UnanimoBundleFull[],
   bundleNamePrefix?: string
 ) =>
   bundleNamePrefix ? bundles.map(bundle => bundleNamePrefix + bundle) : bundles;
@@ -141,7 +134,7 @@ const addPrefixToBundleNames = (
  *     "utils/layout",
  *   ],
  *   "./assets/css/", (optional)
- *   "mercury" (optional)
+ *   "unanimo" (optional)
  * );
  *
  * HTML/render/template:
@@ -152,7 +145,7 @@ const addPrefixToBundleNames = (
  * ```
  */
 export const getBundles = (
-  bundles: MercuryBundleOptimized[] | MercuryBundleFull[],
+  bundles: UnanimoBundleOptimized[] | UnanimoBundleFull[],
   basePath?: string,
   bundleNamePrefix?: string
 ): ThemeModel =>
@@ -161,14 +154,3 @@ export const getBundles = (
         getThemeModelItem(basePath, bundle, bundleNamePrefix)
       )
     : addPrefixToBundleNames(bundles, bundleNamePrefix);
-
-/**
- * Establish the mapping between the bundle name and its generated hash.
- *
- * If the bundles are created with the CLI that provides Mercury
- * (`mercury` command), this mapping must be set to download the right bundles
- * with the ch-theme component.
- */
-export const setBundleMapping = (mappings: MercuryBundleMapping) => {
-  bundleMappings = mappings;
-};

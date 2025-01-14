@@ -1,0 +1,22 @@
+<runtime-bundles [bundles]="['components/radio-group']" />
+
+<header>
+  <h1 class="heading-1">{{ metadata.title }}</h1>
+</header>
+
+<p class="text-body-regular-l">{{ metadata.description }}</p>
+
+<code-snippet [codeSnippet]="codeSnippets.default" [language]="'ts'">
+  <ch-radio-group-render
+    class="radio-group"
+    [model]="radioGroupModel"
+  ></ch-radio-group-render>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.vertical">
+  <ch-radio-group-render
+    class="radio-group"
+    direction="vertical"
+    [model]="radioGroupModel"
+  ></ch-radio-group-render>
+</code-snippet>
