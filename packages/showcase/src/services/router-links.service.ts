@@ -28,8 +28,8 @@ export class RouterCommonLinksService {
   componentsInput = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.INPUT}`
   );
-  componentsTextarea = computed(
-    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.INPUT}`
+  componentsTabularGrid = computed(
+    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.TABULAR_GRID}`
   );
 
   utilsForm = computed(

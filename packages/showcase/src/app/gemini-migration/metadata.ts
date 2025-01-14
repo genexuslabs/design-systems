@@ -353,6 +353,180 @@ export const geminiMigrationMetadata = {
           ]
         }
       }
+    },
+
+    gxgGrid: {
+      linkId: "gxg-grid",
+      title: "8. gxg-grid",
+      before: {
+        template: {
+          tag: "gxg-grid",
+          children: [
+            {
+              tag: "ch-grid",
+              children: [
+                {
+                  tag: "ch-grid-columnset",
+                  children: [
+                    {
+                      tag: "ch-grid-column",
+                      properties: [
+                        { name: "column-name", value: "Country Name" },
+                        { name: "column-name-position", value: "text" },
+                        { name: "settingable", value: "false" }
+                      ]
+                    },
+                    {
+                      tag: "ch-grid-column",
+                      properties: [
+                        { name: "column-name", value: "Country Code" },
+                        { name: "column-name-position", value: "text" },
+                        { name: "settingable", value: "false" }
+                      ]
+                    },
+                    {
+                      tag: "ch-grid-column",
+                      properties: [
+                        { name: "column-name", value: "Population" },
+                        { name: "column-name-position", value: "text" },
+                        { name: "settingable", value: "false" }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  tag: "ch-grid-row",
+                  children: [
+                    { tag: "ch-grid-cell", children: "Uruguay" },
+                    { tag: "ch-grid-cell", children: "UY" },
+                    { tag: "ch-grid-cell", children: "~3.5 million" }
+                  ]
+                },
+                {
+                  tag: "ch-grid-row",
+                  children: [
+                    { tag: "ch-grid-cell", children: "Brazil" },
+                    { tag: "ch-grid-cell", children: "BR" },
+                    { tag: "ch-grid-cell", children: "~214 million" }
+                  ]
+                },
+                {
+                  tag: "ch-grid-row",
+                  children: [
+                    { tag: "ch-grid-cell", children: "Argentina" },
+                    { tag: "ch-grid-cell", children: "AR" },
+                    { tag: "ch-grid-cell", children: "~46 million" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      after: {
+        template: {
+          tag: "ch-tabular-grid",
+          class: "tabular-grid",
+          children: [
+            {
+              tag: "ch-tabular-grid-columnset",
+              class: "tabular-grid-column-set",
+              children: [
+                {
+                  tag: "ch-tabular-grid-column",
+                  class: "tabular-grid-column",
+                  properties: [
+                    { name: "column-name", value: "Country Name" },
+                    { name: "column-name-position", value: "text" },
+                    { name: "settingable", value: "false" }
+                  ]
+                },
+                {
+                  tag: "ch-tabular-grid-column",
+                  class: "tabular-grid-column",
+                  properties: [
+                    { name: "column-name", value: "Country Code" },
+                    { name: "column-name-position", value: "text" },
+                    { name: "settingable", value: "false" }
+                  ]
+                },
+                {
+                  tag: "ch-tabular-grid-column",
+                  class: "tabular-grid-column",
+                  properties: [
+                    { name: "column-name", value: "Population" },
+                    { name: "column-name-position", value: "text" },
+                    { name: "settingable", value: "false" }
+                  ]
+                }
+              ]
+            },
+            {
+              tag: "ch-tabular-grid-row",
+              class: "tabular-grid-row",
+              children: [
+                {
+                  tag: "ch-tabular-grid-cell",
+                  class: "tabular-grid-cell",
+                  children: "Uruguay"
+                },
+                {
+                  tag: "ch-tabular-grid-cell",
+                  class: "tabular-grid-cell",
+                  children: "UY"
+                },
+                {
+                  tag: "ch-tabular-grid-cell",
+                  class: "tabular-grid-cell",
+                  children: "~3.5 million"
+                }
+              ]
+            },
+            {
+              tag: "ch-tabular-grid-row",
+              class: "tabular-grid-row",
+              children: [
+                {
+                  tag: "ch-tabular-grid-cell",
+                  class: "tabular-grid-cell",
+                  children: "Brazil"
+                },
+                {
+                  tag: "ch-tabular-grid-cell",
+                  class: "tabular-grid-cell",
+                  children: "BR"
+                },
+                {
+                  tag: "ch-tabular-grid-cell",
+                  class: "tabular-grid-cell",
+                  children: "~214 million"
+                }
+              ]
+            },
+            {
+              tag: "ch-tabular-grid-row",
+              class: "tabular-grid-row",
+              children: [
+                {
+                  tag: "ch-tabular-grid-cell",
+                  class: "tabular-grid-cell",
+                  children: "Argentina"
+                },
+                {
+                  tag: "ch-tabular-grid-cell",
+                  class: "tabular-grid-cell",
+                  children: "AR"
+                },
+                {
+                  tag: "ch-tabular-grid-cell",
+                  class: "tabular-grid-cell",
+                  children: "~46 million"
+                }
+              ]
+            }
+          ]
+        }
+      }
     }
   }
 } as const satisfies ComponentMetadataBeforeAfter;
