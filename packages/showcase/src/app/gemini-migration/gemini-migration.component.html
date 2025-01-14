@@ -427,3 +427,30 @@
     ></ch-image>
   </div>
 }
+
+@if (showGxgLabel()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgLabel"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-label</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-label</code> tag with a <code>label</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>label</code> class.</li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <div class="field field-block">
+      <label class="label" htmlFor="your-control-id">The Label Caption</label>
+    </div>
+  </div>
+}

@@ -121,7 +121,8 @@ export class GeminiMigrationComponent {
       ["gxg-form-text", true],
       ["gxg-form-textarea", true],
       ["gxg-grid", true],
-      ["gxg-icon", true]
+      ["gxg-icon", true],
+      ["gxg-label", true]
     ]);
 
     // Update the rendered migrations by watching changes for the
@@ -162,6 +163,7 @@ export class GeminiMigrationComponent {
   );
   showGxgGrid = computed(() => this.migrations().get("gxg-grid"));
   showGxgIcon = computed(() => this.migrations().get("gxg-icon"));
+  showGxgLabel = computed(() => this.migrations().get("gxg-label"));
 
   updateRenderedMigration =
     (typographyName: string) => (event: ChCheckboxCustomEvent<string>) => {

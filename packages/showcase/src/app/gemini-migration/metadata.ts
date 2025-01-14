@@ -559,6 +559,33 @@ export const geminiMigrationMetadata = {
           class: "icon-sm"
         }
       }
+    },
+
+    gxgLabel: {
+      linkId: "gxg-label",
+      title: "gxg-label",
+      before: {
+        template: {
+          tag: "gxg-label",
+          properties: [{ name: "label-position", value: "above" }],
+          children: "This is the label"
+        }
+      },
+      after: {
+        template: {
+          tag: "div",
+          class: "field field-block",
+          children: [
+            {
+              tag: "label",
+              class: "label",
+              properties: [{ name: "htmlFor", value: "your-control-id" }],
+              children: "The Label Caption"
+            },
+            "<!-- Your related control here -->"
+          ]
+        }
+      }
     }
   }
 } as const satisfies ComponentMetadataBeforeAfter;
