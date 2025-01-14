@@ -43,7 +43,7 @@ export type MercuryBundleComponentForm =
   | "components/icon"
   | "components/radio-group"
   | "components/slider"
-  | "components/toggle";
+  | "components/switch";
 
 export type MercuryBundleReset = "resets/box-sizing";
 
