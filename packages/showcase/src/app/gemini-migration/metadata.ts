@@ -303,6 +303,56 @@ export const geminiMigrationMetadata = {
           ]
         }
       }
+    },
+
+    gxgFormTextarea: {
+      linkId: "gxg-form-textarea",
+      title: "7. gxg-form-textarea",
+      before: {
+        template: {
+          tag: "gxg-form-textarea",
+          properties: [
+            {
+              name: "placeholder",
+              value: "I have experience in backend development..."
+            },
+            { name: "value", value: "" },
+            { name: "height", value: "100px" }
+          ]
+        }
+      },
+      after: {
+        template: {
+          tag: "div",
+          class: "field field-block",
+          children: [
+            {
+              tag: "label",
+              class: "label",
+              properties: [{ name: "for", value: "developer-experience" }],
+              children: "Developer Experience"
+            },
+            {
+              tag: "ch-edit",
+              class: "input",
+              properties: [
+                { name: "id", value: "developer-experience" },
+                { name: "value", value: "" },
+                {
+                  name: "placeholder",
+                  value: "I have experience in backend development..."
+                },
+                {
+                  name: "multiline",
+                  value: "true",
+                  variable: true
+                },
+                { name: "autoGrow", value: "true", variable: true }
+              ]
+            }
+          ]
+        }
+      }
     }
   }
 } as const satisfies ComponentMetadataBeforeAfter;

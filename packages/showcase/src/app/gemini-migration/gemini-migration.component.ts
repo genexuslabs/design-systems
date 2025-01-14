@@ -113,7 +113,8 @@ export class GeminiMigrationComponent {
       ["gxg-combo-box", true],
       ["gxg-form-checkbox", true],
       ["gxg-form-radio-group", true],
-      ["gxg-form-text", true]
+      ["gxg-form-text", true],
+      ["gxg-form-textarea", true]
     ]);
 
     // Update the rendered migrations by watching changes for the
@@ -149,6 +150,9 @@ export class GeminiMigrationComponent {
     this.migrations().get("gxg-form-radio-group")
   );
   showGxgFormText = computed(() => this.migrations().get("gxg-form-text"));
+  showGxgFormTextarea = computed(() =>
+    this.migrations().get("gxg-form-textarea")
+  );
 
   updateRenderedMigration =
     (typographyName: string) => (event: ChCheckboxCustomEvent<string>) => {

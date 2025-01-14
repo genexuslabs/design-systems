@@ -28,6 +28,9 @@ export class RouterCommonLinksService {
   componentsInput = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.INPUT}`
   );
+  componentsTextarea = computed(
+    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.INPUT}`
+  );
 
   utilsForm = computed(
     () => `/${this.dsService.designSystem()}${UTILITY_CLASSES_ROUTES.FORM}`
