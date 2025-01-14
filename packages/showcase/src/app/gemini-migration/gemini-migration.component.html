@@ -2,6 +2,7 @@
   [bundles]="[
     'components/checkbox',
     'components/combo-box',
+    'components/edit',
     'components/radio-group',
     'utils/form',
     'utils/typography'
@@ -212,6 +213,46 @@
         [model]="favoriteColorsRadioGroupModel()"
         [value]="'yellow'"
       ></ch-radio-group-render>
+    </div>
+  </div>
+}
+
+@if (showGxgFormText()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgFormText"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-form-text</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-form-text</code> tag with a
+        <code>ch-edit</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>input</code> class.</li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsInput()"
+          >Specify the control properties following the documentation
+        </a>
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <div class="field field-block">
+      <label class="label" htmlFor="favorite-colors-radio"> Name </label>
+      <ch-edit
+        value="Adam Smith"
+        class="input"
+        placeholder="John Smith"
+        startImgSrc="{this.#chEditIcon}"
+      ></ch-edit>
     </div>
   </div>
 }

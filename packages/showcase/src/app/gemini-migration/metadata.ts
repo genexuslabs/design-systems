@@ -255,6 +255,54 @@ export const geminiMigrationMetadata = {
           ]
         }
       }
+    },
+
+    gxgFormText: {
+      linkId: "gxg-form-text",
+      title: "6. gxg-form-text",
+      before: {
+        template: {
+          tag: "gxg-form-text",
+          properties: [
+            { name: "placeholder", value: "John Smith" },
+            { name: "value", value: "Adam Smith" },
+            { name: "icon", value: "gemini-tools/add-circle" }
+          ]
+        }
+      },
+      after: {
+        imports: [
+          'import { AssetsManager } from "@genexusm-sdk/common-components";'
+        ],
+        variables: [
+          {
+            name: "ICON",
+            value:
+              'AssetsManager.getIconPath({ category: "gemini-tools", name: "add-circle", colorType: "on-primary" })'
+          }
+        ],
+        template: {
+          tag: "div",
+          class: "field field-block",
+          children: [
+            {
+              tag: "label",
+              class: "label",
+              properties: [{ name: "for", value: "user-name" }]
+            },
+            {
+              tag: "ch-edit",
+              class: "input",
+              properties: [
+                { name: "id", value: "user-name" },
+                { name: "value", value: "Adam Smith" },
+                { name: "placeholder", value: "John Smith" },
+                { name: "startImgSrc", value: "ICON", variable: true }
+              ]
+            }
+          ]
+        }
+      }
     }
   }
 } as const satisfies ComponentMetadataBeforeAfter;
