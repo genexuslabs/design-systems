@@ -1,21 +1,21 @@
 import type { ThemeModel } from "@genexus/chameleon-controls-library";
 import type { ThemeItemModel } from "@genexus/chameleon-controls-library/dist/types/components/theme/theme-types.d.ts";
 import type {
-  MercuryBundleComponent,
-  MercuryBundleComponentForm,
-  MercuryBundleFull,
-  MercuryBundleOptimized,
-  MercuryBundleReset,
-  MercuryBundleUtil,
-  MercuryBundleUtilFormFull
+  UnanimoBundleComponent,
+  UnanimoBundleComponentForm,
+  UnanimoBundleFull,
+  UnanimoBundleOptimized,
+  UnanimoBundleReset,
+  UnanimoBundleUtil,
+  UnanimoBundleUtilFormFull
 } from "./types.ts";
 
 type BundleNames =
-  | MercuryBundleComponent
-  | MercuryBundleComponentForm
-  | MercuryBundleReset
-  | MercuryBundleUtil
-  | MercuryBundleUtilFormFull;
+  | UnanimoBundleComponent
+  | UnanimoBundleComponentForm
+  | UnanimoBundleReset
+  | UnanimoBundleUtil
+  | UnanimoBundleUtilFormFull;
 
 const getThemeModelItem = <T extends BundleNames, S extends string>(
   basePath: string,
@@ -110,7 +110,7 @@ export const getThemeBundles = (basePath: string, bundleNamePrefix?: string) =>
   ] as const satisfies ThemeModel;
 
 const addPrefixToBundleNames = (
-  bundles: MercuryBundleOptimized[] | MercuryBundleFull[],
+  bundles: UnanimoBundleOptimized[] | UnanimoBundleFull[],
   bundleNamePrefix?: string
 ) =>
   bundleNamePrefix ? bundles.map(bundle => bundleNamePrefix + bundle) : bundles;
@@ -134,7 +134,7 @@ const addPrefixToBundleNames = (
  *     "utils/layout",
  *   ],
  *   "./assets/css/", (optional)
- *   "mercury" (optional)
+ *   "unanimo" (optional)
  * );
  *
  * HTML/render/template:
@@ -145,7 +145,7 @@ const addPrefixToBundleNames = (
  * ```
  */
 export const getBundles = (
-  bundles: MercuryBundleOptimized[] | MercuryBundleFull[],
+  bundles: UnanimoBundleOptimized[] | UnanimoBundleFull[],
   basePath?: string,
   bundleNamePrefix?: string
 ): ThemeModel =>

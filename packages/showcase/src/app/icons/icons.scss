@@ -1,0 +1,51 @@
+icons {
+  h3 {
+    margin-block: var(--mer-spacing--4xl, calc(var(--spacing--xxl) * 2))
+      var(--mer-spacing--md, var(--spacing--l));
+  }
+
+  h2 {
+    margin-block: var(--mer-spacing--md, var(--spacing--l));
+  }
+
+  .group {
+    display: grid;
+    grid-auto-rows: max-content;
+    gap: var(--mer-spacing--xs);
+    inline-size: calc(25% - 6px);
+    padding: var(--mer-spacing--md, var(--spacing--l));
+    margin-block-end: var(--mer-spacing--md, var(--spacing--l));
+    border: 1px dashed var(--mer-border-color__on-surface);
+    border-radius: var(--mer-spacing--2xs);
+  }
+
+  .state {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    gap: var(--mer-spacing--xs);
+
+    &::before {
+      content: "";
+      display: block;
+      inline-size: var(--mer-spacing--xl);
+      block-size: var(--mer-spacing--xl);
+      background: no-repeat center / 100% var(--icon-path);
+    }
+  }
+}
+
+.section-icons {
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto 200px;
+
+  h3 {
+    inline-size: 100%;
+  }
+
+  &__color-type-with-states {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 8px;
+  }
+}

@@ -1,0 +1,61 @@
+<runtime-bundles [bundles]="['components/slider', 'utils/form']" />
+
+<header>
+  <h1 class="heading-1">{{ metadata.title }}</h1>
+</header>
+
+<p class="text-body-regular-l">{{ metadata.description }}</p>
+
+<blockquote class="blockquote-info">
+  <b>Tip:</b> Apply <code>display: grid</code> to the slider's container to make
+  the slider stretch to 100% width.
+</blockquote>
+
+<code-snippet [codeSnippet]="codeSnippets.default">
+  <p class="text-body-regular-m">
+    To display a slider with a label, you will have to do the same as working
+    with native HTML, adding a <code>for</code> attribute for the label with the
+    value of the control's <code>id</code>.
+  </p>
+
+  <p class="text-body-regular-m">
+    In addition, a div wrapper must be used around those elements to properly
+    style them. These styles are documented on the
+    <a class="hyperlink" [routerLink]="commonLinks.componentsLabel()">label</a>
+    and <a class="hyperlink" [routerLink]="commonLinks.utilsForm()">form</a>
+    sections, correspondingly.
+  </p>
+
+  <br />
+
+  <div class="field field-block">
+    <label class="label" for="name">{{
+      codeSnippets.default.template.children[0].children
+    }}</label>
+    <ch-slider class="slider" id="name"></ch-slider>
+  </div>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.noLabel">
+  <ch-slider class="slider" [accessibleName]="'Temperature'"></ch-slider>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.disabled">
+  <ch-slider
+    class="slider"
+    [accessibleName]="'Temperature'"
+    disabled
+  ></ch-slider>
+</code-snippet>
+
+@let rangeTemplateProperties = codeSnippets.customRange.template.properties;
+
+<code-snippet [codeSnippet]="codeSnippets.customRange">
+  <ch-slider
+    class="slider"
+    [accessibleName]="'Temperature'"
+    [minValue]="rangeTemplateProperties[0].value"
+    [maxValue]="rangeTemplateProperties[1].value"
+    [value]="rangeTemplateProperties[2].value"
+  ></ch-slider>
+</code-snippet>

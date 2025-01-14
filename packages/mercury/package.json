@@ -16,6 +16,12 @@
         "default": "./dist/index.js"
       }
     },
+    "./MERCURY_ASSETS.js": {
+      "import": {
+        "types": "./dist/assets/MERCURY_ASSETS.d.ts",
+        "default": "./dist/assets/MERCURY_ASSETS.js"
+      }
+    },
     "./assets-manager.js": {
       "import": {
         "types": "./dist/assets-manager.d.ts",

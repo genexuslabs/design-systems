@@ -1,0 +1,37 @@
+<runtime-bundles [bundles]="['utils/form', 'components/edit']" />
+
+<header>
+  <h1 class="heading-1">{{ metadata.title }}</h1>
+</header>
+
+<p class="text-body-regular-l">{{ metadata.description }}</p>
+
+<code-snippet [codeSnippet]="codeSnippets.default">
+  <label class="label" for="element-1">{{
+    codeSnippets.default.template.children
+  }}</label>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.blockStart">
+  <div class="field field-block">
+    <label class="label" for="element-2">{{
+      codeSnippets.blockStart.template.children[0].children
+    }}</label>
+
+    <ch-edit id="element-2" class="input"></ch-edit>
+  </div>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.inlineStart">
+  <div class="field field-inline">
+    <label class="label" for="element-3">{{
+      codeSnippets.inlineStart.template.children[0].children
+    }}</label>
+
+    <ch-edit id="element-3" class="input"></ch-edit>
+  </div>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.disabled"
+  >TODO..................</code-snippet
+>

@@ -1,0 +1,71 @@
+<runtime-bundles [bundles]="['components/icon']" />
+
+<header>
+  <h1 class="heading-1">{{ metadata.title }}</h1>
+</header>
+
+<p class="text-body-regular-l">{{ metadata.description }}</p>
+
+<code-snippet [codeSnippet]="codeSnippets.iconSource" [language]="'ts'">
+  <p class="text-body-regular-s">
+    Mercury provides an utility function to get
+    <a class="hyperlink" [routerLink]="commonLinks.icons()"
+      >any icon from the library</a
+    >
+    called <code>getIconPath</code>. To set the icon on the
+    <code>ch-image</code>:
+  </p>
+
+  <ol class="text-body-regular-s step-list">
+    <li>Import <code>getIconPath</code>.</li>
+
+    <li>
+      Use <code>getIconPath</code> to declare the category, name, and optional
+      color type of the icon in a variable.
+    </li>
+
+    <li>
+      Use the variable in the <code>ch-image</code>&nbsp;<code>src</code>
+      property.
+    </li>
+  </ol>
+
+  <button aria-label="Assistant" type="button">
+    <ch-image
+      class="icon-md"
+      [getImagePathCallback]="getImagePathCallback"
+      [src]="ASSISTANT_ICON"
+    ></ch-image>
+  </button>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.sizeSmall">
+  <button aria-label="Assistant" type="button">
+    <ch-image
+      class="icon-sm"
+      [getImagePathCallback]="getImagePathCallback"
+      [src]="ASSISTANT_ICON"
+    ></ch-image>
+  </button>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.sizeMedium">
+  <button aria-label="Assistant" type="button">
+    <ch-image
+      class="icon-md"
+      [getImagePathCallback]="getImagePathCallback"
+      [src]="ASSISTANT_ICON"
+    ></ch-image>
+  </button>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.mask">
+  <button aria-label="Assistant" type="button">
+    <ch-image
+      class="icon-md"
+      [getImagePathCallback]="getImagePathCallback"
+      [src]="ASSISTANT_ICON"
+      [type]="'mask'"
+    ></ch-image>
+  </button>
+</code-snippet>

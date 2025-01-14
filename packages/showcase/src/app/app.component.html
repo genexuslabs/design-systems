@@ -1,0 +1,82 @@
+<runtime-bundles
+  [bundles]="[
+    'components/button',
+    'components/code',
+    'components/navigation-list',
+    'components/segmented-control',
+    'components/sidebar',
+    'utils/elevation',
+    'utils/typography',
+    'chameleon/scrollbar'
+  ]"
+  [avoidFlashOfUnstyledContent]="true"
+/>
+
+<ch-theme [model]="mercuryIconsBundle"></ch-theme>
+
+<aside class="elevation-1">
+  <ch-sidebar class="sidebar">
+    <ch-navigation-list-render
+      class="navigation-list navigation-list-primary"
+      [expandSelectedLink]="true"
+      [model]="navigationListModel()"
+      [selectedLink]="selectedLink()"
+      (hyperlinkClick)="handleHyperlinkClick($event)"
+    ></ch-navigation-list-render>
+  </ch-sidebar>
+</aside>
+
+<header class="app-header">
+  @if (selectedBundle()) {
+    <p class="app-header__bundle text-body-regular-m">
+      Bundle:
+
+      <button
+        class="button-tertiary button-icon-and-text"
+        (click)="copyBundle()"
+      >
+        {{ selectedBundle() }}
+
+        <ch-image
+          class="icon-md"
+          [getImagePathCallback]="getImagePathCallback"
+          [src]="'system/copy/primary'"
+          type="mask"
+        ></ch-image>
+      </button>
+    </p>
+  }
+
+  @if (selectedLink().id === "/icons") {
+    <ch-edit
+      [accessibleName]="'Icon'"
+      class="input app-header__filters"
+      [debounce]="400"
+      [placeholder]="'Search icon...'"
+      [type]="'search'"
+      (input)="handleFilterChange($event)"
+    ></ch-edit>
+  }
+
+  <div class="app-header__config">
+    <ch-segmented-control-render
+      class="segmented-control"
+      [model]="designSystemModel()"
+      [selectedId]="designSystem()"
+      (selectedItemChange)="handleDesignSystemChange($event)"
+    ></ch-segmented-control-render>
+
+    <ch-segmented-control-render
+      class="segmented-control"
+      [model]="colorSchemeModel()"
+      [selectedId]="colorScheme()"
+      (selectedItemChange)="handleColorSchemeChange($event)"
+    ></ch-segmented-control-render>
+  </div>
+</header>
+
+<main>
+  <article>
+    <router-outlet style="display: contents" />
+  </article>
+</main>

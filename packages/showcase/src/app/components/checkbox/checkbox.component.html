@@ -1,0 +1,81 @@
+<runtime-bundles [bundles]="['components/checkbox', 'utils/form']" />
+
+<header>
+  <h1 class="heading-1">{{ metadata.title }}</h1>
+</header>
+
+<p class="text-body-regular-l">{{ metadata.description }}</p>
+
+<code-snippet [codeSnippet]="codeSnippets.checked">
+  <ch-checkbox class="checkbox" caption="The caption"></ch-checkbox>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.unchecked">
+  <ch-checkbox
+    class="checkbox"
+    caption="The caption"
+    checked-value="true"
+  ></ch-checkbox>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.indeterminate">
+  <ch-checkbox
+    class="checkbox"
+    caption="The caption"
+    indeterminate
+  ></ch-checkbox>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.disabled">
+  <ch-checkbox class="checkbox" caption="The caption" disabled></ch-checkbox>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.withIcon" language="ts">
+  <ch-checkbox
+    class="checkbox"
+    caption="The caption"
+    [checkedValue]="'true'"
+    [getImagePathCallback]="getImagePathCallback"
+    [startImgSrc]="ICON"
+  ></ch-checkbox>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.groupingCheckboxesBlock">
+  <div class="field-group">
+    <ch-checkbox
+      class="checkbox"
+      [caption]="'The caption 1'"
+      [checkedValue]="'true'"
+    ></ch-checkbox>
+    <ch-checkbox
+      class="checkbox"
+      [caption]="'The caption 2'"
+      [checkedValue]="'true'"
+    ></ch-checkbox>
+    <ch-checkbox
+      class="checkbox"
+      [caption]="'The caption 3'"
+      [checkedValue]="'true'"
+    ></ch-checkbox>
+  </div>
+</code-snippet>
+
+<code-snippet [codeSnippet]="codeSnippets.groupingCheckboxesInline">
+  <div class="field-group-inline">
+    <ch-checkbox
+      class="checkbox"
+      [caption]="'The caption 1'"
+      [checkedValue]="'true'"
+    ></ch-checkbox>
+    <ch-checkbox
+      class="checkbox"
+      [caption]="'The caption 2'"
+      [checkedValue]="'true'"
+    ></ch-checkbox>
+    <ch-checkbox
+      class="checkbox"
+      [caption]="'The caption 3'"
+      [checkedValue]="'true'"
+    ></ch-checkbox>
+  </div>
+</code-snippet>

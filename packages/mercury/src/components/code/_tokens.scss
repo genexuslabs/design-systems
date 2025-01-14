@@ -9,6 +9,8 @@
   --code__border: var(--mer-border__width--sm) solid
     var(--mer-surface__elevation--03);
   --code__border-radius: var(--mer-border__radius--sm);
+
+  // TODO: Fix this. It MUST be two separated properties (padding-block and padding-inline)
   --code__padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
 
   --ch-code__doctag: var(--code__color-blue);
