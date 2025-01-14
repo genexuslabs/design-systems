@@ -2,6 +2,12 @@ import fs from "node:fs";
 import path from "node:path";
 
 import {
+  BASE_BUNDLE_WITH_BACK_SLASH,
+  BASE_GLOBANT_CSS_FILE,
+  BASE_GLOBANT_FILE,
+  BASE_GLOBANT_JS_FILE,
+  BASE_GLOBANT_SCSS_FILE,
+  BASE_SCSS_FILE,
   BUNDLE_MAPPING_ENTRIES,
   BUNDLE_MAPPING_FILE,
   CSS_BUNDLES_OUT_DIR,
@@ -22,6 +28,45 @@ const CSS_CREATED_DIRS = new Set();
 const JS_CREATED_DIRS = new Set();
 const BUNDLES: BundleMetadata[] = [];
 
+const addBaseGlobantFile = (
+  fileMetadata: FileMetadata,
+  cssOutDir: string,
+  jsOutDir: string
+) => {
+  const { filePath } = fileMetadata;
+
+  BUNDLES.push({
+    fileDir: fileMetadata.dir
+      .replace(SCSS_BUNDLES_OUT_DIR, "")
+      .replace("\\", "/"),
+    bundleNameWithBackSlash: filePath
+      .replace(SCSS_BUNDLES_OUT_DIR, "")
+      .replace(BASE_SCSS_FILE, BASE_GLOBANT_FILE)
+  });
+
+  const transpiledBundle = transpileBundle(filePath, true);
+
+  // Store the CSS file with its default values
+  fs.writeFileSync(
+    path.join(cssOutDir, BASE_GLOBANT_CSS_FILE),
+    replacePlaceholdersInBundle(
+      transpiledBundle,
+      DEFAULT_FONT_FACE_PATH,
+      DEFAULT_ICONS_PATH
+    )
+  );
+
+  // Store the CSS file in a JS file with placeholders for the values
+  fs.writeFileSync(
+    path.join(jsOutDir, BASE_GLOBANT_JS_FILE),
+    `export const bundle = \`${transpiledBundle}\`;`
+  );
+
+  printBundleWasTranspiled(
+    filePath.replace(BASE_SCSS_FILE, BASE_GLOBANT_SCSS_FILE)
+  );
+};
+
 export const transpileCssBundleWithPlaceholder = (
   fileMetadata: FileMetadata
 ) => {
@@ -37,14 +82,15 @@ export const transpileCssBundleWithPlaceholder = (
   );
   const fileNameCssExt = fileName.replace(".scss", ".css");
   const fileNameJsExt = fileName.replace(".scss", ".js");
+  const bundleNameWithBackSlash = filePath
+    .replace(SCSS_BUNDLES_OUT_DIR, "")
+    .replace(".scss", "");
 
   BUNDLES.push({
     fileDir: fileMetadata.dir
       .replace(SCSS_BUNDLES_OUT_DIR, "")
       .replace("\\", "/"),
-    bundleNameWithBackSlash: filePath
-      .replace(SCSS_BUNDLES_OUT_DIR, "")
-      .replace(".scss", "")
+    bundleNameWithBackSlash
   });
 
   // Create the file directory if it does not exists
@@ -56,7 +102,7 @@ export const transpileCssBundleWithPlaceholder = (
     JS_CREATED_DIRS.add(jsOutDir);
   }
 
-  const transpiledBundle = transpileBundle(filePath);
+  const transpiledBundle = transpileBundle(filePath, false);
 
   // Store the CSS file with its default values
   fs.writeFileSync(
@@ -75,6 +121,10 @@ export const transpileCssBundleWithPlaceholder = (
   );
 
   printBundleWasTranspiled(filePath);
+
+  if (bundleNameWithBackSlash === BASE_BUNDLE_WITH_BACK_SLASH) {
+    addBaseGlobantFile(fileMetadata, cssOutDir, jsOutDir);
+  }
 };
 
 const createBundleEntryInMappingFile = <

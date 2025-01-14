@@ -5,7 +5,11 @@ import type { BundleAssociationMetadata, CLIArguments } from "./types";
 
 // @ts-expect-error: This file does exists after the bundle transpilation process
 import { bundleMappings } from "../../bundles/js/bundle-mappings.js";
-import { BUNDLE_MAPPING_TO_HASH_FILE } from "./constants.js";
+import {
+  BASE_BUNDLE,
+  BASE_GLOBANT_BUNDLE,
+  BUNDLE_MAPPING_TO_HASH_FILE
+} from "./constants.js";
 import {
   getBundleNameWithHash,
   getHash,
@@ -29,8 +33,17 @@ const findLargestPath = (): number => {
   return largestBundleLength;
 };
 
+const getActualBundleName = (bundleName: string) =>
+  bundleName === BASE_BUNDLE || bundleName === BASE_GLOBANT_BUNDLE
+    ? BASE_BUNDLE
+    : bundleName;
+
+const shouldSkipBundleCreation = (bundleName: string, globant: boolean) =>
+  (bundleName === BASE_BUNDLE && globant) ||
+  (bundleName === BASE_GLOBANT_BUNDLE && !globant);
+
 export const createBundlesWithCustomPaths = (args: CLIArguments) => {
-  const { avoidHash, fontFacePath, iconsPath } = args;
+  const { avoidHash, fontFacePath, iconsPath, globant } = args;
   const outDir = path.join(args.outDirPath);
   const CREATED_DIRS = new Set();
 
@@ -39,6 +52,11 @@ export const createBundlesWithCustomPaths = (args: CLIArguments) => {
 
   (bundleMappings as BundleAssociationMetadata[]).forEach(entry => {
     const { bundleName, fileDir, transpiledBundle } = entry;
+
+    if (shouldSkipBundleCreation(bundleName, globant)) {
+      return;
+    }
+    const actualBundleName = getActualBundleName(bundleName);
 
     const compiledBundleWithoutPlaceholders = replacePlaceholdersInBundle(
       transpiledBundle,
@@ -52,9 +70,9 @@ export const createBundlesWithCustomPaths = (args: CLIArguments) => {
       CREATED_DIRS.add(fileDir);
     }
 
-    const bundleNameWithHash = avoidHash.has(bundleName)
-      ? bundleName
-      : getBundleNameWithHash(bundleName, hash);
+    const bundleNameWithHash = avoidHash.has(actualBundleName)
+      ? actualBundleName
+      : getBundleNameWithHash(actualBundleName, hash);
     const filePathToCreateBundle = path.join(
       outDir,
       `${bundleNameWithHash}.css`
@@ -63,18 +81,18 @@ export const createBundlesWithCustomPaths = (args: CLIArguments) => {
 
     printBundleWasCreated({
       outDir,
-      bundleName,
+      bundleName: actualBundleName,
       compiledBundleWithoutPlaceholders,
       filePathToCreateBundle,
 
       // WA to improve style
       largestBundleLength:
-        largestBundleLength + (avoidHash.has(bundleName) ? 17 : 0)
+        largestBundleLength + (avoidHash.has(actualBundleName) ? 17 : 0)
     });
 
     // Store the bundle mapping.
     // For example: "components/button" --> "components/button-9f82641938b85445"
-    const bundleToHashEntry = `  "${bundleName}": "${bundleNameWithHash}"`;
+    const bundleToHashEntry = `  "${actualBundleName}": "${bundleNameWithHash}"`;
 
     // Concat entries in the object
     bundleMappingToHashObjectEntries +=
