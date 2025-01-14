@@ -44,7 +44,7 @@ export type UnanimoBundleComponentForm =
   | "components/icon"
   | "components/radio-group"
   | "components/slider"
-  | "components/toggle"; // TODO: Rename the switch "bundle" to "toggle"
+  | "components/switch";
 
 export type UnanimoBundleReset = "resets/box-sizing";
 
