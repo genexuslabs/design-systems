@@ -51,6 +51,11 @@ export class GeminiMigrationComponent {
     name: "add-circle",
     colorType: "on-primary"
   });
+  ICON_PRIMARY = getIconPath({
+    category: "gemini-tools",
+    name: "add-circle",
+    colorType: "primary"
+  });
 
   favoriteColorsComboBoxModel = signal<ComboBoxModel>([
     {
@@ -115,7 +120,8 @@ export class GeminiMigrationComponent {
       ["gxg-form-radio-group", true],
       ["gxg-form-text", true],
       ["gxg-form-textarea", true],
-      ["gxg-grid", true]
+      ["gxg-grid", true],
+      ["gxg-icon", true]
     ]);
 
     // Update the rendered migrations by watching changes for the
@@ -155,6 +161,7 @@ export class GeminiMigrationComponent {
     this.migrations().get("gxg-form-textarea")
   );
   showGxgGrid = computed(() => this.migrations().get("gxg-grid"));
+  showGxgIcon = computed(() => this.migrations().get("gxg-icon"));
 
   updateRenderedMigration =
     (typographyName: string) => (event: ChCheckboxCustomEvent<string>) => {

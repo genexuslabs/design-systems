@@ -5,6 +5,7 @@
     'components/edit',
     'components/radio-group',
     'components/tabular-grid',
+    'components/icon',
     'utils/form',
     'utils/typography'
   ]"
@@ -389,5 +390,40 @@
         </ch-tabular-grid-row>
       </ch-tabular-grid>
     </div>
+  </div>
+}
+
+@if (showGxgIcon()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgIcon"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-icon</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-icon</code> tag with a <code>ch-image</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>icon-sm</code> or <code>icon-md</code> class.</li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsIcon()"
+          >Specify the control properties following the documentation
+        </a>
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <ch-image
+      class="icon-sm"
+      [getImagePathCallback]="getImagePathCallback"
+      [src]="ICON_PRIMARY"
+    ></ch-image>
   </div>
 }

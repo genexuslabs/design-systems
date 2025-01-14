@@ -527,6 +527,38 @@ export const geminiMigrationMetadata = {
           ]
         }
       }
+    },
+
+    gxgIcon: {
+      linkId: "gxg-icon",
+      title: "9. gxg-icon",
+      before: {
+        template: {
+          tag: "gxg-icon",
+          properties: [
+            { name: "type", value: "gemini-tools/add-circle" },
+            { name: "color", value: "mercury-primary" },
+            { name: "size", value: "small" }
+          ]
+        }
+      },
+      after: {
+        imports: [
+          'import { AssetsManager } from "@genexusm-sdk/common-components";'
+        ],
+        variables: [
+          {
+            name: "ICON",
+            value:
+              'AssetsManager.getIconPath({category: "gemini-tools", name: "add-circle", colorType: "on-primary" })'
+          }
+        ],
+        template: {
+          tag: "ch-image",
+          properties: [{ name: "src", value: "ICON", variable: true }],
+          class: "icon-sm"
+        }
+      }
     }
   }
 } as const satisfies ComponentMetadataBeforeAfter;
