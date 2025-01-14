@@ -16,7 +16,8 @@ import {
 } from "@genexus/mercury/assets-manager.js";
 import type {
   ChCheckboxCustomEvent,
-  ComboBoxModel
+  ComboBoxModel,
+  RadioGroupModel
 } from "@genexus/chameleon-controls-library";
 
 import { geminiMigrationMetadata } from "./metadata";
@@ -51,7 +52,30 @@ export class GeminiMigrationComponent {
     colorType: "on-primary"
   });
 
-  favoriteColorsModel = signal<ComboBoxModel>([
+  favoriteColorsComboBoxModel = signal<ComboBoxModel>([
+    {
+      value: "red",
+      caption: "Red"
+    },
+    {
+      value: "blue",
+      caption: "Blue"
+    },
+    {
+      value: "green",
+      caption: "Green"
+    },
+    {
+      value: "yellow",
+      caption: "Yellow"
+    },
+    {
+      value: "purple",
+      caption: "Purple"
+    }
+  ]);
+
+  favoriteColorsRadioGroupModel = signal<RadioGroupModel>([
     {
       value: "red",
       caption: "Red"
@@ -87,7 +111,8 @@ export class GeminiMigrationComponent {
       ["gxg-button: text only", true],
       ["gxg-button: text with icon", true],
       ["gxg-combo-box", true],
-      ["gxg-form-checkbox", true]
+      ["gxg-form-checkbox", true],
+      ["gxg-form-radio-group", true]
     ]);
 
     // Update the rendered migrations by watching changes for the
@@ -118,6 +143,9 @@ export class GeminiMigrationComponent {
   showGxgComboBox = computed(() => this.migrations().get("gxg-combo-box"));
   showGxgFormCheckbox = computed(() =>
     this.migrations().get("gxg-form-checkbox")
+  );
+  showGxgFormRadioGroup = computed(() =>
+    this.migrations().get("gxg-form-radio-group")
   );
 
   updateRenderedMigration =

@@ -1,4 +1,7 @@
-import type { ComboBoxModel } from "@genexus/chameleon-controls-library";
+import type {
+  ComboBoxModel,
+  RadioGroupModel
+} from "@genexus/chameleon-controls-library";
 import { ComponentMetadataBeforeAfter } from "../../common/types";
 import { chameleonImportType } from "../../services/template-language/create-template";
 
@@ -167,6 +170,88 @@ export const geminiMigrationMetadata = {
             { name: "caption", value: "The Caption" },
             { name: "checkedValue", value: "true" },
             { name: "value", value: "true" }
+          ]
+        }
+      }
+    },
+
+    gxgFormRadioGroup: {
+      linkId: "gxg-form-radio-group",
+      title: "5. gxg-form-radio-group",
+      before: {
+        template: {
+          tag: "gxg-form-radio-group",
+          properties: [{ name: "label", value: "My Favorite Color" }],
+          children: [
+            {
+              tag: "gxg-form-radio",
+              properties: [
+                { name: "label", value: "red" },
+                { name: "value", value: "red" }
+              ]
+            },
+            {
+              tag: "gxg-form-radio",
+              properties: [
+                { name: "label", value: "blue" },
+                { name: "value", value: "blue" }
+              ]
+            },
+            {
+              tag: "gxg-form-radio",
+              properties: [
+                { name: "label", value: "green" },
+                { name: "value", value: "green" }
+              ]
+            },
+            {
+              tag: "gxg-form-radio",
+              properties: [
+                { name: "label", value: "yellow" },
+                { name: "value", value: "yellow" }
+              ]
+            }
+          ]
+        }
+      },
+      after: {
+        imports: [chameleonImportType("RadioGroupModel")],
+        states: [
+          {
+            name: "favoriteColorsModel",
+            type: "RadioGroupModel",
+            value: [
+              { value: "red", caption: "Red" },
+              { value: "blue", caption: "Blue" },
+              { value: "green", caption: "Green" },
+              { value: "yellow", caption: "Yellow" },
+              { value: "purple", caption: "Purple" }
+            ] satisfies RadioGroupModel
+          }
+        ],
+        template: {
+          tag: "div",
+          class: "field field-block",
+          children: [
+            {
+              tag: "label",
+              class: "label",
+              properties: [{ name: "for", value: "favorite-colors-radio" }],
+              children: "Favorite Colors"
+            },
+            {
+              tag: "ch-radio-group-render",
+              class: "radio-group",
+              properties: [
+                { name: "id", value: "favorite-colors-radio" },
+                {
+                  name: "model",
+                  value: "favoriteColorsModel",
+                  state: true
+                },
+                { name: "value", value: "yellow" }
+              ]
+            }
           ]
         }
       }

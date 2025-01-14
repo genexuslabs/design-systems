@@ -22,6 +22,9 @@ export class RouterCommonLinksService {
   componentsIcon = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.ICON}`
   );
+  componentsRadioGroup = computed(
+    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.RADIO_GROUP}`
+  );
 
   utilsForm = computed(
     () => `/${this.dsService.designSystem()}${UTILITY_CLASSES_ROUTES.FORM}`

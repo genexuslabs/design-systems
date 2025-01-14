@@ -2,6 +2,7 @@
   [bundles]="[
     'components/checkbox',
     'components/combo-box',
+    'components/radio-group',
     'utils/form',
     'utils/typography'
   ]"
@@ -129,7 +130,7 @@
     <ch-combo-box-render
       class="combo-box"
       id="favorite-colors"
-      [model]="favoriteColorsModel()"
+      [model]="favoriteColorsComboBoxModel()"
       [placeholder]="'Select an item'"
       [value]="'yellow'"
     ></ch-combo-box-render>
@@ -137,7 +138,10 @@
 }
 
 @if (showGxgFormCheckbox()) {
-  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgFormCheckbox">
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgFormCheckbox"
+    [languageAfter]="'ts'"
+  >
     <p class="text-body-regular-s">
       When transitioning from a <code>gxg-form-checkbox</code>:
     </p>
@@ -167,5 +171,47 @@
       [checkedValue]="'true'"
       [value]="'true'"
     ></ch-checkbox>
+  </div>
+}
+
+@if (showGxgFormRadioGroup()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgFormRadioGroup"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-form-radio-group</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-form-radio-group</code> tag with a
+        <code>ch-radio-group-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>radio-group</code> class.</li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsRadioGroup()"
+          >Specify the control properties following the documentation
+        </a>
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <div class="field field-block">
+      <label class="label" htmlFor="favorite-colors-radio">
+        Favorite Colors
+      </label>
+      <ch-radio-group-render
+        class="radio-group"
+        id="favorite-colors-radio"
+        [model]="favoriteColorsRadioGroupModel()"
+        [value]="'yellow'"
+      ></ch-radio-group-render>
+    </div>
   </div>
 }
