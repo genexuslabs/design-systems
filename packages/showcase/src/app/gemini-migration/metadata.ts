@@ -172,6 +172,7 @@ export const geminiMigrationMetadata = {
           properties: [
             { name: "caption", value: "The Caption" },
             { name: "checkedValue", value: "true" },
+            { name: "uncheckedValue", value: "false" },
             { name: "value", value: "true" }
           ]
         }
@@ -363,62 +364,62 @@ export const geminiMigrationMetadata = {
       title: "8. gxg-grid",
       before: {
         template: {
-          tag: "gxg-grid",
+          tag: "gxgGrid",
           children: [
             {
-              tag: "ch-grid",
+              tag: "chGrid",
               children: [
                 {
-                  tag: "ch-grid-columnset",
+                  tag: "chGridColumnset",
                   children: [
                     {
-                      tag: "ch-grid-column",
+                      tag: "chGridColumn",
                       properties: [
-                        { name: "column-name", value: "Country Name" },
-                        { name: "column-name-position", value: "text" },
+                        { name: "columnName", value: "Country Name" },
+                        { name: "columnNamePosition", value: "text" },
                         { name: "settingable", value: "false" }
                       ]
                     },
                     {
-                      tag: "ch-grid-column",
+                      tag: "chGridColumn",
                       properties: [
-                        { name: "column-name", value: "Country Code" },
-                        { name: "column-name-position", value: "text" },
+                        { name: "columnName", value: "Country Code" },
+                        { name: "columnNamePosition", value: "text" },
                         { name: "settingable", value: "false" }
                       ]
                     },
                     {
-                      tag: "ch-grid-column",
+                      tag: "chGridColumn",
                       properties: [
-                        { name: "column-name", value: "Population" },
-                        { name: "column-name-position", value: "text" },
+                        { name: "columnName", value: "Population" },
+                        { name: "columnNamePosition", value: "text" },
                         { name: "settingable", value: "false" }
                       ]
                     }
                   ]
                 },
                 {
-                  tag: "ch-grid-row",
+                  tag: "chGridRow",
                   children: [
-                    { tag: "ch-grid-cell", children: "Uruguay" },
-                    { tag: "ch-grid-cell", children: "UY" },
-                    { tag: "ch-grid-cell", children: "~3.5 million" }
+                    { tag: "chGridCell", children: "Uruguay" },
+                    { tag: "chGridCell", children: "UY" },
+                    { tag: "chGridCell", children: "~3.5 million" }
                   ]
                 },
                 {
-                  tag: "ch-grid-row",
+                  tag: "chGridRow",
                   children: [
-                    { tag: "ch-grid-cell", children: "Brazil" },
-                    { tag: "ch-grid-cell", children: "BR" },
-                    { tag: "ch-grid-cell", children: "~214 million" }
+                    { tag: "chGridCell", children: "Brazil" },
+                    { tag: "chGridCell", children: "BR" },
+                    { tag: "chGridCell", children: "~214 million" }
                   ]
                 },
                 {
-                  tag: "ch-grid-row",
+                  tag: "chGridRow",
                   children: [
-                    { tag: "ch-grid-cell", children: "Argentina" },
-                    { tag: "ch-grid-cell", children: "AR" },
-                    { tag: "ch-grid-cell", children: "~46 million" }
+                    { tag: "chGridCell", children: "Argentina" },
+                    { tag: "chGridCell", children: "AR" },
+                    { tag: "chGridCell", children: "~46 million" }
                   ]
                 }
               ]
@@ -433,32 +434,32 @@ export const geminiMigrationMetadata = {
           children: [
             {
               tag: "ch-tabular-grid-columnset",
-              class: "tabular-grid-column-set",
+              class: "tabularGridColumnSet",
               children: [
                 {
                   tag: "ch-tabular-grid-column",
-                  class: "tabular-grid-column",
+                  class: "tabularGridColumn",
                   properties: [
-                    { name: "column-name", value: "Country Name" },
-                    { name: "column-name-position", value: "text" },
+                    { name: "columnName", value: "Country Name" },
+                    { name: "columnNamePosition", value: "text" },
                     { name: "settingable", value: "false" }
                   ]
                 },
                 {
                   tag: "ch-tabular-grid-column",
-                  class: "tabular-grid-column",
+                  class: "tabularGridColumn",
                   properties: [
-                    { name: "column-name", value: "Country Code" },
-                    { name: "column-name-position", value: "text" },
+                    { name: "columnName", value: "Country Code" },
+                    { name: "columnNamePosition", value: "text" },
                     { name: "settingable", value: "false" }
                   ]
                 },
                 {
                   tag: "ch-tabular-grid-column",
-                  class: "tabular-grid-column",
+                  class: "tabularGridColumn",
                   properties: [
-                    { name: "column-name", value: "Population" },
-                    { name: "column-name-position", value: "text" },
+                    { name: "columnName", value: "Population" },
+                    { name: "columnNamePosition", value: "text" },
                     { name: "settingable", value: "false" }
                   ]
                 }
@@ -466,63 +467,63 @@ export const geminiMigrationMetadata = {
             },
             {
               tag: "ch-tabular-grid-row",
-              class: "tabular-grid-row",
+              class: "tabularGridRow",
               children: [
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabular-grid-cell",
+                  class: "tabularGridCell",
                   children: "Uruguay"
                 },
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabular-grid-cell",
+                  class: "tabularGridCell",
                   children: "UY"
                 },
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabular-grid-cell",
+                  class: "tabularGridCell",
                   children: "~3.5 million"
                 }
               ]
             },
             {
               tag: "ch-tabular-grid-row",
-              class: "tabular-grid-row",
+              class: "tabularGridRow",
               children: [
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabular-grid-cell",
+                  class: "tabularGridCell",
                   children: "Brazil"
                 },
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabular-grid-cell",
+                  class: "tabularGridCell",
                   children: "BR"
                 },
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabular-grid-cell",
+                  class: "tabularGridCell",
                   children: "~214 million"
                 }
               ]
             },
             {
               tag: "ch-tabular-grid-row",
-              class: "tabular-grid-row",
+              class: "tabularGridRow",
               children: [
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabular-grid-cell",
+                  class: "tabularGridCell",
                   children: "Argentina"
                 },
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabular-grid-cell",
+                  class: "tabularGridCell",
                   children: "AR"
                 },
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabular-grid-cell",
+                  class: "tabularGridCell",
                   children: "~46 million"
                 }
               ]
@@ -570,7 +571,7 @@ export const geminiMigrationMetadata = {
       before: {
         template: {
           tag: "gxg-label",
-          properties: [{ name: "label-position", value: "above" }],
+          properties: [{ name: "labelPosition", value: "above" }],
           children: "This is the label"
         }
       },
@@ -856,17 +857,17 @@ export const geminiMigrationMetadata = {
                   tag: "gxg-tab-button",
                   properties: [
                     { name: "slot", value: "tab-bar" },
-                    { name: "tab-label", value: "apples" },
+                    { name: "tabLabel", value: "apples" },
                     { name: "tab", value: "apples" },
                     { name: "key", value: "apples" },
-                    { name: "is-selected", value: true }
+                    { name: "isSelected", value: true }
                   ]
                 },
                 {
                   tag: "gxg-tab-button",
                   properties: [
                     { name: "slot", value: "tab-bar" },
-                    { name: "tab-label", value: "bananas" },
+                    { name: "tabLabel", value: "bananas" },
                     { name: "tab", value: "bananas" },
                     { name: "key", value: "bananas" },
                     { name: "icon", value: "gemini-tools/settings" }
@@ -876,7 +877,7 @@ export const geminiMigrationMetadata = {
                   tag: "gxg-tab-button",
                   properties: [
                     { name: "slot", value: "tab-bar" },
-                    { name: "tab-label", value: "cherries" },
+                    { name: "tabLabel", value: "cherries" },
                     { name: "tab", value: "cherries" },
                     { name: "key", value: "cherries" },
                     { name: "icon", value: "gemini-tools/settings" },
@@ -933,8 +934,8 @@ export const geminiMigrationMetadata = {
           tag: "ch-tab-render",
           class: "tab tab-indicator-start",
           properties: [
-            { name: "tab-list-position", value: "inline-start" },
-            { name: "selected-id", value: "apples" },
+            { name: "tabListPosition", value: "inline-start" },
+            { name: "selectedId", value: "apples" },
             { name: "model", value: "fruitsModel", state: true }
           ],
           children: [
@@ -1219,7 +1220,7 @@ export const geminiMigrationMetadata = {
               class: "tree-view",
               properties: [
                 { name: "model", value: "this.myTreeModel", state: true },
-                { name: "show-lines", value: "last" }
+                { name: "showLines", value: "last" }
               ],
               children: []
             }
