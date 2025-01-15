@@ -9,19 +9,23 @@ import {
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router, RouterLink } from "@angular/router";
+import {
+  favoriteColorsActionListModel,
+  favoriteColorsComboBoxModel,
+  favoriteColorsRadioGroupModel,
+  favoriteColorsSuggestModel,
+  fruitsTabModel,
+  objectsTreeViewModel,
+  pillsModel,
+  suggestOptions
+} from "./models";
 
 import {
   getIconPath,
-  getImagePathCallback
+  getImagePathCallback,
+  getTreeViewImagePathCallback
 } from "@genexus/mercury/assets-manager.js";
-import type {
-  ChCheckboxCustomEvent,
-  ComboBoxModel,
-  RadioGroupModel,
-  ActionListItemModel,
-  TabModel,
-  TreeViewModel
-} from "@genexus/chameleon-controls-library";
+import type { ChCheckboxCustomEvent } from "@genexus/chameleon-controls-library";
 
 import { geminiMigrationMetadata } from "./metadata";
 import { RouterCommonLinksService } from "../../services/router-links.service";
@@ -60,273 +64,19 @@ export class GeminiMigrationComponent {
     colorType: "primary"
   });
 
-  favoriteColorsComboBoxModel = signal<ComboBoxModel>([
-    {
-      value: "red",
-      caption: "Red"
-    },
-    {
-      value: "blue",
-      caption: "Blue"
-    },
-    {
-      value: "green",
-      caption: "Green"
-    },
-    {
-      value: "yellow",
-      caption: "Yellow"
-    },
-    {
-      value: "purple",
-      caption: "Purple"
-    }
-  ]);
-
-  favoriteColorsSuggestModel = signal<ComboBoxModel>([
-    {
-      value: "red",
-      caption: "Red"
-    },
-    {
-      value: "blue",
-      caption: "Blue"
-    },
-    {
-      value: "green",
-      caption: "Green"
-    },
-    {
-      value: "yellow",
-      caption: "Yellow"
-    },
-    {
-      value: "purple",
-      caption: "Purple"
-    }
-  ]);
-  suggestOptions = signal({
-    alreadyProcessed: false,
-    autoExpand: true,
-    hideMatchesAndShowNonMatches: false,
-    highlightMatchedItems: false,
-    matchCase: false,
-    regularExpression: false,
-    strict: false
-  });
-
-  favoriteColorsRadioGroupModel = signal<RadioGroupModel>([
-    {
-      value: "red",
-      caption: "Red"
-    },
-    {
-      value: "blue",
-      caption: "Blue"
-    },
-    {
-      value: "green",
-      caption: "Green"
-    },
-    {
-      value: "yellow",
-      caption: "Yellow"
-    },
-    {
-      value: "purple",
-      caption: "Purple"
-    }
-  ]);
-
-  favoriteColorsActionListModel = signal<ActionListItemModel[]>([
-    {
-      id: "red",
-      type: "actionable",
-      caption: "Red"
-    },
-    {
-      id: "blue",
-      type: "actionable",
-      caption: "Blue"
-    },
-    {
-      id: "green",
-      type: "actionable",
-      caption: "Green"
-    },
-    {
-      id: "yellow",
-      type: "actionable",
-      caption: "Yellow"
-    },
-    {
-      id: "purple",
-      type: "actionable",
-      caption: "Purple"
-    }
-  ]);
-
-  fruitsTabModel = signal<TabModel>([
-    { id: "apples", name: "Apples" },
-    { id: "bananas", name: "Bananas" },
-    { id: "cherries", name: "Cherries" }
-  ]);
-
-  objectsTreeViewModel = signal<TreeViewModel>([
-    {
-      id: "root",
-      caption: "GeneXusNext Develop",
-      startImgSrc: "objects/version",
-      expanded: true,
-      leaf: false,
-      items: [
-        {
-          id: "Main_Programs",
-          caption: "Main Programs",
-          startImgSrc: "objects/category",
-          expanded: true,
-          items: [
-            {
-              id: "Main_Programs.Prompt",
-              caption: "Prompt",
-              startImgSrc: "objects/panel-for-sd",
-              leaf: true,
-              metadata: "Panel"
-            },
-            {
-              id: "Main_Programs.ApiHealthCheck",
-              caption: "ApiHealthCheck",
-              startImgSrc: "objects/api",
-              leaf: true
-            },
-            {
-              id: "Main_Programs.BackHome",
-              caption: "BackHome",
-              startImgSrc: "objects/web-panel",
-              leaf: true
-            },
-            {
-              id: "Main_Programs.Login",
-              caption: "Login",
-              startImgSrc: "objects/web-panel",
-              leaf: true
-            },
-            {
-              id: "Main_Programs.ProvisioningServices",
-              caption: "ProvisioningServices",
-              startImgSrc: "objects/api",
-              leaf: true
-            },
-            {
-              id: "Main_Programs.VersionCheck",
-              caption: "VersionCheck",
-              startImgSrc: "objects/procedure",
-              leaf: true
-            }
-          ]
-        },
-        {
-          id: "Root_Module",
-          caption: "Root Module",
-          startImgSrc: getIconPath({
-            category: "objects",
-            name: "module"
-          }),
-          expanded: false,
-          items: [
-            {
-              id: "Root_Module.Images",
-              caption: "Images",
-              startImgSrc: "objects/image",
-              leaf: true
-            },
-            {
-              id: "Root_Module.GXNext",
-              caption: "GXNext",
-              startImgSrc: "objects/dso",
-              leaf: true
-            },
-            {
-              id: "Root_Module.GeneXusNext",
-              caption: "GeneXusNext",
-              startImgSrc: "objects/dso",
-              leaf: true
-            },
-            {
-              id: "Root_Module.Files",
-              caption: "Files",
-              startImgSrc: "objects/file",
-              leaf: true
-            },
-            {
-              id: "Root_Module.Domain",
-              caption: "Domain ",
-              startImgSrc: "objects/file",
-              leaf: true
-            }
-          ]
-        },
-        {
-          id: "References",
-          caption: "References",
-          startImgSrc: "objects/references",
-          leaf: true
-        },
-        {
-          id: "Customization",
-          caption: "Customization",
-          startImgSrc: "objects/customization",
-          expanded: true,
-          items: [
-            {
-              id: "Customization.Files",
-              caption: "Files",
-              startImgSrc: "objects/file",
-              leaf: true
-            },
-            {
-              id: "Customization.Images",
-              caption: "Images",
-              startImgSrc: "objects/image",
-              leaf: true
-            }
-          ]
-        },
-        {
-          id: "Documentation",
-          caption: "Documentation",
-          startImgSrc: "objects/document",
-          leaf: true
-        }
-      ]
-    }
-  ]);
-
-  pillsModel = signal<ComboBoxModel>([
-    {
-      value: "enabled",
-      caption: "Enabled"
-    },
-    {
-      value: "processing",
-      caption: "Processing"
-    },
-    {
-      value: "success",
-      caption: "Success"
-    },
-    {
-      value: "error",
-      caption: "Error"
-    },
-    {
-      value: "warning",
-      caption: "Warning"
-    }
-  ]);
+  favoriteColorsActionListModel = favoriteColorsActionListModel;
+  favoriteColorsComboBoxModel = favoriteColorsComboBoxModel;
+  favoriteColorsRadioGroupModel = favoriteColorsRadioGroupModel;
+  favoriteColorsSuggestModel = favoriteColorsSuggestModel;
+  fruitsTabModel = fruitsTabModel;
+  objectsTreeViewModel = objectsTreeViewModel;
+  pillsModel = pillsModel;
+  suggestOptions = suggestOptions;
 
   // TODO: This is a WA, since the Chameleon's register does not for some reason
   getImagePathCallback = getImagePathCallback;
+  getTreeViewImagePathCallback = getTreeViewImagePathCallback;
+
   hiddenMigrations = input<string>("");
 
   /**
