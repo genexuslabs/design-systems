@@ -80,7 +80,7 @@ export const geminiMigrationMetadata = {
         template: {
           tag: "gxg-combo-box",
           properties: [
-            { name: "label", value: "Favorite Colors" },
+            { name: "label", value: "Favorite Colours" },
             { name: "placeholder", value: "Select an item" },
             { name: "value", value: "yellow" }
           ],
@@ -136,7 +136,7 @@ export const geminiMigrationMetadata = {
               tag: "label",
               class: "label",
               properties: [{ name: "for", value: "favorite-colors" }],
-              children: "Favorite Colors"
+              children: "Favorite Colours"
             },
             {
               tag: "ch-combo-box-render",
@@ -185,7 +185,7 @@ export const geminiMigrationMetadata = {
       before: {
         template: {
           tag: "gxg-form-radio-group",
-          properties: [{ name: "label", value: "My Favorite Color" }],
+          properties: [{ name: "label", value: "Favorite Colour" }],
           children: [
             {
               tag: "gxg-form-radio",
@@ -241,7 +241,7 @@ export const geminiMigrationMetadata = {
               tag: "label",
               class: "label",
               properties: [{ name: "for", value: "favorite-colors-radio" }],
-              children: "Favorite Colors"
+              children: "Favorite Colour"
             },
             {
               tag: "ch-radio-group-render",
@@ -292,7 +292,8 @@ export const geminiMigrationMetadata = {
             {
               tag: "label",
               class: "label",
-              properties: [{ name: "for", value: "user-name" }]
+              properties: [{ name: "for", value: "user-name" }],
+              children: "Name"
             },
             {
               tag: "ch-edit",
@@ -572,7 +573,7 @@ export const geminiMigrationMetadata = {
         template: {
           tag: "gxg-label",
           properties: [{ name: "labelPosition", value: "above" }],
-          children: "This is the label"
+          children: "The Label Caption"
         }
       },
       after: {
@@ -651,7 +652,7 @@ export const geminiMigrationMetadata = {
               tag: "label",
               class: "label",
               properties: [{ name: "for", value: "list-box-items" }],
-              children: "List Box Items"
+              children: "Favorite Colour"
             },
             {
               tag: "ch-action-list-render",
@@ -816,16 +817,16 @@ export const geminiMigrationMetadata = {
               tag: "label",
               class: "label",
               properties: [{ name: "for", value: "suggest" }],
-              children: "Favorite Colors"
+              children: "Favorite Colour"
             },
             {
               tag: "ch-combo-box-render",
               class: "combo-box",
               properties: [
                 { name: "id", value: "suggest" },
-                { name: "accessibleName", value: "My Favorite Colors" },
+                { name: "accessibleName", value: "Favorite Colours" },
                 { name: "model", value: "suggestModel", state: true },
-                { name: "placeholder", value: "Select your favorite color" },
+                { name: "placeholder", value: "Green" },
                 { name: "suggest", value: true },
                 { name: "suggestOptions", value: "suggestOptions", state: true }
               ]
@@ -1213,7 +1214,7 @@ export const geminiMigrationMetadata = {
               tag: "label",
               class: "label",
               properties: [{ name: "for", value: "my-tree-view" }],
-              children: "GeneXusNext Develop"
+              children: "GeneXus Objects"
             },
             {
               tag: "ch-tree-view-render",

@@ -17,7 +17,12 @@
 
 // tree-view
 .gemini-migration-preview--tree-view {
-  block-size: 340px;
+  block-size: 370px;
+}
+.gemini-migration-preview--tree-view .field {
+  block-size: 100%;
+  display: grid;
+  grid-template-rows: max-content 1fr;
 }
 .tree-view {
   block-size: 100%;
