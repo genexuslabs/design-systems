@@ -81,6 +81,38 @@ export class GeminiMigrationComponent {
     }
   ]);
 
+  favoriteColorsSuggestModel = signal<ComboBoxModel>([
+    {
+      value: "red",
+      caption: "Red"
+    },
+    {
+      value: "blue",
+      caption: "Blue"
+    },
+    {
+      value: "green",
+      caption: "Green"
+    },
+    {
+      value: "yellow",
+      caption: "Yellow"
+    },
+    {
+      value: "purple",
+      caption: "Purple"
+    }
+  ]);
+  suggestOptions = signal({
+    alreadyProcessed: false,
+    autoExpand: true,
+    hideMatchesAndShowNonMatches: false,
+    highlightMatchedItems: false,
+    matchCase: false,
+    regularExpression: false,
+    strict: false
+  });
+
   favoriteColorsRadioGroupModel = signal<RadioGroupModel>([
     {
       value: "red",
@@ -152,7 +184,8 @@ export class GeminiMigrationComponent {
       ["gxg-grid", true],
       ["gxg-icon", true],
       ["gxg-label", true],
-      ["gxg-list-box", true]
+      ["gxg-list-box", true],
+      ["gxg-suggest", true]
     ]);
 
     // Update the rendered migrations by watching changes for the
@@ -195,6 +228,7 @@ export class GeminiMigrationComponent {
   showGxgIcon = computed(() => this.migrations().get("gxg-icon"));
   showGxgLabel = computed(() => this.migrations().get("gxg-label"));
   showGxgListBox = computed(() => this.migrations().get("gxg-list-box"));
+  showGxgSuggest = computed(() => this.migrations().get("gxg-suggest"));
 
   updateRenderedMigration =
     (typographyName: string) => (event: ChCheckboxCustomEvent<string>) => {

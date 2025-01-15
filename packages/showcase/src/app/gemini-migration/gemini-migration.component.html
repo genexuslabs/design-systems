@@ -479,14 +479,83 @@
 
   <div class="gemini-migration-preview gemini-migration-preview--list-box">
     <div class="field field-block">
-      <label class="label" htmlFor="list-box-id"
+      <label class="label" htmlFor="list-box"
         >Select your favorite colour:</label
       >
       <ch-action-list-render
         class="list-box"
-        id="list-box-id"
+        id="list-box"
         [model]="favoriteColorsActionListModel()"
       ></ch-action-list-render>
     </div>
+  </div>
+}
+
+@if (showGxgSuggest()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgSuggest"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-list-box</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-list-box</code> tag with a
+        <code>ch-action-list-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>list-box</code> class.</li>
+      <li>
+        <a
+          href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/combo-box#ch-combo-box-render"
+          target="_blank"
+          >Specify the ch-combo-box-render items following the model property
+        </a>
+      </li>
+      <li>
+        Set the <code>suggest</code> property to <code>true</code> to turn the
+        suggest feature on.
+      </li>
+      <li>
+        Subscribe to the <code>filterChange</code> event listener, and use the
+        <code>event.detail</code> to filter the items accordingly, by defining
+        the <code>filter</code> value.
+      </li>
+      <li>
+        <a
+          href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/combo-box#ch-combo-box-render"
+          target="_blank"
+          >Specify the options by following the
+          <code>suggestOptions</code> property
+        </a>
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview gemini-migration-preview">
+    <div class="field field-block">
+      <label class="label" htmlFor="suggest"
+        >Select your favorite colour:</label
+      >
+      <ch-combo-box-render
+        class="combo-box"
+        id="suggest"
+        [model]="favoriteColorsSuggestModel()"
+        suggest
+        [suggestOptions]="this.suggestOptions()"
+        placeholder="Red"
+      ></ch-combo-box-render>
+    </div>
+    <script>
+      const suggestRef = document.getElementById("suggest");
+      suggestRef.addEventListener("filterChange", e => {
+        console.log("filterChange");
+        suggestRef.filter = e.detail;
+      });
+    </script>
   </div>
 }

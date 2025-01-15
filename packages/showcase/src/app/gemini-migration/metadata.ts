@@ -661,6 +661,87 @@ export const geminiMigrationMetadata = {
           ]
         }
       }
+    },
+
+    gxgSuggest: {
+      linkId: "gxg-suggest",
+      title: "gxg-suggest",
+      before: {
+        template: {
+          tag: "gxg-suggest",
+          children: [
+            {
+              tag: "ch-suggest",
+              properties: [
+                {
+                  name: "value",
+                  value: "this.selectedColor.name",
+                  variable: true
+                },
+                {
+                  name: "onValueChanged",
+                  value: "this.colorChangedHandler",
+                  variable: true
+                }
+              ],
+              children: "{this.renderSuggestLists(this.colorSuggestions)}"
+            }
+          ]
+        }
+      },
+      after: {
+        imports: [chameleonImportType("ActionListModel")],
+        states: [
+          {
+            name: "suggestModel",
+            type: "ActionListModel",
+            value: [
+              { id: "red", type: "actionable", caption: "Red" },
+              { id: "blue", type: "actionable", caption: "Blue" },
+              { id: "green", type: "actionable", caption: "Green" },
+              { id: "yellow", type: "actionable", caption: "Yellow" },
+              { id: "purple", type: "actionable", caption: "Purple" }
+            ] satisfies ActionListModel
+          },
+          {
+            name: "suggestOptions",
+            type: "ComboBoxSuggestOptions",
+            value: {
+              alreadyProcessed: false,
+              autoExpand: true,
+              hideMatchesAndShowNonMatches: false,
+              highlightMatchedItems: false,
+              matchCase: false,
+              regularExpression: false,
+              strict: false
+            }
+          }
+        ],
+        template: {
+          tag: "div",
+          class: "field field-block",
+          children: [
+            {
+              tag: "label",
+              class: "label",
+              properties: [{ name: "for", value: "suggest" }],
+              children: "Favorite Colors"
+            },
+            {
+              tag: "ch-combo-box-render",
+              class: "combo-box",
+              properties: [
+                { name: "id", value: "suggest" },
+                { name: "accessibleName", value: "My Favorite Colors" },
+                { name: "model", value: "suggestModel", state: true },
+                { name: "placeholder", value: "Select your favorite color" },
+                { name: "suggest", value: true },
+                { name: "suggestOptions", value: "suggestOptions", state: true }
+              ]
+            }
+          ]
+        }
+      }
     }
   }
 } as const satisfies ComponentMetadataBeforeAfter;
