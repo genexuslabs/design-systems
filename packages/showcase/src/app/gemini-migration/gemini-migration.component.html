@@ -134,7 +134,7 @@
   </code-snippet>
 
   <div class="gemini-migration-preview field field-block">
-    <label class="label" for="favorite-colors">Favorite Colors</label>
+    <label class="label" for="favorite-colors">Favorite Colours</label>
     <ch-combo-box-render
       class="combo-box"
       id="favorite-colors"
@@ -212,7 +212,7 @@
   <div class="gemini-migration-preview">
     <div class="field field-block">
       <label class="label" htmlFor="favorite-colors-radio">
-        Favorite Colors
+        Favorite Colour
       </label>
       <ch-radio-group-render
         class="radio-group"
@@ -297,7 +297,7 @@
         >Developer Experience</label
       >
       <ch-edit
-        value=""
+        value="I have extensive experience as a backend developer, specializing in designing and implementing robust, scalable, and secure server-side solutions. My expertise includes working with a variety of programming languages and frameworks such as Node.js, Python, and Java, as well as managing databases like PostgreSQL and MongoDB. I am skilled in creating APIs, optimizing database performance, and integrating third-party services to deliver seamless user experiences."
         class="input"
         placeholder="I have experience in backend development..."
         multiline
@@ -483,9 +483,7 @@
 
   <div class="gemini-migration-preview gemini-migration-preview--list-box">
     <div class="field field-block">
-      <label class="label" htmlFor="list-box"
-        >Select your favorite colour:</label
-      >
+      <label class="label" htmlFor="list-box">Favorite Colour:</label>
       <ch-action-list-render
         class="list-box"
         id="list-box"
@@ -518,9 +516,7 @@
 
   <div class="gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" htmlFor="status-pill"
-        >Select the issue status:</label
-      >
+      <label class="label" htmlFor="status-pill">Status Selection</label>
       <ch-combo-box-render
         id="status-pill"
         class="pill"
@@ -578,9 +574,7 @@
 
   <div class="gemini-migration-preview gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" htmlFor="suggest"
-        >Select your favorite colour:</label
-      >
+      <label class="label" htmlFor="suggest">Favorite Colour</label>
       <ch-combo-box-render
         class="combo-box"
         id="suggest"
@@ -622,9 +616,7 @@
 
   <div class="gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" htmlFor="fruits-tab"
-        >Select your favorite fruit:</label
-      >
+      <label class="label" htmlFor="fruits-tab">Our Fruits</label>
       <ch-tab-render
         class="tab tab-indicator-start"
         id="fruits-tab"
@@ -747,12 +739,16 @@
   </code-snippet>
 
   <div class="gemini-migration-preview gemini-migration-preview--tree-view">
-    <ch-tree-view-render
-      class="tree-view"
-      [model]="this.objectsTreeViewModel()"
-      [get-image-path-callback]="getImagePathCallback"
-      show-lines="last"
-    >
-    </ch-tree-view-render>
+    <div class="field field-block">
+      <label class="label" htmlFor="genexus-objects">GeneXus Objects</label>
+      <ch-tree-view-render
+        id="genexus-objects"
+        class="tree-view"
+        [model]="objectsTreeViewModel()"
+        [getImagePathCallback]="getTreeViewImagePathCallback"
+        [showLines]="'last'"
+      >
+      </ch-tree-view-render>
+    </div>
   </div>
 }

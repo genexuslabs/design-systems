@@ -342,7 +342,15 @@ export const geminiMigrationMetadata = {
               class: "input",
               properties: [
                 { name: "id", value: "developer-experience" },
-                { name: "value", value: "" },
+                {
+                  name: "value",
+                  value: `I have extensive experience as a backend developer, specializing in designing
+      and implementing robust, scalable, and secure server-side solutions. My expertise
+      includes working with a variety of programming languages and frameworks such as
+      Node.js, Python, and Java, as well as managing databases like PostgreSQL and MongoDB. 
+      am skilled in creating APIs, optimizing database performance, and integrating third-party
+      services to deliver seamless user experiences.`
+                },
                 {
                   name: "placeholder",
                   value: "I have experience in backend development..."
