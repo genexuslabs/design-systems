@@ -16,26 +16,26 @@ export class RouterCommonLinksService {
   componentsComboBox = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.COMBO_BOX}`
   );
-  componentsLabel = computed(
-    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.LABEL}`
-  );
   componentsIcon = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.ICON}`
-  );
-  componentsRadioGroup = computed(
-    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.RADIO_GROUP}`
   );
   componentsInput = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.INPUT}`
   );
-  componentsTabularGrid = computed(
-    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.TABULAR_GRID}`
+  componentsLabel = computed(
+    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.LABEL}`
   );
   componentsLisBox = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.LIST_BOX}`
   );
+  componentsRadioGroup = computed(
+    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.RADIO_GROUP}`
+  );
   componentsTab = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.TAB}`
+  );
+  componentsTabularGrid = computed(
+    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.TABULAR_GRID}`
   );
   componentsTree = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.TREE_VIEW}`

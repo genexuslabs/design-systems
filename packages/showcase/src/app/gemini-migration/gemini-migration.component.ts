@@ -346,12 +346,12 @@ export class GeminiMigrationComponent {
       ["gxg-icon", true],
       ["gxg-label", true],
       ["gxg-list-box", true],
+      ["gxg-pills", true],
       ["gxg-suggest", true],
       ["gxg-tabs", true],
       ["gxg-text", true],
       ["gxg-title", true],
-      ["gxg-tree-view", true],
-      ["gxg-pills", true]
+      ["gxg-tree-view", true]
     ]);
 
     // Update the rendered migrations by watching changes for the
