@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import * as sass from "sass";
 
 import {
   BASE_BUNDLE_WITH_BACK_SLASH,
@@ -19,10 +20,15 @@ import {
 import { BundleMetadata, FileMetadata } from "./types.js";
 import {
   getBundleNameWithoutSpecialChars,
-  replacePlaceholdersInBundle,
-  transpileBundle
+  replacePlaceholdersInBundle
 } from "./utils.js";
 import { printBundleWasTranspiled } from "./print-utils.js";
+
+const transpileBundle = (filePath: string, globant: boolean) =>
+  sass.compile(filePath, {
+    loadPaths: [globant ? "src/config/globant" : "src/config/default"],
+    style: "compressed"
+  }).css;
 
 const CSS_CREATED_DIRS = new Set();
 const JS_CREATED_DIRS = new Set();
