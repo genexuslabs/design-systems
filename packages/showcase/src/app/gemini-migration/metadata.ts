@@ -888,6 +888,31 @@ export const geminiMigrationMetadata = {
           ]
         }
       }
+    },
+
+    gxgText: {
+      linkId: "gxg-text",
+      title: "gxg-text",
+      before: {
+        template: {
+          tag: "gxg-text",
+          properties: [{ name: "type", value: "text-regular" }],
+          children: `Genexus is a development platform that automates application creation using a
+  model-driven approach. It allows developers to focus on high-level design, generating 
+  code  for web, mobile, and desktop applications, resulting in faster development cycles 
+  and fewer errors.`
+        }
+      },
+      after: {
+        template: {
+          tag: "p",
+          class: "text-body",
+          children: `Genexus is a development platform that automates application creation using a 
+  model-driven approach. It allows developers to focus on high-level design, generating code 
+  for web, mobile, and desktop applications, resulting in faster development cycles and fewer 
+  errors.`
+        }
+      }
     }
   }
 } as const satisfies ComponentMetadataBeforeAfter;

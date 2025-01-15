@@ -193,7 +193,8 @@ export class GeminiMigrationComponent {
       ["gxg-label", true],
       ["gxg-list-box", true],
       ["gxg-suggest", true],
-      ["gxg-tabs", true]
+      ["gxg-tabs", true],
+      ["gxg-text", true]
     ]);
 
     // Update the rendered migrations by watching changes for the
@@ -238,6 +239,7 @@ export class GeminiMigrationComponent {
   showGxgListBox = computed(() => this.migrations().get("gxg-list-box"));
   showGxgSuggest = computed(() => this.migrations().get("gxg-suggest"));
   showGxgTabs = computed(() => this.migrations().get("gxg-tabs"));
+  showGxgText = computed(() => this.migrations().get("gxg-text"));
 
   updateRenderedMigration =
     (typographyName: string) => (event: ChCheckboxCustomEvent<string>) => {

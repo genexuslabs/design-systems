@@ -623,3 +623,31 @@
     </div>
   </div>
 }
+
+@if (showGxgText()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgText"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-text</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>Replace the <code>gxg-text</code> tag with a <code>p</code> tag.</li>
+
+      <li>Remove the <code>type</code> attribute/value</li>
+
+      <li>Add the <code>text-body</code> class.</li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview gemini-migration-preview--list-box">
+    <p class="text-body">
+      Genexus is a development platform that automates application creation
+      using a model-driven approach. It allows developers to focus on high-level
+      design, generating code for web, mobile, and desktop applications,
+      resulting in faster development cycles and fewer errors.
+    </p>
+  </div>
+}
