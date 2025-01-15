@@ -1,7 +1,8 @@
 import type {
   ComboBoxModel,
   RadioGroupModel,
-  ActionListModel
+  ActionListModel,
+  TabModel
 } from "@genexus/chameleon-controls-library";
 import { ComponentMetadataBeforeAfter } from "../../common/types";
 import { chameleonImportType } from "../../services/template-language/create-template";
@@ -738,6 +739,151 @@ export const geminiMigrationMetadata = {
                 { name: "suggest", value: true },
                 { name: "suggestOptions", value: "suggestOptions", state: true }
               ]
+            }
+          ]
+        }
+      }
+    },
+
+    gxgTabs: {
+      linkId: "gxg-tabs",
+      title: "gxg-tabs",
+      before: {
+        template: {
+          tag: "gxg-tabs",
+          properties: [
+            { name: "id", value: "gxgTabs" },
+            { name: "position", value: "top" }
+          ],
+          children: [
+            {
+              tag: "gxg-tab-bar",
+              properties: [
+                { name: "slot", value: "tab-bar-container" },
+                { name: "id", value: "tab-bar" }
+              ],
+              children: [
+                {
+                  tag: "gxg-tab-button",
+                  properties: [
+                    { name: "slot", value: "tab-bar" },
+                    { name: "tab-label", value: "apples" },
+                    { name: "tab", value: "apples" },
+                    { name: "key", value: "apples" },
+                    { name: "is-selected", value: true }
+                  ]
+                },
+                {
+                  tag: "gxg-tab-button",
+                  properties: [
+                    { name: "slot", value: "tab-bar" },
+                    { name: "tab-label", value: "bananas" },
+                    { name: "tab", value: "bananas" },
+                    { name: "key", value: "bananas" },
+                    { name: "icon", value: "gemini-tools/settings" }
+                  ]
+                },
+                {
+                  tag: "gxg-tab-button",
+                  properties: [
+                    { name: "slot", value: "tab-bar" },
+                    { name: "tab-label", value: "cherries" },
+                    { name: "tab", value: "cherries" },
+                    { name: "key", value: "cherries" },
+                    { name: "icon", value: "gemini-tools/settings" },
+                    { name: "hidden", value: true }
+                  ]
+                }
+              ]
+            },
+            {
+              tag: "gxg-tab",
+              properties: [
+                { name: "tab", value: "apples" },
+                { name: "key", value: "apples" },
+                { name: "isSelected", value: true }
+              ],
+              children:
+                "<p>An apple is a sweet, edible fruit produced by an apple tree...</p>"
+            },
+            {
+              tag: "gxg-tab",
+              properties: [
+                { name: "tab", value: "bananas" },
+                { name: "key", value: "bananas" },
+                { name: "isSelected", value: false }
+              ],
+              children: "<p>A banana is an elongated, edible fruit...</p>"
+            },
+            {
+              tag: "gxg-tab",
+              properties: [
+                { name: "tab", value: "cherries" },
+                { name: "key", value: "cherries" },
+                { name: "isSelected", value: false }
+              ],
+              children: "<p>A cherry is the fruit of many plants...</p>"
+            }
+          ]
+        }
+      },
+      after: {
+        imports: [chameleonImportType("TabModel")],
+        states: [
+          {
+            name: "fruitsModel",
+            type: "TabModel",
+            value: [
+              { id: "apples", name: "Apples" },
+              { id: "bananas", name: "Bananas" },
+              { id: "cherries", name: "Cherries" }
+            ] satisfies TabModel
+          }
+        ],
+        template: {
+          tag: "ch-tab-render",
+          class: "tab tab-indicator-start",
+          properties: [
+            { name: "tab-list-position", value: "inline-start" },
+            { name: "selected-id", value: "apples" },
+            { name: "model", value: "fruitsModel", state: true }
+          ],
+          children: [
+            {
+              tag: "div",
+              properties: [
+                { name: "slot", value: "apples" },
+                { name: "class", value: "spacing-body" }
+              ],
+              children: {
+                tag: "p",
+                class: "text-body",
+                children: "An apple is a sweet, edible fruit..."
+              }
+            },
+            {
+              tag: "div",
+              properties: [
+                { name: "slot", value: "bananas" },
+                { name: "class", value: "spacing-body" }
+              ],
+              children: {
+                tag: "p",
+                class: "text-body",
+                children: "A banana is an elongated, edible fruit..."
+              }
+            },
+            {
+              tag: "div",
+              properties: [
+                { name: "slot", value: "cherries" },
+                { name: "class", value: "spacing-body" }
+              ],
+              children: {
+                tag: "p",
+                class: "text-body",
+                children: "A cherry is the fruit of many plants..."
+              }
             }
           ]
         }

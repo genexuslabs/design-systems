@@ -18,7 +18,8 @@ import type {
   ChCheckboxCustomEvent,
   ComboBoxModel,
   RadioGroupModel,
-  ActionListItemModel
+  ActionListItemModel,
+  TabModel
 } from "@genexus/chameleon-controls-library";
 
 import { geminiMigrationMetadata } from "./metadata";
@@ -164,6 +165,12 @@ export class GeminiMigrationComponent {
     }
   ]);
 
+  fruitsTabModel = signal<TabModel>([
+    { id: "apples", name: "Apples" },
+    { id: "bananas", name: "Bananas" },
+    { id: "cherries", name: "Cherries" }
+  ]);
+
   // TODO: This is a WA, since the Chameleon's register does not for some reason
   getImagePathCallback = getImagePathCallback;
   hiddenMigrations = input<string>("");
@@ -185,7 +192,8 @@ export class GeminiMigrationComponent {
       ["gxg-icon", true],
       ["gxg-label", true],
       ["gxg-list-box", true],
-      ["gxg-suggest", true]
+      ["gxg-suggest", true],
+      ["gxg-tabs", true]
     ]);
 
     // Update the rendered migrations by watching changes for the
@@ -229,6 +237,7 @@ export class GeminiMigrationComponent {
   showGxgLabel = computed(() => this.migrations().get("gxg-label"));
   showGxgListBox = computed(() => this.migrations().get("gxg-list-box"));
   showGxgSuggest = computed(() => this.migrations().get("gxg-suggest"));
+  showGxgTabs = computed(() => this.migrations().get("gxg-tabs"));
 
   updateRenderedMigration =
     (typographyName: string) => (event: ChCheckboxCustomEvent<string>) => {

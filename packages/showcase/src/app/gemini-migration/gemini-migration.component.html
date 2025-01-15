@@ -7,8 +7,10 @@
     'components/radio-group',
     'components/tabular-grid',
     'components/icon',
+    'components/tab',
     'utils/form',
-    'utils/typography'
+    'utils/typography',
+    'utils/spacing'
   ]"
 />
 
@@ -550,12 +552,74 @@
         placeholder="Red"
       ></ch-combo-box-render>
     </div>
-    <script>
-      const suggestRef = document.getElementById("suggest");
-      suggestRef.addEventListener("filterChange", e => {
-        console.log("filterChange");
-        suggestRef.filter = e.detail;
-      });
-    </script>
+  </div>
+}
+
+@if (showGxgTabs()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgTabs"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-tabs</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-tabs</code> tag with a
+        <code>ch-tab-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>tab</code> class.</li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsTab()"
+          >Specify the control properties following the documentation (TODO)
+        </a>
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview gemini-migration-preview--list-box">
+    <div class="field field-block">
+      <label class="label" htmlFor="fruits-tab"
+        >Select your favorite fruit:</label
+      >
+      <ch-tab-render
+        class="tab tab-indicator-start"
+        id="fruits-tab"
+        tabListPosition="inline-start"
+        [model]="this.fruitsTabModel()"
+        selected-id="apples"
+      >
+        <div slot="apples" class="spacing-body">
+          <p class="text-body">
+            An apple is a sweet, edible fruit produced by an apple tree. Apple
+            trees are cultivated worldwide and are the most widely grown species
+            in the genus Malus. The tree originated in Central Asia, where its
+            wild ancestor, Malus sieversii, is still found today. An apple is a
+            sweet, edible fruit produced by an apple tree.
+          </p>
+        </div>
+        <div slot="bananas" class="spacing-body">
+          <p class="text-body">
+            A banana is an elongated, edible fruit – botanically a berry –
+            produced by several kinds of large herbaceous flowering plants in
+            the genus Musa. In some countries, bananas used for cooking may be
+            called "plantains", distinguishing them from dessert bananas.
+          </p>
+        </div>
+        <div slot="cherries" class="spacing-body">
+          <p class="text-body">
+            A cherry is the fruit of many plants of the genus Prunus, and is a
+            fleshy drupe. Commercial cherries are obtained from cultivars of
+            several species, such as the sweet Prunus avium and the sour Prunus
+            cerasus.
+          </p>
+        </div>
+      </ch-tab-render>
+    </div>
   </div>
 }
