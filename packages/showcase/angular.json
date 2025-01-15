@@ -29,22 +29,22 @@
               },
               {
                 "glob": "**/*",
-                "input": "../mercury/dist/bundles/css/",
+                "input": ".mercury/",
                 "output": "/assets/css/mercury"
               },
               {
                 "glob": "**/*",
-                "input": "../unanimo/dist/bundles/css/",
+                "input": "node_modules/@genexus/unanimo/dist/bundles/css",
                 "output": "/assets/css/unanimo"
               },
               {
                 "glob": "**/*",
-                "input": "../mercury/dist/assets/",
+                "input": "node_modules/@genexus/mercury/dist/assets/",
                 "output": "/assets/"
               },
               {
                 "glob": "**/*",
-                "input": "../unanimo/dist/assets/",
+                "input": "node_modules/@genexus/unanimo/dist/assets/",
                 "output": "/assets/"
               }
             ],
@@ -112,5 +112,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
