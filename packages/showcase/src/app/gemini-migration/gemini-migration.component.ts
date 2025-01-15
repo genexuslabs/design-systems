@@ -19,7 +19,8 @@ import type {
   ComboBoxModel,
   RadioGroupModel,
   ActionListItemModel,
-  TabModel
+  TabModel,
+  TreeViewModel
 } from "@genexus/chameleon-controls-library";
 
 import { geminiMigrationMetadata } from "./metadata";
@@ -171,6 +172,136 @@ export class GeminiMigrationComponent {
     { id: "cherries", name: "Cherries" }
   ]);
 
+  objectsTreeViewModel = signal<TreeViewModel>([
+    {
+      id: "root",
+      caption: "GeneXusNext Develop",
+      startImgSrc: "objects/version",
+      expanded: true,
+      leaf: false,
+      items: [
+        {
+          id: "Main_Programs",
+          caption: "Main Programs",
+          startImgSrc: "objects/category",
+          expanded: true,
+          items: [
+            {
+              id: "Main_Programs.Prompt",
+              caption: "Prompt",
+              startImgSrc: "objects/panel-for-sd",
+              leaf: true,
+              metadata: "Panel"
+            },
+            {
+              id: "Main_Programs.ApiHealthCheck",
+              caption: "ApiHealthCheck",
+              startImgSrc: "objects/api",
+              leaf: true
+            },
+            {
+              id: "Main_Programs.BackHome",
+              caption: "BackHome",
+              startImgSrc: "objects/web-panel",
+              leaf: true
+            },
+            {
+              id: "Main_Programs.Login",
+              caption: "Login",
+              startImgSrc: "objects/web-panel",
+              leaf: true
+            },
+            {
+              id: "Main_Programs.ProvisioningServices",
+              caption: "ProvisioningServices",
+              startImgSrc: "objects/api",
+              leaf: true
+            },
+            {
+              id: "Main_Programs.VersionCheck",
+              caption: "VersionCheck",
+              startImgSrc: "objects/procedure",
+              leaf: true
+            }
+          ]
+        },
+        {
+          id: "Root_Module",
+          caption: "Root Module",
+          startImgSrc: getIconPath({
+            category: "objects",
+            name: "module"
+          }),
+          expanded: false,
+          items: [
+            {
+              id: "Root_Module.Images",
+              caption: "Images",
+              startImgSrc: "objects/image",
+              leaf: true
+            },
+            {
+              id: "Root_Module.GXNext",
+              caption: "GXNext",
+              startImgSrc: "objects/dso",
+              leaf: true
+            },
+            {
+              id: "Root_Module.GeneXusNext",
+              caption: "GeneXusNext",
+              startImgSrc: "objects/dso",
+              leaf: true
+            },
+            {
+              id: "Root_Module.Files",
+              caption: "Files",
+              startImgSrc: "objects/file",
+              leaf: true
+            },
+            {
+              id: "Root_Module.Domain",
+              caption: "Domain ",
+              startImgSrc: "objects/file",
+              leaf: true
+            }
+          ]
+        },
+        {
+          id: "References",
+          caption: "References",
+          startImgSrc: "objects/references",
+          leaf: true
+        },
+        {
+          id: "Customization",
+          caption: "Customization",
+          startImgSrc: "objects/customization",
+          expanded: true,
+          items: [
+            {
+              id: "Customization.Files",
+              caption: "Files",
+              startImgSrc: "objects/file",
+              leaf: true
+            },
+            {
+              id: "Customization.Images",
+              caption: "Images",
+              startImgSrc: "objects/image",
+              leaf: true
+            }
+          ]
+        },
+        {
+          id: "Documentation",
+          caption: "Documentation",
+          startImgSrc: "objects/document",
+          leaf: true
+        }
+      ]
+    }
+  ]);
+
   // TODO: This is a WA, since the Chameleon's register does not for some reason
   getImagePathCallback = getImagePathCallback;
   hiddenMigrations = input<string>("");
@@ -195,7 +326,8 @@ export class GeminiMigrationComponent {
       ["gxg-suggest", true],
       ["gxg-tabs", true],
       ["gxg-text", true],
-      ["gxg-title", true]
+      ["gxg-title", true],
+      ["gxg-tree-view", true]
     ]);
 
     // Update the rendered migrations by watching changes for the
@@ -242,6 +374,7 @@ export class GeminiMigrationComponent {
   showGxgTabs = computed(() => this.migrations().get("gxg-tabs"));
   showGxgText = computed(() => this.migrations().get("gxg-text"));
   showGxgTitle = computed(() => this.migrations().get("gxg-title"));
+  showGxgTree = computed(() => this.migrations().get("gxg-tree-view"));
 
   updateRenderedMigration =
     (typographyName: string) => (event: ChCheckboxCustomEvent<string>) => {

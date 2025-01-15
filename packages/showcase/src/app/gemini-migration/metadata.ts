@@ -2,7 +2,8 @@ import type {
   ComboBoxModel,
   RadioGroupModel,
   ActionListModel,
-  TabModel
+  TabModel,
+  TreeViewModel
 } from "@genexus/chameleon-controls-library";
 import { ComponentMetadataBeforeAfter } from "../../common/types";
 import { chameleonImportType } from "../../services/template-language/create-template";
@@ -961,6 +962,181 @@ export const geminiMigrationMetadata = {
           { tag: "h5", class: "heading-5", children: "This is a heading 5" },
           { tag: "h6", class: "heading-6", children: "This is a heading 6" }
         ]
+      }
+    },
+
+    gxgTreeView: {
+      linkId: "gxg-tree-view",
+      title: "4. gxg-tree-view",
+      before: {
+        template: {
+          tag: "gxg-tree-view",
+          properties: [
+            { name: "treeModel", value: "this.myTreeModel" },
+            { name: "dragDisabled", value: "true" },
+            { name: "dropDisabled", value: "true" },
+            { name: "toggleCheckboxes", value: "true" },
+            { name: "checkbox", value: "true" },
+            { name: "checked", value: "true" }
+          ],
+          children: []
+        }
+      },
+      after: {
+        imports: [chameleonImportType("TreeViewModel")],
+        states: [
+          {
+            name: "myTreeModel",
+            type: "TreeViewModel",
+            value: [
+              {
+                id: "root",
+                caption: "GeneXusNext Develop",
+                startImgSrc: "objects/version",
+                expanded: true,
+                leaf: false,
+                items: [
+                  {
+                    id: "Main_Programs",
+                    caption: "Main Programs",
+                    startImgSrc: "objects/category",
+                    expanded: true,
+                    items: [
+                      {
+                        id: "Main_Programs.Prompt",
+                        caption: "Prompt",
+                        startImgSrc: "objects/panel-for-sd",
+                        leaf: true,
+                        metadata: "Panel"
+                      },
+                      {
+                        id: "Main_Programs.ApiHealthCheck",
+                        caption: "ApiHealthCheck",
+                        startImgSrc: "objects/api",
+                        leaf: true
+                      },
+                      {
+                        id: "Main_Programs.BackHome",
+                        caption: "BackHome",
+                        startImgSrc: "objects/web-panel",
+                        leaf: true
+                      },
+                      {
+                        id: "Main_Programs.Login",
+                        caption: "Login",
+                        startImgSrc: "objects/web-panel",
+                        leaf: true
+                      },
+                      {
+                        id: "Main_Programs.ProvisioningServices",
+                        caption: "ProvisioningServices",
+                        startImgSrc: "objects/api",
+                        leaf: true
+                      },
+                      {
+                        id: "Main_Programs.VersionCheck",
+                        caption: "VersionCheck",
+                        startImgSrc: "objects/procedure",
+                        leaf: true
+                      }
+                    ]
+                  },
+                  {
+                    id: "Root_Module",
+                    caption: "Root Module !",
+                    startImgSrc: "objects/module",
+                    expanded: false,
+                    items: [
+                      {
+                        id: "Root_Module.Images",
+                        caption: "Images",
+                        startImgSrc: "objects/image",
+                        leaf: true
+                      },
+                      {
+                        id: "Root_Module.GXNext",
+                        caption: "GXNext",
+                        startImgSrc: "objects/dso",
+                        leaf: true
+                      },
+                      {
+                        id: "Root_Module.GeneXusNext",
+                        caption: "GeneXusNext",
+                        startImgSrc: "objects/dso",
+                        leaf: true
+                      },
+                      {
+                        id: "Root_Module.Files",
+                        caption: "Files",
+                        startImgSrc: "objects/file",
+                        leaf: true
+                      },
+                      {
+                        id: "Root_Module.Domain",
+                        caption: "Domain 3",
+                        startImgSrc: "objects/domain",
+                        leaf: true
+                      }
+                    ]
+                  },
+                  {
+                    id: "References",
+                    caption: "References",
+                    startImgSrc: "objects/references",
+                    leaf: true
+                  },
+                  {
+                    id: "Customization",
+                    caption: "Customization",
+                    startImgSrc: "objects/customization",
+                    expanded: true,
+                    items: [
+                      {
+                        id: "Customization.Files",
+                        caption: "Files",
+                        startImgSrc: "objects/file",
+                        leaf: true
+                      },
+                      {
+                        id: "Customization.Images",
+                        caption: "Images",
+                        startImgSrc: "objects/image",
+                        leaf: true
+                      }
+                    ]
+                  },
+                  {
+                    id: "Documentation",
+                    caption: "Documentation",
+                    startImgSrc: "objects/document",
+                    leaf: true
+                  }
+                ]
+              }
+            ] satisfies TreeViewModel
+          }
+        ],
+        template: {
+          tag: "div",
+          class: "field field-block",
+          children: [
+            {
+              tag: "label",
+              class: "label",
+              properties: [{ name: "for", value: "my-tree-view" }],
+              children: "GeneXusNext Develop"
+            },
+            {
+              tag: "ch-tree-view-render",
+              class: "tree-view",
+              properties: [
+                { name: "model", value: "this.myTreeModel", state: true },
+                { name: "show-lines", value: "last" }
+              ],
+              children: []
+            }
+          ]
+        }
       }
     }
   }

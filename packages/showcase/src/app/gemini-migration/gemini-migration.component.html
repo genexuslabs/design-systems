@@ -8,6 +8,7 @@
     'components/tabular-grid',
     'components/icon',
     'components/tab',
+    'components/tree-view',
     'utils/form',
     'utils/typography',
     'utils/spacing'
@@ -684,5 +685,37 @@
     <h5 class="heading-5">This is a heading 5</h5>
     <br />
     <h6 class="heading-6">This is a heading 6</h6>
+  </div>
+}
+
+@if (showGxgTree()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgTreeView"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-tree-view</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-tree-view</code> tag with a
+        <code>ch-tree-view-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>tree-view</code> class.</li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview gemini-migration-preview--tree-view">
+    <ch-tree-view-render
+      class="tree-view"
+      [model]="this.objectsTreeViewModel()"
+      [get-image-path-callback]="getImagePathCallback"
+      show-lines="last"
+    >
+    </ch-tree-view-render>
   </div>
 }

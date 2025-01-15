@@ -37,6 +37,9 @@ export class RouterCommonLinksService {
   componentsTab = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.TAB}`
   );
+  componentsTree = computed(
+    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.TREE_VIEW}`
+  );
 
   utilsForm = computed(
     () => `/${this.dsService.designSystem()}${UTILITY_CLASSES_ROUTES.FORM}`
