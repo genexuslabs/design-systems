@@ -1,6 +1,5 @@
 import crypto from "node:crypto";
 import { styleText } from "node:util";
-import * as sass from "sass";
 
 import {
   FONT_FACE_PATH_PLACEHOLDER,
@@ -28,12 +27,6 @@ export const getFileSize = (fileContent: string) => {
   const fileLengthInGB = fileLengthInMB / KB;
   return fileLengthInGB.toFixed(3) + "GB";
 };
-
-export const transpileBundle = (filePath: string, globant: boolean) =>
-  sass.compile(filePath, {
-    loadPaths: [globant ? "src/config/globant" : "src/config/default"],
-    style: "compressed"
-  }).css;
 
 export const getHash = (fileContent: string) =>
   crypto.createHash("md5").update(fileContent).digest("hex").substring(16);
