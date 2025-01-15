@@ -956,7 +956,7 @@ export const geminiMigrationMetadata = {
               ],
               children: {
                 tag: "p",
-                class: "text-body",
+                class: "text-body-regular-m",
                 children: "An apple is a sweet, edible fruit..."
               }
             },
@@ -968,7 +968,7 @@ export const geminiMigrationMetadata = {
               ],
               children: {
                 tag: "p",
-                class: "text-body",
+                class: "text-body-regular-m",
                 children: "A banana is an elongated, edible fruit..."
               }
             },
@@ -980,7 +980,7 @@ export const geminiMigrationMetadata = {
               ],
               children: {
                 tag: "p",
-                class: "text-body",
+                class: "text-body-regular-m",
                 children: "A cherry is the fruit of many plants..."
               }
             }
@@ -1005,7 +1005,7 @@ export const geminiMigrationMetadata = {
       after: {
         template: {
           tag: "p",
-          class: "text-body",
+          class: "text-body-regular-m",
           children: `Genexus is a development platform that automates application creation using a 
   model-driven approach. It allows developers to focus on high-level design, generating code 
   for web, mobile, and desktop applications, resulting in faster development cycles and fewer 

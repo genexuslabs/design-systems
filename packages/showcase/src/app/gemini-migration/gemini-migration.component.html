@@ -300,8 +300,8 @@
         value="I have extensive experience as a backend developer, specializing in designing and implementing robust, scalable, and secure server-side solutions. My expertise includes working with a variety of programming languages and frameworks such as Node.js, Python, and Java, as well as managing databases like PostgreSQL and MongoDB. I am skilled in creating APIs, optimizing database performance, and integrating third-party services to deliver seamless user experiences."
         class="input"
         placeholder="I have experience in backend development..."
-        multiline
-        auto-grow
+        [multiline]="true"
+        [autoGrow]="true"
       ></ch-edit>
     </div>
   </div>
@@ -482,14 +482,10 @@
   </code-snippet>
 
   <div class="gemini-migration-preview gemini-migration-preview--list-box">
-    <div class="field field-block">
-      <label class="label" htmlFor="list-box">Favorite Colour:</label>
-      <ch-action-list-render
-        class="list-box"
-        id="list-box"
-        [model]="favoriteColorsActionListModel()"
-      ></ch-action-list-render>
-    </div>
+    <ch-action-list-render
+      class="list-box"
+      [model]="favoriteColorsActionListModel()"
+    ></ch-action-list-render>
   </div>
 }
 
@@ -625,7 +621,7 @@
         selected-id="apples"
       >
         <div slot="apples" class="spacing-body">
-          <p class="text-body">
+          <p class="text-body-regular-m">
             An apple is a sweet, edible fruit produced by an apple tree. Apple
             trees are cultivated worldwide and are the most widely grown species
             in the genus Malus. The tree originated in Central Asia, where its
@@ -634,7 +630,7 @@
           </p>
         </div>
         <div slot="bananas" class="spacing-body">
-          <p class="text-body">
+          <p class="text-body-regular-m">
             A banana is an elongated, edible fruit – botanically a berry –
             produced by several kinds of large herbaceous flowering plants in
             the genus Musa. In some countries, bananas used for cooking may be
@@ -642,7 +638,7 @@
           </p>
         </div>
         <div slot="cherries" class="spacing-body">
-          <p class="text-body">
+          <p class="text-body-regular-m">
             A cherry is the fruit of many plants of the genus Prunus, and is a
             fleshy drupe. Commercial cherries are obtained from cultivars of
             several species, such as the sweet Prunus avium and the sour Prunus
@@ -703,7 +699,7 @@
   </code-snippet>
 
   <div class="gemini-migration-preview">
-    <h1 class="heading-1">This is a heading 1</h1>
+    <h2 class="heading-1">This is a heading 1</h2>
     <br />
     <h2 class="heading-2">This is a heading 2</h2>
     <br />
