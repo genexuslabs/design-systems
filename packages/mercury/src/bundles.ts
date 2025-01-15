@@ -4,6 +4,7 @@ import type {
   MercuryBundleComponent,
   MercuryBundleComponentForm,
   MercuryBundleFull,
+  MercuryBundleMapping,
   MercuryBundleOptimized,
   MercuryBundleReset,
   MercuryBundleUtil,
@@ -17,24 +18,30 @@ type BundleNames =
   | MercuryBundleUtil
   | MercuryBundleUtilFormFull;
 
+let bundleMappings: MercuryBundleMapping | undefined;
+
 const getThemeModelItem = <T extends BundleNames, S extends string>(
   basePath: string,
   bundleName: T,
   bundleNamePrefix: S | undefined,
   attachStyleSheet: boolean | undefined = undefined
 ) => {
-  const bundleNameWithPrefix = bundleNamePrefix
+  const themeName = bundleNamePrefix
     ? bundleNamePrefix + bundleName
     : bundleName;
-  const bundleURL = `${basePath}${bundleName}.css`;
+
+  const bundleNameWithHash = bundleMappings
+    ? bundleMappings[bundleName]
+    : bundleName;
+  const bundleURL = `${basePath}${bundleNameWithHash}.css`;
 
   return attachStyleSheet === undefined
     ? ({
-        name: bundleNameWithPrefix,
+        name: themeName,
         url: bundleURL
       } as const satisfies ThemeItemModel)
     : ({
-        name: bundleNameWithPrefix,
+        name: themeName,
         url: bundleURL,
         attachStyleSheet
       } as const satisfies ThemeItemModel);
@@ -88,10 +95,10 @@ export const getThemeBundles = (basePath: string, bundleNamePrefix?: string) =>
     ),
     getThemeModelItem(basePath, "components/sidebar", bundleNamePrefix),
     getThemeModelItem(basePath, "components/slider", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/switch", bundleNamePrefix),
     getThemeModelItem(basePath, "components/tab", bundleNamePrefix),
     getThemeModelItem(basePath, "components/tabular-grid", bundleNamePrefix),
     getThemeModelItem(basePath, "components/ticket-list", bundleNamePrefix),
-    getThemeModelItem(basePath, "components/toggle", bundleNamePrefix),
     getThemeModelItem(basePath, "components/tooltip", bundleNamePrefix),
     getThemeModelItem(basePath, "components/tree-view", bundleNamePrefix),
     getThemeModelItem(basePath, "components/widget", bundleNamePrefix),
@@ -154,3 +161,14 @@ export const getBundles = (
         getThemeModelItem(basePath, bundle, bundleNamePrefix)
       )
     : addPrefixToBundleNames(bundles, bundleNamePrefix);
+
+/**
+ * Establish the mapping between the bundle name and its generated hash.
+ *
+ * If the bundles are created with the CLI that provides Mercury
+ * (`mercury` command), this mapping must be set to download the right bundles
+ * with the ch-theme component.
+ */
+export const setBundleMapping = (mappings: MercuryBundleMapping) => {
+  bundleMappings = mappings;
+};

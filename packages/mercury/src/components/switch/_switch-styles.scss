@@ -1,0 +1,143 @@
+%switch-basic {
+  --ch-switch-track__unchecked-background-color: var(
+    --mer-color__neutral-gray--650
+  );
+  --ch-switch-track__checked-background-color: var(
+    --mer-color__tinted-primary--50
+  );
+  --ch-switch-thumb__unchecked-background-color: var(--mer-icon__neutral);
+  --ch-switch-thumb__checked-background-color: var(--mer-icon__neutral);
+  --ch-switch-thumb__state-transition-duration: 150ms;
+  font-weight: var(--mer-font__weight--regular);
+  line-height: var(--mer-line-height--regular);
+
+  &__track {
+    border-radius: var(--ch-switch-track-block-size);
+    margin-inline-end: var(--mer-spacing--xs);
+
+    &--disabled {
+      --ch-switch-track__unchecked-background-color: var(
+        --mer-accent__primary--disabled
+      );
+      --ch-switch-track__checked-background-color: var(
+        --mer-accent__primary--disabled
+      );
+      --ch-switch-thumb__unchecked-background-color: var(
+        --mer-icon__on-disabled
+      );
+      --ch-switch-thumb__checked-background-color: var(--mer-icon__on-disabled);
+    }
+  }
+
+  &__caption {
+    &--checked {
+      // Font weight shouldn't change, since it causes a subtle inline-size shift, moving surrounding elements.
+    }
+  }
+}
+
+%switch-small {
+  --ch-switch-track-block-size: 16px;
+  --ch-switch-track-inline-size: 31px;
+  --ch-switch-thumb-size: 9px;
+
+  &__thumb {
+    &--unchecked {
+      inset-inline-start: 4px;
+    }
+
+    &--checked {
+      inset-inline-start: calc(100% - var(--ch-switch-thumb-size) - 4px);
+    }
+  }
+}
+
+%switch-large {
+  --ch-switch-track-block-size: 26px;
+  --ch-switch-track-inline-size: 50px;
+  --ch-switch-thumb-size: 16px;
+
+  &__thumb {
+    &--unchecked {
+      inset-inline-start: 6px;
+    }
+
+    &--checked {
+      inset-inline-start: calc(100% - var(--ch-switch-thumb-size) - 6px);
+    }
+  }
+}
+
+@mixin switch-small(
+  $switch-selector: ".switch-small",
+  $track-selector: ".switch-small::part(track)",
+  $track--disabled-selector: ".switch-small::part(track disabled)",
+  $thumb--unchecked-selector: ".switch-small::part(thumb unchecked)",
+  $thumb--checked-selector: ".switch-small::part(thumb checked)",
+  $caption--checked-selector: ".switch-small::part(caption checked)",
+  $add--disabled: true
+) {
+  #{$switch-selector} {
+    @extend %switch-basic;
+    @extend %switch-small;
+  }
+
+  #{$track-selector} {
+    @extend %switch-basic__track;
+  }
+
+  @if $add--disabled {
+    #{$track--disabled-selector} {
+      @extend %switch-basic__track--disabled;
+    }
+  }
+
+  #{$thumb--unchecked-selector} {
+    @extend %switch-small__thumb--unchecked;
+  }
+
+  #{$thumb--checked-selector} {
+    @extend %switch-small__thumb--checked;
+  }
+
+  #{$caption--checked-selector} {
+    @extend %switch-basic__caption--checked;
+  }
+}
+
+@mixin switch-large(
+  $switch-selector: ".switch-large",
+  $track-selector: ".switch-large::part(track)",
+  $track--disabled-selector: ".switch-large::part(track disabled)",
+  $thumb--unchecked-selector: ".switch-large::part(thumb unchecked)",
+  $thumb--checked-selector: ".switch-large::part(thumb checked)",
+  $caption--checked-selector: ".switch-large::part(caption checked)",
+  $add--disabled: true
+) {
+  #{$switch-selector} {
+    @extend %switch-basic;
+    @extend %switch-large;
+  }
+
+  #{$track-selector} {
+    @extend %switch-basic__track;
+  }
+
+  @if $add--disabled {
+    #{$track--disabled-selector} {
+      @extend %switch-basic__track--disabled;
+    }
+  }
+
+  #{$thumb--unchecked-selector} {
+    @extend %switch-large__thumb--unchecked;
+  }
+
+  #{$thumb--checked-selector} {
+    @extend %switch-large__thumb--checked;
+  }
+
+  #{$caption--checked-selector} {
+    @extend %switch-basic__caption--checked;
+  }
+}

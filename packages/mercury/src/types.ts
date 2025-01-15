@@ -43,7 +43,7 @@ export type MercuryBundleComponentForm =
   | "components/icon"
   | "components/radio-group"
   | "components/slider"
-  | "components/toggle";
+  | "components/switch";
 
 export type MercuryBundleReset = "resets/box-sizing";
 
@@ -57,6 +57,15 @@ export type MercuryBundleUtil =
   | "chameleon/scrollbar";
 
 export type MercuryBundleUtilFormFull = "utils/form--full";
+
+export type MercuryBundleMapping = {
+  [key in
+    | MercuryBundleComponent
+    | MercuryBundleComponentForm
+    | MercuryBundleReset
+    | MercuryBundleUtil
+    | MercuryBundleUtilFormFull]: `${key}-${string}` | key;
+};
 
 export type AssetsMetadata = {
   category: string;
