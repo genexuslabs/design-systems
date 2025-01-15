@@ -9,6 +9,7 @@
     'components/icon',
     'components/tab',
     'components/tree-view',
+    'components/pills',
     'utils/form',
     'utils/typography',
     'utils/spacing'
@@ -717,5 +718,41 @@
       show-lines="last"
     >
     </ch-tree-view-render>
+  </div>
+}
+
+@if (showGxgPills()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgPills"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-pills</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-pills</code> tag with a
+        <code>ch-combo-box-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>pill</code> class.</li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <div class="field field-block">
+      <label class="label" htmlFor="status-pill"
+        >Select the issue status:</label
+      >
+      <ch-combo-box-render
+        id="status-pill"
+        class="pill"
+        [model]="pillsModel()"
+        value="enabled"
+      ></ch-combo-box-render>
+    </div>
   </div>
 }

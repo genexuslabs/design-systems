@@ -302,6 +302,29 @@ export class GeminiMigrationComponent {
     }
   ]);
 
+  pillsModel = signal<ComboBoxModel>([
+    {
+      value: "enabled",
+      caption: "Enabled"
+    },
+    {
+      value: "processing",
+      caption: "Processing"
+    },
+    {
+      value: "success",
+      caption: "Success"
+    },
+    {
+      value: "error",
+      caption: "Error"
+    },
+    {
+      value: "warning",
+      caption: "Warning"
+    }
+  ]);
+
   // TODO: This is a WA, since the Chameleon's register does not for some reason
   getImagePathCallback = getImagePathCallback;
   hiddenMigrations = input<string>("");
@@ -327,7 +350,8 @@ export class GeminiMigrationComponent {
       ["gxg-tabs", true],
       ["gxg-text", true],
       ["gxg-title", true],
-      ["gxg-tree-view", true]
+      ["gxg-tree-view", true],
+      ["gxg-pills", true]
     ]);
 
     // Update the rendered migrations by watching changes for the
@@ -375,6 +399,7 @@ export class GeminiMigrationComponent {
   showGxgText = computed(() => this.migrations().get("gxg-text"));
   showGxgTitle = computed(() => this.migrations().get("gxg-title"));
   showGxgTree = computed(() => this.migrations().get("gxg-tree-view"));
+  showGxgPills = computed(() => this.migrations().get("gxg-pills"));
 
   updateRenderedMigration =
     (typographyName: string) => (event: ChCheckboxCustomEvent<string>) => {
@@ -393,7 +418,7 @@ export class GeminiMigrationComponent {
 
       this.router.navigate([], {
         queryParams: { hiddenMigrations: hiddenMigrationsQueryParm },
-        queryParamsHandling: "merge" // Conserve other query parameters
+        queryParamsHandling: "merge"
       });
     };
 }

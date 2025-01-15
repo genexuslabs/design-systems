@@ -1138,6 +1138,94 @@ export const geminiMigrationMetadata = {
           ]
         }
       }
+    },
+
+    gxgPills: {
+      linkId: "gxg-pills",
+      title: "gxg-pills",
+      before: {
+        template: {
+          tag: "div",
+          children: [
+            {
+              tag: "gxg-pill",
+              properties: [
+                { name: "icon", value: "gemini-tools/success" },
+                { name: "type", value: "static" }
+              ],
+              children: "Success"
+            },
+            {
+              tag: "gxg-pill",
+              properties: [
+                { name: "icon", value: "gemini-tools/error" },
+                { name: "type", value: "static" }
+              ],
+              children: "Error"
+            },
+            {
+              tag: "gxg-pill",
+              properties: [
+                { name: "icon", value: "gemini-tools/warning" },
+                { name: "type", value: "static" }
+              ],
+              children: "Warning"
+            }
+          ]
+        }
+      },
+      after: {
+        imports: [chameleonImportType("ComboBoxModel")],
+        states: [
+          {
+            name: "pillStatusModel",
+            type: "ComboBoxModel",
+            value: [
+              {
+                value: "enabled",
+                caption: "Enabled"
+              },
+              {
+                value: "processing",
+                caption: "Processing"
+              },
+              {
+                value: "success",
+                caption: "Success"
+              },
+              {
+                value: "error",
+                caption: "Error"
+              },
+              {
+                value: "warning",
+                caption: "Warning"
+              }
+            ]
+          }
+        ],
+        template: {
+          tag: "div",
+          class: "field field-block",
+          children: [
+            {
+              tag: "label",
+              class: "label",
+              properties: [{ name: "for", value: "pills" }],
+              children: "Status Selection"
+            },
+            {
+              tag: "ch-combo-box-render",
+              class: "pill",
+              properties: [
+                { name: "id", value: "pills" },
+                { name: "model", value: "pillStatusModel", state: true },
+                { name: "placeholder", value: "Select a status" }
+              ]
+            }
+          ]
+        }
+      }
     }
   }
 } as const satisfies ComponentMetadataBeforeAfter;
