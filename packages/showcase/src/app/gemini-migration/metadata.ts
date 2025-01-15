@@ -913,6 +913,55 @@ export const geminiMigrationMetadata = {
   errors.`
         }
       }
+    },
+
+    gxgTitle: {
+      linkId: "gxg-title",
+      title: "gxg-title",
+      before: {
+        template: [
+          {
+            tag: "gxg-title",
+            properties: [{ name: "type", value: "title-01" }],
+            children: "This is a heading 1"
+          },
+          {
+            tag: "gxg-title",
+            properties: [{ name: "type", value: "title-02" }],
+            children: "This is a heading 2"
+          },
+          {
+            tag: "gxg-title",
+            properties: [{ name: "type", value: "title-03" }],
+            children: "This is a heading 3"
+          },
+          {
+            tag: "gxg-title",
+            properties: [{ name: "type", value: "title-04" }],
+            children: "This is a heading 4"
+          },
+          {
+            tag: "gxg-title",
+            properties: [{ name: "type", value: "title-05" }],
+            children: "This is a heading 5"
+          },
+          {
+            tag: "gxg-title",
+            properties: [{ name: "type", value: "title-06" }],
+            children: "This is a heading 6"
+          }
+        ]
+      },
+      after: {
+        template: [
+          { tag: "h1", class: "heading-1", children: "This is a heading 1" },
+          { tag: "h2", class: "heading-2", children: "This is a heading 2" },
+          { tag: "h3", class: "heading-3", children: "This is a heading 3" },
+          { tag: "h4", class: "heading-4", children: "This is a heading 4" },
+          { tag: "h5", class: "heading-5", children: "This is a heading 5" },
+          { tag: "h6", class: "heading-6", children: "This is a heading 6" }
+        ]
+      }
     }
   }
 } as const satisfies ComponentMetadataBeforeAfter;
