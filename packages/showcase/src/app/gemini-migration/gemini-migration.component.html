@@ -3,6 +3,7 @@
     'components/checkbox',
     'components/combo-box',
     'components/edit',
+    'components/list-box',
     'components/radio-group',
     'components/tabular-grid',
     'components/icon',
@@ -451,6 +452,41 @@
   <div class="gemini-migration-preview">
     <div class="field field-block">
       <label class="label" htmlFor="your-control-id">The Label Caption</label>
+    </div>
+  </div>
+}
+
+@if (showGxgListBox()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgListBox"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-list-box</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-list-box</code> tag with a
+        <code>ch-action-list-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>list-box</code> class.</li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview gemini-migration-preview--list-box">
+    <div class="field field-block">
+      <label class="label" htmlFor="list-box-id"
+        >Select your favorite colour:</label
+      >
+      <ch-action-list-render
+        class="list-box"
+        id="list-box-id"
+        [model]="favoriteColorsActionListModel()"
+      ></ch-action-list-render>
     </div>
   </div>
 }

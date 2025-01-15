@@ -1,6 +1,7 @@
 import type {
   ComboBoxModel,
-  RadioGroupModel
+  RadioGroupModel,
+  ActionListModel
 } from "@genexus/chameleon-controls-library";
 import { ComponentMetadataBeforeAfter } from "../../common/types";
 import { chameleonImportType } from "../../services/template-language/create-template";
@@ -583,6 +584,80 @@ export const geminiMigrationMetadata = {
               children: "The Label Caption"
             },
             "<!-- Your related control here -->"
+          ]
+        }
+      }
+    },
+
+    gxgListBox: {
+      linkId: "gxg-list-box",
+      title: "4. gxg-list-box",
+      before: {
+        template: {
+          tag: "gxg-list-box",
+          properties: [{ name: "the-title", value: "My Listbox Caption" }],
+          children: [
+            {
+              tag: "gxg-list-box-item",
+              properties: [{ name: "value", value: "red" }],
+              children: "Red"
+            },
+            {
+              tag: "gxg-list-box-item",
+              properties: [{ name: "value", value: "blue" }],
+              children: "Blue"
+            },
+            {
+              tag: "gxg-list-box-item",
+              properties: [{ name: "value", value: "green" }],
+              children: "Green"
+            },
+            {
+              tag: "gxg-list-box-item",
+              properties: [{ name: "value", value: "yellow" }],
+              children: "Yellow"
+            },
+            {
+              tag: "gxg-list-box-item",
+              properties: [{ name: "value", value: "purple" }],
+              children: "Purple"
+            }
+          ]
+        }
+      },
+      after: {
+        imports: [chameleonImportType("ActionListModel")],
+        states: [
+          {
+            name: "listBoxItems",
+            type: "ActionListModel",
+            value: [
+              { id: "red", type: "actionable", caption: "Red" },
+              { id: "blue", type: "actionable", caption: "Blue" },
+              { id: "green", type: "actionable", caption: "Green" },
+              { id: "yellow", type: "actionable", caption: "Yellow" },
+              { id: "purple", type: "actionable", caption: "Purple" }
+            ] satisfies ActionListModel
+          }
+        ],
+        template: {
+          tag: "div",
+          class: "field field-block",
+          children: [
+            {
+              tag: "label",
+              class: "label",
+              properties: [{ name: "for", value: "list-box-items" }],
+              children: "List Box Items"
+            },
+            {
+              tag: "ch-action-list-render",
+              class: "list-box",
+              properties: [
+                { name: "id", value: "list-box-items" },
+                { name: "model", value: "listBoxItems", state: true }
+              ]
+            }
           ]
         }
       }

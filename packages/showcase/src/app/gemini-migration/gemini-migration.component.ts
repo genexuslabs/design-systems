@@ -17,7 +17,8 @@ import {
 import type {
   ChCheckboxCustomEvent,
   ComboBoxModel,
-  RadioGroupModel
+  RadioGroupModel,
+  ActionListItemModel
 } from "@genexus/chameleon-controls-library";
 
 import { geminiMigrationMetadata } from "./metadata";
@@ -103,6 +104,34 @@ export class GeminiMigrationComponent {
     }
   ]);
 
+  favoriteColorsActionListModel = signal<ActionListItemModel[]>([
+    {
+      id: "red",
+      type: "actionable",
+      caption: "Red"
+    },
+    {
+      id: "blue",
+      type: "actionable",
+      caption: "Blue"
+    },
+    {
+      id: "green",
+      type: "actionable",
+      caption: "Green"
+    },
+    {
+      id: "yellow",
+      type: "actionable",
+      caption: "Yellow"
+    },
+    {
+      id: "purple",
+      type: "actionable",
+      caption: "Purple"
+    }
+  ]);
+
   // TODO: This is a WA, since the Chameleon's register does not for some reason
   getImagePathCallback = getImagePathCallback;
   hiddenMigrations = input<string>("");
@@ -122,7 +151,8 @@ export class GeminiMigrationComponent {
       ["gxg-form-textarea", true],
       ["gxg-grid", true],
       ["gxg-icon", true],
-      ["gxg-label", true]
+      ["gxg-label", true],
+      ["gxg-list-box", true]
     ]);
 
     // Update the rendered migrations by watching changes for the
@@ -164,6 +194,7 @@ export class GeminiMigrationComponent {
   showGxgGrid = computed(() => this.migrations().get("gxg-grid"));
   showGxgIcon = computed(() => this.migrations().get("gxg-icon"));
   showGxgLabel = computed(() => this.migrations().get("gxg-label"));
+  showGxgListBox = computed(() => this.migrations().get("gxg-list-box"));
 
   updateRenderedMigration =
     (typographyName: string) => (event: ChCheckboxCustomEvent<string>) => {

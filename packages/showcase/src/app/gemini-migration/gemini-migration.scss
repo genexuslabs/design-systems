@@ -1,3 +1,16 @@
 .gemini-migration-preview {
   margin-block-start: var(--mer-spacing--md);
 }
+
+// list-box
+.gemini-migration-preview--list-box {
+  block-size: 202px;
+}
+.gemini-migration-preview--list-box .field {
+  block-size: 100%;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+}
+.list-box {
+  block-size: 100%;
+}

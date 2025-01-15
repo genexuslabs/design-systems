@@ -31,6 +31,9 @@ export class RouterCommonLinksService {
   componentsTabularGrid = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.TABULAR_GRID}`
   );
+  componentsLisBox = computed(
+    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.LIST_BOX}`
+  );
 
   utilsForm = computed(
     () => `/${this.dsService.designSystem()}${UTILITY_CLASSES_ROUTES.FORM}`
