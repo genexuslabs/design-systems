@@ -211,9 +211,7 @@
 
   <div class="gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" htmlFor="favorite-colors-radio">
-        Favorite Colour
-      </label>
+      <label class="label" for="favorite-colors-radio"> Favorite Colour </label>
       <ch-radio-group-render
         class="radio-group"
         id="favorite-colors-radio"
@@ -253,7 +251,7 @@
 
   <div class="gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" htmlFor="favorite-colors-radio"> Name </label>
+      <label class="label" for="favorite-colors-radio"> Name </label>
       <ch-edit
         value="Adam Smith"
         class="input"
@@ -293,7 +291,7 @@
 
   <div class="gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" htmlFor="developer-experience"
+      <label class="label" for="developer-experience"
         >Developer Experience</label
       >
       <ch-edit
@@ -336,27 +334,27 @@
 
   <div class="gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" htmlFor="countries-population"
+      <label class="label" for="countries-population"
         >Countries Population</label
       >
       <ch-tabular-grid class="tabular-grid" id="countries-population">
         <ch-tabular-grid-columnset class="tabular-grid-column-set">
           <ch-tabular-grid-column
             class="tabular-grid-column"
-            column-name="Country Name"
-            column-name-position="text"
+            columnName="Country Name"
+            columnNamePosition="text"
             settingable="false"
           ></ch-tabular-grid-column>
           <ch-tabular-grid-column
             class="tabular-grid-column"
-            column-name="Country Code"
-            column-name-position="text"
+            columnName="Country Code"
+            columnNamePosition="text"
             settingable="false"
           ></ch-tabular-grid-column>
           <ch-tabular-grid-column
             class="tabular-grid-column"
-            column-name="Population"
-            column-name-position="text"
+            columnName="Population"
+            columnNamePosition="text"
             settingable="false"
           ></ch-tabular-grid-column>
         </ch-tabular-grid-columnset>
@@ -455,7 +453,7 @@
 
   <div class="gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" htmlFor="your-control-id">The Label Caption</label>
+      <label class="label" for="your-control-id">The Label Caption</label>
     </div>
   </div>
 }
@@ -512,12 +510,12 @@
 
   <div class="gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" htmlFor="status-pill">Status Selection</label>
+      <label class="label" for="status-pill">Status Selection</label>
       <ch-combo-box-render
         id="status-pill"
         class="pill"
         [model]="pillsModel()"
-        value="enabled"
+        value="success"
       ></ch-combo-box-render>
     </div>
   </div>
@@ -570,7 +568,7 @@
 
   <div class="gemini-migration-preview gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" htmlFor="suggest">Favorite Colour</label>
+      <label class="label" for="suggest">Favorite Colour</label>
       <ch-combo-box-render
         class="combo-box"
         id="suggest"
@@ -612,7 +610,7 @@
 
   <div class="gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" htmlFor="fruits-tab">Our Fruits</label>
+      <label class="label" for="fruits-tab">Our Fruits</label>
       <ch-tab-render
         class="tab tab-indicator-start"
         id="fruits-tab"
@@ -620,31 +618,27 @@
         [model]="this.fruitsTabModel()"
         selected-id="apples"
       >
-        <div slot="apples" class="spacing-body">
-          <p class="text-body-regular-m">
-            An apple is a sweet, edible fruit produced by an apple tree. Apple
-            trees are cultivated worldwide and are the most widely grown species
-            in the genus Malus. The tree originated in Central Asia, where its
-            wild ancestor, Malus sieversii, is still found today. An apple is a
-            sweet, edible fruit produced by an apple tree.
-          </p>
-        </div>
-        <div slot="bananas" class="spacing-body">
-          <p class="text-body-regular-m">
-            A banana is an elongated, edible fruit – botanically a berry –
-            produced by several kinds of large herbaceous flowering plants in
-            the genus Musa. In some countries, bananas used for cooking may be
-            called "plantains", distinguishing them from dessert bananas.
-          </p>
-        </div>
-        <div slot="cherries" class="spacing-body">
-          <p class="text-body-regular-m">
-            A cherry is the fruit of many plants of the genus Prunus, and is a
-            fleshy drupe. Commercial cherries are obtained from cultivars of
-            several species, such as the sweet Prunus avium and the sour Prunus
-            cerasus.
-          </p>
-        </div>
+        <p slot="apples" class="text-body-regular-m spacing-body">
+          An apple is a sweet, edible fruit produced by an apple tree. Apple
+          trees are cultivated worldwide and are the most widely grown species
+          in the genus Malus. The tree originated in Central Asia, where its
+          wild ancestor, Malus sieversii, is still found today. An apple is a
+          sweet, edible fruit produced by an apple tree.
+        </p>
+
+        <p slot="bananas" class="text-body-regular-m spacing-body">
+          A banana is an elongated, edible fruit – botanically a berry –
+          produced by several kinds of large herbaceous flowering plants in the
+          genus Musa. In some countries, bananas used for cooking may be called
+          "plantains", distinguishing them from dessert bananas.
+        </p>
+
+        <p slot="cherries" class="text-body-regular-m spacing-body">
+          A cherry is the fruit of many plants of the genus Prunus, and is a
+          fleshy drupe. Commercial cherries are obtained from cultivars of
+          several species, such as the sweet Prunus avium and the sour Prunus
+          cerasus.
+        </p>
       </ch-tab-render>
     </div>
   </div>
@@ -735,16 +729,13 @@
   </code-snippet>
 
   <div class="gemini-migration-preview gemini-migration-preview--tree-view">
-    <div class="field field-block">
-      <label class="label" htmlFor="genexus-objects">GeneXus Objects</label>
-      <ch-tree-view-render
-        id="genexus-objects"
-        class="tree-view"
-        [model]="objectsTreeViewModel()"
-        [getImagePathCallback]="getTreeViewImagePathCallback"
-        [showLines]="'last'"
-      >
-      </ch-tree-view-render>
-    </div>
+    <ch-tree-view-render
+      id="genexus-objects"
+      class="tree-view"
+      [model]="objectsTreeViewModel()"
+      [getImagePathCallback]="getTreeViewImagePathCallback"
+      [showLines]="'last'"
+    >
+    </ch-tree-view-render>
   </div>
 }

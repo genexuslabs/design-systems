@@ -264,14 +264,6 @@ export const objectsTreeViewModel = signal<TreeViewModel>([
 
 export const pillsModel = signal<ComboBoxModel>([
   {
-    value: "enabled",
-    caption: "Enabled"
-  },
-  {
-    value: "processing",
-    caption: "Processing"
-  },
-  {
     value: "success",
     caption: "Success"
   },

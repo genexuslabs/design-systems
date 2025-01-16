@@ -8,6 +8,9 @@ import type {
 import { ComponentMetadataBeforeAfter } from "../../common/types";
 import { chameleonImportType } from "../../services/template-language/create-template";
 
+const ADD_CIRCLE_ICON_TEMPLATE =
+  'AssetsManager.getIconPath({ category: "gemini-tools", name: "add-circle", colorType: "on-primary" })';
+
 export const geminiMigrationMetadata = {
   title: "Gemini Migration",
   description:
@@ -315,14 +318,28 @@ export const geminiMigrationMetadata = {
       title: "7. gxg-form-textarea",
       before: {
         template: {
-          tag: "gxg-form-textarea",
-          properties: [
+          tag: "div",
+          class: "field field-block",
+          children: [
             {
-              name: "placeholder",
-              value: "I have experience in backend development..."
+              tag: "label",
+              class: "label",
+              properties: [{ name: "for", value: "experience-textarea" }],
+              children: "Experience"
             },
-            { name: "value", value: "" },
-            { name: "height", value: "100px" }
+            {
+              tag: "gxg-form-textarea",
+              class: "textarea",
+              properties: [
+                { name: "id", value: "experience-textarea" },
+                {
+                  name: "placeholder",
+                  value: "I have experience in backend development..."
+                },
+                { name: "value", value: "" },
+                { name: "height", value: "100px" }
+              ]
+            }
           ]
         }
       },
@@ -562,8 +579,7 @@ export const geminiMigrationMetadata = {
         variables: [
           {
             name: "ICON",
-            value:
-              'AssetsManager.getIconPath({category: "gemini-tools", name: "add-circle", colorType: "on-primary" })'
+            value: ADD_CIRCLE_ICON_TEMPLATE
           }
         ],
         template: {
@@ -592,7 +608,7 @@ export const geminiMigrationMetadata = {
             {
               tag: "label",
               class: "label",
-              properties: [{ name: "htmlFor", value: "your-control-id" }],
+              properties: [{ name: "for", value: "your-control-id" }],
               children: "The Label Caption"
             },
             "<!-- Your related control here -->"
@@ -607,7 +623,7 @@ export const geminiMigrationMetadata = {
       before: {
         template: {
           tag: "gxg-list-box",
-          properties: [{ name: "the-title", value: "My Listbox Caption" }],
+          properties: [{ name: "theTitle", value: "My Listbox Caption" }],
           children: [
             {
               tag: "gxg-list-box-item",
@@ -653,24 +669,9 @@ export const geminiMigrationMetadata = {
           }
         ],
         template: {
-          tag: "div",
-          class: "field field-block",
-          children: [
-            {
-              tag: "label",
-              class: "label",
-              properties: [{ name: "for", value: "list-box-items" }],
-              children: "Favorite Colour"
-            },
-            {
-              tag: "ch-action-list-render",
-              class: "list-box",
-              properties: [
-                { name: "id", value: "list-box-items" },
-                { name: "model", value: "listBoxItems", state: true }
-              ]
-            }
-          ]
+          tag: "ch-action-list-render",
+          class: "list-box",
+          properties: [{ name: "model", value: "listBoxItems", state: true }]
         }
       }
     },
@@ -716,14 +717,6 @@ export const geminiMigrationMetadata = {
             name: "pillStatusModel",
             type: "ComboBoxModel",
             value: [
-              {
-                value: "enabled",
-                caption: "Enabled"
-              },
-              {
-                value: "processing",
-                caption: "Processing"
-              },
               {
                 value: "success",
                 caption: "Success"
@@ -784,24 +777,24 @@ export const geminiMigrationMetadata = {
                   variable: true
                 }
               ],
-              children: "{this.renderSuggestLists(this.colorSuggestions)}"
+              children: "<!-- Your dynamically generated lists items here -->"
             }
           ]
         }
       },
       after: {
-        imports: [chameleonImportType("ActionListModel")],
+        imports: [chameleonImportType("ComboBoxModel")],
         states: [
           {
             name: "suggestModel",
-            type: "ActionListModel",
+            type: "ComboBoxModel",
             value: [
-              { id: "red", type: "actionable", caption: "Red" },
-              { id: "blue", type: "actionable", caption: "Blue" },
-              { id: "green", type: "actionable", caption: "Green" },
-              { id: "yellow", type: "actionable", caption: "Yellow" },
-              { id: "purple", type: "actionable", caption: "Purple" }
-            ] satisfies ActionListModel
+              { value: "red", caption: "Red" },
+              { value: "blue", caption: "Blue" },
+              { value: "green", caption: "Green" },
+              { value: "yellow", caption: "Yellow" },
+              { value: "purple", caption: "Purple" }
+            ] satisfies ComboBoxModel
           },
           {
             name: "suggestOptions",
@@ -832,7 +825,6 @@ export const geminiMigrationMetadata = {
               class: "combo-box",
               properties: [
                 { name: "id", value: "suggest" },
-                { name: "accessibleName", value: "Favorite Colours" },
                 { name: "model", value: "suggestModel", state: true },
                 { name: "placeholder", value: "Green" },
                 { name: "suggest", value: true },
@@ -941,7 +933,7 @@ export const geminiMigrationMetadata = {
         ],
         template: {
           tag: "ch-tab-render",
-          class: "tab tab-indicator-start",
+          class: "tab",
           properties: [
             { name: "tabListPosition", value: "inline-start" },
             { name: "selectedId", value: "apples" },
@@ -949,40 +941,28 @@ export const geminiMigrationMetadata = {
           ],
           children: [
             {
-              tag: "div",
+              tag: "p",
               properties: [
                 { name: "slot", value: "apples" },
-                { name: "class", value: "spacing-body" }
+                { name: "class", value: "spacing-body text-body-regular-m" }
               ],
-              children: {
-                tag: "p",
-                class: "text-body-regular-m",
-                children: "An apple is a sweet, edible fruit..."
-              }
+              children: "An apple is a sweet, edible fruit..."
             },
             {
-              tag: "div",
+              tag: "p",
               properties: [
                 { name: "slot", value: "bananas" },
-                { name: "class", value: "spacing-body" }
+                { name: "class", value: "spacing-body text-body-regular-m" }
               ],
-              children: {
-                tag: "p",
-                class: "text-body-regular-m",
-                children: "A banana is an elongated, edible fruit..."
-              }
+              children: "A banana is an elongated, edible fruit..."
             },
             {
-              tag: "div",
+              tag: "p",
               properties: [
                 { name: "slot", value: "cherries" },
-                { name: "class", value: "spacing-body" }
+                { name: "class", value: "spacing-body text-body-regular-m" }
               ],
-              children: {
-                tag: "p",
-                class: "text-body-regular-m",
-                children: "A cherry is the fruit of many plants..."
-              }
+              children: "A cherry is the fruit of many plants..."
             }
           ]
         }
@@ -1070,12 +1050,11 @@ export const geminiMigrationMetadata = {
         template: {
           tag: "gxg-tree-view",
           properties: [
-            { name: "treeModel", value: "this.myTreeModel" },
-            { name: "dragDisabled", value: "true" },
-            { name: "dropDisabled", value: "true" },
-            { name: "toggleCheckboxes", value: "true" },
-            { name: "checkbox", value: "true" },
-            { name: "checked", value: "true" }
+            { name: "treeModel", value: "myTreeModel", state: true },
+            { name: "dragDisabled", value: true },
+            { name: "dropDisabled", value: true },
+            { name: "expanded", value: true },
+            { name: "showLines", value: "last" }
           ],
           children: []
         }
@@ -1215,25 +1194,16 @@ export const geminiMigrationMetadata = {
           }
         ],
         template: {
-          tag: "div",
-          class: "field field-block",
-          children: [
-            {
-              tag: "label",
-              class: "label",
-              properties: [{ name: "for", value: "my-tree-view" }],
-              children: "GeneXus Objects"
-            },
-            {
-              tag: "ch-tree-view-render",
-              class: "tree-view",
-              properties: [
-                { name: "model", value: "this.myTreeModel", state: true },
-                { name: "showLines", value: "last" }
-              ],
-              children: []
-            }
-          ]
+          tag: "ch-tree-view-render",
+          class: "tree-view",
+          properties: [
+            { name: "model", value: "myTreeModel", state: true },
+            { name: "dragDisabled", value: true },
+            { name: "dropDisabled", value: true },
+            { name: "expanded", value: true },
+            { name: "showLines", value: "last" }
+          ],
+          children: []
         }
       }
     }
