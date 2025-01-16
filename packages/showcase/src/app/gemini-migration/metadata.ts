@@ -1,13 +1,12 @@
-import type {
-  ComboBoxModel,
-  RadioGroupModel,
-  ActionListModel,
-  TabModel,
-  TreeViewModel
-} from "@genexus/chameleon-controls-library";
 import { ComponentMetadataBeforeAfter } from "../../common/types";
 import { chameleonImportType } from "../../services/template-language/create-template";
 import { iconsModelForMetadata } from "../components/tree-view/models";
+import {
+  favoriteColorsActionListModel,
+  favoriteColorsComboBoxModel,
+  favoriteColorsRadioGroupModel,
+  fruitsTabModel
+} from "./models";
 
 const ADD_CIRCLE_ICON_TEMPLATE =
   'AssetsManager.getIconPath({ category: "gemini-tools", name: "add-circle", colorType: "on-primary" })';
@@ -123,13 +122,7 @@ export const geminiMigrationMetadata = {
           {
             name: "favoriteColorsModel",
             type: "ComboBoxModel",
-            value: [
-              { value: "red", caption: "Red" },
-              { value: "blue", caption: "Blue" },
-              { value: "green", caption: "Green" },
-              { value: "yellow", caption: "Yellow" },
-              { value: "purple", caption: "Purple" }
-            ] satisfies ComboBoxModel
+            value: favoriteColorsComboBoxModel
           }
         ],
         template: {
@@ -234,13 +227,7 @@ export const geminiMigrationMetadata = {
           {
             name: "favoriteColorsModel",
             type: "RadioGroupModel",
-            value: [
-              { value: "red", caption: "Red" },
-              { value: "blue", caption: "Blue" },
-              { value: "green", caption: "Green" },
-              { value: "yellow", caption: "Yellow" },
-              { value: "purple", caption: "Purple" }
-            ] satisfies RadioGroupModel
+            value: favoriteColorsRadioGroupModel
           }
         ],
         template: {
@@ -655,13 +642,7 @@ export const geminiMigrationMetadata = {
           {
             name: "listBoxItems",
             type: "ActionListModel",
-            value: [
-              { id: "red", type: "actionable", caption: "Red" },
-              { id: "blue", type: "actionable", caption: "Blue" },
-              { id: "green", type: "actionable", caption: "Green" },
-              { id: "yellow", type: "actionable", caption: "Yellow" },
-              { id: "purple", type: "actionable", caption: "Purple" }
-            ] satisfies ActionListModel
+            value: favoriteColorsActionListModel
           }
         ],
         template: {
@@ -786,13 +767,7 @@ export const geminiMigrationMetadata = {
           {
             name: "suggestModel",
             type: "ComboBoxModel",
-            value: [
-              { value: "red", caption: "Red" },
-              { value: "blue", caption: "Blue" },
-              { value: "green", caption: "Green" },
-              { value: "yellow", caption: "Yellow" },
-              { value: "purple", caption: "Purple" }
-            ] satisfies ComboBoxModel
+            value: favoriteColorsComboBoxModel
           }
 
           // TODO: This is only necessary when using strict mode. In that case,
@@ -925,11 +900,7 @@ export const geminiMigrationMetadata = {
           {
             name: "fruitsModel",
             type: "TabModel",
-            value: [
-              { id: "apples", name: "Apples" },
-              { id: "bananas", name: "Bananas" },
-              { id: "cherries", name: "Cherries" }
-            ] satisfies TabModel
+            value: fruitsTabModel
           }
         ],
         template: {

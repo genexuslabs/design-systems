@@ -134,11 +134,11 @@
   </code-snippet>
 
   <div class="gemini-migration-preview field field-block">
-    <label class="label" for="favorite-colors">Favorite Colours</label>
+    <label class="label" for="favorite-colors">Favorite colors</label>
     <ch-combo-box-render
       class="combo-box"
       id="favorite-colors"
-      [model]="favoriteColorsComboBoxModel()"
+      [model]="favoriteColorsComboBoxModel"
       [placeholder]="'Select an item'"
       [value]="'yellow'"
     ></ch-combo-box-render>
@@ -208,11 +208,11 @@
 
   <div class="gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" for="favorite-colors-radio">Favorite Colour</label>
+      <label class="label" for="favorite-colors-radio">Favorite colors</label>
       <ch-radio-group-render
         class="radio-group"
         id="favorite-colors-radio"
-        [model]="favoriteColorsRadioGroupModel()"
+        [model]="favoriteColorsRadioGroupModel"
         [value]="'yellow'"
       ></ch-radio-group-render>
     </div>
@@ -279,8 +279,8 @@
 
       <li>
         <a class="hyperlink" [routerLink]="commonLinks.componentsInput()"
-          >Specify the control properties following the documentation (TODO)
-        </a>
+          >Specify the control properties following the documentation</a
+        >
       </li>
     </ol>
   </code-snippet>
@@ -296,7 +296,9 @@
         [placeholder]="'Add your description here'"
         [multiline]="true"
         [autoGrow]="true"
-        [value]="'I have experience in backend development...'"
+        [value]="
+          'I have extensive experience as a backend developer, specializing in designing and implementing robust, scalable, and secure server-side solutions. My expertise includes working with a variety of programming languages and frameworks such as Node.js, Python, and Java, as well as managing databases like PostgreSQL and MongoDB. I am skilled in creating APIs, optimizing database performance, and integrating third-party services to deliver seamless user experiences.'
+        "
       ></ch-edit>
     </div>
   </div>
@@ -468,7 +470,7 @@
   <div class="gemini-migration-preview gemini-migration-preview--list-box">
     <ch-action-list-render
       class="list-box"
-      [model]="favoriteColorsActionListModel()"
+      [model]="favoriteColorsActionListModel"
     ></ch-action-list-render>
   </div>
 }
@@ -500,7 +502,7 @@
       <ch-combo-box-render
         id="status-pill"
         class="pill"
-        [model]="pillsModel()"
+        [model]="pillsModel"
         [value]="'success'"
       ></ch-combo-box-render>
     </div>
@@ -554,11 +556,11 @@
 
   <div class="gemini-migration-preview gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" for="suggest">Favorite Colors</label>
+      <label class="label" for="suggest">Favorite colors</label>
       <ch-combo-box-render
         class="combo-box"
         id="suggest"
-        [model]="favoriteColorsSuggestModel()"
+        [model]="favoriteColorsSuggestModel"
         [placeholder]="'Search a color'"
         [suggest]="true"
       ></ch-combo-box-render>
@@ -587,7 +589,7 @@
 
       <li>
         <a class="hyperlink" [routerLink]="commonLinks.componentsTab()"
-          >Specify the control properties following the documentation (TODO)
+          >Specify the control properties following the documentation
         </a>
       </li>
     </ol>
@@ -600,7 +602,7 @@
         class="tab tab-indicator-start"
         id="fruits-tab"
         tabListPosition="inline-start"
-        [model]="this.fruitsTabModel()"
+        [model]="fruitsTabModel"
         selected-id="apples"
       >
         <p slot="apples" class="text-body-regular-m spacing-body">

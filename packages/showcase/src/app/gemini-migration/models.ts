@@ -1,14 +1,12 @@
-import { signal } from "@angular/core";
-import { getIconPath } from "@genexus/mercury/assets-manager.js";
 import type {
-  ActionListItemModel,
+  ActionListModel,
   ComboBoxModel,
   RadioGroupModel,
-  TabModel,
-  TreeViewModel
+  TabModel
 } from "@genexus/chameleon-controls-library";
 
-export const favoriteColorsActionListModel = signal<ActionListItemModel[]>([
+// TODO: Fix action list issue when clicking on an item
+export const favoriteColorsActionListModel: ActionListModel = [
   {
     id: "red",
     type: "actionable",
@@ -34,9 +32,9 @@ export const favoriteColorsActionListModel = signal<ActionListItemModel[]>([
     type: "actionable",
     caption: "Purple"
   }
-]);
+];
 
-export const favoriteColorsComboBoxModel = signal<ComboBoxModel>([
+export const favoriteColorsComboBoxModel: ComboBoxModel = [
   {
     value: "red",
     caption: "Red"
@@ -57,9 +55,9 @@ export const favoriteColorsComboBoxModel = signal<ComboBoxModel>([
     value: "purple",
     caption: "Purple"
   }
-]);
+];
 
-export const favoriteColorsRadioGroupModel = signal<RadioGroupModel>([
+export const favoriteColorsRadioGroupModel: RadioGroupModel = [
   {
     value: "red",
     caption: "Red"
@@ -80,9 +78,9 @@ export const favoriteColorsRadioGroupModel = signal<RadioGroupModel>([
     value: "purple",
     caption: "Purple"
   }
-]);
+];
 
-export const favoriteColorsSuggestModel = signal<ComboBoxModel>([
+export const favoriteColorsSuggestModel: ComboBoxModel = [
   {
     value: "red",
     caption: "Red"
@@ -103,7 +101,7 @@ export const favoriteColorsSuggestModel = signal<ComboBoxModel>([
     value: "purple",
     caption: "Purple"
   }
-]);
+];
 
 // export const suggestOptions = signal({
 //   alreadyProcessed: false,
@@ -115,13 +113,13 @@ export const favoriteColorsSuggestModel = signal<ComboBoxModel>([
 //   strict: false
 // });
 
-export const fruitsTabModel = signal<TabModel>([
+export const fruitsTabModel: TabModel = [
   { id: "apples", name: "Apples" },
   { id: "bananas", name: "Bananas" },
   { id: "cherries", name: "Cherries" }
-]);
+];
 
-export const pillsModel = signal<ComboBoxModel>([
+export const pillsModel: ComboBoxModel = [
   {
     value: "success",
     caption: "Success"
@@ -134,4 +132,4 @@ export const pillsModel = signal<ComboBoxModel>([
     value: "warning",
     caption: "Warning"
   }
-]);
+];
