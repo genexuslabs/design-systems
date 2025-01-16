@@ -272,6 +272,161 @@ export const buttonMetadata = {
           CAPTION
         ]
       }
+    },
+
+    // tertiary
+
+    buttonTertiaryTextOnly: {
+      linkId: "button-tertiary-text-only",
+      title: "3.1. Text Only",
+      template: {
+        tag: "button",
+        class: "button-tertiary",
+        properties: [{ name: "type", value: "button" }],
+        children: CAPTION
+      }
+    },
+
+    buttonTertiaryTextOnlyDisabled: {
+      linkId: "button-tertiary-text-only-disabled",
+      title: "3.2. Text Only: Disabled",
+      template: {
+        tag: "button",
+        class: "button-tertiary",
+        properties: [
+          { name: "disabled", value: true },
+          { name: "type", value: "button" }
+        ],
+        children: CAPTION
+      }
+    },
+
+    buttonTertiaryIconAndText: {
+      linkId: "button-tertiary-icon-and-text",
+      title: "3.4. Icon and Text",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value:
+            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+        }
+      ],
+      template: {
+        tag: "button",
+        class: "button-tertiary button-icon-and-text",
+        properties: [{ name: "type", value: "button" }],
+        children: [
+          {
+            tag: "ch-image",
+            class: "icon-sm",
+            properties: [
+              { name: "src", value: "ICON", variable: true },
+              { name: "type", value: "mask" }
+            ]
+          },
+          CAPTION
+        ]
+      }
+    },
+
+    buttonTertiaryIconAndTextDisabled: {
+      linkId: "button-tertiary-icon-and-text-disabled",
+      title: "3.5. Icon and Text: Disabled",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value:
+            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+        }
+      ],
+      template: {
+        tag: "button",
+        class: "button-tertiary button-icon-and-text",
+        properties: [
+          { name: "type", value: "button" },
+          { name: "disabled", value: true }
+        ],
+        children: [
+          {
+            tag: "ch-image",
+            class: "icon-sm",
+            properties: [
+              { name: "src", value: "ICON" },
+              { name: "type", value: "mask" }
+            ]
+          },
+          CAPTION
+        ]
+      }
+    },
+
+    buttonTertiaryIconOnly: {
+      linkId: "button-tertiary-icon-only",
+      title: "3.6. Icon Only",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value:
+            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+        }
+      ],
+      template: {
+        tag: "button",
+        class: "button-tertiary button-icon-only",
+        properties: [{ name: "type", value: "button" }],
+        children: [
+          {
+            tag: "ch-image",
+            class: "icon-sm",
+            properties: [
+              { name: "src", value: "ICON" },
+              { name: "type", value: "mask" }
+            ]
+          }
+        ]
+      }
+    },
+
+    buttonTertiaryIconOnlyDisabled: {
+      linkId: "button-tertiary-icon-only-disabled",
+      title: "3.6. Icon Only Disablewd",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value:
+            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+        }
+      ],
+      template: {
+        tag: "button",
+        class: "button-tertiary button-icon-only",
+        properties: [
+          { name: "type", value: "button" },
+          { name: "disabled", value: true }
+        ],
+        children: [
+          {
+            tag: "ch-image",
+            class: "icon-sm",
+            properties: [
+              { name: "src", value: "ICON" },
+              { name: "type", value: "mask" }
+            ]
+          }
+        ]
+      }
     }
   }
 } as const satisfies ComponentMetadata;

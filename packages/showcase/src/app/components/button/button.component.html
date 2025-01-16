@@ -111,7 +111,10 @@
     cancelling an action, providing users with alternative options.
   </p>
 
-  <code-snippet [headingLevel]="3">
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonSecondaryTextOnly"
+    [headingLevel]="3"
+  >
     <button class="button-secondary" type="button">Caption</button>
   </code-snippet>
 
@@ -186,6 +189,112 @@
         [type]="'mask'"
       ></ch-image>
       Caption
+    </button>
+  </code-snippet>
+</section>
+
+<!-- tertiary section -->
+
+<section aria-labelledby="button-tertiary">
+  <h2 id="button-tertiary" class="heading-2">
+    <a routerLink="." fragment="button-tertiary">3. Button Tertiary</a>
+  </h2>
+
+  <p class="text-body-regular-l">
+    A tertiary HTML button is a minimalistic element on a webpage, designed to
+    be subtle and unobtrusive. With no border and a transparent background, it
+    typically represents the least critical actions, such as linking to
+    additional information or performing tertiary tasks, allowing it to blend
+    seamlessly into the content.
+  </p>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonTertiaryTextOnly"
+    [headingLevel]="3"
+  >
+    <button class="button-tertiary" type="button">Caption</button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonTertiaryTextOnlyDisabled"
+    [headingLevel]="3"
+  >
+    <button class="button-tertiary" disabled type="button">Caption</button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonTertiaryIconAndText"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonTertiaryIconAndText.template.class"
+      type="button"
+    >
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="icon"
+        [type]="'mask'"
+      ></ch-image>
+      Caption
+    </button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonTertiaryIconAndTextDisabled"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonTertiaryIconAndTextDisabled.template.class"
+      type="button"
+      disabled
+    >
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="icon"
+        [type]="'mask'"
+      ></ch-image>
+      Caption
+    </button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonTertiaryIconOnly"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonTertiaryIconOnly.template.class"
+      type="button"
+    >
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="icon"
+        [type]="'mask'"
+      ></ch-image>
+    </button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonTertiaryIconOnlyDisabled"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonTertiaryIconOnlyDisabled.template.class"
+      type="button"
+      disabled
+    >
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="icon"
+        [type]="'mask'"
+      ></ch-image>
     </button>
   </code-snippet>
 </section>
