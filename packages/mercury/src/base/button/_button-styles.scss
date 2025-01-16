@@ -7,59 +7,51 @@
   @include control-padding-inline-block();
   padding-inline: var(--control__padding-inline);
 
+  background-color: var(--button-background-color);
+  border-color: var(--button-border-color);
+  color: var(--button-color);
+
   &--focus-visible {
     @include focus-outline();
   }
 }
 
 %button-primary {
-  @include button-tokens-primary();
   @include control-font-weight-semi-bold();
   @extend %button-base;
 
-  //overwrite some control default styles
-  --control__border-color: var(--button-primary__border-color);
-
-  background-color: var(--button-primary__bg-color);
-  color: var(--button-primary__color);
+  // Define new tokens for default state
+  --button-background-color: var(--mer-accent__primary);
+  --button-border-color: var(--button-background-color);
+  --button-color: var(--mer-text__on-primary);
 
   &--hover {
-    background-color: var(--button-primary__bg-color--hover);
-    --control__border-color: var(--button-primary__border-color--hover);
-    color: var(--button-primary__color--hover);
+    --button-background-color: var(--mer-accent__primary--hover);
+    --button-color: var(--mer-text__on-primary);
   }
 
   &--active {
-    background-color: var(--button-primary__bg-color--active);
-    --control__border-color: var(--button-primary__border-color--active);
-    color: var(--button-primary__color--active);
+    --button-background-color: var(--mer-accent__primary--active);
+    --button-color: var(--mer-text__on-primary--active);
   }
 
   &--disabled {
-    background-color: var(--button-primary__bg-color--disabled);
-    --control__border-color: var(--button-primary__bg-color--disabled);
-    color: var(--button-primary__color--disabled);
+    --button-background-color: var(--mer-accent__primary--disabled);
+    --button-color: var(--mer-text__on-disabled);
   }
 
   &--destructive {
-    --control__border-color: var(--button-primary__border-color--destructive);
-    background-color: var(--button-primary__bg-color--destructive);
-    color: var(--button-primary__color--destructive);
+    --button-background-color: var(--mer-accent__primary--destructive);
+    --button-color: var(--mer-text__on-primary);
 
     &-hover {
-      --control__border-color: var(
-        --button-primary__bg-color--destructive-hover
-      );
-      background-color: var(--button-primary__bg-color--destructive-hover);
-      color: var(--button-primary__color--destructive);
+      --button-background-color: var(--mer-accent__primary--destructive-hover);
+      --button-color: var(--mer-text__on-primary);
     }
 
     &-active {
-      --control__border-color: var(
-        --button-primary__bg-color--destructive-active
-      );
-      background-color: var(--button-primary__bg-color--destructive-active);
-      color: var(--button-primary__color--destructive);
+      --button-background-color: var(--mer-accent__primary--destructive-active);
+      --button-color: var(--mer-text__on-primary);
     }
   }
 }
@@ -185,6 +177,7 @@
 
   @if $add--destructive {
     #{$destructive-selector} {
+      @extend %button-primary;
       @extend %button-primary--destructive;
 
       &:hover {
