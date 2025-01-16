@@ -5,7 +5,8 @@ const CAPTION: ComponentTemplateItemText = "Caption";
 
 export const buttonMetadata = {
   title: "Button",
-  description: "TODO..................",
+  description:
+    "The button element is an interactive component used to trigger actions or events. It supports various states (hover, active, disabled) and styles (primary, secondary, destructive) for customization and accessibility.",
   codeSnippets: {
     buttonPrimaryTextOnly: {
       linkId: "button-primary-text-only",
@@ -37,7 +38,7 @@ export const buttonMetadata = {
       title: "1.3. Text Only: Destructive",
       template: {
         tag: "button",
-        class: "button-primary button-primary-destructive",
+        class: "button-primary-destructive",
         properties: [{ name: "type", value: "button" }],
         children: CAPTION
       }
@@ -59,6 +60,71 @@ export const buttonMetadata = {
       template: {
         tag: "button",
         class: "button-primary button-icon-and-text",
+        properties: [{ name: "type", value: "button" }],
+        children: [
+          {
+            tag: "ch-image",
+            class: "icon-sm",
+            properties: [
+              { name: "src", value: "ICON", variable: true },
+              { name: "type", value: "mask" }
+            ]
+          },
+          CAPTION
+        ]
+      }
+    },
+
+    buttonPrimaryIconAndTextDisabled: {
+      linkId: "button-primary-icon-and-text-disabled",
+      title: "1.5. Icon and Text: Disabled",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value:
+            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+        }
+      ],
+      template: {
+        tag: "button",
+        class: "button-primary button-icon-and-text",
+        properties: [
+          { name: "type", value: "button" },
+          { name: "disabled", value: true }
+        ],
+        children: [
+          {
+            tag: "ch-image",
+            class: "icon-sm",
+            properties: [
+              { name: "src", value: "ICON" },
+              { name: "type", value: "mask" }
+            ]
+          },
+          CAPTION
+        ]
+      }
+    },
+
+    buttonPrimaryIconAndTextDestructive: {
+      linkId: "button-primary-icon-and-text-destructive",
+      title: "1.6. Icon and Text: Destructive",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value:
+            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+        }
+      ],
+      template: {
+        tag: "button",
+        class: "button-primary-destructive button-icon-and-text",
         properties: [{ name: "type", value: "button" }],
         children: [
           {

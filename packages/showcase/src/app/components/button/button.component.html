@@ -33,9 +33,7 @@
     [codeSnippet]="codeSnippets.buttonPrimaryTextOnlyDestructive"
     [headingLevel]="3"
   >
-    <button class="button-primary button-primary-destructive" type="button">
-      Caption
-    </button>
+    <button class="button-primary-destructive" type="button">Caption</button>
   </code-snippet>
 
   <code-snippet
@@ -45,6 +43,45 @@
   >
     <button
       [class]="codeSnippets.buttonPrimaryIconAndText.template.class"
+      type="button"
+    >
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="icon"
+        [type]="'mask'"
+      ></ch-image>
+      Caption
+    </button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonPrimaryIconAndTextDisabled"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonPrimaryIconAndTextDisabled.template.class"
+      type="button"
+      disabled
+    >
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="icon"
+        [type]="'mask'"
+      ></ch-image>
+      Caption
+    </button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonPrimaryIconAndTextDestructive"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonPrimaryIconAndTextDestructive.template.class"
       type="button"
     >
       <ch-image
