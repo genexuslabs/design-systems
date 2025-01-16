@@ -5,7 +5,7 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
   selector: "components-accordion",
   templateUrl: "./accordion.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RuntimeBundlesComponent],
+  imports: [RuntimeBundlesComponent, RuntimeBundlesComponent],
   host: { class: "main-content" }
 })
 export class AccordionComponent {}
