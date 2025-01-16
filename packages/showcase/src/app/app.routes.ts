@@ -107,7 +107,7 @@ const childRoutes: Routes = [
   {
     path: "introduction/installation/angular",
     loadComponent: () =>
-      import("./introduction/installation/angular/angular.component").then(
+      import("./introduction/installation/Angular/angular.component").then(
         m => m.InstallationAngularComponent
       )
   },
@@ -137,8 +137,8 @@ const childRoutes: Routes = [
 export const routes: Routes = [
   {
     path: "",
-    loadComponent: () =>
-      import("./landing/landing.component").then(m => m.LandingComponent)
+    redirectTo: "mercury/introduction/what-is-mercury",
+    pathMatch: "full"
   },
   {
     path: "mercury",
@@ -190,27 +190,29 @@ export const getNavigationListRoutes = (ds: "mercury" | "unanimo") =>
           id: `/introduction/what-is-${ds}`,
           caption: `What is ${ds === "mercury" ? "Mercury" : "Unanimo"}?`,
           link: { url: `/${ds}/introduction/what-is-${ds}` }
-        },
-        {
-          caption: "Installation",
-          items: [
-            {
-              id: "/introduction/installation/angular",
-              caption: "Angular",
-              link: { url: `/${ds}/introduction/installation/angular` }
-            },
-            {
-              id: "/introduction/installation/react",
-              caption: "React",
-              link: { url: `/${ds}/introduction/installation/react` }
-            },
-            {
-              id: "/introduction/installation/stencil-js",
-              caption: "StencilJS",
-              link: { url: `/${ds}/introduction/installation/stencil-js` }
-            }
-          ]
         }
+
+        // TODO: Pages for tomorrow
+        // {
+        //   caption: "Installation",
+        //   items: [
+        //     {
+        //       id: "/introduction/installation/angular",
+        //       caption: "Angular",
+        //       link: { url: `/${ds}/introduction/installation/angular` }
+        //     },
+        //     {
+        //       id: "/introduction/installation/react",
+        //       caption: "React",
+        //       link: { url: `/${ds}/introduction/installation/react` }
+        //     },
+        //     {
+        //       id: "/introduction/installation/stencil-js",
+        //       caption: "StencilJS",
+        //       link: { url: `/${ds}/introduction/installation/stencil-js` }
+        //     }
+        //   ]
+        // }
       ]
     },
     getNavigationListItem(
