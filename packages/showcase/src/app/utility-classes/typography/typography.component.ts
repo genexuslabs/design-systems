@@ -17,7 +17,7 @@ import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-s
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
 
 @Component({
-  selector: "components-typography",
+  selector: "utility-classes-typography",
   templateUrl: "./typography.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: "main-content" },

@@ -9,7 +9,7 @@ import { elevationMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 
 @Component({
-  selector: "components-elevation",
+  selector: "utility-classes-elevation",
   templateUrl: "./elevation.component.html",
   styleUrl: "./elevation.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
