@@ -138,6 +138,140 @@ export const buttonMetadata = {
           CAPTION
         ]
       }
+    },
+
+    // secondary
+
+    buttonSecondaryTextOnly: {
+      linkId: "button-secondary-text-only",
+      title: "2.1. Text Only",
+      template: {
+        tag: "button",
+        class: "button-secondary",
+        properties: [{ name: "type", value: "button" }],
+        children: CAPTION
+      }
+    },
+
+    buttonSecondaryTextOnlyDisabled: {
+      linkId: "button-secondary-text-only-disabled",
+      title: "2.2. Text Only: Disabled",
+      template: {
+        tag: "button",
+        class: "button-secondary",
+        properties: [
+          { name: "disabled", value: true },
+          { name: "type", value: "button" }
+        ],
+        children: CAPTION
+      }
+    },
+
+    buttonSecondaryTextOnlyDestructive: {
+      linkId: "button-secondary-text-only-destructive",
+      title: "2.3. Text Only: Destructive",
+      template: {
+        tag: "button",
+        class: "button-secondary-destructive",
+        properties: [{ name: "type", value: "button" }],
+        children: CAPTION
+      }
+    },
+
+    buttonSecondaryIconAndText: {
+      linkId: "button-secondary-icon-and-text",
+      title: "2.4. Icon and Text",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value:
+            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+        }
+      ],
+      template: {
+        tag: "button",
+        class: "button-secondary button-icon-and-text",
+        properties: [{ name: "type", value: "button" }],
+        children: [
+          {
+            tag: "ch-image",
+            class: "icon-sm",
+            properties: [
+              { name: "src", value: "ICON", variable: true },
+              { name: "type", value: "mask" }
+            ]
+          },
+          CAPTION
+        ]
+      }
+    },
+
+    buttonSecondaryIconAndTextDisabled: {
+      linkId: "button-secondary-icon-and-text-disabled",
+      title: "2.5. Icon and Text: Disabled",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value:
+            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+        }
+      ],
+      template: {
+        tag: "button",
+        class: "button-secondary button-icon-and-text",
+        properties: [
+          { name: "type", value: "button" },
+          { name: "disabled", value: true }
+        ],
+        children: [
+          {
+            tag: "ch-image",
+            class: "icon-sm",
+            properties: [
+              { name: "src", value: "ICON" },
+              { name: "type", value: "mask" }
+            ]
+          },
+          CAPTION
+        ]
+      }
+    },
+
+    buttonSecondaryIconAndTextDestructive: {
+      linkId: "button-secondary-icon-and-text-destructive",
+      title: "2.6. Icon and Text: Destructive",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value:
+            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+        }
+      ],
+      template: {
+        tag: "button",
+        class: "button-secondary-destructive button-icon-and-text",
+        properties: [{ name: "type", value: "button" }],
+        children: [
+          {
+            tag: "ch-image",
+            class: "icon-sm",
+            properties: [
+              { name: "src", value: "ICON", variable: true },
+              { name: "type", value: "mask" }
+            ]
+          },
+          CAPTION
+        ]
+      }
     }
   }
 } as const satisfies ComponentMetadata;
