@@ -2,10 +2,10 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
 
 @Component({
-  selector: "components-accordion",
-  templateUrl: "./accordion.component.html",
+  selector: "components-list-box",
+  templateUrl: "./list-box.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RuntimeBundlesComponent, RuntimeBundlesComponent],
   host: { class: "main-content" }
 })
-export class AccordionComponent {}
+export class ListBoxComponent {}
