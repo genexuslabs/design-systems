@@ -6,7 +6,7 @@ This a monorepo that contains the implementation for the Mercury and Unanimo des
 
 ### Mercury
 
-Mercury Design System is a robust and scalable solution designed to improve product development. It's implemented over [Chameleon](https://github.com/genexuslabs/chameleon-controls-library) a library of white-label, highly-customizable and reusable web components, which implements all components necessaries for the Mercury DS.
+[Mercury Design System](/packages/mercury/README.md) is a robust and scalable solution designed to improve product development. It's implemented over [Chameleon](https://github.com/genexuslabs/chameleon-controls-library) a library of white-label, highly-customizable and reusable web components, which implements all components necessaries for the Mercury DS.
 
 To see the documentation and examples of how to use Mercury, visit the [showcase](https://mercury-showcase.genexus.com).
 
