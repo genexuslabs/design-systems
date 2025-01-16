@@ -8,7 +8,7 @@ export const ensureDirectoryExistsAndItsClear = (dirPath: string) => {
     fs.rmSync(dirPath, { recursive: true });
   }
 
-  fs.mkdirSync(dirPath);
+  fs.mkdirSync(dirPath, { recursive: true });
 };
 
 export function* walkSync(dir: string): Generator<FileMetadata> {
