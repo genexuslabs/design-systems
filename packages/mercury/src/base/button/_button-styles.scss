@@ -155,12 +155,24 @@
       @extend %button-primary;
       @extend %button-primary--destructive;
 
+      &:focus-visible {
+        // TODO: avoid duplcation
+        @extend %button-base--focus-visible;
+      }
+
       &:hover {
         @extend %button-primary--destructive-hover;
       }
 
       &:active {
         @extend %button-primary--destructive-active;
+      }
+
+      @if $add--disabled {
+        // TODO: avoid duplcation
+        &:disabled {
+          @extend %button-primary--disabled;
+        }
       }
     }
   }
@@ -201,12 +213,24 @@
       @extend %button-secondary;
       @extend %button-secondary--destructive;
 
+      &:focus-visible {
+        // TODO: avoid duplcation
+        @extend %button-base--focus-visible;
+      }
+
       &:hover {
         @extend %button-secondary--destructive-hover;
       }
 
       &:active {
         @extend %button-secondary--destructive-active;
+      }
+
+      @if $add--disabled {
+        // TODO: avoid duplcation
+        &:disabled {
+          @extend %button-secondary--disabled;
+        }
       }
     }
   }
