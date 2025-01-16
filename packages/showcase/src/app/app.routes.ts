@@ -63,6 +63,25 @@ const childRoutes: Routes = [
       import("./components/label/label.component").then(m => m.LabelComponent)
   },
   {
+    path: COMPONENTS_ROUTES.LIST_BOX.substring(1),
+    loadComponent: () =>
+      import("./components/list-box/list-box.component").then(
+        m => m.ListBoxComponent
+      )
+  },
+  {
+    path: COMPONENTS_ROUTES.PILLS.substring(1),
+    loadComponent: () =>
+      import("./components/pills/pills.component").then(m => m.PillsComponent)
+  },
+  {
+    path: COMPONENTS_ROUTES.PROPERTY_GRID.substring(1),
+    loadComponent: () =>
+      import("./components/property-grid/property-grid.component").then(
+        m => m.PropertyGridComponent
+      )
+  },
+  {
     path: COMPONENTS_ROUTES.RADIO_GROUP.substring(1),
     loadComponent: () =>
       import("./components/radio-group/radio-group.component").then(
@@ -84,10 +103,36 @@ const childRoutes: Routes = [
       )
   },
   {
+    path: COMPONENTS_ROUTES.TAB.substring(1),
+    loadComponent: () =>
+      import("./components/tab/tab.component").then(m => m.TabComponent)
+  },
+  {
+    path: COMPONENTS_ROUTES.TABULAR_GRID.substring(1),
+    loadComponent: () =>
+      import("./components/tabular-grid/tabular-grid.component").then(
+        m => m.TabularGridComponent
+      )
+  },
+  {
+    path: COMPONENTS_ROUTES.TOOLTIP.substring(1),
+    loadComponent: () =>
+      import("./components/tooltip/tooltip.component").then(
+        m => m.TooltipComponent
+      )
+  },
+  {
     path: COMPONENTS_ROUTES.TREE_VIEW.substring(1),
     loadComponent: () =>
       import("./components/tree-view/tree-view.component").then(
         m => m.TreeViewComponent
+      )
+  },
+  {
+    path: COMPONENTS_ROUTES.WIDGET.substring(1),
+    loadComponent: () =>
+      import("./components/widget/widget.component").then(
+        m => m.WidgetComponent
       )
   },
   {
@@ -117,6 +162,25 @@ const childRoutes: Routes = [
       import("./utility-classes/elevation/elevation.component").then(
         m => m.ElevationComponent
       )
+  },
+  {
+    path: UTILITY_CLASSES_ROUTES.LAYOUT.substring(1),
+    loadComponent: () =>
+      import("./utility-classes/layout/layout.component").then(
+        m => m.LayoutComponent
+      )
+  },
+  {
+    path: UTILITY_CLASSES_ROUTES.SPACING.substring(1),
+    loadComponent: () =>
+      import("./utility-classes/spacing/spacing.component").then(
+        m => m.SpacingComponent
+      )
+  },
+  {
+    path: UTILITY_CLASSES_ROUTES.FORM.substring(1),
+    loadComponent: () =>
+      import("./utility-classes/form/form.component").then(m => m.FormComponent)
   },
   {
     path: UTILITY_CLASSES_ROUTES.TYPOGRAPHY.substring(1),
