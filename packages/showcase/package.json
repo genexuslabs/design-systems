@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o --port 0",
-    "build": "ng build",
+    "start": "npm run build.scss && ng serve -o --port 0",
+    "build": "npm run build.scss && ng build",
+    "build.scss": "mercury -i=/assets/icons/ -f=/assets/fonts/ --outDir=.mercury/ --avoid-hash=base/base",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "npm run build.scss && ng test",
     "serve:ssr:showcase": "node dist/showcase/server/server.mjs"
   },
   "private": true,
@@ -22,8 +23,8 @@
     "@angular/router": "~19.0.5",
     "@angular/ssr": "~19.0.6",
     "@genexus/chameleon-controls-library": "6.0.0-next.56",
-    "@genexus/mercury": "file:///../mercury",
-    "@genexus/unanimo": "file:///../unanimo",
+    "@genexus/mercury": "latest",
+    "@genexus/unanimo": "latest",
     "express": "^4.21.2",
     "rxjs": "~7.8.1",
     "tslib": "~2.8.1"

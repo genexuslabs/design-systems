@@ -43,6 +43,7 @@ import {
   MERCURY_BASE_CSS_URL
 } from "../services/design-system.service";
 import { SEOService } from "../services/seo.service";
+import { bundleToHashMappings } from "../../.mercury/bundle-to-hash-mappings";
 
 const MERCURY_UNANIMO_PREFIX_URL_REGEX = /\/(mercury|unanimo)/;
 const FRAGMENT_QUERY_PARAMS_URL = /(#.*|\?.*)/;
@@ -91,7 +92,10 @@ export class AppComponent {
   );
 
   mercuryIconsBundle: ThemeModel = [
-    { name: "mercury/base/icons", url: MERCURY_BASE_CSS_URL + "base/icons.css" }
+    {
+      name: "mercury/base/icons",
+      url: MERCURY_BASE_CSS_URL + `${bundleToHashMappings["base/icons"]}.css`
+    }
   ];
 
   constructor() {
