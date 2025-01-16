@@ -2,7 +2,16 @@
   [bundles]="[
     'components/checkbox',
     'components/combo-box',
+    'components/edit',
+    'components/icon',
+    'components/list-box',
+    'components/pills',
+    'components/radio-group',
+    'components/tab',
+    'components/tabular-grid',
+    'components/tree-view',
     'utils/form',
+    'utils/spacing',
     'utils/typography'
   ]"
 />
@@ -125,11 +134,11 @@
   </code-snippet>
 
   <div class="gemini-migration-preview field field-block">
-    <label class="label" for="favorite-colors">Favorite Colors</label>
+    <label class="label" for="favorite-colors">Favorite colors</label>
     <ch-combo-box-render
       class="combo-box"
       id="favorite-colors"
-      [model]="favoriteColorsModel()"
+      [model]="favoriteColorsComboBoxModel"
       [placeholder]="'Select an item'"
       [value]="'yellow'"
     ></ch-combo-box-render>
@@ -167,5 +176,548 @@
       [checkedValue]="'true'"
       [value]="'true'"
     ></ch-checkbox>
+  </div>
+}
+
+@if (showGxgFormRadioGroup()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgFormRadioGroup"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-form-radio-group</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-form-radio-group</code> tag with a
+        <code>ch-radio-group-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>radio-group</code> class.</li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsRadioGroup()"
+          >Specify the control properties following the documentation
+        </a>
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <div class="field field-block">
+      <label class="label" for="favorite-colors-radio">Favorite colors</label>
+      <ch-radio-group-render
+        class="radio-group"
+        id="favorite-colors-radio"
+        [model]="favoriteColorsRadioGroupModel"
+        [value]="'yellow'"
+      ></ch-radio-group-render>
+    </div>
+  </div>
+}
+
+@if (showGxgFormText()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgFormText"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-form-text</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-form-text</code> tag with a
+        <code>ch-edit</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>input</code> class.</li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsInput()"
+          >Specify the control properties following the documentation
+        </a>
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <div class="field field-block">
+      <label class="label" for="user-name">Name</label>
+      <ch-edit
+        id="user-name"
+        class="input"
+        [placeholder]="'John Smith'"
+        [getImagePathCallback]="getImagePathCallback"
+        [startImgSrc]="ICON_PRIMARY"
+        [value]="'Adam Smith'"
+      ></ch-edit>
+    </div>
+  </div>
+}
+
+@if (showGxgFormTextarea()) {
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgFormTextarea">
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-form-textarea</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-form-textarea</code> tag with a
+        <code>ch-edit</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>input</code> class.</li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsInput()"
+          >Specify the control properties following the documentation</a
+        >
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <div class="field field-block">
+      <label class="label" for="developer-experience"
+        >Developer experience</label
+      >
+      <ch-edit
+        id="developer-experience"
+        class="input"
+        [placeholder]="'Add your description here'"
+        [multiline]="true"
+        [autoGrow]="true"
+        [value]="
+          'I have extensive experience as a backend developer, specializing in designing and implementing robust, scalable, and secure server-side solutions. My expertise includes working with a variety of programming languages and frameworks such as Node.js, Python, and Java, as well as managing databases like PostgreSQL and MongoDB. I am skilled in creating APIs, optimizing database performance, and integrating third-party services to deliver seamless user experiences.'
+        "
+      ></ch-edit>
+    </div>
+  </div>
+}
+
+@if (showGxgGrid()) {
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgGrid">
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-grid</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-grid</code> tag with a
+        <code>ch-tabular-grid</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>tabular-grid</code> class.</li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsTabularGrid()"
+          >Specify the control properties following the documentation</a
+        >
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <ch-tabular-grid class="tabular-grid">
+      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          [columnName]="'Country Name'"
+          [columnNamePosition]="'text'"
+          [settingable]="false"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          [columnName]="'Country Code'"
+          [columnNamePosition]="'text'"
+          [settingable]="false"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          [columnName]="'Population'"
+          [columnNamePosition]="'text'"
+          [settingable]="false"
+        ></ch-tabular-grid-column>
+      </ch-tabular-grid-columnset>
+      <ch-tabular-grid-row class="tabular-grid-row">
+        <ch-tabular-grid-cell class="tabular-grid-cell">
+          Uruguay
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >UY</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell">
+          ~3.5 million
+        </ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row">
+        <ch-tabular-grid-cell class="tabular-grid-cell">
+          Brazil
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BR</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell">
+          ~214 million
+        </ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row">
+        <ch-tabular-grid-cell class="tabular-grid-cell">
+          Argentina
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >AR</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell">
+          ~46 million
+        </ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+    </ch-tabular-grid>
+  </div>
+}
+
+@if (showGxgIcon()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgIcon"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-icon</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-icon</code> tag with a <code>ch-image</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>icon-sm</code> or <code>icon-md</code> class.</li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsIcon()"
+          >Specify the control properties following the documentation
+        </a>
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <ch-image
+      class="icon-sm"
+      [getImagePathCallback]="getImagePathCallback"
+      [src]="ICON_PRIMARY"
+    ></ch-image>
+  </div>
+}
+
+@if (showGxgLabel()) {
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgLabel">
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-label</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-label</code> tag with a <code>label</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>label</code> class.</li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <div class="field field-block">
+      <label class="label" for="your-control-id">The Label Caption</label>
+    </div>
+  </div>
+}
+
+@if (showGxgListBox()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgListBox"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-list-box</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-list-box</code> tag with a
+        <code>ch-action-list-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>list-box</code> class.</li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview gemini-migration-preview--list-box">
+    <ch-action-list-render
+      class="list-box"
+      [model]="favoriteColorsActionListModel"
+    ></ch-action-list-render>
+  </div>
+}
+
+@if (showGxgPills()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgPills"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-pills</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-pills</code> tag with a
+        <code>ch-combo-box-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>pill</code> class.</li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <div class="field field-block">
+      <label class="label" for="status-pill">Status selection</label>
+      <ch-combo-box-render
+        id="status-pill"
+        class="pill"
+        [model]="pillsModel"
+        [value]="'success'"
+      ></ch-combo-box-render>
+    </div>
+  </div>
+}
+
+@if (showGxgSuggest()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgSuggest"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-list-box</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-list-box</code> tag with a
+        <code>ch-action-list-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>list-box</code> class.</li>
+      <li>
+        <a
+          href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/combo-box#ch-combo-box-render"
+          target="_blank"
+          >Specify the ch-combo-box-render items following the model property
+        </a>
+      </li>
+      <li>
+        Set the <code>suggest</code> property to <code>true</code> to turn the
+        suggest feature on.
+      </li>
+      <li>
+        Subscribe to the <code>filterChange</code> event listener, and use the
+        <code>event.detail</code> to filter the items accordingly, by defining
+        the <code>filter</code> value.
+      </li>
+      <li>
+        <a
+          href="https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/combo-box#ch-combo-box-render"
+          target="_blank"
+          >Specify the options by following the
+          <code>suggestOptions</code> property
+        </a>
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview gemini-migration-preview">
+    <div class="field field-block">
+      <label class="label" for="suggest">Favorite colors</label>
+      <ch-combo-box-render
+        class="combo-box"
+        id="suggest"
+        [model]="favoriteColorsSuggestModel"
+        [placeholder]="'Search a color'"
+        [suggest]="true"
+      ></ch-combo-box-render>
+    </div>
+  </div>
+}
+
+@if (showGxgTabs()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgTabs"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-tabs</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-tabs</code> tag with a
+        <code>ch-tab-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>tab</code> class.</li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsTab()"
+          >Specify the control properties following the documentation
+        </a>
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <div class="field field-block">
+      <label class="label" for="fruits-tab">Our Fruits</label>
+      <ch-tab-render
+        class="tab tab-indicator-start"
+        id="fruits-tab"
+        tabListPosition="inline-start"
+        [model]="fruitsTabModel"
+        selected-id="apples"
+      >
+        <p slot="apples" class="text-body-regular-m spacing-body">
+          An apple is a sweet, edible fruit produced by an apple tree. Apple
+          trees are cultivated worldwide and are the most widely grown species
+          in the genus Malus. The tree originated in Central Asia, where its
+          wild ancestor, Malus sieversii, is still found today. An apple is a
+          sweet, edible fruit produced by an apple tree.
+        </p>
+
+        <p slot="bananas" class="text-body-regular-m spacing-body">
+          A banana is an elongated, edible fruit – botanically a berry –
+          produced by several kinds of large herbaceous flowering plants in the
+          genus Musa. In some countries, bananas used for cooking may be called
+          "plantains", distinguishing them from dessert bananas.
+        </p>
+
+        <p slot="cherries" class="text-body-regular-m spacing-body">
+          A cherry is the fruit of many plants of the genus Prunus, and is a
+          fleshy drupe. Commercial cherries are obtained from cultivars of
+          several species, such as the sweet Prunus avium and the sour Prunus
+          cerasus.
+        </p>
+      </ch-tab-render>
+    </div>
+  </div>
+}
+
+@if (showGxgText()) {
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgText">
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-text</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>Replace the <code>gxg-text</code> tag with a <code>p</code> tag.</li>
+
+      <li>Remove the <code>type</code> attribute/value</li>
+
+      <li>Add the <code>text-body</code> class.</li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <p class="text-body">
+      Genexus is a development platform that automates application creation
+      using a model-driven approach. It allows developers to focus on high-level
+      design, generating code for web, mobile, and desktop applications,
+      resulting in faster development cycles and fewer errors.
+    </p>
+  </div>
+}
+
+@if (showGxgTitle()) {
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgTitle">
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-title</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-title</code> tag with a <code>h*</code> tag.
+      </li>
+
+      <li>Remove the <code>type</code> attribute/value</li>
+
+      <li>Add the <code>heading-*</code> class.</li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <h2 class="heading-1">This is a heading 1</h2>
+    <br />
+    <h2 class="heading-2">This is a heading 2</h2>
+    <br />
+    <h3 class="heading-3">This is a heading 3</h3>
+    <br />
+    <h4 class="heading-4">This is a heading 4</h4>
+    <br />
+    <h5 class="heading-5">This is a heading 5</h5>
+    <br />
+    <h6 class="heading-6">This is a heading 6</h6>
+  </div>
+}
+
+@if (showGxgTree()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgTreeView"
+    [languageBefore]="'ts'"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-tree-view</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-tree-view</code> tag with a
+        <code>ch-tree-view-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>Add the <code>tree-view</code> class.</li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview gemini-migration-preview--tree-view">
+    <ch-tree-view-render
+      id="genexus-objects"
+      class="tree-view"
+      [model]="objectsTreeViewModel"
+      [getImagePathCallback]="getTreeViewImagePathCallback"
+      [showLines]="'last'"
+    >
+    </ch-tree-view-render>
   </div>
 }

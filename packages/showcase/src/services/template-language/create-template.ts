@@ -115,13 +115,20 @@ const renderTemplate = (
   );
 
   const formattedTag = createTag(item.tag, codeLanguage);
-  const propertiesWithClass: ComponentTemplateItemNodeProperty[] = [];
+  let propertiesWithClass: ComponentTemplateItemNodeProperty[] = [];
 
   if (item.class) {
     propertiesWithClass.push({ name: "class", value: item.class });
   }
   if (item.properties) {
     propertiesWithClass.push(...item.properties);
+  }
+
+  // Remove "key" property as Angular does not support keys
+  if (codeLanguage === "Angular") {
+    propertiesWithClass = propertiesWithClass.filter(
+      property => property.name !== "key"
+    );
   }
 
   // Example: ['class="input"', 'disabled', 'value="Spider man"']

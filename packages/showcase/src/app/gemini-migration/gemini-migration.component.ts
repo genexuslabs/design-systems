@@ -4,25 +4,34 @@ import {
   computed,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
-  input,
-  signal
+  input
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router, RouterLink } from "@angular/router";
+import {
+  favoriteColorsActionListModel,
+  favoriteColorsComboBoxModel,
+  favoriteColorsRadioGroupModel,
+  favoriteColorsSuggestModel,
+  fruitsTabModel,
+  pillsModel
+} from "./models";
 
 import {
   getIconPath,
-  getImagePathCallback
+  getImagePathCallback,
+  getTreeViewImagePathCallback
 } from "@genexus/mercury/assets-manager.js";
 import type {
   ChCheckboxCustomEvent,
-  ComboBoxModel
+  TreeViewModel
 } from "@genexus/chameleon-controls-library";
 
 import { geminiMigrationMetadata } from "./metadata";
 import { RouterCommonLinksService } from "../../services/router-links.service";
 import { CodeSnippetComponent } from "../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../user-controls/runtime-bundles/runtime-bundles.component";
+import { iconsModel } from "../components/tree-view/models";
 
 @Component({
   selector: "components-gemini-migration",
@@ -50,32 +59,25 @@ export class GeminiMigrationComponent {
     name: "add-circle",
     colorType: "on-primary"
   });
+  ICON_PRIMARY = getIconPath({
+    category: "gemini-tools",
+    name: "add-circle",
+    colorType: "primary"
+  });
 
-  favoriteColorsModel = signal<ComboBoxModel>([
-    {
-      value: "red",
-      caption: "Red"
-    },
-    {
-      value: "blue",
-      caption: "Blue"
-    },
-    {
-      value: "green",
-      caption: "Green"
-    },
-    {
-      value: "yellow",
-      caption: "Yellow"
-    },
-    {
-      value: "purple",
-      caption: "Purple"
-    }
-  ]);
+  favoriteColorsActionListModel = favoriteColorsActionListModel;
+  favoriteColorsComboBoxModel = favoriteColorsComboBoxModel;
+  favoriteColorsRadioGroupModel = favoriteColorsRadioGroupModel;
+  favoriteColorsSuggestModel = favoriteColorsSuggestModel;
+  fruitsTabModel = fruitsTabModel;
+  objectsTreeViewModel: TreeViewModel = structuredClone(iconsModel);
+  pillsModel = pillsModel;
+  // suggestOptions = suggestOptions;
 
   // TODO: This is a WA, since the Chameleon's register does not for some reason
   getImagePathCallback = getImagePathCallback;
+  getTreeViewImagePathCallback = getTreeViewImagePathCallback;
+
   hiddenMigrations = input<string>("");
 
   /**
@@ -87,7 +89,20 @@ export class GeminiMigrationComponent {
       ["gxg-button: text only", true],
       ["gxg-button: text with icon", true],
       ["gxg-combo-box", true],
-      ["gxg-form-checkbox", true]
+      ["gxg-form-checkbox", true],
+      ["gxg-form-radio-group", true],
+      ["gxg-form-text", true],
+      ["gxg-form-textarea", true],
+      ["gxg-grid", true],
+      ["gxg-icon", true],
+      ["gxg-label", true],
+      ["gxg-list-box", true],
+      ["gxg-pills", true],
+      ["gxg-suggest", true],
+      ["gxg-tabs", true],
+      ["gxg-text", true],
+      ["gxg-title", true],
+      ["gxg-tree-view", true]
     ]);
 
     // Update the rendered migrations by watching changes for the
@@ -119,6 +134,23 @@ export class GeminiMigrationComponent {
   showGxgFormCheckbox = computed(() =>
     this.migrations().get("gxg-form-checkbox")
   );
+  showGxgFormRadioGroup = computed(() =>
+    this.migrations().get("gxg-form-radio-group")
+  );
+  showGxgFormText = computed(() => this.migrations().get("gxg-form-text"));
+  showGxgFormTextarea = computed(() =>
+    this.migrations().get("gxg-form-textarea")
+  );
+  showGxgGrid = computed(() => this.migrations().get("gxg-grid"));
+  showGxgIcon = computed(() => this.migrations().get("gxg-icon"));
+  showGxgLabel = computed(() => this.migrations().get("gxg-label"));
+  showGxgListBox = computed(() => this.migrations().get("gxg-list-box"));
+  showGxgSuggest = computed(() => this.migrations().get("gxg-suggest"));
+  showGxgTabs = computed(() => this.migrations().get("gxg-tabs"));
+  showGxgText = computed(() => this.migrations().get("gxg-text"));
+  showGxgTitle = computed(() => this.migrations().get("gxg-title"));
+  showGxgTree = computed(() => this.migrations().get("gxg-tree-view"));
+  showGxgPills = computed(() => this.migrations().get("gxg-pills"));
 
   updateRenderedMigration =
     (typographyName: string) => (event: ChCheckboxCustomEvent<string>) => {
@@ -137,7 +169,7 @@ export class GeminiMigrationComponent {
 
       this.router.navigate([], {
         queryParams: { hiddenMigrations: hiddenMigrationsQueryParm },
-        queryParamsHandling: "merge" // Conserve other query parameters
+        queryParamsHandling: "merge"
       });
     };
 }
