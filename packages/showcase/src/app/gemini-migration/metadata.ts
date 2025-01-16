@@ -7,6 +7,7 @@ import type {
 } from "@genexus/chameleon-controls-library";
 import { ComponentMetadataBeforeAfter } from "../../common/types";
 import { chameleonImportType } from "../../services/template-language/create-template";
+import { iconsModelForMetadata } from "../components/tree-view/models";
 
 const ADD_CIRCLE_ICON_TEMPLATE =
   'AssetsManager.getIconPath({ category: "gemini-tools", name: "add-circle", colorType: "on-primary" })';
@@ -175,7 +176,6 @@ export const geminiMigrationMetadata = {
           properties: [
             { name: "caption", value: "The Caption" },
             { name: "checkedValue", value: "true" },
-            { name: "uncheckedValue", value: "false" },
             { name: "value", value: "true" }
           ]
         }
@@ -188,34 +188,41 @@ export const geminiMigrationMetadata = {
       before: {
         template: {
           tag: "gxg-form-radio-group",
-          properties: [{ name: "label", value: "Favorite Colour" }],
+          properties: [{ name: "label", value: "Favorite colors" }],
           children: [
             {
               tag: "gxg-form-radio",
               properties: [
                 { name: "label", value: "red" },
-                { name: "value", value: "red" }
+                { name: "value", value: "Red" }
               ]
             },
             {
               tag: "gxg-form-radio",
               properties: [
                 { name: "label", value: "blue" },
-                { name: "value", value: "blue" }
+                { name: "value", value: "Blue" }
               ]
             },
             {
               tag: "gxg-form-radio",
               properties: [
                 { name: "label", value: "green" },
-                { name: "value", value: "green" }
+                { name: "value", value: "Green" }
               ]
             },
             {
               tag: "gxg-form-radio",
               properties: [
                 { name: "label", value: "yellow" },
-                { name: "value", value: "yellow" }
+                { name: "value", value: "Yellow" }
+              ]
+            },
+            {
+              tag: "gxg-form-radio",
+              properties: [
+                { name: "label", value: "purple" },
+                { name: "value", value: "Purple" }
               ]
             }
           ]
@@ -244,7 +251,7 @@ export const geminiMigrationMetadata = {
               tag: "label",
               class: "label",
               properties: [{ name: "for", value: "favorite-colors-radio" }],
-              children: "Favorite Colour"
+              children: "Favorite colors"
             },
             {
               tag: "ch-radio-group-render",
@@ -271,9 +278,9 @@ export const geminiMigrationMetadata = {
         template: {
           tag: "gxg-form-text",
           properties: [
+            { name: "icon", value: "gemini-tools/add-circle" },
             { name: "placeholder", value: "John Smith" },
-            { name: "value", value: "Adam Smith" },
-            { name: "icon", value: "gemini-tools/add-circle" }
+            { name: "value", value: "Adam Smith" }
           ]
         }
       },
@@ -303,9 +310,9 @@ export const geminiMigrationMetadata = {
               class: "input",
               properties: [
                 { name: "id", value: "user-name" },
-                { name: "value", value: "Adam Smith" },
                 { name: "placeholder", value: "John Smith" },
-                { name: "startImgSrc", value: "ICON", variable: true }
+                { name: "startImgSrc", value: "ICON", variable: true },
+                { name: "value", value: "Adam Smith" }
               ]
             }
           ]
@@ -318,28 +325,22 @@ export const geminiMigrationMetadata = {
       title: "7. gxg-form-textarea",
       before: {
         template: {
-          tag: "div",
-          class: "field field-block",
-          children: [
+          tag: "gxg-form-textarea",
+          class: "textarea",
+          properties: [
             {
-              tag: "label",
-              class: "label",
-              properties: [{ name: "for", value: "experience-textarea" }],
-              children: "Experience"
+              name: "label",
+              value: "Developer experience"
             },
             {
-              tag: "gxg-form-textarea",
-              class: "textarea",
-              properties: [
-                { name: "id", value: "experience-textarea" },
-                {
-                  name: "placeholder",
-                  value: "I have experience in backend development..."
-                },
-                { name: "value", value: "" },
-                { name: "height", value: "100px" }
-              ]
-            }
+              name: "placeholder",
+              value: "Add your description here"
+            },
+            {
+              name: "value",
+              value: "I have experience in backend development..."
+            },
+            { name: "height", value: "100px" }
           ]
         }
       },
@@ -352,32 +353,27 @@ export const geminiMigrationMetadata = {
               tag: "label",
               class: "label",
               properties: [{ name: "for", value: "developer-experience" }],
-              children: "Developer Experience"
+              children: "Developer experience"
             },
             {
               tag: "ch-edit",
               class: "input",
               properties: [
                 { name: "id", value: "developer-experience" },
-                {
-                  name: "value",
-                  value: `I have extensive experience as a backend developer, specializing in designing
-      and implementing robust, scalable, and secure server-side solutions. My expertise
-      includes working with a variety of programming languages and frameworks such as
-      Node.js, Python, and Java, as well as managing databases like PostgreSQL and MongoDB. 
-      am skilled in creating APIs, optimizing database performance, and integrating third-party
-      services to deliver seamless user experiences.`
-                },
-                {
-                  name: "placeholder",
-                  value: "I have experience in backend development..."
-                },
+                { name: "autoGrow", value: "true", variable: true },
                 {
                   name: "multiline",
                   value: "true",
                   variable: true
                 },
-                { name: "autoGrow", value: "true", variable: true }
+                {
+                  name: "placeholder",
+                  value: "Add your description here"
+                },
+                {
+                  name: "value",
+                  value: "I have experience in backend development..."
+                }
               ]
             }
           ]
@@ -390,62 +386,62 @@ export const geminiMigrationMetadata = {
       title: "8. gxg-grid",
       before: {
         template: {
-          tag: "gxgGrid",
+          tag: "gxg-grid",
           children: [
             {
-              tag: "chGrid",
+              tag: "ch-grid",
               children: [
                 {
-                  tag: "chGridColumnset",
+                  tag: "ch-grid-columnset",
                   children: [
                     {
-                      tag: "chGridColumn",
+                      tag: "ch-grid-column",
                       properties: [
                         { name: "columnName", value: "Country Name" },
                         { name: "columnNamePosition", value: "text" },
-                        { name: "settingable", value: "false" }
+                        { name: "settingable", value: false }
                       ]
                     },
                     {
-                      tag: "chGridColumn",
+                      tag: "ch-grid-column",
                       properties: [
                         { name: "columnName", value: "Country Code" },
                         { name: "columnNamePosition", value: "text" },
-                        { name: "settingable", value: "false" }
+                        { name: "settingable", value: false }
                       ]
                     },
                     {
-                      tag: "chGridColumn",
+                      tag: "ch-grid-column",
                       properties: [
                         { name: "columnName", value: "Population" },
                         { name: "columnNamePosition", value: "text" },
-                        { name: "settingable", value: "false" }
+                        { name: "settingable", value: false }
                       ]
                     }
                   ]
                 },
                 {
-                  tag: "chGridRow",
+                  tag: "ch-grid-row",
                   children: [
-                    { tag: "chGridCell", children: "Uruguay" },
-                    { tag: "chGridCell", children: "UY" },
-                    { tag: "chGridCell", children: "~3.5 million" }
+                    { tag: "ch-grid-cell", children: "Uruguay" },
+                    { tag: "ch-grid-cell", children: "UY" },
+                    { tag: "ch-grid-cell", children: "~3.5 million" }
                   ]
                 },
                 {
-                  tag: "chGridRow",
+                  tag: "ch-grid-row",
                   children: [
-                    { tag: "chGridCell", children: "Brazil" },
-                    { tag: "chGridCell", children: "BR" },
-                    { tag: "chGridCell", children: "~214 million" }
+                    { tag: "ch-grid-cell", children: "Brazil" },
+                    { tag: "ch-grid-cell", children: "BR" },
+                    { tag: "ch-grid-cell", children: "~214 million" }
                   ]
                 },
                 {
-                  tag: "chGridRow",
+                  tag: "ch-grid-row",
                   children: [
-                    { tag: "chGridCell", children: "Argentina" },
-                    { tag: "chGridCell", children: "AR" },
-                    { tag: "chGridCell", children: "~46 million" }
+                    { tag: "ch-grid-cell", children: "Argentina" },
+                    { tag: "ch-grid-cell", children: "AR" },
+                    { tag: "ch-grid-cell", children: "~46 million" }
                   ]
                 }
               ]
@@ -460,33 +456,33 @@ export const geminiMigrationMetadata = {
           children: [
             {
               tag: "ch-tabular-grid-columnset",
-              class: "tabularGridColumnSet",
+              class: "tabular-grid-column-sset",
               children: [
                 {
                   tag: "ch-tabular-grid-column",
-                  class: "tabularGridColumn",
+                  class: "tabular-grid-column",
                   properties: [
                     { name: "columnName", value: "Country Name" },
                     { name: "columnNamePosition", value: "text" },
-                    { name: "settingable", value: "false" }
+                    { name: "settingable", value: false }
                   ]
                 },
                 {
                   tag: "ch-tabular-grid-column",
-                  class: "tabularGridColumn",
+                  class: "tabular-grid-column",
                   properties: [
                     { name: "columnName", value: "Country Code" },
                     { name: "columnNamePosition", value: "text" },
-                    { name: "settingable", value: "false" }
+                    { name: "settingable", value: false }
                   ]
                 },
                 {
                   tag: "ch-tabular-grid-column",
-                  class: "tabularGridColumn",
+                  class: "tabular-grid-column",
                   properties: [
                     { name: "columnName", value: "Population" },
                     { name: "columnNamePosition", value: "text" },
-                    { name: "settingable", value: "false" }
+                    { name: "settingable", value: false }
                   ]
                 }
               ]
@@ -497,17 +493,17 @@ export const geminiMigrationMetadata = {
               children: [
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabularGridCell",
+                  class: "tabular-grid-cell",
                   children: "Uruguay"
                 },
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabularGridCell",
+                  class: "tabular-grid-cell",
                   children: "UY"
                 },
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabularGridCell",
+                  class: "tabular-grid-cell",
                   children: "~3.5 million"
                 }
               ]
@@ -518,17 +514,17 @@ export const geminiMigrationMetadata = {
               children: [
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabularGridCell",
+                  class: "tabular-grid-cell",
                   children: "Brazil"
                 },
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabularGridCell",
+                  class: "tabular-grid-cell",
                   children: "BR"
                 },
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabularGridCell",
+                  class: "tabular-grid-cell",
                   children: "~214 million"
                 }
               ]
@@ -539,17 +535,17 @@ export const geminiMigrationMetadata = {
               children: [
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabularGridCell",
+                  class: "tabular-grid-cell",
                   children: "Argentina"
                 },
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabularGridCell",
+                  class: "tabular-grid-cell",
                   children: "AR"
                 },
                 {
                   tag: "ch-tabular-grid-cell",
-                  class: "tabularGridCell",
+                  class: "tabular-grid-cell",
                   children: "~46 million"
                 }
               ]
@@ -592,7 +588,7 @@ export const geminiMigrationMetadata = {
 
     gxgLabel: {
       linkId: "gxg-label",
-      title: "gxg-label",
+      title: "10. gxg-label",
       before: {
         template: {
           tag: "gxg-label",
@@ -619,7 +615,7 @@ export const geminiMigrationMetadata = {
 
     gxgListBox: {
       linkId: "gxg-list-box",
-      title: "4. gxg-list-box",
+      title: "11. gxg-list-box",
       before: {
         template: {
           tag: "gxg-list-box",
@@ -678,7 +674,7 @@ export const geminiMigrationMetadata = {
 
     gxgPills: {
       linkId: "gxg-pills",
-      title: "gxg-pills",
+      title: "12. gxg-pills",
       before: {
         template: {
           tag: "div",
@@ -740,7 +736,7 @@ export const geminiMigrationMetadata = {
               tag: "label",
               class: "label",
               properties: [{ name: "for", value: "pills" }],
-              children: "Status Selection"
+              children: "Status selection"
             },
             {
               tag: "ch-combo-box-render",
@@ -758,7 +754,7 @@ export const geminiMigrationMetadata = {
 
     gxgSuggest: {
       linkId: "gxg-suggest",
-      title: "gxg-suggest",
+      title: "13. gxg-suggest",
       before: {
         template: {
           tag: "gxg-suggest",
@@ -768,14 +764,16 @@ export const geminiMigrationMetadata = {
               properties: [
                 {
                   name: "value",
-                  value: "this.selectedColor.name",
-                  variable: true
-                },
-                {
-                  name: "onValueChanged",
-                  value: "this.colorChangedHandler",
+                  value: "selectedColor",
                   variable: true
                 }
+
+                // TODO: Add support for events
+                // {
+                //   name: "onValueChanged",
+                //   value: "this.colorChangedHandler",
+                //   variable: true
+                // }
               ],
               children: "<!-- Your dynamically generated lists items here -->"
             }
@@ -795,20 +793,23 @@ export const geminiMigrationMetadata = {
               { value: "yellow", caption: "Yellow" },
               { value: "purple", caption: "Purple" }
             ] satisfies ComboBoxModel
-          },
-          {
-            name: "suggestOptions",
-            type: "ComboBoxSuggestOptions",
-            value: {
-              alreadyProcessed: false,
-              autoExpand: true,
-              hideMatchesAndShowNonMatches: false,
-              highlightMatchedItems: false,
-              matchCase: false,
-              regularExpression: false,
-              strict: false
-            }
           }
+
+          // TODO: This is only necessary when using strict mode. In that case,
+          // only the strict flag should be added.
+          // {
+          //   name: "suggestOptions",
+          //   type: "ComboBoxSuggestOptions",
+          //   value: {
+          //     alreadyProcessed: false,
+          //     autoExpand: true,
+          //     hideMatchesAndShowNonMatches: false,
+          //     highlightMatchedItems: false,
+          //     matchCase: false,
+          //     regularExpression: false,
+          //     strict: false
+          //   }
+          // }
         ],
         template: {
           tag: "div",
@@ -818,7 +819,7 @@ export const geminiMigrationMetadata = {
               tag: "label",
               class: "label",
               properties: [{ name: "for", value: "suggest" }],
-              children: "Favorite Colour"
+              children: "Favorite colors"
             },
             {
               tag: "ch-combo-box-render",
@@ -826,9 +827,9 @@ export const geminiMigrationMetadata = {
               properties: [
                 { name: "id", value: "suggest" },
                 { name: "model", value: "suggestModel", state: true },
-                { name: "placeholder", value: "Green" },
-                { name: "suggest", value: true },
-                { name: "suggestOptions", value: "suggestOptions", state: true }
+                { name: "placeholder", value: "Search a color" },
+                { name: "suggest", value: true }
+                // { name: "suggestOptions", value: "suggestOptions", state: true }
               ]
             }
           ]
@@ -838,7 +839,7 @@ export const geminiMigrationMetadata = {
 
     gxgTabs: {
       linkId: "gxg-tabs",
-      title: "gxg-tabs",
+      title: "14. gxg-tabs",
       before: {
         template: {
           tag: "gxg-tabs",
@@ -971,7 +972,7 @@ export const geminiMigrationMetadata = {
 
     gxgText: {
       linkId: "gxg-text",
-      title: "gxg-text",
+      title: "15. gxg-text",
       before: {
         template: {
           tag: "gxg-text",
@@ -996,7 +997,7 @@ export const geminiMigrationMetadata = {
 
     gxgTitle: {
       linkId: "gxg-title",
-      title: "gxg-title",
+      title: "16. gxg-title",
       before: {
         template: [
           {
@@ -1045,162 +1046,48 @@ export const geminiMigrationMetadata = {
 
     gxgTreeView: {
       linkId: "gxg-tree-view",
-      title: "4. gxg-tree-view",
+      title: "17. gxg-tree-view",
       before: {
+        imports: [chameleonImportType("TreeViewModel")],
+        states: [
+          {
+            name: "myTreeModel",
+            type: "TreeViewModel",
+            value: "..."
+          }
+        ],
         template: {
           tag: "gxg-tree-view",
           properties: [
-            { name: "treeModel", value: "myTreeModel", state: true },
             { name: "dragDisabled", value: true },
             { name: "dropDisabled", value: true },
             { name: "expanded", value: true },
+            { name: "treeModel", value: "myTreeModel", state: true },
             { name: "showLines", value: "last" }
           ],
           children: []
         }
       },
       after: {
-        imports: [chameleonImportType("TreeViewModel")],
+        imports: [
+          chameleonImportType("TreeViewModel"),
+          'import { getIconPath, getIconPathExpanded } from "@genexus/mercury/assets-manager.js";'
+        ],
         states: [
           {
             name: "myTreeModel",
             type: "TreeViewModel",
-            value: [
-              {
-                id: "root",
-                caption: "GeneXusNext Develop",
-                startImgSrc: "objects/version",
-                expanded: true,
-                leaf: false,
-                items: [
-                  {
-                    id: "Main_Programs",
-                    caption: "Main Programs",
-                    startImgSrc: "objects/category",
-                    expanded: true,
-                    items: [
-                      {
-                        id: "Main_Programs.Prompt",
-                        caption: "Prompt",
-                        startImgSrc: "objects/panel-for-sd",
-                        leaf: true,
-                        metadata: "Panel"
-                      },
-                      {
-                        id: "Main_Programs.ApiHealthCheck",
-                        caption: "ApiHealthCheck",
-                        startImgSrc: "objects/api",
-                        leaf: true
-                      },
-                      {
-                        id: "Main_Programs.BackHome",
-                        caption: "BackHome",
-                        startImgSrc: "objects/web-panel",
-                        leaf: true
-                      },
-                      {
-                        id: "Main_Programs.Login",
-                        caption: "Login",
-                        startImgSrc: "objects/web-panel",
-                        leaf: true
-                      },
-                      {
-                        id: "Main_Programs.ProvisioningServices",
-                        caption: "ProvisioningServices",
-                        startImgSrc: "objects/api",
-                        leaf: true
-                      },
-                      {
-                        id: "Main_Programs.VersionCheck",
-                        caption: "VersionCheck",
-                        startImgSrc: "objects/procedure",
-                        leaf: true
-                      }
-                    ]
-                  },
-                  {
-                    id: "Root_Module",
-                    caption: "Root Module !",
-                    startImgSrc: "objects/module",
-                    expanded: false,
-                    items: [
-                      {
-                        id: "Root_Module.Images",
-                        caption: "Images",
-                        startImgSrc: "objects/image",
-                        leaf: true
-                      },
-                      {
-                        id: "Root_Module.GXNext",
-                        caption: "GXNext",
-                        startImgSrc: "objects/dso",
-                        leaf: true
-                      },
-                      {
-                        id: "Root_Module.GeneXusNext",
-                        caption: "GeneXusNext",
-                        startImgSrc: "objects/dso",
-                        leaf: true
-                      },
-                      {
-                        id: "Root_Module.Files",
-                        caption: "Files",
-                        startImgSrc: "objects/file",
-                        leaf: true
-                      },
-                      {
-                        id: "Root_Module.Domain",
-                        caption: "Domain 3",
-                        startImgSrc: "objects/domain",
-                        leaf: true
-                      }
-                    ]
-                  },
-                  {
-                    id: "References",
-                    caption: "References",
-                    startImgSrc: "objects/references",
-                    leaf: true
-                  },
-                  {
-                    id: "Customization",
-                    caption: "Customization",
-                    startImgSrc: "objects/customization",
-                    expanded: true,
-                    items: [
-                      {
-                        id: "Customization.Files",
-                        caption: "Files",
-                        startImgSrc: "objects/file",
-                        leaf: true
-                      },
-                      {
-                        id: "Customization.Images",
-                        caption: "Images",
-                        startImgSrc: "objects/image",
-                        leaf: true
-                      }
-                    ]
-                  },
-                  {
-                    id: "Documentation",
-                    caption: "Documentation",
-                    startImgSrc: "objects/document",
-                    leaf: true
-                  }
-                ]
-              }
-            ] satisfies TreeViewModel
+            value: iconsModelForMetadata
           }
         ],
         template: {
           tag: "ch-tree-view-render",
           class: "tree-view",
           properties: [
-            { name: "model", value: "myTreeModel", state: true },
             { name: "dragDisabled", value: true },
             { name: "dropDisabled", value: true },
             { name: "expanded", value: true },
+            { name: "model", value: "myTreeModel", state: true },
             { name: "showLines", value: "last" }
           ],
           children: []

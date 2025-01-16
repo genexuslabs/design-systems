@@ -146,10 +146,7 @@
 }
 
 @if (showGxgFormCheckbox()) {
-  <code-snippet
-    [codeSnippetBeforeAndAfter]="codeSnippets.gxgFormCheckbox"
-    [languageAfter]="'ts'"
-  >
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgFormCheckbox">
     <p class="text-body-regular-s">
       When transitioning from a <code>gxg-form-checkbox</code>:
     </p>
@@ -211,7 +208,7 @@
 
   <div class="gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" for="favorite-colors-radio"> Favorite Colour </label>
+      <label class="label" for="favorite-colors-radio">Favorite Colour</label>
       <ch-radio-group-render
         class="radio-group"
         id="favorite-colors-radio"
@@ -251,22 +248,21 @@
 
   <div class="gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" for="favorite-colors-radio"> Name </label>
+      <label class="label" for="user-name">Name</label>
       <ch-edit
-        value="Adam Smith"
+        id="user-name"
         class="input"
-        placeholder="John Smith"
-        startImgSrc="{this.#chEditIcon}"
+        [placeholder]="'John Smith'"
+        [getImagePathCallback]="getImagePathCallback"
+        [startImgSrc]="ICON_PRIMARY"
+        [value]="'Adam Smith'"
       ></ch-edit>
     </div>
   </div>
 }
 
 @if (showGxgFormTextarea()) {
-  <code-snippet
-    [codeSnippetBeforeAndAfter]="codeSnippets.gxgFormTextarea"
-    [languageAfter]="'ts'"
-  >
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgFormTextarea">
     <p class="text-body-regular-s">
       When transitioning from a <code>gxg-form-textarea</code>:
     </p>
@@ -292,24 +288,22 @@
   <div class="gemini-migration-preview">
     <div class="field field-block">
       <label class="label" for="developer-experience"
-        >Developer Experience</label
+        >Developer experience</label
       >
       <ch-edit
-        value="I have extensive experience as a backend developer, specializing in designing and implementing robust, scalable, and secure server-side solutions. My expertise includes working with a variety of programming languages and frameworks such as Node.js, Python, and Java, as well as managing databases like PostgreSQL and MongoDB. I am skilled in creating APIs, optimizing database performance, and integrating third-party services to deliver seamless user experiences."
+        id="developer-experience"
         class="input"
-        placeholder="I have experience in backend development..."
+        [placeholder]="'Add your description here'"
         [multiline]="true"
         [autoGrow]="true"
+        [value]="'I have experience in backend development...'"
       ></ch-edit>
     </div>
   </div>
 }
 
 @if (showGxgGrid()) {
-  <code-snippet
-    [codeSnippetBeforeAndAfter]="codeSnippets.gxgGrid"
-    [languageAfter]="'ts'"
-  >
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgGrid">
     <p class="text-body-regular-s">
       When transitioning from a <code>gxg-grid</code>:
     </p>
@@ -326,73 +320,68 @@
 
       <li>
         <a class="hyperlink" [routerLink]="commonLinks.componentsTabularGrid()"
-          >Specify the control properties following the documentation (TODO)
-        </a>
+          >Specify the control properties following the documentation</a
+        >
       </li>
     </ol>
   </code-snippet>
 
   <div class="gemini-migration-preview">
-    <div class="field field-block">
-      <label class="label" for="countries-population"
-        >Countries Population</label
-      >
-      <ch-tabular-grid class="tabular-grid" id="countries-population">
-        <ch-tabular-grid-columnset class="tabular-grid-column-set">
-          <ch-tabular-grid-column
-            class="tabular-grid-column"
-            columnName="Country Name"
-            columnNamePosition="text"
-            settingable="false"
-          ></ch-tabular-grid-column>
-          <ch-tabular-grid-column
-            class="tabular-grid-column"
-            columnName="Country Code"
-            columnNamePosition="text"
-            settingable="false"
-          ></ch-tabular-grid-column>
-          <ch-tabular-grid-column
-            class="tabular-grid-column"
-            columnName="Population"
-            columnNamePosition="text"
-            settingable="false"
-          ></ch-tabular-grid-column>
-        </ch-tabular-grid-columnset>
-        <ch-tabular-grid-row class="tabular-grid-row">
-          <ch-tabular-grid-cell class="tabular-grid-cell">
-            Uruguay
-          </ch-tabular-grid-cell>
-          <ch-tabular-grid-cell class="tabular-grid-cell"
-            >UY</ch-tabular-grid-cell
-          >
-          <ch-tabular-grid-cell class="tabular-grid-cell">
-            ~3.5 million
-          </ch-tabular-grid-cell>
-        </ch-tabular-grid-row>
-        <ch-tabular-grid-row class="tabular-grid-row">
-          <ch-tabular-grid-cell class="tabular-grid-cell">
-            Brazil
-          </ch-tabular-grid-cell>
-          <ch-tabular-grid-cell class="tabular-grid-cell"
-            >BR</ch-tabular-grid-cell
-          >
-          <ch-tabular-grid-cell class="tabular-grid-cell">
-            ~214 million
-          </ch-tabular-grid-cell>
-        </ch-tabular-grid-row>
-        <ch-tabular-grid-row class="tabular-grid-row">
-          <ch-tabular-grid-cell class="tabular-grid-cell">
-            Argentina
-          </ch-tabular-grid-cell>
-          <ch-tabular-grid-cell class="tabular-grid-cell"
-            >AR</ch-tabular-grid-cell
-          >
-          <ch-tabular-grid-cell class="tabular-grid-cell">
-            ~46 million
-          </ch-tabular-grid-cell>
-        </ch-tabular-grid-row>
-      </ch-tabular-grid>
-    </div>
+    <ch-tabular-grid class="tabular-grid">
+      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          [columnName]="'Country Name'"
+          [columnNamePosition]="'text'"
+          [settingable]="false"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          [columnName]="'Country Code'"
+          [columnNamePosition]="'text'"
+          [settingable]="false"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          [columnName]="'Population'"
+          [columnNamePosition]="'text'"
+          [settingable]="false"
+        ></ch-tabular-grid-column>
+      </ch-tabular-grid-columnset>
+      <ch-tabular-grid-row class="tabular-grid-row">
+        <ch-tabular-grid-cell class="tabular-grid-cell">
+          Uruguay
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >UY</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell">
+          ~3.5 million
+        </ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row">
+        <ch-tabular-grid-cell class="tabular-grid-cell">
+          Brazil
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BR</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell">
+          ~214 million
+        </ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row">
+        <ch-tabular-grid-cell class="tabular-grid-cell">
+          Argentina
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >AR</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell">
+          ~46 million
+        </ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+    </ch-tabular-grid>
   </div>
 }
 
@@ -432,10 +421,7 @@
 }
 
 @if (showGxgLabel()) {
-  <code-snippet
-    [codeSnippetBeforeAndAfter]="codeSnippets.gxgLabel"
-    [languageAfter]="'ts'"
-  >
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgLabel">
     <p class="text-body-regular-s">
       When transitioning from a <code>gxg-label</code>:
     </p>
@@ -510,12 +496,12 @@
 
   <div class="gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" for="status-pill">Status Selection</label>
+      <label class="label" for="status-pill">Status selection</label>
       <ch-combo-box-render
         id="status-pill"
         class="pill"
         [model]="pillsModel()"
-        value="success"
+        [value]="'success'"
       ></ch-combo-box-render>
     </div>
   </div>
@@ -568,14 +554,13 @@
 
   <div class="gemini-migration-preview gemini-migration-preview">
     <div class="field field-block">
-      <label class="label" for="suggest">Favorite Colour</label>
+      <label class="label" for="suggest">Favorite Colors</label>
       <ch-combo-box-render
         class="combo-box"
         id="suggest"
         [model]="favoriteColorsSuggestModel()"
-        suggest
-        [suggestOptions]="this.suggestOptions()"
-        placeholder="Red"
+        [placeholder]="'Search a color'"
+        [suggest]="true"
       ></ch-combo-box-render>
     </div>
   </div>
@@ -645,10 +630,7 @@
 }
 
 @if (showGxgText()) {
-  <code-snippet
-    [codeSnippetBeforeAndAfter]="codeSnippets.gxgText"
-    [languageAfter]="'ts'"
-  >
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgText">
     <p class="text-body-regular-s">
       When transitioning from a <code>gxg-text</code>:
     </p>
@@ -673,10 +655,7 @@
 }
 
 @if (showGxgTitle()) {
-  <code-snippet
-    [codeSnippetBeforeAndAfter]="codeSnippets.gxgTitle"
-    [languageAfter]="'ts'"
-  >
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgTitle">
     <p class="text-body-regular-s">
       When transitioning from a <code>gxg-title</code>:
     </p>
@@ -710,6 +689,7 @@
 @if (showGxgTree()) {
   <code-snippet
     [codeSnippetBeforeAndAfter]="codeSnippets.gxgTreeView"
+    [languageBefore]="'ts'"
     [languageAfter]="'ts'"
   >
     <p class="text-body-regular-s">
@@ -732,7 +712,7 @@
     <ch-tree-view-render
       id="genexus-objects"
       class="tree-view"
-      [model]="objectsTreeViewModel()"
+      [model]="objectsTreeViewModel"
       [getImagePathCallback]="getTreeViewImagePathCallback"
       [showLines]="'last'"
     >

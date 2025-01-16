@@ -15,9 +15,7 @@ import {
   favoriteColorsRadioGroupModel,
   favoriteColorsSuggestModel,
   fruitsTabModel,
-  objectsTreeViewModel,
-  pillsModel,
-  suggestOptions
+  pillsModel
 } from "./models";
 
 import {
@@ -25,12 +23,16 @@ import {
   getImagePathCallback,
   getTreeViewImagePathCallback
 } from "@genexus/mercury/assets-manager.js";
-import type { ChCheckboxCustomEvent } from "@genexus/chameleon-controls-library";
+import type {
+  ChCheckboxCustomEvent,
+  TreeViewModel
+} from "@genexus/chameleon-controls-library";
 
 import { geminiMigrationMetadata } from "./metadata";
 import { RouterCommonLinksService } from "../../services/router-links.service";
 import { CodeSnippetComponent } from "../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../user-controls/runtime-bundles/runtime-bundles.component";
+import { iconsModel } from "../components/tree-view/models";
 
 @Component({
   selector: "components-gemini-migration",
@@ -69,9 +71,9 @@ export class GeminiMigrationComponent {
   favoriteColorsRadioGroupModel = favoriteColorsRadioGroupModel;
   favoriteColorsSuggestModel = favoriteColorsSuggestModel;
   fruitsTabModel = fruitsTabModel;
-  objectsTreeViewModel = objectsTreeViewModel;
+  objectsTreeViewModel: TreeViewModel = structuredClone(iconsModel);
   pillsModel = pillsModel;
-  suggestOptions = suggestOptions;
+  // suggestOptions = suggestOptions;
 
   // TODO: This is a WA, since the Chameleon's register does not for some reason
   getImagePathCallback = getImagePathCallback;
