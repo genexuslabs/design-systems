@@ -119,6 +119,7 @@
   $combo-box-selector: ".combo-box",
   $combo-box--disabled-selector: ".combo-box[disabled]",
   $combo-box--error-selector: ".combo-box-error",
+  // TODO (Update error class selector, when Chameleon provides a custom state like :invalid)
   $combo-box__placeholder-selector:
     ".combo-box[part='ch-combo-box--empty-value']",
   $window-selector: ".combo-box::part(window)",

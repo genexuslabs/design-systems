@@ -6,6 +6,7 @@
 @mixin label(
   $label-selector: ".label",
   $label--disabled-selector: ".label--disabled",
+  // TODO (remove disabled class, in favor of a smarter selector that do not requires an additional class. The label should idealy be aware of the related control disabled state).
   $label--position-block-selector: ".label--above",
   $label--position-inline-selector: ".label--before"
 ) {
