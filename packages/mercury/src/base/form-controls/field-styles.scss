@@ -44,7 +44,6 @@
 /// @group Field
 /// @param {String} $field-group-selector [".field-group"] -
 /// @param {String} $field-group-inline-selector [".field-group-inline"] -
-/// @param {String} $field-selector [".field"] -
 /// @param {String} $field-block-selector [".field-block"] -
 /// @param {String} $field-inline-selector [".field-inline"] -
 /// @param {String} $field-inline__label-selector [".field-inline .label"] -
@@ -53,7 +52,6 @@
 @mixin field(
   $field-group-selector: ".field-group",
   $field-group-inline-selector: ".field-group-inline",
-  $field-selector: ".field",
   $field-block-selector: ".field-block",
   $field-inline-selector: ".field-inline",
   $field-inline__label-selector: ".field-inline > .label",
@@ -70,15 +68,13 @@
     @extend %field-group-inline;
   }
 
-  #{$field-selector} {
-    @extend %field;
-  }
-
   #{$field-block-selector} {
+    @extend %field;
     @extend %field-block;
   }
 
   #{$field-inline-selector} {
+    @extend %field;
     @extend %field-inline;
   }
 
