@@ -128,7 +128,10 @@ export const transpileCssBundleWithPlaceholder = (
 
   printBundleWasTranspiled(filePath);
 
-  if (bundleNameWithBackSlash === BASE_BUNDLE_WITH_BACK_SLASH) {
+  if (
+    bundleNameWithBackSlash.replaceAll("/", "\\") ===
+    BASE_BUNDLE_WITH_BACK_SLASH
+  ) {
     addBaseGlobantFile(fileMetadata, cssOutDir, jsOutDir);
   }
 };
