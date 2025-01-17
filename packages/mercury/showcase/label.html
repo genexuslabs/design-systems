@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="./assets/styles/sidebar.css" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <link rel="stylesheet" href="./assets/styles/reset.css" />
+    <link rel="stylesheet" href="./css/showcase-sass.css" />
   </head>
   <body class="showcase" data-sidebar data-bundle="utils/form">
     <script src="./assets/scripts/scripts.js"></script>
@@ -82,12 +83,12 @@
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <label class="label label--disabled">The Label Caption</label>
+                  <label class="label-disabled">The Label Caption</label>
                 </div>
                 <div class="article__code">
                   <ch-code id="ch-code-2" language="tsx" class="code"></ch-code>
                   <script>
-                    const markup2 = `<label class="label label--disabled">The Label Caption</label>`;
+                    const markup2 = `<label class="label-disabled">The Label Caption</label>`;
                     document.getElementById("ch-code-2").value = markup2;
                   </script>
                 </div>
@@ -105,9 +106,9 @@
               <div class="article__main">
                 <div class="article__content">
                   <form class="field-group">
-                    <div class="field field-block">
+                    <div class="field-block">
                       <label class="label">The Label Caption</label>
-                      <div class="dummy-control"></div>
+                      <div class="dummy-control">your control</div>
                     </div>
                   </form>
                 </div>
@@ -116,7 +117,7 @@
                   </ch-code>
                   <script>
                     const markup3 = `<form class="field-group">
-  <div class="field field-block">
+  <div class="field-block">
     <label class="label" htmlFor="control-id-1">The Label Caption</label>
     <!-- You "control-id-3" control here -->
   </div>
@@ -138,9 +139,9 @@
               <div class="article__main">
                 <div class="article__content">
                   <form class="field-group">
-                    <div class="field field-inline">
+                    <div class="field-inline">
                       <label class="label">The Label Caption</label>
-                      <div class="dummy-control"></div>
+                      <div class="dummy-control">your control</div>
                     </div>
                   </form>
                 </div>
@@ -148,7 +149,7 @@
                   <ch-code id="ch-code-4" language="tsx" class="code">
                   </ch-code>
                   <script>
-                    const markup4 = `<div class="field field-inline">
+                    const markup4 = `<div class="field-inline">
   <label class="label" htmlFor="control-id-1">The Label Caption</label>
   <!-- You "control-id-1" control here -->
 </div>`;
