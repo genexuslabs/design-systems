@@ -38,10 +38,14 @@ export class AccordionComponent {
    */
   accordions = computed(() => {
     const newAccordions = new Map<string, boolean>([
-      // ["Filled", true],
-      // ["Filled : Disabled", true],
-      // ["Filled : With Icons", true],
-      ["Filled : Disabled With Icons", true]
+      ["Filled", true],
+      ["Filled : Disabled", true],
+      ["Filled : With Icons", true],
+      ["Filled : Disabled With Icons", true],
+      ["Outlined", true],
+      ["Outlined : Disabled", true],
+      ["Outlined : With Icons", true],
+      ["Outlined : Disabled With Icons", true]
     ]);
 
     // Update the rendered accordions by watching changes for the
@@ -72,6 +76,17 @@ export class AccordionComponent {
   );
   showFilledDisabledWithIcons = computed(() =>
     this.accordions().get("Filled : Disabled With Icons")
+  );
+
+  showOutlined = computed(() => this.accordions().get("Outlined"));
+  showOutlinedDisabled = computed(() =>
+    this.accordions().get("Outlined : Disabled")
+  );
+  showOutlinedWithIcons = computed(() =>
+    this.accordions().get("Outlined : With Icons")
+  );
+  showOutlinedDisabledWithIcons = computed(() =>
+    this.accordions().get("Outlined : Disabled With Icons")
   );
 
   // TODO: This is a WA, since the Chameleon's register does not for some reason
