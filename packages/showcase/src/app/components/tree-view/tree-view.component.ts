@@ -12,10 +12,7 @@ import type {
   ChCheckboxCustomEvent,
   TreeViewModel
 } from "@genexus/chameleon-controls-library";
-import {
-  getIconPath,
-  getTreeViewImagePathCallback
-} from "@genexus/mercury/assets-manager.js";
+import { getTreeViewImagePathCallback } from "@genexus/mercury/assets-manager.js";
 
 import { treeViewMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
