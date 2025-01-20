@@ -6,7 +6,55 @@ on:
       - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
 
 jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    outputs:
+      unanimo-changed: ${{ steps.check-unanimo.outputs.version-changed }}
+      mercury-changed: ${{ steps.check-mercury.outputs.version-changed }}
+      svg-sass-generator-changed: ${{ steps.check-svg-sass-generator.outputs.version-changed }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Check if `unanimo` version changed
+        id: check-unanimo
+        run: |
+          CURRENT_VERSION=$(jq -r .version packages/unanimo/package.json)
+          PREVIOUS_VERSION=$(git show HEAD^:packages/unanimo/package.json | jq -r .version)
+          if [ "$CURRENT_VERSION" != "$PREVIOUS_VERSION" ]; then
+            echo "Version changed!"
+            echo "version-changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "version-changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check if `mercury` version changed
+        id: check-mercury
+        run: |
+          CURRENT_VERSION=$(jq -r .version packages/mercury/package.json)
+          PREVIOUS_VERSION=$(git show HEAD^:packages/mercury/package.json | jq -r .version)
+          if [ "$CURRENT_VERSION" != "$PREVIOUS_VERSION" ]; then
+            echo "Version changed!"
+            echo "version-changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "version-changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check if `svg-sass-generator` version changed
+        id: check-svg-sass-generator
+        run: |
+          CURRENT_VERSION=$(jq -r .version packages/svg-sass-generator/package.json)
+          PREVIOUS_VERSION=$(git show HEAD^:packages/svg-sass-generator/package.json | jq -r .version)
+          if [ "$CURRENT_VERSION" != "$PREVIOUS_VERSION" ]; then
+            echo "Version changed!"
+            echo "version-changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "version-changed=false" >> $GITHUB_OUTPUT
+          fi
+
   publish-unanimo:
+    needs: check-version
+    if: needs.check-version.outputs.unanimo-changed == 'true'
     uses: genexuslabs/design-systems/.github/workflows/install-and-deploy.yml@main
     with:
       node-version: "20.x"
@@ -16,6 +64,8 @@ jobs:
     secrets: inherit
 
   publish-mercury:
+    needs: check-version
+    if: needs.check-version.outputs.mercury-changed == 'true'
     uses: genexuslabs/design-systems/.github/workflows/install-and-deploy.yml@main
     with:
       node-version: "20.x"
@@ -25,6 +75,8 @@ jobs:
     secrets: inherit
 
   publish-svg-sass-generator:
+    needs: check-version
+    if: needs.check-version.outputs.svg-sass-generator-changed == 'true'
     uses: genexuslabs/design-systems/.github/workflows/install-and-deploy.yml@main
     with:
       node-version: "20.x"
