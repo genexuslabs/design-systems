@@ -7,15 +7,18 @@
 <p class="text-body-regular-l">{{ metadata.description }}</p>
 
 <ol class="filters elevation-1">
-  @for (treeViewEntry of this.accordions().entries(); track treeViewEntry[0]) {
-    @let accordionViewName = treeViewEntry[0];
+  @for (
+    accordionEntry of this.accordions().entries();
+    track accordionEntry[0]
+  ) {
+    @let accordionViewName = accordionEntry[0];
 
     <li class="filters-checkbox">
       <ch-checkbox
         [caption]="accordionViewName"
         class="checkbox"
         [checkedValue]="'true'"
-        [value]="treeViewEntry[1].toString()"
+        [value]="accordionEntry[1].toString()"
         [unCheckedValue]="'false'"
         (input)="updateRenderedAccordion(accordionViewName)($event)"
       ></ch-checkbox>
