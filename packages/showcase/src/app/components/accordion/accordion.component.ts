@@ -39,7 +39,8 @@ export class AccordionComponent {
   accordions = computed(() => {
     const newAccordions = new Map<string, boolean>([
       // ["Filled", true],
-      ["Filled Disabled", true]
+      // ["Filled : Disabled", true]
+      ["Filled : With Icons", true]
     ]);
 
     // Update the rendered accordions by watching changes for the
@@ -62,7 +63,12 @@ export class AccordionComponent {
   });
 
   showFilled = computed(() => this.accordions().get("Filled"));
-  showFilledDisabled = computed(() => this.accordions().get("Filled Disabled"));
+  showFilledDisabled = computed(() =>
+    this.accordions().get("Filled : Disabled")
+  );
+  showFilledWithIcons = computed(() =>
+    this.accordions().get("Filled : With Icons")
+  );
 
   // TODO: This is a WA, since the Chameleon's register does not for some reason
   getImagePathCallback = getImagePathCallback;

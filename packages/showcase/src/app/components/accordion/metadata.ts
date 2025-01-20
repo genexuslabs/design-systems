@@ -1,6 +1,10 @@
 import { ComponentMetadata } from "../../../common/types";
 import { chameleonImportType } from "../../../services/template-language/create-template";
-import { accordionSimpleModel, accordionWithIconsModel } from "./models";
+import {
+  accordionSimpleModel,
+  accordionWithIconsModel,
+  accordionWithIconsModelForMetadata
+} from "./models";
 
 const FILLED_CLASS = "accordion-filled";
 const OUTLINED_CLASS = "accordion-outlined";
@@ -75,6 +79,55 @@ export const accordionMetadata = {
             state: true
           },
           { name: "disabled", value: true }
+        ],
+        children: [
+          {
+            tag: "div",
+            class: "text-body-regular-m spacing-body",
+            properties: [{ name: "slot", value: "file" }],
+            children: "The File object in GeneXus is designed to handle ..."
+          },
+          {
+            tag: "div",
+            class: "text-body-regular-m spacing-body",
+            properties: [{ name: "slot", value: "domain" }],
+            children: "The Domain object in GeneXus allows developers ..."
+          },
+          {
+            tag: "div",
+            class: "text-body-regular-m spacing-body",
+            properties: [{ name: "slot", value: "procedure" }],
+            children: "The Procedure object in GeneXus is used to define ..."
+          },
+          {
+            tag: "div",
+            class: "text-body-regular-m spacing-body",
+            properties: [{ name: "slot", value: "document" }],
+            children: "The Document object in GeneXus is designed to handle ..."
+          }
+        ]
+      }
+    },
+
+    filledWithIcons: {
+      linkId: "accordion-filled-with-icons",
+      title: "1.3. Filled : With Icons",
+      states: [
+        {
+          name: "accordionModel",
+          type: "AccordionModel",
+          value: accordionWithIconsModelForMetadata
+        }
+      ],
+      template: {
+        tag: "ch-accordion-render",
+        class: "accordion-filled",
+        properties: [
+          {
+            name: "model",
+            value: "accordionWithIconsModel",
+            state: true
+          }
         ],
         children: [
           {

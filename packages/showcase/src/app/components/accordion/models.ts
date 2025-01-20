@@ -25,8 +25,7 @@ export const accordionWithIconsModel: AccordionModel = [
   {
     id: "file",
     caption: "objects: file",
-    // startImgSrc: "objects/file",
-    startImgSrc: getIconPath({ category: "objects", name: "file" }),
+    startImgSrc: "getIconPath({ category: 'objects', name: 'file' })",
     expanded: true
   },
   {
@@ -43,5 +42,29 @@ export const accordionWithIconsModel: AccordionModel = [
     id: "document",
     caption: "objects: document",
     startImgSrc: getIconPath({ category: "objects", name: "document" })
+  }
+];
+
+export const accordionWithIconsModelForMetadata: AccordionModel = [
+  {
+    id: "file",
+    caption: "objects: file",
+    startImgSrc: "getIconPath({ category: 'objects', name: 'file' })",
+    expanded: true
+  },
+  {
+    id: "domain",
+    caption: "objects: domain",
+    startImgSrc: "getIconPath({ category: 'objects', name: 'domain' })"
+  },
+  {
+    id: "procedure",
+    caption: "objects: procedure",
+    startImgSrc: "getIconPath({ category: 'objects', name: 'procedure' })"
+  },
+  {
+    id: "document",
+    caption: "objects: document",
+    startImgSrc: "getIconPath({ category: 'objects', name: 'document' })"
   }
 ];
