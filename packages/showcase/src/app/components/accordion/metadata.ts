@@ -12,7 +12,7 @@ export const accordionMetadata = {
   codeSnippets: {
     filled: {
       linkId: "accordion-filled",
-      title: "1.1. Accordion Filled",
+      title: "1.1. Filled",
       states: [
         {
           name: "accordionModel",
@@ -25,6 +25,56 @@ export const accordionMetadata = {
         class: "accordion-filled",
         properties: [
           { name: "model", value: "accordionSimpleModel", state: true }
+        ],
+        children: [
+          {
+            tag: "div",
+            class: "text-body-regular-m spacing-body",
+            properties: [{ name: "slot", value: "file" }],
+            children: "The File object in GeneXus is designed to handle ..."
+          },
+          {
+            tag: "div",
+            class: "text-body-regular-m spacing-body",
+            properties: [{ name: "slot", value: "domain" }],
+            children: "The Domain object in GeneXus allows developers ..."
+          },
+          {
+            tag: "div",
+            class: "text-body-regular-m spacing-body",
+            properties: [{ name: "slot", value: "procedure" }],
+            children: "The Procedure object in GeneXus is used to define ..."
+          },
+          {
+            tag: "div",
+            class: "text-body-regular-m spacing-body",
+            properties: [{ name: "slot", value: "document" }],
+            children: "The Document object in GeneXus is designed to handle ..."
+          }
+        ]
+      }
+    },
+
+    filledDisabled: {
+      linkId: "accordion-filled-disbled",
+      title: "1.2. Filled : Disabled",
+      states: [
+        {
+          name: "accordionModel",
+          type: "AccordionModel",
+          value: accordionSimpleModel
+        }
+      ],
+      template: {
+        tag: "ch-accordion-render",
+        class: "accordion-filled",
+        properties: [
+          {
+            name: "model",
+            value: "accordionSimpleModel",
+            state: true
+          },
+          { name: "disabled", value: true }
         ],
         children: [
           {

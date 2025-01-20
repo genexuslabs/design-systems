@@ -37,7 +37,10 @@ export class AccordionComponent {
    * migration section must be rendered.
    */
   accordions = computed(() => {
-    const newAccordions = new Map<string, boolean>([["Filled", true]]);
+    const newAccordions = new Map<string, boolean>([
+      // ["Filled", true],
+      ["Filled Disabled", true]
+    ]);
 
     // Update the rendered accordions by watching changes for the
     // hiddenAccordions query parameter
@@ -59,6 +62,7 @@ export class AccordionComponent {
   });
 
   showFilled = computed(() => this.accordions().get("Filled"));
+  showFilledDisabled = computed(() => this.accordions().get("Filled Disabled"));
 
   // TODO: This is a WA, since the Chameleon's register does not for some reason
   getImagePathCallback = getImagePathCallback;
