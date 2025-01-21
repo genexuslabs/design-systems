@@ -38,6 +38,12 @@ Mercury Design System is a robust and scalable solution designed to improve prod
 
   - [2.5. Style the base application](#25-style-the-base-application)
 
+    - [2.5.1. Adding base styles using Vite](#251-adding-base-styles-using-vite)
+
+    - [2.5.2. Adding base styles using React](#252-adding-base-styles-using-react)
+
+    - [2.5.3. Adding base styles using normal HTML](#253-adding-base-styles-using-normal-html)
+
   - [2.6. Style the components with the CSS bundles](#26-style-the-components-with-the-css-bundles)
 
   - [2.7. Set the dark and light mode](#27-set-the-darklight-mode)
