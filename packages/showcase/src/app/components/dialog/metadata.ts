@@ -138,8 +138,7 @@ export const iconMetadata = {
           },
           {
             name: "resizable",
-            value: true,
-            variable: true
+            value: true
           }
         ],
         children: {
@@ -173,13 +172,11 @@ export const iconMetadata = {
           },
           {
             name: "resizable",
-            value: true,
-            variable: true
+            value: true
           },
           {
             name: "adjustPositionAfterResize",
-            value: true,
-            variable: true
+            value: true
           }
         ],
         children: {
@@ -213,8 +210,7 @@ export const iconMetadata = {
           },
           {
             name: "modal",
-            value: false,
-            variable: true
+            value: false
           }
         ],
         children: {
