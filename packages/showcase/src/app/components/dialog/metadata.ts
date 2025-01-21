@@ -222,6 +222,41 @@ export const iconMetadata = {
           children: "Any content"
         }
       }
+    },
+
+    allowDrag: {
+      linkId: "allow-drag",
+      title: "7. Allow Drag",
+      states: [
+        {
+          name: "showDialog",
+          type: "boolean",
+          value: false,
+          stateStencil: true
+        }
+      ],
+      template: {
+        // TODO: Add support for events
+        tag: "ch-dialog",
+        class: "dialog",
+        properties: [
+          {
+            name: "show",
+            value: "showDialog",
+            state: true,
+            stateStencil: true
+          },
+          {
+            name: "allowDrag",
+            value: "box",
+            variable: true
+          }
+        ],
+        children: {
+          tag: "div",
+          children: "Any content"
+        }
+      }
     }
   }
 } as const satisfies ComponentMetadata;

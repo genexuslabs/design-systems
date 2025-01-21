@@ -345,3 +345,59 @@
     </ch-dialog>
   </code-snippet>
 }
+
+@if (showAllowDrag()) {
+  <code-snippet [codeSnippet]="codeSnippets.allowDrag" [language]="'ts'">
+    <p class="text-body-regular-s">
+      By default, the <code>ch-dialog</code> component does not support
+      dragging. You can enable dragging by setting the
+      <code>allowDragging</code> property to either <code>header</code> or
+      <code>box</code>. In the following example, <code>allowDragging</code> is
+      set to <code>box</code>, as the dialog does not have a header to drag.
+    </p>
+
+    <br />
+
+    <button
+      class="button-primary"
+      type="button"
+      (click)="showDialogAllowDrag()"
+    >
+      Show dialog
+    </button>
+
+    <ch-dialog
+      class="dialog"
+      [show]="dialogAllowDragDisplayed()"
+      (dialogClosed)="hideDialogAllowDrag()"
+      [allowDrag]="'box'"
+    >
+      <div class="spacing-body">
+        <p class="text-body-regular-m">
+          GeneXus is a low-code development platform that streamlines the
+          creation of enterprise applications by automatically generating code
+          for various environments from a single specification.
+        </p>
+
+        <br />
+
+        <p class="text-body-regular-m">
+          It's ideal for developers who want to quickly prototype, develop, and
+          deploy applications across web, mobile, and desktop platforms. With
+          its model-driven approach, GeneXus minimizes the need for manual
+          coding, allowing developers to focus on design and user experience.
+        </p>
+
+        <br />
+
+        <p class="text-body-regular-m">
+          The platform also excels in its robust integration capabilities,
+          enabling seamless connectivity with various databases and third-party
+          services. This flexibility ensures that applications built with
+          GeneXus are scalable and maintainable, reducing the time and effort
+          required for updates and enhancements.
+        </p>
+      </div>
+    </ch-dialog>
+  </code-snippet>
+}
