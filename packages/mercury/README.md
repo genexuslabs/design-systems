@@ -319,7 +319,7 @@ registerMercury();
 In Vite we can inline the base styles to improve the initial load performance.
 
 > [!TIP]
-> If the CSS bundles were created using the CLI, we recommend adding the `--avoid-hash=base/base` to avoid hashing the base CSS bundle and thus facilitating the path for the base CSS bundle.
+> If the CSS bundles were created using the CLI, we recommend adding the --avoid-hash=base/base to avoid hashing the base CSS bundle and thus make the path to the base CSS bundle simpler.
 
 ```html
 <!DOCTYPE html>
@@ -336,7 +336,7 @@ In Vite we can inline the base styles to improve the initial load performance.
 #### 2.5.2. Adding base styles using React
 
 > [!TIP]
-> If the CSS bundles were created using the CLI, we recommend adding the `--avoid-hash=base/base` to avoid hashing the base CSS bundle and thus facilitating the path for the base CSS bundle.
+> If the CSS bundles were created using the CLI, we recommend adding the --avoid-hash=base/base to avoid hashing the base CSS bundle and thus make the path to the base CSS bundle simpler.
 
 ```ts
 // App.tsx
@@ -361,7 +361,7 @@ import "{{ CSS outDir path }}/base/base.css";
 
 ### 2.6. Style the components with the CSS bundles
 
-[Chameleon](https://github.com/genexuslabs/chameleon-controls-library) provides the `ch-theme` component, a component to download and reuse the CSS bundles across the application.
+[Chameleon](https://github.com/genexuslabs/chameleon-controls-library) provides the `ch-theme` component, a component for downloading and using the CSS bundles in the application.
 
 Refer to the showcase to see
 
@@ -405,7 +405,7 @@ The following table list describes all CSS bundles.
 | `components/combo-box`         | Styles for the [combo-box](https://mercury-showcase.genexus.com/mercury/components/combo-box) component                                                                                             |
 | `components/dialog`            | Styles for the [dialog](https://mercury-showcase.genexus.com/mercury/components/dialog) component                                                                                                   |
 | `components/dropdown`          | Styles for the dropdown component                                                                                                                                                                   |
-| `components/edit`              | Styles for the [input](https://mercury-showcase.genexus.com/mercury/components/input) and [search](https://mercury-showcase.genexus.com/mercury/components/input) components                        |
+| `components/edit`              | Styles for the [input](https://mercury-showcase.genexus.com/mercury/components/input) and [search](https://mercury-showcase.genexus.com/mercury/components/search) components                       |
 | `components/flexible-layout`   | Styles for the flexible layout component                                                                                                                                                            |
 | `components/icon`              | Styles for the [icon](https://mercury-showcase.genexus.com/mercury/components/icon) component                                                                                                       |
 | `components/layout-splitter`   | Styles for the layout splitter component                                                                                                                                                            |
@@ -415,9 +415,9 @@ The following table list describes all CSS bundles.
 | `components/pills`             | Styles for the [pills](https://mercury-showcase.genexus.com/mercury/components/pills) component                                                                                                     |
 | `components/radio-group`       | Styles for the [radio group](https://mercury-showcase.genexus.com/mercury/components/radio-group) component                                                                                         |
 | `components/segmented-control` | Styles for the segmented control component                                                                                                                                                          |
-| `components/sidebar`           | Styles for the [sidebar](https://mercury-showcase.genexus.com/mercury/components/sidebar) component                                                                                                 |
+| `components/sidebar`           | Styles for the sidebar component                                                                                                                                                                    |
 | `components/slider`            | Styles for the [slider](https://mercury-showcase.genexus.com/mercury/components/slider) component                                                                                                   |
-| `components/switch`            | Styles for the [switch](https://mercury-showcase.genexus.com/mercury/components/switch) component                                                                                                   |
+| `components/switch`            | Styles for the switch component                                                                                                                                                                     |
 | `components/tab`               | Styles for the [tab](https://mercury-showcase.genexus.com/mercury/components/tab) component                                                                                                         |
 | `components/tabular-grid`      | Styles for the [tabular grid](https://mercury-showcase.genexus.com/mercury/components/tabular-grid) and                                                                                             |
 | `components/ticket-list`       | Styles for the ticket list component                                                                                                                                                                |
