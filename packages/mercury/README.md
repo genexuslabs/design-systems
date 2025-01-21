@@ -10,11 +10,32 @@ Mercury Design System is a robust and scalable solution designed to improve prod
 - Full RTL and internationalization support.
 - Open source.
 
+## Contents
+
+- [1. Installation](#1-installation)
+
+- [2. Usage](#2-usage)
+
+  - [2.1. Copy icons and custom fonts](#21-copy-icons-and-custom-fonts)
+    - [2.1.1. Copying assets with Vite](#211-copying-assets-with-vite)
+    - [2.1.2. Copying assets with StencilJS](#212-copying-assets-with-stenciljs)
+  - [2.2. Create the CSS bundles](#22-creating-the-css-bundles)
+    - [2.2.1. Using the CLI to create the CSS bundles](#221-using-the-cli-to-create-the-bundles)
+    - [2.2.2. Using SASS to transpile the CSS bundles](#222-generating-the-css-using-sass)
+    - [2.2.3. Using already generated CSS bundles](#223-using-already-generated-css)
+  - [2.3. Register Mercury and Chameleon utilities](#23-register-mercury-and-chameleon-utilities)
+  - [2.4. Style the base application](#24-style-the-base-application)
+  - [2.5. Style the components with the CSS bundles](#25-style-the-components-with-the-css-bundles)
+
+- [3. CLI flags](#3-cli-flags)
+
 ## 1. Installation
 
 ```bash
 npm i @genexus/mercury
 ```
+
+s
 
 ## 2. Usage
 
@@ -98,13 +119,13 @@ export const config: Config = {
 };
 ```
 
-### 2.2. Creating the CSS bundles
+### 2.2. Create the CSS bundles
 
 After you have defined the path for the icons and custom fonts, you must create the CSS bundles with the path to those assets.
 
 In the following sections we provide examples of how to create these bundles.
 
-### 2.2.1. Using the CLI to create the bundles
+### 2.2.1. Using the CLI to create the CSS bundles
 
 > [!IMPORTANT]  
 > This is the way we recommend to create the bundles.
@@ -158,7 +179,7 @@ Using the CLI:
    // Other Mercury and Chameleon utilities...
    ```
 
-### 2.2.2. Generating the CSS using SASS
+### 2.2.2. Using SASS to transpile the CSS bundles
 
 > [!IMPORTANT]  
 > We don't recommend this way, because the CLI does this under the hood in a much better and faster way. Also, this way does not hash the generated CSS, which leads to cache issues when re-deploying your application after updating your version of Mercury.
@@ -190,7 +211,7 @@ Using the CLI:
     npx sass --load-path=src --no-source-map --style compressed node_modules/@genexus/mercury/dist/bundles/scss:src/assets/generated
     ```
 
-### 2.2.3. Using already generated CSS
+### 2.2.3. Using already generated CSS bundles
 
 > [!IMPORTANT]  
 > We don't recommend this way, because the generated CSS contains fixed paths for the assets and the CSS names don't contain a hash, which leads to cache issues when re-deploying your application after updating your version of Mercury.
