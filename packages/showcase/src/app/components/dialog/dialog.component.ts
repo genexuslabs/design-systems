@@ -42,6 +42,7 @@ export class DialogComponent {
   dialogWithFooterDisplayed = signal(false);
   dialogResizableDisplayed = signal(false);
   dialogAdjustPositionDisplayed = signal(false);
+  dialogNonModalDisplayed = signal(false);
 
   showDialogDefault = () => this.dialogDefaultDisplayed.set(true);
   hideDialogDefault = () => this.dialogDefaultDisplayed.set(false);
@@ -59,6 +60,9 @@ export class DialogComponent {
   hideDialogAdjustPosition = () =>
     this.dialogAdjustPositionDisplayed.set(false);
 
+  showDialogNonModal = () => this.dialogNonModalDisplayed.set(true);
+  hideDialogNonModal = () => this.dialogNonModalDisplayed.set(false);
+
   hiddenDialogs = input<string>("");
 
   /**
@@ -70,8 +74,9 @@ export class DialogComponent {
       // ["Default", true],
       // ["With Header", true],
       // ["With Footer", true],
-      // ["Resizable", true]
-      ["Adjust Position", true]
+      // ["Resizable", true],
+      // ["Adjust Position", true],
+      ["Non Modal", true]
     ]);
 
     // Update the rendered migrations by watching changes for the
@@ -98,6 +103,7 @@ export class DialogComponent {
   showWithFooter = computed(() => this.dialogs().get("With Footer"));
   showResizable = computed(() => this.dialogs().get("Resizable"));
   showAdjustPosition = computed(() => this.dialogs().get("Adjust Position"));
+  showNonModal = computed(() => this.dialogs().get("Non Modal"));
 
   updateRenderedDialog =
     (dialogName: string) => (event: ChCheckboxCustomEvent<string>) => {

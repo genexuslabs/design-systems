@@ -187,6 +187,41 @@ export const iconMetadata = {
           children: "Any content"
         }
       }
+    },
+
+    nonModal: {
+      linkId: "non-modal",
+      title: "6. Non Modal",
+      states: [
+        {
+          name: "showDialog",
+          type: "boolean",
+          value: false,
+          stateStencil: true
+        }
+      ],
+      template: {
+        // TODO: Add support for events
+        tag: "ch-dialog",
+        class: "dialog",
+        properties: [
+          {
+            name: "show",
+            value: "showDialog",
+            state: true,
+            stateStencil: true
+          },
+          {
+            name: "modal",
+            value: false,
+            variable: true
+          }
+        ],
+        children: {
+          tag: "div",
+          children: "Any content"
+        }
+      }
     }
   }
 } as const satisfies ComponentMetadata;
