@@ -2,18 +2,20 @@
   --ch-navigation-list-item__tooltip-separation-x: var(--mer-spacing--2xs);
 
   --ch-navigation-list-item-custom-padding-inline-start: calc(
-    var(--mer-spacing--xs) + var(--mer-spacing--3xs)
+    var(--mer-spacing--xs) - 1px
   );
   --ch-navigation-list-item-gap: var(--mer-spacing--xs);
   --ch-navigation-list-item-expand-collapse-duration: 200ms;
 
-  --ch-navigation-list-item__image-size: 20px;
+  --ch-navigation-list-item__image-size: var(--mer-spacing--md);
   --ch-navigation-list-item__expandable-button-size: 20px;
   --ch-navigation-list-item__expandable-button-image-size: calc(
     var(--mer-spacing--md) - var(--mer-spacing--3xs)
   );
 
   color: var(--item__color);
+  line-height: var(--mer-spacing--md);
+  gap: var(--mer-spacing--sm);
 
   &-item-action {
     padding-block: var(--mer-spacing--xs);
@@ -23,8 +25,9 @@
   &-item-tooltip {
     padding-block: var(--mer-spacing--2xs);
     padding-inline: var(--mer-spacing--xs);
-    background-color: var(--mer-color__neutral-gray--800);
+    background-color: var(--mer-color__neutral-gray--1000);
     border-radius: var(--mer-border__radius--sm);
+    box-shadow: 4px 4px 12px 0px #00000033;
     color: var(--mer-color__neutral-gray--300);
     font-size: var(--mer-font__size--xs);
   }
@@ -43,12 +46,19 @@
   }
 
   &-item-link {
+    padding-inline-end: calc(var(--mer-spacing--xs) - 1px);
+    padding-block: calc(var(--mer-spacing--xs) - 1px);
+    border: 1px solid transparent;
+    border-radius: 4px;
+
     &--selected {
-      background-color: var(--item__bg-color--selected-hover);
+      background-color: var(--item__bg-color--selected);
+      border-color: var(--item__border-color--selected);
+      color: var(--mer-accent__primary);
     }
 
     &--hover-not-selected {
-      background-color: var(--item__bg-color--hover);
+      color: var(--mer-accent__primary);
     }
   }
 }
@@ -57,6 +67,7 @@
   $navigation-list-selector: ".navigation-list",
   $item-action-selector: ".navigation-list::part(item__action)",
   $item-button-selector: ".navigation-list::part(item__button)",
+  $item-link-selector: ".navigation-list::part(item__link)",
   $item-link-not-selected-selector:
     ".navigation-list::part(item__link not-selected)",
   $item-link-selected-selector: ".navigation-list::part(item__link selected)",
@@ -80,6 +91,10 @@
 
   #{$item-link-selected-selector} {
     @extend %navigation-list-item-link--selected;
+  }
+
+  #{$item-link-selector} {
+    @extend %navigation-list-item-link;
   }
 
   #{$item-link-not-selected-selector}:hover {

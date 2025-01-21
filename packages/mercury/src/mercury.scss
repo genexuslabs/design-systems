@@ -46,9 +46,11 @@
 @import "./components/code/code-styles";
 @import "./components/combo-box/combo-box-styles";
 @import "./components/dialog/dialog-styles";
+@import "./components/dropdown/dropdown-styles";
 @import "./components/flexible-layout/flexible-layout-styles";
 @import "./components/icon/icon-styles";
 @import "./components/input/input-styles";
+@import "./components/layout-splitter/layout-splitter-styles";
 @import "./components/list-box/list-box-styles";
 @import "./components/markdown-viewer/markdown-viewer-styles";
 @import "./components/navigation-list/navigation-list-styles";
@@ -63,6 +65,7 @@
 @import "./components/tabular-grid/tabular-grid-styles";
 @import "./components/tabular-grid/helpers";
 @import "./components/ticket-list/ticket-list-styles";
+@import "./components/switch/switch-styles";
 @import "./components/tooltip/tooltip-styles";
 @import "./components/tree-view/tree-view-styles";
 @import "./components/widget/widget-styles";
@@ -121,9 +124,11 @@
   $code: true,
   $combo-box: true,
   $dialog: true,
+  $dropdown: true,
   $edit: true,
   $flexible-layout: true,
   $icon: true,
+  $layout-splitter: true,
   $list-box: true,
   $markdown-viewer: true,
   $navigation-list: true,
@@ -135,6 +140,7 @@
   $tab: true,
   $tabular-grid: true,
   $ticket-list: true,
+  $switch: true,
   $tooltip: true,
   $tree-view: true,
   $widget: true
@@ -500,6 +506,10 @@
     @include dialog();
   }
 
+  @if $dropdown {
+    @include dropdown();
+  }
+
   @if $edit {
     @include input();
   }
@@ -510,6 +520,10 @@
 
   @if $icon {
     @include icon();
+  }
+
+  @if $layout-splitter {
+    @include layout-splitter();
   }
 
   @if $list-box {
@@ -556,6 +570,11 @@
 
   @if $ticket-list {
     @include ticket-list();
+  }
+
+  @if $switch {
+    @include switch-small();
+    @include switch-large();
   }
 
   @if $tooltip {
@@ -625,9 +644,11 @@
   $code: false,
   $combo-box: false,
   $dialog: false,
+  $dropdown: false,
   $edit: false,
   $flexible-layout: false,
   $icon: false,
+  $layout-splitter: false,
   $list-box: false,
   $markdown-viewer: false,
   $navigation-list: false,
@@ -639,6 +660,7 @@
   $tab: false,
   $tabular-grid: false,
   $ticket-list: false,
+  $switch: false,
   $tooltip: false,
   $tree-view: false,
   $widget: false
@@ -697,9 +719,11 @@
     $code: $code,
     $combo-box: $combo-box,
     $dialog: $dialog,
+    $dropdown: $dropdown,
     $edit: $edit,
     $flexible-layout: $flexible-layout,
     $icon: $icon,
+    $layout-splitter: $layout-splitter,
     $list-box: $list-box,
     $markdown-viewer: $markdown-viewer,
     $navigation-list: $navigation-list,
@@ -711,6 +735,7 @@
     $tab: $tab,
     $tabular-grid: $tabular-grid,
     $ticket-list: $ticket-list,
+    $switch: $switch,
     $tooltip: $tooltip,
     $tree-view: $tree-view,
     $widget: $widget

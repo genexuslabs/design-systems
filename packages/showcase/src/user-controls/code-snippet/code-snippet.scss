@@ -1,0 +1,13 @@
+code-snippet {
+  display: grid;
+
+  > section > h2,
+  > section > h3 {
+    margin-block-end: var(--mer-spacing--md, var(--spacing--l));
+  }
+}
+
+.code-snippet-before-and-after {
+  display: grid;
+  grid-template-rows: max-content max-content;
+}

@@ -1,62 +1,15 @@
-import { ThemeModel } from "@genexus/chameleon-controls-library";
-import { ThemeItemModel } from "@genexus/chameleon-controls-library/dist/types/components/theme/theme-types";
-
-export type MercuryBundles =
-  | [MercuryBundleReset, ...MercuryBundleOptimized[]]
-  | [MercuryBundleReset, ...MercuryBundleFull[]];
-
-export type MercuryBundleOptimized =
-  | MercuryBundleComponent
-  | MercuryBundleComponentForm
-  | MercuryBundleUtil;
-
-export type MercuryBundleFull =
-  | MercuryBundleComponent
-  | MercuryBundleUtil
-  | MercuryBundleUtilFormFull;
-
-export type MercuryBundleBase = "base/base" | "base/icons";
-
-export type MercuryBundleComponent =
-  | "components/accordion"
-  | "components/chat"
-  | "components/code"
-  | "components/dialog"
-  | "components/flexible-layout"
-  | "components/list-box"
-  | "components/markdown-viewer"
-  | "components/navigation-list"
-  | "components/pills"
-  | "components/segmented-control"
-  | "components/sidebar"
-  | "components/tab"
-  | "components/tabular-grid"
-  | "components/ticket-list"
-  | "components/tooltip"
-  | "components/tree-view"
-  | "components/widget";
-
-export type MercuryBundleComponentForm =
-  | "components/button"
-  | "components/checkbox"
-  | "components/combo-box"
-  | "components/edit"
-  | "components/icon"
-  | "components/radio-group"
-  | "components/slider";
-
-export type MercuryBundleReset = "resets/box-sizing";
-
-export type MercuryBundleUtil =
-  | "utils/elevation"
-  | "utils/form"
-  | "utils/layout"
-  | "utils/spacing"
-  | "utils/typography"
-  // TODO: Use "utils/scrollbar" when the ch-theme supports aliases
-  | "chameleon/scrollbar";
-
-export type MercuryBundleUtilFormFull = "utils/form--full";
+import type { ThemeModel } from "@genexus/chameleon-controls-library";
+import type { ThemeItemModel } from "@genexus/chameleon-controls-library/dist/types/components/theme/theme-types.d.ts";
+import type {
+  MercuryBundleComponent,
+  MercuryBundleComponentForm,
+  MercuryBundleFull,
+  MercuryBundleMapping,
+  MercuryBundleOptimized,
+  MercuryBundleReset,
+  MercuryBundleUtil,
+  MercuryBundleUtilFormFull
+} from "./types.ts";
 
 type BundleNames =
   | MercuryBundleComponent
@@ -65,21 +18,34 @@ type BundleNames =
   | MercuryBundleUtil
   | MercuryBundleUtilFormFull;
 
-const getThemeModelItem = <T extends BundleNames>(
+let bundleMappings: MercuryBundleMapping | undefined;
+
+const getThemeModelItem = <T extends BundleNames, S extends string>(
   basePath: string,
   bundleName: T,
+  bundleNamePrefix: S | undefined,
   attachStyleSheet: boolean | undefined = undefined
-) =>
-  attachStyleSheet === undefined
+) => {
+  const themeName = bundleNamePrefix
+    ? bundleNamePrefix + bundleName
+    : bundleName;
+
+  const bundleNameWithHash = bundleMappings
+    ? bundleMappings[bundleName]
+    : bundleName;
+  const bundleURL = `${basePath}${bundleNameWithHash}.css`;
+
+  return attachStyleSheet === undefined
     ? ({
-        name: bundleName,
-        url: `${basePath}${bundleName}.css`
+        name: themeName,
+        url: bundleURL
       } as const satisfies ThemeItemModel)
     : ({
-        name: bundleName,
-        url: `${basePath}${bundleName}.css`,
+        name: themeName,
+        url: bundleURL,
         attachStyleSheet
       } as const satisfies ThemeItemModel);
+};
 
 /**
  * Given the basePath, returns all bundles (except base and icons) in the
@@ -97,46 +63,64 @@ const getThemeModelItem = <T extends BundleNames>(
  *   </body>
  * ```
  */
-export const getThemeBundles = (basePath: string) =>
+export const getThemeBundles = (basePath: string, bundleNamePrefix?: string) =>
   [
     // Components
-    getThemeModelItem(basePath, "components/accordion"),
-    getThemeModelItem(basePath, "components/button"),
-    getThemeModelItem(basePath, "components/chat"),
-    getThemeModelItem(basePath, "components/checkbox"),
-    getThemeModelItem(basePath, "components/code"),
-    getThemeModelItem(basePath, "components/combo-box"),
-    getThemeModelItem(basePath, "components/flexible-layout"),
-    getThemeModelItem(basePath, "components/dialog"),
-    getThemeModelItem(basePath, "components/icon"),
-    getThemeModelItem(basePath, "components/edit"),
-    getThemeModelItem(basePath, "components/list-box"),
-    getThemeModelItem(basePath, "components/markdown-viewer", false),
-    getThemeModelItem(basePath, "components/navigation-list"),
-    getThemeModelItem(basePath, "components/pills"),
-    getThemeModelItem(basePath, "components/radio-group"),
-    getThemeModelItem(basePath, "components/segmented-control"),
-    getThemeModelItem(basePath, "components/sidebar"),
-    getThemeModelItem(basePath, "components/slider"),
-    getThemeModelItem(basePath, "components/tab"),
-    getThemeModelItem(basePath, "components/tabular-grid"),
-    getThemeModelItem(basePath, "components/ticket-list"),
-    getThemeModelItem(basePath, "components/tooltip"),
-    getThemeModelItem(basePath, "components/tree-view"),
-    getThemeModelItem(basePath, "components/widget"),
+    getThemeModelItem(basePath, "components/accordion", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/button", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/chat", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/checkbox", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/code", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/combo-box", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/flexible-layout", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/dialog", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/dropdown", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/icon", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/edit", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/layout-splitter", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/list-box", bundleNamePrefix),
+    getThemeModelItem(
+      basePath,
+      "components/markdown-viewer",
+      bundleNamePrefix,
+      false
+    ),
+    getThemeModelItem(basePath, "components/navigation-list", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/pills", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/radio-group", bundleNamePrefix),
+    getThemeModelItem(
+      basePath,
+      "components/segmented-control",
+      bundleNamePrefix
+    ),
+    getThemeModelItem(basePath, "components/sidebar", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/slider", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/switch", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/tab", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/tabular-grid", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/ticket-list", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/tooltip", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/tree-view", bundleNamePrefix),
+    getThemeModelItem(basePath, "components/widget", bundleNamePrefix),
 
     // Resets
-    getThemeModelItem(basePath, "resets/box-sizing"),
+    getThemeModelItem(basePath, "resets/box-sizing", bundleNamePrefix),
 
     // Utils
-    getThemeModelItem(basePath, "utils/form"),
-    getThemeModelItem(basePath, "utils/elevation"),
-    getThemeModelItem(basePath, "utils/form--full"),
-    getThemeModelItem(basePath, "utils/layout"),
-    getThemeModelItem(basePath, "utils/spacing"),
-    getThemeModelItem(basePath, "utils/typography"),
-    getThemeModelItem(basePath, "chameleon/scrollbar")
+    getThemeModelItem(basePath, "utils/form", bundleNamePrefix),
+    getThemeModelItem(basePath, "utils/elevation", bundleNamePrefix),
+    getThemeModelItem(basePath, "utils/form--full", bundleNamePrefix),
+    getThemeModelItem(basePath, "utils/layout", bundleNamePrefix),
+    getThemeModelItem(basePath, "utils/spacing", bundleNamePrefix),
+    getThemeModelItem(basePath, "utils/typography", bundleNamePrefix),
+    getThemeModelItem(basePath, "chameleon/scrollbar", bundleNamePrefix)
   ] as const satisfies ThemeModel;
+
+const addPrefixToBundleNames = (
+  bundles: MercuryBundleOptimized[] | MercuryBundleFull[],
+  bundleNamePrefix?: string
+) =>
+  bundleNamePrefix ? bundles.map(bundle => bundleNamePrefix + bundle) : bundles;
 
 /**
  * Given the bundles array and the basePath (optional), returns the given
@@ -156,7 +140,8 @@ export const getThemeBundles = (basePath: string) =>
  *     "utils/form",
  *     "utils/layout",
  *   ],
- *   "./assets/css/"
+ *   "./assets/css/", (optional)
+ *   "mercury" (optional)
  * );
  *
  * HTML/render/template:
@@ -168,8 +153,22 @@ export const getThemeBundles = (basePath: string) =>
  */
 export const getBundles = (
   bundles: MercuryBundleOptimized[] | MercuryBundleFull[],
-  basePath?: string
+  basePath?: string,
+  bundleNamePrefix?: string
 ): ThemeModel =>
   basePath
-    ? bundles.map(bundle => getThemeModelItem(basePath, bundle))
-    : bundles;
+    ? bundles.map(bundle =>
+        getThemeModelItem(basePath, bundle, bundleNamePrefix)
+      )
+    : addPrefixToBundleNames(bundles, bundleNamePrefix);
+
+/**
+ * Establish the mapping between the bundle name and its generated hash.
+ *
+ * If the bundles are created with the CLI that provides Mercury
+ * (`mercury` command), this mapping must be set to download the right bundles
+ * with the ch-theme component.
+ */
+export const setBundleMapping = (mappings: MercuryBundleMapping) => {
+  bundleMappings = mappings;
+};

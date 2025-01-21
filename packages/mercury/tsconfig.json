@@ -3,10 +3,10 @@
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["ES2022"],
+    "lib": ["ESNext"],
     "moduleResolution": "node",
     "module": "esnext",
-    "target": "ES2022",
+    "target": "ESNext",
 
     "declaration": true,
     "outDir": "dist/",
@@ -23,6 +23,6 @@
     "noUnusedParameters": true,
     "strict": true
   },
-  "include": ["src/assets-manager.ts"],
+  "include": ["src/index.ts", "src/cli/*"],
   "exclude": ["node_modules"]
 }
