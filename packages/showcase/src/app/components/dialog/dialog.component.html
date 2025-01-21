@@ -169,4 +169,72 @@
   </code-snippet>
 }
 
-@if (showResizable()) {}
+@if (showResizable()) {
+  <code-snippet [codeSnippet]="codeSnippets.resizable" [language]="'ts'">
+    <p class="text-body-regular-s">
+      <code>resizable</code> allows you to resize the dialog by dragging from
+      the edges. You might want in this case to set maximum and minimum block
+      and inline sizes. For this, the <code>ch-dialog</code> provides specific
+      CSS custom properties that you should use:
+    </p>
+
+    <ul>
+      <li>
+        <code>--ch-dialog-max-block-size</code>
+      </li>
+      <li>
+        <code>--ch-dialog-max-inline-size</code>
+      </li>
+      <li>
+        <code>--ch-dialog-min-block-size</code>
+      </li>
+      <li>
+        <code>--ch-dialog-min-inline-size</code>
+      </li>
+    </ul>
+    <br />
+
+    <button
+      class="button-primary"
+      type="button"
+      (click)="showDialogResizable()"
+    >
+      Show dialog
+    </button>
+
+    <ch-dialog
+      class="dialog"
+      [show]="dialogResizableDisplayed()"
+      [resizable]="true"
+      (dialogClosed)="hideDialogResizable()"
+      [ngStyle]="customDialogProperties"
+    >
+      <div class="spacing-body">
+        <p class="text-body-regular-m">
+          GeneXus is a low-code development platform that streamlines the
+          creation of enterprise applications by automatically generating code
+          for various environments from a single specification.
+        </p>
+
+        <br />
+
+        <p class="text-body-regular-m">
+          It's ideal for developers who want to quickly prototype, develop, and
+          deploy applications across web, mobile, and desktop platforms. With
+          its model-driven approach, GeneXus minimizes the need for manual
+          coding, allowing developers to focus on design and user experience.
+        </p>
+
+        <br />
+
+        <p class="text-body-regular-m">
+          The platform also excels in its robust integration capabilities,
+          enabling seamless connectivity with various databases and third-party
+          services. This flexibility ensures that applications built with
+          GeneXus are scalable and maintainable, reducing the time and effort
+          required for updates and enhancements.
+        </p>
+      </div>
+    </ch-dialog>
+  </code-snippet>
+}

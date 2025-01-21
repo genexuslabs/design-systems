@@ -28,12 +28,19 @@ export class DialogComponent {
   commonLinks = inject(RouterCommonLinksService);
   router = inject(Router);
 
+  customDialogProperties = {
+    "--ch-dialog-max-block-size": "600px",
+    "--ch-dialog-max-inline-size": "800px",
+    "--ch-dialog-min-block-size": "200px",
+    "--ch-dialog-min-inline-size": "400px"
+  };
   metadata = iconMetadata;
   codeSnippets = iconMetadata.codeSnippets;
 
   dialogDefaultDisplayed = signal(false);
   dialogWithHeaderDisplayed = signal(false);
   dialogWithFooterDisplayed = signal(false);
+  dialogResizableDisplayed = signal(false);
 
   showDialogDefault = () => this.dialogDefaultDisplayed.set(true);
   hideDialogDefault = () => this.dialogDefaultDisplayed.set(false);
@@ -43,6 +50,9 @@ export class DialogComponent {
 
   showDialogWithFooter = () => this.dialogWithFooterDisplayed.set(true);
   hideDialogWithFooter = () => this.dialogWithFooterDisplayed.set(false);
+
+  showDialogResizable = () => this.dialogResizableDisplayed.set(true);
+  hideDialogResizable = () => this.dialogResizableDisplayed.set(false);
 
   hiddenDialogs = input<string>("");
 
