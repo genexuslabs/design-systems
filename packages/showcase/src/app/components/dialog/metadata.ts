@@ -31,8 +31,8 @@ export const iconMetadata = {
     },
 
     header: {
-      linkId: "header",
-      title: "2. Header",
+      linkId: "with-header",
+      title: "2. With Header",
       states: [
         {
           name: "showDialog",
@@ -64,8 +64,8 @@ export const iconMetadata = {
     },
 
     footer: {
-      linkId: "footer",
-      title: "3. Footer",
+      linkId: "with-footer",
+      title: "3. With Footer",
       states: [
         {
           name: "showDialog",

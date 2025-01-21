@@ -53,8 +53,8 @@ export class DialogComponent {
   dialogs = computed(() => {
     const newMigrations = new Map<string, boolean>([
       ["Default", true],
-      ["Header", true],
-      ["Footer", true],
+      ["With Header", true],
+      ["With Footer", true],
       ["Resizable", true]
     ]);
 
@@ -78,8 +78,8 @@ export class DialogComponent {
   });
 
   showDefault = computed(() => this.dialogs().get("Default"));
-  showHeader = computed(() => this.dialogs().get("Header"));
-  showFooter = computed(() => this.dialogs().get("Footer"));
+  showHeader = computed(() => this.dialogs().get("With Header"));
+  showFooter = computed(() => this.dialogs().get("With Footer"));
   showResizable = computed(() => this.dialogs().get("Resizable"));
 
   updateRenderedDialog =
