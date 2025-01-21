@@ -20,11 +20,11 @@ Mercury Design System is a robust and scalable solution designed to improve prod
 
   - [2.2. Create the CSS bundles](#22-create-the-css-bundles)
 
-    - [2.2.1. Using the CLI to create the CSS bundles](#221-using-the-cli-to-create-the-bundles)
+    - [2.2.1. Using the CLI to create the CSS bundles](#221-using-the-cli-to-create-the-css-bundles)
 
-    - [2.2.2. Using SASS to transpile the CSS bundles](#222-generating-the-css-using-sass)
+    - [2.2.2. Using SASS to transpile the CSS bundles](#222-using-sass-to-transpile-the-css-bundles)
 
-    - [2.2.3. Using already generated CSS bundles](#223-using-already-generated-css)
+    - [2.2.3. Using already generated CSS bundles](#223-using-already-generated-css-bundles)
 
   - [2.3. Copy the CSS bundles, custom fonts and icons to the dev and prod builds](#23-copy-the-css-bundles-custom-fonts-and-icons-to-the-dev-and-prod-builds)
 
@@ -34,7 +34,7 @@ Mercury Design System is a robust and scalable solution designed to improve prod
 
     - [2.3.3. Copying assets with Vite](#233-copying-assets-with-vite)
 
-  - [2.4. Register Mercury and Chameleon utilities to use the icons](#24-register-mercury-and-chameleon-utilities)
+  - [2.4. Register Mercury and Chameleon utilities to use the icons](#24-register-mercury-and-chameleon-utilities-to-use-the-icons)
 
   - [2.5. Style the base application](#25-style-the-base-application)
 
