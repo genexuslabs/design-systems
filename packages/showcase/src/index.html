@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <title>Showcase</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.png" />
+    <style>
+      :root:not(.hydrated),
+      app-root > .data-bundle-loaded,
+      .main-content:has(> runtime-bundles:not(.data-bundle-loaded)) {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+<header>
+  <h1 class="heading-1">Icons</h1>
+</header>
+
+<runtime-bundles [bundles]="['components/checkbox', 'components/edit']" />
+
+<ol class="filters elevation-1">
+  @for (
+    categoryEntry of this.categoriesToRender().entries();
+    track categoryEntry[0]
+  ) {
+    @let categoryName = categoryEntry[0];
+
+    <li class="filters-checkbox">
+      <ch-checkbox
+        [caption]="categoryName"
+        class="checkbox"
+        [checkedValue]="'true'"
+        [value]="categoryEntry[1].toString()"
+        [unCheckedValue]="'false'"
+        (input)="updateRenderedCategory(categoryName)($event)"
+      ></ch-checkbox>
+    </li>
+  }
+</ol>
+
+@for (
+  category of filteredAssets();
+  track category.categoryName;
+  let categoryIndex = $index
+) {
+  @let categoryName = category.categoryName;
+  @let categoryTitlePrefix = categoryIndex + 1 + ".";
+
+  @if (this.categoriesToRender().get(categoryName)) {
+    <section [attr.aria-labelledby]="categoryName" class="section-icons">
+      <h2 [id]="categoryName" class="heading-2">
+        <a routerLink="." [fragment]="categoryName">
+          {{ categoryTitlePrefix + " " + categoryName }}
+        </a>
+      </h2>
+
+      <p class="text-body-regular-m">
+        {{ categoryExplanation()[categoryName] }}
+      </p>
+
+      @for (
+        iconWithColorType of category.icons;
+        track iconWithColorType.iconName;
+        let iconIndex = $index
+      ) {
+        @let iconName = iconWithColorType.iconName;
+        @let iconTitlePrefix = categoryTitlePrefix + (iconIndex + 1) + ".";
+
+        <section
+          [attr.aria-labelledby]="iconName"
+          [class.section-icons]="true"
+          [class.section-icons__color-type-with-states]="
+            !!iconWithColorType.colorType.colorType
+          "
+        >
+          <h3 [id]="iconName" class="heading-3">
+            <a routerLink="." [fragment]="categoryName + '-' + iconName">
+              {{ iconTitlePrefix + " " + iconName }}
+            </a>
+          </h3>
+
+          @if (iconWithColorType.colorType.colorType) {
+            @for (
+              colorTypeWithStates of iconWithColorType.colorType.colorType;
+              track $index;
+              let typeIndex = $index
+            ) {
+              @let type = colorTypeWithStates.type;
+
+              <section
+                [attr.aria-labelledby]="type"
+                class="section-icons group"
+              >
+                <h4 [id]="type" class="heading-4">
+                  <a
+                    routerLink="."
+                    [fragment]="categoryName + '-' + iconName + '-' + type"
+                  >
+                    {{ type }}
+                  </a>
+                </h4>
+
+                @for (onlyStates of colorTypeWithStates.states; track $index) {
+                  <span class="state" [style.--icon-path]="onlyStates.img">{{
+                    onlyStates.state
+                  }}</span>
+                }
+              </section>
+            }
+          } @else {
+            @for (
+              onlyStates of iconWithColorType.colorType.states;
+              track $index
+            ) {
+              <span class="state">{{ onlyStates.state }}</span>
+            }
+          }
+        </section>
+      }
+    </section>
+  }
+}

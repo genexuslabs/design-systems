@@ -1,0 +1,34 @@
+<section [attr.aria-labelledby]="linkId()">
+  @if (headingLevel() === 2) {
+    <h2 [id]="linkId()" class="heading-3">
+      <a routerLink="." [fragment]="linkId()">{{ title() }}</a>
+    </h2>
+  } @else {
+    <h3 [id]="linkId()" class="heading-3">
+      <a routerLink="." [fragment]="linkId()">{{ title() }}</a>
+    </h3>
+  }
+
+  <ng-content />
+
+  @if (codeTemplate()) {
+    <copy-code [language]="language()" [value]="codeTemplate()!"></copy-code>
+  }
+
+  @if (codeTemplateBefore() && codeTemplateAfter()) {
+    <div class="code-snippet-before-and-after">
+      <copy-code
+        [copyButton]="false"
+        [label]="'BEFORE'"
+        [language]="languageBefore()"
+        [value]="codeTemplateBefore()!"
+      ></copy-code>
+
+      <copy-code
+        [language]="languageAfter()"
+        [label]="'AFTER'"
+        [value]="codeTemplateAfter()!"
+      ></copy-code>
+    </div>
+  }
+</section>

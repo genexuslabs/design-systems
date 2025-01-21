@@ -1,0 +1,40 @@
+<runtime-bundles [bundles]="['components/tab']" />
+
+<ch-tab-render
+  class="tab"
+  [model]="languagesModel"
+  [selectedId]="templateLanguageService.language()"
+  (selectedItemChange)="selectedNewLanguage($event)"
+>
+  @if (label()) {
+    <p slot="tab-list-end" class="copy-code__label text-body-highlighted-s">
+      {{ label() }}
+    </p>
+  }
+
+  <div
+    class="copy-code__container"
+    slot="{{ templateLanguageService.language() }}"
+  >
+    @if (copyButton()) {
+      <button
+        aria-label="Copy Markup"
+        class="button-primary button-icon-only"
+        type="button"
+        (click)="handleCopyMarkup()"
+      >
+        <ch-image
+          class="icon-md"
+          [getImagePathCallback]="getImagePathCallback()"
+          [src]="'mer/system/copy/primary'"
+          type="mask"
+        ></ch-image>
+      </button>
+    }
+    <ch-code
+      class="code"
+      [value]="value()[templateLanguageService.language()]"
+      [language]="language()"
+    ></ch-code>
+  </div>
+</ch-tab-render>

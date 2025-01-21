@@ -1,0 +1,13 @@
+.elevation-example-box {
+  margin-block-start: var(--mer-spacing--md, var(--spacing--l));
+  padding: var(--mer-spacing--md, var(--spacing--l));
+  border: 1px dashed var(--mer-border-color__on-surface);
+  border-radius: var(--mer-spacing--2xs);
+  text-align: center;
+}
+
+.sub-elevation-example-box {
+  padding: var(--mer-spacing--md, var(--spacing--l));
+  margin-block-start: var(--mer-spacing--md, var(--spacing--l));
+  border-radius: var(--mer-spacing--2xs);
+}

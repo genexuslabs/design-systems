@@ -46,6 +46,7 @@
 @import "./components/code/code-styles";
 @import "./components/combo-box/combo-box-styles";
 @import "./components/dialog/dialog-styles";
+@import "./components/dropdown/dropdown-styles";
 @import "./components/flexible-layout/flexible-layout-styles";
 @import "./components/icon/icon-styles";
 @import "./components/input/input-styles";
@@ -64,7 +65,7 @@
 @import "./components/tabular-grid/tabular-grid-styles";
 @import "./components/tabular-grid/helpers";
 @import "./components/ticket-list/ticket-list-styles";
-@import "./components/toggle/toggle-styles";
+@import "./components/switch/switch-styles";
 @import "./components/tooltip/tooltip-styles";
 @import "./components/tree-view/tree-view-styles";
 @import "./components/widget/widget-styles";
@@ -123,6 +124,7 @@
   $code: true,
   $combo-box: true,
   $dialog: true,
+  $dropdown: true,
   $edit: true,
   $flexible-layout: true,
   $icon: true,
@@ -138,7 +140,7 @@
   $tab: true,
   $tabular-grid: true,
   $ticket-list: true,
-  $toggle: true,
+  $switch: true,
   $tooltip: true,
   $tree-view: true,
   $widget: true
@@ -504,6 +506,10 @@
     @include dialog();
   }
 
+  @if $dropdown {
+    @include dropdown();
+  }
+
   @if $edit {
     @include input();
   }
@@ -566,9 +572,9 @@
     @include ticket-list();
   }
 
-  @if $toggle {
-    @include toggle-small();
-    @include toggle-large();
+  @if $switch {
+    @include switch-small();
+    @include switch-large();
   }
 
   @if $tooltip {
@@ -638,6 +644,7 @@
   $code: false,
   $combo-box: false,
   $dialog: false,
+  $dropdown: false,
   $edit: false,
   $flexible-layout: false,
   $icon: false,
@@ -653,7 +660,7 @@
   $tab: false,
   $tabular-grid: false,
   $ticket-list: false,
-  $toggle: false,
+  $switch: false,
   $tooltip: false,
   $tree-view: false,
   $widget: false
@@ -712,6 +719,7 @@
     $code: $code,
     $combo-box: $combo-box,
     $dialog: $dialog,
+    $dropdown: $dropdown,
     $edit: $edit,
     $flexible-layout: $flexible-layout,
     $icon: $icon,
@@ -727,7 +735,7 @@
     $tab: $tab,
     $tabular-grid: $tabular-grid,
     $ticket-list: $ticket-list,
-    $toggle: $toggle,
+    $switch: $switch,
     $tooltip: $tooltip,
     $tree-view: $tree-view,
     $widget: $widget

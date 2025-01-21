@@ -1,0 +1,24 @@
+.gemini-migration-preview {
+  margin-block-start: var(--mer-spacing--md);
+}
+
+// list-box
+.gemini-migration-preview--list-box {
+  block-size: 180px;
+}
+.list-box {
+  block-size: 100%;
+}
+
+// tree-view
+.gemini-migration-preview--tree-view {
+  block-size: 370px;
+}
+.gemini-migration-preview--tree-view .field {
+  block-size: 100%;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+}
+.tree-view {
+  block-size: 100%;
+}

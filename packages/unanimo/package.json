@@ -1,14 +1,32 @@
 {
   "name": "@genexus/unanimo",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "description": "A design system for GeneXus generated applications.",
-  "main": "dist/unanimo.scss",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist/"
   ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./bundles.js": {
+      "import": {
+        "types": "./dist/bundles.d.ts",
+        "default": "./dist/bundles.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "copy-assets": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/assets/ dist/assets",
-    "build": "npm run copy-assets && npm run build.scss && npm run build.docs",
+    "build": "tsc && npm run copy-assets && npm run build.scss && npm run build.docs",
     "build.scss": "scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss && npm run build.bundles",
     "build.bundles": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/bundles/scss dist/bundles/scss && sass --load-path=src --no-source-map --style compressed dist/bundles/scss:dist/bundles/css",
     "build.docs": "sassdoc dist/unanimo.scss",
@@ -16,12 +34,14 @@
     "test": "sass test/test.scss test/unanimo.css",
     "validate.ci": "npm run build"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@atao60/fse-cli": "^0.1.9",
+    "@genexus/chameleon-controls-library": "6.0.0-next.55",
     "sass": "~1.77.8",
     "sassdoc": "^2.7.4",
-    "scss-bundle": "~3.1.2"
+    "scss-bundle": "~3.1.2",
+    "typescript": "~5.5.3"
   },
   "engines": {
     "pnpm": ">=3"
