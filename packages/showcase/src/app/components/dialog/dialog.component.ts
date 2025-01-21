@@ -75,12 +75,12 @@ export class DialogComponent {
    */
   dialogs = computed(() => {
     const newMigrations = new Map<string, boolean>([
-      // ["Default", true],
-      // ["With Header", true],
-      // ["With Footer", true],
-      // ["Resizable", true],
-      // ["Adjust Position", true],
-      // ["Non Modal", true],
+      ["Default", true],
+      ["With Header", true],
+      ["With Footer", true],
+      ["Resizable", true],
+      ["Adjust Position", true],
+      ["Non Modal", true],
       ["Allow Drag", true]
     ]);
 

@@ -248,8 +248,7 @@ export const iconMetadata = {
           },
           {
             name: "allowDrag",
-            value: "box",
-            variable: true
+            value: "box"
           }
         ],
         children: {
