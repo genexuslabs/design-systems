@@ -17,17 +17,29 @@ Mercury Design System is a robust and scalable solution designed to improve prod
 - [2. Usage](#2-usage)
 
   - [2.1. Before starting, define the path for the CSS bundles, custom fonts and icons](#21-before-starting-define-the-path-for-the-css-bundles-custom-fonts-and-icons)
+
   - [2.2. Create the CSS bundles](#22-create-the-css-bundles)
+
     - [2.2.1. Using the CLI to create the CSS bundles](#221-using-the-cli-to-create-the-bundles)
+
     - [2.2.2. Using SASS to transpile the CSS bundles](#222-generating-the-css-using-sass)
+
     - [2.2.3. Using already generated CSS bundles](#223-using-already-generated-css)
+
   - [2.3. Copy the CSS bundles, custom fonts and icons to the dev and prod builds](#23-copy-the-css-bundles-custom-fonts-and-icons-to-the-dev-and-prod-builds)
+
     - [2.3.1. Copying assets with Angular](#231-copying-assets-with-angular)
+
     - [2.3.2. Copying assets with StencilJS](#232-copying-assets-with-stenciljs)
+
     - [2.3.3. Copying assets with Vite](#233-copying-assets-with-vite)
+
   - [2.4. Register Mercury and Chameleon utilities to use the icons](#24-register-mercury-and-chameleon-utilities)
+
   - [2.5. Style the base application](#25-style-the-base-application)
+
   - [2.6. Style the components with the CSS bundles](#26-style-the-components-with-the-css-bundles)
+
   - [2.7. Set the dark and light mode](#27-set-the-darklight-mode)
 
 - [3. CSS bundles mapping](#3-css-bundles-mapping)
@@ -44,7 +56,7 @@ npm i @genexus/mercury
 
 This repository provides the following assets to implement the Mercury DS:
 
-- CSS to style the Chameleon components.
+- CSS to style the [Chameleon](https://github.com/genexuslabs/chameleon-controls-library) components.
 - Custom fonts.
 - Icons.
 
@@ -110,9 +122,9 @@ Using the CLI:
    "build": "npm run build.scss && ..."
    ```
 
-3. Before using any Mercury or Chameleon utility, you must register the bundle mapping. This mapping allows Mercury to map the bundle names (for example, `components/button`) with the real name of the CSS file (for example, `components/button-9f82641938b85445.css`).
+3. Before using any Mercury or [Chameleon](https://github.com/genexuslabs/chameleon-controls-library) utility, you must register the bundle mapping. This mapping allows Mercury to map the bundle names (for example, `components/button`) with the real name of the CSS file (for example, `components/button-9f82641938b85445.css`).
 
-   **IMPORTANT**: Run this JavaScript before using any Mercury or Chameleon utilities.
+   **IMPORTANT**: Run this JavaScript before using any Mercury or [Chameleon](https://github.com/genexuslabs/chameleon-controls-library) utilities.
 
    ```ts
    import { setBundleMapping } from "@genexus/mercury/dist/bundles";
@@ -127,7 +139,7 @@ Using the CLI:
 
 #### 2.2.2. Using SASS to transpile the CSS bundles
 
-> [!IMPORTANT]  
+> [!WARNING]
 > We don't recommend this way, because the CLI does this under the hood in a much better and faster way. Also, this way does not hash the generated CSS, which leads to cache issues when re-deploying your application after updating your version of Mercury.
 
 1.  Install `sass` dependency to transpile the bundles.
@@ -153,7 +165,7 @@ Using the CLI:
 
 #### 2.2.3. Using already generated CSS bundles
 
-> [!IMPORTANT]  
+> [!WARNING]
 > We don't recommend this way, because the generated CSS contains fixed paths for the assets and the CSS names don't contain a hash, which leads to cache issues when re-deploying your application after updating your version of Mercury.
 > We only include this case, because in some scenarios it can facilitate the initialization with Mercury.
 
@@ -281,7 +293,7 @@ export default defineConfig({
 
 ### 2.4. Register Mercury and Chameleon utilities to use the icons
 
-Chameleon and Mercury export utilities to facilitate the usage of icons. If you are using Mercury icons, do the following:
+[Chameleon](https://github.com/genexuslabs/chameleon-controls-library) and Mercury export utilities to facilitate the usage of icons. If you are using Mercury icons, do the following:
 
 ```ts
 import { registryProperty } from "@genexus/chameleon-controls-library/dist/collection";
@@ -349,7 +361,7 @@ import "{{ CSS outDir path }}/base/base.css";
 
 ### 2.6. Style the components with the CSS bundles
 
-Chameleon provides a component, the `ch-theme`, to download and reuse the CSS bundles across the application.
+[Chameleon](https://github.com/genexuslabs/chameleon-controls-library) provides the `ch-theme` component, a component to download and reuse the CSS bundles across the application.
 
 Refer to the showcase to see
 
@@ -374,6 +386,49 @@ Mercury's implementation is designed from the ground up to support both dark and
 ```
 
 ## 3. CSS bundles mapping
+
+The CSS for the Mercury's implementation is split into bundles to give explicit control over the downloaded CSS and allow developers to optimize performance by only using the CSS needed for each page.
+
+Each CSS bundle contains a set of classes to style the [Chameleon](https://github.com/genexuslabs/chameleon-controls-library) components and traditional HTML elements. The classes defined for each bundle can be seen in the [showcase](https://mercury-showcase.genexus.com/).
+
+The following table list describes all CSS bundles.
+[property grid](https://mercury-showcase.genexus.com/mercury/components/tabular-grid) components
+
+| Bundle name                    | Content                                                                                                                                                                                             |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `chameleon/scrollbar`          | Styles for the scrollbar of the components                                                                                                                                                          |
+| `components/accordion`         | Styles for the [accordion](https://mercury-showcase.genexus.com/mercury/components/accordion) component                                                                                             |
+| `components/button`            | Styles for the [button](https://mercury-showcase.genexus.com/mercury/components/button) button                                                                                                      |
+| `components/chat`              | Styles for the chat component                                                                                                                                                                       |
+| `components/checkbox`          | Styles for the [checkbox](https://mercury-showcase.genexus.com/mercury/components/checkbox) component                                                                                               |
+| `components/code`              | Styles for the code block component                                                                                                                                                                 |
+| `components/combo-box`         | Styles for the [combo-box](https://mercury-showcase.genexus.com/mercury/components/combo-box) component                                                                                             |
+| `components/dialog`            | Styles for the [dialog](https://mercury-showcase.genexus.com/mercury/components/dialog) component                                                                                                   |
+| `components/dropdown`          | Styles for the dropdown component                                                                                                                                                                   |
+| `components/edit`              | Styles for the [input](https://mercury-showcase.genexus.com/mercury/components/input) and [search](https://mercury-showcase.genexus.com/mercury/components/input) components                        |
+| `components/flexible-layout`   | Styles for the flexible layout component                                                                                                                                                            |
+| `components/icon`              | Styles for the [icon](https://mercury-showcase.genexus.com/mercury/components/icon) component                                                                                                       |
+| `components/layout-splitter`   | Styles for the layout splitter component                                                                                                                                                            |
+| `components/list-box`          | Styles for the [list box](https://mercury-showcase.genexus.com/mercury/components/list-box) component                                                                                               |
+| `components/markdown-viewer`   | Styles for the markdown viewer component                                                                                                                                                            |
+| `components/navigation-list`   | Styles for the navigation list component                                                                                                                                                            |
+| `components/pills`             | Styles for the [pills](https://mercury-showcase.genexus.com/mercury/components/pills) component                                                                                                     |
+| `components/radio-group`       | Styles for the [radio group](https://mercury-showcase.genexus.com/mercury/components/radio-group) component                                                                                         |
+| `components/segmented-control` | Styles for the segmented control component                                                                                                                                                          |
+| `components/sidebar`           | Styles for the [sidebar](https://mercury-showcase.genexus.com/mercury/components/sidebar) component                                                                                                 |
+| `components/slider`            | Styles for the [slider](https://mercury-showcase.genexus.com/mercury/components/slider) component                                                                                                   |
+| `components/switch`            | Styles for the [switch](https://mercury-showcase.genexus.com/mercury/components/switch) component                                                                                                   |
+| `components/tab`               | Styles for the [tab](https://mercury-showcase.genexus.com/mercury/components/tab) component                                                                                                         |
+| `components/tabular-grid`      | Styles for the [tabular grid](https://mercury-showcase.genexus.com/mercury/components/tabular-grid) and                                                                                             |
+| `components/ticket-list`       | Styles for the ticket list component                                                                                                                                                                |
+| `components/tooltip`           | Styles for the [tooltip](https://mercury-showcase.genexus.com/mercury/components/tooltip) component                                                                                                 |
+| `components/tree-view`         | Styles for the [tree view](https://mercury-showcase.genexus.com/mercury/components/tree-view) component                                                                                             |
+| `components/widget`            | Styles for the [widget](https://mercury-showcase.genexus.com/mercury/components/widget) component                                                                                                   |
+| `utils/elevation`              | Styles to apply [elevations](https://mercury-showcase.genexus.com/mercury/utility-classes/elevation) on any component                                                                               |
+| `utils/form`                   | Styles for the [label](https://mercury-showcase.genexus.com/mercury/components/label) component and to build layouts for [forms](https://mercury-showcase.genexus.com/mercury/utility-classes/form) |
+| `utils/layout`                 | Styles to build common [layouts](https://mercury-showcase.genexus.com/mercury/utility-classes/layout)                                                                                               |
+| `utils/spacing`                | Styles to apply [spacing](https://mercury-showcase.genexus.com/mercury/utility-classes/spacing) in different components that are used as containers                                                 |
+| `utils/typography`             | Styles for using the different [typographies](https://mercury-showcase.genexus.com/mercury/utility-classes/typography)                                                                              |
 
 ## 4. CLI flags
 
