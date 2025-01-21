@@ -30,7 +30,7 @@ export const iconMetadata = {
       }
     },
 
-    header: {
+    withHeader: {
       linkId: "with-header",
       title: "2. With Header",
       states: [
@@ -63,7 +63,7 @@ export const iconMetadata = {
       }
     },
 
-    footer: {
+    withFooter: {
       linkId: "with-footer",
       title: "3. With Footer",
       states: [

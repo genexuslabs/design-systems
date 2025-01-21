@@ -32,17 +32,17 @@ export class DialogComponent {
   codeSnippets = iconMetadata.codeSnippets;
 
   dialogDefaultDisplayed = signal(false);
-  dialogHeaderDisplayed = signal(false);
-  dialogFooterDisplayed = signal(false);
+  dialogWithHeaderDisplayed = signal(false);
+  dialogWithFooterDisplayed = signal(false);
 
   showDialogDefault = () => this.dialogDefaultDisplayed.set(true);
   hideDialogDefault = () => this.dialogDefaultDisplayed.set(false);
 
-  showDialogHeader = () => this.dialogHeaderDisplayed.set(true);
-  hideDialogHeader = () => this.dialogHeaderDisplayed.set(false);
+  showDialogWithHeader = () => this.dialogWithHeaderDisplayed.set(true);
+  hideDialogWithHeader = () => this.dialogWithHeaderDisplayed.set(false);
 
-  showDialogFooter = () => this.dialogFooterDisplayed.set(true);
-  hideDialogFooter = () => this.dialogFooterDisplayed.set(false);
+  showDialogWithFooter = () => this.dialogWithFooterDisplayed.set(true);
+  hideDialogWithFooter = () => this.dialogWithFooterDisplayed.set(false);
 
   hiddenDialogs = input<string>("");
 
@@ -52,9 +52,9 @@ export class DialogComponent {
    */
   dialogs = computed(() => {
     const newMigrations = new Map<string, boolean>([
-      ["Default", true],
-      ["With Header", true],
-      ["With Footer", true],
+      // ["Default", true],
+      // ["With Header", true],
+      // ["With Footer", true],
       ["Resizable", true]
     ]);
 
@@ -78,8 +78,8 @@ export class DialogComponent {
   });
 
   showDefault = computed(() => this.dialogs().get("Default"));
-  showHeader = computed(() => this.dialogs().get("With Header"));
-  showFooter = computed(() => this.dialogs().get("With Footer"));
+  showWithHeader = computed(() => this.dialogs().get("With Header"));
+  showWithFooter = computed(() => this.dialogs().get("With Footer"));
   showResizable = computed(() => this.dialogs().get("Resizable"));
 
   updateRenderedDialog =

@@ -71,9 +71,13 @@
   </code-snippet>
 }
 
-@if (showHeader()) {
-  <code-snippet [codeSnippet]="codeSnippets.header" [language]="'ts'">
-    <button class="button-primary" type="button" (click)="showDialogHeader()">
+@if (showWithHeader()) {
+  <code-snippet [codeSnippet]="codeSnippets.withHeader" [language]="'ts'">
+    <button
+      class="button-primary"
+      type="button"
+      (click)="showDialogWithHeader()"
+    >
       Show dialog
     </button>
 
@@ -81,9 +85,9 @@
       class="dialog"
       [caption]="'Title'"
       [closeButtonAccessibleName]="'Close dialog'"
-      [show]="dialogHeaderDisplayed()"
+      [show]="dialogWithHeaderDisplayed()"
       [showHeader]="true"
-      (dialogClosed)="hideDialogHeader()"
+      (dialogClosed)="hideDialogWithHeader()"
     >
       <div class="spacing-body">
         <p class="text-body-regular-m">
@@ -115,17 +119,21 @@
   </code-snippet>
 }
 
-@if (showFooter()) {
-  <code-snippet [codeSnippet]="codeSnippets.footer" [language]="'ts'">
-    <button class="button-primary" type="button" (click)="showDialogFooter()">
+@if (showWithFooter()) {
+  <code-snippet [codeSnippet]="codeSnippets.withFooter" [language]="'ts'">
+    <button
+      class="button-primary"
+      type="button"
+      (click)="showDialogWithFooter()"
+    >
       Show dialog
     </button>
 
     <ch-dialog
       class="dialog"
-      [show]="dialogFooterDisplayed()"
+      [show]="dialogWithFooterDisplayed()"
       [showFooter]="true"
-      (dialogClosed)="hideDialogFooter()"
+      (dialogClosed)="hideDialogWithFooter()"
     >
       <div class="spacing-body">
         <p class="text-body-regular-m">
