@@ -19,11 +19,11 @@
 
     <li class="filters-checkbox">
       <ch-checkbox
-        [caption]="dialogName"
         class="checkbox"
+        [caption]="dialogName"
         [checkedValue]="'true'"
-        [value]="dialogEntry[1].toString()"
         [unCheckedValue]="'false'"
+        [value]="dialogEntry[1].toString()"
         (input)="updateRenderedDialog(dialogName)($event)"
       ></ch-checkbox>
     </li>
@@ -204,10 +204,10 @@
 
     <ch-dialog
       class="dialog"
-      [show]="dialogResizableDisplayed()"
-      [resizable]="true"
-      (dialogClosed)="hideDialogResizable()"
       [ngStyle]="customDialogProperties"
+      [resizable]="true"
+      [show]="dialogResizableDisplayed()"
+      (dialogClosed)="hideDialogResizable()"
     >
       <div class="spacing-body">
         <p class="text-body-regular-m">
@@ -258,11 +258,11 @@
 
     <ch-dialog
       class="dialog"
-      [show]="dialogAdjustPositionDisplayed()"
-      [resizable]="true"
-      (dialogClosed)="hideDialogAdjustPosition()"
       [ngStyle]="customDialogProperties"
       [adjustPositionAfterResize]="true"
+      [resizable]="true"
+      [show]="dialogAdjustPositionDisplayed()"
+      (dialogClosed)="hideDialogAdjustPosition()"
     >
       <div class="spacing-body">
         <p class="text-body-regular-m">
@@ -313,9 +313,9 @@
   <!-- // WA: Set the non modal dialog outside the code-snippet to prevent z-index issues -->
   <ch-dialog
     class="dialog"
+    [modal]="false"
     [show]="dialogNonModalDisplayed()"
     (dialogClosed)="hideDialogNonModal()"
-    [modal]="false"
   >
     <div class="spacing-body">
       <p class="text-body-regular-m">
@@ -368,9 +368,9 @@
 
     <ch-dialog
       class="dialog"
+      [allowDrag]="'box'"
       [show]="dialogAllowDragDisplayed()"
       (dialogClosed)="hideDialogAllowDrag()"
-      [allowDrag]="'box'"
     >
       <div class="spacing-body">
         <p class="text-body-regular-m">
