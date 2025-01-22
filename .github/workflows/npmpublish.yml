@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        
+
       - name: Get the latest Unanimo version
         id: get-latest-unanimo-version
         run: |
@@ -42,7 +42,7 @@ jobs:
           echo "The latest Unanimo version is ${{ env.latest_unanimo_version }}"
           echo "The latest Mercury version is ${{ env.latest_mercury_version }}"
           echo "The latest SVG Generator version is ${{ env.latest_svg_generator_version }}"
-          
+
       - name: Check if `unanimo` version changed
         id: check-unanimo
         run: |
