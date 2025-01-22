@@ -21,14 +21,30 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Get latest published Unanimo version
-        id: get-unanimo-version
+        
+      - name: Get the latest Unanimo version
+        id: get-latest-unanimo-version
         run: |
           PACKAGE_NAME=@genexus/unanimo
           LATEST_UNANIMO_VERSION=$(curl -s https://registry.npmjs.org/$PACKAGE_NAME | jq -r '.["dist-tags"].latest')
           echo "latest_unanimo_version=$LATEST_UNANIMO_VERSION" >> $GITHUB_ENV
 
-      - name: Print tags
+      - name: Get the latest Mercury version
+        id: get-latest-mercury-version
         run: |
-          echo "The latest tag is ${{ env.latest_unanimo_version }}"
+          PACKAGE_NAME=@genexus/mercury
+          LATEST_MERCURY_VERSION=$(curl -s https://registry.npmjs.org/$PACKAGE_NAME | jq -r '.["dist-tags"].latest')
+          echo "latest_mercury_version=$LATEST_MERCURY_VERSION" >> $GITHUB_ENV
+
+      - name: Get the latest SVG_Generator version
+        id: get-latest-svg_generator-version
+        run: |
+          PACKAGE_NAME=@genexus/svg-sass-generator
+          LATEST_SVG_GENERATOR_VERSION=$(curl -s https://registry.npmjs.org/$PACKAGE_NAME | jq -r '.["dist-tags"].latest')
+          echo "latest_svg_generator_version=$LATEST_SVG_GENERATOR_VERSION" >> $GITHUB_ENV
+
+      - name: Print last published versions
+        run: |
+          echo "The latest Unanimo version is ${{ env.latest_unanimo_version }}"
+          echo "The latest Mercury version is ${{ env.latest_mercury_version }}"
+          echo "The latest SVG Generator version is ${{ env.latest_svg_generator_version }}"
