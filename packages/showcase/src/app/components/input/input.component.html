@@ -1,4 +1,6 @@
-<runtime-bundles [bundles]="['components/edit', 'utils/form']" />
+<runtime-bundles
+  [bundles]="['components/edit', 'utils/form', 'components/checkbox']"
+/>
 
 <header>
   <h1 class="heading-1">{{ metadata.title }}</h1>
@@ -8,61 +10,93 @@
   {{ metadata.description }}
 </p>
 
-<code-snippet [codeSnippet]="codeSnippets.default">
-  <p class="text-body-regular-m">
-    To display an input with a label, you will have to do the same as working
-    with native HTML, adding a <code>for</code> attribute for the label with the
-    value of the control's <code>id</code>.
-  </p>
+<ol class="filters elevation-1">
+  @for (inputEntry of this.inputs().entries(); track inputEntry[0]) {
+    @let inputName = inputEntry[0];
 
-  <p class="text-body-regular-m">
-    In addition, a div wrapper must be used around those elements to properly
-    style them. These styles are documented on the
-    <a class="hyperlink" [routerLink]="commonLinks.componentsLabel()">label</a>
-    and <a class="hyperlink" [routerLink]="commonLinks.utilsForm()">form</a>
-    sections, correspondingly.
-  </p>
+    <li class="filters-checkbox">
+      <ch-checkbox
+        [caption]="inputName"
+        class="checkbox"
+        [checkedValue]="'true'"
+        [value]="inputEntry[1].toString()"
+        [unCheckedValue]="'false'"
+        (input)="updateRenderedInput(inputName)($event)"
+      ></ch-checkbox>
+    </li>
+  }
+</ol>
 
-  <br />
+@if (showDefault()) {
+  <code-snippet [codeSnippet]="codeSnippets.default">
+    <p class="text-body-regular-m">
+      To display an input with a label, you will have to do the same as working
+      with native HTML, adding a <code>for</code> attribute for the label with
+      the value of the control's <code>id</code>.
+    </p>
 
-  <div class="field field-block">
-    <label class="label" for="name">Name</label>
-    <ch-edit class="input" id="name"></ch-edit>
-  </div>
-</code-snippet>
+    <p class="text-body-regular-m">
+      In addition, a div wrapper must be used around those elements to properly
+      style them. These styles are documented on the
+      <a class="hyperlink" [routerLink]="commonLinks.componentsLabel()"
+        >label</a
+      >
+      and <a class="hyperlink" [routerLink]="commonLinks.utilsForm()">form</a>
+      sections, correspondingly.
+    </p>
 
-<code-snippet [codeSnippet]="codeSnippets.noLabel">
-  <ch-edit accessibleName="Name" class="input"></ch-edit>
-</code-snippet>
+    <br />
 
-<code-snippet [codeSnippet]="codeSnippets.value">
-  <ch-edit accessibleName="Name" class="input" value="Pat Taylor"></ch-edit>
-</code-snippet>
+    <div class="field field-block">
+      <label class="label" for="name">Name</label>
+      <ch-edit class="input" id="name"></ch-edit>
+    </div>
+  </code-snippet>
+}
 
-<code-snippet [codeSnippet]="codeSnippets.placeholder">
-  <ch-edit
-    accessibleName="Name"
-    class="input"
-    placeholder="e.g. Mike Shinoda"
-  ></ch-edit>
-</code-snippet>
+@if (showNoLabel()) {
+  <code-snippet [codeSnippet]="codeSnippets.noLabel">
+    <ch-edit accessibleName="Name" class="input"></ch-edit>
+  </code-snippet>
+}
 
-<code-snippet [codeSnippet]="codeSnippets.disabled">
-  <ch-edit
-    accessibleName="Name"
-    class="input"
-    disabled
-    value="Pat Taylor"
-  ></ch-edit>
-</code-snippet>
+@if (showWithValue()) {
+  <code-snippet [codeSnippet]="codeSnippets.withValue">
+    <ch-edit accessibleName="Name" class="input" value="Pat Taylor"></ch-edit>
+  </code-snippet>
+}
 
-<code-snippet [codeSnippet]="codeSnippets.withIcon">
-  <ch-edit
-    accessibleName="Name"
-    class="input"
-    [startImgSrc]="USER_ICON"
-  ></ch-edit>
-</code-snippet>
+@if (showWithPlaceholder()) {
+  <code-snippet [codeSnippet]="codeSnippets.withPlaceholder">
+    <ch-edit
+      accessibleName="Name"
+      class="input"
+      placeholder="e.g. Mike Shinoda"
+    ></ch-edit>
+  </code-snippet>
+}
+
+@if (showDisabled()) {
+  <code-snippet [codeSnippet]="codeSnippets.disabled">
+    <ch-edit
+      accessibleName="Name"
+      class="input"
+      disabled
+      value="Pat Taylor"
+    ></ch-edit>
+  </code-snippet>
+}
+
+@if (showWithIcon()) {
+  <code-snippet [codeSnippet]="codeSnippets.withIcon">
+    <ch-edit
+      accessibleName="Name"
+      class="input"
+      [getImagePathCallback]="getImagePathCallback"
+      [startImgSrc]="USER_ICON"
+    ></ch-edit>
+  </code-snippet>
+}
 
 <!-- <code-snippet [codeSnippet]="codeSnippets.errors"
   >TODO..................</code-snippet
