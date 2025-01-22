@@ -516,11 +516,10 @@ The following table list describes all CSS bundles.
 
 ## 4. CLI flags
 
-Flags:
-| Flag | Description |
-| -- | -- |
-| `--globant` <br/><br/> `--gl` <br/><br/> `-gl` | If specified, the generated CSS will use the tokens for the Mercury Globant variant. |
-| `--icons-path=path` <br/><br/>`--icons=path` <br/><br/>`--i=path` <br/><br/>`-i=path` | Allows you to customize the base path for the icons. If not specified, `./assets/icons/` will be used. |
-| `--font-face-path=path` <br/><br/>`--font-face=path` <br/><br/>`--f=path` <br/><br/>`-f=path` | Allows you to customize the base path for the custom fonts. If not specified, `./assets/fonts/` will be used. |
+| Flag                                                                                                        | Description                                                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--globant` <br/><br/> `--gl` <br/><br/> `-gl`                                                              | If specified, the generated CSS will use the tokens for the Mercury Globant variant.                                                        |
+| `--icons-path=path` <br/><br/>`--icons=path` <br/><br/>`--i=path` <br/><br/>`-i=path`                       | Allows you to customize the base path for the icons. If not specified, `./assets/icons/` will be used.                                      |
+| `--font-face-path=path` <br/><br/>`--font-face=path` <br/><br/>`--f=path` <br/><br/>`-f=path`               | Allows you to customize the base path for the custom fonts. If not specified, `./assets/fonts/` will be used.                               |
 | `--avoid-hash=bundle1,bundle2,...` <br/><br/>`--ah=bundle1,bundle2,...` <br/><br/>`-ah=bundle1,bundle2,...` | Receives a set of comma-separated values, where each value is a bundle. Allows you to avoid the creating the hash for the provided bundles. |
-| `--outDir=path` <br/><br/>`--outdir=path` <br/><br/>`--o=path` <br/><br/>`-o=path` | Allows you to customize the path where the CSS files will be created. If not specified, `./mercury/` will be used. |
+| `--outDir=path` <br/><br/>`--outdir=path` <br/><br/>`--o=path` <br/><br/>`-o=path`                          | Allows you to customize the path where the CSS files will be created. If not specified, `./mercury/` will be used.                          |
