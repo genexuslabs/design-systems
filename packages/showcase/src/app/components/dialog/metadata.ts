@@ -25,14 +25,40 @@ export const iconMetadata = {
         ],
         children: {
           tag: "div",
+          class: "spacing-body",
           children: "Any content"
         }
       }
     },
 
-    header: {
-      linkId: "header",
-      title: "2. Header",
+    withoutPadding: {
+      linkId: "without-padding",
+      title: "2. Without Padding",
+      states: [
+        {
+          name: "showDialog",
+          type: "boolean",
+          value: false,
+          stateStencil: true
+        }
+      ],
+      template: {
+        // TODO: Add support for events
+        tag: "ch-dialog",
+        class: "dialog",
+        properties: [
+          { name: "show", value: "showDialog", state: true, stateStencil: true }
+        ],
+        children: {
+          tag: "div",
+          children: "Any content"
+        }
+      }
+    },
+
+    withHeader: {
+      linkId: "with-header",
+      title: "3. With Header",
       states: [
         {
           name: "showDialog",
@@ -58,14 +84,15 @@ export const iconMetadata = {
         ],
         children: {
           tag: "div",
+          class: "spacing-body",
           children: "Any content"
         }
       }
     },
 
-    footer: {
-      linkId: "footer",
-      title: "3. Footer",
+    withFooter: {
+      linkId: "with-footer",
+      title: "4. With Footer",
       states: [
         {
           name: "showDialog",
@@ -90,6 +117,7 @@ export const iconMetadata = {
         children: [
           {
             tag: "div",
+            class: "spacing-body",
             children: "Any content"
           },
           {
@@ -111,6 +139,150 @@ export const iconMetadata = {
             ]
           }
         ]
+      }
+    },
+
+    resizable: {
+      linkId: "resizable",
+      title: "5. Resizable",
+      states: [
+        {
+          name: "showDialog",
+          type: "boolean",
+          value: false,
+          stateStencil: true
+        }
+      ],
+      template: {
+        // TODO: Add support for events
+        tag: "ch-dialog",
+        class: "dialog",
+        properties: [
+          {
+            name: "show",
+            value: "showDialog",
+            state: true,
+            stateStencil: true
+          },
+          {
+            name: "resizable",
+            value: true
+          }
+        ],
+        children: {
+          tag: "div",
+          class: "spacing-body",
+          children: "Any content"
+        }
+      }
+    },
+
+    adjustPosition: {
+      linkId: "adjust-position",
+      title: "6. Adjust Position",
+      states: [
+        {
+          name: "showDialog",
+          type: "boolean",
+          value: false,
+          stateStencil: true
+        }
+      ],
+      template: {
+        // TODO: Add support for events
+        tag: "ch-dialog",
+        class: "dialog",
+        properties: [
+          {
+            name: "show",
+            value: "showDialog",
+            state: true,
+            stateStencil: true
+          },
+          {
+            name: "resizable",
+            value: true
+          },
+          {
+            name: "adjustPositionAfterResize",
+            value: true
+          }
+        ],
+        children: {
+          tag: "div",
+          class: "spacing-body",
+          children: "Any content"
+        }
+      }
+    },
+
+    nonModal: {
+      linkId: "non-modal",
+      title: "7. Non Modal",
+      states: [
+        {
+          name: "showDialog",
+          type: "boolean",
+          value: false,
+          stateStencil: true
+        }
+      ],
+      template: {
+        // TODO: Add support for events
+        tag: "ch-dialog",
+        class: "dialog",
+        properties: [
+          {
+            name: "show",
+            value: "showDialog",
+            state: true,
+            stateStencil: true
+          },
+          {
+            name: "modal",
+            value: false
+          }
+        ],
+        children: {
+          tag: "div",
+          class: "spacing-body",
+          children: "Any content"
+        }
+      }
+    },
+
+    allowDrag: {
+      linkId: "allow-drag",
+      title: "8. Allow Drag",
+      states: [
+        {
+          name: "showDialog",
+          type: "boolean",
+          value: false,
+          stateStencil: true
+        }
+      ],
+      template: {
+        // TODO: Add support for events
+        tag: "ch-dialog",
+        class: "dialog",
+        properties: [
+          {
+            name: "show",
+            value: "showDialog",
+            state: true,
+            stateStencil: true
+          },
+          {
+            name: "allowDrag",
+            value: "box"
+          }
+        ],
+        children: {
+          tag: "div",
+          class: "spacing-body",
+          children: "Any content"
+        }
       }
     }
   }
