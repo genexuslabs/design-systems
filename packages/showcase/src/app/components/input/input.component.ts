@@ -7,7 +7,7 @@ import {
   input,
   signal
 } from "@angular/core";
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import type { ChCheckboxCustomEvent } from "@genexus/chameleon-controls-library";
 import {
@@ -19,7 +19,6 @@ import { inputMetadata } from "./metadata";
 import { RouterCommonLinksService } from "../../../services/router-links.service";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
-import { Router } from "@angular/router";
 
 @Component({
   selector: "components-input",
