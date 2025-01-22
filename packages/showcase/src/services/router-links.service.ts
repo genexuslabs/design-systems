@@ -48,6 +48,9 @@ export class RouterCommonLinksService {
     () =>
       `/${this.dsService.designSystem()}${UTILITY_CLASSES_ROUTES.TYPOGRAPHY}`
   );
+  utilsSpacing = computed(
+    () => `/${this.dsService.designSystem()}${UTILITY_CLASSES_ROUTES.SPACING}`
+  );
 
   icons = computed(
     () => `/${this.dsService.designSystem()}${STANDALONE_ROUTES.ICONS}`
