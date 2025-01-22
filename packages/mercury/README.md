@@ -473,7 +473,7 @@ The CSS for the Mercury's implementation is split into bundles to give explicit 
 
 Each CSS bundle contains a set of classes to style the [Chameleon](https://github.com/genexuslabs/chameleon-controls-library) components and traditional HTML elements. The classes defined for each bundle can be seen in the [showcase](https://mercury-showcase.genexus.com/).
 
-The following table list describes all CSS bundles.
+The following table describes all CSS bundles.
 
 | Bundle name                    | Content                                                                                                                                                                                                  |
 | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
