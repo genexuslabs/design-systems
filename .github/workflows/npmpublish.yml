@@ -15,16 +15,22 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
 
-      - name: Get previous tag
-        id: get-previous-tag
+      - name: Fetch all tags
+        run: git fetch --tags
+        
+      - name: Get latest and previous tags
+        id: get-tags
         run: |
-          PREVIOUS_TAG=$(git describe --tags --abbrev=0 HEAD^)
-          echo "Previous tag: $PREVIOUS_TAG"
-          echo "previous-tag=$PREVIOUS_TAG" >> $GITHUB_ENV
+          tags=($(git tag -l --sort=-creatordate | head -n 2))
+          echo "latest-tag=${tags[0]}" >> $GITHUB_ENV
+          echo "previous-tag=${tags[1]}" >> $GITHUB_ENV
 
+      - name: Print tags
+        run: |
+          echo "The latest tag is ${{ env.latest-tag }}"
+          echo "The previous tag is ${{ env.previous-tag }}"
+          
       - name: Check if `unanimo` version changed
         id: check-unanimo
         run: |
