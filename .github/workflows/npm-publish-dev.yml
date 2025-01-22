@@ -1,0 +1,35 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+name: Node.js Package
+
+on:
+  push:
+    tags:
+      - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
+
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    outputs:
+      unanimo-changed: ${{ steps.check-unanimo.outputs.version-changed }}
+      mercury-changed: ${{ steps.check-mercury.outputs.version-changed }}
+      svg-sass-generator-changed: ${{ steps.check-svg-sass-generator.outputs.version-changed }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Fetch all tags
+        run: git fetch --tags
+        
+      - name: Get latest and previous tags
+        id: get-tags
+        run: |
+          tags=($(git tag -l --sort=-creatordate | head -n 2))
+          echo "latest_tag=${tags[0]}" >> $GITHUB_ENV
+          echo "previous_tag=${tags[1]}" >> $GITHUB_ENV
+
+      - name: Print tags
+        run: |
+          echo "The latest tag is ${{ env.latest_tag }}"
+          echo "The previous tag is ${{ env.previous_tag }}"
