@@ -329,7 +329,7 @@ registerMercury();
 In Vite we can inline the base styles to improve the initial load performance.
 
 > [!TIP]
-> If the CSS bundles were created using the CLI, we recommend adding the --avoid-hash=base/base to avoid hashing the base CSS bundle and thus make the path to the base CSS bundle simpler.
+> If the CSS bundles were created using the CLI, we recommend adding the `--avoid-hash=base/base` to avoid hashing the base CSS bundle and thus make the path to the base CSS bundle simpler.
 
 ```html
 <!DOCTYPE html>
@@ -346,7 +346,7 @@ In Vite we can inline the base styles to improve the initial load performance.
 #### 2.5.2. Adding base styles using React
 
 > [!TIP]
-> If the CSS bundles were created using the CLI, we recommend adding the --avoid-hash=base/base to avoid hashing the base CSS bundle and thus make the path to the base CSS bundle simpler.
+> If the CSS bundles were created using the CLI, we recommend adding the `--avoid-hash=base/base` to avoid hashing the base CSS bundle and thus make the path to the base CSS bundle simpler.
 
 ```ts
 // App.tsx
