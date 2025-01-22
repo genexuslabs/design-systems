@@ -26,7 +26,7 @@
   --article-header__gap: 16px;
   --article-header__margin-block-end: 32px;
   --article-title__font-size: 20px;
-  --article-title__font-weight: 500;
+  --article-title__font-weight: 400;
   --article-title__pipe-font-size: 14px;
   --article-title__pipe-padding-inline: 4px;
   --article-description__font-size: 14px;
@@ -54,12 +54,6 @@
 DS overrides
 For the showcase some DS styles are better overridden
 ====================*/
-
-.field-group-cols-2 > .label,
-.field-inline > .label {
-  /*because the .dummy-control block size is a little bit higher than the mercury controls block size value.*/
-  margin-block-start: 10px !important;
-}
 
 /*====================
 Helper Classes
@@ -208,7 +202,7 @@ body.showcase {
   display: none;
 }
 ::selection {
-  background-color: var(--mer-color__tinted-blue--10);
+  background-color: var(--mer-color__tinted-primary--10);
   color: var(--mer-text__on-surface);
 }
 .m-0 {
@@ -234,17 +228,6 @@ body.all-hidden .section__header {
 }
 .dummy-box--lg {
   inline-size: 400px;
-}
-.dummy-control {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  outline: 2px dashed var(--mer-border-color__on-surface);
-  color: var(--mer-color__neutral-gray--500);
-  block-size: calc(
-    var(--control__font-size--regular) * var(--control__line-height) +
-      var(--control__padding-block) * 2 + var(--control__border-width) * 2
-  );
 }
 
 /* List */
@@ -291,17 +274,6 @@ Top Bar
 }
 .top-bar__button:active {
   filter: brightness(1.2);
-}
-
-/*====================
-Main Header
-====================*/
-.bundle-container {
-  border-block-end: 1px solid var(--mer-surface__elevation--01);
-  block-size: var(--sc-top-bar__height);
-  display: grid;
-  align-items: center;
-  text-transform: capitalize;
 }
 
 /*====================

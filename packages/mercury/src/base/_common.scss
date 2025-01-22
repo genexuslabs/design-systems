@@ -235,6 +235,9 @@
 @mixin item-gap() {
   gap: var(--item__gap--regular);
 }
+@mixin item-column-gap() {
+  column-gap: var(--item__gap--regular);
+}
 @mixin item-padding() {
   padding-block: var(--item__padding-block);
   padding-inline: var(--item__padding-inline);
@@ -274,16 +277,22 @@
 
 // Row
 @mixin grid-row-colors-enabled() {
-  background-color: var(--item__bg-color);
-  color: var(--item__color);
+  // Some controls using --item__** variables inside the tabular grid inherit
+  // unwanted styles. For example, when a row is selected, controls like a
+  // list-box inherit the selected background color. To prevent this, these
+  // properties cannot be directly applied to the tabular grid.
+  --grid-row__bg-color: var(--item__bg-color);
+  --grid-row__color: var(--item__color);
+  background-color: var(--grid-row__bg-color);
+  color: var(--grid-row__color);
 }
 @mixin grid-row-colors-highlighted() {
-  --item__bg-color: var(--item__bg-color--hover);
-  --item__color: var(--item__color--hover);
+  --grid-row__bg-color: var(--item__bg-color--hover);
+  --grid-row__color: var(--item__color--hover);
 }
 @mixin grid-row-colors-selected() {
-  --item__bg-color: var(--item__bg-color--selected);
-  --item__color: var(--item__color--selected);
+  --grid-row__bg-color: var(--item__bg-color--selected);
+  --grid-row__color: var(--item__color--selected);
 }
 @mixin grid-row-dragging() {
   box-shadow: var(--mer-box-shadow--01);
@@ -438,8 +447,10 @@
 // ----------------------
 
 @mixin control-footer-base() {
-  padding: var(--mer-spacing--xs) var(--mer-spacing--sm);
-  gap: var(--mer-spacing--sm);
+  --control-footer-justify-content: end;
+  padding-block-start: var(--mer-spacing--xs);
+  display: flex;
+  justify-content: var(--control-footer-justify-content);
   align-items: center;
 }
 @mixin control-footer-border() {
@@ -449,18 +460,54 @@
 @mixin control-footer(
   $selector: ".control-footer",
   $with-border-selector: ".control-footer-with-border",
+  $justify-start-selector: ".control-footer-start",
+  $justify-center-selector: ".control-footer-center",
+  $justify-space-between-selector: ".control-footer-space-between",
   $with-border: true
 ) {
   #{$selector},
   #{$with-border-selector} {
     @include control-footer-base();
-    display: flex; // part of ch-dialog footer implementation
-    justify-content: flex-end; // part of ch-dialog footer implementation
   }
-
+  #{$justify-start-selector} {
+    --control-footer-justify-content: start;
+  }
+  #{$justify-center-selector} {
+    --control-footer-justify-content: center;
+  }
+  #{$justify-space-between-selector} {
+    --control-footer-justify-content: space-between;
+  }
   @if $with-border {
     #{$with-border-selector} {
       @include control-footer-border();
+    }
+  }
+}
+
+// ----------------------
+// Pseudo Dialog Header
+// ----------------------
+
+@mixin control-header-base() {
+  padding-block-end: var(--mer-spacing--md);
+}
+@mixin control-header-border() {
+  border-block-end: var(--mer-border__width--sm) solid
+    var(--mer-border-color__on-elevation--01);
+}
+@mixin control-header(
+  $selector: ".control-header",
+  $with-border-selector: ".control-header-with-border",
+  $with-border: true
+) {
+  #{$selector},
+  #{$with-border-selector} {
+    @include control-header-base();
+  }
+  @if $with-border {
+    #{$with-border-selector} {
+      @include control-header-border();
     }
   }
 }
@@ -500,13 +547,17 @@
 }
 
 @mixin spacing-body(
-  $body-selector: ".spacing-body",
-  $body-block-selector: ".spacing-body-block",
-  $body-block-start-selector: ".spacing-body-block-start",
-  $body-block-end-selector: ".spacing-body-block-end",
-  $body-inline-selector: ".spacing-body-inline",
-  $body-inline-start-selector: ".spacing-body-inline-start",
-  $body-inline-end-selector: ".spacing-body-inline-end"
+  $body-selector: ".spacing-body,:host(.spacing-body)",
+  $body-block-selector: ".spacing-body-block,:host(.spacing-body-block)",
+  $body-block-start-selector:
+    ".spacing-body-block-start,:host(.spacing-body-block-start)",
+  $body-block-end-selector:
+    ".spacing-body-block-end,:host(.spacing-body-block-end)",
+  $body-inline-selector: ".spacing-body-inline,:host(.spacing-body-inline)",
+  $body-inline-start-selector:
+    ".spacing-body-inline-start,:host(.spacing-body-inline-start)",
+  $body-inline-end-selector:
+    ".spacing-body-inline-end,:host(.spacing-body-inline-end)"
 ) {
   #{$body-selector} {
     @extend %spacing-body;
@@ -530,5 +581,27 @@
   }
   #{$body-inline-end-selector} {
     @extend %spacing-body-inline-end;
+  }
+}
+
+// ----------------------
+// Spinner
+// ----------------------
+
+@mixin spinner($size) {
+  width: $size;
+  height: $size;
+  border: calc($size / 5) solid var(--mer-color__tinted-primary--50);
+  border-top: calc($size / 5) solid var(--mer-color__primary--300);
+  border-radius: 50%;
+  animation: spin var(--mer-timing--regular) linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }

@@ -1,6 +1,7 @@
 %tab {
   --ch-tab-close-button__background-image-size: var(--mer-icon__size--md);
-  --ch-tab-close-button__image-size: var(--mer-icon__box--md);
+  --ch-tab-close-button__image-size: var(--mer-spacing--md);
+  --ch-tab-image-size: var(--mer-icon__box--md);
 
   --spacing-body-block-start: var(--mer-spacing--md);
   --spacing-body-block-end: var(--mer-spacing--md);
@@ -11,76 +12,176 @@
   @include items-container-colors();
 }
 
-%tab-caption {
+%tab-button-block {
   @include tab-button-colors-enabled();
   @include tab-button-font();
   @include tab-button-gap();
 
+  @include tab-button-padding-inline();
+  border-block: var(--tab-caption__border-width)
+    var(--tab-caption__border-style) transparent;
+
+  // TODO: Remove this mixin
+  // @include tab-button-border-block-end();
+}
+
+%tab-button-inline {
+  @include tab-button-colors-enabled();
+  @include tab-button-font();
+  @include tab-button-gap();
+
+  @include tab-button-padding-stack();
+  border-inline: var(--tab-caption__border-width)
+    var(--tab-caption__border-style) transparent;
+
+  // TODO: Remove this mixin
+  // @include tab-button-border-block();
+}
+
+// Block Start
+%tab-button-block-start--hover {
+  @include tab-button-colors-hover();
+}
+
+%tab-button-block-start--active {
+  // TODO
+  @include tab-button-colors-hover();
+}
+
+%tab-button-block-start--selected {
+  @include tab-button-colors-selected-inline();
+  border-block-end-color: var(--tab-caption__border-color);
+}
+
+// Block End
+%tab-button-block-end--hover {
+  @include tab-button-colors-hover();
+}
+
+%tab-button-block-end--active {
+  // TODO
+  @include tab-button-colors-hover();
+}
+
+%tab-button-block-end--selected {
+  @include tab-button-colors-selected-inline();
+  border-block-start-color: var(--tab-caption__border-color);
+}
+
+// Inline Start
+%tab-button-inline-start--hover {
+  @include tab-button-colors-hover();
+}
+
+%tab-button-inline-start--active {
+  // TODO
+  @include tab-button-colors-hover();
+}
+
+%tab-button-inline-start--selected {
+  @include tab-button-colors-selected-stack();
+  border-inline-end-color: var(--tab-caption__border-color);
+}
+
+// Inline End
+%tab-button-inline-end--hover {
+  @include tab-button-colors-hover();
+}
+
+%tab-button-inline-end--active {
+  // TODO
+  @include tab-button-colors-hover();
+}
+
+%tab-button-inline-end--selected {
+  @include tab-button-colors-selected-stack();
+  border-inline-start-color: var(--tab-caption__border-color);
+}
+
+// Focus
+%tab-button--focus-visible {
+  @include focus-outline();
+}
+
+// Disabled
+%tab-button--disabled {
+  @include tab-button-colors-disabled();
+  --tab-button__border-width: 0;
+}
+
+%tab-button-close-button {
+  margin-inline-start: 4px;
+  border-radius: 4px;
+
   &--hover {
-    @include tab-button-colors-hover();
+    background-color: var(--mer-color__tinted-primary--20);
   }
 
   &--focus-visible {
     @include focus-outline();
   }
-
-  &--block {
-    @include tab-button-padding-inline();
-    @include tab-button-border-block-end();
-  }
-
-  &--inline {
-    @include tab-button-padding-stack();
-    @include tab-button-border-block();
-  }
-
-  &--selected {
-    &-inline {
-      @include tab-button-colors-selected-stack();
-    }
-    &-block {
-      @include tab-button-colors-selected-inline();
-    }
-  }
-
-  &--disabled {
-    @include tab-button-colors-disabled();
-    --tab-caption__border-width: 0;
-  }
-
-  &__close-button {
-    &--focus {
-      @include focus-outline();
-    }
-  }
 }
 
 %tab-list {
-  &--block {
+  &--block-start {
     border-block-end: var(--items-container__border-width)
       var(--items-container__border-style) var(--items-container__border-color);
   }
 
-  &--inline {
+  &--block-end {
+    border-block-start: var(--items-container__border-width)
+      var(--items-container__border-style) var(--items-container__border-color);
+  }
+
+  &--inline-start {
     border-inline-end: var(--items-container__border-width)
+      var(--items-container__border-style) var(--items-container__border-color);
+  }
+
+  &--inline-end {
+    border-inline-start: var(--items-container__border-width)
       var(--items-container__border-style) var(--items-container__border-color);
   }
 }
 
 @mixin tab(
   $tab-selector: ".tab",
-  $tab-caption-selector: ".tab::part(button)",
-  $tab-caption--block-selector: ".tab::part(button block)",
-  $tab-caption--inline-selector: ".tab::part(button inline)",
-  $tab-caption--selected-selector: ".tab::part(button selected)",
-  $tab-caption--selected-inline-selector: ".tab::part(button inline selected)",
-  $tab-caption--selected-block-selector: ".tab::part(button block selected)",
-  $tab-caption--disabled-selector: ".tab::part(button disabled)",
-  $tab-caption__close-button-selector: ".tab::part(close-button)",
-  $tab-list-selector: ".tab::part(tab-list)",
-  $tab-list--block-selector: ".tab::part(tab-list block)",
-  $tab-list--inline-selector: ".tab::part(tab-list inline)",
+
+  $tab-button-block-start-selector: ".tab::part(tab block-start)",
+  $tab-button-block-start--selected-selector:
+    ".tab::part(tab block-start selected)",
+  $tab-button-block-start--disabled-selector:
+    ".tab::part(tab block-start disabled)",
+
+  $tab-button-block-end-selector: ".tab::part(tab block-end)",
+  $tab-button-block-end--selected-selector: ".tab::part(tab block-end selected)",
+  $tab-button-block-end--disabled-selector: ".tab::part(tab block-end disabled)",
+
+  $tab-button-inline-start-selector: ".tab::part(tab inline-start)",
+  $tab-button-inline-start--selected-selector:
+    ".tab::part(tab inline-start selected)",
+  $tab-button-inline-start--disabled-selector:
+    ".tab::part(tab inline-start disabled)",
+
+  $tab-button-inline-end-selector: ".tab::part(tab inline-end)",
+  $tab-button-inline-end--selected-selector:
+    ".tab::part(tab inline-end selected)",
+  $tab-button-inline-end--disabled-selector:
+    ".tab::part(tab inline-end disabled)",
+
+  $tab-button--disabled-selector: ".tab::part(tab disabled)",
+  $tab-button-close-button-selector: ".tab::part(close-button)",
+
+  $tab-list--block-start-selector: ".tab::part(tab-list block-start)",
+  $tab-list--block-end-selector: ".tab::part(tab-list block-end)",
+  $tab-list--inline-start-selector: ".tab::part(tab-list inline-start)",
+  $tab-list--inline-end-selector: ".tab::part(tab-list inline-end)",
+
   $add--tab: true,
+  $add--tab-button-block-start: true,
+  $add--tab-button-block-end: true,
+  $add--tab-button-inline-start: true,
+  $add--tab-button-inline-end: true,
   $add--tab-list: true,
   $add--disabled: true
 ) {
@@ -90,62 +191,165 @@
     }
   }
 
-  #{$tab-caption-selector} {
-    // @extend %tab-text;
-    @extend %tab-caption;
+  // - - - - - - - - - - - - - - - - - - - -
+  //        Tab Button (block-start)
+  // - - - - - - - - - - - - - - - - - - - -
+  @if ($add--tab-button-block-start) {
+    #{$tab-button-block-start-selector} {
+      @extend %tab-button-block;
+
+      &:hover {
+        @extend %tab-button-block-start--hover;
+      }
+
+      &:active {
+        @extend %tab-button-block-start--active;
+      }
+
+      &:focus-visible {
+        @extend %tab-button--focus-visible;
+      }
+    }
+
+    #{$tab-button-block-start--selected-selector} {
+      @extend %tab-button-block-start--selected;
+    }
+
+    @if $add--disabled {
+      #{$tab-button-block-start--disabled-selector} {
+        @extend %tab-button--disabled;
+      }
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //         Tab Button (block-end)
+  // - - - - - - - - - - - - - - - - - - - -
+  @if ($add--tab-button-block-end) {
+    #{$tab-button-block-end-selector} {
+      @extend %tab-button-block;
+
+      &:hover {
+        @extend %tab-button-block-end--hover;
+      }
+
+      &:active {
+        @extend %tab-button-block-end--active;
+      }
+
+      &:focus-visible {
+        @extend %tab-button--focus-visible;
+      }
+    }
+
+    #{$tab-button-block-end--selected-selector} {
+      @extend %tab-button-block-end--selected;
+    }
+
+    @if $add--disabled {
+      #{$tab-button-block-end--disabled-selector} {
+        @extend %tab-button--disabled;
+      }
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //        Tab Button (inline-start)
+  // - - - - - - - - - - - - - - - - - - - -
+  @if ($add--tab-button-inline-start) {
+    #{$tab-button-inline-start-selector} {
+      @extend %tab-button-inline;
+
+      &:hover {
+        @extend %tab-button-inline-start--hover;
+      }
+
+      &:active {
+        @extend %tab-button-inline-start--active;
+      }
+
+      &:focus-visible {
+        @extend %tab-button--focus-visible;
+      }
+    }
+
+    #{$tab-button-inline-start--selected-selector} {
+      @extend %tab-button-inline-start--selected;
+    }
+
+    @if $add--disabled {
+      #{$tab-button-inline-start--disabled-selector} {
+        @extend %tab-button--disabled;
+      }
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //         Tab Button (inline-end)
+  // - - - - - - - - - - - - - - - - - - - -
+  @if ($add--tab-button-inline-end) {
+    #{$tab-button-inline-end-selector} {
+      @extend %tab-button-inline;
+
+      &:hover {
+        @extend %tab-button-inline-end--hover;
+      }
+
+      &:active {
+        @extend %tab-button-inline-end--active;
+      }
+
+      &:focus-visible {
+        @extend %tab-button--focus-visible;
+      }
+    }
+
+    #{$tab-button-inline-end--selected-selector} {
+      @extend %tab-button-inline-end--selected;
+    }
+
+    @if $add--disabled {
+      #{$tab-button-inline-end--disabled-selector} {
+        @extend %tab-button--disabled;
+      }
+    }
+  }
+
+  #{$tab-button-close-button-selector} {
+    @extend %tab-button-close-button;
+
+    &:focus-visible {
+      @extend %tab-button-close-button--focus-visible;
+    }
+  }
+
+  #{$tab-button-close-button-selector} {
+    @extend %tab-button-close-button;
 
     &:hover {
-      @extend %tab-caption--hover;
+      @extend %tab-button-close-button--hover;
     }
 
     &:focus-visible {
-      @extend %tab-caption--focus-visible;
-    }
-  }
-
-  #{$tab-caption--block-selector} {
-    @extend %tab-caption--block;
-  }
-
-  #{$tab-caption--inline-selector} {
-    @extend %tab-caption--inline;
-  }
-
-  #{$tab-caption--selected-selector} {
-    @extend %tab-caption--selected;
-  }
-
-  #{$tab-caption--selected-inline-selector} {
-    @extend %tab-caption--selected-inline;
-  }
-
-  #{$tab-caption--selected-block-selector} {
-    @extend %tab-caption--selected-block;
-  }
-
-  #{$tab-caption__close-button-selector} {
-    &:focus-visible {
-      @extend %tab-caption__close-button--focus;
+      @extend %tab-button-close-button--focus-visible;
     }
   }
 
   @if $add--tab-list {
-    #{$tab-list-selector} {
-      @extend %tab-list;
+    #{$tab-list--block-start-selector} {
+      @extend %tab-list--block-start;
     }
-  }
 
-  #{$tab-list--block-selector} {
-    @extend %tab-list--block;
-  }
+    #{$tab-list--block-end-selector} {
+      @extend %tab-list--block-end;
+    }
 
-  #{$tab-list--inline-selector} {
-    @extend %tab-list--inline;
-  }
+    #{$tab-list--inline-start-selector} {
+      @extend %tab-list--inline-start;
+    }
 
-  @if $add--disabled {
-    #{$tab-caption--disabled-selector} {
-      @extend %tab-caption--disabled;
+    #{$tab-list--inline-end-selector} {
+      @extend %tab-list--inline-end;
     }
   }
 }

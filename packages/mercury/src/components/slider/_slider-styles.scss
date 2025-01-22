@@ -21,7 +21,7 @@
   // - - - - - - - - - - - - - - - - - - - -
   // track
   --slider-track__block-size: var(--mer-spacing--2xs);
-  --slider-track__bg-color--selected: var(--mer-color__primary-blue--200);
+  --slider-track__bg-color--selected: var(--mer-color__primary--200);
   --slider-track__bg-color--unselected: var(--mer-color__neutral-gray--650);
   --slider-track__bg-color--selected-disabled: var(
     --mer-accent__primary--disabled
@@ -48,6 +48,14 @@
 }
 
 %slider__thumb {
+  &--hover {
+    --ch-slider-thumb-background-color: var(--mer-color__primary--600);
+  }
+
+  &--active-focus {
+    --ch-slider-thumb-background-color: var(--mer-color__primary--600);
+    @include focus-outline();
+  }
 }
 
 /// @group Slider
@@ -85,12 +93,18 @@
 @mixin slider(
   $slider-selector: ".slider",
   $track-selector: ".slider::part(track)",
-  $thumb-selector: ".slider::part(thumb)",
-  $thumb-focus-selector: ".slider:focus-visible::part(thumb focus)"
+  $thumb-active-selector: ".slider:active::part(thumb)",
+  $thumb-focus-selector: ".slider:focus::part(thumb)"
 ) {
   #{$slider-selector} {
     @extend %slider__slider;
+
+    &:hover {
+      @extend %slider__thumb--hover;
+    }
   }
+
+  // TODO: TEST THIS
   #{$slider-selector}:disabled {
     @extend %slider__slider--disabled;
   }
@@ -99,11 +113,11 @@
     @extend %slider__track;
   }
 
-  #{$thumb-selector} {
-    @extend %slider__thumb;
+  #{$thumb-active-selector} {
+    @extend %slider__thumb--active-focus;
   }
 
   #{$thumb-focus-selector} {
-    @include focus-outline();
+    @extend %slider__thumb--active-focus;
   }
 }

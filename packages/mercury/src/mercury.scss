@@ -46,12 +46,15 @@
 @import "./components/code/code-styles";
 @import "./components/combo-box/combo-box-styles";
 @import "./components/dialog/dialog-styles";
+@import "./components/dropdown/dropdown-styles";
 @import "./components/flexible-layout/flexible-layout-styles";
 @import "./components/icon/icon-styles";
-@import "./components/form-input/form-input-styles";
+@import "./components/input/input-styles";
+@import "./components/layout-splitter/layout-splitter-styles";
 @import "./components/list-box/list-box-styles";
 @import "./components/markdown-viewer/markdown-viewer-styles";
 @import "./components/navigation-list/navigation-list-styles";
+@import "./components/pills/pills-styles";
 @import "./components/property-grid/property-grid-styles";
 @import "./components/radio-group/radio-group-styles";
 @import "./components/shortcuts/styles";
@@ -62,6 +65,7 @@
 @import "./components/tabular-grid/tabular-grid-styles";
 @import "./components/tabular-grid/helpers";
 @import "./components/ticket-list/ticket-list-styles";
+@import "./components/switch/switch-styles";
 @import "./components/tooltip/tooltip-styles";
 @import "./components/tree-view/tree-view-styles";
 @import "./components/widget/widget-styles";
@@ -83,6 +87,7 @@
   $light-theme: true,
   $prefers-color-scheme-dark: false,
   $prefers-color-scheme-light: false,
+  $globant-colors: false,
 
   // Tokens
   $tokens: true,
@@ -119,12 +124,15 @@
   $code: true,
   $combo-box: true,
   $dialog: true,
+  $dropdown: true,
   $edit: true,
   $flexible-layout: true,
   $icon: true,
+  $layout-splitter: true,
   $list-box: true,
   $markdown-viewer: true,
   $navigation-list: true,
+  $pills: true,
   $radio-group: true,
   $segmented-control: true,
   $sidebar: true,
@@ -132,6 +140,7 @@
   $tab: true,
   $tabular-grid: true,
   $ticket-list: true,
+  $switch: true,
   $tooltip: true,
   $tree-view: true,
   $widget: true
@@ -284,7 +293,7 @@
       // Fixes issues in elements that force its color based on this property.
       // For example, the font color of the input with autocomplete (:-webkit-autofill)
       color-scheme: light;
-      @include foundation-colors--light();
+      @include foundation-colors--light($globant-colors: $globant-colors);
     }
   }
   @if $colors and $tokens and $prefers-color-scheme-light {
@@ -293,7 +302,7 @@
         // Fixes issues in elements that force its color based on this property.
         // For example, the font color of the input with autocomplete (:-webkit-autofill)
         color-scheme: light;
-        @include foundation-colors--light();
+        @include foundation-colors--light($globant-colors: $globant-colors);
       }
     }
   }
@@ -304,7 +313,7 @@
       // Fixes issues in elements that force its color based on this property.
       // For example, the font color of the input with autocomplete (:-webkit-autofill)
       color-scheme: dark;
-      @include foundation-colors--dark();
+      @include foundation-colors--dark($globant-colors: $globant-colors);
     }
   }
   @if $colors and $tokens and $prefers-color-scheme-dark {
@@ -313,7 +322,7 @@
         // Fixes issues in elements that force its color based on this property.
         // For example, the font color of the input with autocomplete (:-webkit-autofill)
         color-scheme: dark;
-        @include foundation-colors--dark();
+        @include foundation-colors--dark($globant-colors: $globant-colors);
       }
     }
   }
@@ -429,6 +438,7 @@
       @include button-primary();
       @include button-secondary();
       @include button-tertiary();
+      @include buttons-spacer();
 
       @include button-icon-only();
       @include button-icon-and-text();
@@ -446,12 +456,13 @@
     }
 
     @if $utility-classes {
-      @include utilities-background();
+      @include utilities-elevation();
     }
 
     @if $layout-classes {
       @include layout();
       @include control-footer();
+      @include control-header();
     }
 
     @if $spacing-classes {
@@ -495,8 +506,12 @@
     @include dialog();
   }
 
+  @if $dropdown {
+    @include dropdown();
+  }
+
   @if $edit {
-    @include form-input();
+    @include input();
   }
 
   @if $flexible-layout {
@@ -505,6 +520,10 @@
 
   @if $icon {
     @include icon();
+  }
+
+  @if $layout-splitter {
+    @include layout-splitter();
   }
 
   @if $list-box {
@@ -517,6 +536,10 @@
 
   @if $navigation-list {
     @include navigation-list();
+  }
+
+  @if $pills {
+    @include pills();
   }
 
   @if $radio-group {
@@ -549,6 +572,11 @@
     @include ticket-list();
   }
 
+  @if $switch {
+    @include switch-small();
+    @include switch-large();
+  }
+
   @if $tooltip {
     @include tooltip();
   }
@@ -579,6 +607,7 @@
   $light-theme: false,
   $prefers-color-scheme-dark: false,
   $prefers-color-scheme-light: false,
+  $globant-colors: false,
 
   // Tokens
   $tokens: false,
@@ -615,12 +644,15 @@
   $code: false,
   $combo-box: false,
   $dialog: false,
+  $dropdown: false,
   $edit: false,
   $flexible-layout: false,
   $icon: false,
+  $layout-splitter: false,
   $list-box: false,
   $markdown-viewer: false,
   $navigation-list: false,
+  $pills: false,
   $radio-group: false,
   $segmented-control: false,
   $sidebar: false,
@@ -628,6 +660,7 @@
   $tab: false,
   $tabular-grid: false,
   $ticket-list: false,
+  $switch: false,
   $tooltip: false,
   $tree-view: false,
   $widget: false
@@ -649,6 +682,7 @@
     $light-theme: $light-theme,
     $prefers-color-scheme-dark: $prefers-color-scheme-dark,
     $prefers-color-scheme-light: $prefers-color-scheme-light,
+    $globant-colors: $globant-colors,
 
     // Tokens
     $tokens: $tokens,
@@ -685,12 +719,15 @@
     $code: $code,
     $combo-box: $combo-box,
     $dialog: $dialog,
+    $dropdown: $dropdown,
     $edit: $edit,
     $flexible-layout: $flexible-layout,
     $icon: $icon,
+    $layout-splitter: $layout-splitter,
     $list-box: $list-box,
     $markdown-viewer: $markdown-viewer,
     $navigation-list: $navigation-list,
+    $pills: $pills,
     $radio-group: $radio-group,
     $segmented-control: $segmented-control,
     $sidebar: $sidebar,
@@ -698,6 +735,7 @@
     $tab: $tab,
     $tabular-grid: $tabular-grid,
     $ticket-list: $ticket-list,
+    $switch: $switch,
     $tooltip: $tooltip,
     $tree-view: $tree-view,
     $widget: $widget

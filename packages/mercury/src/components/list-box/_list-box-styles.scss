@@ -18,6 +18,9 @@
     @include item-border-radius();
     @include item-font();
     @include item-padding();
+    // @include item-column-gap(); // TODO: uncomment when '.action' class on Chameleon fixes the grid-template.
+    // Explanation: At the time of writting Chameleon is applying a grid-template that consists on three columns.
+    // As a side effect, if we apply column-gap an inline-start gap will be applied, even tough is not intended.
 
     &--disabled {
       @include item-colors-disabled();
@@ -49,6 +52,9 @@
       }
     }
 
+    &--nested {
+      margin-inline-start: var(--mer-spacing--lg);
+    }
     &--nested-expandable {
     }
   }
@@ -78,16 +84,14 @@
     }
   }
 
-  &-additional-item--action {
-    // to be defined later
-
-    &--hover {
-      // to be defined later
-    }
-
-    &--focus-visible {
-      @include focus-outline();
-    }
+  &-additional-item--image {
+    // TODO: uncomment when '.action' class on Chameleon fixes the grid-template, and use back item-column-gap() instead.
+    margin-inline-end: var(--item__gap--regular);
+  }
+  &-additional-item--text {
+    // TODO: uncomment when '.action' class on Chameleon fixes the grid-template, and use back item-column-gap() instead.
+    margin-inline-start: calc(var(--item__gap--regular) * 2);
+    font-style: italic;
   }
 
   &-separator {
@@ -105,6 +109,7 @@
   $group-action-selector: ".list-box::part(group__action)",
   $group-caption-selector: ".list-box::part(group__caption)",
 
+  $item-action--nested-selector: ".list-box::part(item__action nested)",
   $item-action--nested-expandable-selector:
     ".list-box::part(item__action nested-expandable)",
 
@@ -134,6 +139,7 @@
     ".list-box::part(item__additional-item image)",
   $additional-item--action-selector:
     ".list-box::part(item__additional-item action)",
+  $additional-item--text-selector: ".list-box::part(item__additional-item text)",
 
   $separator-selector: ".list-box::part(separator)",
 
@@ -191,7 +197,10 @@
     }
   }
 
-  // Nested expandable
+  // Nested
+  #{$item-action--nested-selector} {
+    @extend %list-box-item-action--nested;
+  }
   #{$item-action--nested-expandable-selector} {
     @extend %list-box-item-action--nested-expandable;
   }
@@ -199,7 +208,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   //                  Group
   // - - - - - - - - - - - - - - - - - - - -
-
   #{$group-selector} {
     @extend %list-box-group;
   }
@@ -237,15 +245,10 @@
 
   @if $add--additional-item {
     #{$additional-item--image-selector} {
-      @extend %list-box-additional-item--action;
-
-      &:hover {
-        @extend %list-box-additional-item--action--hover;
-      }
-
-      &:focus-visible {
-        @extend %list-box-additional-item--action--focus-visible;
-      }
+      @extend %list-box-additional-item--image;
+    }
+    #{$additional-item--text-selector} {
+      @extend %list-box-additional-item--text;
     }
   }
 }

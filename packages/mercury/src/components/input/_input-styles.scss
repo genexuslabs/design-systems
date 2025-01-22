@@ -1,0 +1,69 @@
+%input {
+  // ch-chameleon custom vars (do not edit their names)
+  // --ch-edit-auto-fill-background-color: var(); not defined by design yet
+  --ch-edit-gap: var(--control__icon-gap);
+  --ch-edit__image-size: var(--mer-icon__box--md);
+  --ch-placeholder-color: var(--mer-color__neutral-gray--400);
+
+  @include control-border();
+  @include control-colors-enabled();
+  @include control-font-weight-regular();
+  @include control-font-size-regular();
+  @include control-padding-inline-block();
+
+  &--focus {
+    @include focus-outline();
+  }
+
+  &--hover {
+    @include control-colors-hover();
+  }
+
+  &--disabled {
+    @include control-colors-disabled();
+  }
+}
+
+/// @group Form
+/// @param {String} $selector [".input"] -
+/// @param {String} $error-selector [".input-error"] -
+/// @param {Boolean} $add--disabled [true] -
+/// @param {Boolean} $add--error [true] -
+@mixin input(
+  $selector: ".input",
+  $empty-placeholder-selector: ".input[part*='ch-edit--empty-value']",
+  $error-selector: ".input-error",
+  $add--disabled: true,
+  $add--error: true,
+  $add--placeholder: true
+) {
+  #{$selector} {
+    @extend %input;
+
+    &:focus {
+      @extend %input--focus;
+    }
+
+    &:hover {
+      @extend %input--hover;
+    }
+
+    @if $add--disabled {
+      &:disabled {
+        @extend %input--disabled;
+      }
+    }
+  }
+
+  @if $add--placeholder {
+    #{$empty-placeholder-selector} {
+      font-style: var(--control-placeholder__font-style);
+    }
+  }
+
+  @if $add--error {
+    #{$error-selector} {
+      @include control-colors-error();
+    }
+  }
+}

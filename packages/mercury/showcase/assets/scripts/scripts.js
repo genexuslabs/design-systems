@@ -300,24 +300,28 @@ const includeSidebarNav = async () => {
       });
 
       listItemsArr.forEach(item => {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.href = item.url;
-        a.textContent = item.caption;
+        const hidden = item.hidden;
+        if (!hidden) {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
 
-        // ¿Is this the item of the actual page?
-        if (item.url.split(".")[0] === pageName) {
-          CURRENT_PAGE_NAV_ITEM = li;
-          li.classList.add("current-page");
+          a.href = item.url;
+          a.textContent = item.caption;
 
-          // Include chameleon URL
-          if (item.chameleonUrl && item.chameleonUrl !== null) {
-            includeChameleonURL(item.chameleonUrl);
+          // ¿Is this the item of the actual page?
+          if (item.url.split(".")[0] === pageName) {
+            CURRENT_PAGE_NAV_ITEM = li;
+            li.classList.add("current-page");
+
+            // Include chameleon URL
+            if (item.chameleonUrl && item.chameleonUrl !== null) {
+              includeChameleonURL(item.chameleonUrl);
+            }
           }
-        }
 
-        li.appendChild(a);
-        ul.appendChild(li);
+          li.appendChild(a);
+          ul.appendChild(li);
+        }
       });
 
       listSectionEl.appendChild(ul);
@@ -600,19 +604,98 @@ const includeBundleButton = () => {
   }
 };
 
+const includeBundleButtonV2 = () => {
+  const bundleValue = document.body.getAttribute("data-bundle");
+
+  if (bundleValue !== null && topBarRef) {
+    // if bundleValue.length is 0, it means this component does not requires a bundle.
+    const PAGE_TITLE = document.title;
+    let COPY_ICON;
+    let CHECK_ICON;
+    let WARNING_ICON;
+    let chImage;
+    let buttonCaption;
+
+    // Icons references
+    COPY_ICON = getIconPath({
+      category: "system",
+      name: "copy",
+      colorType: "primary"
+    });
+    CHECK_ICON = getIconPath({
+      category: "system",
+      name: "check",
+      colorType: "primary"
+    });
+    WARNING_ICON = getIconPath({
+      category: "system",
+      name: "warning",
+      colorType: "primary"
+    });
+
+    // Create and add the ch-image element
+    chImage = document.createElement("ch-image");
+    chImage.className = "icon-md";
+    chImage.src = COPY_ICON;
+
+    // "copy bundle" container (for Label + Button)
+    const copyBundleContainer = document.createElement("div");
+    copyBundleContainer.classList.add("copy-bundle__container");
+
+    // "copy bundle" label
+    const copyBundleLabel = document.createElement("label");
+    copyBundleLabel.classList.add("copy-bundle__label");
+    copyBundleLabel.textContent = "Bundle:";
+
+    // Create the "copy bundle" button
+    const copyBundleButton = document.createElement("button");
+    copyBundleButton.className = "button-tertiary button-icon-and-text";
+    buttonCaption = `${bundleValue}`;
+
+    const buttonCaptionTextNode = document.createTextNode(buttonCaption);
+
+    copyBundleButton.addEventListener("click", e => {
+      navigator.clipboard
+        .writeText(`"${bundleValue}"`)
+        .then(() => {
+          chImage.previousSibling.textContent = "Copied!";
+          chImage.src = CHECK_ICON;
+          e.target.style.pointerEvents = "none";
+        })
+        .catch(err => {
+          chImage.previousSibling.textContent = "Failed to Copy";
+          chImage.src = WARNING_ICON;
+          e.target.style.pointerEvents = "none";
+        });
+      setTimeout(() => {
+        chImage.previousSibling.textContent = buttonCaption;
+        chImage.src = COPY_ICON;
+        e.target.style.pointerEvents = "auto";
+      }, 1500);
+    });
+
+    // Appends
+    copyBundleButton.appendChild(buttonCaptionTextNode);
+    copyBundleButton.appendChild(chImage);
+    // chImage.after(buttonCaptionTextNode);
+    copyBundleContainer.appendChild(copyBundleLabel);
+    copyBundleContainer.appendChild(copyBundleButton);
+
+    topBarRef.appendChild(copyBundleContainer);
+  }
+};
+
 /**
  * @description: this function includes for every section a caption at the end that indicates the end.
  */
 const includeEndOfSectionCaption = () => {
   const pageSections = document.querySelectorAll(SECTION_SELECTOR);
   pageSections.forEach(section => {
-    console.log("section", section);
     const sectionTitleEl = section.querySelector(SECTION_TITLE_SELECTOR);
     if (sectionTitleEl && sectionTitleEl.textContent.trim().length > 0) {
       const endOfSectionEl = document.createElement("p");
       endOfSectionEl.classList.add("section__end-caption");
       endOfSectionEl.textContent = `end of ${sectionTitleEl.textContent.trim()} section`;
-      console.log(endOfSectionEl);
       section.appendChild(endOfSectionEl);
     }
   });
@@ -630,8 +713,9 @@ document.addEventListener("DOMContentLoaded", function () {
   listenToCtrlCmd();
   includeSidebar();
   includeTopBar();
-  includeChameleonURL();
   getChCodeValues();
-  includeBundleButton();
+  // includeBundleButton(); // This version adds the button below the top-bar
+  includeBundleButtonV2(); // This version adds the button inside the top-bar
+  includeChameleonURL();
   includeEndOfSectionCaption();
 });

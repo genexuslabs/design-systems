@@ -89,12 +89,12 @@
                         effort required for updates and enhancements.
                       </p>
                     </div>
-                    <button slot="footer" type="button" class="button-tertiary">
-                      Cancel
-                    </button>
-                    <button slot="footer" type="button" class="button-primary">
-                      Save
-                    </button>
+                    <div slot="footer" class="buttons-spacer">
+                      <button type="button" class="button-secondary">
+                        Cancel
+                      </button>
+                      <button type="button" class="button-primary">Save</button>
+                    </div>
                   </ch-dialog>
                   <button class="button-secondary" id="btn-show-dialog-basic">
                     Show Dialog
@@ -114,6 +114,10 @@
                   <script>
                     code = `<ch-dialog class="dialog" caption="About GeneXus" show-header>
   <div class="spacing-body"><!-- Your dialog content here --></div>
+  <div slot="footer" class="buttons-spacer">
+    <button type="button" class="button-secondary">Cancel</button>
+    <button type="button" class="button-primary">Save</button>
+  </div>
 </ch-dialog>
 `;
                   </script>
@@ -187,16 +191,20 @@
                 </p>
                 <div class="article__content">
                   <div class="control-footer dummy-border">
-                    <button class="button-tertiary">Cancel</button>
-                    <button class="button-primary">Save</button>
+                    <div class="buttons-spacer">
+                      <button class="button-secondary">Cancel</button>
+                      <button class="button-primary">Save</button>
+                    </div>
                   </div>
                 </div>
                 <div class="article__code">
                   <ch-code language="tsx" class="code"> </ch-code>
                   <script>
                     code = `<div class="control-footer">
-  <button class="button-tertiary">Cancel</button>
-  <button class="button-primary">Save</button>
+  <div class="buttons-spacer">
+    <button class="button-secondary">Cancel</button>
+    <button class="button-primary">Save</button>
+  </div>
 </div>`;
                   </script>
                 </div>
@@ -227,17 +235,69 @@
                   <div
                     class="control-footer-with-border dummy-border-highlighted dummy-border-inline-end dummy-border-block-end dummy-border-inline-start"
                   >
-                    <button class="button-tertiary">Cancel</button>
-                    <button class="button-primary">Save</button>
+                    <div class="buttons-spacer">
+                      <button class="button-secondary">Cancel</button>
+                      <button class="button-primary">Save</button>
+                    </div>
                   </div>
                 </div>
                 <div class="article__code">
                   <ch-code language="tsx" class="code"> </ch-code>
                   <script>
                     code = `<div class="control-footer-with-border">
-  <button class="button-tertiary">Cancel</button>
-  <button class="button-primary">Save</button>
+  <div class="buttons-spacer">
+    <button class="button-secondary">Cancel</button>
+    <button class="button-primary">Save</button>
+  </div>
 </div>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          control-footer: with spacing
+          =========================== -->
+            <article
+              class="article"
+              data-nav
+              data-title="control-footer: with spacing"
+            >
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  The <code>.control-footer</code> component only applies
+                  padding to the top (block-start) by default. To add padding on
+                  the other sides, you can use any of the available "spacing"
+                  classes. These classes will adjust the padding based on the
+                  specific context in which the <code>.control-footer</code> is
+                  used.
+                </p>
+                <div class="article__content widget">
+                  <div
+                    class="control-footer-with-border dummy-border-highlighted dummy-border-inline-end dummy-border-block-end dummy-border-inline-start spacing-body"
+                  >
+                    <div class="buttons-spacer">
+                      <button class="button-secondary">Cancel</button>
+                      <button class="button-primary">Save</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<div class="widget">
+  <div class="control-footer-with-border spacing-body">
+    <div class="buttons-spacer">
+      <button class="button-secondary">Cancel</button>
+      <button class="button-primary">Save</button>
+    </div>
+  </div>
+</div>
+`;
                   </script>
                 </div>
                 <!-- /.article__content -->

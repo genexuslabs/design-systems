@@ -23,10 +23,11 @@
 }
 
 %tree-view-drop--after {
-  background-color: var(--mer-color__primary-blue--200);
+  background-color: var(--mer-color__primary--200);
 }
 
 %tree-view-item__header {
+  min-inline-size: var(--tree-view__min-inline-size);
   @include item-colors-enabled();
   @include item-border-radius();
   @include item-border();

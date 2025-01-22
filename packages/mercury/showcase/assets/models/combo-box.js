@@ -1,3 +1,116 @@
+export const comboBoxWithIconsModel = [
+  {
+    value: "workflow",
+    caption: "Workflow",
+    startImgSrc: "objects/workflow"
+  },
+  {
+    value: "work-panel",
+    caption: "Work Panel",
+    startImgSrc: "objects/work-panel"
+  },
+  {
+    value: "webpanel",
+    caption: "Webpanel",
+    startImgSrc: "objects/webpanel"
+  },
+  {
+    value: "web-component",
+    caption: "Web Component",
+    startImgSrc: "objects/web-component"
+  },
+  {
+    value: "version",
+    caption: "Version",
+    startImgSrc: "objects/version"
+  },
+  {
+    value: "url-rewrite",
+    caption: "Url Rewrite",
+    startImgSrc: "objects/url-rewrite"
+  },
+  {
+    value: "transaction",
+    caption: "Transaction",
+    startImgSrc: "objects/transaction"
+  },
+  {
+    value: "to-be-defined",
+    caption: "To Be Defined",
+    startImgSrc: "objects/to-be-defined"
+  },
+  {
+    value: "theme",
+    caption: "Theme",
+    startImgSrc: "objects/theme"
+  },
+  {
+    value: "theme-web",
+    caption: "Theme Web",
+    startImgSrc: "objects/theme-web"
+  },
+  {
+    value: "theme-for-sd",
+    caption: "Theme For Sd",
+    startImgSrc: "objects/theme-for-sd"
+  },
+  {
+    value: "table",
+    caption: "Table",
+    startImgSrc: "objects/table"
+  },
+  {
+    value: "super-app",
+    caption: "Super App",
+    startImgSrc: "objects/super-app"
+  },
+  {
+    value: "subtype-group",
+    caption: "Subtype Group",
+    startImgSrc: "objects/subtype-group"
+  },
+  {
+    value: "structured-data-type",
+    caption: "Structured Data Type",
+    startImgSrc: "objects/structured-data-type"
+  },
+  {
+    value: "stencil",
+    caption: "Stencil",
+    startImgSrc: "objects/stencil"
+  },
+  {
+    value: "roles",
+    caption: "Roles",
+    startImgSrc: "objects/roles"
+  },
+  {
+    value: "report",
+    caption: "Report",
+    startImgSrc: "objects/report"
+  },
+  {
+    value: "references",
+    caption: "References",
+    startImgSrc: "objects/references"
+  },
+  {
+    value: "query",
+    caption: "Query",
+    startImgSrc: "objects/query"
+  },
+  {
+    value: "procedure",
+    caption: "Procedure",
+    startImgSrc: "objects/procedure"
+  },
+  {
+    value: "patterns",
+    caption: "Patterns",
+    startImgSrc: "objects/patterns"
+  }
+];
+
 export const comboBox1Model = [
   {
     value: "Value 1",

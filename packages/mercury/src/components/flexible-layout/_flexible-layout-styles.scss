@@ -1,43 +1,187 @@
 %flexible-layout {
-  --ch-tab-close-button__background-image-size: var(--mer-icon__size--md);
-  --ch-tab-close-button__image-size: var(--mer-icon__box--md);
+  --flexible-layout--tab-list-block__background-color: var(
+    --mer-surface__elevation--01
+  );
+  --flexible-layout--tab-list-inline__background-color: var(
+    --mer-surface__elevation--02
+  );
 
-  --spacing-body-block-start: var(--mer-spacing--md);
-  --spacing-body-block-end: var(--mer-spacing--md);
-  --spacing-body-inline-start: var(--mer-spacing--md);
-  --spacing-body-inline-end: var(--mer-spacing--md);
+  --flexible-layout--tab-list-inline__inline-size: 48px;
 
-  &-tab-caption {
-    background-color: color-mix(
-      in srgb,
-      var(--colors-foundation__gray--300) 20%,
-      transparent
+  --flexible-layout--tab-button-block-start__background-color: var(
+    --flexible-layout--tab-list-block__background-color
+  );
+  --flexible-layout--tab-button-block-end__background-color: var(
+    --flexible-layout--tab-list-block__background-color
+  );
+
+  --flexible-layout--tab-button-inline-start__background-color: var(
+    --flexible-layout--tab-list-inline__background-color
+  );
+  --flexible-layout--tab-button-inline-end__background-color: var(
+    --flexible-layout--tab-list-inline__background-color
+  );
+
+  --flexible-layout--tab-button-block-start__background-color--selected: var(
+    --mer-surface
+  );
+  --flexible-layout--tab-button-block-end__background-color--selected: var(
+    --mer-surface
+  );
+
+  &-tab {
+    --ch-tab-close-button__background-image-size: var(--mer-icon__size--md);
+    --ch-tab-close-button__image-size: var(--mer-spacing--md);
+    --ch-tab-image-size: var(--mer-icon__box--md);
+
+    --spacing-body-block-start: var(--mer-spacing--md);
+    --spacing-body-block-end: var(--mer-spacing--md);
+    --spacing-body-inline-start: var(--mer-spacing--md);
+    --spacing-body-inline-end: var(--mer-spacing--md);
+  }
+
+  &-tab-button-block {
+    @include tab-button-colors-enabled();
+    @include tab-button-font();
+    @include tab-button-gap();
+
+    padding-inline: var(--tab-caption__padding-inline);
+
+    // Due to border-block-width: 1px;
+    padding-block: calc(var(--tab-caption__padding-block) - 1px);
+
+    border-block: 1px solid transparent;
+  }
+
+  &-tab-button-inline {
+    @include tab-button-colors-enabled();
+    @include tab-button-font();
+    @include tab-button-gap();
+
+    padding-block: var(--tab-caption__padding-block);
+
+    // Due to border-inline-width: 1px;
+    padding-inline: calc(var(--tab-caption__padding-inline) - 1px);
+
+    border-inline: 1px solid transparent;
+  }
+
+  // Style for the button of the selected tab
+  &-tab-button--selected-before {
+    color: var(--mer-accent__primary);
+  }
+
+  // Block Start
+  &-tab-button-block-start {
+    background-color: var(
+      --flexible-layout--tab-button-block-start__background-color
     );
+  }
 
-    &--selected {
-      background-color: color-mix(
-        in srgb,
-        var(--colors-foundation__gray--300) 50%,
-        transparent
-      );
-    }
+  &-tab-button-block-start--hover {
+    @include tab-button-colors-hover();
+  }
+
+  &-tab-button-block-start--active {
+    @include tab-button-colors-hover();
+  }
+
+  &-tab-button-block-start--selected {
+    border-block-start-color: var(--mer-accent__primary);
+    background-color: var(
+      --flexible-layout--tab-button-block-start__background-color--selected
+    );
+  }
+
+  // Block End
+  &-tab-button-block-end {
+    background-color: var(
+      --flexible-layout--tab-button-block-end__background-color
+    );
+  }
+
+  &-tab-button-block-end--hover {
+    @include tab-button-colors-hover();
+  }
+
+  &-tab-button-block-end--active {
+    @include tab-button-colors-hover();
+  }
+
+  &-tab-button-block-end--selected {
+    border-block-end-color: var(--mer-accent__primary);
+    background-color: var(
+      --flexible-layout--tab-button-block-end__background-color--selected
+    );
+  }
+
+  // Inline Start
+  &-tab-button-inline-start {
+    background-color: var(
+      --flexible-layout--tab-button-inline-start__background-color
+    );
+    inline-size: var(--flexible-layout--tab-list-inline__inline-size);
+  }
+
+  &-tab-button-inline-start--hover {
+    @include tab-button-colors-hover();
+  }
+
+  &-tab-button-inline-start--active {
+    @include tab-button-colors-hover();
+  }
+
+  &-tab-button-inline-start--selected {
+    border-inline-start-color: var(--mer-accent__primary);
+    color: var(--mer-accent__primary);
+  }
+
+  // Inline End
+  &-tab-button-inline-end {
+    background-color: var(
+      --flexible-layout--tab-button-inline-end__background-color
+    );
+    inline-size: var(--flexible-layout--tab-list-inline__inline-size);
+  }
+
+  &-tab-button-inline-end--hover {
+    @include tab-button-colors-hover();
+  }
+
+  &-tab-button-inline-end--active {
+    @include tab-button-colors-hover();
+  }
+
+  &-tab-button-inline-end--selected {
+    border-inline-end-color: var(--mer-accent__primary);
+    color: var(--mer-accent__primary);
+  }
+
+  // Disabled
+  &-tab-button--disabled {
+    @include tab-button-colors-disabled();
   }
 
   &-tab-list--inline {
-    background-color: var(--mer-color__neutral-gray--600);
-    inline-size: 48px;
+    background-color: var(--flexible-layout--tab-list-inline__background-color);
+    inline-size: var(--flexible-layout--tab-list-inline__inline-size);
     gap: 4px;
   }
 
   &-tab-list--block {
-    background-color: var(--mer-color__neutral-gray--650);
+    background-color: var(--flexible-layout--tab-list-block__background-color);
     overflow: auto;
+  }
+
+  // Disabled
+  &-tab-button--disabled {
+    @include tab-button-colors-disabled();
   }
 
   &-droppable-area {
     background-color: color-mix(
       in srgb,
-      var(--accents__secondary--hover) 25%,
+      var(--mer-accent__primary) 25%,
       transparent
     );
   }
@@ -49,48 +193,202 @@
 
 @mixin flexible-layout(
   $flexible-layout-selector: ".flexible-layout",
-  $flexible-layout__bar-selector: ".flexible-layout::part(bar)",
   $tab-selector: ".flexible-layout::part(leaf)",
-  $tab-caption-selector: ".flexible-layout::part(button)",
-  $tab-caption--block-selector: ".flexible-layout::part(button block)",
-  $tab-caption--inline-selector: ".flexible-layout::part(button inline)",
-  $tab-caption--selected-selector: ".flexible-layout::part(button selected)",
-  $tab-caption--disabled-selector: ".flexible-layout::part(button disabled)",
-  $tab-caption__close-button-selector: ".flexible-layout::part(close-button)",
+
+  $tab-button-block-start-selector: ".flexible-layout::part(tab block-start)",
+  $tab-button-block-start--selected-selector:
+    ".flexible-layout::part(tab block-start selected)",
+  $tab-button-block-start--disabled-selector:
+    ".flexible-layout::part(tab block-start disabled)",
+
+  $tab-button-block-end-selector: ".flexible-layout::part(tab block-end)",
+  $tab-button-block-end--selected-selector:
+    ".flexible-layout::part(tab block-end selected)",
+  $tab-button-block-end--disabled-selector:
+    ".flexible-layout::part(tab block-end disabled)",
+
+  $tab-button-inline-start-selector: ".flexible-layout::part(tab inline-start)",
+  $tab-button-inline-start--selected-selector:
+    ".flexible-layout::part(tab inline-start selected)",
+  $tab-button-inline-start--disabled-selector:
+    ".flexible-layout::part(tab inline-start disabled)",
+
+  $tab-button-inline-end-selector: ".flexible-layout::part(tab inline-end)",
+  $tab-button-inline-end--selected-selector:
+    ".flexible-layout::part(tab inline-end selected)",
+  $tab-button-inline-end--disabled-selector:
+    ".flexible-layout::part(tab inline-end disabled)",
+
+  $tab-button-close-button-selector: ".flexible-layout::part(close-button)",
+
   $tab-list--inline-selector: ".flexible-layout::part(tab-list inline)",
   $tab-list--block-selector: ".flexible-layout::part(tab-list block)",
+
+  $bar-selector: ".flexible-layout::part(bar)",
   $droppable-area-selector: ".flexible-layout::part(droppable-area)",
+  $add--tab-button-block-start: true,
+  $add--tab-button-block-end: true,
+  $add--tab-button-inline-start: true,
+  $add--tab-button-inline-end: true,
   $add--disabled: true
 ) {
+  #{$flexible-layout-selector} {
+    @extend %flexible-layout;
+  }
+
   @include tab(
-    $tab-selector: #{$tab-selector},
-    $tab-caption-selector: #{$tab-caption-selector},
-    $tab-caption--block-selector: #{$tab-caption--block-selector},
-    $tab-caption--inline-selector: #{$tab-caption--inline-selector},
-    $tab-caption--selected-selector: #{$tab-caption--selected-selector},
-    $tab-caption__close-button-selector: #{$tab-caption__close-button-selector},
+    $tab-button-close-button-selector: #{$tab-button-close-button-selector},
+    $add--tab-button-block-start: false,
+    $add--tab-button-block-end: false,
+    $add--tab-button-inline-start: false,
+    $add--tab-button-inline-end: false,
     $add--tab: false,
     $add--tab-list: false,
     $add--disabled: $add--disabled
   );
 
-  #{$flexible-layout-selector} {
-    @extend %flexible-layout;
+  #{$tab-selector} {
+    @extend %flexible-layout-tab;
   }
 
-  #{$flexible-layout__bar-selector} {
+  #{$bar-selector} {
     @extend %flexible-layout-bar;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
-  //               Tab Caption
+  //        Tab Button (block-start)
   // - - - - - - - - - - - - - - - - - - - -
-  #{$tab-caption-selector} {
-    @extend %flexible-layout-tab-caption;
+  @if $add--tab-button-block-start {
+    #{$tab-button-block-start-selector} {
+      @extend %flexible-layout-tab-button-block;
+      @extend %flexible-layout-tab-button-block-start;
+
+      &:hover {
+        @extend %flexible-layout-tab-button-block-start--hover;
+      }
+
+      &:active {
+        @extend %flexible-layout-tab-button-block-start--active;
+      }
+
+      &:focus-visible {
+        @extend %tab-button--focus-visible;
+      }
+    }
+
+    #{$tab-button-block-start--selected-selector} {
+      @extend %flexible-layout-tab-button-block-start--selected;
+
+      &::before {
+        @extend %flexible-layout-tab-button--selected-before;
+      }
+    }
+
+    @if $add--disabled {
+      #{$tab-button-block-start--disabled-selector} {
+        @extend %flexible-layout-tab-button--disabled;
+      }
+    }
   }
 
-  #{$tab-caption--selected-selector} {
-    @extend %flexible-layout-tab-caption--selected;
+  // - - - - - - - - - - - - - - - - - - - -
+  //         Tab Button (block-end)
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $add--tab-button-block-end {
+    #{$tab-button-block-end-selector} {
+      @extend %flexible-layout-tab-button-block;
+      @extend %flexible-layout-tab-button-block-end;
+
+      &:hover {
+        @extend %flexible-layout-tab-button-block-end--hover;
+      }
+
+      &:active {
+        @extend %flexible-layout-tab-button-block-end--active;
+      }
+
+      &:focus-visible {
+        @extend %tab-button--focus-visible;
+      }
+    }
+
+    #{$tab-button-block-end--selected-selector} {
+      @extend %flexible-layout-tab-button-block-end--selected;
+
+      &::before {
+        @extend %flexible-layout-tab-button--selected-before;
+      }
+    }
+
+    @if $add--disabled {
+      #{$tab-button-block-end--disabled-selector} {
+        @extend %flexible-layout-tab-button--disabled;
+      }
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //        Tab Button (inline-start)
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $add--tab-button-inline-start {
+    #{$tab-button-inline-start-selector} {
+      @extend %flexible-layout-tab-button-inline;
+      @extend %flexible-layout-tab-button-inline-start;
+
+      &:hover {
+        @extend %flexible-layout-tab-button-inline-start--hover;
+      }
+
+      &:active {
+        @extend %flexible-layout-tab-button-inline-start--active;
+      }
+
+      &:focus-visible {
+        @extend %tab-button--focus-visible;
+      }
+    }
+
+    #{$tab-button-inline-start--selected-selector} {
+      @extend %flexible-layout-tab-button-inline-start--selected;
+    }
+
+    @if $add--disabled {
+      #{$tab-button-inline-start--disabled-selector} {
+        @extend %flexible-layout-tab-button--disabled;
+      }
+    }
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //         Tab Button (inline-end)
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $add--tab-button-inline-end {
+    #{$tab-button-inline-end-selector} {
+      @extend %flexible-layout-tab-button-inline;
+      @extend %flexible-layout-tab-button-inline-end;
+
+      &:hover {
+        @extend %flexible-layout-tab-button-inline-end--hover;
+      }
+
+      &:active {
+        @extend %flexible-layout-tab-button-inline-end--active;
+      }
+
+      &:focus-visible {
+        @extend %tab-button--focus-visible;
+      }
+    }
+
+    #{$tab-button-inline-end--selected-selector} {
+      @extend %flexible-layout-tab-button-inline-end--selected;
+    }
+
+    @if $add--disabled {
+      #{$tab-button-inline-end--disabled-selector} {
+        @extend %flexible-layout-tab-button--disabled;
+      }
+    }
   }
 
   // - - - - - - - - - - - - - - - - - - - -

@@ -1,15 +1,19 @@
 %dialog {
-  --spacing-body-block-start: var(--mer-spacing--lg);
-  --spacing-body-block-end: var(--mer-spacing--lg);
-  --spacing-body-inline-start: var(--mer-spacing--md);
-  --spacing-body-inline-end: var(--mer-spacing--md);
+  --spacing-body-block-start: var(--mer-spacing--md);
+  --spacing-body-block-end: var(--mer-spacing--md);
+  --spacing-body-inline-start: var(--mer-spacing--sm);
+  --spacing-body-inline-end: var(--mer-spacing--sm);
   --ch-dialog-max-inline-size: 800px;
   background-color: var(--mer-surface__elevation--01);
   box-shadow: var(--mer-box-shadow--01);
 
   &__backdrop {
-    background-color: rgba(32, 36, 40, 0.9);
-    backdrop-filter: blur(1.5px);
+    background-color: color-mix(
+      in srgb,
+      var(--mer-color__neutral-gray--900) 71%,
+      transparent 30%
+    );
+    backdrop-filter: blur(15px);
     z-index: 108; // TODO: This is a WA to show the backdrop above the button of the dropdown
   }
 
@@ -43,8 +47,8 @@
   }
 
   &__footer {
-    @include control-footer-base();
-    @include control-footer-border();
+    padding-block: var(--mer-spacing--xs);
+    padding-inline: var(--mer-spacing--sm);
   }
 
   // ------------------------------
@@ -53,7 +57,7 @@
   &__edge {
     $edge-border-width: var(--mer-border__width--lg);
     $edge-border-style: solid;
-    $edge-color: var(--mer-color__tinted-blue--20);
+    $edge-color: var(--mer-color__tinted-primary--20);
     border-color: transparent;
     transition: var(--mer-timing--fast) border-color;
 
@@ -146,6 +150,8 @@
   #{$footer-selector} {
     @extend %dialog__footer;
   }
+  // @include buttons-spacer($footer-selector);
+  @include control-footer($with-border-selector: $footer-selector);
 
   // ------------------------------
   // Edges (For dragging)

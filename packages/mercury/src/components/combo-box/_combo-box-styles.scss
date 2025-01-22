@@ -4,12 +4,10 @@
 %combo-box {
   --ch-combo-box-separation-y: var(--mer-spacing--3xs);
   --ch-combo-box-item-gap: var(--mer-spacing--xs);
-
-  --ch-combo-box-item__image-size: var(--mer-spacing--md);
-  --ch-combo-box-group__expandable-button-size: var(--mer-spacing--md);
-
-  --ch-combo-box-group__expandable-button-image-size: var(--mer-spacing--sm);
+  --ch-combo-box-item__image-size: var(--mer-icon__box--md);
   --ch-combo-box-item__background-image-size: 100%;
+  --ch-combo-box-group__expandable-button-size: var(--mer-spacing--md);
+  --ch-combo-box-group__expandable-button-image-size: var(--mer-spacing--sm);
 
   @include control-border();
   @include control-colors-enabled();
@@ -17,17 +15,84 @@
   @include control-font-size-regular();
   @include control-padding-inline-block();
 
-  &:hover {
+  &--hover {
     @include control-colors-hover();
   }
 
+  &--focus {
+    @include focus-border();
+  }
+
+  &--disabled {
+    @include control-colors-disabled();
+  }
+
+  &--error {
+    @include control-colors-error();
+  }
+
+  &__window {
+    @include items-container-border();
+    @include items-container-border-radius();
+    @include items-container-colors();
+    @include items-container-padding();
+    @include items-container-gap();
+    @include items-container-max-height();
+    @include items-container-dropdown();
+  }
+
+  &-group__header {
+    @include item-colors-enabled();
+    @include item-font-header();
+    @include item-padding();
+
+    &--expandable {
+      @include item-colors-enabled();
+      @include item-font-header();
+      @include item-padding();
+      @include item-border-radius();
+
+      &-hover {
+        --item__color: var(--mer-accent__primary);
+      }
+    }
+
+    &--disabled {
+      @include item-colors-disabled();
+    }
+  }
+
+  &-group {
+    @include items-container-gap();
+
+    &__content {
+      @include items-container-gap();
+    }
+  }
+
   &__item {
+    @include item-colors-enabled();
+    @include item-border();
+    @include item-border-radius();
+    @include item-font();
+    @include item-padding();
+
     &--nested {
       padding-inline-start: calc(
-        var(--ch-combo-box-item-gap) +
-          var(--ch-combo-box-group__expandable-button-size) +
-          var(--mer-spacing--2xs)
+        calc(
+          var(--ch-combo-box-item-gap) +
+            var(--ch-combo-box-group__expandable-button-size) +
+            var(--item__padding-inline)
+        )
       );
+    }
+
+    &--selected {
+      @include item-colors-selected();
+    }
+
+    &--disabled {
+      @include item-colors-disabled();
     }
   }
 }
@@ -49,13 +114,13 @@
 /// @param {String} $item--selected-selector [".combo-box::part(item selected)"] -
 /// @param {Boolean} $add--disabled [true] -
 /// @param {Boolean} $add--placeholder [true] -
-/// @param {Boolean} $add--placeholder-var [true] -
 /// @param {Boolean} $add--error [true] -
 @mixin combo-box(
   $combo-box-selector: ".combo-box",
   $combo-box--disabled-selector: ".combo-box[disabled]",
   $combo-box--error-selector: ".combo-box-error",
-  $combo-box__placeholder-selector: ".combo-box::part(placeholder)",
+  $combo-box__placeholder-selector:
+    ".combo-box[part='ch-combo-box--empty-value']",
   $window-selector: ".combo-box::part(window)",
   $group-selector: ".combo-box::part(group)",
   $group__content-selector: ".combo-box::part(group__content)",
@@ -69,17 +134,17 @@
   $item--selected-selector: ".combo-box::part(item selected)",
   $add--disabled: true,
   $add--placeholder: true,
-  $add--placeholder-var: true,
   $add--error: true
 ) {
   #{$combo-box-selector} {
     @extend %combo-box;
 
-    &:focus {
-      @include focus-border();
+    &:hover {
+      @extend %combo-box--hover;
     }
 
-    @if $add--placeholder-var {
+    &:focus {
+      @extend %combo-box--focus;
     }
   }
 
@@ -89,72 +154,41 @@
     }
   }
 
-  @if $add--disabled {
-    #{$combo-box--disabled-selector} {
-      @include control-colors-disabled();
-    }
-
-    #{$group__header--disabled-selector} {
-      @include item-colors-disabled();
-    }
-
-    #{$item--disabled-selector} {
-      @include item-colors-disabled();
-    }
-  }
-
-  @if $add--error {
-    #{$combo-box--error-selector} {
-      @include control-colors-error();
-    }
-  }
-
   // - - - - - - - - - - - - - - - - - - - -
   //                 Window
   // - - - - - - - - - - - - - - - - - - - -
   #{$window-selector} {
-    @include items-container-colors();
-    @include items-container-padding();
-    @include items-container-dropdown();
-    @include items-container-gap();
-    @include items-container-max-height();
+    @extend %combo-box__window;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
   //                  Group
   // - - - - - - - - - - - - - - - - - - - -
   #{$group__header-selector} {
-    @include item-colors-enabled();
-    @include item-font-header();
-    @include item-padding();
+    @extend %combo-box-group__header;
   }
 
   #{$group__header--expandable-selector} {
-    @include item-colors-enabled();
-    @include item-font-header();
-    @include item-padding();
-    @include item-border-radius();
+    @extend %combo-box-group__header--expandable;
 
     &:hover {
-      @include item-colors-hover();
+      @extend %combo-box-group__header--expandable-hover;
     }
   }
+
   #{$group-selector} {
-    @include items-container-gap();
+    @extend %combo-box-group;
   }
+
   #{$group__content-selector} {
-    @include items-container-gap();
+    @extend %combo-box-group__content;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
   //                  Item
   // - - - - - - - - - - - - - - - - - - - -
   #{$item-selector} {
-    @include item-colors-enabled();
-    @include item-border();
-    @include item-border-radius();
-    @include item-font();
-    @include item-padding();
+    @extend %combo-box__item;
   }
 
   #{$item--nested-selector} {
@@ -162,6 +196,29 @@
   }
 
   #{$item--selected-selector} {
-    @include item-colors-selected();
+    @extend %combo-box__item--selected;
+  }
+
+  // - - - - - - - - - - - - - - - - - - - -
+  //                Disabled
+  // - - - - - - - - - - - - - - - - - - - -
+  @if $add--disabled {
+    #{$combo-box--disabled-selector} {
+      @extend %combo-box--disabled;
+    }
+
+    #{$group__header--disabled-selector} {
+      @extend %combo-box-group__header--disabled;
+    }
+
+    #{$item--disabled-selector} {
+      @extend %combo-box__item--disabled;
+    }
+  }
+
+  @if $add--error {
+    #{$combo-box--error-selector} {
+      @extend %combo-box--error;
+    }
   }
 }

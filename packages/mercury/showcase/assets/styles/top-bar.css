@@ -15,8 +15,31 @@
 
   display: flex;
   align-items: center;
-  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 .container__top-bar a {
   text-decoration: none !important;
 }
+
+/*copy bundle*/
+.copy-bundle__label {
+  font-size: var(--control__font-size--regular);
+  color: var(--mer-text__on-disabled);
+}
+.copy-bundle__container {
+  display: flex;
+  align-items: center;
+}
+
+/* .bundle-container {
+  border-block-end: 1px solid var(--mer-surface__elevation--01);
+  block-size: var(--sc-top-bar__height);
+  background-color: var(--mer-color__surface);
+  z-index: 99;
+  display: grid;
+  align-items: center;
+  text-transform: capitalize;
+  position: fixed;
+  top: var(--sc-top-bar__height);
+  inline-size: calc(100vw - var(--sc-sidebar__width));
+} */

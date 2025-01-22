@@ -16,7 +16,7 @@ Step 2: Copy 'src/assets/icons/_generated/*'
 Copy to /showcase 
 - - - - - - - - - - - - - 
 (all required files should be copied to /showcase, so that the showcase can be
-distributed with absolute independence of /dist).
+distributed with independence of /dist).
 
 Step 3: Copy generated icons
 Step 4: Copy 'dist/bundles/css/all.css'
@@ -25,6 +25,7 @@ Step 6: Copy 'dist/assets-manager.js'
 Step 7: Copy 'dist/bundles.js' 
 Step 8: Copy 'dist/assets/MERCURY_ASSETS.js' 
 Step 9: Copy 'dist/mercury.scss' 
+Step 10: Copy 'dist/register-mercury.js' 
 */
 
 const ASSETS_MANAGER_JS = "assets-manager.js";
@@ -135,6 +136,12 @@ copyFileToFolder(
 copyFileToFolder(
   path.join(DIST_PATH, "mercury.scss"),
   path.join(SHOWCASE_PATH, "scss")
+);
+
+// Step 10
+copyFileToFolder(
+  path.join(DIST_PATH, "register-mercury.js"),
+  SHOWCASE_SCRIPTS_DIR
 );
 
 console.log("copy-tasks.js copied successfully");

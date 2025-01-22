@@ -22,7 +22,7 @@
     <main class="main">
       <div class="container">
         <!-- button primary -->
-        <section class="section">
+        <section class="section" data-nav>
           <!-- header -->
           <header class="section__header">
             <h1 class="section__title">list box</h1>
@@ -40,8 +40,8 @@
             <!-- ========================== 
           base
           =========================== -->
-            <article class="article" data-title="base">
-              <!-- <header class="article__header"></header> -->
+            <article class="article" data-nav data-title="base">
+              <header class="article__header"></header>
               <!-- main -->
               <div class="article__main">
                 <div class="article__content" style="height: 240px">
@@ -62,11 +62,44 @@
                   </script>
                 </div>
                 <div class="article__code">
-                  <ch-code id="ch-code-1" language="tsx" class="code">
-                  </ch-code>
+                  <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    const markup1 = `<ch-action-list-render class="list-box"><ch-action-list-render>`;
-                    document.getElementById("ch-code-1").value = markup1;
+                    code = `<ch-action-list-render class="list-box"></ch-action-list-render>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          with icons
+          =========================== -->
+            <article class="article" data-nav data-title="with icons">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content" style="height: 240px">
+                  <ch-action-list-render
+                    selection="none"
+                    class="list-box"
+                    id="action-list-2"
+                  ></ch-action-list-render>
+                  <script type="module">
+                    import { withIconsModel } from "./assets/models/action-list.js";
+                    const actionList2 =
+                      document.getElementById("action-list-2");
+                    actionList2.model = withIconsModel;
+                    setTimeout(() => {
+                      // WA to avoid "undefined" when initial selection != "none"
+                      actionList2.selection = "multiple";
+                    }, 500);
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-action-list-render class="list-box"></ch-action-list-render>`;
                   </script>
                 </div>
                 <!-- /.article__content -->

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkbox</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+  </head>
+  <body class="showcase" data-sidebar data-bundle="components/checkbox">
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- button primary -->
+        <section class="section">
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">checkbox</h1>
+            <p class="section__description">
+              A checkbox input element is a versatile component on a webpage,
+              designed to allow users to make binary choices. It is typically
+              used for selecting multiple options from a list or toggling a
+              setting on and off, making it an essential tool for enhancing user
+              interaction and data collection.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          checked
+          =========================== -->
+            <article class="article" data-nav data-title="checked">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox"
+                    checked-value="true"
+                    un-checked-value="false"
+                    value="true"
+                    caption="The Caption"
+                  ></ch-checkbox>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-checkbox class="checkbox"></ch-checkbox>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          unchecked
+          =========================== -->
+            <article class="article" data-nav data-title="unchecked">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox"
+                    checked-value="true"
+                    un-checked-value="false"
+                    value="false"
+                    caption="The Caption"
+                  ></ch-checkbox>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-checkbox class="checkbox"></ch-checkbox>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          indeterminate
+          =========================== -->
+            <article class="article" data-nav data-title="indeterminate">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox"
+                    checked-value="true"
+                    un-checked-value="false"
+                    value="false"
+                    indeterminate
+                    caption="The Caption"
+                  ></ch-checkbox>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-checkbox class="checkbox"></ch-checkbox>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          disabled
+          =========================== -->
+            <article class="article" data-nav data-title="disabled">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox"
+                    checked-value="true"
+                    un-checked-value="false"
+                    value="false"
+                    caption="The Caption"
+                    disabled
+                  ></ch-checkbox>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-checkbox class="checkbox"></ch-checkbox>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          with icon
+          =========================== -->
+            <article class="article" data-nav data-title="with icon">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    id="checkbox-with-icon-enabled"
+                    class="checkbox"
+                    checked-value="true"
+                    un-checked-value="false"
+                    value="true"
+                    caption="The Caption"
+                  ></ch-checkbox>
+                  <script type="module">
+                    const ADD_CIRCLE_ICON = getIconPath({
+                      category: "gemini-tools",
+                      name: "add-circle",
+                      colorType: "on-elevation"
+                    });
+                    console.log(ADD_CIRCLE_ICON);
+                    const checkboxWithIconEnabled = document.getElementById(
+                      "checkbox-with-icon-enabled"
+                    );
+                    checkboxWithIconEnabled.startImgSrc = ADD_CIRCLE_ICON;
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `const ADD_CIRCLE_ICON = getIconPath({
+  category: "gemini-tools",
+  name: "add-circle",
+  colorType: "on-elevation"
+});
+<ch-checkbox class="checkbox" startImgSrc={ADD_CIRCLE_ICON}></ch-checkbox>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          with error
+          =========================== -->
+            <article class="article" data-nav data-title="with error">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-checkbox
+                    class="checkbox checkbox-error"
+                    checked-value="true"
+                    un-checked-value="false"
+                    value="false"
+                    caption="The Caption"
+                  ></ch-checkbox>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-checkbox class="checkbox checkbox-error"></ch-checkbox>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          grouping checkboxes
+          =========================== -->
+            <article class="article" data-nav data-title="grouping checkboxes">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="field-group">
+                    <ch-checkbox
+                      class="checkbox"
+                      checked-value="true"
+                      un-checked-value="false"
+                      value="false"
+                      caption="The Caption 1"
+                    ></ch-checkbox>
+                    <ch-checkbox
+                      class="checkbox"
+                      checked-value="true"
+                      un-checked-value="false"
+                      value="false"
+                      caption="The Caption 2"
+                    ></ch-checkbox>
+                    <ch-checkbox
+                      class="checkbox"
+                      checked-value="true"
+                      un-checked-value="false"
+                      value="false"
+                      caption="The Caption 3"
+                    ></ch-checkbox>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<div class="field-group">
+  <ch-checkbox class="checkbox"></ch-checkbox>
+  <ch-checkbox class="checkbox"></ch-checkbox>
+  <ch-checkbox class="checkbox"></ch-checkbox>
+</div>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          grouping checkboxes: inline
+          =========================== -->
+            <article
+              class="article"
+              data-nav
+              data-title="grouping checkboxes: inline"
+            >
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <div class="field-group-inline">
+                    <ch-checkbox
+                      class="checkbox"
+                      checked-value="true"
+                      un-checked-value="false"
+                      value="false"
+                      caption="The Caption 1"
+                    ></ch-checkbox>
+                    <ch-checkbox
+                      class="checkbox"
+                      checked-value="true"
+                      un-checked-value="false"
+                      value="false"
+                      caption="The Caption 2"
+                    ></ch-checkbox>
+                    <ch-checkbox
+                      class="checkbox"
+                      checked-value="true"
+                      un-checked-value="false"
+                      value="false"
+                      caption="The Caption 3"
+                    ></ch-checkbox>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<div class="field-group-inline">
+  <ch-checkbox class="checkbox"></ch-checkbox>
+  <ch-checkbox class="checkbox"></ch-checkbox>
+  <ch-checkbox class="checkbox"></ch-checkbox>
+</div>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

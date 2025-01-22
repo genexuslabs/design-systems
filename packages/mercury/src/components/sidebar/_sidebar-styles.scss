@@ -1,25 +1,150 @@
 %sidebar {
+  // chameleon tokens (do not modify names)
   --ch-sidebar-inline-size--collapsed: 42px;
   --ch-sidebar__chevron-size: 24px;
-  --ch-sidebar__chevron-image-size: 16px;
+  --ch-sidebar__chevron-image-size: var(--mer-spacing--sm); // 12px
+  --ch-sidebar__chevron-background-image: var(
+    --icon__system_arrow-right_primary--enabled
+  );
 
+  // spacing body tokens
+  --spacing-body-block-start: var(--mer-spacing--sm);
+  --spacing-body-block-end: var(--mer-spacing--sm);
+  --spacing-body-inline-start: var(--mer-spacing--sm);
+  --spacing-body-inline-end: var(--mer-spacing--sm);
+
+  // sidebar tokens
+  --sidebar-button-border-width: var(--mer-border__width--sm);
+  --sidebar-button-margin: calc(
+    (
+        var(--ch-sidebar-inline-size--collapsed) -
+          (
+            var(--ch-sidebar__chevron-size) + var(--sidebar-button-border-width) *
+              2
+          )
+      ) / 2
+  );
+
+  // TODO: Remove this background-color. The elevation must determine the color
   background-color: var(--mer-color__neutral-gray--800);
-  color: var(--mer-color__neutral-gray--300);
+  overflow: hidden;
+
+  // Collapsed Hidden
+
+  &-collapsed-hidden {
+    --ch-sidebar-inline-size--collapsed: 0;
+  }
+
+  // With Motion
+
+  &-with-motion {
+    &.ch-sidebar--collapsed {
+      // WA to win over user "inline-size" property. This allows the transition.
+      inline-size: var(--ch-sidebar-inline-size--collapsed) !important;
+    }
+    transition: var(--mer-timing--super-fast) ease inline-size;
+
+    &--button-before {
+      transition: var(--mer-timing--super-fast) ease transform;
+    }
+  }
+
+  // - - - - - - - -
+  // Button
+  // - - - - - - - -
 
   &-expand-button {
-    padding: var(--mer-spacing--xs);
+    background-color: var(--mer-surface__elevation--02);
+    border: var(--sidebar-button-border-width) solid
+      var(--mer-border-color__on-elevation--01);
+    color: var(--mer-icon__neutral);
+    inline-size: calc(
+      var(--ch-sidebar__chevron-size) + var(--sidebar-button-border-width) * 2
+    );
+    margin: var(--sidebar-button-margin);
+
+    &--before {
+      transform: rotate(180deg);
+    }
+
+    &--hover {
+      background-color: var(--mer-surface__elevation--03);
+      border-color: var(--mer-border-color__on-elevation--02);
+      color: var(--mer-icon__highlighted);
+    }
+
+    &--active {
+      background-color: var(--mer-surface__elevation--01);
+      border-color: var(--mer-border-color__on-elevation--01);
+    }
+
+    &--focus-visible {
+      @include focus-outline();
+    }
+
+    &--collapsed {
+      &-before {
+        transform: rotate(0);
+      }
+    }
   }
 }
 
 @mixin sidebar(
   $sidebar-selector: ".sidebar",
-  $expand-button-selector: ".sidebar::part(expand-button)"
+  $sidebar-collapsed-hidden-selector: ".sidebar-collapsed-hidden",
+  $sidebar-with-motion-selector: ".sidebar-with-motion",
+  $sidebar-with-motion-button-selector:
+    ".sidebar-with-motion::part(expand-button)",
+  $expand-button-selector: ".sidebar::part(expand-button)",
+  $expand-button-collapsed-selector: ".sidebar::part(expand-button collapsed)"
 ) {
   #{$sidebar-selector} {
     @extend %sidebar;
   }
 
+  // Collapsed hidden
+  #{$sidebar-collapsed-hidden-selector} {
+    @extend %sidebar-collapsed-hidden;
+  }
+
+  // With motion
+  #{$sidebar-with-motion-selector} {
+    @extend %sidebar-with-motion;
+  }
+  #{$sidebar-with-motion-button-selector}::before {
+    @extend %sidebar-with-motion--button-before;
+  }
+
+  // - - - - - - - -
+  // Button
+  // - - - - - - - -
+
+  // enabled
   #{$expand-button-selector} {
     @extend %sidebar-expand-button;
+  }
+  #{$expand-button-selector}::before {
+    @extend %sidebar-expand-button--before;
+  }
+  // hover
+  #{$expand-button-selector}:hover {
+    @extend %sidebar-expand-button--hover;
+  }
+  // active
+  #{$expand-button-selector}:active {
+    @extend %sidebar-expand-button--active;
+  }
+
+  #{$expand-button-selector}:focus-visible {
+    @extend %sidebar-expand-button--focus-visible;
+  }
+
+  // collapsed
+  #{$expand-button-collapsed-selector} {
+    @extend %sidebar-expand-button--collapsed;
+  }
+  #{$expand-button-collapsed-selector}::before {
+    @extend %sidebar-expand-button--collapsed-before;
   }
 }

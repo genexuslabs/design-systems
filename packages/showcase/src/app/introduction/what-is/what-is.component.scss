@@ -1,0 +1,5 @@
+what-is {
+  & > p + p {
+    margin-block-start: var(--mer-spacing--md, var(--spacing--l));
+  }
+}

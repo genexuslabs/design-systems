@@ -1,0 +1,8 @@
+@import "../../../unanimo.scss";
+
+@include unanimo-only(
+  $components: true,
+  $dropdown-primary: true,
+  $dropdown-secondary: true,
+  $dropdown-conversational: true
+);

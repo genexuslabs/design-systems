@@ -1,0 +1,94 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+.main-content {
+  display: grid;
+  grid-auto-rows: max-content;
+  justify-self: center;
+  margin: var(
+    --mer-spacing--3xl,
+    calc(var(--spacing--xxl) + var(--spacing--l))
+  );
+  max-inline-size: 960px;
+  flex: 1;
+
+  & > header {
+    margin-block-end: var(--mer-spacing--md, var(--spacing--l));
+  }
+
+  & > section,
+  & > code-snippet,
+  & > section > code-snippet {
+    margin-block-start: var(--mer-spacing--4xl, calc(var(--spacing--xxl) * 2));
+  }
+
+  copy-code > .tab {
+    margin-block-start: var(--mer-spacing--md, var(--spacing--l));
+  }
+}
+
+.filters {
+  display: grid;
+  gap: var(--mer-spacing--xs, var(--spacing--m));
+  position: fixed;
+  inset-block-start: 60px;
+  inset-inline-end: var(--mer-spacing--xs, var(--spacing--m));
+  padding: var(--mer-spacing--md, var(--spacing--l));
+  margin: 0;
+  border: 1px solid
+    var(--mer-border-color__on-elevation--01, var(--border-color__mild));
+  border-radius: var(--mer-border__radius--sm, var(--border-radius--m));
+  z-index: 1;
+}
+
+.filters-checkbox {
+  display: contents;
+}
+
+.step-list {
+  > li {
+    margin-block: var(--mer-spacing--2xs);
+  }
+}
+
+// Useful to download the styles before the first paint, avoiding CLS
+.tree-view-snippet {
+  block-size: 300px;
+}
+
+code {
+  padding-block: 2px;
+  padding-inline: 6px;
+  background-color: var(--mer-color__neutral-gray--650);
+  border-radius: 4px;
+  color: var(--mer-text__on-elevation);
+}
+
+runtime-bundles {
+  display: none;
+}
+
+// This is a WA to add support for RTL and add paddings for Unanimo
+ch-code {
+  padding-inline: var(--mer-spacing--sm, 12px);
+  padding-block: var(--mer-spacing--xs, var(--spacing--m));
+}
+
+.blockquote-info {
+  padding: var(--mer-spacing--md, var(--spacing--l));
+  margin: 0;
+  margin-block-start: var(--mer-spacing--md, var(--spacing--l));
+  border-inline-start: 2px solid var(--mer-border-color__on-surface);
+  background-color: var(--mer-surface__elevation--01);
+  border-radius: var(--mer-border__radius--sm);
+  color: var(--mer-color__neutral-gray--300);
+  font-size: var(--mer-font__size--2xs);
+}
+
+.hyperlink {
+  color: var(--mer-accent__primary, var(--text__primary));
+  text-decoration: underline;
+}

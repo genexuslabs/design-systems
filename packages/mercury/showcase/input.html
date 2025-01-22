@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input</title>
+    <style>
+      /* Avoid FOUC (Flash Of Unstyled Content) */
+      html:not(.hydrated) {
+        visibility: hidden;
+      }
+    </style>
+    <script type="module" src="./assets/scripts/scripts-header.js"></script>
+
+    <link rel="stylesheet" href="./all.css" />
+    <link rel="stylesheet" href="./assets/styles/top-bar.css" />
+    <link rel="stylesheet" href="./assets/styles/sidebar.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+  </head>
+  <body class="showcase" data-sidebar data-bundle="components/edit">
+    <script src="./assets/scripts/scripts.js"></script>
+    <main class="main">
+      <div class="container">
+        <!-- input -->
+        <section class="section" data-nav>
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">input</h1>
+            <p class="section__description">
+              A primary HTML input element is a crucial part of a webpage,
+              designed to capture user data and facilitate interactions. It
+              serves as the main interface for users to enter information such
+              as text, numbers, or dates, making it essential for data
+              collection and user engagement, whether within a form or used
+              independently.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+          placeholder
+          =========================== -->
+            <article class="article" data-nav data-title="placeholder">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-edit
+                    class="input"
+                    placeholder="e.g. Mike Shinoda"
+                  ></ch-edit>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-edit class="input" placeholder="e.g. Mike Shinoda"></ch-edit>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          placeholder: disabled
+          =========================== -->
+            <article
+              class="article"
+              data-nav
+              data-title="placeholder: disabled"
+            >
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-edit
+                    class="input"
+                    placeholder="e.g. Mike Shinoda"
+                    disabled
+                  ></ch-edit>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-edit class="input" placeholder="e.g. Mike Shinoda" disabled></ch-edit>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          enabled
+          =========================== -->
+            <article class="article" data-nav data-title="enabled">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-edit class="input" value="Pat Taylor"></ch-edit>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-edit class="input" value="Pat Taylor"></ch-edit>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          disabled
+          =========================== -->
+            <article class="article" data-nav data-title="disabled">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-edit class="input" value="Pat Taylor" disabled></ch-edit>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-edit class="input" value="Pat Taylor" disabled></ch-edit>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          with icon
+          =========================== -->
+            <article class="article" data-nav data-title="with icon">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-edit
+                    class="input"
+                    value="Pat Taylor"
+                    id="ch-edit-with-icon"
+                  ></ch-edit>
+                  <script type="module">
+                    import { getIconPath } from "./assets/scripts/assets-manager.js";
+                    const ICON_USER = getIconPath({
+                      category: "system",
+                      name: "user",
+                      colorType: "on-surface"
+                    });
+                    const chEditWithIcon =
+                      document.getElementById("ch-edit-with-icon");
+                    chEditWithIcon.startImgSrc = ICON_USER;
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"></ch-code>
+                  <script>
+                    code = `// import before @Component 
+import { getIconPath } from "@genexus/mercury";
+
+// declare inside @Component
+#userIcon = getIconPath({
+  category: "system",
+  name: "user",
+  colorType: "on-surface"
+});
+
+<ch-edit
+  class="input"
+  value="Pat Taylor"
+  startImgSrc={this.#userIcon}
+>
+</ch-edit>`;
+                  </script>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          with error
+          =========================== -->
+            <article class="article" data-nav data-title="with error">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <ch-edit
+                    class="input input-error"
+                    value="Pat Taylor"
+                  ></ch-edit>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<ch-edit class="input input-error" value="Pat Taylor"></ch-edit>`;
+                  </script>
+                </div>
+                <!-- /.article__content -->
+              </div>
+              <!-- /.article__main -->
+            </article>
+
+            <!-- ========================== 
+          with label
+          =========================== -->
+            <article class="article" data-nav data-title="with label">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  To display a <code>.input</code> input with a label, you will
+                  have to provide a label with the corresponding class, as well
+                  as a div wrapper around the label and the control with the
+                  corresponding classes to get the proper styling and spacing.
+                  These styles are documented on the <em>label</em> and
+                  <em>form</em>
+                  sections, correspondingly. The links to those pages are
+                  provided below this code example.
+                </p>
+                <div class="article__content">
+                  <div class="field field-block">
+                    <label class="label">Beneficiary Name</label>
+                    <ch-edit class="input" value="Pat Taylor"></ch-edit>
+                  </div>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<div class="field field-block">
+  <label class="label">Beneficiary Name</label>
+  <ch-edit class="input" value="Pat Taylor"></ch-edit>
+</div>`;
+                  </script>
+                </div>
+                <div class="article__content">
+                  <ul class="dummy-grid-container dummy-grid-container-2">
+                    <li>
+                      <a href="./label.html" class="dummy-grid-container__item"
+                        >label styles</a
+                      >
+                    </li>
+                    <li>
+                      <a href="./form.html" class="dummy-grid-container__item"
+                        >field styles</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+
+        <!-- input search -->
+        <section class="section" data-nav>
+          <!-- header -->
+          <header class="section__header">
+            <h1 class="section__title">form input: search</h1>
+            <p class="section__description">
+              A input of type "search" is a specialized HTML input element
+              designed for search functionality within a webpage. It allows
+              users to enter search queries, providing a streamlined and
+              intuitive interface for finding content.
+            </p>
+          </header>
+          <div class="section__articles-container">
+            <!-- ========================== 
+enabled
+=========================== -->
+            <article class="article" data-nav data-title="enabled">
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <p class="article__description">
+                  Note: The styles for the input type="search" are not yet
+                  completed.
+                </p>
+                <div class="article__content">
+                  <ch-edit
+                    class="input"
+                    value="Pat Taylor"
+                    id="ch-edit-search"
+                    type="search"
+                  ></ch-edit>
+                  <script type="module">
+                    import { getIconPath } from "./assets/scripts/assets-manager.js";
+                    const SEARCH_ICON = getIconPath({
+                      category: "system",
+                      name: "search",
+                      colorType: "on-surface"
+                    });
+                    console.log("SEARCH_ICON", SEARCH_ICON);
+                    const chEditSearch =
+                      document.getElementById("ch-edit-search");
+                    chEditSearch.startImgSrc = SEARCH_ICON;
+                  </script>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"></ch-code>
+                  <script>
+                    code = `// import before @Component 
+import { getIconPath } from "@genexus/mercury";
+
+// declare inside @Component
+#searchIcon = getIconPath({
+  category: "system",
+  name: "search",
+  colorType: "on-surface"
+});
+
+<ch-edit
+  class="input"
+  value="Pat Taylor"
+  startImgSrc={this.#searchIcon}
+>
+</ch-edit>`;
+                  </script>
+                </div>
+              </div>
+              <!-- /.article__main -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
