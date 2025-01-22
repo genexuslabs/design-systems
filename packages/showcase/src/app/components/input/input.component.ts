@@ -4,8 +4,7 @@ import {
   computed,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
-  input,
-  signal
+  input
 } from "@angular/core";
 import { Router, RouterLink } from "@angular/router";
 import { CommonModule } from "@angular/common";
