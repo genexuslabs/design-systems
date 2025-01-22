@@ -31,6 +31,7 @@
 /// @param {Boolean} $add--error [true] -
 @mixin input(
   $selector: ".input",
+  $empty-placeholder-selector: ".input[part*='ch-edit--empty-value']",
   $error-selector: ".input-error",
   // TODO (Update error class selector, when Chameleon provides a custom state like :invalid)
   $add--disabled: true,
@@ -53,11 +54,11 @@
         @extend %input--disabled;
       }
     }
+  }
 
-    @if $add--placeholder {
-      &::placeholder {
-        font-style: italic;
-      }
+  @if $add--placeholder {
+    #{$empty-placeholder-selector} {
+      font-style: var(--control-placeholder__font-style);
     }
   }
 
