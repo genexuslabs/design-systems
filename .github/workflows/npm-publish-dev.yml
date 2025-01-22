@@ -22,17 +22,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Fetch all tags
-        run: git fetch --tags
-        
-      - name: Get latest and previous tags
-        id: get-tags
+      - name: Get latest published Unanimo version
+        id: get-unanimo-version
         run: |
-          tags=($(git tag -l --sort=-creatordate | head -n 2))
-          echo "latest_tag=${tags[0]}" >> $GITHUB_ENV
-          echo "previous_tag=${tags[1]}" >> $GITHUB_ENV
+          PACKAGE_NAME=@genexus/unanimo
+          LATEST_UNANIMO_VERSION=$(curl -s https://registry.npmjs.org/$PACKAGE_NAME | jq -r '.["dist-tags"].latest')
+          echo "latest_unanimo_version=$LATEST_UNANIMO_VERSION" >> $GITHUB_ENV
 
       - name: Print tags
         run: |
-          echo "The latest tag is ${{ env.latest_tag }}"
-          echo "The previous tag is ${{ env.previous_tag }}"
+          echo "The latest tag is ${{ env.latest_unanimo_version }}"
