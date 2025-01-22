@@ -1,3 +1,4 @@
+[![CI](https://github.com/genexuslabs/design-systems/actions/workflows/node.js.yml/badge.svg)](https://github.com/genexuslabs/design-systems/actions/workflows/node.js.yml)
 # Design Systems
 
 This a monorepo that contains the implementation for the Mercury and Unanimo design systems. It also contains packages that serves as tooling for creating icons that are compatible with these design systems.
