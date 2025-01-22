@@ -15,12 +15,17 @@ import { RouterCommonLinksService } from "../../../services/router-links.service
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
 import { Router } from "@angular/router";
-
+import { CommonSnippets } from "../../../user-controls/common-snippets/common-snippets.component";
 @Component({
   selector: "components-dialog",
   templateUrl: "./dialog.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
+  imports: [
+    CommonModule,
+    CodeSnippetComponent,
+    RuntimeBundlesComponent,
+    CommonSnippets
+  ],
   host: { class: "main-content" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
@@ -38,6 +43,7 @@ export class DialogComponent {
   codeSnippets = iconMetadata.codeSnippets;
 
   dialogDefaultDisplayed = signal(false);
+  dialogWithoutPaddingDisplayed = signal(false);
   dialogWithHeaderDisplayed = signal(false);
   dialogWithFooterDisplayed = signal(false);
   dialogResizableDisplayed = signal(false);
@@ -47,6 +53,10 @@ export class DialogComponent {
 
   showDialogDefault = () => this.dialogDefaultDisplayed.set(true);
   hideDialogDefault = () => this.dialogDefaultDisplayed.set(false);
+
+  showDialogWithoutPadding = () => this.dialogWithoutPaddingDisplayed.set(true);
+  hideDialogWithoutPadding = () =>
+    this.dialogWithoutPaddingDisplayed.set(false);
 
   showDialogWithHeader = () => this.dialogWithHeaderDisplayed.set(true);
   hideDialogWithHeader = () => this.dialogWithHeaderDisplayed.set(false);
@@ -76,6 +86,7 @@ export class DialogComponent {
   dialogs = computed(() => {
     const newMigrations = new Map<string, boolean>([
       ["Default", true],
+      ["Without Padding", true],
       ["With Header", true],
       ["With Footer", true],
       ["Resizable", true],
@@ -104,6 +115,7 @@ export class DialogComponent {
   });
 
   showDefault = computed(() => this.dialogs().get("Default"));
+  showWithoutPadding = computed(() => this.dialogs().get("Without Padding"));
   showWithHeader = computed(() => this.dialogs().get("With Header"));
   showWithFooter = computed(() => this.dialogs().get("With Footer"));
   showResizable = computed(() => this.dialogs().get("Resizable"));

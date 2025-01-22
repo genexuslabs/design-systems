@@ -25,6 +25,32 @@ export const iconMetadata = {
         ],
         children: {
           tag: "div",
+          class: "spacing-body",
+          children: "Any content"
+        }
+      }
+    },
+
+    withoutPadding: {
+      linkId: "without-padding",
+      title: "2. Without Padding",
+      states: [
+        {
+          name: "showDialog",
+          type: "boolean",
+          value: false,
+          stateStencil: true
+        }
+      ],
+      template: {
+        // TODO: Add support for events
+        tag: "ch-dialog",
+        class: "dialog",
+        properties: [
+          { name: "show", value: "showDialog", state: true, stateStencil: true }
+        ],
+        children: {
+          tag: "div",
           children: "Any content"
         }
       }
@@ -32,7 +58,7 @@ export const iconMetadata = {
 
     withHeader: {
       linkId: "with-header",
-      title: "2. With Header",
+      title: "3. With Header",
       states: [
         {
           name: "showDialog",
@@ -58,6 +84,7 @@ export const iconMetadata = {
         ],
         children: {
           tag: "div",
+          class: "spacing-body",
           children: "Any content"
         }
       }
@@ -65,7 +92,7 @@ export const iconMetadata = {
 
     withFooter: {
       linkId: "with-footer",
-      title: "3. With Footer",
+      title: "4. With Footer",
       states: [
         {
           name: "showDialog",
@@ -90,6 +117,7 @@ export const iconMetadata = {
         children: [
           {
             tag: "div",
+            class: "spacing-body",
             children: "Any content"
           },
           {
@@ -116,7 +144,7 @@ export const iconMetadata = {
 
     resizable: {
       linkId: "resizable",
-      title: "4. Resizable",
+      title: "5. Resizable",
       states: [
         {
           name: "showDialog",
@@ -143,6 +171,7 @@ export const iconMetadata = {
         ],
         children: {
           tag: "div",
+          class: "spacing-body",
           children: "Any content"
         }
       }
@@ -150,7 +179,7 @@ export const iconMetadata = {
 
     adjustPosition: {
       linkId: "adjust-position",
-      title: "5. Adjust Position",
+      title: "6. Adjust Position",
       states: [
         {
           name: "showDialog",
@@ -181,6 +210,7 @@ export const iconMetadata = {
         ],
         children: {
           tag: "div",
+          class: "spacing-body",
           children: "Any content"
         }
       }
@@ -188,7 +218,7 @@ export const iconMetadata = {
 
     nonModal: {
       linkId: "non-modal",
-      title: "6. Non Modal",
+      title: "7. Non Modal",
       states: [
         {
           name: "showDialog",
@@ -215,6 +245,7 @@ export const iconMetadata = {
         ],
         children: {
           tag: "div",
+          class: "spacing-body",
           children: "Any content"
         }
       }
@@ -222,7 +253,7 @@ export const iconMetadata = {
 
     allowDrag: {
       linkId: "allow-drag",
-      title: "7. Allow Drag",
+      title: "8. Allow Drag",
       states: [
         {
           name: "showDialog",
@@ -249,6 +280,7 @@ export const iconMetadata = {
         ],
         children: {
           tag: "div",
+          class: "spacing-body",
           children: "Any content"
         }
       }
