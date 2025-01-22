@@ -112,7 +112,7 @@ npx mercury <flags>
 "build.scss": "mercury <flags>"
 ```
 
-Consult the [CLI flags](#cli-flags) section to read the complete documentation for the CLI.
+Consult the [CLI flags](#4-cli-flags) section to read the complete documentation for the CLI.
 
 Using the CLI:
 
