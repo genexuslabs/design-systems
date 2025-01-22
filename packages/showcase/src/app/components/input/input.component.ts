@@ -1,11 +1,15 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   CUSTOM_ELEMENTS_SCHEMA,
-  inject
+  inject,
+  input,
+  signal
 } from "@angular/core";
 import { RouterLink } from "@angular/router";
 import { CommonModule } from "@angular/common";
+import type { ChCheckboxCustomEvent } from "@genexus/chameleon-controls-library";
 import {
   getIconPath,
   getImagePathCallback
@@ -15,6 +19,7 @@ import { inputMetadata } from "./metadata";
 import { RouterCommonLinksService } from "../../../services/router-links.service";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "components-input",
@@ -31,6 +36,7 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
 })
 export class InputComponent {
   commonLinks = inject(RouterCommonLinksService);
+  router = inject(Router);
 
   USER_ICON = getIconPath({
     category: "system",
@@ -43,4 +49,89 @@ export class InputComponent {
 
   metadata = inputMetadata;
   codeSnippets = inputMetadata.codeSnippets;
+
+  inputDefaultDisplayed = signal(false);
+  inputNoLabelDisplayed = signal(false);
+  inputWithValueDisplayed = signal(false);
+  inputWithPlaceholderDisplayed = signal(false);
+  inputDisabledDisplayed = signal(false);
+  inputWithIconDisplayed = signal(false);
+
+  showInputDefault = () => this.inputDefaultDisplayed.set(true);
+  hideInputDefault = () => this.inputDefaultDisplayed.set(false);
+
+  showInputNoLabel = () => this.inputNoLabelDisplayed.set(true);
+  hideInputNoLabel = () => this.inputNoLabelDisplayed.set(false);
+
+  showInputWithValue = () => this.inputWithValueDisplayed.set(true);
+  hideInputWithValue = () => this.inputWithValueDisplayed.set(false);
+
+  showInputWithPlaceholder = () => this.inputWithPlaceholderDisplayed.set(true);
+  hideInputWithPlaceholder = () =>
+    this.inputWithPlaceholderDisplayed.set(false);
+
+  showInputDisabled = () => this.inputDisabledDisplayed.set(true);
+  hideInputDisabled = () => this.inputDisabledDisplayed.set(false);
+
+  showInputWithIcon = () => this.inputWithIconDisplayed.set(true);
+  hideInputWithIcon = () => this.inputWithIconDisplayed.set(false);
+
+  hiddenInputs = input<string>("");
+
+  /**
+   * This map is useful for rendering checkboxes to determine whether an
+   * example of the input component must be rendered.
+   */
+  inputs = computed(() => {
+    const newExamples = new Map<string, boolean>([
+      ["Default", true],
+      ["No Label", true],
+      ["With Value", true],
+      ["With Placeholder", true],
+      ["Disabled", true],
+      ["With Icon", true]
+    ]);
+
+    // Update the rendered examples by watching changes for the
+    // hiddenInputs query parameter
+    const hiddenInputsArray = this.hiddenInputs()
+      ? this.hiddenInputs().split(",")
+      : [];
+
+    // Display all examples
+    newExamples.forEach((_, exampleName) => newExamples.set(exampleName, true));
+
+    // Remove those examples that must be hidden
+    hiddenInputsArray.forEach(hiddenExampleName =>
+      newExamples.set(hiddenExampleName, false)
+    );
+
+    return newExamples;
+  });
+
+  showDefault = computed(() => this.inputs().get("Default"));
+  showNoLabel = computed(() => this.inputs().get("No Label"));
+  showWithValue = computed(() => this.inputs().get("With Value"));
+  showWithPlaceholder = computed(() => this.inputs().get("With Placeholder"));
+  showDisabled = computed(() => this.inputs().get("Disabled"));
+  showWithIcon = computed(() => this.inputs().get("With Icon"));
+
+  updateRenderedInput =
+    (inputName: string) => (event: ChCheckboxCustomEvent<string>) => {
+      this.inputs().set(inputName, event.detail === "true");
+
+      let hiddenInputsQueryParam = "";
+
+      this.inputs().forEach((renderInput, inputName) => {
+        if (!renderInput) {
+          hiddenInputsQueryParam +=
+            hiddenInputsQueryParam === "" ? inputName : "," + inputName;
+        }
+      });
+
+      this.router.navigate([], {
+        queryParams: { hiddenInputs: hiddenInputsQueryParam },
+        queryParamsHandling: "merge" // Conserve other query parameters
+      });
+    };
 }
