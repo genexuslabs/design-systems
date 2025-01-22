@@ -10,16 +10,16 @@ import { RouterCommonLinksService } from "../../services/router-links.service";
       <ng-container *ngSwitchCase="'spacing-body-description'">
         <div class="snippet-container">
           <p class="text-body-regular-s">
-            By default, the <code>.{{ componentName }}</code> does not include
-            any padding around the content. This is a general rule followed by
-            other components in the Mercury design system. To add padding, you
-            can use any combination of the provided CSS classes designed for
-            this purpose. Learn more about the spacing classes on the
+            By default, the <em>{{ componentName }}</em> does not include any
+            padding around the content. This is a general rule followed by other
+            components in the Mercury design system. To add padding, you can use
+            any combination of the provided CSS classes designed for this
+            purpose. Learn more about the spacing classes on the
             <a class="hyperlink" [routerLink]="commonLinks.utilsSpacing()"
               >spacing documentation page</a
             >.The following example displays the
-            <code>.{{ componentName }}</code> with padding all around, by
-            applying the <code>.spacing-body</code> class.
+            <em>{{ componentName }}</em> with padding all around, by applying
+            the <code>.spacing-body</code> class.
           </p>
         </div>
       </ng-container>
