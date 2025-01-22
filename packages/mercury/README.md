@@ -74,20 +74,20 @@ This repository provides the following assets to implement the Mercury DS:
 
 The CSS is divided by bundles, where each bundle contains the CSS to style a component. For example, to style a `button` we have the `components/button` bundle, to style the `ch-checkbox` we have the `components/checkbox`, and so on.
 
-Check out to the [CSS bundles mapping](#3-css-bundles-mapping) section to see how each component in the Mercury DS Figma maps to a CSS bundle. This mapping is also present in each page of [showcase](https://mercury-showcase.genexus.com/).
+Check out to the [CSS bundles mapping](#3-css-bundles-mapping) section to see how each component in the Mercury DS Figma maps to a CSS bundle. This mapping is also present on every page of [showcase](https://mercury-showcase.genexus.com/).
 
 ### 2.1. Before starting, define the path for the CSS bundles, custom fonts and icons
 
-First of all, you must define the path where the CSS bundles, custom fonts and icons will be contained in the `dist` folder of your final application.
+First of all, you must define the path where the CSS bundles, custom fonts, and icons will be contained in the `dist` folder of your final application.
 
 We will refer to those paths with the following names:
 
-| Reference                      | Meaning                                                                | Example                    |
-| ------------------------------ | ---------------------------------------------------------------------- | -------------------------- |
-| `{{ CSS outDir path }}`        | An untracked folder for generating the CSS of the application          | `/src/assets/mercury-css/` |
-| `{{ CSS bundles final path }}` | Path in the final application where the CSS bundles will be consumed   | `/assets/css/`             |
-| `{{ Fonts final path }}`       | Path in the final application where the custom fonts will be consumed  | `/assets/fonts/`           |
-| `{{ Icons final path }}`       | Path in the final application where the icons bundles will be consumed | `/assets/icons/`           |
+| Reference                      | Meaning                                                                                | Example                    |
+| ------------------------------ | -------------------------------------------------------------------------------------- | -------------------------- |
+| `{{ CSS outDir path }}`        | An untracked folder for generating the CSS of the application.                         | `/src/assets/mercury-css/` |
+| `{{ CSS bundles final path }}` | Path in the final application (`dist` folder) where the CSS bundles will be consumed.  | `/assets/css/`             |
+| `{{ Fonts final path }}`       | Path in the final application (`dist` folder) where the custom fonts will be consumed. | `/assets/fonts/`           |
+| `{{ Icons final path }}`       | Path in the final application (`dist` folder) where the icons will be consumed.        | `/assets/icons/`           |
 
 ### 2.2. Create the CSS bundles
 
@@ -121,7 +121,7 @@ Using the CLI:
    For example:
 
    ```json
-   "build.scss": "mercury --i={{ Icons final path }} --f={{ Fonts path final }} --gl --outDir={{ CSS outDir path }}"
+   "build.scss": "mercury --i={{ Icons final path }} --f={{ Fonts path final }} --outDir={{ CSS outDir path }}"
    ```
 
 2. Use the `"build.scss"` script before building your application (dev server and prod build).
@@ -134,14 +134,12 @@ Using the CLI:
    "build": "npm run build.scss && ..."
    ```
 
-3. Before using any Mercury or [Chameleon](https://github.com/genexuslabs/chameleon-controls-library) utility, you must register the bundle mapping. This mapping allows Mercury to map the bundle names (for example, `components/button`) with the real name of the CSS file (for example, `components/button-9f82641938b85445.css`).
+3. Before using any Mercury or [Chameleon](https://github.com/genexuslabs/chameleon-controls-library) utility, you must register the bundle mapping. This mapping allows Mercury to map the bundle names with the real name of the CSS file (for example, `bundleToHashMappings["components/button"] --> components/button-9f82641938b85445`).
 
    **IMPORTANT**: Run this JavaScript before using any Mercury or [Chameleon](https://github.com/genexuslabs/chameleon-controls-library) utilities.
 
    ```ts
    import { setBundleMapping } from "@genexus/mercury/dist/bundles";
-
-   // This path is generated in the same directory as the one specified in the CLI --outDir flag
    import { bundleToHashMappings } from "{{ CSS outDir path }}/bundle-to-hash-mappings";
 
    setBundleMapping(bundleToHashMappings);
