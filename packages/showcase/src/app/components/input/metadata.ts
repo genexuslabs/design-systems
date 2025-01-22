@@ -39,9 +39,9 @@ export const inputMetadata = {
       }
     },
 
-    value: {
-      linkId: "value",
-      title: "3. Value",
+    withValue: {
+      linkId: "with-value",
+      title: "3. With Value",
       template: {
         tag: "ch-edit",
         class: COMPONENT_CLASS,
@@ -52,9 +52,9 @@ export const inputMetadata = {
       }
     },
 
-    placeholder: {
-      linkId: "placeholder",
-      title: "4. Placeholder",
+    withPlaceholder: {
+      linkId: "with-placeholder",
+      title: "4. With Placeholder",
       template: {
         tag: "ch-edit",
         class: COMPONENT_CLASS,
