@@ -46,6 +46,12 @@ Mercury Design System is a robust and scalable solution designed to improve prod
 
   - [2.6. Style the components with the CSS bundles](#26-style-the-components-with-the-css-bundles)
 
+    - [2.6.1 How to style a component in Angular](#261-how-to-style-a-component-in-angular)
+
+    - [2.6.2. How to style a component in React](#262-how-to-style-a-component-in-react)
+
+    - [2.6.3. How to style a component in StencilJS](#263-how-to-style-a-component-in-stenciljs)
+
   - [2.7. Set the dark and light mode](#27-set-the-darklight-mode)
 
 - [3. CSS bundles mapping](#3-css-bundles-mapping)
@@ -68,7 +74,7 @@ This repository provides the following assets to implement the Mercury DS:
 
 The CSS is divided by bundles, where each bundle contains the CSS to style a component. For example, to style a `button` we have the `components/button` bundle, to style the `ch-checkbox` we have the `components/checkbox`, and so on.
 
-Refer to the [CSS bundles](#css-bundles) section to see how each component in the Mercury DS Figma maps to a CSS bundle. This mapping is also present in each page of [showcase](https://mercury-showcase.genexus.com/).
+Check out to the [CSS bundles mapping](#3-css-bundles-mapping) section to see how each component in the Mercury DS Figma maps to a CSS bundle. This mapping is also present in each page of [showcase](https://mercury-showcase.genexus.com/).
 
 ### 2.1. Before starting, define the path for the CSS bundles, custom fonts and icons
 
@@ -369,7 +375,79 @@ import "{{ CSS outDir path }}/base/base.css";
 
 [Chameleon](https://github.com/genexuslabs/chameleon-controls-library) provides the `ch-theme` component, a component for downloading and using the CSS bundles in the application.
 
-Refer to the showcase to see
+In the following sections we provide examples of how to use these CSS bundles. Check out to the [showcase](https://mercury-showcase.genexus.com/) to see all use cases.
+
+#### 2.6.1 How to style a component in Angular
+
+```ts
+import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA
+} from "@angular/core";
+import { getBundles } from "@genexus/mercury/bundles.js";
+
+@Component({
+  selector: "custom-dialog",
+  styleUrl: "./custom-dialog.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  template: `<ch-theme model="bundles"></ch-theme>
+    <button class="button-primary" type="button">Caption</button>`
+})
+export class CustomDialogComponent {
+  bundles = getBundles("components/button", "{{ CSS bundles final path }}");
+}
+```
+
+#### 2.6.2. How to style a component in React
+
+```tsx
+import { ChTheme } from "<path to Chameleon web components wrappers>";
+import { getBundles } from "@genexus/mercury/bundles.js";
+
+const bundles = getBundles("components/button", "{{ CSS bundles final path }}");
+
+const CustomDialog = () => {
+  return (
+    <>
+      <ChTheme model={bundles}></ChTheme>
+      <button className="button-primary" type="button">
+        Caption
+      </button>
+    </>
+  );
+};
+
+export default CustomDialog;
+```
+
+#### 2.6.3. How to style a component in StencilJS
+
+```tsx
+import { Component, Host } from "@stencil/core";
+import { getBundles } from "@genexus/mercury/bundles.js";
+
+const bundles = getBundles("components/button", "{{ CSS bundles final path }}");
+
+@Component({
+  shadow: true,
+  styleUrl: "custom-dialog.scss",
+  tag: "custom-dialog"
+})
+export class CustomDialog {
+  render() {
+    return (
+      <Host>
+        <ch-theme model={bundles}></ch-theme>
+        <button class="button-primary" type="button">
+          Caption
+        </button>
+      </Host>
+    );
+  }
+}
+```
 
 ### 2.7. Set the dark/light mode
 
