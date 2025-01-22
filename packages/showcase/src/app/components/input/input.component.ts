@@ -50,32 +50,6 @@ export class InputComponent {
   metadata = inputMetadata;
   codeSnippets = inputMetadata.codeSnippets;
 
-  inputDefaultDisplayed = signal(false);
-  inputNoLabelDisplayed = signal(false);
-  inputWithValueDisplayed = signal(false);
-  inputWithPlaceholderDisplayed = signal(false);
-  inputDisabledDisplayed = signal(false);
-  inputWithIconDisplayed = signal(false);
-
-  showInputDefault = () => this.inputDefaultDisplayed.set(true);
-  hideInputDefault = () => this.inputDefaultDisplayed.set(false);
-
-  showInputNoLabel = () => this.inputNoLabelDisplayed.set(true);
-  hideInputNoLabel = () => this.inputNoLabelDisplayed.set(false);
-
-  showInputWithValue = () => this.inputWithValueDisplayed.set(true);
-  hideInputWithValue = () => this.inputWithValueDisplayed.set(false);
-
-  showInputWithPlaceholder = () => this.inputWithPlaceholderDisplayed.set(true);
-  hideInputWithPlaceholder = () =>
-    this.inputWithPlaceholderDisplayed.set(false);
-
-  showInputDisabled = () => this.inputDisabledDisplayed.set(true);
-  hideInputDisabled = () => this.inputDisabledDisplayed.set(false);
-
-  showInputWithIcon = () => this.inputWithIconDisplayed.set(true);
-  hideInputWithIcon = () => this.inputWithIconDisplayed.set(false);
-
   hiddenInputs = input<string>("");
 
   /**
