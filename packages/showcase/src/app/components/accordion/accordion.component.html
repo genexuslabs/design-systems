@@ -1,12 +1,408 @@
-<runtime-bundles [bundles]="['utils/typography']" />
+<runtime-bundles [bundles]="['components/checkbox', 'components/accordion']" />
 
 <header>
-  <h1 class="heading-1">Accordion</h1>
+  <h1 class="heading-1">{{ metadata.title }}</h1>
 </header>
 
-<p>
-  This page is under construction and will be available soon. You can see the
-  <a class="hyperlink" href="/old/accordion.html" target="_blank"
-    >old version here</a
-  >.
-</p>
+<p class="text-body-regular-l">{{ metadata.description }}</p>
+
+<ol class="filters elevation-1">
+  @for (
+    accordionEntry of this.accordions().entries();
+    track accordionEntry[0]
+  ) {
+    @let accordionViewName = accordionEntry[0];
+
+    <li class="filters-checkbox">
+      <ch-checkbox
+        [caption]="accordionViewName"
+        class="checkbox"
+        [checkedValue]="'true'"
+        [value]="accordionEntry[1].toString()"
+        [unCheckedValue]="'false'"
+        (input)="updateRenderedAccordion(accordionViewName)($event)"
+      ></ch-checkbox>
+    </li>
+  }
+</ol>
+
+<!-- filled -->
+
+@if (showFilled()) {
+  <code-snippet [codeSnippet]="codeSnippets.filled" [language]="'ts'">
+    <ch-accordion-render
+      class="accordion-filled"
+      [model]="accordionSimpleModel"
+    >
+      <div slot="file" class="text-body-regular-m spacing-body">
+        The File object in GeneXus is designed to handle file-related operations
+        within an application. It allows developers to work with files stored
+        locally or on a server by providing methods to upload, download, open,
+        read, write, and manipulate files in various formats. This object is
+        particularly useful for managing documents, images, or any other type of
+        file interaction, making it easier to handle file-based processes within
+        business applications.
+      </div>
+      <div slot="domain" class="text-body-regular-m spacing-body">
+        The Domain object in GeneXus allows developers to define a specific data
+        type with associated validation rules, formatting, and constraints,
+        which can be reused across various parts of an application. It helps
+        ensure consistency and standardization for commonly used data types,
+        such as emails, phone numbers, or currencies. By creating Domains,
+        developers can streamline application maintenance and enforce uniform
+        data validation throughout the system.
+      </div>
+      <div slot="procedure" class="text-body-regular-m spacing-body">
+        The Procedure object in GeneXus is used to define a sequence of actions
+        or logic that can be executed within an application. It allows
+        developers to create reusable routines to process data, perform
+        calculations, update databases, or call external services. Procedures
+        can be triggered by user actions or scheduled tasks, and they offer
+        flexibility for handling complex business logic while improving the
+        modularity and maintainability of the application.
+      </div>
+      <div slot="document" class="text-body-regular-m spacing-body">
+        The Document object in GeneXus is designed to handle text-based content,
+        such as generating, manipulating, and exporting documents in various
+        formats like PDF, Word, or HTML. It allows developers to create dynamic
+        reports, invoices, or other formal documents by merging static text with
+        data from the application. The Document object is ideal for automating
+        the creation of printable and shareable files within business workflows.
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+@if (showFilledDisabled()) {
+  <code-snippet [codeSnippet]="codeSnippets.filledDisabled" [language]="'ts'">
+    <ch-accordion-render
+      class="accordion-filled"
+      [model]="accordionSimpleModel"
+      disabled
+    >
+      <div slot="file" class="text-body-regular-m spacing-body">
+        The File object in GeneXus is designed to handle file-related operations
+        within an application. It allows developers to work with files stored
+        locally or on a server by providing methods to upload, download, open,
+        read, write, and manipulate files in various formats. This object is
+        particularly useful for managing documents, images, or any other type of
+        file interaction, making it easier to handle file-based processes within
+        business applications.
+      </div>
+      <div slot="domain" class="text-body-regular-m spacing-body">
+        The Domain object in GeneXus allows developers to define a specific data
+        type with associated validation rules, formatting, and constraints,
+        which can be reused across various parts of an application. It helps
+        ensure consistency and standardization for commonly used data types,
+        such as emails, phone numbers, or currencies. By creating Domains,
+        developers can streamline application maintenance and enforce uniform
+        data validation throughout the system.
+      </div>
+      <div slot="procedure" class="text-body-regular-m spacing-body">
+        The Procedure object in GeneXus is used to define a sequence of actions
+        or logic that can be executed within an application. It allows
+        developers to create reusable routines to process data, perform
+        calculations, update databases, or call external services. Procedures
+        can be triggered by user actions or scheduled tasks, and they offer
+        flexibility for handling complex business logic while improving the
+        modularity and maintainability of the application.
+      </div>
+      <div slot="document" class="text-body-regular-m spacing-body">
+        The Document object in GeneXus is designed to handle text-based content,
+        such as generating, manipulating, and exporting documents in various
+        formats like PDF, Word, or HTML. It allows developers to create dynamic
+        reports, invoices, or other formal documents by merging static text with
+        data from the application. The Document object is ideal for automating
+        the creation of printable and shareable files within business workflows.
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+@if (showFilledWithIcons()) {
+  <code-snippet [codeSnippet]="codeSnippets.filledWithIcons" [language]="'ts'">
+    <ch-accordion-render
+      class="accordion-filled"
+      [model]="accordionWithIconsModel"
+      [getImagePathCallback]="getImagePathCallback"
+    >
+      <div slot="file" class="text-body-regular-m spacing-body">
+        The File object in GeneXus is designed to handle file-related operations
+        within an application. It allows developers to work with files stored
+        locally or on a server by providing methods to upload, download, open,
+        read, write, and manipulate files in various formats. This object is
+        particularly useful for managing documents, images, or any other type of
+        file interaction, making it easier to handle file-based processes within
+        business applications.
+      </div>
+      <div slot="domain" class="text-body-regular-m spacing-body">
+        The Domain object in GeneXus allows developers to define a specific data
+        type with associated validation rules, formatting, and constraints,
+        which can be reused across various parts of an application. It helps
+        ensure consistency and standardization for commonly used data types,
+        such as emails, phone numbers, or currencies. By creating Domains,
+        developers can streamline application maintenance and enforce uniform
+        data validation throughout the system.
+      </div>
+      <div slot="procedure" class="text-body-regular-m spacing-body">
+        The Procedure object in GeneXus is used to define a sequence of actions
+        or logic that can be executed within an application. It allows
+        developers to create reusable routines to process data, perform
+        calculations, update databases, or call external services. Procedures
+        can be triggered by user actions or scheduled tasks, and they offer
+        flexibility for handling complex business logic while improving the
+        modularity and maintainability of the application.
+      </div>
+      <div slot="document" class="text-body-regular-m spacing-body">
+        The Document object in GeneXus is designed to handle text-based content,
+        such as generating, manipulating, and exporting documents in various
+        formats like PDF, Word, or HTML. It allows developers to create dynamic
+        reports, invoices, or other formal documents by merging static text with
+        data from the application. The Document object is ideal for automating
+        the creation of printable and shareable files within business workflows.
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+@if (showFilledDisabledWithIcons()) {
+  <code-snippet
+    [codeSnippet]="codeSnippets.filledDisabledWithIcons"
+    [language]="'ts'"
+  >
+    <ch-accordion-render
+      class="accordion-filled"
+      disabled
+      [model]="accordionWithIconsModel"
+      [getImagePathCallback]="getImagePathCallback"
+    >
+      <div slot="file" class="text-body-regular-m spacing-body">
+        The File object in GeneXus is designed to handle file-related operations
+        within an application. It allows developers to work with files stored
+        locally or on a server by providing methods to upload, download, open,
+        read, write, and manipulate files in various formats. This object is
+        particularly useful for managing documents, images, or any other type of
+        file interaction, making it easier to handle file-based processes within
+        business applications.
+      </div>
+      <div slot="domain" class="text-body-regular-m spacing-body">
+        The Domain object in GeneXus allows developers to define a specific data
+        type with associated validation rules, formatting, and constraints,
+        which can be reused across various parts of an application. It helps
+        ensure consistency and standardization for commonly used data types,
+        such as emails, phone numbers, or currencies. By creating Domains,
+        developers can streamline application maintenance and enforce uniform
+        data validation throughout the system.
+      </div>
+      <div slot="procedure" class="text-body-regular-m spacing-body">
+        The Procedure object in GeneXus is used to define a sequence of actions
+        or logic that can be executed within an application. It allows
+        developers to create reusable routines to process data, perform
+        calculations, update databases, or call external services. Procedures
+        can be triggered by user actions or scheduled tasks, and they offer
+        flexibility for handling complex business logic while improving the
+        modularity and maintainability of the application.
+      </div>
+      <div slot="document" class="text-body-regular-m spacing-body">
+        The Document object in GeneXus is designed to handle text-based content,
+        such as generating, manipulating, and exporting documents in various
+        formats like PDF, Word, or HTML. It allows developers to create dynamic
+        reports, invoices, or other formal documents by merging static text with
+        data from the application. The Document object is ideal for automating
+        the creation of printable and shareable files within business workflows.
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+<!-- outlined -->
+
+@if (showOutlined()) {
+  <code-snippet [codeSnippet]="codeSnippets.outlined" [language]="'ts'">
+    <ch-accordion-render
+      class="accordion-outlined"
+      [model]="accordionSimpleModel"
+    >
+      <div slot="file" class="text-body-regular-m spacing-body">
+        The File object in GeneXus is designed to handle file-related operations
+        within an application. It allows developers to work with files stored
+        locally or on a server by providing methods to upload, download, open,
+        read, write, and manipulate files in various formats. This object is
+        particularly useful for managing documents, images, or any other type of
+        file interaction, making it easier to handle file-based processes within
+        business applications.
+      </div>
+      <div slot="domain" class="text-body-regular-m spacing-body">
+        The Domain object in GeneXus allows developers to define a specific data
+        type with associated validation rules, formatting, and constraints,
+        which can be reused across various parts of an application. It helps
+        ensure consistency and standardization for commonly used data types,
+        such as emails, phone numbers, or currencies. By creating Domains,
+        developers can streamline application maintenance and enforce uniform
+        data validation throughout the system.
+      </div>
+      <div slot="procedure" class="text-body-regular-m spacing-body">
+        The Procedure object in GeneXus is used to define a sequence of actions
+        or logic that can be executed within an application. It allows
+        developers to create reusable routines to process data, perform
+        calculations, update databases, or call external services. Procedures
+        can be triggered by user actions or scheduled tasks, and they offer
+        flexibility for handling complex business logic while improving the
+        modularity and maintainability of the application.
+      </div>
+      <div slot="document" class="text-body-regular-m spacing-body">
+        The Document object in GeneXus is designed to handle text-based content,
+        such as generating, manipulating, and exporting documents in various
+        formats like PDF, Word, or HTML. It allows developers to create dynamic
+        reports, invoices, or other formal documents by merging static text with
+        data from the application. The Document object is ideal for automating
+        the creation of printable and shareable files within business workflows.
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+@if (showOutlinedDisabled()) {
+  <code-snippet [codeSnippet]="codeSnippets.outlinedDisabled" [language]="'ts'">
+    <ch-accordion-render
+      class="accordion-outlined"
+      [model]="accordionSimpleModel"
+      disabled
+    >
+      <div slot="file" class="text-body-regular-m spacing-body">
+        The File object in GeneXus is designed to handle file-related operations
+        within an application. It allows developers to work with files stored
+        locally or on a server by providing methods to upload, download, open,
+        read, write, and manipulate files in various formats. This object is
+        particularly useful for managing documents, images, or any other type of
+        file interaction, making it easier to handle file-based processes within
+        business applications.
+      </div>
+      <div slot="domain" class="text-body-regular-m spacing-body">
+        The Domain object in GeneXus allows developers to define a specific data
+        type with associated validation rules, formatting, and constraints,
+        which can be reused across various parts of an application. It helps
+        ensure consistency and standardization for commonly used data types,
+        such as emails, phone numbers, or currencies. By creating Domains,
+        developers can streamline application maintenance and enforce uniform
+        data validation throughout the system.
+      </div>
+      <div slot="procedure" class="text-body-regular-m spacing-body">
+        The Procedure object in GeneXus is used to define a sequence of actions
+        or logic that can be executed within an application. It allows
+        developers to create reusable routines to process data, perform
+        calculations, update databases, or call external services. Procedures
+        can be triggered by user actions or scheduled tasks, and they offer
+        flexibility for handling complex business logic while improving the
+        modularity and maintainability of the application.
+      </div>
+      <div slot="document" class="text-body-regular-m spacing-body">
+        The Document object in GeneXus is designed to handle text-based content,
+        such as generating, manipulating, and exporting documents in various
+        formats like PDF, Word, or HTML. It allows developers to create dynamic
+        reports, invoices, or other formal documents by merging static text with
+        data from the application. The Document object is ideal for automating
+        the creation of printable and shareable files within business workflows.
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+@if (showOutlinedWithIcons()) {
+  <code-snippet
+    [codeSnippet]="codeSnippets.outlinedWithIcons"
+    [language]="'ts'"
+  >
+    <ch-accordion-render
+      class="accordion-outlined"
+      [model]="accordionWithIconsModel"
+      [getImagePathCallback]="getImagePathCallback"
+    >
+      <div slot="file" class="text-body-regular-m spacing-body">
+        The File object in GeneXus is designed to handle file-related operations
+        within an application. It allows developers to work with files stored
+        locally or on a server by providing methods to upload, download, open,
+        read, write, and manipulate files in various formats. This object is
+        particularly useful for managing documents, images, or any other type of
+        file interaction, making it easier to handle file-based processes within
+        business applications.
+      </div>
+      <div slot="domain" class="text-body-regular-m spacing-body">
+        The Domain object in GeneXus allows developers to define a specific data
+        type with associated validation rules, formatting, and constraints,
+        which can be reused across various parts of an application. It helps
+        ensure consistency and standardization for commonly used data types,
+        such as emails, phone numbers, or currencies. By creating Domains,
+        developers can streamline application maintenance and enforce uniform
+        data validation throughout the system.
+      </div>
+      <div slot="procedure" class="text-body-regular-m spacing-body">
+        The Procedure object in GeneXus is used to define a sequence of actions
+        or logic that can be executed within an application. It allows
+        developers to create reusable routines to process data, perform
+        calculations, update databases, or call external services. Procedures
+        can be triggered by user actions or scheduled tasks, and they offer
+        flexibility for handling complex business logic while improving the
+        modularity and maintainability of the application.
+      </div>
+      <div slot="document" class="text-body-regular-m spacing-body">
+        The Document object in GeneXus is designed to handle text-based content,
+        such as generating, manipulating, and exporting documents in various
+        formats like PDF, Word, or HTML. It allows developers to create dynamic
+        reports, invoices, or other formal documents by merging static text with
+        data from the application. The Document object is ideal for automating
+        the creation of printable and shareable files within business workflows.
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+@if (showOutlinedDisabledWithIcons()) {
+  <code-snippet
+    [codeSnippet]="codeSnippets.outlinedDisabledWithIcons"
+    [language]="'ts'"
+  >
+    <ch-accordion-render
+      class="accordion-outlined"
+      disabled
+      [model]="accordionWithIconsModel"
+      [getImagePathCallback]="getImagePathCallback"
+    >
+      <div slot="file" class="text-body-regular-m spacing-body">
+        The File object in GeneXus is designed to handle file-related operations
+        within an application. It allows developers to work with files stored
+        locally or on a server by providing methods to upload, download, open,
+        read, write, and manipulate files in various formats. This object is
+        particularly useful for managing documents, images, or any other type of
+        file interaction, making it easier to handle file-based processes within
+        business applications.
+      </div>
+      <div slot="domain" class="text-body-regular-m spacing-body">
+        The Domain object in GeneXus allows developers to define a specific data
+        type with associated validation rules, formatting, and constraints,
+        which can be reused across various parts of an application. It helps
+        ensure consistency and standardization for commonly used data types,
+        such as emails, phone numbers, or currencies. By creating Domains,
+        developers can streamline application maintenance and enforce uniform
+        data validation throughout the system.
+      </div>
+      <div slot="procedure" class="text-body-regular-m spacing-body">
+        The Procedure object in GeneXus is used to define a sequence of actions
+        or logic that can be executed within an application. It allows
+        developers to create reusable routines to process data, perform
+        calculations, update databases, or call external services. Procedures
+        can be triggered by user actions or scheduled tasks, and they offer
+        flexibility for handling complex business logic while improving the
+        modularity and maintainability of the application.
+      </div>
+      <div slot="document" class="text-body-regular-m spacing-body">
+        The Document object in GeneXus is designed to handle text-based content,
+        such as generating, manipulating, and exporting documents in various
+        formats like PDF, Word, or HTML. It allows developers to create dynamic
+        reports, invoices, or other formal documents by merging static text with
+        data from the application. The Document object is ideal for automating
+        the creation of printable and shareable files within business workflows.
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
