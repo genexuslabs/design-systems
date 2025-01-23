@@ -194,7 +194,10 @@
   @include grid-row-colors-enabled();
   --item__bg-color: var(--items-container__bg-color);
 
-  border: 0; //WA
+  --control__font-size--regular: var(--grid-font-size);
+  --control__font-size--small: var(--grid-font-size);
+
+  border: 0; // WA
 
   &--focused {
     @include focus-outline();
