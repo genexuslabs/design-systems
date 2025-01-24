@@ -248,6 +248,11 @@
       }
     }
 
+    // Reduce FOUC in Chameleon
+    :root:not(.hydrated) {
+      visibility: hidden;
+    }
+
     body {
       @include document-common-styles();
       background-color: var(--surface--alternative);
