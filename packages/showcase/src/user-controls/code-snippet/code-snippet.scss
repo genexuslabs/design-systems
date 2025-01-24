@@ -1,3 +1,5 @@
+$articleMaxInlineSize: 640px;
+
 code-snippet {
   display: grid;
 
@@ -10,4 +12,36 @@ code-snippet {
 .code-snippet-before-and-after {
   display: grid;
   grid-template-rows: max-content max-content;
+}
+
+.note {
+  // highlited article description
+  &::before {
+    content: "note:";
+    display: block;
+
+    font-size: var(--mer-font__size--sm);
+    font-weight: var(--mer-font__weight--semi-bold);
+
+    margin-block-end: var(--mer-spacing--2xs);
+  }
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--mer-spacing--xs);
+  max-inline-size: $articleMaxInlineSize;
+
+  color: var(--mer-color__neutral-gray--400);
+  font-size: var(--mer-font__size--2xs);
+
+  background-color: var(--mer-surface__elevation--01);
+  border-inline-start: 2px solid var(--mer-border-color__on-surface);
+  border-radius: var(--mer-border__radius--sm);
+
+  padding-block: var(--mer-spacing--sm);
+  padding-inline: var(--mer-spacing--md);
+}
+
+.c-green {
+  color: #30cbb8;
 }
