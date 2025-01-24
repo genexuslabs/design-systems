@@ -558,7 +558,175 @@ export const tabularGridMetadata = {
       title: "11. Tree grid",
       template: {
         tag: "ch-tabular-grid",
-        class: "tabular-grid"
+        class: "tabular-grid tabular-grid-show-node-icons",
+        children: [
+          {
+            tag: "ch-tabular-grid-columnset",
+            class: "tabular-grid-column-set",
+            children: [
+              {
+                tag: "ch-tabular-grid-column",
+                class: "tabular-grid-column",
+                properties: [
+                  { name: "column-name", value: "Name" },
+                  { name: "settingable", value: "false" },
+                  { name: "column-type", value: "tree" },
+                  { name: "freeze", value: "start" },
+                  { name: "size", value: "20%" }
+                ]
+              },
+              {
+                tag: "ch-tabular-grid-column",
+                class: "tabular-grid-column",
+                properties: [
+                  { name: "column-name", value: "Type" },
+                  { name: "settingable", value: "false" },
+                  { name: "size", value: "80%" }
+                ]
+              },
+              {
+                tag: "ch-tabular-grid-column",
+                class: "tabular-grid-column",
+                properties: [
+                  { name: "column-name", value: "Description" },
+                  { name: "settingable", value: "false" },
+                  { name: "size", value: "500px" }
+                ]
+              },
+              {
+                tag: "ch-tabular-grid-column",
+                class: "tabular-grid-column",
+                properties: [
+                  { name: "column-name", value: "Is Collection" },
+                  { name: "settingable", value: "false" },
+                  { name: "size", value: "100px" }
+                ]
+              }
+            ]
+          },
+          {
+            tag: "ch-tabular-grid-row",
+            class: "tabular-grid-row",
+            children: [
+              {
+                tag: "ch-tabular-grid-cell",
+                class: "tabular-grid-cell",
+                children: "Target"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: "tabular-grid-cell",
+                children: ""
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: "tabular-grid-cell",
+                children: "Target"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: "tabular-grid-cell",
+                children: "false"
+              },
+              {
+                tag: "ch-tabular-grid-rowset",
+                class: "tabular-grid-rowset",
+                children: [
+                  {
+                    tag: "ch-tabular-grid-row",
+                    class: "tabular-grid-row",
+                    children: [
+                      {
+                        tag: "ch-tabular-grid-cell",
+                        class: "tabular-grid-cell",
+                        children: "Devices"
+                      },
+                      {
+                        tag: "ch-tabular-grid-cell",
+                        class: "tabular-grid-cell",
+                        children: ""
+                      },
+                      {
+                        tag: "ch-tabular-grid-cell",
+                        class: "tabular-grid-cell",
+                        children: "Devices List"
+                      },
+                      {
+                        tag: "ch-tabular-grid-cell",
+                        class: "tabular-grid-cell",
+                        children: "true"
+                      },
+                      {
+                        tag: "ch-tabular-grid-rowset",
+                        class: "tabular-grid-rowset",
+                        children: [
+                          {
+                            tag: "ch-tabular-grid-row",
+                            class: "tabular-grid-row",
+                            children: [
+                              {
+                                tag: "ch-tabular-grid-cell",
+                                class: "tabular-grid-cell",
+                                children: "Device"
+                              },
+                              {
+                                tag: "ch-tabular-grid-cell",
+                                class: "tabular-grid-cell",
+                                children: ""
+                              },
+                              {
+                                tag: "ch-tabular-grid-cell",
+                                class: "tabular-grid-cell",
+                                children: ""
+                              },
+                              {
+                                tag: "ch-tabular-grid-cell",
+                                class: "tabular-grid-cell",
+                                children: ""
+                              },
+                              {
+                                tag: "ch-tabular-grid-rowset",
+                                class: "tabular-grid-rowset",
+                                children: [
+                                  {
+                                    tag: "ch-tabular-grid-row",
+                                    class: "tabular-grid-row",
+                                    children: [
+                                      {
+                                        tag: "ch-tabular-grid-cell",
+                                        class: "tabular-grid-cell",
+                                        children: "DeviceToken"
+                                      },
+                                      {
+                                        tag: "ch-tabular-grid-cell",
+                                        class: "tabular-grid-cell",
+                                        children: "Character(500)"
+                                      },
+                                      {
+                                        tag: "ch-tabular-grid-cell",
+                                        class: "tabular-grid-cell",
+                                        children: "DeviceToken"
+                                      },
+                                      {
+                                        tag: "ch-tabular-grid-cell",
+                                        class: "tabular-grid-cell",
+                                        children: "false"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
 
