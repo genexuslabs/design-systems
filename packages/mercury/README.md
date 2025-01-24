@@ -34,7 +34,7 @@ Mercury Design System is a robust and scalable solution designed to improve prod
 
     - [2.3.3. Copying assets with Vite](#233-copying-assets-with-vite)
 
-  - [2.4. Register Mercury and Chameleon utilities to use the icons](#24-register-mercury-and-chameleon-utilities-to-use-the-icons)
+  - [2.4. Register Mercury and Chameleon utilities](#24-register-mercury-and-chameleon-utilities)
 
   - [2.5. Style the base application](#25-style-the-base-application)
 
@@ -52,7 +52,9 @@ Mercury Design System is a robust and scalable solution designed to improve prod
 
     - [2.6.3. How to style a component in StencilJS](#263-how-to-style-a-component-in-stenciljs)
 
-  - [2.7. Set the dark and light mode](#27-set-the-darklight-mode)
+  - [2.7. Download the icon paths](#27-download-the-icon-paths)
+
+  - [2.8. Set the dark and light mode](#28-set-the-darklight-mode)
 
 - [3. CSS bundles mapping](#3-css-bundles-mapping)
 
@@ -301,7 +303,7 @@ export default defineConfig({
 });
 ```
 
-### 2.4. Register Mercury and Chameleon utilities to use the icons
+### 2.4. Register Mercury and Chameleon utilities
 
 [Chameleon](https://github.com/genexuslabs/chameleon-controls-library) and Mercury export utilities to facilitate the usage of icons. If you are using Mercury icons, do the following:
 
@@ -447,7 +449,27 @@ export class CustomDialog {
 }
 ```
 
-### 2.7. Set the dark/light mode
+### 2.7. Download the icon paths
+
+In the [Register Mercury and Chameleon utilities](#24-register-mercury-and-chameleon-utilities) section we registered utilities to compute the icons in the component. The only remaining thing to do is download the path for the icons. To do this, we need to download a CSS bundle called `base/icons` using the `ch-theme` component.
+
+The only difference with the previous sections, is that the bundle is not downloaded using the getBundles utils, instead is computed with the following way:
+
+```ts
+import type { ThemeModel } from "@genexus/chameleon-controls-library";
+import { bundleToHashMappings } from "{{ CSS outDir path }}/bundle-to-hash-mappings";
+
+const iconsBundle: ThemeModel = [
+  {
+    name: "base/icons",
+    url: `{{ Icons final path }}${bundleToHashMappings["base/icons"]}.css`
+  }
+];
+
+// Use the iconsBundle in the ch-theme/ChTheme component...
+```
+
+### 2.8. Set the dark/light mode
 
 Mercury's implementation is designed from the ground up to support both dark and light modes. To set the dark/light mode, add the `light` or `dark` class in the `<html>` tag. This will toggle the color scheme for all components and even the icons!
 
