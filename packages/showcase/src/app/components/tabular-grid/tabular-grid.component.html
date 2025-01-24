@@ -34,6 +34,8 @@
   }
 </ol>
 
+<!-- Tabular Grid -->
+
 @if (showSelectionNoneKeyboardFocus()) {
   <code-snippet
     [codeSnippet]="codeSnippets.selectionNoneKeyboardFocus"
@@ -2012,39 +2014,572 @@
   </code-snippet>
 }
 
-@if (showPropertyGrid()) {
-  <code-snippet [codeSnippet]="codeSnippets.propertyGrid" [language]="'ts'">
-  </code-snippet>
-}
+<!-- Tabular Grid: Helpers -->
 
 @if (showAlignCellsBlockStart()) {
   <code-snippet
-    [codeSnippet]="codeSnippets.alignCellsBlockStart"
+    [codeSnippet]="helpersCodeSnippets.alignCellsBlockStart"
     [language]="'ts'"
   >
+    <ch-tabular-grid class="tabular-grid tabular-grid-align-cells-block-start">
+      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="code"
+          column-name="Country Code"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="name"
+          column-name="Country Name"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="population"
+          column-name="Country Population"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="language"
+          column-name="Country Language"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+      </ch-tabular-grid-columnset>
+
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >AR<span class="grid-align-cell-block-start"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Argentina is a large country in South America, known for its diverse
+          landscapes, rich culture, and vibrant history. It stretches from the
+          tropical north to the southern tip of the continent, encompassing a
+          variety of climates and terrains, from the Andes mountains to the
+          Pampas plains and the Patagonia region.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >45.400.000<span class="grid-align-cell-block-start"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español<span class="grid-align-cell-block-start"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BO<span class="grid-align-cell-block-start"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Bolivia is a landlocked country in central South America, known for
+          its diverse cultures, rich history, and stunning natural landscapes.
+          It is one of the most culturally diverse countries in the region, with
+          a large indigenous population that influences its traditions and daily
+          life.</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >11.800.000<span class="grid-align-cell-block-start"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español<span class="grid-align-cell-block-start"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BR<span class="grid-align-cell-block-start"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Brazil is the largest country in South America and the fifth largest
+          in the world, known for its vibrant culture, diverse ecosystems, and
+          iconic landmarks. It is a vast country with a mix of modern cities,
+          colonial architecture, and natural wonders.</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >212.600.000<span class="grid-align-cell-block-start"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Português<span class="grid-align-cell-block-start"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+    </ch-tabular-grid>
   </code-snippet>
 }
 
 @if (showAlignCellsBlockCenter()) {
   <code-snippet
-    [codeSnippet]="codeSnippets.alignCellsBlockCenter"
+    [codeSnippet]="helpersCodeSnippets.alignCellsBlockCenter"
     [language]="'ts'"
   >
+    <ch-tabular-grid class="tabular-grid tabular-grid-align-cells-block-center">
+      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="code"
+          column-name="Country Code"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="name"
+          column-name="Country Name"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="population"
+          column-name="Country Population"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="language"
+          column-name="Country Language"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+      </ch-tabular-grid-columnset>
+
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >AR<span class="grid-align-cell-block-center"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Argentina is a large country in South America, known for its diverse
+          landscapes, rich culture, and vibrant history. It stretches from the
+          tropical north to the southern tip of the continent, encompassing a
+          variety of climates and terrains, from the Andes mountains to the
+          Pampas plains and the Patagonia region.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >45.400.000<span class="grid-align-cell-block-center"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español<span class="grid-align-cell-block-center"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BO<span class="grid-align-cell-block-center"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Bolivia is a landlocked country in central South America, known for
+          its diverse cultures, rich history, and stunning natural landscapes.
+          It is one of the most culturally diverse countries in the region, with
+          a large indigenous population that influences its traditions and daily
+          life.</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >11.800.000<span class="grid-align-cell-block-center"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español<span class="grid-align-cell-block-center"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BR<span class="grid-align-cell-block-center"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Brazil is the largest country in South America and the fifth largest
+          in the world, known for its vibrant culture, diverse ecosystems, and
+          iconic landmarks. It is a vast country with a mix of modern cities,
+          colonial architecture, and natural wonders.</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >212.600.000<span class="grid-align-cell-block-center"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Português<span class="grid-align-cell-block-center"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+    </ch-tabular-grid>
   </code-snippet>
 }
 
 @if (showAlignCellsBlockEnd()) {
   <code-snippet
-    [codeSnippet]="codeSnippets.alignCellsBlockEnd"
+    [codeSnippet]="helpersCodeSnippets.alignCellsBlockEnd"
     [language]="'ts'"
   >
+    <ch-tabular-grid class="tabular-grid tabular-grid-align-cells-block-end">
+      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="code"
+          column-name="Country Code"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="name"
+          column-name="Country Name"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="population"
+          column-name="Country Population"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="language"
+          column-name="Country Language"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+      </ch-tabular-grid-columnset>
+
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >AR<span class="grid-align-cell-block-end"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Argentina is a large country in South America, known for its diverse
+          landscapes, rich culture, and vibrant history. It stretches from the
+          tropical north to the southern tip of the continent, encompassing a
+          variety of climates and terrains, from the Andes mountains to the
+          Pampas plains and the Patagonia region.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >45.400.000<span class="grid-align-cell-block-end"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español<span class="grid-align-cell-block-end"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BO<span class="grid-align-cell-block-end"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Bolivia is a landlocked country in central South America, known for
+          its diverse cultures, rich history, and stunning natural landscapes.
+          It is one of the most culturally diverse countries in the region, with
+          a large indigenous population that influences its traditions and daily
+          life.</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >11.800.000<span class="grid-align-cell-block-end"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español<span class="grid-align-cell-block-end"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BR<span class="grid-align-cell-block-end"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Brazil is the largest country in South America and the fifth largest
+          in the world, known for its vibrant culture, diverse ecosystems, and
+          iconic landmarks. It is a vast country with a mix of modern cities,
+          colonial architecture, and natural wonders.</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >212.600.000<span class="grid-align-cell-block-end"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Português<span class="grid-align-cell-block-end"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+    </ch-tabular-grid>
   </code-snippet>
 }
 
 @if (showAlignCellsInlineStart()) {
   <code-snippet
-    [codeSnippet]="codeSnippets.alignCellsInlineStart"
+    [codeSnippet]="helpersCodeSnippets.alignCellsInlineStart"
     [language]="'ts'"
   >
+    <ch-tabular-grid
+      class="tabular-grid tabular-grid-align-cells-inlinse-start"
+    >
+      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="code"
+          column-name="Country Code"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="name"
+          column-name="Country Name"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="population"
+          column-name="Country Population"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="language"
+          column-name="Country Language"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+      </ch-tabular-grid-columnset>
+
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >AR<span class="grid-align-cell-inline-start"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Argentina is a large country in South America, known for its diverse
+          landscapes, rich culture, and vibrant history. It stretches from the
+          tropical north to the southern tip of the continent, encompassing a
+          variety of climates and terrains, from the Andes mountains to the
+          Pampas plains and the Patagonia region.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >45.400.000<span class="grid-align-cell-inline-start"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español<span class="grid-align-cell-inline-start"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BO<span class="grid-align-cell-inline-start"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Bolivia is a landlocked country in central South America, known for
+          its diverse cultures, rich history, and stunning natural landscapes.
+          It is one of the most culturally diverse countries in the region, with
+          a large indigenous population that influences its traditions and daily
+          life.</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >11.800.000<span class="grid-align-cell-inline-start"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español<span class="grid-align-cell-inline-start"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BR<span class="grid-align-cell-inline-start"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Brazil is the largest country in South America and the fifth largest
+          in the world, known for its vibrant culture, diverse ecosystems, and
+          iconic landmarks. It is a vast country with a mix of modern cities,
+          colonial architecture, and natural wonders.</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >212.600.000<span class="grid-align-cell-inline-start"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Português<span class="grid-align-cell-inline-start"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+    </ch-tabular-grid>
+  </code-snippet>
+}
+
+@if (showAlignCellsInlineCenter()) {
+  <code-snippet
+    [codeSnippet]="helpersCodeSnippets.alignCellsInlineCenter"
+    [language]="'ts'"
+  >
+    <ch-tabular-grid
+      class="tabular-grid tabular-grid-align-cells-inline-center"
+    >
+      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="code"
+          column-name="Country Code"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="name"
+          column-name="Country Name"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="population"
+          column-name="Country Population"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="language"
+          column-name="Country Language"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+      </ch-tabular-grid-columnset>
+
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >AR<span class="grid-align-cell-inline-center"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Argentina is a large country in South America, known for its diverse
+          landscapes, rich culture, and vibrant history. It stretches from the
+          tropical north to the southern tip of the continent, encompassing a
+          variety of climates and terrains, from the Andes mountains to the
+          Pampas plains and the Patagonia region.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >45.400.000<span class="grid-align-cell-inline-center"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español<span class="grid-align-cell-inline-center"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BO<span class="grid-align-cell-inline-center"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Bolivia is a landlocked country in central South America, known for
+          its diverse cultures, rich history, and stunning natural landscapes.
+          It is one of the most culturally diverse countries in the region, with
+          a large indigenous population that influences its traditions and daily
+          life.</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >11.800.000<span class="grid-align-cell-inline-center"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español<span class="grid-align-cell-inline-center"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BR<span class="grid-align-cell-inline-center"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Brazil is the largest country in South America and the fifth largest
+          in the world, known for its vibrant culture, diverse ecosystems, and
+          iconic landmarks. It is a vast country with a mix of modern cities,
+          colonial architecture, and natural wonders.</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >212.600.000<span class="grid-align-cell-inline-center"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Português<span class="grid-align-cell-inline-center"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+    </ch-tabular-grid>
+  </code-snippet>
+}
+
+@if (showAlignCellsInlineEnd()) {
+  <code-snippet
+    [codeSnippet]="helpersCodeSnippets.alignCellsInlineEnd"
+    [language]="'ts'"
+  >
+    <ch-tabular-grid class="tabular-grid tabular-grid-align-cells-inline-end">
+      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="code"
+          column-name="Country Code"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="name"
+          column-name="Country Name"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="population"
+          column-name="Country Population"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="language"
+          column-name="Country Language"
+          settingable="false"
+          sortable="true"
+        ></ch-tabular-grid-column>
+      </ch-tabular-grid-columnset>
+
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >AR<span class="grid-align-cell-inline-end"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Argentina is a large country in South America, known for its diverse
+          landscapes, rich culture, and vibrant history. It stretches from the
+          tropical north to the southern tip of the continent, encompassing a
+          variety of climates and terrains, from the Andes mountains to the
+          Pampas plains and the Patagonia region.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >45.400.000<span class="grid-align-cell-inline-end"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español<span class="grid-align-cell-inline-end"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BO<span class="grid-align-cell-inline-end"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Bolivia is a landlocked country in central South America, known for
+          its diverse cultures, rich history, and stunning natural landscapes.
+          It is one of the most culturally diverse countries in the region, with
+          a large indigenous population that influences its traditions and daily
+          life.</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >11.800.000<span class="grid-align-cell-inline-end"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español<span class="grid-align-cell-inline-end"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BR<span class="grid-align-cell-inline-end"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Brazil is the largest country in South America and the fifth largest
+          in the world, known for its vibrant culture, diverse ecosystems, and
+          iconic landmarks. It is a vast country with a mix of modern cities,
+          colonial architecture, and natural wonders.</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >212.600.000<span class="grid-align-cell-inline-end"></span
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Português<span class="grid-align-cell-inline-end"></span
+        ></ch-tabular-grid-cell>
+      </ch-tabular-grid-row>
+    </ch-tabular-grid>
   </code-snippet>
 }

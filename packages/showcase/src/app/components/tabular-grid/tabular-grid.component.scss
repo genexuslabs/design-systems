@@ -1,0 +1,61 @@
+// The following are styles specific for the "tabular grid: helper classes" cases.
+// These styles simply will make understanding the alignment more easily.
+
+.tabular-grid {
+  --tabular-grid-line-position-inline-offset: var(--control__padding-inline);
+  --tabular-grid-line-position-block-offset: var(--control__padding-block);
+  --tabular-grid-line-style: dashed;
+  --tabular-grid-line-width: 2px;
+}
+
+/* block cell alignment */
+.grid-align-cell-block-start {
+  inline-size: calc(100% - var(--control__padding-inline) * 2);
+  block-size: 1px;
+  border-block-end: var(--tabular-grid-line-width)
+    var(--tabular-grid-line-style) var(--mer-color__message-green--200);
+  top: var(--tabular-grid-line-position-block-offset);
+  position: absolute;
+}
+.grid-align-cell-block-center {
+  inline-size: calc(100% - var(--control__padding-inline) * 2);
+  block-size: 1px;
+  border-block-end: var(--tabular-grid-line-width)
+    var(--tabular-grid-line-style) var(--mer-color__message-green--200);
+  top: 50%;
+  position: absolute;
+}
+.grid-align-cell-block-end {
+  inline-size: calc(100% - var(--control__padding-inline) * 2);
+  block-size: 1px;
+  border-block-end: var(--tabular-grid-line-width)
+    var(--tabular-grid-line-style) var(--mer-color__message-green--200);
+  bottom: var(--tabular-grid-line-position-block-offset);
+  position: absolute;
+}
+
+/* inline cell alignment */
+.grid-align-cell-inline-start {
+  block-size: calc(100% - var(--control__padding-inline) * 2);
+  inline-size: 1px;
+  border-inline-start: var(--tabular-grid-line-width)
+    var(--tabular-grid-line-style) var(--mer-color__message-green--200);
+  left: var(--tabular-grid-line-position-inline-offset);
+  position: absolute;
+}
+.grid-align-cell-inline-center {
+  block-size: calc(100% - var(--control__padding-inline) * 2);
+  inline-size: 1px;
+  border-inline-start: var(--tabular-grid-line-width)
+    var(--tabular-grid-line-style) var(--mer-color__message-green--200);
+  left: 50%;
+  position: absolute;
+}
+.grid-align-cell-inline-end {
+  block-size: calc(100% - var(--control__padding-inline) * 2);
+  inline-size: 1px;
+  border-inline-start: var(--tabular-grid-line-width)
+    var(--tabular-grid-line-style) var(--mer-color__message-green--200);
+  right: var(--tabular-grid-line-position-inline-offset);
+  position: absolute;
+}

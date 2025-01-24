@@ -728,68 +728,72 @@ export const tabularGridMetadata = {
           }
         ]
       }
-    },
+    }
+  }
+} as const satisfies ComponentMetadata;
 
-    propertyGrid: {
-      linkId: "property-grid",
-      title: "12. Property grid",
-      template: {
-        tag: "ch-tabular-grid",
-        class: "tabular-grid"
-      }
-    },
-
+export const tabularGridHelpersMetadata = {
+  title: "Tabular Grid: Helpers",
+  description:
+    "Helper classes in a tabular grid component are crucial for ensuring flexibility and consistency in layout and styling across complex tables. They allow developers to easily apply specific alignments, spacing, and formatting to various table elements without needing to write custom CSS for each instance.",
+  codeSnippets: {
     alignCellsBlockStart: {
       linkId: "align-cells-block-start",
-      title: "13. Align cells: block start",
+      title: "12. Align cells: block start",
       template: {
         tag: "ch-tabular-grid",
-        class: "tabular-grid"
+        class: "tabular-grid tabular-grid-align-cells-block-start",
+        children: ["<!-- Your grid content here -->"]
       }
     },
 
     alignCellsBlockCenter: {
       linkId: "align-cells-block-center",
-      title: "14. Align cells: block center",
+      title: "13. Align cells: block center",
       template: {
         tag: "ch-tabular-grid",
-        class: "tabular-grid"
+        class: "tabular-grid tabular-grid-align-cells-block-center",
+        children: ["<!-- Your grid content here -->"]
       }
     },
 
     alignCellsBlockEnd: {
       linkId: "align-cells-block-end",
-      title: "15. Align cells: block end",
+      title: "14. Align cells: block end",
       template: {
         tag: "ch-tabular-grid",
-        class: "tabular-grid"
+        class: "tabular-grid tabular-grid-align-cells-block-end",
+        children: ["<!-- Your grid content here -->"]
       }
     },
 
     alignCellsInlineStart: {
       linkId: "align-cells-inline-start",
-      title: "16. Align cells: inline start",
+      title: "15. Align cells: inline start",
       template: {
         tag: "ch-tabular-grid",
-        class: "tabular-grid"
+        class: "tabular-grid tabular-grid-align-cells-inline-start",
+        children: ["<!-- Your grid content here -->"]
       }
     },
 
     alignCellsInlineCenter: {
       linkId: "align-cells-inline-center",
-      title: "17. Align cells: inline center",
+      title: "16. Align cells: inline center",
       template: {
         tag: "ch-tabular-grid",
-        class: "tabular-grid"
+        class: "tabular-grid tabular-grid-align-cells-inline-center",
+        children: ["<!-- Your grid content here -->"]
       }
     },
 
     alignCellsInlineEnd: {
       linkId: "align-cells-inline-end",
-      title: "18. Align cells: inline end",
+      title: "17. Align cells: inline end",
       template: {
         tag: "ch-tabular-grid",
-        class: "tabular-grid"
+        class: "tabular-grid tabular-grid-align-cells-inline-end",
+        children: ["<!-- Your grid content here -->"]
       }
     }
   }
