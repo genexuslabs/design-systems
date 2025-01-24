@@ -2,60 +2,70 @@
 // These styles simply will make understanding the alignment more easily.
 
 .tabular-grid {
-  --tabular-grid-line-position-inline-offset: var(--control__padding-inline);
-  --tabular-grid-line-position-block-offset: var(--control__padding-block);
+  --tabular-grid-line-position-inline-offset: var(--grid-cell__padding-inline);
+  --tabular-grid-line-position-block-offset: var(--grid-cell__padding-block);
   --tabular-grid-line-style: dashed;
   --tabular-grid-line-width: 2px;
 }
 
-/* block cell alignment */
-.grid-align-cell-block-start {
-  inline-size: calc(100% - var(--control__padding-inline) * 2);
-  block-size: 1px;
-  border-block-end: var(--tabular-grid-line-width)
-    var(--tabular-grid-line-style) var(--mer-color__message-green--200);
-  top: var(--tabular-grid-line-position-block-offset);
+$grid-cell-alignment-border-width: var(--mer-border__width--sm);
+$grid-cell-alignment-border-inline-size: calc(
+  100% - var(--grid-cell__padding-inline) * 2
+);
+$grid-cell-alignment-border-block-size: calc(
+  100% - var(--grid-cell__padding-block) * 2
+);
+$grid-cell-alignment-border-style: var(--tabular-grid-line-width)
+  var(--tabular-grid-line-style) var(--mer-color__message-green--200);
+
+%tabular-grid-cell-alignment-line-common {
+  content: "";
   position: absolute;
 }
-.grid-align-cell-block-center {
-  inline-size: calc(100% - var(--control__padding-inline) * 2);
-  block-size: 1px;
-  border-block-end: var(--tabular-grid-line-width)
-    var(--tabular-grid-line-style) var(--mer-color__message-green--200);
-  top: 50%;
-  position: absolute;
+%tabular-grid-cell-block-alignment-line-common {
+  block-size: $grid-cell-alignment-border-width;
+  inline-size: $grid-cell-alignment-border-inline-size;
+  border-block-end: $grid-cell-alignment-border-style;
 }
-.grid-align-cell-block-end {
-  inline-size: calc(100% - var(--control__padding-inline) * 2);
-  block-size: 1px;
-  border-block-end: var(--tabular-grid-line-width)
-    var(--tabular-grid-line-style) var(--mer-color__message-green--200);
-  bottom: var(--tabular-grid-line-position-block-offset);
-  position: absolute;
+%tabular-grid-cell-inline-alignment-line-common {
+  block-size: $grid-cell-alignment-border-block-size;
+  inline-size: $grid-cell-alignment-border-width;
+  border-inline-start: $grid-cell-alignment-border-style;
 }
 
-/* inline cell alignment */
-.grid-align-cell-inline-start {
-  block-size: calc(100% - var(--control__padding-inline) * 2);
-  inline-size: 1px;
-  border-inline-start: var(--tabular-grid-line-width)
-    var(--tabular-grid-line-style) var(--mer-color__message-green--200);
-  left: var(--tabular-grid-line-position-inline-offset);
-  position: absolute;
-}
-.grid-align-cell-inline-center {
-  block-size: calc(100% - var(--control__padding-inline) * 2);
-  inline-size: 1px;
-  border-inline-start: var(--tabular-grid-line-width)
-    var(--tabular-grid-line-style) var(--mer-color__message-green--200);
-  left: 50%;
-  position: absolute;
-}
-.grid-align-cell-inline-end {
-  block-size: calc(100% - var(--control__padding-inline) * 2);
-  inline-size: 1px;
-  border-inline-start: var(--tabular-grid-line-width)
-    var(--tabular-grid-line-style) var(--mer-color__message-green--200);
-  right: var(--tabular-grid-line-position-inline-offset);
-  position: absolute;
+.fancy-tabular-grid-preview {
+  // TODO: Apply this visual cues when the fany mode is available.
+  /* block cell line alignment */
+  .tabular-grid-align-cells-block-start .tabular-grid-cell::after {
+    @extend %tabular-grid-cell-alignment-line-common;
+    @extend %tabular-grid-cell-block-alignment-line-common;
+    top: var(--tabular-grid-line-position-block-offset);
+  }
+  .tabular-grid-align-cells-block-center .tabular-grid-cell::after {
+    @extend %tabular-grid-cell-alignment-line-common;
+    @extend %tabular-grid-cell-block-alignment-line-common;
+    top: 50%;
+  }
+  .tabular-grid-align-cells-block-end .tabular-grid-cell::after {
+    @extend %tabular-grid-cell-alignment-line-common;
+    @extend %tabular-grid-cell-block-alignment-line-common;
+    bottom: var(--tabular-grid-line-position-block-offset);
+  }
+
+  /* inline cell line alignment */
+  .tabular-grid-align-cells-inline-start .tabular-grid-cell::after {
+    @extend %tabular-grid-cell-alignment-line-common;
+    @extend %tabular-grid-cell-inline-alignment-line-common;
+    left: var(--tabular-grid-line-position-inline-offset);
+  }
+  .tabular-grid-align-cells-inline-center .tabular-grid-cell::after {
+    @extend %tabular-grid-cell-alignment-line-common;
+    @extend %tabular-grid-cell-inline-alignment-line-common;
+    left: 50%;
+  }
+  .tabular-grid-align-cells-inline-end .tabular-grid-cell::after {
+    @extend %tabular-grid-cell-alignment-line-common;
+    @extend %tabular-grid-cell-inline-alignment-line-common;
+    right: var(--tabular-grid-line-position-inline-offset);
+  }
 }
