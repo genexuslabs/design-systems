@@ -49,12 +49,82 @@ export const tabularGridMetadata = {
         ]
       }
     },
-    rowSet: {
-      linkId: "row-set",
-      title: "2. Row set",
+
+    withRowSet: {
+      linkId: "tabular-grid-rowsets",
+      title: "With Rowset",
       template: {
         tag: "ch-tabular-grid",
-        class: "tabular-grid"
+        class: "tabular-grid",
+        properties: [{ name: "row-selection-mode", value: "none" }],
+        children: [
+          {
+            tag: "ch-tabular-grid-columnset",
+            class: "tabular-grid-column-set",
+            children: [
+              {
+                tag: "ch-tabular-grid-column",
+                class: "tabular-grid-column",
+                properties: [
+                  { name: "column-id", value: "code" },
+                  { name: "column-name", value: "Country Code" },
+                  { name: "settingable", value: "false" }
+                ]
+              },
+              '<!-- Add more "ch-tabular-grid-column" objects here as needed -->'
+            ]
+          },
+          {
+            tag: "ch-tabular-grid-rowset",
+            class: "tabular-grid-rowset",
+            children: [
+              {
+                tag: "ch-tabular-grid-rowset-legend",
+                class: "tabular-grid-rowset-legend",
+                children: "América del Sur"
+              },
+              {
+                tag: "ch-tabular-grid-row",
+                class: "tabular-grid-row",
+                properties: [{ name: "rowid", value: "bo" }],
+                children: [
+                  {
+                    tag: "ch-tabular-grid-cell",
+                    class: "tabular-grid-cell",
+                    children: "BO"
+                  },
+                  '<!-- Add more "ch-tabular-grid-cell" objects here as needed -->'
+                ]
+              },
+              '<!-- Add more "ch-tabular-grid-row" objects here as needed -->',
+              {
+                tag: "ch-tabular-grid-rowset",
+                class: "tabular-grid-rowset",
+                children: [
+                  {
+                    tag: "ch-tabular-grid-rowset-legend",
+                    class: "tabular-grid-rowset-legend",
+                    children: "Campeones del mundo"
+                  },
+                  {
+                    tag: "ch-tabular-grid-row",
+                    class: "tabular-grid-row",
+                    properties: [{ name: "rowid", value: "ar" }],
+                    children: [
+                      {
+                        tag: "ch-tabular-grid-cell",
+                        class: "tabular-grid-cell",
+                        children: "AR"
+                      },
+                      '<!-- Add more "ch-tabular-grid-cell" objects here as needed -->'
+                    ]
+                  },
+                  '<!-- Add more "ch-tabular-grid-row" objects here as needed -->'
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
 
