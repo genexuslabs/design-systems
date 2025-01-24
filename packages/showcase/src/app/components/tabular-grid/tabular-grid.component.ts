@@ -37,10 +37,10 @@ export class TabularGridComponent {
    */
   tabularGrids = computed(() => {
     const newTabularGrids = new Map<string, boolean>([
-      ["Selection: none + keyboard focus", true]
-      // ["Row set", true],
-      // ["Selection: simple + keyboard: focus", true],
-      // ["Selection: simple + keyboard: select", true],
+      // ["Selection: none + keyboard focus", true]
+      // ["With Row Set", true]
+      ["Selection: single + keyboard: focus", true]
+      // ["Selection: single + keyboard: select", true],
       // ["Selection: multiple + keyboard: focus", true],
       // ["Selection: multiple + keyboard: select", true],
       // ["Row mark + keyboard: select", true],
@@ -79,12 +79,12 @@ export class TabularGridComponent {
   showSelectionNoneKeyboardFocus = computed(() =>
     this.tabularGrids().get("Selection: none + keyboard focus")
   );
-  showRowSet = computed(() => this.tabularGrids().get("Row set"));
-  showSelectionSimpleKeyboardFocus = computed(() =>
-    this.tabularGrids().get("Selection: simple + keyboard: focus")
+  showRowSet = computed(() => this.tabularGrids().get("With Row Set"));
+  showSelectionSingleKeyboardFocus = computed(() =>
+    this.tabularGrids().get("Selection: single + keyboard: focus")
   );
-  showSelectionSimpleKeyboardSelect = computed(() =>
-    this.tabularGrids().get("Selection: simple + keyboard: select")
+  showSelectionSingleKeyboardSelect = computed(() =>
+    this.tabularGrids().get("Selection: single + keyboard: select")
   );
   showSelectionMultipleKeyboardFocus = computed(() =>
     this.tabularGrids().get("Selection: multiple + keyboard: focus")

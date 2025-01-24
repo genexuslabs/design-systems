@@ -51,7 +51,7 @@ export const tabularGridMetadata = {
     },
 
     withRowSet: {
-      linkId: "tabular-grid-rowsets",
+      linkId: "with-row-set",
       title: "With Rowset",
       template: {
         tag: "ch-tabular-grid",
@@ -128,18 +128,53 @@ export const tabularGridMetadata = {
       }
     },
 
-    selectionSimpleKeyboardFocus: {
-      linkId: "selection-simple-keyboard-focus",
-      title: "3. Selection: simple + keyboard: focus",
+    selectionSingleKeyboardFocus: {
+      linkId: "selection-single-keyboard-focus",
+      title: "3. Selection: single + keyboard: focus",
       template: {
         tag: "ch-tabular-grid",
-        class: "tabular-grid"
+        class: "tabular-grid",
+        properties: [
+          { name: "row-selection-mode", value: "simple" },
+          { name: "keyboard-navigation-mode", value: "focus" }
+        ],
+        children: [
+          {
+            tag: "ch-tabular-grid-columnset",
+            class: "tabular-grid-column-set",
+            children: [
+              {
+                tag: "ch-tabular-grid-column",
+                class: "tabular-grid-column",
+                properties: [
+                  { name: "column-id", value: "code" },
+                  { name: "column-name", value: "Country Code" },
+                  { name: "settingable", value: "false" }
+                ]
+              },
+              "<!-- Add more ch-tabular-grid-column's as needed -->"
+            ]
+          },
+          {
+            tag: "ch-tabular-grid-row",
+            class: "tabular-grid-row",
+            children: [
+              {
+                tag: "ch-tabular-grid-cell",
+                class: "tabular-grid-cell",
+                children: "AR"
+              },
+              "<!-- Add more ch-tabular-grid-cell's as needed... -->"
+            ]
+          },
+          "<!-- Add more ch-tabular-grid-row's as needed... -->"
+        ]
       }
     },
 
-    selectionSimpleKeyboardSelect: {
-      linkId: "selection-simple-keyboard-select",
-      title: "4. Selection: simple + keyboard: select",
+    selectionSingleKeyboardSelect: {
+      linkId: "selection-single-keyboard-select",
+      title: "4. Selection: single + keyboard: select",
       template: {
         tag: "ch-tabular-grid",
         class: "tabular-grid"
