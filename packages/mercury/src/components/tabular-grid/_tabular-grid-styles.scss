@@ -69,7 +69,6 @@
   @include items-container-colors();
 
   --item__border-color--enabled: var(--mer-surface__elevation--01);
-  // @include tabular-grid-tokens();
   @include tabular-grid-row-tokens();
   @include tabular-grid-column-tokens();
   @include tabular-grid-cell-tokens();
@@ -83,6 +82,10 @@
 // - - - - - - - - - - - - - - - - - - - -
 %tabular-grid-column-set {
   border-block-end: var(--grid-cell__border);
+
+  &--hover {
+    --grid-bar-resize-split__bg-color: var(--mer-surface__elevation--03);
+  }
 }
 
 // - - - - - - - - - - - - - - - - - - - -
@@ -101,13 +104,20 @@
   @include control-font-weight-semi-bold();
   gap: var(--grid-common__gap);
   width: 100%;
+
+  &--hover {
+    --grid-bar-resize-split__bg-color: var(--mer-accent__primary);
+  }
 }
 
 %tabular-grid-column__bar-resize-split {
-  background-color: var(--mer-surface__elevation--01);
+  background-color: var(--grid-bar-resize-split__bg-color);
   inline-size: var(--grid-bar-resize-split__inline-size);
   &--hover {
-    background-color: var(--mer-accent__primary--hover);
+    --grid-bar-resize-split__bg-color: var(--mer-accent__primary--hover);
+  }
+  &--active {
+    --grid-bar-resize-split__bg-color: var(--mer-accent__primary--active);
   }
 }
 
@@ -499,6 +509,10 @@
 
   #{$tabular-grid-column-set} {
     @extend %tabular-grid-column-set;
+
+    &:hover {
+      @extend %tabular-grid-column-set--hover;
+    }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -511,6 +525,9 @@
 
   #{$tabular-grid-column__bar-selector} {
     @extend %tabular-grid-column__bar;
+    &:hover {
+      @extend %tabular-grid-column__bar--hover;
+    }
   }
 
   #{$tabular-grid-column__bar-resize-split-selector} {
