@@ -26,11 +26,7 @@ import {
   SegmentedControlModel,
   ThemeModel
 } from "@genexus/chameleon-controls-library";
-import { registryProperty } from "@genexus/chameleon-controls-library/dist/collection/index";
-import {
-  getImagePathCallback,
-  getImagePathCallbackDefinitions
-} from "@genexus/mercury/assets-manager.js";
+import { getImagePathCallback } from "@genexus/mercury/assets-manager.js";
 
 import { RuntimeBundlesComponent } from "../user-controls/runtime-bundles/runtime-bundles.component";
 import { getNavigationListRoutes } from "./app.routes";
@@ -68,9 +64,6 @@ export class AppComponent {
   colorSchemeService = inject(ColorSchemeService);
   dsService = inject(DesignSystemService);
   seoService = inject(SEOService);
-
-  // TODO: This is a WA, since the Chameleon's register does not for some reason
-  getImagePathCallback = getImagePathCallback;
 
   colorSchemeModel = signal<SegmentedControlModel>([
     { id: "dark", caption: "Dark" },
@@ -126,8 +119,6 @@ export class AppComponent {
 
     // Browser
     if (isPlatformBrowser(this.platform)) {
-      registryProperty("getImagePathCallback", getImagePathCallbackDefinitions);
-
       // Initialize the color scheme
       this.colorScheme.set(this.colorSchemeService.getColorScheme());
 

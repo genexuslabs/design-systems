@@ -17,11 +17,7 @@ import {
   pillsModel
 } from "./models";
 
-import {
-  getIconPath,
-  getImagePathCallback,
-  getTreeViewImagePathCallback
-} from "@genexus/mercury/assets-manager.js";
+import { getIconPath } from "@genexus/mercury/assets-manager.js";
 import type {
   ChCheckboxCustomEvent,
   TreeViewModel
@@ -73,10 +69,6 @@ export class GeminiMigrationComponent {
   objectsTreeViewModel: TreeViewModel = structuredClone(iconsModel);
   pillsModel = pillsModel;
   // suggestOptions = suggestOptions;
-
-  // TODO: This is a WA, since the Chameleon's register does not for some reason
-  getImagePathCallback = getImagePathCallback;
-  getTreeViewImagePathCallback = getTreeViewImagePathCallback;
 
   hiddenMigrations = input<string>("");
 

@@ -9,10 +9,7 @@ import {
 import { Router, RouterLink } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import type { ChCheckboxCustomEvent } from "@genexus/chameleon-controls-library";
-import {
-  getIconPath,
-  getImagePathCallback
-} from "@genexus/mercury/assets-manager.js";
+import { getIconPath } from "@genexus/mercury/assets-manager.js";
 
 import { inputMetadata } from "./metadata";
 import { RouterCommonLinksService } from "../../../services/router-links.service";
@@ -41,9 +38,6 @@ export class InputComponent {
     name: "user",
     colorType: "on-surface"
   });
-
-  // TODO: This is a WA, since the Chameleon's register does not for some reason
-  getImagePathCallback = getImagePathCallback;
 
   metadata = inputMetadata;
   codeSnippets = inputMetadata.codeSnippets;

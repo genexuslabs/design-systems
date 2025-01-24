@@ -96,11 +96,7 @@
 
   <div class="gemini-migration-preview">
     <button class="button-primary button-icon-and-text">
-      <ch-image
-        class="icon-sm"
-        [getImagePathCallback]="getImagePathCallback"
-        [src]="ICON"
-      ></ch-image>
+      <ch-image class="icon-sm" [src]="ICON"></ch-image>
       Caption
     </button>
   </div>
@@ -253,7 +249,6 @@
         id="user-name"
         class="input"
         [placeholder]="'John Smith'"
-        [getImagePathCallback]="getImagePathCallback"
         [startImgSrc]="ICON_PRIMARY"
         [value]="'Adam Smith'"
       ></ch-edit>
@@ -414,11 +409,7 @@
   </code-snippet>
 
   <div class="gemini-migration-preview">
-    <ch-image
-      class="icon-sm"
-      [getImagePathCallback]="getImagePathCallback"
-      [src]="ICON_PRIMARY"
-    ></ch-image>
+    <ch-image class="icon-sm" [src]="ICON_PRIMARY"></ch-image>
   </div>
 }
 
@@ -715,7 +706,6 @@
       id="genexus-objects"
       class="tree-view"
       [model]="objectsTreeViewModel"
-      [getImagePathCallback]="getTreeViewImagePathCallback"
       [showLines]="'last'"
     >
     </ch-tree-view-render>
