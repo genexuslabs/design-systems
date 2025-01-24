@@ -1099,6 +1099,168 @@
     [codeSnippet]="codeSnippets.rowMarkKeyboardSelect"
     [language]="'ts'"
   >
+    <ch-tabular-grid
+      class="tabular-grid"
+      row-selection-mode="multiple"
+      keyboard-navigation-mode="select"
+    >
+      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="code"
+          column-name="Country Code"
+          column-type="rich"
+          rich-row-selector
+          rich-row-selector-mode="mark"
+          settingable="false"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="name"
+          column-name="Country Name"
+          settingable="false"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="population"
+          column-name="Country Population"
+          settingable="false"
+        ></ch-tabular-grid-column>
+        <ch-tabular-grid-column
+          class="tabular-grid-column"
+          column-id="language"
+          column-name="Country Language"
+          settingable="false"
+        ></ch-tabular-grid-column>
+      </ch-tabular-grid-columnset>
+
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >AR</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Argentina</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >45.400.000</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español</ch-tabular-grid-cell
+        >
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BO</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Bolivia</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >11.800.000</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español</ch-tabular-grid-cell
+        >
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >BR</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Brasil</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >212.600.000</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Português</ch-tabular-grid-cell
+        >
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="cl">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >CL</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Chile</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >19.500.000</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español</ch-tabular-grid-cell
+        >
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="ec">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >EC</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Ecuador</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >17.600.000</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español</ch-tabular-grid-cell
+        >
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="py">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >PY</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Paraguay</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >7.500.000</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español</ch-tabular-grid-cell
+        >
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="pe">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >PE</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Perú</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >32.800.000</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español</ch-tabular-grid-cell
+        >
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="uy">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >UY</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Uruguay</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >3.500.000</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español</ch-tabular-grid-cell
+        >
+      </ch-tabular-grid-row>
+      <ch-tabular-grid-row class="tabular-grid-row" rowid="ve">
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >VE</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Venezuela</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >28.500.000</ch-tabular-grid-cell
+        >
+        <ch-tabular-grid-cell class="tabular-grid-cell"
+          >Español</ch-tabular-grid-cell
+        >
+      </ch-tabular-grid-row>
+    </ch-tabular-grid>
   </code-snippet>
 }
 

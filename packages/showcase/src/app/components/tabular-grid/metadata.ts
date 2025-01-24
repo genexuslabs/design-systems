@@ -309,7 +309,54 @@ export const tabularGridMetadata = {
       title: "7. Row mark + keyboard: select",
       template: {
         tag: "ch-tabular-grid",
-        class: "tabular-grid"
+        class: "tabular-grid",
+        properties: [
+          { name: "row-selection-mode", value: "multiple" },
+          { name: "keyboard-navigation-mode", value: "select" }
+        ],
+        children: [
+          {
+            tag: "ch-tabular-grid-columnset",
+            class: "tabular-grid-column-set",
+            children: [
+              {
+                tag: "ch-tabular-grid-column",
+                class: "tabular-grid-column",
+                properties: [
+                  { name: "column-id", value: "code" },
+                  { name: "column-name", value: "Country Code" },
+                  { name: "column-type", value: "rich" },
+                  { name: "rich-row-selector", value: "" },
+                  { name: "rich-row-selector-mode", value: "mark" },
+                  { name: "settingable", value: "false" }
+                ]
+              },
+              {
+                tag: "ch-tabular-grid-column",
+                class: "tabular-grid-column",
+                properties: [
+                  { name: "column-id", value: "name" },
+                  { name: "column-name", value: "Country Name" },
+                  { name: "settingable", value: "false" }
+                ]
+              },
+              "<!-- Add more ch-tabular-grid-column's as needed -->"
+            ]
+          },
+          {
+            tag: "ch-tabular-grid-row",
+            class: "tabular-grid-row",
+            children: [
+              {
+                tag: "ch-tabular-grid-cell",
+                class: "tabular-grid-cell",
+                children: "AR"
+              },
+              "<!-- Add more ch-tabular-grid-cell's as needed... -->"
+            ]
+          },
+          "<!-- Add more ch-tabular-grid-row's as needed... -->"
+        ]
       }
     },
 
