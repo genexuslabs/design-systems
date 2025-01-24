@@ -473,7 +473,83 @@ export const tabularGridMetadata = {
       title: "10. Row action",
       template: {
         tag: "ch-tabular-grid",
-        class: "tabular-grid"
+        class: "tabular-grid",
+        properties: [{ name: "row-selection-mode", value: "multiple" }],
+        children: [
+          {
+            tag: "ch-tabular-grid-columnset",
+            class: "tabular-grid-column-set",
+            children: [
+              {
+                tag: "ch-tabular-grid-column",
+                class: "tabular-grid-column",
+                properties: [
+                  { name: "column-id", value: "code" },
+                  { name: "column-name", value: "Country Code" },
+                  { name: "settingable", value: "false" }
+                ]
+              },
+              "<!-- Add more ch-tabular-grid-column's as needed -->",
+              {
+                tag: "ch-tabular-grid-column",
+                class: "tabular-grid-column",
+                properties: [
+                  { name: "column-id", value: "actions" },
+                  { name: "column-name", value: "Actions" },
+                  { name: "column-name-hidden", value: "true" },
+                  { name: "size", value: "min-content" },
+                  { name: "column-type", value: "rich" },
+                  { name: "rich-row-actions", value: "true" },
+                  { name: "settingable", value: "false" }
+                ]
+              }
+            ]
+          },
+          {
+            tag: "ch-tabular-grid-row",
+            class: "tabular-grid-row",
+            children: [
+              {
+                tag: "ch-tabular-grid-cell",
+                class: "tabular-grid-cell",
+                children: "AR"
+              },
+              "<!-- Add more ch-tabular-grid-cell's as needed... -->"
+            ]
+          },
+          "<!-- Add more ch-tabular-grid-row's as needed... -->",
+          {
+            tag: "ch-tabular-grid-row-actions",
+            class: "tabular-grid-row-actions",
+            properties: [{ name: "show-on-row-hover", value: "" }],
+            children: [
+              { tag: "button", class: "button-tertiary", children: "Action A" },
+              { tag: "button", class: "button-tertiary", children: "Action B" }
+            ]
+          },
+          {
+            tag: "ch-tabular-grid-row-actions",
+            class: "tabular-grid-row-actions",
+            properties: [{ name: "show-on-row-actions", value: "" }],
+            children: [
+              { tag: "button", class: "button-tertiary", children: "Action C" },
+              { tag: "button", class: "button-tertiary", children: "Action D" },
+              { tag: "button", class: "button-tertiary", children: "Action E" }
+            ]
+          },
+          {
+            tag: "ch-tabular-grid-row-actions",
+            class: "tabular-grid-row-actions",
+            properties: [{ name: "show-on-row-context", value: "" }],
+            children: [
+              { tag: "button", class: "button-tertiary", children: "Action A" },
+              { tag: "button", class: "button-tertiary", children: "Action B" },
+              { tag: "button", class: "button-tertiary", children: "Action C" },
+              { tag: "button", class: "button-tertiary", children: "Action D" },
+              { tag: "button", class: "button-tertiary", children: "Action E" }
+            ]
+          }
+        ]
       }
     },
 
