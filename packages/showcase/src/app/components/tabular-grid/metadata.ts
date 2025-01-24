@@ -52,7 +52,7 @@ export const tabularGridMetadata = {
 
     withRowSet: {
       linkId: "with-row-set",
-      title: "With Rowset",
+      title: "2. With Rowset",
       template: {
         tag: "ch-tabular-grid",
         class: "tabular-grid",
