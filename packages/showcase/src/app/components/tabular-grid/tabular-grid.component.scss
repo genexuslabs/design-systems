@@ -34,7 +34,7 @@ $grid-cell-alignment-border-style: var(--tabular-grid-line-width)
 }
 
 .fancy-tabular-grid-preview {
-  // TODO: Apply this visual cues when the fany mode is available.
+  // TODO: Apply this visual cues when the fancy mode is available.
   /* block cell line alignment */
   .tabular-grid-align-cells-block-start .tabular-grid-cell::after {
     @extend %tabular-grid-cell-alignment-line-common;
