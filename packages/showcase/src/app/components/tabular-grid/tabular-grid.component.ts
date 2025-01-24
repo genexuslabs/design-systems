@@ -14,9 +14,10 @@ import {
   getImagePathCallback
 } from "@genexus/mercury/assets-manager.js";
 
-import { tabularGridMetadata } from "./metadata";
+import { tabularGridMetadata, tabularGridHelpersMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
+import { paragraphClass } from "../../../common/html";
 
 @Component({
   selector: "components-tabular-grid",
@@ -24,7 +25,8 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
   host: { class: "main-content", ngSkipHydration: "true" },
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  styleUrls: ["./tabular-grid.component.scss"]
 })
 export class TabularGridComponent {
   router = inject(Router);
@@ -37,24 +39,23 @@ export class TabularGridComponent {
    */
   tabularGrids = computed(() => {
     const newTabularGrids = new Map<string, boolean>([
-      // ["Selection: none + keyboard focus", true]
-      // ["With Row Set", true]
-      ["Selection: single + keyboard: focus", true]
-      // ["Selection: single + keyboard: select", true],
-      // ["Selection: multiple + keyboard: focus", true],
-      // ["Selection: multiple + keyboard: select", true],
-      // ["Row mark + keyboard: select", true],
-      // ["Row mark + keyboard: focus", true],
-      // ["Row reorder (dragging)", true],
-      // ["Row action", true],
-      // ["Tree grid", true],
-      // ["Property grid", true],
-      // ["Align cells: block start", true],
-      // ["Align cells: block center", true],
-      // ["Align cells: block end", true],
-      // ["Align cells: inline start", true],
-      // ["Align cells: inline center", true],
-      // ["Align cells: inline end", true]
+      ["Selection: none + keyboard focus", true],
+      ["With Row Set", true],
+      ["Selection: single + keyboard: focus", true],
+      ["Selection: single + keyboard: select", true],
+      ["Selection: multiple + keyboard: focus", true],
+      ["Selection: multiple + keyboard: select", true],
+      ["Row mark + keyboard: select", true],
+      ["Row mark + keyboard: focus", true],
+      ["Row reorder (dragging)", true],
+      ["Row action", true],
+      ["Tree grid", true],
+      ["Align cells: block start", true],
+      ["Align cells: block center", true],
+      ["Align cells: block end", true],
+      ["Align cells: inline start", true],
+      ["Align cells: inline center", true],
+      ["Align cells: inline end", true]
     ]);
 
     // Update the rendered tabular grids by watching changes for the
@@ -76,6 +77,7 @@ export class TabularGridComponent {
     return newTabularGrids;
   });
 
+  // Tabular Grid
   showSelectionNoneKeyboardFocus = computed(() =>
     this.tabularGrids().get("Selection: none + keyboard focus")
   );
@@ -103,7 +105,8 @@ export class TabularGridComponent {
   );
   showRowAction = computed(() => this.tabularGrids().get("Row action"));
   showTreeGrid = computed(() => this.tabularGrids().get("Tree grid"));
-  showPropertyGrid = computed(() => this.tabularGrids().get("Property grid"));
+
+  // Tabular Grid: Helpers
   showAlignCellsBlockStart = computed(() =>
     this.tabularGrids().get("Align cells: block start")
   );
@@ -129,6 +132,9 @@ export class TabularGridComponent {
   metadata = tabularGridMetadata;
   codeSnippets = tabularGridMetadata.codeSnippets;
 
+  helpersMetadata = tabularGridHelpersMetadata;
+  helpersCodeSnippets = tabularGridHelpersMetadata.codeSnippets;
+
   updateRenderedTabularGrid =
     (gridName: string) => (event: ChCheckboxCustomEvent<string>) => {
       this.tabularGrids().set(gridName, event.detail === "true");
@@ -147,4 +153,6 @@ export class TabularGridComponent {
         queryParamsHandling: "merge" // Conserve other query parameters
       });
     };
+
+  paragraphClass = paragraphClass;
 }
