@@ -56,7 +56,7 @@ export const tabularGridMetadata = {
       template: {
         tag: "ch-tabular-grid",
         class: "tabular-grid",
-        properties: [{ name: "row-selection-mode", value: "none" }],
+        properties: [{ name: "rowSelectionMode", value: "none" }],
         children: [
           {
             tag: "ch-tabular-grid-columnset",
@@ -66,8 +66,8 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-id", value: "code" },
-                  { name: "column-name", value: "Country Code" },
+                  { name: "columnId", value: "code" },
+                  { name: "columnName", value: "Country Code" },
                   { name: "settingable", value: "false" }
                 ]
               },
@@ -86,7 +86,7 @@ export const tabularGridMetadata = {
               {
                 tag: "ch-tabular-grid-row",
                 class: "tabular-grid-row",
-                properties: [{ name: "rowid", value: "bo" }],
+                properties: [{ name: "rowId", value: "bo" }],
                 children: [
                   {
                     tag: "ch-tabular-grid-cell",
@@ -109,7 +109,7 @@ export const tabularGridMetadata = {
                   {
                     tag: "ch-tabular-grid-row",
                     class: "tabular-grid-row",
-                    properties: [{ name: "rowid", value: "ar" }],
+                    properties: [{ name: "rowId", value: "ar" }],
                     children: [
                       {
                         tag: "ch-tabular-grid-cell",
@@ -135,8 +135,8 @@ export const tabularGridMetadata = {
         tag: "ch-tabular-grid",
         class: "tabular-grid",
         properties: [
-          { name: "row-selection-mode", value: "single" },
-          { name: "keyboard-navigation-mode", value: "focus" }
+          { name: "rowSelectionMode", value: "single" },
+          { name: "keyboardNavigationMode", value: "focus" }
         ],
         children: [
           {
@@ -147,8 +147,8 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-id", value: "code" },
-                  { name: "column-name", value: "Country Code" },
+                  { name: "columnId", value: "code" },
+                  { name: "columnName", value: "Country Code" },
                   { name: "settingable", value: "false" }
                 ]
               },
@@ -179,8 +179,8 @@ export const tabularGridMetadata = {
         tag: "ch-tabular-grid",
         class: "tabular-grid",
         properties: [
-          { name: "row-selection-mode", value: "single" },
-          { name: "keyboard-navigation-mode", value: "select" }
+          { name: "rowSelectionMode", value: "single" },
+          { name: "keyboardNavigationMode", value: "select" }
         ],
         children: [
           {
@@ -191,8 +191,8 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-id", value: "code" },
-                  { name: "column-name", value: "Country Code" },
+                  { name: "columnId", value: "code" },
+                  { name: "columnName", value: "Country Code" },
                   { name: "settingable", value: "false" }
                 ]
               },
@@ -223,8 +223,8 @@ export const tabularGridMetadata = {
         tag: "ch-tabular-grid",
         class: "tabular-grid",
         properties: [
-          { name: "row-selection-mode", value: "multiple" },
-          { name: "keyboard-navigation-mode", value: "focus" }
+          { name: "rowSelectionMode", value: "multiple" },
+          { name: "keyboardNavigationMode", value: "focus" }
         ],
         children: [
           {
@@ -235,8 +235,8 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-id", value: "code" },
-                  { name: "column-name", value: "Country Code" },
+                  { name: "columnId", value: "code" },
+                  { name: "columnName", value: "Country Code" },
                   { name: "settingable", value: "false" }
                 ]
               },
@@ -267,8 +267,8 @@ export const tabularGridMetadata = {
         tag: "ch-tabular-grid",
         class: "tabular-grid",
         properties: [
-          { name: "row-selection-mode", value: "multiple" },
-          { name: "keyboard-navigation-mode", value: "selection" }
+          { name: "rowSelectionMode", value: "multiple" },
+          { name: "keyboardNavigationMode", value: "selection" }
         ],
         children: [
           {
@@ -279,8 +279,8 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-id", value: "code" },
-                  { name: "column-name", value: "Country Code" },
+                  { name: "columnId", value: "code" },
+                  { name: "columnName", value: "Country Code" },
                   { name: "settingable", value: "false" }
                 ]
               },
@@ -311,8 +311,8 @@ export const tabularGridMetadata = {
         tag: "ch-tabular-grid",
         class: "tabular-grid",
         properties: [
-          { name: "row-selection-mode", value: "multiple" },
-          { name: "keyboard-navigation-mode", value: "select" }
+          { name: "rowSelectionMode", value: "multiple" },
+          { name: "keyboardNavigationMode", value: "select" }
         ],
         children: [
           {
@@ -323,11 +323,11 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-id", value: "code" },
-                  { name: "column-name", value: "Country Code" },
-                  { name: "column-type", value: "rich" },
-                  { name: "rich-row-selector", value: "" },
-                  { name: "rich-row-selector-mode", value: "mark" },
+                  { name: "columnId", value: "code" },
+                  { name: "columnName", value: "Country Code" },
+                  { name: "columnType", value: "rich" },
+                  { name: "richRowSelector", value: "" },
+                  { name: "richRowSelectorMode", value: "mark" },
                   { name: "settingable", value: "false" }
                 ]
               },
@@ -335,8 +335,8 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-id", value: "name" },
-                  { name: "column-name", value: "Country Name" },
+                  { name: "columnId", value: "name" },
+                  { name: "columnName", value: "Country Name" },
                   { name: "settingable", value: "false" }
                 ]
               },
@@ -367,8 +367,8 @@ export const tabularGridMetadata = {
         tag: "ch-tabular-grid",
         class: "tabular-grid",
         properties: [
-          { name: "row-selection-mode", value: "multiple" },
-          { name: "keyboard-navigation-mode", value: "focus" }
+          { name: "rowSelectionMode", value: "multiple" },
+          { name: "keyboardNavigationMode", value: "focus" }
         ],
         children: [
           {
@@ -379,11 +379,11 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-id", value: "code" },
-                  { name: "column-name", value: "Country Code" },
-                  { name: "column-type", value: "rich" },
-                  { name: "rich-row-selector", value: "" },
-                  { name: "rich-row-selector-mode", value: "mark" },
+                  { name: "columnId", value: "code" },
+                  { name: "columnName", value: "Country Code" },
+                  { name: "columnType", value: "rich" },
+                  { name: "richRowSelector", value: "" },
+                  { name: "richRowSelectorMode", value: "mark" },
                   { name: "settingable", value: "false" }
                 ]
               },
@@ -391,8 +391,8 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-id", value: "name" },
-                  { name: "column-name", value: "Country Name" },
+                  { name: "columnId", value: "name" },
+                  { name: "columnName", value: "Country Name" },
                   { name: "settingable", value: "false" }
                 ]
               },
@@ -422,7 +422,7 @@ export const tabularGridMetadata = {
       template: {
         tag: "ch-tabular-grid",
         class: "tabular-grid",
-        properties: [{ name: "row-selection-mode", value: "multiple" }],
+        properties: [{ name: "rowSelectionMode", value: "multiple" }],
         children: [
           {
             tag: "ch-tabular-grid-columnset",
@@ -432,10 +432,10 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-id", value: "code" },
-                  { name: "column-name", value: "Country Code" },
-                  { name: "column-type", value: "rich" },
-                  { name: "rich-row-drag", value: "" },
+                  { name: "columnId", value: "code" },
+                  { name: "columnName", value: "Country Code" },
+                  { name: "columnType", value: "rich" },
+                  { name: "richRowDrag", value: "" },
                   { name: "settingable", value: "false" }
                 ]
               },
@@ -443,8 +443,8 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-id", value: "name" },
-                  { name: "column-name", value: "Country Name" },
+                  { name: "columnId", value: "name" },
+                  { name: "columnName", value: "Country Name" },
                   { name: "settingable", value: "false" }
                 ]
               },
@@ -474,7 +474,7 @@ export const tabularGridMetadata = {
       template: {
         tag: "ch-tabular-grid",
         class: "tabular-grid",
-        properties: [{ name: "row-selection-mode", value: "multiple" }],
+        properties: [{ name: "rowSelectionMode", value: "multiple" }],
         children: [
           {
             tag: "ch-tabular-grid-columnset",
@@ -484,25 +484,23 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-id", value: "code" },
-                  { name: "column-name", value: "Country Code" },
+                  { name: "columnId", value: "code" },
+                  { name: "columnName", value: "Country Code" },
+                  { name: "columnType", value: "rich" },
+                  { name: "richRowDrag", value: "" },
                   { name: "settingable", value: "false" }
                 ]
               },
-              "<!-- Add more ch-tabular-grid-column's as needed -->",
               {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-id", value: "actions" },
-                  { name: "column-name", value: "Actions" },
-                  { name: "column-name-hidden", value: "true" },
-                  { name: "size", value: "min-content" },
-                  { name: "column-type", value: "rich" },
-                  { name: "rich-row-actions", value: "true" },
+                  { name: "columnId", value: "name" },
+                  { name: "columnName", value: "Country Name" },
                   { name: "settingable", value: "false" }
                 ]
-              }
+              },
+              "<!-- Add more ch-tabular-grid-column's as needed -->"
             ]
           },
           {
@@ -517,38 +515,7 @@ export const tabularGridMetadata = {
               "<!-- Add more ch-tabular-grid-cell's as needed... -->"
             ]
           },
-          "<!-- Add more ch-tabular-grid-row's as needed... -->",
-          {
-            tag: "ch-tabular-grid-row-actions",
-            class: "tabular-grid-row-actions",
-            properties: [{ name: "show-on-row-hover", value: "" }],
-            children: [
-              { tag: "button", class: "button-tertiary", children: "Action A" },
-              { tag: "button", class: "button-tertiary", children: "Action B" }
-            ]
-          },
-          {
-            tag: "ch-tabular-grid-row-actions",
-            class: "tabular-grid-row-actions",
-            properties: [{ name: "show-on-row-actions", value: "" }],
-            children: [
-              { tag: "button", class: "button-tertiary", children: "Action C" },
-              { tag: "button", class: "button-tertiary", children: "Action D" },
-              { tag: "button", class: "button-tertiary", children: "Action E" }
-            ]
-          },
-          {
-            tag: "ch-tabular-grid-row-actions",
-            class: "tabular-grid-row-actions",
-            properties: [{ name: "show-on-row-context", value: "" }],
-            children: [
-              { tag: "button", class: "button-tertiary", children: "Action A" },
-              { tag: "button", class: "button-tertiary", children: "Action B" },
-              { tag: "button", class: "button-tertiary", children: "Action C" },
-              { tag: "button", class: "button-tertiary", children: "Action D" },
-              { tag: "button", class: "button-tertiary", children: "Action E" }
-            ]
-          }
+          "<!-- Add more ch-tabular-grid-row's as needed... -->"
         ]
       }
     },
@@ -568,9 +535,9 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-name", value: "Name" },
+                  { name: "columnName", value: "Name" },
                   { name: "settingable", value: "false" },
-                  { name: "column-type", value: "tree" },
+                  { name: "columnType", value: "tree" },
                   { name: "freeze", value: "start" },
                   { name: "size", value: "20%" }
                 ]
@@ -579,7 +546,7 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-name", value: "Type" },
+                  { name: "columnName", value: "Type" },
                   { name: "settingable", value: "false" },
                   { name: "size", value: "80%" }
                 ]
@@ -588,7 +555,7 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-name", value: "Description" },
+                  { name: "columnName", value: "Description" },
                   { name: "settingable", value: "false" },
                   { name: "size", value: "500px" }
                 ]
@@ -597,7 +564,7 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-column",
                 class: "tabular-grid-column",
                 properties: [
-                  { name: "column-name", value: "Is Collection" },
+                  { name: "columnName", value: "Is Collection" },
                   { name: "settingable", value: "false" },
                   { name: "size", value: "100px" }
                 ]
