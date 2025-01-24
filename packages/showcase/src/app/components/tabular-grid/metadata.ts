@@ -135,7 +135,7 @@ export const tabularGridMetadata = {
         tag: "ch-tabular-grid",
         class: "tabular-grid",
         properties: [
-          { name: "row-selection-mode", value: "simple" },
+          { name: "row-selection-mode", value: "single" },
           { name: "keyboard-navigation-mode", value: "focus" }
         ],
         children: [
@@ -177,7 +177,42 @@ export const tabularGridMetadata = {
       title: "4. Selection: single + keyboard: select",
       template: {
         tag: "ch-tabular-grid",
-        class: "tabular-grid"
+        class: "tabular-grid",
+        properties: [
+          { name: "row-selection-mode", value: "single" },
+          { name: "keyboard-navigation-mode", value: "select" }
+        ],
+        children: [
+          {
+            tag: "ch-tabular-grid-columnset",
+            class: "tabular-grid-column-set",
+            children: [
+              {
+                tag: "ch-tabular-grid-column",
+                class: "tabular-grid-column",
+                properties: [
+                  { name: "column-id", value: "code" },
+                  { name: "column-name", value: "Country Code" },
+                  { name: "settingable", value: "false" }
+                ]
+              },
+              "<!-- Add more ch-tabular-grid-column's as needed -->"
+            ]
+          },
+          {
+            tag: "ch-tabular-grid-row",
+            class: "tabular-grid-row",
+            children: [
+              {
+                tag: "ch-tabular-grid-cell",
+                class: "tabular-grid-cell",
+                children: "AR"
+              },
+              "<!-- Add more ch-tabular-grid-cell's as needed... -->"
+            ]
+          },
+          "<!-- Add more ch-tabular-grid-row's as needed... -->"
+        ]
       }
     },
 
