@@ -12,10 +12,7 @@ import type {
   ChCheckboxCustomEvent,
   TreeViewModel
 } from "@genexus/chameleon-controls-library";
-import {
-  getIconPath,
-  getTreeViewImagePathCallback
-} from "@genexus/mercury/assets-manager.js";
+import { getIconPath } from "@genexus/mercury/assets-manager.js";
 
 import { treeViewMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
@@ -78,9 +75,6 @@ export class TreeViewComponent {
   showShowLinesAll = computed(() => this.treeViews().get("Show Lines: All"));
   showWithIcons = computed(() => this.treeViews().get("With icons"));
   showCheckboxes = computed(() => this.treeViews().get("Checkboxes"));
-
-  // TODO: This is a WA, since the Chameleon's register does not for some reason
-  getImagePathCallback = getTreeViewImagePathCallback;
 
   metadata = treeViewMetadata;
   codeSnippets = treeViewMetadata.codeSnippets;

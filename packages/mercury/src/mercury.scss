@@ -378,6 +378,11 @@
   //                General
   // - - - - - - - - - - - - - - - - - - - -
   @if $body {
+    // Reduce FOUC in Chameleon
+    :root:not(.hydrated) {
+      visibility: hidden;
+    }
+
     body {
       @include document-common-styles();
 
