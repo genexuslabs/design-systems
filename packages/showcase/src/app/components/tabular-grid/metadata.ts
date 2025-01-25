@@ -18,6 +18,13 @@ import {
   TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS
 } from "./tabular-grid.component";
 
+const MAKE_BUTTON = (label: string) => ({
+  tag: "button",
+  class: "button-tertiary",
+  children: label,
+  properties: [{ name: "type", value: "button" }]
+});
+
 export const tabularGridMetadata = {
   title: "Tabular Grid",
   description:
@@ -539,39 +546,16 @@ export const tabularGridMetadata = {
             tag: "ch-tabular-grid-row-actions",
             class: TABULAR_GRID_ROW_ACTIONS_CLASS,
             properties: [{ name: "showOnRowHover", value: true }],
-            children: [
-              {
-                tag: "button",
-                class: "button-tertiary",
-                children: "Action A"
-              },
-              {
-                tag: "button",
-                class: "button-tertiary",
-                children: "Action B"
-              }
-            ]
+            children: [MAKE_BUTTON("Action A"), MAKE_BUTTON("Action B")]
           },
           {
             tag: "ch-tabular-grid-row-actions",
             class: TABULAR_GRID_ROW_ACTIONS_CLASS,
             properties: [{ name: "showOnRowActions", value: true }],
             children: [
-              {
-                tag: "button",
-                class: "button-tertiary",
-                children: "Action C"
-              },
-              {
-                tag: "button",
-                class: "button-tertiary",
-                children: "Action D"
-              },
-              {
-                tag: "button",
-                class: "button-tertiary",
-                children: "Action E"
-              }
+              MAKE_BUTTON("Action C"),
+              MAKE_BUTTON("Action D"),
+              MAKE_BUTTON("Action E")
             ]
           },
           {
@@ -579,31 +563,11 @@ export const tabularGridMetadata = {
             class: TABULAR_GRID_ROW_ACTIONS_CLASS,
             properties: [{ name: "showOnRowContext", value: true }],
             children: [
-              {
-                tag: "button",
-                class: "button-tertiary",
-                children: "Action A"
-              },
-              {
-                tag: "button",
-                class: "button-tertiary",
-                children: "Action B"
-              },
-              {
-                tag: "button",
-                class: "button-tertiary",
-                children: "Action C"
-              },
-              {
-                tag: "button",
-                class: "button-tertiary",
-                children: "Action D"
-              },
-              {
-                tag: "button",
-                class: "button-tertiary",
-                children: "Action E"
-              }
+              MAKE_BUTTON("Action A"),
+              MAKE_BUTTON("Action B"),
+              MAKE_BUTTON("Action C"),
+              MAKE_BUTTON("Action D"),
+              MAKE_BUTTON("Action E")
             ]
           }
         ]
