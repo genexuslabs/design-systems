@@ -39,33 +39,33 @@ $grid-cell-alignment-border-style: var(--tabular-grid-line-width)
   .tabular-grid-align-cells-block-start .tabular-grid-cell::after {
     @extend %tabular-grid-cell-alignment-line-common;
     @extend %tabular-grid-cell-block-alignment-line-common;
-    top: var(--tabular-grid-line-position-block-offset);
+    inset-block-start: var(--tabular-grid-line-position-block-offset);
   }
   .tabular-grid-align-cells-block-center .tabular-grid-cell::after {
     @extend %tabular-grid-cell-alignment-line-common;
     @extend %tabular-grid-cell-block-alignment-line-common;
-    top: 50%;
+    inset-block-start: 50%;
   }
   .tabular-grid-align-cells-block-end .tabular-grid-cell::after {
     @extend %tabular-grid-cell-alignment-line-common;
     @extend %tabular-grid-cell-block-alignment-line-common;
-    bottom: var(--tabular-grid-line-position-block-offset);
+    inset-block-end: var(--tabular-grid-line-position-block-offset);
   }
 
   /* inline cell line alignment */
   .tabular-grid-align-cells-inline-start .tabular-grid-cell::after {
     @extend %tabular-grid-cell-alignment-line-common;
     @extend %tabular-grid-cell-inline-alignment-line-common;
-    left: var(--tabular-grid-line-position-inline-offset);
+    inset-inline-start: var(--tabular-grid-line-position-inline-offset);
   }
   .tabular-grid-align-cells-inline-center .tabular-grid-cell::after {
     @extend %tabular-grid-cell-alignment-line-common;
     @extend %tabular-grid-cell-inline-alignment-line-common;
-    left: 50%;
+    inset-inline-start: 50%;
   }
   .tabular-grid-align-cells-inline-end .tabular-grid-cell::after {
     @extend %tabular-grid-cell-alignment-line-common;
     @extend %tabular-grid-cell-inline-alignment-line-common;
-    right: var(--tabular-grid-line-position-inline-offset);
+    inset-inline-end: var(--tabular-grid-line-position-inline-offset);
   }
 }
