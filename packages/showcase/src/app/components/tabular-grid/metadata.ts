@@ -1,11 +1,11 @@
 import { ComponentMetadata } from "../../../common/types";
-import { chameleonImportType } from "../../../services/template-language/create-template";
 
 import {
   TABULAR_GRID_CLASS,
   TABULAR_GRID_COLUMN_SET_CLASS,
   TABULAR_GRID_COLUMN_CLASS,
   TABULAR_GRID_ROW_CLASS,
+  TABULAR_GRID_ROW_ACTIONS_CLASS,
   TABULAR_GRID_CELL_CLASS,
   TABULAR_GRID_ROWSET_CLASS,
   TABULAR_GRID_ROWSET_LEGEND_CLASS,
@@ -503,21 +503,23 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
-                  { name: "columnType", value: "rich" },
-                  { name: "richRowDrag", value: "" },
                   { name: "settingable", value: "false" }
                 ]
               },
+              "<!-- Add more ch-tabular-grid-column's as needed -->",
               {
                 tag: "ch-tabular-grid-column",
                 class: TABULAR_GRID_COLUMN_CLASS,
                 properties: [
-                  { name: "columnId", value: "name" },
-                  { name: "columnName", value: "Country Name" },
+                  { name: "columnId", value: "actions" },
+                  { name: "columnName", value: "Actions" },
+                  { name: "columnNameHidden", value: "true" },
+                  { name: "size", value: "min-content" },
+                  { name: "columnType", value: "rich" },
+                  { name: "richRowActions", value: "true" },
                   { name: "settingable", value: "false" }
                 ]
-              },
-              "<!-- Add more ch-tabular-grid-column's as needed -->"
+              }
             ]
           },
           {
@@ -532,7 +534,78 @@ export const tabularGridMetadata = {
               "<!-- Add more ch-tabular-grid-cell's as needed... -->"
             ]
           },
-          "<!-- Add more ch-tabular-grid-row's as needed... -->"
+          "<!-- Add more ch-tabular-grid-row's as needed... -->",
+          {
+            tag: "ch-tabular-grid-row-actions",
+            class: TABULAR_GRID_ROW_ACTIONS_CLASS,
+            properties: [{ name: "showOnRowHover", value: "true" }],
+            children: [
+              {
+                tag: "button",
+                class: "button-tertiary",
+                children: "Action A"
+              },
+              {
+                tag: "button",
+                class: "button-tertiary",
+                children: "Action B"
+              }
+            ]
+          },
+          {
+            tag: "ch-tabular-grid-row-actions",
+            class: TABULAR_GRID_ROW_ACTIONS_CLASS,
+            properties: [{ name: "showOnRowActions", value: "true" }],
+            children: [
+              {
+                tag: "button",
+                class: "button-tertiary",
+                children: "Action C"
+              },
+              {
+                tag: "button",
+                class: "button-tertiary",
+                children: "Action D"
+              },
+              {
+                tag: "button",
+                class: "button-tertiary",
+                children: "Action E"
+              }
+            ]
+          },
+          {
+            tag: "ch-tabular-grid-row-actions",
+            class: TABULAR_GRID_ROW_ACTIONS_CLASS,
+            properties: [{ name: "showOnRowContext", value: "true" }],
+            children: [
+              {
+                tag: "button",
+                class: "button-tertiary",
+                children: "Action A"
+              },
+              {
+                tag: "button",
+                class: "button-tertiary",
+                children: "Action B"
+              },
+              {
+                tag: "button",
+                class: "button-tertiary",
+                children: "Action C"
+              },
+              {
+                tag: "button",
+                class: "button-tertiary",
+                children: "Action D"
+              },
+              {
+                tag: "button",
+                class: "button-tertiary",
+                children: "Action E"
+              }
+            ]
+          }
         ]
       }
     },
