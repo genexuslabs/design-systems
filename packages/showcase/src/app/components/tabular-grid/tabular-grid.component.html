@@ -25,7 +25,7 @@
       <ch-checkbox
         [caption]="tabularGridName"
         class="checkbox"
-        [checkedValue]="'true'"
+        [checkedValue]="true"
         [value]="tabularGridEntry[1].toString()"
         [unCheckedValue]="'false'"
         (input)="updateRenderedTabularGrid(tabularGridName)($event)"
@@ -43,37 +43,37 @@
   >
     <ch-tabular-grid
       class="{{ TABULAR_GRID_CLASS }}"
-      row-selection-mode="none"
-      keyboard-navigation-mode="focus"
+      [rowSelectionMode]="'none'"
+      [keyboardNavigationMode]="'focus'"
     >
       <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
           class="{{ TABULAR_GRID_COLUMN_CLASS }}"
-          column-id="code"
-          column-name="Country Code"
-          settingable="false"
-          sortable="true"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
           class="{{ TABULAR_GRID_COLUMN_CLASS }}"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
-          sortable="true"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
           class="{{ TABULAR_GRID_COLUMN_CLASS }}"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
-          sortable="true"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
           class="{{ TABULAR_GRID_COLUMN_CLASS }}"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
-          sortable="true"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
@@ -1153,7 +1153,7 @@
           [columnId]="'code'"
           [columnName]="'Country Code'"
           [columnType]="'rich'"
-          rich-row-selector
+          [richRowSelector]="true"
           [richRowSelectorMode]="'mark'"
           [settingable]="false"
         ></ch-tabular-grid-column>
@@ -2459,31 +2459,31 @@
       <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
           class="{{ TABULAR_GRID_COLUMN_CLASS }}"
-          column-id="code"
-          column-name="Country Code"
-          settingable="false"
-          sortable="true"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
           class="{{ TABULAR_GRID_COLUMN_CLASS }}"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
-          sortable="true"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
           class="{{ TABULAR_GRID_COLUMN_CLASS }}"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
-          sortable="true"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
           class="{{ TABULAR_GRID_COLUMN_CLASS }}"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
-          sortable="true"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
