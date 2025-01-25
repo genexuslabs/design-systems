@@ -42,34 +42,34 @@
     [language]="'ts'"
   >
     <ch-tabular-grid
-      class="tabular-grid tabular-grid-cell-layout"
+      class="{{ TABULAR_GRID_CLASS }}"
       row-selection-mode="none"
       keyboard-navigation-mode="focus"
     >
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
           column-id="code"
           column-name="Country Code"
           settingable="false"
           sortable="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
           column-id="name"
           column-name="Country Name"
           settingable="false"
           sortable="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
           column-id="population"
           column-name="Country Population"
           settingable="false"
           sortable="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
           column-id="language"
           column-name="Country Language"
           settingable="false"
@@ -77,130 +77,130 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
           eiusmod tempor incididunt</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >45.400.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Bolivia</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >11.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Brasil</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >212.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="cl">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="cl">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Chile</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >19.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ec">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ec">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Ecuador</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >17.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="py">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="py">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Paraguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >7.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="pe">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="pe">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Perú</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >32.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="uy">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="uy">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Uruguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >3.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ve">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ve">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Venezuela</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >28.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
@@ -210,214 +210,221 @@
 
 @if (showRowSet()) {
   <code-snippet [codeSnippet]="codeSnippets.withRowSet" [language]="'ts'">
-    <ch-tabular-grid class="tabular-grid" row-selection-mode="none">
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+    <ch-tabular-grid class="{{ TABULAR_GRID_CLASS }}" row-selection-mode="none">
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="code"
-          column-name="Country Code"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-rowset class="tabular-grid-rowset">
-        <ch-tabular-grid-rowset-legend class="tabular-grid-rowset-legend"
-          >América del Sur</ch-tabular-grid-rowset-legend
+      <ch-tabular-grid-rowset class="{{ TABULAR_GRID_ROWSET_CLASS }}">
+        <ch-tabular-grid-rowset-legend
+          class="{{ TABULAR_GRID_ROWSET_LEGEND_CLASS }}"
         >
-        <ch-tabular-grid-row rowid="bo" class="tabular-grid-row">
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          América del Sur
+        </ch-tabular-grid-rowset-legend>
+        <ch-tabular-grid-row rowid="bo" class="{{ TABULAR_GRID_ROW_CLASS }}">
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >BO</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >Bolivia</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >11.800.000</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >Español</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="cl" class="tabular-grid-row">
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-row rowid="cl" class="{{ TABULAR_GRID_ROW_CLASS }}">
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >CL</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >Chile</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >19.500.000</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >Español</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="ec" class="tabular-grid-row">
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-row rowid="ec" class="{{ TABULAR_GRID_ROW_CLASS }}">
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >EC</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >Ecuador</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >17.600.000</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >Español</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="py" class="tabular-grid-row">
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-row rowid="py" class="{{ TABULAR_GRID_ROW_CLASS }}">
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >PY</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >Paraguay</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >7.500.000</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >Español</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="pe" class="tabular-grid-row">
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-row rowid="pe" class="{{ TABULAR_GRID_ROW_CLASS }}">
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >PE</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >Perú</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >32.800.000</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >Español</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="ve" class="tabular-grid-row">
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-row rowid="ve" class="{{ TABULAR_GRID_ROW_CLASS }}">
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >VE</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >Venezuela</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >28.500.000</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >Español</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-rowset class="tabular-grid-rowset">
-          <ch-tabular-grid-rowset-legend class="tabular-grid-rowset-legend"
-            >Campeones del mundo</ch-tabular-grid-rowset-legend
-          >
-          <ch-tabular-grid-row rowid="ar" class="tabular-grid-row">
-            <ch-tabular-grid-cell class="tabular-grid-cell"
-              >AR</ch-tabular-grid-cell
-            >
-            <ch-tabular-grid-cell class="tabular-grid-cell"
-              >Argentina</ch-tabular-grid-cell
-            >
-            <ch-tabular-grid-cell class="tabular-grid-cell"
-              >45.400.000</ch-tabular-grid-cell
-            >
-            <ch-tabular-grid-cell class="tabular-grid-cell"
-              >Español</ch-tabular-grid-cell
-            >
-          </ch-tabular-grid-row>
-          <ch-tabular-grid-row rowid="br" class="tabular-grid-row">
-            <ch-tabular-grid-cell class="tabular-grid-cell"
-              >BR</ch-tabular-grid-cell
-            >
-            <ch-tabular-grid-cell class="tabular-grid-cell"
-              >Brasil</ch-tabular-grid-cell
-            >
-            <ch-tabular-grid-cell class="tabular-grid-cell"
-              >212.600.000</ch-tabular-grid-cell
-            >
-            <ch-tabular-grid-cell class="tabular-grid-cell"
-              >Português</ch-tabular-grid-cell
-            >
-          </ch-tabular-grid-row>
-          <ch-tabular-grid-row rowid="uy" class="tabular-grid-row">
-            <ch-tabular-grid-cell class="tabular-grid-cell"
-              >UY</ch-tabular-grid-cell
-            >
-            <ch-tabular-grid-cell class="tabular-grid-cell"
-              >Uruguay</ch-tabular-grid-cell
-            >
-            <ch-tabular-grid-cell class="tabular-grid-cell"
-              >3.500.000</ch-tabular-grid-cell
-            >
-            <ch-tabular-grid-cell class="tabular-grid-cell"
-              >Español</ch-tabular-grid-cell
-            >
-          </ch-tabular-grid-row>
-        </ch-tabular-grid-rowset>
       </ch-tabular-grid-rowset>
 
-      <ch-tabular-grid-rowset class="tabular-grid-rowset">
-        <ch-tabular-grid-rowset-legend class="tabular-grid-rowset-legend"
-          >América del Norte</ch-tabular-grid-rowset-legend
+      <ch-tabular-grid-rowset class="{{ TABULAR_GRID_ROWSET_CLASS }}">
+        <ch-tabular-grid-rowset-legend
+          class="{{ TABULAR_GRID_ROWSET_LEGEND_CLASS }}"
         >
-        <ch-tabular-grid-row rowid="ca" class="tabular-grid-row">
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          Campeones del mundo
+        </ch-tabular-grid-rowset-legend>
+        <ch-tabular-grid-row rowid="ar" class="{{ TABULAR_GRID_ROW_CLASS }}">
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
+            >AR</ch-tabular-grid-cell
+          >
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
+            >Argentina</ch-tabular-grid-cell
+          >
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
+            >45.400.000</ch-tabular-grid-cell
+          >
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
+            >Español</ch-tabular-grid-cell
+          >
+        </ch-tabular-grid-row>
+        <ch-tabular-grid-row rowid="br" class="{{ TABULAR_GRID_ROW_CLASS }}">
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
+            >BR</ch-tabular-grid-cell
+          >
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
+            >Brasil</ch-tabular-grid-cell
+          >
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
+            >212.600.000</ch-tabular-grid-cell
+          >
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
+            >Português</ch-tabular-grid-cell
+          >
+        </ch-tabular-grid-row>
+        <ch-tabular-grid-row rowid="uy" class="{{ TABULAR_GRID_ROW_CLASS }}">
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
+            >UY</ch-tabular-grid-cell
+          >
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
+            >Uruguay</ch-tabular-grid-cell
+          >
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
+            >3.500.000</ch-tabular-grid-cell
+          >
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
+            >Español</ch-tabular-grid-cell
+          >
+        </ch-tabular-grid-row>
+      </ch-tabular-grid-rowset>
+
+      <ch-tabular-grid-rowset class="{{ TABULAR_GRID_ROWSET_CLASS }}">
+        <ch-tabular-grid-rowset-legend
+          class="{{ TABULAR_GRID_ROWSET_LEGEND_CLASS }}"
+        >
+          América del Norte
+        </ch-tabular-grid-rowset-legend>
+        <ch-tabular-grid-row rowid="ca" class="{{ TABULAR_GRID_ROW_CLASS }}">
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >CA</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >Canadá</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >38.000.000</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >English</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="mx" class="tabular-grid-row">
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-row rowid="mx" class="{{ TABULAR_GRID_ROW_CLASS }}">
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >MX</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >México</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >126.000.000</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >Español</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="us" class="tabular-grid-row">
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-row rowid="us" class="{{ TABULAR_GRID_ROW_CLASS }}">
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >US</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >Estados Unidos</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >331.000.000</ch-tabular-grid-cell
           >
-          <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >English</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
@@ -436,160 +443,160 @@
     <br />
 
     <ch-tabular-grid
-      class="tabular-grid"
-      row-selection-mode="single"
-      keyboard-navigation-mode="focus"
+      class="{{ TABULAR_GRID_CLASS }}"
+      [rowSelectionMode]="'single'"
+      [keyboardNavigationMode]="'focus'"
     >
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="code"
-          column-name="Country Code"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Argentina</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >45.400.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Bolivia</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >11.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Brasil</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >212.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="cl">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="cl">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Chile</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >19.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ec">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ec">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Ecuador</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >17.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="py">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="py">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Paraguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >7.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="pe">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="pe">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Perú</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >32.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="uy">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="uy">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Uruguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >3.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ve">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ve">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Venezuela</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >28.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
@@ -609,160 +616,160 @@
     <br />
 
     <ch-tabular-grid
-      class="tabular-grid"
-      row-selection-mode="single"
-      keyboard-navigation-mode="select"
+      class="{{ TABULAR_GRID_CLASS }}"
+      [rowSelectionMode]="'single'"
+      [keyboardNavigationMode]="'select'"
     >
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="code"
-          column-name="Country Code"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Argentina</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >45.400.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Bolivia</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >11.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Brasil</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >212.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="cl">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="cl">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Chile</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >19.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ec">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ec">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Ecuador</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >17.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="py">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="py">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Paraguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >7.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="pe">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="pe">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Perú</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >32.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="uy">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="uy">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Uruguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >3.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ve">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ve">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Venezuela</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >28.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
@@ -784,162 +791,162 @@
     <br />
 
     <ch-tabular-grid
-      class="tabular-grid"
-      row-selection-mode="multiple"
-      keyboard-navigation-mode="focus"
+      class="{{ TABULAR_GRID_CLASS }}"
+      [rowSelectionMode]="'multiple'"
+      [keyboardNavigationMode]="'focus'"
     >
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="code"
-          column-name="Country Code"
-          column-type="rich"
-          rich-row-selector
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [columnType]="'rich'"
+          [richRowSelector]="true"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ar">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Argentina</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >45.400.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="bo">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Bolivia</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >11.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="br">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Brasil</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >212.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="cl">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="cl">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Chile</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >19.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ec">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ec">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Ecuador</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >17.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="py">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="py">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Paraguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >7.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="pe">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="pe">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Perú</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >32.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="uy">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="uy">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Uruguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >3.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ve">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ve">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Venezuela</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >28.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
@@ -961,160 +968,160 @@
     <br />
 
     <ch-tabular-grid
-      class="tabular-grid"
-      row-selection-mode="multiple"
-      keyboard-navigation-mode="selection"
+      class="{{ TABULAR_GRID_CLASS }}"
+      [rowSelectionMode]="'multiple'"
+      [keyboardNavigationMode]="'selection'"
     >
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="code"
-          column-name="Country Code"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Argentina</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >45.400.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Bolivia</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >11.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Brasil</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >212.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="cl">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="cl">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Chile</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >19.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ec">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ec">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Ecuador</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >17.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="py">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="py">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Paraguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >7.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="pe">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="pe">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Perú</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >32.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="uy">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="uy">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Uruguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >3.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ve">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ve">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Venezuela</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >28.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
@@ -1136,163 +1143,163 @@
     <br />
 
     <ch-tabular-grid
-      class="tabular-grid"
-      row-selection-mode="multiple"
-      keyboard-navigation-mode="select"
+      class="{{ TABULAR_GRID_CLASS }}"
+      [rowSelectionMode]="'multiple'"
+      [keyboardNavigationMode]="'select'"
     >
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="code"
-          column-name="Country Code"
-          column-type="rich"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [columnType]="'rich'"
           rich-row-selector
-          rich-row-selector-mode="mark"
-          settingable="false"
+          [richRowSelectorMode]="'mark'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Argentina</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >45.400.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Bolivia</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >11.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Brasil</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >212.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="cl">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="cl">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Chile</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >19.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ec">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ec">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Ecuador</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >17.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="py">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="py">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Paraguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >7.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="pe">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="pe">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Perú</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >32.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="uy">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="uy">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Uruguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >3.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ve">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ve">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Venezuela</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >28.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
@@ -1314,163 +1321,163 @@
     <br />
 
     <ch-tabular-grid
-      class="tabular-grid"
-      row-selection-mode="multiple"
-      keyboard-navigation-mode="focus"
+      class="{{ TABULAR_GRID_CLASS }}"
+      [rowSelectionMode]="'multiple'"
+      [keyboardNavigationMode]="'focus'"
     >
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="code"
-          column-name="Country Code"
-          column-type="rich"
-          rich-row-selector
-          rich-row-selector-mode="mark"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [columnType]="'rich'"
+          [richRowSelector]="true"
+          [richRowSelectorMode]="'mark'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ar">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Argentina</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >45.400.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="bo">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Bolivia</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >11.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="br">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Brasil</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >212.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="cl">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="cl">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Chile</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >19.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ec">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ec">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Ecuador</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >17.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="py">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="py">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Paraguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >7.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="pe">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="pe">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Perú</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >32.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="uy">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="uy">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Uruguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >3.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ve">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ve">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Venezuela</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >28.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
@@ -1487,159 +1494,162 @@
 
     <br />
 
-    <ch-tabular-grid class="tabular-grid" row-selection-mode="multiple">
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+    <ch-tabular-grid
+      class="{{ TABULAR_GRID_CLASS }}"
+      [rowSelectionMode]="'multiple'"
+    >
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="code"
-          column-name="Country Code"
-          column-type="rich"
-          rich-row-drag
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [columnType]="'rich'"
+          [richRowDrag]="true"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ar">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Argentina</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >45.400.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="bo">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Bolivia</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >11.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="br">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Brasil</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >212.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="cl">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="cl">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Chile</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >19.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ec">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ec">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Ecuador</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >17.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="py">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="py">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Paraguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >7.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="pe">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="pe">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Perú</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >32.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="uy">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="uy">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Uruguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >3.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ve">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ve">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Venezuela</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >28.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
@@ -1657,197 +1667,218 @@
 
     <br />
 
-    <ch-tabular-grid class="tabular-grid" row-selection-mode="multiple">
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+    <ch-tabular-grid
+      class="{{ TABULAR_GRID_CLASS }}"
+      [rowSelectionMode]="'multiple'"
+    >
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="code"
-          column-name="Country Code"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="actions"
-          column-name="Actions"
-          column-name-hidden="true"
-          size="min-content"
-          column-type="rich"
-          rich-row-actions="true"
-          settingable="false"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'actions'"
+          [columnName]="'Actions'"
+          [columnNameHidden]="true"
+          [size]="'min-content'"
+          [columnType]="'rich'"
+          [richRowActions]="true"
+          [settingable]="false"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Argentina</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >45.400.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell
+          class="{{ TABULAR_GRID_CELL_CLASS }}"
+        ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Bolivia</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >11.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell
+          class="{{ TABULAR_GRID_CELL_CLASS }}"
+        ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Brasil</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >212.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Português</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell
+          class="{{ TABULAR_GRID_CELL_CLASS }}"
+        ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="cl">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="cl">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Chile</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >19.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell
+          class="{{ TABULAR_GRID_CELL_CLASS }}"
+        ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ec">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ec">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Ecuador</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >17.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell
+          class="{{ TABULAR_GRID_CELL_CLASS }}"
+        ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="py">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="py">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Paraguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >7.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell
+          class="{{ TABULAR_GRID_CELL_CLASS }}"
+        ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="pe">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="pe">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Perú</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >32.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell
+          class="{{ TABULAR_GRID_CELL_CLASS }}"
+        ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="uy">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="uy">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Uruguay</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >3.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell
+          class="{{ TABULAR_GRID_CELL_CLASS }}"
+        ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ve">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ve">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Venezuela</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >28.500.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell
+          class="{{ TABULAR_GRID_CELL_CLASS }}"
+        ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
       <ch-tabular-grid-row-actions
-        class="tabular-grid-row-actions"
-        show-on-row-hover
+        class="{{ TABULAR_GRID_ROW_ACTIONS_CLASS }}"
+        [showOnRowHover]="true"
       >
         <button class="button-tertiary">Action A</button>
         <button class="button-tertiary">Action B</button>
       </ch-tabular-grid-row-actions>
       <ch-tabular-grid-row-actions
-        class="tabular-grid-row-actions"
-        show-on-row-actions
+        class="{{ TABULAR_GRID_ROW_ACTIONS_CLASS }}"
+        [showOnRowActions]="true"
       >
         <button class="button-tertiary">Action C</button>
         <button class="button-tertiary">Action D</button>
         <button class="button-tertiary">Action E</button>
       </ch-tabular-grid-row-actions>
       <ch-tabular-grid-row-actions
-        class="tabular-grid-row-actions"
-        show-on-row-context
+        class="{{ TABULAR_GRID_ROW_ACTIONS_CLASS }}"
+        [showOnRowContext]="true"
       >
         <button class="button-tertiary">Action A</button>
         <button class="button-tertiary">Action B</button>
@@ -1872,90 +1903,94 @@
 
     <br />
 
-    <ch-tabular-grid class="tabular-grid tabular-grid-show-node-icons">
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+    <ch-tabular-grid
+      class="{{ TABULAR_GRID_CLASS }} {{ TABULAR_GRID_SHOW_NODE_ICONS_CLASS }}"
+    >
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-name="Name"
-          settingable="false"
-          column-type="tree"
-          freeze="start"
-          size="20%"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnName]="'Name'"
+          [settingable]="false"
+          [columnType]="'tree'"
+          [freeze]="'start'"
+          [size]="'20%'"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-name="Type"
-          settingable="false"
-          size="80%"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnName]="'Type'"
+          [settingable]="false"
+          [size]="'80%'"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-name="Description"
-          settingable="false"
-          size="500px"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnName]="'Description'"
+          [settingable]="false"
+          [size]="'500px'"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-name="Is Collection"
-          settingable="false"
-          size="100px"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnName]="'Is Collection'"
+          [settingable]="false"
+          [size]="'100px'"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Target</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"></ch-tabular-grid-cell>
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell
+          class="{{ TABULAR_GRID_CELL_CLASS }}"
+        ></ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Target</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >false</ch-tabular-grid-cell
         >
 
-        <ch-tabular-grid-rowset class="tabular-grid-rowset">
-          <ch-tabular-grid-row class="tabular-grid-row">
-            <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-rowset class="{{ TABULAR_GRID_ROWSET_CLASS }}">
+          <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}">
+            <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
               >Devices</ch-tabular-grid-cell
             >
             <ch-tabular-grid-cell
-              class="tabular-grid-cell"
+              class="{{ TABULAR_GRID_CELL_CLASS }}"
             ></ch-tabular-grid-cell>
-            <ch-tabular-grid-cell class="tabular-grid-cell"
+            <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
               >Devices List</ch-tabular-grid-cell
             >
-            <ch-tabular-grid-cell class="tabular-grid-cell"
+            <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
               >true</ch-tabular-grid-cell
             >
 
-            <ch-tabular-grid-rowset class="tabular-grid-rowset">
-              <ch-tabular-grid-row class="tabular-grid-row">
-                <ch-tabular-grid-cell class="tabular-grid-cell"
+            <ch-tabular-grid-rowset class="{{ TABULAR_GRID_ROWSET_CLASS }}">
+              <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}">
+                <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                   >Device</ch-tabular-grid-cell
                 >
                 <ch-tabular-grid-cell
-                  class="tabular-grid-cell"
+                  class="{{ TABULAR_GRID_CELL_CLASS }}"
                 ></ch-tabular-grid-cell>
                 <ch-tabular-grid-cell
-                  class="tabular-grid-cell"
+                  class="{{ TABULAR_GRID_CELL_CLASS }}"
                 ></ch-tabular-grid-cell>
                 <ch-tabular-grid-cell
-                  class="tabular-grid-cell"
+                  class="{{ TABULAR_GRID_CELL_CLASS }}"
                 ></ch-tabular-grid-cell>
 
-                <ch-tabular-grid-rowset class="tabular-grid-rowset">
-                  <ch-tabular-grid-row class="tabular-grid-row">
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                <ch-tabular-grid-rowset class="{{ TABULAR_GRID_ROWSET_CLASS }}">
+                  <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}">
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >DeviceToken</ch-tabular-grid-cell
                     >
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >Character(500)</ch-tabular-grid-cell
                     >
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >DeviceToken</ch-tabular-grid-cell
                     >
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >false</ch-tabular-grid-cell
                     >
                   </ch-tabular-grid-row>
@@ -1963,47 +1998,47 @@
               </ch-tabular-grid-row>
             </ch-tabular-grid-rowset>
           </ch-tabular-grid-row>
-          <ch-tabular-grid-row class="tabular-grid-row">
-            <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}">
+            <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
               >Groups</ch-tabular-grid-cell
             >
             <ch-tabular-grid-cell
-              class="tabular-grid-cell"
+              class="{{ TABULAR_GRID_CELL_CLASS }}"
             ></ch-tabular-grid-cell>
-            <ch-tabular-grid-cell class="tabular-grid-cell"
+            <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
               >Groups</ch-tabular-grid-cell
             >
-            <ch-tabular-grid-cell class="tabular-grid-cell"
+            <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
               >true</ch-tabular-grid-cell
             >
 
-            <ch-tabular-grid-rowset class="tabular-grid-rowset">
-              <ch-tabular-grid-row class="tabular-grid-row">
-                <ch-tabular-grid-cell class="tabular-grid-cell"
+            <ch-tabular-grid-rowset class="{{ TABULAR_GRID_ROWSET_CLASS }}">
+              <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}">
+                <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                   >Group</ch-tabular-grid-cell
                 >
                 <ch-tabular-grid-cell
-                  class="tabular-grid-cell"
+                  class="{{ TABULAR_GRID_CELL_CLASS }}"
                 ></ch-tabular-grid-cell>
                 <ch-tabular-grid-cell
-                  class="tabular-grid-cell"
+                  class="{{ TABULAR_GRID_CELL_CLASS }}"
                 ></ch-tabular-grid-cell>
                 <ch-tabular-grid-cell
-                  class="tabular-grid-cell"
+                  class="{{ TABULAR_GRID_CELL_CLASS }}"
                 ></ch-tabular-grid-cell>
 
-                <ch-tabular-grid-rowset class="tabular-grid-rowset">
-                  <ch-tabular-grid-row class="tabular-grid-row">
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                <ch-tabular-grid-rowset class="{{ TABULAR_GRID_ROWSET_CLASS }}">
+                  <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}">
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >Name</ch-tabular-grid-cell
                     >
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >Character(100)</ch-tabular-grid-cell
                     >
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >Name</ch-tabular-grid-cell
                     >
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >false</ch-tabular-grid-cell
                     >
                   </ch-tabular-grid-row>
@@ -2011,61 +2046,61 @@
               </ch-tabular-grid-row>
             </ch-tabular-grid-rowset>
           </ch-tabular-grid-row>
-          <ch-tabular-grid-row class="tabular-grid-row">
-            <ch-tabular-grid-cell class="tabular-grid-cell"
+          <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}">
+            <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
               >Targets</ch-tabular-grid-cell
             >
             <ch-tabular-grid-cell
-              class="tabular-grid-cell"
+              class="{{ TABULAR_GRID_CELL_CLASS }}"
             ></ch-tabular-grid-cell>
-            <ch-tabular-grid-cell class="tabular-grid-cell"
+            <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
               >Targets</ch-tabular-grid-cell
             >
-            <ch-tabular-grid-cell class="tabular-grid-cell"
+            <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
               >true</ch-tabular-grid-cell
             >
 
-            <ch-tabular-grid-rowset class="tabular-grid-rowset">
-              <ch-tabular-grid-row class="tabular-grid-row">
-                <ch-tabular-grid-cell class="tabular-grid-cell"
+            <ch-tabular-grid-rowset class="{{ TABULAR_GRID_ROWSET_CLASS }}">
+              <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}">
+                <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                   >Filter</ch-tabular-grid-cell
                 >
                 <ch-tabular-grid-cell
-                  class="tabular-grid-cell"
+                  class="{{ TABULAR_GRID_CELL_CLASS }}"
                 ></ch-tabular-grid-cell>
                 <ch-tabular-grid-cell
-                  class="tabular-grid-cell"
+                  class="{{ TABULAR_GRID_CELL_CLASS }}"
                 ></ch-tabular-grid-cell>
                 <ch-tabular-grid-cell
-                  class="tabular-grid-cell"
+                  class="{{ TABULAR_GRID_CELL_CLASS }}"
                 ></ch-tabular-grid-cell>
 
-                <ch-tabular-grid-rowset class="tabular-grid-rowset">
-                  <ch-tabular-grid-row class="tabular-grid-row">
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                <ch-tabular-grid-rowset class="{{ TABULAR_GRID_ROWSET_CLASS }}">
+                  <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}">
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >Name</ch-tabular-grid-cell
                     >
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >Character(100)</ch-tabular-grid-cell
                     >
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >Name</ch-tabular-grid-cell
                     >
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >false</ch-tabular-grid-cell
                     >
                   </ch-tabular-grid-row>
-                  <ch-tabular-grid-row class="tabular-grid-row">
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                  <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}">
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >Value</ch-tabular-grid-cell
                     >
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >Character(100)</ch-tabular-grid-cell
                     >
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >Name</ch-tabular-grid-cell
                     >
-                    <ch-tabular-grid-cell class="tabular-grid-cell"
+                    <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
                       >false</ch-tabular-grid-cell
                     >
                   </ch-tabular-grid-row>
@@ -2095,88 +2130,92 @@
 
     <br />
 
-    <ch-tabular-grid class="tabular-grid tabular-grid-align-cells-block-start">
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+    <ch-tabular-grid
+      class="{{ TABULAR_GRID_CLASS }} {{
+        TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS
+      }}"
+    >
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="code"
-          column-name="Country Code"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Argentina is a large country in South America, known for its diverse
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Argentina is a large country in South America, known for its diverse
           landscapes, rich culture, and vibrant history. It stretches from the
           tropical north to the southern tip of the continent, encompassing a
           variety of climates and terrains, from the Andes mountains to the
           Pampas plains and the Patagonia region.
         </ch-tabular-grid-cell>
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >45.400.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Bolivia is a landlocked country in central South America, known for
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Bolivia is a landlocked country in central South America, known for
           its diverse cultures, rich history, and stunning natural landscapes.
           It is one of the most culturally diverse countries in the region, with
           a large indigenous population that influences its traditions and daily
-          life.</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+          life.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >11.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Brazil is the largest country in South America and the fifth largest
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Brazil is the largest country in South America and the fifth largest
           in the world, known for its vibrant culture, diverse ecosystems, and
           iconic landmarks. It is a vast country with a mix of modern cities,
-          colonial architecture, and natural wonders.</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+          colonial architecture, and natural wonders.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >212.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
@@ -2197,90 +2236,95 @@
     </p>
 
     <br />
-    <ch-tabular-grid class="tabular-grid tabular-grid-align-cells-block-center">
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+
+    <ch-tabular-grid
+      class="{{ TABULAR_GRID_CLASS }} {{
+        TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS
+      }}"
+    >
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="code"
-          column-name="Country Code"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >AR</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Argentina is a large country in South America, known for its diverse
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          AR
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Argentina is a large country in South America, known for its diverse
           landscapes, rich culture, and vibrant history. It stretches from the
           tropical north to the southern tip of the continent, encompassing a
           variety of climates and terrains, from the Andes mountains to the
           Pampas plains and the Patagonia region.
         </ch-tabular-grid-cell>
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >45.400.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Español</ch-tabular-grid-cell
-        >
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          45.400.000
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Español
+        </ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >BO</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Bolivia is a landlocked country in central South America, known for
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          BO
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Bolivia is a landlocked country in central South America, known for
           its diverse cultures, rich history, and stunning natural landscapes.
           It is one of the most culturally diverse countries in the region, with
           a large indigenous population that influences its traditions and daily
-          life.</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >11.800.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Español</ch-tabular-grid-cell
-        >
+          life.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          11.800.000
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Español
+        </ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >BR</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Brazil is the largest country in South America and the fifth largest
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          BR
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Brazil is the largest country in South America and the fifth largest
           in the world, known for its vibrant culture, diverse ecosystems, and
           iconic landmarks. It is a vast country with a mix of modern cities,
-          colonial architecture, and natural wonders.</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >212.600.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Português</ch-tabular-grid-cell
-        >
+          colonial architecture, and natural wonders.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          212.600.000
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Português
+        </ch-tabular-grid-cell>
       </ch-tabular-grid-row>
     </ch-tabular-grid>
   </code-snippet>
@@ -2300,88 +2344,92 @@
 
     <br />
 
-    <ch-tabular-grid class="tabular-grid tabular-grid-align-cells-block-end">
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+    <ch-tabular-grid
+      class="{{ TABULAR_GRID_CLASS }} {{
+        TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS
+      }}"
+    >
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="code"
-          column-name="Country Code"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Argentina is a large country in South America, known for its diverse
           landscapes, rich culture, and vibrant history. It stretches from the
           tropical north to the southern tip of the continent, encompassing a
           variety of climates and terrains, from the Andes mountains to the
           Pampas plains and the Patagonia region.
         </ch-tabular-grid-cell>
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >45.400.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Bolivia is a landlocked country in central South America, known for
           its diverse cultures, rich history, and stunning natural landscapes.
           It is one of the most culturally diverse countries in the region, with
           a large indigenous population that influences its traditions and daily
           life.</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >11.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Brazil is the largest country in South America and the fifth largest
           in the world, known for its vibrant culture, diverse ecosystems, and
           iconic landmarks. It is a vast country with a mix of modern cities,
           colonial architecture, and natural wonders.</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >212.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
@@ -2403,31 +2451,35 @@
 
     <br />
 
-    <ch-tabular-grid class="tabular-grid tabular-grid-align-cells-inline-start">
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+    <ch-tabular-grid
+      class="{{ TABULAR_GRID_CLASS }} {{
+        TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS
+      }}"
+    >
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
           column-id="code"
           column-name="Country Code"
           settingable="false"
           sortable="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
           column-id="name"
           column-name="Country Name"
           settingable="false"
           sortable="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
           column-id="population"
           column-name="Country Population"
           settingable="false"
           sortable="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
           column-id="language"
           column-name="Country Language"
           settingable="false"
@@ -2435,56 +2487,58 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Argentina is a large country in South America, known for its diverse
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Argentina is a large country in South America, known for its diverse
           landscapes, rich culture, and vibrant history. It stretches from the
           tropical north to the southern tip of the continent, encompassing a
           variety of climates and terrains, from the Andes mountains to the
           Pampas plains and the Patagonia region.
         </ch-tabular-grid-cell>
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >45.400.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Bolivia is a landlocked country in central South America, known for
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Bolivia is a landlocked country in central South America, known for
           its diverse cultures, rich history, and stunning natural landscapes.
           It is one of the most culturally diverse countries in the region, with
           a large indigenous population that influences its traditions and daily
-          life.</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+          life.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >11.800.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Brazil is the largest country in South America and the fifth largest
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Brazil is the largest country in South America and the fifth largest
           in the world, known for its vibrant culture, diverse ecosystems, and
           iconic landmarks. It is a vast country with a mix of modern cities,
-          colonial architecture, and natural wonders.</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+          colonial architecture, and natural wonders.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >212.600.000</ch-tabular-grid-cell
         >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
@@ -2507,91 +2561,102 @@
     <br />
 
     <ch-tabular-grid
-      class="tabular-grid tabular-grid-align-cells-inline-center"
+      class="{{ TABULAR_GRID_CLASS }} {{
+        TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS
+      }}"
     >
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="code"
-          column-name="Country Code"
-          settingable="false"
-          sortable="true"
-        ></ch-tabular-grid-column>
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [settingable]="false"
+          [sortable]="true"
+        >
+        </ch-tabular-grid-column>
+
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
-          sortable="true"
-        ></ch-tabular-grid-column>
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
+          [sortable]="true"
+        >
+        </ch-tabular-grid-column>
+
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
-          sortable="true"
-        ></ch-tabular-grid-column>
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
+          [sortable]="true"
+        >
+        </ch-tabular-grid-column>
+
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
-          sortable="true"
-        ></ch-tabular-grid-column>
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
+          [sortable]="true"
+        >
+        </ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >AR</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Argentina is a large country in South America, known for its diverse
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          AR
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Argentina is a large country in South America, known for its diverse
           landscapes, rich culture, and vibrant history. It stretches from the
           tropical north to the southern tip of the continent, encompassing a
           variety of climates and terrains, from the Andes mountains to the
           Pampas plains and the Patagonia region.
         </ch-tabular-grid-cell>
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >45.400.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Español</ch-tabular-grid-cell
-        >
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          45.400.000
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Español
+        </ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >BO</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Bolivia is a landlocked country in central South America, known for
+
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          BO
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Bolivia is a landlocked country in central South America, known for
           its diverse cultures, rich history, and stunning natural landscapes.
           It is one of the most culturally diverse countries in the region, with
           a large indigenous population that influences its traditions and daily
-          life.</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >11.800.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Español</ch-tabular-grid-cell
-        >
+          life.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          11.800.000
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Español
+        </ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >BR</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Brazil is the largest country in South America and the fifth largest
+
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          BR
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Brazil is the largest country in South America and the fifth largest
           in the world, known for its vibrant culture, diverse ecosystems, and
           iconic landmarks. It is a vast country with a mix of modern cities,
-          colonial architecture, and natural wonders.</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >212.600.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Português</ch-tabular-grid-cell
-        >
+          colonial architecture, and natural wonders.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          212.600.000
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Português
+        </ch-tabular-grid-cell>
       </ch-tabular-grid-row>
     </ch-tabular-grid>
   </code-snippet>
@@ -2611,90 +2676,94 @@
 
     <br />
 
-    <ch-tabular-grid class="tabular-grid tabular-grid-align-cells-inline-end">
-      <ch-tabular-grid-columnset class="tabular-grid-column-set">
+    <ch-tabular-grid
+      class="{{ TABULAR_GRID_CLASS }} {{
+        TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS
+      }}"
+    >
+      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="code"
-          column-name="Country Code"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'code'"
+          [columnName]="'Country Code'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="name"
-          column-name="Country Name"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'name'"
+          [columnName]="'Country Name'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="population"
-          column-name="Country Population"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'population'"
+          [columnName]="'Country Population'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
         <ch-tabular-grid-column
-          class="tabular-grid-column"
-          column-id="language"
-          column-name="Country Language"
-          settingable="false"
-          sortable="true"
+          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
+          [columnId]="'language'"
+          [columnName]="'Country Language'"
+          [settingable]="false"
+          [sortable]="true"
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="ar">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >AR</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Argentina is a large country in South America, known for its diverse
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          AR
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Argentina is a large country in South America, known for its diverse
           landscapes, rich culture, and vibrant history. It stretches from the
           tropical north to the southern tip of the continent, encompassing a
           variety of climates and terrains, from the Andes mountains to the
           Pampas plains and the Patagonia region.
         </ch-tabular-grid-cell>
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >45.400.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Español</ch-tabular-grid-cell
-        >
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          45.400.000
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Español
+        </ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="bo">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >BO</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Bolivia is a landlocked country in central South America, known for
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          BO
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Bolivia is a landlocked country in central South America, known for
           its diverse cultures, rich history, and stunning natural landscapes.
           It is one of the most culturally diverse countries in the region, with
           a large indigenous population that influences its traditions and daily
-          life.</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >11.800.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Español</ch-tabular-grid-cell
-        >
+          life.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          11.800.000
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Español
+        </ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="tabular-grid-row" rowid="br">
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >BR</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Brazil is the largest country in South America and the fifth largest
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          BR
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Brazil is the largest country in South America and the fifth largest
           in the world, known for its vibrant culture, diverse ecosystems, and
           iconic landmarks. It is a vast country with a mix of modern cities,
-          colonial architecture, and natural wonders.</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >212.600.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="tabular-grid-cell"
-          >Português</ch-tabular-grid-cell
-        >
+          colonial architecture, and natural wonders.
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          212.600.000
+        </ch-tabular-grid-cell>
+        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
+          Português
+        </ch-tabular-grid-cell>
       </ch-tabular-grid-row>
     </ch-tabular-grid>
   </code-snippet>
