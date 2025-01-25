@@ -64,23 +64,23 @@ export class TabularGridComponent {
    */
   tabularGrids = computed(() => {
     const newTabularGrids = new Map<string, boolean>([
-      // ["Selection: none + keyboard focus", true],
-      // ["With Row Set", true],
-      // ["Selection: single + keyboard: focus", true],
-      // ["Selection: single + keyboard: select", true],
-      // ["Selection: multiple + keyboard: focus", true],
-      // ["Selection: multiple + keyboard: select", true],
-      // ["Row mark + keyboard: select", true],
-      // ["Row mark + keyboard: focus", true],
-      // ["Row reorder (dragging)", true],
-      // ["Row action", true]
-      // ["Tree grid", true],
-      // ["Align cells: block start", true],
-      // ["Align cells: block center", true],
-      // ["Align cells: block end", true],
-      // ["Align cells: inline start", true],
-      // ["Align cells: inline center", true],
-      // ["Align cells: inline end", true]
+      ["Selection: none + keyboard focus", true],
+      ["With Row Set", true],
+      ["Selection: single + keyboard: focus", true],
+      ["Selection: single + keyboard: select", true],
+      ["Selection: multiple + keyboard: focus", true],
+      ["Selection: multiple + keyboard: select", true],
+      ["Row mark + keyboard: select", true],
+      ["Row mark + keyboard: focus", true],
+      ["Row reorder (dragging)", true],
+      ["Row action", true],
+      ["Tree grid", true],
+      ["Align cells: block start", true],
+      ["Align cells: block center", true],
+      ["Align cells: block end", true],
+      ["Align cells: inline start", true],
+      ["Align cells: inline center", true],
+      ["Align cells: inline end", true]
     ]);
 
     // Update the rendered tabular grids by watching changes for the
