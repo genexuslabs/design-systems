@@ -19,6 +19,31 @@ import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-s
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
 import { paragraphClass } from "../../../common/html";
 
+export const TABULAR_GRID_CLASS = "tabular-grid";
+export const TABULAR_GRID_COLUMN_SET_CLASS = "tabular-grid-column-set";
+export const TABULAR_GRID_COLUMN_CLASS = "tabular-grid-column";
+export const TABULAR_GRID_ROW_CLASS = "tabular-grid-row";
+export const TABULAR_GRID_ROW_ACTIONS_CLASS = "tabular-grid-row-actions";
+export const TABULAR_GRID_CELL_CLASS = "tabular-grid-cell";
+export const TABULAR_GRID_ROWSET_CLASS = "tabular-grid-rowset";
+export const TABULAR_GRID_ROWSET_LEGEND_CLASS = "tabular-grid-rowset-legend";
+export const TABULAR_GRID_SHOW_NODE_ICONS_CLASS =
+  "tabular-grid-show-node-icons";
+
+// Align classes
+export const TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS =
+  "tabular-grid-align-cells-block-start";
+export const TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS =
+  "tabular-grid-align-cells-block-center";
+export const TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS =
+  "tabular-grid-align-cells-block-end";
+export const TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS =
+  "tabular-grid-align-cells-inline-start";
+export const TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS =
+  "tabular-grid-align-cells-inline-center";
+export const TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS =
+  "tabular-grid-align-cells-inline-end";
+
 @Component({
   selector: "components-tabular-grid",
   templateUrl: "./tabular-grid.component.html",
@@ -155,4 +180,28 @@ export class TabularGridComponent {
     };
 
   paragraphClass = paragraphClass;
+
+  // Defining the class properties
+  TABULAR_GRID_CLASS = TABULAR_GRID_CLASS;
+  TABULAR_GRID_COLUMN_SET_CLASS = TABULAR_GRID_COLUMN_SET_CLASS;
+  TABULAR_GRID_COLUMN_CLASS = TABULAR_GRID_COLUMN_CLASS;
+  TABULAR_GRID_ROW_CLASS = TABULAR_GRID_ROW_CLASS;
+  TABULAR_GRID_ROW_ACTIONS_CLASS = TABULAR_GRID_ROW_ACTIONS_CLASS;
+  TABULAR_GRID_CELL_CLASS = TABULAR_GRID_CELL_CLASS;
+  TABULAR_GRID_ROWSET_CLASS = TABULAR_GRID_ROWSET_CLASS;
+  TABULAR_GRID_ROWSET_LEGEND_CLASS = TABULAR_GRID_ROWSET_LEGEND_CLASS;
+  TABULAR_GRID_SHOW_NODE_ICONS_CLASS = TABULAR_GRID_SHOW_NODE_ICONS_CLASS;
+
+  TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS =
+    TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS;
+  TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS =
+    TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS;
+  TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS =
+    TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS;
+  TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS =
+    TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS;
+  TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS =
+    TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS;
+  TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS =
+    TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS;
 }

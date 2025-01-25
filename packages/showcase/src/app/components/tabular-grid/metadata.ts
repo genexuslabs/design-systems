@@ -1,27 +1,22 @@
 import { ComponentMetadata } from "../../../common/types";
 import { chameleonImportType } from "../../../services/template-language/create-template";
 
-const TABULAR_GRID_CLASS = "tabular-grid";
-const TABULAR_GRID_COLUMN_SET_CLASS = "tabular-grid-column-set";
-const TABULAR_GRID_COLUMN_CLASS = "tabular-grid-column";
-const TABULAR_GRID_ROW_CLASS = "tabular-grid-row";
-const TABULAR_GRID_CELL_CLASS = "tabular-grid-cell";
-const TABULAR_GRID_ROWSET_CLASS = "tabular-grid-rowset";
-const TABULAR_GRID_ROWSET_LEGEND_CLASS = "tabular-grid-rowset-legend";
-const TABULAR_GRID_SHOW_NODE_ICONS_CLASS = "tabular-grid-show-node-icons";
-// Align classes
-const TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS =
-  "tabular-grid-align-cells-block-start";
-const TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS =
-  "tabular-grid-align-cells-block-center";
-const TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS =
-  "tabular-grid-align-cells-block-end";
-const TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS =
-  "tabular-grid-align-cells-inline-start";
-const TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS =
-  "tabular-grid-align-cells-inline-center";
-const TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS =
-  "tabular-grid-align-cells-inline-end";
+import {
+  TABULAR_GRID_CLASS,
+  TABULAR_GRID_COLUMN_SET_CLASS,
+  TABULAR_GRID_COLUMN_CLASS,
+  TABULAR_GRID_ROW_CLASS,
+  TABULAR_GRID_CELL_CLASS,
+  TABULAR_GRID_ROWSET_CLASS,
+  TABULAR_GRID_ROWSET_LEGEND_CLASS,
+  TABULAR_GRID_SHOW_NODE_ICONS_CLASS,
+  TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS,
+  TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS,
+  TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS,
+  TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS,
+  TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS,
+  TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS
+} from "./tabular-grid.component";
 
 export const tabularGridMetadata = {
   title: "Tabular Grid",
