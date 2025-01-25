@@ -44,8 +44,8 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
-                  { name: "settingable", value: "false" },
-                  { name: "sortable", value: "true" }
+                  { name: "settingable", value: false },
+                  { name: "sortable", value: true }
                 ]
               },
               "<!-- Add more ch-tabular-grid-column's as needed -->"
@@ -85,7 +85,7 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
-                  { name: "settingable", value: "false" }
+                  { name: "settingable", value: false }
                 ]
               },
               '<!-- Add more "ch-tabular-grid-column" objects here as needed -->'
@@ -166,7 +166,7 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
-                  { name: "settingable", value: "false" }
+                  { name: "settingable", value: false }
                 ]
               },
               "<!-- Add more ch-tabular-grid-column's as needed -->"
@@ -210,7 +210,7 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
-                  { name: "settingable", value: "false" }
+                  { name: "settingable", value: false }
                 ]
               },
               "<!-- Add more ch-tabular-grid-column's as needed -->"
@@ -254,7 +254,7 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
-                  { name: "settingable", value: "false" }
+                  { name: "settingable", value: false }
                 ]
               },
               "<!-- Add more ch-tabular-grid-column's as needed -->"
@@ -298,7 +298,7 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
-                  { name: "settingable", value: "false" }
+                  { name: "settingable", value: false }
                 ]
               },
               "<!-- Add more ch-tabular-grid-column's as needed -->"
@@ -345,7 +345,7 @@ export const tabularGridMetadata = {
                   { name: "columnType", value: "rich" },
                   { name: "richRowSelector", value: "" },
                   { name: "richRowSelectorMode", value: "mark" },
-                  { name: "settingable", value: "false" }
+                  { name: "settingable", value: false }
                 ]
               },
               {
@@ -354,7 +354,7 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "name" },
                   { name: "columnName", value: "Country Name" },
-                  { name: "settingable", value: "false" }
+                  { name: "settingable", value: false }
                 ]
               },
               "<!-- Add more ch-tabular-grid-column's as needed -->"
@@ -401,7 +401,7 @@ export const tabularGridMetadata = {
                   { name: "columnType", value: "rich" },
                   { name: "richRowSelector", value: "" },
                   { name: "richRowSelectorMode", value: "mark" },
-                  { name: "settingable", value: "false" }
+                  { name: "settingable", value: false }
                 ]
               },
               {
@@ -410,7 +410,7 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "name" },
                   { name: "columnName", value: "Country Name" },
-                  { name: "settingable", value: "false" }
+                  { name: "settingable", value: false }
                 ]
               },
               "<!-- Add more ch-tabular-grid-column's as needed -->"
@@ -453,7 +453,7 @@ export const tabularGridMetadata = {
                   { name: "columnName", value: "Country Code" },
                   { name: "columnType", value: "rich" },
                   { name: "richRowDrag", value: "" },
-                  { name: "settingable", value: "false" }
+                  { name: "settingable", value: false }
                 ]
               },
               {
@@ -462,7 +462,7 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "name" },
                   { name: "columnName", value: "Country Name" },
-                  { name: "settingable", value: "false" }
+                  { name: "settingable", value: false }
                 ]
               },
               "<!-- Add more ch-tabular-grid-column's as needed -->"
@@ -503,7 +503,7 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
-                  { name: "settingable", value: "false" }
+                  { name: "settingable", value: false }
                 ]
               },
               "<!-- Add more ch-tabular-grid-column's as needed -->",
@@ -513,11 +513,11 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "actions" },
                   { name: "columnName", value: "Actions" },
-                  { name: "columnNameHidden", value: "true" },
+                  { name: "columnNameHidden", value: true },
                   { name: "size", value: "min-content" },
                   { name: "columnType", value: "rich" },
-                  { name: "richRowActions", value: "true" },
-                  { name: "settingable", value: "false" }
+                  { name: "richRowActions", value: true },
+                  { name: "settingable", value: false }
                 ]
               }
             ]
@@ -538,7 +538,7 @@ export const tabularGridMetadata = {
           {
             tag: "ch-tabular-grid-row-actions",
             class: TABULAR_GRID_ROW_ACTIONS_CLASS,
-            properties: [{ name: "showOnRowHover", value: "true" }],
+            properties: [{ name: "showOnRowHover", value: true }],
             children: [
               {
                 tag: "button",
@@ -555,7 +555,7 @@ export const tabularGridMetadata = {
           {
             tag: "ch-tabular-grid-row-actions",
             class: TABULAR_GRID_ROW_ACTIONS_CLASS,
-            properties: [{ name: "showOnRowActions", value: "true" }],
+            properties: [{ name: "showOnRowActions", value: true }],
             children: [
               {
                 tag: "button",
@@ -577,7 +577,7 @@ export const tabularGridMetadata = {
           {
             tag: "ch-tabular-grid-row-actions",
             class: TABULAR_GRID_ROW_ACTIONS_CLASS,
-            properties: [{ name: "showOnRowContext", value: "true" }],
+            properties: [{ name: "showOnRowContext", value: true }],
             children: [
               {
                 tag: "button",
@@ -626,7 +626,7 @@ export const tabularGridMetadata = {
                 class: TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnName", value: "Name" },
-                  { name: "settingable", value: "false" },
+                  { name: "settingable", value: false },
                   { name: "columnType", value: "tree" },
                   { name: "freeze", value: "start" },
                   { name: "size", value: "20%" }
@@ -637,7 +637,7 @@ export const tabularGridMetadata = {
                 class: TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnName", value: "Type" },
-                  { name: "settingable", value: "false" },
+                  { name: "settingable", value: false },
                   { name: "size", value: "80%" }
                 ]
               },
@@ -646,7 +646,7 @@ export const tabularGridMetadata = {
                 class: TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnName", value: "Description" },
-                  { name: "settingable", value: "false" },
+                  { name: "settingable", value: false },
                   { name: "size", value: "500px" }
                 ]
               },
@@ -655,7 +655,7 @@ export const tabularGridMetadata = {
                 class: TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnName", value: "Is Collection" },
-                  { name: "settingable", value: "false" },
+                  { name: "settingable", value: false },
                   { name: "size", value: "100px" }
                 ]
               }
