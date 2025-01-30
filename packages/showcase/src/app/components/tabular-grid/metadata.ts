@@ -74,6 +74,7 @@ export const tabularGridMetadata = {
           {
             tag: "ch-tabular-grid-row",
             class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
+            properties: [{ name: "rowid", value: "ar" }],
             children: [
               {
                 tag: "ch-tabular-grid-cell",
@@ -120,8 +121,7 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
-                  { name: "settingable", value: false },
-                  { name: "sortable", value: true }
+                  { name: "settingable", value: false }
                 ]
               },
               {
@@ -130,8 +130,7 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "name" },
                   { name: "columnName", value: "Country Name" },
-                  { name: "settingable", value: false },
-                  { name: "sortable", value: true }
+                  { name: "settingable", value: false }
                 ]
               },
               {
@@ -140,8 +139,7 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "population" },
                   { name: "columnName", value: "Country Population" },
-                  { name: "settingable", value: false },
-                  { name: "sortable", value: true }
+                  { name: "settingable", value: false }
                 ]
               },
               {
@@ -150,8 +148,7 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "language" },
                   { name: "columnName", value: "Country Language" },
-                  { name: "settingable", value: false },
-                  { name: "sortable", value: true }
+                  { name: "settingable", value: false }
                 ]
               }
             ]
@@ -260,22 +257,47 @@ export const tabularGridMetadata = {
                   { name: "settingable", value: false }
                 ]
               },
-              "<!-- Add more ch-tabular-grid-column's as needed -->"
+              {
+                tag: "ch-tabular-grid-column",
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
+                properties: [
+                  { name: "columnId", value: "name" },
+                  { name: "columnName", value: "Country Name" },
+                  { name: "settingable", value: false }
+                ]
+              },
+              {
+                tag: "ch-tabular-grid-column",
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
+                properties: [
+                  { name: "columnId", value: "population" },
+                  { name: "columnName", value: "Country Population" },
+                  { name: "settingable", value: false }
+                ]
+              },
+              {
+                tag: "ch-tabular-grid-column",
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
+                properties: [
+                  { name: "columnId", value: "language" },
+                  { name: "columnName", value: "Country Language" },
+                  { name: "settingable", value: false }
+                ]
+              }
             ]
           },
           {
             tag: "ch-tabular-grid-row",
             class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
+            properties: [{ name: "rowid", value: "ar" }],
             children: [
               {
                 tag: "ch-tabular-grid-cell",
                 class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: "AR"
-              },
-              "<!-- Add more ch-tabular-grid-cell's as needed... -->"
+              }
             ]
-          },
-          "<!-- Add more ch-tabular-grid-row's as needed... -->"
+          }
         ]
       }
     },
