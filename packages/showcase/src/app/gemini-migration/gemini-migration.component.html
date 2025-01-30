@@ -1,5 +1,6 @@
 <runtime-bundles
   [bundles]="[
+    'components/accordion',
     'components/checkbox',
     'components/combo-box',
     'components/edit',
@@ -41,6 +42,81 @@
     </li>
   }
 </ol>
+
+@if (showGxgAccordion()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgAccordion"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-accordion</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-accordion</code> tag with a
+        <code>ch-accordion-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>
+        Add the <code>accordion-filled</code> or
+        <code>accordion-outlined</code> class in order to apply the Mercury
+        styles.
+      </li>
+
+      <li>
+        Remove all the <code>gxg-accordion-item</code> items, since the
+        <code>ch-accordion-render</code> uses a model instead.
+      </li>
+
+      <li>
+        Assign a model like the one provided in the following example
+        <code>(#objectsAccordionModel)</code>
+      </li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsAccordion()"
+          >Read Mercury documentation to see how to apply some common cases
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="hyperlink"
+          href="{{ CHAMELEON_COMPONENTS_PATH }}accordion#ch-accordion-render"
+          target="_blank"
+          >Refer to the Chameleon documentation for the complete specifications.
+        </a>
+      </li>
+    </ol>
+
+    <br />
+
+    <div class="note">
+      <p>
+        The following Mercury example uses a spacing utility class
+        <code>.spacing-body</code>, that applies padding all around the
+        accordion item content. To use the <code>.spacing-body</code> you will
+        need to include the propper bundle: <code>utils/spacing</code>.
+        <br />
+      </p>
+    </div>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <ch-accordion-render
+      class="accordion-filled"
+      [model]="objectsAccordionModel"
+    >
+      <div slot="file" class="spacing-body">File content here</div>
+      <div slot="domain" class="spacing-body">Domain content here</div>
+      <div slot="procedure" class="spacing-body">Procedure content here</div>
+      <div slot="document" class="spacing-body">Document content here</div>
+    </ch-accordion-render>
+  </div>
+}
 
 @if (showGxgButtonTextOnly()) {
   <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgButtonTextOnly">

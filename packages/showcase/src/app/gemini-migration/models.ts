@@ -152,3 +152,23 @@ export const pillsModel: ComboBoxModel = [
     caption: "Warning"
   }
 ];
+
+export const objectsAccordionModel = [
+  {
+    id: "file",
+    caption: "objects: file",
+    expanded: true
+  },
+  {
+    id: "domain",
+    caption: "objects: domain"
+  },
+  {
+    id: "procedure",
+    caption: "objects: procedure"
+  },
+  {
+    id: "document",
+    caption: "objects: document"
+  }
+];

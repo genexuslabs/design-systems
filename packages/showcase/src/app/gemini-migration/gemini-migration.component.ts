@@ -9,6 +9,7 @@ import {
 import { CommonModule } from "@angular/common";
 import { Router, RouterLink } from "@angular/router";
 import {
+  objectsAccordionModel,
   carsComboBoxModel,
   favoriteColorsActionListModel,
   favoriteColorsComboBoxModel,
@@ -62,6 +63,7 @@ export class GeminiMigrationComponent {
     colorType: "primary"
   });
 
+  objectsAccordionModel = objectsAccordionModel;
   carsComboBoxModel = carsComboBoxModel;
   favoriteColorsActionListModel = favoriteColorsActionListModel;
   favoriteColorsComboBoxModel = favoriteColorsComboBoxModel;
@@ -84,6 +86,7 @@ export class GeminiMigrationComponent {
    */
   migrations = computed(() => {
     const newMigrations = new Map<string, boolean>([
+      ["gxg-accordion", true],
       ["gxg-button: text only", true],
       ["gxg-button: text with icon", true],
       ["gxg-combo-box", true],
@@ -123,6 +126,7 @@ export class GeminiMigrationComponent {
     return newMigrations;
   });
 
+  showGxgAccordion = computed(() => this.migrations().get("gxg-accordion"));
   showGxgButtonTextOnly = computed(() =>
     this.migrations().get("gxg-button: text only")
   );

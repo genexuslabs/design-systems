@@ -10,6 +10,9 @@ import {
 export class RouterCommonLinksService {
   dsService = inject(DesignSystemService);
 
+  componentsAccordion = computed(
+    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.ACCORDION}`
+  );
   componentsCheckbox = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.CHECKBOX}`
   );

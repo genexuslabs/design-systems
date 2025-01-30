@@ -2,6 +2,7 @@ import { ComponentMetadataBeforeAfter } from "../../common/types";
 import { chameleonImportType } from "../../services/template-language/create-template";
 import { iconsModelForMetadata } from "../components/tree-view/models";
 import {
+  objectsAccordionModel,
   carsComboBoxModel,
   favoriteColorsActionListModel,
   favoriteColorsComboBoxModel,
@@ -19,6 +20,102 @@ export const geminiMigrationMetadata = {
   description:
     'When migrating from the "Gemini" design system to "Mercury," you\'ll be transitioning your project\'s styles, components, and design principles to align with the new system. This process involves updating your codebase to replace Gemini-specific components and styles with their Mercury equivalents, ensuring consistency with Mercury\'s guidelines. The migration guide will provide you with step-by-step instructions to help make this transition as smooth as possible.',
   codeSnippets: {
+    gxgAccordion: {
+      linkId: "gxg-accordion",
+      title: "0. gxg-accordion",
+      before: {
+        template: {
+          tag: "gxg-accordion",
+          properties: [{ name: "mode", value: "classical" }],
+          children: [
+            {
+              tag: "gxg-accordion-item",
+              properties: [
+                { name: "item-title", value: "objects: file" },
+                { name: "item-id", value: "objects-file" }
+              ],
+              children: "File content here"
+            },
+            {
+              tag: "gxg-accordion-item",
+              properties: [
+                { name: "item-title", value: "objects: domain" },
+                { name: "item-id", value: "objects-domain" }
+              ],
+              children: "Domain content here"
+            },
+            {
+              tag: "gxg-accordion-item",
+              properties: [
+                { name: "item-title", value: "objects: procedure" },
+                { name: "item-id", value: "objects-procedure" }
+              ],
+              children: "Procedure content here"
+            },
+            {
+              tag: "gxg-accordion-item",
+              properties: [
+                { name: "item-title", value: "objects: document" },
+                { name: "item-id", value: "objects-document" }
+              ],
+              children: "Document content here"
+            }
+          ]
+        }
+      },
+      after: {
+        imports: [chameleonImportType("AccordionModel")],
+        states: [
+          {
+            name: "objectsAccordionModel",
+            type: "AccordionModel",
+            value: objectsAccordionModel
+          }
+        ],
+        template: {
+          tag: "ch-accordion-render",
+          properties: [
+            { name: "class", value: "accordion-outlined" },
+            { name: "model", value: "objectsAccordionModel", state: true }
+          ],
+          children: [
+            {
+              tag: "div",
+              properties: [
+                { name: "slot", value: "objects-file" },
+                { name: "class", value: "spacing-body" }
+              ],
+              children: "File content here"
+            },
+            {
+              tag: "div",
+              properties: [
+                { name: "slot", value: "objects-domain" },
+                { name: "class", value: "spacing-body" }
+              ],
+              children: "Domain content here"
+            },
+            {
+              tag: "div",
+              properties: [
+                { name: "slot", value: "objects-procedure" },
+                { name: "class", value: "spacing-body" }
+              ],
+              children: "Procedure content here"
+            },
+            {
+              tag: "div",
+              properties: [
+                { name: "slot", value: "objects-document" },
+                { name: "class", value: "spacing-body" }
+              ],
+              children: "Document content here"
+            }
+          ]
+        }
+      }
+    },
+
     gxgButtonTextOnly: {
       linkId: "gxg-button-text-only",
       title: "1. gxg-button: Text only",
