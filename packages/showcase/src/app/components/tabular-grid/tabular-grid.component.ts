@@ -19,30 +19,7 @@ import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-s
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
 import { paragraphClass } from "../../../common/html";
 
-export const TABULAR_GRID_CLASS = "tabular-grid";
-export const TABULAR_GRID_COLUMN_SET_CLASS = "tabular-grid-column-set";
-export const TABULAR_GRID_COLUMN_CLASS = "tabular-grid-column";
-export const TABULAR_GRID_ROW_CLASS = "tabular-grid-row";
-export const TABULAR_GRID_ROW_ACTIONS_CLASS = "tabular-grid-row-actions";
-export const TABULAR_GRID_CELL_CLASS = "tabular-grid-cell";
-export const TABULAR_GRID_ROWSET_CLASS = "tabular-grid-rowset";
-export const TABULAR_GRID_ROWSET_LEGEND_CLASS = "tabular-grid-rowset-legend";
-export const TABULAR_GRID_SHOW_NODE_ICONS_CLASS =
-  "tabular-grid-show-node-icons";
-
-// Align classes
-export const TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS =
-  "tabular-grid-align-cells-block-start";
-export const TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS =
-  "tabular-grid-align-cells-block-center";
-export const TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS =
-  "tabular-grid-align-cells-block-end";
-export const TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS =
-  "tabular-grid-align-cells-inline-start";
-export const TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS =
-  "tabular-grid-align-cells-inline-center";
-export const TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS =
-  "tabular-grid-align-cells-inline-end";
+import { CSS_SELECTORS } from "./classes";
 
 @Component({
   selector: "components-tabular-grid",
@@ -64,23 +41,23 @@ export class TabularGridComponent {
    */
   tabularGrids = computed(() => {
     const newTabularGrids = new Map<string, boolean>([
-      ["Selection: none + keyboard focus", true],
-      ["With Row Set", true],
-      ["Selection: single + keyboard: focus", true],
-      ["Selection: single + keyboard: select", true],
-      ["Selection: multiple + keyboard: focus", true],
-      ["Selection: multiple + keyboard: select", true],
-      ["Row mark + keyboard: select", true],
-      ["Row mark + keyboard: focus", true],
-      ["Row reorder (dragging)", true],
-      ["Row action", true],
-      ["Tree grid", true],
-      ["Align cells: block start", true],
-      ["Align cells: block center", true],
-      ["Align cells: block end", true],
-      ["Align cells: inline start", true],
-      ["Align cells: inline center", true],
-      ["Align cells: inline end", true]
+      // ["Selection: none + keyboard focus", true],
+      ["With Row Set", true]
+      // ["Selection: single + keyboard: focus", true],
+      // ["Selection: single + keyboard: select", true],
+      // ["Selection: multiple + keyboard: focus", true],
+      // ["Selection: multiple + keyboard: select", true],
+      // ["Row mark + keyboard: select", true],
+      // ["Row mark + keyboard: focus", true],
+      // ["Row reorder (dragging)", true],
+      // ["Row action", true],
+      // ["Tree grid", true],
+      // ["Align cells: block start", true],
+      // ["Align cells: block center", true],
+      // ["Align cells: block end", true],
+      // ["Align cells: inline start", true],
+      // ["Align cells: inline center", true],
+      // ["Align cells: inline end", true]
     ]);
 
     // Update the rendered tabular grids by watching changes for the
@@ -182,26 +159,29 @@ export class TabularGridComponent {
   paragraphClass = paragraphClass;
 
   // Defining the class properties
-  TABULAR_GRID_CLASS = TABULAR_GRID_CLASS;
-  TABULAR_GRID_COLUMN_SET_CLASS = TABULAR_GRID_COLUMN_SET_CLASS;
-  TABULAR_GRID_COLUMN_CLASS = TABULAR_GRID_COLUMN_CLASS;
-  TABULAR_GRID_ROW_CLASS = TABULAR_GRID_ROW_CLASS;
-  TABULAR_GRID_ROW_ACTIONS_CLASS = TABULAR_GRID_ROW_ACTIONS_CLASS;
-  TABULAR_GRID_CELL_CLASS = TABULAR_GRID_CELL_CLASS;
-  TABULAR_GRID_ROWSET_CLASS = TABULAR_GRID_ROWSET_CLASS;
-  TABULAR_GRID_ROWSET_LEGEND_CLASS = TABULAR_GRID_ROWSET_LEGEND_CLASS;
-  TABULAR_GRID_SHOW_NODE_ICONS_CLASS = TABULAR_GRID_SHOW_NODE_ICONS_CLASS;
+  TABULAR_GRID_CLASS = CSS_SELECTORS.TABULAR_GRID_CLASS;
+  TABULAR_GRID_COLUMN_SET_CLASS = CSS_SELECTORS.TABULAR_GRID_COLUMN_SET_CLASS;
+  TABULAR_GRID_COLUMN_CLASS = CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS;
+  TABULAR_GRID_ROW_CLASS = CSS_SELECTORS.TABULAR_GRID_ROW_CLASS;
+  TABULAR_GRID_ROW_ACTIONS_CLASS = CSS_SELECTORS.TABULAR_GRID_ROW_ACTIONS_CLASS;
+  TABULAR_GRID_CELL_CLASS = CSS_SELECTORS.TABULAR_GRID_CELL_CLASS;
+  TABULAR_GRID_ROWSET_CLASS = CSS_SELECTORS.TABULAR_GRID_ROWSET_CLASS;
+  TABULAR_GRID_ROWSET_LEGEND_CLASS =
+    CSS_SELECTORS.TABULAR_GRID_ROWSET_LEGEND_CLASS;
+  TABULAR_GRID_SHOW_NODE_ICONS_CLASS =
+    CSS_SELECTORS.TABULAR_GRID_SHOW_NODE_ICONS_CLASS;
 
+  // Align classes
   TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS =
-    TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS;
+    CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS;
   TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS =
-    TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS;
+    CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS;
   TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS =
-    TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS;
+    CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS;
   TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS =
-    TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS;
+    CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS;
   TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS =
-    TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS;
+    CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS;
   TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS =
-    TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS;
+    CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS;
 }

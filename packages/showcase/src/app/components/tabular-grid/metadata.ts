@@ -1,22 +1,6 @@
 import { ComponentMetadata } from "../../../common/types";
 
-import {
-  TABULAR_GRID_CLASS,
-  TABULAR_GRID_COLUMN_SET_CLASS,
-  TABULAR_GRID_COLUMN_CLASS,
-  TABULAR_GRID_ROW_CLASS,
-  TABULAR_GRID_ROW_ACTIONS_CLASS,
-  TABULAR_GRID_CELL_CLASS,
-  TABULAR_GRID_ROWSET_CLASS,
-  TABULAR_GRID_ROWSET_LEGEND_CLASS,
-  TABULAR_GRID_SHOW_NODE_ICONS_CLASS,
-  TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS,
-  TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS,
-  TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS,
-  TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS,
-  TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS,
-  TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS
-} from "./tabular-grid.component";
+import { CSS_SELECTORS } from "./classes";
 
 const MAKE_BUTTON = (label: string) => ({
   tag: "button",
@@ -35,7 +19,7 @@ export const tabularGridMetadata = {
       title: "1. Selection: none + keyboard: focus",
       template: {
         tag: "ch-tabular-grid",
-        class: TABULAR_GRID_CLASS,
+        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
         properties: [
           { name: "rowSelectionMode", value: "none" },
           { name: "keyboardNavigationMode", value: "focus" }
@@ -43,11 +27,11 @@ export const tabularGridMetadata = {
         children: [
           {
             tag: "ch-tabular-grid-columnset",
-            class: TABULAR_GRID_COLUMN_SET_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_COLUMN_SET_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
@@ -55,21 +39,65 @@ export const tabularGridMetadata = {
                   { name: "sortable", value: true }
                 ]
               },
-              "<!-- Add more ch-tabular-grid-column's as needed -->"
+              {
+                tag: "ch-tabular-grid-column",
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
+                properties: [
+                  { name: "columnId", value: "name" },
+                  { name: "columnName", value: "Country Name" },
+                  { name: "settingable", value: false },
+                  { name: "sortable", value: true }
+                ]
+              },
+              {
+                tag: "ch-tabular-grid-column",
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
+                properties: [
+                  { name: "columnId", value: "population" },
+                  { name: "columnName", value: "Country Population" },
+                  { name: "settingable", value: false },
+                  { name: "sortable", value: true }
+                ]
+              },
+              {
+                tag: "ch-tabular-grid-column",
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
+                properties: [
+                  { name: "columnId", value: "language" },
+                  { name: "columnName", value: "Country Language" },
+                  { name: "settingable", value: false },
+                  { name: "sortable", value: true }
+                ]
+              }
             ]
           },
           {
             tag: "ch-tabular-grid-row",
-            class: TABULAR_GRID_ROW_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-cell",
-                class: TABULAR_GRID_CELL_CLASS,
-                children: ["<!--  Your cell content -->"]
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "AR"
               },
-              "<!-- Add more ch-tabular-grid-cell's as needed... -->"
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "Argentina"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "45.400.000"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "Español"
+              }
             ]
-          }
+          },
+          `<!-- Add as many rows as needed -->`
         ]
       }
     },
@@ -79,71 +107,66 @@ export const tabularGridMetadata = {
       title: "2. With Rowset",
       template: {
         tag: "ch-tabular-grid",
-        class: TABULAR_GRID_CLASS,
+        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
         properties: [{ name: "rowSelectionMode", value: "none" }],
         children: [
           {
             tag: "ch-tabular-grid-columnset",
-            class: TABULAR_GRID_COLUMN_SET_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_COLUMN_SET_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
                   { name: "settingable", value: false }
                 ]
-              },
-              '<!-- Add more "ch-tabular-grid-column" objects here as needed -->'
+              }
             ]
           },
           {
             tag: "ch-tabular-grid-rowset",
-            class: TABULAR_GRID_ROWSET_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_ROWSET_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-rowset-legend",
-                class: TABULAR_GRID_ROWSET_LEGEND_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_ROWSET_LEGEND_CLASS,
                 children: "América del Sur"
               },
               {
                 tag: "ch-tabular-grid-row",
-                class: TABULAR_GRID_ROW_CLASS,
-                properties: [{ name: "rowId", value: "bo" }],
+                class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
+                properties: [{ name: "rowid", value: "bo" }],
                 children: [
                   {
                     tag: "ch-tabular-grid-cell",
-                    class: TABULAR_GRID_CELL_CLASS,
+                    class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                     children: "BO"
-                  },
-                  '<!-- Add more "ch-tabular-grid-cell" objects here as needed -->'
+                  }
                 ]
               },
-              '<!-- Add more "ch-tabular-grid-row" objects here as needed -->',
               {
                 tag: "ch-tabular-grid-rowset",
-                class: TABULAR_GRID_ROWSET_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_ROWSET_CLASS,
                 children: [
                   {
                     tag: "ch-tabular-grid-rowset-legend",
-                    class: TABULAR_GRID_ROWSET_LEGEND_CLASS,
+                    class: CSS_SELECTORS.TABULAR_GRID_ROWSET_LEGEND_CLASS,
                     children: "Campeones del mundo"
                   },
                   {
                     tag: "ch-tabular-grid-row",
-                    class: TABULAR_GRID_ROW_CLASS,
-                    properties: [{ name: "rowId", value: "ar" }],
+                    class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
+                    properties: [{ name: "rowid", value: "ar" }],
                     children: [
                       {
                         tag: "ch-tabular-grid-cell",
-                        class: TABULAR_GRID_CELL_CLASS,
+                        class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                         children: "AR"
-                      },
-                      '<!-- Add more "ch-tabular-grid-cell" objects here as needed -->'
+                      }
                     ]
-                  },
-                  '<!-- Add more "ch-tabular-grid-row" objects here as needed -->'
+                  }
                 ]
               }
             ]
@@ -157,7 +180,7 @@ export const tabularGridMetadata = {
       title: "3. Selection: single + keyboard: focus",
       template: {
         tag: "ch-tabular-grid",
-        class: TABULAR_GRID_CLASS,
+        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
         properties: [
           { name: "rowSelectionMode", value: "single" },
           { name: "keyboardNavigationMode", value: "focus" }
@@ -165,11 +188,11 @@ export const tabularGridMetadata = {
         children: [
           {
             tag: "ch-tabular-grid-columnset",
-            class: TABULAR_GRID_COLUMN_SET_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_COLUMN_SET_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
@@ -181,11 +204,11 @@ export const tabularGridMetadata = {
           },
           {
             tag: "ch-tabular-grid-row",
-            class: TABULAR_GRID_ROW_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-cell",
-                class: TABULAR_GRID_CELL_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: "AR"
               },
               "<!-- Add more ch-tabular-grid-cell's as needed... -->"
@@ -201,7 +224,7 @@ export const tabularGridMetadata = {
       title: "4. Selection: single + keyboard: select",
       template: {
         tag: "ch-tabular-grid",
-        class: TABULAR_GRID_CLASS,
+        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
         properties: [
           { name: "rowSelectionMode", value: "single" },
           { name: "keyboardNavigationMode", value: "select" }
@@ -209,11 +232,11 @@ export const tabularGridMetadata = {
         children: [
           {
             tag: "ch-tabular-grid-columnset",
-            class: TABULAR_GRID_COLUMN_SET_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_COLUMN_SET_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
@@ -225,11 +248,11 @@ export const tabularGridMetadata = {
           },
           {
             tag: "ch-tabular-grid-row",
-            class: TABULAR_GRID_ROW_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-cell",
-                class: TABULAR_GRID_CELL_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: "AR"
               },
               "<!-- Add more ch-tabular-grid-cell's as needed... -->"
@@ -245,7 +268,7 @@ export const tabularGridMetadata = {
       title: "5. Selection: multiple + keyboard: focus",
       template: {
         tag: "ch-tabular-grid",
-        class: TABULAR_GRID_CLASS,
+        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
         properties: [
           { name: "rowSelectionMode", value: "multiple" },
           { name: "keyboardNavigationMode", value: "focus" }
@@ -253,11 +276,11 @@ export const tabularGridMetadata = {
         children: [
           {
             tag: "ch-tabular-grid-columnset",
-            class: TABULAR_GRID_COLUMN_SET_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_COLUMN_SET_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
@@ -269,11 +292,11 @@ export const tabularGridMetadata = {
           },
           {
             tag: "ch-tabular-grid-row",
-            class: TABULAR_GRID_ROW_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-cell",
-                class: TABULAR_GRID_CELL_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: "AR"
               },
               "<!-- Add more ch-tabular-grid-cell's as needed... -->"
@@ -289,7 +312,7 @@ export const tabularGridMetadata = {
       title: "6. Selection: multiple + keyboard: select",
       template: {
         tag: "ch-tabular-grid",
-        class: TABULAR_GRID_CLASS,
+        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
         properties: [
           { name: "rowSelectionMode", value: "multiple" },
           { name: "keyboardNavigationMode", value: "selection" }
@@ -297,11 +320,11 @@ export const tabularGridMetadata = {
         children: [
           {
             tag: "ch-tabular-grid-columnset",
-            class: TABULAR_GRID_COLUMN_SET_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_COLUMN_SET_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
@@ -313,11 +336,11 @@ export const tabularGridMetadata = {
           },
           {
             tag: "ch-tabular-grid-row",
-            class: TABULAR_GRID_ROW_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-cell",
-                class: TABULAR_GRID_CELL_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: "AR"
               },
               "<!-- Add more ch-tabular-grid-cell's as needed... -->"
@@ -333,7 +356,7 @@ export const tabularGridMetadata = {
       title: "7. Row mark + keyboard: select",
       template: {
         tag: "ch-tabular-grid",
-        class: TABULAR_GRID_CLASS,
+        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
         properties: [
           { name: "rowSelectionMode", value: "multiple" },
           { name: "keyboardNavigationMode", value: "select" }
@@ -341,11 +364,11 @@ export const tabularGridMetadata = {
         children: [
           {
             tag: "ch-tabular-grid-columnset",
-            class: TABULAR_GRID_COLUMN_SET_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_COLUMN_SET_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
@@ -357,7 +380,7 @@ export const tabularGridMetadata = {
               },
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnId", value: "name" },
                   { name: "columnName", value: "Country Name" },
@@ -369,11 +392,11 @@ export const tabularGridMetadata = {
           },
           {
             tag: "ch-tabular-grid-row",
-            class: TABULAR_GRID_ROW_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-cell",
-                class: TABULAR_GRID_CELL_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: "AR"
               },
               "<!-- Add more ch-tabular-grid-cell's as needed... -->"
@@ -389,7 +412,7 @@ export const tabularGridMetadata = {
       title: "8. Row mark + keyboard: focus",
       template: {
         tag: "ch-tabular-grid",
-        class: TABULAR_GRID_CLASS,
+        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
         properties: [
           { name: "rowSelectionMode", value: "multiple" },
           { name: "keyboardNavigationMode", value: "focus" }
@@ -397,11 +420,11 @@ export const tabularGridMetadata = {
         children: [
           {
             tag: "ch-tabular-grid-columnset",
-            class: TABULAR_GRID_COLUMN_SET_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_COLUMN_SET_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
@@ -413,7 +436,7 @@ export const tabularGridMetadata = {
               },
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnId", value: "name" },
                   { name: "columnName", value: "Country Name" },
@@ -425,11 +448,11 @@ export const tabularGridMetadata = {
           },
           {
             tag: "ch-tabular-grid-row",
-            class: TABULAR_GRID_ROW_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-cell",
-                class: TABULAR_GRID_CELL_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: "AR"
               },
               "<!-- Add more ch-tabular-grid-cell's as needed... -->"
@@ -445,16 +468,16 @@ export const tabularGridMetadata = {
       title: "9. Row reorder (dragging)",
       template: {
         tag: "ch-tabular-grid",
-        class: TABULAR_GRID_CLASS,
+        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
         properties: [{ name: "rowSelectionMode", value: "multiple" }],
         children: [
           {
             tag: "ch-tabular-grid-columnset",
-            class: TABULAR_GRID_COLUMN_SET_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_COLUMN_SET_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
@@ -465,7 +488,7 @@ export const tabularGridMetadata = {
               },
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnId", value: "name" },
                   { name: "columnName", value: "Country Name" },
@@ -477,11 +500,11 @@ export const tabularGridMetadata = {
           },
           {
             tag: "ch-tabular-grid-row",
-            class: TABULAR_GRID_ROW_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-cell",
-                class: TABULAR_GRID_CELL_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: "AR"
               },
               "<!-- Add more ch-tabular-grid-cell's as needed... -->"
@@ -497,16 +520,16 @@ export const tabularGridMetadata = {
       title: "10. Row action",
       template: {
         tag: "ch-tabular-grid",
-        class: TABULAR_GRID_CLASS,
+        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
         properties: [{ name: "rowSelectionMode", value: "multiple" }],
         children: [
           {
             tag: "ch-tabular-grid-columnset",
-            class: TABULAR_GRID_COLUMN_SET_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_COLUMN_SET_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
@@ -516,7 +539,7 @@ export const tabularGridMetadata = {
               "<!-- Add more ch-tabular-grid-column's as needed -->",
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnId", value: "actions" },
                   { name: "columnName", value: "Actions" },
@@ -531,11 +554,11 @@ export const tabularGridMetadata = {
           },
           {
             tag: "ch-tabular-grid-row",
-            class: TABULAR_GRID_ROW_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-cell",
-                class: TABULAR_GRID_CELL_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: "AR"
               },
               "<!-- Add more ch-tabular-grid-cell's as needed... -->"
@@ -544,13 +567,13 @@ export const tabularGridMetadata = {
           "<!-- Add more ch-tabular-grid-row's as needed... -->",
           {
             tag: "ch-tabular-grid-row-actions",
-            class: TABULAR_GRID_ROW_ACTIONS_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_ACTIONS_CLASS,
             properties: [{ name: "showOnRowHover", value: true }],
             children: [MAKE_BUTTON("Action A"), MAKE_BUTTON("Action B")]
           },
           {
             tag: "ch-tabular-grid-row-actions",
-            class: TABULAR_GRID_ROW_ACTIONS_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_ACTIONS_CLASS,
             properties: [{ name: "showOnRowActions", value: true }],
             children: [
               MAKE_BUTTON("Action C"),
@@ -560,7 +583,7 @@ export const tabularGridMetadata = {
           },
           {
             tag: "ch-tabular-grid-row-actions",
-            class: TABULAR_GRID_ROW_ACTIONS_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_ACTIONS_CLASS,
             properties: [{ name: "showOnRowContext", value: true }],
             children: [
               MAKE_BUTTON("Action A"),
@@ -579,15 +602,15 @@ export const tabularGridMetadata = {
       title: "11. Tree grid",
       template: {
         tag: "ch-tabular-grid",
-        class: `${TABULAR_GRID_CLASS} ${TABULAR_GRID_SHOW_NODE_ICONS_CLASS}`,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_SHOW_NODE_ICONS_CLASS}`,
         children: [
           {
             tag: "ch-tabular-grid-columnset",
-            class: TABULAR_GRID_COLUMN_SET_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_COLUMN_SET_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnName", value: "Name" },
                   { name: "settingable", value: false },
@@ -598,7 +621,7 @@ export const tabularGridMetadata = {
               },
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnName", value: "Type" },
                   { name: "settingable", value: false },
@@ -607,7 +630,7 @@ export const tabularGridMetadata = {
               },
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnName", value: "Description" },
                   { name: "settingable", value: false },
@@ -616,7 +639,7 @@ export const tabularGridMetadata = {
               },
               {
                 tag: "ch-tabular-grid-column",
-                class: TABULAR_GRID_COLUMN_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
                 properties: [
                   { name: "columnName", value: "Is Collection" },
                   { name: "settingable", value: false },
@@ -627,110 +650,114 @@ export const tabularGridMetadata = {
           },
           {
             tag: "ch-tabular-grid-row",
-            class: TABULAR_GRID_ROW_CLASS,
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
             children: [
               {
                 tag: "ch-tabular-grid-cell",
-                class: TABULAR_GRID_CELL_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: "Target"
               },
               {
                 tag: "ch-tabular-grid-cell",
-                class: TABULAR_GRID_CELL_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: ""
               },
               {
                 tag: "ch-tabular-grid-cell",
-                class: TABULAR_GRID_CELL_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: "Target"
               },
               {
                 tag: "ch-tabular-grid-cell",
-                class: TABULAR_GRID_CELL_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: "false"
               },
               {
                 tag: "ch-tabular-grid-rowset",
-                class: TABULAR_GRID_ROWSET_CLASS,
+                class: CSS_SELECTORS.TABULAR_GRID_ROWSET_CLASS,
                 children: [
                   {
                     tag: "ch-tabular-grid-row",
-                    class: TABULAR_GRID_ROW_CLASS,
+                    class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
                     children: [
                       {
                         tag: "ch-tabular-grid-cell",
-                        class: TABULAR_GRID_CELL_CLASS,
+                        class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                         children: "Devices"
                       },
                       {
                         tag: "ch-tabular-grid-cell",
-                        class: TABULAR_GRID_CELL_CLASS,
+                        class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                         children: ""
                       },
                       {
                         tag: "ch-tabular-grid-cell",
-                        class: TABULAR_GRID_CELL_CLASS,
+                        class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                         children: "Devices List"
                       },
                       {
                         tag: "ch-tabular-grid-cell",
-                        class: TABULAR_GRID_CELL_CLASS,
+                        class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                         children: "true"
                       },
                       {
                         tag: "ch-tabular-grid-rowset",
-                        class: TABULAR_GRID_ROWSET_CLASS,
+                        class: CSS_SELECTORS.TABULAR_GRID_ROWSET_CLASS,
                         children: [
                           {
                             tag: "ch-tabular-grid-row",
-                            class: TABULAR_GRID_ROW_CLASS,
+                            class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
                             children: [
                               {
                                 tag: "ch-tabular-grid-cell",
-                                class: TABULAR_GRID_CELL_CLASS,
+                                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                                 children: "Device"
                               },
                               {
                                 tag: "ch-tabular-grid-cell",
-                                class: TABULAR_GRID_CELL_CLASS,
+                                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                                 children: ""
                               },
                               {
                                 tag: "ch-tabular-grid-cell",
-                                class: TABULAR_GRID_CELL_CLASS,
+                                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                                 children: ""
                               },
                               {
                                 tag: "ch-tabular-grid-cell",
-                                class: TABULAR_GRID_CELL_CLASS,
+                                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                                 children: ""
                               },
                               {
                                 tag: "ch-tabular-grid-rowset",
-                                class: TABULAR_GRID_ROWSET_CLASS,
+                                class: CSS_SELECTORS.TABULAR_GRID_ROWSET_CLASS,
                                 children: [
                                   {
                                     tag: "ch-tabular-grid-row",
-                                    class: TABULAR_GRID_ROW_CLASS,
+                                    class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
                                     children: [
                                       {
                                         tag: "ch-tabular-grid-cell",
-                                        class: TABULAR_GRID_CELL_CLASS,
+                                        class:
+                                          CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                                         children: "DeviceToken"
                                       },
                                       {
                                         tag: "ch-tabular-grid-cell",
-                                        class: TABULAR_GRID_CELL_CLASS,
+                                        class:
+                                          CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                                         children: "Character(500)"
                                       },
                                       {
                                         tag: "ch-tabular-grid-cell",
-                                        class: TABULAR_GRID_CELL_CLASS,
+                                        class:
+                                          CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                                         children: "DeviceToken"
                                       },
                                       {
                                         tag: "ch-tabular-grid-cell",
-                                        class: TABULAR_GRID_CELL_CLASS,
+                                        class:
+                                          CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                                         children: "false"
                                       }
                                     ]
@@ -763,7 +790,7 @@ export const tabularGridHelpersMetadata = {
       title: "12. Align cells: block start",
       template: {
         tag: "ch-tabular-grid",
-        class: `${TABULAR_GRID_CLASS} ${TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS}`,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS}`,
         children: ["<!-- Your grid content here -->"]
       }
     },
@@ -773,7 +800,7 @@ export const tabularGridHelpersMetadata = {
       title: "13. Align cells: block center",
       template: {
         tag: "ch-tabular-grid",
-        class: `${TABULAR_GRID_CLASS} ${TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS}`,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS}`,
         children: ["<!-- Your grid content here -->"]
       }
     },
@@ -783,7 +810,7 @@ export const tabularGridHelpersMetadata = {
       title: "14. Align cells: block end",
       template: {
         tag: "ch-tabular-grid",
-        class: `${TABULAR_GRID_CLASS} ${TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS}`,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS}`,
         children: ["<!-- Your grid content here -->"]
       }
     },
@@ -793,7 +820,7 @@ export const tabularGridHelpersMetadata = {
       title: "15. Align cells: inline start",
       template: {
         tag: "ch-tabular-grid",
-        class: `${TABULAR_GRID_CLASS} ${TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS}`,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS}`,
         children: ["<!-- Your grid content here -->"]
       }
     },
@@ -803,7 +830,7 @@ export const tabularGridHelpersMetadata = {
       title: "16. Align cells: inline center",
       template: {
         tag: "ch-tabular-grid",
-        class: `${TABULAR_GRID_CLASS} ${TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS}`,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS}`,
         children: ["<!-- Your grid content here -->"]
       }
     },
@@ -813,7 +840,7 @@ export const tabularGridHelpersMetadata = {
       title: "17. Align cells: inline end",
       template: {
         tag: "ch-tabular-grid",
-        class: `${TABULAR_GRID_CLASS} ${TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS}`,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS}`,
         children: ["<!-- Your grid content here -->"]
       }
     }
