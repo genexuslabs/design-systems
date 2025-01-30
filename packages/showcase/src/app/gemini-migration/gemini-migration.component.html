@@ -113,17 +113,39 @@
 
     <ol class="text-body-regular-s step-list">
       <li>
-        Replace the <code>gxg-combo-box</code> tag with a
+        Replace the <code>gxg-select</code> tag with a
         <code>ch-combo-box-render</code> tag.
       </li>
 
       <li>Remove all the attributes and values.</li>
 
-      <li>Add the <code>combo-box</code> class.</li>
+      <li>
+        Add the <code>combo-box</code> class in order to apply the Mercury
+        styles.
+      </li>
+
+      <li>
+        Remove all the <code>gxg-combo-box-item</code> items, since the
+        <code>ch-combo-box-render</code> uses a model instead.
+      </li>
+
+      <li>
+        Assign a model like the one provided in the following example
+        <code>(#favoriteColorsModel)</code>
+      </li>
 
       <li>
         <a class="hyperlink" [routerLink]="commonLinks.componentsComboBox()"
-          >Specify the ch-combo-box-render items following the model property
+          >Read Mercury documentation to see how to apply some common cases
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="hyperlink"
+          href="{{ CHAMELEON_COMPONENTS_PATH }}combo-box#ch-combo-box-render"
+          target="_blank"
+          >Refer to the Chameleon documentation for the complete specifications.
         </a>
       </li>
     </ol>
@@ -497,6 +519,67 @@
         [value]="'success'"
       ></ch-combo-box-render>
     </div>
+  </div>
+}
+
+@if (showGxgSelect()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgSelect"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-select</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-select</code> tag with a
+        <code>ch-combo-box-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>
+        Add the <code>combo-box</code> class in order to apply the Mercury
+        styles.
+      </li>
+
+      <li>
+        Remove all the <code>gxg-option</code> items, since the
+        <code>ch-combo-box-render</code> uses a model instead.
+      </li>
+
+      <li>
+        Assign a model like the one provided in the following example
+        <code>(#carsComboBoxModel)</code>
+      </li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsComboBox()"
+          >Read Mercury documentation to see how to apply some common cases
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="hyperlink"
+          href="{{ CHAMELEON_COMPONENTS_PATH }}combo-box#ch-combo-box-render"
+          target="_blank"
+          >Refer to the Chameleon documentation for the complete specifications.
+        </a>
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview field field-block">
+    <label class="label" for="favorite-car">Favorite car</label>
+    <ch-combo-box-render
+      class="combo-box {{ SCROLLABLE_CLASS }}"
+      id="favorite-car"
+      [model]="carsComboBoxModel"
+      [placeholder]="'Porsche'"
+      [value]="'bmw'"
+    ></ch-combo-box-render>
   </div>
 }
 

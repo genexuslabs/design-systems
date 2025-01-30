@@ -57,6 +57,25 @@ export const favoriteColorsComboBoxModel: ComboBoxModel = [
   }
 ];
 
+export const carsComboBoxModel: ComboBoxModel = [
+  {
+    value: "audi",
+    caption: "Audi"
+  },
+  {
+    value: "bmw",
+    caption: "BMW"
+  },
+  {
+    value: "citroen",
+    caption: "Citroen"
+  },
+  {
+    value: "ford",
+    caption: "Ford"
+  }
+];
+
 export const favoriteColorsRadioGroupModel: RadioGroupModel = [
   {
     value: "red",

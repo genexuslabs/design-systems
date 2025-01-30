@@ -9,6 +9,7 @@ import {
 import { CommonModule } from "@angular/common";
 import { Router, RouterLink } from "@angular/router";
 import {
+  carsComboBoxModel,
   favoriteColorsActionListModel,
   favoriteColorsComboBoxModel,
   favoriteColorsRadioGroupModel,
@@ -23,7 +24,7 @@ import type {
   TreeViewModel
 } from "@genexus/chameleon-controls-library";
 
-import { geminiMigrationMetadata } from "./metadata";
+import { geminiMigrationMetadata, SCROLLABLE_CLASS } from "./metadata";
 import { RouterCommonLinksService } from "../../services/router-links.service";
 import { CodeSnippetComponent } from "../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../user-controls/runtime-bundles/runtime-bundles.component";
@@ -61,6 +62,7 @@ export class GeminiMigrationComponent {
     colorType: "primary"
   });
 
+  carsComboBoxModel = carsComboBoxModel;
   favoriteColorsActionListModel = favoriteColorsActionListModel;
   favoriteColorsComboBoxModel = favoriteColorsComboBoxModel;
   favoriteColorsRadioGroupModel = favoriteColorsRadioGroupModel;
@@ -68,6 +70,10 @@ export class GeminiMigrationComponent {
   fruitsTabModel = fruitsTabModel;
   objectsTreeViewModel: TreeViewModel = structuredClone(iconsModel);
   pillsModel = pillsModel;
+
+  SCROLLABLE_CLASS = SCROLLABLE_CLASS;
+  CHAMELEON_COMPONENTS_PATH =
+    "https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/";
   // suggestOptions = suggestOptions;
 
   hiddenMigrations = input<string>("");
@@ -90,6 +96,7 @@ export class GeminiMigrationComponent {
       ["gxg-label", true],
       ["gxg-list-box", true],
       ["gxg-pills", true],
+      ["gxg-select", true],
       ["gxg-suggest", true],
       ["gxg-tabs", true],
       ["gxg-text", true],
@@ -137,6 +144,7 @@ export class GeminiMigrationComponent {
   showGxgIcon = computed(() => this.migrations().get("gxg-icon"));
   showGxgLabel = computed(() => this.migrations().get("gxg-label"));
   showGxgListBox = computed(() => this.migrations().get("gxg-list-box"));
+  showGxgSelect = computed(() => this.migrations().get("gxg-select"));
   showGxgSuggest = computed(() => this.migrations().get("gxg-suggest"));
   showGxgTabs = computed(() => this.migrations().get("gxg-tabs"));
   showGxgText = computed(() => this.migrations().get("gxg-text"));

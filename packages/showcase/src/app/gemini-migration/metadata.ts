@@ -2,11 +2,14 @@ import { ComponentMetadataBeforeAfter } from "../../common/types";
 import { chameleonImportType } from "../../services/template-language/create-template";
 import { iconsModelForMetadata } from "../components/tree-view/models";
 import {
+  carsComboBoxModel,
   favoriteColorsActionListModel,
   favoriteColorsComboBoxModel,
   favoriteColorsRadioGroupModel,
   fruitsTabModel
 } from "./models";
+
+export const SCROLLABLE_CLASS = "scrollable";
 
 const ADD_CIRCLE_ICON_TEMPLATE =
   'AssetsManager.getIconPath({ category: "gemini-tools", name: "add-circle", colorType: "on-primary" })';
@@ -733,9 +736,99 @@ export const geminiMigrationMetadata = {
       }
     },
 
+    gxgSelect: {
+      linkId: "gxg-select",
+      title: "13. gxg-select",
+      before: {
+        template: {
+          tag: "gxg-select",
+          properties: [
+            { name: "id", value: "gxg-select" },
+            { name: "label", value: "Select a car:" },
+            { name: "label-position", value: "above" },
+            { name: "size", value: "5" }
+          ],
+          children: [
+            {
+              tag: "gxg-option",
+              properties: [{ name: "value", value: "none" }],
+              children: "Select car:"
+            },
+            {
+              tag: "gxg-option",
+              properties: [{ name: "value", value: "audi" }],
+              children: "Audi"
+            },
+            {
+              tag: "gxg-option",
+              properties: [{ name: "value", value: "bmw" }],
+              children: "BMW"
+            },
+            {
+              tag: "gxg-option",
+              properties: [{ name: "value", value: "citroen" }],
+              children: "Citroen"
+            },
+            {
+              tag: "gxg-option",
+              properties: [{ name: "value", value: "ford" }],
+              children: "Ford"
+            }
+          ]
+        }
+      },
+      after: {
+        imports: [chameleonImportType("ComboBoxModel")],
+        states: [
+          {
+            name: "carsComboBoxModel",
+            type: "ComboBoxModel",
+            value: carsComboBoxModel
+          }
+          // TODO: This is only necessary when using strict mode. In that case,
+          // only the strict flag should be added.
+          // {
+          //   name: "suggestOptions",
+          //   type: "ComboBoxSuggestOptions",
+          //   value: {
+          //     alreadyProcessed: false,
+          //     autoExpand: true,
+          //     hideMatchesAndShowNonMatches: false,
+          //     highlightMatchedItems: false,
+          //     matchCase: false,
+          //     regularExpression: false,
+          //     strict: false
+          //   }
+          // }
+        ],
+        template: {
+          tag: "div",
+          class: "field field-block",
+          children: [
+            {
+              tag: "label",
+              class: "label",
+              properties: [{ name: "for", value: "favorite-car" }],
+              children: "Favorite Car"
+            },
+            {
+              tag: "ch-combo-box-render",
+              class: `combo-box ${SCROLLABLE_CLASS}`,
+              properties: [
+                { name: "id", value: "favorite-car" },
+                { name: "model", value: "favoriteCarsModel", state: true },
+                { name: "placeholder", value: "Porsche" },
+                { name: "value", value: "bmw" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+
     gxgSuggest: {
       linkId: "gxg-suggest",
-      title: "13. gxg-suggest",
+      title: "14. gxg-suggest",
       before: {
         template: {
           tag: "gxg-suggest",
@@ -814,7 +907,7 @@ export const geminiMigrationMetadata = {
 
     gxgTabs: {
       linkId: "gxg-tabs",
-      title: "14. gxg-tabs",
+      title: "15. gxg-tabs",
       before: {
         template: {
           tag: "gxg-tabs",
@@ -943,7 +1036,7 @@ export const geminiMigrationMetadata = {
 
     gxgText: {
       linkId: "gxg-text",
-      title: "15. gxg-text",
+      title: "16. gxg-text",
       before: {
         template: {
           tag: "gxg-text",
@@ -968,7 +1061,7 @@ export const geminiMigrationMetadata = {
 
     gxgTitle: {
       linkId: "gxg-title",
-      title: "16. gxg-title",
+      title: "17. gxg-title",
       before: {
         template: [
           {
@@ -1017,7 +1110,7 @@ export const geminiMigrationMetadata = {
 
     gxgTreeView: {
       linkId: "gxg-tree-view",
-      title: "17. gxg-tree-view",
+      title: "18. gxg-tree-view",
       before: {
         imports: [chameleonImportType("TreeViewModel")],
         states: [
