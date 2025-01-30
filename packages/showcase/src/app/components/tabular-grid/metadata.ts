@@ -295,9 +295,52 @@ export const tabularGridMetadata = {
                 tag: "ch-tabular-grid-cell",
                 class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: "AR"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "Argentina"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "45.400.00"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "Español"
               }
             ]
-          }
+          },
+          {
+            tag: "ch-tabular-grid-row",
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
+            properties: [{ name: "rowid", value: "bo" }],
+            children: [
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "BO"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "Bolivia"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "11.800.000"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "Español"
+              }
+            ]
+          },
+          `<!-- Add as many rows as needed -->`
         ]
       }
     },
