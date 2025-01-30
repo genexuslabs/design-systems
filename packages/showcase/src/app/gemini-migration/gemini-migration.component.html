@@ -3,6 +3,7 @@
     'components/accordion',
     'components/checkbox',
     'components/combo-box',
+    'components/dialog',
     'components/edit',
     'components/icon',
     'components/list-box',
@@ -561,6 +562,83 @@
       class="list-box"
       [model]="favoriteColorsActionListModel"
     ></ch-action-list-render>
+  </div>
+}
+
+@if (showGxgModal()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgModal"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-modal</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-modal</code> tag with a
+        <code>ch-dialog</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>
+        Add the <code>dialog</code> class in order to apply the Mercury styles.
+      </li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsDialog()"
+          >Read Mercury documentation to see how to apply some common cases
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="hyperlink"
+          href="{{ CHAMELEON_COMPONENTS_PATH }}dialog#ch-dialog"
+          target="_blank"
+          >Refer to the Chameleon documentation for the complete specifications.
+        </a>
+      </li>
+    </ol>
+
+    <br />
+
+    <div class="note">
+      <p>
+        The following Mercury example uses a spacing utility class
+        <code>.spacing-body</code>, that applies padding all around the dialog
+        content area. To use the <code>.spacing-body</code> you will need to
+        include the propper bundle: <code>utils/spacing</code>.
+        <br />
+      </p>
+    </div>
+  </code-snippet>
+
+  <div class="gemini-migration-preview gemini-migration-preview--list-box">
+    <button class="button-primary" type="button" (click)="showDialog()">
+      Show dialog
+    </button>
+
+    <ch-dialog
+      class="dialog"
+      [caption]="'Terms and conditions'"
+      [showHeader]="true"
+      [showFooter]="true"
+      [show]="dialogDisplayed()"
+      (dialogClosed)="hideDialog()"
+      [style.--ch-dialog-inline-size]="'400px'"
+    >
+      <div class="spacing-body">
+        By accessing this website, you agree to comply with these terms and
+        conditions. We reserve the right to modify or update these terms at any
+        time without notice.
+      </div>
+      <div [slot]="'footer'" class="buttons-spacer">
+        <button type="'button'" class="button-secondary">Disagree</button>
+        <button type="'button'" class="button-primary">Agree</button>
+      </div>
+    </ch-dialog>
   </div>
 }
 

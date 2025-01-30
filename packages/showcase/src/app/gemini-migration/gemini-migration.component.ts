@@ -4,7 +4,8 @@ import {
   computed,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
-  input
+  input,
+  signal
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router, RouterLink } from "@angular/router";
@@ -63,6 +64,7 @@ export class GeminiMigrationComponent {
     colorType: "primary"
   });
 
+  // Models
   objectsAccordionModel = objectsAccordionModel;
   carsComboBoxModel = carsComboBoxModel;
   favoriteColorsActionListModel = favoriteColorsActionListModel;
@@ -73,9 +75,16 @@ export class GeminiMigrationComponent {
   objectsTreeViewModel: TreeViewModel = structuredClone(iconsModel);
   pillsModel = pillsModel;
 
+  // Constants
   SCROLLABLE_CLASS = SCROLLABLE_CLASS;
   CHAMELEON_COMPONENTS_PATH =
     "https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/";
+
+  // Dialog
+  dialogDisplayed = signal(false);
+  showDialog = () => this.dialogDisplayed.set(true);
+  hideDialog = () => this.dialogDisplayed.set(false);
+
   // suggestOptions = suggestOptions;
 
   hiddenMigrations = input<string>("");
@@ -98,6 +107,7 @@ export class GeminiMigrationComponent {
       ["gxg-icon", true],
       ["gxg-label", true],
       ["gxg-list-box", true],
+      ["gxg-modal", true],
       ["gxg-pills", true],
       ["gxg-select", true],
       ["gxg-suggest", true],
@@ -148,6 +158,7 @@ export class GeminiMigrationComponent {
   showGxgIcon = computed(() => this.migrations().get("gxg-icon"));
   showGxgLabel = computed(() => this.migrations().get("gxg-label"));
   showGxgListBox = computed(() => this.migrations().get("gxg-list-box"));
+  showGxgModal = computed(() => this.migrations().get("gxg-modal"));
   showGxgSelect = computed(() => this.migrations().get("gxg-select"));
   showGxgSuggest = computed(() => this.migrations().get("gxg-suggest"));
   showGxgTabs = computed(() => this.migrations().get("gxg-tabs"));

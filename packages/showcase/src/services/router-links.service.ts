@@ -19,6 +19,9 @@ export class RouterCommonLinksService {
   componentsComboBox = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.COMBO_BOX}`
   );
+  componentsDialog = computed(
+    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.DIALOG}`
+  );
   componentsIcon = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.ICON}`
   );

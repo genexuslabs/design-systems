@@ -22,7 +22,7 @@ export const geminiMigrationMetadata = {
   codeSnippets: {
     gxgAccordion: {
       linkId: "gxg-accordion",
-      title: "0. gxg-accordion",
+      title: "gxg-accordion",
       before: {
         template: {
           tag: "gxg-accordion",
@@ -118,7 +118,7 @@ export const geminiMigrationMetadata = {
 
     gxgButtonTextOnly: {
       linkId: "gxg-button-text-only",
-      title: "1. gxg-button: Text only",
+      title: "gxg-button: Text only",
       before: {
         template: {
           tag: "gxg-button",
@@ -178,7 +178,7 @@ export const geminiMigrationMetadata = {
 
     gxgComboBox: {
       linkId: "gxg-combo-box",
-      title: "3. gxg-combo-box",
+      title: "gxg-combo-box",
       before: {
         template: {
           tag: "gxg-combo-box",
@@ -252,7 +252,7 @@ export const geminiMigrationMetadata = {
 
     gxgFormCheckbox: {
       linkId: "gxg-form-checkbox",
-      title: "4. gxg-form-checkbox",
+      title: "gxg-form-checkbox",
       before: {
         template: {
           tag: "gxg-form-checkbox",
@@ -277,7 +277,7 @@ export const geminiMigrationMetadata = {
 
     gxgFormRadioGroup: {
       linkId: "gxg-form-radio-group",
-      title: "5. gxg-form-radio-group",
+      title: "gxg-form-radio-group",
       before: {
         template: {
           tag: "gxg-form-radio-group",
@@ -360,7 +360,7 @@ export const geminiMigrationMetadata = {
 
     gxgFormText: {
       linkId: "gxg-form-text",
-      title: "6. gxg-form-text",
+      title: "gxg-form-text",
       before: {
         template: {
           tag: "gxg-form-text",
@@ -409,7 +409,7 @@ export const geminiMigrationMetadata = {
 
     gxgFormTextarea: {
       linkId: "gxg-form-textarea",
-      title: "7. gxg-form-textarea",
+      title: "gxg-form-textarea",
       before: {
         template: {
           tag: "gxg-form-textarea",
@@ -470,7 +470,7 @@ export const geminiMigrationMetadata = {
 
     gxgGrid: {
       linkId: "gxg-grid",
-      title: "8. gxg-grid",
+      title: "gxg-grid",
       before: {
         template: {
           tag: "gxg-grid",
@@ -644,7 +644,7 @@ export const geminiMigrationMetadata = {
 
     gxgIcon: {
       linkId: "gxg-icon",
-      title: "9. gxg-icon",
+      title: "gxg-icon",
       before: {
         template: {
           tag: "gxg-icon",
@@ -675,7 +675,7 @@ export const geminiMigrationMetadata = {
 
     gxgLabel: {
       linkId: "gxg-label",
-      title: "10. gxg-label",
+      title: "gxg-label",
       before: {
         template: {
           tag: "gxg-label",
@@ -702,7 +702,7 @@ export const geminiMigrationMetadata = {
 
     gxgListBox: {
       linkId: "gxg-list-box",
-      title: "11. gxg-list-box",
+      title: "gxg-list-box",
       before: {
         template: {
           tag: "gxg-list-box",
@@ -753,9 +753,89 @@ export const geminiMigrationMetadata = {
       }
     },
 
+    gxgModal: {
+      linkId: "gxg-modal",
+      title: "gxg-modal",
+      before: {
+        template: {
+          tag: "gxg-modal",
+          properties: [
+            { name: "id", value: "modal" },
+            { name: "modal-title", value: "Terms and conditions agreement" }
+          ],
+          children: [
+            `By accessing this website, you agree to comply with these terms and
+conditions. We reserve the right to modify or update these terms at any time
+without notice.`,
+            {
+              tag: "gxg-button",
+              properties: [
+                { name: "slot", value: "footer" },
+                { name: "type", value: "secondary-text-only" }
+              ],
+              children: "No"
+            },
+            {
+              tag: "gxg-button",
+              properties: [
+                { name: "slot", value: "footer" },
+                { name: "type", value: "primary-text-only" }
+              ],
+              children: "Yes"
+            }
+          ]
+        }
+      },
+      after: {
+        template: {
+          tag: "ch-dialog",
+          properties: [
+            { name: "class", value: "dialog" },
+            { name: "caption", value: "Terms and conditions agreement" },
+            { name: "showHeader", value: true },
+            { name: "showFooter", value: true }
+          ],
+          children: [
+            {
+              tag: "p",
+              properties: [{ name: "class", value: "spacing-body" }],
+              children: `By accessing this website, you agree to comply with these terms and
+conditions. We reserve the right to modify or update these terms at any time
+without notice.`
+            },
+            {
+              tag: "div",
+              properties: [
+                { name: "slot", value: "footer" },
+                { name: "class", value: "buttons-spacer" }
+              ],
+              children: [
+                {
+                  tag: "button",
+                  properties: [
+                    { name: "type", value: "button" },
+                    { name: "class", value: "button-secondary" }
+                  ],
+                  children: "Disagree"
+                },
+                {
+                  tag: "button",
+                  properties: [
+                    { name: "type", value: "button" },
+                    { name: "class", value: "button-primary" }
+                  ],
+                  children: "Agree"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+
     gxgPills: {
       linkId: "gxg-pills",
-      title: "12. gxg-pills",
+      title: "gxg-pills",
       before: {
         template: {
           tag: "div",
@@ -835,7 +915,7 @@ export const geminiMigrationMetadata = {
 
     gxgSelect: {
       linkId: "gxg-select",
-      title: "13. gxg-select",
+      title: "gxg-select",
       before: {
         template: {
           tag: "gxg-select",
@@ -925,7 +1005,7 @@ export const geminiMigrationMetadata = {
 
     gxgSuggest: {
       linkId: "gxg-suggest",
-      title: "14. gxg-suggest",
+      title: "gxg-suggest",
       before: {
         template: {
           tag: "gxg-suggest",
@@ -1004,7 +1084,7 @@ export const geminiMigrationMetadata = {
 
     gxgTabs: {
       linkId: "gxg-tabs",
-      title: "15. gxg-tabs",
+      title: "gxg-tabs",
       before: {
         template: {
           tag: "gxg-tabs",
@@ -1133,7 +1213,7 @@ export const geminiMigrationMetadata = {
 
     gxgText: {
       linkId: "gxg-text",
-      title: "16. gxg-text",
+      title: "gxg-text",
       before: {
         template: {
           tag: "gxg-text",
@@ -1158,7 +1238,7 @@ export const geminiMigrationMetadata = {
 
     gxgTitle: {
       linkId: "gxg-title",
-      title: "17. gxg-title",
+      title: "gxg-title",
       before: {
         template: [
           {
@@ -1207,7 +1287,7 @@ export const geminiMigrationMetadata = {
 
     gxgTreeView: {
       linkId: "gxg-tree-view",
-      title: "18. gxg-tree-view",
+      title: "gxg-tree-view",
       before: {
         imports: [chameleonImportType("TreeViewModel")],
         states: [
