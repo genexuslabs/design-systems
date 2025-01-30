@@ -74,7 +74,7 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ar'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
@@ -89,7 +89,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'bo'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
@@ -103,7 +103,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'br'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
@@ -117,7 +117,7 @@
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="cl">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'cl'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
@@ -131,7 +131,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ec">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ec'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
@@ -145,7 +145,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="py">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'py'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
@@ -159,7 +159,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="pe">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'pe'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
@@ -173,7 +173,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="uy">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'uy'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
@@ -187,7 +187,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ve">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ve'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
@@ -241,7 +241,10 @@
         >
           América del Sur
         </ch-tabular-grid-rowset-legend>
-        <ch-tabular-grid-row rowid="bo" class="{{ TABULAR_GRID_ROW_CLASS }}">
+        <ch-tabular-grid-row
+          [rowId]="'bo'"
+          class="{{ TABULAR_GRID_ROW_CLASS }}"
+        >
           <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >BO</ch-tabular-grid-cell
           >
@@ -255,7 +258,10 @@
             >Español</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="cl" class="{{ TABULAR_GRID_ROW_CLASS }}">
+        <ch-tabular-grid-row
+          [rowId]="'cl'"
+          class="{{ TABULAR_GRID_ROW_CLASS }}"
+        >
           <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >CL</ch-tabular-grid-cell
           >
@@ -269,7 +275,10 @@
             >Español</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="ec" class="{{ TABULAR_GRID_ROW_CLASS }}">
+        <ch-tabular-grid-row
+          [rowId]="'ec'"
+          class="{{ TABULAR_GRID_ROW_CLASS }}"
+        >
           <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >EC</ch-tabular-grid-cell
           >
@@ -283,7 +292,10 @@
             >Español</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="py" class="{{ TABULAR_GRID_ROW_CLASS }}">
+        <ch-tabular-grid-row
+          [rowId]="'py'"
+          class="{{ TABULAR_GRID_ROW_CLASS }}"
+        >
           <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >PY</ch-tabular-grid-cell
           >
@@ -297,7 +309,10 @@
             >Español</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="pe" class="{{ TABULAR_GRID_ROW_CLASS }}">
+        <ch-tabular-grid-row
+          [rowId]="'pe'"
+          class="{{ TABULAR_GRID_ROW_CLASS }}"
+        >
           <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >PE</ch-tabular-grid-cell
           >
@@ -311,7 +326,10 @@
             >Español</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="ve" class="{{ TABULAR_GRID_ROW_CLASS }}">
+        <ch-tabular-grid-row
+          [rowId]="'ve'"
+          class="{{ TABULAR_GRID_ROW_CLASS }}"
+        >
           <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >VE</ch-tabular-grid-cell
           >
@@ -333,7 +351,10 @@
         >
           Campeones del mundo
         </ch-tabular-grid-rowset-legend>
-        <ch-tabular-grid-row rowid="ar" class="{{ TABULAR_GRID_ROW_CLASS }}">
+        <ch-tabular-grid-row
+          [rowId]="'ar'"
+          class="{{ TABULAR_GRID_ROW_CLASS }}"
+        >
           <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >AR</ch-tabular-grid-cell
           >
@@ -347,7 +368,10 @@
             >Español</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="br" class="{{ TABULAR_GRID_ROW_CLASS }}">
+        <ch-tabular-grid-row
+          [rowId]="'br'"
+          class="{{ TABULAR_GRID_ROW_CLASS }}"
+        >
           <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >BR</ch-tabular-grid-cell
           >
@@ -361,7 +385,10 @@
             >Português</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="uy" class="{{ TABULAR_GRID_ROW_CLASS }}">
+        <ch-tabular-grid-row
+          [rowId]="'uy'"
+          class="{{ TABULAR_GRID_ROW_CLASS }}"
+        >
           <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >UY</ch-tabular-grid-cell
           >
@@ -383,7 +410,10 @@
         >
           América del Norte
         </ch-tabular-grid-rowset-legend>
-        <ch-tabular-grid-row rowid="ca" class="{{ TABULAR_GRID_ROW_CLASS }}">
+        <ch-tabular-grid-row
+          [rowId]="'ca'"
+          class="{{ TABULAR_GRID_ROW_CLASS }}"
+        >
           <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >CA</ch-tabular-grid-cell
           >
@@ -397,7 +427,10 @@
             >English</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="mx" class="{{ TABULAR_GRID_ROW_CLASS }}">
+        <ch-tabular-grid-row
+          [rowId]="'mx'"
+          class="{{ TABULAR_GRID_ROW_CLASS }}"
+        >
           <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >MX</ch-tabular-grid-cell
           >
@@ -411,7 +444,10 @@
             >Español</ch-tabular-grid-cell
           >
         </ch-tabular-grid-row>
-        <ch-tabular-grid-row rowid="us" class="{{ TABULAR_GRID_ROW_CLASS }}">
+        <ch-tabular-grid-row
+          [rowId]="'us'"
+          class="{{ TABULAR_GRID_ROW_CLASS }}"
+        >
           <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
             >US</ch-tabular-grid-cell
           >
@@ -468,7 +504,7 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ar'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
@@ -482,7 +518,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'bo'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
@@ -496,7 +532,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'br'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
@@ -510,7 +546,7 @@
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="cl">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'cl'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
@@ -524,7 +560,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ec">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ec'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
@@ -538,7 +574,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="py">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'py'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
@@ -552,7 +588,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="pe">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'pe'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
@@ -566,7 +602,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="uy">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'uy'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
@@ -580,7 +616,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ve">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ve'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
@@ -638,7 +674,7 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ar'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
@@ -652,7 +688,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'bo'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
@@ -666,7 +702,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'br'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
@@ -680,7 +716,7 @@
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="cl">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'cl'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
@@ -694,7 +730,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ec">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ec'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
@@ -708,7 +744,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="py">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'py'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
@@ -722,7 +758,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="pe">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'pe'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
@@ -736,7 +772,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="uy">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'uy'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
@@ -750,7 +786,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ve">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ve'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
@@ -812,7 +848,7 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ar">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ar'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
@@ -826,7 +862,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="bo">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'bo'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
@@ -840,7 +876,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="br">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'br'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
@@ -854,7 +890,7 @@
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="cl">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'cl'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
@@ -868,7 +904,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ec">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ec'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
@@ -882,7 +918,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="py">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'py'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
@@ -896,7 +932,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="pe">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'pe'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
@@ -910,7 +946,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="uy">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'uy'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
@@ -924,7 +960,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ve">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ve'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
@@ -984,7 +1020,7 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ar'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
@@ -998,7 +1034,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'bo'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
@@ -1012,7 +1048,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'br'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
@@ -1026,7 +1062,7 @@
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="cl">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'cl'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
@@ -1040,7 +1076,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ec">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ec'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
@@ -1054,7 +1090,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="py">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'py'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
@@ -1068,7 +1104,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="pe">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'pe'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
@@ -1082,7 +1118,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="uy">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'uy'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
@@ -1096,7 +1132,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ve">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ve'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
@@ -1159,7 +1195,7 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ar'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
@@ -1173,7 +1209,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'bo'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
@@ -1187,7 +1223,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'br'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
@@ -1201,7 +1237,7 @@
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="cl">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'cl'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
@@ -1215,7 +1251,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ec">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ec'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
@@ -1229,7 +1265,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="py">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'py'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
@@ -1243,7 +1279,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="pe">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'pe'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
@@ -1257,7 +1293,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="uy">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'uy'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
@@ -1271,7 +1307,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ve">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ve'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
@@ -1334,7 +1370,7 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ar">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ar'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
@@ -1348,7 +1384,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="bo">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'bo'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
@@ -1362,7 +1398,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="br">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'br'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
@@ -1376,7 +1412,7 @@
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="cl">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'cl'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
@@ -1390,7 +1426,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ec">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ec'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
@@ -1404,7 +1440,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="py">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'py'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
@@ -1418,7 +1454,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="pe">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'pe'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
@@ -1432,7 +1468,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="uy">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'uy'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
@@ -1446,7 +1482,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ve">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ve'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
@@ -1503,7 +1539,7 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ar">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ar'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
@@ -1517,7 +1553,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="bo">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'bo'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
@@ -1531,7 +1567,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="br">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'br'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
@@ -1545,7 +1581,7 @@
           >Português</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="cl">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'cl'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
@@ -1559,7 +1595,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ec">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ec'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
@@ -1573,7 +1609,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="py">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'py'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
@@ -1587,7 +1623,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="pe">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'pe'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
@@ -1601,7 +1637,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="uy">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'uy'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
@@ -1615,7 +1651,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowId="ve">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ve'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
@@ -1684,7 +1720,7 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ar'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
@@ -1701,7 +1737,7 @@
           class="{{ TABULAR_GRID_CELL_CLASS }}"
         ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'bo'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
@@ -1718,7 +1754,7 @@
           class="{{ TABULAR_GRID_CELL_CLASS }}"
         ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'br'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
@@ -1735,7 +1771,7 @@
           class="{{ TABULAR_GRID_CELL_CLASS }}"
         ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="cl">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'cl'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >CL</ch-tabular-grid-cell
         >
@@ -1752,7 +1788,7 @@
           class="{{ TABULAR_GRID_CELL_CLASS }}"
         ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ec">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ec'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >EC</ch-tabular-grid-cell
         >
@@ -1769,7 +1805,7 @@
           class="{{ TABULAR_GRID_CELL_CLASS }}"
         ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="py">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'py'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PY</ch-tabular-grid-cell
         >
@@ -1786,7 +1822,7 @@
           class="{{ TABULAR_GRID_CELL_CLASS }}"
         ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="pe">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'pe'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >PE</ch-tabular-grid-cell
         >
@@ -1803,7 +1839,7 @@
           class="{{ TABULAR_GRID_CELL_CLASS }}"
         ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="uy">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'uy'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >UY</ch-tabular-grid-cell
         >
@@ -1820,7 +1856,7 @@
           class="{{ TABULAR_GRID_CELL_CLASS }}"
         ></ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ve">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ve'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >VE</ch-tabular-grid-cell
         >
@@ -2140,7 +2176,7 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ar'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
@@ -2158,7 +2194,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'bo'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
@@ -2176,7 +2212,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'br'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
@@ -2245,7 +2281,7 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ar'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
           AR
         </ch-tabular-grid-cell>
@@ -2263,7 +2299,7 @@
           Español
         </ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'bo'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
           BO
         </ch-tabular-grid-cell>
@@ -2281,7 +2317,7 @@
           Español
         </ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'br'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
           BR
         </ch-tabular-grid-cell>
@@ -2350,7 +2386,7 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ar'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
@@ -2368,7 +2404,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'bo'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
@@ -2386,7 +2422,7 @@
           >Español</ch-tabular-grid-cell
         >
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'br'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
@@ -2454,7 +2490,7 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ar'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >AR</ch-tabular-grid-cell
         >
@@ -2473,7 +2509,7 @@
         >
       </ch-tabular-grid-row>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'bo'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BO</ch-tabular-grid-cell
         >
@@ -2492,7 +2528,7 @@
         >
       </ch-tabular-grid-row>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'br'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
           >BR</ch-tabular-grid-cell
         >
@@ -2567,7 +2603,7 @@
         </ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ar'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
           AR
         </ch-tabular-grid-cell>
@@ -2586,7 +2622,7 @@
         </ch-tabular-grid-cell>
       </ch-tabular-grid-row>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'bo'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
           BO
         </ch-tabular-grid-cell>
@@ -2605,7 +2641,7 @@
         </ch-tabular-grid-cell>
       </ch-tabular-grid-row>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'br'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
           BR
         </ch-tabular-grid-cell>
@@ -2674,7 +2710,7 @@
         ></ch-tabular-grid-column>
       </ch-tabular-grid-columnset>
 
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="ar">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'ar'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
           AR
         </ch-tabular-grid-cell>
@@ -2692,7 +2728,7 @@
           Español
         </ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="bo">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'bo'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
           BO
         </ch-tabular-grid-cell>
@@ -2710,7 +2746,7 @@
           Español
         </ch-tabular-grid-cell>
       </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" rowid="br">
+      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowId]="'br'">
         <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}">
           BR
         </ch-tabular-grid-cell>
