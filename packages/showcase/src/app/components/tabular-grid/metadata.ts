@@ -19,7 +19,7 @@ export const tabularGridMetadata = {
       title: "1. Selection: none + keyboard: focus",
       template: {
         tag: "ch-tabular-grid",
-        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         properties: [
           { name: "rowSelectionMode", value: "none" },
           { name: "keyboardNavigationMode", value: "focus" }
@@ -108,7 +108,7 @@ export const tabularGridMetadata = {
       title: "2. With Rowset",
       template: {
         tag: "ch-tabular-grid",
-        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         properties: [{ name: "rowSelectionMode", value: "none" }],
         children: [
           {
@@ -238,7 +238,7 @@ export const tabularGridMetadata = {
       title: "3. Selection: single + keyboard: focus",
       template: {
         tag: "ch-tabular-grid",
-        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         properties: [
           { name: "rowSelectionMode", value: "single" },
           { name: "keyboardNavigationMode", value: "focus" }
@@ -350,7 +350,7 @@ export const tabularGridMetadata = {
       title: "4. Selection: single + keyboard: select",
       template: {
         tag: "ch-tabular-grid",
-        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         properties: [
           { name: "rowSelectionMode", value: "single" },
           { name: "keyboardNavigationMode", value: "select" }
@@ -466,7 +466,7 @@ export const tabularGridMetadata = {
       title: "5. Selection: multiple + keyboard: focus",
       template: {
         tag: "ch-tabular-grid",
-        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         properties: [
           { name: "rowSelectionMode", value: "multiple" },
           { name: "keyboardNavigationMode", value: "focus" }
@@ -580,10 +580,10 @@ export const tabularGridMetadata = {
       title: "6. Selection: multiple + keyboard: select",
       template: {
         tag: "ch-tabular-grid",
-        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         properties: [
           { name: "rowSelectionMode", value: "multiple" },
-          { name: "keyboardNavigationMode", value: "selection" }
+          { name: "keyboardNavigationMode", value: "select" }
         ],
         children: [
           {
@@ -692,7 +692,7 @@ export const tabularGridMetadata = {
       title: "7. Row mark + keyboard: select",
       template: {
         tag: "ch-tabular-grid",
-        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         properties: [
           { name: "rowSelectionMode", value: "multiple" },
           { name: "keyboardNavigationMode", value: "select" }
@@ -807,7 +807,7 @@ export const tabularGridMetadata = {
       title: "8. Row mark + keyboard: focus",
       template: {
         tag: "ch-tabular-grid",
-        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         properties: [
           { name: "rowSelectionMode", value: "multiple" },
           { name: "keyboardNavigationMode", value: "focus" }
@@ -922,7 +922,7 @@ export const tabularGridMetadata = {
       title: "9. Row reorder (dragging)",
       template: {
         tag: "ch-tabular-grid",
-        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         properties: [{ name: "rowSelectionMode", value: "multiple" }],
         children: [
           {
@@ -1036,7 +1036,7 @@ export const tabularGridMetadata = {
       title: "10. Row action",
       template: {
         tag: "ch-tabular-grid",
-        class: CSS_SELECTORS.TABULAR_GRID_CLASS,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         properties: [{ name: "rowSelectionMode", value: "multiple" }],
         children: [
           {
@@ -1194,7 +1194,7 @@ export const tabularGridMetadata = {
       title: "11. Tree grid",
       template: {
         tag: "ch-tabular-grid",
-        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_SHOW_NODE_ICONS_CLASS}`,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_SHOW_NODE_ICONS_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         children: [
           {
             tag: "ch-tabular-grid-columnset",
@@ -1382,7 +1382,7 @@ export const tabularGridHelpersMetadata = {
       title: "12. Align cells: block start",
       template: {
         tag: "ch-tabular-grid",
-        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS}`,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         children: ["<!-- Your grid content here -->"]
       }
     },
@@ -1392,7 +1392,7 @@ export const tabularGridHelpersMetadata = {
       title: "13. Align cells: block center",
       template: {
         tag: "ch-tabular-grid",
-        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS}`,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         children: ["<!-- Your grid content here -->"]
       }
     },
@@ -1402,7 +1402,7 @@ export const tabularGridHelpersMetadata = {
       title: "14. Align cells: block end",
       template: {
         tag: "ch-tabular-grid",
-        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS}`,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         children: ["<!-- Your grid content here -->"]
       }
     },
@@ -1412,7 +1412,7 @@ export const tabularGridHelpersMetadata = {
       title: "15. Align cells: inline start",
       template: {
         tag: "ch-tabular-grid",
-        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS}`,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         children: ["<!-- Your grid content here -->"]
       }
     },
@@ -1422,7 +1422,7 @@ export const tabularGridHelpersMetadata = {
       title: "16. Align cells: inline center",
       template: {
         tag: "ch-tabular-grid",
-        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS}`,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         children: ["<!-- Your grid content here -->"]
       }
     },
@@ -1432,7 +1432,7 @@ export const tabularGridHelpersMetadata = {
       title: "17. Align cells: inline end",
       template: {
         tag: "ch-tabular-grid",
-        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS}`,
+        class: `${CSS_SELECTORS.TABULAR_GRID_CLASS} ${CSS_SELECTORS.TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS} ${CSS_SELECTORS.SCROLLABLE_CLASS}`,
         children: ["<!-- Your grid content here -->"]
       }
     }

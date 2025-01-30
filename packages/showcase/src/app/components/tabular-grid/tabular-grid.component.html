@@ -39,11 +39,13 @@
 @if (showSelectionNoneKeyboardFocus()) {
   <code-snippet [codeSnippet]="codeSnippets.selectionNoneKeyboardFocus">
     <ch-tabular-grid
-      class="{{ TABULAR_GRID_CLASS }}"
+      class="{{ TABULAR_GRID_CLASS }} {{ SCROLLABLE_CLASS }}"
       [rowSelectionMode]="'none'"
       [keyboardNavigationMode]="'focus'"
     >
-      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
+      <ch-tabular-grid-columnset
+        class="{{ TABULAR_GRID_COLUMN_SET_CLASS }} {{ SCROLLABLE_CLASS }}"
+      >
         <ch-tabular-grid-column
           class="{{ TABULAR_GRID_COLUMN_CLASS }}"
           [columnId]="'code'"
@@ -207,7 +209,10 @@
 
 @if (showRowSet()) {
   <code-snippet [codeSnippet]="codeSnippets.withRowSet">
-    <ch-tabular-grid class="{{ TABULAR_GRID_CLASS }}" row-selection-mode="none">
+    <ch-tabular-grid
+      class="{{ TABULAR_GRID_CLASS }} {{ SCROLLABLE_CLASS }}"
+      row-selection-mode="none"
+    >
       <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
           class="{{ TABULAR_GRID_COLUMN_CLASS }}"
@@ -473,7 +478,7 @@
     <br />
 
     <ch-tabular-grid
-      class="{{ TABULAR_GRID_CLASS }}"
+      class="{{ TABULAR_GRID_CLASS }} {{ SCROLLABLE_CLASS }}"
       [rowSelectionMode]="'single'"
       [keyboardNavigationMode]="'focus'"
     >
@@ -643,7 +648,7 @@
     <br />
 
     <ch-tabular-grid
-      class="{{ TABULAR_GRID_CLASS }}"
+      class="{{ TABULAR_GRID_CLASS }} {{ SCROLLABLE_CLASS }}"
       [rowSelectionMode]="'single'"
       [keyboardNavigationMode]="'select'"
     >
@@ -815,7 +820,7 @@
     <br />
 
     <ch-tabular-grid
-      class="{{ TABULAR_GRID_CLASS }}"
+      class="{{ TABULAR_GRID_CLASS }} {{ SCROLLABLE_CLASS }}"
       [rowSelectionMode]="'multiple'"
       [keyboardNavigationMode]="'focus'"
     >
@@ -988,10 +993,12 @@
 
     <br />
 
+    hola
+
     <ch-tabular-grid
-      class="{{ TABULAR_GRID_CLASS }}"
+      class="{{ TABULAR_GRID_CLASS }} {{ SCROLLABLE_CLASS }}"
       [rowSelectionMode]="'multiple'"
-      [keyboardNavigationMode]="'selection'"
+      [keyboardNavigationMode]="'select'"
     >
       <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
@@ -1161,184 +1168,9 @@
     <br />
 
     <ch-tabular-grid
-      class="{{ TABULAR_GRID_CLASS }}"
+      class="{{ TABULAR_GRID_CLASS }} {{ SCROLLABLE_CLASS }}"
       [rowSelectionMode]="'multiple'"
       [keyboardNavigationMode]="'select'"
-    >
-      <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
-        <ch-tabular-grid-column
-          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
-          [columnId]="'code'"
-          [columnName]="'Country Code'"
-          [columnType]="'rich'"
-          [richRowSelector]="true"
-          [richRowSelectorMode]="'mark'"
-          [settingable]="false"
-        ></ch-tabular-grid-column>
-        <ch-tabular-grid-column
-          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
-          [columnId]="'name'"
-          [columnName]="'Country Name'"
-          [settingable]="false"
-        ></ch-tabular-grid-column>
-        <ch-tabular-grid-column
-          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
-          [columnId]="'population'"
-          [columnName]="'Country Population'"
-          [settingable]="false"
-        ></ch-tabular-grid-column>
-        <ch-tabular-grid-column
-          class="{{ TABULAR_GRID_COLUMN_CLASS }}"
-          [columnId]="'language'"
-          [columnName]="'Country Language'"
-          [settingable]="false"
-        ></ch-tabular-grid-column>
-      </ch-tabular-grid-columnset>
-
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowid]="'ar'">
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >AR</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Argentina</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >45.400.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Español</ch-tabular-grid-cell
-        >
-      </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowid]="'bo'">
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >BO</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Bolivia</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >11.800.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Español</ch-tabular-grid-cell
-        >
-      </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowid]="'br'">
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >BR</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Brasil</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >212.600.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Português</ch-tabular-grid-cell
-        >
-      </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowid]="'cl'">
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >CL</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Chile</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >19.500.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Español</ch-tabular-grid-cell
-        >
-      </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowid]="'ec'">
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >EC</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Ecuador</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >17.600.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Español</ch-tabular-grid-cell
-        >
-      </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowid]="'py'">
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >PY</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Paraguay</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >7.500.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Español</ch-tabular-grid-cell
-        >
-      </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowid]="'pe'">
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >PE</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Perú</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >32.800.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Español</ch-tabular-grid-cell
-        >
-      </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowid]="'uy'">
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >UY</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Uruguay</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >3.500.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Español</ch-tabular-grid-cell
-        >
-      </ch-tabular-grid-row>
-      <ch-tabular-grid-row class="{{ TABULAR_GRID_ROW_CLASS }}" [rowid]="'ve'">
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >VE</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Venezuela</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >28.500.000</ch-tabular-grid-cell
-        >
-        <ch-tabular-grid-cell class="{{ TABULAR_GRID_CELL_CLASS }}"
-          >Español</ch-tabular-grid-cell
-        >
-      </ch-tabular-grid-row>
-    </ch-tabular-grid>
-  </code-snippet>
-}
-
-@if (showRowMarkKeyboardFocus()) {
-  <code-snippet [codeSnippet]="codeSnippets.rowMarkKeyboardFocus">
-    <p class="{{ paragraphClass }}">
-      Adds checkboxes that allows marking the rows (keyboard navigation changes
-      focus only). Press <code>space-bar</code> to select a row, or
-      <code>shift</code> and arrow cursors to select multiple rows.
-    </p>
-
-    <br />
-
-    <ch-tabular-grid
-      class="{{ TABULAR_GRID_CLASS }}"
-      [rowSelectionMode]="'multiple'"
-      [keyboardNavigationMode]="'focus'"
     >
       <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
@@ -1507,7 +1339,7 @@
     <br />
 
     <ch-tabular-grid
-      class="{{ TABULAR_GRID_CLASS }}"
+      class="{{ TABULAR_GRID_CLASS }} {{ SCROLLABLE_CLASS }}"
       [rowSelectionMode]="'multiple'"
     >
       <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
@@ -1680,7 +1512,7 @@
     <br />
 
     <ch-tabular-grid
-      class="{{ TABULAR_GRID_CLASS }}"
+      class="{{ TABULAR_GRID_CLASS }} {{ SCROLLABLE_CLASS }}"
       [rowSelectionMode]="'multiple'"
     >
       <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
@@ -1916,7 +1748,9 @@
     <br />
 
     <ch-tabular-grid
-      class="{{ TABULAR_GRID_CLASS }} {{ TABULAR_GRID_SHOW_NODE_ICONS_CLASS }}"
+      class="{{ TABULAR_GRID_CLASS }} {{ SCROLLABLE_CLASS }} {{
+        TABULAR_GRID_SHOW_NODE_ICONS_CLASS
+      }} scrollable"
     >
       <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
@@ -2143,7 +1977,7 @@
     <ch-tabular-grid
       class="{{ TABULAR_GRID_CLASS }} {{
         TABULAR_GRID_ALIGN_CELLS_BLOCK_START_CLASS
-      }}"
+      }} {{ SCROLLABLE_CLASS }}"
     >
       <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
@@ -2248,7 +2082,7 @@
     <ch-tabular-grid
       class="{{ TABULAR_GRID_CLASS }} {{
         TABULAR_GRID_ALIGN_CELLS_BLOCK_CENTER_CLASS
-      }}"
+      }} {{ SCROLLABLE_CLASS }}"
     >
       <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
@@ -2353,7 +2187,7 @@
     <ch-tabular-grid
       class="{{ TABULAR_GRID_CLASS }} {{
         TABULAR_GRID_ALIGN_CELLS_BLOCK_END_CLASS
-      }}"
+      }} {{ SCROLLABLE_CLASS }}"
     >
       <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
@@ -2457,7 +2291,7 @@
     <ch-tabular-grid
       class="{{ TABULAR_GRID_CLASS }} {{
         TABULAR_GRID_ALIGN_CELLS_INLINE_START_CLASS
-      }}"
+      }} {{ SCROLLABLE_CLASS }}"
     >
       <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
@@ -2563,7 +2397,7 @@
     <ch-tabular-grid
       class="{{ TABULAR_GRID_CLASS }} {{
         TABULAR_GRID_ALIGN_CELLS_INLINE_CENTER_CLASS
-      }}"
+      }} {{ SCROLLABLE_CLASS }}"
     >
       <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
@@ -2677,7 +2511,7 @@
     <ch-tabular-grid
       class="{{ TABULAR_GRID_CLASS }} {{
         TABULAR_GRID_ALIGN_CELLS_INLINE_END_CLASS
-      }}"
+      }} {{ SCROLLABLE_CLASS }}"
     >
       <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column

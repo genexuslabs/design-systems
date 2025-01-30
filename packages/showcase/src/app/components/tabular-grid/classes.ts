@@ -1,4 +1,5 @@
 export const CSS_SELECTORS = {
+  SCROLLABLE_CLASS: "scrollable",
   TABULAR_GRID_CLASS: "tabular-grid",
   TABULAR_GRID_COLUMN_SET_CLASS: "tabular-grid-column-set",
   TABULAR_GRID_COLUMN_CLASS: "tabular-grid-column",
