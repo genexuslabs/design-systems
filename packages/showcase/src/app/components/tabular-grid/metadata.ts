@@ -936,7 +936,7 @@ export const tabularGridMetadata = {
                   { name: "columnId", value: "code" },
                   { name: "columnName", value: "Country Code" },
                   { name: "columnType", value: "rich" },
-                  { name: "richRowDrag", value: "" },
+                  { name: "richRowDrag", value: true },
                   { name: "settingable", value: false }
                 ]
               },
@@ -946,25 +946,87 @@ export const tabularGridMetadata = {
                 properties: [
                   { name: "columnId", value: "name" },
                   { name: "columnName", value: "Country Name" },
-                  { name: "settingable", value: false }
+                  { name: "settingable", value: false },
+                  { name: "sortable", value: true }
                 ]
               },
-              "<!-- Add more ch-tabular-grid-column's as needed -->"
+              {
+                tag: "ch-tabular-grid-column",
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
+                properties: [
+                  { name: "columnId", value: "population" },
+                  { name: "columnName", value: "Country Population" },
+                  { name: "settingable", value: false },
+                  { name: "sortable", value: true }
+                ]
+              },
+              {
+                tag: "ch-tabular-grid-column",
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
+                properties: [
+                  { name: "columnId", value: "language" },
+                  { name: "columnName", value: "Country Language" },
+                  { name: "settingable", value: false },
+                  { name: "sortable", value: true }
+                ]
+              }
             ]
           },
           {
             tag: "ch-tabular-grid-row",
             class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
+            properties: [{ name: "rowid", value: "ar" }],
             children: [
               {
                 tag: "ch-tabular-grid-cell",
                 class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: "AR"
               },
-              "<!-- Add more ch-tabular-grid-cell's as needed... -->"
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "Argentina"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "45.400.00"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "Español"
+              }
             ]
           },
-          "<!-- Add more ch-tabular-grid-row's as needed... -->"
+          {
+            tag: "ch-tabular-grid-row",
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
+            properties: [{ name: "rowid", value: "bo" }],
+            children: [
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "BO"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "Bolivia"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "11.800.000"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "Español"
+              }
+            ]
+          },
+          `<!-- Add as many rows as needed -->`
         ]
       }
     },
@@ -990,7 +1052,33 @@ export const tabularGridMetadata = {
                   { name: "settingable", value: false }
                 ]
               },
-              "<!-- Add more ch-tabular-grid-column's as needed -->",
+              {
+                tag: "ch-tabular-grid-column",
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
+                properties: [
+                  { name: "columnId", value: "name" },
+                  { name: "columnName", value: "Country Name" },
+                  { name: "settingable", value: false }
+                ]
+              },
+              {
+                tag: "ch-tabular-grid-column",
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
+                properties: [
+                  { name: "columnId", value: "population" },
+                  { name: "columnName", value: "Country Population" },
+                  { name: "settingable", value: false }
+                ]
+              },
+              {
+                tag: "ch-tabular-grid-column",
+                class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
+                properties: [
+                  { name: "columnId", value: "language" },
+                  { name: "columnName", value: "Country Language" },
+                  { name: "settingable", value: false }
+                ]
+              },
               {
                 tag: "ch-tabular-grid-column",
                 class: CSS_SELECTORS.TABULAR_GRID_COLUMN_CLASS,
@@ -1009,16 +1097,66 @@ export const tabularGridMetadata = {
           {
             tag: "ch-tabular-grid-row",
             class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
+            properties: [{ name: "rowid", value: "ar" }],
             children: [
               {
                 tag: "ch-tabular-grid-cell",
                 class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
                 children: "AR"
               },
-              "<!-- Add more ch-tabular-grid-cell's as needed... -->"
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "Argentina"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "45.400.00"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "Español"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS
+              }
             ]
           },
-          "<!-- Add more ch-tabular-grid-row's as needed... -->",
+          {
+            tag: "ch-tabular-grid-row",
+            class: CSS_SELECTORS.TABULAR_GRID_ROW_CLASS,
+            properties: [{ name: "rowid", value: "bo" }],
+            children: [
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "BO"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "Bolivia"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "11.800.000"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS,
+                children: "Español"
+              },
+              {
+                tag: "ch-tabular-grid-cell",
+                class: CSS_SELECTORS.TABULAR_GRID_CELL_CLASS
+              }
+            ]
+          },
+          `<!-- Add as many rows as needed -->`,
           {
             tag: "ch-tabular-grid-row-actions",
             class: CSS_SELECTORS.TABULAR_GRID_ROW_ACTIONS_CLASS,
