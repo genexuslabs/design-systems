@@ -37,10 +37,7 @@
 <!-- Tabular Grid -->
 
 @if (showSelectionNoneKeyboardFocus()) {
-  <code-snippet
-    [codeSnippet]="codeSnippets.selectionNoneKeyboardFocus"
-    [language]="'ts'"
-  >
+  <code-snippet [codeSnippet]="codeSnippets.selectionNoneKeyboardFocus">
     <ch-tabular-grid
       class="{{ TABULAR_GRID_CLASS }}"
       [rowSelectionMode]="'none'"
@@ -209,7 +206,7 @@
 }
 
 @if (showRowSet()) {
-  <code-snippet [codeSnippet]="codeSnippets.withRowSet" [language]="'ts'">
+  <code-snippet [codeSnippet]="codeSnippets.withRowSet">
     <ch-tabular-grid class="{{ TABULAR_GRID_CLASS }}" row-selection-mode="none">
       <ch-tabular-grid-columnset class="{{ TABULAR_GRID_COLUMN_SET_CLASS }}">
         <ch-tabular-grid-column
@@ -434,10 +431,7 @@
 }
 
 @if (showSelectionSingleKeyboardFocus()) {
-  <code-snippet
-    [codeSnippet]="codeSnippets.selectionSingleKeyboardFocus"
-    [language]="'ts'"
-  >
+  <code-snippet [codeSnippet]="codeSnippets.selectionSingleKeyboardFocus">
     <p class="{{ paragraphClass }}">Keyboard navigation changes focus only.</p>
 
     <br />
@@ -605,10 +599,7 @@
 }
 
 @if (showSelectionSingleKeyboardSelect()) {
-  <code-snippet
-    [codeSnippet]="codeSnippets.selectionSingleKeyboardSelect"
-    [language]="'ts'"
-  >
+  <code-snippet [codeSnippet]="codeSnippets.selectionSingleKeyboardSelect">
     <p class="{{ paragraphClass }}">
       Keyboard navigation changes focus and selection.
     </p>
@@ -778,10 +769,7 @@
 }
 
 @if (showSelectionMultipleKeyboardFocus()) {
-  <code-snippet
-    [codeSnippet]="codeSnippets.selectionMultipleKeyboardFocus"
-    [language]="'ts'"
-  >
+  <code-snippet [codeSnippet]="codeSnippets.selectionMultipleKeyboardFocus">
     <p class="{{ paragraphClass }}">
       Keyboard navigation changes focus only. To select multiple rows, press
       <code>ctrl/cmd</code> for individual selection, or <code>shift</code> for
@@ -955,10 +943,7 @@
 }
 
 @if (showSelectionMultipleKeyboardSelect()) {
-  <code-snippet
-    [codeSnippet]="codeSnippets.selectionMultipleKeyboardSelect"
-    [language]="'ts'"
-  >
+  <code-snippet [codeSnippet]="codeSnippets.selectionMultipleKeyboardSelect">
     <p class="{{ paragraphClass }}">
       Keyboard navigation changes focus and selection. To select multiple rows,
       press <code>ctrl/cmd</code> for individual selection, or
@@ -1130,10 +1115,7 @@
 }
 
 @if (showRowMarkKeyboardSelect()) {
-  <code-snippet
-    [codeSnippet]="codeSnippets.rowMarkKeyboardSelect"
-    [language]="'ts'"
-  >
+  <code-snippet [codeSnippet]="codeSnippets.rowMarkKeyboardSelect">
     <p class="{{ paragraphClass }}">
       Adds checkboxes that allows marking the rows (Keyboard navigation changes
       focus and selection). Press <code>space-bar</code> to mark a row, or
@@ -1308,10 +1290,7 @@
 }
 
 @if (showRowMarkKeyboardFocus()) {
-  <code-snippet
-    [codeSnippet]="codeSnippets.rowMarkKeyboardFocus"
-    [language]="'ts'"
-  >
+  <code-snippet [codeSnippet]="codeSnippets.rowMarkKeyboardFocus">
     <p class="{{ paragraphClass }}">
       Adds checkboxes that allows marking the rows (keyboard navigation changes
       focus only). Press <code>space-bar</code> to select a row, or
@@ -1486,10 +1465,7 @@
 }
 
 @if (showRowReorderDragging()) {
-  <code-snippet
-    [codeSnippet]="codeSnippets.rowReorderDragging"
-    [language]="'ts'"
-  >
+  <code-snippet [codeSnippet]="codeSnippets.rowReorderDragging">
     <p class="{{ paragraphClass }}">It allows row re-ordering.</p>
 
     <br />
@@ -1658,7 +1634,7 @@
 }
 
 @if (showRowAction()) {
-  <code-snippet [codeSnippet]="codeSnippets.rowAction" [language]="'ts'">
+  <code-snippet [codeSnippet]="codeSnippets.rowAction">
     <p class="{{ paragraphClass }}">
       It allows displaying a window with custom actions that he user defines by
       using slotted content (hover a row, or right click on it). Note: The
@@ -1891,7 +1867,7 @@
 }
 
 @if (showTreeGrid()) {
-  <code-snippet [codeSnippet]="codeSnippets.treeGrid" [language]="'ts'">
+  <code-snippet [codeSnippet]="codeSnippets.treeGrid">
     <div class="note">
       <p>
         By default, node icons and node-leaf icons are not displayed. To display
@@ -2117,10 +2093,7 @@
 <!-- Tabular Grid: Helpers -->
 
 @if (showAlignCellsBlockStart()) {
-  <code-snippet
-    [codeSnippet]="helpersCodeSnippets.alignCellsBlockStart"
-    [language]="'ts'"
-  >
+  <code-snippet [codeSnippet]="helpersCodeSnippets.alignCellsBlockStart">
     <p class="{{ paragraphClass }}">
       In some cases, you may wish to align the cell content to the top in a
       vertical direction. To do this, simply add the class
@@ -2225,10 +2198,7 @@
 }
 
 @if (showAlignCellsBlockCenter()) {
-  <code-snippet
-    [codeSnippet]="helpersCodeSnippets.alignCellsBlockCenter"
-    [language]="'ts'"
-  >
+  <code-snippet [codeSnippet]="helpersCodeSnippets.alignCellsBlockCenter">
     <p class="{{ paragraphClass }}">
       In some cases, you may wish to align the cell content to the center in a
       vertical direction. To do this, simply add the class
@@ -2333,10 +2303,7 @@
 }
 
 @if (showAlignCellsBlockEnd()) {
-  <code-snippet
-    [codeSnippet]="helpersCodeSnippets.alignCellsBlockEnd"
-    [language]="'ts'"
-  >
+  <code-snippet [codeSnippet]="helpersCodeSnippets.alignCellsBlockEnd">
     <p class="{{ paragraphClass }}">
       In some cases, you may wish to align the cell content to the bottom in a
       vertical direction. To do this, simply add the class
@@ -2441,10 +2408,7 @@
 }
 
 @if (showAlignCellsInlineStart()) {
-  <code-snippet
-    [codeSnippet]="helpersCodeSnippets.alignCellsInlineStart"
-    [language]="'ts'"
-  >
+  <code-snippet [codeSnippet]="helpersCodeSnippets.alignCellsInlineStart">
     <p class="{{ paragraphClass }}">
       In some cases, you may wish to align the cell content to the start in an
       horizontal direction. To do this, simply add the class
@@ -2550,10 +2514,7 @@
 }
 
 @if (showAlignCellsInlineCenter()) {
-  <code-snippet
-    [codeSnippet]="helpersCodeSnippets.alignCellsInlineCenter"
-    [language]="'ts'"
-  >
+  <code-snippet [codeSnippet]="helpersCodeSnippets.alignCellsInlineCenter">
     <p class="{{ paragraphClass }}">
       In some cases, you may wish to align the cell content to the center in an
       horizontal direction. To do this, simply add the class
@@ -2666,10 +2627,7 @@
 }
 
 @if (showAlignCellsInlineEnd()) {
-  <code-snippet
-    [codeSnippet]="helpersCodeSnippets.alignCellsInlineEnd"
-    [language]="'ts'"
-  >
+  <code-snippet [codeSnippet]="helpersCodeSnippets.alignCellsInlineEnd">
     <p class="{{ paragraphClass }}">
       In some cases, you may wish to align the cell content to the end in an
       horizontal direction. To do this, simply add the class
