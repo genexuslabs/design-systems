@@ -777,6 +777,65 @@
   </div>
 }
 
+@if (showGxgStack()) {
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgStack">
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-stack</code>:
+    </p>
+    <br />
+    <p class="text-body-regular-s">
+      Gemini's <code>gxg-stack</code> was used to evenly space components or
+      elements with a consistent gap. The gap size was defined as a property,
+      selected from a predefined set of spacing tokens.
+    </p>
+
+    <br />
+
+    <p class="text-body-regular-s">
+      While this solution provided some visual consistency, the spacing value
+      chosen by the user was free, causing the same type of elements to have
+      different gap values in different sections.
+    </p>
+
+    <br />
+
+    <p class="text-body-regular-s">
+      In Mercury, the gap between elements is determined by the design system
+      and depends on the type of context. At the time of writting, the only
+      existing vertical gap is generated for controls, by the
+      <code>.field-group</code> class, within which form fields
+      (<code>.field</code>) are placed.
+    </p>
+
+    <br />
+
+    <a class="hyperlink" [routerLink]="commonLinks.utilsForm()"
+      >Read Mercury documentation to see how to apply some common cases
+    </a>
+  </code-snippet>
+
+  <div class="gemini-migration-preview field field-block">
+    <div class="field-group">
+      <div class="field field-block">
+        <label class="label" htmlFor="full-name">Full Name</label>
+        <ch-edit
+          id="full-name"
+          class="input"
+          placeholder="John Smith"
+        ></ch-edit>
+      </div>
+      <div class="field field-block">
+        <label class="label" htmlFor="job-position">Job Position</label>
+        <ch-edit class="input" placeholder="Backend developer"></ch-edit>
+      </div>
+      <div class="field field-block">
+        <label class="label" htmlFor="location">Location</label>
+        <ch-edit class="input" placeholder="Miami, USA"></ch-edit>
+      </div>
+    </div>
+  </div>
+}
+
 @if (showGxgSuggest()) {
   <code-snippet
     [codeSnippetBeforeAndAfter]="codeSnippets.gxgSuggest"

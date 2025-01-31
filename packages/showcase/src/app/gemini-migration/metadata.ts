@@ -1064,6 +1064,112 @@ without notice.`
       }
     },
 
+    gxgStack: {
+      linkId: "gxg-stack",
+      title: "gxg-stack",
+      before: {
+        template: {
+          tag: "gxg-stack",
+          properties: [{ name: "columns-space", value: "m" }],
+          children: [
+            {
+              tag: "gxg-form-text",
+              properties: [
+                { name: "label", value: "Full name" },
+                { name: "label-position", value: "top" },
+                { name: "placeholder", value: "John Smith" },
+                { name: "id", value: "full-name" }
+              ]
+            },
+            {
+              tag: "gxg-form-text",
+              properties: [
+                { name: "label", value: "Job position" },
+                { name: "label-position", value: "top" },
+                { name: "placeholder", value: "Backend developer" },
+                { name: "id", value: "backend-developer" }
+              ]
+            },
+            {
+              tag: "gxg-form-text",
+              properties: [
+                { name: "label", value: "Location" },
+                { name: "label-position", value: "top" },
+                { name: "placeholder", value: "Miami, Usa" },
+                { name: "id", value: "location" }
+              ]
+            }
+          ]
+        }
+      },
+      after: {
+        template: {
+          tag: "div",
+          class: "field-group",
+          children: [
+            {
+              tag: "div",
+              class: "field field-block",
+              children: [
+                {
+                  tag: "label",
+                  class: "label",
+                  properties: [{ name: "htmlFor", value: "full-name" }],
+                  children: "Full Name"
+                },
+                {
+                  tag: "ch-edit",
+                  properties: [
+                    { name: "id", value: "full-name" },
+                    { name: "class", value: "input" },
+                    { name: "placeholder", value: "John Smith" }
+                  ]
+                }
+              ]
+            },
+            {
+              tag: "div",
+              class: "field field-block",
+              children: [
+                {
+                  tag: "label",
+                  class: "label",
+                  properties: [{ name: "htmlFor", value: "job-position" }],
+                  children: "Job Position"
+                },
+                {
+                  tag: "ch-edit",
+                  properties: [
+                    { name: "class", value: "input" },
+                    { name: "placeholder", value: "Backend developer" }
+                  ]
+                }
+              ]
+            },
+            {
+              tag: "div",
+              class: "field field-block",
+              children: [
+                {
+                  tag: "label",
+                  class: "label",
+                  properties: [{ name: "htmlFor", value: "location" }],
+                  children: "Location"
+                },
+                {
+                  tag: "ch-edit",
+                  properties: [
+                    { name: "class", value: "input" },
+                    { name: "placeholder", value: "Miami, USA" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+
     gxgSuggest: {
       linkId: "gxg-suggest",
       title: "gxg-suggest",
