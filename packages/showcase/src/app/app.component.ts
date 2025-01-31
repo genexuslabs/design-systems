@@ -26,7 +26,9 @@ import {
   SegmentedControlModel,
   ThemeModel
 } from "@genexus/chameleon-controls-library";
-import { getImagePathCallback } from "@genexus/mercury/assets-manager.js";
+
+// Side effect to define the template render
+import "../user-controls/template-render/template-render";
 
 import { RuntimeBundlesComponent } from "../user-controls/runtime-bundles/runtime-bundles.component";
 import { getNavigationListRoutes } from "./app.routes";
