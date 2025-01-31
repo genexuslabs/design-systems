@@ -6,7 +6,6 @@
 
 %heading {
   &-base {
-    @include heading-font-tokens();
     font-family: var(--mer-font-family--title);
     line-height: var(--mer-line-height--tight);
     color: var(--heading__color);
@@ -67,30 +66,23 @@
 
 // body
 %text-body {
-  &-base {
-    @include body-font-tokens();
-  }
   &-regular {
     &-l {
-      @extend %text-body-base;
       font-size: var(--text-body__font-size--l);
       font-weight: var(--text-body-regular__font-weight);
       line-height: var(--text-body__line-height);
     }
     &-m {
-      @extend %text-body-base;
       font-size: var(--text-body__font-size--m);
       font-weight: var(--text-body-regular__font-weight);
       line-height: var(--text-body__line-height);
     }
     &-s {
-      @extend %text-body-base;
       font-size: var(--text-body__font-size--s);
       font-weight: var(--text-body-regular__font-weight);
       line-height: var(--text-body__line-height);
     }
     &-xs {
-      @extend %text-body-base;
       font-size: var(--text-body__font-size--xs);
       font-weight: var(--text-body-regular__font-weight);
       line-height: var(--text-body__line-height);
@@ -98,19 +90,16 @@
   }
   &-highlighted {
     &-l {
-      @extend %text-body-base;
       font-size: var(--text-body__font-size--l);
       font-weight: var(--text-body-highlighted__font-weight);
       line-height: var(--text-body__line-height);
     }
     &-m {
-      @extend %text-body-base;
       font-size: var(--text-body__font-size--m);
       font-weight: var(--text-body-highlighted__font-weight);
       line-height: var(--text-body__line-height);
     }
     &-s {
-      @extend %text-body-base;
       font-size: var(--text-body__font-size--s);
       font-weight: var(--text-body-highlighted__font-weight);
       line-height: var(--text-body__line-height);
@@ -124,28 +113,24 @@
   }
   &-italic {
     &-l {
-      @extend %text-body-base;
       font-size: var(--text-body__font-size--l);
       font-style: italic;
       font-weight: var(--text-body-italic__font-weight);
       line-height: var(--text-body__line-height);
     }
     &-m {
-      @extend %text-body-base;
       font-size: var(--text-body__font-size--m);
       font-style: italic;
       font-weight: var(--text-body-italic__font-weight);
       line-height: var(--text-body__line-height);
     }
     &-s {
-      @extend %text-body-base;
       font-size: var(--text-body__font-size--s);
       font-style: italic;
       font-weight: var(--text-body-italic__font-weight);
       line-height: var(--text-body__line-height);
     }
     &-xs {
-      @extend %text-body-base;
       font-size: var(--text-body__font-size--xs);
       font-style: italic;
       font-weight: var(--text-body-italic__font-weight);
