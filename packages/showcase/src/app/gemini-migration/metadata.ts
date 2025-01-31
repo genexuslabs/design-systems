@@ -75,7 +75,7 @@ export const geminiMigrationMetadata = {
         template: {
           tag: "ch-accordion-render",
           properties: [
-            { name: "class", value: "accordion-outlined" },
+            { name: "class", value: "accordion-filled" },
             { name: "model", value: "objectsAccordionModel", state: true }
           ],
           children: [
@@ -848,49 +848,8 @@ without notice.`,
         }
       },
       after: {
-        template: {
-          tag: "ch-dialog",
-          properties: [
-            { name: "class", value: "dialog" },
-            { name: "caption", value: "Terms and conditions agreement" },
-            { name: "showHeader", value: true },
-            { name: "showFooter", value: true }
-          ],
-          children: [
-            {
-              tag: "p",
-              properties: [{ name: "class", value: "spacing-body" }],
-              children: `By accessing this website, you agree to comply with these terms and
-conditions. We reserve the right to modify or update these terms at any time
-without notice.`
-            },
-            {
-              tag: "div",
-              properties: [
-                { name: "slot", value: "footer" },
-                { name: "class", value: "buttons-spacer" }
-              ],
-              children: [
-                {
-                  tag: "button",
-                  properties: [
-                    { name: "type", value: "button" },
-                    { name: "class", value: "button-secondary" }
-                  ],
-                  children: "Disagree"
-                },
-                {
-                  tag: "button",
-                  properties: [
-                    { name: "type", value: "button" },
-                    { name: "class", value: "button-primary" }
-                  ],
-                  children: "Agree"
-                }
-              ]
-            }
-          ]
-        }
+        template:
+          "Pelase, refer to the documentation and examples in the plugins repository."
       }
     },
 
@@ -982,8 +941,8 @@ without notice.`
           tag: "gxg-select",
           properties: [
             { name: "id", value: "gxg-select" },
-            { name: "label", value: "Select a car:" },
-            { name: "label-position", value: "above" },
+            { name: "label", value: "Favorite car" },
+            { name: "labelPosition", value: "above" },
             { name: "size", value: "5" }
           ],
           children: [
@@ -1047,11 +1006,11 @@ without notice.`
               tag: "label",
               class: "label",
               properties: [{ name: "for", value: "favorite-car" }],
-              children: "Favorite Car"
+              children: "Favorite car"
             },
             {
               tag: "ch-combo-box-render",
-              class: `combo-box ${SCROLLABLE_CLASS}`,
+              class: `combo-box`,
               properties: [
                 { name: "id", value: "favorite-car" },
                 { name: "model", value: "favoriteCarsModel", state: true },
@@ -1120,8 +1079,8 @@ without notice.`
                 {
                   tag: "ch-edit",
                   properties: [
-                    { name: "id", value: "full-name" },
                     { name: "class", value: "input" },
+                    { name: "id", value: "full-name" },
                     { name: "placeholder", value: "John Smith" }
                   ]
                 }
@@ -1141,6 +1100,7 @@ without notice.`
                   tag: "ch-edit",
                   properties: [
                     { name: "class", value: "input" },
+                    { name: "id", value: "job-position" },
                     { name: "placeholder", value: "Backend developer" }
                   ]
                 }
@@ -1160,6 +1120,7 @@ without notice.`
                   tag: "ch-edit",
                   properties: [
                     { name: "class", value: "input" },
+                    { name: "id", value: "location" },
                     { name: "placeholder", value: "Miami, USA" }
                   ]
                 }
