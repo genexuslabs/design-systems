@@ -176,6 +176,67 @@ export const geminiMigrationMetadata = {
       }
     },
 
+    gxgColumns: {
+      linkId: "gxg-columns",
+      title: "gxg-columns",
+      before: {
+        template: {
+          tag: "gxg-columns",
+          properties: [],
+          children: [
+            {
+              tag: "gxg-column",
+              properties: [{ name: "width", value: "1/4" }],
+              children: "Content fo column 1"
+            },
+            {
+              tag: "gxg-column",
+              properties: [{ name: "width", value: "1/4" }],
+              children: "Content fo column 2"
+            },
+            {
+              tag: "gxg-column",
+              properties: [{ name: "width", value: "1/4" }],
+              children: "Content fo column 3"
+            },
+            {
+              tag: "gxg-column",
+              properties: [{ name: "width", value: "1/4" }],
+              children: "Content fo column 4"
+            }
+          ]
+        }
+      },
+      after: {
+        template: {
+          tag: "div",
+          class: "layout layout--cols-4",
+          children: [
+            {
+              tag: "div",
+              class: "layout__panel",
+              children: "Content of column 1"
+            },
+            {
+              tag: "div",
+              class: "layout__panel",
+              children: "Content of column 2"
+            },
+            {
+              tag: "div",
+              class: "layout__panel",
+              children: "Content of column 3"
+            },
+            {
+              tag: "div",
+              class: "layout__panel",
+              children: "Content of column 4"
+            }
+          ]
+        }
+      }
+    },
+
     gxgComboBox: {
       linkId: "gxg-combo-box",
       title: "gxg-combo-box",

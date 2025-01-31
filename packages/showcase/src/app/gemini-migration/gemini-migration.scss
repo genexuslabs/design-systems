@@ -22,3 +22,18 @@
 .tree-view {
   block-size: 100%;
 }
+
+// layout
+.layout {
+  background-color: var(--mer-surface__elevation--01);
+  height: 300px;
+}
+.layout__panel {
+  border: var(--mer-border__width--sm) solid var(--mer-surface__elevation--01);
+  border-radius: var(--mer-border__radius--sm);
+  background-color: var(--mer-surface__elevation--02);
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  font-size: var(--mer-font__size--xs);
+}

@@ -13,6 +13,7 @@
     'components/tabular-grid',
     'components/tree-view',
     'utils/form',
+    'utils/layout',
     'utils/spacing',
     'utils/typography'
   ]"
@@ -176,6 +177,45 @@
       <ch-image class="icon-sm" [src]="ICON"></ch-image>
       Caption
     </button>
+  </div>
+}
+
+@if (showGxgColumns()) {
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgColumns">
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-columns</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-columns</code> tag with a <code>.layout</code> +
+        <code>.layout--cols-*</code> tags, where * is any of the available
+        combinations.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>
+        Replace all the <code>gxg-column</code> tags with
+        <code>div.layout__panel</code> tags. Each column content goes inside
+        this tags.
+      </li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.utilsLayout()"
+          >Refer to the Mercury documentation for complete details.
+        </a>
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <div class="layout layout--cols-4">
+      <div class="layout__panel">Content of column 1</div>
+      <div class="layout__panel">Content of column 2</div>
+      <div class="layout__panel">Content of column 3</div>
+      <div class="layout__panel">Content of column 4</div>
+    </div>
   </div>
 }
 

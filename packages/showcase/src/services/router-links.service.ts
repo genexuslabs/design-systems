@@ -50,6 +50,9 @@ export class RouterCommonLinksService {
   utilsForm = computed(
     () => `/${this.dsService.designSystem()}${UTILITY_CLASSES_ROUTES.FORM}`
   );
+  utilsLayout = computed(
+    () => `/${this.dsService.designSystem()}${UTILITY_CLASSES_ROUTES.LAYOUT}`
+  );
   utilsTypography = computed(
     () =>
       `/${this.dsService.designSystem()}${UTILITY_CLASSES_ROUTES.TYPOGRAPHY}`

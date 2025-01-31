@@ -98,6 +98,7 @@ export class GeminiMigrationComponent {
       ["gxg-accordion", true],
       ["gxg-button: text only", true],
       ["gxg-button: text with icon", true],
+      ["gxg-columns", true],
       ["gxg-combo-box", true],
       ["gxg-form-checkbox", true],
       ["gxg-form-radio-group", true],
@@ -143,6 +144,7 @@ export class GeminiMigrationComponent {
   showGxgButtonTextWithIcon = computed(() =>
     this.migrations().get("gxg-button: text with icon")
   );
+  showGxgColumns = computed(() => this.migrations().get("gxg-columns"));
   showGxgComboBox = computed(() => this.migrations().get("gxg-combo-box"));
   showGxgFormCheckbox = computed(() =>
     this.migrations().get("gxg-form-checkbox")
