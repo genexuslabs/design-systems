@@ -2,11 +2,15 @@ import { ComponentMetadataBeforeAfter } from "../../common/types";
 import { chameleonImportType } from "../../services/template-language/create-template";
 import { iconsModelForMetadata } from "../components/tree-view/models";
 import {
+  objectsAccordionModel,
+  carsComboBoxModel,
   favoriteColorsActionListModel,
   favoriteColorsComboBoxModel,
   favoriteColorsRadioGroupModel,
   fruitsTabModel
 } from "./models";
+
+export const SCROLLABLE_CLASS = "scrollable";
 
 const ADD_CIRCLE_ICON_TEMPLATE =
   'AssetsManager.getIconPath({ category: "gemini-tools", name: "add-circle", colorType: "on-primary" })';
@@ -16,9 +20,105 @@ export const geminiMigrationMetadata = {
   description:
     'When migrating from the "Gemini" design system to "Mercury," you\'ll be transitioning your project\'s styles, components, and design principles to align with the new system. This process involves updating your codebase to replace Gemini-specific components and styles with their Mercury equivalents, ensuring consistency with Mercury\'s guidelines. The migration guide will provide you with step-by-step instructions to help make this transition as smooth as possible.',
   codeSnippets: {
+    gxgAccordion: {
+      linkId: "gxg-accordion",
+      title: "gxg-accordion",
+      before: {
+        template: {
+          tag: "gxg-accordion",
+          properties: [{ name: "mode", value: "classical" }],
+          children: [
+            {
+              tag: "gxg-accordion-item",
+              properties: [
+                { name: "item-title", value: "objects: file" },
+                { name: "item-id", value: "objects-file" }
+              ],
+              children: "File content here"
+            },
+            {
+              tag: "gxg-accordion-item",
+              properties: [
+                { name: "item-title", value: "objects: domain" },
+                { name: "item-id", value: "objects-domain" }
+              ],
+              children: "Domain content here"
+            },
+            {
+              tag: "gxg-accordion-item",
+              properties: [
+                { name: "item-title", value: "objects: procedure" },
+                { name: "item-id", value: "objects-procedure" }
+              ],
+              children: "Procedure content here"
+            },
+            {
+              tag: "gxg-accordion-item",
+              properties: [
+                { name: "item-title", value: "objects: document" },
+                { name: "item-id", value: "objects-document" }
+              ],
+              children: "Document content here"
+            }
+          ]
+        }
+      },
+      after: {
+        imports: [chameleonImportType("AccordionModel")],
+        states: [
+          {
+            name: "objectsAccordionModel",
+            type: "AccordionModel",
+            value: objectsAccordionModel
+          }
+        ],
+        template: {
+          tag: "ch-accordion-render",
+          properties: [
+            { name: "class", value: "accordion-outlined" },
+            { name: "model", value: "objectsAccordionModel", state: true }
+          ],
+          children: [
+            {
+              tag: "div",
+              properties: [
+                { name: "slot", value: "objects-file" },
+                { name: "class", value: "spacing-body" }
+              ],
+              children: "File content here"
+            },
+            {
+              tag: "div",
+              properties: [
+                { name: "slot", value: "objects-domain" },
+                { name: "class", value: "spacing-body" }
+              ],
+              children: "Domain content here"
+            },
+            {
+              tag: "div",
+              properties: [
+                { name: "slot", value: "objects-procedure" },
+                { name: "class", value: "spacing-body" }
+              ],
+              children: "Procedure content here"
+            },
+            {
+              tag: "div",
+              properties: [
+                { name: "slot", value: "objects-document" },
+                { name: "class", value: "spacing-body" }
+              ],
+              children: "Document content here"
+            }
+          ]
+        }
+      }
+    },
+
     gxgButtonTextOnly: {
       linkId: "gxg-button-text-only",
-      title: "1. gxg-button: Text only",
+      title: "gxg-button: Text only",
       before: {
         template: {
           tag: "gxg-button",
@@ -76,9 +176,70 @@ export const geminiMigrationMetadata = {
       }
     },
 
+    gxgColumns: {
+      linkId: "gxg-columns",
+      title: "gxg-columns",
+      before: {
+        template: {
+          tag: "gxg-columns",
+          properties: [],
+          children: [
+            {
+              tag: "gxg-column",
+              properties: [{ name: "width", value: "1/4" }],
+              children: "Content fo column 1"
+            },
+            {
+              tag: "gxg-column",
+              properties: [{ name: "width", value: "1/4" }],
+              children: "Content fo column 2"
+            },
+            {
+              tag: "gxg-column",
+              properties: [{ name: "width", value: "1/4" }],
+              children: "Content fo column 3"
+            },
+            {
+              tag: "gxg-column",
+              properties: [{ name: "width", value: "1/4" }],
+              children: "Content fo column 4"
+            }
+          ]
+        }
+      },
+      after: {
+        template: {
+          tag: "div",
+          class: "layout layout--cols-4",
+          children: [
+            {
+              tag: "div",
+              class: "layout__panel",
+              children: "Content of column 1"
+            },
+            {
+              tag: "div",
+              class: "layout__panel",
+              children: "Content of column 2"
+            },
+            {
+              tag: "div",
+              class: "layout__panel",
+              children: "Content of column 3"
+            },
+            {
+              tag: "div",
+              class: "layout__panel",
+              children: "Content of column 4"
+            }
+          ]
+        }
+      }
+    },
+
     gxgComboBox: {
       linkId: "gxg-combo-box",
-      title: "3. gxg-combo-box",
+      title: "gxg-combo-box",
       before: {
         template: {
           tag: "gxg-combo-box",
@@ -152,7 +313,7 @@ export const geminiMigrationMetadata = {
 
     gxgFormCheckbox: {
       linkId: "gxg-form-checkbox",
-      title: "4. gxg-form-checkbox",
+      title: "gxg-form-checkbox",
       before: {
         template: {
           tag: "gxg-form-checkbox",
@@ -177,7 +338,7 @@ export const geminiMigrationMetadata = {
 
     gxgFormRadioGroup: {
       linkId: "gxg-form-radio-group",
-      title: "5. gxg-form-radio-group",
+      title: "gxg-form-radio-group",
       before: {
         template: {
           tag: "gxg-form-radio-group",
@@ -260,7 +421,7 @@ export const geminiMigrationMetadata = {
 
     gxgFormText: {
       linkId: "gxg-form-text",
-      title: "6. gxg-form-text",
+      title: "gxg-form-text",
       before: {
         template: {
           tag: "gxg-form-text",
@@ -309,7 +470,7 @@ export const geminiMigrationMetadata = {
 
     gxgFormTextarea: {
       linkId: "gxg-form-textarea",
-      title: "7. gxg-form-textarea",
+      title: "gxg-form-textarea",
       before: {
         template: {
           tag: "gxg-form-textarea",
@@ -370,7 +531,7 @@ export const geminiMigrationMetadata = {
 
     gxgGrid: {
       linkId: "gxg-grid",
-      title: "8. gxg-grid",
+      title: "gxg-grid",
       before: {
         template: {
           tag: "gxg-grid",
@@ -544,7 +705,7 @@ export const geminiMigrationMetadata = {
 
     gxgIcon: {
       linkId: "gxg-icon",
-      title: "9. gxg-icon",
+      title: "gxg-icon",
       before: {
         template: {
           tag: "gxg-icon",
@@ -575,7 +736,7 @@ export const geminiMigrationMetadata = {
 
     gxgLabel: {
       linkId: "gxg-label",
-      title: "10. gxg-label",
+      title: "gxg-label",
       before: {
         template: {
           tag: "gxg-label",
@@ -602,7 +763,7 @@ export const geminiMigrationMetadata = {
 
     gxgListBox: {
       linkId: "gxg-list-box",
-      title: "11. gxg-list-box",
+      title: "gxg-list-box",
       before: {
         template: {
           tag: "gxg-list-box",
@@ -653,9 +814,89 @@ export const geminiMigrationMetadata = {
       }
     },
 
+    gxgModal: {
+      linkId: "gxg-modal",
+      title: "gxg-modal",
+      before: {
+        template: {
+          tag: "gxg-modal",
+          properties: [
+            { name: "id", value: "modal" },
+            { name: "modal-title", value: "Terms and conditions agreement" }
+          ],
+          children: [
+            `By accessing this website, you agree to comply with these terms and
+conditions. We reserve the right to modify or update these terms at any time
+without notice.`,
+            {
+              tag: "gxg-button",
+              properties: [
+                { name: "slot", value: "footer" },
+                { name: "type", value: "secondary-text-only" }
+              ],
+              children: "No"
+            },
+            {
+              tag: "gxg-button",
+              properties: [
+                { name: "slot", value: "footer" },
+                { name: "type", value: "primary-text-only" }
+              ],
+              children: "Yes"
+            }
+          ]
+        }
+      },
+      after: {
+        template: {
+          tag: "ch-dialog",
+          properties: [
+            { name: "class", value: "dialog" },
+            { name: "caption", value: "Terms and conditions agreement" },
+            { name: "showHeader", value: true },
+            { name: "showFooter", value: true }
+          ],
+          children: [
+            {
+              tag: "p",
+              properties: [{ name: "class", value: "spacing-body" }],
+              children: `By accessing this website, you agree to comply with these terms and
+conditions. We reserve the right to modify or update these terms at any time
+without notice.`
+            },
+            {
+              tag: "div",
+              properties: [
+                { name: "slot", value: "footer" },
+                { name: "class", value: "buttons-spacer" }
+              ],
+              children: [
+                {
+                  tag: "button",
+                  properties: [
+                    { name: "type", value: "button" },
+                    { name: "class", value: "button-secondary" }
+                  ],
+                  children: "Disagree"
+                },
+                {
+                  tag: "button",
+                  properties: [
+                    { name: "type", value: "button" },
+                    { name: "class", value: "button-primary" }
+                  ],
+                  children: "Agree"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+
     gxgPills: {
       linkId: "gxg-pills",
-      title: "12. gxg-pills",
+      title: "gxg-pills",
       before: {
         template: {
           tag: "div",
@@ -733,9 +974,205 @@ export const geminiMigrationMetadata = {
       }
     },
 
+    gxgSelect: {
+      linkId: "gxg-select",
+      title: "gxg-select",
+      before: {
+        template: {
+          tag: "gxg-select",
+          properties: [
+            { name: "id", value: "gxg-select" },
+            { name: "label", value: "Select a car:" },
+            { name: "label-position", value: "above" },
+            { name: "size", value: "5" }
+          ],
+          children: [
+            {
+              tag: "gxg-option",
+              properties: [{ name: "value", value: "none" }],
+              children: "Select car:"
+            },
+            {
+              tag: "gxg-option",
+              properties: [{ name: "value", value: "audi" }],
+              children: "Audi"
+            },
+            {
+              tag: "gxg-option",
+              properties: [{ name: "value", value: "bmw" }],
+              children: "BMW"
+            },
+            {
+              tag: "gxg-option",
+              properties: [{ name: "value", value: "citroen" }],
+              children: "Citroen"
+            },
+            {
+              tag: "gxg-option",
+              properties: [{ name: "value", value: "ford" }],
+              children: "Ford"
+            }
+          ]
+        }
+      },
+      after: {
+        imports: [chameleonImportType("ComboBoxModel")],
+        states: [
+          {
+            name: "carsComboBoxModel",
+            type: "ComboBoxModel",
+            value: carsComboBoxModel
+          }
+          // TODO: This is only necessary when using strict mode. In that case,
+          // only the strict flag should be added.
+          // {
+          //   name: "suggestOptions",
+          //   type: "ComboBoxSuggestOptions",
+          //   value: {
+          //     alreadyProcessed: false,
+          //     autoExpand: true,
+          //     hideMatchesAndShowNonMatches: false,
+          //     highlightMatchedItems: false,
+          //     matchCase: false,
+          //     regularExpression: false,
+          //     strict: false
+          //   }
+          // }
+        ],
+        template: {
+          tag: "div",
+          class: "field field-block",
+          children: [
+            {
+              tag: "label",
+              class: "label",
+              properties: [{ name: "for", value: "favorite-car" }],
+              children: "Favorite Car"
+            },
+            {
+              tag: "ch-combo-box-render",
+              class: `combo-box ${SCROLLABLE_CLASS}`,
+              properties: [
+                { name: "id", value: "favorite-car" },
+                { name: "model", value: "favoriteCarsModel", state: true },
+                { name: "placeholder", value: "Porsche" },
+                { name: "value", value: "bmw" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+
+    gxgStack: {
+      linkId: "gxg-stack",
+      title: "gxg-stack",
+      before: {
+        template: {
+          tag: "gxg-stack",
+          properties: [{ name: "columns-space", value: "m" }],
+          children: [
+            {
+              tag: "gxg-form-text",
+              properties: [
+                { name: "label", value: "Full name" },
+                { name: "label-position", value: "top" },
+                { name: "placeholder", value: "John Smith" },
+                { name: "id", value: "full-name" }
+              ]
+            },
+            {
+              tag: "gxg-form-text",
+              properties: [
+                { name: "label", value: "Job position" },
+                { name: "label-position", value: "top" },
+                { name: "placeholder", value: "Backend developer" },
+                { name: "id", value: "backend-developer" }
+              ]
+            },
+            {
+              tag: "gxg-form-text",
+              properties: [
+                { name: "label", value: "Location" },
+                { name: "label-position", value: "top" },
+                { name: "placeholder", value: "Miami, Usa" },
+                { name: "id", value: "location" }
+              ]
+            }
+          ]
+        }
+      },
+      after: {
+        template: {
+          tag: "div",
+          class: "field-group",
+          children: [
+            {
+              tag: "div",
+              class: "field field-block",
+              children: [
+                {
+                  tag: "label",
+                  class: "label",
+                  properties: [{ name: "htmlFor", value: "full-name" }],
+                  children: "Full Name"
+                },
+                {
+                  tag: "ch-edit",
+                  properties: [
+                    { name: "id", value: "full-name" },
+                    { name: "class", value: "input" },
+                    { name: "placeholder", value: "John Smith" }
+                  ]
+                }
+              ]
+            },
+            {
+              tag: "div",
+              class: "field field-block",
+              children: [
+                {
+                  tag: "label",
+                  class: "label",
+                  properties: [{ name: "htmlFor", value: "job-position" }],
+                  children: "Job Position"
+                },
+                {
+                  tag: "ch-edit",
+                  properties: [
+                    { name: "class", value: "input" },
+                    { name: "placeholder", value: "Backend developer" }
+                  ]
+                }
+              ]
+            },
+            {
+              tag: "div",
+              class: "field field-block",
+              children: [
+                {
+                  tag: "label",
+                  class: "label",
+                  properties: [{ name: "htmlFor", value: "location" }],
+                  children: "Location"
+                },
+                {
+                  tag: "ch-edit",
+                  properties: [
+                    { name: "class", value: "input" },
+                    { name: "placeholder", value: "Miami, USA" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+
     gxgSuggest: {
       linkId: "gxg-suggest",
-      title: "13. gxg-suggest",
+      title: "gxg-suggest",
       before: {
         template: {
           tag: "gxg-suggest",
@@ -814,7 +1251,7 @@ export const geminiMigrationMetadata = {
 
     gxgTabs: {
       linkId: "gxg-tabs",
-      title: "14. gxg-tabs",
+      title: "gxg-tabs",
       before: {
         template: {
           tag: "gxg-tabs",
@@ -943,7 +1380,7 @@ export const geminiMigrationMetadata = {
 
     gxgText: {
       linkId: "gxg-text",
-      title: "15. gxg-text",
+      title: "gxg-text",
       before: {
         template: {
           tag: "gxg-text",
@@ -968,7 +1405,7 @@ export const geminiMigrationMetadata = {
 
     gxgTitle: {
       linkId: "gxg-title",
-      title: "16. gxg-title",
+      title: "gxg-title",
       before: {
         template: [
           {
@@ -1017,7 +1454,7 @@ export const geminiMigrationMetadata = {
 
     gxgTreeView: {
       linkId: "gxg-tree-view",
-      title: "17. gxg-tree-view",
+      title: "gxg-tree-view",
       before: {
         imports: [chameleonImportType("TreeViewModel")],
         states: [
