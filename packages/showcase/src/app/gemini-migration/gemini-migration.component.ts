@@ -95,28 +95,28 @@ export class GeminiMigrationComponent {
    */
   migrations = computed(() => {
     const newMigrations = new Map<string, boolean>([
-      // ["gxg-accordion", true],
-      // ["gxg-button: text only", true],
-      // ["gxg-button: text with icon", true],
-      // ["gxg-columns", true],
-      // ["gxg-combo-box", true],
-      // ["gxg-form-checkbox", true],
-      // ["gxg-form-radio-group", true],
-      // ["gxg-form-text", true],
-      // ["gxg-form-textarea", true],
-      // ["gxg-grid", true],
-      // ["gxg-icon", true],
-      // ["gxg-label", true],
-      // ["gxg-list-box", true],
-      // ["gxg-modal", true],
-      // ["gxg-pills", true],
-      // ["gxg-select", true],
-      ["gxg-stack", true]
-      // ["gxg-suggest", true],
-      // ["gxg-tabs", true],
-      // ["gxg-text", true],
-      // ["gxg-title", true],
-      // ["gxg-tree-view", true]
+      ["gxg-accordion", true],
+      ["gxg-button: text only", true],
+      ["gxg-button: text with icon", true],
+      ["gxg-columns", true],
+      ["gxg-combo-box", true],
+      ["gxg-form-checkbox", true],
+      ["gxg-form-radio-group", true],
+      ["gxg-form-text", true],
+      ["gxg-form-textarea", true],
+      ["gxg-grid", true],
+      ["gxg-icon", true],
+      ["gxg-label", true],
+      ["gxg-list-box", true],
+      ["gxg-modal", true],
+      ["gxg-pills", true],
+      ["gxg-select", true],
+      ["gxg-stack", true],
+      ["gxg-suggest", true],
+      ["gxg-tabs", true],
+      ["gxg-text", true],
+      ["gxg-title", true],
+      ["gxg-tree-view", true]
     ]);
 
     // Update the rendered migrations by watching changes for the
