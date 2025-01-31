@@ -606,56 +606,29 @@
 }
 
 @if (showGxgModal()) {
-  <code-snippet
-    [codeSnippetBeforeAndAfter]="codeSnippets.gxgModal"
-    [languageAfter]="'ts'"
-  >
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgModal">
     <p class="text-body-regular-s">
-      When transitioning from a <code>gxg-modal</code>:
+      When transitioning from a <code>gxg-modal</code>: If you want to open a
+      dialog similar to others in the IDE, it's best to use the IDE services to
+      do so. You can find
+      <a
+        class="hyperlink"
+        href="https://github.com/genexuslabs/genexus-next-plugin-sample/blob/main/frontend/README.md#sample-dialog"
+        target="_blank"
+        >documentation</a
+      >
+      and
+      <a
+        class="hyperlink"
+        href="https://github.com/genexuslabs/genexus-next-plugin-sample/blob/main/frontend/packages/main/src/dialogs/sample-dialog.tsx"
+        target="_blank"
+        >examples</a
+      >
+      in the plugins repository.
     </p>
-
-    <ol class="text-body-regular-s step-list">
-      <li>
-        Replace the <code>gxg-modal</code> tag with a
-        <code>ch-dialog</code> tag.
-      </li>
-
-      <li>Remove all the attributes and values.</li>
-
-      <li>
-        Add the <code>dialog</code> class in order to apply the Mercury styles.
-      </li>
-
-      <li>
-        <a class="hyperlink" [routerLink]="commonLinks.componentsDialog()"
-          >Read Mercury documentation to see how to apply some common cases
-        </a>
-      </li>
-
-      <li>
-        <a
-          class="hyperlink"
-          href="{{ CHAMELEON_COMPONENTS_PATH }}dialog#ch-dialog"
-          target="_blank"
-          >Refer to the Chameleon documentation for the complete specifications.
-        </a>
-      </li>
-    </ol>
-
-    <br />
-
-    <div class="note">
-      <p>
-        The following Mercury example uses a spacing utility class
-        <code>.spacing-body</code>, that applies padding all around the dialog
-        content area. To use the <code>.spacing-body</code> you will need to
-        include the propper bundle: <code>utils/spacing</code>.
-        <br />
-      </p>
-    </div>
   </code-snippet>
 
-  <div class="gemini-migration-preview gemini-migration-preview--list-box">
+  <!-- <div class="gemini-migration-preview">
     <button class="button-primary" type="button" (click)="showDialog()">
       Show dialog
     </button>
@@ -674,12 +647,11 @@
         conditions. We reserve the right to modify or update these terms at any
         time without notice.
       </div>
-      <div [slot]="'footer'" class="buttons-spacer">
-        <button type="'button'" class="button-secondary">Disagree</button>
+      <div [slot]="'footer'">
         <button type="'button'" class="button-primary">Agree</button>
       </div>
     </ch-dialog>
-  </div>
+  </div> -->
 }
 
 @if (showGxgPills()) {
@@ -768,7 +740,7 @@
   <div class="gemini-migration-preview field field-block">
     <label class="label" for="favorite-car">Favorite car</label>
     <ch-combo-box-render
-      class="combo-box {{ SCROLLABLE_CLASS }}"
+      class="combo-box"
       id="favorite-car"
       [model]="carsComboBoxModel"
       [placeholder]="'Porsche'"
@@ -819,18 +791,20 @@
       <div class="field field-block">
         <label class="label" htmlFor="full-name">Full Name</label>
         <ch-edit
-          id="full-name"
           class="input"
+          id="full-name"
           placeholder="John Smith"
         ></ch-edit>
       </div>
       <div class="field field-block">
-        <label class="label" htmlFor="job-position">Job Position</label>
+        <label class="label" id="job-position" htmlFor="job-position"
+          >Job Position</label
+        >
         <ch-edit class="input" placeholder="Backend developer"></ch-edit>
       </div>
       <div class="field field-block">
         <label class="label" htmlFor="location">Location</label>
-        <ch-edit class="input" placeholder="Miami, USA"></ch-edit>
+        <ch-edit class="input" id="location" placeholder="Miami, USA"></ch-edit>
       </div>
     </div>
   </div>
