@@ -54,9 +54,11 @@
   }
 }
 
-// Useful to download the styles before the first paint, avoiding CLS
-.tree-view-snippet {
-  block-size: 300px;
+template-render {
+  // Useful to download the styles before the first paint, avoiding CLS
+  ch-tree-view-render {
+    block-size: 300px;
+  }
 }
 
 code {

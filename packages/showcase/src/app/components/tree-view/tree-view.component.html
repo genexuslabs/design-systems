@@ -26,52 +26,21 @@
 </ol>
 
 @if (showDefault()) {
-  <code-snippet [codeSnippet]="codeSnippets.noIcons" [language]="'ts'">
-    <ch-tree-view-render
-      class="tree-view tree-view-secondary tree-view-snippet"
-      [model]="noIconsModel"
-    ></ch-tree-view-render>
-  </code-snippet>
+  <code-snippet [codeSnippet]="codeSnippets.noIcons" [language]="'ts'" />
 }
 
 @if (showShowLinesLast()) {
-  <code-snippet [codeSnippet]="codeSnippets.showLinesLast">
-    <ch-tree-view-render
-      class="tree-view tree-view-secondary tree-view-snippet"
-      [model]="noIconsModel"
-      [showLines]="'last'"
-    ></ch-tree-view-render>
-  </code-snippet>
+  <code-snippet [codeSnippet]="codeSnippets.showLinesLast" />
 }
 
 @if (showShowLinesAll()) {
-  <code-snippet [codeSnippet]="codeSnippets.showLinesAll">
-    <ch-tree-view-render
-      class="tree-view tree-view-secondary tree-view-snippet"
-      [model]="noIconsModel"
-      [showLines]="'all'"
-    ></ch-tree-view-render>
-  </code-snippet>
+  <code-snippet [codeSnippet]="codeSnippets.showLinesAll" />
 }
 
 @if (showWithIcons()) {
-  <code-snippet [codeSnippet]="codeSnippets.withIcons" [language]="'ts'">
-    <ch-tree-view-render
-      class="tree-view tree-view-secondary tree-view-snippet"
-      [model]="withIconsModel"
-      [showLines]="'last'"
-    ></ch-tree-view-render>
-  </code-snippet>
+  <code-snippet [codeSnippet]="codeSnippets.withIcons" [language]="'ts'" />
 }
 
 @if (showCheckboxes()) {
-  <code-snippet [codeSnippet]="codeSnippets.withCheckboxes">
-    <ch-tree-view-render
-      class="tree-view tree-view-secondary tree-view-snippet"
-      checkbox
-      [model]="noIconsModel"
-      [showLines]="'all'"
-      [toggleCheckboxes]="true"
-    ></ch-tree-view-render>
-  </code-snippet>
+  <code-snippet [codeSnippet]="codeSnippets.withCheckboxes" />
 }

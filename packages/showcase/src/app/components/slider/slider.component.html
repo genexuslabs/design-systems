@@ -27,35 +27,10 @@
   </p>
 
   <br />
-
-  <div class="field field-block">
-    <label class="label" for="name">{{
-      codeSnippets.default.template.children[0].children
-    }}</label>
-    <ch-slider class="slider" id="name"></ch-slider>
-  </div>
 </code-snippet>
 
-<code-snippet [codeSnippet]="codeSnippets.noLabel">
-  <ch-slider class="slider" [accessibleName]="'Temperature'"></ch-slider>
-</code-snippet>
+<code-snippet [codeSnippet]="codeSnippets.noLabel" />
 
-<code-snippet [codeSnippet]="codeSnippets.disabled">
-  <ch-slider
-    class="slider"
-    [accessibleName]="'Temperature'"
-    disabled
-  ></ch-slider>
-</code-snippet>
+<code-snippet [codeSnippet]="codeSnippets.disabled" />
 
-@let rangeTemplateProperties = codeSnippets.customRange.template.properties;
-
-<code-snippet [codeSnippet]="codeSnippets.customRange">
-  <ch-slider
-    class="slider"
-    [accessibleName]="'Temperature'"
-    [minValue]="rangeTemplateProperties[0].value"
-    [maxValue]="rangeTemplateProperties[1].value"
-    [value]="rangeTemplateProperties[2].value"
-  ></ch-slider>
-</code-snippet>
+<code-snippet [codeSnippet]="codeSnippets.customRange" />

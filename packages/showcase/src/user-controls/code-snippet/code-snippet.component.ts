@@ -5,6 +5,7 @@ import {
   computed,
   CUSTOM_ELEMENTS_SCHEMA,
   input,
+  type Signal,
   ViewEncapsulation
 } from "@angular/core";
 import { RouterLink, RouterModule } from "@angular/router";
@@ -30,6 +31,13 @@ export class CodeSnippetComponent {
   codeSnippetBeforeAndAfter = input<
     ComponentMetadataCodeSnippetBeforeAndAfter | undefined
   >();
+
+  actualCodeSnippetToRender = computed(() => {
+    const codeSnippet =
+      this.codeSnippet() ?? this.codeSnippetBeforeAndAfter()?.after;
+
+    return codeSnippet;
+  });
 
   codeTemplate = computed(() => {
     const codeSnippet = this.codeSnippet();

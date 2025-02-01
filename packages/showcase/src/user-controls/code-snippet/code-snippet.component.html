@@ -11,6 +11,11 @@
 
   <ng-content />
 
+  <template-render
+    [model]="actualCodeSnippetToRender()?.template"
+    [states]="actualCodeSnippetToRender()?.states"
+  ></template-render>
+
   @if (codeTemplate()) {
     <copy-code [language]="language()" [value]="codeTemplate()!"></copy-code>
   }

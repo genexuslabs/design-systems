@@ -22,49 +22,15 @@
   </p>
 
   <br />
-
-  <div class="field field-block">
-    <label class="label" for="name">{{
-      codeSnippets.default.template.children[0].children
-    }}</label>
-    <ch-combo-box-render
-      class="combo-box"
-      id="name"
-      [model]="comboBoxModel"
-    ></ch-combo-box-render>
-  </div>
 </code-snippet>
 
-<code-snippet [codeSnippet]="codeSnippets.noLabel">
-  <ch-combo-box-render
-    class="combo-box"
-    [model]="comboBoxModel"
-  ></ch-combo-box-render>
-</code-snippet>
+<code-snippet [codeSnippet]="codeSnippets.noLabel" />
 
-<code-snippet [codeSnippet]="codeSnippets.disabled">
-  <ch-combo-box-render
-    class="combo-box"
-    disabled
-    [model]="comboBoxModel"
-  ></ch-combo-box-render>
-</code-snippet>
+<code-snippet [codeSnippet]="codeSnippets.disabled" />
 
-<code-snippet [codeSnippet]="codeSnippets.placeholder">
-  <ch-combo-box-render
-    class="combo-box"
-    [model]="comboBoxModel"
-    [placeholder]="codeSnippets.placeholder.template.properties[1].value"
-  ></ch-combo-box-render>
-</code-snippet>
+<code-snippet [codeSnippet]="codeSnippets.placeholder" />
 
-<code-snippet [codeSnippet]="codeSnippets.withIcons">
-  <ch-combo-box-render
-    class="combo-box"
-    [model]="comboBoxIconsModel"
-    [value]="codeSnippets.withIcons.template.properties[0].value"
-  ></ch-combo-box-render>
-</code-snippet>
+<code-snippet [codeSnippet]="codeSnippets.withIcons" />
 
 <!-- <code-snippet [codeSnippet]="codeSnippets.errors"
   >TODO..................</code-snippet
