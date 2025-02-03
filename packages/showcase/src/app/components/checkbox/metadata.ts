@@ -63,6 +63,7 @@ export const checkboxMetadata = {
     },
 
     withIcon: {
+      language: "ts",
       linkId: "with-icon",
       title: "5. With Icon",
       imports: [

@@ -3,6 +3,7 @@ import {
   CodeTemplateVariables,
   ComponentTemplateModel
 } from "../services/template-language/types";
+import { CommonSnippetType } from "../user-controls/common-snippets/types";
 
 export type ColorScheme = "dark" | "light";
 
@@ -21,6 +22,12 @@ export type ComponentMetadataBeforeAfter = {
 };
 
 export type ComponentMetadataCodeSnippet = {
+  additionalInfoTemplate?: {
+    type: CommonSnippetType;
+    metadata: string;
+  };
+  avoidTemplateRender?: boolean;
+  language?: string;
   linkId: string;
   title: string;
   imports?: string[];
@@ -30,16 +37,23 @@ export type ComponentMetadataCodeSnippet = {
 };
 
 export type ComponentMetadataCodeSnippetBeforeAndAfter = {
+  additionalInfoTemplate?: {
+    type: CommonSnippetType;
+    metadata: string;
+  };
+  avoidTemplateRender?: boolean;
   linkId: string;
   title: string;
   before: {
     imports?: string[];
+    language?: string;
     states?: CodeTemplateStates;
     variables?: CodeTemplateVariables;
     template: ComponentTemplateModel;
   };
   after: {
     imports?: string[];
+    language?: string;
     states?: CodeTemplateStates;
     variables?: CodeTemplateVariables;
     template: ComponentTemplateModel;

@@ -4,27 +4,9 @@
   <h1 class="heading-1">{{ metadata.title }}</h1>
 </header>
 
-<p class="text-body-regular-l">
-  {{ metadata.description }}
-</p>
+<p class="text-body-regular-l">{{ metadata.description }}</p>
 
-<code-snippet [codeSnippet]="codeSnippets.default">
-  <p class="text-body-regular-m">
-    To display an input with a label, you will have to do the same as working
-    with native HTML, adding a <code>for</code> attribute for the label with the
-    value of the control's <code>id</code>.
-  </p>
-
-  <p class="text-body-regular-m">
-    In addition, a div wrapper must be used around those elements to properly
-    style them. These styles are documented on the
-    <a class="hyperlink" [routerLink]="commonLinks.componentsLabel()">label</a>
-    and <a class="hyperlink" [routerLink]="commonLinks.utilsForm()">form</a>
-    sections, correspondingly.
-  </p>
-
-  <br />
-</code-snippet>
+<code-snippet [codeSnippet]="codeSnippets.default" />
 
 <code-snippet [codeSnippet]="codeSnippets.noLabel" />
 

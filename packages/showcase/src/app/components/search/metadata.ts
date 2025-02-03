@@ -10,6 +10,10 @@ export const searchMetadata = {
     default: {
       linkId: "default",
       title: "1. Default",
+      additionalInfoTemplate: {
+        metadata: "a search",
+        type: "label-and-for"
+      },
       template: {
         tag: "div",
         class: "field field-block",

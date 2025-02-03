@@ -9,6 +9,7 @@ export const elevationMetadata = {
     "CSS utility classes for background colors offer a fast, consistent way to apply styles, reducing repetitive code. They speed up development and simplify maintenance by centralizing color updates, ensuring uniformity across the project.",
   codeSnippets: {
     elevation1: {
+      avoidTemplateRender: true,
       linkId: "elevation-1",
       title: "1. Elevation 1",
       template: [
@@ -21,6 +22,7 @@ export const elevationMetadata = {
     },
 
     elevation2: {
+      avoidTemplateRender: true,
       linkId: "elevation-2",
       title: "2. Elevation 2",
       template: [
@@ -33,6 +35,7 @@ export const elevationMetadata = {
     },
 
     elevation3: {
+      avoidTemplateRender: true,
       linkId: "elevation-3",
       title: "3. Elevation 3",
       template: [

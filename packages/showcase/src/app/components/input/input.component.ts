@@ -6,7 +6,7 @@ import {
   inject,
   input
 } from "@angular/core";
-import { Router, RouterLink } from "@angular/router";
+import { Router } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import type { ChCheckboxCustomEvent } from "@genexus/chameleon-controls-library";
 import { getIconPath } from "@genexus/mercury/assets-manager.js";
@@ -20,12 +20,7 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
   selector: "components-input",
   templateUrl: "./input.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    CommonModule,
-    CodeSnippetComponent,
-    RuntimeBundlesComponent,
-    RouterLink
-  ],
+  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
   host: { class: "main-content" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

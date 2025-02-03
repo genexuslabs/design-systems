@@ -6,16 +6,6 @@
 
 <p class="text-body-regular-l">{{ metadata.description }}</p>
 
-<code-snippet [codeSnippet]="codeSnippets.checked" />
-
-<code-snippet [codeSnippet]="codeSnippets.unchecked" />
-
-<code-snippet [codeSnippet]="codeSnippets.indeterminate" />
-
-<code-snippet [codeSnippet]="codeSnippets.disabled" />
-
-<code-snippet [codeSnippet]="codeSnippets.withIcon" language="ts" />
-
-<code-snippet [codeSnippet]="codeSnippets.groupingCheckboxesBlock" />
-
-<code-snippet [codeSnippet]="codeSnippets.groupingCheckboxesInline" />
+@for (item of codeSnippets; track $index) {
+  <code-snippet [codeSnippet]="item" />
+}

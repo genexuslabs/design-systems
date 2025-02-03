@@ -9,12 +9,21 @@
     </h3>
   }
 
+  @if (additionalInfoTemplate()) {
+    <common-snippets
+      [metadata]="additionalInfoTemplate()!.metadata"
+      [type]="additionalInfoTemplate()!.type"
+    ></common-snippets>
+  }
+
   <ng-content />
 
-  <template-render
-    [model]="actualCodeSnippetToRender()?.template"
-    [states]="actualCodeSnippetToRender()?.states"
-  ></template-render>
+  @if (!avoidTemplateRender()) {
+    <template-render
+      [model]="actualCodeSnippetToRender()?.template"
+      [states]="actualCodeSnippetToRender()?.states"
+    ></template-render>
+  }
 
   @if (codeTemplate()) {
     <copy-code [language]="language()" [value]="codeTemplate()!"></copy-code>

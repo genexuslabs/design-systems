@@ -28,73 +28,27 @@
 </ol>
 
 @if (showDefault()) {
-  <code-snippet [codeSnippet]="codeSnippets.default">
-    <p class="text-body-regular-m">
-      To display an input with a label, you will have to do the same as working
-      with native HTML, adding a <code>for</code> attribute for the label with
-      the value of the control's <code>id</code>.
-    </p>
-
-    <p class="text-body-regular-m">
-      In addition, a div wrapper must be used around those elements to properly
-      style them. These styles are documented on the
-      <a class="hyperlink" [routerLink]="commonLinks.componentsLabel()"
-        >label</a
-      >
-      and <a class="hyperlink" [routerLink]="commonLinks.utilsForm()">form</a>
-      sections, correspondingly.
-    </p>
-
-    <br />
-
-    <div class="field field-block">
-      <label class="label" for="name">Name</label>
-      <ch-edit class="input" id="name"></ch-edit>
-    </div>
-  </code-snippet>
+  <code-snippet [codeSnippet]="codeSnippets.default" />
 }
 
 @if (showNoLabel()) {
-  <code-snippet [codeSnippet]="codeSnippets.noLabel">
-    <ch-edit accessibleName="Name" class="input"></ch-edit>
-  </code-snippet>
+  <code-snippet [codeSnippet]="codeSnippets.noLabel" />
 }
 
 @if (showWithValue()) {
-  <code-snippet [codeSnippet]="codeSnippets.withValue">
-    <ch-edit accessibleName="Name" class="input" value="Pat Taylor"></ch-edit>
-  </code-snippet>
+  <code-snippet [codeSnippet]="codeSnippets.withValue" />
 }
 
 @if (showWithPlaceholder()) {
-  <code-snippet [codeSnippet]="codeSnippets.withPlaceholder">
-    <ch-edit
-      accessibleName="Name"
-      class="input"
-      placeholder="e.g. Mike Shinoda"
-    ></ch-edit>
-  </code-snippet>
+  <code-snippet [codeSnippet]="codeSnippets.withPlaceholder" />
 }
 
 @if (showDisabled()) {
-  <code-snippet [codeSnippet]="codeSnippets.disabled">
-    <ch-edit
-      accessibleName="Name"
-      class="input"
-      disabled
-      value="Pat Taylor"
-    ></ch-edit>
-  </code-snippet>
+  <code-snippet [codeSnippet]="codeSnippets.disabled" />
 }
 
 @if (showWithIcon()) {
-  <code-snippet [codeSnippet]="codeSnippets.withIcon">
-    <ch-edit
-      accessibleName="Name"
-      class="input"
-      [startImgSrc]="USER_ICON"
-    ></ch-edit>
-  </code-snippet>
+  <code-snippet [codeSnippet]="codeSnippets.withIcon" />
 }
 
 <!-- <code-snippet [codeSnippet]="codeSnippets.errors"

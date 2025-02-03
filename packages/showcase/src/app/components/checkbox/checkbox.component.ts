@@ -25,5 +25,5 @@ export class CheckboxComponent {
   });
 
   metadata = checkboxMetadata;
-  codeSnippets = checkboxMetadata.codeSnippets;
+  codeSnippets = Object.values(checkboxMetadata.codeSnippets);
 }

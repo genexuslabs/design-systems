@@ -10,6 +10,10 @@ export const comboBoxMetadata = {
     default: {
       linkId: "default",
       title: "1. Default",
+      additionalInfoTemplate: {
+        metadata: "a combo-box",
+        type: "label-and-for"
+      },
       template: {
         tag: "div",
         class: "field field-block",
@@ -76,12 +80,12 @@ export const comboBoxMetadata = {
           { name: "value", value: "patterns" }
         ]
       }
-    },
-
-    errors: {
-      linkId: "errors",
-      title: "6. Error",
-      template: "TODO"
     }
+
+    // errors: {
+    //   linkId: "errors",
+    //   title: "6. Error",
+    //   template: "TODO"
+    // }
   }
 } as const satisfies ComponentMetadata;

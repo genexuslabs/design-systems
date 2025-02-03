@@ -15,13 +15,22 @@ import {
   ComponentMetadataCodeSnippet,
   ComponentMetadataCodeSnippetBeforeAndAfter
 } from "../../common/types";
+import { CommonSnippetsComponent } from "../common-snippets/common-snippets.component";
+
+const DEFAULT_TEMPLATE_LANGUAGE = "html";
 
 @Component({
   selector: "code-snippet",
   templateUrl: "./code-snippet.component.html",
   styleUrl: "./code-snippet.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, RouterLink, RouterModule, CopyCodeComponent],
+  imports: [
+    CommonModule,
+    RouterLink,
+    RouterModule,
+    CopyCodeComponent,
+    CommonSnippetsComponent
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   // Lighter HTML by not adding any extra attribute to emulate the encapsulation
   encapsulation: ViewEncapsulation.None
@@ -32,12 +41,21 @@ export class CodeSnippetComponent {
     ComponentMetadataCodeSnippetBeforeAndAfter | undefined
   >();
 
-  actualCodeSnippetToRender = computed(() => {
-    const codeSnippet =
-      this.codeSnippet() ?? this.codeSnippetBeforeAndAfter()?.after;
+  actualCodeSnippetToRender = computed(
+    () => this.codeSnippet() ?? this.codeSnippetBeforeAndAfter()?.after
+  );
 
-    return codeSnippet;
-  });
+  additionalInfoTemplate = computed(
+    () =>
+      (this.codeSnippet() ?? this.codeSnippetBeforeAndAfter())
+        ?.additionalInfoTemplate
+  );
+
+  avoidTemplateRender = computed(
+    () =>
+      (this.codeSnippet() ?? this.codeSnippetBeforeAndAfter())
+        ?.avoidTemplateRender
+  );
 
   codeTemplate = computed(() => {
     const codeSnippet = this.codeSnippet();
@@ -78,9 +96,19 @@ export class CodeSnippetComponent {
 
   headingLevel = input<2 | 3>(2);
 
-  language = input<string>("html");
-  languageBefore = input<string>("html");
-  languageAfter = input<string>("html");
+  language = computed(
+    () => this.codeSnippet()?.language ?? DEFAULT_TEMPLATE_LANGUAGE
+  );
+  languageBefore = computed(
+    () =>
+      this.codeSnippetBeforeAndAfter()?.before?.language ??
+      DEFAULT_TEMPLATE_LANGUAGE
+  );
+  languageAfter = computed(
+    () =>
+      this.codeSnippetBeforeAndAfter()?.after?.language ??
+      DEFAULT_TEMPLATE_LANGUAGE
+  );
 
   linkId = computed(
     () => (this.codeSnippet() ?? this.codeSnippetBeforeAndAfter()!).linkId

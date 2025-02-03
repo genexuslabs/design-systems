@@ -5,7 +5,6 @@ import {
   inject
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { RouterLink } from "@angular/router";
 
 import { sliderMetadata } from "./metadata";
 import { RouterCommonLinksService } from "../../../services/router-links.service";
@@ -16,12 +15,7 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
   selector: "components-slider",
   templateUrl: "./slider.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    CommonModule,
-    CodeSnippetComponent,
-    RouterLink,
-    RuntimeBundlesComponent
-  ],
+  imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
   host: { class: "main-content" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

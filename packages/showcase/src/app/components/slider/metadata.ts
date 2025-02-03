@@ -10,6 +10,10 @@ export const sliderMetadata = {
     default: {
       linkId: "default",
       title: "1. Default",
+      additionalInfoTemplate: {
+        metadata: "a slider",
+        type: "label-and-for"
+      },
       template: {
         tag: "div",
         class: "field field-block",

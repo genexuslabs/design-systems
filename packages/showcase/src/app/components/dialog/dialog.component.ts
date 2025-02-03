@@ -15,7 +15,7 @@ import { RouterCommonLinksService } from "../../../services/router-links.service
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
 import { Router } from "@angular/router";
-import { CommonSnippets } from "../../../user-controls/common-snippets/common-snippets.component";
+import { CommonSnippetsComponent } from "../../../user-controls/common-snippets/common-snippets.component";
 @Component({
   selector: "components-dialog",
   templateUrl: "./dialog.component.html",
@@ -24,7 +24,7 @@ import { CommonSnippets } from "../../../user-controls/common-snippets/common-sn
     CommonModule,
     CodeSnippetComponent,
     RuntimeBundlesComponent,
-    CommonSnippets
+    CommonSnippetsComponent
   ],
   host: { class: "main-content" },
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

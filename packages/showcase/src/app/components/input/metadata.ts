@@ -10,6 +10,10 @@ export const inputMetadata = {
     default: {
       linkId: "default",
       title: "1. Default",
+      additionalInfoTemplate: {
+        metadata: "an input",
+        type: "label-and-for"
+      },
       template: {
         tag: "div",
         class: "field field-block",
@@ -90,12 +94,12 @@ export const inputMetadata = {
           { name: "startImgSrc", value: "USER_ICON", variable: true }
         ]
       }
-    },
-
-    errors: {
-      linkId: "errors",
-      title: "7. Error",
-      template: "TODO"
     }
+
+    // errors: {
+    //   linkId: "errors",
+    //   title: "7. Error",
+    //   template: "TODO"
+    // }
   }
 } as const satisfies ComponentMetadata;
