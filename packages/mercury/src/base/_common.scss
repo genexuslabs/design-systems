@@ -93,12 +93,7 @@
   --control__border-radius: 0;
 }
 // Font
-@mixin control-font-weight-regular() {
-  font-weight: var(--control__font-weight--regular);
-}
-@mixin control-font-weight-semi-bold() {
-  font-weight: var(--control__font-weight--semi-bold);
-}
+
 // Font Size
 @mixin control-font-size-small() {
   font-size: var(--control__font-size--small);
@@ -257,7 +252,6 @@
 @mixin item-font() {
   line-height: var(--item__line-height);
   font-size: var(--item__font-size);
-  font-weight: var(--item__font-weight);
 }
 @mixin item-font-size-small() {
   --item__font-size: var(--item__font-size--small);
@@ -268,7 +262,6 @@
   // to be the same.
   line-height: var(--item__line-height);
   font-size: var(--item__font-size);
-  font-weight: var(--item-header__font-weight);
 }
 
 // ---------------------------------
@@ -351,7 +344,6 @@
 }
 @mixin tab-button-font() {
   font-size: var(--tab-caption__font-size);
-  font-weight: var(--tab-caption__font-weight);
 }
 @mixin tab-button-gap() {
   gap: var(--tab-caption__gap);
@@ -403,7 +395,6 @@
 
 @mixin label-font() {
   color: var(--label__color);
-  font-weight: var(--label__font-weight);
   font-size: var(--label__font-size);
   line-height: var(--label__line-height);
 }

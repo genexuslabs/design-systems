@@ -101,7 +101,6 @@
   --grid-label__gap: 0;
   @include grid-row-colors-enabled();
   @include grid-cell-padding-inline-block();
-  @include control-font-weight-semi-bold();
   gap: var(--grid-common__gap);
   width: 100%;
 
