@@ -26,8 +26,7 @@
   }
 
   &__caption {
-    @extend %heading-5;
-    @extend %heading-color__gray--light;
+    @extend %subtitle-semi-bold-xs;
     word-break: break-word;
   }
 

@@ -19,7 +19,7 @@
 }
 
 %accordion-header {
-  @extend %text-body-highlighted-m;
+  @extend %body-semi-bold-m;
   padding: var(--accordion-header__padding);
   gap: var(--accordion-header__gap);
   color: var(--accordion-header__color);

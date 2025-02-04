@@ -28,7 +28,7 @@
     }
 
     &::part(message__role) {
-      @extend %text-body-highlighted-m;
+      @extend %body-semi-bold-m;
       display: inline-grid;
       grid-template-columns: max-content max-content;
       gap: 6px;
@@ -50,12 +50,12 @@
     }
 
     &::part(message__time) {
-      @extend %text-body-italic-m;
+      @extend %body-regular-italic-m;
       color: #828b96;
     }
 
     &::part(message__content) {
-      @extend %text-body-regular-m;
+      @extend %body-regular-m;
       color: var(--mer-color__neutral-gray--100);
     }
 
@@ -74,7 +74,7 @@
     }
 
     &::part(message assistant waiting) {
-      @extend %text-body-italic-s;
+      @extend %body-regular-italic-s;
       background-color: var(--mer-color__neutral-gray--900);
       border-radius: unset;
       color: #666;
