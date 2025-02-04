@@ -131,6 +131,11 @@
 }
 
 // body
+@mixin body-font() {
+  font-size: var(--font-size-body-m);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-regular);
+}
 
 @mixin body-xl() {
   font-size: var(--font-size-body-xl);
@@ -169,9 +174,7 @@
     }
 
     &-m {
-      @include body-m();
-      @extend %body-regular;
-      @extend %body-base;
+      @include body-font();
     }
 
     &-s {
