@@ -34,7 +34,7 @@
 @import "./base/form-controls/field-styles";
 @import "./base/icons";
 @import "./base/layout/layout-styles";
-@import "./base/typography/typography-styles";
+@import "./base/typography";
 
 // Icons
 @import "./icons/button";
@@ -393,14 +393,11 @@
           color: var(--mer-text__on-surface);
         }
 
-        @if $font {
-          line-height: var(--mer-body__line-height);
+        @if $font and $font-face {
+          font-family: var(--font-family-body);
         }
-
-        @if $font-face {
-          font-family: var(--mer-body__font-family);
-          font-size: var(--mer-body__font-size);
-          font-weight: var(--mer-body__font-weight);
+        @if $font and $typography-classes {
+          @include body-font();
         }
       }
     }
