@@ -147,6 +147,48 @@ export const typographyMetadata = {
       linkId: "body-regular-xs",
       title: "3.5. Body Regular XS",
       template: [{ tag: "p", class: "body-regular-xs", children: BODY_CONTENT }]
+    },
+
+    // Body SemiBold
+
+    bodySemiBoldXL: {
+      linkId: "body-semi-bold-xl",
+      title: "3.1. Body SemiBold XL",
+      template: [
+        { tag: "p", class: "body-semi-bold-xl", children: BODY_CONTENT }
+      ]
+    },
+
+    bodySemiBoldL: {
+      linkId: "body-semi-bold-l",
+      title: "3.2. Body SemiBold L",
+      template: [
+        { tag: "p", class: "body-semi-bold-l", children: BODY_CONTENT }
+      ]
+    },
+
+    bodySemiBoldM: {
+      linkId: "body-semi-bold-m",
+      title: "3.3. Body SemiBold M",
+      template: [
+        { tag: "p", class: "body-semi-bold-m", children: BODY_CONTENT }
+      ]
+    },
+
+    bodySemiBoldS: {
+      linkId: "body-semi-bold-s",
+      title: "3.4. Body SemiBold S",
+      template: [
+        { tag: "p", class: "body-semi-bold-s", children: BODY_CONTENT }
+      ]
+    },
+
+    bodySemiBoldXS: {
+      linkId: "body-semi-bold-xs",
+      title: "3.5. Body SemiBold XS",
+      template: [
+        { tag: "p", class: "body-semi-bold-xs", children: BODY_CONTENT }
+      ]
     }
   }
 } as const satisfies ComponentMetadata;
