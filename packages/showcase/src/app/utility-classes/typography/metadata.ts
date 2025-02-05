@@ -265,6 +265,56 @@ export const typographyMetadata = {
       template: [
         { tag: "p", class: "body-tiny-regular-xs", children: BODY_TINY_CONTENT }
       ]
+    },
+
+    // Body Tiny SemiBold
+
+    bodyTinySemiBoldL: {
+      linkId: "body-tiny-semi-bold-l",
+      title: "3.2. Body Tiny SemiBold L",
+      template: [
+        {
+          tag: "p",
+          class: "body-tiny-semi-bold-l",
+          children: BODY_TINY_CONTENT
+        }
+      ]
+    },
+
+    bodyTinySemiBoldM: {
+      linkId: "body-tiny-semi-bold-m",
+      title: "3.3. Body Tiny SemiBold M",
+      template: [
+        {
+          tag: "p",
+          class: "body-tiny-semi-bold-m",
+          children: BODY_TINY_CONTENT
+        }
+      ]
+    },
+
+    bodyTinySemiBoldS: {
+      linkId: "body-tiny-semi-bold-s",
+      title: "3.4. Body Tiny SemiBold S",
+      template: [
+        {
+          tag: "p",
+          class: "body-tiny-semi-bold-s",
+          children: BODY_TINY_CONTENT
+        }
+      ]
+    },
+
+    bodyTinySemiBoldXS: {
+      linkId: "body-tiny-semi-bold-xs",
+      title: "3.5. Body Tiny SemiBold XS",
+      template: [
+        {
+          tag: "p",
+          class: "body-tiny-semi-bold-xs",
+          children: BODY_TINY_CONTENT
+        }
+      ]
     }
   }
 } as const satisfies ComponentMetadata;
