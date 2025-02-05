@@ -23,8 +23,9 @@
 
   @include control-border();
   @include control-colors-enabled();
-  @include control-font-size-regular();
   @include control-padding-inline-block();
+
+  @extend %body-semi-bold-m;
 
   // states
   &--enabled {
@@ -82,8 +83,9 @@
     @include item-colors-enabled();
     @include item-border();
     @include item-border-radius();
-    @include item-font();
     @include item-padding();
+
+    @extend %body-regular-m;
 
     &--with-icon {
       padding-inline-start: var(--mer-spacing--xl);
