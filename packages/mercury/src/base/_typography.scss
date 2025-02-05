@@ -1,33 +1,33 @@
 // heading
 
 @mixin heading-1() {
-  font-size: var(--font-size-headers-h1);
   @extend %heading-base;
+  font-size: var(--font-size-headers-h1);
 }
 
 @mixin heading-2() {
-  font-size: var(--font-size-headers-h2);
   @extend %heading-base;
+  font-size: var(--font-size-headers-h2);
 }
 
 @mixin heading-3() {
-  font-size: var(--font-size-headers-h3);
   @extend %heading-base;
+  font-size: var(--font-size-headers-h3);
 }
 
 @mixin heading-4() {
-  font-size: var(--font-size-headers-h4);
   @extend %heading-base;
+  font-size: var(--font-size-headers-h4);
 }
 
 @mixin heading-5() {
-  font-size: var(--font-size-headers-h5);
   @extend %heading-base;
+  font-size: var(--font-size-headers-h5);
 }
 
 @mixin heading-6() {
-  font-size: var(--font-size-headers-h6);
   @extend %heading-base;
+  font-size: var(--font-size-headers-h6);
 }
 
 %heading {
@@ -163,15 +163,15 @@
     font-weight: var(--font-weight-regular);
 
     &-xl {
-      @include body-xl();
-      @extend %body-regular;
       @extend %body-base;
+      @extend %body-regular;
+      @include body-xl();
     }
 
     &-l {
-      @include body-l();
-      @extend %body-regular;
       @extend %body-base;
+      @extend %body-regular;
+      @include body-l();
     }
 
     &-m {
@@ -179,15 +179,15 @@
     }
 
     &-s {
-      @include body-s();
-      @extend %body-regular;
       @extend %body-base;
+      @extend %body-regular;
+      @include body-s();
     }
 
     &-xs {
-      @include body-xs();
-      @extend %body-regular;
       @extend %body-base;
+      @extend %body-regular;
+      @include body-xs();
     }
   }
 
@@ -195,33 +195,33 @@
     font-weight: var(--font-weight-semi-bold);
 
     &-xl {
-      @include body-xl();
-      @extend %body-semi-bold;
       @extend %body-base;
+      @extend %body-semi-bold;
+      @include body-xl();
     }
 
     &-l {
-      @include body-l();
-      @extend %body-semi-bold;
       @extend %body-base;
+      @extend %body-semi-bold;
+      @include body-l();
     }
 
     &-m {
-      @include body-m();
-      @extend %body-semi-bold;
       @extend %body-base;
+      @extend %body-semi-bold;
+      @include body-m();
     }
 
     &-s {
-      @include body-s();
-      @extend %body-semi-bold;
       @extend %body-base;
+      @extend %body-semi-bold;
+      @include body-s();
     }
 
     &-xs {
-      @include body-xs();
-      @extend %body-semi-bold;
       @extend %body-base;
+      @extend %body-semi-bold;
+      @include body-xs();
     }
   }
 
@@ -230,33 +230,33 @@
     font-style: italic;
 
     &-xl {
-      @include body-xl();
-      @extend %body-regular-italic;
       @extend %body-base;
+      @extend %body-regular-italic;
+      @include body-xl();
     }
 
     &-l {
-      @include body-l();
-      @extend %body-regular-italic;
       @extend %body-base;
+      @extend %body-regular-italic;
+      @include body-l();
     }
 
     &-m {
-      @include body-m();
-      @extend %body-regular-italic;
       @extend %body-base;
+      @extend %body-regular-italic;
+      @include body-m();
     }
 
     &-s {
-      @include body-s();
-      @extend %body-regular-italic;
       @extend %body-base;
+      @extend %body-regular-italic;
+      @include body-s();
     }
 
     &-xs {
-      @include body-xs();
-      @extend %body-regular-italic;
       @extend %body-base;
+      @extend %body-regular-italic;
+      @include body-xs();
     }
   }
 }
@@ -272,26 +272,60 @@
 @mixin body-tiny-s() {
   font-size: var(--font-size-tiny-s);
 }
+@mixin body-tiny-xs() {
+  font-size: var(--font-size-tiny-s);
+}
 
 %body-tiny {
-  &-base {
+  &-regular-base {
     font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+  }
+  &-semi-bold-base {
+    font-weight: var(--font-weight-semi-bold);
     line-height: var(--line-height-tight);
   }
   &-regular {
     &-l {
+      @extend %body-tiny-regular-base;
       @include body-tiny-l();
-      @extend %body-tiny-base;
     }
 
     &-m {
+      @extend %body-tiny-regular-base;
       @include body-tiny-m();
-      @extend %body-tiny-base;
     }
 
     &-s {
+      @extend %body-tiny-regular-base;
       @include body-tiny-s();
-      @extend %body-tiny-base;
+    }
+
+    &-xs {
+      @extend %body-tiny-regular-base;
+      @include body-tiny-xs();
+    }
+  }
+
+  &-semi-bold {
+    &-l {
+      @extend %body-tiny-semi-bold-base;
+      @include body-tiny-l();
+    }
+
+    &-m {
+      @extend %body-tiny-semi-bold-base;
+      @include body-tiny-m();
+    }
+
+    &-s {
+      @extend %body-tiny-semi-bold-base;
+      @include body-tiny-s();
+    }
+
+    &-xs {
+      @extend %body-tiny-semi-bold-base;
+      @include body-tiny-xs();
     }
   }
 }
@@ -303,38 +337,44 @@
 /// @param {String} $heading-4-selector [".heading-4"] -
 /// @param {String} $heading-5-selector [".heading-5"] -
 /// @param {String} $heading-6-selector [".heading-6"] -
-///
+
 /// @param {String} $subtitle-regular-l-selector [".subtitle-regular-l"] -
 /// @param {String} $subtitle-regular-m-selector [".subtitle-regular-m"] -
 /// @param {String} $subtitle-regular-s-selector [".subtitle-regular-s"] -
 /// @param {String} $subtitle-regular-xs-selector [".subtitle-regular-xs"] -
-///
+
 /// @param {String} $subtitle-bold-l-selector [".subtitle-bold-l"] -
 /// @param {String} $subtitle-bold-m-selector [".subtitle-bold-m"] -
 /// @param {String} $subtitle-bold-s-selector [".subtitle-bold-s"] -
 /// @param {String} $subtitle-bold-xs-selector [".subtitle-bold-xs"] -
-///
+
 /// @param {String} $body-regular-xl-selector [".body-regular-xl"] -
 /// @param {String} $body-regular-l-selector [".body-regular-l"] -
 /// @param {String} $body-regular-m-selector [".body-regular-m"] -
 /// @param {String} $body-regular-s-selector [".body-regular-s"] -
 /// @param {String} $body-regular-xs-selector [".body-regular-xs"] -
-///
+
 /// @param {String} $body-semi-bold-xl-selector [".body-semi-bold-xl"] -
 /// @param {String} $body-semi-bold-l-selector [".body-semi-bold-l"] -
 /// @param {String} $body-semi-bold-m-selector [".body-semi-bold-m"] -
 /// @param {String} $body-semi-bold-s-selector [".body-semi-bold-s"] -
 /// @param {String} $body-semi-bold-xs-selector [".body-semi-bold-xs"] -
-///
+
 /// @param {String} $body-regular-italic-xl-selector [".body-regular-italic-xl"] -
 /// @param {String} $body-regular-italic-l-selector [".body-regular-italic-l"] -
 /// @param {String} $body-regular-italic-m-selector [".body-regular-italic-m"] -
 /// @param {String} $body-regular-italic-s-selector [".body-regular-italic-s"] -
 /// @param {String} $body-regular-italic-xs-selector [".body-regular-italic-xs"] -
-///
+
 /// @param {String} $body-tiny-regular-l-selector [".body-tiny-regular-l"] -
 /// @param {String} $body-tiny-regular-m-selector [".body-tiny-regular-m"] -
 /// @param {String} $body-tiny-regular-s-selector [".body-tiny-regular-s"] -
+/// @param {String} $body-tiny-regular-xs-selector [".body-tiny-regular-xs"] -
+
+/// @param {String} $body-tiny-semi-bold-l-selector [".body-tiny-semi-bold-l"] -
+/// @param {String} $body-tiny-semi-bold-m-selector [".body-tiny-semi-bold-m"] -
+/// @param {String} $body-tiny-semi-bold-s-selector [".body-tiny-semi-bold-s"] -
+/// @param {String} $body-tiny-semi-bold-xs-selector [".body-tiny-semi-bold-xs"] -
 
 @mixin typography-classes(
   $heading-1-selector: ".heading-1",
@@ -374,7 +414,13 @@
 
   $body-tiny-regular-l-selector: ".body-tiny-regular-l",
   $body-tiny-regular-m-selector: ".body-tiny-regular-m",
-  $body-tiny-regular-s-selector: ".body-tiny-regular-s"
+  $body-tiny-regular-s-selector: ".body-tiny-regular-s",
+  $body-tiny-regular-xs-selector: ".body-tiny-regular-xs",
+
+  $body-tiny-semi-bold-l-selector: ".body-tiny-semi-bold-l",
+  $body-tiny-semi-bold-m-selector: ".body-tiny-semi-bold-m",
+  $body-tiny-semi-bold-s-selector: ".body-tiny-semi-bold-s",
+  $body-tiny-semi-bold-xs-selector: ".body-tiny-semi-bold-xs"
 ) {
   // Heading:
 
@@ -397,7 +443,7 @@
     @extend %heading-6;
   }
 
-  // Subtitle: regular and bold
+  // Subtitle: regular
 
   #{$subtitle-regular-l-selector} {
     @extend %subtitle-regular-l;
@@ -412,6 +458,8 @@
     @extend %subtitle-regular-xs;
   }
 
+  // Subtitle: bold
+
   #{$subtitle-semi-bold-l-selector} {
     @extend %subtitle-semi-bold-l;
   }
@@ -425,7 +473,7 @@
     @extend %subtitle-semi-bold-xs;
   }
 
-  // Body: regular, semi-bold, and italic
+  // Body: regular
 
   #{$body-regular-xl-selector} {
     @extend %body-regular-xl;
@@ -443,6 +491,8 @@
     @extend %body-regular-xs;
   }
 
+  // Body: semi-bold
+
   #{$body-semi-bold-xl-selector} {
     @extend %body-semi-bold-xl;
   }
@@ -458,6 +508,8 @@
   #{$body-semi-bold-xs-selector} {
     @extend %body-semi-bold-xs;
   }
+
+  // Body: regular italic
 
   #{$body-regular-italic-xl-selector} {
     @extend %body-regular-italic-xl;
@@ -485,6 +537,24 @@
   }
   #{$body-tiny-regular-s-selector} {
     @extend %body-tiny-regular-s;
+  }
+  #{$body-tiny-regular-xs-selector} {
+    @extend %body-tiny-regular-xs;
+  }
+
+  // Body tiny: semi-bold
+
+  #{$body-tiny-semi-bold-l-selector} {
+    @extend %body-tiny-semi-bold-l;
+  }
+  #{$body-tiny-semi-bold-m-selector} {
+    @extend %body-tiny-semi-bold-m;
+  }
+  #{$body-tiny-semi-bold-s-selector} {
+    @extend %body-tiny-semi-bold-s;
+  }
+  #{$body-tiny-semi-bold-xs-selector} {
+    @extend %body-tiny-semi-bold-xs;
   }
 }
 
