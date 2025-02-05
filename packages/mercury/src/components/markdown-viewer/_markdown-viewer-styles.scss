@@ -1,6 +1,6 @@
 @mixin markdown-viewer() {
   :host {
-    @extend %text-body;
+    @extend %body-regular-m;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -87,7 +87,7 @@
   }
 
   strong {
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
   }
 
   // - - - - - - - - - - - - - - - - - - - -
