@@ -4,7 +4,7 @@ import { ComponentTemplateModel } from "../../../services/template-language/type
 const HEADING_CONTENT: ComponentTemplateModel = `heading`;
 const SUBTITLE_CONTENT: ComponentTemplateModel = `subtitle`;
 const BODY_CONTENT: ComponentTemplateModel = `body`;
-const BODY_TINY_CONTENT: ComponentTemplateModel = `body-tiny`;
+const BODY_TINY_CONTENT: ComponentTemplateModel = `tiny`;
 
 export const typographyMetadata = {
   title: "Typography",
@@ -233,85 +233,85 @@ export const typographyMetadata = {
       ]
     },
 
-    // Body Tiny Regular
+    // Tiny Regular
 
     bodyTinyRegularL: {
-      linkId: "body-tiny-regular-l",
-      title: "3.2. Body: Tiny Large",
+      linkId: "tiny-regular-l",
+      title: "3.2. Tiny: Large",
       template: [
-        { tag: "p", class: "body-tiny-regular-l", children: BODY_TINY_CONTENT }
+        { tag: "p", class: "tiny-regular-l", children: BODY_TINY_CONTENT }
       ]
     },
 
     bodyTinyRegularM: {
-      linkId: "body-tiny-regular-m",
-      title: "3.3. Body: Tiny Medium",
+      linkId: "tiny-regular-m",
+      title: "3.3. Tiny: Medium",
       template: [
-        { tag: "p", class: "body-tiny-regular-m", children: BODY_TINY_CONTENT }
+        { tag: "p", class: "tiny-regular-m", children: BODY_TINY_CONTENT }
       ]
     },
 
     bodyTinyRegularS: {
-      linkId: "body-tiny-regular-s",
-      title: "3.4. Body: Tiny Small",
+      linkId: "tiny-regular-s",
+      title: "3.4. Tiny: Small",
       template: [
-        { tag: "p", class: "body-tiny-regular-s", children: BODY_TINY_CONTENT }
+        { tag: "p", class: "tiny-regular-s", children: BODY_TINY_CONTENT }
       ]
     },
 
     bodyTinyRegularXS: {
-      linkId: "body-tiny-regular-xs",
-      title: "3.5. Body: Tiny Extra Small",
+      linkId: "tiny-regular-xs",
+      title: "3.5. Tiny: Extra Small",
       template: [
-        { tag: "p", class: "body-tiny-regular-xs", children: BODY_TINY_CONTENT }
+        { tag: "p", class: "tiny-regular-xs", children: BODY_TINY_CONTENT }
       ]
     },
 
-    // Body Tiny SemiBold
+    // Tiny SemiBold
 
     bodyTinySemiBoldL: {
-      linkId: "body-tiny-semi-bold-l",
-      title: "3.2. Body: Tiny Large",
+      linkId: "tiny-semi-bold-l",
+      title: "3.2. Tiny: Large",
       template: [
         {
           tag: "p",
-          class: "body-tiny-semi-bold-l",
+          class: "tiny-semi-bold-l",
           children: BODY_TINY_CONTENT
         }
       ]
     },
 
     bodyTinySemiBoldM: {
-      linkId: "body-tiny-semi-bold-m",
-      title: "3.3. Body: Tiny SemiBold Medium",
+      linkId: "tiny-semi-bold-m",
+      title: "3.3. Tiny: SemiBold Medium",
       template: [
         {
           tag: "p",
-          class: "body-tiny-semi-bold-m",
+          class: "tiny-semi-bold-m",
           children: BODY_TINY_CONTENT
         }
       ]
     },
 
     bodyTinySemiBoldS: {
-      linkId: "body-tiny-semi-bold-s",
-      title: "3.4. Body: Tiny SemiBold Small",
+      linkId: "tiny-semi-bold-s",
+      title: "3.4. Tiny: SemiBold Small",
       template: [
         {
           tag: "p",
-          class: "body-tiny-semi-bold-s",
+          class: "tiny-semi-bold-s",
           children: BODY_TINY_CONTENT
         }
       ]
     },
 
     bodyTinySemiBoldXS: {
-      linkId: "body-tiny-semi-bold-xs",
-      title: "3.5. Body: Tiny SemiBold Extra Small",
+      linkId: "tiny-semi-bold-xs",
+      title: "3.5. Tiny: SemiBold Extra Small",
       template: [
         {
           tag: "p",
-          class: "body-tiny-semi-bold-xs",
+          class: "tiny-semi-bold-xs",
           children: BODY_TINY_CONTENT
         }
       ]

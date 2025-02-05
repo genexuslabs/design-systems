@@ -36,14 +36,14 @@ export class TypographyComponent {
    */
   typographies = computed(() => {
     const newTypographies = new Map<string, boolean>([
-      ["Headings", true],
-      ["Subtitles Regular", true],
-      ["Subtitles SemiBold", true],
-      ["Body Regular", true],
-      ["Body SemiBold", true],
-      ["Body Regular Italic", true],
-      ["Body Tiny Regular", true],
-      ["Body Tiny SemiBold", true]
+      // ["Headings", true],
+      // ["Subtitles Regular", true],
+      // ["Subtitles SemiBold", true],
+      // ["Body Regular", true],
+      // ["Body SemiBold", true],
+      // ["Body Regular Italic", true],
+      ["Tiny Regular", true],
+      ["Tiny SemiBold", true]
     ]);
 
     // Update the rendered typographies by watching changes for the
@@ -76,12 +76,8 @@ export class TypographyComponent {
   showBodyRegularItalic = computed(() =>
     this.typographies().get("Body Regular Italic")
   );
-  showBodyTinyRegular = computed(() =>
-    this.typographies().get("Body Tiny Regular")
-  );
-  showBodyTinyBold = computed(() =>
-    this.typographies().get("Body Tiny SemiBold")
-  );
+  showTinyRegular = computed(() => this.typographies().get("Tiny Regular"));
+  showTinyBold = computed(() => this.typographies().get("Tiny SemiBold"));
 
   hiddenTypographies = input<string>("");
 
