@@ -29,7 +29,7 @@
     border-radius: var(--mer-border__radius--sm);
     box-shadow: 4px 4px 12px 0px #00000033;
     color: var(--mer-color__neutral-gray--300);
-    font-size: var(--mer-font__size--xs);
+    @extend %body-regular-m;
   }
 
   &-item-action {
