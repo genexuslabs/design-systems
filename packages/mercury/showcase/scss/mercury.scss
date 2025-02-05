@@ -337,22 +337,6 @@
   --control__border-color: transparent;
   --control__border-radius: 0;
 }
-// Font
-@mixin control-font-weight-regular() {
-  font-weight: var(--control__font-weight--regular);
-}
-@mixin control-font-weight-semi-bold() {
-  font-weight: var(--control__font-weight--semi-bold);
-}
-// Font Size
-@mixin control-font-size-small() {
-  font-size: var(--control__font-size--small);
-  line-height: var(--control__line-height);
-}
-@mixin control-font-size-regular() {
-  font-size: var(--control__font-size--regular);
-  line-height: var(--control__line-height);
-}
 // Height
 @mixin control-height-regular() {
   block-size: var(--control__height);
@@ -499,22 +483,6 @@
 @mixin item-height-large() {
   block-size: var(--item__height--large);
 }
-@mixin item-font() {
-  line-height: var(--item__line-height);
-  font-size: var(--item__font-size);
-  font-weight: var(--item__font-weight);
-}
-@mixin item-font-size-small() {
-  --item__font-size: var(--item__font-size--small);
-}
-@mixin item-font-header() {
-  // item header font-size and line-height has to be the same as
-  // item font-size and line-height in order for the computed height
-  // to be the same.
-  line-height: var(--item__line-height);
-  font-size: var(--item__font-size);
-  font-weight: var(--item-header__font-weight);
-}
 
 // ---------------------------------
 // Grid Item
@@ -565,8 +533,8 @@
   padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
-  padding-block-start: var(--mer-spacing--2xs);
-  padding-block-end: var(--mer-spacing--2xs);
+  padding-block-start: var(--mer-spacing--xs);
+  padding-block-end: var(--mer-spacing--xs);
 }
 @mixin grid-rowset-legend-colors-enabled() {
   --grid-rowset-legend__bg-color: var(--mer-surface__elevation--02);
@@ -593,10 +561,6 @@
 @mixin tab-button-border-block-start() {
   border-block-start: var(--tab-caption__border-width)
     var(--tab-caption__border-style) var(--tab-caption__border-color);
-}
-@mixin tab-button-font() {
-  font-size: var(--tab-caption__font-size);
-  font-weight: var(--tab-caption__font-weight);
 }
 @mixin tab-button-gap() {
   gap: var(--tab-caption__gap);
@@ -646,12 +610,6 @@
 // Label
 // ----------------------
 
-@mixin label-font() {
-  color: var(--label__color);
-  font-weight: var(--label__font-weight);
-  font-size: var(--label__font-size);
-  line-height: var(--label__line-height);
-}
 @mixin label-gap-block() {
   gap: var(--label__gap--block);
 }
@@ -1182,38 +1140,77 @@
 }
 
 @mixin font() {
-  // families
-  --mer-font-family--title: Inter, Helvetica, Arial, sans-serif;
-  --mer-font-family--body: Inter, Helvetica, Arial, sans-serif;
-  --mer-font-family--code: monospace;
+  // font-families
+  --font-family-header: Inter, Helvetica, Arial, sans-serif;
+  --font-family-body: Inter, Helvetica, Arial, sans-serif;
+  --font-family-code: monospace;
 
-  // weights
-  --mer-font__weight--light: 300;
-  --mer-font__weight--regular: 400;
-  --mer-font__weight--medium: 500;
-  --mer-font__weight--semi-bold: 600;
-  --mer-font__weight--bold: 700;
-  --mer-font__weight--extra-bold: 800;
+  // font-sizes: headers
+  --font-size-header-h1: 40px;
+  --font-size-header-h2: 32px;
+  --font-size-header-h3: 28px;
+  --font-size-header-h4: 24px;
+  --font-size-header-h5: 20px;
+  --font-size-header-h6: 18px;
 
-  // sizes
-  --mer-font__size--4xs: 11px;
-  --mer-font__size--3xs: 12px;
-  --mer-font__size--2xs: 13px;
-  --mer-font__size--xs: 14px;
-  --mer-font__size--sm: 16px;
-  --mer-font__size--md: 20px;
-  --mer-font__size--lg: 24px;
-  --mer-font__size--xl: 36px;
+  // font-sizes: subtitle
+  --font-size-subtitle-l: 20px;
+  --font-size-subtitle-m: 18px;
+  --font-size-subtitle-s: 16px;
+  --font-size-subtitle-xs: 14px;
 
-  // line heights
-  --mer-line-height--tight: 1.3;
-  --mer-line-height--regular: 1.4;
-  --mer-line-height--spaced: 1.5;
+  // font-sizes: body
+  --font-size-body-xl: 18px;
+  --font-size-body-l: 16px;
+  --font-size-body-m: 14px;
+  --font-size-body-s: 12px;
+  --font-size-body-xs: 11px;
+
+  // font-sizes: tiny
+  --font-size-tiny-l: 12px;
+  --font-size-tiny-m: 11px;
+  --font-size-tiny-s: 10px;
+  --font-size-tiny-xs: 8px;
+
+  // font-weights
+  --font-weight-bold: 700;
+  --font-weight-semi-bold: 600;
+  --font-weight-regular: 400;
+
+  // line-heights
+  --line-height-tight: 1.2;
+  --line-height-regular: 1.3;
 
   // letter spacings (to be done)
-  // --mer-letter-spacing--tight: ;
-  // --mer-letter-spacing--regular: ;
-  // --mer-letter-spacing--comfortable: ;
+
+  // - - - - - - -
+  // !Deprecated
+  // - - - - - - -
+
+  --mer-font-family--title: Inter, Helvetica, Arial, sans-serif; /* @deprecated */
+  --mer-font-family--body: Inter, Helvetica, Arial, sans-serif; /* @deprecated */
+  --mer-font-family--code: monospace; /* @deprecated */
+
+  --mer-font__weight--extra-bold: 800; /* @deprecated */
+  --mer-font__weight--bold: 700; /* @deprecated */
+  --mer-font__weight--semi-bold: 600; /* @deprecated */
+  --mer-font__weight--medium: 500; /* @deprecated */
+  --mer-font__weight--regular: 400; /* @deprecated */
+  --mer-font__weight--light: 300; /* @deprecated */
+
+  --mer-font__size--4xs: 11px; /* @deprecated */
+  --mer-font__size--3xs: 12px; /* @deprecated */
+  --mer-font__size--2xs: 13px; /* @deprecated */
+  --mer-font__size--xs: 14px; /* @deprecated */
+  --mer-font__size--sm: 16px; /* @deprecated */
+  --mer-font__size--md: 20px; /* @deprecated */
+  --mer-font__size--lg: 24px; /* @deprecated */
+  --mer-font__size--xl: 36px; /* @deprecated */
+  --mer-font__size--2xl: 40px; /* @deprecated */
+
+  --mer-line-height--tight: 1.3; /* @deprecated */
+  --mer-line-height--regular: 1.4; /* @deprecated */
+  --mer-line-height--spaced: 1.5; /* @deprecated */
 }
 
 @mixin foundation-colors--gradients() {
@@ -1389,19 +1386,9 @@
 
   // - - - - - - - Font Face - - - - - - -
 
-  --control__font-family: var(--mer-font-family--body);
-  --control__font-weight--regular: var(--mer-font__weight--regular);
-  --control__font-weight--semi-bold: var(--mer-font__weight--semi-bold);
-
-  // - - - - - - - Font Size - - - - - - -
-
-  --control__font-size--small: var(--mer-font__size--3xs);
-  --control__font-size--regular: var(--mer-font__size--xs);
-  --control__line-height: var(--mer-line-height--spaced);
-
   // - - - - - - - Padding - - - - - - -
 
-  --control__padding-block: var(--mer-spacing--2xs);
+  --control__padding-block: var(--mer-spacing--xs);
   --control__padding-inline: var(--mer-spacing--xs);
 
   // - - - - - - - Gap - - - - - - -
@@ -1410,7 +1397,7 @@
 
   // - - - - - - - Placeholder - - - - - - -
 
-  --control-placeholder__color: var(--ch-placeholder-color);
+  --control-placeholder__color: var(--mer-color__neutral-gray--400);
   --control-placeholder__color--disabled: var(
     --mer-form-input__color--disabled
   );
@@ -1434,9 +1421,6 @@
   // -------------------------------------------------------------
 
   // fixed values
-  --label__font-size: var(--mer-font__size--2xs);
-  --label__font-weight: var(--mer-font__weight--semi-bold);
-  --label__line-height: var(--mer-line-height--regular);
   --label__border-width: 1.2px;
   --label__border-style: solid;
   --label__border-radius: var(--mer-border__radius--2xs);
@@ -1484,10 +1468,6 @@
   // ----------------------
   --mer-body__bg-color: var(--mer-surface);
   --mer-body__color: var(--mer-text__on-surface);
-  --mer-body__font-size: var(--mer-font__size--3xs);
-  --mer-body__font-family: var(--mer-font-family--body);
-  --mer-body__font-weight: var(--mer-font__weight--regular);
-  --mer-body__line-height: var(--mer-line-height--spaced);
   --mer-body__margin-block: var(--mer-spacing--sm);
 
   // ----------------------
@@ -1497,11 +1477,6 @@
   --mer-system__border-width: var(--mer-border__width--sm);
   --mer-system__border-style: solid;
   --mer-system__border-color: var(--mer-color__neutral-gray--500);
-
-  // ----------------------
-  // Heading
-  // ----------------------
-  --mer-heading__color: var(--mer-color__neutral-gray--100);
 
   // ----------------------
   // Scrollbar
@@ -1656,22 +1631,11 @@
   --item__height--regular: var(--mer-spacing--xl); // ie.: Combo box
   --item__height--large: 36px; // ie.: Grid
 
-  // - - - - - - - Font Face - - - - - - -
-
-  // item
-  --item__font-size: var(--item__font-size--regular);
-  --item__font-size--small: var(--mer-font__size--3xs);
-  --item__font-size--regular: var(--mer-font__size--xs);
-  --item__font-weight: var(--mer-font__weight--regular);
-  // item header
-  --item-header__font-weight: var(--mer-font__weight--semi-bold);
-
   // - - - - - - - Item Gap - - - - - - -
   // For example, the gap between the icon and the caption
   --item__gap--regular: var(--mer-spacing--xs);
 
   // - - - - - - - Line Height - - - - - - -
-  --item__line-height: var(--mer-line-height--tight);
 
   // - - - - - - - - - - - - - - - - - - - -
   //           Items Container
@@ -1761,10 +1725,6 @@
     --mer-border-color__on-elevation--01
   );
   --tab-caption__color--disabled: var(--mer-text__primary--disabled);
-
-  // - - - - - - - Font - - - - - - -
-  --tab-caption__font-size: var(--mer-font__size--3xs);
-  --tab-caption__font-weight: var(--mer-font__weight--semi-bold);
 
   // - - - - - - - Padding - - - - - - -
   --tab-caption__padding-block: var(--mer-spacing--xs);
@@ -1984,22 +1944,6 @@
   --control__border-color: transparent;
   --control__border-radius: 0;
 }
-// Font
-@mixin control-font-weight-regular() {
-  font-weight: var(--control__font-weight--regular);
-}
-@mixin control-font-weight-semi-bold() {
-  font-weight: var(--control__font-weight--semi-bold);
-}
-// Font Size
-@mixin control-font-size-small() {
-  font-size: var(--control__font-size--small);
-  line-height: var(--control__line-height);
-}
-@mixin control-font-size-regular() {
-  font-size: var(--control__font-size--regular);
-  line-height: var(--control__line-height);
-}
 // Height
 @mixin control-height-regular() {
   block-size: var(--control__height);
@@ -2146,22 +2090,6 @@
 @mixin item-height-large() {
   block-size: var(--item__height--large);
 }
-@mixin item-font() {
-  line-height: var(--item__line-height);
-  font-size: var(--item__font-size);
-  font-weight: var(--item__font-weight);
-}
-@mixin item-font-size-small() {
-  --item__font-size: var(--item__font-size--small);
-}
-@mixin item-font-header() {
-  // item header font-size and line-height has to be the same as
-  // item font-size and line-height in order for the computed height
-  // to be the same.
-  line-height: var(--item__line-height);
-  font-size: var(--item__font-size);
-  font-weight: var(--item-header__font-weight);
-}
 
 // ---------------------------------
 // Grid Item
@@ -2212,8 +2140,8 @@
   padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
-  padding-block-start: var(--mer-spacing--2xs);
-  padding-block-end: var(--mer-spacing--2xs);
+  padding-block-start: var(--mer-spacing--xs);
+  padding-block-end: var(--mer-spacing--xs);
 }
 @mixin grid-rowset-legend-colors-enabled() {
   --grid-rowset-legend__bg-color: var(--mer-surface__elevation--02);
@@ -2240,10 +2168,6 @@
 @mixin tab-button-border-block-start() {
   border-block-start: var(--tab-caption__border-width)
     var(--tab-caption__border-style) var(--tab-caption__border-color);
-}
-@mixin tab-button-font() {
-  font-size: var(--tab-caption__font-size);
-  font-weight: var(--tab-caption__font-weight);
 }
 @mixin tab-button-gap() {
   gap: var(--tab-caption__gap);
@@ -2293,12 +2217,6 @@
 // Label
 // ----------------------
 
-@mixin label-font() {
-  color: var(--label__color);
-  font-weight: var(--label__font-weight);
-  font-size: var(--label__font-size);
-  line-height: var(--label__line-height);
-}
 @mixin label-gap-block() {
   gap: var(--label__gap--block);
 }
@@ -2499,6 +2417,10 @@
 }
 
 
+%label-font {
+  @extend %body-semi-bold-s;
+}
+
 /// @group Label
 /// @param {String} $label-selector [".label"] -
 /// @param {String} $label--disabled-selector [".label--disabled"] -
@@ -2509,7 +2431,7 @@
   $label--position-inline-selector: ".label--before"
 ) {
   #{$label-selector} {
-    @include label-font();
+    @extend %label-font;
   }
   #{$label--disabled-selector} {
     @include label-color-disabled();
@@ -2627,7 +2549,6 @@
 %button-base {
   @include button-common-styles();
   @include control-border();
-  @include control-font-size-regular();
   @include control-padding-inline-block();
   padding-inline: var(--control__padding-inline);
 
@@ -2638,8 +2559,8 @@
 
 %button-primary {
   @include button-tokens-primary();
-  @include control-font-weight-semi-bold();
   @extend %button-base;
+  @extend %body-semi-bold-m;
 
   //overwrite some control default styles
   --control__border-color: var(--button-primary__border-color);
@@ -2691,6 +2612,7 @@
 %button-secondary {
   @include button-tokens-secondary();
   @extend %button-base;
+  @extend %body-semi-bold-m;
 
   //overwrite some control default styles
   --control__border-color: var(--button-secondary__border-color);
@@ -2741,8 +2663,8 @@
 
 %button-tertiary {
   @include button-tokens-tertiary();
-  @include control-font-weight-regular();
   @extend %button-base;
+  @extend %body-regular-m;
 
   //overwrite some control default styles
   --control__border-color: var(--button-tertiary__border-color);
@@ -2955,7 +2877,9 @@
     grid-template-columns: max-content 1fr;
 
     &__label {
-      margin-block-start: var(--field-inline-label__margin-block-start);
+      // Make the label vertically aligned with an inline control.
+      // Also do not look center on taller contro, like a textarea.
+      margin-block-start: 11px;
     }
   }
 }
@@ -3164,258 +3088,336 @@
   }
 }
 
-@mixin heading-font-tokens() {
-  // heading base
-  --heading-base__font-family: var(--mer-font-family--title);
-  --heading__color: var(
-    --mer-heading__gray--light
-  ); // this forces the user to apply an allowed heading color.
+// heading
 
-  // h1
-  --heading-h1__font-size: var(--mer-font__size--xl);
-  --heading-h1__font-weight: var(--mer-font__weight--bold);
-  --heading-h1__line-height: var(--mer-line-height--tight);
-  // h2
-  --heading-h2__font-size: var(--mer-font__size--lg);
-  --heading-h2__font-weight: var(--mer-font__weight--bold);
-  --heading-h2__line-height: var(--mer-line-height--tight);
-  // h3
-  --heading-h3__font-size: var(--mer-font__size--sm);
-  --heading-h3__font-weight: var(--mer-font__weight--bold);
-  --heading-h3__line-height: var(--mer-line-height--regular);
-  // h4
-  --heading-h4__font-size: var(--mer-font__size--xs);
-  --heading-h4__font-weight: var(--mer-font__weight--bold);
-  --heading-h4__line-height: var(--mer-line-height--spaced);
-  // h5
-  --heading-h5__font-size: var(--mer-font__size--2xs);
-  --heading-h5__font-weight: var(--mer-font__weight--bold);
-  --heading-h5__line-height: var(--mer-line-height--spaced);
-  // h6
-  --heading-h6__font-size: var(--mer-font__size--3xs);
-  --heading-h6__font-weight: var(--mer-font__weight--semi-bold);
-  --heading-h6__line-height: var(--mer-line-height--spaced);
+@mixin heading-1() {
+  @extend %heading-base;
+  font-size: var(--font-size-header-h1);
 }
 
-@mixin body-font-tokens() {
-  // Generic
-  --text-body__font-size--l: var(--mer-font__size--sm);
-  --text-body__font-size--m: var(--mer-font__size--xs);
-  --text-body__font-size--s: var(--mer-font__size--3xs);
-  --text-body__font-size--xs: var(--mer-font__size--4xs);
-  --text-body__line-height: var(--mer-line-height--spaced);
-  // Regular
-  --text-body-regular__font-weight: var(--mer-font__weight--regular);
-  // Highlighted
-  --text-body-highlighted__font-weight: var(--mer-font__weight--semi-bold);
-  // Italic
-  --text-body-italic__font-weight: var(--mer-font__weight--regular);
+@mixin heading-2() {
+  @extend %heading-base;
+  font-size: var(--font-size-header-h2);
 }
 
-@mixin tab-font-tokens() {
-  --text-tab__font-family: var(--mer-font-family--inter-regular);
-  --text-tab__font-size: var(--mer-font__size--3xs);
-  --text-tab__line-height: var(--mer-line-height--regular);
+@mixin heading-3() {
+  @extend %heading-base;
+  font-size: var(--font-size-header-h3);
 }
 
-@mixin button-font-tokens() {
-  --text-button__font-family: var(--mer-font-family--inter-regular);
-  --text-button__font-size: var(--mer-font__size--3xs);
-  --text-button__line-height: var(--mer-line-height--regular);
-  --text-button__font-weight--semi-bold: var(--mer-font__weight--semi-bold);
-  --text-button__font-weight--regular: var(--mer-font__weight--regular);
+@mixin heading-4() {
+  @extend %heading-base;
+  font-size: var(--font-size-header-h4);
 }
 
-@mixin tooltip-font-tokens() {
-  --mer-text-tooltip__font-family: var(--mer-font-family--body);
-  --mer-text-tooltip__font-size: var(--mer-font-size--2xs);
+@mixin heading-5() {
+  @extend %heading-base;
+  font-size: var(--font-size-header-h5);
 }
 
-
-// ----------------------
-// Heading
-// ----------------------
+@mixin heading-6() {
+  @extend %heading-base;
+  font-size: var(--font-size-header-h6);
+}
 
 %heading {
   &-base {
-    @include heading-font-tokens();
-    font-family: var(--mer-font-family--title);
-    line-height: var(--mer-line-height--tight);
-    color: var(--heading__color);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
   }
 
   &-1 {
-    @extend %heading-base;
-    font-size: var(--mer-font__size--xl); // 36px
-    font-weight: var(--mer-font__weight--bold);
-    line-height: var(--heading-h1__line-height);
+    @include heading-1();
   }
 
   &-2 {
-    @extend %heading-base;
-    font-size: var(--mer-font__size--lg); // 24px
-    font-weight: var(--mer-font__weight--bold);
-    line-height: var(--heading-h2__line-height);
+    @include heading-2();
   }
 
   &-3 {
-    @extend %heading-base;
-    font-size: var(--mer-font__size--sm); // 16px
-    font-weight: var(--mer-font__weight--bold);
-    line-height: var(--heading-h3__line-height);
+    @include heading-3();
   }
 
   &-4 {
-    @extend %heading-base;
-    font-size: var(--mer-font__size--xs); // 14px
-    font-weight: var(--mer-font__weight--bold);
-    line-height: var(--heading-h4__line-height);
+    @include heading-4();
   }
 
   &-5 {
-    @extend %heading-base;
-    font-size: var(--mer-font__size--2xs); // 13px
-    font-weight: var(--mer-font__weight--bold);
-    line-height: var(--heading-h5__line-height);
+    @include heading-5();
   }
 
   &-6 {
-    @extend %heading-base;
-    font-size: var(--mer-font__size--3xs); // 12px
-    font-weight: var(--mer-font__weight--semi-bold);
-    line-height: var(--heading-h6__line-height);
-  }
-
-  &-color {
-    &__gray--light {
-      --heading__color: var(--mer-heading__gray--light);
-    }
+    @include heading-6();
   }
 }
 
-%text-link {
-  text-decoration: underline;
+// subtitle
+
+@mixin subtitle-l() {
+  font-size: var(--font-size-subtitle-l);
+  line-height: var(--line-height-regular);
+}
+@mixin subtitle-m() {
+  font-size: var(--font-size-subtitle-m);
+  line-height: var(--line-height-regular);
+}
+@mixin subtitle-s() {
+  font-size: var(--font-size-subtitle-s);
+  line-height: var(--line-height-tight);
+}
+@mixin subtitle-xs() {
+  font-size: var(--font-size-subtitle-xs);
+  line-height: var(--line-height-tight);
+}
+
+%subtitle {
+  &-regular {
+    font-family: var(--font-family-header);
+    font-weight: var(--font-weight-regular);
+
+    &-l {
+      @include subtitle-l();
+      @extend %subtitle-regular;
+    }
+
+    &-m {
+      @include subtitle-m();
+      @extend %subtitle-regular;
+    }
+
+    &-s {
+      @include subtitle-s();
+      @extend %subtitle-regular;
+    }
+
+    &-xs {
+      @include subtitle-xs();
+      @extend %subtitle-regular;
+    }
+  }
+
+  &-semi-bold {
+    font-weight: var(--font-weight-semi-bold);
+
+    &-l {
+      @include subtitle-l();
+      @extend %subtitle-semi-bold;
+    }
+
+    &-m {
+      @include subtitle-m();
+      @extend %subtitle-semi-bold;
+    }
+
+    &-s {
+      @include subtitle-s();
+      @extend %subtitle-semi-bold;
+    }
+
+    &-xs {
+      @include subtitle-xs();
+      @extend %subtitle-semi-bold;
+    }
+  }
 }
 
 // body
-%text-body {
+@mixin body-font() {
+  font-size: var(--font-size-body-m);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-regular);
+}
+
+@mixin body-xl() {
+  font-size: var(--font-size-body-xl);
+}
+@mixin body-l() {
+  font-size: var(--font-size-body-l);
+}
+@mixin body-m() {
+  font-size: var(--font-size-body-m);
+}
+@mixin body-s() {
+  font-size: var(--font-size-body-s);
+}
+@mixin body-xs() {
+  font-size: var(--font-size-body-xs);
+}
+
+%body {
   &-base {
-    @include body-font-tokens();
+    line-height: var(--line-height-tight);
+  }
+
+  &-regular {
+    font-weight: var(--font-weight-regular);
+
+    &-xl {
+      @extend %body-base;
+      @extend %body-regular;
+      @include body-xl();
+    }
+
+    &-l {
+      @extend %body-base;
+      @extend %body-regular;
+      @include body-l();
+    }
+
+    &-m {
+      @include body-font();
+    }
+
+    &-s {
+      @extend %body-base;
+      @extend %body-regular;
+      @include body-s();
+    }
+
+    &-xs {
+      @extend %body-base;
+      @extend %body-regular;
+      @include body-xs();
+    }
+  }
+
+  &-semi-bold {
+    font-weight: var(--font-weight-semi-bold);
+
+    &-xl {
+      @extend %body-base;
+      @extend %body-semi-bold;
+      @include body-xl();
+    }
+
+    &-l {
+      @extend %body-base;
+      @extend %body-semi-bold;
+      @include body-l();
+    }
+
+    &-m {
+      @extend %body-base;
+      @extend %body-semi-bold;
+      @include body-m();
+    }
+
+    &-s {
+      @extend %body-base;
+      @extend %body-semi-bold;
+      @include body-s();
+    }
+
+    &-xs {
+      @extend %body-base;
+      @extend %body-semi-bold;
+      @include body-xs();
+    }
+  }
+
+  &-regular-italic {
+    font-weight: var(--font-weight-regular);
+    font-style: italic;
+
+    &-xl {
+      @extend %body-base;
+      @extend %body-regular-italic;
+      @include body-xl();
+    }
+
+    &-l {
+      @extend %body-base;
+      @extend %body-regular-italic;
+      @include body-l();
+    }
+
+    &-m {
+      @extend %body-base;
+      @extend %body-regular-italic;
+      @include body-m();
+    }
+
+    &-s {
+      @extend %body-base;
+      @extend %body-regular-italic;
+      @include body-s();
+    }
+
+    &-xs {
+      @extend %body-base;
+      @extend %body-regular-italic;
+      @include body-xs();
+    }
+  }
+}
+
+// body tiny
+
+@mixin tiny-l() {
+  font-size: var(--font-size-tiny-l);
+}
+@mixin tiny-m() {
+  font-size: var(--font-size-tiny-m);
+}
+@mixin tiny-s() {
+  font-size: var(--font-size-tiny-s);
+}
+@mixin tiny-xs() {
+  font-size: var(--font-size-tiny-xs);
+}
+
+%tiny {
+  &-regular-base {
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+  }
+  &-semi-bold-base {
+    font-weight: var(--font-weight-semi-bold);
+    line-height: var(--line-height-tight);
   }
   &-regular {
     &-l {
-      @extend %text-body-base;
-      font-size: var(--text-body__font-size--l);
-      font-weight: var(--text-body-regular__font-weight);
-      line-height: var(--text-body__line-height);
+      @extend %tiny-regular-base;
+      @include tiny-l();
     }
+
     &-m {
-      @extend %text-body-base;
-      font-size: var(--text-body__font-size--m);
-      font-weight: var(--text-body-regular__font-weight);
-      line-height: var(--text-body__line-height);
+      @extend %tiny-regular-base;
+      @include tiny-m();
     }
+
     &-s {
-      @extend %text-body-base;
-      font-size: var(--text-body__font-size--s);
-      font-weight: var(--text-body-regular__font-weight);
-      line-height: var(--text-body__line-height);
+      @extend %tiny-regular-base;
+      @include tiny-s();
     }
+
     &-xs {
-      @extend %text-body-base;
-      font-size: var(--text-body__font-size--xs);
-      font-weight: var(--text-body-regular__font-weight);
-      line-height: var(--text-body__line-height);
+      @extend %tiny-regular-base;
+      @include tiny-xs();
     }
   }
-  &-highlighted {
+
+  &-semi-bold {
     &-l {
-      @extend %text-body-base;
-      font-size: var(--text-body__font-size--l);
-      font-weight: var(--text-body-highlighted__font-weight);
-      line-height: var(--text-body__line-height);
+      @extend %tiny-semi-bold-base;
+      @include tiny-l();
     }
+
     &-m {
-      @extend %text-body-base;
-      font-size: var(--text-body__font-size--m);
-      font-weight: var(--text-body-highlighted__font-weight);
-      line-height: var(--text-body__line-height);
+      @extend %tiny-semi-bold-base;
+      @include tiny-m();
     }
+
     &-s {
-      @extend %text-body-base;
-      font-size: var(--text-body__font-size--s);
-      font-weight: var(--text-body-highlighted__font-weight);
-      line-height: var(--text-body__line-height);
+      @extend %tiny-semi-bold-base;
+      @include tiny-s();
     }
+
     &-xs {
-      @extend %text-body-base;
-      font-size: var(--text-body__font-size--xs);
-      font-weight: var(--text-body-highlighted__font-weight);
-      line-height: var(--text-body__line-height);
+      @extend %tiny-semi-bold-base;
+      @include tiny-xs();
     }
   }
-  &-italic {
-    &-l {
-      @extend %text-body-base;
-      font-size: var(--text-body__font-size--l);
-      font-style: italic;
-      font-weight: var(--text-body-italic__font-weight);
-      line-height: var(--text-body__line-height);
-    }
-    &-m {
-      @extend %text-body-base;
-      font-size: var(--text-body__font-size--m);
-      font-style: italic;
-      font-weight: var(--text-body-italic__font-weight);
-      line-height: var(--text-body__line-height);
-    }
-    &-s {
-      @extend %text-body-base;
-      font-size: var(--text-body__font-size--s);
-      font-style: italic;
-      font-weight: var(--text-body-italic__font-weight);
-      line-height: var(--text-body__line-height);
-    }
-    &-xs {
-      @extend %text-body-base;
-      font-size: var(--text-body__font-size--xs);
-      font-style: italic;
-      font-weight: var(--text-body-italic__font-weight);
-      line-height: var(--text-body__line-height);
-    }
-  }
-}
-
-// tab
-%tab-text {
-  @include tab-font-tokens();
-  font-family: var(--text-tab__font-family);
-  font-size: var(--text-tab__font-size);
-  line-height: var(--text-tab__line-height);
-}
-
-// button
-%button-text {
-  @include button-font-tokens();
-  font-family: var(--text-button__font-family);
-  font-size: var(--text-button__font-size);
-  line-height: var(--text-button__line-height);
-
-  &--semi-bold {
-    @extend %button-text;
-    font-weight: var(--mer-font__weight--semi-bold);
-  }
-  &--regular {
-    @extend %button-text;
-    font-weight: var(--mer-font__weight--regular);
-  }
-}
-
-// tooltip
-%tooltip-text {
-  @include tooltip-font-tokens();
-  font-family: var(--mer-text-tooltip__font-family);
-  font-size: var(--mer-text-tooltip__font-size);
 }
 
 /// @group Typography
@@ -3425,19 +3427,44 @@
 /// @param {String} $heading-4-selector [".heading-4"] -
 /// @param {String} $heading-5-selector [".heading-5"] -
 /// @param {String} $heading-6-selector [".heading-6"] -
-/// @param {String} $heading-color__gray-light-selector [".heading-gray--light"] -
-/// @param {String} $text-body-regular-l-selector [".text-body-regular-l"] -
-/// @param {String} $text-body-regular-m-selector [".text-body-regular-m"] -
-/// @param {String} $text-body-regular-s-selector [".text-body-regular-s"] -
-/// @param {String} $text-body-regular-xs-selector [".text-body-regular-xs"] -
-/// @param {String} $text-body-highlighted-l-selector [".text-body-highlighted-l"] -
-/// @param {String} $text-body-highlighted-m-selector [".text-body-highlighted-m"] -
-/// @param {String} $text-body-highlighted-s-selector [".text-body-highlighted-s"] -
-/// @param {String} $text-body-highlighted-xs-selector [".text-body-highlighted-xs"] -
-/// @param {String} $text-body-italic-l-selector [".text-body-italic-l"] -
-/// @param {String} $text-body-italic-m-selector [".text-body-italic-m"] -
-/// @param {String} $text-body-italic-s-selector [".text-body-italic-s"] -
-/// @param {String} $text-body-italic-xs-selector [".text-body-italic-xs"] -
+
+/// @param {String} $subtitle-regular-l-selector [".subtitle-regular-l"] -
+/// @param {String} $subtitle-regular-m-selector [".subtitle-regular-m"] -
+/// @param {String} $subtitle-regular-s-selector [".subtitle-regular-s"] -
+/// @param {String} $subtitle-regular-xs-selector [".subtitle-regular-xs"] -
+
+/// @param {String} $subtitle-bold-l-selector [".subtitle-bold-l"] -
+/// @param {String} $subtitle-bold-m-selector [".subtitle-bold-m"] -
+/// @param {String} $subtitle-bold-s-selector [".subtitle-bold-s"] -
+/// @param {String} $subtitle-bold-xs-selector [".subtitle-bold-xs"] -
+
+/// @param {String} $body-regular-xl-selector [".body-regular-xl"] -
+/// @param {String} $body-regular-l-selector [".body-regular-l"] -
+/// @param {String} $body-regular-m-selector [".body-regular-m"] -
+/// @param {String} $body-regular-s-selector [".body-regular-s"] -
+/// @param {String} $body-regular-xs-selector [".body-regular-xs"] -
+
+/// @param {String} $body-semi-bold-xl-selector [".body-semi-bold-xl"] -
+/// @param {String} $body-semi-bold-l-selector [".body-semi-bold-l"] -
+/// @param {String} $body-semi-bold-m-selector [".body-semi-bold-m"] -
+/// @param {String} $body-semi-bold-s-selector [".body-semi-bold-s"] -
+/// @param {String} $body-semi-bold-xs-selector [".body-semi-bold-xs"] -
+
+/// @param {String} $body-regular-italic-xl-selector [".body-regular-italic-xl"] -
+/// @param {String} $body-regular-italic-l-selector [".body-regular-italic-l"] -
+/// @param {String} $body-regular-italic-m-selector [".body-regular-italic-m"] -
+/// @param {String} $body-regular-italic-s-selector [".body-regular-italic-s"] -
+/// @param {String} $body-regular-italic-xs-selector [".body-regular-italic-xs"] -
+
+/// @param {String} $tiny-regular-l-selector [".tiny-regular-l"] -
+/// @param {String} $tiny-regular-m-selector [".tiny-regular-m"] -
+/// @param {String} $tiny-regular-s-selector [".tiny-regular-s"] -
+/// @param {String} $tiny-regular-xs-selector [".tiny-regular-xs"] -
+
+/// @param {String} $tiny-semi-bold-l-selector [".tiny-semi-bold-l"] -
+/// @param {String} $tiny-semi-bold-m-selector [".tiny-semi-bold-m"] -
+/// @param {String} $tiny-semi-bold-s-selector [".tiny-semi-bold-s"] -
+/// @param {String} $tiny-semi-bold-xs-selector [".tiny-semi-bold-xs"] -
 
 @mixin typography-classes(
   $heading-1-selector: ".heading-1",
@@ -3446,108 +3473,194 @@
   $heading-4-selector: ".heading-4",
   $heading-5-selector: ".heading-5",
   $heading-6-selector: ".heading-6",
-  $heading-color__gray-light-selector: ".heading-gray--light",
-  $text-body-regular-l-selector: ".text-body-regular-l",
-  $text-body-regular-m-selector: ".text-body-regular-m",
-  $text-body-regular-s-selector: ".text-body-regular-s",
-  $text-body-regular-xs-selector: ".text-body-regular-xs",
-  $text-body-highlighted-l-selector: ".text-body-highlighted-l",
-  $text-body-highlighted-m-selector: ".text-body-highlighted-m",
-  $text-body-highlighted-s-selector: ".text-body-highlighted-s",
-  $text-body-highlighted-xs-selector: ".text-body-highlighted-xs",
-  $text-body-italic-l-selector: ".text-body-italic-l",
-  $text-body-italic-m-selector: ".text-body-italic-m",
-  $text-body-italic-s-selector: ".text-body-italic-s",
-  $text-body-italic-xs-selector: ".text-body-italic-xs"
+
+  $subtitle-regular-l-selector: ".subtitle-regular-l",
+  $subtitle-regular-m-selector: ".subtitle-regular-m",
+  $subtitle-regular-s-selector: ".subtitle-regular-s",
+  $subtitle-regular-xs-selector: ".subtitle-regular-xs",
+
+  $subtitle-semi-bold-l-selector: ".subtitle-semi-bold-l",
+  $subtitle-semi-bold-m-selector: ".subtitle-semi-bold-m",
+  $subtitle-semi-bold-s-selector: ".subtitle-semi-bold-s",
+  $subtitle-semi-bold-xs-selector: ".subtitle-semi-bold-xs",
+
+  $body-regular-xl-selector: ".body-regular-xl",
+  $body-regular-l-selector: ".body-regular-l",
+  $body-regular-m-selector: ".body-regular-m",
+  $body-regular-s-selector: ".body-regular-s",
+  $body-regular-xs-selector: ".body-regular-xs",
+
+  $body-semi-bold-xl-selector: ".body-semi-bold-xl",
+  $body-semi-bold-l-selector: ".body-semi-bold-l",
+  $body-semi-bold-m-selector: ".body-semi-bold-m",
+  $body-semi-bold-s-selector: ".body-semi-bold-s",
+  $body-semi-bold-xs-selector: ".body-semi-bold-xs",
+
+  $body-regular-italic-xl-selector: ".body-regular-italic-xl",
+  $body-regular-italic-l-selector: ".body-regular-italic-l",
+  $body-regular-italic-m-selector: ".body-regular-italic-m",
+  $body-regular-italic-s-selector: ".body-regular-italic-s",
+  $body-regular-italic-xs-selector: ".body-regular-italic-xs",
+
+  $tiny-regular-l-selector: ".tiny-regular-l",
+  $tiny-regular-m-selector: ".tiny-regular-m",
+  $tiny-regular-s-selector: ".tiny-regular-s",
+  $tiny-regular-xs-selector: ".tiny-regular-xs",
+
+  $tiny-semi-bold-l-selector: ".tiny-semi-bold-l",
+  $tiny-semi-bold-m-selector: ".tiny-semi-bold-m",
+  $tiny-semi-bold-s-selector: ".tiny-semi-bold-s",
+  $tiny-semi-bold-xs-selector: ".tiny-semi-bold-xs"
 ) {
-  // headings
+  // Heading:
 
   #{$heading-1-selector} {
     @extend %heading-1;
   }
-
   #{$heading-2-selector} {
     @extend %heading-2;
   }
-
   #{$heading-3-selector} {
     @extend %heading-3;
   }
-
   #{$heading-4-selector} {
     @extend %heading-4;
   }
-
   #{$heading-5-selector} {
     @extend %heading-5;
   }
-
   #{$heading-6-selector} {
     @extend %heading-6;
   }
 
-  #{$heading-color__gray-light-selector} {
-    @extend %heading-color__gray--light;
+  // Subtitle: regular
+
+  #{$subtitle-regular-l-selector} {
+    @extend %subtitle-regular-l;
+  }
+  #{$subtitle-regular-m-selector} {
+    @extend %subtitle-regular-m;
+  }
+  #{$subtitle-regular-s-selector} {
+    @extend %subtitle-regular-s;
+  }
+  #{$subtitle-regular-xs-selector} {
+    @extend %subtitle-regular-xs;
   }
 
-  // body
+  // Subtitle: bold
 
-  #{$text-body-regular-l-selector} {
-    @extend %text-body-regular-l;
+  #{$subtitle-semi-bold-l-selector} {
+    @extend %subtitle-semi-bold-l;
+  }
+  #{$subtitle-semi-bold-m-selector} {
+    @extend %subtitle-semi-bold-m;
+  }
+  #{$subtitle-semi-bold-s-selector} {
+    @extend %subtitle-semi-bold-s;
+  }
+  #{$subtitle-semi-bold-xs-selector} {
+    @extend %subtitle-semi-bold-xs;
   }
 
-  #{$text-body-regular-m-selector} {
-    @extend %text-body-regular-m;
+  // Body: regular
+
+  #{$body-regular-xl-selector} {
+    @extend %body-regular-xl;
+  }
+  #{$body-regular-l-selector} {
+    @extend %body-regular-l;
+  }
+  #{$body-regular-m-selector} {
+    @extend %body-regular-m;
+  }
+  #{$body-regular-s-selector} {
+    @extend %body-regular-s;
+  }
+  #{$body-regular-xs-selector} {
+    @extend %body-regular-xs;
   }
 
-  #{$text-body-regular-s-selector} {
-    @extend %text-body-regular-s;
+  // Body: semi-bold
+
+  #{$body-semi-bold-xl-selector} {
+    @extend %body-semi-bold-xl;
+  }
+  #{$body-semi-bold-l-selector} {
+    @extend %body-semi-bold-l;
+  }
+  #{$body-semi-bold-m-selector} {
+    @extend %body-semi-bold-m;
+  }
+  #{$body-semi-bold-s-selector} {
+    @extend %body-semi-bold-s;
+  }
+  #{$body-semi-bold-xs-selector} {
+    @extend %body-semi-bold-xs;
   }
 
-  #{$text-body-regular-xs-selector} {
-    @extend %text-body-regular-xs;
+  // Body: regular italic
+
+  #{$body-regular-italic-xl-selector} {
+    @extend %body-regular-italic-xl;
+  }
+  #{$body-regular-italic-l-selector} {
+    @extend %body-regular-italic-l;
+  }
+  #{$body-regular-italic-m-selector} {
+    @extend %body-regular-italic-m;
+  }
+  #{$body-regular-italic-s-selector} {
+    @extend %body-regular-italic-s;
+  }
+  #{$body-regular-italic-xs-selector} {
+    @extend %body-regular-italic-xs;
   }
 
-  #{$text-body-highlighted-l-selector} {
-    @extend %text-body-highlighted-l;
+  // Body tiny: regular
+
+  #{$tiny-regular-l-selector} {
+    @extend %tiny-regular-l;
+  }
+  #{$tiny-regular-m-selector} {
+    @extend %tiny-regular-m;
+  }
+  #{$tiny-regular-s-selector} {
+    @extend %tiny-regular-s;
+  }
+  #{$tiny-regular-xs-selector} {
+    @extend %tiny-regular-xs;
   }
 
-  #{$text-body-highlighted-m-selector} {
-    @extend %text-body-highlighted-m;
-  }
+  // Body tiny: semi-bold
 
-  #{$text-body-highlighted-s-selector} {
-    @extend %text-body-highlighted-s;
+  #{$tiny-semi-bold-l-selector} {
+    @extend %tiny-semi-bold-l;
   }
-
-  #{$text-body-highlighted-xs-selector} {
-    @extend %text-body-highlighted-xs;
+  #{$tiny-semi-bold-m-selector} {
+    @extend %tiny-semi-bold-m;
   }
-
-  #{$text-body-italic-l-selector} {
-    @extend %text-body-italic-l;
+  #{$tiny-semi-bold-s-selector} {
+    @extend %tiny-semi-bold-s;
   }
-
-  #{$text-body-italic-m-selector} {
-    @extend %text-body-italic-m;
-  }
-
-  #{$text-body-italic-s-selector} {
-    @extend %text-body-italic-s;
-  }
-
-  #{$text-body-italic-xs-selector} {
-    @extend %text-body-italic-xs;
+  #{$tiny-semi-bold-xs-selector} {
+    @extend %tiny-semi-bold-xs;
   }
 }
 
-// ---------------------------------------
-// Text States e.g.: for the property-grid
-// ---------------------------------------
+// link
+
+%text-link {
+  color: var(--mer-text__primary);
+  text-decoration-line: underline;
+}
+
+// property-grid
 
 %text-edited {
-  font-weight: var(--mer-font__weight--semi-bold);
+  font-weight: var(--font-weight-bold);
 }
+
 %text-readonly {
   font-style: italic;
   color: var(--item__color--disabled);
@@ -3664,15 +3777,8 @@
 
 
 %button-icon-only {
-  padding: 0;
-  box-sizing: border-box;
-  // A control block-size is the sum of its font-size + line-height + padding-block + border.
-  $buttonIconOnlySize: calc(
-    var(--control__font-size--regular) * var(--control__line-height) +
-      var(--control__padding-block) * 2 + var(--control__border-width) * 2
-  );
-  inline-size: $buttonIconOnlySize;
-  block-size: $buttonIconOnlySize;
+  @include control-padding-inline-block();
+  @include control-border();
 }
 
 %button-icon-and-text {
@@ -3774,7 +3880,7 @@
 }
 
 %accordion-header {
-  @extend %text-body-highlighted-m;
+  @extend %subtitle-semi-bold-xs;
   padding: var(--accordion-header__padding);
   gap: var(--accordion-header__gap);
   color: var(--accordion-header__color);
@@ -3988,7 +4094,7 @@
     }
 
     &::part(message__role) {
-      @extend %text-body-highlighted-m;
+      @extend %body-semi-bold-m;
       display: inline-grid;
       grid-template-columns: max-content max-content;
       gap: 6px;
@@ -4010,12 +4116,12 @@
     }
 
     &::part(message__time) {
-      @extend %text-body-italic-m;
+      @extend %body-regular-italic-m;
       color: #828b96;
     }
 
     &::part(message__content) {
-      @extend %text-body-regular-m;
+      @extend %body-regular-m;
       color: var(--mer-color__neutral-gray--100);
     }
 
@@ -4034,7 +4140,7 @@
     }
 
     &::part(message assistant waiting) {
-      @extend %text-body-italic-s;
+      @extend %body-regular-italic-s;
       background-color: var(--mer-color__neutral-gray--900);
       border-radius: unset;
       color: #666;
@@ -4081,7 +4187,7 @@
 
     &::part(message__processing) {
       color: var(--mer-text__on-surface);
-      font-size: var(--mer-font__size--2xs);
+      font-size: var(--font-size-body-s);
     }
 
     @include input(
@@ -4095,7 +4201,7 @@
       border-radius: var(--control__border-radius);
       border: 1px solid var(--mer-border-color__neutral);
       color: var(--control__border-style);
-      font-size: var(--control__font-size--regular);
+      font-size: var(--font-size-body-m);
       inline-size: 100%;
       justify-content: center;
       line-height: var(--control__line-height);
@@ -4181,7 +4287,7 @@
 
   // Label
   &__label {
-    @include label-font();
+    @extend %label-font;
 
     &--disabled {
       @include label-color-disabled();
@@ -4622,22 +4728,6 @@
   --control__border-color: transparent;
   --control__border-radius: 0;
 }
-// Font
-@mixin control-font-weight-regular() {
-  font-weight: var(--control__font-weight--regular);
-}
-@mixin control-font-weight-semi-bold() {
-  font-weight: var(--control__font-weight--semi-bold);
-}
-// Font Size
-@mixin control-font-size-small() {
-  font-size: var(--control__font-size--small);
-  line-height: var(--control__line-height);
-}
-@mixin control-font-size-regular() {
-  font-size: var(--control__font-size--regular);
-  line-height: var(--control__line-height);
-}
 // Height
 @mixin control-height-regular() {
   block-size: var(--control__height);
@@ -4784,22 +4874,6 @@
 @mixin item-height-large() {
   block-size: var(--item__height--large);
 }
-@mixin item-font() {
-  line-height: var(--item__line-height);
-  font-size: var(--item__font-size);
-  font-weight: var(--item__font-weight);
-}
-@mixin item-font-size-small() {
-  --item__font-size: var(--item__font-size--small);
-}
-@mixin item-font-header() {
-  // item header font-size and line-height has to be the same as
-  // item font-size and line-height in order for the computed height
-  // to be the same.
-  line-height: var(--item__line-height);
-  font-size: var(--item__font-size);
-  font-weight: var(--item-header__font-weight);
-}
 
 // ---------------------------------
 // Grid Item
@@ -4850,8 +4924,8 @@
   padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
-  padding-block-start: var(--mer-spacing--2xs);
-  padding-block-end: var(--mer-spacing--2xs);
+  padding-block-start: var(--mer-spacing--xs);
+  padding-block-end: var(--mer-spacing--xs);
 }
 @mixin grid-rowset-legend-colors-enabled() {
   --grid-rowset-legend__bg-color: var(--mer-surface__elevation--02);
@@ -4878,10 +4952,6 @@
 @mixin tab-button-border-block-start() {
   border-block-start: var(--tab-caption__border-width)
     var(--tab-caption__border-style) var(--tab-caption__border-color);
-}
-@mixin tab-button-font() {
-  font-size: var(--tab-caption__font-size);
-  font-weight: var(--tab-caption__font-weight);
 }
 @mixin tab-button-gap() {
   gap: var(--tab-caption__gap);
@@ -4931,12 +5001,6 @@
 // Label
 // ----------------------
 
-@mixin label-font() {
-  color: var(--label__color);
-  font-weight: var(--label__font-weight);
-  font-size: var(--label__font-size);
-  line-height: var(--label__line-height);
-}
 @mixin label-gap-block() {
   gap: var(--label__gap--block);
 }
@@ -5145,10 +5209,10 @@
   --ch-combo-box-group__expandable-button-size: var(--mer-spacing--md);
   --ch-combo-box-group__expandable-button-image-size: var(--mer-spacing--sm);
 
+  @extend %body-regular-m;
+
   @include control-border();
   @include control-colors-enabled();
-  @include control-font-weight-regular();
-  @include control-font-size-regular();
   @include control-padding-inline-block();
 
   &--hover {
@@ -5179,12 +5243,10 @@
 
   &-group__header {
     @include item-colors-enabled();
-    @include item-font-header();
     @include item-padding();
 
     &--expandable {
       @include item-colors-enabled();
-      @include item-font-header();
       @include item-padding();
       @include item-border-radius();
 
@@ -5207,10 +5269,10 @@
   }
 
   &__item {
+    @extend %body-regular-m;
     @include item-colors-enabled();
     @include item-border();
     @include item-border-radius();
-    @include item-font();
     @include item-padding();
 
     &--nested {
@@ -5387,8 +5449,7 @@
   }
 
   &__caption {
-    @extend %heading-5;
-    @extend %heading-color__gray--light;
+    @extend %subtitle-semi-bold-xs;
     word-break: break-word;
   }
 
@@ -5548,7 +5609,6 @@
   @include items-container-dropdown();
   @include items-container-border-radius();
   @include items-container-gap();
-  @include item-font();
 }
 
 // Primary
@@ -5559,6 +5619,7 @@
   @include item-border-radius();
   @include item-padding();
   @include item-gap();
+  @extend %body-regular-m;
 
   &--focus {
     // @include focus-style($outline: true);
@@ -5773,8 +5834,8 @@
 
   &-tab-button-block {
     @include tab-button-colors-enabled();
-    @include tab-button-font();
     @include tab-button-gap();
+    @extend %body-regular-s;
 
     padding-inline: var(--tab-caption__padding-inline);
 
@@ -5786,8 +5847,8 @@
 
   &-tab-button-inline {
     @include tab-button-colors-enabled();
-    @include tab-button-font();
     @include tab-button-gap();
+    @extend %body-regular-s;
 
     padding-block: var(--tab-caption__padding-block);
 
@@ -6173,11 +6234,10 @@
   --ch-edit-gap: var(--control__icon-gap);
   --ch-edit__image-size: var(--mer-icon__box--md);
   --ch-placeholder-color: var(--mer-color__neutral-gray--400);
+  @extend %body-regular-m;
 
   @include control-border();
   @include control-colors-enabled();
-  @include control-font-weight-regular();
-  @include control-font-size-regular();
   @include control-padding-inline-block();
 
   &--focus {
@@ -6200,6 +6260,7 @@
 /// @param {Boolean} $add--error [true] -
 @mixin input(
   $selector: ".input",
+  $empty-placeholder-selector: ".input[part*='ch-edit--empty-value']",
   $error-selector: ".input-error",
   $add--disabled: true,
   $add--error: true,
@@ -6221,11 +6282,11 @@
         @extend %input--disabled;
       }
     }
+  }
 
-    @if $add--placeholder {
-      &::placeholder {
-        font-style: italic;
-      }
+  @if $add--placeholder {
+    #{$empty-placeholder-selector} {
+      @extend %body-regular-italic-m;
     }
   }
 
@@ -6266,8 +6327,8 @@
     @include item-colors-enabled();
     @include item-border();
     @include item-border-radius();
-    @include item-font();
     @include item-padding();
+    @extend %body-regular-m;
     // @include item-column-gap(); // TODO: uncomment when '.action' class on Chameleon fixes the grid-template.
     // Explanation: At the time of writting Chameleon is applying a grid-template that consists on three columns.
     // As a side effect, if we apply column-gap an inline-start gap will be applied, even tough is not intended.
@@ -6322,7 +6383,7 @@
     }
     &-action,
     &-caption {
-      @include item-font-header();
+      @extend %subtitle-semi-bold-xs;
       @include item-colors-enabled();
     }
     &-caption {
@@ -6505,7 +6566,7 @@
 
 @mixin markdown-viewer() {
   :host {
-    @extend %text-body;
+    @extend %body-regular-m;
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -6592,7 +6653,7 @@
   }
 
   strong {
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -6742,7 +6803,7 @@
     border-radius: var(--mer-border__radius--sm);
     box-shadow: 4px 4px 12px 0px #00000033;
     color: var(--mer-color__neutral-gray--300);
-    font-size: var(--mer-font__size--xs);
+    @extend %body-regular-m;
   }
 
   &-item-action {
@@ -7070,22 +7131,6 @@
   --control__border-color: transparent;
   --control__border-radius: 0;
 }
-// Font
-@mixin control-font-weight-regular() {
-  font-weight: var(--control__font-weight--regular);
-}
-@mixin control-font-weight-semi-bold() {
-  font-weight: var(--control__font-weight--semi-bold);
-}
-// Font Size
-@mixin control-font-size-small() {
-  font-size: var(--control__font-size--small);
-  line-height: var(--control__line-height);
-}
-@mixin control-font-size-regular() {
-  font-size: var(--control__font-size--regular);
-  line-height: var(--control__line-height);
-}
 // Height
 @mixin control-height-regular() {
   block-size: var(--control__height);
@@ -7232,22 +7277,6 @@
 @mixin item-height-large() {
   block-size: var(--item__height--large);
 }
-@mixin item-font() {
-  line-height: var(--item__line-height);
-  font-size: var(--item__font-size);
-  font-weight: var(--item__font-weight);
-}
-@mixin item-font-size-small() {
-  --item__font-size: var(--item__font-size--small);
-}
-@mixin item-font-header() {
-  // item header font-size and line-height has to be the same as
-  // item font-size and line-height in order for the computed height
-  // to be the same.
-  line-height: var(--item__line-height);
-  font-size: var(--item__font-size);
-  font-weight: var(--item-header__font-weight);
-}
 
 // ---------------------------------
 // Grid Item
@@ -7298,8 +7327,8 @@
   padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
-  padding-block-start: var(--mer-spacing--2xs);
-  padding-block-end: var(--mer-spacing--2xs);
+  padding-block-start: var(--mer-spacing--xs);
+  padding-block-end: var(--mer-spacing--xs);
 }
 @mixin grid-rowset-legend-colors-enabled() {
   --grid-rowset-legend__bg-color: var(--mer-surface__elevation--02);
@@ -7326,10 +7355,6 @@
 @mixin tab-button-border-block-start() {
   border-block-start: var(--tab-caption__border-width)
     var(--tab-caption__border-style) var(--tab-caption__border-color);
-}
-@mixin tab-button-font() {
-  font-size: var(--tab-caption__font-size);
-  font-weight: var(--tab-caption__font-weight);
 }
 @mixin tab-button-gap() {
   gap: var(--tab-caption__gap);
@@ -7379,12 +7404,6 @@
 // Label
 // ----------------------
 
-@mixin label-font() {
-  color: var(--label__color);
-  font-weight: var(--label__font-weight);
-  font-size: var(--label__font-size);
-  line-height: var(--label__line-height);
-}
 @mixin label-gap-block() {
   gap: var(--label__gap--block);
 }
@@ -7607,9 +7626,9 @@
 
   @include control-border();
   @include control-colors-enabled();
-  @include control-font-weight-semi-bold();
-  @include control-font-size-regular();
   @include control-padding-inline-block();
+
+  @extend %body-semi-bold-m;
 
   // states
   &--enabled {
@@ -7667,8 +7686,9 @@
     @include item-colors-enabled();
     @include item-border();
     @include item-border-radius();
-    @include item-font();
     @include item-padding();
+
+    @extend %body-regular-m;
 
     &--with-icon {
       padding-inline-start: var(--mer-spacing--xl);
@@ -8507,7 +8527,7 @@
 }
 
 %radio__label {
-  @include label-font();
+  @extend %label-font;
 }
 
 %radio__label-disabled {
@@ -8590,7 +8610,7 @@
 
   @if $radio-item__label {
     #{$radio-item__label} {
-      @include label-font();
+      @extend %label-font;
     }
   }
 
@@ -8609,11 +8629,9 @@
   --shortcuts-key__color: var(--mer-color__neutral-gray--900);
   --shortcuts-key__background-color: var(--mer-color__message-red--100);
   --shortcuts-key__border-radius: var(--mer-border__radius--md);
-  --shortcuts-key__font-size: var(--mer-font__size--xs);
   --shortcuts-key__padding: var(--mer-spacing--2xs);
 
   //slash
-  --shortcuts-slash__font-size: var(--mer-font__size--xs);
   --shortcuts-slash__color: var(--mer-color__message-red--100);
   --shortcuts-slash__padding: var(--mer-spacing--2xs);
 
@@ -8635,15 +8653,15 @@
       color: var(--shortcuts-key__color);
       background-color: var(--shortcuts-key__background-color);
       border-radius: var(--shortcuts-key__border-radius);
-      font-size: var(--shortcuts-key__font-size);
       padding: var(--shortcuts-key__padding);
+      @extend %body-regular-m;
     }
 
     &::part(slash),
     &::part(plus) {
-      font-size: var(--shortcuts-slash__font-size);
       color: var(--shortcuts-slash__color);
       padding: var(--shortcuts-slash__padding);
+      @extend %body-regular-m;
     }
 
     &::part(element) {
@@ -9043,8 +9061,8 @@
 
 %tab-button-block {
   @include tab-button-colors-enabled();
-  @include tab-button-font();
   @include tab-button-gap();
+  @extend %body-regular-s;
 
   @include tab-button-padding-inline();
   border-block: var(--tab-caption__border-width)
@@ -9056,8 +9074,8 @@
 
 %tab-button-inline {
   @include tab-button-colors-enabled();
-  @include tab-button-font();
   @include tab-button-gap();
+  @extend %body-regular-s;
 
   @include tab-button-padding-stack();
   border-inline: var(--tab-caption__border-width)
@@ -9383,10 +9401,6 @@
   }
 }
 
-@mixin tabular-grid-tokens() {
-  --grid__font-size: var(--mer-font__size--3xs);
-}
-
 @mixin tabular-grid-row-tokens() {
   /* This style-sheet applies for: 
   - ch-grid-row
@@ -9394,7 +9408,6 @@
   - ch-grid-rowset-legend
   */
 
-  --grid-rowset-legend__font-family: var(--mer-font-family--title);
   --grid-rowset-legend__font-size: var(--grid-base__font-size);
   --grid-rowset-legend__color: var(--grid-base__color);
   --grid-rowset-legend__color--hover: var(--item__color--hover);
@@ -9454,7 +9467,6 @@
   --grid-column-bar__padding-inline: var(--mer-spacing--xs);
   --grid-column-bar__padding-block: var(--mer-spacing--xs);
   --grid-column-bar__font-size: var(--grid-base__font-size);
-  --grid-column-bar__font-family: var(--mer-font-family--title);
 
   // =======================================
   //         Part "bar-selector"
@@ -9593,18 +9605,18 @@
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid {
-  @include tabular-grid-tokens();
+  --grid-bar-resize-split__bg-color: transparent;
   --focus__outline-offset: -2px; // WA since the box-shadow hides the outline-block-end and outline-inline-end.
-  font-size: var(--grid__font-size);
   --grid-label__gap: var(--mer-spacing--xs);
   --grid-common__gap: var(--mer-spacing--xs);
   max-block-size: 100%; // TODO: This reset must be placed in the control implementation. This property is a WA.
+
+  @extend %body-regular-s;
 
   --indent: 16px;
   @include items-container-colors();
 
   --item__border-color--enabled: var(--mer-surface__elevation--01);
-  // @include tabular-grid-tokens();
   @include tabular-grid-row-tokens();
   @include tabular-grid-column-tokens();
   @include tabular-grid-cell-tokens();
@@ -9618,6 +9630,10 @@
 // - - - - - - - - - - - - - - - - - - - -
 %tabular-grid-column-set {
   border-block-end: var(--grid-cell__border);
+
+  &--hover {
+    --grid-bar-resize-split__bg-color: var(--mer-surface__elevation--03);
+  }
 }
 
 // - - - - - - - - - - - - - - - - - - - -
@@ -9627,22 +9643,29 @@
 %tabular-grid-column {
   // should equal the tabular-grid background-color
   background-color: var(--items-container__bg-color);
+  @extend %body-semi-bold-s;
 }
 
 %tabular-grid-column__bar {
   --grid-label__gap: 0;
   @include grid-row-colors-enabled();
   @include grid-cell-padding-inline-block();
-  @include control-font-weight-semi-bold();
   gap: var(--grid-common__gap);
   width: 100%;
+
+  &--hover {
+    --grid-bar-resize-split__bg-color: var(--mer-accent__primary);
+  }
 }
 
 %tabular-grid-column__bar-resize-split {
-  background-color: var(--mer-surface__elevation--01);
+  background-color: var(--grid-bar-resize-split__bg-color);
   inline-size: var(--grid-bar-resize-split__inline-size);
   &--hover {
-    background-color: var(--mer-accent__primary--hover);
+    --grid-bar-resize-split__bg-color: var(--mer-accent__primary--hover);
+  }
+  &--active {
+    --grid-bar-resize-split__bg-color: var(--mer-accent__primary--active);
   }
 }
 
@@ -9729,7 +9752,9 @@
   @include grid-row-colors-enabled();
   --item__bg-color: var(--items-container__bg-color);
 
-  border: 0; //WA
+  // TODO: Check how controls font size's should be redefined inside tabular-grid cell, using the new font styles classes.
+
+  border: 0; // WA
 
   &--focused {
     @include focus-outline();
@@ -10031,6 +10056,10 @@
 
   #{$tabular-grid-column-set} {
     @extend %tabular-grid-column-set;
+
+    &:hover {
+      @extend %tabular-grid-column-set--hover;
+    }
   }
 
   // - - - - - - - - - - - - - - - - - - - -
@@ -10043,6 +10072,9 @@
 
   #{$tabular-grid-column__bar-selector} {
     @extend %tabular-grid-column__bar;
+    &:hover {
+      @extend %tabular-grid-column__bar--hover;
+    }
   }
 
   #{$tabular-grid-column__bar-resize-split-selector} {
@@ -10417,10 +10449,8 @@
   }
 }
 
-// TODO: Use the right typography classes
 %ticket-list {
-  font-size: 12px;
-  line-height: 14.52px;
+  @extend %tiny-regular-l;
 
   &-action {
     position: relative;
@@ -10456,7 +10486,7 @@
   }
 
   &-caption {
-    font-weight: 600;
+    font-weight: var(--font-weight-semi-bold);
   }
 
   &-description {
@@ -10464,7 +10494,7 @@
   }
 
   &-status {
-    font-weight: 600;
+    font-weight: var(--font-weight-semi-bold);
     margin-block-end: var(--mer-spacing--xs);
     gap: var(--mer-spacing--2xs);
 
@@ -10502,7 +10532,7 @@
     gap: var(--mer-spacing--xs);
     border: 1px solid var(--mer-color__neutral-gray--500);
     border-radius: 30px;
-    font-weight: 600;
+    font-weight: var(--font-weight-semi-bold);
 
     &--selected {
       border-color: var(--mer-border-color__primary--focused);
@@ -10623,8 +10653,6 @@
   --ch-switch-thumb__unchecked-background-color: var(--mer-icon__neutral);
   --ch-switch-thumb__checked-background-color: var(--mer-icon__neutral);
   --ch-switch-thumb__state-transition-duration: 150ms;
-  font-weight: var(--mer-font__weight--regular);
-  line-height: var(--mer-line-height--regular);
 
   &__track {
     border-radius: var(--ch-switch-track-block-size);
@@ -10655,6 +10683,7 @@
   --ch-switch-track-block-size: 16px;
   --ch-switch-track-inline-size: 31px;
   --ch-switch-thumb-size: 9px;
+  @extend %body-regular-s;
 
   &__thumb {
     &--unchecked {
@@ -10671,6 +10700,7 @@
   --ch-switch-track-block-size: 26px;
   --ch-switch-track-inline-size: 50px;
   --ch-switch-thumb-size: 16px;
+  @extend %body-regular-m;
 
   &__thumb {
     &--unchecked {
@@ -10761,10 +10791,6 @@
   --tooltip__background-color: var(--mer-color__neutral-gray--1000);
   --tooltip__border-radius: var(--mer-border__radius--sm);
   --tooltip__color: var(--mer-text__on-surface);
-  --tooltip__font-family: var(--mer-font-family--body);
-  --tooltip__font-size: var(--mer-font__size--3xs);
-  --tooltip__font-weight: var(--mer-font__weight--medium);
-  --tooltip__line-height: var(--mer-line-height--tight);
   --tooltip__padding-block: var(--mer-spacing--xs);
   --tooltip__padding-inline: var(--mer-spacing--xs);
 
@@ -10781,12 +10807,9 @@
   background-color: var(--tooltip__background-color);
   border-radius: var(--tooltip__border-radius);
   color: var(--tooltip__color);
-  font-family: var(--tooltip__font-family);
-  font-size: var(--tooltip__font-size);
-  font-weight: var(--tooltip__font-weight);
-  line-height: var(--tooltip__line-height);
   padding-block: var(--tooltip__padding-block);
   padding-inline: var(--tooltip__padding-inline);
+  @extend %body-regular-s;
 }
 
 /// @group Tooltip
@@ -10801,7 +10824,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   //               Tree View
   // - - - - - - - - - - - - - - - - - - - -
-  --tree-view-item__line-height: var(--mer-line-height--spaced);
 
   // - - - - - - - - - - - - - - - - - - - -
   //     Item (Provided by the ch-tree)
@@ -10858,10 +10880,9 @@
 
 %tree-view {
   @include tree-view-tokens();
-  @include item-font();
-  @include item-font-size-small();
   line-height: var(--tree-view-item__line-height);
   min-inline-size: var(--tree-view__min-inline-size);
+  @extend %body-regular-s;
 }
 
 // TODO: Improve this
@@ -10870,7 +10891,7 @@
   background-color: var(--mer-surface__elevation--01);
   border-radius: 10px;
   box-shadow: var(--mer-elevation__box-shadow--03);
-  font-size: 8px;
+  @extend %tiny-semi-bold-xs;
 }
 
 %tree-view-item--drag-enter {
@@ -10880,6 +10901,10 @@
 
 %tree-view-drop--after {
   background-color: var(--mer-color__primary--200);
+}
+
+%tree-view-item__group {
+  @include items-container-gap-small();
 }
 
 %tree-view-item__header {
@@ -10925,6 +10950,7 @@
 /// @param {String} $drag-preview-selector [".tree-view::part(drag-preview)"] -
 /// @param {String} $drop-selector [".tree-view::part(drop)"] -
 /// @param {String} $item--drag-enter-selector [".tree-view::part(item drag-enter)"] -
+/// @param {String} $item__group-selector [".tree-view::part(item__group)"] -
 /// @param {String} $item__header-selector [".tree-view::part(item__header)"] -
 /// @param {String} $item__header--not-selected-selector [".tree-view::part(item__header not-selected)"] -
 /// @param {String} $item__header--selected-selector [".tree-view::part(item__header selected)"] -
@@ -10981,6 +11007,7 @@
   //                  Item
   // - - - - - - - - - - - - - - - - - - - -
   $item__header-selector: ".tree-view::part(item__header)",
+  $item__group-selector: ".tree-view::part(item__group)",
   $item__header--not-selected-selector:
     ".tree-view::part(item__header not-selected)",
   $item__header--selected-selector: ".tree-view::part(item__header selected)",
@@ -11039,9 +11066,21 @@
     @extend %tree-view-item--drag-enter;
   }
 
-  // - - - - - - - - - - - - - - - - - - - -
-  //                 Header
-  // - - - - - - - - - - - - - - - - - - - -
+  #{$item__header-selector} {
+    @extend %tree-view-item__header;
+
+    &:focus-visible {
+      @extend %tree-view-item__header--focus-visible;
+    }
+  }
+
+  // Group
+  #{$item__group-selector} {
+    @extend %tree-view-item__group;
+  }
+
+  // Header
+
   #{$item__header-selector} {
     @extend %tree-view-item__header;
 
@@ -22994,34 +23033,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   // font-face
   @if $font-face {
-    // Thin
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-Thin.woff2");
-      font-weight: 100;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-ThinItalic.woff2");
-      font-weight: 100;
-      font-style: italic;
-    }
-
-    // ExtraLight
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-ExtraLight.woff2");
-      font-weight: 200;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-ExtraLightItalic.woff2");
-      font-weight: 200;
-      font-style: italic;
-    }
-
     // Light
     @font-face {
       font-family: "Inter";
@@ -23089,34 +23100,6 @@
       font-family: "Inter";
       src: url("#{$font-face-path}Inter-BoldItalic.woff2");
       font-weight: 700;
-      font-style: italic;
-    }
-
-    // ExtraBold
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-ExtraBold.woff2");
-      font-weight: 800;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-ExtraBoldItalic.woff2");
-      font-weight: 800;
-      font-style: italic;
-    }
-
-    // Black
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-Black.woff2");
-      font-weight: 900;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-BlackItalic.woff2");
-      font-weight: 900;
       font-style: italic;
     }
   }
@@ -23215,6 +23198,11 @@
   //                General
   // - - - - - - - - - - - - - - - - - - - -
   @if $body {
+    // Reduce FOUC in Chameleon
+    :root:not(.hydrated) {
+      visibility: hidden;
+    }
+
     body {
       @include document-common-styles();
 
@@ -23225,14 +23213,11 @@
           color: var(--mer-text__on-surface);
         }
 
-        @if $font {
-          line-height: var(--mer-body__line-height);
+        @if $font and $font-face {
+          font-family: var(--font-family-body);
         }
-
-        @if $font-face {
-          font-family: var(--mer-body__font-family);
-          font-size: var(--mer-body__font-size);
-          font-weight: var(--mer-body__font-weight);
+        @if $font and $typography-classes {
+          @include body-font();
         }
       }
     }
