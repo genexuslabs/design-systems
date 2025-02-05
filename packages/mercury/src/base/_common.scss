@@ -92,17 +92,6 @@
   --control__border-color: transparent;
   --control__border-radius: 0;
 }
-// Font
-
-// Font Size
-@mixin control-font-size-small() {
-  font-size: var(--control__font-size--small);
-  line-height: var(--control__line-height);
-}
-@mixin control-font-size-regular() {
-  font-size: var(--control__font-size--regular);
-  line-height: var(--control__line-height);
-}
 // Height
 @mixin control-height-regular() {
   block-size: var(--control__height);
@@ -249,20 +238,6 @@
 @mixin item-height-large() {
   block-size: var(--item__height--large);
 }
-@mixin item-font() {
-  line-height: var(--item__line-height);
-  font-size: var(--item__font-size);
-}
-@mixin item-font-size-small() {
-  --item__font-size: var(--item__font-size--small);
-}
-@mixin item-font-header() {
-  // item header font-size and line-height has to be the same as
-  // item font-size and line-height in order for the computed height
-  // to be the same.
-  line-height: var(--item__line-height);
-  font-size: var(--item__font-size);
-}
 
 // ---------------------------------
 // Grid Item
@@ -341,9 +316,6 @@
 @mixin tab-button-border-block-start() {
   border-block-start: var(--tab-caption__border-width)
     var(--tab-caption__border-style) var(--tab-caption__border-color);
-}
-@mixin tab-button-font() {
-  font-size: var(--tab-caption__font-size);
 }
 @mixin tab-button-gap() {
   gap: var(--tab-caption__gap);

@@ -54,14 +54,6 @@
   --item__height--regular: var(--mer-spacing--xl); // ie.: Combo box
   --item__height--large: 36px; // ie.: Grid
 
-  // - - - - - - - Font Face - - - - - - -
-
-  // item
-  --item__font-size: var(--item__font-size--regular);
-  --item__font-size--small: var(--mer-font__size--3xs);
-  --item__font-size--regular: var(--mer-font__size--xs);
-  // item header
-
   // - - - - - - - Item Gap - - - - - - -
   // For example, the gap between the icon and the caption
   --item__gap--regular: var(--mer-spacing--xs);
@@ -156,9 +148,6 @@
     --mer-border-color__on-elevation--01
   );
   --tab-caption__color--disabled: var(--mer-text__primary--disabled);
-
-  // - - - - - - - Font - - - - - - -
-  --tab-caption__font-size: var(--mer-font__size--3xs);
 
   // - - - - - - - Padding - - - - - - -
   --tab-caption__padding-block: var(--mer-spacing--xs);
