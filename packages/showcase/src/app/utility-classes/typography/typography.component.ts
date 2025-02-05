@@ -36,12 +36,12 @@ export class TypographyComponent {
    */
   typographies = computed(() => {
     const newTypographies = new Map<string, boolean>([
-      // ["Headings", true],
-      // ["Subtitles Regular", true],
-      // ["Subtitles SemiBold", true],
-      // ["Body Regular", true],
-      // ["Body SemiBold", true],
-      // ["Body Regular Italic", true],
+      ["Headings", true],
+      ["Subtitles Regular", true],
+      ["Subtitles SemiBold", true],
+      ["Body Regular", true],
+      ["Body SemiBold", true],
+      ["Body Regular Italic", true],
       ["Tiny Regular", true],
       ["Tiny SemiBold", true]
     ]);
