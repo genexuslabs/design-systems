@@ -15,7 +15,6 @@ import type { ChCheckboxCustomEvent } from "@genexus/chameleon-controls-library"
 import { typographyMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
-
 @Component({
   selector: "utility-classes-typography",
   templateUrl: "./typography.component.html",
@@ -36,10 +35,14 @@ export class TypographyComponent {
    */
   typographies = computed(() => {
     const newTypographies = new Map<string, boolean>([
-      ["Headings", true],
-      ["Text Body Regular", true],
-      ["Text Body Highlighted", true],
-      ["Text Body Italic", true]
+      ["Headings", true]
+      // ["Subtitles Regular", true],
+      // ["Subtitles Bold", true],
+      // ["Body Regular", true],
+      // ["Body Bold", true],
+      // ["Body Italic", true],
+      // ["Tiny Regular", true],
+      // ["Tiny Bold", true]
     ]);
 
     // Update the rendered typographies by watching changes for the
@@ -60,21 +63,16 @@ export class TypographyComponent {
 
     return newTypographies;
   });
-  showTextBodyRegular = computed(() =>
-    this.typographies().get("Text Body Regular")
+  showHeadings = computed(() => this.typographies().get("Headings"));
+  showSubtitlesRegular = computed(() =>
+    this.typographies().get("Subtitles Regular")
   );
-  showTextBodyHighlighted = computed(() =>
-    this.typographies().get("Text Body Highlighted")
-  );
-  showTextBodyItalic = computed(() =>
-    this.typographies().get("Text Body Italic")
-  );
-  showTextBody = computed(
-    () =>
-      this.showTextBodyRegular() ||
-      this.showTextBodyHighlighted() ||
-      this.showTextBodyItalic()
-  );
+  showSubtitlesBold = computed(() => this.typographies().get("Subtitles Bold"));
+  showBodyRegular = computed(() => this.typographies().get("Body Regular"));
+  showBodyBold = computed(() => this.typographies().get("Body Bold"));
+  showBodyItalic = computed(() => this.typographies().get("Body Italic"));
+  showTinyRegular = computed(() => this.typographies().get("Tiny Regular"));
+  showTinyBold = computed(() => this.typographies().get("Tiny Bold"));
 
   hiddenTypographies = input<string>("");
 
