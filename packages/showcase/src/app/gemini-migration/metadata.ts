@@ -1314,7 +1314,7 @@ without notice.`,
               tag: "p",
               properties: [
                 { name: "slot", value: "apples" },
-                { name: "class", value: "spacing-body text-body-regular-m" }
+                { name: "class", value: "spacing-body body-regular-m" }
               ],
               children: "An apple is a sweet, edible fruit..."
             },
@@ -1322,7 +1322,7 @@ without notice.`,
               tag: "p",
               properties: [
                 { name: "slot", value: "bananas" },
-                { name: "class", value: "spacing-body text-body-regular-m" }
+                { name: "class", value: "spacing-body body-regular-m" }
               ],
               children: "A banana is an elongated, edible fruit..."
             },
@@ -1330,7 +1330,7 @@ without notice.`,
               tag: "p",
               properties: [
                 { name: "slot", value: "cherries" },
-                { name: "class", value: "spacing-body text-body-regular-m" }
+                { name: "class", value: "spacing-body body-regular-m" }
               ],
               children: "A cherry is the fruit of many plants..."
             }
@@ -1355,7 +1355,7 @@ without notice.`,
       after: {
         template: {
           tag: "p",
-          class: "text-body-regular-m",
+          class: "body-regular-m",
           children: `Genexus is a development platform that automates application creation using a 
   model-driven approach. It allows developers to focus on high-level design, generating code 
   for web, mobile, and desktop applications, resulting in faster development cycles and fewer 
