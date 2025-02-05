@@ -6,10 +6,9 @@
   background-color: var(--tooltip__background-color);
   border-radius: var(--tooltip__border-radius);
   color: var(--tooltip__color);
-  font-size: var(--tooltip__font-size);
-  line-height: var(--tooltip__line-height);
   padding-block: var(--tooltip__padding-block);
   padding-inline: var(--tooltip__padding-inline);
+  @extend %body-regular-s;
 }
 
 /// @group Tooltip
