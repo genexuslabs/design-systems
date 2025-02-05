@@ -55,7 +55,7 @@ export const typographyMetadata = {
       linkId: "subtitle-regular-l",
       title: "2.1. Subtitle Regular L",
       template: [
-        { tag: "p", class: "subtitle-regular-l", children: HEADING_CONTENT }
+        { tag: "p", class: "subtitle-regular-l", children: SUBTITLE_CONTENT }
       ]
     },
 
@@ -63,7 +63,7 @@ export const typographyMetadata = {
       linkId: "subtitle-regular-m",
       title: "2.2. Subtitle Regular M",
       template: [
-        { tag: "p", class: "subtitle-regular-m", children: HEADING_CONTENT }
+        { tag: "p", class: "subtitle-regular-m", children: SUBTITLE_CONTENT }
       ]
     },
 
@@ -71,7 +71,7 @@ export const typographyMetadata = {
       linkId: "subtitle-regular-s",
       title: "2.3. Subtitle Regular S",
       template: [
-        { tag: "p", class: "subtitle-regular-s", children: HEADING_CONTENT }
+        { tag: "p", class: "subtitle-regular-s", children: SUBTITLE_CONTENT }
       ]
     },
 
@@ -79,7 +79,7 @@ export const typographyMetadata = {
       linkId: "subtitle-regular-xs",
       title: "2.4. Subtitle Regular XS",
       template: [
-        { tag: "p", class: "subtitle-regular-xs", children: HEADING_CONTENT }
+        { tag: "p", class: "subtitle-regular-xs", children: SUBTITLE_CONTENT }
       ]
     },
 
@@ -89,7 +89,7 @@ export const typographyMetadata = {
       linkId: "subtitle-regular-l",
       title: "2.1. Subtitle SemiBold L",
       template: [
-        { tag: "p", class: "subtitle-regular-l", children: HEADING_CONTENT }
+        { tag: "p", class: "subtitle-regular-l", children: SUBTITLE_CONTENT }
       ]
     },
 
@@ -97,7 +97,7 @@ export const typographyMetadata = {
       linkId: "subtitle-regular-m",
       title: "2.2. Subtitle SemiBold M",
       template: [
-        { tag: "p", class: "subtitle-regular-m", children: HEADING_CONTENT }
+        { tag: "p", class: "subtitle-regular-m", children: SUBTITLE_CONTENT }
       ]
     },
 
@@ -105,7 +105,7 @@ export const typographyMetadata = {
       linkId: "subtitle-regular-s",
       title: "2.3. Subtitle SemiBold S",
       template: [
-        { tag: "p", class: "subtitle-regular-s", children: HEADING_CONTENT }
+        { tag: "p", class: "subtitle-regular-s", children: SUBTITLE_CONTENT }
       ]
     },
 
@@ -113,7 +113,7 @@ export const typographyMetadata = {
       linkId: "subtitle-regular-xs",
       title: "2.4. Subtitle SemiBold XS",
       template: [
-        { tag: "p", class: "subtitle-regular-xs", children: HEADING_CONTENT }
+        { tag: "p", class: "subtitle-regular-xs", children: SUBTITLE_CONTENT }
       ]
     }
   }
