@@ -13,7 +13,7 @@
   background-color: var(--mer-surface__elevation--01);
   border-radius: 10px;
   box-shadow: var(--mer-elevation__box-shadow--03);
-  @extend %body-tiny-semi-bold-xs;
+  @extend %tiny-semi-bold-xs;
 }
 
 %tree-view-item--drag-enter {

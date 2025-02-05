@@ -263,20 +263,20 @@
 
 // body tiny
 
-@mixin body-tiny-l() {
+@mixin tiny-l() {
   font-size: var(--font-size-tiny-l);
 }
-@mixin body-tiny-m() {
+@mixin tiny-m() {
   font-size: var(--font-size-tiny-m);
 }
-@mixin body-tiny-s() {
+@mixin tiny-s() {
   font-size: var(--font-size-tiny-s);
 }
-@mixin body-tiny-xs() {
+@mixin tiny-xs() {
   font-size: var(--font-size-tiny-xs);
 }
 
-%body-tiny {
+%tiny {
   &-regular-base {
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-tight);
@@ -287,45 +287,45 @@
   }
   &-regular {
     &-l {
-      @extend %body-tiny-regular-base;
-      @include body-tiny-l();
+      @extend %tiny-regular-base;
+      @include tiny-l();
     }
 
     &-m {
-      @extend %body-tiny-regular-base;
-      @include body-tiny-m();
+      @extend %tiny-regular-base;
+      @include tiny-m();
     }
 
     &-s {
-      @extend %body-tiny-regular-base;
-      @include body-tiny-s();
+      @extend %tiny-regular-base;
+      @include tiny-s();
     }
 
     &-xs {
-      @extend %body-tiny-regular-base;
-      @include body-tiny-xs();
+      @extend %tiny-regular-base;
+      @include tiny-xs();
     }
   }
 
   &-semi-bold {
     &-l {
-      @extend %body-tiny-semi-bold-base;
-      @include body-tiny-l();
+      @extend %tiny-semi-bold-base;
+      @include tiny-l();
     }
 
     &-m {
-      @extend %body-tiny-semi-bold-base;
-      @include body-tiny-m();
+      @extend %tiny-semi-bold-base;
+      @include tiny-m();
     }
 
     &-s {
-      @extend %body-tiny-semi-bold-base;
-      @include body-tiny-s();
+      @extend %tiny-semi-bold-base;
+      @include tiny-s();
     }
 
     &-xs {
-      @extend %body-tiny-semi-bold-base;
-      @include body-tiny-xs();
+      @extend %tiny-semi-bold-base;
+      @include tiny-xs();
     }
   }
 }
@@ -366,15 +366,15 @@
 /// @param {String} $body-regular-italic-s-selector [".body-regular-italic-s"] -
 /// @param {String} $body-regular-italic-xs-selector [".body-regular-italic-xs"] -
 
-/// @param {String} $body-tiny-regular-l-selector [".body-tiny-regular-l"] -
-/// @param {String} $body-tiny-regular-m-selector [".body-tiny-regular-m"] -
-/// @param {String} $body-tiny-regular-s-selector [".body-tiny-regular-s"] -
-/// @param {String} $body-tiny-regular-xs-selector [".body-tiny-regular-xs"] -
+/// @param {String} $tiny-regular-l-selector [".tiny-regular-l"] -
+/// @param {String} $tiny-regular-m-selector [".tiny-regular-m"] -
+/// @param {String} $tiny-regular-s-selector [".tiny-regular-s"] -
+/// @param {String} $tiny-regular-xs-selector [".tiny-regular-xs"] -
 
-/// @param {String} $body-tiny-semi-bold-l-selector [".body-tiny-semi-bold-l"] -
-/// @param {String} $body-tiny-semi-bold-m-selector [".body-tiny-semi-bold-m"] -
-/// @param {String} $body-tiny-semi-bold-s-selector [".body-tiny-semi-bold-s"] -
-/// @param {String} $body-tiny-semi-bold-xs-selector [".body-tiny-semi-bold-xs"] -
+/// @param {String} $tiny-semi-bold-l-selector [".tiny-semi-bold-l"] -
+/// @param {String} $tiny-semi-bold-m-selector [".tiny-semi-bold-m"] -
+/// @param {String} $tiny-semi-bold-s-selector [".tiny-semi-bold-s"] -
+/// @param {String} $tiny-semi-bold-xs-selector [".tiny-semi-bold-xs"] -
 
 @mixin typography-classes(
   $heading-1-selector: ".heading-1",
@@ -412,15 +412,15 @@
   $body-regular-italic-s-selector: ".body-regular-italic-s",
   $body-regular-italic-xs-selector: ".body-regular-italic-xs",
 
-  $body-tiny-regular-l-selector: ".body-tiny-regular-l",
-  $body-tiny-regular-m-selector: ".body-tiny-regular-m",
-  $body-tiny-regular-s-selector: ".body-tiny-regular-s",
-  $body-tiny-regular-xs-selector: ".body-tiny-regular-xs",
+  $tiny-regular-l-selector: ".tiny-regular-l",
+  $tiny-regular-m-selector: ".tiny-regular-m",
+  $tiny-regular-s-selector: ".tiny-regular-s",
+  $tiny-regular-xs-selector: ".tiny-regular-xs",
 
-  $body-tiny-semi-bold-l-selector: ".body-tiny-semi-bold-l",
-  $body-tiny-semi-bold-m-selector: ".body-tiny-semi-bold-m",
-  $body-tiny-semi-bold-s-selector: ".body-tiny-semi-bold-s",
-  $body-tiny-semi-bold-xs-selector: ".body-tiny-semi-bold-xs"
+  $tiny-semi-bold-l-selector: ".tiny-semi-bold-l",
+  $tiny-semi-bold-m-selector: ".tiny-semi-bold-m",
+  $tiny-semi-bold-s-selector: ".tiny-semi-bold-s",
+  $tiny-semi-bold-xs-selector: ".tiny-semi-bold-xs"
 ) {
   // Heading:
 
@@ -529,32 +529,32 @@
 
   // Body tiny: regular
 
-  #{$body-tiny-regular-l-selector} {
-    @extend %body-tiny-regular-l;
+  #{$tiny-regular-l-selector} {
+    @extend %tiny-regular-l;
   }
-  #{$body-tiny-regular-m-selector} {
-    @extend %body-tiny-regular-m;
+  #{$tiny-regular-m-selector} {
+    @extend %tiny-regular-m;
   }
-  #{$body-tiny-regular-s-selector} {
-    @extend %body-tiny-regular-s;
+  #{$tiny-regular-s-selector} {
+    @extend %tiny-regular-s;
   }
-  #{$body-tiny-regular-xs-selector} {
-    @extend %body-tiny-regular-xs;
+  #{$tiny-regular-xs-selector} {
+    @extend %tiny-regular-xs;
   }
 
   // Body tiny: semi-bold
 
-  #{$body-tiny-semi-bold-l-selector} {
-    @extend %body-tiny-semi-bold-l;
+  #{$tiny-semi-bold-l-selector} {
+    @extend %tiny-semi-bold-l;
   }
-  #{$body-tiny-semi-bold-m-selector} {
-    @extend %body-tiny-semi-bold-m;
+  #{$tiny-semi-bold-m-selector} {
+    @extend %tiny-semi-bold-m;
   }
-  #{$body-tiny-semi-bold-s-selector} {
-    @extend %body-tiny-semi-bold-s;
+  #{$tiny-semi-bold-s-selector} {
+    @extend %tiny-semi-bold-s;
   }
-  #{$body-tiny-semi-bold-xs-selector} {
-    @extend %body-tiny-semi-bold-xs;
+  #{$tiny-semi-bold-xs-selector} {
+    @extend %tiny-semi-bold-xs;
   }
 }
 
