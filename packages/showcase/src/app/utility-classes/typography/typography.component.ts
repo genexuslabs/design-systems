@@ -37,8 +37,8 @@ export class TypographyComponent {
   typographies = computed(() => {
     const newTypographies = new Map<string, boolean>([
       // ["Headings", true],
-      ["Subtitles Regular", true]
-      // ["Subtitles Bold", true],
+      // ["Subtitles Regular", true]
+      ["Subtitles SemiBold", true]
       // ["Body Regular", true],
       // ["Body Bold", true],
       // ["Body Italic", true],
@@ -68,7 +68,9 @@ export class TypographyComponent {
   showSubtitlesRegular = computed(() =>
     this.typographies().get("Subtitles Regular")
   );
-  showSubtitlesBold = computed(() => this.typographies().get("Subtitles Bold"));
+  showSubtitlesSemiBold = computed(() =>
+    this.typographies().get("Subtitles SemiBold")
+  );
   showBodyRegular = computed(() => this.typographies().get("Body Regular"));
   showBodyBold = computed(() => this.typographies().get("Body Bold"));
   showBodyItalic = computed(() => this.typographies().get("Body Italic"));

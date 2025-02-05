@@ -81,6 +81,40 @@ export const typographyMetadata = {
       template: [
         { tag: "p", class: "subtitle-regular-xs", children: HEADING_CONTENT }
       ]
+    },
+
+    // Subtitles SemiBold
+
+    subtitleSemiBoldL: {
+      linkId: "subtitle-regular-l",
+      title: "2.1. Subtitle SemiBold L",
+      template: [
+        { tag: "p", class: "subtitle-regular-l", children: HEADING_CONTENT }
+      ]
+    },
+
+    subtitleSemiBoldM: {
+      linkId: "subtitle-regular-m",
+      title: "2.2. Subtitle SemiBold M",
+      template: [
+        { tag: "p", class: "subtitle-regular-m", children: HEADING_CONTENT }
+      ]
+    },
+
+    subtitleSemiBoldS: {
+      linkId: "subtitle-regular-s",
+      title: "2.3. Subtitle SemiBold S",
+      template: [
+        { tag: "p", class: "subtitle-regular-s", children: HEADING_CONTENT }
+      ]
+    },
+
+    subtitleSemiBoldXS: {
+      linkId: "subtitle-regular-xs",
+      title: "2.4. Subtitle SemiBold XS",
+      template: [
+        { tag: "p", class: "subtitle-regular-xs", children: HEADING_CONTENT }
+      ]
     }
   }
 } as const satisfies ComponentMetadata;
