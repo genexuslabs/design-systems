@@ -2,32 +2,32 @@
 
 @mixin heading-1() {
   @extend %heading-base;
-  font-size: var(--font-size-headers-h1);
+  font-size: var(--font-size-header-h1);
 }
 
 @mixin heading-2() {
   @extend %heading-base;
-  font-size: var(--font-size-headers-h2);
+  font-size: var(--font-size-header-h2);
 }
 
 @mixin heading-3() {
   @extend %heading-base;
-  font-size: var(--font-size-headers-h3);
+  font-size: var(--font-size-header-h3);
 }
 
 @mixin heading-4() {
   @extend %heading-base;
-  font-size: var(--font-size-headers-h4);
+  font-size: var(--font-size-header-h4);
 }
 
 @mixin heading-5() {
   @extend %heading-base;
-  font-size: var(--font-size-headers-h5);
+  font-size: var(--font-size-header-h5);
 }
 
 @mixin heading-6() {
   @extend %heading-base;
-  font-size: var(--font-size-headers-h6);
+  font-size: var(--font-size-header-h6);
 }
 
 %heading {
