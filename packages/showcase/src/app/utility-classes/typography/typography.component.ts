@@ -18,6 +18,7 @@ import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/
 @Component({
   selector: "utility-classes-typography",
   templateUrl: "./typography.component.html",
+  styleUrl: "./typography.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: "main-content" },
   imports: [CommonModule, CodeSnippetComponent, RuntimeBundlesComponent],
@@ -35,8 +36,8 @@ export class TypographyComponent {
    */
   typographies = computed(() => {
     const newTypographies = new Map<string, boolean>([
-      ["Headings", true]
-      // ["Subtitles Regular", true],
+      // ["Headings", true],
+      ["Subtitles Regular", true]
       // ["Subtitles Bold", true],
       // ["Body Regular", true],
       // ["Body Bold", true],

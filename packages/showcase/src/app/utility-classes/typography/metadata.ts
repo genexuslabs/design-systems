@@ -1,12 +1,18 @@
 import { ComponentMetadata } from "../../../common/types";
 import { ComponentTemplateModel } from "../../../services/template-language/types";
 
-const HEADING_CONTENT: ComponentTemplateModel = "<!-- Your heading content -->";
+const HEADING_CONTENT: ComponentTemplateModel = `heading`;
+const SUBTITLE_CONTENT: ComponentTemplateModel = `subtitle`;
+const BODY_CONTENT: ComponentTemplateModel = `body`;
+const BODY_TINY_CONTENT: ComponentTemplateModel = `body-tiny`;
 
 export const typographyMetadata = {
   title: "Typography",
   description: "",
+
   codeSnippets: {
+    //  Headings
+
     heading1: {
       linkId: "heading-1",
       title: "1.1. Heading 1",
@@ -41,6 +47,40 @@ export const typographyMetadata = {
       linkId: "heading-6",
       title: "1.6. Heading 6",
       template: [{ tag: "h6", class: "heading-6", children: HEADING_CONTENT }]
+    },
+
+    // Subtitles Regular
+
+    subtitleRegularL: {
+      linkId: "subtitle-regular-l",
+      title: "2.1. Subtitle Regular L",
+      template: [
+        { tag: "p", class: "subtitle-regular-l", children: HEADING_CONTENT }
+      ]
+    },
+
+    subtitleRegularM: {
+      linkId: "subtitle-regular-m",
+      title: "2.2. Subtitle Regular M",
+      template: [
+        { tag: "p", class: "subtitle-regular-m", children: HEADING_CONTENT }
+      ]
+    },
+
+    subtitleRegularS: {
+      linkId: "subtitle-regular-s",
+      title: "2.3. Subtitle Regular S",
+      template: [
+        { tag: "p", class: "subtitle-regular-s", children: HEADING_CONTENT }
+      ]
+    },
+
+    subtitleRegularXS: {
+      linkId: "subtitle-regular-xs",
+      title: "2.4. Subtitle Regular XS",
+      template: [
+        { tag: "p", class: "subtitle-regular-xs", children: HEADING_CONTENT }
+      ]
     }
   }
 } as const satisfies ComponentMetadata;
