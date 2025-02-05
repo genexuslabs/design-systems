@@ -53,7 +53,7 @@ export const typographyMetadata = {
 
     subtitleRegularL: {
       linkId: "subtitle-regular-l",
-      title: "2.1. Subtitle Regular L",
+      title: "2.1. Subtitle: Large",
       template: [
         { tag: "p", class: "subtitle-regular-l", children: SUBTITLE_CONTENT }
       ]
@@ -61,7 +61,7 @@ export const typographyMetadata = {
 
     subtitleRegularM: {
       linkId: "subtitle-regular-m",
-      title: "2.2. Subtitle Regular M",
+      title: "2.2. Subtitle: Medium",
       template: [
         { tag: "p", class: "subtitle-regular-m", children: SUBTITLE_CONTENT }
       ]
@@ -69,7 +69,7 @@ export const typographyMetadata = {
 
     subtitleRegularS: {
       linkId: "subtitle-regular-s",
-      title: "2.3. Subtitle Regular S",
+      title: "2.3. Subtitle: Small",
       template: [
         { tag: "p", class: "subtitle-regular-s", children: SUBTITLE_CONTENT }
       ]
@@ -77,7 +77,7 @@ export const typographyMetadata = {
 
     subtitleRegularXS: {
       linkId: "subtitle-regular-xs",
-      title: "2.4. Subtitle Regular XS",
+      title: "2.4. Subtitle: Extra Small",
       template: [
         { tag: "p", class: "subtitle-regular-xs", children: SUBTITLE_CONTENT }
       ]
@@ -87,7 +87,7 @@ export const typographyMetadata = {
 
     subtitleSemiBoldL: {
       linkId: "subtitle-regular-l",
-      title: "2.1. Subtitle SemiBold L",
+      title: "2.1. Subtitle: Large",
       template: [
         { tag: "p", class: "subtitle-semi-bold-l", children: SUBTITLE_CONTENT }
       ]
@@ -95,7 +95,7 @@ export const typographyMetadata = {
 
     subtitleSemiBoldM: {
       linkId: "subtitle-regular-m",
-      title: "2.2. Subtitle SemiBold M",
+      title: "2.2. Subtitle: Medium",
       template: [
         { tag: "p", class: "subtitle-semi-bold-m", children: SUBTITLE_CONTENT }
       ]
@@ -103,7 +103,7 @@ export const typographyMetadata = {
 
     subtitleSemiBoldS: {
       linkId: "subtitle-regular-s",
-      title: "2.3. Subtitle SemiBold S",
+      title: "2.3. Subtitle: Small",
       template: [
         { tag: "p", class: "subtitle-semi-bold-s", children: SUBTITLE_CONTENT }
       ]
@@ -111,7 +111,7 @@ export const typographyMetadata = {
 
     subtitleSemiBoldXS: {
       linkId: "subtitle-regular-xs",
-      title: "2.4. Subtitle SemiBold XS",
+      title: "2.4. Subtitle: Extra Small",
       template: [
         { tag: "p", class: "subtitle-semi-bold-xs", children: SUBTITLE_CONTENT }
       ]
@@ -121,31 +121,31 @@ export const typographyMetadata = {
 
     bodyRegularXL: {
       linkId: "body-regular-xl",
-      title: "3.1. Body Regular XL",
+      title: "3.1. Body: Extra Large",
       template: [{ tag: "p", class: "body-regular-xl", children: BODY_CONTENT }]
     },
 
     bodyRegularL: {
       linkId: "body-regular-l",
-      title: "3.2. Body Regular L",
+      title: "3.2. Body: Regular Large",
       template: [{ tag: "p", class: "body-regular-l", children: BODY_CONTENT }]
     },
 
     bodyRegularM: {
       linkId: "body-regular-m",
-      title: "3.3. Body Regular M",
+      title: "3.3. Body: Medium",
       template: [{ tag: "p", class: "body-regular-m", children: BODY_CONTENT }]
     },
 
     bodyRegularS: {
       linkId: "body-regular-s",
-      title: "3.4. Body Regular S",
+      title: "3.4. Body: Small",
       template: [{ tag: "p", class: "body-regular-s", children: BODY_CONTENT }]
     },
 
     bodyRegularXS: {
       linkId: "body-regular-xs",
-      title: "3.5. Body Regular XS",
+      title: "3.5. Body: Extra Small",
       template: [{ tag: "p", class: "body-regular-xs", children: BODY_CONTENT }]
     },
 
@@ -153,7 +153,7 @@ export const typographyMetadata = {
 
     bodySemiBoldXL: {
       linkId: "body-semi-bold-xl",
-      title: "3.1. Body SemiBold XL",
+      title: "3.1. Body: Extra Large",
       template: [
         { tag: "p", class: "body-semi-bold-xl", children: BODY_CONTENT }
       ]
@@ -161,7 +161,7 @@ export const typographyMetadata = {
 
     bodySemiBoldL: {
       linkId: "body-semi-bold-l",
-      title: "3.2. Body SemiBold L",
+      title: "3.2. Body: Large",
       template: [
         { tag: "p", class: "body-semi-bold-l", children: BODY_CONTENT }
       ]
@@ -169,7 +169,7 @@ export const typographyMetadata = {
 
     bodySemiBoldM: {
       linkId: "body-semi-bold-m",
-      title: "3.3. Body SemiBold M",
+      title: "3.3. Body: Medium",
       template: [
         { tag: "p", class: "body-semi-bold-m", children: BODY_CONTENT }
       ]
@@ -177,7 +177,7 @@ export const typographyMetadata = {
 
     bodySemiBoldS: {
       linkId: "body-semi-bold-s",
-      title: "3.4. Body SemiBold S",
+      title: "3.4. Body: Small",
       template: [
         { tag: "p", class: "body-semi-bold-s", children: BODY_CONTENT }
       ]
@@ -185,7 +185,7 @@ export const typographyMetadata = {
 
     bodySemiBoldXS: {
       linkId: "body-semi-bold-xs",
-      title: "3.5. Body SemiBold XS",
+      title: "3.5. Body: Extra Small",
       template: [
         { tag: "p", class: "body-semi-bold-xs", children: BODY_CONTENT }
       ]
@@ -195,7 +195,7 @@ export const typographyMetadata = {
 
     bodyRegularItalicXL: {
       linkId: "body-regular-italic-xl",
-      title: "3.1. Body Regular Italic XL",
+      title: "3.1. Body: Italic XLarge",
       template: [
         { tag: "p", class: "body-regular-italic-xl", children: BODY_CONTENT }
       ]
@@ -203,7 +203,7 @@ export const typographyMetadata = {
 
     bodyRegularItalicL: {
       linkId: "body-regular-italic-l",
-      title: "3.2. Body Regular Italic L",
+      title: "3.2. Body: Italic Large",
       template: [
         { tag: "p", class: "body-regular-italic-l", children: BODY_CONTENT }
       ]
@@ -211,7 +211,7 @@ export const typographyMetadata = {
 
     bodyRegularItalicM: {
       linkId: "body-regular-italic-m",
-      title: "3.3. Body Regular Italic M",
+      title: "3.3. Body: Italic Medium",
       template: [
         { tag: "p", class: "body-regular-italic-m", children: BODY_CONTENT }
       ]
@@ -219,7 +219,7 @@ export const typographyMetadata = {
 
     bodyRegularItalicS: {
       linkId: "body-regular-italic-s",
-      title: "3.4. Body Regular Italic S",
+      title: "3.4. Body: Italic Small",
       template: [
         { tag: "p", class: "body-regular-italic-s", children: BODY_CONTENT }
       ]
@@ -227,7 +227,7 @@ export const typographyMetadata = {
 
     bodyRegularItalicXS: {
       linkId: "body-regular-italic-xs",
-      title: "3.5. Body Regular Italic XS",
+      title: "3.5. Body: Italic Extra Small",
       template: [
         { tag: "p", class: "body-regular-italic-xs", children: BODY_CONTENT }
       ]
@@ -237,7 +237,7 @@ export const typographyMetadata = {
 
     bodyTinyRegularL: {
       linkId: "body-tiny-regular-l",
-      title: "3.2. Body Tiny Regular L",
+      title: "3.2. Body: Tiny Large",
       template: [
         { tag: "p", class: "body-tiny-regular-l", children: BODY_TINY_CONTENT }
       ]
@@ -245,7 +245,7 @@ export const typographyMetadata = {
 
     bodyTinyRegularM: {
       linkId: "body-tiny-regular-m",
-      title: "3.3. Body Tiny Regular M",
+      title: "3.3. Body: Tiny Medium",
       template: [
         { tag: "p", class: "body-tiny-regular-m", children: BODY_TINY_CONTENT }
       ]
@@ -253,7 +253,7 @@ export const typographyMetadata = {
 
     bodyTinyRegularS: {
       linkId: "body-tiny-regular-s",
-      title: "3.4. Body Tiny Regular S",
+      title: "3.4. Body: Tiny Small",
       template: [
         { tag: "p", class: "body-tiny-regular-s", children: BODY_TINY_CONTENT }
       ]
@@ -261,7 +261,7 @@ export const typographyMetadata = {
 
     bodyTinyRegularXS: {
       linkId: "body-tiny-regular-xs",
-      title: "3.5. Body Tiny Regular XS",
+      title: "3.5. Body: Tiny Extra Small",
       template: [
         { tag: "p", class: "body-tiny-regular-xs", children: BODY_TINY_CONTENT }
       ]
@@ -271,7 +271,7 @@ export const typographyMetadata = {
 
     bodyTinySemiBoldL: {
       linkId: "body-tiny-semi-bold-l",
-      title: "3.2. Body Tiny SemiBold L",
+      title: "3.2. Body: Tiny Large",
       template: [
         {
           tag: "p",
@@ -283,7 +283,7 @@ export const typographyMetadata = {
 
     bodyTinySemiBoldM: {
       linkId: "body-tiny-semi-bold-m",
-      title: "3.3. Body Tiny SemiBold M",
+      title: "3.3. Body: Tiny SemiBold Medium",
       template: [
         {
           tag: "p",
@@ -295,7 +295,7 @@ export const typographyMetadata = {
 
     bodyTinySemiBoldS: {
       linkId: "body-tiny-semi-bold-s",
-      title: "3.4. Body Tiny SemiBold S",
+      title: "3.4. Body: Tiny SemiBold Small",
       template: [
         {
           tag: "p",
@@ -307,7 +307,7 @@ export const typographyMetadata = {
 
     bodyTinySemiBoldXS: {
       linkId: "body-tiny-semi-bold-xs",
-      title: "3.5. Body Tiny SemiBold XS",
+      title: "3.5. Body: Tiny SemiBold Extra Small",
       template: [
         {
           tag: "p",
