@@ -5,7 +5,6 @@
   @include items-container-dropdown();
   @include items-container-border-radius();
   @include items-container-gap();
-  @include item-font();
 }
 
 // Primary
@@ -16,6 +15,7 @@
   @include item-border-radius();
   @include item-padding();
   @include item-gap();
+  @extend %body-regular-m;
 
   &--focus {
     // @include focus-style($outline: true);
