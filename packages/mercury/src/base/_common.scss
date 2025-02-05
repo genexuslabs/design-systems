@@ -313,8 +313,8 @@
   padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
-  padding-block-start: var(--mer-spacing--2xs);
-  padding-block-end: var(--mer-spacing--2xs);
+  padding-block-start: var(--mer-spacing--xs);
+  padding-block-end: var(--mer-spacing--xs);
 }
 @mixin grid-rowset-legend-colors-enabled() {
   --grid-rowset-legend__bg-color: var(--mer-surface__elevation--02);
