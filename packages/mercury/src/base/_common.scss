@@ -393,11 +393,6 @@
 // Label
 // ----------------------
 
-@mixin label-font() {
-  color: var(--label__color);
-  font-size: var(--label__font-size);
-  line-height: var(--label__line-height);
-}
 @mixin label-gap-block() {
   gap: var(--label__gap--block);
 }
