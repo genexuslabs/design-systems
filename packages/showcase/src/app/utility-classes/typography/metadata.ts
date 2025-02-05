@@ -189,6 +189,82 @@ export const typographyMetadata = {
       template: [
         { tag: "p", class: "body-semi-bold-xs", children: BODY_CONTENT }
       ]
+    },
+
+    // Body Regular Italic
+
+    bodyRegularItalicXL: {
+      linkId: "body-regular-italic-xl",
+      title: "3.1. Body Regular Italic XL",
+      template: [
+        { tag: "p", class: "body-regular-italic-xl", children: BODY_CONTENT }
+      ]
+    },
+
+    bodyRegularItalicL: {
+      linkId: "body-regular-italic-l",
+      title: "3.2. Body Regular Italic L",
+      template: [
+        { tag: "p", class: "body-regular-italic-l", children: BODY_CONTENT }
+      ]
+    },
+
+    bodyRegularItalicM: {
+      linkId: "body-regular-italic-m",
+      title: "3.3. Body Regular Italic M",
+      template: [
+        { tag: "p", class: "body-regular-italic-m", children: BODY_CONTENT }
+      ]
+    },
+
+    bodyRegularItalicS: {
+      linkId: "body-regular-italic-s",
+      title: "3.4. Body Regular Italic S",
+      template: [
+        { tag: "p", class: "body-regular-italic-s", children: BODY_CONTENT }
+      ]
+    },
+
+    bodyRegularItalicXS: {
+      linkId: "body-regular-italic-xs",
+      title: "3.5. Body Regular Italic XS",
+      template: [
+        { tag: "p", class: "body-regular-italic-xs", children: BODY_CONTENT }
+      ]
+    },
+
+    // Body Tiny Regular
+
+    bodyTinyRegularL: {
+      linkId: "body-tiny-regular-l",
+      title: "3.2. Body Tiny Regular L",
+      template: [
+        { tag: "p", class: "body-tiny-regular-l", children: BODY_TINY_CONTENT }
+      ]
+    },
+
+    bodyTinyRegularM: {
+      linkId: "body-tiny-regular-m",
+      title: "3.3. Body Tiny Regular M",
+      template: [
+        { tag: "p", class: "body-tiny-regular-m", children: BODY_TINY_CONTENT }
+      ]
+    },
+
+    bodyTinyRegularS: {
+      linkId: "body-tiny-regular-s",
+      title: "3.4. Body Tiny Regular S",
+      template: [
+        { tag: "p", class: "body-tiny-regular-s", children: BODY_TINY_CONTENT }
+      ]
+    },
+
+    bodyTinyRegularXS: {
+      linkId: "body-tiny-regular-xs",
+      title: "3.5. Body Tiny Regular XS",
+      template: [
+        { tag: "p", class: "body-tiny-regular-xs", children: BODY_TINY_CONTENT }
+      ]
     }
   }
 } as const satisfies ComponentMetadata;
