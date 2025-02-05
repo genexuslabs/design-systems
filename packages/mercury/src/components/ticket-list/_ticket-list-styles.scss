@@ -1,7 +1,5 @@
-// TODO: Use the right typography classes
 %ticket-list {
-  font-size: 12px;
-  line-height: 14.52px;
+  @extend %body-tiny-regular-l;
 
   &-action {
     position: relative;
@@ -37,7 +35,7 @@
   }
 
   &-caption {
-    font-weight: 600;
+    font-weight: var(--font-weight-semi-bold);
   }
 
   &-description {
@@ -45,7 +43,7 @@
   }
 
   &-status {
-    font-weight: 600;
+    font-weight: var(--font-weight-semi-bold);
     margin-block-end: var(--mer-spacing--xs);
     gap: var(--mer-spacing--2xs);
 
@@ -83,7 +81,7 @@
     gap: var(--mer-spacing--xs);
     border: 1px solid var(--mer-color__neutral-gray--500);
     border-radius: 30px;
-    font-weight: 600;
+    font-weight: var(--font-weight-semi-bold);
 
     &--selected {
       border-color: var(--mer-border-color__primary--focused);
