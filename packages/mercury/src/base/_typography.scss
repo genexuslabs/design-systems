@@ -488,9 +488,14 @@
   }
 }
 
-// ---------------------------------------
-// Text States e.g.: for the property-grid
-// ---------------------------------------
+// link
+
+%text-link {
+  color: var(--mer-text__primary);
+  text-decoration-line: underline;
+}
+
+// property-grid
 
 %text-edited {
   font-weight: var(--mer-font__weight--semi-bold);
