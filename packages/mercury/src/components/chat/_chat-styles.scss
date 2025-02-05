@@ -121,7 +121,7 @@
 
     &::part(message__processing) {
       color: var(--mer-text__on-surface);
-      font-size: var(--mer-font__size--2xs);
+      font-size: var(--font-size-body-s);
     }
 
     @include input(
@@ -135,7 +135,7 @@
       border-radius: var(--control__border-radius);
       border: 1px solid var(--mer-border-color__neutral);
       color: var(--control__border-style);
-      font-size: var(--control__font-size--regular);
+      font-size: var(--font-size-body-m);
       inline-size: 100%;
       justify-content: center;
       line-height: var(--control__line-height);
