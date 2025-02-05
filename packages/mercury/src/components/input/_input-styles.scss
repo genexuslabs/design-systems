@@ -4,10 +4,10 @@
   --ch-edit-gap: var(--control__icon-gap);
   --ch-edit__image-size: var(--mer-icon__box--md);
   --ch-placeholder-color: var(--mer-color__neutral-gray--400);
+  @extend %body-regular-m;
 
   @include control-border();
   @include control-colors-enabled();
-  @include control-font-size-regular();
   @include control-padding-inline-block();
 
   &--focus {
@@ -56,7 +56,7 @@
 
   @if $add--placeholder {
     #{$empty-placeholder-selector} {
-      font-style: var(--control-placeholder__font-style);
+      @extend %body-regular-italic-m;
     }
   }
 
