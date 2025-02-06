@@ -79,6 +79,7 @@
 @mixin checkbox(
   $checkbox-selector: ".checkbox",
   $checkbox--error-selector: ".checkbox-error::part(input)",
+  // TODO (Update error class selector, when Chameleon provides a custom state like :invalid)
   $checkbox__input-selector: ".checkbox::part(input)",
   $checkbox__input--disabled-selector: ".checkbox::part(input disabled)",
   $checkbox__input--checked-selector: ".checkbox::part(input checked)",

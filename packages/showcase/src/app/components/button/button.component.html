@@ -4,6 +4,8 @@
 
 <p class="text-body-regular-l">{{ metadata.description }}</p>
 
+<!-- primary section -->
+
 <section aria-labelledby="button-primary">
   <h2 id="button-primary" class="heading-2">
     <a routerLink="." fragment="button-primary">1. Button Primary</a>
@@ -33,9 +35,7 @@
     [codeSnippet]="codeSnippets.buttonPrimaryTextOnlyDestructive"
     [headingLevel]="3"
   >
-    <button class="button-primary button-primary-destructive" type="button">
-      Caption
-    </button>
+    <button class="button-primary-destructive" type="button">Caption</button>
   </code-snippet>
 
   <code-snippet
@@ -49,6 +49,247 @@
     >
       <ch-image class="icon-sm" [src]="icon" [type]="'mask'"></ch-image>
       Caption
+    </button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonPrimaryIconAndTextDisabled"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonPrimaryIconAndTextDisabled.template.class"
+      type="button"
+      disabled
+    >
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="icon"
+        [type]="'mask'"
+      ></ch-image>
+      Caption
+    </button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonPrimaryIconAndTextDestructive"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonPrimaryIconAndTextDestructive.template.class"
+      type="button"
+    >
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="icon"
+        [type]="'mask'"
+      ></ch-image>
+      Caption
+    </button>
+  </code-snippet>
+</section>
+
+<!-- secondary section -->
+
+<section aria-labelledby="button-secondary">
+  <h2 id="button-secondary" class="heading-2">
+    <a routerLink="." fragment="button-secondary">2. Button Secondary</a>
+  </h2>
+
+  <p class="text-body-regular-l">
+    A secondary HTML button is a supportive element on a webpage, designed to
+    complement the primary button without overshadowing it. It usually
+    represents less critical actions, such as navigating to another page or
+    cancelling an action, providing users with alternative options.
+  </p>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonSecondaryTextOnly"
+    [headingLevel]="3"
+  >
+    <button class="button-secondary" type="button">Caption</button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonSecondaryTextOnlyDisabled"
+    [headingLevel]="3"
+  >
+    <button class="button-secondary" disabled type="button">Caption</button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonSecondaryTextOnlyDestructive"
+    [headingLevel]="3"
+  >
+    <button class="button-secondary-destructive" type="button">Caption</button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonSecondaryIconAndText"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonSecondaryIconAndText.template.class"
+      type="button"
+    >
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="icon"
+        [type]="'mask'"
+      ></ch-image>
+      Caption
+    </button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonSecondaryIconAndTextDisabled"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonSecondaryIconAndTextDisabled.template.class"
+      type="button"
+      disabled
+    >
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="icon"
+        [type]="'mask'"
+      ></ch-image>
+      Caption
+    </button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonSecondaryIconAndTextDestructive"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="
+        codeSnippets.buttonSecondaryIconAndTextDestructive.template.class
+      "
+      type="button"
+    >
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="icon"
+        [type]="'mask'"
+      ></ch-image>
+      Caption
+    </button>
+  </code-snippet>
+</section>
+
+<!-- tertiary section -->
+
+<section aria-labelledby="button-tertiary">
+  <h2 id="button-tertiary" class="heading-2">
+    <a routerLink="." fragment="button-tertiary">3. Button Tertiary</a>
+  </h2>
+
+  <p class="text-body-regular-l">
+    A tertiary HTML button is a minimalistic element on a webpage, designed to
+    be subtle and unobtrusive. With no border and a transparent background, it
+    typically represents the least critical actions, such as linking to
+    additional information or performing tertiary tasks, allowing it to blend
+    seamlessly into the content.
+  </p>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonTertiaryTextOnly"
+    [headingLevel]="3"
+  >
+    <button class="button-tertiary" type="button">Caption</button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonTertiaryTextOnlyDisabled"
+    [headingLevel]="3"
+  >
+    <button class="button-tertiary" disabled type="button">Caption</button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonTertiaryIconAndText"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonTertiaryIconAndText.template.class"
+      type="button"
+    >
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="icon"
+        [type]="'mask'"
+      ></ch-image>
+      Caption
+    </button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonTertiaryIconAndTextDisabled"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonTertiaryIconAndTextDisabled.template.class"
+      type="button"
+      disabled
+    >
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="icon"
+        [type]="'mask'"
+      ></ch-image>
+      Caption
+    </button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonTertiaryIconOnly"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonTertiaryIconOnly.template.class"
+      type="button"
+    >
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="icon"
+        [type]="'mask'"
+      ></ch-image>
+    </button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonTertiaryIconOnlyDisabled"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonTertiaryIconOnlyDisabled.template.class"
+      type="button"
+      disabled
+    >
+      <ch-image
+        class="icon-sm"
+        [getImagePathCallback]="getImagePathCallback"
+        [src]="icon"
+        [type]="'mask'"
+      ></ch-image>
     </button>
   </code-snippet>
 </section>

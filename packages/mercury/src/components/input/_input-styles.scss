@@ -33,6 +33,7 @@
   $selector: ".input",
   $empty-placeholder-selector: ".input[part*='ch-edit--empty-value']",
   $error-selector: ".input-error",
+  // TODO (Update error class selector, when Chameleon provides a custom state like :invalid)
   $add--disabled: true,
   $add--error: true,
   $add--placeholder: true

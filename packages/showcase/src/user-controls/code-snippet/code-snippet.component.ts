@@ -74,10 +74,12 @@ export class CodeSnippetComponent {
   languageBefore = input<string>("html");
   languageAfter = input<string>("html");
 
-  linkId = computed(
-    () => (this.codeSnippet() ?? this.codeSnippetBeforeAndAfter()!).linkId
-  );
-  title = computed(
-    () => (this.codeSnippet() ?? this.codeSnippetBeforeAndAfter()!).title
-  );
+  linkId = computed(() => {
+    const codeSnippet = this.codeSnippet() ?? this.codeSnippetBeforeAndAfter();
+    return codeSnippet?.linkId;
+  });
+  title = computed(() => {
+    const codeSnippet = this.codeSnippet() ?? this.codeSnippetBeforeAndAfter();
+    return codeSnippet?.title;
+  });
 }
