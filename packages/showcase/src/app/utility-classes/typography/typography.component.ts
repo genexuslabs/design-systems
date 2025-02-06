@@ -41,7 +41,7 @@ export class TypographyComponent {
       ["Subtitles SemiBold", true],
       ["Body Regular", true],
       ["Body SemiBold", true],
-      ["Body Regular Italic", true],
+      ["Body Italic", true],
       ["Tiny Regular", true],
       ["Tiny SemiBold", true]
     ]);
@@ -73,9 +73,7 @@ export class TypographyComponent {
   );
   showBodyRegular = computed(() => this.typographies().get("Body Regular"));
   showBodySemiBold = computed(() => this.typographies().get("Body Bold"));
-  showBodyRegularItalic = computed(() =>
-    this.typographies().get("Body Regular Italic")
-  );
+  showBodyItalic = computed(() => this.typographies().get("Body Italic"));
   showTinyRegular = computed(() => this.typographies().get("Tiny Regular"));
   showTinyBold = computed(() => this.typographies().get("Tiny SemiBold"));
 

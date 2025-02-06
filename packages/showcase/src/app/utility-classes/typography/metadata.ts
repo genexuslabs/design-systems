@@ -191,46 +191,36 @@ export const typographyMetadata = {
       ]
     },
 
-    // Body Regular Italic
+    // Body Italic
 
-    bodyRegularItalicXL: {
-      linkId: "body-regular-italic-xl",
+    bodyItalicXL: {
+      linkId: "body-italic-xl",
       title: "6.1. Body: Italic XLarge",
-      template: [
-        { tag: "p", class: "body-regular-italic-xl", children: BODY_CONTENT }
-      ]
+      template: [{ tag: "p", class: "body-italic-xl", children: BODY_CONTENT }]
     },
 
-    bodyRegularItalicL: {
-      linkId: "body-regular-italic-l",
+    bodyItalicL: {
+      linkId: "body-italic-l",
       title: "6.2. Body: Italic Large",
-      template: [
-        { tag: "p", class: "body-regular-italic-l", children: BODY_CONTENT }
-      ]
+      template: [{ tag: "p", class: "body-italic-l", children: BODY_CONTENT }]
     },
 
-    bodyRegularItalicM: {
-      linkId: "body-regular-italic-m",
+    bodyItalicM: {
+      linkId: "body-italic-m",
       title: "6.3. Body: Italic Medium",
-      template: [
-        { tag: "p", class: "body-regular-italic-m", children: BODY_CONTENT }
-      ]
+      template: [{ tag: "p", class: "body-italic-m", children: BODY_CONTENT }]
     },
 
-    bodyRegularItalicS: {
-      linkId: "body-regular-italic-s",
+    bodyItalicS: {
+      linkId: "body-italic-s",
       title: "6.4. Body: Italic Small",
-      template: [
-        { tag: "p", class: "body-regular-italic-s", children: BODY_CONTENT }
-      ]
+      template: [{ tag: "p", class: "body-italic-s", children: BODY_CONTENT }]
     },
 
-    bodyRegularItalicXS: {
-      linkId: "body-regular-italic-xs",
+    bodyItalicXS: {
+      linkId: "body-italic-xs",
       title: "6.5. Body: Italic Extra Small",
-      template: [
-        { tag: "p", class: "body-regular-italic-xs", children: BODY_CONTENT }
-      ]
+      template: [{ tag: "p", class: "body-italic-xs", children: BODY_CONTENT }]
     },
 
     // Tiny Regular
