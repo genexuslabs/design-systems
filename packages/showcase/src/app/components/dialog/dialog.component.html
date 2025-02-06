@@ -11,7 +11,7 @@
   <h1 class="heading-1">{{ metadata.title }}</h1>
 </header>
 
-<p class="text-body-regular-l">{{ metadata.description }}</p>
+<p class="body-regular-l">{{ metadata.description }}</p>
 
 <ol class="filters elevation-1">
   @for (dialogEntry of this.dialogs().entries(); track dialogEntry[0]) {
@@ -50,7 +50,7 @@
       (dialogClosed)="hideDialogDefault()"
     >
       <div class="spacing-body">
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           GeneXus is a low-code development platform that streamlines the
           creation of enterprise applications by automatically generating code
           for various environments from a single specification.
@@ -58,7 +58,7 @@
 
         <br />
 
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           It's ideal for developers who want to quickly prototype, develop, and
           deploy applications across web, mobile, and desktop platforms. With
           its model-driven approach, GeneXus minimizes the need for manual
@@ -67,7 +67,7 @@
 
         <br />
 
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           The platform also excels in its robust integration capabilities,
           enabling seamless connectivity with various databases and third-party
           services. This flexibility ensures that applications built with
@@ -97,7 +97,7 @@
       (dialogClosed)="hideDialogWithoutPadding()"
     >
       <div>
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           GeneXus is a low-code development platform that streamlines the
           creation of enterprise applications by automatically generating code
           for various environments from a single specification.
@@ -105,7 +105,7 @@
 
         <br />
 
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           It's ideal for developers who want to quickly prototype, develop, and
           deploy applications across web, mobile, and desktop platforms. With
           its model-driven approach, GeneXus minimizes the need for manual
@@ -114,7 +114,7 @@
 
         <br />
 
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           The platform also excels in its robust integration capabilities,
           enabling seamless connectivity with various databases and third-party
           services. This flexibility ensures that applications built with
@@ -145,7 +145,7 @@
       (dialogClosed)="hideDialogWithHeader()"
     >
       <div class="spacing-body">
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           GeneXus is a low-code development platform that streamlines the
           creation of enterprise applications by automatically generating code
           for various environments from a single specification.
@@ -153,7 +153,7 @@
 
         <br />
 
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           It's ideal for developers who want to quickly prototype, develop, and
           deploy applications across web, mobile, and desktop platforms. With
           its model-driven approach, GeneXus minimizes the need for manual
@@ -162,7 +162,7 @@
 
         <br />
 
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           The platform also excels in its robust integration capabilities,
           enabling seamless connectivity with various databases and third-party
           services. This flexibility ensures that applications built with
@@ -191,7 +191,7 @@
       (dialogClosed)="hideDialogWithFooter()"
     >
       <div class="spacing-body">
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           GeneXus is a low-code development platform that streamlines the
           creation of enterprise applications by automatically generating code
           for various environments from a single specification.
@@ -199,7 +199,7 @@
 
         <br />
 
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           It's ideal for developers who want to quickly prototype, develop, and
           deploy applications across web, mobile, and desktop platforms. With
           its model-driven approach, GeneXus minimizes the need for manual
@@ -208,7 +208,7 @@
 
         <br />
 
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           The platform also excels in its robust integration capabilities,
           enabling seamless connectivity with various databases and third-party
           services. This flexibility ensures that applications built with
@@ -226,7 +226,7 @@
 
 @if (showResizable()) {
   <code-snippet [codeSnippet]="codeSnippets.resizable" [language]="'ts'">
-    <p class="text-body-regular-s">
+    <p class="body-regular-s">
       <code>resizable</code> allows you to resize the dialog by dragging from
       the edges. You might want in this case to set maximum and minimum block
       and inline sizes. For this, the <code>ch-dialog</code> provides specific
@@ -265,7 +265,7 @@
       (dialogClosed)="hideDialogResizable()"
     >
       <div class="spacing-body">
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           GeneXus is a low-code development platform that streamlines the
           creation of enterprise applications by automatically generating code
           for various environments from a single specification.
@@ -273,7 +273,7 @@
 
         <br />
 
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           It's ideal for developers who want to quickly prototype, develop, and
           deploy applications across web, mobile, and desktop platforms. With
           its model-driven approach, GeneXus minimizes the need for manual
@@ -282,7 +282,7 @@
 
         <br />
 
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           The platform also excels in its robust integration capabilities,
           enabling seamless connectivity with various databases and third-party
           services. This flexibility ensures that applications built with
@@ -296,7 +296,7 @@
 
 @if (showAdjustPosition()) {
   <code-snippet [codeSnippet]="codeSnippets.adjustPosition" [language]="'ts'">
-    <p class="text-body-regular-s">
+    <p class="body-regular-s">
       <code>adjustPositionAfterResize</code> will reposition the dialog after
       being resized. This property goes hand in hand with <code>resizable</code>
     </p>
@@ -320,7 +320,7 @@
       (dialogClosed)="hideDialogAdjustPosition()"
     >
       <div class="spacing-body">
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           GeneXus is a low-code development platform that streamlines the
           creation of enterprise applications by automatically generating code
           for various environments from a single specification.
@@ -328,7 +328,7 @@
 
         <br />
 
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           It's ideal for developers who want to quickly prototype, develop, and
           deploy applications across web, mobile, and desktop platforms. With
           its model-driven approach, GeneXus minimizes the need for manual
@@ -337,7 +337,7 @@
 
         <br />
 
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           The platform also excels in its robust integration capabilities,
           enabling seamless connectivity with various databases and third-party
           services. This flexibility ensures that applications built with
@@ -351,7 +351,7 @@
 
 @if (showNonModal()) {
   <code-snippet [codeSnippet]="codeSnippets.nonModal" [language]="'ts'">
-    <p class="text-body-regular-s">
+    <p class="body-regular-s">
       By default, the <code>ch-dialog</code> component functions as a modal,
       meaning it prevents interaction with the rest of the page's content when
       visible. To make the dialog non-modal and allow interaction with the
@@ -373,7 +373,7 @@
     (dialogClosed)="hideDialogNonModal()"
   >
     <div class="spacing-body">
-      <p class="text-body-regular-m">
+      <p class="body-regular-m">
         GeneXus is a low-code development platform that streamlines the creation
         of enterprise applications by automatically generating code for various
         environments from a single specification.
@@ -381,7 +381,7 @@
 
       <br />
 
-      <p class="text-body-regular-m">
+      <p class="body-regular-m">
         It's ideal for developers who want to quickly prototype, develop, and
         deploy applications across web, mobile, and desktop platforms. With its
         model-driven approach, GeneXus minimizes the need for manual coding,
@@ -390,7 +390,7 @@
 
       <br />
 
-      <p class="text-body-regular-m">
+      <p class="body-regular-m">
         The platform also excels in its robust integration capabilities,
         enabling seamless connectivity with various databases and third-party
         services. This flexibility ensures that applications built with GeneXus
@@ -403,7 +403,7 @@
 
 @if (showAllowDrag()) {
   <code-snippet [codeSnippet]="codeSnippets.allowDrag" [language]="'ts'">
-    <p class="text-body-regular-s">
+    <p class="body-regular-s">
       By default, the <code>ch-dialog</code> component does not support
       dragging. You can enable dragging by setting the
       <code>allowDragging</code> property to either <code>header</code> or
@@ -428,7 +428,7 @@
       (dialogClosed)="hideDialogAllowDrag()"
     >
       <div class="spacing-body">
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           GeneXus is a low-code development platform that streamlines the
           creation of enterprise applications by automatically generating code
           for various environments from a single specification.
@@ -436,7 +436,7 @@
 
         <br />
 
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           It's ideal for developers who want to quickly prototype, develop, and
           deploy applications across web, mobile, and desktop platforms. With
           its model-driven approach, GeneXus minimizes the need for manual
@@ -445,7 +445,7 @@
 
         <br />
 
-        <p class="text-body-regular-m">
+        <p class="body-regular-m">
           The platform also excels in its robust integration capabilities,
           enabling seamless connectivity with various databases and third-party
           services. This flexibility ensures that applications built with

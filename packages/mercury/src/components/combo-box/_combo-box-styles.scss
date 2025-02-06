@@ -9,10 +9,10 @@
   --ch-combo-box-group__expandable-button-size: var(--mer-spacing--md);
   --ch-combo-box-group__expandable-button-image-size: var(--mer-spacing--sm);
 
+  @extend %body-regular-m;
+
   @include control-border();
   @include control-colors-enabled();
-  @include control-font-weight-regular();
-  @include control-font-size-regular();
   @include control-padding-inline-block();
 
   &--hover {
@@ -43,12 +43,10 @@
 
   &-group__header {
     @include item-colors-enabled();
-    @include item-font-header();
     @include item-padding();
 
     &--expandable {
       @include item-colors-enabled();
-      @include item-font-header();
       @include item-padding();
       @include item-border-radius();
 
@@ -71,10 +69,10 @@
   }
 
   &__item {
+    @extend %body-regular-m;
     @include item-colors-enabled();
     @include item-border();
     @include item-border-radius();
-    @include item-font();
     @include item-padding();
 
     &--nested {

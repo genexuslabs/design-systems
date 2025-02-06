@@ -1,7 +1,6 @@
 %button-base {
   @include button-common-styles();
   @include control-border();
-  @include control-font-size-regular();
   @include control-padding-inline-block();
   padding-inline: var(--control__padding-inline);
 
@@ -15,8 +14,8 @@
 }
 
 %button-primary {
-  @include control-font-weight-semi-bold();
   @extend %button-base;
+  @extend %body-semi-bold-m;
 
   // In primary button, border color matches with background-color.
 
@@ -56,8 +55,8 @@
 }
 
 %button-secondary {
-  @include control-font-weight-regular();
   @extend %button-base;
+  @extend %body-semi-bold-m;
 
   // Default styles for the secondary button
   --button-background-color: transparent;
@@ -91,8 +90,8 @@
 }
 
 %button-tertiary {
-  @include control-font-weight-regular();
   @extend %button-base;
+  @extend %body-regular-m;
 
   // Default styles for the tertiary button
   --button-background-color: transparent;

@@ -1,4 +1,3 @@
-@import "tokens-grid";
 @import "tokens-row";
 @import "tokens-column";
 @import "tokens-cell";
@@ -58,12 +57,13 @@
 // - - - - - - - - - - - - - - - - - - - -
 
 %tabular-grid {
-  @include tabular-grid-tokens();
+  --grid-bar-resize-split__bg-color: transparent;
   --focus__outline-offset: -2px; // WA since the box-shadow hides the outline-block-end and outline-inline-end.
-  font-size: var(--grid__font-size);
   --grid-label__gap: var(--mer-spacing--xs);
   --grid-common__gap: var(--mer-spacing--xs);
   max-block-size: 100%; // TODO: This reset must be placed in the control implementation. This property is a WA.
+
+  @extend %body-regular-s;
 
   --indent: 16px;
   @include items-container-colors();
@@ -95,13 +95,13 @@
 %tabular-grid-column {
   // should equal the tabular-grid background-color
   background-color: var(--items-container__bg-color);
+  @extend %body-semi-bold-s;
 }
 
 %tabular-grid-column__bar {
   --grid-label__gap: 0;
   @include grid-row-colors-enabled();
   @include grid-cell-padding-inline-block();
-  @include control-font-weight-semi-bold();
   gap: var(--grid-common__gap);
   width: 100%;
 
@@ -204,9 +204,7 @@
   @include grid-row-colors-enabled();
   --item__bg-color: var(--items-container__bg-color);
 
-  --control__font-size--regular: var(--grid-font-size);
-  --control__font-size--small: var(--grid-font-size);
-  --item__font-size: var(--grid-font-size);
+  // TODO: Check how controls font size's should be redefined inside tabular-grid cell, using the new font styles classes.
 
   border: 0; // WA
 

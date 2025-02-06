@@ -34,7 +34,7 @@
 @import "./base/form-controls/field-styles";
 @import "./base/icons";
 @import "./base/layout/layout-styles";
-@import "./base/typography/typography-styles";
+@import "./base/typography";
 
 // Icons
 @import "./icons/button";
@@ -157,34 +157,6 @@
   // - - - - - - - - - - - - - - - - - - - -
   // font-face
   @if $font-face {
-    // Thin
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-Thin.woff2");
-      font-weight: 100;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-ThinItalic.woff2");
-      font-weight: 100;
-      font-style: italic;
-    }
-
-    // ExtraLight
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-ExtraLight.woff2");
-      font-weight: 200;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-ExtraLightItalic.woff2");
-      font-weight: 200;
-      font-style: italic;
-    }
-
     // Light
     @font-face {
       font-family: "Inter";
@@ -252,34 +224,6 @@
       font-family: "Inter";
       src: url("#{$font-face-path}Inter-BoldItalic.woff2");
       font-weight: 700;
-      font-style: italic;
-    }
-
-    // ExtraBold
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-ExtraBold.woff2");
-      font-weight: 800;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-ExtraBoldItalic.woff2");
-      font-weight: 800;
-      font-style: italic;
-    }
-
-    // Black
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-Black.woff2");
-      font-weight: 900;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: "Inter";
-      src: url("#{$font-face-path}Inter-BlackItalic.woff2");
-      font-weight: 900;
       font-style: italic;
     }
   }
@@ -393,14 +337,11 @@
           color: var(--mer-text__on-surface);
         }
 
-        @if $font {
-          line-height: var(--mer-body__line-height);
+        @if $font and $font-face {
+          font-family: var(--font-family-body);
         }
-
-        @if $font-face {
-          font-family: var(--mer-body__font-family);
-          font-size: var(--mer-body__font-size);
-          font-weight: var(--mer-body__font-weight);
+        @if $font {
+          @include body-font();
         }
       }
     }

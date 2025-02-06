@@ -11,15 +11,15 @@
       color: var(--shortcuts-key__color);
       background-color: var(--shortcuts-key__background-color);
       border-radius: var(--shortcuts-key__border-radius);
-      font-size: var(--shortcuts-key__font-size);
       padding: var(--shortcuts-key__padding);
+      @extend %body-regular-m;
     }
 
     &::part(slash),
     &::part(plus) {
-      font-size: var(--shortcuts-slash__font-size);
       color: var(--shortcuts-slash__color);
       padding: var(--shortcuts-slash__padding);
+      @extend %body-regular-m;
     }
 
     &::part(element) {

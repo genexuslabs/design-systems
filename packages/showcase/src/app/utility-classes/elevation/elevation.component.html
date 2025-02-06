@@ -2,45 +2,45 @@
   <h1 class="heading-1">{{ metadata.title }}</h1>
 </header>
 
-<p class="text-body-regular-l">{{ metadata.description }}</p>
+<p class="body-regular-l">{{ metadata.description }}</p>
 
 <code-snippet [codeSnippet]="codeSnippets.elevation1">
-  <p class="text-body-regular-m">
+  <p class="body-regular-m">
     Apply the <code>.elevation-1</code> background color class only when the
     container has no ancestor with an elevation background. This approach
     maintains a clear visual hierarchy by enhancing contrast between nested
     elevation containers.
   </p>
 
-  <div class="elevation-example-box text-body-regular-m">
+  <div class="elevation-example-box body-regular-m">
     surface
     <div class="sub-elevation-example-box elevation-1">elevation 1</div>
   </div>
 </code-snippet>
 
 <code-snippet [codeSnippet]="codeSnippets.elevation2">
-  <p class="text-body-regular-m">
+  <p class="body-regular-m">
     Apply the <code>.elevation-2</code> background color class when the parent
     container's has a <code>.elevation-1</code> background. This maintains a
     clear visual hierarchy by enhancing contrast between nested elevation
     containers.
   </p>
 
-  <div class="elevation-example-box text-body-regular-m elevation-1">
+  <div class="elevation-example-box body-regular-m elevation-1">
     elevation 1
     <div class="sub-elevation-example-box elevation-2">elevation 2</div>
   </div>
 </code-snippet>
 
 <code-snippet [codeSnippet]="codeSnippets.elevation3">
-  <p class="text-body-regular-m">
+  <p class="body-regular-m">
     Apply the <code>.elevation-3</code> background color class when the parent
     container's has a <code>.elevation-2</code> background. This maintains a
     clear visual hierarchy by enhancing contrast between nested elevation
     containers.
   </p>
 
-  <div class="elevation-example-box text-body-regular-m elevation-2">
+  <div class="elevation-example-box body-regular-m elevation-2">
     elevation 2
     <div class="sub-elevation-example-box elevation-3">elevation 3</div>
   </div>

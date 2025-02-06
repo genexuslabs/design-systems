@@ -5,7 +5,6 @@
   align-items: center;
 
   @include item-colors-enabled();
-  @include item-font();
   @include item-border();
   @include item-border-radius();
   @include item-padding-inline();
@@ -54,8 +53,6 @@
   color: var(--mer-color__neutral-gray--500);
   @include control-border();
   @include control-colors-enabled();
-  @include control-font-weight-regular();
-  @include control-font-size-regular();
   @include control-padding-inline-block();
   border-style: dashed;
 }

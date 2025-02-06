@@ -33,7 +33,7 @@
 }
 
 %radio__label {
-  @include label-font();
+  @extend %label-font;
 }
 
 %radio__label-disabled {
@@ -116,7 +116,7 @@
 
   @if $radio-item__label {
     #{$radio-item__label} {
-      @include label-font();
+      @extend %label-font;
     }
   }
 
