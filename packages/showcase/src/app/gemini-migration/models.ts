@@ -57,6 +57,25 @@ export const favoriteColorsComboBoxModel: ComboBoxModel = [
   }
 ];
 
+export const carsComboBoxModel: ComboBoxModel = [
+  {
+    value: "audi",
+    caption: "Audi"
+  },
+  {
+    value: "bmw",
+    caption: "BMW"
+  },
+  {
+    value: "citroen",
+    caption: "Citroen"
+  },
+  {
+    value: "ford",
+    caption: "Ford"
+  }
+];
+
 export const favoriteColorsRadioGroupModel: RadioGroupModel = [
   {
     value: "red",
@@ -131,5 +150,25 @@ export const pillsModel: ComboBoxModel = [
   {
     value: "warning",
     caption: "Warning"
+  }
+];
+
+export const objectsAccordionModel = [
+  {
+    id: "file",
+    caption: "objects: file",
+    expanded: true
+  },
+  {
+    id: "domain",
+    caption: "objects: domain"
+  },
+  {
+    id: "procedure",
+    caption: "objects: procedure"
+  },
+  {
+    id: "document",
+    caption: "objects: document"
   }
 ];

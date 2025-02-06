@@ -10,11 +10,17 @@ import {
 export class RouterCommonLinksService {
   dsService = inject(DesignSystemService);
 
+  componentsAccordion = computed(
+    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.ACCORDION}`
+  );
   componentsCheckbox = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.CHECKBOX}`
   );
   componentsComboBox = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.COMBO_BOX}`
+  );
+  componentsDialog = computed(
+    () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.DIALOG}`
   );
   componentsIcon = computed(
     () => `/${this.dsService.designSystem()}${COMPONENTS_ROUTES.ICON}`
@@ -43,6 +49,9 @@ export class RouterCommonLinksService {
 
   utilsForm = computed(
     () => `/${this.dsService.designSystem()}${UTILITY_CLASSES_ROUTES.FORM}`
+  );
+  utilsLayout = computed(
+    () => `/${this.dsService.designSystem()}${UTILITY_CLASSES_ROUTES.LAYOUT}`
   );
   utilsTypography = computed(
     () =>

@@ -4,11 +4,14 @@ import {
   computed,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
-  input
+  input,
+  signal
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router, RouterLink } from "@angular/router";
 import {
+  objectsAccordionModel,
+  carsComboBoxModel,
   favoriteColorsActionListModel,
   favoriteColorsComboBoxModel,
   favoriteColorsRadioGroupModel,
@@ -17,17 +20,13 @@ import {
   pillsModel
 } from "./models";
 
-import {
-  getIconPath,
-  getImagePathCallback,
-  getTreeViewImagePathCallback
-} from "@genexus/mercury/assets-manager.js";
+import { getIconPath } from "@genexus/mercury/assets-manager.js";
 import type {
   ChCheckboxCustomEvent,
   TreeViewModel
 } from "@genexus/chameleon-controls-library";
 
-import { geminiMigrationMetadata } from "./metadata";
+import { geminiMigrationMetadata, SCROLLABLE_CLASS } from "./metadata";
 import { RouterCommonLinksService } from "../../services/router-links.service";
 import { CodeSnippetComponent } from "../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../user-controls/runtime-bundles/runtime-bundles.component";
@@ -65,6 +64,9 @@ export class GeminiMigrationComponent {
     colorType: "primary"
   });
 
+  // Models
+  objectsAccordionModel = objectsAccordionModel;
+  carsComboBoxModel = carsComboBoxModel;
   favoriteColorsActionListModel = favoriteColorsActionListModel;
   favoriteColorsComboBoxModel = favoriteColorsComboBoxModel;
   favoriteColorsRadioGroupModel = favoriteColorsRadioGroupModel;
@@ -72,11 +74,18 @@ export class GeminiMigrationComponent {
   fruitsTabModel = fruitsTabModel;
   objectsTreeViewModel: TreeViewModel = structuredClone(iconsModel);
   pillsModel = pillsModel;
-  // suggestOptions = suggestOptions;
 
-  // TODO: This is a WA, since the Chameleon's register does not for some reason
-  getImagePathCallback = getImagePathCallback;
-  getTreeViewImagePathCallback = getTreeViewImagePathCallback;
+  // Constants
+  SCROLLABLE_CLASS = SCROLLABLE_CLASS;
+  CHAMELEON_COMPONENTS_PATH =
+    "https://github.com/genexuslabs/chameleon-controls-library/tree/main/src/components/";
+
+  // Dialog
+  dialogDisplayed = signal(false);
+  showDialog = () => this.dialogDisplayed.set(true);
+  hideDialog = () => this.dialogDisplayed.set(false);
+
+  // suggestOptions = suggestOptions;
 
   hiddenMigrations = input<string>("");
 
@@ -86,8 +95,10 @@ export class GeminiMigrationComponent {
    */
   migrations = computed(() => {
     const newMigrations = new Map<string, boolean>([
+      ["gxg-accordion", true],
       ["gxg-button: text only", true],
       ["gxg-button: text with icon", true],
+      ["gxg-columns", true],
       ["gxg-combo-box", true],
       ["gxg-form-checkbox", true],
       ["gxg-form-radio-group", true],
@@ -97,7 +108,10 @@ export class GeminiMigrationComponent {
       ["gxg-icon", true],
       ["gxg-label", true],
       ["gxg-list-box", true],
+      ["gxg-modal", true],
       ["gxg-pills", true],
+      ["gxg-select", true],
+      ["gxg-stack", true],
       ["gxg-suggest", true],
       ["gxg-tabs", true],
       ["gxg-text", true],
@@ -124,12 +138,14 @@ export class GeminiMigrationComponent {
     return newMigrations;
   });
 
+  showGxgAccordion = computed(() => this.migrations().get("gxg-accordion"));
   showGxgButtonTextOnly = computed(() =>
     this.migrations().get("gxg-button: text only")
   );
   showGxgButtonTextWithIcon = computed(() =>
     this.migrations().get("gxg-button: text with icon")
   );
+  showGxgColumns = computed(() => this.migrations().get("gxg-columns"));
   showGxgComboBox = computed(() => this.migrations().get("gxg-combo-box"));
   showGxgFormCheckbox = computed(() =>
     this.migrations().get("gxg-form-checkbox")
@@ -145,6 +161,9 @@ export class GeminiMigrationComponent {
   showGxgIcon = computed(() => this.migrations().get("gxg-icon"));
   showGxgLabel = computed(() => this.migrations().get("gxg-label"));
   showGxgListBox = computed(() => this.migrations().get("gxg-list-box"));
+  showGxgModal = computed(() => this.migrations().get("gxg-modal"));
+  showGxgSelect = computed(() => this.migrations().get("gxg-select"));
+  showGxgStack = computed(() => this.migrations().get("gxg-stack"));
   showGxgSuggest = computed(() => this.migrations().get("gxg-suggest"));
   showGxgTabs = computed(() => this.migrations().get("gxg-tabs"));
   showGxgText = computed(() => this.migrations().get("gxg-text"));

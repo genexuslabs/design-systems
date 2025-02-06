@@ -6,10 +6,7 @@ import {
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterLink } from "@angular/router";
-import {
-  getIconPath,
-  getImagePathCallback
-} from "@genexus/mercury/assets-manager.js";
+import { getIconPath } from "@genexus/mercury/assets-manager.js";
 
 import { iconMetadata } from "./metadata";
 import { RouterCommonLinksService } from "../../../services/router-links.service";
@@ -37,9 +34,6 @@ export class IconComponent {
     name: "assistant",
     colorType: "primary"
   });
-
-  // TODO: This is a WA, since the Chameleon's register does not for some reason
-  getImagePathCallback = getImagePathCallback;
 
   metadata = iconMetadata;
   codeSnippets = iconMetadata.codeSnippets;

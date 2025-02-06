@@ -1,7 +1,9 @@
 <runtime-bundles
   [bundles]="[
+    'components/accordion',
     'components/checkbox',
     'components/combo-box',
+    'components/dialog',
     'components/edit',
     'components/icon',
     'components/list-box',
@@ -11,6 +13,7 @@
     'components/tabular-grid',
     'components/tree-view',
     'utils/form',
+    'utils/layout',
     'utils/spacing',
     'utils/typography'
   ]"
@@ -41,6 +44,81 @@
     </li>
   }
 </ol>
+
+@if (showGxgAccordion()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgAccordion"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-accordion</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-accordion</code> tag with a
+        <code>ch-accordion-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>
+        Add the <code>accordion-filled</code> or
+        <code>accordion-outlined</code> class in order to apply the Mercury
+        styles.
+      </li>
+
+      <li>
+        Remove all the <code>gxg-accordion-item</code> items, since the
+        <code>ch-accordion-render</code> uses a model instead.
+      </li>
+
+      <li>
+        Assign a model like the one provided in the following example
+        <code>(#objectsAccordionModel)</code>
+      </li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsAccordion()"
+          >Read Mercury documentation to see how to apply some common cases
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="hyperlink"
+          href="{{ CHAMELEON_COMPONENTS_PATH }}accordion#ch-accordion-render"
+          target="_blank"
+          >Refer to the Chameleon documentation for the complete specifications.
+        </a>
+      </li>
+    </ol>
+
+    <br />
+
+    <div class="note">
+      <p>
+        The following Mercury example uses a spacing utility class
+        <code>.spacing-body</code>, that applies padding all around the
+        accordion item content. To use the <code>.spacing-body</code> you will
+        need to include the propper bundle: <code>utils/spacing</code>.
+        <br />
+      </p>
+    </div>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <ch-accordion-render
+      class="accordion-filled"
+      [model]="objectsAccordionModel"
+    >
+      <div slot="file" class="spacing-body">File content here</div>
+      <div slot="domain" class="spacing-body">Domain content here</div>
+      <div slot="procedure" class="spacing-body">Procedure content here</div>
+      <div slot="document" class="spacing-body">Document content here</div>
+    </ch-accordion-render>
+  </div>
+}
 
 @if (showGxgButtonTextOnly()) {
   <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgButtonTextOnly">
@@ -96,13 +174,48 @@
 
   <div class="gemini-migration-preview">
     <button class="button-primary button-icon-and-text">
-      <ch-image
-        class="icon-sm"
-        [getImagePathCallback]="getImagePathCallback"
-        [src]="ICON"
-      ></ch-image>
+      <ch-image class="icon-sm" [src]="ICON"></ch-image>
       Caption
     </button>
+  </div>
+}
+
+@if (showGxgColumns()) {
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgColumns">
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-columns</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-columns</code> tag with a <code>.layout</code> +
+        <code>.layout--cols-*</code> tags, where * is any of the available
+        combinations.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>
+        Replace all the <code>gxg-column</code> tags with
+        <code>div.layout__panel</code> tags. Each column content goes inside
+        this tags.
+      </li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.utilsLayout()"
+          >Refer to the Mercury documentation for complete details.
+        </a>
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview">
+    <div class="layout layout--cols-4">
+      <div class="layout__panel">Content of column 1</div>
+      <div class="layout__panel">Content of column 2</div>
+      <div class="layout__panel">Content of column 3</div>
+      <div class="layout__panel">Content of column 4</div>
+    </div>
   </div>
 }
 
@@ -117,17 +230,39 @@
 
     <ol class="text-body-regular-s step-list">
       <li>
-        Replace the <code>gxg-combo-box</code> tag with a
+        Replace the <code>gxg-select</code> tag with a
         <code>ch-combo-box-render</code> tag.
       </li>
 
       <li>Remove all the attributes and values.</li>
 
-      <li>Add the <code>combo-box</code> class.</li>
+      <li>
+        Add the <code>combo-box</code> class in order to apply the Mercury
+        styles.
+      </li>
+
+      <li>
+        Remove all the <code>gxg-combo-box-item</code> items, since the
+        <code>ch-combo-box-render</code> uses a model instead.
+      </li>
+
+      <li>
+        Assign a model like the one provided in the following example
+        <code>(#favoriteColorsModel)</code>
+      </li>
 
       <li>
         <a class="hyperlink" [routerLink]="commonLinks.componentsComboBox()"
-          >Specify the ch-combo-box-render items following the model property
+          >Read Mercury documentation to see how to apply some common cases
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="hyperlink"
+          href="{{ CHAMELEON_COMPONENTS_PATH }}combo-box#ch-combo-box-render"
+          target="_blank"
+          >Refer to the Chameleon documentation for the complete specifications.
         </a>
       </li>
     </ol>
@@ -253,7 +388,6 @@
         id="user-name"
         class="input"
         [placeholder]="'John Smith'"
-        [getImagePathCallback]="getImagePathCallback"
         [startImgSrc]="ICON_PRIMARY"
         [value]="'Adam Smith'"
       ></ch-edit>
@@ -414,11 +548,7 @@
   </code-snippet>
 
   <div class="gemini-migration-preview">
-    <ch-image
-      class="icon-sm"
-      [getImagePathCallback]="getImagePathCallback"
-      [src]="ICON_PRIMARY"
-    ></ch-image>
+    <ch-image class="icon-sm" [src]="ICON_PRIMARY"></ch-image>
   </div>
 }
 
@@ -475,6 +605,55 @@
   </div>
 }
 
+@if (showGxgModal()) {
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgModal">
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-modal</code>: If you want to open a
+      dialog similar to others in the IDE, it's best to use the IDE services to
+      do so. You can find
+      <a
+        class="hyperlink"
+        href="https://github.com/genexuslabs/genexus-next-plugin-sample/blob/main/frontend/README.md#sample-dialog"
+        target="_blank"
+        >documentation</a
+      >
+      and
+      <a
+        class="hyperlink"
+        href="https://github.com/genexuslabs/genexus-next-plugin-sample/blob/main/frontend/packages/main/src/dialogs/sample-dialog.tsx"
+        target="_blank"
+        >examples</a
+      >
+      in the plugins repository.
+    </p>
+  </code-snippet>
+
+  <!-- <div class="gemini-migration-preview">
+    <button class="button-primary" type="button" (click)="showDialog()">
+      Show dialog
+    </button>
+
+    <ch-dialog
+      class="dialog"
+      [caption]="'Terms and conditions'"
+      [showHeader]="true"
+      [showFooter]="true"
+      [show]="dialogDisplayed()"
+      (dialogClosed)="hideDialog()"
+      [style.--ch-dialog-inline-size]="'400px'"
+    >
+      <div class="spacing-body">
+        By accessing this website, you agree to comply with these terms and
+        conditions. We reserve the right to modify or update these terms at any
+        time without notice.
+      </div>
+      <div [slot]="'footer'">
+        <button type="'button'" class="button-primary">Agree</button>
+      </div>
+    </ch-dialog>
+  </div> -->
+}
+
 @if (showGxgPills()) {
   <code-snippet
     [codeSnippetBeforeAndAfter]="codeSnippets.gxgPills"
@@ -505,6 +684,128 @@
         [model]="pillsModel"
         [value]="'success'"
       ></ch-combo-box-render>
+    </div>
+  </div>
+}
+
+@if (showGxgSelect()) {
+  <code-snippet
+    [codeSnippetBeforeAndAfter]="codeSnippets.gxgSelect"
+    [languageAfter]="'ts'"
+  >
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-select</code>:
+    </p>
+
+    <ol class="text-body-regular-s step-list">
+      <li>
+        Replace the <code>gxg-select</code> tag with a
+        <code>ch-combo-box-render</code> tag.
+      </li>
+
+      <li>Remove all the attributes and values.</li>
+
+      <li>
+        Add the <code>combo-box</code> class in order to apply the Mercury
+        styles.
+      </li>
+
+      <li>
+        Remove all the <code>gxg-option</code> items, since the
+        <code>ch-combo-box-render</code> uses a model instead.
+      </li>
+
+      <li>
+        Assign a model like the one provided in the following example
+        <code>(#carsComboBoxModel)</code>
+      </li>
+
+      <li>
+        <a class="hyperlink" [routerLink]="commonLinks.componentsComboBox()"
+          >Read Mercury documentation to see how to apply some common cases
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="hyperlink"
+          href="{{ CHAMELEON_COMPONENTS_PATH }}combo-box#ch-combo-box-render"
+          target="_blank"
+          >Refer to the Chameleon documentation for the complete specifications.
+        </a>
+      </li>
+    </ol>
+  </code-snippet>
+
+  <div class="gemini-migration-preview field field-block">
+    <label class="label" for="favorite-car">Favorite car</label>
+    <ch-combo-box-render
+      class="combo-box"
+      id="favorite-car"
+      [model]="carsComboBoxModel"
+      [placeholder]="'Porsche'"
+      [value]="'bmw'"
+    ></ch-combo-box-render>
+  </div>
+}
+
+@if (showGxgStack()) {
+  <code-snippet [codeSnippetBeforeAndAfter]="codeSnippets.gxgStack">
+    <p class="text-body-regular-s">
+      When transitioning from a <code>gxg-stack</code>:
+    </p>
+    <br />
+    <p class="text-body-regular-s">
+      Gemini's <code>gxg-stack</code> was used to evenly space components or
+      elements with a consistent gap. The gap size was defined as a property,
+      selected from a predefined set of spacing tokens.
+    </p>
+
+    <br />
+
+    <p class="text-body-regular-s">
+      While this solution provided some visual consistency, the spacing value
+      chosen by the user was free, causing the same type of elements to have
+      different gap values in different sections.
+    </p>
+
+    <br />
+
+    <p class="text-body-regular-s">
+      In Mercury, the gap between elements is determined by the design system
+      and depends on the type of context. At the time of writting, the only
+      existing vertical gap is generated for controls, by the
+      <code>.field-group</code> class, within which form fields
+      (<code>.field</code>) are placed.
+    </p>
+
+    <br />
+
+    <a class="hyperlink" [routerLink]="commonLinks.utilsForm()"
+      >Read Mercury documentation to see how to apply some common cases
+    </a>
+  </code-snippet>
+
+  <div class="gemini-migration-preview field field-block">
+    <div class="field-group">
+      <div class="field field-block">
+        <label class="label" htmlFor="full-name">Full Name</label>
+        <ch-edit
+          class="input"
+          id="full-name"
+          placeholder="John Smith"
+        ></ch-edit>
+      </div>
+      <div class="field field-block">
+        <label class="label" id="job-position" htmlFor="job-position"
+          >Job Position</label
+        >
+        <ch-edit class="input" placeholder="Backend developer"></ch-edit>
+      </div>
+      <div class="field field-block">
+        <label class="label" htmlFor="location">Location</label>
+        <ch-edit class="input" id="location" placeholder="Miami, USA"></ch-edit>
+      </div>
     </div>
   </div>
 }
@@ -715,7 +1016,6 @@
       id="genexus-objects"
       class="tree-view"
       [model]="objectsTreeViewModel"
-      [getImagePathCallback]="getTreeViewImagePathCallback"
       [showLines]="'last'"
     >
     </ch-tree-view-render>
