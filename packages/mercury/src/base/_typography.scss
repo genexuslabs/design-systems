@@ -63,19 +63,42 @@
 
 // subtitle
 
-@mixin subtitle-l() {
+@mixin subtitle-l($weight: regular) {
+  @if $weight == regular {
+    @extend %subtitle-regular;
+  } @else if $weight == semi-bold {
+    @extend %subtitle-semi-bold;
+  }
   font-size: var(--font-size-subtitle-l);
   line-height: var(--line-height-regular);
 }
-@mixin subtitle-m() {
+
+@mixin subtitle-m($weight: regular) {
+  @if $weight == regular {
+    @extend %subtitle-regular;
+  } @else if $weight == semi-bold {
+    @extend %subtitle-semi-bold;
+  }
   font-size: var(--font-size-subtitle-m);
   line-height: var(--line-height-regular);
 }
-@mixin subtitle-s() {
+
+@mixin subtitle-s($weight: regular) {
+  @if $weight == regular {
+    @extend %subtitle-regular;
+  } @else if $weight == semi-bold {
+    @extend %subtitle-semi-bold;
+  }
   font-size: var(--font-size-subtitle-s);
   line-height: var(--line-height-tight);
 }
-@mixin subtitle-xs() {
+
+@mixin subtitle-xs($weight: regular) {
+  @if $weight == regular {
+    @extend %subtitle-regular;
+  } @else if $weight == semi-bold {
+    @extend %subtitle-semi-bold;
+  }
   font-size: var(--font-size-subtitle-xs);
   line-height: var(--line-height-tight);
 }
@@ -87,46 +110,39 @@
 
     &-l {
       @include subtitle-l();
-      @extend %subtitle-regular;
     }
 
     &-m {
       @include subtitle-m();
-      @extend %subtitle-regular;
     }
 
     &-s {
       @include subtitle-s();
-      @extend %subtitle-regular;
     }
 
     &-xs {
       @include subtitle-xs();
-      @extend %subtitle-regular;
     }
   }
 
   &-semi-bold {
+    font-family: var(--font-family-header);
     font-weight: var(--font-weight-semi-bold);
 
     &-l {
-      @include subtitle-l();
-      @extend %subtitle-semi-bold;
+      @include subtitle-l(semi-bold);
     }
 
     &-m {
-      @include subtitle-m();
-      @extend %subtitle-semi-bold;
+      @include subtitle-m(semi-bold);
     }
 
     &-s {
-      @include subtitle-s();
-      @extend %subtitle-semi-bold;
+      @include subtitle-s(semi-bold);
     }
 
     &-xs {
-      @include subtitle-xs();
-      @extend %subtitle-semi-bold;
+      @include subtitle-xs(semi-bold);
     }
   }
 }

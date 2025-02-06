@@ -340,7 +340,7 @@
         @if $font and $font-face {
           font-family: var(--font-family-body);
         }
-        @if $font and $typography-classes {
+        @if $font {
           @include body-font();
         }
       }
