@@ -1,40 +1,38 @@
 // heading
 
 @mixin heading-1() {
-  @extend %heading-base;
+  @extend %heading;
   font-size: var(--font-size-header-h1);
 }
 
 @mixin heading-2() {
-  @extend %heading-base;
+  @extend %heading;
   font-size: var(--font-size-header-h2);
 }
 
 @mixin heading-3() {
-  @extend %heading-base;
+  @extend %heading;
   font-size: var(--font-size-header-h3);
 }
 
 @mixin heading-4() {
-  @extend %heading-base;
+  @extend %heading;
   font-size: var(--font-size-header-h4);
 }
 
 @mixin heading-5() {
-  @extend %heading-base;
+  @extend %heading;
   font-size: var(--font-size-header-h5);
 }
 
 @mixin heading-6() {
-  @extend %heading-base;
+  @extend %heading;
   font-size: var(--font-size-header-h6);
 }
 
 %heading {
-  &-base {
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-tight);
-  }
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
 
   &-1 {
     @include heading-1();
@@ -64,21 +62,25 @@
 // subtitle
 
 // subtitle: regular
+
 @mixin subtitle-regular-l() {
   @extend %subtitle;
   @extend %subtitle-regular;
   @extend %subtitle-l;
 }
+
 @mixin subtitle-regular-m() {
   @extend %subtitle;
   @extend %subtitle-regular;
   @extend %subtitle-m;
 }
+
 @mixin subtitle-regular-s() {
   @extend %subtitle;
   @extend %subtitle-regular;
   @extend %subtitle-s;
 }
+
 @mixin subtitle-regular-xs() {
   @extend %subtitle;
   @extend %subtitle-regular;
@@ -86,21 +88,25 @@
 }
 
 // subtitle: semi-bold
+
 @mixin subtitle-semi-bold-l() {
   @extend %subtitle;
   @extend %subtitle-semi-bold;
   @extend %subtitle-l;
 }
+
 @mixin subtitle-semi-bold-m() {
   @extend %subtitle;
   @extend %subtitle-semi-bold;
   @extend %subtitle-m;
 }
+
 @mixin subtitle-semi-bold-s() {
   @extend %subtitle;
   @extend %subtitle-semi-bold;
   @extend %subtitle-s;
 }
+
 @mixin subtitle-semi-bold-xs() {
   @extend %subtitle;
   @extend %subtitle-semi-bold;
@@ -114,14 +120,17 @@
     font-size: var(--font-size-subtitle-l);
     line-height: var(--line-height-regular);
   }
+
   &-m {
     font-size: var(--font-size-subtitle-m);
     line-height: var(--line-height-regular);
   }
+
   &-s {
     font-size: var(--font-size-subtitle-s);
     line-height: var(--line-height-tight);
   }
+
   &-xs {
     font-size: var(--font-size-subtitle-xs);
     line-height: var(--line-height-tight);
@@ -131,19 +140,19 @@
     font-weight: var(--font-weight-regular);
 
     &-l {
-      @include subtitle-l();
+      @include subtitle-regular-l();
     }
 
     &-m {
-      @include subtitle-m();
+      @include subtitle-regular-m();
     }
 
     &-s {
-      @include subtitle-s();
+      @include subtitle-regular-s();
     }
 
     &-xs {
-      @include subtitle-xs();
+      @include subtitle-regular-xs();
     }
   }
 
@@ -151,64 +160,155 @@
     font-weight: var(--font-weight-semi-bold);
 
     &-l {
-      @include subtitle-l();
+      @include subtitle-semi-bold-l();
     }
 
     &-m {
-      @include subtitle-m();
+      @include subtitle-semi-bold-m();
     }
 
     &-s {
-      @include subtitle-s();
+      @include subtitle-semi-bold-s();
     }
 
     &-xs {
-      @include subtitle-xs();
+      @include subtitle-semi-bold-xs();
     }
   }
 }
 
 // body
+
+// body: regular
+
+@mixin body-regular-xl() {
+  @extend %body;
+  @extend %body-regular;
+  @extend %body-xl;
+}
+
+@mixin body-regular-l() {
+  @extend %body;
+  @extend %body-regular;
+  @extend %body-l;
+}
+
 @mixin body-font() {
+  // "medium" is the body font weight.
   font-size: var(--font-size-body-m);
   line-height: var(--line-height-tight);
   font-weight: var(--font-weight-regular);
 }
 
-@mixin body-xl() {
-  font-size: var(--font-size-body-xl);
+@mixin body-regular-s() {
+  @extend %body;
+  @extend %body-regular;
+  @extend %body-s;
 }
-@mixin body-l() {
-  font-size: var(--font-size-body-l);
+
+@mixin body-regular-xs() {
+  @extend %body;
+  @extend %body-regular;
+  @extend %body-xs;
 }
-@mixin body-m() {
-  font-size: var(--font-size-body-m);
+
+// body: semi-bold
+
+@mixin body-semi-bold-xl() {
+  @extend %body;
+  @extend %body-semi-bold;
+  @extend %body-xl;
 }
-@mixin body-s() {
-  font-size: var(--font-size-body-s);
+
+@mixin body-semi-bold-l() {
+  @extend %body;
+  @extend %body-semi-bold;
+  @extend %body-l;
 }
-@mixin body-xs() {
-  font-size: var(--font-size-body-xs);
+
+@mixin body-semi-bold-m() {
+  @extend %body;
+  @extend %body-semi-bold;
+  @extend %body-m;
+}
+
+@mixin body-semi-bold-s() {
+  @extend %body;
+  @extend %body-semi-bold;
+  @extend %body-s;
+}
+
+@mixin body-semi-bold-xs() {
+  @extend %body;
+  @extend %body-semi-bold;
+  @extend %body-xs;
+}
+
+// body: italic
+
+@mixin body-italic-xl() {
+  @extend %body;
+  @extend %body-italic;
+  @extend %body-xl;
+}
+
+@mixin body-italic-l() {
+  @extend %body;
+  @extend %body-italic;
+  @extend %body-l;
+}
+
+@mixin body-italic-m() {
+  @extend %body;
+  @extend %body-italic;
+  @extend %body-m;
+}
+
+@mixin body-italic-s() {
+  @extend %body;
+  @extend %body-italic;
+  @extend %body-s;
+}
+
+@mixin body-italic-xs() {
+  @extend %body;
+  @extend %body-italic;
+  @extend %body-xs;
 }
 
 %body {
-  &-base {
-    line-height: var(--line-height-tight);
+  line-height: var(--line-height-tight);
+
+  // sizes
+  &-xl {
+    font-size: var(--font-size-body-xl);
+  }
+
+  &-l {
+    font-size: var(--font-size-body-l);
+  }
+
+  &-m {
+    font-size: var(--font-size-body-m);
+  }
+
+  &-s {
+    font-size: var(--font-size-body-s);
+  }
+
+  &-xs {
+    font-size: var(--font-size-body-xs);
   }
 
   &-regular {
     font-weight: var(--font-weight-regular);
 
     &-xl {
-      @extend %body-base;
-      @extend %body-regular;
-      @include body-xl();
+      @include body-regular-xl();
     }
 
     &-l {
-      @extend %body-base;
-      @extend %body-regular;
-      @include body-l();
+      @include body-regular-l();
     }
 
     &-m {
@@ -216,15 +316,11 @@
     }
 
     &-s {
-      @extend %body-base;
-      @extend %body-regular;
-      @include body-s();
+      @include body-regular-s();
     }
 
     &-xs {
-      @extend %body-base;
-      @extend %body-regular;
-      @include body-xs();
+      @include body-regular-xs();
     }
   }
 
@@ -232,137 +328,164 @@
     font-weight: var(--font-weight-semi-bold);
 
     &-xl {
-      @extend %body-base;
-      @extend %body-semi-bold;
-      @include body-xl();
+      @include body-semi-bold-xl();
     }
 
     &-l {
-      @extend %body-base;
-      @extend %body-semi-bold;
-      @include body-l();
+      @include body-semi-bold-l();
     }
 
     &-m {
-      @extend %body-base;
-      @extend %body-semi-bold;
-      @include body-m();
+      @include body-semi-bold-m();
     }
 
     &-s {
-      @extend %body-base;
-      @extend %body-semi-bold;
-      @include body-s();
+      @include body-semi-bold-s();
     }
 
     &-xs {
-      @extend %body-base;
-      @extend %body-semi-bold;
-      @include body-xs();
+      @include body-semi-bold-xs();
     }
   }
 
-  &-regular-italic {
+  &-italic {
     font-weight: var(--font-weight-regular);
     font-style: italic;
 
     &-xl {
-      @extend %body-base;
-      @extend %body-regular-italic;
-      @include body-xl();
+      @include body-italic-xl();
     }
 
     &-l {
-      @extend %body-base;
-      @extend %body-regular-italic;
-      @include body-l();
+      @include body-italic-l();
     }
 
     &-m {
-      @extend %body-base;
-      @extend %body-regular-italic;
-      @include body-m();
+      @include body-italic-m();
     }
 
     &-s {
-      @extend %body-base;
-      @extend %body-regular-italic;
-      @include body-s();
+      @include body-italic-s();
     }
 
     &-xs {
-      @extend %body-base;
-      @extend %body-regular-italic;
-      @include body-xs();
+      @include body-italic-xs();
     }
   }
 }
 
-// body tiny
+// tiny
 
-@mixin tiny-l() {
-  font-size: var(--font-size-tiny-l);
+// tiny: regular
+
+@mixin tiny-regular-l() {
+  @extend %tiny;
+  @extend %tiny-regular;
+  @extend %tiny-l;
 }
-@mixin tiny-m() {
-  font-size: var(--font-size-tiny-m);
+
+@mixin tiny-regular-m() {
+  @extend %tiny;
+  @extend %tiny-regular;
+  @extend %tiny-m;
 }
-@mixin tiny-s() {
-  font-size: var(--font-size-tiny-s);
+
+@mixin tiny-regular-s() {
+  @extend %tiny;
+  @extend %tiny-regular;
+  @extend %tiny-s;
 }
-@mixin tiny-xs() {
-  font-size: var(--font-size-tiny-xs);
+
+@mixin tiny-regular-xs() {
+  @extend %tiny;
+  @extend %tiny-regular;
+  @extend %tiny-xs;
+}
+
+// tiny: semi-bold
+
+@mixin tiny-semi-bold-l() {
+  @extend %tiny;
+  @extend %tiny-semi-bold;
+  @extend %tiny-l;
+}
+
+@mixin tiny-semi-bold-m() {
+  @extend %tiny;
+  @extend %tiny-semi-bold;
+  @extend %tiny-m;
+}
+
+@mixin tiny-semi-bold-s() {
+  @extend %tiny;
+  @extend %tiny-semi-bold;
+  @extend %tiny-s;
+}
+
+@mixin tiny-semi-bold-xs() {
+  @extend %tiny;
+  @extend %tiny-semi-bold;
+  @extend %tiny-xs;
 }
 
 %tiny {
-  &-regular-base {
-    font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-tight);
+
+  &-l {
+    font-size: var(--font-size-tiny-l);
     line-height: var(--line-height-tight);
   }
-  &-semi-bold-base {
-    font-weight: var(--font-weight-semi-bold);
+
+  &-m {
+    font-size: var(--font-size-tiny-m);
     line-height: var(--line-height-tight);
   }
+
+  &-s {
+    font-size: var(--font-size-tiny-s);
+    line-height: var(--line-height-tight);
+  }
+
+  &-xs {
+    font-size: var(--font-size-tiny-xs);
+    line-height: var(--line-height-tight);
+  }
+
   &-regular {
+    font-weight: var(--font-weight-regular);
     &-l {
-      @extend %tiny-regular-base;
-      @include tiny-l();
+      @include tiny-regular-l();
     }
 
     &-m {
-      @extend %tiny-regular-base;
-      @include tiny-m();
+      @include tiny-regular-m();
     }
 
     &-s {
-      @extend %tiny-regular-base;
-      @include tiny-s();
+      @include tiny-regular-s();
     }
 
     &-xs {
-      @extend %tiny-regular-base;
-      @include tiny-xs();
+      @include tiny-regular-xs();
     }
   }
 
   &-semi-bold {
+    font-weight: var(--font-weight-semi-bold);
     &-l {
-      @extend %tiny-semi-bold-base;
-      @include tiny-l();
+      @include tiny-semi-bold-l();
     }
 
     &-m {
-      @extend %tiny-semi-bold-base;
-      @include tiny-m();
+      @include tiny-semi-bold-m();
     }
 
     &-s {
-      @extend %tiny-semi-bold-base;
-      @include tiny-s();
+      @include tiny-semi-bold-s();
     }
 
     &-xs {
-      @extend %tiny-semi-bold-base;
-      @include tiny-xs();
+      @include tiny-semi-bold-xs();
     }
   }
 }
@@ -397,11 +520,11 @@
 /// @param {String} $body-semi-bold-s-selector [".body-semi-bold-s"] -
 /// @param {String} $body-semi-bold-xs-selector [".body-semi-bold-xs"] -
 
-/// @param {String} $body-regular-italic-xl-selector [".body-regular-italic-xl"] -
-/// @param {String} $body-regular-italic-l-selector [".body-regular-italic-l"] -
-/// @param {String} $body-regular-italic-m-selector [".body-regular-italic-m"] -
-/// @param {String} $body-regular-italic-s-selector [".body-regular-italic-s"] -
-/// @param {String} $body-regular-italic-xs-selector [".body-regular-italic-xs"] -
+/// @param {String} $body-italic-xl-selector [".body-italic-xl"] -
+/// @param {String} $body-italic-l-selector [".body-italic-l"] -
+/// @param {String} $body-italic-m-selector [".body-italic-m"] -
+/// @param {String} $body-italic-s-selector [".body-italic-s"] -
+/// @param {String} $body-italic-xs-selector [".body-italic-xs"] -
 
 /// @param {String} $tiny-regular-l-selector [".tiny-regular-l"] -
 /// @param {String} $tiny-regular-m-selector [".tiny-regular-m"] -
@@ -443,11 +566,11 @@
   $body-semi-bold-s-selector: ".body-semi-bold-s",
   $body-semi-bold-xs-selector: ".body-semi-bold-xs",
 
-  $body-regular-italic-xl-selector: ".body-regular-italic-xl",
-  $body-regular-italic-l-selector: ".body-regular-italic-l",
-  $body-regular-italic-m-selector: ".body-regular-italic-m",
-  $body-regular-italic-s-selector: ".body-regular-italic-s",
-  $body-regular-italic-xs-selector: ".body-regular-italic-xs",
+  $body-italic-xl-selector: ".body-italic-xl",
+  $body-italic-l-selector: ".body-italic-l",
+  $body-italic-m-selector: ".body-italic-m",
+  $body-italic-s-selector: ".body-italic-s",
+  $body-italic-xs-selector: ".body-italic-xs",
 
   $tiny-regular-l-selector: ".tiny-regular-l",
   $tiny-regular-m-selector: ".tiny-regular-m",
@@ -548,20 +671,20 @@
 
   // Body: regular italic
 
-  #{$body-regular-italic-xl-selector} {
-    @extend %body-regular-italic-xl;
+  #{$body-italic-xl-selector} {
+    @extend %body-italic-xl;
   }
-  #{$body-regular-italic-l-selector} {
-    @extend %body-regular-italic-l;
+  #{$body-italic-l-selector} {
+    @extend %body-italic-l;
   }
-  #{$body-regular-italic-m-selector} {
-    @extend %body-regular-italic-m;
+  #{$body-italic-m-selector} {
+    @extend %body-italic-m;
   }
-  #{$body-regular-italic-s-selector} {
-    @extend %body-regular-italic-s;
+  #{$body-italic-s-selector} {
+    @extend %body-italic-s;
   }
-  #{$body-regular-italic-xs-selector} {
-    @extend %body-regular-italic-xs;
+  #{$body-italic-xs-selector} {
+    @extend %body-italic-xs;
   }
 
   // Body tiny: regular
