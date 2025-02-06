@@ -50,7 +50,7 @@
     }
 
     &::part(message__time) {
-      @extend %body-regular-italic-m;
+      @extend %body-italic-m;
       color: #828b96;
     }
 
@@ -74,7 +74,7 @@
     }
 
     &::part(message assistant waiting) {
-      @extend %body-regular-italic-s;
+      @extend %body-italic-s;
       background-color: var(--mer-color__neutral-gray--900);
       border-radius: unset;
       color: #666;
