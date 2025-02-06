@@ -3,7 +3,6 @@
 %button-base {
   @include button-common-styles();
   @include control-border();
-  @include control-font-size-regular();
   @include control-padding-inline-block();
   padding-inline: var(--control__padding-inline);
 
@@ -14,8 +13,8 @@
 
 %button-primary {
   @include button-tokens-primary();
-  @include control-font-weight-semi-bold();
   @extend %button-base;
+  @extend %body-semi-bold-m;
 
   //overwrite some control default styles
   --control__border-color: var(--button-primary__border-color);
@@ -67,6 +66,7 @@
 %button-secondary {
   @include button-tokens-secondary();
   @extend %button-base;
+  @extend %body-semi-bold-m;
 
   //overwrite some control default styles
   --control__border-color: var(--button-secondary__border-color);
@@ -117,8 +117,8 @@
 
 %button-tertiary {
   @include button-tokens-tertiary();
-  @include control-font-weight-regular();
   @extend %button-base;
+  @extend %body-regular-m;
 
   //overwrite some control default styles
   --control__border-color: var(--button-tertiary__border-color);

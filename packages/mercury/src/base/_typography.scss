@@ -1,0 +1,737 @@
+// heading
+
+@mixin heading-1() {
+  @extend %heading;
+  font-size: var(--font-size-header-h1);
+}
+
+@mixin heading-2() {
+  @extend %heading;
+  font-size: var(--font-size-header-h2);
+}
+
+@mixin heading-3() {
+  @extend %heading;
+  font-size: var(--font-size-header-h3);
+}
+
+@mixin heading-4() {
+  @extend %heading;
+  font-size: var(--font-size-header-h4);
+}
+
+@mixin heading-5() {
+  @extend %heading;
+  font-size: var(--font-size-header-h5);
+}
+
+@mixin heading-6() {
+  @extend %heading;
+  font-size: var(--font-size-header-h6);
+}
+
+%heading {
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+
+  &-1 {
+    @include heading-1();
+  }
+
+  &-2 {
+    @include heading-2();
+  }
+
+  &-3 {
+    @include heading-3();
+  }
+
+  &-4 {
+    @include heading-4();
+  }
+
+  &-5 {
+    @include heading-5();
+  }
+
+  &-6 {
+    @include heading-6();
+  }
+}
+
+// subtitle
+
+// subtitle: regular
+
+@mixin subtitle-regular-l() {
+  @extend %subtitle;
+  @extend %subtitle-regular;
+  @extend %subtitle-l;
+}
+
+@mixin subtitle-regular-m() {
+  @extend %subtitle;
+  @extend %subtitle-regular;
+  @extend %subtitle-m;
+}
+
+@mixin subtitle-regular-s() {
+  @extend %subtitle;
+  @extend %subtitle-regular;
+  @extend %subtitle-s;
+}
+
+@mixin subtitle-regular-xs() {
+  @extend %subtitle;
+  @extend %subtitle-regular;
+  @extend %subtitle-xs;
+}
+
+// subtitle: semi-bold
+
+@mixin subtitle-semi-bold-l() {
+  @extend %subtitle;
+  @extend %subtitle-semi-bold;
+  @extend %subtitle-l;
+}
+
+@mixin subtitle-semi-bold-m() {
+  @extend %subtitle;
+  @extend %subtitle-semi-bold;
+  @extend %subtitle-m;
+}
+
+@mixin subtitle-semi-bold-s() {
+  @extend %subtitle;
+  @extend %subtitle-semi-bold;
+  @extend %subtitle-s;
+}
+
+@mixin subtitle-semi-bold-xs() {
+  @extend %subtitle;
+  @extend %subtitle-semi-bold;
+  @extend %subtitle-xs;
+}
+
+%subtitle {
+  font-family: var(--font-family-header);
+
+  &-l {
+    font-size: var(--font-size-subtitle-l);
+    line-height: var(--line-height-regular);
+  }
+
+  &-m {
+    font-size: var(--font-size-subtitle-m);
+    line-height: var(--line-height-regular);
+  }
+
+  &-s {
+    font-size: var(--font-size-subtitle-s);
+    line-height: var(--line-height-tight);
+  }
+
+  &-xs {
+    font-size: var(--font-size-subtitle-xs);
+    line-height: var(--line-height-tight);
+  }
+
+  &-regular {
+    font-weight: var(--font-weight-regular);
+
+    &-l {
+      @include subtitle-regular-l();
+    }
+
+    &-m {
+      @include subtitle-regular-m();
+    }
+
+    &-s {
+      @include subtitle-regular-s();
+    }
+
+    &-xs {
+      @include subtitle-regular-xs();
+    }
+  }
+
+  &-semi-bold {
+    font-weight: var(--font-weight-semi-bold);
+
+    &-l {
+      @include subtitle-semi-bold-l();
+    }
+
+    &-m {
+      @include subtitle-semi-bold-m();
+    }
+
+    &-s {
+      @include subtitle-semi-bold-s();
+    }
+
+    &-xs {
+      @include subtitle-semi-bold-xs();
+    }
+  }
+}
+
+// body
+
+// body: regular
+
+@mixin body-regular-xl() {
+  @extend %body;
+  @extend %body-regular;
+  @extend %body-xl;
+}
+
+@mixin body-regular-l() {
+  @extend %body;
+  @extend %body-regular;
+  @extend %body-l;
+}
+
+@mixin body-font() {
+  // "medium" is the body font weight.
+  font-size: var(--font-size-body-m);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-regular);
+}
+
+@mixin body-regular-s() {
+  @extend %body;
+  @extend %body-regular;
+  @extend %body-s;
+}
+
+@mixin body-regular-xs() {
+  @extend %body;
+  @extend %body-regular;
+  @extend %body-xs;
+}
+
+// body: semi-bold
+
+@mixin body-semi-bold-xl() {
+  @extend %body;
+  @extend %body-semi-bold;
+  @extend %body-xl;
+}
+
+@mixin body-semi-bold-l() {
+  @extend %body;
+  @extend %body-semi-bold;
+  @extend %body-l;
+}
+
+@mixin body-semi-bold-m() {
+  @extend %body;
+  @extend %body-semi-bold;
+  @extend %body-m;
+}
+
+@mixin body-semi-bold-s() {
+  @extend %body;
+  @extend %body-semi-bold;
+  @extend %body-s;
+}
+
+@mixin body-semi-bold-xs() {
+  @extend %body;
+  @extend %body-semi-bold;
+  @extend %body-xs;
+}
+
+// body: italic
+
+@mixin body-italic-xl() {
+  @extend %body;
+  @extend %body-italic;
+  @extend %body-xl;
+}
+
+@mixin body-italic-l() {
+  @extend %body;
+  @extend %body-italic;
+  @extend %body-l;
+}
+
+@mixin body-italic-m() {
+  @extend %body;
+  @extend %body-italic;
+  @extend %body-m;
+}
+
+@mixin body-italic-s() {
+  @extend %body;
+  @extend %body-italic;
+  @extend %body-s;
+}
+
+@mixin body-italic-xs() {
+  @extend %body;
+  @extend %body-italic;
+  @extend %body-xs;
+}
+
+%body {
+  line-height: var(--line-height-tight);
+
+  // sizes
+  &-xl {
+    font-size: var(--font-size-body-xl);
+  }
+
+  &-l {
+    font-size: var(--font-size-body-l);
+  }
+
+  &-m {
+    font-size: var(--font-size-body-m);
+  }
+
+  &-s {
+    font-size: var(--font-size-body-s);
+  }
+
+  &-xs {
+    font-size: var(--font-size-body-xs);
+  }
+
+  &-regular {
+    font-weight: var(--font-weight-regular);
+
+    &-xl {
+      @include body-regular-xl();
+    }
+
+    &-l {
+      @include body-regular-l();
+    }
+
+    &-m {
+      @include body-font();
+    }
+
+    &-s {
+      @include body-regular-s();
+    }
+
+    &-xs {
+      @include body-regular-xs();
+    }
+  }
+
+  &-semi-bold {
+    font-weight: var(--font-weight-semi-bold);
+
+    &-xl {
+      @include body-semi-bold-xl();
+    }
+
+    &-l {
+      @include body-semi-bold-l();
+    }
+
+    &-m {
+      @include body-semi-bold-m();
+    }
+
+    &-s {
+      @include body-semi-bold-s();
+    }
+
+    &-xs {
+      @include body-semi-bold-xs();
+    }
+  }
+
+  &-italic {
+    font-weight: var(--font-weight-regular);
+    font-style: italic;
+
+    &-xl {
+      @include body-italic-xl();
+    }
+
+    &-l {
+      @include body-italic-l();
+    }
+
+    &-m {
+      @include body-italic-m();
+    }
+
+    &-s {
+      @include body-italic-s();
+    }
+
+    &-xs {
+      @include body-italic-xs();
+    }
+  }
+}
+
+// tiny
+
+// tiny: regular
+
+@mixin tiny-regular-l() {
+  @extend %tiny;
+  @extend %tiny-regular;
+  @extend %tiny-l;
+}
+
+@mixin tiny-regular-m() {
+  @extend %tiny;
+  @extend %tiny-regular;
+  @extend %tiny-m;
+}
+
+@mixin tiny-regular-s() {
+  @extend %tiny;
+  @extend %tiny-regular;
+  @extend %tiny-s;
+}
+
+@mixin tiny-regular-xs() {
+  @extend %tiny;
+  @extend %tiny-regular;
+  @extend %tiny-xs;
+}
+
+// tiny: semi-bold
+
+@mixin tiny-semi-bold-l() {
+  @extend %tiny;
+  @extend %tiny-semi-bold;
+  @extend %tiny-l;
+}
+
+@mixin tiny-semi-bold-m() {
+  @extend %tiny;
+  @extend %tiny-semi-bold;
+  @extend %tiny-m;
+}
+
+@mixin tiny-semi-bold-s() {
+  @extend %tiny;
+  @extend %tiny-semi-bold;
+  @extend %tiny-s;
+}
+
+@mixin tiny-semi-bold-xs() {
+  @extend %tiny;
+  @extend %tiny-semi-bold;
+  @extend %tiny-xs;
+}
+
+%tiny {
+  line-height: var(--line-height-tight);
+
+  &-l {
+    font-size: var(--font-size-tiny-l);
+    line-height: var(--line-height-tight);
+  }
+
+  &-m {
+    font-size: var(--font-size-tiny-m);
+    line-height: var(--line-height-tight);
+  }
+
+  &-s {
+    font-size: var(--font-size-tiny-s);
+    line-height: var(--line-height-tight);
+  }
+
+  &-xs {
+    font-size: var(--font-size-tiny-xs);
+    line-height: var(--line-height-tight);
+  }
+
+  &-regular {
+    font-weight: var(--font-weight-regular);
+    &-l {
+      @include tiny-regular-l();
+    }
+
+    &-m {
+      @include tiny-regular-m();
+    }
+
+    &-s {
+      @include tiny-regular-s();
+    }
+
+    &-xs {
+      @include tiny-regular-xs();
+    }
+  }
+
+  &-semi-bold {
+    font-weight: var(--font-weight-semi-bold);
+    &-l {
+      @include tiny-semi-bold-l();
+    }
+
+    &-m {
+      @include tiny-semi-bold-m();
+    }
+
+    &-s {
+      @include tiny-semi-bold-s();
+    }
+
+    &-xs {
+      @include tiny-semi-bold-xs();
+    }
+  }
+}
+
+/// @group Typography
+/// @param {String} $heading-1-selector [".heading-1"] -
+/// @param {String} $heading-2-selector [".heading-2"] -
+/// @param {String} $heading-3-selector [".heading-3"] -
+/// @param {String} $heading-4-selector [".heading-4"] -
+/// @param {String} $heading-5-selector [".heading-5"] -
+/// @param {String} $heading-6-selector [".heading-6"] -
+
+/// @param {String} $subtitle-regular-l-selector [".subtitle-regular-l"] -
+/// @param {String} $subtitle-regular-m-selector [".subtitle-regular-m"] -
+/// @param {String} $subtitle-regular-s-selector [".subtitle-regular-s"] -
+/// @param {String} $subtitle-regular-xs-selector [".subtitle-regular-xs"] -
+
+/// @param {String} $subtitle-bold-l-selector [".subtitle-bold-l"] -
+/// @param {String} $subtitle-bold-m-selector [".subtitle-bold-m"] -
+/// @param {String} $subtitle-bold-s-selector [".subtitle-bold-s"] -
+/// @param {String} $subtitle-bold-xs-selector [".subtitle-bold-xs"] -
+
+/// @param {String} $body-regular-xl-selector [".body-regular-xl"] -
+/// @param {String} $body-regular-l-selector [".body-regular-l"] -
+/// @param {String} $body-regular-m-selector [".body-regular-m"] -
+/// @param {String} $body-regular-s-selector [".body-regular-s"] -
+/// @param {String} $body-regular-xs-selector [".body-regular-xs"] -
+
+/// @param {String} $body-semi-bold-xl-selector [".body-semi-bold-xl"] -
+/// @param {String} $body-semi-bold-l-selector [".body-semi-bold-l"] -
+/// @param {String} $body-semi-bold-m-selector [".body-semi-bold-m"] -
+/// @param {String} $body-semi-bold-s-selector [".body-semi-bold-s"] -
+/// @param {String} $body-semi-bold-xs-selector [".body-semi-bold-xs"] -
+
+/// @param {String} $body-italic-xl-selector [".body-italic-xl"] -
+/// @param {String} $body-italic-l-selector [".body-italic-l"] -
+/// @param {String} $body-italic-m-selector [".body-italic-m"] -
+/// @param {String} $body-italic-s-selector [".body-italic-s"] -
+/// @param {String} $body-italic-xs-selector [".body-italic-xs"] -
+
+/// @param {String} $tiny-regular-l-selector [".tiny-regular-l"] -
+/// @param {String} $tiny-regular-m-selector [".tiny-regular-m"] -
+/// @param {String} $tiny-regular-s-selector [".tiny-regular-s"] -
+/// @param {String} $tiny-regular-xs-selector [".tiny-regular-xs"] -
+
+/// @param {String} $tiny-semi-bold-l-selector [".tiny-semi-bold-l"] -
+/// @param {String} $tiny-semi-bold-m-selector [".tiny-semi-bold-m"] -
+/// @param {String} $tiny-semi-bold-s-selector [".tiny-semi-bold-s"] -
+/// @param {String} $tiny-semi-bold-xs-selector [".tiny-semi-bold-xs"] -
+
+@mixin typography-classes(
+  $heading-1-selector: ".heading-1",
+  $heading-2-selector: ".heading-2",
+  $heading-3-selector: ".heading-3",
+  $heading-4-selector: ".heading-4",
+  $heading-5-selector: ".heading-5",
+  $heading-6-selector: ".heading-6",
+
+  $subtitle-regular-l-selector: ".subtitle-regular-l",
+  $subtitle-regular-m-selector: ".subtitle-regular-m",
+  $subtitle-regular-s-selector: ".subtitle-regular-s",
+  $subtitle-regular-xs-selector: ".subtitle-regular-xs",
+
+  $subtitle-semi-bold-l-selector: ".subtitle-semi-bold-l",
+  $subtitle-semi-bold-m-selector: ".subtitle-semi-bold-m",
+  $subtitle-semi-bold-s-selector: ".subtitle-semi-bold-s",
+  $subtitle-semi-bold-xs-selector: ".subtitle-semi-bold-xs",
+
+  $body-regular-xl-selector: ".body-regular-xl",
+  $body-regular-l-selector: ".body-regular-l",
+  $body-regular-m-selector: ".body-regular-m",
+  $body-regular-s-selector: ".body-regular-s",
+  $body-regular-xs-selector: ".body-regular-xs",
+
+  $body-semi-bold-xl-selector: ".body-semi-bold-xl",
+  $body-semi-bold-l-selector: ".body-semi-bold-l",
+  $body-semi-bold-m-selector: ".body-semi-bold-m",
+  $body-semi-bold-s-selector: ".body-semi-bold-s",
+  $body-semi-bold-xs-selector: ".body-semi-bold-xs",
+
+  $body-italic-xl-selector: ".body-italic-xl",
+  $body-italic-l-selector: ".body-italic-l",
+  $body-italic-m-selector: ".body-italic-m",
+  $body-italic-s-selector: ".body-italic-s",
+  $body-italic-xs-selector: ".body-italic-xs",
+
+  $tiny-regular-l-selector: ".tiny-regular-l",
+  $tiny-regular-m-selector: ".tiny-regular-m",
+  $tiny-regular-s-selector: ".tiny-regular-s",
+  $tiny-regular-xs-selector: ".tiny-regular-xs",
+
+  $tiny-semi-bold-l-selector: ".tiny-semi-bold-l",
+  $tiny-semi-bold-m-selector: ".tiny-semi-bold-m",
+  $tiny-semi-bold-s-selector: ".tiny-semi-bold-s",
+  $tiny-semi-bold-xs-selector: ".tiny-semi-bold-xs"
+) {
+  // Heading:
+
+  #{$heading-1-selector} {
+    @extend %heading-1;
+  }
+  #{$heading-2-selector} {
+    @extend %heading-2;
+  }
+  #{$heading-3-selector} {
+    @extend %heading-3;
+  }
+  #{$heading-4-selector} {
+    @extend %heading-4;
+  }
+  #{$heading-5-selector} {
+    @extend %heading-5;
+  }
+  #{$heading-6-selector} {
+    @extend %heading-6;
+  }
+
+  // Subtitle: regular
+
+  #{$subtitle-regular-l-selector} {
+    @extend %subtitle-regular-l;
+  }
+  #{$subtitle-regular-m-selector} {
+    @extend %subtitle-regular-m;
+  }
+  #{$subtitle-regular-s-selector} {
+    @extend %subtitle-regular-s;
+  }
+  #{$subtitle-regular-xs-selector} {
+    @extend %subtitle-regular-xs;
+  }
+
+  // Subtitle: bold
+
+  #{$subtitle-semi-bold-l-selector} {
+    @extend %subtitle-semi-bold-l;
+  }
+  #{$subtitle-semi-bold-m-selector} {
+    @extend %subtitle-semi-bold-m;
+  }
+  #{$subtitle-semi-bold-s-selector} {
+    @extend %subtitle-semi-bold-s;
+  }
+  #{$subtitle-semi-bold-xs-selector} {
+    @extend %subtitle-semi-bold-xs;
+  }
+
+  // Body: regular
+
+  #{$body-regular-xl-selector} {
+    @extend %body-regular-xl;
+  }
+  #{$body-regular-l-selector} {
+    @extend %body-regular-l;
+  }
+  #{$body-regular-m-selector} {
+    @extend %body-regular-m;
+  }
+  #{$body-regular-s-selector} {
+    @extend %body-regular-s;
+  }
+  #{$body-regular-xs-selector} {
+    @extend %body-regular-xs;
+  }
+
+  // Body: semi-bold
+
+  #{$body-semi-bold-xl-selector} {
+    @extend %body-semi-bold-xl;
+  }
+  #{$body-semi-bold-l-selector} {
+    @extend %body-semi-bold-l;
+  }
+  #{$body-semi-bold-m-selector} {
+    @extend %body-semi-bold-m;
+  }
+  #{$body-semi-bold-s-selector} {
+    @extend %body-semi-bold-s;
+  }
+  #{$body-semi-bold-xs-selector} {
+    @extend %body-semi-bold-xs;
+  }
+
+  // Body: regular italic
+
+  #{$body-italic-xl-selector} {
+    @extend %body-italic-xl;
+  }
+  #{$body-italic-l-selector} {
+    @extend %body-italic-l;
+  }
+  #{$body-italic-m-selector} {
+    @extend %body-italic-m;
+  }
+  #{$body-italic-s-selector} {
+    @extend %body-italic-s;
+  }
+  #{$body-italic-xs-selector} {
+    @extend %body-italic-xs;
+  }
+
+  // Body tiny: regular
+
+  #{$tiny-regular-l-selector} {
+    @extend %tiny-regular-l;
+  }
+  #{$tiny-regular-m-selector} {
+    @extend %tiny-regular-m;
+  }
+  #{$tiny-regular-s-selector} {
+    @extend %tiny-regular-s;
+  }
+  #{$tiny-regular-xs-selector} {
+    @extend %tiny-regular-xs;
+  }
+
+  // Body tiny: semi-bold
+
+  #{$tiny-semi-bold-l-selector} {
+    @extend %tiny-semi-bold-l;
+  }
+  #{$tiny-semi-bold-m-selector} {
+    @extend %tiny-semi-bold-m;
+  }
+  #{$tiny-semi-bold-s-selector} {
+    @extend %tiny-semi-bold-s;
+  }
+  #{$tiny-semi-bold-xs-selector} {
+    @extend %tiny-semi-bold-xs;
+  }
+}
+
+// link
+
+%text-link {
+  color: var(--mer-text__primary);
+  text-decoration-line: underline;
+}
+
+// property-grid
+
+%text-edited {
+  font-weight: var(--font-weight-bold);
+}
+
+%text-readonly {
+  font-style: italic;
+  color: var(--item__color--disabled);
+}

@@ -1,0 +1,13 @@
+// Set max-inline-size in order to display more lines
+// to perceive/vizualize how line-height looks.
+
+.fancy-mode {
+  [class*="heading"],
+  [class*="subtitle"],
+  [class*="body"] {
+    max-inline-size: 600px;
+  }
+  [class*="tiny"] {
+    max-inline-size: 400px;
+  }
+}

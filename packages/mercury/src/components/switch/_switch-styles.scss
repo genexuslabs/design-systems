@@ -8,8 +8,6 @@
   --ch-switch-thumb__unchecked-background-color: var(--mer-icon__neutral);
   --ch-switch-thumb__checked-background-color: var(--mer-icon__neutral);
   --ch-switch-thumb__state-transition-duration: 150ms;
-  font-weight: var(--mer-font__weight--regular);
-  line-height: var(--mer-line-height--regular);
 
   &__track {
     border-radius: var(--ch-switch-track-block-size);
@@ -40,6 +38,7 @@
   --ch-switch-track-block-size: 16px;
   --ch-switch-track-inline-size: 31px;
   --ch-switch-thumb-size: 9px;
+  @extend %body-regular-s;
 
   &__thumb {
     &--unchecked {
@@ -56,6 +55,7 @@
   --ch-switch-track-block-size: 26px;
   --ch-switch-track-inline-size: 50px;
   --ch-switch-thumb-size: 16px;
+  @extend %body-regular-m;
 
   &__thumb {
     &--unchecked {

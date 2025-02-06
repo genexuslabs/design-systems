@@ -92,22 +92,6 @@
   --control__border-color: transparent;
   --control__border-radius: 0;
 }
-// Font
-@mixin control-font-weight-regular() {
-  font-weight: var(--control__font-weight--regular);
-}
-@mixin control-font-weight-semi-bold() {
-  font-weight: var(--control__font-weight--semi-bold);
-}
-// Font Size
-@mixin control-font-size-small() {
-  font-size: var(--control__font-size--small);
-  line-height: var(--control__line-height);
-}
-@mixin control-font-size-regular() {
-  font-size: var(--control__font-size--regular);
-  line-height: var(--control__line-height);
-}
 // Height
 @mixin control-height-regular() {
   block-size: var(--control__height);
@@ -254,22 +238,6 @@
 @mixin item-height-large() {
   block-size: var(--item__height--large);
 }
-@mixin item-font() {
-  line-height: var(--item__line-height);
-  font-size: var(--item__font-size);
-  font-weight: var(--item__font-weight);
-}
-@mixin item-font-size-small() {
-  --item__font-size: var(--item__font-size--small);
-}
-@mixin item-font-header() {
-  // item header font-size and line-height has to be the same as
-  // item font-size and line-height in order for the computed height
-  // to be the same.
-  line-height: var(--item__line-height);
-  font-size: var(--item__font-size);
-  font-weight: var(--item-header__font-weight);
-}
 
 // ---------------------------------
 // Grid Item
@@ -320,8 +288,8 @@
   padding-inline: 0;
 }
 @mixin grid-rowset-legend-padding-block() {
-  padding-block-start: var(--mer-spacing--2xs);
-  padding-block-end: var(--mer-spacing--2xs);
+  padding-block-start: var(--mer-spacing--xs);
+  padding-block-end: var(--mer-spacing--xs);
 }
 @mixin grid-rowset-legend-colors-enabled() {
   --grid-rowset-legend__bg-color: var(--mer-surface__elevation--02);
@@ -348,10 +316,6 @@
 @mixin tab-button-border-block-start() {
   border-block-start: var(--tab-caption__border-width)
     var(--tab-caption__border-style) var(--tab-caption__border-color);
-}
-@mixin tab-button-font() {
-  font-size: var(--tab-caption__font-size);
-  font-weight: var(--tab-caption__font-weight);
 }
 @mixin tab-button-gap() {
   gap: var(--tab-caption__gap);
@@ -401,12 +365,6 @@
 // Label
 // ----------------------
 
-@mixin label-font() {
-  color: var(--label__color);
-  font-weight: var(--label__font-weight);
-  font-size: var(--label__font-size);
-  line-height: var(--label__line-height);
-}
 @mixin label-gap-block() {
   gap: var(--label__gap--block);
 }

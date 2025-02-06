@@ -36,7 +36,9 @@
     grid-template-columns: max-content 1fr;
 
     &__label {
-      margin-block-start: var(--field-inline-label__margin-block-start);
+      // Make the label vertically aligned with an inline control.
+      // Also do not look center on taller contro, like a textarea.
+      margin-block-start: 11px;
     }
   }
 }

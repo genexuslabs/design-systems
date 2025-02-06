@@ -1,34 +1,73 @@
 @mixin font() {
-  // families
-  --mer-font-family--title: Inter, Helvetica, Arial, sans-serif;
-  --mer-font-family--body: Inter, Helvetica, Arial, sans-serif;
-  --mer-font-family--code: monospace;
+  // font-families
+  --font-family-header: Inter, Helvetica, Arial, sans-serif;
+  --font-family-body: Inter, Helvetica, Arial, sans-serif;
+  --font-family-code: monospace;
 
-  // weights
-  --mer-font__weight--light: 300;
-  --mer-font__weight--regular: 400;
-  --mer-font__weight--medium: 500;
-  --mer-font__weight--semi-bold: 600;
-  --mer-font__weight--bold: 700;
-  --mer-font__weight--extra-bold: 800;
+  // font-sizes: headers
+  --font-size-header-h1: 40px;
+  --font-size-header-h2: 32px;
+  --font-size-header-h3: 28px;
+  --font-size-header-h4: 24px;
+  --font-size-header-h5: 20px;
+  --font-size-header-h6: 18px;
 
-  // sizes
-  --mer-font__size--4xs: 11px;
-  --mer-font__size--3xs: 12px;
-  --mer-font__size--2xs: 13px;
-  --mer-font__size--xs: 14px;
-  --mer-font__size--sm: 16px;
-  --mer-font__size--md: 20px;
-  --mer-font__size--lg: 24px;
-  --mer-font__size--xl: 36px;
+  // font-sizes: subtitle
+  --font-size-subtitle-l: 20px;
+  --font-size-subtitle-m: 18px;
+  --font-size-subtitle-s: 16px;
+  --font-size-subtitle-xs: 14px;
 
-  // line heights
-  --mer-line-height--tight: 1.3;
-  --mer-line-height--regular: 1.4;
-  --mer-line-height--spaced: 1.5;
+  // font-sizes: body
+  --font-size-body-xl: 18px;
+  --font-size-body-l: 16px;
+  --font-size-body-m: 14px;
+  --font-size-body-s: 12px;
+  --font-size-body-xs: 11px;
+
+  // font-sizes: tiny
+  --font-size-tiny-l: 12px;
+  --font-size-tiny-m: 11px;
+  --font-size-tiny-s: 10px;
+  --font-size-tiny-xs: 8px;
+
+  // font-weights
+  --font-weight-bold: 700;
+  --font-weight-semi-bold: 600;
+  --font-weight-regular: 400;
+
+  // line-heights
+  --line-height-tight: 1.2;
+  --line-height-regular: 1.3;
 
   // letter spacings (to be done)
-  // --mer-letter-spacing--tight: ;
-  // --mer-letter-spacing--regular: ;
-  // --mer-letter-spacing--comfortable: ;
+
+  // - - - - - - -
+  // !Deprecated
+  // - - - - - - -
+
+  --mer-font-family--title: Inter, Helvetica, Arial, sans-serif; /* @deprecated */
+  --mer-font-family--body: Inter, Helvetica, Arial, sans-serif; /* @deprecated */
+  --mer-font-family--code: monospace; /* @deprecated */
+
+  --mer-font__weight--extra-bold: 800; /* @deprecated */
+  --mer-font__weight--bold: 700; /* @deprecated */
+  --mer-font__weight--semi-bold: 600; /* @deprecated */
+  --mer-font__weight--medium: 500; /* @deprecated */
+  --mer-font__weight--regular: 400; /* @deprecated */
+  --mer-font__weight--light: 300; /* @deprecated */
+
+  --mer-font__size--4xs: 11px; /* @deprecated */
+  --mer-font__size--3xs: 12px; /* @deprecated */
+  --mer-font__size--2xs: 13px; /* @deprecated */
+  --mer-font__size--xs: 14px; /* @deprecated */
+  --mer-font__size--sm: 16px; /* @deprecated */
+  --mer-font__size--md: 20px; /* @deprecated */
+  --mer-font__size--lg: 24px; /* @deprecated */
+  --mer-font__size--xl: 36px; /* @deprecated */
+  --mer-font__size--2xl: 40px; /* @deprecated */
+
+  --mer-line-height--tight: 1.3; /* @deprecated */
+  --mer-line-height--regular: 1.4; /* @deprecated */
+  --mer-line-height--spaced: 1.5; /* @deprecated */
 }

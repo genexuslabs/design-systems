@@ -24,13 +24,15 @@
   }
 </ol>
 
+<!-- Headings -->
+
 @if (this.typographies().get("Headings")) {
   <section aria-labelledby="headings">
     <h2 id="headings" class="heading-2">
       <a routerLink="." fragment="headings">1. Headings</a>
     </h2>
 
-    <p class="text-body-regular-l">
+    <p class="body-regular-l">
       Using HTML headings provides structure and clarity to your web content,
       enhancing both accessibility and SEO. The h1 tag should be used only once
       per page as the main title, representing the primary topic.
@@ -88,177 +90,366 @@
   </section>
 }
 
-<section aria-labelledby="heading-colors">
-  <h2 id="heading-colors" class="heading-2">
-    <a routerLink="." fragment="heading-colors">2. Headings colors TODO</a>
-  </h2>
+<!-- Subtitles -->
 
-  TODO
-</section>
-
-@if (this.showTextBody()) {
-  <section aria-labelledby="text-body">
-    <h2 id="text-body" class="heading-2">
-      <a routerLink="." fragment="text-body">3. Text body</a>
+@if (this.typographies().get("Subtitles Regular")) {
+  <section aria-labelledby="headings">
+    <h2 id="headings" class="heading-2">
+      <a routerLink="." fragment="headings">2. Subtitles Regular</a>
     </h2>
 
-    <p class="text-body-regular-l">
-      In web development, body text is essential for delivering content to
-      users. Properly structured and organized text ensures readability and
-      accessibility, enhancing the user experience by making information easy to
-      navigate and understand. Clear, well-written text also improves SEO by
-      providing search engines with easily indexable content, helping your
-      website rank higher in search results.
-    </p>
+    <code-snippet
+      [codeSnippet]="codeSnippets.subtitleRegularL"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.subtitleRegularL.template[0].class">
+        GeneXus: Leading the Charge in Revolutionizing Software Development with
+        Cutting-Edge Automation and Artificial Intelligence, Shaping a Smarter,
+        More Efficient Future for Businesses Worldwide
+      </p>
+    </code-snippet>
 
-    @if (this.showTextBodyRegular()) {
-      <code-snippet
-        [codeSnippet]="codeSnippets.textBodyRegularLarge"
-        [headingLevel]="3"
-      >
-        <p class="text-body-regular-l">
-          GeneXus is a development platform that automates application creation
-          using a model-driven approach. It allows developers to focus on
-          high-level design, generating code for web, mobile, and desktop
-          applications, resulting in faster development cycles and fewer errors.
-        </p>
-      </code-snippet>
+    <code-snippet
+      [codeSnippet]="codeSnippets.subtitleRegularM"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.subtitleRegularM.template[0].class">
+        GeneXus: Leading the Charge in Revolutionizing Software Development with
+        Cutting-Edge Automation and Artificial Intelligence, Shaping a Smarter,
+        More Efficient Future for Businesses Worldwide
+      </p>
+    </code-snippet>
 
-      <code-snippet
-        [codeSnippet]="codeSnippets.textBodyRegularMedium"
-        [headingLevel]="3"
-      >
-        <p class="text-body-regular-m">
-          GeneXus is a development platform that automates application creation
-          using a model-driven approach. It allows developers to focus on
-          high-level design, generating code for web, mobile, and desktop
-          applications, resulting in faster development cycles and fewer errors.
-        </p>
-      </code-snippet>
+    <code-snippet
+      [codeSnippet]="codeSnippets.subtitleRegularS"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.subtitleRegularS.template[0].class">
+        GeneXus: Leading the Charge in Revolutionizing Software Development with
+        Cutting-Edge Automation and Artificial Intelligence, Shaping a Smarter,
+        More Efficient Future for Businesses Worldwide
+      </p>
+    </code-snippet>
 
-      <code-snippet
-        [codeSnippet]="codeSnippets.textBodyRegularSmall"
-        [headingLevel]="3"
-      >
-        <p class="text-body-regular-s">
-          GeneXus is a development platform that automates application creation
-          using a model-driven approach. It allows developers to focus on
-          high-level design, generating code for web, mobile, and desktop
-          applications, resulting in faster development cycles and fewer errors.
-        </p>
-      </code-snippet>
+    <code-snippet
+      [codeSnippet]="codeSnippets.subtitleRegularXS"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.subtitleRegularXS.template[0].class">
+        GeneXus: Leading the Charge in Revolutionizing Software Development with
+        Cutting-Edge Automation and Artificial Intelligence, Shaping a Smarter,
+        More Efficient Future for Businesses Worldwide
+      </p>
+    </code-snippet>
+  </section>
+}
 
-      <code-snippet
-        [codeSnippet]="codeSnippets.textBodyRegularExtraSmall"
-        [headingLevel]="3"
-      >
-        <p class="text-body-regular-xs">
-          GeneXus is a development platform that automates application creation
-          using a model-driven approach. It allows developers to focus on
-          high-level design, generating code for web, mobile, and desktop
-          applications, resulting in faster development cycles and fewer errors.
-        </p>
-      </code-snippet>
-    }
+@if (this.typographies().get("Subtitles SemiBold")) {
+  <section aria-labelledby="headings">
+    <h2 id="headings" class="heading-2">
+      <a routerLink="." fragment="headings">3. Subtitles SemiBold</a>
+    </h2>
 
-    @if (this.showTextBodyHighlighted()) {
-      <code-snippet
-        [codeSnippet]="codeSnippets.textBodyHighlightedLarge"
-        [headingLevel]="3"
-      >
-        <p class="text-body-highlighted-l">
-          GeneXus is a development platform that automates application creation
-          using a model-driven approach. It allows developers to focus on
-          high-level design, generating code for web, mobile, and desktop
-          applications, resulting in faster development cycles and fewer errors.
-        </p>
-      </code-snippet>
+    <code-snippet
+      [codeSnippet]="codeSnippets.subtitleSemiBoldL"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.subtitleSemiBoldL.template[0].class">
+        GeneXus: Leading the Charge in Revolutionizing Software Development with
+        Cutting-Edge Automation and Artificial Intelligence, Shaping a Smarter,
+        More Efficient Future for Businesses Worldwide
+      </p>
+    </code-snippet>
 
-      <code-snippet
-        [codeSnippet]="codeSnippets.textBodyHighlightedMedium"
-        [headingLevel]="3"
-      >
-        <p class="text-body-highlighted-m">
-          GeneXus is a development platform that automates application creation
-          using a model-driven approach. It allows developers to focus on
-          high-level design, generating code for web, mobile, and desktop
-          applications, resulting in faster development cycles and fewer errors.
-        </p>
-      </code-snippet>
+    <code-snippet
+      [codeSnippet]="codeSnippets.subtitleSemiBoldM"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.subtitleSemiBoldM.template[0].class">
+        GeneXus: Leading the Charge in Revolutionizing Software Development with
+        Cutting-Edge Automation and Artificial Intelligence, Shaping a Smarter,
+        More Efficient Future for Businesses Worldwide
+      </p>
+    </code-snippet>
 
-      <code-snippet
-        [codeSnippet]="codeSnippets.textBodyHighlightedSmall"
-        [headingLevel]="3"
-      >
-        <p class="text-body-highlighted-s">
-          GeneXus is a development platform that automates application creation
-          using a model-driven approach. It allows developers to focus on
-          high-level design, generating code for web, mobile, and desktop
-          applications, resulting in faster development cycles and fewer errors.
-        </p>
-      </code-snippet>
+    <code-snippet
+      [codeSnippet]="codeSnippets.subtitleSemiBoldS"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.subtitleSemiBoldS.template[0].class">
+        GeneXus: Leading the Charge in Revolutionizing Software Development with
+        Cutting-Edge Automation and Artificial Intelligence, Shaping a Smarter,
+        More Efficient Future for Businesses Worldwide
+      </p>
+    </code-snippet>
 
-      <code-snippet
-        [codeSnippet]="codeSnippets.textBodyHighlightedExtraSmall"
-        [headingLevel]="3"
-      >
-        <p class="text-body-highlighted-xs">
-          GeneXus is a development platform that automates application creation
-          using a model-driven approach. It allows developers to focus on
-          high-level design, generating code for web, mobile, and desktop
-          applications, resulting in faster development cycles and fewer errors.
-        </p>
-      </code-snippet>
-    }
+    <code-snippet
+      [codeSnippet]="codeSnippets.subtitleSemiBoldXS"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.subtitleSemiBoldXS.template[0].class">
+        GeneXus: Leading the Charge in Revolutionizing Software Development with
+        Cutting-Edge Automation and Artificial Intelligence, Shaping a Smarter,
+        More Efficient Future for Businesses Worldwide
+      </p>
+    </code-snippet>
+  </section>
+}
 
-    @if (this.showTextBodyItalic()) {
-      <code-snippet
-        [codeSnippet]="codeSnippets.textBodyItalicLarge"
-        [headingLevel]="3"
-      >
-        <p class="text-body-italic-l">
-          GeneXus is a development platform that automates application creation
-          using a model-driven approach. It allows developers to focus on
-          high-level design, generating code for web, mobile, and desktop
-          applications, resulting in faster development cycles and fewer errors.
-        </p>
-      </code-snippet>
+<!-- Body -->
 
-      <code-snippet
-        [codeSnippet]="codeSnippets.textBodyItalicMedium"
-        [headingLevel]="3"
-      >
-        <p class="text-body-italic-m">
-          GeneXus is a development platform that automates application creation
-          using a model-driven approach. It allows developers to focus on
-          high-level design, generating code for web, mobile, and desktop
-          applications, resulting in faster development cycles and fewer errors.
-        </p>
-      </code-snippet>
+@if (this.typographies().get("Body Regular")) {
+  <section aria-labelledby="body-regular">
+    <h2 id="body-regular" class="heading-2">
+      <a routerLink="." fragment="body-regular">4. Body Regular</a>
+    </h2>
 
-      <code-snippet
-        [codeSnippet]="codeSnippets.textBodyItalicSmall"
-        [headingLevel]="3"
-      >
-        <p class="text-body-italic-s">
-          GeneXus is a development platform that automates application creation
-          using a model-driven approach. It allows developers to focus on
-          high-level design, generating code for web, mobile, and desktop
-          applications, resulting in faster development cycles and fewer errors.
-        </p>
-      </code-snippet>
+    <code-snippet [codeSnippet]="codeSnippets.bodyRegularXL" [headingLevel]="3">
+      <p [class]="codeSnippets.bodyRegularXL.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
 
-      <code-snippet
-        [codeSnippet]="codeSnippets.textBodyItalicExtraSmall"
-        [headingLevel]="3"
-      >
-        <p class="text-body-italic-xs">
-          GeneXus is a development platform that automates application creation
-          using a model-driven approach. It allows developers to focus on
-          high-level design, generating code for web, mobile, and desktop
-          applications, resulting in faster development cycles and fewer errors.
-        </p>
-      </code-snippet>
-    }
+    <code-snippet [codeSnippet]="codeSnippets.bodyRegularL" [headingLevel]="3">
+      <p [class]="codeSnippets.bodyRegularL.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet [codeSnippet]="codeSnippets.bodyRegularM" [headingLevel]="3">
+      <p [class]="codeSnippets.bodyRegularM.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet [codeSnippet]="codeSnippets.bodyRegularS" [headingLevel]="3">
+      <p [class]="codeSnippets.bodyRegularS.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet [codeSnippet]="codeSnippets.bodyRegularXS" [headingLevel]="3">
+      <p [class]="codeSnippets.bodyRegularXS.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+  </section>
+}
+
+@if (this.typographies().get("Body SemiBold")) {
+  <section aria-labelledby="body-regular">
+    <h2 id="body-regular" class="heading-2">
+      <a routerLink="." fragment="body-regular">5. Body SemiBold</a>
+    </h2>
+
+    <code-snippet
+      [codeSnippet]="codeSnippets.bodySemiBoldXL"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.bodySemiBoldXL.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet [codeSnippet]="codeSnippets.bodySemiBoldL" [headingLevel]="3">
+      <p [class]="codeSnippets.bodySemiBoldL.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet [codeSnippet]="codeSnippets.bodySemiBoldM" [headingLevel]="3">
+      <p [class]="codeSnippets.bodySemiBoldM.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet [codeSnippet]="codeSnippets.bodySemiBoldS" [headingLevel]="3">
+      <p [class]="codeSnippets.bodySemiBoldS.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet
+      [codeSnippet]="codeSnippets.bodySemiBoldXS"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.bodySemiBoldXS.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+  </section>
+}
+
+@if (this.typographies().get("Body Italic")) {
+  <section aria-labelledby="body-italic">
+    <h2 id="body-italic" class="heading-2">
+      <a routerLink="." fragment="body-italic">6. Body Italic</a>
+    </h2>
+
+    <code-snippet [codeSnippet]="codeSnippets.bodyItalicXL" [headingLevel]="3">
+      <p [class]="codeSnippets.bodyItalicXL.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet [codeSnippet]="codeSnippets.bodyItalicL" [headingLevel]="3">
+      <p [class]="codeSnippets.bodyItalicL.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet [codeSnippet]="codeSnippets.bodyItalicM" [headingLevel]="3">
+      <p [class]="codeSnippets.bodyItalicM.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet [codeSnippet]="codeSnippets.bodyItalicS" [headingLevel]="3">
+      <p [class]="codeSnippets.bodyItalicS.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet [codeSnippet]="codeSnippets.bodyItalicXS" [headingLevel]="3">
+      <p [class]="codeSnippets.bodyItalicXS.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+  </section>
+}
+
+<!-- Tiny -->
+
+@if (this.typographies().get("Tiny Regular")) {
+  <section aria-labelledby="tiny-regular">
+    <h2 id="tiny-regular" class="heading-2">
+      <a routerLink="." fragment="tiny-regular">7. Tiny Regular</a>
+    </h2>
+
+    <code-snippet
+      [codeSnippet]="codeSnippets.bodyTinyRegularL"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.bodyTinyRegularL.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet
+      [codeSnippet]="codeSnippets.bodyTinyRegularM"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.bodyTinyRegularM.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet
+      [codeSnippet]="codeSnippets.bodyTinyRegularS"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.bodyTinyRegularS.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet
+      [codeSnippet]="codeSnippets.bodyTinyRegularXS"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.bodyTinyRegularXS.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+  </section>
+}
+
+@if (this.typographies().get("Tiny SemiBold")) {
+  <section aria-labelledby="body-tiny-semi-bold">
+    <h2 id="body-tiny-semi-bold" class="heading-2">
+      <a routerLink="." fragment="body-tiny-semi-bold">8. Tiny SemiBold</a>
+    </h2>
+
+    <code-snippet
+      [codeSnippet]="codeSnippets.bodyTinySemiBoldL"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.bodyTinySemiBoldL.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet
+      [codeSnippet]="codeSnippets.bodyTinySemiBoldM"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.bodyTinySemiBoldM.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet
+      [codeSnippet]="codeSnippets.bodyTinySemiBoldS"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.bodyTinySemiBoldS.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
+
+    <code-snippet
+      [codeSnippet]="codeSnippets.bodyTinySemiBoldXS"
+      [headingLevel]="3"
+    >
+      <p [class]="codeSnippets.bodyTinySemiBoldXS.template[0].class">
+        GeneXus: Leading the Digital Transformation with Intelligent Software
+        Solutions, Enabling Businesses to Innovate Faster and Scale Seamlessly
+        in a Rapidly Evolving Technological Landscape
+      </p>
+    </code-snippet>
   </section>
 }
