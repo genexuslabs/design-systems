@@ -63,49 +63,71 @@
 
 // subtitle
 
-@mixin subtitle-l($weight: regular) {
-  @if $weight == regular {
-    @extend %subtitle-regular;
-  } @else if $weight == semi-bold {
-    @extend %subtitle-semi-bold;
-  }
-  font-size: var(--font-size-subtitle-l);
-  line-height: var(--line-height-regular);
+// subtitle: regular
+@mixin subtitle-regular-l() {
+  @extend %subtitle;
+  @extend %subtitle-regular;
+  @extend %subtitle-l;
+}
+@mixin subtitle-regular-m() {
+  @extend %subtitle;
+  @extend %subtitle-regular;
+  @extend %subtitle-m;
+}
+@mixin subtitle-regular-s() {
+  @extend %subtitle;
+  @extend %subtitle-regular;
+  @extend %subtitle-s;
+}
+@mixin subtitle-regular-xs() {
+  @extend %subtitle;
+  @extend %subtitle-regular;
+  @extend %subtitle-xs;
 }
 
-@mixin subtitle-m($weight: regular) {
-  @if $weight == regular {
-    @extend %subtitle-regular;
-  } @else if $weight == semi-bold {
-    @extend %subtitle-semi-bold;
-  }
-  font-size: var(--font-size-subtitle-m);
-  line-height: var(--line-height-regular);
+// subtitle: semi-bold
+@mixin subtitle-semi-bold-l() {
+  @extend %subtitle;
+  @extend %subtitle-semi-bold;
+  @extend %subtitle-l;
 }
-
-@mixin subtitle-s($weight: regular) {
-  @if $weight == regular {
-    @extend %subtitle-regular;
-  } @else if $weight == semi-bold {
-    @extend %subtitle-semi-bold;
-  }
-  font-size: var(--font-size-subtitle-s);
-  line-height: var(--line-height-tight);
+@mixin subtitle-semi-bold-m() {
+  @extend %subtitle;
+  @extend %subtitle-semi-bold;
+  @extend %subtitle-m;
 }
-
-@mixin subtitle-xs($weight: regular) {
-  @if $weight == regular {
-    @extend %subtitle-regular;
-  } @else if $weight == semi-bold {
-    @extend %subtitle-semi-bold;
-  }
-  font-size: var(--font-size-subtitle-xs);
-  line-height: var(--line-height-tight);
+@mixin subtitle-semi-bold-s() {
+  @extend %subtitle;
+  @extend %subtitle-semi-bold;
+  @extend %subtitle-s;
+}
+@mixin subtitle-semi-bold-xs() {
+  @extend %subtitle;
+  @extend %subtitle-semi-bold;
+  @extend %subtitle-xs;
 }
 
 %subtitle {
+  font-family: var(--font-family-header);
+
+  &-l {
+    font-size: var(--font-size-subtitle-l);
+    line-height: var(--line-height-regular);
+  }
+  &-m {
+    font-size: var(--font-size-subtitle-m);
+    line-height: var(--line-height-regular);
+  }
+  &-s {
+    font-size: var(--font-size-subtitle-s);
+    line-height: var(--line-height-tight);
+  }
+  &-xs {
+    font-size: var(--font-size-subtitle-xs);
+    line-height: var(--line-height-tight);
+  }
+
   &-regular {
-    font-family: var(--font-family-header);
     font-weight: var(--font-weight-regular);
 
     &-l {
@@ -126,23 +148,22 @@
   }
 
   &-semi-bold {
-    font-family: var(--font-family-header);
     font-weight: var(--font-weight-semi-bold);
 
     &-l {
-      @include subtitle-l(semi-bold);
+      @include subtitle-l();
     }
 
     &-m {
-      @include subtitle-m(semi-bold);
+      @include subtitle-m();
     }
 
     &-s {
-      @include subtitle-s(semi-bold);
+      @include subtitle-s();
     }
 
     &-xs {
-      @include subtitle-xs(semi-bold);
+      @include subtitle-xs();
     }
   }
 }
