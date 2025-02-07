@@ -1,5 +1,6 @@
 @import "../../../../common/resets";
 @import "../../base/common";
+@import "../../config/tree-controls";
 
 %combo-box {
   --ch-combo-box-separation-y: var(--mer-spacing--3xs);
@@ -44,6 +45,7 @@
   &-group__header {
     @include item-colors-enabled();
     @include item-padding();
+    @extend %body-regular-m;
 
     &--expandable {
       @include item-colors-enabled();
@@ -69,11 +71,11 @@
   }
 
   &__item {
-    @extend %body-regular-m;
     @include item-colors-enabled();
     @include item-border();
     @include item-border-radius();
     @include item-padding();
+    @extend %body-regular-m;
 
     &--nested {
       padding-inline-start: calc(
@@ -114,7 +116,7 @@
 /// @param {Boolean} $add--placeholder [true] -
 /// @param {Boolean} $add--error [true] -
 @mixin combo-box(
-  $combo-box-selector: ".combo-box",
+  $combo-box-selector: $combo-box-selector,
   $combo-box--disabled-selector: ".combo-box[disabled]",
   $combo-box--error-selector: ".combo-box-error",
   $combo-box__placeholder-selector:
