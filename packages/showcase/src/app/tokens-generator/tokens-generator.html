@@ -1,0 +1,24 @@
+<br /><br /><br /><br />
+<h1>Tokens</h1>
+
+<div *ngFor="let group of groups; trackBy: trackByFn" class="group">
+  <h2>{{ group.groupName }}</h2>
+  <section
+    *ngFor="let category of group.categories; trackBy: trackByFn"
+    class="category"
+  >
+    <h3>{{ category.categoryName }}</h3>
+    <article
+      *ngFor="let subCategory of category.subCategories; trackBy: trackByFn"
+      class="sub-category"
+    >
+      <h4>{{ subCategory.subCategoryName }}</h4>
+      <ul>
+        <li *ngFor="let item of subCategory.items; trackBy: trackByFn">
+          <span class="token-name">{{ item.name }}</span>:
+          <span class="token-value">{{ item.value }}</span>
+        </li>
+      </ul>
+    </article>
+  </section>
+</div>

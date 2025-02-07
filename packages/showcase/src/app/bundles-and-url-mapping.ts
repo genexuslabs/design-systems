@@ -30,7 +30,8 @@ export const UTILITY_CLASSES_ROUTES = {
 
 export const STANDALONE_ROUTES = {
   ICONS: "/icons",
-  GEMINI_MIGRATION: "/gemini-migration"
+  GEMINI_MIGRATION: "/gemini-migration",
+  TOKENS_GENERATOR: "/tokens-generator"
 } as const;
 
 export const bundleMapping = {
@@ -89,6 +90,7 @@ export const URL_MAPPING = {
 
   [STANDALONE_ROUTES.ICONS]: "Icons",
   [STANDALONE_ROUTES.GEMINI_MIGRATION]: "Gemini Migration",
+  [STANDALONE_ROUTES.TOKENS_GENERATOR]: "Tokens Generator",
 
   "/chameleon-compatibility": "Chameleon Compatibility"
 } as const;

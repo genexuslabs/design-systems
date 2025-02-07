@@ -219,6 +219,13 @@ export const routes: Routes = [
           import("./gemini-migration/gemini-migration.component").then(
             m => m.GeminiMigrationComponent
           )
+      },
+      {
+        path: STANDALONE_ROUTES.TOKENS_GENERATOR.substring(1),
+        loadComponent: () =>
+          import("./tokens-generator/tokens-generator.component").then(
+            m => m.TokensGeneratorComponent
+          )
       }
     ]
   },
@@ -312,6 +319,13 @@ export const getNavigationListRoutes = (ds: "mercury" | "unanimo") =>
           getNavigationListItem(
             STANDALONE_ROUTES.GEMINI_MIGRATION,
             URL_MAPPING[STANDALONE_ROUTES.GEMINI_MIGRATION],
+
+            ds
+          ),
+          getNavigationListItem(
+            STANDALONE_ROUTES.TOKENS_GENERATOR,
+            URL_MAPPING[STANDALONE_ROUTES.TOKENS_GENERATOR],
+
             ds
           )
         ]
