@@ -44,8 +44,6 @@ export class TemplateRender extends LitElement {
   }
 
   override render() {
-    console.log(this.model, this.#stateMapping);
-
     if (!this.model) {
       return "";
     }

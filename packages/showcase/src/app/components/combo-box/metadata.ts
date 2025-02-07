@@ -1,4 +1,5 @@
 import { ComponentMetadata } from "../../../common/types";
+import { comboBoxModel } from "./models";
 
 const COMPONENT_CLASS = "combo-box";
 
@@ -14,6 +15,13 @@ export const comboBoxMetadata = {
         metadata: "a combo-box",
         type: "label-and-for"
       },
+      states: [
+        {
+          name: "comboBoxModel",
+          type: "ComboBoxModel",
+          value: comboBoxModel
+        }
+      ],
       template: {
         tag: "div",
         class: "field field-block",
@@ -27,7 +35,15 @@ export const comboBoxMetadata = {
           {
             tag: "ch-combo-box-render",
             class: COMPONENT_CLASS,
-            properties: [{ name: "id", value: "options" }]
+            properties: [
+              { name: "id", value: "options" },
+              {
+                name: "model",
+                value: "comboBoxModel",
+                state: true,
+                variable: true
+              }
+            ]
           }
         ]
       }
@@ -36,22 +52,52 @@ export const comboBoxMetadata = {
     noLabel: {
       linkId: "default",
       title: "2. No Label",
+      avoidStateImportAndVariablesDisplay: true,
+      states: [
+        {
+          name: "comboBoxModel",
+          type: "ComboBoxModel",
+          value: comboBoxModel
+        }
+      ],
       template: {
         tag: "ch-combo-box-render",
         class: COMPONENT_CLASS,
-        properties: [{ name: "accessibleName", value: "Options" }]
+        properties: [
+          { name: "accessibleName", value: "Options" },
+          {
+            name: "model",
+            value: "comboBoxModel",
+            state: true,
+            variable: true
+          }
+        ]
       }
     },
 
     disabled: {
       linkId: "disabled",
       title: "3. Disabled",
+      avoidStateImportAndVariablesDisplay: true,
+      states: [
+        {
+          name: "comboBoxModel",
+          type: "ComboBoxModel",
+          value: comboBoxModel
+        }
+      ],
       template: {
         tag: "ch-combo-box-render",
         class: COMPONENT_CLASS,
         properties: [
           { name: "accessibleName", value: "Options" },
-          { name: "disabled", value: true }
+          { name: "disabled", value: true },
+          {
+            name: "model",
+            value: "comboBoxModel",
+            state: true,
+            variable: true
+          }
         ]
       }
     },
@@ -59,11 +105,25 @@ export const comboBoxMetadata = {
     placeholder: {
       linkId: "placeholder",
       title: "4. Placeholder",
+      avoidStateImportAndVariablesDisplay: true,
+      states: [
+        {
+          name: "comboBoxModel",
+          type: "ComboBoxModel",
+          value: comboBoxModel
+        }
+      ],
       template: {
         tag: "ch-combo-box-render",
         class: COMPONENT_CLASS,
         properties: [
           { name: "accessibleName", value: "Options" },
+          {
+            name: "model",
+            value: "comboBoxModel",
+            state: true,
+            variable: true
+          },
           { name: "placeholder", value: "Select a value" }
         ]
       }
