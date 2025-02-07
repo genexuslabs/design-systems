@@ -15,6 +15,8 @@ export const chameleonImportType = (thingToImport: string) =>
 
 const INDENTATION_SIZE = 2; // 2 spaces
 const MAX_LINE_WIDTH_FOR_PRETTIER = 80; // 80 characters
+const fromDomAttributeToDomProperty = (attr: string) =>
+  attr.replace(/-./g, x => x[1].toUpperCase());
 
 const REMOVE_STRING_IN_GET_ICON_PATH_TO_FUNCTION =
   /"startImgSrc":\s*"((getIconPath|getIconPathExpanded)\(([^)]*)\))"/g;
@@ -129,6 +131,17 @@ const renderTemplate = (
     propertiesWithClass = propertiesWithClass.filter(
       property => property.name !== "key"
     );
+  }
+
+  const propertyThatIsAnAttribute = propertiesWithClass.find(property =>
+    property.name.includes("-")
+  );
+
+  if (propertyThatIsAnAttribute) {
+    console.error(
+      `The "properties" member of the metadata can only be used to set DOM properties. Do not use it do set DOM attributes.\nPerhaps, you want to use "${fromDomAttributeToDomProperty(propertyThatIsAnAttribute.name)}" instead of "${propertyThatIsAnAttribute.name}"`
+    );
+    return "";
   }
 
   // Example: ['class="input"', 'disabled', 'value="Spider man"']
@@ -331,16 +344,41 @@ export const createTemplateForAllLanguages = (
   template: ComponentTemplateModel,
   imports?: string[],
   variables?: CodeTemplateVariables,
-  states?: CodeTemplateStates
-): CodeTemplatesByLanguage => ({
-  Angular: createTemplate(template, "Angular", 0, imports, variables, states),
-  React: createTemplate(template, "React", 0, imports, variables, states),
-  StencilJS: createTemplate(
-    template,
-    "StencilJS",
-    0,
-    imports,
-    variables,
-    states
-  )
-});
+  states?: CodeTemplateStates,
+  avoidStateImportAndVariablesDisplay?: boolean
+): CodeTemplatesByLanguage => {
+  const actualImports = avoidStateImportAndVariablesDisplay
+    ? undefined
+    : imports;
+  const actualVariables = avoidStateImportAndVariablesDisplay
+    ? undefined
+    : variables;
+  const actualStates = avoidStateImportAndVariablesDisplay ? undefined : states;
+
+  return {
+    Angular: createTemplate(
+      template,
+      "Angular",
+      0,
+      actualImports,
+      actualVariables,
+      actualStates
+    ),
+    React: createTemplate(
+      template,
+      "React",
+      0,
+      actualImports,
+      actualVariables,
+      actualStates
+    ),
+    StencilJS: createTemplate(
+      template,
+      "StencilJS",
+      0,
+      actualImports,
+      actualVariables,
+      actualStates
+    )
+  };
+};

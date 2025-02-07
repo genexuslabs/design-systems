@@ -65,7 +65,8 @@ export class CodeSnippetComponent {
           codeSnippet.template,
           codeSnippet.imports,
           codeSnippet.variables,
-          codeSnippet.states
+          codeSnippet.states,
+          codeSnippet.avoidStateImportAndVariablesDisplay
         )
       : undefined;
   });
@@ -77,7 +78,8 @@ export class CodeSnippetComponent {
           codeSnippet.before.template,
           codeSnippet.before.imports,
           codeSnippet.before.variables,
-          codeSnippet.before.states
+          codeSnippet.before.states,
+          codeSnippet.before.avoidStateImportAndVariablesDisplay
         )
       : undefined;
   });
@@ -89,26 +91,35 @@ export class CodeSnippetComponent {
           codeSnippet.after.template,
           codeSnippet.after.imports,
           codeSnippet.after.variables,
-          codeSnippet.after.states
+          codeSnippet.after.states,
+          codeSnippet.after.avoidStateImportAndVariablesDisplay
         )
       : undefined;
   });
 
   headingLevel = input<2 | 3>(2);
 
-  language = computed(
-    () => this.codeSnippet()?.language ?? DEFAULT_TEMPLATE_LANGUAGE
-  );
-  languageBefore = computed(
-    () =>
-      this.codeSnippetBeforeAndAfter()?.before?.language ??
-      DEFAULT_TEMPLATE_LANGUAGE
-  );
-  languageAfter = computed(
-    () =>
-      this.codeSnippetBeforeAndAfter()?.after?.language ??
-      DEFAULT_TEMPLATE_LANGUAGE
-  );
+  protected language = computed(() => {
+    const codeSnippet = this.codeSnippet();
+    return !codeSnippet?.avoidStateImportAndVariablesDisplay &&
+      (codeSnippet?.states || codeSnippet?.variables || codeSnippet?.imports)
+      ? "ts"
+      : DEFAULT_TEMPLATE_LANGUAGE;
+  });
+  languageBefore = computed(() => {
+    const codeSnippet = this.codeSnippetBeforeAndAfter()?.before;
+    return !codeSnippet?.avoidStateImportAndVariablesDisplay &&
+      (codeSnippet?.states || codeSnippet?.variables || codeSnippet?.imports)
+      ? "ts"
+      : DEFAULT_TEMPLATE_LANGUAGE;
+  });
+  languageAfter = computed(() => {
+    const codeSnippet = this.codeSnippetBeforeAndAfter()?.after;
+    return !codeSnippet?.avoidStateImportAndVariablesDisplay &&
+      (codeSnippet?.states || codeSnippet?.variables || codeSnippet?.imports)
+      ? "ts"
+      : DEFAULT_TEMPLATE_LANGUAGE;
+  });
 
   linkId = computed(
     () => (this.codeSnippet() ?? this.codeSnippetBeforeAndAfter()!).linkId

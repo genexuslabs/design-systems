@@ -31,7 +31,7 @@
 </ol>
 
 @if (showDefault()) {
-  <code-snippet [codeSnippet]="codeSnippets.default" [language]="'ts'">
+  <code-snippet [codeSnippet]="codeSnippets.default">
     <common-snippets
       [type]="'spacing-body-description'"
       [componentName]="metadata.title"
@@ -80,7 +80,7 @@
 }
 
 @if (showWithoutPadding()) {
-  <code-snippet [codeSnippet]="codeSnippets.withoutPadding" [language]="'ts'">
+  <code-snippet [codeSnippet]="codeSnippets.withoutPadding">
     <button
       class="button-primary"
       type="button"
@@ -127,7 +127,7 @@
 }
 
 @if (showWithHeader()) {
-  <code-snippet [codeSnippet]="codeSnippets.withHeader" [language]="'ts'">
+  <code-snippet [codeSnippet]="codeSnippets.withHeader">
     <button
       class="button-primary"
       type="button"
@@ -175,7 +175,7 @@
 }
 
 @if (showWithFooter()) {
-  <code-snippet [codeSnippet]="codeSnippets.withFooter" [language]="'ts'">
+  <code-snippet [codeSnippet]="codeSnippets.withFooter">
     <button
       class="button-primary"
       type="button"
@@ -225,7 +225,7 @@
 }
 
 @if (showResizable()) {
-  <code-snippet [codeSnippet]="codeSnippets.resizable" [language]="'ts'">
+  <code-snippet [codeSnippet]="codeSnippets.resizable">
     <p class="body-regular-s">
       <code>resizable</code> allows you to resize the dialog by dragging from
       the edges. You might want in this case to set maximum and minimum block
@@ -295,7 +295,7 @@
 }
 
 @if (showAdjustPosition()) {
-  <code-snippet [codeSnippet]="codeSnippets.adjustPosition" [language]="'ts'">
+  <code-snippet [codeSnippet]="codeSnippets.adjustPosition">
     <p class="body-regular-s">
       <code>adjustPositionAfterResize</code> will reposition the dialog after
       being resized. This property goes hand in hand with <code>resizable</code>
@@ -350,7 +350,7 @@
 }
 
 @if (showNonModal()) {
-  <code-snippet [codeSnippet]="codeSnippets.nonModal" [language]="'ts'">
+  <code-snippet [codeSnippet]="codeSnippets.nonModal">
     <p class="body-regular-s">
       By default, the <code>ch-dialog</code> component functions as a modal,
       meaning it prevents interaction with the rest of the page's content when
@@ -402,7 +402,7 @@
 }
 
 @if (showAllowDrag()) {
-  <code-snippet [codeSnippet]="codeSnippets.allowDrag" [language]="'ts'">
+  <code-snippet [codeSnippet]="codeSnippets.allowDrag">
     <p class="body-regular-s">
       By default, the <code>ch-dialog</code> component does not support
       dragging. You can enable dragging by setting the

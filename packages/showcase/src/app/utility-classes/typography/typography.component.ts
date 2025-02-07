@@ -3,10 +3,8 @@ import {
   Component,
   computed,
   CUSTOM_ELEMENTS_SCHEMA,
-  effect,
   inject,
-  input,
-  signal
+  input
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router } from "@angular/router";
@@ -15,6 +13,7 @@ import type { ChCheckboxCustomEvent } from "@genexus/chameleon-controls-library"
 import { typographyMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
+
 @Component({
   selector: "utility-classes-typography",
   templateUrl: "./typography.component.html",

@@ -26,7 +26,7 @@
 </ol>
 
 @if (showDefault()) {
-  <code-snippet [codeSnippet]="codeSnippets.noIcons" [language]="'ts'" />
+  <code-snippet [codeSnippet]="codeSnippets.noIcons" />
 }
 
 @if (showShowLinesLast()) {
@@ -38,7 +38,7 @@
 }
 
 @if (showWithIcons()) {
-  <code-snippet [codeSnippet]="codeSnippets.withIcons" [language]="'ts'" />
+  <code-snippet [codeSnippet]="codeSnippets.withIcons" />
 }
 
 @if (showCheckboxes()) {

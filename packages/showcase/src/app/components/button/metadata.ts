@@ -47,7 +47,6 @@ export const buttonMetadata = {
     buttonPrimaryIconAndText: {
       linkId: "button-primary-icon-and-text",
       title: "1.4. Icon and Text",
-      language: "ts",
       imports: [
         'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
       ],

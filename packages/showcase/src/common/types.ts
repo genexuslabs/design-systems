@@ -27,7 +27,7 @@ export type ComponentMetadataCodeSnippet = {
     metadata: string;
   };
   avoidTemplateRender?: boolean;
-  language?: string;
+  avoidStateImportAndVariablesDisplay?: boolean;
   linkId: string;
   title: string;
   imports?: string[];
@@ -45,6 +45,7 @@ export type ComponentMetadataCodeSnippetBeforeAndAfter = {
   linkId: string;
   title: string;
   before: {
+    avoidStateImportAndVariablesDisplay?: boolean;
     imports?: string[];
     language?: string;
     states?: CodeTemplateStates;
@@ -52,6 +53,7 @@ export type ComponentMetadataCodeSnippetBeforeAndAfter = {
     template: ComponentTemplateModel;
   };
   after: {
+    avoidStateImportAndVariablesDisplay?: boolean;
     imports?: string[];
     language?: string;
     states?: CodeTemplateStates;

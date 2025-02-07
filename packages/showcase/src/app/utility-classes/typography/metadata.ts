@@ -58,6 +58,7 @@ export const typographyMetadata = {
     // Subtitles Regular
 
     subtitleRegularL: {
+      avoidTemplateRender: true,
       linkId: "subtitle-regular-l",
       title: "2.1. Subtitle: Large",
       template: {
@@ -68,6 +69,7 @@ export const typographyMetadata = {
     },
 
     subtitleRegularM: {
+      avoidTemplateRender: true,
       linkId: "subtitle-regular-m",
       title: "2.2. Subtitle: Medium",
       template: {
@@ -78,6 +80,7 @@ export const typographyMetadata = {
     },
 
     subtitleRegularS: {
+      avoidTemplateRender: true,
       linkId: "subtitle-regular-s",
       title: "2.3. Subtitle: Small",
       template: {
@@ -88,6 +91,7 @@ export const typographyMetadata = {
     },
 
     subtitleRegularXS: {
+      avoidTemplateRender: true,
       linkId: "subtitle-regular-xs",
       title: "2.4. Subtitle: Extra Small",
       template: {
@@ -100,6 +104,7 @@ export const typographyMetadata = {
     // Subtitles SemiBold
 
     subtitleSemiBoldL: {
+      avoidTemplateRender: true,
       linkId: "subtitle-regular-l",
       title: "3.1. Subtitle: Large",
       template: {
@@ -110,6 +115,7 @@ export const typographyMetadata = {
     },
 
     subtitleSemiBoldM: {
+      avoidTemplateRender: true,
       linkId: "subtitle-regular-m",
       title: "3.2. Subtitle: Medium",
       template: {
@@ -120,6 +126,7 @@ export const typographyMetadata = {
     },
 
     subtitleSemiBoldS: {
+      avoidTemplateRender: true,
       linkId: "subtitle-regular-s",
       title: "3.3. Subtitle: Small",
       template: {
@@ -130,6 +137,7 @@ export const typographyMetadata = {
     },
 
     subtitleSemiBoldXS: {
+      avoidTemplateRender: true,
       linkId: "subtitle-regular-xs",
       title: "3.4. Subtitle: Extra Small",
       template: {
@@ -142,30 +150,35 @@ export const typographyMetadata = {
     // Body Regular
 
     bodyRegularXL: {
+      avoidTemplateRender: true,
       linkId: "body-regular-xl",
       title: "4.1. Body: Extra Large",
       template: { tag: "p", class: "body-regular-xl", children: BODY_CONTENT }
     },
 
     bodyRegularL: {
+      avoidTemplateRender: true,
       linkId: "body-regular-l",
       title: "4.2. Body: Regular Large",
       template: { tag: "p", class: "body-regular-l", children: BODY_CONTENT }
     },
 
     bodyRegularM: {
+      avoidTemplateRender: true,
       linkId: "body-regular-m",
       title: "4.3. Body: Medium",
       template: { tag: "p", class: "body-regular-m", children: BODY_CONTENT }
     },
 
     bodyRegularS: {
+      avoidTemplateRender: true,
       linkId: "body-regular-s",
       title: "4.4. Body: Small",
       template: { tag: "p", class: "body-regular-s", children: BODY_CONTENT }
     },
 
     bodyRegularXS: {
+      avoidTemplateRender: true,
       linkId: "body-regular-xs",
       title: "4.5. Body: Extra Small",
       template: { tag: "p", class: "body-regular-xs", children: BODY_CONTENT }
@@ -174,30 +187,35 @@ export const typographyMetadata = {
     // Body SemiBold
 
     bodySemiBoldXL: {
+      avoidTemplateRender: true,
       linkId: "body-semi-bold-xl",
       title: "5.1. Body: Extra Large",
       template: { tag: "p", class: "body-semi-bold-xl", children: BODY_CONTENT }
     },
 
     bodySemiBoldL: {
+      avoidTemplateRender: true,
       linkId: "body-semi-bold-l",
       title: "5.2. Body: Large",
       template: { tag: "p", class: "body-semi-bold-l", children: BODY_CONTENT }
     },
 
     bodySemiBoldM: {
+      avoidTemplateRender: true,
       linkId: "body-semi-bold-m",
       title: "5.3. Body: Medium",
       template: { tag: "p", class: "body-semi-bold-m", children: BODY_CONTENT }
     },
 
     bodySemiBoldS: {
+      avoidTemplateRender: true,
       linkId: "body-semi-bold-s",
       title: "5.4. Body: Small",
       template: { tag: "p", class: "body-semi-bold-s", children: BODY_CONTENT }
     },
 
     bodySemiBoldXS: {
+      avoidTemplateRender: true,
       linkId: "body-semi-bold-xs",
       title: "5.5. Body: Extra Small",
       template: { tag: "p", class: "body-semi-bold-xs", children: BODY_CONTENT }
@@ -206,30 +224,35 @@ export const typographyMetadata = {
     // Body Italic
 
     bodyItalicXL: {
+      avoidTemplateRender: true,
       linkId: "body-italic-xl",
       title: "6.1. Body: Italic XLarge",
       template: { tag: "p", class: "body-italic-xl", children: BODY_CONTENT }
     },
 
     bodyItalicL: {
+      avoidTemplateRender: true,
       linkId: "body-italic-l",
       title: "6.2. Body: Italic Large",
       template: { tag: "p", class: "body-italic-l", children: BODY_CONTENT }
     },
 
     bodyItalicM: {
+      avoidTemplateRender: true,
       linkId: "body-italic-m",
       title: "6.3. Body: Italic Medium",
       template: { tag: "p", class: "body-italic-m", children: BODY_CONTENT }
     },
 
     bodyItalicS: {
+      avoidTemplateRender: true,
       linkId: "body-italic-s",
       title: "6.4. Body: Italic Small",
       template: { tag: "p", class: "body-italic-s", children: BODY_CONTENT }
     },
 
     bodyItalicXS: {
+      avoidTemplateRender: true,
       linkId: "body-italic-xs",
       title: "6.5. Body: Italic Extra Small",
       template: { tag: "p", class: "body-italic-xs", children: BODY_CONTENT }
@@ -238,6 +261,7 @@ export const typographyMetadata = {
     // Tiny Regular
 
     bodyTinyRegularL: {
+      avoidTemplateRender: true,
       linkId: "tiny-regular-l",
       title: "7.1. Tiny: Large",
       template: {
@@ -248,6 +272,7 @@ export const typographyMetadata = {
     },
 
     bodyTinyRegularM: {
+      avoidTemplateRender: true,
       linkId: "tiny-regular-m",
       title: "7.2. Tiny: Medium",
       template: {
@@ -258,6 +283,7 @@ export const typographyMetadata = {
     },
 
     bodyTinyRegularS: {
+      avoidTemplateRender: true,
       linkId: "tiny-regular-s",
       title: "7.3. Tiny: Small",
       template: {
@@ -268,6 +294,7 @@ export const typographyMetadata = {
     },
 
     bodyTinyRegularXS: {
+      avoidTemplateRender: true,
       linkId: "tiny-regular-xs",
       title: "7.4. Tiny: Extra Small",
       template: {
@@ -280,6 +307,7 @@ export const typographyMetadata = {
     // Tiny SemiBold
 
     bodyTinySemiBoldL: {
+      avoidTemplateRender: true,
       linkId: "tiny-semi-bold-l",
       title: "8.1. Tiny: Large",
       template: {
@@ -290,6 +318,7 @@ export const typographyMetadata = {
     },
 
     bodyTinySemiBoldM: {
+      avoidTemplateRender: true,
       linkId: "tiny-semi-bold-m",
       title: "8.2. Tiny: SemiBold Medium",
       template: {
@@ -300,6 +329,7 @@ export const typographyMetadata = {
     },
 
     bodyTinySemiBoldS: {
+      avoidTemplateRender: true,
       linkId: "tiny-semi-bold-s",
       title: "8.3. Tiny: SemiBold Small",
       template: {
@@ -310,6 +340,7 @@ export const typographyMetadata = {
     },
 
     bodyTinySemiBoldXS: {
+      avoidTemplateRender: true,
       linkId: "tiny-semi-bold-xs",
       title: "8.4. Tiny: SemiBold Extra Small",
       template: {

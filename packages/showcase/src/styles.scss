@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+$articleMaxInlineSize: 800px;
+
 .main-content {
   display: grid;
   grid-auto-rows: max-content;
@@ -80,6 +82,8 @@ ch-code {
 }
 
 .blockquote-info {
+  max-inline-size: $articleMaxInlineSize;
+
   padding: var(--mer-spacing--md, var(--spacing--l));
   margin: 0;
   margin-block-start: var(--mer-spacing--md, var(--spacing--l));

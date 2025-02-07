@@ -27,6 +27,7 @@ export const radioGroupMetadata = {
           {
             name: "model",
             value: "radioGroupModel",
+            variable: true,
             state: true
           }
         ]
@@ -36,6 +37,14 @@ export const radioGroupMetadata = {
     vertical: {
       linkId: "Vertical",
       title: "2. Vertical",
+      avoidStateImportAndVariablesDisplay: true,
+      states: [
+        {
+          name: "...",
+          type: "RadioGroupModel",
+          value: radioGroupModel
+        }
+      ],
       template: {
         tag: "ch-radio-group-render",
         class: COMPONENT_CLASS,

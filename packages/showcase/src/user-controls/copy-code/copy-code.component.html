@@ -4,10 +4,11 @@
   class="tab"
   [model]="languagesModel"
   [selectedId]="templateLanguageService.language()"
+  [showTabListEnd]="true"
   (selectedItemChange)="selectedNewLanguage($event)"
 >
   @if (label()) {
-    <p slot="tab-list-end" class="copy-code__label text-body-highlighted-s">
+    <p slot="tab-list-end" class="copy-code__label body-semi-bold-s">
       {{ label() }}
     </p>
   }

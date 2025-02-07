@@ -31,32 +31,32 @@ export const geminiMigrationMetadata = {
             {
               tag: "gxg-accordion-item",
               properties: [
-                { name: "item-title", value: "objects: file" },
-                { name: "item-id", value: "objects-file" }
+                { name: "itemTitle", value: "objects: file" },
+                { name: "itemId", value: "objects-file" }
               ],
               children: "File content here"
             },
             {
               tag: "gxg-accordion-item",
               properties: [
-                { name: "item-title", value: "objects: domain" },
-                { name: "item-id", value: "objects-domain" }
+                { name: "itemTitle", value: "objects: domain" },
+                { name: "itemId", value: "objects-domain" }
               ],
               children: "Domain content here"
             },
             {
               tag: "gxg-accordion-item",
               properties: [
-                { name: "item-title", value: "objects: procedure" },
-                { name: "item-id", value: "objects-procedure" }
+                { name: "itemTitle", value: "objects: procedure" },
+                { name: "itemId", value: "objects-procedure" }
               ],
               children: "Procedure content here"
             },
             {
               tag: "gxg-accordion-item",
               properties: [
-                { name: "item-title", value: "objects: document" },
-                { name: "item-id", value: "objects-document" }
+                { name: "itemTitle", value: "objects: document" },
+                { name: "itemId", value: "objects-document" }
               ],
               children: "Document content here"
             }
@@ -822,7 +822,7 @@ export const geminiMigrationMetadata = {
           tag: "gxg-modal",
           properties: [
             { name: "id", value: "modal" },
-            { name: "modal-title", value: "Terms and conditions agreement" }
+            { name: "modalTitle", value: "Terms and conditions agreement" }
           ],
           children: [
             `By accessing this website, you agree to comply with these terms and
@@ -1029,13 +1029,13 @@ without notice.`,
       before: {
         template: {
           tag: "gxg-stack",
-          properties: [{ name: "columns-space", value: "m" }],
+          properties: [{ name: "columnsSpace", value: "m" }],
           children: [
             {
               tag: "gxg-form-text",
               properties: [
                 { name: "label", value: "Full name" },
-                { name: "label-position", value: "top" },
+                { name: "labelPosition", value: "top" },
                 { name: "placeholder", value: "John Smith" },
                 { name: "id", value: "full-name" }
               ]
@@ -1044,7 +1044,7 @@ without notice.`,
               tag: "gxg-form-text",
               properties: [
                 { name: "label", value: "Job position" },
-                { name: "label-position", value: "top" },
+                { name: "labelPosition", value: "top" },
                 { name: "placeholder", value: "Backend developer" },
                 { name: "id", value: "backend-developer" }
               ]
@@ -1053,7 +1053,7 @@ without notice.`,
               tag: "gxg-form-text",
               properties: [
                 { name: "label", value: "Location" },
-                { name: "label-position", value: "top" },
+                { name: "labelPosition", value: "top" },
                 { name: "placeholder", value: "Miami, Usa" },
                 { name: "id", value: "location" }
               ]
