@@ -1,4 +1,16 @@
 import {
+  INDENTATION_SIZE,
+  initialIndentation,
+  MAX_LINE_WIDTH_FOR_PRETTIER,
+  REMOVE_STRING_IN_GET_ICON_PATH_TO_FUNCTION
+} from "./constants";
+import {
+  camelCaseFromKebab,
+  fromDomAttributeToDomProperty,
+  insertSpacesAtTheBeginningExceptForTheFirstLine,
+  lineBreakWithIndentation
+} from "./parse-lines-and-words";
+import {
   CodeTemplateLanguages,
   CodeTemplatesByLanguage,
   CodeTemplateState,
@@ -12,32 +24,6 @@ import {
 
 export const chameleonImportType = (thingToImport: string) =>
   `import type { ${thingToImport} } from "@genexus/chameleon-controls-library"`;
-
-const INDENTATION_SIZE = 2; // 2 spaces
-const MAX_LINE_WIDTH_FOR_PRETTIER = 80; // 80 characters
-const fromDomAttributeToDomProperty = (attr: string) =>
-  attr.replace(/-./g, x => x[1].toUpperCase());
-
-const REMOVE_STRING_IN_GET_ICON_PATH_TO_FUNCTION =
-  /"startImgSrc":\s*"((getIconPath|getIconPathExpanded)\(([^)]*)\))"/g;
-
-const insertSpacesAtTheBeginningExceptForTheFirstLine = (
-  text: string,
-  spaces = 2
-) =>
-  text
-    .split("\n")
-    .map((line, index) => (index === 0 ? line : " ".repeat(spaces) + line))
-    .join("\n");
-
-const lineBreakWithIndentation = (indentation: number) =>
-  "\n" + " ".repeat(indentation);
-
-const camelCaseFromKebab = (inputString: string) =>
-  inputString
-    .split("-")
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join("");
 
 const createTag = (tagName: string, codeLanguage: CodeTemplateLanguages) =>
   codeLanguage === "React" &&
@@ -268,12 +254,6 @@ export class CustomDialog {
   }
 }`
 };
-
-const initialIndentation = {
-  Angular: 4,
-  React: 6,
-  StencilJS: 8
-} as const;
 
 const stateDefinitionByCodeTemplateLanguage = {
   Angular: (state: CodeTemplateState) =>
