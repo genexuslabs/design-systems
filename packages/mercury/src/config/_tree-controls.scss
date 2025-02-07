@@ -1,0 +1,11 @@
+// In Mercury, some controls use different font styles than the tabular grid.
+// When these controls are inside a tabular grid, they should inherit its styles.
+// This ensures visual consistency across the interface. Add relevant selectors
+// below, then import this file where needed and apply the selector variable.
+
+// ie. for the combo-box: @mixin combo-box($combo-box-selector: $combo-box-selector, ...
+
+$combo-box-selector: ".combo-box";
+$input-selector: ".input";
+
+$tree-controls: ($combo-box-selector, $input-selector);

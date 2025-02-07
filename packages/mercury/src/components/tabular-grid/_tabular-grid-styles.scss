@@ -1,10 +1,15 @@
 @import "tokens-row";
 @import "tokens-column";
 @import "tokens-cell";
+@import "../../config/tree-controls";
 
 // - - - - - - - - - - - - - - - - - - - -
 //           general settings
 // - - - - - - - - - - - - - - - - - - - -
+
+%tabular-grid-font-size {
+  @extend %body-regular-s;
+}
 
 %tabular-grid__icon {
   &-size {
@@ -63,7 +68,14 @@
   --grid-common__gap: var(--mer-spacing--xs);
   max-block-size: 100%; // TODO: This reset must be placed in the control implementation. This property is a WA.
 
-  @extend %body-regular-s;
+  @extend %tabular-grid-font-size;
+
+  // make controls inherit tabular-grid font styles
+  @each $control-selector in $tree-controls {
+    #{$control-selector} {
+      @extend %tabular-grid-font-size;
+    }
+  }
 
   --indent: 16px;
   @include items-container-colors();
@@ -493,6 +505,7 @@
 
   #{$tabular-grid-selector} {
     @extend %tabular-grid;
+
     &:focus {
       outline: none;
     }
