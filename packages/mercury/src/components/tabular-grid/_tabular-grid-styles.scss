@@ -70,13 +70,6 @@
 
   @extend %tabular-grid-font-size;
 
-  // make controls inherit tabular-grid font styles
-  @each $control-selector in $tree-controls {
-    #{$control-selector} {
-      @extend %tabular-grid-font-size;
-    }
-  }
-
   --indent: 16px;
   @include items-container-colors();
 
@@ -219,6 +212,13 @@
   // TODO: Check how controls font size's should be redefined inside tabular-grid cell, using the new font styles classes.
 
   border: 0; // WA
+
+  // make controls inherit tabular-grid font styles
+  @each $control-selector in $tree-controls {
+    > #{$control-selector} {
+      @extend %tabular-grid-font-size;
+    }
+  }
 
   &--focused {
     @include focus-outline();
