@@ -51,7 +51,7 @@
 
   // Label
   &__label {
-    @include label-font();
+    @extend %label-font;
 
     &--disabled {
       @include label-color-disabled();

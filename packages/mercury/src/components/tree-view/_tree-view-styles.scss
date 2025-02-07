@@ -2,10 +2,9 @@
 
 %tree-view {
   @include tree-view-tokens();
-  @include item-font();
-  @include item-font-size-small();
   line-height: var(--tree-view-item__line-height);
   min-inline-size: var(--tree-view__min-inline-size);
+  @extend %body-regular-s;
 }
 
 // TODO: Improve this
@@ -14,7 +13,7 @@
   background-color: var(--mer-surface__elevation--01);
   border-radius: 10px;
   box-shadow: var(--mer-elevation__box-shadow--03);
-  font-size: 8px;
+  @extend %tiny-semi-bold-xs;
 }
 
 %tree-view-item--drag-enter {
@@ -24,6 +23,10 @@
 
 %tree-view-drop--after {
   background-color: var(--mer-color__primary--200);
+}
+
+%tree-view-item__group {
+  @include items-container-gap-small();
 }
 
 %tree-view-item__header {
@@ -69,6 +72,7 @@
 /// @param {String} $drag-preview-selector [".tree-view::part(drag-preview)"] -
 /// @param {String} $drop-selector [".tree-view::part(drop)"] -
 /// @param {String} $item--drag-enter-selector [".tree-view::part(item drag-enter)"] -
+/// @param {String} $item__group-selector [".tree-view::part(item__group)"] -
 /// @param {String} $item__header-selector [".tree-view::part(item__header)"] -
 /// @param {String} $item__header--not-selected-selector [".tree-view::part(item__header not-selected)"] -
 /// @param {String} $item__header--selected-selector [".tree-view::part(item__header selected)"] -
@@ -125,6 +129,7 @@
   //                  Item
   // - - - - - - - - - - - - - - - - - - - -
   $item__header-selector: ".tree-view::part(item__header)",
+  $item__group-selector: ".tree-view::part(item__group)",
   $item__header--not-selected-selector:
     ".tree-view::part(item__header not-selected)",
   $item__header--selected-selector: ".tree-view::part(item__header selected)",
@@ -183,9 +188,21 @@
     @extend %tree-view-item--drag-enter;
   }
 
-  // - - - - - - - - - - - - - - - - - - - -
-  //                 Header
-  // - - - - - - - - - - - - - - - - - - - -
+  #{$item__header-selector} {
+    @extend %tree-view-item__header;
+
+    &:focus-visible {
+      @extend %tree-view-item__header--focus-visible;
+    }
+  }
+
+  // Group
+  #{$item__group-selector} {
+    @extend %tree-view-item__group;
+  }
+
+  // Header
+
   #{$item__header-selector} {
     @extend %tree-view-item__header;
 

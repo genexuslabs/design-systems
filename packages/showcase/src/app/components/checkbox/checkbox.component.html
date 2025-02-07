@@ -4,7 +4,7 @@
   <h1 class="heading-1">{{ metadata.title }}</h1>
 </header>
 
-<p class="text-body-regular-l">{{ metadata.description }}</p>
+<p class="body-regular-l">{{ metadata.description }}</p>
 
 @for (item of codeSnippets; track $index) {
   <code-snippet [codeSnippet]="item" />

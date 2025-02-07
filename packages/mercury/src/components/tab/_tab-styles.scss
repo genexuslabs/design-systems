@@ -14,8 +14,8 @@
 
 %tab-button-block {
   @include tab-button-colors-enabled();
-  @include tab-button-font();
   @include tab-button-gap();
+  @extend %body-regular-s;
 
   @include tab-button-padding-inline();
   border-block: var(--tab-caption__border-width)
@@ -27,8 +27,8 @@
 
 %tab-button-inline {
   @include tab-button-colors-enabled();
-  @include tab-button-font();
   @include tab-button-gap();
+  @extend %body-regular-s;
 
   @include tab-button-padding-stack();
   border-inline: var(--tab-caption__border-width)
