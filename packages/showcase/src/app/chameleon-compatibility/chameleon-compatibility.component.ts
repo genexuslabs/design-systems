@@ -14,7 +14,7 @@ import { unanimoCompatibilityTable } from "./unanimo-compatibility-table";
 @Component({
   selector: "chameleon-compatibility",
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: "./chameleon-compatibility.component.html",
+  templateUrl: "./chameleon-compatibility.ng.html",
   host: { class: "main-content", ngSkipHydration: "true" },
   styleUrl: "./chameleon-compatibility.scss",
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

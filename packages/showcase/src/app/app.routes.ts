@@ -15,177 +15,155 @@ const childRoutes: Routes = [
     // substring(1) removes the initial "/"
     path: COMPONENTS_ROUTES.ACCORDION.substring(1),
     loadComponent: () =>
-      import("./components/accordion/accordion.component").then(
+      import("./components/accordion/accordion.ng").then(
         m => m.AccordionComponent
       )
   },
   {
     path: COMPONENTS_ROUTES.BUTTON.substring(1),
     loadComponent: () =>
-      import("./components/button/button.component").then(
-        m => m.ButtonComponent
-      )
+      import("./components/button/button.ng").then(m => m.ButtonComponent)
   },
   {
     path: COMPONENTS_ROUTES.CHECKBOX.substring(1),
     loadComponent: () =>
-      import("./components/checkbox/checkbox.component").then(
-        m => m.CheckboxComponent
-      )
+      import("./components/checkbox/checkbox.ng").then(m => m.CheckboxComponent)
   },
   {
     path: COMPONENTS_ROUTES.COMBO_BOX.substring(1),
     loadComponent: () =>
-      import("./components/combo-box/combo-box.component").then(
+      import("./components/combo-box/combo-box.ng").then(
         m => m.ComboBoxComponent
       )
   },
   {
     path: COMPONENTS_ROUTES.DIALOG.substring(1),
     loadComponent: () =>
-      import("./components/dialog/dialog.component").then(
-        m => m.DialogComponent
-      )
+      import("./components/dialog/dialog.ng").then(m => m.DialogComponent)
   },
   {
     path: COMPONENTS_ROUTES.ICON.substring(1),
     loadComponent: () =>
-      import("./components/icon/icon.component").then(m => m.IconComponent)
+      import("./components/icon/icon.ng").then(m => m.IconComponent)
   },
   {
     path: COMPONENTS_ROUTES.INPUT.substring(1),
     loadComponent: () =>
-      import("./components/input/input.component").then(m => m.InputComponent)
+      import("./components/input/input.ng").then(m => m.InputComponent)
   },
   {
     path: COMPONENTS_ROUTES.LABEL.substring(1),
     loadComponent: () =>
-      import("./components/label/label.component").then(m => m.LabelComponent)
+      import("./components/label/label.ng").then(m => m.LabelComponent)
   },
   {
     path: COMPONENTS_ROUTES.LIST_BOX.substring(1),
     loadComponent: () =>
-      import("./components/list-box/list-box.component").then(
-        m => m.ListBoxComponent
-      )
+      import("./components/list-box/list-box.ng").then(m => m.ListBoxComponent)
   },
   {
     path: COMPONENTS_ROUTES.PILLS.substring(1),
     loadComponent: () =>
-      import("./components/pills/pills.component").then(m => m.PillsComponent)
+      import("./components/pills/pills.ng").then(m => m.PillsComponent)
   },
   {
     path: COMPONENTS_ROUTES.PROPERTY_GRID.substring(1),
     loadComponent: () =>
-      import("./components/property-grid/property-grid.component").then(
+      import("./components/property-grid/property-grid.ng").then(
         m => m.PropertyGridComponent
       )
   },
   {
     path: COMPONENTS_ROUTES.RADIO_GROUP.substring(1),
     loadComponent: () =>
-      import("./components/radio-group/radio-group.component").then(
+      import("./components/radio-group/radio-group.ng").then(
         m => m.RadioGroupComponent
       )
   },
   {
     path: COMPONENTS_ROUTES.SEARCH.substring(1),
     loadComponent: () =>
-      import("./components/search/search.component").then(
-        m => m.SearchComponent
-      )
+      import("./components/search/search.ng").then(m => m.SearchComponent)
   },
   {
     path: COMPONENTS_ROUTES.SLIDER.substring(1),
     loadComponent: () =>
-      import("./components/slider/slider.component").then(
-        m => m.SliderComponent
-      )
+      import("./components/slider/slider.ng").then(m => m.SliderComponent)
   },
   {
     path: COMPONENTS_ROUTES.TAB.substring(1),
     loadComponent: () =>
-      import("./components/tab/tab.component").then(m => m.TabComponent)
+      import("./components/tab/tab.ng").then(m => m.TabComponent)
   },
   {
     path: COMPONENTS_ROUTES.TABULAR_GRID.substring(1),
     loadComponent: () =>
-      import("./components/tabular-grid/tabular-grid.component").then(
+      import("./components/tabular-grid/tabular-grid.ng").then(
         m => m.TabularGridComponent
       )
   },
   {
     path: COMPONENTS_ROUTES.TOOLTIP.substring(1),
     loadComponent: () =>
-      import("./components/tooltip/tooltip.component").then(
-        m => m.TooltipComponent
-      )
+      import("./components/tooltip/tooltip.ng").then(m => m.TooltipComponent)
   },
   {
     path: COMPONENTS_ROUTES.TREE_VIEW.substring(1),
     loadComponent: () =>
-      import("./components/tree-view/tree-view.component").then(
+      import("./components/tree-view/tree-view.ng").then(
         m => m.TreeViewComponent
       )
   },
   {
     path: COMPONENTS_ROUTES.WIDGET.substring(1),
     loadComponent: () =>
-      import("./components/widget/widget.component").then(
-        m => m.WidgetComponent
-      )
+      import("./components/widget/widget.ng").then(m => m.WidgetComponent)
   },
   {
     path: "introduction/what-is-mercury",
     loadComponent: () =>
-      import("./introduction/what-is/what-is.component").then(
-        m => m.WhatIsComponent
-      )
+      import("./introduction/what-is/what-is.ng").then(m => m.WhatIsComponent)
   },
   {
     path: "introduction/what-is-unanimo",
     loadComponent: () =>
-      import("./introduction/what-is/what-is.component").then(
-        m => m.WhatIsComponent
-      )
+      import("./introduction/what-is/what-is.ng").then(m => m.WhatIsComponent)
   },
   {
     path: "introduction/installation/angular",
     loadComponent: () =>
-      import("./introduction/installation/Angular/angular.component").then(
+      import("./introduction/installation/Angular/angular.ng").then(
         m => m.InstallationAngularComponent
       )
   },
   {
     path: UTILITY_CLASSES_ROUTES.ELEVATION.substring(1),
     loadComponent: () =>
-      import("./utility-classes/elevation/elevation.component").then(
+      import("./utility-classes/elevation/elevation.ng").then(
         m => m.ElevationComponent
       )
   },
   {
     path: UTILITY_CLASSES_ROUTES.LAYOUT.substring(1),
     loadComponent: () =>
-      import("./utility-classes/layout/layout.component").then(
-        m => m.LayoutComponent
-      )
+      import("./utility-classes/layout/layout.ng").then(m => m.LayoutComponent)
   },
   {
     path: UTILITY_CLASSES_ROUTES.SPACING.substring(1),
     loadComponent: () =>
-      import("./utility-classes/spacing/spacing.component").then(
+      import("./utility-classes/spacing/spacing.ng").then(
         m => m.SpacingComponent
       )
   },
   {
     path: UTILITY_CLASSES_ROUTES.FORM.substring(1),
     loadComponent: () =>
-      import("./utility-classes/form/form.component").then(m => m.FormComponent)
+      import("./utility-classes/form/form.ng").then(m => m.FormComponent)
   },
   {
     path: UTILITY_CLASSES_ROUTES.TYPOGRAPHY.substring(1),
     loadComponent: () =>
-      import("./utility-classes/typography/typography.component").then(
+      import("./utility-classes/typography/typography.ng").then(
         m => m.TypographyComponent
       )
   },
@@ -211,12 +189,12 @@ export const routes: Routes = [
       {
         path: STANDALONE_ROUTES.ICONS.substring(1),
         loadComponent: () =>
-          import("./icons/icons.component").then(m => m.IconsComponent)
+          import("./icons/icons.ng").then(m => m.IconsComponent)
       },
       {
         path: STANDALONE_ROUTES.GEMINI_MIGRATION.substring(1),
         loadComponent: () =>
-          import("./gemini-migration/gemini-migration.component").then(
+          import("./gemini-migration/gemini-migration.ng").then(
             m => m.GeminiMigrationComponent
           )
       }
@@ -230,7 +208,7 @@ export const routes: Routes = [
     // 404
     path: "**",
     loadComponent: () =>
-      import("./landing/landing.component").then(m => m.LandingComponent)
+      import("./landing/landing.ng").then(m => m.LandingComponent)
   }
 ];
 

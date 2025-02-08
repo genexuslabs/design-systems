@@ -1,4 +1,4 @@
-import { MercuryCategory } from "./icons.component";
+import { MercuryCategory } from "./icons.ng";
 
 export const mercuryCategoryExplanation = {
   bpm: "The bpm category features icons related to Business Process Management (BPM) within GeneXus. BPM tools help in designing, automating, and optimizing business processes, and these icons represent the various elements and actions involved in managing and executing workflows.",
