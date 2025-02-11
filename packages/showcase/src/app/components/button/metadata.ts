@@ -64,7 +64,7 @@ export const buttonMetadata = {
         children: [
           {
             tag: "ch-image",
-            class: "icon-sm",
+            class: "icon-md",
             properties: [
               { name: "src", value: "ICON", variable: true },
               { name: "type", value: "mask" }
@@ -98,7 +98,7 @@ export const buttonMetadata = {
         children: [
           {
             tag: "ch-image",
-            class: "icon-sm",
+            class: "icon-md",
             properties: [
               { name: "src", value: "ICON" },
               { name: "type", value: "mask" }
@@ -129,7 +129,7 @@ export const buttonMetadata = {
         children: [
           {
             tag: "ch-image",
-            class: "icon-sm",
+            class: "icon-md",
             properties: [
               { name: "src", value: "ICON", variable: true },
               { name: "type", value: "mask" }
@@ -198,7 +198,7 @@ export const buttonMetadata = {
         children: [
           {
             tag: "ch-image",
-            class: "icon-sm",
+            class: "icon-md",
             properties: [
               { name: "src", value: "ICON", variable: true },
               { name: "type", value: "mask" }
@@ -232,7 +232,7 @@ export const buttonMetadata = {
         children: [
           {
             tag: "ch-image",
-            class: "icon-sm",
+            class: "icon-md",
             properties: [
               { name: "src", value: "ICON" },
               { name: "type", value: "mask" }
@@ -263,7 +263,7 @@ export const buttonMetadata = {
         children: [
           {
             tag: "ch-image",
-            class: "icon-sm",
+            class: "icon-md",
             properties: [
               { name: "src", value: "ICON", variable: true },
               { name: "type", value: "mask" }
@@ -321,7 +321,7 @@ export const buttonMetadata = {
         children: [
           {
             tag: "ch-image",
-            class: "icon-sm",
+            class: "icon-md",
             properties: [
               { name: "src", value: "ICON", variable: true },
               { name: "type", value: "mask" }
@@ -355,7 +355,7 @@ export const buttonMetadata = {
         children: [
           {
             tag: "ch-image",
-            class: "icon-sm",
+            class: "icon-md",
             properties: [
               { name: "src", value: "ICON" },
               { name: "type", value: "mask" }
@@ -386,7 +386,7 @@ export const buttonMetadata = {
         children: [
           {
             tag: "ch-image",
-            class: "icon-sm",
+            class: "icon-md",
             properties: [
               { name: "src", value: "ICON" },
               { name: "type", value: "mask" }
@@ -419,7 +419,7 @@ export const buttonMetadata = {
         children: [
           {
             tag: "ch-image",
-            class: "icon-sm",
+            class: "icon-md",
             properties: [
               { name: "src", value: "ICON" },
               { name: "type", value: "mask" }
