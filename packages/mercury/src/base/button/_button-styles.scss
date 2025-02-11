@@ -4,7 +4,6 @@
   @include control-padding-inline-block();
 
   background-color: var(--button-background-color);
-  border-color: var(--button-border-color);
   color: var(--button-color);
 
   &--focus-visible {
@@ -19,7 +18,7 @@
   // In primary button, border color matches with background-color.
 
   --button-background-color: var(--mer-accent__primary);
-  --button-border-color: var(--button-background-color);
+  --control__border-color: var(--button-background-color);
   --button-color: var(--mer-text__on-primary);
 
   &--hover {
@@ -59,7 +58,7 @@
 
   // Default styles for the secondary button
   --button-background-color: transparent;
-  --button-border-color: var(--button-color);
+  --control__border-color: var(--button-color);
   --button-color: var(--mer-text__neutral);
 
   &--hover {
@@ -67,7 +66,7 @@
   }
 
   &--active {
-    --button-border-color: var(--mer-border-color__primary--active);
+    --control__border-color: var(--mer-border-color__primary--active);
     --button-color: var(--mer-text__on-primary--active);
   }
 
@@ -94,7 +93,7 @@
 
   // Default styles for the tertiary button
   --button-background-color: transparent;
-  --button-border-color: transparent;
+  --control__border-color: transparent;
   --button-color: var(--mer-text__primary);
 
   &--hover {
