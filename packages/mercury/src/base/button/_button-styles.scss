@@ -2,7 +2,6 @@
   @include button-common-styles();
   @include control-border();
   @include control-padding-inline-block();
-  padding-inline: var(--control__padding-inline);
 
   background-color: var(--button-background-color);
   border-color: var(--button-border-color);
