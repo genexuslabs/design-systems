@@ -1,4 +1,6 @@
 import type {
+  ActionMenuImagePathCallback,
+  ActionMenuItemActionableModel,
   ComboBoxImagePathCallback,
   GxImageMultiState,
   NavigationListItemModel,
@@ -203,6 +205,21 @@ export const getImagePathCallback = (
   return result;
 };
 
+export const getActionMenuImagePathCallback: ActionMenuImagePathCallback = (
+  item: ActionMenuItemActionableModel,
+  iconDirection: "start" | "end"
+) => {
+  if (
+    (!item.startImgSrc && iconDirection === "start") ||
+    (!item.endImgSrc && iconDirection === "end")
+  ) {
+    return undefined;
+  }
+  const imgSrc =
+    iconDirection === "start" ? item.startImgSrc! : item.endImgSrc!;
+  return getImagePathCallback(imgSrc);
+};
+
 export const getActionListImagePathCallback = (
   additionalItem: ActionListItemAdditionalBase
 ) =>
@@ -275,6 +292,7 @@ export const getComboBoxImagePathCallback: ComboBoxImagePathCallback = (
  */
 export const getImagePathCallbackDefinitions: RegistryGetImagePathCallback = {
   "ch-accordion-render": getImagePathCallback,
+  "ch-action-menu-render": getActionMenuImagePathCallback,
   "ch-action-list-render": getActionListImagePathCallback,
   "ch-combo-box-render": getComboBoxImagePathCallback,
   "ch-navigation-list-render": getNavigationListImagePathCallback,
