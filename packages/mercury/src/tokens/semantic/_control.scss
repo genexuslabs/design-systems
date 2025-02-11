@@ -35,7 +35,14 @@
 
   // - - - - - - - Padding - - - - - - -
 
-  --control__padding-block: var(--mer-spacing--xs);
+  // A calc is required to force the control block-size be 32px. Using padding tokens from the
+  // DS results in higer block-size.
+  --control__padding-block: calc(
+    (
+        32px - 2 * var(--control__border-width) - var(--font-size-body-m) *
+          var(--line-height-tight)
+      ) / 2
+  );
   --control__padding-inline: var(--mer-spacing--xs);
 
   // - - - - - - - Gap - - - - - - -
