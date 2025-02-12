@@ -211,5 +211,10 @@ export const accordionMetadata = {
         children: accordionCommonChildren
       }
     }
+
+    // TODO: A section for "elevation"
+    // - A case without elevation class
+    // - filled cases with "elevation-2" and "elevation-3"
+    // - outlined cases with "elevation-2" and "elevation-3"
   }
 };
