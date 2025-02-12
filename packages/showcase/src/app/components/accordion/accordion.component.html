@@ -32,23 +32,64 @@
       class="accordion-filled elevation-1"
       [model]="accordionModel"
     >
-      <div slot="{{ metadata.accordionItemFile.slot }}" class="spacing-body">
-        {{ metadata.accordionItemFile.description }}
-      </div>
-      <div slot="{{ metadata.accordionItemDomain.slot }}" class="spacing-body">
-        {{ metadata.accordionItemDomain.description }}
+      <div
+        slot="{{ metadata.common.itemFile.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ metadata.common.itemFile.description }}
       </div>
       <div
-        slot="{{ metadata.accordionItemProcedure.slot }}"
-        class="spacing-body"
+        slot="{{ metadata.common.itemDomain.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
       >
-        {{ metadata.accordionItemProcedure.description }}
+        {{ metadata.common.itemDomain.description }}
       </div>
       <div
-        slot="{{ metadata.accordionItemDocument.slot }}"
-        class="spacing-body"
+        slot="{{ metadata.common.itemProcedure.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
       >
-        {{ metadata.accordionItemDocument.description }}
+        {{ metadata.common.itemProcedure.description }}
+      </div>
+      <div
+        slot="{{ metadata.common.itemDocument.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ metadata.common.itemDocument.description }}
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+@if (showFilledDisabled()) {
+  <code-snippet [codeSnippet]="codeSnippets.filledDisabled" [language]="'ts'">
+    <ch-accordion-render
+      class="accordion-filled elevation-1"
+      [model]="accordionModel"
+      disabled
+    >
+      <div
+        slot="{{ metadata.common.itemFile.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ metadata.common.itemFile.description }}
+      </div>
+      <div
+        slot="{{ metadata.common.itemDomain.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ metadata.common.itemDomain.description }}
+      </div>
+      <div
+        slot="{{ metadata.common.itemProcedure.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ metadata.common.itemProcedure.description }}
+      </div>
+      <div
+        slot="{{ metadata.common.itemDocument.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ metadata.common.itemDocument.description }}
       </div>
     </ch-accordion-render>
   </code-snippet>
