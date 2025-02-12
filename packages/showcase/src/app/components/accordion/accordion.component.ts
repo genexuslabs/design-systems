@@ -17,6 +17,7 @@ import { accordionMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
 import { accordionModel, accordionWithIconsModel } from "./models";
+import { SPACING_BODY_CLASS } from "../../../common/html";
 
 @Component({
   selector: "components-accordion",
@@ -98,6 +99,8 @@ export class AccordionComponent {
   accordionWithIconsModel: AccordionModel = structuredClone(
     accordionWithIconsModel
   );
+
+  SPACING_BODY_CLASS = SPACING_BODY_CLASS;
 
   updateRenderedAccordion =
     (accordionName: string) => (event: ChCheckboxCustomEvent<string>) => {
