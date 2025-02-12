@@ -11,14 +11,21 @@
   #{$elevation-2-selector},
   #{$elevation-3-selector} {
     color: var(--mer-text__on-elevation);
+    --elevation-color: var(--mer-text__on-elevation);
   }
   #{$elevation-1-selector} {
-    background-color: var(--mer-surface__elevation--01);
+    --elevation-background-color: var(--mer-surface__elevation--01);
+    background-color: var(--elevation-background-color);
+    --elevation-border-color: var(--mer-border-color__on-elevation--01);
   }
   #{$elevation-2-selector} {
-    background-color: var(--mer-surface__elevation--02);
+    --elevation-background-color: var(--mer-surface__elevation--02);
+    background-color: var(--elevation-background-color);
+    --elevation-border-color: var(--mer-border-color__on-elevation--02);
   }
   #{$elevation-3-selector} {
-    background-color: var(--mer-surface__elevation--03);
+    --elevation-background-color: var(--mer-surface__elevation--03);
+    background-color: var(--elevation-background-color);
+    --elevation-border-color: var(--mer-border-color__on-elevation--03);
   }
 }
