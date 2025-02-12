@@ -17,7 +17,7 @@ import {
 import { tabularGridMetadata, tabularGridHelpersMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
-import { paragraphClass } from "../../../common/html";
+import { PARAGRAPH_CLASS } from "../../../common/html";
 
 import { CSS_SELECTORS } from "./classes";
 
@@ -156,7 +156,7 @@ export class TabularGridComponent {
       });
     };
 
-  paragraphClass = paragraphClass;
+  PARAGRAPH_CLASS = PARAGRAPH_CLASS;
 
   // Defining the class properties
   SCROLLABLE_CLASS = CSS_SELECTORS.SCROLLABLE_CLASS;
