@@ -33,7 +33,7 @@ export const accordionMetadata = {
   },
 
   codeSnippets: {
-    // accordion filled
+    // filled cases
     filled: {
       linkId: "accordion-filled",
       title: "Filled",
@@ -66,6 +66,7 @@ export const accordionMetadata = {
       imports: [chameleonImportType("AccordionModel")],
       template: {
         tag: CH_TAG,
+        class: `${FILLED_CLASS} ${ELEVATION_CLASS}`,
         properties: [
           { name: "model", value: "genexusObjects", state: true },
           { name: "disabled", value: true }
@@ -87,6 +88,7 @@ export const accordionMetadata = {
       imports: [chameleonImportType("AccordionModel")],
       template: {
         tag: CH_TAG,
+        class: `${FILLED_CLASS} ${ELEVATION_CLASS}`,
         properties: [{ name: "model", value: "genexusObjects", state: true }],
         children: accordionCommonChildren
       }
@@ -105,6 +107,91 @@ export const accordionMetadata = {
       imports: [chameleonImportType("AccordionModel")],
       template: {
         tag: CH_TAG,
+        class: `${FILLED_CLASS} ${ELEVATION_CLASS}`,
+        properties: [
+          { name: "model", value: "genexusObjects", state: true },
+          { name: "disabled", value: true }
+        ],
+        children: accordionCommonChildren
+      }
+    },
+
+    // outlined cases
+
+    outlined: {
+      linkId: "accordion-outlined",
+      title: "Outlined",
+      states: [
+        {
+          name: "genexusObjects",
+          type: "AccordionModel",
+          value: accordionModel
+        }
+      ],
+      imports: [chameleonImportType("AccordionModel")],
+      template: {
+        tag: CH_TAG,
+        class: `${OUTLINED_CLASS} ${ELEVATION_CLASS}`,
+        properties: [{ name: "model", value: "genexusObjects", state: true }],
+        children: accordionCommonChildren
+      }
+    },
+
+    outlinedDisabled: {
+      linkId: "accordion-outlined-disabled",
+      title: "Outlined: Disabled",
+      states: [
+        {
+          name: "genexusObjects",
+          type: "AccordionModel",
+          value: accordionModel
+        }
+      ],
+      imports: [chameleonImportType("AccordionModel")],
+      template: {
+        tag: CH_TAG,
+        class: `${OUTLINED_CLASS} ${ELEVATION_CLASS}`,
+        properties: [
+          { name: "model", value: "genexusObjects", state: true },
+          { name: "disabled", value: true }
+        ],
+        children: accordionCommonChildren
+      }
+    },
+
+    outlinedWithIcons: {
+      linkId: "accordion-outlined-with-icons",
+      title: "Outlined With Icons",
+      states: [
+        {
+          name: "genexusObjects",
+          type: "AccordionModel",
+          value: accordionWithIconsModel
+        }
+      ],
+      imports: [chameleonImportType("AccordionModel")],
+      template: {
+        tag: CH_TAG,
+        class: `${OUTLINED_CLASS} ${ELEVATION_CLASS}`,
+        properties: [{ name: "model", value: "genexusObjects", state: true }],
+        children: accordionCommonChildren
+      }
+    },
+
+    outlinedWithIconsDisabled: {
+      linkId: "accordion-outlined-with-icons-disabled",
+      title: "Outlined With Icons: Disabled",
+      states: [
+        {
+          name: "genexusObjects",
+          type: "AccordionModel",
+          value: accordionWithIconsModel
+        }
+      ],
+      imports: [chameleonImportType("AccordionModel")],
+      template: {
+        tag: CH_TAG,
+        class: `${OUTLINED_CLASS} ${ELEVATION_CLASS}`,
         properties: [
           { name: "model", value: "genexusObjects", state: true },
           { name: "disabled", value: true }
