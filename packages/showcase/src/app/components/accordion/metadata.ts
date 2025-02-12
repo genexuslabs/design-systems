@@ -90,6 +90,27 @@ export const accordionMetadata = {
         properties: [{ name: "model", value: "genexusObjects", state: true }],
         children: accordionCommonChildren
       }
+    },
+
+    filledWithIconsDisabled: {
+      linkId: "accordion-filled-with-icons-disabled",
+      title: "Filled With Icons: Disabled",
+      states: [
+        {
+          name: "genexusObjects",
+          type: "AccordionModel",
+          value: accordionWithIconsModel
+        }
+      ],
+      imports: [chameleonImportType("AccordionModel")],
+      template: {
+        tag: CH_TAG,
+        properties: [
+          { name: "model", value: "genexusObjects", state: true },
+          { name: "disabled", value: true }
+        ],
+        children: accordionCommonChildren
+      }
     }
   }
 };

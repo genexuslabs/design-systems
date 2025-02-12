@@ -128,3 +128,41 @@
     </ch-accordion-render>
   </code-snippet>
 }
+
+@if (showFilledWithIconsDisabled()) {
+  <code-snippet
+    [codeSnippet]="codeSnippets.filledWithIconsDisabled"
+    [language]="'ts'"
+  >
+    <ch-accordion-render
+      class="accordion-filled elevation-1"
+      [model]="accordionWithIconsModel"
+      disabled
+    >
+      <div
+        slot="{{ metadata.common.itemFile.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ metadata.common.itemFile.description }}
+      </div>
+      <div
+        slot="{{ metadata.common.itemDomain.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ metadata.common.itemDomain.description }}
+      </div>
+      <div
+        slot="{{ metadata.common.itemProcedure.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ metadata.common.itemProcedure.description }}
+      </div>
+      <div
+        slot="{{ metadata.common.itemDocument.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ metadata.common.itemDocument.description }}
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
