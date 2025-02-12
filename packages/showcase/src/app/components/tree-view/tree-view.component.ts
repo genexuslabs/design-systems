@@ -57,12 +57,12 @@ export class TreeViewComponent {
       ? this.hiddenTreeViews().split(",")
       : [];
 
-    // Display all typographies
+    // Display all trees
     newTreeViews.forEach((_, treeViewName) =>
       newTreeViews.set(treeViewName, true)
     );
 
-    // Remove those typographies that must be hidden
+    // Remove those trees that must be hidden
     hiddenTreeViewsArray.forEach(hiddenTreeViewName =>
       newTreeViews.set(hiddenTreeViewName, false)
     );
