@@ -1,4 +1,7 @@
-export const accordionModel = [
+import { AccordionModel } from "@genexus/chameleon-controls-library";
+import { getIconPath } from "@genexus/mercury";
+
+export const accordionModel: AccordionModel = [
   {
     id: "file",
     caption: "objects: file",
@@ -18,26 +21,26 @@ export const accordionModel = [
   }
 ];
 
-export const accordionWithIconsModel = [
+export const accordionWithIconsModel: AccordionModel = [
   {
     id: "file",
     caption: "objects: file",
-    startImgSrc: "objects/file",
+    startImgSrc: "getIconPath({ category: 'objects', name: 'webpanel' })",
     expanded: true
   },
   {
     id: "domain",
     caption: "objects: domain",
-    startImgSrc: "objects/domain"
+    startImgSrc: "getIconPath({ category: 'objects', name: 'domain' })"
   },
   {
     id: "procedure",
     caption: "objects: procedure",
-    startImgSrc: "objects/procedure"
+    startImgSrc: "getIconPath({ category: 'objects', name: 'procedure' })"
   },
   {
     id: "document",
     caption: "objects: document",
-    startImgSrc: "objects/document"
+    startImgSrc: "getIconPath({ category: 'objects', name: 'document' })"
   }
 ];

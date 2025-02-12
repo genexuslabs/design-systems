@@ -85,7 +85,10 @@ export const accordionMetadata = {
           value: accordionWithIconsModel
         }
       ],
-      imports: [chameleonImportType("AccordionModel")],
+      imports: [
+        chameleonImportType("AccordionModel"),
+        'import { getIconPath, getIconPathExpanded } from "@genexus/mercury/assets-manager.js";'
+      ],
       template: {
         tag: CH_TAG,
         class: `${FILLED_CLASS} ${ELEVATION_CLASS}`,
@@ -104,7 +107,10 @@ export const accordionMetadata = {
           value: accordionWithIconsModel
         }
       ],
-      imports: [chameleonImportType("AccordionModel")],
+      imports: [
+        chameleonImportType("AccordionModel"),
+        'import { getIconPath, getIconPathExpanded } from "@genexus/mercury/assets-manager.js";'
+      ],
       template: {
         tag: CH_TAG,
         class: `${FILLED_CLASS} ${ELEVATION_CLASS}`,
@@ -169,7 +175,10 @@ export const accordionMetadata = {
           value: accordionWithIconsModel
         }
       ],
-      imports: [chameleonImportType("AccordionModel")],
+      imports: [
+        chameleonImportType("AccordionModel"),
+        'import { getIconPath, getIconPathExpanded } from "@genexus/mercury/assets-manager.js";'
+      ],
       template: {
         tag: CH_TAG,
         class: `${OUTLINED_CLASS} ${ELEVATION_CLASS}`,
@@ -188,7 +197,10 @@ export const accordionMetadata = {
           value: accordionWithIconsModel
         }
       ],
-      imports: [chameleonImportType("AccordionModel")],
+      imports: [
+        chameleonImportType("AccordionModel"),
+        'import { getIconPath, getIconPathExpanded } from "@genexus/mercury/assets-manager.js";'
+      ],
       template: {
         tag: CH_TAG,
         class: `${OUTLINED_CLASS} ${ELEVATION_CLASS}`,
