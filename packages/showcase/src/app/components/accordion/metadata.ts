@@ -72,6 +72,24 @@ export const accordionMetadata = {
         ],
         children: accordionCommonChildren
       }
+    },
+
+    filledWithIcons: {
+      linkId: "accordion-filled-with-icons",
+      title: "Filled With Icons",
+      states: [
+        {
+          name: "genexusObjects",
+          type: "AccordionModel",
+          value: accordionWithIconsModel
+        }
+      ],
+      imports: [chameleonImportType("AccordionModel")],
+      template: {
+        tag: CH_TAG,
+        properties: [{ name: "model", value: "genexusObjects", state: true }],
+        children: accordionCommonChildren
+      }
     }
   }
 };
