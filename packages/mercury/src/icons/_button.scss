@@ -1,5 +1,7 @@
 %button-icon-only {
-  @include control-padding-inline-block();
+  padding: calc(
+    (32px - 2 * var(--control__border-width) - var(--mer-icon__box--md)) / 2
+  );
   @include control-border();
 }
 
