@@ -1,60 +1,21 @@
 @mixin accordion-tokens() {
-  // chameleon tokens (do not modify names)
+  // chameleon tokens (do not modify --ch names)
   --ch-accordion__header-image-size: var(--mer-icon__box--sm);
   --ch-accordion__chevron-size: var(--mer-icon__box--sm);
   --ch-accordion-expand-collapse-duration: var(--mer-timing--fast);
   --ch-accordion-expand-collapse-timing-function: ease-in-out;
 
   // spacing
-  --spacing-body-block-start: 0;
+  --spacing-body-block-start: var(--mer-spacing--sm);
   --spacing-body-block-end: var(--mer-spacing--sm);
   --spacing-body-inline-start: var(--mer-spacing--sm);
   --spacing-body-inline-end: var(--mer-spacing--sm);
 
-  // accordion
-  --accordion__gap: var(--mer-spacing--2xs);
-
   // panel
   --accordion-panel__border-radius: var(--mer-border__radius--sm);
-  --accordion-panel__bg-color: var(--mer-surface__elevation--01);
-  --accordion-panel__bg-color--disabled: var(--mer-surface__elevation--02);
-  // panel (outlined)
-  --accordion-panel-outlined__border-color: var(--mer-border-color__on-surface);
-  --accordion-panel-outlined__border-color--disabled: var(
-    --mer-border-color__primary--disabled
-  );
-  --accordion-panel-outlined__border-color--disabled: var(
-    --mer-border-color__primary--disabled
-  );
-  --accordion-panel-outlined__border: var(--mer-border__width--sm) solid
-    var(--accordion-panel-outlined__border-color);
-  --accordion-panel-outlined__border-radius: var(--mer-border__radius--sm);
+  --accordion-panel__border-color: transparent;
+  --accordion-panel__bg-color: transparent;
 
   // header
-  --accordion-header__padding: var(--mer-spacing--sm);
-  --accordion-header__gap: var(--mer-spacing--sm);
-  --accordion-header__color: var(--mer-text__highlighted);
-  --accordion-header__color--disabled: var(--mer-accent__primary--disabled);
-  --accordion-header__border-width: var(--mer-border__width--sm);
-  --accordion-header__border-color: transparent;
-  --accordion-header__border-radius: var(--accordion-panel__border-radius);
-  --accordion-header__border-block-end-color: var(
-    --mer-border-color__on-surface
-  ); // for expanded
-
-  // section
-  --accordion-section__border-color: var(--mer-border-color__on-elevation--01);
-  --accordion-section__margin-block: var(--mer-spacing--sm);
-  --accordion-section__margin-inline: var(--mer-spacing--sm);
-  --accordion-section__bg-color: var(--mer-surface__elevation--01);
-  --accordion-section__border: var(--mer-border__width--sm) solid
-    var(--accordion-section__border-color);
-  --accordion-section__border-radius: var(--mer-border__radius--sm);
-  // section (outlined)
-  --accordion-section-outlined__border-color: var(
-    --mer-border-color__on-surface
-  );
-  --accordion-section-outlined__border-color--disabled: var(
-    --mer-border-color__primary--disabled
-  );
+  --accordion-header__outline-color: transparent;
 }
