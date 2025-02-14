@@ -1388,7 +1388,14 @@
 
   // - - - - - - - Padding - - - - - - -
 
-  --control__padding-block: var(--mer-spacing--xs);
+  // A calc is required to force the control block-size be 32px. Using padding tokens from the
+  // DS results in higer block-size.
+  --control__padding-block: calc(
+    (
+        32px - 2 * var(--control__border-width) - var(--font-size-body-m) *
+          var(--line-height-tight)
+      ) / 2
+  );
   --control__padding-inline: var(--mer-spacing--xs);
 
   // - - - - - - - Gap - - - - - - -
@@ -2418,7 +2425,7 @@
 
 
 %label-font {
-  @extend %body-semi-bold-s;
+  @extend %body-semi-bold-m;
 }
 
 /// @group Label
@@ -2438,119 +2445,13 @@
   }
 }
  // should be at the top, since other elements use it.
-@mixin button-tokens-primary() {
-  --button-primary__bg-color: var(--mer-accent__primary);
-  --button-primary__border-color: var(--button-primary__bg-color);
-  --button-primary__color: var(--mer-text__on-primary);
-  //hover
-  --button-primary__bg-color--hover: var(--mer-accent__primary--hover);
-  --button-primary__border-color--hover: var(--button-primary__bg-color--hover);
-  --button-primary__color--hover: var(--mer-text__on-primary);
-
-  //active
-  --button-primary__bg-color--active: var(--mer-accent__primary--active);
-  --button-primary__border-color--active: var(
-    --button-primary__bg-color--active
-  );
-  --button-primary__color--active: var(--mer-text__on-primary--active);
-
-  //disabled
-  --button-primary__bg-color--disabled: var(--mer-accent__primary--disabled);
-  --button-primary__border-color--disabled: var(
-    --mer-border-color__primary--disabled
-  );
-  --button-primary__color--disabled: var(--mer-text__on-disabled);
-
-  //destructive
-  --button-primary__bg-color--destructive: var(
-    --mer-accent__primary--destructive
-  );
-  --button-primary__bg-color--destructive-hover: var(
-    --mer-accent__primary--destructive-hover
-  );
-  --button-primary__bg-color--destructive-active: var(
-    --mer-accent__primary--destructive-active
-  );
-  --button-primary__border-color--destructive: var(
-    --button-primary__bg-color--destructive
-  );
-  --button-primary__color--destructive: var(--mer-text__on-primary);
-}
-
-@mixin button-tokens-secondary() {
-  --button-secondary__background-color: transparent;
-  --button-secondary__border-color: var(--mer-border-color__neutral);
-  --button-secondary__color: var(--mer-text__neutral);
-  //hover
-  --button-secondary__background-color--hover: transparent;
-  --button-secondary__border-color--hover: var(
-    --mer-border-color__primary--hover
-  );
-  --button-secondary__color--hover: var(--mer-text__primary--hover);
-  //active
-  --button-secondary__background-color--active: transparent;
-  --button-secondary__border-color--active: var(
-    --mer-border-color__primary--active
-  );
-  --button-secondary__color--active: var(--mer-text__on-primary--active);
-  //disabled
-  --button-secondary__background-color--disabled: transparent;
-  --button-secondary__border-color--disabled: var(--mer-text__on-disabled);
-  --button-secondary__color--disabled: var(--mer-text__on-disabled);
-
-  //destructive
-  --button-secondary__bg-color--destructive: transparent;
-  --button-secondary__bg-color--destructive-hover: var(
-    --mer-accent__primary--destructive-hover
-  );
-  --button-secondary__bg-color--destructive-active: var(
-    --mer-accent__primary--destructive-active
-  );
-  --button-secondary__border-color--destructive: var(
-    --button-primary__bg-color--destructive
-  );
-  --button-secondary__color--destructive: var(--mer-text__on-primary);
-
-  //destructive
-  --button-secondary__bg-color--destructive: var(transparent);
-  --button-secondary__bg-color--destructive-hover: var(
-    --mer-color__message-red--600
-  );
-  --button-secondary__bg-color--destructive-active: var(
-    --mer-color__message-red--500
-  );
-  --button-secondary__border-color--destructive: var(
-    --mer-accent__primary--destructive
-  );
-  --button-secondary__color--destructive: var(
-    --mer-accent__primary--destructive
-  );
-}
-
-@mixin button-tokens-tertiary() {
-  --button-tertiary__background-color: transparent;
-  --button-tertiary__border-color: transparent;
-  --button-tertiary__color: var(--mer-text__primary);
-  //hover
-  --button-tertiary__background-color--hover: transparent;
-  --button-tertiary__border-color--hover: transparent;
-  --button-tertiary__color--hover: var(--mer-text__primary--hover);
-  //active
-  --button-tertiary__background-color--active: transparent;
-  --button-tertiary__border-color--active: transparent;
-  --button-tertiary__color--active: var(--mer-text__primary--active);
-  //disabled
-  --button-tertiary__background-color--disabled: transparent;
-  --button-tertiary__border-color--disabled: transparent;
-  --button-tertiary__color--disabled: var(--mer-text__on-disabled);
-}
-
-
 %button-base {
   @include button-common-styles();
   @include control-border();
   @include control-padding-inline-block();
-  padding-inline: var(--control__padding-inline);
+
+  background-color: var(--button-background-color);
+  color: var(--button-color);
 
   &--focus-visible {
     @include focus-outline();
@@ -2558,136 +2459,100 @@
 }
 
 %button-primary {
-  @include button-tokens-primary();
   @extend %button-base;
   @extend %body-semi-bold-m;
 
-  //overwrite some control default styles
-  --control__border-color: var(--button-primary__border-color);
+  // In primary button, border color matches with background-color.
 
-  background-color: var(--button-primary__bg-color);
-  color: var(--button-primary__color);
+  --button-background-color: var(--mer-accent__primary);
+  --control__border-color: var(--button-background-color);
+  --button-color: var(--mer-text__on-primary);
 
   &--hover {
-    background-color: var(--button-primary__bg-color--hover);
-    --control__border-color: var(--button-primary__border-color--hover);
-    color: var(--button-primary__color--hover);
+    --button-background-color: var(--mer-accent__primary--hover);
+    --button-color: var(--mer-text__on-primary);
   }
 
   &--active {
-    background-color: var(--button-primary__bg-color--active);
-    --control__border-color: var(--button-primary__border-color--active);
-    color: var(--button-primary__color--active);
+    --button-background-color: var(--mer-accent__primary--active);
+    --button-color: var(--mer-text__on-primary--active);
   }
 
   &--disabled {
-    background-color: var(--button-primary__bg-color--disabled);
-    --control__border-color: var(--button-primary__bg-color--disabled);
-    color: var(--button-primary__color--disabled);
+    --button-background-color: var(--mer-accent__primary--disabled);
+    --button-color: var(--mer-text__on-disabled);
   }
 
   &--destructive {
-    --control__border-color: var(--button-primary__border-color--destructive);
-    background-color: var(--button-primary__bg-color--destructive);
-    color: var(--button-primary__color--destructive);
+    --button-background-color: var(--mer-accent__primary--destructive);
+    --button-color: var(--mer-text__on-primary);
 
     &-hover {
-      --control__border-color: var(
-        --button-primary__bg-color--destructive-hover
-      );
-      background-color: var(--button-primary__bg-color--destructive-hover);
-      color: var(--button-primary__color--destructive);
+      --button-background-color: var(--mer-accent__primary--destructive-hover);
+      --button-color: var(--mer-text__on-primary);
     }
 
     &-active {
-      --control__border-color: var(
-        --button-primary__bg-color--destructive-active
-      );
-      background-color: var(--button-primary__bg-color--destructive-active);
-      color: var(--button-primary__color--destructive);
+      --button-background-color: var(--mer-accent__primary--destructive-active);
+      --button-color: var(--mer-text__on-primary);
     }
   }
 }
 
 %button-secondary {
-  @include button-tokens-secondary();
   @extend %button-base;
   @extend %body-semi-bold-m;
 
-  //overwrite some control default styles
-  --control__border-color: var(--button-secondary__border-color);
-
-  background-color: var(--button-secondary__background-color);
-  color: var(--button-secondary__color);
+  // Default styles for the secondary button
+  --button-background-color: transparent;
+  --control__border-color: var(--button-color);
+  --button-color: var(--mer-text__neutral);
 
   &--hover {
-    background-color: var(--button-secondary__background-color--hover);
-    --control__border-color: var(--button-secondary__border-color--hover);
-    color: var(--button-secondary__color--hover);
+    --button-color: var(--mer-text__primary--hover);
   }
 
   &--active {
-    background-color: var(--button-secondary__background-color--active);
-    --control__border-color: var(--button-secondary__border-color--active);
-    color: var(--button-secondary__color--active);
+    --control__border-color: var(--mer-border-color__primary--active);
+    --button-color: var(--mer-text__on-primary--active);
   }
 
   &--disabled {
-    background-color: var(--button-secondary__background-color--disabled);
-    --control__border-color: var(--button-secondary__border-color--disabled);
-    color: var(--button-secondary__color--disabled);
+    --button-color: var(--mer-text__on-disabled);
   }
 
   &--destructive {
-    --control__border-color: var(--button-secondary__border-color--destructive);
-    background-color: var(--button-secondary__bg-color--destructive);
-    color: var(--button-secondary__color--destructive);
+    --button-color: var(--mer-accent__primary--destructive);
 
     &-hover {
-      --control__border-color: var(
-        --button-secondary__bg-color--destructive-hover
-      );
-      background-color: var(--button-secondary__bg-color--destructive-hover);
-      color: var(--button-secondary__color--destructive);
+      --button-background-color: var(--mer-color__message-red--600);
     }
 
     &-active {
-      --control__border-color: var(
-        --button-secondary__bg-color--destructive-active
-      );
-      background-color: var(--button-secondary__bg-color--destructive-active);
-      color: var(--button-secondary__color--destructive);
+      --button-background-color: var(--mer-color__message-red--500);
     }
   }
 }
 
 %button-tertiary {
-  @include button-tokens-tertiary();
   @extend %button-base;
   @extend %body-regular-m;
 
-  //overwrite some control default styles
-  --control__border-color: var(--button-tertiary__border-color);
-
-  background-color: var(--button-tertiary__background-color);
-  color: var(--button-tertiary__color);
+  // Default styles for the tertiary button
+  --button-background-color: transparent;
+  --control__border-color: transparent;
+  --button-color: var(--mer-text__primary);
 
   &--hover {
-    background-color: var(--button-tertiary__background-color--hover);
-    --control__border-color: var(--button-tertiary__border-color--hover);
-    color: var(--button-tertiary__color--hover);
+    --button-color: var(--mer-text__primary--hover);
   }
 
   &--active {
-    background-color: var(--button-tertiary__background-color--active);
-    --control__border-color: var(--button-tertiary__border-color--active);
-    color: var(--button-tertiary__color--active);
+    --button-color: var(--mer-text__primary--active);
   }
 
   &--disabled {
-    background-color: var(--button-tertiary__background-color--disabled);
-    --control__border-color: var(--button-tertiary__border-color--disabled);
-    color: var(--button-tertiary__color--disabled);
+    --button-color: var(--mer-text__on-disabled);
   }
 }
 
@@ -2731,7 +2596,13 @@
 
   @if $add--destructive {
     #{$destructive-selector} {
+      @extend %button-primary;
       @extend %button-primary--destructive;
+
+      &:focus-visible {
+        // TODO: avoid duplcation
+        @extend %button-base--focus-visible;
+      }
 
       &:hover {
         @extend %button-primary--destructive-hover;
@@ -2739,6 +2610,13 @@
 
       &:active {
         @extend %button-primary--destructive-active;
+      }
+
+      @if $add--disabled {
+        // TODO: avoid duplcation
+        &:disabled {
+          @extend %button-primary--disabled;
+        }
       }
     }
   }
@@ -2768,8 +2646,7 @@
     }
 
     @if $add--disabled == true {
-      &:disabled,
-      &--disabled {
+      &:disabled {
         @extend %button-secondary--disabled;
       }
     }
@@ -2777,7 +2654,13 @@
 
   @if $add--destructive {
     #{$destructive-selector} {
+      @extend %button-secondary;
       @extend %button-secondary--destructive;
+
+      &:focus-visible {
+        // TODO: avoid duplcation
+        @extend %button-base--focus-visible;
+      }
 
       &:hover {
         @extend %button-secondary--destructive-hover;
@@ -2785,6 +2668,13 @@
 
       &:active {
         @extend %button-secondary--destructive-active;
+      }
+
+      @if $add--disabled {
+        // TODO: avoid duplcation
+        &:disabled {
+          @extend %button-secondary--disabled;
+        }
       }
     }
   }
@@ -3091,40 +2981,38 @@
 // heading
 
 @mixin heading-1() {
-  @extend %heading-base;
+  @extend %heading;
   font-size: var(--font-size-header-h1);
 }
 
 @mixin heading-2() {
-  @extend %heading-base;
+  @extend %heading;
   font-size: var(--font-size-header-h2);
 }
 
 @mixin heading-3() {
-  @extend %heading-base;
+  @extend %heading;
   font-size: var(--font-size-header-h3);
 }
 
 @mixin heading-4() {
-  @extend %heading-base;
+  @extend %heading;
   font-size: var(--font-size-header-h4);
 }
 
 @mixin heading-5() {
-  @extend %heading-base;
+  @extend %heading;
   font-size: var(--font-size-header-h5);
 }
 
 @mixin heading-6() {
-  @extend %heading-base;
+  @extend %heading;
   font-size: var(--font-size-header-h6);
 }
 
 %heading {
-  &-base {
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-tight);
-  }
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
 
   &-1 {
     @include heading-1();
@@ -3153,46 +3041,98 @@
 
 // subtitle
 
-@mixin subtitle-l() {
-  font-size: var(--font-size-subtitle-l);
-  line-height: var(--line-height-regular);
+// subtitle: regular
+
+@mixin subtitle-regular-l() {
+  @extend %subtitle;
+  @extend %subtitle-regular;
+  @extend %subtitle-l;
 }
-@mixin subtitle-m() {
-  font-size: var(--font-size-subtitle-m);
-  line-height: var(--line-height-regular);
+
+@mixin subtitle-regular-m() {
+  @extend %subtitle;
+  @extend %subtitle-regular;
+  @extend %subtitle-m;
 }
-@mixin subtitle-s() {
-  font-size: var(--font-size-subtitle-s);
-  line-height: var(--line-height-tight);
+
+@mixin subtitle-regular-s() {
+  @extend %subtitle;
+  @extend %subtitle-regular;
+  @extend %subtitle-s;
 }
-@mixin subtitle-xs() {
-  font-size: var(--font-size-subtitle-xs);
-  line-height: var(--line-height-tight);
+
+@mixin subtitle-regular-xs() {
+  @extend %subtitle;
+  @extend %subtitle-regular;
+  @extend %subtitle-xs;
+}
+
+// subtitle: semi-bold
+
+@mixin subtitle-semi-bold-l() {
+  @extend %subtitle;
+  @extend %subtitle-semi-bold;
+  @extend %subtitle-l;
+}
+
+@mixin subtitle-semi-bold-m() {
+  @extend %subtitle;
+  @extend %subtitle-semi-bold;
+  @extend %subtitle-m;
+}
+
+@mixin subtitle-semi-bold-s() {
+  @extend %subtitle;
+  @extend %subtitle-semi-bold;
+  @extend %subtitle-s;
+}
+
+@mixin subtitle-semi-bold-xs() {
+  @extend %subtitle;
+  @extend %subtitle-semi-bold;
+  @extend %subtitle-xs;
 }
 
 %subtitle {
+  font-family: var(--font-family-header);
+
+  &-l {
+    font-size: var(--font-size-subtitle-l);
+    line-height: var(--line-height-regular);
+  }
+
+  &-m {
+    font-size: var(--font-size-subtitle-m);
+    line-height: var(--line-height-regular);
+  }
+
+  &-s {
+    font-size: var(--font-size-subtitle-s);
+    line-height: var(--line-height-tight);
+  }
+
+  &-xs {
+    font-size: var(--font-size-subtitle-xs);
+    line-height: var(--line-height-tight);
+  }
+
   &-regular {
-    font-family: var(--font-family-header);
     font-weight: var(--font-weight-regular);
 
     &-l {
-      @include subtitle-l();
-      @extend %subtitle-regular;
+      @include subtitle-regular-l();
     }
 
     &-m {
-      @include subtitle-m();
-      @extend %subtitle-regular;
+      @include subtitle-regular-m();
     }
 
     &-s {
-      @include subtitle-s();
-      @extend %subtitle-regular;
+      @include subtitle-regular-s();
     }
 
     &-xs {
-      @include subtitle-xs();
-      @extend %subtitle-regular;
+      @include subtitle-regular-xs();
     }
   }
 
@@ -3200,68 +3140,155 @@
     font-weight: var(--font-weight-semi-bold);
 
     &-l {
-      @include subtitle-l();
-      @extend %subtitle-semi-bold;
+      @include subtitle-semi-bold-l();
     }
 
     &-m {
-      @include subtitle-m();
-      @extend %subtitle-semi-bold;
+      @include subtitle-semi-bold-m();
     }
 
     &-s {
-      @include subtitle-s();
-      @extend %subtitle-semi-bold;
+      @include subtitle-semi-bold-s();
     }
 
     &-xs {
-      @include subtitle-xs();
-      @extend %subtitle-semi-bold;
+      @include subtitle-semi-bold-xs();
     }
   }
 }
 
 // body
+
+// body: regular
+
+@mixin body-regular-xl() {
+  @extend %body;
+  @extend %body-regular;
+  @extend %body-xl;
+}
+
+@mixin body-regular-l() {
+  @extend %body;
+  @extend %body-regular;
+  @extend %body-l;
+}
+
 @mixin body-font() {
+  // "medium" is the body font weight.
   font-size: var(--font-size-body-m);
   line-height: var(--line-height-tight);
   font-weight: var(--font-weight-regular);
 }
 
-@mixin body-xl() {
-  font-size: var(--font-size-body-xl);
+@mixin body-regular-s() {
+  @extend %body;
+  @extend %body-regular;
+  @extend %body-s;
 }
-@mixin body-l() {
-  font-size: var(--font-size-body-l);
+
+@mixin body-regular-xs() {
+  @extend %body;
+  @extend %body-regular;
+  @extend %body-xs;
 }
-@mixin body-m() {
-  font-size: var(--font-size-body-m);
+
+// body: semi-bold
+
+@mixin body-semi-bold-xl() {
+  @extend %body;
+  @extend %body-semi-bold;
+  @extend %body-xl;
 }
-@mixin body-s() {
-  font-size: var(--font-size-body-s);
+
+@mixin body-semi-bold-l() {
+  @extend %body;
+  @extend %body-semi-bold;
+  @extend %body-l;
 }
-@mixin body-xs() {
-  font-size: var(--font-size-body-xs);
+
+@mixin body-semi-bold-m() {
+  @extend %body;
+  @extend %body-semi-bold;
+  @extend %body-m;
+}
+
+@mixin body-semi-bold-s() {
+  @extend %body;
+  @extend %body-semi-bold;
+  @extend %body-s;
+}
+
+@mixin body-semi-bold-xs() {
+  @extend %body;
+  @extend %body-semi-bold;
+  @extend %body-xs;
+}
+
+// body: italic
+
+@mixin body-italic-xl() {
+  @extend %body;
+  @extend %body-italic;
+  @extend %body-xl;
+}
+
+@mixin body-italic-l() {
+  @extend %body;
+  @extend %body-italic;
+  @extend %body-l;
+}
+
+@mixin body-italic-m() {
+  @extend %body;
+  @extend %body-italic;
+  @extend %body-m;
+}
+
+@mixin body-italic-s() {
+  @extend %body;
+  @extend %body-italic;
+  @extend %body-s;
+}
+
+@mixin body-italic-xs() {
+  @extend %body;
+  @extend %body-italic;
+  @extend %body-xs;
 }
 
 %body {
-  &-base {
-    line-height: var(--line-height-tight);
+  line-height: var(--line-height-tight);
+
+  // sizes
+  &-xl {
+    font-size: var(--font-size-body-xl);
+  }
+
+  &-l {
+    font-size: var(--font-size-body-l);
+  }
+
+  &-m {
+    font-size: var(--font-size-body-m);
+  }
+
+  &-s {
+    font-size: var(--font-size-body-s);
+  }
+
+  &-xs {
+    font-size: var(--font-size-body-xs);
   }
 
   &-regular {
     font-weight: var(--font-weight-regular);
 
     &-xl {
-      @extend %body-base;
-      @extend %body-regular;
-      @include body-xl();
+      @include body-regular-xl();
     }
 
     &-l {
-      @extend %body-base;
-      @extend %body-regular;
-      @include body-l();
+      @include body-regular-l();
     }
 
     &-m {
@@ -3269,15 +3296,11 @@
     }
 
     &-s {
-      @extend %body-base;
-      @extend %body-regular;
-      @include body-s();
+      @include body-regular-s();
     }
 
     &-xs {
-      @extend %body-base;
-      @extend %body-regular;
-      @include body-xs();
+      @include body-regular-xs();
     }
   }
 
@@ -3285,137 +3308,164 @@
     font-weight: var(--font-weight-semi-bold);
 
     &-xl {
-      @extend %body-base;
-      @extend %body-semi-bold;
-      @include body-xl();
+      @include body-semi-bold-xl();
     }
 
     &-l {
-      @extend %body-base;
-      @extend %body-semi-bold;
-      @include body-l();
+      @include body-semi-bold-l();
     }
 
     &-m {
-      @extend %body-base;
-      @extend %body-semi-bold;
-      @include body-m();
+      @include body-semi-bold-m();
     }
 
     &-s {
-      @extend %body-base;
-      @extend %body-semi-bold;
-      @include body-s();
+      @include body-semi-bold-s();
     }
 
     &-xs {
-      @extend %body-base;
-      @extend %body-semi-bold;
-      @include body-xs();
+      @include body-semi-bold-xs();
     }
   }
 
-  &-regular-italic {
+  &-italic {
     font-weight: var(--font-weight-regular);
     font-style: italic;
 
     &-xl {
-      @extend %body-base;
-      @extend %body-regular-italic;
-      @include body-xl();
+      @include body-italic-xl();
     }
 
     &-l {
-      @extend %body-base;
-      @extend %body-regular-italic;
-      @include body-l();
+      @include body-italic-l();
     }
 
     &-m {
-      @extend %body-base;
-      @extend %body-regular-italic;
-      @include body-m();
+      @include body-italic-m();
     }
 
     &-s {
-      @extend %body-base;
-      @extend %body-regular-italic;
-      @include body-s();
+      @include body-italic-s();
     }
 
     &-xs {
-      @extend %body-base;
-      @extend %body-regular-italic;
-      @include body-xs();
+      @include body-italic-xs();
     }
   }
 }
 
-// body tiny
+// tiny
 
-@mixin tiny-l() {
-  font-size: var(--font-size-tiny-l);
+// tiny: regular
+
+@mixin tiny-regular-l() {
+  @extend %tiny;
+  @extend %tiny-regular;
+  @extend %tiny-l;
 }
-@mixin tiny-m() {
-  font-size: var(--font-size-tiny-m);
+
+@mixin tiny-regular-m() {
+  @extend %tiny;
+  @extend %tiny-regular;
+  @extend %tiny-m;
 }
-@mixin tiny-s() {
-  font-size: var(--font-size-tiny-s);
+
+@mixin tiny-regular-s() {
+  @extend %tiny;
+  @extend %tiny-regular;
+  @extend %tiny-s;
 }
-@mixin tiny-xs() {
-  font-size: var(--font-size-tiny-xs);
+
+@mixin tiny-regular-xs() {
+  @extend %tiny;
+  @extend %tiny-regular;
+  @extend %tiny-xs;
+}
+
+// tiny: semi-bold
+
+@mixin tiny-semi-bold-l() {
+  @extend %tiny;
+  @extend %tiny-semi-bold;
+  @extend %tiny-l;
+}
+
+@mixin tiny-semi-bold-m() {
+  @extend %tiny;
+  @extend %tiny-semi-bold;
+  @extend %tiny-m;
+}
+
+@mixin tiny-semi-bold-s() {
+  @extend %tiny;
+  @extend %tiny-semi-bold;
+  @extend %tiny-s;
+}
+
+@mixin tiny-semi-bold-xs() {
+  @extend %tiny;
+  @extend %tiny-semi-bold;
+  @extend %tiny-xs;
 }
 
 %tiny {
-  &-regular-base {
-    font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-tight);
+
+  &-l {
+    font-size: var(--font-size-tiny-l);
     line-height: var(--line-height-tight);
   }
-  &-semi-bold-base {
-    font-weight: var(--font-weight-semi-bold);
+
+  &-m {
+    font-size: var(--font-size-tiny-m);
     line-height: var(--line-height-tight);
   }
+
+  &-s {
+    font-size: var(--font-size-tiny-s);
+    line-height: var(--line-height-tight);
+  }
+
+  &-xs {
+    font-size: var(--font-size-tiny-xs);
+    line-height: var(--line-height-tight);
+  }
+
   &-regular {
+    font-weight: var(--font-weight-regular);
     &-l {
-      @extend %tiny-regular-base;
-      @include tiny-l();
+      @include tiny-regular-l();
     }
 
     &-m {
-      @extend %tiny-regular-base;
-      @include tiny-m();
+      @include tiny-regular-m();
     }
 
     &-s {
-      @extend %tiny-regular-base;
-      @include tiny-s();
+      @include tiny-regular-s();
     }
 
     &-xs {
-      @extend %tiny-regular-base;
-      @include tiny-xs();
+      @include tiny-regular-xs();
     }
   }
 
   &-semi-bold {
+    font-weight: var(--font-weight-semi-bold);
     &-l {
-      @extend %tiny-semi-bold-base;
-      @include tiny-l();
+      @include tiny-semi-bold-l();
     }
 
     &-m {
-      @extend %tiny-semi-bold-base;
-      @include tiny-m();
+      @include tiny-semi-bold-m();
     }
 
     &-s {
-      @extend %tiny-semi-bold-base;
-      @include tiny-s();
+      @include tiny-semi-bold-s();
     }
 
     &-xs {
-      @extend %tiny-semi-bold-base;
-      @include tiny-xs();
+      @include tiny-semi-bold-xs();
     }
   }
 }
@@ -3450,11 +3500,11 @@
 /// @param {String} $body-semi-bold-s-selector [".body-semi-bold-s"] -
 /// @param {String} $body-semi-bold-xs-selector [".body-semi-bold-xs"] -
 
-/// @param {String} $body-regular-italic-xl-selector [".body-regular-italic-xl"] -
-/// @param {String} $body-regular-italic-l-selector [".body-regular-italic-l"] -
-/// @param {String} $body-regular-italic-m-selector [".body-regular-italic-m"] -
-/// @param {String} $body-regular-italic-s-selector [".body-regular-italic-s"] -
-/// @param {String} $body-regular-italic-xs-selector [".body-regular-italic-xs"] -
+/// @param {String} $body-italic-xl-selector [".body-italic-xl"] -
+/// @param {String} $body-italic-l-selector [".body-italic-l"] -
+/// @param {String} $body-italic-m-selector [".body-italic-m"] -
+/// @param {String} $body-italic-s-selector [".body-italic-s"] -
+/// @param {String} $body-italic-xs-selector [".body-italic-xs"] -
 
 /// @param {String} $tiny-regular-l-selector [".tiny-regular-l"] -
 /// @param {String} $tiny-regular-m-selector [".tiny-regular-m"] -
@@ -3496,11 +3546,11 @@
   $body-semi-bold-s-selector: ".body-semi-bold-s",
   $body-semi-bold-xs-selector: ".body-semi-bold-xs",
 
-  $body-regular-italic-xl-selector: ".body-regular-italic-xl",
-  $body-regular-italic-l-selector: ".body-regular-italic-l",
-  $body-regular-italic-m-selector: ".body-regular-italic-m",
-  $body-regular-italic-s-selector: ".body-regular-italic-s",
-  $body-regular-italic-xs-selector: ".body-regular-italic-xs",
+  $body-italic-xl-selector: ".body-italic-xl",
+  $body-italic-l-selector: ".body-italic-l",
+  $body-italic-m-selector: ".body-italic-m",
+  $body-italic-s-selector: ".body-italic-s",
+  $body-italic-xs-selector: ".body-italic-xs",
 
   $tiny-regular-l-selector: ".tiny-regular-l",
   $tiny-regular-m-selector: ".tiny-regular-m",
@@ -3601,20 +3651,20 @@
 
   // Body: regular italic
 
-  #{$body-regular-italic-xl-selector} {
-    @extend %body-regular-italic-xl;
+  #{$body-italic-xl-selector} {
+    @extend %body-italic-xl;
   }
-  #{$body-regular-italic-l-selector} {
-    @extend %body-regular-italic-l;
+  #{$body-italic-l-selector} {
+    @extend %body-italic-l;
   }
-  #{$body-regular-italic-m-selector} {
-    @extend %body-regular-italic-m;
+  #{$body-italic-m-selector} {
+    @extend %body-italic-m;
   }
-  #{$body-regular-italic-s-selector} {
-    @extend %body-regular-italic-s;
+  #{$body-italic-s-selector} {
+    @extend %body-italic-s;
   }
-  #{$body-regular-italic-xs-selector} {
-    @extend %body-regular-italic-xs;
+  #{$body-italic-xs-selector} {
+    @extend %body-italic-xs;
   }
 
   // Body tiny: regular
@@ -3668,116 +3718,10 @@
 
 
 // Icons
-@mixin button-tokens-primary() {
-  --button-primary__bg-color: var(--mer-accent__primary);
-  --button-primary__border-color: var(--button-primary__bg-color);
-  --button-primary__color: var(--mer-text__on-primary);
-  //hover
-  --button-primary__bg-color--hover: var(--mer-accent__primary--hover);
-  --button-primary__border-color--hover: var(--button-primary__bg-color--hover);
-  --button-primary__color--hover: var(--mer-text__on-primary);
-
-  //active
-  --button-primary__bg-color--active: var(--mer-accent__primary--active);
-  --button-primary__border-color--active: var(
-    --button-primary__bg-color--active
-  );
-  --button-primary__color--active: var(--mer-text__on-primary--active);
-
-  //disabled
-  --button-primary__bg-color--disabled: var(--mer-accent__primary--disabled);
-  --button-primary__border-color--disabled: var(
-    --mer-border-color__primary--disabled
-  );
-  --button-primary__color--disabled: var(--mer-text__on-disabled);
-
-  //destructive
-  --button-primary__bg-color--destructive: var(
-    --mer-accent__primary--destructive
-  );
-  --button-primary__bg-color--destructive-hover: var(
-    --mer-accent__primary--destructive-hover
-  );
-  --button-primary__bg-color--destructive-active: var(
-    --mer-accent__primary--destructive-active
-  );
-  --button-primary__border-color--destructive: var(
-    --button-primary__bg-color--destructive
-  );
-  --button-primary__color--destructive: var(--mer-text__on-primary);
-}
-
-@mixin button-tokens-secondary() {
-  --button-secondary__background-color: transparent;
-  --button-secondary__border-color: var(--mer-border-color__neutral);
-  --button-secondary__color: var(--mer-text__neutral);
-  //hover
-  --button-secondary__background-color--hover: transparent;
-  --button-secondary__border-color--hover: var(
-    --mer-border-color__primary--hover
-  );
-  --button-secondary__color--hover: var(--mer-text__primary--hover);
-  //active
-  --button-secondary__background-color--active: transparent;
-  --button-secondary__border-color--active: var(
-    --mer-border-color__primary--active
-  );
-  --button-secondary__color--active: var(--mer-text__on-primary--active);
-  //disabled
-  --button-secondary__background-color--disabled: transparent;
-  --button-secondary__border-color--disabled: var(--mer-text__on-disabled);
-  --button-secondary__color--disabled: var(--mer-text__on-disabled);
-
-  //destructive
-  --button-secondary__bg-color--destructive: transparent;
-  --button-secondary__bg-color--destructive-hover: var(
-    --mer-accent__primary--destructive-hover
-  );
-  --button-secondary__bg-color--destructive-active: var(
-    --mer-accent__primary--destructive-active
-  );
-  --button-secondary__border-color--destructive: var(
-    --button-primary__bg-color--destructive
-  );
-  --button-secondary__color--destructive: var(--mer-text__on-primary);
-
-  //destructive
-  --button-secondary__bg-color--destructive: var(transparent);
-  --button-secondary__bg-color--destructive-hover: var(
-    --mer-color__message-red--600
-  );
-  --button-secondary__bg-color--destructive-active: var(
-    --mer-color__message-red--500
-  );
-  --button-secondary__border-color--destructive: var(
-    --mer-accent__primary--destructive
-  );
-  --button-secondary__color--destructive: var(
-    --mer-accent__primary--destructive
-  );
-}
-
-@mixin button-tokens-tertiary() {
-  --button-tertiary__background-color: transparent;
-  --button-tertiary__border-color: transparent;
-  --button-tertiary__color: var(--mer-text__primary);
-  //hover
-  --button-tertiary__background-color--hover: transparent;
-  --button-tertiary__border-color--hover: transparent;
-  --button-tertiary__color--hover: var(--mer-text__primary--hover);
-  //active
-  --button-tertiary__background-color--active: transparent;
-  --button-tertiary__border-color--active: transparent;
-  --button-tertiary__color--active: var(--mer-text__primary--active);
-  //disabled
-  --button-tertiary__background-color--disabled: transparent;
-  --button-tertiary__border-color--disabled: transparent;
-  --button-tertiary__color--disabled: var(--mer-text__on-disabled);
-}
-
-
 %button-icon-only {
-  @include control-padding-inline-block();
+  padding: calc(
+    (32px - 2 * var(--control__border-width) - var(--mer-icon__box--md)) / 2
+  );
   @include control-border();
 }
 
@@ -4116,7 +4060,7 @@
     }
 
     &::part(message__time) {
-      @extend %body-regular-italic-m;
+      @extend %body-italic-m;
       color: #828b96;
     }
 
@@ -4140,7 +4084,7 @@
     }
 
     &::part(message assistant waiting) {
-      @extend %body-regular-italic-s;
+      @extend %body-italic-s;
       background-color: var(--mer-color__neutral-gray--900);
       border-radius: unset;
       color: #666;
@@ -4191,7 +4135,7 @@
     }
 
     @include input(
-      $selector: "&::part(send-input)",
+      $input-selector: "&::part(send-input)",
       $add--disabled: false,
       $add--placeholder: false,
       $add--error: false
@@ -5200,6 +5144,18 @@
   }
 }
 
+// In Mercury, some controls use different font styles than the tabular grid.
+// When these controls are inside a tabular grid, they should inherit its styles.
+// This ensures visual consistency across the interface. Add relevant selectors
+// below, then import this file where needed and apply the selector variable.
+
+// ie. for the combo-box: @mixin combo-box($combo-box-selector: $combo-box-selector, ...
+
+$combo-box-selector: ".combo-box";
+$input-selector: ".input";
+
+$tree-controls: ($combo-box-selector, $input-selector);
+
 
 %combo-box {
   --ch-combo-box-separation-y: var(--mer-spacing--3xs);
@@ -5244,6 +5200,7 @@
   &-group__header {
     @include item-colors-enabled();
     @include item-padding();
+    @extend %body-regular-m;
 
     &--expandable {
       @include item-colors-enabled();
@@ -5269,11 +5226,11 @@
   }
 
   &__item {
-    @extend %body-regular-m;
     @include item-colors-enabled();
     @include item-border();
     @include item-border-radius();
     @include item-padding();
+    @extend %body-regular-m;
 
     &--nested {
       padding-inline-start: calc(
@@ -5314,7 +5271,7 @@
 /// @param {Boolean} $add--placeholder [true] -
 /// @param {Boolean} $add--error [true] -
 @mixin combo-box(
-  $combo-box-selector: ".combo-box",
+  $combo-box-selector: $combo-box-selector,
   $combo-box--disabled-selector: ".combo-box[disabled]",
   $combo-box--error-selector: ".combo-box-error",
   $combo-box__placeholder-selector:
@@ -6228,6 +6185,19 @@
   }
 }
 
+// In Mercury, some controls use different font styles than the tabular grid.
+// When these controls are inside a tabular grid, they should inherit its styles.
+// This ensures visual consistency across the interface. Add relevant selectors
+// below, then import this file where needed and apply the selector variable.
+
+// ie. for the combo-box: @mixin combo-box($combo-box-selector: $combo-box-selector, ...
+
+$combo-box-selector: ".combo-box";
+$input-selector: ".input";
+
+$tree-controls: ($combo-box-selector, $input-selector);
+
+
 %input {
   // ch-chameleon custom vars (do not edit their names)
   // --ch-edit-auto-fill-background-color: var(); not defined by design yet
@@ -6254,19 +6224,19 @@
 }
 
 /// @group Form
-/// @param {String} $selector [".input"] -
+/// @param {String} $input-selector [".input"] -
 /// @param {String} $error-selector [".input-error"] -
 /// @param {Boolean} $add--disabled [true] -
 /// @param {Boolean} $add--error [true] -
 @mixin input(
-  $selector: ".input",
+  $input-selector: $input-selector,
   $empty-placeholder-selector: ".input[part*='ch-edit--empty-value']",
   $error-selector: ".input-error",
   $add--disabled: true,
   $add--error: true,
   $add--placeholder: true
 ) {
-  #{$selector} {
+  #{$input-selector} {
     @extend %input;
 
     &:focus {
@@ -6286,7 +6256,7 @@
 
   @if $add--placeholder {
     #{$empty-placeholder-selector} {
-      @extend %body-regular-italic-m;
+      @extend %body-italic-m;
     }
   }
 
@@ -9549,10 +9519,26 @@
 
 // --checkbox-check__color: var(--mer-border-color__neutral--active);
 
+// In Mercury, some controls use different font styles than the tabular grid.
+// When these controls are inside a tabular grid, they should inherit its styles.
+// This ensures visual consistency across the interface. Add relevant selectors
+// below, then import this file where needed and apply the selector variable.
+
+// ie. for the combo-box: @mixin combo-box($combo-box-selector: $combo-box-selector, ...
+
+$combo-box-selector: ".combo-box";
+$input-selector: ".input";
+
+$tree-controls: ($combo-box-selector, $input-selector);
+
 
 // - - - - - - - - - - - - - - - - - - - -
 //           general settings
 // - - - - - - - - - - - - - - - - - - - -
+
+%tabular-grid-font-size {
+  @extend %body-regular-s;
+}
 
 %tabular-grid__icon {
   &-size {
@@ -9611,7 +9597,7 @@
   --grid-common__gap: var(--mer-spacing--xs);
   max-block-size: 100%; // TODO: This reset must be placed in the control implementation. This property is a WA.
 
-  @extend %body-regular-s;
+  @extend %tabular-grid-font-size;
 
   --indent: 16px;
   @include items-container-colors();
@@ -9755,6 +9741,13 @@
   // TODO: Check how controls font size's should be redefined inside tabular-grid cell, using the new font styles classes.
 
   border: 0; // WA
+
+  // make controls inherit tabular-grid font styles
+  @each $control-selector in $tree-controls {
+    > #{$control-selector} {
+      @extend %tabular-grid-font-size;
+    }
+  }
 
   &--focused {
     @include focus-outline();
@@ -10041,6 +10034,7 @@
 
   #{$tabular-grid-selector} {
     @extend %tabular-grid;
+
     &:focus {
       outline: none;
     }
@@ -23216,7 +23210,7 @@
         @if $font and $font-face {
           font-family: var(--font-family-body);
         }
-        @if $font and $typography-classes {
+        @if $font {
           @include body-font();
         }
       }
