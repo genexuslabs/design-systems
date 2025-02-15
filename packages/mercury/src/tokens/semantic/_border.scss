@@ -6,6 +6,12 @@
   --mer-border-color__primary--focused: var(--mer-color__neutral-gray--200);
   --mer-border-color__dim: var(--mer-color__neutral-gray--550);
   --mer-border-color__error: var(--mer-color__message-red--600);
+  --mer-border-color__error--hover: var(
+    --mer-accent__primary--destructive-hover
+  );
+  --mer-border-color__error--active: var(
+    --mer-accent__primary--destructive-active
+  );
   --mer-border-color__warning: var(--mer-color__message-yellow--100);
   --mer-border-color__success: var(--mer-color__message-green--100);
   --mer-border-color__neutral: var(--mer-color__neutral-gray--400);
