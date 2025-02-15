@@ -47,7 +47,7 @@
 
     &-active {
       --button-background-color: var(--mer-accent__primary--destructive-active);
-      --button-color: var(--mer-text__on-primary);
+      --button-color: var(--mer-text__highlighted);
     }
   }
 }
@@ -75,14 +75,17 @@
   }
 
   &--destructive {
-    --button-color: var(--mer-accent__primary--destructive);
+    --button-color: var(--mer-text__highlighted);
+    --control__border-color: var(--mer-border-color__error);
 
     &-hover {
-      --button-background-color: var(--mer-color__message-red--600);
+      --button-color: var(--mer-accent__primary--destructive-hover);
+      --control__border-color: var(--mer-border-color__error--hover);
     }
 
     &-active {
-      --button-background-color: var(--mer-color__message-red--500);
+      --button-color: var(--mer-text__highlighted);
+      --control__border-color: var(--mer-border-color__error--active);
     }
   }
 }
