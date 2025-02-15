@@ -2582,6 +2582,230 @@ export const MERCURY_ASSETS = freeze({
     })
   }),
   system: freeze({
+    "zoom-out": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_zoom-out_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_zoom-out_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_zoom-out_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_zoom-out_on-surface--disabled"
+        })
+      }),
+      "on-primary": freeze({
+        enabled: freeze({
+          name: "system_zoom-out_on-primary--enabled"
+        }),
+        hover: freeze({
+          name: "system_zoom-out_on-primary--hover"
+        }),
+        active: freeze({
+          name: "system_zoom-out_on-primary--active"
+        }),
+        disabled: freeze({
+          name: "system_zoom-out_on-primary--disabled"
+        })
+      }),
+      "on-disabled": freeze({
+        enabled: freeze({
+          name: "system_zoom-out_on-disabled--enabled"
+        })
+      }),
+      "on-message": freeze({
+        enabled: freeze({
+          name: "system_zoom-out_on-message--enabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_zoom-out_on-elevation--enabled"
+        })
+      }),
+      primary: freeze({
+        enabled: freeze({
+          name: "system_zoom-out_primary--enabled"
+        }),
+        hover: freeze({
+          name: "system_zoom-out_primary--hover"
+        }),
+        active: freeze({
+          name: "system_zoom-out_primary--active"
+        }),
+        disabled: freeze({
+          name: "system_zoom-out_primary--disabled"
+        })
+      }),
+      error: freeze({
+        enabled: freeze({
+          name: "system_zoom-out_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_zoom-out_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_zoom-out_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_zoom-out_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_zoom-out_error-actionable--disabled"
+        })
+      }),
+      warning: freeze({
+        enabled: freeze({
+          name: "system_zoom-out_warning--enabled"
+        })
+      }),
+      success: freeze({
+        enabled: freeze({
+          name: "system_zoom-out_success--enabled"
+        })
+      }),
+      neutral: freeze({
+        enabled: freeze({
+          name: "system_zoom-out_neutral--enabled"
+        }),
+        hover: freeze({
+          name: "system_zoom-out_neutral--hover"
+        }),
+        active: freeze({
+          name: "system_zoom-out_neutral--active"
+        }),
+        disabled: freeze({
+          name: "system_zoom-out_neutral--disabled"
+        })
+      }),
+      highlighted: freeze({
+        enabled: freeze({
+          name: "system_zoom-out_highlighted--enabled"
+        })
+      }),
+      bright: freeze({
+        enabled: freeze({
+          name: "system_zoom-out_bright--enabled"
+        })
+      })
+    }),
+    "zoom-in": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_zoom-in_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_zoom-in_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_zoom-in_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_zoom-in_on-surface--disabled"
+        })
+      }),
+      "on-primary": freeze({
+        enabled: freeze({
+          name: "system_zoom-in_on-primary--enabled"
+        }),
+        hover: freeze({
+          name: "system_zoom-in_on-primary--hover"
+        }),
+        active: freeze({
+          name: "system_zoom-in_on-primary--active"
+        }),
+        disabled: freeze({
+          name: "system_zoom-in_on-primary--disabled"
+        })
+      }),
+      "on-disabled": freeze({
+        enabled: freeze({
+          name: "system_zoom-in_on-disabled--enabled"
+        })
+      }),
+      "on-message": freeze({
+        enabled: freeze({
+          name: "system_zoom-in_on-message--enabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_zoom-in_on-elevation--enabled"
+        })
+      }),
+      primary: freeze({
+        enabled: freeze({
+          name: "system_zoom-in_primary--enabled"
+        }),
+        hover: freeze({
+          name: "system_zoom-in_primary--hover"
+        }),
+        active: freeze({
+          name: "system_zoom-in_primary--active"
+        }),
+        disabled: freeze({
+          name: "system_zoom-in_primary--disabled"
+        })
+      }),
+      error: freeze({
+        enabled: freeze({
+          name: "system_zoom-in_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_zoom-in_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_zoom-in_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_zoom-in_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_zoom-in_error-actionable--disabled"
+        })
+      }),
+      warning: freeze({
+        enabled: freeze({
+          name: "system_zoom-in_warning--enabled"
+        })
+      }),
+      success: freeze({
+        enabled: freeze({
+          name: "system_zoom-in_success--enabled"
+        })
+      }),
+      neutral: freeze({
+        enabled: freeze({
+          name: "system_zoom-in_neutral--enabled"
+        }),
+        hover: freeze({
+          name: "system_zoom-in_neutral--hover"
+        }),
+        active: freeze({
+          name: "system_zoom-in_neutral--active"
+        }),
+        disabled: freeze({
+          name: "system_zoom-in_neutral--disabled"
+        })
+      }),
+      highlighted: freeze({
+        enabled: freeze({
+          name: "system_zoom-in_highlighted--enabled"
+        })
+      }),
+      bright: freeze({
+        enabled: freeze({
+          name: "system_zoom-in_bright--enabled"
+        })
+      })
+    }),
     warning: freeze({
       "on-surface": freeze({
         enabled: freeze({
@@ -4147,6 +4371,230 @@ export const MERCURY_ASSETS = freeze({
       bright: freeze({
         enabled: freeze({
           name: "system_substract_bright--enabled"
+        })
+      })
+    }),
+    star: freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_star_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_star_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_star_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_star_on-surface--disabled"
+        })
+      }),
+      "on-primary": freeze({
+        enabled: freeze({
+          name: "system_star_on-primary--enabled"
+        }),
+        hover: freeze({
+          name: "system_star_on-primary--hover"
+        }),
+        active: freeze({
+          name: "system_star_on-primary--active"
+        }),
+        disabled: freeze({
+          name: "system_star_on-primary--disabled"
+        })
+      }),
+      "on-disabled": freeze({
+        enabled: freeze({
+          name: "system_star_on-disabled--enabled"
+        })
+      }),
+      "on-message": freeze({
+        enabled: freeze({
+          name: "system_star_on-message--enabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_star_on-elevation--enabled"
+        })
+      }),
+      primary: freeze({
+        enabled: freeze({
+          name: "system_star_primary--enabled"
+        }),
+        hover: freeze({
+          name: "system_star_primary--hover"
+        }),
+        active: freeze({
+          name: "system_star_primary--active"
+        }),
+        disabled: freeze({
+          name: "system_star_primary--disabled"
+        })
+      }),
+      error: freeze({
+        enabled: freeze({
+          name: "system_star_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_star_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_star_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_star_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_star_error-actionable--disabled"
+        })
+      }),
+      warning: freeze({
+        enabled: freeze({
+          name: "system_star_warning--enabled"
+        })
+      }),
+      success: freeze({
+        enabled: freeze({
+          name: "system_star_success--enabled"
+        })
+      }),
+      neutral: freeze({
+        enabled: freeze({
+          name: "system_star_neutral--enabled"
+        }),
+        hover: freeze({
+          name: "system_star_neutral--hover"
+        }),
+        active: freeze({
+          name: "system_star_neutral--active"
+        }),
+        disabled: freeze({
+          name: "system_star_neutral--disabled"
+        })
+      }),
+      highlighted: freeze({
+        enabled: freeze({
+          name: "system_star_highlighted--enabled"
+        })
+      }),
+      bright: freeze({
+        enabled: freeze({
+          name: "system_star_bright--enabled"
+        })
+      })
+    }),
+    "star-unselected": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_star-unselected_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_star-unselected_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_star-unselected_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_star-unselected_on-surface--disabled"
+        })
+      }),
+      "on-primary": freeze({
+        enabled: freeze({
+          name: "system_star-unselected_on-primary--enabled"
+        }),
+        hover: freeze({
+          name: "system_star-unselected_on-primary--hover"
+        }),
+        active: freeze({
+          name: "system_star-unselected_on-primary--active"
+        }),
+        disabled: freeze({
+          name: "system_star-unselected_on-primary--disabled"
+        })
+      }),
+      "on-disabled": freeze({
+        enabled: freeze({
+          name: "system_star-unselected_on-disabled--enabled"
+        })
+      }),
+      "on-message": freeze({
+        enabled: freeze({
+          name: "system_star-unselected_on-message--enabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_star-unselected_on-elevation--enabled"
+        })
+      }),
+      primary: freeze({
+        enabled: freeze({
+          name: "system_star-unselected_primary--enabled"
+        }),
+        hover: freeze({
+          name: "system_star-unselected_primary--hover"
+        }),
+        active: freeze({
+          name: "system_star-unselected_primary--active"
+        }),
+        disabled: freeze({
+          name: "system_star-unselected_primary--disabled"
+        })
+      }),
+      error: freeze({
+        enabled: freeze({
+          name: "system_star-unselected_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_star-unselected_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_star-unselected_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_star-unselected_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_star-unselected_error-actionable--disabled"
+        })
+      }),
+      warning: freeze({
+        enabled: freeze({
+          name: "system_star-unselected_warning--enabled"
+        })
+      }),
+      success: freeze({
+        enabled: freeze({
+          name: "system_star-unselected_success--enabled"
+        })
+      }),
+      neutral: freeze({
+        enabled: freeze({
+          name: "system_star-unselected_neutral--enabled"
+        }),
+        hover: freeze({
+          name: "system_star-unselected_neutral--hover"
+        }),
+        active: freeze({
+          name: "system_star-unselected_neutral--active"
+        }),
+        disabled: freeze({
+          name: "system_star-unselected_neutral--disabled"
+        })
+      }),
+      highlighted: freeze({
+        enabled: freeze({
+          name: "system_star-unselected_highlighted--enabled"
+        })
+      }),
+      bright: freeze({
+        enabled: freeze({
+          name: "system_star-unselected_bright--enabled"
         })
       })
     }),
@@ -9526,6 +9974,118 @@ export const MERCURY_ASSETS = freeze({
         })
       })
     }),
+    "expand-content": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_expand-content_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_expand-content_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_expand-content_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_expand-content_on-surface--disabled"
+        })
+      }),
+      "on-primary": freeze({
+        enabled: freeze({
+          name: "system_expand-content_on-primary--enabled"
+        }),
+        hover: freeze({
+          name: "system_expand-content_on-primary--hover"
+        }),
+        active: freeze({
+          name: "system_expand-content_on-primary--active"
+        }),
+        disabled: freeze({
+          name: "system_expand-content_on-primary--disabled"
+        })
+      }),
+      "on-disabled": freeze({
+        enabled: freeze({
+          name: "system_expand-content_on-disabled--enabled"
+        })
+      }),
+      "on-message": freeze({
+        enabled: freeze({
+          name: "system_expand-content_on-message--enabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_expand-content_on-elevation--enabled"
+        })
+      }),
+      primary: freeze({
+        enabled: freeze({
+          name: "system_expand-content_primary--enabled"
+        }),
+        hover: freeze({
+          name: "system_expand-content_primary--hover"
+        }),
+        active: freeze({
+          name: "system_expand-content_primary--active"
+        }),
+        disabled: freeze({
+          name: "system_expand-content_primary--disabled"
+        })
+      }),
+      error: freeze({
+        enabled: freeze({
+          name: "system_expand-content_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_expand-content_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_expand-content_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_expand-content_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_expand-content_error-actionable--disabled"
+        })
+      }),
+      warning: freeze({
+        enabled: freeze({
+          name: "system_expand-content_warning--enabled"
+        })
+      }),
+      success: freeze({
+        enabled: freeze({
+          name: "system_expand-content_success--enabled"
+        })
+      }),
+      neutral: freeze({
+        enabled: freeze({
+          name: "system_expand-content_neutral--enabled"
+        }),
+        hover: freeze({
+          name: "system_expand-content_neutral--hover"
+        }),
+        active: freeze({
+          name: "system_expand-content_neutral--active"
+        }),
+        disabled: freeze({
+          name: "system_expand-content_neutral--disabled"
+        })
+      }),
+      highlighted: freeze({
+        enabled: freeze({
+          name: "system_expand-content_highlighted--enabled"
+        })
+      }),
+      bright: freeze({
+        enabled: freeze({
+          name: "system_expand-content_bright--enabled"
+        })
+      })
+    }),
     error: freeze({
       "on-surface": freeze({
         enabled: freeze({
@@ -11315,6 +11875,118 @@ export const MERCURY_ASSETS = freeze({
       bright: freeze({
         enabled: freeze({
           name: "system_company_bright--enabled"
+        })
+      })
+    }),
+    "collapse-content": freeze({
+      "on-surface": freeze({
+        enabled: freeze({
+          name: "system_collapse-content_on-surface--enabled"
+        }),
+        hover: freeze({
+          name: "system_collapse-content_on-surface--hover"
+        }),
+        active: freeze({
+          name: "system_collapse-content_on-surface--active"
+        }),
+        disabled: freeze({
+          name: "system_collapse-content_on-surface--disabled"
+        })
+      }),
+      "on-primary": freeze({
+        enabled: freeze({
+          name: "system_collapse-content_on-primary--enabled"
+        }),
+        hover: freeze({
+          name: "system_collapse-content_on-primary--hover"
+        }),
+        active: freeze({
+          name: "system_collapse-content_on-primary--active"
+        }),
+        disabled: freeze({
+          name: "system_collapse-content_on-primary--disabled"
+        })
+      }),
+      "on-disabled": freeze({
+        enabled: freeze({
+          name: "system_collapse-content_on-disabled--enabled"
+        })
+      }),
+      "on-message": freeze({
+        enabled: freeze({
+          name: "system_collapse-content_on-message--enabled"
+        })
+      }),
+      "on-elevation": freeze({
+        enabled: freeze({
+          name: "system_collapse-content_on-elevation--enabled"
+        })
+      }),
+      primary: freeze({
+        enabled: freeze({
+          name: "system_collapse-content_primary--enabled"
+        }),
+        hover: freeze({
+          name: "system_collapse-content_primary--hover"
+        }),
+        active: freeze({
+          name: "system_collapse-content_primary--active"
+        }),
+        disabled: freeze({
+          name: "system_collapse-content_primary--disabled"
+        })
+      }),
+      error: freeze({
+        enabled: freeze({
+          name: "system_collapse-content_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_collapse-content_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_collapse-content_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_collapse-content_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_collapse-content_error-actionable--disabled"
+        })
+      }),
+      warning: freeze({
+        enabled: freeze({
+          name: "system_collapse-content_warning--enabled"
+        })
+      }),
+      success: freeze({
+        enabled: freeze({
+          name: "system_collapse-content_success--enabled"
+        })
+      }),
+      neutral: freeze({
+        enabled: freeze({
+          name: "system_collapse-content_neutral--enabled"
+        }),
+        hover: freeze({
+          name: "system_collapse-content_neutral--hover"
+        }),
+        active: freeze({
+          name: "system_collapse-content_neutral--active"
+        }),
+        disabled: freeze({
+          name: "system_collapse-content_neutral--disabled"
+        })
+      }),
+      highlighted: freeze({
+        enabled: freeze({
+          name: "system_collapse-content_highlighted--enabled"
+        })
+      }),
+      bright: freeze({
+        enabled: freeze({
+          name: "system_collapse-content_bright--enabled"
         })
       })
     }),
