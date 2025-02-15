@@ -2645,6 +2645,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_warning_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_warning_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_warning_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_warning_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_warning_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_warning_warning--enabled"
@@ -2741,6 +2755,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_version_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_version_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_version_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_version_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_version_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -2841,6 +2869,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_user_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_user_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_user_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_user_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_user_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_user_warning--enabled"
@@ -2937,6 +2979,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_upload_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_upload_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_upload_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_upload_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_upload_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -3037,6 +3093,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_undo_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_undo_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_undo_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_undo_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_undo_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_undo_warning--enabled"
@@ -3133,6 +3203,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_tools_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_tools_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_tools_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_tools_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_tools_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -3233,6 +3317,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_toggle-theme_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_toggle-theme_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_toggle-theme_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_toggle-theme_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_toggle-theme_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_toggle-theme_warning--enabled"
@@ -3329,6 +3427,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_time_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_time_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_time_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_time_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_time_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -3429,6 +3541,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_thunder_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_thunder_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_thunder_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_thunder_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_thunder_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_thunder_warning--enabled"
@@ -3525,6 +3651,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_thumb-up_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_thumb-up_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_thumb-up_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_thumb-up_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_thumb-up_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -3625,6 +3765,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_thumb-down_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_thumb-down_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_thumb-down_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_thumb-down_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_thumb-down_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_thumb-down_warning--enabled"
@@ -3721,6 +3875,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_text-compare_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_text-compare_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_text-compare_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_text-compare_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_text-compare_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -3821,6 +3989,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_table_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_table_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_table_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_table_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_table_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_table_warning--enabled"
@@ -3917,6 +4099,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_substract_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_substract_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_substract_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_substract_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_substract_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -4017,6 +4213,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_show_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_show_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_show_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_show_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_show_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_show_warning--enabled"
@@ -4113,6 +4323,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_share_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_share_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_share_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_share_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_share_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -4213,6 +4437,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_settings_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_settings_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_settings_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_settings_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_settings_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_settings_warning--enabled"
@@ -4309,6 +4547,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_send_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_send_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_send_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_send_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_send_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -4409,6 +4661,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_search_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_search_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_search_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_search_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_search_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_search_warning--enabled"
@@ -4505,6 +4771,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_save_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_save_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_save_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_save_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_save_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -4605,6 +4885,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_run_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_run_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_run_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_run_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_run_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_run_warning--enabled"
@@ -4701,6 +4995,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_right-panel-open_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_right-panel-open_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_right-panel-open_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_right-panel-open_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_right-panel-open_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -4801,6 +5109,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_retry_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_retry_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_retry_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_retry_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_retry_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_retry_warning--enabled"
@@ -4897,6 +5219,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_refresh_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_refresh_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_refresh_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_refresh_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_refresh_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -4997,6 +5333,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_query_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_query_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_query_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_query_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_query_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_query_warning--enabled"
@@ -5093,6 +5443,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_qr-code_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_qr-code_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_qr-code_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_qr-code_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_qr-code_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -5193,6 +5557,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_publish_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_publish_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_publish_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_publish_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_publish_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_publish_warning--enabled"
@@ -5289,6 +5667,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_property_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_property_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_property_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_property_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_property_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -5389,6 +5781,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_photo_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_photo_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_photo_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_photo_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_photo_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_photo_warning--enabled"
@@ -5485,6 +5891,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_pause_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_pause_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_pause_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_pause_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_pause_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -5585,6 +6005,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_order-numberically_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_order-numberically_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_order-numberically_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_order-numberically_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_order-numberically_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_order-numberically_warning--enabled"
@@ -5681,6 +6115,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_order-alphabetically_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_order-alphabetically_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_order-alphabetically_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_order-alphabetically_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_order-alphabetically_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -5781,6 +6229,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_notification_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_notification_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_notification_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_notification_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_notification_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_notification_warning--enabled"
@@ -5877,6 +6339,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_news_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_news_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_news_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_news_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_news_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -5977,6 +6453,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_more-vertical_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_more-vertical_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_more-vertical_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_more-vertical_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_more-vertical_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_more-vertical_warning--enabled"
@@ -6073,6 +6563,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_more-horizontal_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_more-horizontal_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_more-horizontal_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_more-horizontal_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_more-horizontal_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -6173,6 +6677,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_mobile_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_mobile_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_mobile_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_mobile_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_mobile_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_mobile_warning--enabled"
@@ -6269,6 +6787,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_mic_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_mic_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_mic_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_mic_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_mic_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -6369,6 +6901,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_mic-off_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_mic-off_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_mic-off_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_mic-off_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_mic-off_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_mic-off_warning--enabled"
@@ -6465,6 +7011,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_message_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_message_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_message_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_message_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_message_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -6565,6 +7125,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_menu_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_menu_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_menu_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_menu_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_menu_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_menu_warning--enabled"
@@ -6661,6 +7235,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_mail_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_mail_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_mail_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_mail_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_mail_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -6761,6 +7349,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_logout_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_logout_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_logout_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_logout_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_logout_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_logout_warning--enabled"
@@ -6857,6 +7459,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_log-out_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_log-out_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_log-out_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_log-out_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_log-out_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -6957,6 +7573,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_lock_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_lock_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_lock_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_lock_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_lock_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_lock_warning--enabled"
@@ -7053,6 +7683,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_loading_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_loading_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_loading_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_loading_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_loading_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -7153,6 +7797,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_list_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_list_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_list_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_list_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_list_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_list_warning--enabled"
@@ -7249,6 +7907,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_link_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_link_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_link_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_link_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_link_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -7349,6 +8021,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_link-off_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_link-off_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_link-off_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_link-off_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_link-off_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_link-off_warning--enabled"
@@ -7445,6 +8131,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_left-panel-open_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_left-panel-open_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_left-panel-open_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_left-panel-open_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_left-panel-open_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -7545,6 +8245,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_launch_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_launch_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_launch_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_launch_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_launch_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_launch_warning--enabled"
@@ -7641,6 +8355,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_language_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_language_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_language_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_language_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_language_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -7741,6 +8469,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_key_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_key_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_key_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_key_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_key_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_key_warning--enabled"
@@ -7837,6 +8579,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_information_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_information_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_information_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_information_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_information_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -7937,6 +8693,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_home_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_home_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_home_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_home_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_home_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_home_warning--enabled"
@@ -8033,6 +8803,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_hide_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_hide_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_hide_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_hide_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_hide_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -8133,6 +8917,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_help_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_help_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_help_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_help_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_help_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_help_warning--enabled"
@@ -8229,6 +9027,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_help-variant_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_help-variant_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_help-variant_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_help-variant_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_help-variant_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -8329,6 +9141,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_folder_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_folder_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_folder_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_folder_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_folder_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_folder_warning--enabled"
@@ -8425,6 +9251,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_filters_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_filters_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_filters_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_filters_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_filters_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -8525,6 +9365,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_eyedropper_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_eyedropper_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_eyedropper_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_eyedropper_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_eyedropper_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_eyedropper_warning--enabled"
@@ -8621,6 +9475,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_expand_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_expand_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_expand_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_expand_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_expand_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -8721,6 +9589,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_error_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_error_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_error_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_error_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_error_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_error_warning--enabled"
@@ -8817,6 +9699,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_edit_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_edit_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_edit_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_edit_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_edit_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -8917,6 +9813,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_drag_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_drag_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_drag_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_drag_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_drag_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_drag_warning--enabled"
@@ -9013,6 +9923,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_download_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_download_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_download_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_download_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_download_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -9113,6 +10037,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_double-chevron-right_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_double-chevron-right_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_double-chevron-right_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_double-chevron-right_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_double-chevron-right_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_double-chevron-right_warning--enabled"
@@ -9209,6 +10147,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_double-chevron-left_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_double-chevron-left_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_double-chevron-left_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_double-chevron-left_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_double-chevron-left_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -9309,6 +10261,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_detail_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_detail_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_detail_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_detail_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_detail_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_detail_warning--enabled"
@@ -9405,6 +10371,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_delete-outlined_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_delete-outlined_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_delete-outlined_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_delete-outlined_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_delete-outlined_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -9505,6 +10485,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_database_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_database_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_database_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_database_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_database_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_database_warning--enabled"
@@ -9601,6 +10595,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_data-modeling_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_data-modeling_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_data-modeling_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_data-modeling_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_data-modeling_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -9701,6 +10709,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_dashboard_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_dashboard_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_dashboard_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_dashboard_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_dashboard_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_dashboard_warning--enabled"
@@ -9797,6 +10819,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_cut_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_cut_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_cut_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_cut_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_cut_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -9897,6 +10933,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_copy_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_copy_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_copy_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_copy_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_copy_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_copy_warning--enabled"
@@ -9993,6 +11043,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_contact_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_contact_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_contact_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_contact_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_contact_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -10093,6 +11157,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_computer_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_computer_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_computer_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_computer_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_computer_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_computer_warning--enabled"
@@ -10189,6 +11267,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_company_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_company_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_company_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_company_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_company_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -10289,6 +11381,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_close_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_close_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_close_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_close_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_close_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_close_warning--enabled"
@@ -10385,6 +11491,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_close-small_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_close-small_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_close-small_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_close-small_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_close-small_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -10485,6 +11605,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_close-sidebar_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_close-sidebar_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_close-sidebar_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_close-sidebar_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_close-sidebar_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_close-sidebar_warning--enabled"
@@ -10581,6 +11715,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_chevron-up_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_chevron-up_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_chevron-up_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_chevron-up_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_chevron-up_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -10681,6 +11829,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_chevron-small-up_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_chevron-small-up_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_chevron-small-up_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_chevron-small-up_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_chevron-small-up_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_chevron-small-up_warning--enabled"
@@ -10777,6 +11939,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_chevron-small-right_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_chevron-small-right_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_chevron-small-right_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_chevron-small-right_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_chevron-small-right_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -10877,6 +12053,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_chevron-small-left_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_chevron-small-left_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_chevron-small-left_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_chevron-small-left_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_chevron-small-left_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_chevron-small-left_warning--enabled"
@@ -10973,6 +12163,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_chevron-small-down_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_chevron-small-down_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_chevron-small-down_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_chevron-small-down_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_chevron-small-down_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -11073,6 +12277,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_chevron-right_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_chevron-right_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_chevron-right_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_chevron-right_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_chevron-right_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_chevron-right_warning--enabled"
@@ -11169,6 +12387,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_chevron-pag-right_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_chevron-pag-right_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_chevron-pag-right_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_chevron-pag-right_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_chevron-pag-right_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -11269,6 +12501,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_chevron-pag-left_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_chevron-pag-left_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_chevron-pag-left_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_chevron-pag-left_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_chevron-pag-left_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_chevron-pag-left_warning--enabled"
@@ -11365,6 +12611,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_chevron-left_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_chevron-left_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_chevron-left_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_chevron-left_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_chevron-left_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -11465,6 +12725,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_chevron-down_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_chevron-down_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_chevron-down_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_chevron-down_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_chevron-down_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_chevron-down_warning--enabled"
@@ -11561,6 +12835,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_check_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_check_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_check_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_check_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_check_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -11661,6 +12949,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_check-circle_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_check-circle_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_check-circle_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_check-circle_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_check-circle_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_check-circle_warning--enabled"
@@ -11757,6 +13059,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_card_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_card_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_card_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_card_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_card_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -11857,6 +13173,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_cancel-circle_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_cancel-circle_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_cancel-circle_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_cancel-circle_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_cancel-circle_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_cancel-circle_warning--enabled"
@@ -11953,6 +13283,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_calendar_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_calendar_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_calendar_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_calendar_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_calendar_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -12053,6 +13397,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_assistant_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_assistant_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_assistant_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_assistant_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_assistant_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_assistant_warning--enabled"
@@ -12149,6 +13507,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_arrow-right_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_arrow-right_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_arrow-right_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_arrow-right_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_arrow-right_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -12249,6 +13621,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_arrow-left_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_arrow-left_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_arrow-left_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_arrow-left_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_arrow-left_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_arrow-left_warning--enabled"
@@ -12345,6 +13731,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_arrow-drop-up_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_arrow-drop-up_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_arrow-drop-up_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_arrow-drop-up_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_arrow-drop-up_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -12445,6 +13845,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_arrow-drop-right_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_arrow-drop-right_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_arrow-drop-right_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_arrow-drop-right_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_arrow-drop-right_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_arrow-drop-right_warning--enabled"
@@ -12541,6 +13955,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_arrow-drop-left_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_arrow-drop-left_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_arrow-drop-left_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_arrow-drop-left_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_arrow-drop-left_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -12641,6 +14069,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_arrow-drop-down_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_arrow-drop-down_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_arrow-drop-down_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_arrow-drop-down_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_arrow-drop-down_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_arrow-drop-down_warning--enabled"
@@ -12737,6 +14179,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_applications_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_applications_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_applications_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_applications_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_applications_error-actionable--disabled"
         })
       }),
       warning: freeze({
@@ -12837,6 +14293,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_add_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_add_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_add_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_add_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_add_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_add_warning--enabled"
@@ -12935,6 +14405,20 @@ export const MERCURY_ASSETS = freeze({
           name: "system_add-circle_error--enabled"
         })
       }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_add-circle_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_add-circle_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_add-circle_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_add-circle_error-actionable--disabled"
+        })
+      }),
       warning: freeze({
         enabled: freeze({
           name: "system_add-circle_warning--enabled"
@@ -13031,6 +14515,20 @@ export const MERCURY_ASSETS = freeze({
       error: freeze({
         enabled: freeze({
           name: "system_accessibility-new_error--enabled"
+        })
+      }),
+      "error-actionable": freeze({
+        enabled: freeze({
+          name: "system_accessibility-new_error-actionable--enabled"
+        }),
+        hover: freeze({
+          name: "system_accessibility-new_error-actionable--hover"
+        }),
+        active: freeze({
+          name: "system_accessibility-new_error-actionable--active"
+        }),
+        disabled: freeze({
+          name: "system_accessibility-new_error-actionable--disabled"
         })
       }),
       warning: freeze({
