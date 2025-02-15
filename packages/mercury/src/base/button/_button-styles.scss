@@ -50,6 +50,21 @@
       --button-color: var(--mer-text__highlighted);
     }
   }
+
+  &--success {
+    --button-background-color: var(--accent-success-enabled);
+    --button-color: var(--mer-text__on-primary);
+
+    &-hover {
+      --button-background-color: var(--accent-success-hover);
+      --button-color: var(--mer-text__on-primary);
+    }
+
+    &-active {
+      --button-background-color: var(--accent-success-active);
+      --button-color: var(--mer-text__highlighted);
+    }
+  }
 }
 
 %button-secondary {
@@ -120,13 +135,17 @@
 /// @group Button
 /// @param {String} $selector [".button-primary"] -
 /// @param {String} $destructive-selector [".button-primary-destructive"] -
+/// @param {String} $success-selector [".button-primary-success"] -
 /// @param {Boolean} $add--disabled [true] -
 /// @param {Boolean} $add--destructive [true] -
+/// @param {Boolean} $add--success [true] -
 @mixin button-primary(
   $selector: ".button-primary",
   $destructive-selector: ".button-primary-destructive",
+  $success-selector: ".button-primary-success",
   $add--disabled: true,
-  $add--destructive: true
+  $add--destructive: true,
+  $add--success: true
 ) {
   #{$selector} {
     @extend %button-primary;
@@ -166,6 +185,33 @@
 
       &:active {
         @extend %button-primary--destructive-active;
+      }
+
+      @if $add--disabled {
+        // TODO: avoid duplcation
+        &:disabled {
+          @extend %button-primary--disabled;
+        }
+      }
+    }
+  }
+
+  @if $add--success {
+    #{$success-selector} {
+      @extend %button-primary;
+      @extend %button-primary--success;
+
+      &:focus-visible {
+        // TODO: avoid duplcation
+        @extend %button-base--focus-visible;
+      }
+
+      &:hover {
+        @extend %button-primary--success-hover;
+      }
+
+      &:active {
+        @extend %button-primary--success-active;
       }
 
       @if $add--disabled {
