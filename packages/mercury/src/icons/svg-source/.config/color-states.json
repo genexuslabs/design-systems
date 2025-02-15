@@ -113,6 +113,27 @@
         }
       },
       {
+        "name": "error-actionable",
+        "states": {
+          "enabled": {
+            "dark": "#E1ECF9",
+            "light": "#E1ECF9"
+          },
+          "hover": {
+            "dark": "#A63A41",
+            "light": "#A63A41"
+          },
+          "active": {
+            "dark": "#E1ECF9",
+            "light": "#E1ECF9"
+          },
+          "disabled": {
+            "dark": "#828B96",
+            "light": "#828B96"
+          }
+        }
+      },
+      {
         "name": "warning",
         "states": {
           "enabled": {
@@ -261,6 +282,7 @@
           "on-elevation": true,
           "primary": true,
           "error": true,
+          "error-actionable": true,
           "warning": true,
           "success": true,
           "neutral": true,
