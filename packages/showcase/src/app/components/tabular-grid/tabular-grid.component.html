@@ -473,7 +473,7 @@
 
 @if (showSelectionSingleKeyboardFocus()) {
   <code-snippet [codeSnippet]="codeSnippets.selectionSingleKeyboardFocus">
-    <p class="{{ paragraphClass }}">Keyboard navigation changes focus only.</p>
+    <p class="{{ PARAGRAPH_CLASS }}">Keyboard navigation changes focus only.</p>
 
     <br />
 
@@ -641,7 +641,7 @@
 
 @if (showSelectionSingleKeyboardSelect()) {
   <code-snippet [codeSnippet]="codeSnippets.selectionSingleKeyboardSelect">
-    <p class="{{ paragraphClass }}">
+    <p class="{{ PARAGRAPH_CLASS }}">
       Keyboard navigation changes focus and selection.
     </p>
 
@@ -811,7 +811,7 @@
 
 @if (showSelectionMultipleKeyboardFocus()) {
   <code-snippet [codeSnippet]="codeSnippets.selectionMultipleKeyboardFocus">
-    <p class="{{ paragraphClass }}">
+    <p class="{{ PARAGRAPH_CLASS }}">
       Keyboard navigation changes focus only. To select multiple rows, press
       <code>ctrl/cmd</code> for individual selection, or <code>shift</code> for
       multiple selection at once.
@@ -985,7 +985,7 @@
 
 @if (showSelectionMultipleKeyboardSelect()) {
   <code-snippet [codeSnippet]="codeSnippets.selectionMultipleKeyboardSelect">
-    <p class="{{ paragraphClass }}">
+    <p class="{{ PARAGRAPH_CLASS }}">
       Keyboard navigation changes focus and selection. To select multiple rows,
       press <code>ctrl/cmd</code> for individual selection, or
       <code>shift</code> for multiple selection at once.
@@ -1159,7 +1159,7 @@
 
 @if (showRowMarkKeyboardSelect()) {
   <code-snippet [codeSnippet]="codeSnippets.rowMarkKeyboardSelect">
-    <p class="{{ paragraphClass }}">
+    <p class="{{ PARAGRAPH_CLASS }}">
       Adds checkboxes that allows marking the rows (Keyboard navigation changes
       focus and selection). Press <code>space-bar</code> to mark a row, or
       multiple rows.
@@ -1334,7 +1334,7 @@
 
 @if (showRowReorderDragging()) {
   <code-snippet [codeSnippet]="codeSnippets.rowReorderDragging">
-    <p class="{{ paragraphClass }}">It allows row re-ordering.</p>
+    <p class="{{ PARAGRAPH_CLASS }}">It allows row re-ordering.</p>
 
     <br />
 
@@ -1503,7 +1503,7 @@
 
 @if (showRowAction()) {
   <code-snippet [codeSnippet]="codeSnippets.rowAction">
-    <p class="{{ paragraphClass }}">
+    <p class="{{ PARAGRAPH_CLASS }}">
       It allows displaying a window with custom actions that he user defines by
       using slotted content (hover a row, or right click on it). Note: The
       stylization of buttons have to be defined by the user.
@@ -1964,7 +1964,7 @@
 
 @if (showAlignCellsBlockStart()) {
   <code-snippet [codeSnippet]="helpersCodeSnippets.alignCellsBlockStart">
-    <p class="{{ paragraphClass }}">
+    <p class="{{ PARAGRAPH_CLASS }}">
       In some cases, you may wish to align the cell content to the top in a
       vertical direction. To do this, simply add the class
       <code class="c-green">.tabular-grid-align-cells-block-start</code> on the
@@ -2069,7 +2069,7 @@
 
 @if (showAlignCellsBlockCenter()) {
   <code-snippet [codeSnippet]="helpersCodeSnippets.alignCellsBlockCenter">
-    <p class="{{ paragraphClass }}">
+    <p class="{{ PARAGRAPH_CLASS }}">
       In some cases, you may wish to align the cell content to the center in a
       vertical direction. To do this, simply add the class
       <code>.tabular-grid-align-cells-block-center</code> on the
@@ -2174,7 +2174,7 @@
 
 @if (showAlignCellsBlockEnd()) {
   <code-snippet [codeSnippet]="helpersCodeSnippets.alignCellsBlockEnd">
-    <p class="{{ paragraphClass }}">
+    <p class="{{ PARAGRAPH_CLASS }}">
       In some cases, you may wish to align the cell content to the bottom in a
       vertical direction. To do this, simply add the class
       <code>.tabular-grid-align-cells-block-end</code> on the
@@ -2279,7 +2279,7 @@
 
 @if (showAlignCellsInlineStart()) {
   <code-snippet [codeSnippet]="helpersCodeSnippets.alignCellsInlineStart">
-    <p class="{{ paragraphClass }}">
+    <p class="{{ PARAGRAPH_CLASS }}">
       In some cases, you may wish to align the cell content to the start in an
       horizontal direction. To do this, simply add the class
       <code>.tabular-grid-align-cells-inline-start</code> on the ch-tabular-grid
@@ -2385,7 +2385,7 @@
 
 @if (showAlignCellsInlineCenter()) {
   <code-snippet [codeSnippet]="helpersCodeSnippets.alignCellsInlineCenter">
-    <p class="{{ paragraphClass }}">
+    <p class="{{ PARAGRAPH_CLASS }}">
       In some cases, you may wish to align the cell content to the center in an
       horizontal direction. To do this, simply add the class
       <code>.tabular-grid-align-cells-inline-center</code> on the
@@ -2498,7 +2498,7 @@
 
 @if (showAlignCellsInlineEnd()) {
   <code-snippet [codeSnippet]="helpersCodeSnippets.alignCellsInlineEnd">
-    <p class="{{ paragraphClass }}">
+    <p class="{{ PARAGRAPH_CLASS }}">
       In some cases, you may wish to align the cell content to the end in an
       horizontal direction. To do this, simply add the class
       <code>.tabular-grid-align-cells-inline-end</code> on the

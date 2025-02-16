@@ -1,12 +1,323 @@
-<runtime-bundles [bundles]="['utils/typography']" />
+<runtime-bundles [bundles]="['components/checkbox', 'components/accordion']" />
 
 <header>
-  <h1 class="heading-1">Accordion</h1>
+  <h1 class="heading-1">{{ metadata.title }}</h1>
 </header>
 
-<p>
-  This page is under construction and will be available soon. You can see the
-  <a class="hyperlink" href="/old/accordion.html" target="_blank"
-    >old version here</a
-  >.
-</p>
+<p class="body-regular-l">{{ metadata.description }}</p>
+
+<ol class="filters elevation-1">
+  @for (
+    accordionEntry of this.accordions().entries();
+    track accordionEntry[0]
+  ) {
+    @let accordionName = accordionEntry[0];
+
+    <li class="filters-checkbox">
+      <ch-checkbox
+        [caption]="accordionName"
+        class="checkbox"
+        [checkedValue]="'true'"
+        [value]="accordionEntry[1].toString()"
+        [unCheckedValue]="'false'"
+        (input)="updateRenderedAccordion(accordionName)($event)"
+      ></ch-checkbox>
+    </li>
+  }
+</ol>
+
+<!-- filled cases -->
+
+@if (showFilled()) {
+  <code-snippet [codeSnippet]="codeSnippets.filled" [language]="'ts'">
+    <ch-accordion-render
+      class="accordion-filled elevation-1"
+      [model]="accordionModel"
+    >
+      <div
+        slot="{{ accordionCommon.itemFile.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemFile.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDomain.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDomain.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemProcedure.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemProcedure.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDocument.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDocument.description }}
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+@if (showFilledDisabled()) {
+  <code-snippet [codeSnippet]="codeSnippets.filledDisabled" [language]="'ts'">
+    <ch-accordion-render
+      class="accordion-filled elevation-1"
+      [model]="accordionModel"
+      disabled
+    >
+      <div
+        slot="{{ accordionCommon.itemFile.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemFile.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDomain.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDomain.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemProcedure.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemProcedure.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDocument.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDocument.description }}
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+@if (showFilledWithIcons()) {
+  <code-snippet [codeSnippet]="codeSnippets.filledWithIcons" [language]="'ts'">
+    <ch-accordion-render
+      class="accordion-filled elevation-1"
+      [model]="accordionWithIconsModel"
+    >
+      <div
+        slot="{{ accordionCommon.itemFile.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemFile.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDomain.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDomain.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemProcedure.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemProcedure.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDocument.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDocument.description }}
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+@if (showFilledWithIconsDisabled()) {
+  <code-snippet
+    [codeSnippet]="codeSnippets.filledWithIconsDisabled"
+    [language]="'ts'"
+  >
+    <ch-accordion-render
+      class="accordion-filled elevation-1"
+      [model]="accordionWithIconsModel"
+      disabled
+    >
+      <div
+        slot="{{ accordionCommon.itemFile.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemFile.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDomain.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDomain.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemProcedure.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemProcedure.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDocument.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDocument.description }}
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+<!-- outlined cases -->
+
+@if (showOutlined()) {
+  <code-snippet [codeSnippet]="codeSnippets.outlined" [language]="'ts'">
+    <ch-accordion-render
+      class="accordion-outlined elevation-1"
+      [model]="accordionModel"
+    >
+      <div
+        slot="{{ accordionCommon.itemFile.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemFile.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDomain.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDomain.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemProcedure.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemProcedure.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDocument.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDocument.description }}
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+@if (showOutlinedDisabled()) {
+  <code-snippet [codeSnippet]="codeSnippets.outlinedDisabled" [language]="'ts'">
+    <ch-accordion-render
+      class="accordion-outlined elevation-1"
+      [model]="accordionModel"
+      disabled
+    >
+      <div
+        slot="{{ accordionCommon.itemFile.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemFile.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDomain.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDomain.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemProcedure.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemProcedure.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDocument.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDocument.description }}
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+@if (showOutlinedWithIcons()) {
+  <code-snippet
+    [codeSnippet]="codeSnippets.outlinedWithIcons"
+    [language]="'ts'"
+  >
+    <ch-accordion-render
+      class="accordion-outlined elevation-1"
+      [model]="accordionWithIconsModel"
+    >
+      <div
+        slot="{{ accordionCommon.itemFile.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemFile.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDomain.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDomain.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemProcedure.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemProcedure.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDocument.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDocument.description }}
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+@if (showOutlinedWithIconsDisabled()) {
+  <code-snippet
+    [codeSnippet]="codeSnippets.outlinedWithIconsDisabled"
+    [language]="'ts'"
+  >
+    <ch-accordion-render
+      class="accordion-outlined elevation-1"
+      [model]="accordionWithIconsModel"
+      disabled
+    >
+      <div
+        slot="{{ accordionCommon.itemFile.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemFile.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDomain.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDomain.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemProcedure.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemProcedure.description }}
+      </div>
+      <div
+        slot="{{ accordionCommon.itemDocument.slot }}"
+        class="{{ SPACING_BODY_CLASS }}"
+      >
+        {{ accordionCommon.itemDocument.description }}
+      </div>
+    </ch-accordion-render>
+  </code-snippet>
+}
+
+<!--
+TODO: A section for "elevation"
+- A case without elevation class
+- filled cases with "elevation-2" and "elevation-3"
+- outlined cases with "elevation-2" and "elevation-3"
+-->
