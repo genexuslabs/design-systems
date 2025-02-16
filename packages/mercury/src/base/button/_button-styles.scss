@@ -5,6 +5,7 @@
   @include control-border();
   @include control-padding-inline-block();
 
+  box-sizing: border-box;
   background-color: var(--button-background-color);
   color: var(--button-color);
 
@@ -138,12 +139,11 @@
   gap: var(--mer-spacing--xs);
 }
 
-%button-with-loader {
-  @extend %icon-and-text;
+%button-loader {
   &::before {
     content: "";
     @include spinner(
-      var(--mer-icon__box--md),
+      var(--loader-size),
       var(--loader-spinner-color),
       var(--loader-track-color)
     );
@@ -157,6 +157,16 @@
       --loader-spinner-color: var(--button-color--enabled);
     }
   }
+}
+%button-with-loader {
+  --loader-size: var(--mer-icon__box--md);
+  @extend %icon-and-text;
+}
+%button-loader-only {
+  --loader-size: 20px;
+  --control__padding-block: calc(
+    (var(--control__block-size) - var(--loader-size)) / 2
+  );
 }
 
 /// @group Button
@@ -172,7 +182,7 @@
   $destructive-selector: ".button-primary-destructive",
   $success-selector: ".button-primary-success",
   $with-loader-selector: ".button-primary-with-loader",
-  $loader-selector: ".button-primary-loader",
+  $loader-only-selector: ".button-primary-loader-only",
   $add--disabled: true,
   $add--destructive: true,
   $add--success: true,
@@ -257,8 +267,9 @@
   @if $add--loading {
     #{$with-loader-selector} {
       @extend %button-primary;
+      @extend %button-loader;
+      @extend %button-loader-primary;
       @extend %button-with-loader;
-      @extend %button-with-loader-primary;
 
       &:focus-visible {
         @extend %button-base--focus-visible;
@@ -270,7 +281,33 @@
 
       &:active {
         @extend %button-primary--active;
-        @extend %button-with-loader-primary--active;
+        @extend %button-loader-primary--active;
+      }
+
+      @if $add--disabled {
+        &:disabled {
+          @extend %button-primary--disabled;
+        }
+      }
+    }
+
+    #{$loader-only-selector} {
+      @extend %button-primary;
+      @extend %button-loader;
+      @extend %button-loader-primary;
+      @extend %button-loader-only;
+
+      &:focus-visible {
+        @extend %button-base--focus-visible;
+      }
+
+      &:hover {
+        @extend %button-primary--hover;
+      }
+
+      &:active {
+        @extend %button-primary--active;
+        @extend %button-loader-primary--active;
       }
 
       @if $add--disabled {
