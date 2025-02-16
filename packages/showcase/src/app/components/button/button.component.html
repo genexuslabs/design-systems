@@ -47,6 +47,15 @@
   </code-snippet>
 
   <code-snippet
+    [codeSnippet]="codeSnippets.buttonPrimaryTextOnlySuccess"
+    [headingLevel]="3"
+  >
+    <button class="button-primary-success" type="button">
+      {{ buttonCommon.caption }}
+    </button>
+  </code-snippet>
+
+  <code-snippet
     [codeSnippet]="codeSnippets.buttonPrimaryIconAndText"
     [headingLevel]="3"
     [language]="'ts'"
@@ -90,6 +99,24 @@
   >
     <button
       [class]="codeSnippets.buttonPrimaryIconAndTextDestructive.template.class"
+      type="button"
+    >
+      <ch-image
+        [class]="iconCommon.size"
+        [src]="buttonCommon.iconSrc"
+        [type]="'mask'"
+      ></ch-image>
+      {{ buttonCommon.caption }}
+    </button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonPrimaryIconAndTextSuccess"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonPrimaryIconAndTextSuccess.template.class"
       type="button"
     >
       <ch-image

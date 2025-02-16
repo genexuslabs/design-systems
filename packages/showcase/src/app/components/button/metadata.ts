@@ -45,9 +45,20 @@ export const buttonMetadata = {
       }
     },
 
+    buttonPrimaryTextOnlySuccess: {
+      linkId: "button-primary-text-only-success",
+      title: "1.4. Text Only: Success",
+      template: {
+        tag: "button",
+        class: "button-primary-success",
+        properties: [{ name: "type", value: "button" }],
+        children: buttonCommon.caption
+      }
+    },
+
     buttonPrimaryIconAndText: {
       linkId: "button-primary-icon-and-text",
-      title: "1.4. Icon and Text",
+      title: "1.5. Icon and Text",
       imports: [
         'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
       ],
@@ -77,7 +88,7 @@ export const buttonMetadata = {
 
     buttonPrimaryIconAndTextDisabled: {
       linkId: "button-primary-icon-and-text-disabled",
-      title: "1.5. Icon and Text: Disabled",
+      title: "1.6. Icon and Text: Disabled",
       imports: [
         'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
       ],
@@ -110,7 +121,7 @@ export const buttonMetadata = {
 
     buttonPrimaryIconAndTextDestructive: {
       linkId: "button-primary-icon-and-text-destructive",
-      title: "1.6. Icon and Text: Destructive",
+      title: "1.7. Icon and Text: Destructive",
       imports: [
         'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
       ],
@@ -138,9 +149,39 @@ export const buttonMetadata = {
       }
     },
 
+    buttonPrimaryIconAndTextSuccess: {
+      linkId: "button-primary-icon-and-text-success",
+      title: "1.8. Icon and Text: Success",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value: ICON_SRC
+        }
+      ],
+      template: {
+        tag: "button",
+        class: "button-primary-success button-icon-and-text",
+        properties: [{ name: "type", value: "button" }],
+        children: [
+          {
+            tag: "ch-image",
+            class: "icon-md",
+            properties: [
+              { name: "src", value: "ICON", variable: true },
+              { name: "type", value: "mask" }
+            ]
+          },
+          buttonCommon.caption
+        ]
+      }
+    },
+
     buttonPrimaryWithLoader: {
       linkId: "button-primary-with-loader",
-      title: "1.7. Primary with Loader",
+      title: "1.9. Primary with Loader",
       template: {
         tag: "button",
         class: "button-primary-with-loader",
@@ -150,7 +191,7 @@ export const buttonMetadata = {
 
     buttonPrimaryLoaderOnly: {
       linkId: "button-primary-loader-only",
-      title: "1.8. Primary Loader Only",
+      title: "1.10. Primary Loader Only",
       template: {
         tag: "button",
         class: "button-primary-loader-only"
@@ -290,7 +331,7 @@ export const buttonMetadata = {
 
     buttonSecondaryWithLoader: {
       linkId: "button-secondary-with-loader",
-      title: "1.7. Secondary with Loader",
+      title: "2.7. Secondary with Loader",
       template: {
         tag: "button",
         class: "button-secondary-with-loader",
@@ -300,7 +341,7 @@ export const buttonMetadata = {
 
     buttonSecondaryLoaderOnly: {
       linkId: "button-secondary-loader-only",
-      title: "1.8. Secondary Loader Only",
+      title: "2.8. Secondary Loader Only",
       template: {
         tag: "button",
         class: "button-secondary-loader-only"
