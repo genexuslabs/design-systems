@@ -288,6 +288,25 @@ export const buttonMetadata = {
       }
     },
 
+    buttonSecondaryWithLoader: {
+      linkId: "button-secondary-with-loader",
+      title: "1.7. Secondary with Loader",
+      template: {
+        tag: "button",
+        class: "button-secondary-with-loader",
+        children: ["Caption"]
+      }
+    },
+
+    buttonSecondaryLoaderOnly: {
+      linkId: "button-secondary-loader-only",
+      title: "1.8. Secondary Loader Only",
+      template: {
+        tag: "button",
+        class: "button-secondary-loader-only"
+      }
+    },
+
     // tertiary
 
     buttonTertiaryTextOnly: {
