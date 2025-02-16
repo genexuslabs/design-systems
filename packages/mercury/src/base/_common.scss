@@ -547,10 +547,11 @@
 // ----------------------
 
 @mixin spinner($size, $spinner_color, $track_color) {
+  $border_thinness: 7; // the higher the thinner
   width: $size;
   height: $size;
-  border: calc($size / 5) solid $track_color;
-  border-top: calc($size / 5) solid $spinner_color;
+  border: calc($size / $border_thinness) solid $track_color;
+  border-top: calc($size / $border_thinness) solid $spinner_color;
   border-radius: 50%;
   animation: spin var(--mer-timing--regular) linear infinite;
 
