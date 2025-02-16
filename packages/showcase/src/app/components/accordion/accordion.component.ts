@@ -13,6 +13,7 @@ import type {
   AccordionModel
 } from "@genexus/chameleon-controls-library";
 
+import { accordionCommon } from "./common";
 import { accordionMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
@@ -93,6 +94,7 @@ export class AccordionComponent {
   );
 
   metadata = accordionMetadata;
+  accordionCommon = accordionCommon;
   codeSnippets = accordionMetadata.codeSnippets;
 
   accordionModel: AccordionModel = structuredClone(accordionModel);
