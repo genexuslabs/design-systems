@@ -1,3 +1,5 @@
+<runtime-bundles [bundles]="['components/icon']" />
+
 <header>
   <h1 class="heading-1">{{ metadata.title }}</h1>
 </header>
@@ -21,21 +23,27 @@
     [codeSnippet]="codeSnippets.buttonPrimaryTextOnly"
     [headingLevel]="3"
   >
-    <button class="button-primary" type="button">Caption</button>
+    <button class="button-primary" type="button">
+      {{ buttonCommon.caption }}
+    </button>
   </code-snippet>
 
   <code-snippet
     [codeSnippet]="codeSnippets.buttonPrimaryTextOnlyDisabled"
     [headingLevel]="3"
   >
-    <button class="button-primary" disabled type="button">Caption</button>
+    <button class="button-primary" disabled type="button">
+      {{ buttonCommon.caption }}
+    </button>
   </code-snippet>
 
   <code-snippet
     [codeSnippet]="codeSnippets.buttonPrimaryTextOnlyDestructive"
     [headingLevel]="3"
   >
-    <button class="button-primary-destructive" type="button">Caption</button>
+    <button class="button-primary-destructive" type="button">
+      {{ buttonCommon.caption }}
+    </button>
   </code-snippet>
 
   <code-snippet
@@ -47,8 +55,12 @@
       [class]="codeSnippets.buttonPrimaryIconAndText.template.class"
       type="button"
     >
-      <ch-image class="icon-md" [src]="icon" [type]="'mask'"></ch-image>
-      Caption
+      <ch-image
+        [class]="iconCommon.size"
+        [src]="buttonCommon.iconSrc"
+        [type]="'mask'"
+      ></ch-image>
+      {{ buttonCommon.caption }}
     </button>
   </code-snippet>
 
@@ -62,8 +74,12 @@
       type="button"
       disabled
     >
-      <ch-image class="icon-md" [src]="icon" [type]="'mask'"></ch-image>
-      Caption
+      <ch-image
+        [class]="iconCommon.size"
+        [src]="buttonCommon.iconSrc"
+        [type]="'mask'"
+      ></ch-image>
+      {{ buttonCommon.caption }}
     </button>
   </code-snippet>
 
@@ -76,9 +92,33 @@
       [class]="codeSnippets.buttonPrimaryIconAndTextDestructive.template.class"
       type="button"
     >
-      <ch-image class="icon-md" [src]="icon" [type]="'mask'"></ch-image>
-      Caption
+      <ch-image
+        [class]="iconCommon.size"
+        [src]="buttonCommon.iconSrc"
+        [type]="'mask'"
+      ></ch-image>
+      {{ buttonCommon.caption }}
     </button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonPrimaryWithLoader"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button [class]="codeSnippets.buttonPrimaryWithLoader.template.class">
+      {{ buttonCommon.caption }}
+    </button>
+  </code-snippet>
+
+  <code-snippet
+    [codeSnippet]="codeSnippets.buttonPrimaryLoaderOnly"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button
+      [class]="codeSnippets.buttonPrimaryLoaderOnly.template.class"
+    ></button>
   </code-snippet>
 </section>
 
@@ -100,21 +140,27 @@
     [codeSnippet]="codeSnippets.buttonSecondaryTextOnly"
     [headingLevel]="3"
   >
-    <button class="button-secondary" type="button">Caption</button>
+    <button class="button-secondary" type="button">
+      {{ buttonCommon.caption }}
+    </button>
   </code-snippet>
 
   <code-snippet
     [codeSnippet]="codeSnippets.buttonSecondaryTextOnlyDisabled"
     [headingLevel]="3"
   >
-    <button class="button-secondary" disabled type="button">Caption</button>
+    <button class="button-secondary" disabled type="button">
+      {{ buttonCommon.caption }}
+    </button>
   </code-snippet>
 
   <code-snippet
     [codeSnippet]="codeSnippets.buttonSecondaryTextOnlyDestructive"
     [headingLevel]="3"
   >
-    <button class="button-secondary-destructive" type="button">Caption</button>
+    <button class="button-secondary-destructive" type="button">
+      {{ buttonCommon.caption }}
+    </button>
   </code-snippet>
 
   <code-snippet
@@ -126,8 +172,12 @@
       [class]="codeSnippets.buttonSecondaryIconAndText.template.class"
       type="button"
     >
-      <ch-image class="icon-md" [src]="icon" [type]="'mask'"></ch-image>
-      Caption
+      <ch-image
+        [class]="iconCommon.size"
+        [src]="buttonCommon.iconSrc"
+        [type]="'mask'"
+      ></ch-image>
+      {{ buttonCommon.caption }}
     </button>
   </code-snippet>
 
@@ -141,8 +191,12 @@
       type="button"
       disabled
     >
-      <ch-image class="icon-md" [src]="icon" [type]="'mask'"></ch-image>
-      Caption
+      <ch-image
+        [class]="iconCommon.size"
+        [src]="buttonCommon.iconSrc"
+        [type]="'mask'"
+      ></ch-image>
+      {{ buttonCommon.caption }}
     </button>
   </code-snippet>
 
@@ -157,8 +211,12 @@
       "
       type="button"
     >
-      <ch-image class="icon-md" [src]="icon" [type]="'mask'"></ch-image>
-      Caption
+      <ch-image
+        [class]="iconCommon.size"
+        [src]="buttonCommon.iconSrc"
+        [type]="'mask'"
+      ></ch-image>
+      {{ buttonCommon.caption }}
     </button>
   </code-snippet>
 </section>
@@ -182,14 +240,18 @@
     [codeSnippet]="codeSnippets.buttonTertiaryTextOnly"
     [headingLevel]="3"
   >
-    <button class="button-tertiary" type="button">Caption</button>
+    <button class="button-tertiary" type="button">
+      {{ buttonCommon.caption }}
+    </button>
   </code-snippet>
 
   <code-snippet
     [codeSnippet]="codeSnippets.buttonTertiaryTextOnlyDisabled"
     [headingLevel]="3"
   >
-    <button class="button-tertiary" disabled type="button">Caption</button>
+    <button class="button-tertiary" disabled type="button">
+      {{ buttonCommon.caption }}
+    </button>
   </code-snippet>
 
   <code-snippet
@@ -201,8 +263,12 @@
       [class]="codeSnippets.buttonTertiaryIconAndText.template.class"
       type="button"
     >
-      <ch-image class="icon-md" [src]="icon" [type]="'mask'"></ch-image>
-      Caption
+      <ch-image
+        [class]="iconCommon.size"
+        [src]="buttonCommon.iconSrc"
+        [type]="'mask'"
+      ></ch-image>
+      {{ buttonCommon.caption }}
     </button>
   </code-snippet>
 
@@ -216,8 +282,12 @@
       type="button"
       disabled
     >
-      <ch-image class="icon-md" [src]="icon" [type]="'mask'"></ch-image>
-      Caption
+      <ch-image
+        [class]="iconCommon.size"
+        [src]="buttonCommon.iconSrc"
+        [type]="'mask'"
+      ></ch-image>
+      {{ buttonCommon.caption }}
     </button>
   </code-snippet>
 
@@ -230,7 +300,11 @@
       [class]="codeSnippets.buttonTertiaryIconOnly.template.class"
       type="button"
     >
-      <ch-image class="icon-md" [src]="icon" [type]="'mask'"></ch-image>
+      <ch-image
+        [class]="iconCommon.size"
+        [src]="buttonCommon.iconSrc"
+        [type]="'mask'"
+      ></ch-image>
     </button>
   </code-snippet>
 
@@ -244,7 +318,11 @@
       type="button"
       disabled
     >
-      <ch-image class="icon-md" [src]="icon" [type]="'mask'"></ch-image>
+      <ch-image
+        [class]="iconCommon.size"
+        [src]="buttonCommon.iconSrc"
+        [type]="'mask'"
+      ></ch-image>
     </button>
   </code-snippet>
 </section>

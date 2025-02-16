@@ -1,7 +1,8 @@
 import { ComponentMetadata } from "../../../common/types";
 import { ComponentTemplateItemText } from "../../../services/template-language/types";
+import { buttonCommon, iconCommon } from "./common";
 
-const CAPTION: ComponentTemplateItemText = "Caption";
+const ICON_SRC = `getIconPath({ category: "${iconCommon.category}", name: "${iconCommon.name}", colorType: "${iconCommon.colorType}" })`;
 
 export const buttonMetadata = {
   title: "Button",
@@ -15,7 +16,7 @@ export const buttonMetadata = {
         tag: "button",
         class: "button-primary",
         properties: [{ name: "type", value: "button" }],
-        children: CAPTION
+        children: buttonCommon.caption
       }
     },
 
@@ -29,7 +30,7 @@ export const buttonMetadata = {
           { name: "disabled", value: true },
           { name: "type", value: "button" }
         ],
-        children: CAPTION
+        children: buttonCommon.caption
       }
     },
 
@@ -40,7 +41,7 @@ export const buttonMetadata = {
         tag: "button",
         class: "button-primary-destructive",
         properties: [{ name: "type", value: "button" }],
-        children: CAPTION
+        children: buttonCommon.caption
       }
     },
 
@@ -53,8 +54,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_SRC
         }
       ],
       template: {
@@ -70,7 +70,7 @@ export const buttonMetadata = {
               { name: "type", value: "mask" }
             ]
           },
-          CAPTION
+          buttonCommon.caption
         ]
       }
     },
@@ -84,8 +84,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_SRC
         }
       ],
       template: {
@@ -104,7 +103,7 @@ export const buttonMetadata = {
               { name: "type", value: "mask" }
             ]
           },
-          CAPTION
+          buttonCommon.caption
         ]
       }
     },
@@ -118,8 +117,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_SRC
         }
       ],
       template: {
@@ -135,8 +133,27 @@ export const buttonMetadata = {
               { name: "type", value: "mask" }
             ]
           },
-          CAPTION
+          buttonCommon.caption
         ]
+      }
+    },
+
+    buttonPrimaryWithLoader: {
+      linkId: "button-primary-with-loader",
+      title: "1.7. Primary with Loader",
+      template: {
+        tag: "button",
+        class: "button-primary-with-loader",
+        children: ["Caption"]
+      }
+    },
+
+    buttonPrimaryLoaderOnly: {
+      linkId: "button-primary-loader-only",
+      title: "1.8. Primary Loader Only",
+      template: {
+        tag: "button",
+        class: "button-primary-loader-only"
       }
     },
 
@@ -149,7 +166,7 @@ export const buttonMetadata = {
         tag: "button",
         class: "button-secondary",
         properties: [{ name: "type", value: "button" }],
-        children: CAPTION
+        children: buttonCommon.caption
       }
     },
 
@@ -163,7 +180,7 @@ export const buttonMetadata = {
           { name: "disabled", value: true },
           { name: "type", value: "button" }
         ],
-        children: CAPTION
+        children: buttonCommon.caption
       }
     },
 
@@ -174,7 +191,7 @@ export const buttonMetadata = {
         tag: "button",
         class: "button-secondary-destructive",
         properties: [{ name: "type", value: "button" }],
-        children: CAPTION
+        children: buttonCommon.caption
       }
     },
 
@@ -187,8 +204,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_SRC
         }
       ],
       template: {
@@ -204,7 +220,7 @@ export const buttonMetadata = {
               { name: "type", value: "mask" }
             ]
           },
-          CAPTION
+          buttonCommon.caption
         ]
       }
     },
@@ -218,8 +234,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_SRC
         }
       ],
       template: {
@@ -238,7 +253,7 @@ export const buttonMetadata = {
               { name: "type", value: "mask" }
             ]
           },
-          CAPTION
+          buttonCommon.caption
         ]
       }
     },
@@ -252,8 +267,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_SRC
         }
       ],
       template: {
@@ -269,7 +283,7 @@ export const buttonMetadata = {
               { name: "type", value: "mask" }
             ]
           },
-          CAPTION
+          buttonCommon.caption
         ]
       }
     },
@@ -283,7 +297,7 @@ export const buttonMetadata = {
         tag: "button",
         class: "button-tertiary",
         properties: [{ name: "type", value: "button" }],
-        children: CAPTION
+        children: buttonCommon.caption
       }
     },
 
@@ -297,7 +311,7 @@ export const buttonMetadata = {
           { name: "disabled", value: true },
           { name: "type", value: "button" }
         ],
-        children: CAPTION
+        children: buttonCommon.caption
       }
     },
 
@@ -310,8 +324,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_SRC
         }
       ],
       template: {
@@ -327,7 +340,7 @@ export const buttonMetadata = {
               { name: "type", value: "mask" }
             ]
           },
-          CAPTION
+          buttonCommon.caption
         ]
       }
     },
@@ -341,8 +354,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_SRC
         }
       ],
       template: {
@@ -361,7 +373,7 @@ export const buttonMetadata = {
               { name: "type", value: "mask" }
             ]
           },
-          CAPTION
+          buttonCommon.caption
         ]
       }
     },
@@ -405,8 +417,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_SRC
         }
       ],
       template: {
