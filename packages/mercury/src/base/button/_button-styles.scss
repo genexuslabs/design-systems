@@ -23,6 +23,7 @@
   --button-background-color: var(--mer-accent__primary);
   --control__border-color: var(--button-background-color);
   --button-color: var(--mer-text__on-primary);
+  // for the loader
   --button-color--enabled: var(
     --mer-text__on-primary
   ); // a copy of --button-color
@@ -82,6 +83,9 @@
   --button-background-color: transparent;
   --control__border-color: var(--button-color);
   --button-color: var(--mer-text__neutral);
+  // for the loader
+  --button-color--enabled: var(--mer-text__neutral); // a copy of --button-color
+  --button-color--active: var(--mer-text__on-primary--active);
 
   &--hover {
     --button-color: var(--mer-text__primary--hover);
@@ -89,7 +93,7 @@
 
   &--active {
     --control__border-color: var(--mer-border-color__primary--active);
-    --button-color: var(--mer-text__on-primary--active);
+    --button-color: var(--button-color--active);
   }
 
   &--disabled {
@@ -155,6 +159,17 @@
 
     &--active {
       --loader-spinner-color: var(--button-color--enabled);
+    }
+  }
+  &-secondary {
+    --loader-spinner-color: var(--mer-accent__primary--disabled);
+    --loader-track-color: var(--button-color);
+
+    &--hover {
+      --loader-spinner-color: var(--mer-accent__primary);
+    }
+    &--active {
+      --loader-spinner-color: var(--mer-accent__primary--disabled);
     }
   }
 }
@@ -321,11 +336,15 @@
 
 /// @group Button
 /// @param {String} $selector [".button-secondary"] -
+/// @param {Boolean} $add--loading [true] -
 @mixin button-secondary(
   $selector: ".button-secondary",
   $destructive-selector: ".button-secondary-destructive",
+  $with-loader-selector: ".button-secondary-with-loader",
+  $loader-only-selector: ".button-secondary-loader-only",
   $add--disabled: true,
-  $add--destructive: true
+  $add--destructive: true,
+  $add--loading: true
 ) {
   #{$selector} {
     @extend %button-secondary;
@@ -369,6 +388,62 @@
 
       @if $add--disabled {
         // TODO: avoid duplcation
+        &:disabled {
+          @extend %button-secondary--disabled;
+        }
+      }
+    }
+  }
+
+  @if $add--loading {
+    #{$with-loader-selector} {
+      @extend %button-secondary;
+      @extend %button-loader;
+      @extend %button-loader-secondary;
+      @extend %button-with-loader;
+
+      &:focus-visible {
+        @extend %button-base--focus-visible;
+      }
+
+      &:hover {
+        @extend %button-secondary--hover;
+        @extend %button-loader-secondary--hover;
+      }
+
+      &:active {
+        @extend %button-secondary--active;
+        @extend %button-loader-secondary--active;
+      }
+
+      @if $add--disabled {
+        &:disabled {
+          @extend %button-secondary--disabled;
+        }
+      }
+    }
+
+    #{$loader-only-selector} {
+      @extend %button-secondary;
+      @extend %button-loader;
+      @extend %button-loader-secondary;
+      @extend %button-loader-only;
+
+      &:focus-visible {
+        @extend %button-base--focus-visible;
+      }
+
+      &:hover {
+        @extend %button-secondary--hover;
+        @extend %button-loader-secondary--hover;
+      }
+
+      &:active {
+        @extend %button-secondary--active;
+        @extend %button-loader-secondary--active;
+      }
+
+      @if $add--disabled {
         &:disabled {
           @extend %button-secondary--disabled;
         }
