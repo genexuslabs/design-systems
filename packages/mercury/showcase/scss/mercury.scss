@@ -2425,7 +2425,7 @@
 
 
 %label-font {
-  @extend %body-semi-bold-s;
+  @extend %body-semi-bold-m;
 }
 
 /// @group Label
@@ -5274,8 +5274,7 @@ $tree-controls: ($combo-box-selector, $input-selector);
   $combo-box-selector: $combo-box-selector,
   $combo-box--disabled-selector: ".combo-box[disabled]",
   $combo-box--error-selector: ".combo-box-error",
-  $combo-box__placeholder-selector:
-    ".combo-box[part='ch-combo-box--empty-value']",
+  $combo-box__placeholder-selector: ".combo-box[part='']",
   $window-selector: ".combo-box::part(window)",
   $group-selector: ".combo-box::part(group)",
   $group__content-selector: ".combo-box::part(group__content)",
@@ -5305,7 +5304,7 @@ $tree-controls: ($combo-box-selector, $input-selector);
 
   @if $add--placeholder {
     #{$combo-box__placeholder-selector} {
-      @include control-placeholder();
+      @extend %body-italic-m;
     }
   }
 
