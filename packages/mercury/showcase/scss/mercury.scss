@@ -3319,7 +3319,10 @@
 %button-loader-only {
   --loader-size: 20px;
   --control__padding-block: calc(
-    (var(--control__block-size) - var(--loader-size)) / 2
+    (
+        var(--control__block-size) - var(--loader-size) -
+          var(--control__border-width) * 2
+      ) / 2
   );
 }
 
