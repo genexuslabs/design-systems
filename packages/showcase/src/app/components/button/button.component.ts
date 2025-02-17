@@ -10,7 +10,12 @@ import { buttonMetadata } from "./metadata";
 import { CodeSnippetComponent } from "../../../user-controls/code-snippet/code-snippet.component";
 import { RuntimeBundlesComponent } from "../../../user-controls/runtime-bundles/runtime-bundles.component";
 import { getIconPath } from "@genexus/mercury/assets-manager.js";
-import { buttonCommon, iconCommon } from "./common";
+import {
+  buttonCommon,
+  iconCommonPrimary,
+  iconCommonSecondary,
+  iconCommonTertiary
+} from "./common";
 
 @Component({
   selector: "components-button",
@@ -38,5 +43,7 @@ export class ButtonComponent {
   });
 
   buttonCommon = buttonCommon;
-  iconCommon = iconCommon;
+  iconCommonPrimary = iconCommonPrimary;
+  iconCommonSecondary = iconCommonSecondary;
+  iconCommonTertiary = iconCommonTertiary;
 }

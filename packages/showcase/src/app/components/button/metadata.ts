@@ -1,8 +1,24 @@
 import { ComponentMetadata } from "../../../common/types";
 import { ComponentTemplateItemText } from "../../../services/template-language/types";
-import { buttonCommon, iconCommon } from "./common";
+import {
+  buttonCommon,
+  iconCommonPrimary,
+  iconCommonSecondary,
+  iconCommonTertiary
+} from "./common";
 
-const ICON_SRC = `getIconPath({ category: "${iconCommon.category}", name: "${iconCommon.name}", colorType: "${iconCommon.colorType}" })`;
+const ICON_PRIMARY_SRC = `getIconPath({ category: "${iconCommonPrimary.category}", name: "${iconCommonPrimary.name}", colorType: "${iconCommonPrimary.colorType}" })`;
+const ICON_SECONDARY_SRC = `getIconPath({ category: "${iconCommonSecondary.category}", name: "${iconCommonSecondary.name}", colorType: "${iconCommonSecondary.colorType}" })`;
+const ICON_TERTIARY_SRC = `getIconPath({ category: "${iconCommonTertiary.category}", name: "${iconCommonTertiary.name}", colorType: "${iconCommonTertiary.colorType}" })`;
+
+const ICON_METADATA = {
+  tag: "ch-image",
+  class: "icon-md",
+  properties: [
+    { name: "src", value: "ICON", variable: true },
+    { name: "type", value: "mask" }
+  ]
+};
 
 export const buttonMetadata = {
   title: "Button",
@@ -65,24 +81,14 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value: ICON_SRC
+          value: ICON_PRIMARY_SRC
         }
       ],
       template: {
         tag: "button",
         class: "button-primary button-icon-and-text",
         properties: [{ name: "type", value: "button" }],
-        children: [
-          {
-            tag: "ch-image",
-            class: "icon-md",
-            properties: [
-              { name: "src", value: "ICON", variable: true },
-              { name: "type", value: "mask" }
-            ]
-          },
-          buttonCommon.caption
-        ]
+        children: [ICON_METADATA, buttonCommon.caption]
       }
     },
 
@@ -95,7 +101,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value: ICON_SRC
+          value: ICON_PRIMARY_SRC
         }
       ],
       template: {
@@ -128,7 +134,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value: ICON_SRC
+          value: ICON_PRIMARY_SRC
         }
       ],
       template: {
@@ -158,7 +164,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value: ICON_SRC
+          value: ICON_PRIMARY_SRC
         }
       ],
       template: {
@@ -188,7 +194,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value: ICON_SRC
+          value: ICON_PRIMARY_SRC
         }
       ],
       template: {
@@ -273,7 +279,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value: ICON_SRC
+          value: ICON_SECONDARY_SRC
         }
       ],
       template: {
@@ -303,7 +309,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value: ICON_SRC
+          value: ICON_SECONDARY_SRC
         }
       ],
       template: {
@@ -336,7 +342,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value: ICON_SRC
+          value: ICON_SECONDARY_SRC
         }
       ],
       template: {
@@ -366,7 +372,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value: ICON_SRC
+          value: ICON_SECONDARY_SRC
         }
       ],
       template: {
@@ -440,24 +446,14 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value: ICON_SRC
+          value: ICON_TERTIARY_SRC
         }
       ],
       template: {
         tag: "button",
         class: "button-tertiary button-icon-and-text",
         properties: [{ name: "type", value: "button" }],
-        children: [
-          {
-            tag: "ch-image",
-            class: "icon-md",
-            properties: [
-              { name: "src", value: "ICON", variable: true },
-              { name: "type", value: "mask" }
-            ]
-          },
-          buttonCommon.caption
-        ]
+        children: [ICON_TERTIARY_SRC, buttonCommon.caption]
       }
     },
 
@@ -470,7 +466,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value: ICON_SRC
+          value: ICON_TERTIARY_SRC
         }
       ],
       template: {
@@ -480,17 +476,7 @@ export const buttonMetadata = {
           { name: "type", value: "button" },
           { name: "disabled", value: true }
         ],
-        children: [
-          {
-            tag: "ch-image",
-            class: "icon-md",
-            properties: [
-              { name: "src", value: "ICON" },
-              { name: "type", value: "mask" }
-            ]
-          },
-          buttonCommon.caption
-        ]
+        children: [ICON_TERTIARY_SRC, buttonCommon.caption]
       }
     },
 
@@ -503,37 +489,27 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_TERTIARY_SRC
         }
       ],
       template: {
         tag: "button",
         class: "button-tertiary button-icon-only",
         properties: [{ name: "type", value: "button" }],
-        children: [
-          {
-            tag: "ch-image",
-            class: "icon-md",
-            properties: [
-              { name: "src", value: "ICON" },
-              { name: "type", value: "mask" }
-            ]
-          }
-        ]
+        children: ICON_TERTIARY_SRC
       }
     },
 
     buttonTertiaryIconOnlyDisabled: {
       linkId: "button-tertiary-icon-only-disabled",
-      title: "3.6. Icon Only Disabled",
+      title: "3.7. Icon Only Disabled",
       imports: [
         'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
       ],
       variables: [
         {
           name: "ICON",
-          value: ICON_SRC
+          value: ICON_TERTIARY_SRC
         }
       ],
       template: {
@@ -543,16 +519,7 @@ export const buttonMetadata = {
           { name: "type", value: "button" },
           { name: "disabled", value: true }
         ],
-        children: [
-          {
-            tag: "ch-image",
-            class: "icon-md",
-            properties: [
-              { name: "src", value: "ICON" },
-              { name: "type", value: "mask" }
-            ]
-          }
-        ]
+        children: [ICON_TERTIARY_SRC]
       }
     }
   }
