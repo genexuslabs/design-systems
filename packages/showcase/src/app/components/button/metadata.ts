@@ -1,7 +1,24 @@
 import { ComponentMetadata } from "../../../common/types";
 import { ComponentTemplateItemText } from "../../../services/template-language/types";
+import {
+  buttonCommon,
+  iconCommonPrimary,
+  iconCommonSecondary,
+  iconCommonTertiary
+} from "./common";
 
-const CAPTION: ComponentTemplateItemText = "Caption";
+const ICON_PRIMARY_SRC = `getIconPath({ category: "${iconCommonPrimary.category}", name: "${iconCommonPrimary.name}", colorType: "${iconCommonPrimary.colorType}" })`;
+const ICON_SECONDARY_SRC = `getIconPath({ category: "${iconCommonSecondary.category}", name: "${iconCommonSecondary.name}", colorType: "${iconCommonSecondary.colorType}" })`;
+const ICON_TERTIARY_SRC = `getIconPath({ category: "${iconCommonTertiary.category}", name: "${iconCommonTertiary.name}", colorType: "${iconCommonTertiary.colorType}" })`;
+
+const ICON_METADATA = {
+  tag: "ch-image",
+  class: "icon-md",
+  properties: [
+    { name: "src", value: "ICON", variable: true },
+    { name: "type", value: "mask" }
+  ]
+};
 
 export const buttonMetadata = {
   title: "Button",
@@ -15,7 +32,7 @@ export const buttonMetadata = {
         tag: "button",
         class: "button-primary",
         properties: [{ name: "type", value: "button" }],
-        children: CAPTION
+        children: buttonCommon.caption
       }
     },
 
@@ -29,7 +46,7 @@ export const buttonMetadata = {
           { name: "disabled", value: true },
           { name: "type", value: "button" }
         ],
-        children: CAPTION
+        children: buttonCommon.caption
       }
     },
 
@@ -40,52 +57,51 @@ export const buttonMetadata = {
         tag: "button",
         class: "button-primary-destructive",
         properties: [{ name: "type", value: "button" }],
-        children: CAPTION
+        children: buttonCommon.caption
+      }
+    },
+
+    buttonPrimaryTextOnlySuccess: {
+      linkId: "button-primary-text-only-success",
+      title: "1.4. Text Only: Success",
+      template: {
+        tag: "button",
+        class: "button-primary-success",
+        properties: [{ name: "type", value: "button" }],
+        children: buttonCommon.caption
       }
     },
 
     buttonPrimaryIconAndText: {
       linkId: "button-primary-icon-and-text",
-      title: "1.4. Icon and Text",
+      title: "1.5. Icon and Text",
       imports: [
         'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
       ],
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_PRIMARY_SRC
         }
       ],
       template: {
         tag: "button",
         class: "button-primary button-icon-and-text",
         properties: [{ name: "type", value: "button" }],
-        children: [
-          {
-            tag: "ch-image",
-            class: "icon-md",
-            properties: [
-              { name: "src", value: "ICON", variable: true },
-              { name: "type", value: "mask" }
-            ]
-          },
-          CAPTION
-        ]
+        children: [ICON_METADATA, buttonCommon.caption]
       }
     },
 
     buttonPrimaryIconAndTextDisabled: {
       linkId: "button-primary-icon-and-text-disabled",
-      title: "1.5. Icon and Text: Disabled",
+      title: "1.6. Icon and Text: Disabled",
       imports: [
         'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
       ],
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_PRIMARY_SRC
         }
       ],
       template: {
@@ -104,22 +120,21 @@ export const buttonMetadata = {
               { name: "type", value: "mask" }
             ]
           },
-          CAPTION
+          buttonCommon.caption
         ]
       }
     },
 
     buttonPrimaryIconAndTextDestructive: {
       linkId: "button-primary-icon-and-text-destructive",
-      title: "1.6. Icon and Text: Destructive",
+      title: "1.7. Icon and Text: Destructive",
       imports: [
         'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
       ],
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_PRIMARY_SRC
         }
       ],
       template: {
@@ -135,8 +150,85 @@ export const buttonMetadata = {
               { name: "type", value: "mask" }
             ]
           },
-          CAPTION
+          buttonCommon.caption
         ]
+      }
+    },
+
+    buttonPrimaryIconAndTextSuccess: {
+      linkId: "button-primary-icon-and-text-success",
+      title: "1.8. Icon and Text: Success",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value: ICON_PRIMARY_SRC
+        }
+      ],
+      template: {
+        tag: "button",
+        class: "button-primary-success button-icon-and-text",
+        properties: [{ name: "type", value: "button" }],
+        children: [
+          {
+            tag: "ch-image",
+            class: "icon-md",
+            properties: [
+              { name: "src", value: "ICON", variable: true },
+              { name: "type", value: "mask" }
+            ]
+          },
+          buttonCommon.caption
+        ]
+      }
+    },
+
+    buttonPrimaryIconOnly: {
+      linkId: "button-primary-icon-only",
+      title: "1.9 Primary icon only",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value: ICON_PRIMARY_SRC
+        }
+      ],
+      template: {
+        tag: "button",
+        class: "button-primary button-icon-only",
+        children: [
+          {
+            tag: "ch-image",
+            class: "icon-md",
+            properties: [
+              { name: "src", value: "ICON", variable: true },
+              { name: "type", value: "mask" }
+            ]
+          }
+        ]
+      }
+    },
+
+    buttonPrimaryWithLoader: {
+      linkId: "button-primary-with-loader",
+      title: "1.10. Primary with Loader",
+      template: {
+        tag: "button",
+        class: "button-primary-with-loader",
+        children: ["Caption"]
+      }
+    },
+
+    buttonPrimaryLoaderOnly: {
+      linkId: "button-primary-loader-only",
+      title: "1.11. Primary Loader Only",
+      template: {
+        tag: "button",
+        class: "button-primary-loader-only"
       }
     },
 
@@ -149,7 +241,7 @@ export const buttonMetadata = {
         tag: "button",
         class: "button-secondary",
         properties: [{ name: "type", value: "button" }],
-        children: CAPTION
+        children: buttonCommon.caption
       }
     },
 
@@ -163,7 +255,7 @@ export const buttonMetadata = {
           { name: "disabled", value: true },
           { name: "type", value: "button" }
         ],
-        children: CAPTION
+        children: buttonCommon.caption
       }
     },
 
@@ -174,7 +266,7 @@ export const buttonMetadata = {
         tag: "button",
         class: "button-secondary-destructive",
         properties: [{ name: "type", value: "button" }],
-        children: CAPTION
+        children: buttonCommon.caption
       }
     },
 
@@ -187,8 +279,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_SECONDARY_SRC
         }
       ],
       template: {
@@ -204,7 +295,7 @@ export const buttonMetadata = {
               { name: "type", value: "mask" }
             ]
           },
-          CAPTION
+          buttonCommon.caption
         ]
       }
     },
@@ -218,8 +309,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_SECONDARY_SRC
         }
       ],
       template: {
@@ -238,7 +328,7 @@ export const buttonMetadata = {
               { name: "type", value: "mask" }
             ]
           },
-          CAPTION
+          buttonCommon.caption
         ]
       }
     },
@@ -252,8 +342,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_SECONDARY_SRC
         }
       ],
       template: {
@@ -269,8 +358,55 @@ export const buttonMetadata = {
               { name: "type", value: "mask" }
             ]
           },
-          CAPTION
+          buttonCommon.caption
         ]
+      }
+    },
+
+    buttonSecondaryIconOnly: {
+      linkId: "button-secondary-icon-only",
+      title: "1.9 Secondary icon only",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value: ICON_SECONDARY_SRC
+        }
+      ],
+      template: {
+        tag: "button",
+        class: "button-secondary button-icon-only",
+        children: [
+          {
+            tag: "ch-image",
+            class: "icon-md",
+            properties: [
+              { name: "src", value: "ICON", variable: true },
+              { name: "type", value: "mask" }
+            ]
+          }
+        ]
+      }
+    },
+
+    buttonSecondaryWithLoader: {
+      linkId: "button-secondary-with-loader",
+      title: "2.8. Secondary with Loader",
+      template: {
+        tag: "button",
+        class: "button-secondary-with-loader",
+        children: ["Caption"]
+      }
+    },
+
+    buttonSecondaryLoaderOnly: {
+      linkId: "button-secondary-loader-only",
+      title: "2.8. Secondary Loader Only",
+      template: {
+        tag: "button",
+        class: "button-secondary-loader-only"
       }
     },
 
@@ -283,7 +419,7 @@ export const buttonMetadata = {
         tag: "button",
         class: "button-tertiary",
         properties: [{ name: "type", value: "button" }],
-        children: CAPTION
+        children: buttonCommon.caption
       }
     },
 
@@ -297,7 +433,7 @@ export const buttonMetadata = {
           { name: "disabled", value: true },
           { name: "type", value: "button" }
         ],
-        children: CAPTION
+        children: buttonCommon.caption
       }
     },
 
@@ -310,25 +446,14 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_TERTIARY_SRC
         }
       ],
       template: {
         tag: "button",
         class: "button-tertiary button-icon-and-text",
         properties: [{ name: "type", value: "button" }],
-        children: [
-          {
-            tag: "ch-image",
-            class: "icon-md",
-            properties: [
-              { name: "src", value: "ICON", variable: true },
-              { name: "type", value: "mask" }
-            ]
-          },
-          CAPTION
-        ]
+        children: [ICON_TERTIARY_SRC, buttonCommon.caption]
       }
     },
 
@@ -341,8 +466,7 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_TERTIARY_SRC
         }
       ],
       template: {
@@ -352,17 +476,7 @@ export const buttonMetadata = {
           { name: "type", value: "button" },
           { name: "disabled", value: true }
         ],
-        children: [
-          {
-            tag: "ch-image",
-            class: "icon-md",
-            properties: [
-              { name: "src", value: "ICON" },
-              { name: "type", value: "mask" }
-            ]
-          },
-          CAPTION
-        ]
+        children: [ICON_TERTIARY_SRC, buttonCommon.caption]
       }
     },
 
@@ -375,38 +489,27 @@ export const buttonMetadata = {
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_TERTIARY_SRC
         }
       ],
       template: {
         tag: "button",
         class: "button-tertiary button-icon-only",
         properties: [{ name: "type", value: "button" }],
-        children: [
-          {
-            tag: "ch-image",
-            class: "icon-md",
-            properties: [
-              { name: "src", value: "ICON" },
-              { name: "type", value: "mask" }
-            ]
-          }
-        ]
+        children: ICON_TERTIARY_SRC
       }
     },
 
     buttonTertiaryIconOnlyDisabled: {
       linkId: "button-tertiary-icon-only-disabled",
-      title: "3.6. Icon Only Disablewd",
+      title: "3.7. Icon Only Disabled",
       imports: [
         'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
       ],
       variables: [
         {
           name: "ICON",
-          value:
-            'getIconPath({ category: "system", name: "add-circle", colorType: "on-elevation" })'
+          value: ICON_TERTIARY_SRC
         }
       ],
       template: {
@@ -416,16 +519,7 @@ export const buttonMetadata = {
           { name: "type", value: "button" },
           { name: "disabled", value: true }
         ],
-        children: [
-          {
-            tag: "ch-image",
-            class: "icon-md",
-            properties: [
-              { name: "src", value: "ICON" },
-              { name: "type", value: "mask" }
-            ]
-          }
-        ]
+        children: [ICON_TERTIARY_SRC]
       }
     }
   }

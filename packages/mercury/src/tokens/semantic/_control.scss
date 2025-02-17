@@ -3,6 +3,8 @@
   // Inline Controls should have the same height to look good inline
   // ---------------------------------------------------------------
 
+  --control__block-size: 32px; // Used for calculations
+
   // - - - - - - - Colors - - - - - - -
 
   --control__bg-color: var(--control__bg-color--enabled);
@@ -39,8 +41,8 @@
   // DS results in higer block-size.
   --control__padding-block: calc(
     (
-        32px - 2 * var(--control__border-width) - var(--font-size-body-m) *
-          var(--line-height-tight)
+        var(--control__block-size) - 2 * var(--control__border-width) -
+          var(--font-size-body-m) * var(--line-height-tight)
       ) / 2
   );
   --control__padding-inline: var(--mer-spacing--xs);

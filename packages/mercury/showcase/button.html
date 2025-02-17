@@ -84,14 +84,12 @@
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <button class="button-primary button-primary-destructive">
-                    Caption
-                  </button>
+                  <button class="button-primary-destructive">Caption</button>
                 </div>
                 <div class="article__code">
                   <ch-code language="tsx" class="code"></ch-code>
                   <script>
-                    code = `<button class="button-primary button-primary-destructive">
+                    code = `<button class="button-primary-destructive">
   Caption
 </button>`;
                   </script>
@@ -108,7 +106,7 @@
                 <div class="article__content">
                   <button class="button-primary button-icon-and-text">
                     <ch-image
-                      class="icon-sm"
+                      class="icon-md"
                       id="primary-text-with-icon-enabled"
                     ></ch-image>
                     Caption 1
@@ -118,7 +116,7 @@
                   <ch-code language="tsx" class="code"> </ch-code>
                   <script>
                     code = `<button class="button-primary button-icon-and-text">
-  <ch-image class="icon-sm"></ch-image>
+  <ch-image class="icon-md"></ch-image>
   Caption
 </button>`;
                   </script>
@@ -144,7 +142,7 @@
                 <div class="article__content">
                   <button class="button-primary button-icon-and-text" disabled>
                     <ch-image
-                      class="icon-sm"
+                      class="icon-md"
                       id="primary-text-with-icon-disabled"
                     ></ch-image>
                     Caption
@@ -154,7 +152,7 @@
                   <ch-code language="tsx" class="code"> </ch-code>
                   <script>
                     code = `<button class="button-primary button-icon-and-text" disabled>
-  <ch-image class="icon-sm"></ch-image>                      
+  <ch-image class="icon-md"></ch-image>                      
   Caption
 </button>`;
                   </script>
@@ -179,10 +177,10 @@
               <div class="article__main">
                 <div class="article__content">
                   <button
-                    class="button-primary button-primary-destructive button-icon-and-text"
+                    class="button-primary-destructive button-icon-and-text"
                   >
                     <ch-image
-                      class="icon-sm"
+                      class="icon-md"
                       id="primary-text-with-icon-destructive"
                     ></ch-image>
                     Caption
@@ -191,8 +189,8 @@
                 <div class="article__code">
                   <ch-code language="tsx" class="code"> </ch-code>
                   <script>
-                    code = `<button class="button-primary button-primary-destructive button-icon-and-text">
-  <ch-image class="icon-sm"></ch-image>                      
+                    code = `<button class="button-primary-destructive button-icon-and-text">
+  <ch-image class="icon-md"></ch-image>                      
   Caption
 </button>`;
                   </script>
@@ -202,6 +200,85 @@
                     >See how to set the icon</a
                   >
                 </p>
+              </div>
+            </article>
+
+            <!-- button-primary icon and text: success -->
+            <article
+              class="article no-separator"
+              nav
+              data-title="icon and text: success"
+            >
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <button class="button-primary-success button-icon-and-text">
+                    <ch-image
+                      class="icon-md"
+                      id="primary-text-with-icon-success"
+                    ></ch-image>
+                    Caption
+                  </button>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<button class="button-primary-success button-icon-and-text">
+  <ch-image class="icon-md"></ch-image>                      
+  Caption
+</button>`;
+                  </script>
+                </div>
+                <p class="article__description">
+                  <a href="./icon.html" target="_blank"
+                    >See how to set the icon</a
+                  >
+                </p>
+              </div>
+            </article>
+
+            <!-- button-primary with loader -->
+            <article class="article no-separator" nav data-title="with loader">
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <button class="button-primary-with-loader">Caption</button>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<button class="button-primary-with-loader">Caption</button>`;
+                  </script>
+                </div>
+              </div>
+            </article>
+
+            <!-- button-primary loader only -->
+
+            <style>
+              .button-primary-loader-only {
+                inline-size: 92px;
+              }
+            </style>
+
+            <article class="article no-separator" nav data-title="loader only">
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <button class="button-primary-loader-only"></button>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<button class="button-primary-loader-only">Caption</button>`;
+                  </script>
+                </div>
               </div>
             </article>
           </div>
@@ -273,14 +350,12 @@
               <!-- main -->
               <div class="article__main">
                 <div class="article__content">
-                  <button class="button-secondary button-secondary-destructive">
-                    Caption
-                  </button>
+                  <button class="button-secondary-destructive">Caption</button>
                 </div>
                 <div class="article__code">
                   <ch-code language="tsx" class="code"></ch-code>
                   <script>
-                    code = `<button class="button-secondary button-secondary-destructive">
+                    code = `<button class="button-secondary-destructive">
   Caption
 </button>`;
                   </script>
@@ -297,7 +372,7 @@
                 <div class="article__content">
                   <button class="button-secondary button-icon-and-text">
                     <ch-image
-                      class="icon-sm"
+                      class="icon-md"
                       id="secondary-text-with-icon-enabled"
                     ></ch-image>
                     Caption
@@ -307,7 +382,7 @@
                   <ch-code language="tsx" class="code"></ch-code>
                   <script>
                     code = `<button class="button-secondary button-icon-and-text">
-  <ch-image class="icon-sm"></ch-image>                      
+  <ch-image class="icon-md"></ch-image>                      
   Caption
 </button>`;
                   </script>
@@ -336,7 +411,7 @@
                     disabled
                   >
                     <ch-image
-                      class="icon-sm"
+                      class="icon-md"
                       id="secondary-text-with-icon-disabled"
                     ></ch-image>
                     Caption
@@ -346,7 +421,7 @@
                   <ch-code language="tsx" class="code"></ch-code>
                   <script>
                     code = `<button class="button-secondary button-icon-and-text" disabled>
-  <ch-image class="icon-sm"></ch-image>                      
+  <ch-image class="icon-md"></ch-image>                      
   Caption
 </button>`;
                   </script>
@@ -356,6 +431,88 @@
                     >See how to set the icon</a
                   >
                 </p>
+              </div>
+            </article>
+
+            <!-- button-secondary icon and text: destructive -->
+            <article
+              class="article"
+              data-nav
+              data-title="icon and text: destructive"
+            >
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <button
+                    class="button-secondary-destructive button-icon-and-text"
+                  >
+                    <ch-image
+                      class="icon-md"
+                      id="secondary-icon-and-text-destructive"
+                    ></ch-image>
+                    Caption
+                  </button>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"></ch-code>
+                  <script>
+                    code = `<button class="button-secondary-destructive button-icon-and-text" disabled>
+  <ch-image class="icon-md"></ch-image>                      
+  Caption
+</button>`;
+                  </script>
+                </div>
+                <p class="article__description">
+                  <a href="./icon.html" target="_blank"
+                    >See how to set the icon</a
+                  >
+                </p>
+              </div>
+            </article>
+
+            <!-- button-secondary with loader -->
+            <article class="article no-separator" nav data-title="with loader">
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <button class="button-secondary-with-loader">Caption</button>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<button class="button-secondary-with-loader">Caption</button>`;
+                  </script>
+                </div>
+              </div>
+            </article>
+
+            <!-- button-secondary loader only -->
+
+            <style>
+              .button-primary-loader-only,
+              .button-secondary-loader-only {
+                inline-size: 92px;
+              }
+            </style>
+
+            <article class="article no-separator" nav data-title="loader only">
+              <!-- header -->
+              <header class="article__header"></header>
+              <!-- main -->
+              <div class="article__main">
+                <div class="article__content">
+                  <button class="button-secondary-loader-only"></button>
+                </div>
+                <div class="article__code">
+                  <ch-code language="tsx" class="code"> </ch-code>
+                  <script>
+                    code = `<button class="button-secondary-loader-only">Caption</button>`;
+                  </script>
+                </div>
               </div>
             </article>
           </div>
@@ -425,7 +582,7 @@
                 <div class="article__content">
                   <button class="button-tertiary button-icon-and-text">
                     <ch-image
-                      class="icon-sm"
+                      class="icon-md"
                       id="tertiary-text-with-icon-enabled"
                     ></ch-image>
                     Caption
@@ -435,7 +592,7 @@
                   <ch-code language="tsx" class="code"></ch-code>
                   <script>
                     code = `<button class="button-tertiary button-icon-and-text">
-  <ch-image class="icon-sm"></ch-image>
+  <ch-image class="icon-md"></ch-image>
   Caption
 </button>`;
                   </script>
@@ -461,7 +618,7 @@
                 <div class="article__content">
                   <button class="button-tertiary button-icon-and-text" disabled>
                     <ch-image
-                      class="icon-sm"
+                      class="icon-md"
                       id="tertiary-text-with-icon-disabled"
                     ></ch-image>
                     Caption
@@ -471,7 +628,7 @@
                   <ch-code language="tsx" class="code"></ch-code>
                   <script>
                     code = `<button class="button-tertiary button-icon-and-text" disabled>
-  <ch-image class="icon-sm"></ch-image>                      
+  <ch-image class="icon-md"></ch-image>                      
   Caption
 </button>`;
                   </script>
@@ -496,7 +653,7 @@
                     aria-label="caption"
                   >
                     <ch-image
-                      class="icon-sm"
+                      class="icon-md"
                       id="tertiary-icon-only"
                     ></ch-image>
                   </button>
@@ -505,7 +662,7 @@
                   <ch-code language="tsx" class="code"></ch-code>
                   <script>
                     code = `<button class="button-tertiary button-icon-only" aria-label="caption">
-  <ch-image class="icon-sm"></ch-image>                      
+  <ch-image class="icon-md"></ch-image>                      
 </button>`;
                   </script>
                 </div>
@@ -530,7 +687,7 @@
                     aria-label="caption"
                   >
                     <ch-image
-                      class="icon-sm"
+                      class="icon-md"
                       id="tertiary-icon-only-disabled"
                     ></ch-image>
                   </button>
@@ -539,7 +696,7 @@
                   <ch-code language="tsx" class="code"></ch-code>
                   <script>
                     code = `<button class="button-tertiary button-icon-only" disabled aria-label="caption">
-  <ch-image class="icon-sm"></ch-image>                      
+  <ch-image class="icon-md"></ch-image>                      
 </button>`;
                   </script>
                 </div>
@@ -571,11 +728,6 @@
         name: "add-circle",
         colorType: "on-disabled"
       });
-      const ICON_ON_ERROR = getIconPath({
-        category: "gemini-tools",
-        name: "add-circle",
-        colorType: "on-message"
-      });
 
       // primary icon and text: enabled
       const chImagePrimaryTextWithIconEnabled = document.getElementById(
@@ -593,7 +745,13 @@
       const chImagePrimaryTextWithIconDestructive = document.getElementById(
         "primary-text-with-icon-destructive"
       );
-      chImagePrimaryTextWithIconDestructive.src = ICON_ON_ERROR;
+      chImagePrimaryTextWithIconDestructive.src = ICON_ON_PRIMARY;
+
+      // primary icon and text: success
+      const chImagePrimaryTextWithIconSuccess = document.getElementById(
+        "primary-text-with-icon-success"
+      );
+      chImagePrimaryTextWithIconSuccess.src = ICON_ON_PRIMARY;
 
       // - - - - - - - - - - - - - - -
       // Button Secondary
@@ -602,6 +760,11 @@
         category: "gemini-tools",
         name: "add-circle",
         colorType: "neutral"
+      });
+      const ICON_ERROR_ACTIONABLE = getIconPath({
+        category: "system",
+        name: "warning",
+        colorType: "error-actionable"
       });
 
       // secondary icon and text: enabled
@@ -617,11 +780,17 @@
       chImageSecondaryTextWithIconDisabled.src = ICON_NEUTRAL;
 
       // secondary icon and text: destructive
+      const chImageSecondaryIconAndTextDestructive = document.getElementById(
+        "secondary-icon-and-text-destructive"
+      );
+      chImageSecondaryIconAndTextDestructive.src = ICON_ERROR_ACTIONABLE;
+
+      // secondary icon and text: destructive
       // ("error" icon color is missing at the time of writing)
       // const chImageSecondaryTextWithIconDestructive = document.getElementById(
       //   "secondary-text-with-icon-destructive"
       // );
-      // chImageSecondaryTextWithIconDestructive.src = ICON_ON_ERROR;
+      // chImageSecondaryTextWithIconDestructive.src = ICON_ON_PRIMARY;
 
       // icon only: enabled
       // const chImageSecondaryIconOnlyEnabled = document.getElementById(

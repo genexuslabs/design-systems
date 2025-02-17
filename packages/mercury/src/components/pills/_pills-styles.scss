@@ -47,7 +47,11 @@
     &::before {
       // override left
       inset-inline-start: 14px;
-      @include spinner($size);
+      @include spinner(
+        $size,
+        var(--mer-color__primary--300),
+        var(--mer-color__tinted-primary--50)
+      );
     }
   }
   &--success {

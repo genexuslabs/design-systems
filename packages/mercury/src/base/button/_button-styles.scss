@@ -1,8 +1,11 @@
+@import "../common";
+
 %button-base {
   @include button-common-styles();
   @include control-border();
   @include control-padding-inline-block();
 
+  box-sizing: border-box;
   background-color: var(--button-background-color);
   color: var(--button-color);
 
@@ -20,6 +23,11 @@
   --button-background-color: var(--mer-accent__primary);
   --control__border-color: var(--button-background-color);
   --button-color: var(--mer-text__on-primary);
+  // for the loader
+  --button-color--enabled: var(
+    --mer-text__on-primary
+  ); // a copy of --button-color
+  --button-color--active: var(--mer-text__on-primary--active);
 
   &--hover {
     --button-background-color: var(--mer-accent__primary--hover);
@@ -28,7 +36,7 @@
 
   &--active {
     --button-background-color: var(--mer-accent__primary--active);
-    --button-color: var(--mer-text__on-primary--active);
+    --button-color: var(--button-color--active);
   }
 
   &--disabled {
@@ -47,7 +55,22 @@
 
     &-active {
       --button-background-color: var(--mer-accent__primary--destructive-active);
+      --button-color: var(--mer-text__highlighted);
+    }
+  }
+
+  &--success {
+    --button-background-color: var(--accent-success-enabled);
+    --button-color: var(--mer-text__on-primary);
+
+    &-hover {
+      --button-background-color: var(--accent-success-hover);
       --button-color: var(--mer-text__on-primary);
+    }
+
+    &-active {
+      --button-background-color: var(--accent-success-active);
+      --button-color: var(--mer-text__highlighted);
     }
   }
 }
@@ -60,6 +83,9 @@
   --button-background-color: transparent;
   --control__border-color: var(--button-color);
   --button-color: var(--mer-text__neutral);
+  // for the loader
+  --button-color--enabled: var(--mer-text__neutral); // a copy of --button-color
+  --button-color--active: var(--mer-text__on-primary--active);
 
   &--hover {
     --button-color: var(--mer-text__primary--hover);
@@ -67,7 +93,7 @@
 
   &--active {
     --control__border-color: var(--mer-border-color__primary--active);
-    --button-color: var(--mer-text__on-primary--active);
+    --button-color: var(--button-color--active);
   }
 
   &--disabled {
@@ -75,14 +101,17 @@
   }
 
   &--destructive {
-    --button-color: var(--mer-accent__primary--destructive);
+    --button-color: var(--mer-text__highlighted);
+    --control__border-color: var(--mer-border-color__error);
 
     &-hover {
-      --button-background-color: var(--mer-color__message-red--600);
+      --button-color: var(--mer-accent__primary--destructive-hover);
+      --control__border-color: var(--mer-border-color__error--hover);
     }
 
     &-active {
-      --button-background-color: var(--mer-color__message-red--500);
+      --button-color: var(--mer-text__highlighted);
+      --control__border-color: var(--mer-border-color__error--active);
     }
   }
 }
@@ -114,16 +143,68 @@
   gap: var(--mer-spacing--xs);
 }
 
+%button-loader {
+  &::before {
+    content: "";
+    @include spinner(
+      var(--loader-size),
+      var(--loader-spinner-color),
+      var(--loader-track-color)
+    );
+  }
+
+  &-primary {
+    --loader-spinner-color: var(--button-color--active);
+    --loader-track-color: var(--button-color);
+
+    &--active {
+      --loader-spinner-color: var(--button-color--enabled);
+    }
+  }
+  &-secondary {
+    --loader-spinner-color: var(--mer-accent__primary--disabled);
+    --loader-track-color: var(--button-color);
+
+    &--hover {
+      --loader-spinner-color: var(--mer-accent__primary);
+    }
+    &--active {
+      --loader-spinner-color: var(--mer-accent__primary--disabled);
+    }
+  }
+}
+%button-with-loader {
+  --loader-size: var(--mer-icon__box--md);
+  @extend %icon-and-text;
+}
+%button-loader-only {
+  --loader-size: 20px;
+  --control__padding-block: calc(
+    (
+        var(--control__block-size) - var(--loader-size) -
+          var(--control__border-width) * 2
+      ) / 2
+  );
+}
+
 /// @group Button
 /// @param {String} $selector [".button-primary"] -
 /// @param {String} $destructive-selector [".button-primary-destructive"] -
+/// @param {String} $success-selector [".button-primary-success"] -
 /// @param {Boolean} $add--disabled [true] -
 /// @param {Boolean} $add--destructive [true] -
+/// @param {Boolean} $add--success [true] -
+/// @param {Boolean} $add--loading [true] -
 @mixin button-primary(
   $selector: ".button-primary",
   $destructive-selector: ".button-primary-destructive",
+  $success-selector: ".button-primary-success",
+  $with-loader-selector: ".button-primary-with-loader",
+  $loader-only-selector: ".button-primary-loader-only",
   $add--disabled: true,
-  $add--destructive: true
+  $add--destructive: true,
+  $add--success: true,
+  $add--loading: true
 ) {
   #{$selector} {
     @extend %button-primary;
@@ -173,15 +254,100 @@
       }
     }
   }
+
+  @if $add--success {
+    #{$success-selector} {
+      @extend %button-primary;
+      @extend %button-primary--success;
+
+      &:focus-visible {
+        // TODO: avoid duplcation
+        @extend %button-base--focus-visible;
+      }
+
+      &:hover {
+        @extend %button-primary--success-hover;
+      }
+
+      &:active {
+        @extend %button-primary--success-active;
+      }
+
+      @if $add--disabled {
+        // TODO: avoid duplcation
+        &:disabled {
+          @extend %button-primary--disabled;
+        }
+      }
+    }
+  }
+
+  @if $add--loading {
+    #{$with-loader-selector} {
+      @extend %button-primary;
+      @extend %button-loader;
+      @extend %button-loader-primary;
+      @extend %button-with-loader;
+
+      &:focus-visible {
+        @extend %button-base--focus-visible;
+      }
+
+      &:hover {
+        @extend %button-primary--hover;
+      }
+
+      &:active {
+        @extend %button-primary--active;
+        @extend %button-loader-primary--active;
+      }
+
+      @if $add--disabled {
+        &:disabled {
+          @extend %button-primary--disabled;
+        }
+      }
+    }
+
+    #{$loader-only-selector} {
+      @extend %button-primary;
+      @extend %button-loader;
+      @extend %button-loader-primary;
+      @extend %button-loader-only;
+
+      &:focus-visible {
+        @extend %button-base--focus-visible;
+      }
+
+      &:hover {
+        @extend %button-primary--hover;
+      }
+
+      &:active {
+        @extend %button-primary--active;
+        @extend %button-loader-primary--active;
+      }
+
+      @if $add--disabled {
+        &:disabled {
+          @extend %button-primary--disabled;
+        }
+      }
+    }
+  }
 }
 
 /// @group Button
 /// @param {String} $selector [".button-secondary"] -
+/// @param {Boolean} $add--loading [true] -
 @mixin button-secondary(
   $selector: ".button-secondary",
   $destructive-selector: ".button-secondary-destructive",
+  $with-loader-selector: ".button-secondary-with-loader",
+  $loader-only-selector: ".button-secondary-loader-only",
   $add--disabled: true,
-  $add--destructive: true
+  $add--destructive: true,
+  $add--loading: true
 ) {
   #{$selector} {
     @extend %button-secondary;
@@ -225,6 +391,62 @@
 
       @if $add--disabled {
         // TODO: avoid duplcation
+        &:disabled {
+          @extend %button-secondary--disabled;
+        }
+      }
+    }
+  }
+
+  @if $add--loading {
+    #{$with-loader-selector} {
+      @extend %button-secondary;
+      @extend %button-loader;
+      @extend %button-loader-secondary;
+      @extend %button-with-loader;
+
+      &:focus-visible {
+        @extend %button-base--focus-visible;
+      }
+
+      &:hover {
+        @extend %button-secondary--hover;
+        @extend %button-loader-secondary--hover;
+      }
+
+      &:active {
+        @extend %button-secondary--active;
+        @extend %button-loader-secondary--active;
+      }
+
+      @if $add--disabled {
+        &:disabled {
+          @extend %button-secondary--disabled;
+        }
+      }
+    }
+
+    #{$loader-only-selector} {
+      @extend %button-secondary;
+      @extend %button-loader;
+      @extend %button-loader-secondary;
+      @extend %button-loader-only;
+
+      &:focus-visible {
+        @extend %button-base--focus-visible;
+      }
+
+      &:hover {
+        @extend %button-secondary--hover;
+        @extend %button-loader-secondary--hover;
+      }
+
+      &:active {
+        @extend %button-secondary--active;
+        @extend %button-loader-secondary--active;
+      }
+
+      @if $add--disabled {
         &:disabled {
           @extend %button-secondary--disabled;
         }
