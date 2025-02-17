@@ -182,10 +182,28 @@ export const buttonMetadata = {
     buttonPrimaryIconOnly: {
       linkId: "button-primary-icon-only",
       title: "1.9 Primary icon only",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value: ICON_SRC
+        }
+      ],
       template: {
         tag: "button",
         class: "button-primary button-icon-only",
-        children: ["Caption"]
+        children: [
+          {
+            tag: "ch-image",
+            class: "icon-md",
+            properties: [
+              { name: "src", value: "ICON", variable: true },
+              { name: "type", value: "mask" }
+            ]
+          }
+        ]
       }
     },
 
@@ -341,10 +359,19 @@ export const buttonMetadata = {
 
     buttonSecondaryIconOnly: {
       linkId: "button-secondary-icon-only",
-      title: "2.7. Secondary icon only",
+      title: "1.9 Secondary icon only",
+      imports: [
+        'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
+      ],
+      variables: [
+        {
+          name: "ICON",
+          value: ICON_SRC
+        }
+      ],
       template: {
         tag: "button",
-        class: "button-secondary button-with-icon",
+        class: "button-secondary button-icon-only",
         children: [
           {
             tag: "ch-image",
