@@ -262,6 +262,20 @@
   </code-snippet>
 
   <code-snippet
+    [codeSnippet]="codeSnippets.buttonSecondaryIconOnly"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button [class]="codeSnippets.buttonSecondaryIconOnly.template.class">
+      <ch-image
+        [class]="iconCommon.size"
+        [src]="buttonCommon.iconSrc"
+        [type]="'mask'"
+      ></ch-image>
+    </button>
+  </code-snippet>
+
+  <code-snippet
     [codeSnippet]="codeSnippets.buttonSecondaryWithLoader"
     [headingLevel]="3"
     [language]="'ts'"

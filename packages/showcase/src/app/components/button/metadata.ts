@@ -339,9 +339,28 @@ export const buttonMetadata = {
       }
     },
 
+    buttonSecondaryIconOnly: {
+      linkId: "button-secondary-icon-only",
+      title: "2.7. Secondary icon only",
+      template: {
+        tag: "button",
+        class: "button-secondary button-with-icon",
+        children: [
+          {
+            tag: "ch-image",
+            class: "icon-md",
+            properties: [
+              { name: "src", value: "ICON", variable: true },
+              { name: "type", value: "mask" }
+            ]
+          }
+        ]
+      }
+    },
+
     buttonSecondaryWithLoader: {
       linkId: "button-secondary-with-loader",
-      title: "2.7. Secondary with Loader",
+      title: "2.8. Secondary with Loader",
       template: {
         tag: "button",
         class: "button-secondary-with-loader",
