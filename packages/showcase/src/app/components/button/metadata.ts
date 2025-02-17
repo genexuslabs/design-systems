@@ -179,9 +179,19 @@ export const buttonMetadata = {
       }
     },
 
+    buttonPrimaryIconOnly: {
+      linkId: "button-primary-icon-only",
+      title: "1.9 Primary icon only",
+      template: {
+        tag: "button",
+        class: "button-primary button-icon-only",
+        children: ["Caption"]
+      }
+    },
+
     buttonPrimaryWithLoader: {
       linkId: "button-primary-with-loader",
-      title: "1.9. Primary with Loader",
+      title: "1.10. Primary with Loader",
       template: {
         tag: "button",
         class: "button-primary-with-loader",
@@ -191,7 +201,7 @@ export const buttonMetadata = {
 
     buttonPrimaryLoaderOnly: {
       linkId: "button-primary-loader-only",
-      title: "1.10. Primary Loader Only",
+      title: "1.11. Primary Loader Only",
       template: {
         tag: "button",
         class: "button-primary-loader-only"
@@ -470,7 +480,7 @@ export const buttonMetadata = {
 
     buttonTertiaryIconOnlyDisabled: {
       linkId: "button-tertiary-icon-only-disabled",
-      title: "3.6. Icon Only Disablewd",
+      title: "3.6. Icon Only Disabled",
       imports: [
         'import { getIconPath } from "@genexus/mercury/assets-manager.js";'
       ],

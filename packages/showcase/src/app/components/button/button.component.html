@@ -129,6 +129,20 @@
   </code-snippet>
 
   <code-snippet
+    [codeSnippet]="codeSnippets.buttonPrimaryIconOnly"
+    [headingLevel]="3"
+    [language]="'ts'"
+  >
+    <button [class]="codeSnippets.buttonPrimaryIconOnly.template.class">
+      <ch-image
+        [class]="iconCommon.size"
+        [src]="buttonCommon.iconSrc"
+        [type]="'mask'"
+      ></ch-image>
+    </button>
+  </code-snippet>
+
+  <code-snippet
     [codeSnippet]="codeSnippets.buttonPrimaryWithLoader"
     [headingLevel]="3"
     [language]="'ts'"
