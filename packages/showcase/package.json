@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build.scss && ng serve -o --port 0",
-    "build": "npm run build.scss && ng build",
+    "start": "yarn build.scss && ng serve -o --port 0",
+    "build": "yarn build.scss && ng build",
     "build.scss": "mercury -i=/assets/icons/ -f=/assets/fonts/ --outDir=.mercury/ --avoid-hash=base/base",
     "watch": "ng build --watch --configuration development",
-    "test": "npm run build.scss && ng test",
+    "test": "yarn build.scss && ng test",
     "serve:ssr:showcase": "node dist/showcase/server/server.mjs"
   },
   "private": true,

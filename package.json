@@ -2,9 +2,20 @@
   "name": "@genexus/design-systems-monorepo",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=7.0.0"
+  "scripts": {
+    "build": "cd packages/showcase && yarn && yarn build",
+    "build.mer": "cd packages/mercury && yarn && yarn build",
+    "build.mer.watch": "cd packages/mercury && yarn && yarn build.scss.watch",
+    "build.un": "cd packages/unanimo && yarn && yarn build",
+    "build.un.watch": "cd packages/unanimo && yarn && yarn build",
+    "start": "cd packages/showcase && yarn && yarn start"
   },
+  "devDependencies": {
+    "@types/node": "~22.13.4",
+    "lerna": "~8.1.9"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
   "version": "0.0.180"
 }

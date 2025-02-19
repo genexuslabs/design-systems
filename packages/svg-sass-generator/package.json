@@ -13,15 +13,15 @@
   ],
   "scripts": {
     "clean": "fse remove ./js && fse remove bin",
-    "build": "npm run clean && tsc --build && npm run copy-json && npm run copy-to-bin",
-    "copy-json": "npm run copy-schema-monochrome && npm run copy-schema-multicolor",
+    "build": "yarn clean && tsc --build && yarn copy-json && yarn copy-to-bin",
+    "copy-json": "yarn copy-schema-monochrome && yarn copy-schema-multicolor",
     "copy-schema-monochrome": "fse copy ./ts/partials-svg/schema-monochrome.json ./js/partials-svg/schema-monochrome.json",
     "copy-schema-multicolor": "fse copy ./ts/partials-svg/schema-multicolor.json ./js/partials-svg/schema-multicolor.json",
     "copy-to-bin": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet ./js ./bin",
     "watch": "tsc --watch",
     "svg": "node ./js/processor-svg.js --srcDir=source-sample/ --outDir=_generated/ --configFilePath=source-sample/my-color-states.json --showcaseDir=showcase/ --showcaseBaseHref=../_generated/ --logDir=log/ --objectFilePath=object/ICONS_ASSETS.ts --defaultColorType=on-surface",
     "sass": "node ./js/processor-sass.js --srcDir=_generated/ --outDir=sass/_generated/ --configFilePath=source-sample/my-color-states.json --vendorAlias=ibm",
-    "validate.ci": "npm run build",
+    "validate.ci": "yarn build",
     "test-mixin": "sass ./tests/tests.scss ./tests/tests.css"
   },
   "author": "GeneXus",
@@ -44,8 +44,5 @@
     "@types/cheerio": "^0.22.35",
     "@types/minimist": "^1.2.5",
     "@types/stringify-object": "^4.0.5"
-  },
-  "engines": {
-    "pnpm": ">=3"
   }
 }

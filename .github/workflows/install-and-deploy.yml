@@ -49,11 +49,11 @@ jobs:
             ${{ runner.os }}-
 
       - name: install dependencies
-        run: npm install
+        run: yarn
         working-directory: ${{ inputs.package }}
 
       - name: validate
-        run: npm run validate.ci
+        run: yarn validate.ci
         working-directory: ${{ inputs.package }}
 
       - name: publish

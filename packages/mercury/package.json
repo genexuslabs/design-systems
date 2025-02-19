@@ -46,13 +46,16 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "npm run build.js && npm run icons-svg && npm run icons-sass && npm run build.scss && npm run copy-tasks && npm run showcase.scss",
+    "build": "yarn build.js && yarn icons-svg && yarn icons-sass && yarn build.scss && yarn copy-tasks && yarn showcase.scss",
     "build.js": "tsc && esbuild dist/*.js --allow-overwrite --minify --outdir=dist && esbuild dist/assets/*.js --allow-overwrite --minify --outdir=dist/assets",
-    "build-no-svg": "npm run build.js && npm run build.scss && npm run copy-tasks",
-    "build.scss": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss && npm run build.bundles",
-    "build.bundles": "node dist/cli/bundle.js",
+    "build-no-svg": "yarn build.js && yarn build.scss && yarn copy-tasks",
+    "build.scss": "yarn build.scss.base && yarn build.scss.bundles",
+    "build.scss.watch": "yarn build.scss && yarn build.scss.mercury",
+    "build.scss.base": "scss-bundle -e ./src/mercury.scss -o dist/mercury.scss",
+    "build.scss.bundles": "node dist/cli/bundle.js",
+    "build.scss.mercury": "node dist/cli/mercury.js -i=/assets/icons/ -f=/assets/fonts/ --outDir=../showcase/.mercury/ --avoid-hash=base/base",
     "start": "vite --port 5200 --open showcase/button.html",
-    "validate.ci": "npm run build-no-svg",
+    "validate.ci": "yarn build-no-svg",
     "icons-svg": "ssg-svg --srcDir=src/icons/svg-source --outDir=src/assets/icons/_generated/ --configFilePath=src/icons/svg-source/.config/color-states.json --showcaseDir=showcase/icons/ --showcaseBaseHref=../assets/icons/ --logDir=./log --objectFilePath=src/assets/MERCURY_ASSETS.ts --defaultColorType=on-surface",
     "icons-sass": "ssg-sass --srcDir=src/assets/icons/ --outDir=src/icons/_generated/ --configFilePath=src/icons/svg-source/.config/color-states.json --vendorPrefix=",
     "watch.scss": "chokidar src/**/*.scss ../common/**/*.scss -c \"npm run build.scss\"",
@@ -74,8 +77,5 @@
     "scss-bundle": "~3.1.2",
     "typescript": "~5.5.3",
     "vite": "~5.4.12"
-  },
-  "engines": {
-    "pnpm": ">=3"
   }
 }
