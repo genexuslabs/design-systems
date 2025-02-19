@@ -40,6 +40,10 @@
     @include items-container-gap();
     @include items-container-max-height();
     @include items-container-dropdown();
+
+    // Reset the font-style to avoid font-style: italic inherit when the
+    // combo-box is displaying the placeholder
+    font-style: normal;
   }
 
   &-group__header {
@@ -101,7 +105,7 @@
 /// @param {String} $combo-box-selector [".combo-box"] -
 /// @param {String} $combo-box--disabled-selector [".combo-box[disabled]"] -
 /// @param {String} $combo-box--error-selector [".combo-box-error"] -
-/// @param {String} $combo-box__placeholder-selector [".combo-box::part(placeholder)"] -
+/// @param {String} $combo-box__placeholder-selector [".combo-box[part='ch-combo-box-render--empty-value']"] -
 /// @param {String} $window-selector [".combo-box::part(window)"] -
 /// @param {String} $group-selector [".combo-box::part(group)"] -
 /// @param {String} $group__content-selector [".combo-box::part(group__content)"] -
@@ -119,7 +123,8 @@
   $combo-box-selector: $combo-box-selector,
   $combo-box--disabled-selector: ".combo-box[disabled]",
   $combo-box--error-selector: ".combo-box-error",
-  $combo-box__placeholder-selector: ".combo-box[part='']",
+  $combo-box__placeholder-selector:
+    ".combo-box[part='ch-combo-box-render--empty-value']",
   $window-selector: ".combo-box::part(window)",
   $group-selector: ".combo-box::part(group)",
   $group__content-selector: ".combo-box::part(group__content)",
