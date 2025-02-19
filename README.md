@@ -42,5 +42,5 @@ To see the documentation and examples of how to use Mercury, visit the [showcase
 - To automatically build Unanimo, run:
 
   ```bash
-  yarn build.mer.watch
+  yarn build.un.watch
   ```
