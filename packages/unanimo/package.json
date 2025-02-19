@@ -26,13 +26,13 @@
   },
   "scripts": {
     "copy-assets": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/assets/ dist/assets",
-    "build": "tsc && npm run copy-assets && npm run build.scss && npm run build.docs",
-    "build.scss": "scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss && npm run build.bundles",
+    "build": "tsc && yarn copy-assets && yarn build.scss && yarn build.docs",
+    "build.scss": "scss-bundle -e ./src/unanimo.scss -o dist/unanimo.scss && yarn build.bundles",
     "build.bundles": "fse copy --all --keepExisting --errorOnExist --dereference --preserveTimestamps --quiet src/bundles/scss dist/bundles/scss && sass --load-path=src --no-source-map --style compressed dist/bundles/scss:dist/bundles/css",
     "build.docs": "sassdoc dist/unanimo.scss",
-    "generate-docs": "npm run build.scss && npm run build.docs",
+    "generate-docs": "yarn build.scss && yarn build.docs",
     "test": "sass test/test.scss test/unanimo.css",
-    "validate.ci": "npm run build"
+    "validate.ci": "yarn build"
   },
   "license": "Apache-2.0",
   "devDependencies": {
