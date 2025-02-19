@@ -5,7 +5,6 @@
   "scripts": {
     "ng": "ng",
     "start": "yarn build.scss && ng serve -o --port 0",
-    "start.watch": "ng serve -o --port 0 --watch",
     "build": "yarn build.scss && ng build",
     "build.scss": "mercury -i=/assets/icons/ -f=/assets/fonts/ --outDir=.mercury/ --avoid-hash=base/base",
     "watch": "ng build --watch --configuration development",

@@ -3,13 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "cd packages/showcase && yarn && yarn start",
+    "build": "cd packages/showcase && yarn && yarn build",
     "build.mer": "cd packages/mercury && yarn && yarn build",
     "build.mer.watch": "cd packages/mercury && yarn && yarn build.scss.watch",
     "build.un": "cd packages/unanimo && yarn && yarn build",
     "build.un.watch": "cd packages/unanimo && yarn && yarn build",
-    "start": "cd packages/showcase && yarn && yarn start",
-    "start.watch": "cd packages/showcase && yarn && yarn start.watch"
+    "start": "cd packages/showcase && yarn && yarn start"
   },
   "devDependencies": {
     "@types/node": "~22.13.4",
