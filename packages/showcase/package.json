@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "yarn build.scss && ng serve -o --port 0",
+    "start.watch": "ng serve -o --port 0",
     "build": "yarn build.scss && ng build",
     "build.scss": "mercury -i=/assets/icons/ -f=/assets/fonts/ --outDir=.mercury/ --avoid-hash=base/base",
     "watch": "ng build --watch --configuration development",
@@ -23,7 +24,7 @@
     "@angular/platform-server": "~19.0.5",
     "@angular/router": "~19.0.5",
     "@angular/ssr": "~19.0.6",
-    "@genexus/chameleon-controls-library": "~6.2.0",
+    "@genexus/chameleon-controls-library": "~6.3.0",
     "@genexus/mercury": "latest",
     "@genexus/unanimo": "latest",
     "express": "^4.21.2",
