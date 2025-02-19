@@ -8,7 +8,8 @@
     "build.mer.watch": "cd packages/mercury && yarn && yarn build.scss.watch",
     "build.un": "cd packages/unanimo && yarn && yarn build",
     "build.un.watch": "cd packages/unanimo && yarn && yarn build",
-    "start": "cd packages/showcase && yarn && yarn start"
+    "start": "cd packages/showcase && yarn && yarn start",
+    "start.watch": "cd packages/showcase && yarn && yarn start.watch"
   },
   "devDependencies": {
     "@types/node": "~22.13.4",
